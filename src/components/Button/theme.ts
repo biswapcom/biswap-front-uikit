@@ -1,18 +1,34 @@
 import { scales, variants } from "./types";
 
 export const scaleVariants = {
-  [scales.MD]: {
+  [scales.XL]: {
     height: "48px",
     padding: "0 24px",
+    borderRadius: "10px",
+  },
+  [scales.LG]: {
+    height: "40px",
+    padding: "0 16px",
+    fontSize: "14px",
+    borderRadius: "8px",
+  },
+  [scales.MD]: {
+    height: "32px",
+    padding: "0 12px",
+    fontSize: "12px",
+    borderRadius: "8px",
   },
   [scales.SM]: {
-    height: "32px",
-    padding: "0 16px",
+    height: "24px",
+    padding: "0 8px",
+    fontSize: "12px",
+    borderRadius: "6px",
   },
   [scales.XS]: {
     height: "20px",
-    fontSize: "12px",
     padding: "0 8px",
+    fontSize: "12px",
+    borderRadius: "6px",
   },
 };
 
@@ -41,7 +57,7 @@ export const styleVariants = {
     color: "backgroundAlt",
   },
   [variants.DANGER]: {
-    backgroundColor: "failure",
+    backgroundColor: "secondary",
     color: "white",
   },
   [variants.SUCCESS]: {

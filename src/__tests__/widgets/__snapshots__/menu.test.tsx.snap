@@ -777,11 +777,11 @@ exports[`renders correctly 1`] = `
   box-shadow: none;
 }
 
-.c32:hover:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled):not(:active) {
+.c32:hover:not(:disabled):not(.button--disabled):not(.button--disabled):not(:active) {
   opacity: 0.65;
 }
 
-.c32:active:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled) {
+.c32:active:not(:disabled):not(.button--disabled):not(.button--disabled) {
   opacity: 0.85;
   -webkit-transform: translateY(1px);
   -ms-transform: translateY(1px);
@@ -790,7 +790,7 @@ exports[`renders correctly 1`] = `
 }
 
 .c32:disabled,
-.c32.pancake-button--disabled {
+.c32.button--disabled {
   background-color: #E9EAEB;
   border-color: #E9EAEB;
   box-shadow: none;
@@ -836,11 +836,11 @@ exports[`renders correctly 1`] = `
   height: sm;
 }
 
-.c36:hover:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled):not(:active) {
+.c36:hover:not(:disabled):not(.button--disabled):not(.button--disabled):not(:active) {
   opacity: 0.65;
 }
 
-.c36:active:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled) {
+.c36:active:not(:disabled):not(.button--disabled):not(.button--disabled) {
   opacity: 0.85;
   -webkit-transform: translateY(1px);
   -ms-transform: translateY(1px);
@@ -849,7 +849,7 @@ exports[`renders correctly 1`] = `
 }
 
 .c36:disabled,
-.c36.pancake-button--disabled {
+.c36.button--disabled {
   background-color: #E9EAEB;
   border-color: #E9EAEB;
   box-shadow: none;
@@ -893,11 +893,11 @@ exports[`renders correctly 1`] = `
   box-shadow: none;
 }
 
-.c86:hover:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled):not(:active) {
+.c86:hover:not(:disabled):not(.button--disabled):not(.button--disabled):not(:active) {
   opacity: 0.65;
 }
 
-.c86:active:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled) {
+.c86:active:not(:disabled):not(.button--disabled):not(.button--disabled) {
   opacity: 0.85;
   -webkit-transform: translateY(1px);
   -ms-transform: translateY(1px);
@@ -906,7 +906,7 @@ exports[`renders correctly 1`] = `
 }
 
 .c86:disabled,
-.c86.pancake-button--disabled {
+.c86.button--disabled {
   background-color: #E9EAEB;
   border-color: #E9EAEB;
   box-shadow: none;
@@ -949,11 +949,11 @@ exports[`renders correctly 1`] = `
   color: white;
 }
 
-.c93:hover:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled):not(:active) {
+.c93:hover:not(:disabled):not(.button--disabled):not(.button--disabled):not(:active) {
   opacity: 0.65;
 }
 
-.c93:active:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled) {
+.c93:active:not(:disabled):not(.button--disabled):not(.button--disabled) {
   opacity: 0.85;
   -webkit-transform: translateY(1px);
   -ms-transform: translateY(1px);
@@ -962,7 +962,7 @@ exports[`renders correctly 1`] = `
 }
 
 .c93:disabled,
-.c93.pancake-button--disabled {
+.c93.button--disabled {
   background-color: #E9EAEB;
   border-color: #E9EAEB;
   box-shadow: none;

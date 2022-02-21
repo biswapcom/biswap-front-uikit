@@ -3,6 +3,8 @@ import { LayoutProps, SpaceProps } from "styled-system";
 import type { PolymorphicComponentProps } from "../../util/polymorphic";
 
 export const scales = {
+  XL: "xl",
+  LG: "lg",
   MD: "md",
   SM: "sm",
   XS: "xs",

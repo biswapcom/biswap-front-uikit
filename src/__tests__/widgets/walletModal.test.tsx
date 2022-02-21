@@ -97,11 +97,11 @@ it("renders ConnectModal correctly", () => {
       box-shadow: none;
     }
 
-    .c7:hover:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled):not(:active) {
+    .c7:hover:not(:disabled):not(.button--disabled):not(.button--disabled):not(:active) {
       opacity: 0.65;
     }
 
-    .c7:active:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled) {
+    .c7:active:not(:disabled):not(.button--disabled):not(.button--disabled) {
       opacity: 0.85;
       -webkit-transform: translateY(1px);
       -ms-transform: translateY(1px);
@@ -110,7 +110,7 @@ it("renders ConnectModal correctly", () => {
     }
 
     .c7:disabled,
-    .c7.pancake-button--disabled {
+    .c7.button--disabled {
       background-color: #E9EAEB;
       border-color: #E9EAEB;
       box-shadow: none;
@@ -157,11 +157,11 @@ it("renders ConnectModal correctly", () => {
       padding-bottom: 16px;
     }
 
-    .c15:hover:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled):not(:active) {
+    .c15:hover:not(:disabled):not(.button--disabled):not(.button--disabled):not(:active) {
       opacity: 0.65;
     }
 
-    .c15:active:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled) {
+    .c15:active:not(:disabled):not(.button--disabled):not(.button--disabled) {
       opacity: 0.85;
       -webkit-transform: translateY(1px);
       -ms-transform: translateY(1px);
@@ -170,7 +170,7 @@ it("renders ConnectModal correctly", () => {
     }
 
     .c15:disabled,
-    .c15.pancake-button--disabled {
+    .c15.button--disabled {
       background-color: #E9EAEB;
       border-color: #E9EAEB;
       box-shadow: none;
@@ -214,11 +214,11 @@ it("renders ConnectModal correctly", () => {
       width: 100%;
     }
 
-    .c22:hover:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled):not(:active) {
+    .c22:hover:not(:disabled):not(.button--disabled):not(.button--disabled):not(:active) {
       opacity: 0.65;
     }
 
-    .c22:active:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled) {
+    .c22:active:not(:disabled):not(.button--disabled):not(.button--disabled) {
       opacity: 0.85;
       -webkit-transform: translateY(1px);
       -ms-transform: translateY(1px);
@@ -227,7 +227,7 @@ it("renders ConnectModal correctly", () => {
     }
 
     .c22:disabled,
-    .c22.pancake-button--disabled {
+    .c22.button--disabled {
       background-color: #E9EAEB;
       border-color: #E9EAEB;
       box-shadow: none;
