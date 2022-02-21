@@ -37,6 +37,7 @@ export interface LinkStatus {
 export interface DropdownMenuItems {
   label?: string | React.ReactNode;
   href?: string;
+  text?: string;
   onClick?: () => void;
   type?: DropdownMenuItemType;
   status?: LinkStatus;

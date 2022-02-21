@@ -25,18 +25,14 @@ export const links: MenuItemsType[] = [
     icon: "Swap",
     items: [
       {
-        label: "Exchange",
+        label: "Swap",
+        text: "",
         href: "/swap",
       },
       {
-        label: "Liquidity",
+        label: "Expert Trade",
+        text: "",
         href: "/liquidity",
-      },
-      {
-        label: "Charts",
-        href: "/charts",
-        iconName: "Chart",
-        isMobileOnly: true,
       },
     ],
   },
@@ -162,7 +158,7 @@ export const userMenulinks: DropdownMenuItems[] = [
   },
 ];
 
-export const MENU_HEIGHT = 56;
+export const MENU_HEIGHT = 72;
 export const MENU_ENTRY_HEIGHT = 48;
 export const MOBILE_MENU_HEIGHT = 44;
 export const SIDEBAR_WIDTH_FULL = 240;
