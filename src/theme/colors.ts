@@ -26,7 +26,43 @@ export const additionalColors = {
   bronze: "#E7974D",
 
   //BS
+  primaryHover: "#2E7AFF",
+  primaryPress: "#004ACC",
 
+  secondaryHover: "#FF506F",
+  secondaryPress: "#E12446",
+
+  successHover: "#38DC89",
+  successPress: "#08B66D",
+
+  warningHover: "#FEE560",
+  warningPress: "#FFCD1C",
+
+  boostHover: "#8E35FF",
+  boostPress: "#6205D9",
+
+
+  //---Dark palette
+  dark900: "#021127",
+  dark800: "#07162D",
+  dark700: "#071C3C",
+  dark600: "#102648",
+  dark500: "#1C3254",
+  dark400: "#2A436A",
+  dark300: "#3F5880",
+  dark200: "#546F99",
+  dark100: "#637FA9",
+
+  //---LightPalette
+  gray900: "#708DB7",
+  gray800: "#83A0C9",
+  gray700: "#9AB2D3",
+  gray600: "#B5C6DE",
+  gray500: "#C8D4E6",
+  gray400: "#DFE7F2",
+  gray300: "#E7EEF6",
+  gray200: "#F2F6FC",
+  gray100: "#F9FAFD",
 };
 
 export const lightColors: Colors = {
