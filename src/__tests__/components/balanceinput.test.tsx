@@ -470,11 +470,11 @@ it("renders correctly with unit prop and switchEditingUnits", () => {
       box-shadow: none;
     }
 
-    .c9:hover:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled):not(:active) {
+    .c9:hover:not(:disabled):not(.button--disabled):not(.button--disabled):not(:active) {
       opacity: 0.65;
     }
 
-    .c9:active:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled) {
+    .c9:active:not(:disabled):not(.button--disabled):not(.button--disabled) {
       opacity: 0.85;
       -webkit-transform: translateY(1px);
       -ms-transform: translateY(1px);
@@ -483,7 +483,7 @@ it("renders correctly with unit prop and switchEditingUnits", () => {
     }
 
     .c9:disabled,
-    .c9.pancake-button--disabled {
+    .c9.button--disabled {
       background-color: #E9EAEB;
       border-color: #E9EAEB;
       box-shadow: none;
