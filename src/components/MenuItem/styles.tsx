@@ -27,6 +27,7 @@ const StyledMenuItem = styled.a<StyledMenuItemProps>`
   color: ${({ theme, $isActive }) => ($isActive ? theme.colors.secondary : theme.colors.white)};
   font-size: 14px;
   font-weight: 400;
+  transition: color .4s ease;
 
   ${({ $statusColor, theme }) =>
     $statusColor &&
@@ -53,7 +54,6 @@ const StyledMenuItem = styled.a<StyledMenuItemProps>`
   `}
 
   &:hover {
-    // background: ${({ theme }) => theme.colors.tertiary};
     color: ${({ theme }) => theme.colors.pastelBlue};
     ${({ $variant }) => $variant === "default" && "border-radius: 16px;"};
   }
