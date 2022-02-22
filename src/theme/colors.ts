@@ -13,6 +13,9 @@ export const baseColors = {
   boost: "#7412F1",
   backgroundDark: "#07162D",
   backgroundLight: "#F9FAFD",
+  white: "#FFFFFF",
+  pastelBlue: "#749BD8",
+  dark: "#071C3C",
 };
 
 export const additionalColors = {
@@ -21,6 +24,9 @@ export const additionalColors = {
   gold: "#FFC700",
   silver: "#B2B2B2",
   bronze: "#E7974D",
+
+  //BS
+
 };
 
 export const lightColors: Colors = {
