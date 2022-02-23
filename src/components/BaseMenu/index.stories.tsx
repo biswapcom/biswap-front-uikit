@@ -8,7 +8,7 @@ import { LinkExternal } from "../Link";
 import { Box, Flex, Grid } from "../Box";
 import { Text } from "../Text";
 import Button from "../Button/Button";
-import { EllipsisIcon } from "../Svg";
+import { MoreHorizontal } from "../Svg";
 
 export default {
   title: "Components/Menu",
@@ -69,7 +69,7 @@ export const SubMenu: React.FC = () => {
       <Flex mb="24px" p="8px" width="300px" border="1px solid grey" justifyContent="space-between" alignItems="center">
         <Text>Icon</Text>
         <SubMenuComp
-          component={<EllipsisIcon height="16px" width="16px" />}
+          component={<MoreHorizontal height="16px" width="16px" />}
           options={{ placement: "right", offset: [0, 15], padding: { top: 20 } }}
         >
           <SubMenuItem as={LinkExternal} href="https://bscscan.com" bold={false} color="text">

@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 import { variant as systemVariant, space } from "styled-system";
-import { WarningIcon, ErrorIcon, CheckmarkCircleFillIcon } from "../Svg";
+import { WarningIcon, ErrorIcon, CheckmarkCircleIcon } from "../Svg";
 import { Text, TextProps } from "../Text";
 import { Box } from "../Box";
 import { MessageProps } from "./types";
@@ -12,7 +12,7 @@ const MessageContext = React.createContext<MessageProps>({ variant: "success" })
 const Icons = {
   warning: WarningIcon,
   danger: ErrorIcon,
-  success: CheckmarkCircleFillIcon,
+  success: CheckmarkCircleIcon,
 };
 
 const MessageContainer = styled.div<MessageProps>`
