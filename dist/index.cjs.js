@@ -186,12 +186,14 @@ var scales$8 = {
 var variants$6 = {
     PRIMARY: "primary",
     SECONDARY: "secondary",
-    TERTIARY: "tertiary",
     TEXT: "text",
     DANGER: "danger",
-    SUBTLE: "subtle",
     SUCCESS: "success",
-    LIGHT: "light",
+    WARNING: "warning",
+    BOOST: "boost",
+    // TERTIARY: "tertiary",
+    // SUBTLE: "subtle",
+    // LIGHT: "light",
 };
 
 var _a$4, _b$3;
@@ -230,6 +232,52 @@ var styleVariants$2 = (_b$3 = {},
     _b$3[variants$6.PRIMARY] = {
         backgroundColor: "primary",
         color: "white",
+        ":hover": {
+            backgroundColor: "primaryHover",
+        },
+        ":active": {
+            backgroundColor: "primaryPress",
+        },
+    },
+    _b$3[variants$6.DANGER] = {
+        backgroundColor: "secondary",
+        color: "white",
+        ":hover": {
+            backgroundColor: "secondaryHover",
+        },
+        ":active": {
+            backgroundColor: "secondaryPress",
+        },
+    },
+    _b$3[variants$6.SUCCESS] = {
+        backgroundColor: "success",
+        color: "white",
+        ":hover": {
+            backgroundColor: "successHover",
+        },
+        ":active": {
+            backgroundColor: "successPress",
+        },
+    },
+    _b$3[variants$6.WARNING] = {
+        backgroundColor: "warning",
+        color: "dark800",
+        ":hover": {
+            backgroundColor: "warningHover",
+        },
+        ":active": {
+            backgroundColor: "warningPress",
+        },
+    },
+    _b$3[variants$6.BOOST] = {
+        backgroundColor: "boost",
+        color: "white",
+        ":hover": {
+            backgroundColor: "boostHover",
+        },
+        ":active": {
+            backgroundColor: "boostPress",
+        },
     },
     _b$3[variants$6.SECONDARY] = {
         backgroundColor: "transparent",
@@ -241,31 +289,9 @@ var styleVariants$2 = (_b$3 = {},
             backgroundColor: "transparent",
         },
     },
-    _b$3[variants$6.TERTIARY] = {
-        backgroundColor: "tertiary",
-        boxShadow: "none",
-        color: "primary",
-    },
-    _b$3[variants$6.SUBTLE] = {
-        backgroundColor: "textSubtle",
-        color: "backgroundAlt",
-    },
-    _b$3[variants$6.DANGER] = {
-        backgroundColor: "secondary",
-        color: "white",
-    },
-    _b$3[variants$6.SUCCESS] = {
-        backgroundColor: "success",
-        color: "white",
-    },
     _b$3[variants$6.TEXT] = {
         backgroundColor: "transparent",
         color: "primary",
-        boxShadow: "none",
-    },
-    _b$3[variants$6.LIGHT] = {
-        backgroundColor: "input",
-        color: "textSubtle",
         boxShadow: "none",
     },
     _b$3);
@@ -286,7 +312,7 @@ var getOpacity = function (_a) {
     var _b = _a.$isLoading, $isLoading = _b === void 0 ? false : _b;
     return $isLoading ? ".5" : "1";
 };
-var StyledButton = styled__default["default"].button(templateObject_1$17 || (templateObject_1$17 = __makeTemplateObject(["\n  align-items: center;\n  border: 0;\n  //box-shadow: 0px -1px 0px 0px rgba(14, 14, 44, 0.4) inset;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  justify-content: center;\n  line-height: 1;\n  opacity: ", ";\n  outline: 0;\n  transition: background-color 0.2s, opacity 0.2s;\n\n  &:hover:not(:disabled):not(.button--disabled):not(.button--disabled):not(:active) {\n    opacity: 0.65;\n  }\n\n  &:active:not(:disabled):not(.button--disabled):not(.button--disabled) {\n    opacity: 0.85;\n    transform: translateY(1px);\n    box-shadow: none;\n  }\n\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"], ["\n  align-items: center;\n  border: 0;\n  //box-shadow: 0px -1px 0px 0px rgba(14, 14, 44, 0.4) inset;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  justify-content: center;\n  line-height: 1;\n  opacity: ", ";\n  outline: 0;\n  transition: background-color 0.2s, opacity 0.2s;\n\n  &:hover:not(:disabled):not(.button--disabled):not(.button--disabled):not(:active) {\n    opacity: 0.65;\n  }\n\n  &:active:not(:disabled):not(.button--disabled):not(.button--disabled) {\n    opacity: 0.85;\n    transform: translateY(1px);\n    box-shadow: none;\n  }\n\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"])), getOpacity, getDisabledStyles, styledSystem.variant({
+var StyledButton = styled__default["default"].button(templateObject_1$17 || (templateObject_1$17 = __makeTemplateObject(["\n  align-items: center;\n  border: 0;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  justify-content: center;\n  line-height: 1;\n  opacity: ", ";\n  outline: 0;\n  transition: background-color 0.2s, opacity 0.2s;\n\n  &:active:not(:disabled):not(.button--disabled):not(.button--disabled) {\n    \n  }\n\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"], ["\n  align-items: center;\n  border: 0;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  justify-content: center;\n  line-height: 1;\n  opacity: ", ";\n  outline: 0;\n  transition: background-color 0.2s, opacity 0.2s;\n\n  &:active:not(:disabled):not(.button--disabled):not(.button--disabled) {\n    \n  }\n\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"])), getOpacity, getDisabledStyles, styledSystem.variant({
     prop: "scale",
     variants: scaleVariants$1,
 }), styledSystem.variant({
@@ -1914,11 +1940,11 @@ var templateObject_1$$, templateObject_2$v;
 
 var getBackgroundColor = function (_a) {
     var theme = _a.theme, variant = _a.variant;
-    return theme.colors[variant === variants$6.SUBTLE ? "input" : "tertiary"];
+    return theme.colors[variant === variants$6.WARNING ? "input" : "tertiary"];
 };
 var getBorderColor$1 = function (_a) {
     var theme = _a.theme, variant = _a.variant;
-    return theme.colors[variant === variants$6.SUBTLE ? "inputSecondary" : "disabled"];
+    return theme.colors[variant === variants$6.WARNING ? "inputSecondary" : "disabled"];
 };
 var StyledButtonMenu = styled__default["default"].div(templateObject_1$_ || (templateObject_1$_ = __makeTemplateObject(["\n  background-color: ", ";\n  border-radius: 16px;\n  display: ", ";\n  border: 1px solid ", ";\n  width: ", ";\n\n  & > button,\n  & > a {\n    flex: ", ";\n  }\n\n  & > button + button,\n  & > a + a {\n    margin-left: 2px; // To avoid focus shadow overlap\n  }\n\n  & > button,\n  & a {\n    box-shadow: none;\n  }\n\n  ", "\n  ", "\n"], ["\n  background-color: ", ";\n  border-radius: 16px;\n  display: ", ";\n  border: 1px solid ", ";\n  width: ", ";\n\n  & > button,\n  & > a {\n    flex: ", ";\n  }\n\n  & > button + button,\n  & > a + a {\n    margin-left: 2px; // To avoid focus shadow overlap\n  }\n\n  & > button,\n  & a {\n    box-shadow: none;\n  }\n\n  ", "\n  ", "\n"])), getBackgroundColor, function (_a) {
     var fullWidth = _a.fullWidth;
@@ -5521,7 +5547,7 @@ var ConnectModal = function (_a) {
                     !showMore && React__default["default"].createElement(MoreWalletCard, { t: t, onClick: function () { return setShowMore(true); } }))),
             React__default["default"].createElement(Box, { p: "24px" },
                 React__default["default"].createElement(Text, { textAlign: "center", color: "textSubtle", as: "p", mb: "16px" }, t("Haven’t got a crypto wallet yet?")),
-                React__default["default"].createElement(Button, __assign({ as: "a", href: "https://docs.pancakeswap.finance/get-started/connection-guide", variant: "subtle", width: "100%" }, getExternalLinkProps()), t("Learn How to Connect"))))));
+                React__default["default"].createElement(Button, __assign({ as: "a", href: "https://docs.pancakeswap.finance/get-started/connection-guide", variant: "warning", width: "100%" }, getExternalLinkProps()), t("Learn How to Connect"))))));
 };
 var templateObject_1$1;
 

@@ -36,6 +36,57 @@ export const styleVariants = {
   [variants.PRIMARY]: {
     backgroundColor: "primary",
     color: "white",
+
+    ":hover": {
+      backgroundColor: "primaryHover",
+    },
+    ":active": {
+      backgroundColor: "primaryPress",
+    },
+  },
+  [variants.DANGER]: {
+    backgroundColor: "secondary",
+    color: "white",
+
+    ":hover": {
+      backgroundColor: "secondaryHover",
+    },
+    ":active": {
+      backgroundColor: "secondaryPress",
+    },
+  },
+  [variants.SUCCESS]: {
+    backgroundColor: "success",
+    color: "white",
+
+    ":hover": {
+      backgroundColor: "successHover",
+    },
+    ":active": {
+      backgroundColor: "successPress",
+    },
+  },
+  [variants.WARNING]: {
+    backgroundColor: "warning",
+    color: "dark800",
+
+    ":hover": {
+      backgroundColor: "warningHover",
+    },
+    ":active": {
+      backgroundColor: "warningPress",
+    },
+  },
+  [variants.BOOST]: {
+    backgroundColor: "boost",
+    color: "white",
+
+    ":hover": {
+      backgroundColor: "boostHover",
+    },
+    ":active": {
+      backgroundColor: "boostPress",
+    },
   },
   [variants.SECONDARY]: {
     backgroundColor: "transparent",
@@ -43,35 +94,14 @@ export const styleVariants = {
     borderColor: "primary",
     boxShadow: "none",
     color: "primary",
+
     ":disabled": {
       backgroundColor: "transparent",
     },
   },
-  [variants.TERTIARY]: {
-    backgroundColor: "tertiary",
-    boxShadow: "none",
-    color: "primary",
-  },
-  [variants.SUBTLE]: {
-    backgroundColor: "textSubtle",
-    color: "backgroundAlt",
-  },
-  [variants.DANGER]: {
-    backgroundColor: "secondary",
-    color: "white",
-  },
-  [variants.SUCCESS]: {
-    backgroundColor: "success",
-    color: "white",
-  },
   [variants.TEXT]: {
     backgroundColor: "transparent",
     color: "primary",
-    boxShadow: "none",
-  },
-  [variants.LIGHT]: {
-    backgroundColor: "input",
-    color: "textSubtle",
     boxShadow: "none",
   },
 };
