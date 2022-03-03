@@ -2,7 +2,11 @@ import React from "react";
 import Svg from "../Svg";
 import { SvgProps } from "../types";
 
-const Icon: React.FC<SvgProps> = (props) => {
+interface IProps extends SvgProps{
+  isDark?: boolean
+}
+
+const Icon: React.FC<IProps> = (props) => {
   return (
     <Svg viewBox="0 0 146 32" fill="none" {...props}>
       <g clip-path="url(#clip0_183_4959)">

@@ -138,7 +138,7 @@ var Text = styled__default["default"].div(templateObject_1$1a || (templateObject
         "white-space: nowrap;\n    overflow: hidden;\n    text-overflow: ellipsis;";
 }, styledSystem.space, styledSystem.typography, styledSystem.layout);
 Text.defaultProps = {
-    color: "text",
+    color: "contrast",
     small: false,
     ellipsis: false,
 };
@@ -3714,7 +3714,7 @@ Tag.defaultProps = {
 
 var isTouchDevice = function () {
     return (typeof window !== "undefined" &&
-        ("ontouchstart" in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0));
+        ("ontouchstart" in window || navigator.maxTouchPoints > 0 /*|| navigator.msMaxTouchPoints > 0*/));
 };
 
 var Arrow = styled__default["default"].div(templateObject_1$h || (templateObject_1$h = __makeTemplateObject(["\n  &,\n  &::before {\n    position: absolute;\n    width: 10px;\n    height: 10px;\n    border-radius: 2px;\n    z-index: -1;\n  }\n\n  &::before {\n    content: \"\";\n    transform: rotate(45deg);\n    background: ", ";\n  }\n"], ["\n  &,\n  &::before {\n    position: absolute;\n    width: 10px;\n    height: 10px;\n    border-radius: 2px;\n    z-index: -1;\n  }\n\n  &::before {\n    content: \"\";\n    transform: rotate(45deg);\n    background: ", ";\n  }\n"])), function (_a) {
@@ -5059,7 +5059,7 @@ var WalletCard = function (_a) {
     var login = _a.login, walletConfig = _a.walletConfig, onDismiss = _a.onDismiss;
     var title = walletConfig.title, Icon = walletConfig.icon;
     return (React__default["default"].createElement(WalletButton, { variant: "tertiary", onClick: function () {
-            var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+            var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) /*&& !window.MSStream*/;
             // Since iOS does not support Trust Wallet we fall back to WalletConnect
             if (walletConfig.title === "Trust Wallet" && isIOS) {
                 login(exports.ConnectorNames.WalletConnect);

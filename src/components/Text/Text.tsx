@@ -33,7 +33,7 @@ const Text = styled.div<TextProps>`
 `;
 
 Text.defaultProps = {
-  color: "text",
+  color: "contrast",
   small: false,
   ellipsis: false,
 };

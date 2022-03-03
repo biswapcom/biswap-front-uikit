@@ -1,4 +1,7 @@
 import React from "react";
 import { SvgProps } from "../types";
-declare const Icon: React.FC<SvgProps>;
+interface IProps extends SvgProps {
+    isDark?: boolean;
+}
+declare const Icon: React.FC<IProps>;
 export default Icon;
