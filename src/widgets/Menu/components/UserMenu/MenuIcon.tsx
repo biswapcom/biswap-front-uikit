@@ -57,7 +57,10 @@ export const DangerMenuIcon: React.FC = () => (
   </MenuIconWrapper>
 );
 
-const MenuIcon: React.FC<{ avatarSrc?: string; variant: Variant }> = ({ avatarSrc, variant }) => {
+const MenuIcon: React.FC<{ avatarSrc?: string; variant: Variant }> = ({
+  avatarSrc,
+  variant,
+}) => {
   if (variant === variants.DANGER) {
     return <DangerMenuIcon />;
   }

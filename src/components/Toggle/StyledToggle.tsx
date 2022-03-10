@@ -1,5 +1,12 @@
 import styled from "styled-components";
-import { ToggleProps, HandleProps, InputProps, ScaleKeys, scales, StyleToggleProps } from "./types";
+import {
+  ToggleProps,
+  HandleProps,
+  InputProps,
+  ScaleKeys,
+  scales,
+  StyleToggleProps,
+} from "./types";
 
 const scaleKeyValues = {
   sm: {

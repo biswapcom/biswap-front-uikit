@@ -1,5 +1,8 @@
 import React from "react";
-import { renderWithTheme, setupMockIntersectionObserver } from "../../testHelpers";
+import {
+  renderWithTheme,
+  setupMockIntersectionObserver,
+} from "../../testHelpers";
 import TokenImage from "../../components/Image/TokenImage";
 
 it("renders correctly", () => {

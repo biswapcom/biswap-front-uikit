@@ -44,4 +44,6 @@ export interface DropdownMenuItems {
   disabled?: boolean;
   iconName?: string;
   isMobileOnly?: boolean;
+  leftIcon?: string;
+  rightIcon?: string;
 }

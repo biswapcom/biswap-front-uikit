@@ -90,15 +90,17 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
         >
           {items
             .filter((item) => !item.isMobileOnly)
-            .map(({ type = DropdownMenuItemType.INTERNAL_LINK, label, href = "/", status, ...itemProps }, itemItem) => {
+            .map(({ type = DropdownMenuItemType.INTERNAL_LINK, label, href = "/", status, leftIcon = '', rightIcon = '', ...itemProps }, itemItem) => {
               const MenuItemContent = (
                 <>
+                  {leftIcon && <IconComponent iconName={leftIcon} />}
                   {label}
                   {status && (
                     <LinkStatus color={status.color} fontSize="14px">
                       {status.text}
                     </LinkStatus>
                   )}
+                  {rightIcon && <IconComponent iconName={rightIcon} />}
                 </>
               );
               const isActive = href === activeItem;

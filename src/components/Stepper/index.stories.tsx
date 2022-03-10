@@ -25,7 +25,12 @@ export const Default: React.FC = () => {
   return (
     <Stepper>
       {steps.map((step, index) => (
-        <Step key={step} index={index} statusFirstPart={status[index]} statusSecondPart={status[index + 1]}>
+        <Step
+          key={step}
+          index={index}
+          statusFirstPart={status[index]}
+          statusSecondPart={status[index + 1]}
+        >
           <Card>
             <CardBody>{step}</CardBody>
           </Card>
@@ -49,9 +54,11 @@ export const Components: React.FC = () => {
             <CardBody>
               <h2>Step 0</h2>
               <div>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vitae nisl imperdiet, vestibulum lacus at,
-                placerat nisi. Vestibulum quis scelerisque purus. Curabitur non magna tincidunt, fermentum neque sed,
-                finibus neque. Phasellus consequat at lorem a venenatis.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+                vitae nisl imperdiet, vestibulum lacus at, placerat nisi.
+                Vestibulum quis scelerisque purus. Curabitur non magna
+                tincidunt, fermentum neque sed, finibus neque. Phasellus
+                consequat at lorem a venenatis.
               </div>
             </CardBody>
           </Card>
@@ -63,9 +70,11 @@ export const Components: React.FC = () => {
             <CardBody>
               <h2>Step 1</h2>
               <div>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vitae nisl imperdiet, vestibulum lacus at,
-                placerat nisi. Vestibulum quis scelerisque purus. Curabitur non magna tincidunt, fermentum neque sed,
-                finibus neque. Phasellus consequat at lorem a venenatis.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+                vitae nisl imperdiet, vestibulum lacus at, placerat nisi.
+                Vestibulum quis scelerisque purus. Curabitur non magna
+                tincidunt, fermentum neque sed, finibus neque. Phasellus
+                consequat at lorem a venenatis.
               </div>
             </CardBody>
           </Card>
@@ -77,9 +86,11 @@ export const Components: React.FC = () => {
             <CardBody>
               <h2>Step 2</h2>
               <div>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vitae nisl imperdiet, vestibulum lacus at,
-                placerat nisi. Vestibulum quis scelerisque purus. Curabitur non magna tincidunt, fermentum neque sed,
-                finibus neque. Phasellus consequat at lorem a venenatis.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+                vitae nisl imperdiet, vestibulum lacus at, placerat nisi.
+                Vestibulum quis scelerisque purus. Curabitur non magna
+                tincidunt, fermentum neque sed, finibus neque. Phasellus
+                consequat at lorem a venenatis.
               </div>
             </CardBody>
           </Card>

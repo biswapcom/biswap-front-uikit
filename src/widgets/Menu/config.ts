@@ -1,5 +1,8 @@
 import { noop } from "lodash";
-import { DropdownMenuItems, DropdownMenuItemType } from "../../components/DropdownMenu/types";
+import {
+  DropdownMenuItems,
+  DropdownMenuItemType,
+} from "../../components/DropdownMenu/types";
 import { MenuItemsType } from "../../components/MenuItems/types";
 import { LinkStatus } from "./types";
 

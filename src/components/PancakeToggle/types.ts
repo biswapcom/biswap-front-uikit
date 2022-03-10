@@ -13,7 +13,8 @@ export const scales = {
 
 export type Scales = typeof scales[keyof typeof scales];
 
-export interface PancakeToggleProps extends InputHTMLAttributes<HTMLInputElement> {
+export interface PancakeToggleProps
+  extends InputHTMLAttributes<HTMLInputElement> {
   scale?: Scales;
   checked?: boolean;
 }

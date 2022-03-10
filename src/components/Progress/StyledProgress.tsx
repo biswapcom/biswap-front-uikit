@@ -16,7 +16,8 @@ export const Bar = styled.div<ProgressBarProps>`
   left: 0;
   background: ${({ theme, $useDark, primary, $background }) => {
     if ($background) return $background;
-    if ($useDark) return primary ? theme.colors.secondary : `${theme.colors.secondary}80`;
+    if ($useDark)
+      return primary ? theme.colors.secondary : `${theme.colors.secondary}80`;
     return primary ? lightColors.secondary : `${lightColors.secondary}80`;
   }};
   height: 100%;
@@ -35,13 +36,16 @@ interface StyledProgressProps {
 
 const StyledProgress = styled.div<StyledProgressProps>`
   position: relative;
-  background-color: ${({ theme, $useDark }) => ($useDark ? theme.colors.input : lightColors.input)};
+  background-color: ${({ theme, $useDark }) =>
+    $useDark ? theme.colors.input : lightColors.input};
   box-shadow: ${({ theme }) => theme.shadows.inset};
   overflow: hidden;
 
   ${Bar} {
-    border-top-left-radius: ${({ variant }) => (variant === variants.FLAT ? "0" : "32px")};
-    border-bottom-left-radius: ${({ variant }) => (variant === variants.FLAT ? "0" : "32px")};
+    border-top-left-radius: ${({ variant }) =>
+      variant === variants.FLAT ? "0" : "32px"};
+    border-bottom-left-radius: ${({ variant }) =>
+      variant === variants.FLAT ? "0" : "32px"};
   }
 
   ${StyledSystemVariant({

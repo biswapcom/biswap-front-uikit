@@ -24,10 +24,11 @@ const StyledMenuItem = styled.a<StyledMenuItemProps>`
   display: flex;
   align-items: center;
 
-  color: ${({ theme, $isActive }) => ($isActive ? theme.colors.secondary : theme.colors.white)};
+  color: ${({ theme, $isActive }) =>
+    $isActive ? theme.colors.secondary : theme.colors.white};
   font-size: 14px;
   font-weight: 400;
-  transition: color .4s ease;
+  transition: color 0.4s ease;
 
   ${({ $statusColor, theme }) =>
     $statusColor &&
@@ -39,8 +40,7 @@ const StyledMenuItem = styled.a<StyledMenuItemProps>`
       width: 8px;
       margin-left: 12px;
     }
-    `
-  }
+    `}
 
   ${({ $variant }) =>
     $variant === "default"

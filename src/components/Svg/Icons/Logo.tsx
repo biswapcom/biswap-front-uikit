@@ -5,7 +5,10 @@ import { SvgProps } from "../types";
 const Icon: React.FC<SvgProps> = (props) => {
   return (
     <Svg viewBox="0 0 40 40" fill="none" {...props}>
-      <path d="M20 40c11.046 0 20-8.954 20-20S31.046 0 20 0 0 8.954 0 20s8.954 20 20 20z" fill="#fff" />
+      <path
+        d="M20 40c11.046 0 20-8.954 20-20S31.046 0 20 0 0 8.954 0 20s8.954 20 20 20z"
+        fill="#fff"
+      />
       <path
         d="M35.492 7.524c-1.387.274-2.71.662-3.798.903-2.484.557-4.807 2.46-5.315 5.944-.452 3.113.597 4.452.137 8.073-.806 6.322-6.87 8.5-9.701 9.822-1.638.758-5.613 2.5-8.678 3.83A19.9 19.9 0 0020 40c11.049 0 20-8.952 20-20 0-4.71-1.629-9.04-4.355-12.452a6.31 6.31 0 00-.153-.024z"
         fill="url(#logo-color-1)"
@@ -15,11 +18,25 @@ const Icon: React.FC<SvgProps> = (props) => {
         fill="url(#logo-color-2)"
       />
       <defs>
-        <linearGradient id="logo-color-1" x1="32.011" y1="12.762" x2="27.293" y2="38.757" gradientUnits="userSpaceOnUse">
+        <linearGradient
+          id="logo-color-1"
+          x1="32.011"
+          y1="12.762"
+          x2="27.293"
+          y2="38.757"
+          gradientUnits="userSpaceOnUse"
+        >
           <stop stopColor="#FF496A" />
           <stop offset="1" stopColor="#E42648" />
         </linearGradient>
-        <linearGradient id="logo-color-2" x1="9.653" y1="29.461" x2="20.086" y2="0" gradientUnits="userSpaceOnUse">
+        <linearGradient
+          id="logo-color-2"
+          x1="9.653"
+          y1="29.461"
+          x2="20.086"
+          y2="0"
+          gradientUnits="userSpaceOnUse"
+        >
           <stop offset=".002" stopColor="#1158F1" />
           <stop offset="1" stopColor="#119BED" />
         </linearGradient>

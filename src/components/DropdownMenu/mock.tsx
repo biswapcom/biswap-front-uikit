@@ -3,13 +3,121 @@ import { DropdownMenuItems, DropdownMenuItemType } from "./types";
 
 const ItemsMock: DropdownMenuItems[] = [
   {
-    label: "Exchange",
+    label: "Swap",
     href: "/swap",
+    leftIcon: "Swap",
+    description: "Item description",
   },
   {
-    label: "Liquidity",
+    label: "Expert Trade",
     href: "/pool",
+    leftIcon: "ExpertTrade",
+    // rightIcon: "ArrowUpForward",
+    rightIconFill: "primary",
+    description: "Item description",
+    links: [
+      {
+        label: "Label",
+        href: "/polar",
+      },
+      {
+        label: "Label 2",
+        href: "/polar",
+      },
+      {
+        label: "Label 3",
+        href: "/polar",
+      },
+      {
+        label: "Label 4",
+        href: "/polar",
+      },
+    ],
   },
+  {
+    label: "Expert Trade",
+    href: "/pool",
+    leftIcon: "ExpertTrade",
+    rightIcon: "ArrowForward",
+    rightIconFill: "primary",
+    description: "Item description",
+  },
+  // {
+  //   label: "Liquidity",
+  //   href: "/pool",
+  //   leftIcon: 'Liquidity',
+  //   description: 'Item description'
+  // },
+  // {
+  //   label: "Farms",
+  //   href: "/pool",
+  //   leftIcon: 'Farms',
+  //   description: 'Item description'
+  // },
+  {
+    label: "LaunchPools",
+    href: "/pool",
+    leftIcon: "Launch",
+    description: "Item description",
+    links: [
+      {
+        label: "Stake BSW",
+        href: "/polar",
+      },
+      {
+        label: "Stake tokens",
+        href: "/polar",
+      },
+    ],
+  },
+  // {
+  //   label: "Referral Program",
+  //   href: "/pool",
+  //   leftIcon: 'Referral',
+  //   description: 'Item description'
+  // },
+  // {
+  //   label: "IDO",
+  //   href: "/pool",
+  //   leftIcon: 'IdoMenu',
+  //   description: 'Item description'
+  // },
+  // {
+  //   label: "Lottery",
+  //   href: "/pool",
+  //   leftIcon: 'Lottery',
+  //   description: 'Item description'
+  // },
+  // {
+  //   label: "Competitions",
+  //   href: "/pool",
+  //   leftIcon: 'Competitions',
+  //   description: 'Item description'
+  // },
+  // {
+  //   label: "NFT Launchpad",
+  //   href: "/pool",
+  //   leftIcon: 'NftLaunch',
+  //   description: 'Item description'
+  // },
+  // {
+  //   label: "NFT Earn",
+  //   href: "/pool",
+  //   leftIcon: 'NftEarn',
+  //   description: 'Item description'
+  // },
+  // {
+  //   label: "Marketplace",
+  //   href: "/pool",
+  //   leftIcon: 'MarketMenu',
+  //   description: 'Item description'
+  // },
+  // {
+  //   label: "GameFi",
+  //   href: "/pool",
+  //   leftIcon: 'GameFi',
+  //   description: 'Item description'
+  // },
   {
     label: "LP Migration",
     href: "https://v1exchange.pancakeswap.finance/#/migrate",

@@ -33,7 +33,11 @@ export const Default: React.FC = () => {
           <Heading mb="16px">{key}</Heading>
           <Row>
             <Input type="text" scale={scales[key]} value="Value" />
-            <Input type="text" scale={scales[key]} placeholder="Placeholder..." />
+            <Input
+              type="text"
+              scale={scales[key]}
+              placeholder="Placeholder..."
+            />
             <Input type="text" scale={scales[key]} value="Disabled" disabled />
             <Input type="text" scale={scales[key]} value="Success" isSuccess />
             <Input type="text" scale={scales[key]} value="Warning" isWarning />
@@ -47,13 +51,28 @@ export const Default: React.FC = () => {
 export const Icons: React.FC = () => {
   return (
     <Box width="300px">
-      <InputGroup startIcon={<Search width="18px" />} endIcon={<StarFill width="18px" />} mb="24px" scale="sm">
+      <InputGroup
+        startIcon={<Search width="18px" />}
+        endIcon={<StarFill width="18px" />}
+        mb="24px"
+        scale="sm"
+      >
         <Input type="text" value="Input Group" />
       </InputGroup>
-      <InputGroup startIcon={<Search width="24px" />} endIcon={<StarFill width="24px" />} mb="24px" scale="md">
+      <InputGroup
+        startIcon={<Search width="24px" />}
+        endIcon={<StarFill width="24px" />}
+        mb="24px"
+        scale="md"
+      >
         <Input type="text" value="Input Group" />
       </InputGroup>
-      <InputGroup startIcon={<Search width="32px" />} endIcon={<StarFill width="32px" />} mb="24px" scale="lg">
+      <InputGroup
+        startIcon={<Search width="32px" />}
+        endIcon={<StarFill width="32px" />}
+        mb="24px"
+        scale="lg"
+      >
         <Input type="text" value="Input Group" />
       </InputGroup>
     </Box>

@@ -10,7 +10,12 @@ import { SubMenuItems } from "../../components/SubMenuItems";
 import { useMatchBreakpoints } from "../../hooks";
 import CakePrice from "../../components/CakePrice/CakePrice";
 import Logo from "./components/Logo";
-import { MENU_HEIGHT, MOBILE_MENU_HEIGHT, TOP_BANNER_HEIGHT, TOP_BANNER_HEIGHT_MOBILE } from "./config";
+import {
+  MENU_HEIGHT,
+  MOBILE_MENU_HEIGHT,
+  TOP_BANNER_HEIGHT,
+  TOP_BANNER_HEIGHT_MOBILE,
+} from "./config";
 import { NavProps } from "./types";
 import LangSelector from "../../components/LangSelector/LangSelector";
 import { MenuContext } from "./context";
@@ -84,16 +89,24 @@ const Menu: React.FC<NavProps> = ({
 }) => {
   const { isMobile } = useMatchBreakpoints();
   const [showMenu, setShowMenu] = useState(true);
-  const refPrevOffset = useRef(typeof window === "undefined" ? 0 : window.pageYOffset);
+  const refPrevOffset = useRef(
+    typeof window === "undefined" ? 0 : window.pageYOffset
+  );
 
-  const topBannerHeight = isMobile ? TOP_BANNER_HEIGHT_MOBILE : TOP_BANNER_HEIGHT;
+  const topBannerHeight = isMobile
+    ? TOP_BANNER_HEIGHT_MOBILE
+    : TOP_BANNER_HEIGHT;
 
-  const totalTopMenuHeight = banner ? MENU_HEIGHT + topBannerHeight : MENU_HEIGHT;
+  const totalTopMenuHeight = banner
+    ? MENU_HEIGHT + topBannerHeight
+    : MENU_HEIGHT;
 
   useEffect(() => {
     const handleScroll = () => {
       const currentOffset = window.pageYOffset;
-      const isBottomOfPage = window.document.body.clientHeight === currentOffset + window.innerHeight;
+      const isBottomOfPage =
+        window.document.body.clientHeight ===
+        currentOffset + window.innerHeight;
       const isTopOfPage = currentOffset === 0;
       // Always show the menu when user reach the top
       if (isTopOfPage) {
@@ -101,7 +114,10 @@ const Menu: React.FC<NavProps> = ({
       }
       // Avoid triggering anything at the bottom because of layout shift
       else if (!isBottomOfPage) {
-        if (currentOffset < refPrevOffset.current || currentOffset <= totalTopMenuHeight) {
+        if (
+          currentOffset < refPrevOffset.current ||
+          currentOffset <= totalTopMenuHeight
+        ) {
           // Has scroll up
           setShowMenu(true);
         } else {
@@ -122,18 +138,33 @@ const Menu: React.FC<NavProps> = ({
   // Find the home link if provided
   const homeLink = links.find((link) => link.label === "Home");
 
-  const subLinksWithoutMobile = subLinks?.filter((subLink) => !subLink.isMobileOnly);
-  const subLinksMobileOnly = subLinks?.filter((subLink) => subLink.isMobileOnly);
+  const subLinksWithoutMobile = subLinks?.filter(
+    (subLink) => !subLink.isMobileOnly
+  );
+  const subLinksMobileOnly = subLinks?.filter(
+    (subLink) => subLink.isMobileOnly
+  );
 
   return (
     <MenuContext.Provider value={{ linkComponent }}>
       <Wrapper>
         <FixedContainer showMenu={showMenu} height={totalTopMenuHeight}>
-          {banner && <TopBannerContainer height={topBannerHeight}>{banner}</TopBannerContainer>}
+          {banner && (
+            <TopBannerContainer height={topBannerHeight}>
+              {banner}
+            </TopBannerContainer>
+          )}
           <StyledNav>
             <Flex>
               <Logo isDark={isDark} href={homeLink?.href ?? "/"} />
-              {!isMobile && <MenuItems items={links} activeItem={activeItem} activeSubItem={activeSubItem} ml="24px" />}
+              {!isMobile && (
+                <MenuItems
+                  items={links}
+                  activeItem={activeItem}
+                  activeSubItem={activeSubItem}
+                  ml="24px"
+                />
+              )}
             </Flex>
             <Flex alignItems="center" height="100%">
               {globalMenu} {userMenu}
@@ -142,7 +173,11 @@ const Menu: React.FC<NavProps> = ({
         </FixedContainer>
         {subLinks && (
           <Flex justifyContent="space-around">
-            <SubMenuItems items={subLinksWithoutMobile} mt={`${totalTopMenuHeight + 1}px`} activeItem={activeSubItem} />
+            <SubMenuItems
+              items={subLinksWithoutMobile}
+              mt={`${totalTopMenuHeight + 1}px`}
+              activeItem={activeSubItem}
+            />
 
             {subLinksMobileOnly?.length > 0 && (
               <SubMenuItems
@@ -170,7 +205,13 @@ const Menu: React.FC<NavProps> = ({
             />
           </Inner>
         </BodyWrapper>
-        {isMobile && <BottomNav items={links} activeItem={activeItem} activeSubItem={activeSubItem} />}
+        {isMobile && (
+          <BottomNav
+            items={links}
+            activeItem={activeItem}
+            activeSubItem={activeSubItem}
+          />
+        )}
       </Wrapper>
     </MenuContext.Provider>
   );

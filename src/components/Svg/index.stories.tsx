@@ -53,7 +53,12 @@ export const Icons: React.FC = () => {
             py="8px"
             m="4px"
           >
-            <Flex alignItems="center" justifyContent="center" style={{ flex: 1 }} height="100%">
+            <Flex
+              alignItems="center"
+              justifyContent="center"
+              style={{ flex: 1 }}
+              height="100%"
+            >
               <Icon width="48px" />
               <Icon width="24px" color="secondary" ml="4px" />
             </Flex>
@@ -83,7 +88,9 @@ const AnimatedIconComponentTemplate: React.FC = (args) => {
   );
 };
 
-export const AnimatedIconComponentStory = AnimatedIconComponentTemplate.bind({});
+export const AnimatedIconComponentStory = AnimatedIconComponentTemplate.bind(
+  {}
+);
 AnimatedIconComponentStory.args = {
   isActive: false,
 };
