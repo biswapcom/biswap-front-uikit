@@ -1,4 +1,6 @@
 import styled, { DefaultTheme } from "styled-components";
+import { variant } from "styled-system";
+import { scaleVariants, styleVariants } from "./theme";
 import { InputProps, scales } from "./types";
 
 interface StyledInputProps extends InputProps {
@@ -24,46 +26,36 @@ const getBoxShadow = ({
   return theme.shadows.inset;
 };
 
-const getHeight = ({ scale = scales.MD }: StyledInputProps) => {
-  switch (scale) {
-    case scales.SM:
-      return "32px";
-    case scales.LG:
-      return "48px";
-    case scales.MD:
-    default:
-      return "40px";
-  }
-};
+// const getHeight = ({ scale = scales.MD }: StyledInputProps) => {
+//   switch (scale) {
+//     case scales.LG:
+//       return "48px";
+//     case scales.SM:
+//       return "32px";
+//     case scales.MD:
+//     default:
+//       return "40px";
+//   }
+// };
 
 const Input = styled.input<InputProps>`
-  background-color: ${({ theme }) => theme.colors.input};
-  border: 0;
-  border-radius: 16px;
-  box-shadow: ${getBoxShadow};
   color: ${({ theme }) => theme.colors.text};
   display: block;
   font-size: 16px;
-  height: ${getHeight};
   outline: 0;
   padding: 0 16px;
   width: 100%;
-  border: 1px solid ${({ theme }) => theme.colors.inputSecondary};
-
-  &::placeholder {
-    color: ${({ theme }) => theme.colors.textSubtle};
-  }
-
-  &:disabled {
-    background-color: ${({ theme }) => theme.colors.backgroundDisabled};
-    box-shadow: none;
-    color: ${({ theme }) => theme.colors.textDisabled};
-    cursor: not-allowed;
-  }
-
-  &:focus:not(:disabled) {
-    box-shadow: ${({ theme }) => theme.shadows.focus};
-  }
+  border: 1px solid transparent;
+  transition: border-color .4s ease, background-color .4s ease, color .4s ease;
+  
+  ${variant({
+    prop: "scale",
+    variants: scaleVariants,
+  })}
+  ${variant({
+    prop: "styleColor",
+    variants: styleVariants,
+  })}
 `;
 
 Input.defaultProps = {

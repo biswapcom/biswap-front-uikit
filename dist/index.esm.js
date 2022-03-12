@@ -162,40 +162,40 @@ var variants$6 = {
     // LIGHT: "light",
 };
 
-var _a$4, _b$3;
-var scaleVariants$1 = (_a$4 = {},
-    _a$4[scales$8.XL] = {
+var _a$5, _b$4;
+var scaleVariants$2 = (_a$5 = {},
+    _a$5[scales$8.XL] = {
         height: "48px",
         padding: "0 24px",
         borderRadius: "10px",
     },
-    _a$4[scales$8.LG] = {
+    _a$5[scales$8.LG] = {
         height: "40px",
         padding: "0 16px",
         fontSize: "14px",
         borderRadius: "8px",
     },
-    _a$4[scales$8.MD] = {
+    _a$5[scales$8.MD] = {
         height: "32px",
         padding: "0 12px",
         fontSize: "12px",
         borderRadius: "8px",
     },
-    _a$4[scales$8.SM] = {
+    _a$5[scales$8.SM] = {
         height: "24px",
         padding: "0 8px",
         fontSize: "12px",
         borderRadius: "6px",
     },
-    _a$4[scales$8.XS] = {
+    _a$5[scales$8.XS] = {
         height: "20px",
         padding: "0 8px",
         fontSize: "12px",
         borderRadius: "6px",
     },
-    _a$4);
-var styleVariants$2 = (_b$3 = {},
-    _b$3[variants$6.PRIMARY] = {
+    _a$5);
+var styleVariants$3 = (_b$4 = {},
+    _b$4[variants$6.PRIMARY] = {
         backgroundColor: "primary",
         color: "white",
         ":hover": {
@@ -205,7 +205,7 @@ var styleVariants$2 = (_b$3 = {},
             backgroundColor: "primaryPress",
         },
     },
-    _b$3[variants$6.DANGER] = {
+    _b$4[variants$6.DANGER] = {
         backgroundColor: "secondary",
         color: "white",
         ":hover": {
@@ -215,7 +215,7 @@ var styleVariants$2 = (_b$3 = {},
             backgroundColor: "secondaryPress",
         },
     },
-    _b$3[variants$6.SUCCESS] = {
+    _b$4[variants$6.SUCCESS] = {
         backgroundColor: "success",
         color: "white",
         ":hover": {
@@ -225,7 +225,7 @@ var styleVariants$2 = (_b$3 = {},
             backgroundColor: "successPress",
         },
     },
-    _b$3[variants$6.WARNING] = {
+    _b$4[variants$6.WARNING] = {
         backgroundColor: "warning",
         color: "dark800",
         ":hover": {
@@ -235,7 +235,7 @@ var styleVariants$2 = (_b$3 = {},
             backgroundColor: "warningPress",
         },
     },
-    _b$3[variants$6.BOOST] = {
+    _b$4[variants$6.BOOST] = {
         backgroundColor: "boost",
         color: "white",
         ":hover": {
@@ -245,7 +245,7 @@ var styleVariants$2 = (_b$3 = {},
             backgroundColor: "boostPress",
         },
     },
-    _b$3[variants$6.SECONDARY] = {
+    _b$4[variants$6.SECONDARY] = {
         backgroundColor: "transparent",
         border: "2px solid",
         borderColor: "primary",
@@ -255,12 +255,12 @@ var styleVariants$2 = (_b$3 = {},
             backgroundColor: "transparent",
         },
     },
-    _b$3[variants$6.TEXT] = {
+    _b$4[variants$6.TEXT] = {
         backgroundColor: "transparent",
         color: "primary",
         boxShadow: "none",
     },
-    _b$3);
+    _b$4);
 
 var getDisabledStyles = function (_a) {
     var $isLoading = _a.$isLoading, theme = _a.theme;
@@ -280,9 +280,9 @@ var getOpacity = function (_a) {
 };
 var StyledButton = styled.button(templateObject_1$18 || (templateObject_1$18 = __makeTemplateObject(["\n  align-items: center;\n  border: 0;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  justify-content: center;\n  line-height: 1;\n  opacity: ", ";\n  outline: 0;\n  transition: background-color 0.2s, opacity 0.2s;\n\n  &:active:not(:disabled):not(.button--disabled):not(.button--disabled) {\n    \n  }\n\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"], ["\n  align-items: center;\n  border: 0;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  justify-content: center;\n  line-height: 1;\n  opacity: ", ";\n  outline: 0;\n  transition: background-color 0.2s, opacity 0.2s;\n\n  &:active:not(:disabled):not(.button--disabled):not(.button--disabled) {\n    \n  }\n\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"])), getOpacity, getDisabledStyles, variant$1({
     prop: "scale",
-    variants: scaleVariants$1,
+    variants: scaleVariants$2,
 }), variant$1({
-    variants: styleVariants$2,
+    variants: styleVariants$3,
 }), layout, space);
 var templateObject_1$18;
 
@@ -1354,54 +1354,97 @@ var scales$7 = {
     MD: "md",
     LG: "lg",
 };
+var styleColor = {
+    LIGHT: "light",
+    DARK: "dark",
+};
 
-/**
- * Priority: Warning --> Success
- */
-var getBoxShadow = function (_a) {
-    var _b = _a.isSuccess, isSuccess = _b === void 0 ? false : _b, _c = _a.isWarning, isWarning = _c === void 0 ? false : _c, theme = _a.theme;
-    if (isWarning) {
-        return theme.shadows.warning;
-    }
-    if (isSuccess) {
-        return theme.shadows.success;
-    }
-    return theme.shadows.inset;
-};
-var getHeight = function (_a) {
-    var _b = _a.scale, scale = _b === void 0 ? scales$7.MD : _b;
-    switch (scale) {
-        case scales$7.SM:
-            return "32px";
-        case scales$7.LG:
-            return "48px";
-        case scales$7.MD:
-        default:
-            return "40px";
-    }
-};
-var Input$1 = styled.input(templateObject_1$11 || (templateObject_1$11 = __makeTemplateObject(["\n  background-color: ", ";\n  border: 0;\n  border-radius: 16px;\n  box-shadow: ", ";\n  color: ", ";\n  display: block;\n  font-size: 16px;\n  height: ", ";\n  outline: 0;\n  padding: 0 16px;\n  width: 100%;\n  border: 1px solid ", ";\n\n  &::placeholder {\n    color: ", ";\n  }\n\n  &:disabled {\n    background-color: ", ";\n    box-shadow: none;\n    color: ", ";\n    cursor: not-allowed;\n  }\n\n  &:focus:not(:disabled) {\n    box-shadow: ", ";\n  }\n"], ["\n  background-color: ", ";\n  border: 0;\n  border-radius: 16px;\n  box-shadow: ", ";\n  color: ", ";\n  display: block;\n  font-size: 16px;\n  height: ", ";\n  outline: 0;\n  padding: 0 16px;\n  width: 100%;\n  border: 1px solid ", ";\n\n  &::placeholder {\n    color: ", ";\n  }\n\n  &:disabled {\n    background-color: ", ";\n    box-shadow: none;\n    color: ", ";\n    cursor: not-allowed;\n  }\n\n  &:focus:not(:disabled) {\n    box-shadow: ", ";\n  }\n"])), function (_a) {
-    var theme = _a.theme;
-    return theme.colors.input;
-}, getBoxShadow, function (_a) {
+var _a$4, _b$3;
+var scaleVariants$1 = (_a$4 = {},
+    _a$4[scales$7.LG] = {
+        borderRadius: "10px",
+        height: "48px",
+        fontSize: "16px",
+    },
+    _a$4[scales$7.MD] = {
+        borderRadius: "8px",
+        height: "40px",
+        fontSize: "14px",
+    },
+    _a$4[scales$7.SM] = {
+        borderRadius: "8px",
+        height: "32px",
+        fontSize: "12px",
+    },
+    _a$4);
+var styleVariants$2 = (_b$3 = {},
+    _b$3[styleColor.LIGHT] = {
+        backgroundColor: "gray300",
+        color: "gray900",
+        "::placeholder": {
+            color: "gray900",
+        },
+        ":hover:not(:disabled)": {
+            borderColor: "gray900",
+            backgroundColor: "transparent",
+            color: "dark800",
+        },
+        ":focus:not(:disabled)": {
+            borderColor: "primary",
+            backgroundColor: "transparent",
+            color: "dark800",
+        },
+        ":disabled": {
+            backgroundColor: "gray200",
+            color: "gray600",
+            cursor: "not-allowed",
+        }
+    },
+    _b$3[styleColor.DARK] = {
+        backgroundColor: "dark500",
+        color: "pastelBlue",
+        "::placeholder": {
+            color: "pastelBlue",
+        },
+        ":hover:not(:disabled)": {
+            borderColor: "dark300",
+            backgroundColor: "transparent",
+            color: "white",
+        },
+        ":focus:not(:disabled)": {
+            borderColor: "primary",
+            backgroundColor: "transparent",
+            color: "white",
+        },
+        ":disabled": {
+            backgroundColor: "dark600",
+            color: "dark200",
+            cursor: "not-allowed",
+        }
+    },
+    _b$3);
+
+// const getHeight = ({ scale = scales.MD }: StyledInputProps) => {
+//   switch (scale) {
+//     case scales.LG:
+//       return "48px";
+//     case scales.SM:
+//       return "32px";
+//     case scales.MD:
+//     default:
+//       return "40px";
+//   }
+// };
+var Input$1 = styled.input(templateObject_1$11 || (templateObject_1$11 = __makeTemplateObject(["\n  color: ", ";\n  display: block;\n  font-size: 16px;\n  outline: 0;\n  padding: 0 16px;\n  width: 100%;\n  border: 1px solid transparent;\n  transition: border-color .4s ease, background-color .4s ease, color .4s ease;\n  \n  ", "\n  ", "\n"], ["\n  color: ", ";\n  display: block;\n  font-size: 16px;\n  outline: 0;\n  padding: 0 16px;\n  width: 100%;\n  border: 1px solid transparent;\n  transition: border-color .4s ease, background-color .4s ease, color .4s ease;\n  \n  ", "\n  ", "\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.text;
-}, getHeight, function (_a) {
-    var theme = _a.theme;
-    return theme.colors.inputSecondary;
-}, function (_a) {
-    var theme = _a.theme;
-    return theme.colors.textSubtle;
-}, function (_a) {
-    var theme = _a.theme;
-    return theme.colors.backgroundDisabled;
-}, function (_a) {
-    var theme = _a.theme;
-    return theme.colors.textDisabled;
-}, function (_a) {
-    var theme = _a.theme;
-    return theme.shadows.focus;
-});
+}, variant$1({
+    prop: "scale",
+    variants: scaleVariants$1,
+}), variant$1({
+    prop: "styleColor",
+    variants: styleVariants$2,
+}));
 Input$1.defaultProps = {
     scale: scales$7.MD,
     isSuccess: false,
@@ -2249,10 +2292,10 @@ var getPadding$1 = function (scale, hasIcon) {
         case scales$7.SM:
             return "32px";
         case scales$7.LG:
-            return "56px";
+            return "48px";
         case scales$7.MD:
         default:
-            return "48px";
+            return "40px";
     }
 };
 var StyledInputGroup = styled(Box)(templateObject_1$E || (templateObject_1$E = __makeTemplateObject(["\n  ", " {\n    padding-left: ", ";\n    padding-right: ", ";\n  }\n"], ["\n  ", " {\n    padding-left: ", ";\n    padding-right: ", ";\n  }\n"])), Input$1, function (_a) {
