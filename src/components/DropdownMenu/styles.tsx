@@ -88,6 +88,7 @@ export const DropdownMenuDivider = styled.hr`
 export const StyledDropdownMenu = styled.div<{
   $isOpen: boolean;
   $isBottomNav: boolean;
+  $isExtended?: boolean;
 }>`
   background-color: ${({ theme }) => theme.card.background};
   border: 1px solid ${({ theme }) => theme.colors.cardBorder};
@@ -104,6 +105,16 @@ export const StyledDropdownMenu = styled.div<{
     `
     pointer-events: none;
     visibility: hidden;
+  `}
+
+  ${({ $isExtended }) =>
+    $isExtended &&
+    `
+      -webkit-column-count: 2;
+      -moz-column-count: 2;
+      column-count: 2;
+      width: 680px;
+
   `}
 `;
 

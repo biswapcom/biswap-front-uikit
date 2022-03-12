@@ -17,6 +17,7 @@ export interface DropdownMenuProps extends BoxProps {
   setMenuOpenByIndex?: React.Dispatch<
     React.SetStateAction<Record<number, boolean>>
   >;
+  isExtended?: boolean;
 }
 
 export interface StyledDropdownMenuItemProps

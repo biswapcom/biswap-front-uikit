@@ -25,6 +25,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
   activeItem = "",
   items = [],
   index,
+  isExtended = true,
   setMenuOpenByIndex,
   ...props
 }) => {
@@ -97,6 +98,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
           {...attributes.popper}
           $isBottomNav={isBottomNav}
           $isOpen={isMenuShow}
+          $isExtended={isExtended}
         >
           {items
             .filter((item) => !item.isMobileOnly)
