@@ -40,14 +40,23 @@ export type Gradients = {
 };
 
 export type Colors = {
+  //BS
   primary: string;
+  secondary: string;
+  success: string;
+  warning: string;
+  boost: string;
+  backgroundDark: string;
+  backgroundLight: string;
+  white: string;
+  pastelBlue: string;
+  dark: string;
+
+  //
   primaryBright: string;
   primaryDark: string;
-  secondary: string;
   tertiary: string;
-  success: string;
   failure: string;
-  warning: string;
   cardBorder: string;
   contrast: string;
   dropdown: string;
@@ -73,6 +82,40 @@ export type Colors = {
   gold: string;
   silver: string;
   bronze: string;
+
+  //BS Additional colors
+  primaryHover: string;
+  primaryPress: string;
+  secondaryHover: string;
+  secondaryPress: string;
+  successHover: string;
+  successPress: string;
+  warningHover: string;
+  warningPress: string;
+  boostHover: string;
+  boostPress: string;
+
+  //BS dark palette
+  dark900: string;
+  dark800: string;
+  dark700: string;
+  dark600: string;
+  dark500: string;
+  dark400: string;
+  dark300: string;
+  dark200: string;
+  dark100: string;
+
+  //BS light palette
+  gray900: string;
+  gray800: string;
+  gray700: string;
+  gray600: string;
+  gray500: string;
+  gray400: string;
+  gray300: string;
+  gray200: string;
+  gray100: string;
 };
 
 export type ZIndices = {

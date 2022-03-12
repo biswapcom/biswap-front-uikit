@@ -10,7 +10,7 @@ import DropdownMenu from "../../components/DropdownMenu/DropdownMenu";
 import { footerLinks } from "../../components/Footer/config";
 import Heading from "../../components/Heading/Heading";
 import Input from "../../components/Input/Input";
-import { CogIcon, LanguageCurrencyIcon } from "../../components/Svg";
+import { CogIcon, DownloadIcon } from "../../components/Svg";
 import Text from "../../components/Text/Text";
 import { Modal, ModalProps, useModal } from "../Modal";
 import UserMenu from "./components/UserMenu";
@@ -64,7 +64,7 @@ const GlobalMenuComponent: React.FC = () => {
   return (
     <Flex>
       <IconButton onClick={onPresent1} variant="text" scale="sm" mr="4px">
-        <LanguageCurrencyIcon height={22} width={22} color="textSubtle" />
+        <DownloadIcon height={22} width={22} color="textSubtle" />
       </IconButton>
       <IconButton onClick={onPresent2} variant="text" scale="sm" mr="8px">
         <CogIcon height={22} width={22} color="textSubtle" />

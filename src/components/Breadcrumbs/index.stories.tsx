@@ -4,7 +4,6 @@ import { BrowserRouter, Link as RouterLink } from "react-router-dom";
 import Text from "../Text/Text";
 import Link from "../Link/Link";
 import LogoIcon from "../Svg/Icons/Logo";
-import PresentWonIcon from "../Svg/Icons/PresentWon";
 import BreadCrumbs from "./Breadcrumbs";
 
 export default {

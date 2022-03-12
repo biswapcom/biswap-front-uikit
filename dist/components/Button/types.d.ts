@@ -11,12 +11,11 @@ export declare const scales: {
 export declare const variants: {
     readonly PRIMARY: "primary";
     readonly SECONDARY: "secondary";
-    readonly TERTIARY: "tertiary";
     readonly TEXT: "text";
     readonly DANGER: "danger";
-    readonly SUBTLE: "subtle";
     readonly SUCCESS: "success";
-    readonly LIGHT: "light";
+    readonly WARNING: "warning";
+    readonly BOOST: "boost";
 };
 export declare type Scale = typeof scales[keyof typeof scales];
 export declare type Variant = typeof variants[keyof typeof variants];

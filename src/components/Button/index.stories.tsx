@@ -46,14 +46,14 @@ export const Default: React.FC = () => {
           );
         })}
       </Box>
-      <Box>
-        <Button mr="8px" disabled>
-          Disabled
-        </Button>
-        <Button variant="secondary" disabled>
-          Disabled
-        </Button>
-      </Box>
+      {/*<Box>*/}
+      {/*  <Button mr="8px" disabled>*/}
+      {/*    Disabled*/}
+      {/*  </Button>*/}
+      {/*  <Button variant="secondary" disabled>*/}
+      {/*    Disabled*/}
+      {/*  </Button>*/}
+      {/*</Box>*/}
     </>
   );
 };

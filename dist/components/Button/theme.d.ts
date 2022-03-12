@@ -33,6 +33,52 @@ export declare const styleVariants: {
     primary: {
         backgroundColor: string;
         color: string;
+        ":hover": {
+            backgroundColor: string;
+        };
+        ":active": {
+            backgroundColor: string;
+        };
+    };
+    danger: {
+        backgroundColor: string;
+        color: string;
+        ":hover": {
+            backgroundColor: string;
+        };
+        ":active": {
+            backgroundColor: string;
+        };
+    };
+    success: {
+        backgroundColor: string;
+        color: string;
+        ":hover": {
+            backgroundColor: string;
+        };
+        ":active": {
+            backgroundColor: string;
+        };
+    };
+    warning: {
+        backgroundColor: string;
+        color: string;
+        ":hover": {
+            backgroundColor: string;
+        };
+        ":active": {
+            backgroundColor: string;
+        };
+    };
+    boost: {
+        backgroundColor: string;
+        color: string;
+        ":hover": {
+            backgroundColor: string;
+        };
+        ":active": {
+            backgroundColor: string;
+        };
     };
     secondary: {
         backgroundColor: string;
@@ -44,29 +90,7 @@ export declare const styleVariants: {
             backgroundColor: string;
         };
     };
-    tertiary: {
-        backgroundColor: string;
-        boxShadow: string;
-        color: string;
-    };
-    subtle: {
-        backgroundColor: string;
-        color: string;
-    };
-    danger: {
-        backgroundColor: string;
-        color: string;
-    };
-    success: {
-        backgroundColor: string;
-        color: string;
-    };
     text: {
-        backgroundColor: string;
-        color: string;
-        boxShadow: string;
-    };
-    light: {
         backgroundColor: string;
         color: string;
         boxShadow: string;

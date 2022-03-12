@@ -14,7 +14,6 @@ export const StyledMenuItemContainer = styled.div<StyledMenuItemProps>`
         bottom: 0;
         height: 4px;
         width: 100%;
-        background-color: ${theme.colors.primary};
         border-radius: 2px 2px 0 0;
       }
     `};
@@ -25,9 +24,10 @@ const StyledMenuItem = styled.a<StyledMenuItemProps>`
   display: flex;
   align-items: center;
 
-  color: ${({ theme, $isActive }) => ($isActive ? theme.colors.secondary : theme.colors.textSubtle)};
+  color: ${({ theme, $isActive }) => ($isActive ? theme.colors.secondary : theme.colors.white)};
   font-size: 14px;
   font-weight: 400;
+  transition: color .4s ease;
 
   ${({ $statusColor, theme }) =>
     $statusColor &&
@@ -35,7 +35,6 @@ const StyledMenuItem = styled.a<StyledMenuItemProps>`
     &:after {
       content: "";
       border-radius: 100%;
-      background: ${theme.colors[$statusColor]};
       height: 8px;
       width: 8px;
       margin-left: 12px;
@@ -55,7 +54,7 @@ const StyledMenuItem = styled.a<StyledMenuItemProps>`
   `}
 
   &:hover {
-    background: ${({ theme }) => theme.colors.tertiary};
+    color: ${({ theme }) => theme.colors.pastelBlue};
     ${({ $variant }) => $variant === "default" && "border-radius: 16px;"};
   }
 `;

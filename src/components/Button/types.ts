@@ -13,12 +13,15 @@ export const scales = {
 export const variants = {
   PRIMARY: "primary",
   SECONDARY: "secondary",
-  TERTIARY: "tertiary",
   TEXT: "text",
   DANGER: "danger",
-  SUBTLE: "subtle",
   SUCCESS: "success",
-  LIGHT: "light",
+  WARNING: "warning",
+  BOOST: "boost",
+
+  // TERTIARY: "tertiary",
+  // SUBTLE: "subtle",
+  // LIGHT: "light",
 } as const;
 
 export type Scale = typeof scales[keyof typeof scales];
