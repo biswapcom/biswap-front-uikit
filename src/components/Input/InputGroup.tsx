@@ -13,10 +13,10 @@ const getPadding = (scale: Scales, hasIcon: boolean) => {
     case scales.SM:
       return "32px";
     case scales.LG:
-      return "56px";
+      return "48px";
     case scales.MD:
     default:
-      return "48px";
+      return "40px";
   }
 };
 
