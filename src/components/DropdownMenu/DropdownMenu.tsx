@@ -112,6 +112,8 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
                   leftIcon = "",
                   rightIcon = "",
                   links = [],
+                  bannerRenderer,
+                  extended = false,
                   ...itemProps
                 },
                 itemItem
@@ -187,6 +189,9 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
                     {type === DropdownMenuItemType.DIVIDER && (
                       <DropdownMenuDivider />
                     )}
+                    {type === DropdownMenuItemType.BANNER &&
+                      bannerRenderer &&
+                      bannerRenderer()}
                   </StyledDropdownMenuItemContainer>
                 );
               }

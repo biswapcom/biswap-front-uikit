@@ -56,6 +56,7 @@ export enum DropdownMenuItemType {
   EXTERNAL_LINK,
   BUTTON,
   DIVIDER,
+  BANNER,
 }
 
 export interface LinkStatus {
@@ -79,4 +80,6 @@ export interface DropdownMenuItems {
   rightIconFill?: string;
   description?: string;
   links?: InternalLink[];
+  extended?: boolean;
+  bannerRenderer?: () => React.ReactNode;
 }
