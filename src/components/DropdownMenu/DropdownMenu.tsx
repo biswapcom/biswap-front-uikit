@@ -3,16 +3,14 @@ import React, { useContext, useEffect, useState } from "react";
 import { usePopper } from "react-popper";
 import { useOnClickOutside } from "../../hooks";
 import { MenuContext } from "../../widgets/Menu/context";
-import { Box, Flex } from "../Box";
-import { Text } from "../Text";
-import IconComponent from "../Svg/IconComponent";
+import { Box } from "../Box";
 import MenuItemContent from "./MenuItemContent";
 
 import {
   DropdownMenuDivider,
   DropdownMenuItem,
   StyledDropdownMenu,
-  LinkStatus,
+  // LinkStatus,
   StyledDropdownMenuItemContainer,
 } from "./styles";
 import { DropdownMenuItemType, DropdownMenuProps } from "./types";
@@ -120,12 +118,12 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
                 },
                 itemItem
               ) => {
-                const getMenuItemContent = () => (
+                const getMenuItemContent = (icon: string = rightIcon) => (
                   <MenuItemContent
                     label={label}
                     fill={rightIconFill}
                     leftIcon={leftIcon}
-                    rightIcon={rightIcon}
+                    rightIcon={icon}
                     description={description}
                     status={status}
                   />
@@ -138,16 +136,18 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
                     {type === DropdownMenuItemType.BUTTON && (
                       <DropdownMenuItem
                         $isActive={isActive}
+                        $hasIcon={!!leftIcon}
                         type="button"
                         {...itemProps}
                       >
-                        {getMenuItemContent()}
+                        {getMenuItemContent("")}
                       </DropdownMenuItem>
                     )}
                     {type === DropdownMenuItemType.INTERNAL_LINK && (
                       <>
                         <DropdownMenuItem
                           $isActive={isActive}
+                          $hasIcon={!!leftIcon}
                           as={linkComponent}
                           href={href}
                           onClick={() => {
@@ -155,7 +155,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
                           }}
                           {...itemProps}
                         >
-                          {getMenuItemContent()}
+                          {getMenuItemContent("ArrowForward")}
                         </DropdownMenuItem>
                         {hasInnerLinks && (
                           <InnerLinksBlock
@@ -170,6 +170,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
                     {type === DropdownMenuItemType.EXTERNAL_LINK && (
                       <DropdownMenuItem
                         $isActive={isActive}
+                        $hasIcon={!!leftIcon}
                         as="a"
                         href={href}
                         target="_blank"
@@ -178,14 +179,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
                         }}
                         {...itemProps}
                       >
-                        <Flex
-                          alignItems="center"
-                          justifyContent="space-between"
-                          width="100%"
-                        >
-                          {label}
-                          <IconComponent iconName="Logout" />
-                        </Flex>
+                        {getMenuItemContent("ArrowUpForward")}
                       </DropdownMenuItem>
                     )}
                     {type === DropdownMenuItemType.DIVIDER && (

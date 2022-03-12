@@ -15,9 +15,9 @@ const getTextColor = ({
   $isActive: boolean;
 }) => {
   if (disabled) return theme.colors.textDisabled;
-  if ($isActive) return theme.colors.secondary;
+  if ($isActive) return theme.colors.primary;
 
-  return theme.colors.textSubtle;
+  return theme.colors.text;
 };
 
 export const InnerLinksBlockContainer = styled.div<{ padded: boolean }>`
@@ -30,10 +30,20 @@ export const DropdownMenuInnerLinkItem = styled.div<StyledDropdownMenuInnerLinkI
   justify-content: flex-start;
   align-items: center;
   cursor: pointer;
+
+  &:hover {
+    .inner-chevron {
+      margin-right: 4px;
+      transition: margin-right 150ms linear;
+    }
+  }
 `;
 
 export const DropdownMenuItem = styled.button<
-  StyledDropdownMenuItemProps & { $isActive: boolean }
+  StyledDropdownMenuItemProps & {
+    $isActive: boolean;
+    $hasIcon?: boolean;
+  }
 >`
   align-items: center;
   border: 0;
@@ -43,15 +53,30 @@ export const DropdownMenuItem = styled.button<
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
   font-weight: ${({ $isActive = false }) => ($isActive ? "600" : "400")};
   display: flex;
-  font-size: 16px;
+  font-size: 14px;
   height: 40px;
   justify-content: space-between;
   outline: 0;
   //padding-left: 16px;
   width: 100%;
 
+  .arrow-icon {
+    visibility: hidden;
+    opacity: 0;
+  }
+
   &:hover:not(:disabled) {
-    // background-color: ${({ theme }) => theme.colors.tertiary};
+    color: ${({ theme, $hasIcon }) => !$hasIcon && theme.colors.primary};
+
+    svg {
+      opacity: 0.85;
+    }
+
+    .arrow-icon {
+      visibility: visible;
+      transition: visibility 200ms linear, opacity 150ms linear;
+      opacity: 1;
+    }
   }
 
   &:active:not(:disabled) {
@@ -98,6 +123,8 @@ export const StyledDropdownMenu = styled.div<{
   width: ${({ $isBottomNav }) =>
     $isBottomNav ? "calc(100% - 32px)" : "352px"};
   visibility: visible;
+  opacity: 1;
+  transition: opacity 250ms linear, visibility 350ms linear;
   z-index: 1001;
 
   ${({ $isOpen }) =>
@@ -105,6 +132,7 @@ export const StyledDropdownMenu = styled.div<{
     `
     pointer-events: none;
     visibility: hidden;
+    opacity: 0;
   `}
 
   ${({ $isExtended }) =>

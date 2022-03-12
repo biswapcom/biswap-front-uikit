@@ -36,7 +36,14 @@ const InnerLinksBlock: FC<InnerLinksBlockProps> = ({
               setIsOpen(false);
             }}
           >
-            {icon && <IconComponent width={10} iconName={icon} color={fill} />}
+            {icon && (
+              <IconComponent
+                className="inner-chevron"
+                width={10}
+                iconName={icon}
+                color={fill}
+              />
+            )}
             <Text fontSize={"12px"} color={fill}>
               {label}
             </Text>
