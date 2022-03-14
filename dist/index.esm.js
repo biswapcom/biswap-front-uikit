@@ -4693,6 +4693,7 @@ var DropdownMenu = function (_a) {
     var _h = useState(null), targetRef = _h[0], setTargetRef = _h[1];
     var _j = useState(null), tooltipRef = _j[0], setTooltipRef = _j[1];
     var hasItems = items.length > 0;
+    var hasMoreThanItems = items.length > 1;
     var _k = usePopper(targetRef, tooltipRef, {
         strategy: isBottomNav ? "absolute" : "fixed",
         placement: isBottomNav ? "top" : "bottom-start",
@@ -4733,7 +4734,7 @@ var DropdownMenu = function (_a) {
         React.createElement(Box, { onPointerDown: function () {
                 setIsOpen(function (s) { return !s; });
             } }, children),
-        hasItems && (React.createElement(StyledDropdownMenu, __assign({ style: styles.popper, ref: setTooltipRef }, attributes.popper, { "$isBottomNav": isBottomNav, "$isOpen": isMenuShow, "$isExtended": isExtended }), items
+        hasItems && (React.createElement(StyledDropdownMenu, __assign({ style: styles.popper, ref: setTooltipRef }, attributes.popper, { "$isBottomNav": isBottomNav, "$isOpen": isMenuShow, "$isExtended": isExtended && hasMoreThanItems }), items
             .filter(function (item) { return !item.isMobileOnly; })
             .map(function (_a, itemItem) {
             var _b = _a.type, type = _b === void 0 ? DropdownMenuItemType.INTERNAL_LINK : _b, label = _a.label, rightIconFill = _a.rightIconFill, description = _a.description, _c = _a.href, href = _c === void 0 ? "/" : _c, status = _a.status, _d = _a.leftIcon, leftIcon = _d === void 0 ? "" : _d, _e = _a.rightIcon, rightIcon = _e === void 0 ? "" : _e, _f = _a.links, links = _f === void 0 ? [] : _f, bannerRenderer = _a.bannerRenderer; _a.extended; var itemProps = __rest(_a, ["type", "label", "rightIconFill", "description", "href", "status", "leftIcon", "rightIcon", "links", "bannerRenderer", "extended"]);
