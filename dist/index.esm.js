@@ -4687,7 +4687,7 @@ var InnerLinksBlock = function (_a) {
 };
 
 var DropdownMenu = function (_a) {
-    var children = _a.children, _b = _a.isBottomNav, isBottomNav = _b === void 0 ? false : _b, _c = _a.showItemsOnMobile, showItemsOnMobile = _c === void 0 ? false : _c, _d = _a.activeItem, activeItem = _d === void 0 ? "" : _d, _e = _a.items, items = _e === void 0 ? [] : _e, index = _a.index, _f = _a.isExtended, isExtended = _f === void 0 ? true : _f, setMenuOpenByIndex = _a.setMenuOpenByIndex, props = __rest(_a, ["children", "isBottomNav", "showItemsOnMobile", "activeItem", "items", "index", "isExtended", "setMenuOpenByIndex"]);
+    var children = _a.children, _b = _a.isBottomNav, isBottomNav = _b === void 0 ? false : _b, _c = _a.showItemsOnMobile, showItemsOnMobile = _c === void 0 ? false : _c, _d = _a.activeItem, activeItem = _d === void 0 ? "" : _d, _e = _a.items, items = _e === void 0 ? [] : _e, index = _a.index, _f = _a.isExtended, isExtended = _f === void 0 ? false : _f, setMenuOpenByIndex = _a.setMenuOpenByIndex, props = __rest(_a, ["children", "isBottomNav", "showItemsOnMobile", "activeItem", "items", "index", "isExtended", "setMenuOpenByIndex"]);
     var linkComponent = useContext(MenuContext).linkComponent;
     var _g = useState(false), isOpen = _g[0], setIsOpen = _g[1];
     var _h = useState(null), targetRef = _h[0], setTargetRef = _h[1];

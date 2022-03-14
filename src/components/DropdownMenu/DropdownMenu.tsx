@@ -23,7 +23,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
   activeItem = "",
   items = [],
   index,
-  isExtended = true,
+  isExtended = false,
   setMenuOpenByIndex,
   ...props
 }) => {
