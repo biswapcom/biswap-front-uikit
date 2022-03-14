@@ -60,7 +60,7 @@ export const Icons: React.FC = () => {
               height="100%"
             >
               <Icon width="48px" />
-              <Icon width="24px" color="secondary" ml="4px" />
+              <Icon width="24px" color="primary" ml="4px" />
             </Flex>
             <Box py="4px">
               <Text color="textSubtle" fontSize="14px">

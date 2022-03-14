@@ -1,5 +1,6 @@
 import React from "react";
 import { Flex } from "../Box";
+import { Text } from "../Text";
 import isTouchDevice from "../../util/isTouchDevice";
 import DropdownMenu from "../DropdownMenu/DropdownMenu";
 import MenuItem from "../MenuItem/MenuItem";
@@ -37,12 +38,15 @@ const MenuItems: React.FC<MenuItemsProps> = ({
                 isActive={isActive}
                 statusColor={statusColor}
               >
-                {label || (
+                {icon && (
                   <IconComponent
                     iconName={icon}
-                    color={isActive ? "secondary" : "textSubtle"}
+                    color={isActive ? "pastelBlue" : "white"}
                   />
                 )}
+                <Text ml={"8px"} color={isActive ? "pastelBlue" : "white"}>
+                  {label}
+                </Text>
               </MenuItem>
             </DropdownMenu>
           );

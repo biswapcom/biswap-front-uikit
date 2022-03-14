@@ -45,7 +45,7 @@ const StyledMenuItem = styled.a<StyledMenuItemProps>`
   ${({ $variant }) =>
     $variant === "default"
       ? `
-    padding: 0 16px;
+    padding: 0 12px;
     height: 48px;
   `
       : `
@@ -54,7 +54,12 @@ const StyledMenuItem = styled.a<StyledMenuItemProps>`
   `}
 
   &:hover {
-    color: ${({ theme }) => theme.colors.pastelBlue};
+    div {
+      color: ${({ theme }) => theme.colors.pastelBlue};
+    }
+    svg {
+      fill: ${({ theme }) => theme.colors.pastelBlue};
+    }
     ${({ $variant }) => $variant === "default" && "border-radius: 16px;"};
   }
 `;

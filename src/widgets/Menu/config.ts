@@ -6,6 +6,8 @@ import {
 import { MenuItemsType } from "../../components/MenuItems/types";
 import { LinkStatus } from "./types";
 
+const getBanner = () => "<div>BANNER</div>";
+
 export const status = {
   LIVE: <LinkStatus>{
     text: "LIVE",
@@ -25,12 +27,12 @@ export const links: MenuItemsType[] = [
   {
     label: "Trade",
     href: "/swap",
-    icon: "Swap",
     items: [
       {
         label: "Swap",
-        text: "",
         href: "/swap",
+        leftIcon: "Swap",
+        description: "Item description",
       },
       {
         label: "Expert Trade",
@@ -40,112 +42,165 @@ export const links: MenuItemsType[] = [
         description: "Item description",
         href: "/liquidity",
       },
+      {
+        label: "Liquidity",
+        href: "/pool",
+        leftIcon: "Liquidity",
+        description: "Item description",
+      },
     ],
   },
   {
     label: "Earn",
     href: "/earn",
-    icon: "Earn",
     items: [
       {
-        label: "Earn",
-        href: "/earn",
+        label: "Farms",
+        href: "/pool",
+        leftIcon: "Farms",
+        description: "Item description",
+      },
+      {
+        label: "LaunchPools",
+        href: "/pool",
+        leftIcon: "Launch",
+        description: "Item description",
         type: DropdownMenuItemType.CONTAINER,
-
         links: [
           {
-            label: "Label",
+            label: "Stake BSW",
             href: "/polar",
           },
           {
-            label: "Label 2",
-            href: "/polar",
-          },
-          {
-            label: "Label 3",
-            href: "/polar",
-          },
-          {
-            label: "Label 4",
+            label: "Stake tokens",
             href: "/polar",
           },
         ],
       },
       {
-        label: "Yield Farms",
-        href: "/farms",
+        label: "Referral Program",
+        href: "/pool",
+        // leftIcon: 'Referral',
+        description: "Item description",
       },
       {
-        label: "Syrup pools",
-        href: "/pools",
+        label: "IDO",
+        href: "/pool",
+        // leftIcon: 'IdoMenu',
+        description: "Item description",
       },
     ],
   },
   {
     label: "Win",
     href: "/",
-    icon: "Trophy",
-    isExtended: true,
     items: [
       {
-        label: "Win",
-        href: "/",
-      },
-      {
-        label: "Predictions",
-        href: "/",
-        status: status.LIVE,
-      },
-      {
         label: "Lottery",
-        href: "/",
+        href: "/pool",
+        // leftIcon: 'Lottery',
+        description: "Item description",
       },
       {
-        label: "Win",
-        href: "/",
-      },
-      {
-        label: "Predictions",
-        href: "/",
-        status: status.LIVE,
+        label: "Competitions",
+        href: "/pool",
+        // leftIcon: 'Competitions',
+        description: "Item description",
       },
     ],
   },
   {
-    label: "",
+    label: "NFT",
     href: "/",
-    icon: "More",
     items: [
       {
-        label: "Info & Analytics",
-        href: "/",
+        label: "NFT Launchpad",
+        href: "/pool",
+        // leftIcon: 'NftLaunch',
+        description: "Item description",
+        type: DropdownMenuItemType.EXTERNAL_LINK,
       },
       {
-        label: "IFO Token Sales",
-        href: "/",
-        status: status.SOON,
+        label: "NFT Earn",
+        href: "/pool",
+        // leftIcon: 'NftEarn',
+        description: "Item description",
+        type: DropdownMenuItemType.EXTERNAL_LINK,
       },
       {
-        type: DropdownMenuItemType.DIVIDER,
+        type: DropdownMenuItemType.BANNER,
+        bannerRenderer: getBanner,
+      },
+    ],
+  },
+  {
+    label: "Info",
+    href: "/",
+    isExtended: true,
+    items: [
+      {
+        label: "Analytics",
+        href: "/pool",
+        description: "Item description",
       },
       {
-        label: "NFT Collectibles",
-        href: "/",
+        label: "Voting",
+        href: "/pool",
+        description: "Item description",
       },
       {
-        label: "Team Leaderboard",
-        href: "/",
+        label: "About BSW",
+        href: "/pool",
+        description: "Item description",
       },
       {
-        type: DropdownMenuItemType.DIVIDER,
+        label: "Team",
+        href: "/pool",
+        description: "Item description",
       },
       {
-        label: "Blog",
-        href: "/",
+        label: "$10M Program",
+        href: "/pool",
+        description: "Item description",
+        type: DropdownMenuItemType.EXTERNAL_LINK,
       },
       {
-        label: "Docs & Guides",
-        href: "/",
+        label: "News",
+        href: "/pool",
+        description: "Item description",
+        type: DropdownMenuItemType.EXTERNAL_LINK,
+      },
+      {
+        label: "Docs",
+        href: "/pool",
+        description: "Item description",
+        type: DropdownMenuItemType.EXTERNAL_LINK,
+      },
+      {
+        label: "Audit",
+        href: "/pool",
+        description: "Item description",
+        type: DropdownMenuItemType.EXTERNAL_LINK,
+      },
+    ],
+  },
+  {
+    label: "Biswap Products",
+    href: "/",
+    icon: "Products",
+    items: [
+      {
+        label: "Marketplace",
+        href: "/pool",
+        leftIcon: "MarketMenu",
+        description: "Item description",
+        type: DropdownMenuItemType.EXTERNAL_LINK,
+      },
+      {
+        label: "GameFi",
+        href: "/pool",
+        leftIcon: "GameFi",
+        description: "Item description",
         type: DropdownMenuItemType.EXTERNAL_LINK,
       },
     ],

@@ -19,6 +19,7 @@ import {
 import { NavProps } from "./types";
 import LangSelector from "../../components/LangSelector/LangSelector";
 import { MenuContext } from "./context";
+import IconComponent from "../../components/Svg/IconComponent";
 
 const Wrapper = styled.div`
   position: relative;
@@ -167,7 +168,7 @@ const Menu: React.FC<NavProps> = ({
               )}
             </Flex>
             <Flex alignItems="center" height="100%">
-              {globalMenu} {userMenu}
+              <IconComponent width={94} iconName="CerticAudited" /> {userMenu}
             </Flex>
           </StyledNav>
         </FixedContainer>
