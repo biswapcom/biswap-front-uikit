@@ -34,7 +34,10 @@ export const links: MenuItemsType[] = [
       },
       {
         label: "Expert Trade",
-        text: "",
+        leftIcon: "ExpertTrade",
+        // rightIcon: "ArrowUpForward",
+        rightIconFill: "primary",
+        description: "Item description",
         href: "/liquidity",
       },
     ],
@@ -47,6 +50,26 @@ export const links: MenuItemsType[] = [
       {
         label: "Earn",
         href: "/earn",
+        type: DropdownMenuItemType.CONTAINER,
+
+        links: [
+          {
+            label: "Label",
+            href: "/polar",
+          },
+          {
+            label: "Label 2",
+            href: "/polar",
+          },
+          {
+            label: "Label 3",
+            href: "/polar",
+          },
+          {
+            label: "Label 4",
+            href: "/polar",
+          },
+        ],
       },
       {
         label: "Yield Farms",
@@ -62,6 +85,7 @@ export const links: MenuItemsType[] = [
     label: "Win",
     href: "/",
     icon: "Trophy",
+    isExtended: true,
     items: [
       {
         label: "Win",
@@ -75,6 +99,15 @@ export const links: MenuItemsType[] = [
       {
         label: "Lottery",
         href: "/",
+      },
+      {
+        label: "Win",
+        href: "/",
+      },
+      {
+        label: "Predictions",
+        href: "/",
+        status: status.LIVE,
       },
     ],
   },

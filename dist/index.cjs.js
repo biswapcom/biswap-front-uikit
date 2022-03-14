@@ -4625,7 +4625,7 @@ var InnerLinksBlockContainer = styled__default["default"].div(templateObject_1$a
     return padded && "62px";
 });
 var DropdownMenuInnerLinkItem = styled__default["default"].div(templateObject_2$6 || (templateObject_2$6 = __makeTemplateObject(["\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n  cursor: pointer;\n\n  &:hover {\n    .inner-chevron {\n      margin-right: 4px;\n      transition: margin-right 150ms linear;\n    }\n  }\n"], ["\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n  cursor: pointer;\n\n  &:hover {\n    .inner-chevron {\n      margin-right: 4px;\n      transition: margin-right 150ms linear;\n    }\n  }\n"])));
-var DropdownMenuItem = styled__default["default"].button(templateObject_3$3 || (templateObject_3$3 = __makeTemplateObject(["\n  align-items: center;\n  border: 0;\n  //background: transparent;\n  color: ", ";\n  cursor: ", ";\n  font-weight: ", ";\n  display: flex;\n  font-size: 14px;\n  height: 40px;\n  justify-content: space-between;\n  outline: 0;\n  //padding-left: 16px;\n  width: 100%;\n\n  .arrow-icon {\n    visibility: hidden;\n    opacity: 0;\n  }\n\n  &:hover:not(:disabled) {\n    color: ", ";\n\n    svg {\n      opacity: 0.85;\n    }\n\n    .arrow-icon {\n      visibility: visible;\n      transition: visibility 200ms linear, opacity 150ms linear;\n      opacity: 1;\n    }\n  }\n\n  &:active:not(:disabled) {\n    opacity: 0.85;\n    transform: translateY(1px);\n  }\n"], ["\n  align-items: center;\n  border: 0;\n  //background: transparent;\n  color: ", ";\n  cursor: ", ";\n  font-weight: ", ";\n  display: flex;\n  font-size: 14px;\n  height: 40px;\n  justify-content: space-between;\n  outline: 0;\n  //padding-left: 16px;\n  width: 100%;\n\n  .arrow-icon {\n    visibility: hidden;\n    opacity: 0;\n  }\n\n  &:hover:not(:disabled) {\n    color: ", ";\n\n    svg {\n      opacity: 0.85;\n    }\n\n    .arrow-icon {\n      visibility: visible;\n      transition: visibility 200ms linear, opacity 150ms linear;\n      opacity: 1;\n    }\n  }\n\n  &:active:not(:disabled) {\n    opacity: 0.85;\n    transform: translateY(1px);\n  }\n"])), function (_a) {
+var DropdownMenuItem = styled__default["default"].button(templateObject_3$3 || (templateObject_3$3 = __makeTemplateObject(["\n  align-items: center;\n  border: 0;\n  //background: transparent;\n  color: ", ";\n  cursor: ", ";\n  font-weight: ", ";\n  display: inline-flex;\n  font-size: 14px;\n  height: 40px;\n  justify-content: space-between;\n  outline: 0;\n  //padding-left: 16px;\n  width: 100%;\n\n  .arrow-icon {\n    visibility: hidden;\n    opacity: 0;\n  }\n\n  &:hover:not(:disabled) {\n    color: ", ";\n\n    svg {\n      opacity: 0.85;\n    }\n\n    .arrow-icon {\n      visibility: visible;\n      transition: visibility 250ms linear, opacity 150ms linear;\n      opacity: 1;\n    }\n  }\n\n  &:active:not(:disabled) {\n    opacity: 0.85;\n    transform: translateY(1px);\n  }\n"], ["\n  align-items: center;\n  border: 0;\n  //background: transparent;\n  color: ", ";\n  cursor: ", ";\n  font-weight: ", ";\n  display: inline-flex;\n  font-size: 14px;\n  height: 40px;\n  justify-content: space-between;\n  outline: 0;\n  //padding-left: 16px;\n  width: 100%;\n\n  .arrow-icon {\n    visibility: hidden;\n    opacity: 0;\n  }\n\n  &:hover:not(:disabled) {\n    color: ", ";\n\n    svg {\n      opacity: 0.85;\n    }\n\n    .arrow-icon {\n      visibility: visible;\n      transition: visibility 250ms linear, opacity 150ms linear;\n      opacity: 1;\n    }\n  }\n\n  &:active:not(:disabled) {\n    opacity: 0.85;\n    transform: translateY(1px);\n  }\n"])), function (_a) {
     var theme = _a.theme, disabled = _a.disabled, $isActive = _a.$isActive;
     return getTextColor({ theme: theme, disabled: disabled, $isActive: $isActive });
 }, function (_a) {
@@ -4659,7 +4659,7 @@ var StyledDropdownMenu = styled__default["default"].div(templateObject_6$2 || (t
 }, function (_a) {
     var $isExtended = _a.$isExtended;
     return $isExtended &&
-        "\n      -webkit-column-count: 2;\n      -moz-column-count: 2;\n      column-count: 2;\n      width: 680px;\n\n  ";
+        "\n    display: block;\n      -webkit-column-count: 2;\n      -moz-column-count: 2;\n      column-count: 2;\n      -webkit-perspective:1;\n      width: 680px;\n  ";
 });
 styled__default["default"](Text)(templateObject_7$1 || (templateObject_7$1 = __makeTemplateObject(["\n  border-radius: ", ";\n  padding: 0 8px;\n  border: 2px solid;\n  border-color: ", ";\n  box-shadow: none;\n  color: ", ";\n  margin-left: 8px;\n"], ["\n  border-radius: ", ";\n  padding: 0 8px;\n  border: 2px solid;\n  border-color: ", ";\n  box-shadow: none;\n  color: ", ";\n  margin-left: 8px;\n"])), function (_a) {
     var theme = _a.theme;
@@ -4680,6 +4680,7 @@ exports.DropdownMenuItemType = void 0;
     DropdownMenuItemType[DropdownMenuItemType["BUTTON"] = 2] = "BUTTON";
     DropdownMenuItemType[DropdownMenuItemType["DIVIDER"] = 3] = "DIVIDER";
     DropdownMenuItemType[DropdownMenuItemType["BANNER"] = 4] = "BANNER";
+    DropdownMenuItemType[DropdownMenuItemType["CONTAINER"] = 5] = "CONTAINER";
 })(exports.DropdownMenuItemType || (exports.DropdownMenuItemType = {}));
 
 var InnerLinksBlock = function (_a) {
@@ -4759,11 +4760,12 @@ var DropdownMenu = function (_a) {
             var hasInnerLinks = links.length > 0;
             return (React__default["default"].createElement(StyledDropdownMenuItemContainer, { key: itemItem },
                 type === exports.DropdownMenuItemType.BUTTON && (React__default["default"].createElement(DropdownMenuItem, __assign({ "$isActive": isActive, "$hasIcon": !!leftIcon, type: "button" }, itemProps), getMenuItemContent(""))),
-                type === exports.DropdownMenuItemType.INTERNAL_LINK && (React__default["default"].createElement(React__default["default"].Fragment, null,
-                    React__default["default"].createElement(DropdownMenuItem, __assign({ "$isActive": isActive, "$hasIcon": !!leftIcon, as: linkComponent, href: href, onClick: function () {
-                            setIsOpen(false);
-                        } }, itemProps), getMenuItemContent("ArrowForward")),
+                type === exports.DropdownMenuItemType.CONTAINER && (React__default["default"].createElement(React__default["default"].Fragment, null,
+                    React__default["default"].createElement(DropdownMenuItem, __assign({ "$isActive": isActive, "$hasIcon": true, as: "div" }, itemProps), getMenuItemContent("")),
                     hasInnerLinks && (React__default["default"].createElement(InnerLinksBlock, { links: links, leftIcon: leftIcon, setIsOpen: setIsOpen, linkComponent: linkComponent })))),
+                type === exports.DropdownMenuItemType.INTERNAL_LINK && (React__default["default"].createElement(DropdownMenuItem, __assign({ "$isActive": isActive, "$hasIcon": !!leftIcon, as: linkComponent, href: href, onClick: function () {
+                        setIsOpen(false);
+                    } }, itemProps), getMenuItemContent("ArrowForward"))),
                 type === exports.DropdownMenuItemType.EXTERNAL_LINK && (React__default["default"].createElement(DropdownMenuItem, __assign({ "$isActive": isActive, "$hasIcon": !!leftIcon, as: "a", href: href, target: "_blank", onClick: function () {
                         setIsOpen(false);
                     } }, itemProps), getMenuItemContent("ArrowUpForward"))),
@@ -4975,11 +4977,13 @@ var MenuItems = function (_a) {
     var _b = _a.items, items = _b === void 0 ? [] : _b, activeItem = _a.activeItem, activeSubItem = _a.activeSubItem, props = __rest(_a, ["items", "activeItem", "activeSubItem"]);
     return (React__default["default"].createElement(Flex, __assign({}, props), items.map(function (_a) {
         var _b, _c;
-        var label = _a.label, _d = _a.items, menuItems = _d === void 0 ? [] : _d, href = _a.href, _e = _a.icon, icon = _e === void 0 ? "" : _e;
+        var label = _a.label, _d = _a.items, menuItems = _d === void 0 ? [] : _d, href = _a.href, _e = _a.icon, icon = _e === void 0 ? "" : _e, isExtended = _a.isExtended;
         var statusColor = (_c = (_b = menuItems === null || menuItems === void 0 ? void 0 : menuItems.find(function (menuItem) { return menuItem.status !== undefined; })) === null || _b === void 0 ? void 0 : _b.status) === null || _c === void 0 ? void 0 : _c.color;
         var isActive = activeItem === href;
-        var linkProps = isTouchDevice() && menuItems && menuItems.length > 0 ? {} : { href: href };
-        return (React__default["default"].createElement(DropdownMenu, { key: "".concat(label, "#").concat(href, "#").concat(icon), items: menuItems, py: 1, activeItem: activeSubItem },
+        var linkProps = isTouchDevice() && menuItems && menuItems.length > 0
+            ? {}
+            : { href: href };
+        return (React__default["default"].createElement(DropdownMenu, { key: "".concat(label, "#").concat(href, "#").concat(icon), items: menuItems, py: 1, activeItem: activeSubItem, isExtended: isExtended },
             React__default["default"].createElement(MenuItem$1, __assign({}, linkProps, { isActive: isActive, statusColor: statusColor }), label || (React__default["default"].createElement(IconComponent, { iconName: icon, color: isActive ? "secondary" : "textSubtle" })))));
     })));
 };
@@ -5031,7 +5035,10 @@ var links = [
             },
             {
                 label: "Expert Trade",
-                text: "",
+                leftIcon: "ExpertTrade",
+                // rightIcon: "ArrowUpForward",
+                rightIconFill: "primary",
+                description: "Item description",
                 href: "/liquidity",
             },
         ],
@@ -5044,6 +5051,25 @@ var links = [
             {
                 label: "Earn",
                 href: "/earn",
+                type: exports.DropdownMenuItemType.CONTAINER,
+                links: [
+                    {
+                        label: "Label",
+                        href: "/polar",
+                    },
+                    {
+                        label: "Label 2",
+                        href: "/polar",
+                    },
+                    {
+                        label: "Label 3",
+                        href: "/polar",
+                    },
+                    {
+                        label: "Label 4",
+                        href: "/polar",
+                    },
+                ],
             },
             {
                 label: "Yield Farms",
@@ -5059,6 +5085,7 @@ var links = [
         label: "Win",
         href: "/",
         icon: "Trophy",
+        isExtended: true,
         items: [
             {
                 label: "Win",
@@ -5072,6 +5099,15 @@ var links = [
             {
                 label: "Lottery",
                 href: "/",
+            },
+            {
+                label: "Win",
+                href: "/",
+            },
+            {
+                label: "Predictions",
+                href: "/",
+                status: status.LIVE,
             },
         ],
     },

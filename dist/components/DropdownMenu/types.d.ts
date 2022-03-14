@@ -48,7 +48,8 @@ export declare enum DropdownMenuItemType {
     EXTERNAL_LINK = 1,
     BUTTON = 2,
     DIVIDER = 3,
-    BANNER = 4
+    BANNER = 4,
+    CONTAINER = 5
 }
 export interface LinkStatus {
     text: string;

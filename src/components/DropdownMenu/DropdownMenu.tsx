@@ -144,19 +144,15 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
                         {getMenuItemContent("")}
                       </DropdownMenuItem>
                     )}
-                    {type === DropdownMenuItemType.INTERNAL_LINK && (
+                    {type === DropdownMenuItemType.CONTAINER && (
                       <>
                         <DropdownMenuItem
                           $isActive={isActive}
-                          $hasIcon={!!leftIcon}
-                          as={linkComponent}
-                          href={href}
-                          onClick={() => {
-                            setIsOpen(false);
-                          }}
+                          $hasIcon={true} // to disable hover styling
+                          as="div"
                           {...itemProps}
                         >
-                          {getMenuItemContent("ArrowForward")}
+                          {getMenuItemContent("")}
                         </DropdownMenuItem>
                         {hasInnerLinks && (
                           <InnerLinksBlock
@@ -167,6 +163,20 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
                           />
                         )}
                       </>
+                    )}
+                    {type === DropdownMenuItemType.INTERNAL_LINK && (
+                      <DropdownMenuItem
+                        $isActive={isActive}
+                        $hasIcon={!!leftIcon}
+                        as={linkComponent}
+                        href={href}
+                        onClick={() => {
+                          setIsOpen(false);
+                        }}
+                        {...itemProps}
+                      >
+                        {getMenuItemContent("ArrowForward")}
+                      </DropdownMenuItem>
                     )}
                     {type === DropdownMenuItemType.EXTERNAL_LINK && (
                       <DropdownMenuItem

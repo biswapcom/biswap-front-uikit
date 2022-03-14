@@ -52,7 +52,7 @@ export const DropdownMenuItem = styled.button<
     getTextColor({ theme, disabled, $isActive })};
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
   font-weight: ${({ $isActive = false }) => ($isActive ? "600" : "400")};
-  display: flex;
+  display: inline-flex;
   font-size: 14px;
   height: 40px;
   justify-content: space-between;
@@ -74,7 +74,7 @@ export const DropdownMenuItem = styled.button<
 
     .arrow-icon {
       visibility: visible;
-      transition: visibility 200ms linear, opacity 150ms linear;
+      transition: visibility 250ms linear, opacity 150ms linear;
       opacity: 1;
     }
   }
@@ -141,8 +141,8 @@ export const StyledDropdownMenu = styled.div<{
       -webkit-column-count: 2;
       -moz-column-count: 2;
       column-count: 2;
+      -webkit-perspective:1;
       width: 680px;
-
   `}
 `;
 

@@ -58,6 +58,7 @@ export enum DropdownMenuItemType {
   BUTTON,
   DIVIDER,
   BANNER,
+  CONTAINER,
 }
 
 export interface LinkStatus {
