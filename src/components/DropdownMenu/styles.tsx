@@ -98,7 +98,7 @@ export const StyledDropdownMenuItemContainer = styled.div`
     border-bottom-right-radius: 8px;
   }
 
-  ${({ theme }) => theme.mediaQueries.md} {
+  ${({ theme }) => theme.mediaQueries.lg} {
     margin-bottom: 24px;
 
     &:last-of-type {
