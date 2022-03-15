@@ -11,7 +11,6 @@ const Icon: React.FC<SvgProps> = (props) => {
         width="6.66667"
         height="6.66667"
         rx="3.33333"
-        // fill="white"
       />
       <rect
         opacity="0.48"
@@ -20,7 +19,6 @@ const Icon: React.FC<SvgProps> = (props) => {
         width="6.66667"
         height="6.66667"
         rx="1"
-        // fill="white"
       />
       <rect
         opacity="0.48"
@@ -29,7 +27,6 @@ const Icon: React.FC<SvgProps> = (props) => {
         width="6.66667"
         height="6.66667"
         rx="1"
-        // fill="white"
       />
       <rect
         opacity="0.48"
@@ -38,7 +35,6 @@ const Icon: React.FC<SvgProps> = (props) => {
         width="6.66667"
         height="6.66667"
         rx="1"
-        // fill="white"
       />{" "}
     </Svg>
   );

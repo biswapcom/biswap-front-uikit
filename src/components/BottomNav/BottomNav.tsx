@@ -42,7 +42,6 @@ const BottomNav: React.FC<BottomNavProps> = ({
                 <DropdownMenu
                   key={label}
                   items={menuItems}
-                  isBottomNav
                   activeItem={activeSubItem}
                   showItemsOnMobile={showItemsOnMobile}
                   setMenuOpenByIndex={setMenuOpenByIndex}

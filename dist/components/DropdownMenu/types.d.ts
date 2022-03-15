@@ -1,20 +1,26 @@
 import React, { ElementType } from "react";
 import { Colors } from "../../theme";
 import { BoxProps } from "../Box";
+import { MenuItemsType } from "../MenuItems/types";
+export interface MobileMenuProps {
+    items: MenuItemsType[];
+    mobileMenuCallback?: (s: boolean) => void;
+    activeItem?: string;
+    isMobileNav?: boolean;
+}
 export interface DropdownMenuProps extends BoxProps {
     items?: DropdownMenuItems[];
+    mobileItems?: MenuItemsType[];
     activeItem?: string;
     /**
-     * As BottomNav styles
-     */
-    isBottomNav?: boolean;
-    /**
-     * Show items on mobile when `isBottomNav` is true
+     * Show items on mobile
      */
     showItemsOnMobile?: boolean;
     index?: number;
     setMenuOpenByIndex?: React.Dispatch<React.SetStateAction<Record<number, boolean>>>;
     isExtended?: boolean;
+    mobileMenuCallback?: (s: boolean) => void;
+    isMobileNav?: boolean;
 }
 export interface StyledDropdownMenuItemProps extends React.ComponentPropsWithoutRef<"button"> {
     disabled?: boolean;
@@ -71,6 +77,11 @@ export interface DropdownMenuItems {
     rightIconFill?: string;
     description?: string;
     links?: InternalLink[];
-    extended?: boolean;
     bannerRenderer?: () => React.ReactNode;
+}
+export interface DropdownMenuItemContainerProps extends DropdownMenuItems {
+    isActive?: boolean;
+    getMenuItemContent: (i: string) => React.ReactNode;
+    linkComponent: React.ElementType;
+    setIsOpen: (s: boolean) => void;
 }

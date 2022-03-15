@@ -86,11 +86,7 @@ export const DropdownMenuItem = styled.button<
 `;
 
 export const StyledDropdownMenuItemContainer = styled.div`
-  margin-bottom: 24px;
-
-  &:last-of-type {
-    margin-bottom: 0;
-  }
+  margin-bottom: 16px;
 
   &:first-child > ${DropdownMenuItem} {
     border-top-left-radius: 8px;
@@ -100,6 +96,14 @@ export const StyledDropdownMenuItemContainer = styled.div`
   &:last-child > ${DropdownMenuItem} {
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
+  }
+
+  ${({ theme }) => theme.mediaQueries.md} {
+    margin-bottom: 24px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
   }
 `;
 
@@ -112,16 +116,15 @@ export const DropdownMenuDivider = styled.hr`
 
 export const StyledDropdownMenu = styled.div<{
   $isOpen: boolean;
-  $isBottomNav: boolean;
   $isExtended?: boolean;
 }>`
   background-color: ${({ theme }) => theme.card.background};
   border: 1px solid ${({ theme }) => theme.colors.cardBorder};
   border-radius: 16px;
+
   padding: 24px;
   pointer-events: auto;
-  width: ${({ $isBottomNav }) =>
-    $isBottomNav ? "calc(100% - 32px)" : "352px"};
+  width: 352px;
   visibility: visible;
   opacity: 1;
   transition: opacity 250ms linear, visibility 350ms linear;
@@ -149,8 +152,7 @@ export const StyledDropdownMenu = styled.div<{
 export const LinkStatus = styled(Text)<{ color: keyof Colors }>`
   border-radius: ${({ theme }) => theme.radii.default};
   padding: 0 8px;
-  border: 2px solid;
-  border-color: ${({ theme, color }) => theme.colors[color]};
+  border: 2px solid ${({ theme, color }) => theme.colors[color]};
   box-shadow: none;
   color: ${({ theme, color }) => theme.colors[color]};
   margin-left: 8px;

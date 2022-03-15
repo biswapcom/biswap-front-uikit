@@ -9,6 +9,7 @@ export type MenuItemsType = {
   showOnMobile?: boolean;
   showItemsOnMobile?: boolean;
   isExtended?: boolean;
+  isMobileNav?: boolean;
 };
 
 export interface MenuItemsProps extends BoxProps {

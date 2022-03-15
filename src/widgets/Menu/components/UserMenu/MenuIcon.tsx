@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Variant, variants } from "./types";
 import { Image } from "../../../../components/Image";
 import { WarningIcon } from "../../../../components/Svg";
-import { Colors } from "../../../../theme/types";
+import { Colors } from "../../../../theme";
 
 const MenuIconWrapper = styled.div<{ borderColor: keyof Colors }>`
   align-items: center;

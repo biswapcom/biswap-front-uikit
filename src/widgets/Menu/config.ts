@@ -80,13 +80,13 @@ export const links: MenuItemsType[] = [
       {
         label: "Referral Program",
         href: "/pool",
-        // leftIcon: 'Referral',
+        leftIcon: "Referral",
         description: "Item description",
       },
       {
         label: "IDO",
         href: "/pool",
-        // leftIcon: 'IdoMenu',
+        leftIcon: "IdoMenu",
         description: "Item description",
       },
     ],
@@ -98,13 +98,13 @@ export const links: MenuItemsType[] = [
       {
         label: "Lottery",
         href: "/pool",
-        // leftIcon: 'Lottery',
+        leftIcon: "Lottery",
         description: "Item description",
       },
       {
         label: "Competitions",
         href: "/pool",
-        // leftIcon: 'Competitions',
+        leftIcon: "Competitions",
         description: "Item description",
       },
     ],
@@ -116,14 +116,14 @@ export const links: MenuItemsType[] = [
       {
         label: "NFT Launchpad",
         href: "/pool",
-        // leftIcon: 'NftLaunch',
+        leftIcon: "NftLaunch",
         description: "Item description",
         type: DropdownMenuItemType.EXTERNAL_LINK,
       },
       {
         label: "NFT Earn",
         href: "/pool",
-        // leftIcon: 'NftEarn',
+        leftIcon: "NftEarn",
         description: "Item description",
         type: DropdownMenuItemType.EXTERNAL_LINK,
       },
@@ -188,6 +188,8 @@ export const links: MenuItemsType[] = [
     label: "Biswap Products",
     href: "/",
     icon: "Products",
+    isMobileNav: true,
+    showItemsOnMobile: true,
     items: [
       {
         label: "Marketplace",

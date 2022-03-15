@@ -4,27 +4,25 @@ import { usePopper } from "react-popper";
 import { useOnClickOutside } from "../../hooks";
 import { MenuContext } from "../../widgets/Menu/context";
 import { Box } from "../Box";
-import MenuItemContent from "./MenuItemContent";
+import { MenuItemContent, DropdownMenuItemContainer } from "./components";
 
 import {
-  DropdownMenuDivider,
-  DropdownMenuItem,
   StyledDropdownMenu,
   // LinkStatus,
-  StyledDropdownMenuItemContainer,
 } from "./styles";
 import { DropdownMenuItemType, DropdownMenuProps } from "./types";
-import InnerLinksBlock from "./InnerLinksBlock";
 
 const DropdownMenu: React.FC<DropdownMenuProps> = ({
   children,
-  isBottomNav = false,
+  isMobileNav = false,
   showItemsOnMobile = false,
   activeItem = "",
   items = [],
+  mobileItems = [],
   index,
   isExtended = false,
   setMenuOpenByIndex,
+  mobileMenuCallback,
   ...props
 }) => {
   const { linkComponent } = useContext(MenuContext);
@@ -34,15 +32,10 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
   const hasItems = items.length > 0;
   const hasMoreThanItems = items.length > 1;
   const { styles, attributes } = usePopper(targetRef, tooltipRef, {
-    strategy: isBottomNav ? "absolute" : "fixed",
-    placement: isBottomNav ? "top" : "bottom-start",
-    modifiers: [
-      { name: "offset", options: { offset: [0, isBottomNav ? 6 : 0] } },
-    ],
+    strategy: "fixed",
+    placement: "bottom-start",
+    modifiers: [{ name: "offset", options: { offset: [0, 0] } }],
   });
-
-  const isMenuShow =
-    isOpen && ((isBottomNav && showItemsOnMobile) || !isBottomNav);
 
   useEffect(() => {
     const showDropdownMenu = () => {
@@ -61,16 +54,20 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
       targetRef?.removeEventListener("mouseenter", showDropdownMenu);
       targetRef?.removeEventListener("mouseleave", hideDropdownMenu);
     };
-  }, [targetRef, tooltipRef, setIsOpen, isBottomNav]);
+  }, [targetRef, tooltipRef, setIsOpen]);
 
   useEffect(() => {
     if (setMenuOpenByIndex && index !== undefined) {
       setMenuOpenByIndex((prevValue) => ({
         ...prevValue,
-        [index]: isMenuShow,
+        [index]: isOpen,
       }));
     }
-  }, [isMenuShow, setMenuOpenByIndex, index]);
+  }, [isOpen, setMenuOpenByIndex, index]);
+
+  useEffect(() => {
+    mobileMenuCallback && mobileMenuCallback(isOpen);
+  }, [isOpen]);
 
   useOnClickOutside(
     {
@@ -95,114 +92,55 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
           style={styles.popper}
           ref={setTooltipRef}
           {...attributes.popper}
-          $isBottomNav={isBottomNav}
-          $isOpen={isMenuShow}
+          $isOpen={isOpen}
           $isExtended={isExtended && hasMoreThanItems}
         >
-          {items
-            .filter((item) => !item.isMobileOnly)
-            .map(
-              (
-                {
-                  type = DropdownMenuItemType.INTERNAL_LINK,
-                  label,
-                  rightIconFill,
-                  description,
-                  href = "/",
-                  status,
-                  leftIcon = "",
-                  rightIcon = "",
-                  links = [],
-                  bannerRenderer,
-                  extended = false,
-                  ...itemProps
-                },
-                itemItem
-              ) => {
-                const getMenuItemContent = (icon: string = rightIcon) => (
-                  <MenuItemContent
-                    label={label}
-                    fill={rightIconFill}
-                    leftIcon={leftIcon}
-                    rightIcon={icon}
-                    description={description}
-                    status={status}
-                  />
-                );
-                const isActive = href === activeItem;
-                const hasInnerLinks = links.length > 0;
+          {items.map(
+            (
+              {
+                type = DropdownMenuItemType.INTERNAL_LINK,
+                label,
+                rightIconFill,
+                description,
+                href = "/",
+                status,
+                leftIcon = "",
+                rightIcon = "",
+                links = [],
+                bannerRenderer,
+                ...itemProps
+              },
+              itemItem
+            ) => {
+              const getMenuItemContent = (icon: string = rightIcon) => (
+                <MenuItemContent
+                  label={label}
+                  fill={rightIconFill}
+                  leftIcon={leftIcon}
+                  rightIcon={icon}
+                  description={description}
+                  status={status}
+                />
+              );
+              const isActive = href === activeItem;
 
-                return (
-                  <StyledDropdownMenuItemContainer key={itemItem}>
-                    {type === DropdownMenuItemType.BUTTON && (
-                      <DropdownMenuItem
-                        $isActive={isActive}
-                        $hasIcon={!!leftIcon}
-                        type="button"
-                        {...itemProps}
-                      >
-                        {getMenuItemContent("")}
-                      </DropdownMenuItem>
-                    )}
-                    {type === DropdownMenuItemType.CONTAINER && (
-                      <>
-                        <DropdownMenuItem
-                          $isActive={isActive}
-                          $hasIcon={true} // to disable hover styling
-                          as="div"
-                          {...itemProps}
-                        >
-                          {getMenuItemContent("")}
-                        </DropdownMenuItem>
-                        {hasInnerLinks && (
-                          <InnerLinksBlock
-                            links={links}
-                            leftIcon={leftIcon}
-                            setIsOpen={setIsOpen}
-                            linkComponent={linkComponent}
-                          />
-                        )}
-                      </>
-                    )}
-                    {type === DropdownMenuItemType.INTERNAL_LINK && (
-                      <DropdownMenuItem
-                        $isActive={isActive}
-                        $hasIcon={!!leftIcon}
-                        as={linkComponent}
-                        href={href}
-                        onClick={() => {
-                          setIsOpen(false);
-                        }}
-                        {...itemProps}
-                      >
-                        {getMenuItemContent("ArrowForward")}
-                      </DropdownMenuItem>
-                    )}
-                    {type === DropdownMenuItemType.EXTERNAL_LINK && (
-                      <DropdownMenuItem
-                        $isActive={isActive}
-                        $hasIcon={!!leftIcon}
-                        as="a"
-                        href={href}
-                        target="_blank"
-                        onClick={() => {
-                          setIsOpen(false);
-                        }}
-                        {...itemProps}
-                      >
-                        {getMenuItemContent("ArrowUpForward")}
-                      </DropdownMenuItem>
-                    )}
-                    {type === DropdownMenuItemType.DIVIDER && (
-                      <DropdownMenuDivider />
-                    )}
-                    {type === DropdownMenuItemType.BANNER &&
-                      bannerRenderer &&
-                      bannerRenderer()}
-                  </StyledDropdownMenuItemContainer>
-                );
-              }
-            )}
+              return (
+                <DropdownMenuItemContainer
+                  key={itemItem}
+                  isActive={isActive}
+                  leftIcon={leftIcon}
+                  getMenuItemContent={getMenuItemContent}
+                  links={links}
+                  setIsOpen={setIsOpen}
+                  linkComponent={linkComponent}
+                  href={href}
+                  bannerRenderer={bannerRenderer}
+                  type={type}
+                  {...itemProps}
+                />
+              );
+            }
+          )}
         </StyledDropdownMenu>
       )}
     </Box>

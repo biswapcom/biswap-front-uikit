@@ -1,15 +1,13 @@
 import React, { FC } from "react";
-import IconComponent from "../Svg/IconComponent";
-import { Flex } from "../Box";
-import { Text } from "../Text";
-// import { LinkStatus } from "./styles";
-import { MenuItemContentProps } from "./types";
+import IconComponent from "../../Svg/IconComponent";
+import { Flex } from "../../Box";
+import { Text } from "../../Text";
+import { MenuItemContentProps } from "../types";
 
 const MenuItemContent: FC<MenuItemContentProps> = ({
   leftIcon,
   label,
   description,
-  // status,
   rightIcon,
   fill = "primary",
 }) => (
@@ -23,11 +21,6 @@ const MenuItemContent: FC<MenuItemContentProps> = ({
         </Text>
       )}
     </Flex>
-    {/*{status && (*/}
-    {/*  <LinkStatus color={status.color} fontSize="14px">*/}
-    {/*    {status.text}*/}
-    {/*  </LinkStatus>*/}
-    {/*)}*/}
     {rightIcon && (
       <IconComponent className="arrow-icon" iconName={rightIcon} color={fill} />
     )}

@@ -13,7 +13,6 @@ export declare const StyledDropdownMenuItemContainer: import("styled-components"
 export declare const DropdownMenuDivider: import("styled-components").StyledComponent<"hr", DefaultTheme, {}, never>;
 export declare const StyledDropdownMenu: import("styled-components").StyledComponent<"div", DefaultTheme, {
     $isOpen: boolean;
-    $isBottomNav: boolean;
     $isExtended?: boolean | undefined;
 }, never>;
 export declare const LinkStatus: import("styled-components").StyledComponent<"div", DefaultTheme, import("../Text").TextProps & {

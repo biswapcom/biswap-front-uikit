@@ -6,6 +6,8 @@ import DropdownMenu from "../DropdownMenu/DropdownMenu";
 import MenuItem from "../MenuItem/MenuItem";
 import IconComponent from "../Svg/IconComponent";
 import { MenuItemsProps } from "./types";
+import { useMatchBreakpoints } from "../../hooks";
+import MobileDropdownMenu from "../DropdownMenu/MobileMenu/MobileDropdownMenu";
 
 const MenuItems: React.FC<MenuItemsProps> = ({
   items = [],
@@ -13,10 +15,21 @@ const MenuItems: React.FC<MenuItemsProps> = ({
   activeSubItem,
   ...props
 }) => {
+  const { isDesktop, isTablet } = useMatchBreakpoints();
   return (
-    <Flex {...props}>
+    <Flex {...props} alignItems="center">
+      {!isDesktop && (
+        <MobileDropdownMenu items={items} activeItem={activeItem} />
+      )}
       {items.map(
-        ({ label, items: menuItems = [], href, icon = "", isExtended }) => {
+        ({
+          label,
+          items: menuItems = [],
+          href,
+          icon = "",
+          isExtended,
+          showItemsOnMobile,
+        }) => {
           const statusColor = menuItems?.find(
             (menuItem) => menuItem.status !== undefined
           )?.status?.color;
@@ -25,30 +38,33 @@ const MenuItems: React.FC<MenuItemsProps> = ({
             isTouchDevice() && menuItems && menuItems.length > 0
               ? {}
               : { href };
+          const visualize = isDesktop || (isTablet && showItemsOnMobile);
           return (
-            <DropdownMenu
-              key={`${label}#${href}#${icon}`}
-              items={menuItems}
-              py={1}
-              activeItem={activeSubItem}
-              isExtended={isExtended}
-            >
-              <MenuItem
-                {...linkProps}
-                isActive={isActive}
-                statusColor={statusColor}
+            visualize && (
+              <DropdownMenu
+                key={`${label}#${href}#${icon}`}
+                items={menuItems}
+                py={1}
+                activeItem={activeSubItem}
+                isExtended={isExtended}
               >
-                {icon && (
-                  <IconComponent
-                    iconName={icon}
-                    color={isActive ? "pastelBlue" : "white"}
-                  />
-                )}
-                <Text ml={"8px"} color={isActive ? "pastelBlue" : "white"}>
-                  {label}
-                </Text>
-              </MenuItem>
-            </DropdownMenu>
+                <MenuItem
+                  {...linkProps}
+                  isActive={isActive}
+                  statusColor={statusColor}
+                >
+                  {icon && (
+                    <IconComponent
+                      iconName={icon}
+                      color={isActive ? "pastelBlue" : "white"}
+                    />
+                  )}
+                  <Text ml={"8px"} color={isActive ? "pastelBlue" : "white"}>
+                    {label}
+                  </Text>
+                </MenuItem>
+              </DropdownMenu>
+            )
           );
         }
       )}
