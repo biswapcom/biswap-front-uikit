@@ -10,6 +10,8 @@ import MenuItemContent from "../components/MenuItemContent";
 
 import { DropdownMenuDivider } from "../styles";
 import { DropdownMenuItemContainer } from "../components";
+import IconComponent from "../../Svg/IconComponent";
+import Accordion from "../../Accordion/Accordion";
 
 const StyledMobileMenu = styled.div<{
   $isOpen: boolean;
@@ -17,7 +19,8 @@ const StyledMobileMenu = styled.div<{
   padding: 32px 24px 0 24px;
   background-color: ${({ theme }) => theme.card.background};
   width: 100vw;
-  max-height: 100vh;
+  height: 100vh;
+  min-height: 100vh;
   overflow: auto;
   visibility: visible;
   opacity: 1;
@@ -41,14 +44,19 @@ const MobileMenu: FC<MobileMenuProps> = ({
 }) => {
   const { linkComponent } = useContext(MenuContext);
   const [isOpen, setIsOpen] = useState(false);
+  const [showItems, setShowItems] = useState(false);
   const [targetRef, setTargetRef] = useState<HTMLDivElement | null>(null);
   const [tooltipRef, setTooltipRef] = useState<HTMLDivElement | null>(null);
   const { isMobile, isTablet } = useMatchBreakpoints();
 
+  const showItemsToggle = () => {
+    setShowItems((prev) => !prev);
+  };
+
   const hasItems = items.length > 0;
   const { styles, attributes } = usePopper(targetRef, tooltipRef, {
     strategy: "fixed",
-    placement: "auto",
+    placement: "auto-start",
   });
 
   useEffect(() => {
@@ -110,63 +118,83 @@ const MobileMenu: FC<MobileMenuProps> = ({
                       <DropdownMenuDivider />
                     </Box>
                   )}
-                  {!showItemsOnMobile && <Text m={"16px 0"}>{label}</Text>}
-                  <Grid
-                    gridTemplateColumns={isMobile ? "1fr" : "repeat(3, 1fr)"}
-                    gridColumnGap={16}
+                  <Accordion
+                    label={label}
+                    clickable={!isTablet}
+                    heading={(opened) => {
+                      return (
+                        !showItemsOnMobile && (
+                          <>
+                            <Text m={"16px 0"}>{label}</Text>
+                            {!isTablet && (
+                              <IconComponent
+                                iconName={opened ? "ChevronUp" : "ChevronDown"}
+                                color={opened ? "primary" : "text"}
+                              />
+                            )}
+                          </>
+                        )
+                      );
+                    }}
                   >
-                    {innerItems.map(
-                      (
-                        {
-                          type = DropdownMenuItemType.INTERNAL_LINK,
-                          label,
-                          rightIconFill,
-                          description,
-                          href = "/",
-                          status,
-                          leftIcon = "",
-                          rightIcon = "",
-                          links = [],
-                          bannerRenderer,
-                          ...itemProps
-                        },
-                        itemItem
-                      ) => {
-                        const getMenuItemContent = (
-                          icon: string = rightIcon
-                        ) => (
-                          <MenuItemContent
-                            label={label}
-                            fill={rightIconFill}
-                            leftIcon={leftIcon}
-                            rightIcon={icon}
-                            description={description}
-                            status={status}
-                          />
-                        );
-
-                        const isActive = href === activeItem;
-
-                        return (
-                          visualize && (
-                            <DropdownMenuItemContainer
-                              key={itemItem}
-                              isActive={isActive}
+                    <Grid
+                      gridTemplateColumns={isMobile ? "1fr" : "repeat(3, 1fr)"}
+                      gridColumnGap={16}
+                      display={showItems ? "grid" : "none"}
+                    >
+                      {innerItems.map(
+                        (
+                          {
+                            type = DropdownMenuItemType.INTERNAL_LINK,
+                            label,
+                            rightIconFill,
+                            description,
+                            href = "/",
+                            status,
+                            leftIcon = "",
+                            rightIcon = "",
+                            links = [],
+                            bannerRenderer,
+                            ...itemProps
+                          },
+                          itemItem
+                        ) => {
+                          const getMenuItemContent = (
+                            icon: string = rightIcon
+                          ) => (
+                            <MenuItemContent
+                              label={label}
+                              fill={rightIconFill}
                               leftIcon={leftIcon}
-                              getMenuItemContent={getMenuItemContent}
-                              links={links}
-                              setIsOpen={setIsOpen}
-                              linkComponent={linkComponent}
-                              href={href}
-                              bannerRenderer={bannerRenderer}
-                              type={type}
-                              {...itemProps}
+                              rightIcon={icon}
+                              description={description}
+                              status={status}
                             />
-                          )
-                        );
-                      }
-                    )}
-                  </Grid>
+                          );
+
+                          const isActive = href === activeItem;
+
+                          return (
+                            visualize && (
+                              <DropdownMenuItemContainer
+                                key={itemItem}
+                                isActive={isActive}
+                                leftIcon={leftIcon}
+                                getMenuItemContent={getMenuItemContent}
+                                links={links}
+                                setIsOpen={setIsOpen}
+                                linkComponent={linkComponent}
+                                href={href}
+                                bannerRenderer={bannerRenderer}
+                                type={type}
+                                {...itemProps}
+                              />
+                            )
+                          );
+                        }
+                      )}
+                    </Grid>
+                  </Accordion>
                   {isTablet && !showItemsOnMobile && <DropdownMenuDivider />}
                 </Box>
               );
