@@ -5470,7 +5470,7 @@ var Menu$1 = function (_a) {
                         React.createElement(Logo$1, { isDark: isDark, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
                         React.createElement(MenuItems, { items: links, activeItem: activeItem, activeSubItem: activeSubItem, ml: "24px" })),
                     React.createElement(Flex, { alignItems: "center", height: "100%" },
-                        !isMobile && (React.createElement(IconComponent, { width: 94, mr: 24, iconName: "CerticAudited" })),
+                        React.createElement(IconComponent, { width: isMobile ? 67 : 94, mr: 24, iconName: "CerticAudited" }),
                         userMenu))),
             React.createElement(BodyWrapper, { mt: !subLinks ? "".concat(totalTopMenuHeight + 1, "px") : "0" },
                 React.createElement(Inner, { isPushed: false, showMenu: showMenu },

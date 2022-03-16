@@ -145,9 +145,11 @@ const Menu: React.FC<NavProps> = ({
               />
             </Flex>
             <Flex alignItems="center" height="100%">
-              {!isMobile && (
-                <IconComponent width={94} mr={24} iconName="CerticAudited" />
-              )}
+              <IconComponent
+                width={isMobile ? 67 : 94}
+                mr={24}
+                iconName="CerticAudited"
+              />
               {userMenu}
             </Flex>
           </StyledNav>
