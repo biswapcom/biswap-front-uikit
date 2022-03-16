@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { StyledMenuItemProps } from "./types";
 
 export const StyledMenuItemContainer = styled.div<StyledMenuItemProps>`
@@ -44,14 +44,17 @@ const StyledMenuItem = styled.a<StyledMenuItemProps>`
 
   ${({ $variant }) =>
     $variant === "default"
-      ? `
-    padding: 0 12px;
-    height: 48px;
-  `
-      : `
-    padding: 4px 4px 0px 4px;
-    height: 42px;
-  `}
+      ? css`
+          padding: 0 8px;
+          height: 48px;
+          ${({ theme }) => theme.mediaQueries.lg} {
+            padding: 0 12px;
+          }
+        `
+      : css`
+          padding: 4px 4px 0px 4px;
+          height: 42px;
+        `}
 
   &:hover {
     div {

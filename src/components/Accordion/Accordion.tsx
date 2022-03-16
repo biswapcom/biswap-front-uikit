@@ -5,7 +5,7 @@ import { Flex } from "../Box";
 interface IProps {
   heading: (s?: boolean) => ReactNode;
   children: ReactNode;
-  label: string;
+  label?: string;
   clickable?: boolean;
 }
 

@@ -5,9 +5,10 @@ import isTouchDevice from "../../util/isTouchDevice";
 import DropdownMenu from "../DropdownMenu/DropdownMenu";
 import MenuItem from "../MenuItem/MenuItem";
 import IconComponent from "../Svg/IconComponent";
-import { MenuItemsProps } from "./types";
+import { MenuItemsProps, MenuItemType } from "./types";
 import { useMatchBreakpoints } from "../../hooks";
 import MobileDropdownMenu from "../DropdownMenu/MobileMenu/MobileDropdownMenu";
+import MenuItemDivider from "../MenuItem/Divider";
 
 const MenuItems: React.FC<MenuItemsProps> = ({
   items = [],
@@ -29,6 +30,7 @@ const MenuItems: React.FC<MenuItemsProps> = ({
           icon = "",
           isExtended,
           showItemsOnMobile,
+          type,
         }) => {
           const statusColor = menuItems?.find(
             (menuItem) => menuItem.status !== undefined
@@ -41,29 +43,37 @@ const MenuItems: React.FC<MenuItemsProps> = ({
           const visualize = isDesktop || (isTablet && showItemsOnMobile);
           return (
             visualize && (
-              <DropdownMenu
-                key={`${label}#${href}#${icon}`}
-                items={menuItems}
-                py={1}
-                activeItem={activeSubItem}
-                isExtended={isExtended}
-              >
-                <MenuItem
-                  {...linkProps}
-                  isActive={isActive}
-                  statusColor={statusColor}
+              <>
+                <DropdownMenu
+                  key={`${label}#${href}#${icon}`}
+                  items={menuItems}
+                  py={1}
+                  activeItem={activeSubItem}
+                  isExtended={isExtended}
                 >
-                  {icon && (
-                    <IconComponent
-                      iconName={icon}
-                      color={isActive ? "pastelBlue" : "white"}
-                    />
-                  )}
-                  <Text ml={"8px"} color={isActive ? "pastelBlue" : "white"}>
-                    {label}
-                  </Text>
-                </MenuItem>
-              </DropdownMenu>
+                  <MenuItem
+                    {...linkProps}
+                    isActive={isActive}
+                    statusColor={statusColor}
+                  >
+                    {type === MenuItemType.DIVIDER && <MenuItemDivider />}
+                    {icon && (
+                      <IconComponent
+                        iconName={icon}
+                        color={isActive ? "pastelBlue" : "white"}
+                      />
+                    )}
+                    {label && (
+                      <Text
+                        ml={"8px"}
+                        color={isActive ? "pastelBlue" : "white"}
+                      >
+                        {label}
+                      </Text>
+                    )}
+                  </MenuItem>
+                </DropdownMenu>
+              </>
             )
           );
         }

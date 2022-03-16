@@ -3,7 +3,7 @@ import {
   DropdownMenuItems,
   DropdownMenuItemType,
 } from "../../components/DropdownMenu/types";
-import { MenuItemsType } from "../../components/MenuItems/types";
+import { MenuItemsType, MenuItemType } from "../../components/MenuItems/types";
 import { LinkStatus } from "./types";
 
 const getBanner = () => "<div>BANNER</div>";
@@ -183,6 +183,10 @@ export const links: MenuItemsType[] = [
         type: DropdownMenuItemType.EXTERNAL_LINK,
       },
     ],
+  },
+  {
+    type: MenuItemType.DIVIDER,
+    showItemsOnMobile: true,
   },
   {
     label: "Biswap Products",

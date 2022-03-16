@@ -5,6 +5,7 @@ import { Text } from "../../Text";
 import { useMatchBreakpoints } from "../../../hooks";
 import MobileMenu from "./MobileMenu";
 import { MenuItemsProps } from "../../MenuItems/types";
+import MenuItem from "../../MenuItem";
 
 const MobileDropdownMenu: FC<MenuItemsProps> = ({ items, activeItem }) => {
   const [isOpened, setIsOpened] = useState(false);
@@ -17,13 +18,13 @@ const MobileDropdownMenu: FC<MenuItemsProps> = ({ items, activeItem }) => {
       isMobileNav
       activeItem={activeItem}
     >
-      <Flex alignItems="center" style={{ height: "48px" }}>
+      <MenuItem>
         <IconComponent
           iconName={isOpened ? "ButtonMenuOpened" : "ButtonMenu"}
           color={isMobile ? "text" : "white"}
         />
         {!isMobile && <Text ml="8px">Menu</Text>}
-      </Flex>
+      </MenuItem>
     </MobileMenu>
   );
 };
