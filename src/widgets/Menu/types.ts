@@ -1,8 +1,8 @@
-import { ElementType, ReactElement } from "react";
-import { FooterLinkType } from "../../components/Footer/types";
-import { MenuItemsType } from "../../components/MenuItems/types";
-import { SubMenuItemsType } from "../../components/SubMenuItems/types";
-import { Colors } from "../../theme/types";
+import {ElementType, ReactElement} from "react";
+import {FooterLinkType} from "../../components/Footer/types";
+import {MenuItemsType} from "../../components/MenuItems/types";
+import {SubMenuItemsType} from "../../components/SubMenuItems/types";
+import {Colors} from "../../theme/types";
 
 export interface Language {
   code: string;
@@ -15,7 +15,15 @@ export interface LinkStatus {
   color: keyof Colors;
 }
 
-export interface NavProps {
+export interface NavProps extends
+  BSWPriceProps,
+  FooterAboutLinks,
+  FooterProductLinks,
+  FooterServiceLinks,
+  ConnectMetaProps,
+  FooterStatisticProps {
+  buyBswLink: string
+  //---------
   linkComponent?: ElementType;
   userMenu?: ReactElement;
   banner?: ReactElement;
@@ -30,6 +38,42 @@ export interface NavProps {
   cakePriceUsd?: number;
   currentLang: string;
   buyCakeLabel: string;
-  langs: Language[];
+  // langs: Language[];
   setLang: (lang: Language) => void;
+}
+
+export interface FooterStatisticProps {
+  footerStatistic: Array<FooterStatisticItem>
+}
+
+export interface FooterStatisticItem {
+  label: string,
+  value: number | string
+}
+
+export interface ConnectMetaProps {
+  onClick: () => void;
+}
+
+export interface BSWPriceProps {
+  BSWPriceLabel: string;
+  BSWPriceValue: number;
+}
+
+export interface FooterAboutLinks {
+  aboutLinks: Array<FooterNavItem>
+}
+
+export interface FooterProductLinks {
+  productLinks: Array<FooterNavItem>
+}
+
+export interface FooterServiceLinks {
+  serviceLinks: Array<FooterNavItem>
+}
+
+export interface FooterNavItem {
+  label: string,
+  href: string,
+  target?: string
 }

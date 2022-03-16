@@ -6,6 +6,7 @@ export type MediaQueries = {
   md: string;
   lg: string;
   xl: string;
+  xll: string;
   xxl: string;
   nav: string;
 };
@@ -50,7 +51,6 @@ export type Colors = {
   backgroundLight: string;
   white: string;
   pastelBlue: string;
-  dark: string;
 
   //
   primaryBright: string;

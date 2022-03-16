@@ -15,7 +15,7 @@ import Text from "../../components/Text/Text";
 import { Modal, ModalProps, useModal } from "../Modal";
 import UserMenu from "./components/UserMenu";
 import { Variant, variants } from "./components/UserMenu/types";
-import { links, userMenulinks } from "./config";
+import {BSWPriceValue, BSWPriceLabel, footerStatistic, aboutLinks, productLinks, serviceLinks, links, userMenulinks} from "./config";
 import Menu from "./Menu";
 import { Language, NavProps } from "./types";
 import BottomDrawer from "../../components/BottomDrawer/BottomDrawer";
@@ -82,7 +82,7 @@ const defaultProps = {
   logout: noop,
   isDark: false,
   toggleTheme: noop,
-  langs,
+  // langs,
   setLang: noop,
   currentLang: "EN",
   cakePriceUsd: 0.023158668932877668,
@@ -102,7 +102,14 @@ const ConnectedTemplate: React.FC<NavProps> = (args) => {
 
   return (
     <BrowserRouter>
-      <Menu {...args}>
+      <Menu {...args}
+            BSWPriceLabel={BSWPriceLabel}
+            BSWPriceValue={BSWPriceValue}
+            footerStatistic={footerStatistic}
+            onClick={noop}
+            aboutLinks={aboutLinks}
+            productLinks={productLinks}
+            serviceLinks={serviceLinks}>
         <div>
           <Heading as="h1" mb="8px">
             Page body

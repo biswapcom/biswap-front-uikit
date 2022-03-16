@@ -4,7 +4,7 @@ import styled from "styled-components";
 import BottomNav from "../../components/BottomNav";
 import { Box } from "../../components/Box";
 import Flex from "../../components/Box/Flex";
-import Footer from "../../components/Footer";
+import Footer from "./components/Footer/Footer";
 import MenuItems from "../../components/MenuItems/MenuItems";
 import { SubMenuItems } from "../../components/SubMenuItems";
 import { useMatchBreakpoints } from "../../hooks";
@@ -78,9 +78,16 @@ const Menu: React.FC<NavProps> = ({
   footerLinks,
   activeItem,
   activeSubItem,
-  langs,
   buyCakeLabel,
   children,
+                                    BSWPriceLabel,
+                                    BSWPriceValue,
+                                    footerStatistic,
+                                    onClick,
+                                    buyBswLink,
+                                    aboutLinks,
+                                    productLinks,
+                                    serviceLinks,
 }) => {
   const { isMobile } = useMatchBreakpoints();
   const [showMenu, setShowMenu] = useState(true);
@@ -158,15 +165,14 @@ const Menu: React.FC<NavProps> = ({
           <Inner isPushed={false} showMenu={showMenu}>
             {children}
             <Footer
-              items={footerLinks}
-              isDark={isDark}
-              toggleTheme={toggleTheme}
-              langs={langs}
-              setLang={setLang}
-              currentLang={currentLang}
-              cakePriceUsd={cakePriceUsd}
-              buyCakeLabel={buyCakeLabel}
-              mb={[`${MOBILE_MENU_HEIGHT}px`, null, "0px"]}
+              BSWPriceLabel={BSWPriceLabel}
+              BSWPriceValue={BSWPriceValue}
+              footerStatistic={footerStatistic}
+              onClick={onClick}
+              buyBswLink={buyBswLink}
+              aboutLinks={aboutLinks}
+              productLinks={productLinks}
+              serviceLinks={serviceLinks}
             />
           </Inner>
         </BodyWrapper>

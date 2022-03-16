@@ -21,7 +21,7 @@ const Tooltip = styled.div<{ isTooltipDisplayed: boolean }>`
   right: 0;
   left: 0;
   text-align: center;
-  background-color: ${({ theme }) => theme.colors.contrast};
+  background-color: ${({ theme }) => theme.colors.white};
   color: ${({ theme }) => theme.colors.invertedContrast};
   border-radius: 16px;
   opacity: 0.7;
