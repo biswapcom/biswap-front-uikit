@@ -33,6 +33,22 @@ const StyledMobileMenu = styled.div<{
     visibility: hidden;
     opacity: 0;
   `}
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: none;
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &::-webkit-slider-thumb {
+    display: none;
+  }
 `;
 
 const MobileMenu: FC<MobileMenuProps> = ({
