@@ -60,14 +60,9 @@ const MobileMenu: FC<MobileMenuProps> = ({
 }) => {
   const { linkComponent } = useContext(MenuContext);
   const [isOpen, setIsOpen] = useState(false);
-  const [showItems, setShowItems] = useState(false);
   const [targetRef, setTargetRef] = useState<HTMLDivElement | null>(null);
   const [tooltipRef, setTooltipRef] = useState<HTMLDivElement | null>(null);
   const { isMobile, isTablet } = useMatchBreakpoints();
-
-  const showItemsToggle = () => {
-    setShowItems((prev) => !prev);
-  };
 
   const hasItems = items.length > 0;
   const { styles, attributes } = usePopper(targetRef, tooltipRef, {
@@ -141,7 +136,13 @@ const MobileMenu: FC<MobileMenuProps> = ({
                       return (
                         !showItemsOnMobile && (
                           <>
-                            <Text m={"16px 0"}>{label}</Text>
+                            <Text
+                              m={"16px 0"}
+                              fontSize={isTablet ? "20px" : "14px"}
+                              color={isMobile && opened ? "primary" : "text"}
+                            >
+                              {label}
+                            </Text>
                             {!isTablet && (
                               <IconComponent
                                 iconName={opened ? "ChevronUp" : "ChevronDown"}
@@ -156,7 +157,6 @@ const MobileMenu: FC<MobileMenuProps> = ({
                     <Grid
                       gridTemplateColumns={isMobile ? "1fr" : "repeat(3, 1fr)"}
                       gridColumnGap={16}
-                      display={showItems ? "grid" : "none"}
                     >
                       {innerItems.map(
                         (

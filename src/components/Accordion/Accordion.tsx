@@ -1,5 +1,5 @@
 import React, { FC, ReactNode, useState } from "react";
-import styled from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 import { Flex } from "../Box";
 
 interface IProps {
@@ -9,10 +9,29 @@ interface IProps {
   clickable?: boolean;
 }
 
+const openBodyAnimation = keyframes`
+  0% {
+    opacity: 0;
+    height: 0;
+  }
+  100% {
+    opacity: 1;
+    height: auto;
+  }
+`;
+
 const AccordionBody = styled.div<{ opened: boolean }>`
   display: ${({ opened }) => (opened ? "flex" : "none")};
   flex-direction: column;
+  overflow: hidden;
+
+  ${({ opened }) =>
+    opened &&
+    css`
+      animation: ${openBodyAnimation} 0.6s ease;
+    `}
 `;
+
 const AccordionTitle = styled(Flex)`
   cursor: pointer;
 `;
