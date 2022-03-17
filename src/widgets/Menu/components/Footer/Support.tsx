@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Telegram from "../../icons/Telegram";
+import Telegram from "../../../../components/Svg/Icons/Telegram";
 
 const Wrapper = styled.div`
   grid-area: support;
