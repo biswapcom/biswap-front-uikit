@@ -10,7 +10,8 @@ import { useMatchBreakpoints } from "../../hooks";
 import Logo from "./components/Logo";
 import {MENU_HEIGHT, TOP_BANNER_HEIGHT, TOP_BANNER_HEIGHT_MOBILE} from "./config";
 import {NavProps} from "./types";
-import { MenuContext } from "./context";
+import {MenuContext} from "./context";
+import NetworkSwitcher, {OptionProps} from "./NetworkSwitcher";
 
 const Wrapper = styled.div`
   position: relative;
