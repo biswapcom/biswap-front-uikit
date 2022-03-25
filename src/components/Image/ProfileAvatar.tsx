@@ -14,7 +14,10 @@ const StyledBunnyPlaceholder = styled(BunnyPlaceholder)`
 `;
 
 const ProfileAvatar: React.FC<BackgroundImageProps> = (props) => (
-  <StyledProfileAvatar loadingPlaceholder={<StyledBunnyPlaceholder />} {...props} />
+  <StyledProfileAvatar
+    loadingPlaceholder={<StyledBunnyPlaceholder/>}
+    {...props}
+  />
 );
 
 export default ProfileAvatar;

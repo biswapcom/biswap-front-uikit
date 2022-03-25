@@ -48,14 +48,19 @@ export const Icons: React.FC = () => {
             alignItems="center"
             width="128px"
             height="96px"
-            style={{ border: "1px solid #eee" }}
+            style={{border: "1px solid #eee"}}
             justifyContent="center"
             py="8px"
             m="4px"
           >
-            <Flex alignItems="center" justifyContent="center" style={{ flex: 1 }} height="100%">
-              <Icon width="48px" />
-              <Icon width="24px" color="secondary" ml="4px" />
+            <Flex
+              alignItems="center"
+              justifyContent="center"
+              style={{flex: 1}}
+              height="100%"
+            >
+              <Icon width="48px"/>
+              <Icon width="24px" color="primary" ml="4px"/>
             </Flex>
             <Box py="4px">
               <Text color="textSubtle" fontSize="14px">
@@ -83,7 +88,9 @@ const AnimatedIconComponentTemplate: React.FC = (args) => {
   );
 };
 
-export const AnimatedIconComponentStory = AnimatedIconComponentTemplate.bind({});
+export const AnimatedIconComponentStory = AnimatedIconComponentTemplate.bind(
+  {}
+);
 AnimatedIconComponentStory.args = {
   isActive: false,
 };

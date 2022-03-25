@@ -83,7 +83,11 @@ export const CardHeader: React.FC = () => {
       </Row>
       <Row>
         <Card borderBackground={gradientBorderColor}>
-          <Box background={theme.colors.gradients.cardHeader} p="16px" height={headerHeight}>
+          <Box
+            background={theme.colors.gradients.cardHeader}
+            p="16px"
+            height={headerHeight}
+          >
             <Heading size="xl">Gradient overlapping Header</Heading>
           </Box>
           <CardBody>The border on sides of header is covered</CardBody>
@@ -144,29 +148,50 @@ export const Ribbon: React.FC = () => {
   return (
     <div style={{ padding: "32px", width: "500px" }}>
       <Row>
-        <Card ribbon={<CardRibbon text="Ribbon" />}>
-          <div style={{ height: "112px", backgroundColor: "#191326" }} />
-          <CardBody style={{ height: "150px" }}>Body</CardBody>
+        <Card ribbon={<CardRibbon text="Ribbon"/>}>
+          <div style={{height: "112px", backgroundColor: "#191326"}}/>
+          <CardBody style={{height: "150px"}}>Body</CardBody>
         </Card>
       </Row>
       <Row>
-        <Card ribbon={<CardRibbon variantColor="textDisabled" text="Ribbon with Long Text" />}>
-          <CardBody style={{ height: "150px" }}>Ribbons will truncate when text is too long</CardBody>
+        <Card
+          ribbon={
+            <CardRibbon
+              variantColor="textDisabled"
+              text="Ribbon with Long Text"
+            />
+          }
+        >
+          <CardBody style={{height: "150px"}}>
+            Ribbons will truncate when text is too long
+          </CardBody>
         </Card>
       </Row>
       <Row>
-        <Card ribbon={<CardRibbon variantColor="success" text="Success" />}>
-          <CardBody style={{ height: "150px" }}>Card</CardBody>
+        <Card ribbon={<CardRibbon variantColor="success" text="Success"/>}>
+          <CardBody style={{height: "150px"}}>Card</CardBody>
         </Card>
       </Row>
       <Row>
-        <Card ribbon={<CardRibbon variantColor="failure" text="Failure" />}>
-          <CardBody style={{ height: "150px" }}>Any Color in the theme</CardBody>
+        <Card ribbon={<CardRibbon variantColor="failure" text="Failure"/>}>
+          <CardBody style={{height: "150px"}}>
+            Any Color in the theme
+          </CardBody>
         </Card>
       </Row>
       <Row>
-        <Card ribbon={<CardRibbon variantColor="failure" text="Failure" ribbonPosition="left" />}>
-          <CardBody style={{ height: "150px" }}>Any Color in the theme</CardBody>
+        <Card
+          ribbon={
+            <CardRibbon
+              variantColor="failure"
+              text="Failure"
+              ribbonPosition="left"
+            />
+          }
+        >
+          <CardBody style={{height: "150px"}}>
+            Any Color in the theme
+          </CardBody>
         </Card>
       </Row>
     </div>

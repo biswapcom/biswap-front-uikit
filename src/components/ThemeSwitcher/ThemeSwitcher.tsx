@@ -14,9 +14,22 @@ const ThemeSwitcher: React.FC<Props> = ({ isDark, toggleTheme }) => (
     checkedColor="textDisabled"
     onChange={() => toggleTheme(!isDark)}
     scale="md"
-    startIcon={(isActive = false) => <IconComponent iconName="Sun" color={isActive ? "warning" : "backgroundAlt"} />}
-    endIcon={(isActive = false) => <IconComponent iconName="Moon" color={isActive ? "secondary" : "backgroundAlt"} />}
+    startIcon={(isActive = false) => (
+      <IconComponent
+        iconName="Sun"
+        color={isActive ? "warning" : "backgroundAlt"}
+      />
+    )}
+    endIcon={(isActive = false) => (
+      <IconComponent
+        iconName="Moon"
+        color={isActive ? "secondary" : "backgroundAlt"}
+      />
+    )}
   />
 );
 
-export default React.memo(ThemeSwitcher, (prev, next) => prev.isDark === next.isDark);
+export default React.memo(
+  ThemeSwitcher,
+  (prev, next) => prev.isDark === next.isDark
+);

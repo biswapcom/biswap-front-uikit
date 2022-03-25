@@ -14,7 +14,15 @@ const Icon: React.FC<SvgProps> = (props) => {
         d="M72 36C72 55.8823 55.8823 72 36 72C16.1177 72 0 55.8823 0 36C0 16.1177 16.1177 0 36 0C55.8823 0 72 16.1177 72 36Z"
         fill={primaryColor}
       />
-      <mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="3" y="3" width="66" height="66">
+      <mask
+        id="mask0"
+        mask-type="alpha"
+        maskUnits="userSpaceOnUse"
+        x="3"
+        y="3"
+        width="66"
+        height="66"
+      >
         <path
           d="M68.25 36C68.25 53.8112 53.8112 68.25 36 68.25C18.1888 68.25 3.75 53.8112 3.75 36C3.75 18.1888 18.1888 3.75 36 3.75C53.8112 3.75 68.25 18.1888 68.25 36Z"
           fill="#C4C4C4"

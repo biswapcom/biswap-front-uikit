@@ -2,8 +2,13 @@ import React from "react";
 import { Flex, Box } from "../Box";
 import { SwapVertIcon } from "../Svg";
 import Text from "../Text/Text";
-import { StyledBalanceInput, StyledInput, UnitContainer, SwitchUnitsButton } from "./styles";
-import { BalanceInputProps } from "./types";
+import {
+  StyledBalanceInput,
+  StyledInput,
+  UnitContainer,
+  SwitchUnitsButton,
+} from "./styles";
+import {BalanceInputProps} from "./types";
 
 const BalanceInput: React.FC<BalanceInputProps> = ({
   value,
@@ -49,8 +54,12 @@ const BalanceInput: React.FC<BalanceInputProps> = ({
         </Box>
         {switchEditingUnits && (
           <Flex alignItems="center" pl="12px">
-            <SwitchUnitsButton scale="sm" variant="text" onClick={switchEditingUnits}>
-              <SwapVertIcon color="textSubtle" />
+            <SwitchUnitsButton
+              scale="sm"
+              variant="text"
+              onClick={switchEditingUnits}
+            >
+              <SwapVertIcon color="textSubtle"/>
             </SwitchUnitsButton>
           </Flex>
         )}

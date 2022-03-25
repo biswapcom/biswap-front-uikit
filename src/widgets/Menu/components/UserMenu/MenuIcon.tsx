@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { Variant, variants } from "./types";
 import { Image } from "../../../../components/Image";
-import { WarningIcon } from "../../../../components/Svg";
-import { Colors } from "../../../../theme/types";
+import {WarningIcon} from "../../../../components/Svg";
+import {Colors} from "../../../../theme";
 
 const MenuIconWrapper = styled.div<{ borderColor: keyof Colors }>`
   align-items: center;
@@ -57,17 +57,20 @@ export const DangerMenuIcon: React.FC = () => (
   </MenuIconWrapper>
 );
 
-const MenuIcon: React.FC<{ avatarSrc?: string; variant: Variant }> = ({ avatarSrc, variant }) => {
+const MenuIcon: React.FC<{ avatarSrc?: string; variant: Variant }> = ({
+                                                                        avatarSrc,
+                                                                        variant,
+                                                                      }) => {
   if (variant === variants.DANGER) {
-    return <DangerMenuIcon />;
+    return <DangerMenuIcon/>;
   }
 
   if (variant === variants.WARNING) {
-    return <WarningMenuIcon />;
+    return <WarningMenuIcon/>;
   }
 
   if (variant === variants.PENDING) {
-    return <PendingMenuIcon />;
+    return <PendingMenuIcon/>;
   }
 
   if (!avatarSrc) {

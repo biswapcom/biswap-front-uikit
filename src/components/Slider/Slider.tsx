@@ -60,7 +60,9 @@ const Slider: React.FC<SliderProps> = ({
       </BunnySlider>
       {valueLabel && (
         <SliderLabelContainer>
-          <SliderLabel progress={labelProgress}>{displayValueLabel}</SliderLabel>
+          <SliderLabel progress={labelProgress}>
+            {displayValueLabel}
+          </SliderLabel>
         </SliderLabelContainer>
       )}
     </Box>

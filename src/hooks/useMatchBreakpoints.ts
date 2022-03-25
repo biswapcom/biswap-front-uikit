@@ -28,7 +28,7 @@ const mediaQueries: MediaQueries = (() => {
   return Object.keys(breakpointMap).reduce((accum, size, index) => {
     // Largest size is just a min-width of second highest max-width
     if (index === Object.keys(breakpointMap).length - 1) {
-      return { ...accum, [size]: `(min-width: ${prevMinWidth}px)` };
+      return {...accum, [size]: `(min-width: ${prevMinWidth}px)`};
     }
 
     const minWidth = prevMinWidth;
@@ -37,11 +37,15 @@ const mediaQueries: MediaQueries = (() => {
     // Min width for next iteration
     prevMinWidth = breakpoint + 1;
 
-    return { ...accum, [size]: `(min-width: ${minWidth}px) and (max-width: ${breakpoint}px)` };
+    return {
+      ...accum,
+      [size]: `(min-width: ${minWidth}px) and (max-width: ${breakpoint}px)`,
+    };
   }, {});
 })();
 
-const getKey = (size: string) => `is${size.charAt(0).toUpperCase()}${size.slice(1)}`;
+const getKey = (size: string) =>
+  `is${size.charAt(0).toUpperCase()}${size.slice(1)}`;
 
 const getState = () => {
   const s = Object.keys(mediaQueries).reduce((accum, size) => {

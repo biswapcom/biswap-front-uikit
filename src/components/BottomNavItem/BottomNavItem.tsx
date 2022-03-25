@@ -15,7 +15,12 @@ const BottomNavItem: React.FC<BottomNavItemProps> = ({
 }) => {
   const { linkComponent } = useContext(MenuContext);
   const bottomNavItemContent = (
-    <Flex flexDirection="column" justifyContent="center" alignItems="center" height="100%">
+    <Flex
+      flexDirection="column"
+      justifyContent="center"
+      alignItems="center"
+      height="100%"
+    >
       {iconName && (
         <AnimatedIconComponent
           iconName={iconName}

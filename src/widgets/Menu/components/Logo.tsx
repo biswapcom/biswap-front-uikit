@@ -60,7 +60,11 @@ const Logo: React.FC<Props> = ({ isDark, href }) => {
           {innerLogo}
         </StyledLink>
       ) : (
-        <StyledLink href={href} as={linkComponent} aria-label="Pancake home page">
+        <StyledLink
+          href={href}
+          as={linkComponent}
+          aria-label="Pancake home page"
+        >
           {innerLogo}
         </StyledLink>
       )}

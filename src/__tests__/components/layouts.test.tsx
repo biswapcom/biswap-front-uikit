@@ -46,7 +46,9 @@ it("renders base layout correctly", () => {
 });
 
 it("renders card layout correctly", () => {
-  const { asFragment } = renderWithTheme(<CardsLayout>cards layout</CardsLayout>);
+  const {asFragment} = renderWithTheme(
+    <CardsLayout>cards layout</CardsLayout>
+  );
   expect(asFragment()).toMatchInlineSnapshot(`
     <DocumentFragment>
       .c0 {

@@ -25,13 +25,35 @@ export const Default: React.FC = () => {
 
   return (
     <>
-      <div style={{ marginBottom: "32px" }}>
-        <Radio name="md" value="one" onChange={handleChange} checked={radio === "one"} />
-        <Radio name="md" value="two" onChange={handleChange} checked={radio === "two"} />
+      <div style={{marginBottom: "32px"}}>
+        <Radio
+          name="md"
+          value="one"
+          onChange={handleChange}
+          checked={radio === "one"}
+        />
+        <Radio
+          name="md"
+          value="two"
+          onChange={handleChange}
+          checked={radio === "two"}
+        />
       </div>
       <div>
-        <Radio scale="sm" name="sm" value="one" onChange={handleChangeSm} checked={radioSm === "one"} />
-        <Radio scale="sm" name="sm" value="two" onChange={handleChangeSm} checked={radioSm === "two"} />
+        <Radio
+          scale="sm"
+          name="sm"
+          value="one"
+          onChange={handleChangeSm}
+          checked={radioSm === "one"}
+        />
+        <Radio
+          scale="sm"
+          name="sm"
+          value="two"
+          onChange={handleChangeSm}
+          checked={radioSm === "two"}
+        />
       </div>
     </>
   );

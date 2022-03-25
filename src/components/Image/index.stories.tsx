@@ -19,7 +19,12 @@ export default {
 export const Image: React.FC = () => {
   return (
     <div>
-      <Img src="https://via.placeholder.com/800x400" width={800} height={400} alt="test" />
+      <Img
+        src="https://via.placeholder.com/800x400"
+        width={800}
+        height={400}
+        alt="test"
+      />
       <div>Image</div>
     </div>
   );
@@ -28,7 +33,12 @@ export const Image: React.FC = () => {
 export const Background: React.FC = () => {
   return (
     <div>
-      <BackgroundImage src="https://via.placeholder.com/800x400" width={800} height={400} mr="16px" />
+      <BackgroundImage
+        src="https://via.placeholder.com/800x400"
+        width={800}
+        height={400}
+        mr="16px"
+      />
       <div>Background Image</div>
     </div>
   );
@@ -132,9 +142,20 @@ export const ProfileAvatar: React.FC = () => {
   return (
     <div>
       <Text>Shows Placeholder until image is downloaded</Text>
-      <ProfileAvatarComponent src="https://via.placeholder.com/960x960" width={64} height={64} alt="test" mb="16px" />
+      <ProfileAvatarComponent
+        src="https://via.placeholder.com/960x960"
+        width={64}
+        height={64}
+        alt="test"
+        mb="16px"
+      />
       <Text>Shows placeholder if the image does not download</Text>
-      <ProfileAvatarComponent src="https://via.placeholder.com" width={64} height={64} alt="test" />
+      <ProfileAvatarComponent
+        src="https://via.placeholder.com"
+        width={64}
+        height={64}
+        alt="test"
+      />
     </div>
   );
 };

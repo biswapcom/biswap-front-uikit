@@ -25,18 +25,26 @@ export const ModalBody = styled(Flex)`
   overflow-y: auto;
 `;
 
-export const ModalCloseButton: React.FC<{ onDismiss: ModalProps["onDismiss"] }> = ({ onDismiss }) => {
+export const ModalCloseButton: React.FC<{
+  onDismiss: ModalProps["onDismiss"];
+}> = ({onDismiss}) => {
   return (
-    <IconButton variant="text" onClick={onDismiss} aria-label="Close the dialog">
-      <CloseIcon color="primary" />
+    <IconButton
+      variant="text"
+      onClick={onDismiss}
+      aria-label="Close the dialog"
+    >
+      <CloseIcon color="primary"/>
     </IconButton>
   );
 };
 
-export const ModalBackButton: React.FC<{ onBack: ModalProps["onBack"] }> = ({ onBack }) => {
+export const ModalBackButton: React.FC<{ onBack: ModalProps["onBack"] }> = ({
+                                                                              onBack,
+                                                                            }) => {
   return (
     <IconButton variant="text" onClick={onBack} area-label="go back" mr="8px">
-      <ArrowBackIcon color="primary" />
+      <ArrowBackIcon color="primary"/>
     </IconButton>
   );
 };
@@ -44,7 +52,8 @@ export const ModalBackButton: React.FC<{ onBack: ModalProps["onBack"] }> = ({ on
 export const ModalContainer = styled(Box)<{ minWidth: string }>`
   overflow: hidden;
   background: ${({ theme }) => theme.modal.background};
-  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1),
+    0px 1px 1px rgba(0, 0, 0, 0.05);
   border: 1px solid ${({ theme }) => theme.colors.cardBorder};
   border-radius: 32px;
   width: 100%;

@@ -20,10 +20,15 @@ const getPadding = (scale: Scales, hasIcon: boolean) => {
   }
 };
 
-const StyledInputGroup = styled(Box)<{ scale: Scales; hasStartIcon: boolean; hasEndIcon: boolean }>`
+const StyledInputGroup = styled(Box)<{
+  scale: Scales;
+  hasStartIcon: boolean;
+  hasEndIcon: boolean;
+}>`
   ${Input} {
-    padding-left: ${({ hasStartIcon, scale }) => getPadding(scale, hasStartIcon)};
-    padding-right: ${({ hasEndIcon, scale }) => getPadding(scale, hasEndIcon)};
+    padding-left: ${({hasStartIcon, scale}) =>
+            getPadding(scale, hasStartIcon)};
+    padding-right: ${({hasEndIcon, scale}) => getPadding(scale, hasEndIcon)};
   }
 `;
 
@@ -44,7 +49,13 @@ const InputIcon = styled.div<{ scale: Scales; isEndIcon?: boolean }>`
   `}
 `;
 
-const InputGroup = ({ scale = scales.MD, startIcon, endIcon, children, ...props }: InputGroupProps): JSX.Element => (
+const InputGroup = ({
+                      scale = scales.MD,
+                      startIcon,
+                      endIcon,
+                      children,
+                      ...props
+                    }: InputGroupProps): JSX.Element => (
   <StyledInputGroup
     scale={scale}
     width="100%"
@@ -54,7 +65,7 @@ const InputGroup = ({ scale = scales.MD, startIcon, endIcon, children, ...props 
     {...props}
   >
     {startIcon && <InputIcon scale={scale}>{startIcon}</InputIcon>}
-    {cloneElement(children, { scale })}
+    {cloneElement(children, {scale})}
     {endIcon && (
       <InputIcon scale={scale} isEndIcon>
         {endIcon}

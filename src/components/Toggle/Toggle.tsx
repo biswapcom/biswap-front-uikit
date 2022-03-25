@@ -15,8 +15,13 @@ const Toggle: React.FC<ToggleProps> = ({
   const isChecked = !!checked;
 
   return (
-    <StyledToggle $checked={isChecked} $checkedColor={checkedColor} $defaultColor={defaultColor} scale={scale}>
-      <Input checked={checked} scale={scale} {...props} type="checkbox" />
+    <StyledToggle
+      $checked={isChecked}
+      $checkedColor={checkedColor}
+      $defaultColor={defaultColor}
+      scale={scale}
+    >
+      <Input checked={checked} scale={scale} {...props} type="checkbox"/>
       {startIcon && endIcon ? (
         <>
           <Handle scale={scale}>
@@ -24,7 +29,12 @@ const Toggle: React.FC<ToggleProps> = ({
               {checked ? endIcon(checked) : startIcon(!checked)}
             </Flex>
           </Handle>
-          <Flex width="100%" height="100%" justifyContent="space-around" alignItems="center">
+          <Flex
+            width="100%"
+            height="100%"
+            justifyContent="space-around"
+            alignItems="center"
+          >
             {startIcon()}
             {endIcon()}
           </Flex>

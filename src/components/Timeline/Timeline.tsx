@@ -12,8 +12,14 @@ type getTextColorProps = {
   useDark: boolean;
 };
 
-const getTextColor = ({ eventStatus, useDark }: getTextColorProps): keyof Colors => {
-  if (eventStatus === "upcoming") return useDark ? "textDisabled" : (lightColors.textDisabled as keyof Colors);
+const getTextColor = ({
+                        eventStatus,
+                        useDark,
+                      }: getTextColorProps): keyof Colors => {
+  if (eventStatus === "upcoming")
+    return useDark
+      ? "textDisabled"
+      : (lightColors.textDisabled as keyof Colors);
   if (eventStatus === "live") return "success";
   return useDark ? "textSubtle" : (lightColors.textSubtle as keyof Colors);
 };
@@ -29,11 +35,17 @@ const Timeline: React.FC<TimelineProps> = ({ events, useDark = true }) => {
           <TimelineEvent key={text} $useDark={useDark}>
             <Flex mr="10px" alignItems="center">
               {isUpcoming && (
-                <IconComponent iconName="CircleOutline" color={useDark ? "textDisabled" : lightColors.textDisabled} />
+                <IconComponent
+                  iconName="CircleOutline"
+                  color={useDark ? "textDisabled" : lightColors.textDisabled}
+                />
               )}
               {isLive && <IconComponent iconName="Logo" />}
               {isPast && (
-                <IconComponent iconName="CheckmarkCircleFill" color={useDark ? "textSubtle" : lightColors.textSubtle} />
+                <IconComponent
+                  iconName="CheckmarkCircleFill"
+                  color={useDark ? "textSubtle" : lightColors.textSubtle}
+                />
               )}
             </Flex>
             <Text color={getTextColor({ eventStatus: status, useDark })} bold>
@@ -45,7 +57,11 @@ const Timeline: React.FC<TimelineProps> = ({ events, useDark = true }) => {
               </Text>
             )}
             {infoText && (
-              <InfoTooltip text={infoText} ml="10px" iconColor={useDark ? "textSubtle" : lightColors.textSubtle} />
+              <InfoTooltip
+                text={infoText}
+                ml="10px"
+                iconColor={useDark ? "textSubtle" : lightColors.textSubtle}
+              />
             )}
           </TimelineEvent>
         );

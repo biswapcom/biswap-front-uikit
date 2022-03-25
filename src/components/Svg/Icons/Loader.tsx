@@ -10,11 +10,11 @@ const rotate = keyframes`
   to {
     transform: rotate(360deg);
   }
-`
+`;
 
 const Loader = styled(Svg)`
   animation: ${rotate} 2s linear infinite;
-`
+`;
 
 const Icon: React.FC<SvgProps> = (props) => {
   return (

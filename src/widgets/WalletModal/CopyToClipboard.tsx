@@ -15,14 +15,15 @@ const StyleButton = styled(Text).attrs({ role: "button" })`
 `;
 
 const Tooltip = styled.div<{ isTooltipDisplayed: boolean }>`
-  display: ${({ isTooltipDisplayed }) => (isTooltipDisplayed ? "block" : "none")};
+  display: ${({isTooltipDisplayed}) =>
+          isTooltipDisplayed ? "block" : "none"};
   position: absolute;
   bottom: -22px;
   right: 0;
   left: 0;
   text-align: center;
-  background-color: ${({ theme }) => theme.colors.white};
-  color: ${({ theme }) => theme.colors.invertedContrast};
+  background-color: ${({theme}) => theme.colors.white};
+  color: ${({theme}) => theme.colors.invertedContrast};
   border-radius: 16px;
   opacity: 0.7;
 `;

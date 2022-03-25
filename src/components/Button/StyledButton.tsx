@@ -58,7 +58,6 @@ const StyledButton = styled.button<BaseButtonProps>`
   transition: background-color 0.2s, opacity 0.2s;
 
   &:active:not(:disabled):not(.button--disabled):not(.button--disabled) {
-    
   }
 
   ${getDisabledStyles}

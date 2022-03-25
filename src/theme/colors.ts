@@ -40,7 +40,6 @@ export const additionalColors = {
   boostHover: "#8E35FF",
   boostPress: "#6205D9",
 
-
   //---Dark palette
   dark900: "#021127",
   dark800: "#07162D",
