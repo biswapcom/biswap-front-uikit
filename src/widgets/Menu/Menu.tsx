@@ -33,7 +33,9 @@ const StyledNav = styled.nav`
   transform: translate3d(0, 0, 0);
 
   padding-left: 16px;
-  padding-right: 16px ${({ theme }) => theme.mediaQueries.sm} {
+  padding-right: 16px;
+
+  ${({ theme }) => theme.mediaQueries.sm} {
     background-color: transparent;
   }
 `;
@@ -46,6 +48,13 @@ const FixedContainer = styled.div<{ showMenu: boolean; height: number }>`
   height: ${({ height }) => `${height}px`};
   width: 100%;
   z-index: 20;
+`;
+
+const TopBannerContainer = styled.div<{ height: number }>`
+  height: ${({ height }) => `${height}px`};
+  min-height: ${({ height }) => `${height}px`};
+  max-height: ${({ height }) => `${height}px`};
+  width: 100%;
 `;
 
 const BodyWrapper = styled(Box)`
@@ -134,6 +143,11 @@ const Menu: React.FC<NavProps> = ({
     <MenuContext.Provider value={{ linkComponent }}>
       <Wrapper>
         <FixedContainer showMenu={showMenu} height={totalTopMenuHeight}>
+          {banner && (
+            <TopBannerContainer height={topBannerHeight}>
+              {banner}
+            </TopBannerContainer>
+          )}
           <StyledNav>
             <Flex>
               <Logo isDark={isDark} href={homeLink?.href ?? "/"} />
