@@ -1,18 +1,15 @@
 import throttle from "lodash/throttle";
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import BottomNav from "../../components/BottomNav";
 import { Box } from "../../components/Box";
 import Flex from "../../components/Box/Flex";
 import Footer from "./components/Footer/Footer";
 import MenuItems from "../../components/MenuItems/MenuItems";
 import { SubMenuItems } from "../../components/SubMenuItems";
 import { useMatchBreakpoints } from "../../hooks";
-import CakePrice from "../../components/CakePrice/CakePrice";
 import Logo from "./components/Logo";
-import { MENU_HEIGHT, MOBILE_MENU_HEIGHT, TOP_BANNER_HEIGHT, TOP_BANNER_HEIGHT_MOBILE } from "./config";
-import { NavProps } from "./types";
-import LangSelector from "../../components/LangSelector/LangSelector";
+import {MENU_HEIGHT, TOP_BANNER_HEIGHT, TOP_BANNER_HEIGHT_MOBILE} from "./config";
+import {NavProps} from "./types";
 import { MenuContext } from "./context";
 
 const Wrapper = styled.div`
@@ -26,8 +23,6 @@ const StyledNav = styled.nav`
   align-items: center;
   width: 100%;
   height: ${MENU_HEIGHT}px;
-  // background-color: ${({ theme }) => theme.nav.background};
-  // border-bottom: 1px solid ${({ theme }) => theme.colors.cardBorder};
   transform: translate3d(0, 0, 0);
 
   padding-left: 16px;
@@ -69,17 +64,16 @@ const Menu: React.FC<NavProps> = ({
   banner,
   globalMenu,
   isDark,
-  toggleTheme,
-  currentLang,
-  setLang,
-  cakePriceUsd,
-  links,
-  subLinks,
-  footerLinks,
-  activeItem,
-  activeSubItem,
-  buyCakeLabel,
-  children,
+                                    toggleTheme,
+                                    currentLang,
+                                    setLang,
+                                    cakePriceUsd,
+                                    links,
+                                    subLinks,
+                                    activeItem,
+                                    activeSubItem,
+                                    buyCakeLabel,
+                                    children,
                                     BSWPriceLabel,
                                     BSWPriceValue,
                                     footerStatistic,
@@ -88,7 +82,7 @@ const Menu: React.FC<NavProps> = ({
                                     aboutLinks,
                                     productLinks,
                                     serviceLinks,
-}) => {
+                                  }) => {
   const { isMobile } = useMatchBreakpoints();
   const [showMenu, setShowMenu] = useState(true);
   const refPrevOffset = useRef(typeof window === "undefined" ? 0 : window.pageYOffset);
@@ -176,7 +170,6 @@ const Menu: React.FC<NavProps> = ({
             />
           </Inner>
         </BodyWrapper>
-        {isMobile && <BottomNav items={links} activeItem={activeItem} activeSubItem={activeSubItem} />}
       </Wrapper>
     </MenuContext.Provider>
   );

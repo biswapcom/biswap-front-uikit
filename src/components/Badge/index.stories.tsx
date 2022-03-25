@@ -3,6 +3,8 @@ import React from "react";
 import {Meta} from "@storybook/react/types-6-0";
 import Badge from "./Badge";
 import Heading from "../Heading/Heading";
+import styled from "styled-components";
+import {BinanceIcon} from "../Svg";
 
 export default {
   title: "Components/Badge",
@@ -10,19 +12,38 @@ export default {
   argTypes: {},
 } as Meta;
 
+const Wrapper = styled.div`
+  padding: 32px;
+`
+const BadgeWrapper = styled.div`
+  display: flex;
+  gap: 20px;
+`
+
 export const Default: React.FC = () => {
   return (
-    <div>
+    <Wrapper>
       <Heading mb={20}>Badges</Heading>
-      <Badge badgeType="light">Light</Badge>
-      <Badge badgeType="dark">Dark</Badge>
-      <Badge badgeType="new">New</Badge>
-      <Badge badgeType="hot">Hot</Badge>
-      <Badge badgeType="warning">Warning</Badge>
-      <Badge badgeType="primary">Primary</Badge>
-      <Badge badgeType="any">any</Badge>
-      <Badge badgeType="boost">Boosted</Badge>
-      <Badge badgeType="warning" fontWeight='700' fontSize='18px'>up to 120%</Badge>
-    </div>
+      <BadgeWrapper>
+        <Badge badgeType="notActive">notActive</Badge>
+        <Badge badgeType="active">active</Badge>
+        <Badge badgeType="success">success</Badge>
+        <Badge badgeType="error">error</Badge>
+        <Badge badgeType="warning">warning</Badge>
+        <Badge badgeType="primary">primary</Badge>
+        <Badge badgeType="boost">boost</Badge>
+        <Badge badgeType="core">core</Badge>
+        <Badge badgeType="any">any</Badge>
+        <Badge badgeType="core" isIcon='left'>
+          <BinanceIcon width="14px" mr="4px"/>
+          icon left
+        </Badge>
+        <Badge badgeType="core" isIcon='right'>
+          icon right
+          <BinanceIcon width="14px" ml="4px"/>
+        </Badge>
+        {/*<Badge badgeType="warning" fontWeight='700' fontSize='18px'>up to 120%</Badge>*/}
+      </BadgeWrapper>
+    </Wrapper>
   );
 };

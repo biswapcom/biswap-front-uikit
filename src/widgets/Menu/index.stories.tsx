@@ -7,7 +7,6 @@ import Flex from "../../components/Box/Flex";
 import Button from "../../components/Button/Button";
 import IconButton from "../../components/Button/IconButton";
 import DropdownMenu from "../../components/DropdownMenu/DropdownMenu";
-import { footerLinks } from "../../components/Footer/config";
 import Heading from "../../components/Heading/Heading";
 import Input from "../../components/Input/Input";
 import { CogIcon, DownloadIcon } from "../../components/Svg";
@@ -88,7 +87,6 @@ const defaultProps = {
   cakePriceUsd: 0.023158668932877668,
   links,
   subLinks: links[0].items,
-  footerLinks,
   profile: null,
   userMenu: <UserMenuComponent account="0xbdda50183d817c3289f895a4472eb475967dc980" />,
   globalMenu: <GlobalMenuComponent />,
@@ -202,7 +200,6 @@ export const NotConnected: React.FC = () => {
         currentLang="EN"
         links={links}
         subLinks={subLinks}
-        footerLinks={footerLinks}
       >
         <div>
           <h1>Page body</h1>
@@ -231,7 +228,6 @@ export const WithoutConnectButton: React.FC = () => {
         setLang={noop}
         currentLang="EN"
         links={links}
-        footerLinks={footerLinks}
         subLinks={subLinks}
       >
         <div>
@@ -255,7 +251,6 @@ export const WithSubmenuSelected: React.FC = () => {
         cakePriceUsd={0.23158668932877668}
         links={links}
         subLinks={subLinks}
-        footerLinks={footerLinks}
       >
         <div>
           <Heading as="h1" mb="8px">
