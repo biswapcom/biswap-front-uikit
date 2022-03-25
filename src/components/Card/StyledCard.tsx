@@ -22,7 +22,13 @@ interface StyledCardProps extends CardProps {
 /**
  * Priority: Warning --> Success --> Active
  */
-const getBorderColor = ({ isActive, isSuccess, isWarning, borderBackground, theme }: StyledCardProps) => {
+const getBorderColor = ({
+  isActive,
+  isSuccess,
+  isWarning,
+  borderBackground,
+  theme,
+}: StyledCardProps) => {
   if (borderBackground) {
     return borderBackground;
   }
@@ -44,7 +50,8 @@ const getBorderColor = ({ isActive, isSuccess, isWarning, borderBackground, them
 export const StyledCard = styled.div<StyledCardProps>`
   background: ${getBorderColor};
   border-radius: ${({ theme }) => theme.radii.card};
-  color: ${({ theme, isDisabled }) => theme.colors[isDisabled ? "textDisabled" : "text"]};
+  color: ${({ theme, isDisabled }) =>
+    theme.colors[isDisabled ? "textDisabled" : "text"]};
   overflow: hidden;
   position: relative;
 
@@ -60,10 +67,14 @@ export const StyledCard = styled.div<StyledCardProps>`
   ${space}
 `;
 
-export const StyledCardInner = styled(Box)<{ background?: string; hasCustomBorder: boolean }>`
+export const StyledCardInner = styled(Box)<{
+  background?: string;
+  hasCustomBorder: boolean;
+}>`
   width: 100%;
   height: 100%;
-  overflow: ${({ hasCustomBorder }) => (hasCustomBorder ? "initial" : "inherit")};
+  overflow: ${({ hasCustomBorder }) =>
+    hasCustomBorder ? "initial" : "inherit"};
   background: ${({ theme, background }) => background ?? theme.card.background};
   border-radius: ${({ theme }) => theme.radii.card};
 `;

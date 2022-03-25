@@ -119,7 +119,9 @@ export const SiwtchUnits: React.FC = () => {
     // This is needed to persist same value as shown for currencyValue after switching
     // otherwise user will see lots of decimals
     const valuesAfterChange = { ...values };
-    valuesAfterChange[editingUnitAfterChange] = !Number.isNaN(parseFloat(values[conversionUnit]))
+    valuesAfterChange[editingUnitAfterChange] = !Number.isNaN(
+      parseFloat(values[conversionUnit])
+    )
       ? parseFloat(values[conversionUnit]).toFixed(2)
       : "0.00";
     setValues(valuesAfterChange);
@@ -161,7 +163,12 @@ export const Textfield: React.FC = () => {
 
   return (
     <Box width="300px">
-      <TextFieldComp label="Label" value={value} placeholder="Placeholder" onUserInput={setValue} />
+      <TextFieldComp
+        label="Label"
+        value={value}
+        placeholder="Placeholder"
+        onUserInput={setValue}
+      />
     </Box>
   );
 };

@@ -47,5 +47,7 @@ export const Text: React.FC = (args) => {
     return () => clearTimeout(timer);
   }, []);
 
-  return <h1 style={{ width: 200 }}>{loading ? <Skeleton {...args} /> : "H1"}</h1>;
+  return (
+    <h1 style={{ width: 200 }}>{loading ? <Skeleton {...args} /> : "H1"}</h1>
+  );
 };

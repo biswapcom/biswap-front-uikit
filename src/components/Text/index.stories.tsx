@@ -29,7 +29,10 @@ export default {
     color: {
       name: "color",
       table: {
-        type: { summary: "string", detail: "Color from the theme, or CSS color" },
+        type: {
+          summary: "string",
+          detail: "Color from the theme, or CSS color",
+        },
         defaultValue: { summary: "theme.colors.text" },
       },
       control: {
@@ -71,7 +74,10 @@ export const Default: React.FC = () => {
 export const TooltipTextVariant: React.FC = () => {
   return (
     <div>
-      <Text>Use TooltipText for text that has tooltip, it accepts the same props as normal Text component</Text>
+      <Text>
+        Use TooltipText for text that has tooltip, it accepts the same props as
+        normal Text component
+      </Text>
       <TooltipText>Example</TooltipText>
     </div>
   );

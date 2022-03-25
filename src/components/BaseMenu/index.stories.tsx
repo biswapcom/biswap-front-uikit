@@ -48,7 +48,12 @@ export const Controlled: React.FC = () => {
 
   return (
     <Box>
-      <Button variant="success" scale="sm" mr="32px" onClick={() => setIsOpen(!isOpen)}>
+      <Button
+        variant="success"
+        scale="sm"
+        mr="32px"
+        onClick={() => setIsOpen(!isOpen)}
+      >
         Outside component controlling menu
       </Button>
       <InlineMenu component={<Button>Controlled Menu</Button>} isOpen={isOpen}>
@@ -66,16 +71,38 @@ export const Controlled: React.FC = () => {
 export const SubMenu: React.FC = () => {
   return (
     <BrowserRouter>
-      <Flex mb="24px" p="8px" width="300px" border="1px solid grey" justifyContent="space-between" alignItems="center">
+      <Flex
+        mb="24px"
+        p="8px"
+        width="300px"
+        border="1px solid grey"
+        justifyContent="space-between"
+        alignItems="center"
+      >
         <Text>Icon</Text>
         <SubMenuComp
           component={<MoreHorizontal height="16px" width="16px" />}
-          options={{ placement: "right", offset: [0, 15], padding: { top: 20 } }}
+          options={{
+            placement: "right",
+            offset: [0, 15],
+            padding: { top: 20 },
+          }}
         >
-          <SubMenuItem as={LinkExternal} href="https://bscscan.com" bold={false} color="text">
+          <SubMenuItem
+            as={LinkExternal}
+            href="https://bscscan.com"
+            bold={false}
+            color="text"
+          >
             View on BSCScan
           </SubMenuItem>
-          <SubMenuItem as={LinkExternal} href="https://pancakeswap.info" bold={false} color="text" target="blank">
+          <SubMenuItem
+            as={LinkExternal}
+            href="https://pancakeswap.info"
+            bold={false}
+            color="text"
+            target="blank"
+          >
             View on PCS Info
           </SubMenuItem>
           <SubMenuItem as={Link} to="/profile">
@@ -84,7 +111,13 @@ export const SubMenu: React.FC = () => {
           <SubMenuItem>Just button</SubMenuItem>
         </SubMenuComp>
       </Flex>
-      <Flex p="8px" width="300px" border="1px solid grey" justifyContent="space-between" alignItems="center">
+      <Flex
+        p="8px"
+        width="300px"
+        border="1px solid grey"
+        justifyContent="space-between"
+        alignItems="center"
+      >
         <Text>Text</Text>
         <SubMenuComp
           component={
@@ -93,10 +126,21 @@ export const SubMenu: React.FC = () => {
             </Text>
           }
         >
-          <SubMenuItem as={LinkExternal} href="https://bscscan.com" bold={false} color="text">
+          <SubMenuItem
+            as={LinkExternal}
+            href="https://bscscan.com"
+            bold={false}
+            color="text"
+          >
             View on BSCScan
           </SubMenuItem>
-          <SubMenuItem as={LinkExternal} href="https://pancakeswap.info" bold={false} color="text" target="blank">
+          <SubMenuItem
+            as={LinkExternal}
+            href="https://pancakeswap.info"
+            bold={false}
+            color="text"
+            target="blank"
+          >
             View on PCS Info
           </SubMenuItem>
           <SubMenuItem as={Link} to="/profile">

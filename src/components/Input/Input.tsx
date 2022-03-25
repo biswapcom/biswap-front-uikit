@@ -10,7 +10,11 @@ interface StyledInputProps extends InputProps {
 /**
  * Priority: Warning --> Success
  */
-const getBoxShadow = ({ isSuccess = false, isWarning = false, theme }: StyledInputProps) => {
+const getBoxShadow = ({
+  isSuccess = false,
+  isWarning = false,
+  theme,
+}: StyledInputProps) => {
   if (isWarning) {
     return theme.shadows.warning;
   }

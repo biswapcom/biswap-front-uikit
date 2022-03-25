@@ -1,7 +1,11 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 import { space, layout } from "styled-system";
-import { SkeletonProps, animation as ANIMATION, variant as VARIANT } from "./types";
+import {
+  SkeletonProps,
+  animation as ANIMATION,
+  variant as VARIANT,
+} from "./types";
 
 const waves = keyframes`
    from {
@@ -28,7 +32,8 @@ const Root = styled.div<SkeletonProps>`
   min-height: 20px;
   display: block;
   background-color: ${({ theme }) => theme.colors.backgroundDisabled};
-  border-radius: ${({ variant, theme }) => (variant === VARIANT.CIRCLE ? theme.radii.circle : theme.radii.small)};
+  border-radius: ${({ variant, theme }) =>
+    variant === VARIANT.CIRCLE ? theme.radii.circle : theme.radii.small};
 
   ${layout}
   ${space}
@@ -46,7 +51,12 @@ const Waves = styled(Root)`
   &:before {
     content: "";
     position: absolute;
-    background-image: linear-gradient(90deg, transparent, rgba(243, 243, 243, 0.5), transparent);
+    background-image: linear-gradient(
+      90deg,
+      transparent,
+      rgba(243, 243, 243, 0.5),
+      transparent
+    );
     top: 0;
     left: -150px;
     height: 100%;
@@ -55,7 +65,11 @@ const Waves = styled(Root)`
   }
 `;
 
-const Skeleton: React.FC<SkeletonProps> = ({ variant = VARIANT.RECT, animation = ANIMATION.PULSE, ...props }) => {
+const Skeleton: React.FC<SkeletonProps> = ({
+  variant = VARIANT.RECT,
+  animation = ANIMATION.PULSE,
+  ...props
+}) => {
   if (animation === ANIMATION.WAVES) {
     return <Waves variant={variant} {...props} />;
   }

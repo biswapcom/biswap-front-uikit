@@ -27,7 +27,10 @@ export const Box: React.FC = () => {
 export const Flex: React.FC = () => {
   return (
     <div>
-      <Text>Based on the Box component. You can apply any flexbox properties on the Flex component.</Text>
+      <Text>
+        Based on the Box component. You can apply any flexbox properties on the
+        Flex component.
+      </Text>
       <Link href="https://styled-system.com/api#flexbox" target="_blank">
         List of applicable props
       </Link>
@@ -51,8 +54,12 @@ export const Grid: React.FC = () => {
       gridColumnGap="16px"
       style={{ backgroundColor: "#7645D9" }}
     >
-      <BoxComponent style={{ backgroundColor: "#1fc7d4", width: "300px", height: "300px" }} />
-      <BoxComponent style={{ backgroundColor: "#1fc7d4", width: "300px", height: "300px" }} />
+      <BoxComponent
+        style={{ backgroundColor: "#1fc7d4", width: "300px", height: "300px" }}
+      />
+      <BoxComponent
+        style={{ backgroundColor: "#1fc7d4", width: "300px", height: "300px" }}
+      />
     </GridComponent>
   );
 };

@@ -56,10 +56,19 @@ export const WithSecondary: React.FC = () => {
     <div style={{ padding: "32px", width: "400px" }}>
       <Progress primaryStep={primaryStep} secondaryStep={secondaryStep} />
       <div style={{ marginTop: "32px" }}>
-        <Button type="button" scale="sm" onClick={() => setPrimaryStep(random(1, 100))}>
+        <Button
+          type="button"
+          scale="sm"
+          onClick={() => setPrimaryStep(random(1, 100))}
+        >
           Random Primary Progress
         </Button>
-        <Button style={{ marginTop: "16px" }} type="button" scale="sm" onClick={() => setSecondaryStep(random(1, 100))}>
+        <Button
+          style={{ marginTop: "16px" }}
+          type="button"
+          scale="sm"
+          onClick={() => setSecondaryStep(random(1, 100))}
+        >
           Random Secondary Progress
         </Button>
       </div>
@@ -73,12 +82,25 @@ export const WithSecondaryAndProgressBunny: React.FC = () => {
 
   return (
     <div style={{ padding: "32px", width: "400px" }}>
-      <Progress primaryStep={primaryStep} secondaryStep={secondaryStep} showProgressBunny />
+      <Progress
+        primaryStep={primaryStep}
+        secondaryStep={secondaryStep}
+        showProgressBunny
+      />
       <div style={{ marginTop: "32px" }}>
-        <Button type="button" scale="sm" onClick={() => setPrimaryStep(random(1, 100))}>
+        <Button
+          type="button"
+          scale="sm"
+          onClick={() => setPrimaryStep(random(1, 100))}
+        >
           Random Primary Progress
         </Button>
-        <Button style={{ marginTop: "16px" }} type="button" scale="sm" onClick={() => setSecondaryStep(random(1, 100))}>
+        <Button
+          style={{ marginTop: "16px" }}
+          type="button"
+          scale="sm"
+          onClick={() => setSecondaryStep(random(1, 100))}
+        >
           Random Secondary Progress
         </Button>
       </div>

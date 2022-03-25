@@ -12,7 +12,8 @@ const eventsMock: Event[] = [
   {
     status: "past",
     text: "Get Ready",
-    infoText: "Activate your profile and make sure you have at least 5 BNB in your wallet to buy a Minting Ticket.",
+    infoText:
+      "Activate your profile and make sure you have at least 5 BNB in your wallet to buy a Minting Ticket.",
   },
   {
     status: "live",

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { StyledMenuItemProps } from "./types";
 
 export const StyledMenuItemContainer = styled.div<StyledMenuItemProps>`
@@ -24,10 +24,11 @@ const StyledMenuItem = styled.a<StyledMenuItemProps>`
   display: flex;
   align-items: center;
 
-  color: ${({ theme, $isActive }) => ($isActive ? theme.colors.secondary : theme.colors.white)};
+  color: ${({ theme, $isActive }) =>
+    $isActive ? theme.colors.secondary : theme.colors.white};
   font-size: 14px;
   font-weight: 400;
-  transition: color .4s ease;
+  transition: color 0.4s ease;
 
   ${({ $statusColor, theme }) =>
     $statusColor &&
@@ -39,22 +40,29 @@ const StyledMenuItem = styled.a<StyledMenuItemProps>`
       width: 8px;
       margin-left: 12px;
     }
-    `
-  }
+    `}
 
   ${({ $variant }) =>
     $variant === "default"
-      ? `
-    padding: 0 16px;
-    height: 48px;
-  `
-      : `
-    padding: 4px 4px 0px 4px;
-    height: 42px;
-  `}
+      ? css`
+          padding: 0 8px;
+          height: 48px;
+          ${({ theme }) => theme.mediaQueries.lg} {
+            padding: 0 12px;
+          }
+        `
+      : css`
+          padding: 4px 4px 0px 4px;
+          height: 42px;
+        `}
 
   &:hover {
-    color: ${({ theme }) => theme.colors.pastelBlue};
+    div {
+      color: ${({ theme }) => theme.colors.pastelBlue};
+    }
+    svg {
+      fill: ${({ theme }) => theme.colors.pastelBlue};
+    }
     ${({ $variant }) => $variant === "default" && "border-radius: 16px;"};
   }
 `;
