@@ -19,9 +19,19 @@ const SocialLinks: React.FC<FlexProps> = ({ ...props }) => (
       const mr = index < socials.length - 1 ? "24px" : 0;
       if (social.items) {
         return (
-          <Dropdown key={social.label} position="top" target={<IconComponent {...iconProps} mr={mr} />}>
+          <Dropdown
+            key={social.label}
+            position="top"
+            target={<IconComponent {...iconProps} mr={mr} />}
+          >
             {social.items.map((item) => (
-              <Link external key={item.label} href={item.href} aria-label={item.label} color="textSubtle">
+              <Link
+                external
+                key={item.label}
+                href={item.href}
+                aria-label={item.label}
+                color="textSubtle"
+              >
                 {item.label}
               </Link>
             ))}
@@ -29,7 +39,13 @@ const SocialLinks: React.FC<FlexProps> = ({ ...props }) => (
         );
       }
       return (
-        <Link external key={social.label} href={social.href} aria-label={social.label} mr={mr}>
+        <Link
+          external
+          key={social.label}
+          href={social.href}
+          aria-label={social.label}
+          mr={mr}
+        >
           <IconComponent {...iconProps} />
         </Link>
       );

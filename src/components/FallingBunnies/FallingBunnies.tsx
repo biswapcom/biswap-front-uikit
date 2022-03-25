@@ -33,7 +33,8 @@ const Bunny = styled.div<BunnyProps>`
   animation-name: ${bunnyFall};
   animation-duration: ${({ duration }) => `${duration}s`};
   animation-timing-function: linear;
-  animation-iteration-count: ${({ iterations }) => (Number.isFinite(iterations) ? String(iterations) : "infinite")};
+  animation-iteration-count: ${({ iterations }) =>
+    Number.isFinite(iterations) ? String(iterations) : "infinite"};
   animation-play-state: running;
 
   &:nth-child(5n + 5) {
@@ -72,7 +73,12 @@ const FallingBunnies: React.FC<FallingBunniesProps> = ({
   duration = 10,
 }) => {
   const bunnies = [...Array(count)].map((_, index) => (
-    <Bunny key={String(index)} position={Math.random() * 100} iterations={iterations} duration={duration}>
+    <Bunny
+      key={String(index)}
+      position={Math.random() * 100}
+      iterations={iterations}
+      duration={duration}
+    >
       <BunnyIcon width={size} height={size} />
     </Bunny>
   ));

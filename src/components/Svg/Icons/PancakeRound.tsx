@@ -78,7 +78,10 @@ const Icon: React.FC<SvgProps> = (props) => {
         d="M29.5544 28.4894C29.5544 30.8083 32.5084 32.6882 36.1524 32.6882C39.7964 32.6882 42.7505 30.8083 42.7505 28.4894C42.7505 26.1704 39.7964 24.2905 36.1524 24.2905C32.5084 24.2905 29.5544 26.1704 29.5544 28.4894Z"
         fill="#9E7200"
       />
-      <path d="M29.5547 26.6899H42.7508V28.4894H29.5547V26.6899Z" fill="#9E7200" />
+      <path
+        d="M29.5547 26.6899H42.7508V28.4894H29.5547V26.6899Z"
+        fill="#9E7200"
+      />
       <path
         d="M29.5544 26.6898C29.5544 29.0088 32.5084 30.8887 36.1524 30.8887C39.7964 30.8887 42.7505 29.0088 42.7505 26.6898C42.7505 24.3709 39.7964 22.491 36.1524 22.491C32.5084 22.491 29.5544 24.3709 29.5544 26.6898Z"
         fill="#F0B90B"
@@ -94,7 +97,14 @@ const Icon: React.FC<SvgProps> = (props) => {
         fill="#633001"
       />
       <defs>
-        <linearGradient id="paint0_linear" x1="45" y1="0" x2="45" y2="90" gradientUnits="userSpaceOnUse">
+        <linearGradient
+          id="paint0_linear"
+          x1="45"
+          y1="0"
+          x2="45"
+          y2="90"
+          gradientUnits="userSpaceOnUse"
+        >
           <stop stopColor="#54DADE" />
           <stop offset="0.762157" stopColor="#24C7D6" />
         </linearGradient>

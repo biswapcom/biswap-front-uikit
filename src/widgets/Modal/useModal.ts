@@ -9,7 +9,15 @@ const useModal = (
   updateOnPropsChange = false,
   modalId = "defaultNodeId"
 ): [Handler, Handler] => {
-  const { isOpen, nodeId, modalNode, setModalNode, onPresent, onDismiss, setCloseOnOverlayClick } = useContext(Context);
+  const {
+    isOpen,
+    nodeId,
+    modalNode,
+    setModalNode,
+    onPresent,
+    onDismiss,
+    setCloseOnOverlayClick,
+  } = useContext(Context);
   const onPresentCallback = useCallback(() => {
     onPresent(modal, modalId);
   }, [modal, modalId, onPresent]);
@@ -28,11 +36,23 @@ const useModal = (
       // Do not try to replace JSON.stringify with isEqual, high risk of infinite rerenders
       // TODO: Find a good way to handle modal updates, this whole flow is just backwards-compatible workaround,
       // would be great to simplify the logic here
-      if (modalProps && oldModalProps && JSON.stringify(modalProps) !== JSON.stringify(oldModalProps)) {
+      if (
+        modalProps &&
+        oldModalProps &&
+        JSON.stringify(modalProps) !== JSON.stringify(oldModalProps)
+      ) {
         setModalNode(modal);
       }
     }
-  }, [updateOnPropsChange, nodeId, modalId, isOpen, modal, modalNode, setModalNode]);
+  }, [
+    updateOnPropsChange,
+    nodeId,
+    modalId,
+    isOpen,
+    modal,
+    modalNode,
+    setModalNode,
+  ]);
 
   useEffect(() => {
     setCloseOnOverlayClick(closeOnOverlayClick);

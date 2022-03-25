@@ -1,9 +1,13 @@
 import styled from "styled-components";
 import { Colors } from "../../theme";
 
-export const StyledIconContainer = styled.div<{ activeBackgroundColor?: keyof Colors }>`
+export const StyledIconContainer = styled.div<{
+  activeBackgroundColor?: keyof Colors;
+}>`
   background: ${({ activeBackgroundColor, theme }) =>
-    activeBackgroundColor ? theme.colors[activeBackgroundColor] : "transparent"};
+    activeBackgroundColor
+      ? theme.colors[activeBackgroundColor]
+      : "transparent"};
 `;
 
 export const StyledAnimatedIconComponent = styled.div<{

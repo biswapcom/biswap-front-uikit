@@ -4,7 +4,9 @@ import { renderWithTheme } from "../../testHelpers";
 import ConnectModal from "../../widgets/WalletModal/ConnectModal";
 
 it("renders ConnectModal correctly", () => {
-  const { asFragment } = renderWithTheme(<ConnectModal login={noop} t={(key: string) => key} />);
+  const { asFragment } = renderWithTheme(
+    <ConnectModal login={noop} t={(key: string) => key} />
+  );
   expect(asFragment()).toMatchInlineSnapshot(`
     <DocumentFragment>
       .c0 {

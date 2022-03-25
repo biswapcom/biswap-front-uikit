@@ -3,8 +3,19 @@ import getExternalLinkProps from "../../util/getExternalLinkProps";
 import StyledButton from "./StyledButton";
 import { ButtonProps, scales, variants } from "./types";
 
-const Button = <E extends ElementType = "button">(props: ButtonProps<E>): JSX.Element => {
-  const { startIcon, endIcon, external, className, isLoading, disabled, children, ...rest } = props;
+const Button = <E extends ElementType = "button">(
+  props: ButtonProps<E>
+): JSX.Element => {
+  const {
+    startIcon,
+    endIcon,
+    external,
+    className,
+    isLoading,
+    disabled,
+    children,
+    ...rest
+  } = props;
   const internalProps = external ? getExternalLinkProps() : {};
   const isDisabled = isLoading || disabled;
   const classNames = className ? [className] : [];

@@ -5,7 +5,9 @@ import Checkbox from "../../components/Checkbox/Checkbox";
 const handleChange = jest.fn();
 
 it("renders correctly", () => {
-  const { asFragment } = renderWithTheme(<Checkbox checked onChange={handleChange} />);
+  const { asFragment } = renderWithTheme(
+    <Checkbox checked onChange={handleChange} />
+  );
   expect(asFragment()).toMatchInlineSnapshot(`
     <DocumentFragment>
       .c0 {

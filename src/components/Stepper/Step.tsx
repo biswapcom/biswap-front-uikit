@@ -31,7 +31,9 @@ const Connector = styled.div<StatusProps>`
   }}
   left: calc(50% - 2px);
   background-color: ${({ theme, status }) =>
-    theme.colors[status === "past" || status === "current" ? "success" : "textDisabled"]};
+    theme.colors[
+      status === "past" || status === "current" ? "success" : "textDisabled"
+    ]};
 `;
 
 const ChildrenWrapper = styled(Box)<{ isVisible: boolean }>`
@@ -63,8 +65,11 @@ const Wrapper = styled.div`
 
 export const StepNumber = styled.div<StatusProps>`
   box-shadow: 0px 1px 4px rgba(25, 19, 38, 0.15);
-  background-color: ${({ theme, status }) => theme.colors[status === "current" ? "secondary" : "invertedContrast"]};
-  border: 2px solid ${({ theme, status }) => (status === "past" ? theme.colors.success : "transparent")};
+  background-color: ${({ theme, status }) =>
+    theme.colors[status === "current" ? "secondary" : "invertedContrast"]};
+  border: 2px solid
+    ${({ theme, status }) =>
+      status === "past" ? theme.colors.success : "transparent"};
   border-radius: ${({ theme }) => theme.radii.circle};
   color: ${getStepNumberFontColor};
   display: flex;
@@ -98,13 +103,28 @@ export const Step: React.FC<StepProps> = ({
   const isLast = index === numberOfSteps - 1;
   return (
     <StyledStep mb={index < numberOfSteps - 1 ? "16px" : 0}>
-      <ChildrenLeftWrapper isVisible={!isIndexPair}>{children}</ChildrenLeftWrapper>
+      <ChildrenLeftWrapper isVisible={!isIndexPair}>
+        {children}
+      </ChildrenLeftWrapper>
       <Wrapper>
         <StepNumber status={statusFirstPart}>{index + 1}</StepNumber>
-        <Connector $isFirstStep={isFirst} $isLastStep={isLast} status={statusFirstPart} $isFirstPart />
-        {!isFirst && !isLast && <Connector $isFirstStep={isFirst} $isLastStep={isLast} status={statusSecondPart} />}
+        <Connector
+          $isFirstStep={isFirst}
+          $isLastStep={isLast}
+          status={statusFirstPart}
+          $isFirstPart
+        />
+        {!isFirst && !isLast && (
+          <Connector
+            $isFirstStep={isFirst}
+            $isLastStep={isLast}
+            status={statusSecondPart}
+          />
+        )}
       </Wrapper>
-      <ChildrenRightWrapper isVisible={isIndexPair}>{children}</ChildrenRightWrapper>
+      <ChildrenRightWrapper isVisible={isIndexPair}>
+        {children}
+      </ChildrenRightWrapper>
     </StyledStep>
   );
 };
