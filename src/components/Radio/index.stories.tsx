@@ -25,7 +25,7 @@ export const Default: React.FC = () => {
 
   return (
     <>
-      <div style={{ marginBottom: "32px" }}>
+      <div style={{marginBottom: "32px"}}>
         <Radio
           name="md"
           value="one"

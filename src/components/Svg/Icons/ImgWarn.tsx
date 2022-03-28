@@ -18,7 +18,7 @@ const Icon: React.FC<SvgProps> = (props) => {
         />
       </g>
       <g filter="url(#filter2_d_348_13510)">
-        <circle cx="33" cy="47.165" r="4" fill="#F33C3D" />
+        <circle cx="33" cy="47.165" r="4" fill="#F33C3D"/>
         <circle
           cx="33"
           cy="47.165"
@@ -46,7 +46,7 @@ const Icon: React.FC<SvgProps> = (props) => {
           filterUnits="userSpaceOnUse"
           colorInterpolationFilters="sRGB"
         >
-          <feFlood floodOpacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix"/>
           <feBlend
             mode="normal"
             in="SourceGraphic"
@@ -59,9 +59,9 @@ const Icon: React.FC<SvgProps> = (props) => {
             values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
             result="hardAlpha"
           />
-          <feOffset dx="1" dy="-1" />
-          <feGaussianBlur stdDeviation="1" />
-          <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+          <feOffset dx="1" dy="-1"/>
+          <feGaussianBlur stdDeviation="1"/>
+          <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
           <feColorMatrix
             type="matrix"
             values="0 0 0 0 1 0 0 0 0 0.403922 0 0 0 0 0 0 0 0 1 0"
@@ -77,9 +77,9 @@ const Icon: React.FC<SvgProps> = (props) => {
             values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
             result="hardAlpha"
           />
-          <feOffset dx="-1" dy="1" />
-          <feGaussianBlur stdDeviation="1" />
-          <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+          <feOffset dx="-1" dy="1"/>
+          <feGaussianBlur stdDeviation="1"/>
+          <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
           <feColorMatrix
             type="matrix"
             values="0 0 0 0 1 0 0 0 0 0.858824 0 0 0 0 0.541176 0 0 0 1 0"
@@ -99,7 +99,7 @@ const Icon: React.FC<SvgProps> = (props) => {
           filterUnits="userSpaceOnUse"
           colorInterpolationFilters="sRGB"
         >
-          <feFlood floodOpacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix"/>
           <feBlend
             mode="normal"
             in="SourceGraphic"
@@ -112,9 +112,9 @@ const Icon: React.FC<SvgProps> = (props) => {
             values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
             result="hardAlpha"
           />
-          <feOffset dx="1" dy="-1" />
-          <feGaussianBlur stdDeviation="1" />
-          <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+          <feOffset dx="1" dy="-1"/>
+          <feGaussianBlur stdDeviation="1"/>
+          <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
           <feColorMatrix
             type="matrix"
             values="0 0 0 0 0.823529 0 0 0 0 0.8 0 0 0 0 0.776471 0 0 0 1 0"
@@ -130,9 +130,9 @@ const Icon: React.FC<SvgProps> = (props) => {
             values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
             result="hardAlpha"
           />
-          <feOffset dx="-1" dy="1" />
-          <feGaussianBlur stdDeviation="1" />
-          <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+          <feOffset dx="-1" dy="1"/>
+          <feGaussianBlur stdDeviation="1"/>
+          <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
           <feColorMatrix
             type="matrix"
             values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"
@@ -152,16 +152,16 @@ const Icon: React.FC<SvgProps> = (props) => {
           filterUnits="userSpaceOnUse"
           colorInterpolationFilters="sRGB"
         >
-          <feFlood floodOpacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix"/>
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
             values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
             result="hardAlpha"
           />
-          <feOffset dx="-2" dy="1" />
-          <feGaussianBlur stdDeviation="2" />
-          <feComposite in2="hardAlpha" operator="out" />
+          <feOffset dx="-2" dy="1"/>
+          <feGaussianBlur stdDeviation="2"/>
+          <feComposite in2="hardAlpha" operator="out"/>
           <feColorMatrix
             type="matrix"
             values="0 0 0 0 0.1375 0 0 0 0 0.0509896 0 0 0 0 0.0509896 0 0 0 0.24 0"
@@ -187,16 +187,16 @@ const Icon: React.FC<SvgProps> = (props) => {
           filterUnits="userSpaceOnUse"
           colorInterpolationFilters="sRGB"
         >
-          <feFlood floodOpacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix"/>
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
             values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
             result="hardAlpha"
           />
-          <feOffset dx="-2" dy="1" />
-          <feGaussianBlur stdDeviation="2" />
-          <feComposite in2="hardAlpha" operator="out" />
+          <feOffset dx="-2" dy="1"/>
+          <feGaussianBlur stdDeviation="2"/>
+          <feComposite in2="hardAlpha" operator="out"/>
           <feColorMatrix
             type="matrix"
             values="0 0 0 0 0.1375 0 0 0 0 0.0509896 0 0 0 0 0.0509896 0 0 0 0.24 0"
@@ -221,8 +221,8 @@ const Icon: React.FC<SvgProps> = (props) => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(35.5 47.165) rotate(122.005) scale(4.71699)"
         >
-          <stop stopColor="white" />
-          <stop offset="1" stopColor="#F43D3E" stopOpacity="0.46" />
+          <stop stopColor="white"/>
+          <stop offset="1" stopColor="#F43D3E" stopOpacity="0.46"/>
         </radialGradient>
         <linearGradient
           id="paint1_linear_348_13510"
@@ -232,8 +232,8 @@ const Icon: React.FC<SvgProps> = (props) => {
           y2="30.165"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="white" />
-          <stop offset="1" stopColor="#F53E43" stopOpacity="0.61" />
+          <stop stopColor="white"/>
+          <stop offset="1" stopColor="#F53E43" stopOpacity="0.61"/>
         </linearGradient>
       </defs>
     </Svg>

@@ -5,12 +5,12 @@ import { SubMenuContainer } from "./styles";
 import { BaseMenuProps } from "./types";
 
 const SubMenu: React.FC<BaseMenuProps & FlexProps> = ({
-  children,
-  component,
-  options,
-  isOpen = false,
-  ...props
-}) => {
+                                                        children,
+                                                        component,
+                                                        options,
+                                                        isOpen = false,
+                                                        ...props
+                                                      }) => {
   return (
     <BaseMenu component={component} options={options} isOpen={isOpen}>
       <SubMenuContainer {...props}>{children}</SubMenuContainer>

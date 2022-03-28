@@ -1,5 +1,5 @@
-import { BoxProps } from "../Box";
-import { DropdownMenuItems } from "../DropdownMenu/types";
+import {BoxProps} from "../Box";
+import {DropdownMenuItems} from "../DropdownMenu/types";
 
 export enum MenuItemType {
   DIVIDER,

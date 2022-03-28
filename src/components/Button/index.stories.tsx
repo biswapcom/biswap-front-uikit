@@ -123,7 +123,7 @@ export const Variants: React.FC = () => {
         <Row>
           <Button
             isLoading
-            endIcon={<AutoRenewIcon spin color="currentColor" />}
+            endIcon={<AutoRenewIcon spin color="currentColor"/>}
           >
             Approving
           </Button>
@@ -132,9 +132,9 @@ export const Variants: React.FC = () => {
           </Button>
         </Row>
         <Row>
-          <Button startIcon={<LogoIcon />}>Start Icon</Button>
-          <Button endIcon={<LogoIcon />}>End Icon</Button>
-          <Button startIcon={<LogoIcon />} endIcon={<LogoIcon />}>
+          <Button startIcon={<LogoIcon/>}>Start Icon</Button>
+          <Button endIcon={<LogoIcon/>}>End Icon</Button>
+          <Button startIcon={<LogoIcon/>} endIcon={<LogoIcon/>}>
             Start & End Icon
           </Button>
         </Row>

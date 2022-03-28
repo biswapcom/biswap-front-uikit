@@ -1,5 +1,6 @@
 export interface NavThemeType {
-    background: string;
+  background: string;
 }
+
 export declare const light: NavThemeType;
 export declare const dark: NavThemeType;

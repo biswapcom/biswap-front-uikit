@@ -6,16 +6,16 @@ import { BaseMenuProps } from "./types";
 import getPortalRoot from "../../util/getPortalRoot";
 
 const BaseMenu: React.FC<BaseMenuProps> = ({
-  component,
-  options,
-  children,
-  isOpen = false,
-}) => {
+                                             component,
+                                             options,
+                                             children,
+                                             isOpen = false,
+                                           }) => {
   const [targetElement, setTargetElement] = useState<HTMLElement | null>(null);
   const [menuElement, setMenuElement] = useState<HTMLElement | null>(null);
   const placement = options?.placement ?? "bottom";
   const offset = options?.offset ?? [0, 10];
-  const padding = options?.padding ?? { left: 16, right: 16 };
+  const padding = options?.padding ?? {left: 16, right: 16};
 
   const [isMenuOpen, setIsMenuOpen] = useState(isOpen);
 
@@ -68,7 +68,7 @@ const BaseMenu: React.FC<BaseMenuProps> = ({
   const menu = (
     <div ref={setMenuElement} style={styles.popper} {...attributes.popper}>
       {typeof children === "function"
-        ? children({ toggle, open, close })
+        ? children({toggle, open, close})
         : children}
     </div>
   );

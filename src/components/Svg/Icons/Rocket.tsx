@@ -14,7 +14,7 @@ const Icon: React.FC<SvgProps> = (props) => {
       </g>
       <defs>
         <clipPath id="clip0">
-          <rect width="16" height="16" />
+          <rect width="16" height="16"/>
         </clipPath>
       </defs>
     </Svg>

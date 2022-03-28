@@ -1,26 +1,28 @@
-import { ReactNode } from "react";
-import { SpaceProps, TypographyProps } from "styled-system";
+import {ReactNode} from "react";
+import {SpaceProps, TypographyProps} from "styled-system";
+
 export declare const variants: {
-    readonly PRIMARY: "primary";
-    readonly SECONDARY: "secondary";
-    readonly SUCCESS: "success";
-    readonly TEXTDISABLED: "textDisabled";
-    readonly TEXTSUBTLE: "textSubtle";
-    readonly BINANCE: "binance";
-    readonly FAILURE: "failure";
-    readonly WARNING: "warning";
+  readonly PRIMARY: "primary";
+  readonly SECONDARY: "secondary";
+  readonly SUCCESS: "success";
+  readonly TEXTDISABLED: "textDisabled";
+  readonly TEXTSUBTLE: "textSubtle";
+  readonly BINANCE: "binance";
+  readonly FAILURE: "failure";
+  readonly WARNING: "warning";
 };
 export declare const scales: {
-    readonly MD: "md";
-    readonly SM: "sm";
+  readonly MD: "md";
+  readonly SM: "sm";
 };
 export declare type Scale = typeof scales[keyof typeof scales];
 export declare type Variant = typeof variants[keyof typeof variants];
+
 export interface TagProps extends SpaceProps, TypographyProps {
-    variant?: Variant;
-    scale?: Scale;
-    startIcon?: ReactNode;
-    endIcon?: ReactNode;
-    outline?: boolean;
-    textTransform?: "uppercase" | "lowercase" | "capitalize";
+  variant?: Variant;
+  scale?: Scale;
+  startIcon?: ReactNode;
+  endIcon?: ReactNode;
+  outline?: boolean;
+  textTransform?: "uppercase" | "lowercase" | "capitalize";
 }

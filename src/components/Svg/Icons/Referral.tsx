@@ -1,18 +1,18 @@
 import React from "react";
 import Svg from "../Svg";
-import { SvgProps } from "../types";
+import {SvgProps} from "../types";
 
 const Icon: React.FC<SvgProps> = (props) => {
   return (
     <Svg viewBox="0 0 40 40" fill="none" {...props}>
-      <rect width="40" height="40" rx="8" fill="#1263F1" />
-      <circle cx="19.9999" cy="18.1364" r="3.63636" fill="white" />
+      <rect width="40" height="40" rx="8" fill="#1263F1"/>
+      <circle cx="19.9999" cy="18.1364" r="3.63636" fill="white"/>
       <path
         d="M12.7273 28.0758C12.7273 25.398 14.898 23.2273 17.5758 23.2273H22.4243C25.102 23.2273 27.2727 25.398 27.2727 28.0758C27.2727 29.4147 26.1874 30.5 24.8485 30.5H15.1515C13.8127 30.5 12.7273 29.4147 12.7273 28.0758Z"
         fill="white"
       />
       <g opacity="0.48">
-        <circle cx="26.0002" cy="12.2505" r="2.72727" fill="white" />
+        <circle cx="26.0002" cy="12.2505" r="2.72727" fill="white"/>
         <path
           fillRule="evenodd"
           clipRule="evenodd"
@@ -21,7 +21,7 @@ const Icon: React.FC<SvgProps> = (props) => {
         />
       </g>
       <g opacity="0.48">
-        <circle cx="14.0002" cy="12.2505" r="2.72727" fill="white" />
+        <circle cx="14.0002" cy="12.2505" r="2.72727" fill="white"/>
         <path
           fillRule="evenodd"
           clipRule="evenodd"

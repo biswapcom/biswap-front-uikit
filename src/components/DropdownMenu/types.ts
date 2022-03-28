@@ -1,7 +1,7 @@
-import React, { ElementType } from "react";
-import { Colors } from "../../theme";
-import { BoxProps } from "../Box";
-import { MenuItemsType } from "../MenuItems/types";
+import React, {ElementType} from "react";
+import {Colors} from "../../theme";
+import {BoxProps} from "../Box";
+import {MenuItemsType} from "../MenuItems/types";
 
 export interface MobileMenuProps {
   items: MenuItemsType[];
@@ -19,9 +19,7 @@ export interface DropdownMenuProps extends BoxProps {
    */
   showItemsOnMobile?: boolean;
   index?: number;
-  setMenuOpenByIndex?: React.Dispatch<
-    React.SetStateAction<Record<number, boolean>>
-  >;
+  setMenuOpenByIndex?: React.Dispatch<React.SetStateAction<Record<number, boolean>>>;
   isExtended?: boolean;
   mobileMenuCallback?: (s: boolean) => void;
   isMobileNav?: boolean;
@@ -32,8 +30,10 @@ export interface StyledDropdownMenuItemProps
   disabled?: boolean;
   isActive?: boolean;
 }
+
 export interface StyledDropdownMenuInnerLinkItemProps
-  extends React.ComponentPropsWithoutRef<"div"> {}
+  extends React.ComponentPropsWithoutRef<"div"> {
+}
 
 export interface InternalLink {
   label?: string;

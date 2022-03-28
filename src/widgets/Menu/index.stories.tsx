@@ -7,7 +7,6 @@ import Flex from "../../components/Box/Flex";
 import Button from "../../components/Button/Button";
 import IconButton from "../../components/Button/IconButton";
 import DropdownMenu from "../../components/DropdownMenu/DropdownMenu";
-import { footerLinks } from "../../components/Footer/config";
 import Heading from "../../components/Heading/Heading";
 import Input from "../../components/Input/Input";
 import { CogIcon, DownloadIcon } from "../../components/Svg";
@@ -15,7 +14,7 @@ import Text from "../../components/Text/Text";
 import { Modal, ModalProps, useModal } from "../Modal";
 import UserMenu from "./components/UserMenu";
 import { Variant, variants } from "./components/UserMenu/types";
-import { links, userMenulinks } from "./config";
+import {BSWPriceValue, BSWPriceLabel, footerStatistic, aboutLinks, productLinks, serviceLinks, links, userMenulinks} from "./config";
 import Menu from "./Menu";
 import { Language, NavProps } from "./types";
 import BottomDrawer from "../../components/BottomDrawer/BottomDrawer";
@@ -42,10 +41,10 @@ const UserMenuComponent: React.FC<{
   text?: string;
   account?: string;
 }> = ({
-  variant = variants.DEFAULT,
-  text,
-  account = "0x8b017905DC96B38f817473dc885F84D4C76bC113",
-}) => {
+        variant = variants.DEFAULT,
+        text,
+        account = "0x8b017905DC96B38f817473dc885F84D4C76bC113",
+      }) => {
   const accountEllipsis = account
     ? `${account.substring(0, 2)}...${account.substring(account.length - 4)}`
     : null;
@@ -61,10 +60,10 @@ const UserMenuComponent: React.FC<{
 };
 
 const GlobalMenuModal: React.FC<ModalProps> = ({
-  title,
-  onDismiss,
-  ...props
-}) => (
+                                                 title,
+                                                 onDismiss,
+                                                 ...props
+                                               }) => (
   <Modal title={title} onDismiss={onDismiss} {...props}>
     <Heading>{title}</Heading>
     <Button>This button Does nothing</Button>
@@ -73,19 +72,19 @@ const GlobalMenuModal: React.FC<ModalProps> = ({
 
 const GlobalMenuComponent: React.FC = () => {
   const [onPresent1] = useModal(
-    <GlobalMenuModal title="Display Settings Modal" />
+    <GlobalMenuModal title="Display Settings Modal"/>
   );
   const [onPresent2] = useModal(
-    <GlobalMenuModal title="Global Settings Modal" />
+    <GlobalMenuModal title="Global Settings Modal"/>
   );
 
   return (
     <Flex>
       <IconButton onClick={onPresent1} variant="text" scale="sm" mr="4px">
-        <DownloadIcon height={22} width={22} color="textSubtle" />
+        <DownloadIcon height={22} width={22} color="textSubtle"/>
       </IconButton>
       <IconButton onClick={onPresent2} variant="text" scale="sm" mr="8px">
-        <CogIcon height={22} width={22} color="textSubtle" />
+        <CogIcon height={22} width={22} color="textSubtle"/>
       </IconButton>
     </Flex>
   );
@@ -100,18 +99,17 @@ const defaultProps = {
   logout: noop,
   isDark: false,
   toggleTheme: noop,
-  langs,
+  // langs,
   setLang: noop,
   currentLang: "EN",
   cakePriceUsd: 0.023158668932877668,
   links,
   subLinks: links[0].items,
-  footerLinks,
   profile: null,
   userMenu: (
-    <UserMenuComponent account="0xbdda50183d817c3289f895a4472eb475967dc980" />
+    <UserMenuComponent account="0xbdda50183d817c3289f895a4472eb475967dc980"/>
   ),
-  globalMenu: <GlobalMenuComponent />,
+  globalMenu: <GlobalMenuComponent/>,
   activeItem: "/swap",
   activeSubItem: "https://exchange.pancakeswap.finance",
   buyCakeLabel: "Buy CAKE",
@@ -122,7 +120,14 @@ const ConnectedTemplate: React.FC<NavProps> = (args) => {
 
   return (
     <BrowserRouter>
-      <Menu {...args}>
+      <Menu {...args}
+            BSWPriceLabel={BSWPriceLabel}
+            BSWPriceValue={BSWPriceValue}
+            footerStatistic={footerStatistic}
+            onClick={noop}
+            aboutLinks={aboutLinks}
+            productLinks={productLinks}
+            serviceLinks={serviceLinks}>
         <div>
           <Heading as="h1" mb="8px">
             Page body
@@ -249,7 +254,6 @@ export const NotConnected: React.FC = () => {
         currentLang="EN"
         links={links}
         subLinks={subLinks}
-        footerLinks={footerLinks}
       >
         <div>
           <h1>Page body</h1>
@@ -283,7 +287,6 @@ export const WithoutConnectButton: React.FC = () => {
         setLang={noop}
         currentLang="EN"
         links={links}
-        footerLinks={footerLinks}
         subLinks={subLinks}
       >
         <div>
@@ -307,7 +310,6 @@ export const WithSubmenuSelected: React.FC = () => {
         cakePriceUsd={0.23158668932877668}
         links={links}
         subLinks={subLinks}
-        footerLinks={footerLinks}
       >
         <div>
           <Heading as="h1" mb="8px">

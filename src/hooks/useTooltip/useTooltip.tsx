@@ -23,7 +23,7 @@ const useTooltip = (
     placement = "auto",
     trigger = "hover",
     arrowPadding = 16,
-    tooltipPadding = { left: 16, right: 16 },
+    tooltipPadding = {left: 16, right: 16},
     tooltipOffset = [0, 10],
   } = options;
   const [targetElement, setTargetElement] = useState<HTMLElement | null>(null);
@@ -193,7 +193,7 @@ const useTooltip = (
       {...attributes.popper}
     >
       <ThemeProvider theme={invertTheme}>{content}</ThemeProvider>
-      <Arrow ref={setArrowElement} style={styles.arrow} />
+      <Arrow ref={setArrowElement} style={styles.arrow}/>
     </StyledTooltip>
   );
 

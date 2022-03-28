@@ -1,5 +1,5 @@
 declare const getExternalLinkProps: () => {
-    target: string;
-    rel: string;
+  target: string;
+  rel: string;
 };
 export default getExternalLinkProps;

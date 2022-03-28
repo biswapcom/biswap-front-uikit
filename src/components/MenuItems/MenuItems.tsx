@@ -1,37 +1,37 @@
 import React from "react";
-import { Flex } from "../Box";
-import { Text } from "../Text";
+import {Flex} from "../Box";
+import {Text} from "../Text";
 import isTouchDevice from "../../util/isTouchDevice";
 import DropdownMenu from "../DropdownMenu/DropdownMenu";
 import MenuItem from "../MenuItem/MenuItem";
 import IconComponent from "../Svg/IconComponent";
-import { MenuItemsProps, MenuItemType } from "./types";
-import { useMatchBreakpoints } from "../../hooks";
+import {MenuItemsProps, MenuItemType} from "./types";
+import {useMatchBreakpoints} from "../../hooks";
 import MobileDropdownMenu from "../DropdownMenu/MobileMenu/MobileDropdownMenu";
 import MenuItemDivider from "../MenuItem/Divider";
 
 const MenuItems: React.FC<MenuItemsProps> = ({
-  items = [],
-  activeItem,
-  activeSubItem,
-  ...props
-}) => {
-  const { isDesktop, isTablet } = useMatchBreakpoints();
+                                               items = [],
+                                               activeItem,
+                                               activeSubItem,
+                                               ...props
+                                             }) => {
+  const {isDesktop, isTablet} = useMatchBreakpoints();
   return (
     <Flex {...props} alignItems="center">
       {!isDesktop && (
-        <MobileDropdownMenu items={items} activeItem={activeItem} />
+        <MobileDropdownMenu items={items} activeItem={activeItem}/>
       )}
       {items.map(
         ({
-          label,
-          items: menuItems = [],
-          href,
-          icon = "",
-          isExtended,
-          showItemsOnMobile,
-          type,
-        }) => {
+           label,
+           items: menuItems = [],
+           href,
+           icon = "",
+           isExtended,
+           showItemsOnMobile,
+           type,
+         }) => {
           const statusColor = menuItems?.find(
             (menuItem) => menuItem.status !== undefined
           )?.status?.color;
@@ -39,7 +39,7 @@ const MenuItems: React.FC<MenuItemsProps> = ({
           const linkProps =
             isTouchDevice() && menuItems && menuItems.length > 0
               ? {}
-              : { href };
+              : {href};
           const visualize = isDesktop || (isTablet && showItemsOnMobile);
           return (
             visualize && (
@@ -56,7 +56,7 @@ const MenuItems: React.FC<MenuItemsProps> = ({
                     isActive={isActive}
                     statusColor={statusColor}
                   >
-                    {type === MenuItemType.DIVIDER && <MenuItemDivider />}
+                    {type === MenuItemType.DIVIDER && <MenuItemDivider/>}
                     {icon && (
                       <IconComponent
                         iconName={icon}

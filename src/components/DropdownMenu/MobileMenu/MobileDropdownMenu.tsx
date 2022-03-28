@@ -1,15 +1,15 @@
-import React, { FC, useState } from "react";
+import React, {FC, useState} from "react";
 import IconComponent from "../../Svg/IconComponent";
-import { Flex } from "../../Box";
-import { Text } from "../../Text";
-import { useMatchBreakpoints } from "../../../hooks";
+import {Flex} from "../../Box";
+import {Text} from "../../Text";
+import {useMatchBreakpoints} from "../../../hooks";
 import MobileMenu from "./MobileMenu";
-import { MenuItemsProps } from "../../MenuItems/types";
+import {MenuItemsProps} from "../../MenuItems/types";
 import MenuItem from "../../MenuItem";
 
-const MobileDropdownMenu: FC<MenuItemsProps> = ({ items, activeItem }) => {
+const MobileDropdownMenu: FC<MenuItemsProps> = ({items, activeItem}) => {
   const [isOpened, setIsOpened] = useState(false);
-  const { isMobile } = useMatchBreakpoints();
+  const {isMobile} = useMatchBreakpoints();
 
   return (
     <MobileMenu

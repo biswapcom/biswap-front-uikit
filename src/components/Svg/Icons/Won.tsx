@@ -50,7 +50,7 @@ const Icon: React.FC<SvgProps> = (props) => {
           d="M11.8535 53.0029L14.5452 42.9573L61.111 55.4346L58.4193 65.4802L11.8535 53.0029Z"
           fill="#7645D9"
         />
-        <g style={{ mixBlendMode: "multiply" }}>
+        <g style={{mixBlendMode: "multiply"}}>
           <path
             fillRule="evenodd"
             clipRule="evenodd"
@@ -72,7 +72,7 @@ const Icon: React.FC<SvgProps> = (props) => {
           d="M31.4707 20.8506L41.5163 18.1589L45.1398 31.6818L35.0942 34.3735L31.4707 20.8506Z"
           fill="#7645D9"
         />
-        <g style={{ mixBlendMode: "multiply" }}>
+        <g style={{mixBlendMode: "multiply"}}>
           <path
             fillRule="evenodd"
             clipRule="evenodd"
@@ -101,8 +101,8 @@ const Icon: React.FC<SvgProps> = (props) => {
           y2="33.028"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#53DEE9" />
-          <stop offset="1" stopColor="#1FC7D4" />
+          <stop stopColor="#53DEE9"/>
+          <stop offset="1" stopColor="#1FC7D4"/>
         </linearGradient>
         <clipPath id="clip0">
           <rect

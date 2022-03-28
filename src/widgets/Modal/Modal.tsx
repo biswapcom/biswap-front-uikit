@@ -10,7 +10,7 @@ import {
   ModalCloseButton,
   ModalBackButton,
 } from "./styles";
-import { ModalProps } from "./types";
+import {ModalProps} from "./types";
 
 const Modal: React.FC<ModalProps> = ({
   title,
@@ -33,10 +33,10 @@ const Modal: React.FC<ModalProps> = ({
         )(theme)}
       >
         <ModalTitle>
-          {onBack && <ModalBackButton onBack={onBack} />}
+          {onBack && <ModalBackButton onBack={onBack}/>}
           <Heading>{title}</Heading>
         </ModalTitle>
-        {!hideCloseButton && <ModalCloseButton onDismiss={onDismiss} />}
+        {!hideCloseButton && <ModalCloseButton onDismiss={onDismiss}/>}
       </ModalHeader>
       <ModalBody p={bodyPadding}>{children}</ModalBody>
     </ModalContainer>

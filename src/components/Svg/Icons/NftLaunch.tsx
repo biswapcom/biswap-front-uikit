@@ -1,11 +1,11 @@
 import React from "react";
 import Svg from "../Svg";
-import { SvgProps } from "../types";
+import {SvgProps} from "../types";
 
 const Icon: React.FC<SvgProps> = (props) => {
   return (
     <Svg viewBox="0 0 40 40" fill="none" {...props}>
-      <rect width="40" height="40" rx="8" fill="#1263F1" />
+      <rect width="40" height="40" rx="8" fill="#1263F1"/>
       <path
         opacity="0.48"
         d="M11 9C9.89543 9 9 9.89543 9 11V29C9 30.1046 9.89543 31 11 31C17 31 18.1667 26.6667 18 24.5H22C21.8333 26.6667 23 31 29 31C30.1046 31 31 30.1046 31 29V11C31 9.89543 30.1046 9 29 9H11Z"

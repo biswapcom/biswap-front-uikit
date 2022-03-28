@@ -1,13 +1,17 @@
-import { InputHTMLAttributes } from "react";
+import {InputHTMLAttributes} from "react";
+
 interface SliderLabelProps {
-    progress: string;
+  progress: string;
 }
+
 interface StyledInputProps extends InputHTMLAttributes<HTMLInputElement> {
-    isMax: boolean;
+  isMax: boolean;
 }
+
 interface DisabledProp {
-    disabled?: boolean;
+  disabled?: boolean;
 }
+
 export declare const SliderLabelContainer: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, {}, never>;
 export declare const SliderLabel: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, import("../Text").TextProps & SliderLabelProps, never>;
 export declare const BunnyButt: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, DisabledProp, never>;

@@ -1,22 +1,22 @@
-import React, { FC } from "react";
+import React, {FC} from "react";
 import {
   DropdownMenuDivider,
   DropdownMenuInnerLinkItem,
   InnerLinksBlockContainer,
 } from "../styles";
 import IconComponent from "../../Svg/IconComponent";
-import { Text } from "../../Text";
-import { DropdownMenuItemType, InnerLinksBlockProps } from "../types";
+import {Text} from "../../Text";
+import {DropdownMenuItemType, InnerLinksBlockProps} from "../types";
 import Grid from "../../Box/Grid";
-import { useMatchBreakpoints } from "../../../hooks";
+import {useMatchBreakpoints} from "../../../hooks";
 
 const InnerLinksBlock: FC<InnerLinksBlockProps> = ({
-  links,
-  leftIcon,
-  setIsOpen,
-  linkComponent,
-}) => {
-  const { isTablet } = useMatchBreakpoints();
+                                                     links,
+                                                     leftIcon,
+                                                     setIsOpen,
+                                                     linkComponent,
+                                                   }) => {
+  const {isTablet} = useMatchBreakpoints();
 
   const renderLinks = () =>
     links.map(
@@ -60,7 +60,7 @@ const InnerLinksBlock: FC<InnerLinksBlockProps> = ({
       <Grid gridTemplateColumns={"1fr 1fr"} gridGap={16} paddingBottom={16}>
         {renderLinks()}
       </Grid>
-      {!isTablet && <DropdownMenuDivider />}
+      {!isTablet && <DropdownMenuDivider/>}
     </InnerLinksBlockContainer>
   );
 };

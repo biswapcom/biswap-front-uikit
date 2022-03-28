@@ -1,4 +1,4 @@
-export { default as Heading } from "./Heading";
+export {default as Heading} from "./Heading";
 export type {
   HeadingProps,
   Scales as HeadingScales,

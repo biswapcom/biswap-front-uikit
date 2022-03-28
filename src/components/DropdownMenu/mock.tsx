@@ -1,6 +1,7 @@
 import React from "react";
-import { noop } from "lodash";
+import {noop} from "lodash";
 import { DropdownMenuItems, DropdownMenuItemType } from "./types";
+
 const getBanner = () => <div>BANNER</div>;
 
 const ItemsMock: DropdownMenuItems[] = [

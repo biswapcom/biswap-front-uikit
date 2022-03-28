@@ -1,7 +1,6 @@
 export interface BadgeProps {
-  badgeType: "new" | "hot" | "light" | "dark" | "primary" | "warning" | string;
+  badgeType: "success" | "error" | "active" | "notActive" | "primary" | "warning" | "core" | string;
   fontSize?: string;
   fontWeight?: string;
-  isMenu?: boolean;
-  lineHeight?: string
+  isIcon?: string;
 }

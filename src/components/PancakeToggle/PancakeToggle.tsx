@@ -4,13 +4,13 @@ import {
   PancakeInput,
   PancakeLabel,
 } from "./StyledPancakeToggle";
-import { PancakeToggleProps, scales } from "./types";
+import {PancakeToggleProps, scales} from "./types";
 
 const PancakeToggle: React.FC<PancakeToggleProps> = ({
-  checked,
-  scale = scales.LG,
-  ...props
-}) => (
+                                                       checked,
+                                                       scale = scales.LG,
+                                                       ...props
+                                                     }) => (
   <PancakeStack scale={scale}>
     <PancakeInput
       id={props.id || "pancake-toggle"}
@@ -25,10 +25,10 @@ const PancakeToggle: React.FC<PancakeToggleProps> = ({
       htmlFor={props.id || "pancake-toggle"}
     >
       <div className="pancakes">
-        <div className="pancake" />
-        <div className="pancake" />
-        <div className="pancake" />
-        <div className="butter" />
+        <div className="pancake"/>
+        <div className="pancake"/>
+        <div className="pancake"/>
+        <div className="butter"/>
       </div>
     </PancakeLabel>
   </PancakeStack>
