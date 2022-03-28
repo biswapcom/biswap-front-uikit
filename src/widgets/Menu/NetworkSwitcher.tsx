@@ -72,7 +72,7 @@ const DropDown = styled.div<{ isOpen: boolean }>`
   position: absolute;
   left: 0;
   top: 32px;
-  background-color: ${({theme}) => theme.colors.dark800};
+  background-color: ${({theme}) => theme.colors.dark600};
   border-radius: 0 0 8px 8px;
   overflow: hidden;
   z-index: ${({theme}) => theme.zIndices.dropdown};
@@ -93,7 +93,7 @@ const DropDownItem = styled.div<{ bg: string }>`
   height: 32px;
   padding: 0 6px;
   cursor: pointer;
-  color: ${({theme}) => theme.colors.text};
+  color: ${({theme}) => theme.colors.gray900};
   transition: background-color .3s ease;
 
   ${({theme}) => theme.mediaQueries.sm} {

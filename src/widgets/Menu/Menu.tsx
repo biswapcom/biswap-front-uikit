@@ -16,10 +16,7 @@ import {NavProps} from "./types";
 import {MenuContext} from "./context";
 import NetworkSwitcher, {OptionProps} from "./NetworkSwitcher";
 
-import {PolygonIcon, BSCIcon, AvalancheIcon} from "../../components/Svg";
-
-interface MenuProps extends NavProps, OptionProps {
-}
+import {BSCIcon, AvalancheIcon} from "../../components/Svg";
 
 const Wrapper = styled.div`
   position: relative;
@@ -75,7 +72,6 @@ const Menu: React.FC<NavProps> = ({
                                     linkComponent = "a",
                                     userMenu,
                                     banner,
-                                    // globalMenu,
                                     isDark,
                                     links,
                                     subLinks,
