@@ -48,6 +48,6 @@ export const Text: React.FC = (args) => {
   }, []);
 
   return (
-    <h1 style={{ width: 200 }}>{loading ? <Skeleton {...args} /> : "H1"}</h1>
+    <h1 style={{width: 200}}>{loading ? <Skeleton {...args} /> : "H1"}</h1>
   );
 };

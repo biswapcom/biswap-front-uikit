@@ -15,7 +15,7 @@ const getBackgroundColor = ({ theme, variant }: StyledButtonMenuProps) => {
 const getBorderColor = ({ theme, variant }: StyledButtonMenuProps) => {
   return theme.colors[
     variant === variants.WARNING ? "inputSecondary" : "disabled"
-  ];
+    ];
 };
 
 const StyledButtonMenu = styled.div<StyledButtonMenuProps>`
@@ -48,10 +48,10 @@ const StyledButtonMenu = styled.div<StyledButtonMenuProps>`
         & > button:disabled {
           background-color: transparent;
           color: ${
-            variant === variants.PRIMARY
-              ? theme.colors.primary
-              : theme.colors.textSubtle
-          };
+        variant === variants.PRIMARY
+          ? theme.colors.primary
+          : theme.colors.textSubtle
+      };
         }
     `;
     }

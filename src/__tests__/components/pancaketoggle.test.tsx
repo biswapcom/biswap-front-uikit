@@ -5,8 +5,8 @@ import PancakeToggle from "../../components/PancakeToggle/PancakeToggle";
 const handleChange = jest.fn();
 
 it("renders correctly", () => {
-  const { asFragment } = renderWithTheme(
-    <PancakeToggle checked onChange={handleChange} scale="md" />
+  const {asFragment} = renderWithTheme(
+    <PancakeToggle checked onChange={handleChange} scale="md"/>
   );
   expect(asFragment()).toMatchInlineSnapshot(`
     <DocumentFragment>
@@ -203,8 +203,8 @@ it("renders correctly", () => {
 });
 
 it("renders correctly scale sm", () => {
-  const { asFragment } = renderWithTheme(
-    <PancakeToggle checked onChange={handleChange} scale="sm" />
+  const {asFragment} = renderWithTheme(
+    <PancakeToggle checked onChange={handleChange} scale="sm"/>
   );
   expect(asFragment()).toMatchInlineSnapshot(`
     <DocumentFragment>

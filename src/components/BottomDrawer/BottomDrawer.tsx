@@ -17,13 +17,13 @@ interface BottomDrawerProps {
 }
 
 const BottomDrawer: React.FC<BottomDrawerProps> = ({
-  content,
-  isOpen,
-  setIsOpen,
-}) => {
+                                                     content,
+                                                     isOpen,
+                                                     setIsOpen,
+                                                   }) => {
   const ref = useRef<HTMLDivElement>(null);
   const shouldRender = useDelayedUnmount(isOpen, 350);
-  const { isMobile } = useMatchBreakpoints();
+  const {isMobile} = useMatchBreakpoints();
 
   useOnClickOutside(ref, () => setIsOpen(false));
 

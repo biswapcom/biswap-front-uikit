@@ -15,7 +15,6 @@ export const baseColors = {
   backgroundLight: "#F9FAFD",
   white: "#FFFFFF",
   pastelBlue: "#749BD8",
-  dark: "#071C3C",
 };
 
 export const additionalColors = {

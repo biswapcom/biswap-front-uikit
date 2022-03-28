@@ -1,16 +1,16 @@
 import styled, { DefaultTheme } from "styled-components";
 import { Colors } from "../../theme";
-import { Text } from "../Text";
+import {Text} from "../Text";
 import {
   StyledDropdownMenuInnerLinkItemProps,
   StyledDropdownMenuItemProps,
 } from "./types";
 
 const getTextColor = ({
-  $isActive,
-  disabled,
-  theme,
-}: StyledDropdownMenuItemProps & {
+                        $isActive,
+                        disabled,
+                        theme,
+                      }: StyledDropdownMenuItemProps & {
   theme: DefaultTheme;
   $isActive: boolean;
 }) => {
@@ -22,7 +22,7 @@ const getTextColor = ({
 
 export const InnerLinksBlockContainer = styled.div<{ padded: boolean }>`
   padding-top: 16px;
-  padding-left: ${({ padded }) => padded && "62px"};
+  padding-left: ${({padded}) => padded && "62px"};
 `;
 
 export const DropdownMenuInnerLinkItem = styled.div<StyledDropdownMenuInnerLinkItemProps>`
@@ -39,19 +39,17 @@ export const DropdownMenuInnerLinkItem = styled.div<StyledDropdownMenuInnerLinkI
   }
 `;
 
-export const DropdownMenuItem = styled.button<
-  StyledDropdownMenuItemProps & {
-    $isActive: boolean;
-    $hasIcon?: boolean;
-  }
->`
+export const DropdownMenuItem = styled.button<StyledDropdownMenuItemProps & {
+  $isActive: boolean;
+  $hasIcon?: boolean;
+}>`
   align-items: center;
   border: 0;
   //background: transparent;
-  color: ${({ theme, disabled, $isActive }) =>
-    getTextColor({ theme, disabled, $isActive })};
-  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
-  font-weight: ${({ $isActive = false }) => ($isActive ? "600" : "400")};
+  color: ${({theme, disabled, $isActive}) =>
+  getTextColor({theme, disabled, $isActive})};
+  cursor: ${({disabled}) => (disabled ? "not-allowed" : "pointer")};
+  font-weight: ${({$isActive = false}) => ($isActive ? "600" : "400")};
   display: inline-flex;
   font-size: 14px;
   height: 40px;
@@ -66,7 +64,7 @@ export const DropdownMenuItem = styled.button<
   }
 
   &:hover:not(:disabled) {
-    color: ${({ theme, $hasIcon }) => !$hasIcon && theme.colors.primary};
+    color: ${({theme, $hasIcon}) => !$hasIcon && theme.colors.primary};
 
     svg {
       opacity: 0.85;
@@ -98,7 +96,7 @@ export const StyledDropdownMenuItemContainer = styled.div`
     border-bottom-right-radius: 8px;
   }
 
-  ${({ theme }) => theme.mediaQueries.lg} {
+  ${({theme}) => theme.mediaQueries.lg} {
     margin-bottom: 24px;
 
     &:last-of-type {
@@ -108,7 +106,7 @@ export const StyledDropdownMenuItemContainer = styled.div`
 `;
 
 export const DropdownMenuDivider = styled.hr`
-  border-color: ${({ theme }) => theme.colors.gray200};
+  border-color: ${({theme}) => theme.colors.gray200};
   border-style: solid;
   border-width: 1px 0 0;
   margin: 4px 0;
@@ -118,8 +116,8 @@ export const StyledDropdownMenu = styled.div<{
   $isOpen: boolean;
   $isExtended?: boolean;
 }>`
-  background-color: ${({ theme }) => theme.card.background};
-  border: 1px solid ${({ theme }) => theme.colors.cardBorder};
+  background-color: ${({theme}) => theme.card.background};
+  border: 1px solid ${({theme}) => theme.colors.cardBorder};
   border-radius: 16px;
 
   padding: 24px;
@@ -130,17 +128,17 @@ export const StyledDropdownMenu = styled.div<{
   transition: opacity 250ms linear, visibility 350ms linear;
   z-index: 1001;
 
-  ${({ $isOpen }) =>
-    !$isOpen &&
-    `
+  ${({$isOpen}) =>
+  !$isOpen &&
+  `
     pointer-events: none;
     visibility: hidden;
     opacity: 0;
   `}
 
-  ${({ $isExtended }) =>
-    $isExtended &&
-    `
+  ${({$isExtended}) =>
+  $isExtended &&
+  `
       -webkit-column-count: 2;
       -moz-column-count: 2;
       column-count: 2;
@@ -150,10 +148,10 @@ export const StyledDropdownMenu = styled.div<{
 `;
 
 export const LinkStatus = styled(Text)<{ color: keyof Colors }>`
-  border-radius: ${({ theme }) => theme.radii.default};
+  border-radius: ${({theme}) => theme.radii.default};
   padding: 0 8px;
-  border: 2px solid ${({ theme, color }) => theme.colors[color]};
+  border: 2px solid ${({theme, color}) => theme.colors[color]};
   box-shadow: none;
-  color: ${({ theme, color }) => theme.colors[color]};
+  color: ${({theme, color}) => theme.colors[color]};
   margin-left: 8px;
 `;

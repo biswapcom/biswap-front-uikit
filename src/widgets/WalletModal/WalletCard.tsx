@@ -32,12 +32,12 @@ interface MoreWalletCardProps extends ButtonProps {
 }
 
 export const MoreWalletCard: React.FC<MoreWalletCardProps> = ({
-  t,
-  ...props
-}) => {
+                                                                t,
+                                                                ...props
+                                                              }) => {
   return (
     <WalletButton variant="tertiary" {...props}>
-      <MoreHorizontal width="40px" mb="8px" color="textSubtle" />
+      <MoreHorizontal width="40px" mb="8px" color="textSubtle"/>
       <Text fontSize="14px">{t("More")}</Text>
     </WalletButton>
   );

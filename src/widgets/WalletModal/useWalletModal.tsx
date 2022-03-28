@@ -13,9 +13,9 @@ const useWalletModal = (
   t: (key: string) => string
 ): ReturnType => {
   const [onPresentConnectModal] = useModal(
-    <ConnectModal login={login} t={t} />
+    <ConnectModal login={login} t={t}/>
   );
-  return { onPresentConnectModal };
+  return {onPresentConnectModal};
 };
 
 export default useWalletModal;

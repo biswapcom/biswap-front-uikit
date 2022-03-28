@@ -21,7 +21,7 @@ const Toggle: React.FC<ToggleProps> = ({
       $defaultColor={defaultColor}
       scale={scale}
     >
-      <Input checked={checked} scale={scale} {...props} type="checkbox" />
+      <Input checked={checked} scale={scale} {...props} type="checkbox"/>
       {startIcon && endIcon ? (
         <>
           <Handle scale={scale}>

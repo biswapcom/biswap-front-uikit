@@ -1,13 +1,15 @@
-import { FlexProps } from "../Box";
+import {FlexProps} from "../Box";
+
 export declare type SubMenuItemsType = {
-    label: string;
-    href: string;
-    itemProps?: any;
-    iconName?: string;
-    isMobileOnly?: boolean;
+  label: string;
+  href: string;
+  itemProps?: any;
+  iconName?: string;
+  isMobileOnly?: boolean;
 };
+
 export interface SubMenuItemsProps extends FlexProps {
-    items: SubMenuItemsType[];
-    activeItem?: string;
-    isMobileOnly?: boolean;
+  items: SubMenuItemsType[];
+  activeItem?: string;
+  isMobileOnly?: boolean;
 }

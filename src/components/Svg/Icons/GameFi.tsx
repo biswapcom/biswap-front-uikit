@@ -1,11 +1,11 @@
 import React from "react";
 import Svg from "../Svg";
-import { SvgProps } from "../types";
+import {SvgProps} from "../types";
 
 const Icon: React.FC<SvgProps> = (props) => {
   return (
     <Svg viewBox="0 0 40 40" fill="none" {...props}>
-      <rect width="40" height="40" rx="8" fill="url(#paint0_radial_685_2787)" />
+      <rect width="40" height="40" rx="8" fill="url(#paint0_radial_685_2787)"/>
       <g filter="url(#filter0_i_685_2787)">
         <path
           d="M31.3561 19.486C30.2956 14.8556 28.6995 12.3842 26.3318 11.7091C25.8341 11.5682 25.3179 11.4977 24.7992 11.5001C24.1137 11.5001 23.5167 11.6613 22.8851 11.8323C22.1241 12.0385 21.2595 12.2727 19.999 12.2727C18.7384 12.2727 17.8733 12.039 17.1108 11.8328C16.4788 11.6613 15.8822 11.5001 15.1987 11.5001C14.6624 11.4983 14.1284 11.5685 13.6121 11.7087C11.257 12.3808 9.66188 14.8513 8.58581 19.4831C7.42875 24.4674 7.99828 27.6144 10.1829 28.3445C10.4824 28.4464 10.7974 28.499 11.115 28.5C12.6115 28.5 13.8116 27.2962 14.6317 26.3106C15.5582 25.1951 16.6428 24.6292 19.999 24.6292C22.9966 24.6292 24.2372 25.0218 25.3088 26.3106C25.9823 27.1209 26.6189 27.6878 27.2539 28.0446C28.0984 28.5188 28.9425 28.6241 29.762 28.3522C31.0531 27.9268 31.7931 26.8022 31.9622 25.0087C32.0907 23.6335 31.8927 21.827 31.3561 19.486Z"
@@ -52,7 +52,7 @@ const Icon: React.FC<SvgProps> = (props) => {
           filterUnits="userSpaceOnUse"
           colorInterpolationFilters="sRGB"
         >
-          <feFlood floodOpacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix"/>
           <feBlend
             mode="normal"
             in="SourceGraphic"
@@ -65,8 +65,8 @@ const Icon: React.FC<SvgProps> = (props) => {
             values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
             result="hardAlpha"
           />
-          <feOffset dy="-1.4" />
-          <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+          <feOffset dy="-1.4"/>
+          <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
           <feColorMatrix
             type="matrix"
             values="0 0 0 0 0.627344 0 0 0 0 0.742503 0 0 0 0 0.9125 0 0 0 1 0"
@@ -86,16 +86,16 @@ const Icon: React.FC<SvgProps> = (props) => {
           filterUnits="userSpaceOnUse"
           colorInterpolationFilters="sRGB"
         >
-          <feFlood floodOpacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix"/>
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
             values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
             result="hardAlpha"
           />
-          <feOffset dy="0.6" />
-          <feGaussianBlur stdDeviation="0.5" />
-          <feComposite in2="hardAlpha" operator="out" />
+          <feOffset dy="0.6"/>
+          <feGaussianBlur stdDeviation="0.5"/>
+          <feComposite in2="hardAlpha" operator="out"/>
           <feColorMatrix
             type="matrix"
             values="0 0 0 0 0.41125 0 0 0 0 0.783333 0 0 0 0 0.596204 0 0 0 1 0"
@@ -117,8 +117,8 @@ const Icon: React.FC<SvgProps> = (props) => {
             values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
             result="hardAlpha"
           />
-          <feOffset dy="0.4" />
-          <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+          <feOffset dy="0.4"/>
+          <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
           <feColorMatrix
             type="matrix"
             values="0 0 0 0 0.285278 0 0 0 0 0.866667 0 0 0 0 0.574272 0 0 0 1 0"
@@ -138,16 +138,16 @@ const Icon: React.FC<SvgProps> = (props) => {
           filterUnits="userSpaceOnUse"
           colorInterpolationFilters="sRGB"
         >
-          <feFlood floodOpacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix"/>
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
             values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
             result="hardAlpha"
           />
-          <feOffset dy="0.6" />
-          <feGaussianBlur stdDeviation="0.5" />
-          <feComposite in2="hardAlpha" operator="out" />
+          <feOffset dy="0.6"/>
+          <feGaussianBlur stdDeviation="0.5"/>
+          <feComposite in2="hardAlpha" operator="out"/>
           <feColorMatrix
             type="matrix"
             values="0 0 0 0 0.8875 0 0 0 0 0.717396 0 0 0 0 0.517708 0 0 0 1 0"
@@ -169,8 +169,8 @@ const Icon: React.FC<SvgProps> = (props) => {
             values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
             result="hardAlpha"
           />
-          <feOffset dy="0.4" />
-          <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+          <feOffset dy="0.4"/>
+          <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
           <feColorMatrix
             type="matrix"
             values="0 0 0 0 1 0 0 0 0 0.808667 0 0 0 0 0.316667 0 0 0 1 0"
@@ -190,16 +190,16 @@ const Icon: React.FC<SvgProps> = (props) => {
           filterUnits="userSpaceOnUse"
           colorInterpolationFilters="sRGB"
         >
-          <feFlood floodOpacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix"/>
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
             values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
             result="hardAlpha"
           />
-          <feOffset dy="0.6" />
-          <feGaussianBlur stdDeviation="0.5" />
-          <feComposite in2="hardAlpha" operator="out" />
+          <feOffset dy="0.6"/>
+          <feGaussianBlur stdDeviation="0.5"/>
+          <feComposite in2="hardAlpha" operator="out"/>
           <feColorMatrix
             type="matrix"
             values="0 0 0 0 0.925 0 0 0 0 0.593542 0 0 0 0 0.652855 0 0 0 1 0"
@@ -221,8 +221,8 @@ const Icon: React.FC<SvgProps> = (props) => {
             values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
             result="hardAlpha"
           />
-          <feOffset dy="0.4" />
-          <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+          <feOffset dy="0.4"/>
+          <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
           <feColorMatrix
             type="matrix"
             values="0 0 0 0 1 0 0 0 0 0.55 0 0 0 0 0.630526 0 0 0 1 0"
@@ -242,16 +242,16 @@ const Icon: React.FC<SvgProps> = (props) => {
           filterUnits="userSpaceOnUse"
           colorInterpolationFilters="sRGB"
         >
-          <feFlood floodOpacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix"/>
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
             values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
             result="hardAlpha"
           />
-          <feOffset dy="0.6" />
-          <feGaussianBlur stdDeviation="0.5" />
-          <feComposite in2="hardAlpha" operator="out" />
+          <feOffset dy="0.6"/>
+          <feGaussianBlur stdDeviation="0.5"/>
+          <feComposite in2="hardAlpha" operator="out"/>
           <feColorMatrix
             type="matrix"
             values="0 0 0 0 0.486528 0 0 0 0 0.651847 0 0 0 0 0.941667 0 0 0 1 0"
@@ -273,8 +273,8 @@ const Icon: React.FC<SvgProps> = (props) => {
             values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
             result="hardAlpha"
           />
-          <feOffset dy="0.4" />
-          <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+          <feOffset dy="0.4"/>
+          <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
           <feColorMatrix
             type="matrix"
             values="0 0 0 0 0.329167 0 0 0 0 0.572833 0 0 0 0 1 0 0 0 1 0"
@@ -294,16 +294,16 @@ const Icon: React.FC<SvgProps> = (props) => {
           filterUnits="userSpaceOnUse"
           colorInterpolationFilters="sRGB"
         >
-          <feFlood floodOpacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix"/>
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
             values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
             result="hardAlpha"
           />
-          <feOffset dy="0.6" />
-          <feGaussianBlur stdDeviation="0.5" />
-          <feComposite in2="hardAlpha" operator="out" />
+          <feOffset dy="0.6"/>
+          <feGaussianBlur stdDeviation="0.5"/>
+          <feComposite in2="hardAlpha" operator="out"/>
           <feColorMatrix
             type="matrix"
             values="0 0 0 0 0.615625 0 0 0 0 0.697708 0 0 0 0 0.820833 0 0 0 1 0"
@@ -325,8 +325,8 @@ const Icon: React.FC<SvgProps> = (props) => {
             values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
             result="hardAlpha"
           />
-          <feOffset dy="0.4" />
-          <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+          <feOffset dy="0.4"/>
+          <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
           <feColorMatrix
             type="matrix"
             values="0 0 0 0 0.427309 0 0 0 0 0.427309 0 0 0 0 0.679167 0 0 0 1 0"
@@ -345,9 +345,9 @@ const Icon: React.FC<SvgProps> = (props) => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(20 -13) rotate(90) scale(61 68.0535)"
         >
-          <stop offset="0.048962" stopColor="#FF1C5E" />
-          <stop offset="0.582877" stopColor="#00000D" />
-          <stop offset="1" stopColor="#1EBB95" />
+          <stop offset="0.048962" stopColor="#FF1C5E"/>
+          <stop offset="0.582877" stopColor="#00000D"/>
+          <stop offset="1" stopColor="#1EBB95"/>
         </radialGradient>
         <linearGradient
           id="paint1_linear_685_2787"
@@ -357,8 +357,8 @@ const Icon: React.FC<SvgProps> = (props) => {
           y2="25"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.0967989" stopColor="white" />
-          <stop offset="1" stopColor="#CBDFFF" />
+          <stop offset="0.0967989" stopColor="white"/>
+          <stop offset="1" stopColor="#CBDFFF"/>
         </linearGradient>
       </defs>
     </Svg>

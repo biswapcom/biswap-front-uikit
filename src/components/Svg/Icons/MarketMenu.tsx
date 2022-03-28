@@ -1,11 +1,11 @@
 import React from "react";
 import Svg from "../Svg";
-import { SvgProps } from "../types";
+import {SvgProps} from "../types";
 
 const Icon: React.FC<SvgProps> = (props) => {
   return (
     <Svg viewBox="0 0 40 40" fill="none" {...props}>
-      <rect width="40" height="40" rx="8" fill="url(#paint0_linear_685_3383)" />
+      <rect width="40" height="40" rx="8" fill="url(#paint0_linear_685_3383)"/>
       <path
         d="M29.0513 15.4051C29.2382 15.4843 29.4079 15.6006 29.5505 15.7473C29.6935 15.8928 29.8069 16.0657 29.8841 16.2562C29.9612 16.4467 30.0006 16.651 30 16.8571L30 27.5257C29.9995 27.9867 29.9076 28.4428 29.7298 28.8665C29.552 29.2902 29.2919 29.6726 28.9654 29.9909C28.3165 30.6381 27.4454 31.0003 26.5385 31L13.4615 31C11.5865 31 10 29.3795 10 27.4643L10 16.8571C10 16.4404 10.1621 16.0407 10.4506 15.746C10.7391 15.4513 11.1304 15.2857 11.5385 15.2857H14.6105V16.8077H16.1587V15.2857L23.8368 15.2857V16.8077H25.3851V15.2857H28.4615C28.6639 15.2853 28.8644 15.3258 29.0513 15.4051Z"
         fill="white"
@@ -35,8 +35,8 @@ const Icon: React.FC<SvgProps> = (props) => {
           y2="56.5"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#1263F1" />
-          <stop offset="1" stopColor="#F63D5E" />
+          <stop stopColor="#1263F1"/>
+          <stop offset="1" stopColor="#F63D5E"/>
         </linearGradient>
         <linearGradient
           id="paint1_linear_685_3383"
@@ -46,8 +46,8 @@ const Icon: React.FC<SvgProps> = (props) => {
           y2="28.627"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#FF496A" />
-          <stop offset="1" stopColor="#E42648" />
+          <stop stopColor="#FF496A"/>
+          <stop offset="1" stopColor="#E42648"/>
         </linearGradient>
         <linearGradient
           id="paint2_linear_685_3383"
@@ -57,8 +57,8 @@ const Icon: React.FC<SvgProps> = (props) => {
           y2="17"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.00181229" stopColor="#1158F1" />
-          <stop offset="1" stopColor="#119BED" />
+          <stop offset="0.00181229" stopColor="#1158F1"/>
+          <stop offset="1" stopColor="#119BED"/>
         </linearGradient>
       </defs>
     </Svg>

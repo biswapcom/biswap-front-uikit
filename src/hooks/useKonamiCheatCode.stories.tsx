@@ -15,7 +15,7 @@ export const Default: React.FC = () => {
   useKonamiCheatCode(correctCodeHandler);
 
   return (
-    <div style={{ padding: "32px" }}>
+    <div style={{padding: "32px"}}>
       <div>
         Enter: ArrowUp, ArrowUp, ArrowDown, ArrowDown, ArrowLeft, ArrowRight,
         ArrowLeft, ArrowRight

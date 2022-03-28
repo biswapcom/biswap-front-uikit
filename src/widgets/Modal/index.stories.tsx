@@ -20,8 +20,8 @@ const CustomModal: React.FC<ModalProps> = ({ title, onDismiss, ...props }) => (
 
 export const Default: React.FC = () => {
   const theme = useTheme();
-  const [onPresent1] = useModal(<CustomModal title="Modal 1" />);
-  const [onPresent2] = useModal(<CustomModal title="Modal 2" />);
+  const [onPresent1] = useModal(<CustomModal title="Modal 1"/>);
+  const [onPresent2] = useModal(<CustomModal title="Modal 2"/>);
   const [onPresent3] = useModal(
     <CustomModal
       title="Modal 3"
@@ -68,7 +68,7 @@ export const WithBackButton: React.FC = () => {
   };
 
   const [onPresent1] = useModal(
-    <BackButtonModal title="Modal with no X" />,
+    <BackButtonModal title="Modal with no X"/>,
     false
   );
 
@@ -117,7 +117,7 @@ export const WithCustomHeader: React.FC = () => {
   };
 
   const [onPresent1] = useModal(
-    <CustomHeaderModal title="Modal with custom header" />
+    <CustomHeaderModal title="Modal with custom header"/>
   );
   return <Button onClick={onPresent1}>Modal with custom header</Button>;
 };
@@ -131,10 +131,10 @@ export const ReactingToOusideChanges: React.FC = () => {
     return () => clearInterval(intervalId);
   }, []);
   const ReactiveModal: React.FC<ModalProps & { count: number }> = ({
-    title,
-    count,
-    onDismiss,
-  }) => {
+                                                                     title,
+                                                                     count,
+                                                                     onDismiss,
+                                                                   }) => {
     return (
       <Modal title={title} onDismiss={onDismiss}>
         <h2>Counter: {count}</h2>

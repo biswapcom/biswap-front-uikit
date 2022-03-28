@@ -28,7 +28,7 @@ const mediaQueries: MediaQueries = (() => {
   return Object.keys(breakpointMap).reduce((accum, size, index) => {
     // Largest size is just a min-width of second highest max-width
     if (index === Object.keys(breakpointMap).length - 1) {
-      return { ...accum, [size]: `(min-width: ${prevMinWidth}px)` };
+      return {...accum, [size]: `(min-width: ${prevMinWidth}px)`};
     }
 
     const minWidth = prevMinWidth;

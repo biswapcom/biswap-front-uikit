@@ -6,7 +6,7 @@ import Box from "../../components/Box/Box";
 import getThemeValue from "../../util/getThemeValue";
 import Text from "../../components/Text/Text";
 import Heading from "../../components/Heading/Heading";
-import { Button } from "../../components/Button";
+import {Button} from "../../components/Button";
 import {
   ModalBody,
   ModalCloseButton,
@@ -14,7 +14,7 @@ import {
   ModalHeader,
   ModalTitle,
 } from "../Modal";
-import WalletCard, { MoreWalletCard } from "./WalletCard";
+import WalletCard, {MoreWalletCard} from "./WalletCard";
 import config, { walletLocalStorageKey } from "./config";
 import { Config, Login } from "./types";
 
@@ -62,11 +62,11 @@ const getPreferredConfig = (walletConfig: Config[]) => {
 };
 
 const ConnectModal: React.FC<Props> = ({
-  login,
-  onDismiss = () => null,
-  displayCount = 3,
-  t,
-}) => {
+                                         login,
+                                         onDismiss = () => null,
+                                         displayCount = 3,
+                                         t,
+                                       }) => {
   const [showMore, setShowMore] = useState(false);
   const theme = useTheme();
   const sortedConfig = getPreferredConfig(config);
@@ -82,7 +82,7 @@ const ConnectModal: React.FC<Props> = ({
         <ModalTitle>
           <Heading>{t("Connect Wallet")}</Heading>
         </ModalTitle>
-        <ModalCloseButton onDismiss={onDismiss} />
+        <ModalCloseButton onDismiss={onDismiss}/>
       </ModalHeader>
       <ModalBody width={["320px", null, "340px"]}>
         <WalletWrapper py="24px" maxHeight="453px" overflowY="auto">
@@ -97,7 +97,7 @@ const ConnectModal: React.FC<Props> = ({
               </Box>
             ))}
             {!showMore && (
-              <MoreWalletCard t={t} onClick={() => setShowMore(true)} />
+              <MoreWalletCard t={t} onClick={() => setShowMore(true)}/>
             )}
           </Grid>
         </WalletWrapper>

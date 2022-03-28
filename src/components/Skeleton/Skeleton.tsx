@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
-import { space, layout } from "styled-system";
+import {space, layout} from "styled-system";
 import {
   SkeletonProps,
   animation as ANIMATION,
@@ -31,9 +31,9 @@ const pulse = keyframes`
 const Root = styled.div<SkeletonProps>`
   min-height: 20px;
   display: block;
-  background-color: ${({ theme }) => theme.colors.backgroundDisabled};
-  border-radius: ${({ variant, theme }) =>
-    variant === VARIANT.CIRCLE ? theme.radii.circle : theme.radii.small};
+  background-color: ${({theme}) => theme.colors.backgroundDisabled};
+  border-radius: ${({variant, theme}) =>
+  variant === VARIANT.CIRCLE ? theme.radii.circle : theme.radii.small};
 
   ${layout}
   ${space}
@@ -66,10 +66,10 @@ const Waves = styled(Root)`
 `;
 
 const Skeleton: React.FC<SkeletonProps> = ({
-  variant = VARIANT.RECT,
-  animation = ANIMATION.PULSE,
-  ...props
-}) => {
+                                             variant = VARIANT.RECT,
+                                             animation = ANIMATION.PULSE,
+                                             ...props
+                                           }) => {
   if (animation === ANIMATION.WAVES) {
     return <Waves variant={variant} {...props} />;
   }

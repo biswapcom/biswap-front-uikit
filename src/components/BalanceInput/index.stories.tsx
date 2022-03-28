@@ -118,7 +118,7 @@ export const SiwtchUnits: React.FC = () => {
     const editingUnitAfterChange = editingUnit === "CAKE" ? "USD" : "CAKE";
     // This is needed to persist same value as shown for currencyValue after switching
     // otherwise user will see lots of decimals
-    const valuesAfterChange = { ...values };
+    const valuesAfterChange = {...values};
     valuesAfterChange[editingUnitAfterChange] = !Number.isNaN(
       parseFloat(values[conversionUnit])
     )

@@ -77,10 +77,10 @@ const UserMenu: React.FC<UserMenuProps> = ({
   const accountEllipsis = account
     ? `${account.substring(0, 2)}...${account.substring(account.length - 4)}`
     : null;
-  const { styles, attributes } = usePopper(targetRef, tooltipRef, {
+  const {styles, attributes} = usePopper(targetRef, tooltipRef, {
     strategy: "fixed",
     placement: "bottom-end",
-    modifiers: [{ name: "offset", options: { offset: [0, 0] } }],
+    modifiers: [{name: "offset", options: {offset: [0, 0]}}],
   });
 
   useEffect(() => {
@@ -112,9 +112,9 @@ const UserMenu: React.FC<UserMenuProps> = ({
           setIsOpen((s) => !s);
         }}
       >
-        <MenuIcon avatarSrc={avatarSrc} variant={variant} />
+        <MenuIcon avatarSrc={avatarSrc} variant={variant}/>
         <LabelText title={text || account}>{text || accountEllipsis}</LabelText>
-        <ChevronDownIcon color="text" width="24px" />
+        <ChevronDownIcon color="text" width="24px"/>
       </StyledUserMenu>
       <Menu
         style={styles.popper}

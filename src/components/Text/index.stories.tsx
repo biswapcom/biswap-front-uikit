@@ -33,7 +33,7 @@ export default {
           summary: "string",
           detail: "Color from the theme, or CSS color",
         },
-        defaultValue: { summary: "theme.colors.text" },
+        defaultValue: {summary: "theme.colors.text"},
       },
       control: {
         type: null,

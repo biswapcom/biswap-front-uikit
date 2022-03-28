@@ -5,14 +5,14 @@ import { InlineMenuContainer } from "./styles";
 import { BaseMenuProps } from "./types";
 
 const InlineMenu: React.FC<BaseMenuProps & BoxProps> = ({
-  children,
-  component,
-  isOpen = false,
-  ...props
-}) => {
+                                                          children,
+                                                          component,
+                                                          isOpen = false,
+                                                          ...props
+                                                        }) => {
   return (
     <BaseMenu
-      options={{ placement: "bottom" }}
+      options={{placement: "bottom"}}
       component={component}
       isOpen={isOpen}
     >
