@@ -65,8 +65,6 @@ export {default as WaitReloadIcon} from "./Icons/WaitReload";
 export {default as MouseIcon} from "./Icons/Mouse";
 export {default as RatingIcon} from "./Icons/Rating";
 export {default as AutoCompaundIcon} from "./Icons/AutoCompaund";
-export {default as PolygonIcon} from "./Icons/Polygon";
-export {default as BSCIcon} from "./Icons/BSC";
 export {default as FireIcon} from "./Icons/Fire";
 export {default as HourglassIcon} from "./Icons/Hourglass";
 export {default as GasIcon} from "./Icons/Gas";
@@ -118,6 +116,11 @@ export {default as ProductsIcon} from "./Icons/Products";
 export {default as ButtonMenuIcon} from "./Icons/ButtonMenu";
 export {default as ButtonMenuOpenedIcon} from "./Icons/ButtonMenuOpened";
 export {default as CerticAuditedIcon} from "./Icons/Certic";
+
+//chain
+export {default as BSCIcon} from "./Icons/BSC";
+export {default as PolygonIcon} from "./Icons/Polygon";
+export {default as AvalancheIcon} from "./Icons/Avalanche";
 
 export {default as Svg} from "./Svg";
 export type {SvgProps} from "./types";

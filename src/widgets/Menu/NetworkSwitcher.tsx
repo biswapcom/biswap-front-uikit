@@ -39,7 +39,7 @@ const Top = styled.div<{ bg: string, isOpen: boolean }>`
   }
 
   svg {
-    fill: ${({theme}) => theme.colors.contrast};
+    fill: ${({theme}) => theme.colors.white};
     width: 20px;
     margin-right: 4px;
 
@@ -103,10 +103,10 @@ const DropDownItem = styled.div<{ bg: string }>`
 
   &:hover {
     background-color: ${({bg}) => bg};
-    color: ${({theme}) => theme.colors.contrast};
+    color: ${({theme}) => theme.colors.white};
 
     svg {
-      fill: ${({theme}) => theme.colors.contrast};
+      fill: ${({theme}) => theme.colors.white};
     }
   }
 

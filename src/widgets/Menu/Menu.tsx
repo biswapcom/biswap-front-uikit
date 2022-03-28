@@ -9,13 +9,17 @@ import {useMatchBreakpoints} from "../../hooks";
 import Logo from "./components/Logo";
 import {
   MENU_HEIGHT,
-  MOBILE_MENU_HEIGHT,
   TOP_BANNER_HEIGHT,
   TOP_BANNER_HEIGHT_MOBILE,
 } from "./config";
 import {NavProps} from "./types";
 import {MenuContext} from "./context";
-import IconComponent from "../../components/Svg/IconComponent";
+import NetworkSwitcher, {OptionProps} from "./NetworkSwitcher";
+
+import {PolygonIcon, BSCIcon, AvalancheIcon} from "../../components/Svg";
+
+interface MenuProps extends NavProps, OptionProps {
+}
 
 const Wrapper = styled.div`
   position: relative;
@@ -40,12 +44,19 @@ const StyledNav = styled.nav`
 
 const FixedContainer = styled.div<{ showMenu: boolean; height: number }>`
   position: fixed;
-  top: ${({ showMenu, height }) => (showMenu ? 0 : `-${height}px`)};
+  top: ${({showMenu, height}) => (showMenu ? 0 : `-${height}px`)};
   left: 0;
   transition: top 0.2s;
-  height: ${({ height }) => `${height}px`};
+  height: ${({height}) => `${height}px`};
   width: 100%;
   z-index: 20;
+`;
+
+const TopBannerContainer = styled.div<{ height: number }>`
+  height: ${({height}) => `${height}px`};
+  min-height: ${({height}) => `${height}px`};
+  max-height: ${({height}) => `${height}px`};
+  width: 100%;
 `;
 
 const BodyWrapper = styled(Box)`
@@ -61,20 +72,15 @@ const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
 `;
 
 const Menu: React.FC<NavProps> = ({
-  linkComponent = "a",
-  userMenu,
-  banner,
+                                    linkComponent = "a",
+                                    userMenu,
+                                    banner,
                                     // globalMenu,
-  isDark,
-                                    toggleTheme,
-                                    currentLang,
-                                    setLang,
-                                    cakePriceUsd,
+                                    isDark,
                                     links,
                                     subLinks,
                                     activeItem,
                                     activeSubItem,
-                                    buyCakeLabel,
                                     children,
                                     BSWPriceLabel,
                                     BSWPriceValue,
@@ -84,6 +90,9 @@ const Menu: React.FC<NavProps> = ({
                                     aboutLinks,
                                     productLinks,
                                     serviceLinks,
+                                    currentNetwork,
+                                    networkChangeToBSC,
+                                    networkChangeToAvalanche
                                   }) => {
   const {isMobile} = useMatchBreakpoints();
   const [showMenu, setShowMenu] = useState(true);
@@ -133,13 +142,27 @@ const Menu: React.FC<NavProps> = ({
     };
   }, [totalTopMenuHeight]);
 
+  const handleNetworkChange = (option: OptionProps): void => {
+    if (option.value !== currentNetwork) {
+      networkChangeToBSC()
+    }
+    if (option.value !== currentNetwork) {
+      networkChangeToAvalanche()
+    }
+  }
+
   // Find the home link if provided
   const homeLink = links.find((link) => link.label === "Home");
 
   return (
-    <MenuContext.Provider value={{ linkComponent }}>
+    <MenuContext.Provider value={{linkComponent}}>
       <Wrapper>
         <FixedContainer showMenu={showMenu} height={totalTopMenuHeight}>
+          {banner && (
+            <TopBannerContainer height={topBannerHeight}>
+              {banner}
+            </TopBannerContainer>
+          )}
           <StyledNav>
             <Flex>
               <Logo isDark={isDark} href={homeLink?.href ?? "/"}/>
@@ -151,10 +174,23 @@ const Menu: React.FC<NavProps> = ({
               />
             </Flex>
             <Flex alignItems="center" height="100%">
-              <IconComponent
-                width={isMobile ? 67 : 94}
-                mr={24}
-                iconName="CerticAudited"
+              <NetworkSwitcher
+                options={[
+                  {
+                    label: 'BSC',
+                    icon: <BSCIcon className="icon"/>,
+                    value: 56,
+                    bg: '#F0B90B',
+                  },
+                  {
+                    label: 'Avalanche',
+                    icon: <AvalancheIcon className="icon"/>,
+                    value: 43114,
+                    bg: '#E84142',
+                  },
+                ]}
+                onChange={handleNetworkChange}
+                currentNetwork={currentNetwork}
               />
               {userMenu}
             </Flex>

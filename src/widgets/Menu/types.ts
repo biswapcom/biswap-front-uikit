@@ -22,6 +22,9 @@ export interface NavProps extends
   ConnectMetaProps,
   FooterStatisticProps {
   buyBswLink: string
+  networkChangeToBSC?: any,
+  networkChangeToAvalanche?: any,
+  currentNetwork?: any,
   //---------
   linkComponent?: ElementType;
   userMenu?: ReactElement;
