@@ -1,72 +1,61 @@
-import {ElementType, ReactElement} from "react";
-import {MenuItemsType} from "../../components/MenuItems/types";
-import {SubMenuItemsType} from "../../components/SubMenuItems/types";
-import {Colors} from "../../theme/types";
-
+import { ElementType, ReactElement } from "react";
+import { MenuItemsType } from "../../components/MenuItems/types";
+import { SubMenuItemsType } from "../../components/SubMenuItems/types";
+import { Colors } from "../../theme/types";
 export interface Language {
-  code: string;
-  language: string;
-  locale: string;
+    code: string;
+    language: string;
+    locale: string;
 }
-
 export interface LinkStatus {
-  text: string;
-  color: keyof Colors;
+    text: string;
+    color: keyof Colors;
 }
-
 export interface NavProps extends BSWPriceProps, FooterAboutLinks, FooterProductLinks, FooterServiceLinks, ConnectMetaProps, FooterStatisticProps {
-  buyBswLink: string;
-  networkChangeToBSC?: any;
-  networkChangeToAvalanche?: any;
-  currentNetwork?: any;
-  linkComponent?: ElementType;
-  userMenu?: ReactElement;
-  banner?: ReactElement;
-  globalMenu?: ReactElement;
-  links: Array<MenuItemsType>;
-  subLinks: Array<SubMenuItemsType>;
-  activeItem: string;
-  activeSubItem: string;
-  isDark: boolean;
-  toggleTheme: (isDark: boolean) => void;
-  cakePriceUsd?: number;
-  currentLang: string;
-  buyCakeLabel: string;
-  setLang: (lang: Language) => void;
+    buyBswLink: string;
+    networkChangeToBSC?: any;
+    networkChangeToAvalanche?: any;
+    currentNetwork?: any;
+    linkComponent?: ElementType;
+    userMenu?: ReactElement;
+    banner?: ReactElement;
+    globalMenu?: ReactElement;
+    links: Array<MenuItemsType>;
+    subLinks: Array<SubMenuItemsType>;
+    activeItem: string;
+    activeSubItem: string;
+    isDark: boolean;
+    toggleTheme: (isDark: boolean) => void;
+    cakePriceUsd?: number;
+    currentLang: string;
+    buyCakeLabel: string;
+    setLang: (lang: Language) => void;
 }
-
 export interface FooterStatisticProps {
-  footerStatistic: Array<FooterStatisticItem>;
+    footerStatistic: Array<FooterStatisticItem>;
 }
-
 export interface FooterStatisticItem {
-  label: string;
-  value: number | string;
+    label: string;
+    value: number | string;
 }
-
 export interface ConnectMetaProps {
-  onClick: () => void;
+    onClick: () => void;
 }
-
 export interface BSWPriceProps {
-  BSWPriceLabel: string;
-  BSWPriceValue: number;
+    BSWPriceLabel: string;
+    BSWPriceValue: number;
 }
-
 export interface FooterAboutLinks {
-  aboutLinks: Array<FooterNavItem>;
+    aboutLinks: Array<FooterNavItem>;
 }
-
 export interface FooterProductLinks {
-  productLinks: Array<FooterNavItem>;
+    productLinks: Array<FooterNavItem>;
 }
-
 export interface FooterServiceLinks {
-  serviceLinks: Array<FooterNavItem>;
+    serviceLinks: Array<FooterNavItem>;
 }
-
 export interface FooterNavItem {
-  label: string;
-  href: string;
-  target?: string;
+    label: string;
+    href: string;
+    target?: string;
 }

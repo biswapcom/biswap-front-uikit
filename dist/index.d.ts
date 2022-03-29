@@ -35,5 +35,5 @@ export * from "./hooks";
 export * from "./widgets/Modal";
 export * from "./widgets/Menu";
 export * from "./widgets/WalletModal";
-export {default as ResetCSS} from "./ResetCSS";
+export { default as ResetCSS } from "./ResetCSS";
 export * from "./theme";

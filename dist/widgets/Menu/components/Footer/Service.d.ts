@@ -1,5 +1,4 @@
 import React from "react";
-import {FooterServiceLinks} from '../../types';
-
+import { FooterServiceLinks } from '../../types';
 declare const Service: React.FC<FooterServiceLinks>;
 export default Service;
