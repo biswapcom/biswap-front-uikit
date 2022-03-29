@@ -88,6 +88,7 @@ export {default as EditIcon} from './Icons/Edit'
 export {default as AddFilledIcon} from './Icons/AddFilled'
 export {default as HolderAutoIcon} from './Icons/HolderAuto'
 export {default as BscNewIcon} from './Icons/BscNew'
+export {default as LogoWithTextIcon} from './Icons/LogoWithText'
 
 export {default as ImgWarnIcon} from './Icons/ImgWarn'
 
