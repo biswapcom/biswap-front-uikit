@@ -114,6 +114,7 @@ export { default as ButtonMenuIcon } from "./Icons/ButtonMenu";
 export { default as ButtonMenuOpenedIcon } from "./Icons/ButtonMenuOpened";
 export { default as CerticAuditedIcon } from "./Icons/Certic";
 export { default as BscNewIcon } from './Icons/BscNew';
+export { default as CupIcon } from "./Icons/Cup";
 export { default as BSCIcon } from "./Icons/BSC";
 export { default as PolygonIcon } from "./Icons/Polygon";
 export { default as AvalancheIcon } from "./Icons/Avalanche";

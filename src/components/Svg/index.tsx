@@ -118,6 +118,7 @@ export {default as ButtonMenuOpenedIcon} from "./Icons/ButtonMenuOpened";
 export {default as CerticAuditedIcon} from "./Icons/Certic";
 
 export {default as BscNewIcon} from './Icons/BscNew'
+export {default as CupIcon} from "./Icons/Cup"
 
 //chain
 export {default as BSCIcon} from "./Icons/BSC";
