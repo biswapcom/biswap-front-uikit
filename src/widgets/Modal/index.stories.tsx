@@ -46,9 +46,9 @@ export const WithBackground: React.FC = () => {
   };
 
   const [onPresent1] = useModal(
-    <CustomBackgroundModal title="Modal with custom header"/>
+    <CustomBackgroundModal title="Modal with custom background bla bla bla"/>
   );
-  return <Button onClick={onPresent1}>Modal with custom header</Button>;
+  return <Button onClick={onPresent1}>Modal with custom background</Button>;
 };
 //-----------
 export const DisableOverlayClick: React.FC = () => {
