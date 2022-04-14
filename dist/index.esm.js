@@ -3230,8 +3230,7 @@ Tag.defaultProps = {
 var isTouchDevice = function () {
     return (typeof window !== "undefined" &&
         ("ontouchstart" in window ||
-            navigator.maxTouchPoints > 0 ||
-            navigator.msMaxTouchPoints > 0));
+            navigator.maxTouchPoints > 0));
 };
 
 var Arrow = styled.div(templateObject_1$m || (templateObject_1$m = __makeTemplateObject(["\n  &,\n  &::before {\n    position: absolute;\n    width: 10px;\n    height: 10px;\n    border-radius: 2px;\n    z-index: -1;\n  }\n\n  &::before {\n    content: \"\";\n    transform: rotate(45deg);\n    background: ", ";\n  }\n"], ["\n  &,\n  &::before {\n    position: absolute;\n    width: 10px;\n    height: 10px;\n    border-radius: 2px;\n    z-index: -1;\n  }\n\n  &::before {\n    content: \"\";\n    transform: rotate(45deg);\n    background: ", ";\n  }\n"])), function (_a) {
@@ -3706,8 +3705,7 @@ var Modal = function (_a) {
         React.createElement(ModalHeader, { background: getThemeValue("colors.".concat(headerBackground), headerBackground)(theme) },
             React.createElement(ModalTitle, null,
                 onBack && React.createElement(ModalBackButton, { onBack: onBack }),
-                title &&
-                    React.createElement(Heading, null, title)),
+                React.createElement(Heading, null, title)),
             !hideCloseButton && React.createElement(ModalCloseButton, { onDismiss: onDismiss })),
         React.createElement(ModalBody, { p: bodyPadding }, children)));
 };
@@ -5030,7 +5028,9 @@ var WalletCard = function (_a) {
     var login = _a.login, walletConfig = _a.walletConfig, onDismiss = _a.onDismiss;
     var title = walletConfig.title, Icon = walletConfig.icon;
     return (React.createElement(WalletButton, { variant: "tertiary", onClick: function () {
-            var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+            var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+            // TODO fix error
+            // /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
             // Since iOS does not support Trust Wallet we fall back to WalletConnect
             if (walletConfig.title === "Trust Wallet" && isIOS) {
                 login(ConnectorNames.WalletConnect);

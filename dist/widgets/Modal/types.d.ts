@@ -7,7 +7,7 @@ export interface InjectedProps {
     onDismiss?: Handler;
 }
 export interface ModalProps extends InjectedProps, BoxProps {
-    title?: string;
+    title: string;
     hideCloseButton?: boolean;
     onBack?: () => void;
     bodyPadding?: string;
