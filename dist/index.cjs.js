@@ -223,6 +223,10 @@ var styleVariants$3 = (_b$4 = {},
         ":active": {
             backgroundColor: "primaryPress",
         },
+        ":disabled": {
+            backgroundColor: "primaryPress",
+            color: "white"
+        },
     },
     _b$4[variants$4.DANGER] = {
         backgroundColor: "secondary",
@@ -5221,9 +5225,9 @@ var ModalBackButton = function (_a) {
         },
         React__default["default"].createElement(Icon$1z, {color: "primary"})));
 };
-var ModalContainer = styled__default["default"](Box)(templateObject_4$8 || (templateObject_4$8 = __makeTemplateObject(["\n  overflow: hidden;\n  background: ", ";\n  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1),\n    0px 1px 1px rgba(0, 0, 0, 0.05);\n  border: 1px solid ", ";\n  border-radius: 32px;\n  width: 100%;\n  max-height: 100vh;\n  z-index: ", ";\n\n  ", " {\n    width: auto;\n    min-width: ", ";\n    max-width: 100%;\n  }\n"], ["\n  overflow: hidden;\n  background: ", ";\n  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1),\n    0px 1px 1px rgba(0, 0, 0, 0.05);\n  border: 1px solid ", ";\n  border-radius: 32px;\n  width: 100%;\n  max-height: 100vh;\n  z-index: ", ";\n\n  ", " {\n    width: auto;\n    min-width: ", ";\n    max-width: 100%;\n  }\n"])), function (_a) {
-    var theme = _a.theme;
-    return theme.modal.background;
+var ModalContainer = styled__default["default"](Box)(templateObject_4$8 || (templateObject_4$8 = __makeTemplateObject(["\n  overflow: hidden;\n  background: ", ";\n  box-shadow: 0 20px 36px -8px rgba(14, 14, 44, 0.1),\n    0px 1px 1px rgba(0, 0, 0, 0.05);\n  border: 1px solid ", ";\n  border-radius: 32px;\n  width: 100%;\n  max-height: 100vh;\n  z-index: ", ";\n\n  ", " {\n    width: auto;\n    min-width: ", ";\n    max-width: 100%;\n  }\n"], ["\n  overflow: hidden;\n  background: ", ";\n  box-shadow: 0 20px 36px -8px rgba(14, 14, 44, 0.1),\n    0px 1px 1px rgba(0, 0, 0, 0.05);\n  border: 1px solid ", ";\n  border-radius: 32px;\n  width: 100%;\n  max-height: 100vh;\n  z-index: ", ";\n\n  ", " {\n    width: auto;\n    min-width: ", ";\n    max-width: 100%;\n  }\n"])), function (_a) {
+    var background = _a.background;
+    return background || "transparent";
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.cardBorder;
@@ -5243,10 +5247,11 @@ var Modal = function (_a) {
     var title = _a.title, onDismiss = _a.onDismiss, onBack = _a.onBack, children = _a.children, _b = _a.hideCloseButton,
         hideCloseButton = _b === void 0 ? false : _b, _c = _a.bodyPadding, bodyPadding = _c === void 0 ? "24px" : _c,
         _d = _a.headerBackground, headerBackground = _d === void 0 ? "transparent" : _d, _e = _a.minWidth,
-        minWidth = _e === void 0 ? "320px" : _e,
-        props = __rest(_a, ["title", "onDismiss", "onBack", "children", "hideCloseButton", "bodyPadding", "headerBackground", "minWidth"]);
+        minWidth = _e === void 0 ? "320px" : _e, _f = _a.modalBackground,
+        modalBackground = _f === void 0 ? "transparent" : _f,
+        props = __rest(_a, ["title", "onDismiss", "onBack", "children", "hideCloseButton", "bodyPadding", "headerBackground", "minWidth", "modalBackground"]);
     var theme = styled.useTheme();
-    return (React__default["default"].createElement(ModalContainer, __assign({minWidth: minWidth}, props),
+    return (React__default["default"].createElement(ModalContainer, __assign({minWidth: minWidth}, props, {background: getThemeValue("colors.".concat(modalBackground), modalBackground)(theme)}),
         React__default["default"].createElement(ModalHeader, {background: getThemeValue("colors.".concat(headerBackground), headerBackground)(theme)},
             React__default["default"].createElement(ModalTitle, null,
                 onBack && React__default["default"].createElement(ModalBackButton, {onBack: onBack}),

@@ -1,6 +1,5 @@
 import React from "react";
 import {Handler} from "./types";
-
 interface ModalsContext {
   isOpen: boolean;
   nodeId: string;
@@ -10,7 +9,6 @@ interface ModalsContext {
   onDismiss: Handler;
   setCloseOnOverlayClick: React.Dispatch<React.SetStateAction<boolean>>;
 }
-
 export declare const Context: React.Context<ModalsContext>;
 declare const ModalProvider: React.FC;
 export default ModalProvider;

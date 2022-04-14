@@ -16,13 +16,11 @@ export interface ImageProps extends ImgHTMLAttributes<HTMLImageElement>, SpacePr
 export interface BackgroundImageProps extends ImageProps {
   loadingPlaceholder?: ReactElement;
 }
-
 export declare const variants: {
   readonly DEFAULT: "default";
   readonly INVERTED: "inverted";
 };
 export declare type Variant = typeof variants[keyof typeof variants];
-
 export interface TokenPairImageProps extends BoxProps {
   primarySrc: string;
   secondarySrc: string;

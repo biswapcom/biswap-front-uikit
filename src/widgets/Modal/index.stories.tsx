@@ -25,7 +25,6 @@ export const Default: React.FC = () => {
   const [onPresent3] = useModal(
     <CustomModal
       title="Modal 3"
-      headerBackground={theme.colors.gradients.cardHeader}
     />
   );
   return (
@@ -37,8 +36,23 @@ export const Default: React.FC = () => {
   );
 };
 
+export const WithBackground: React.FC = () => {
+  const CustomBackgroundModal: React.FC<ModalProps> = ({title, onDismiss}) => {
+    return (
+      <Modal title={title} modalBackground="secondary" onDismiss={onDismiss}>
+        test
+      </Modal>
+    );
+  };
+
+  const [onPresent1] = useModal(
+    <CustomBackgroundModal title="Modal with custom header"/>
+  );
+  return <Button onClick={onPresent1}>Modal with custom header</Button>;
+};
+//-----------
 export const DisableOverlayClick: React.FC = () => {
-  const [onPresent1] = useModal(<CustomModal title="Modal 1" />, false);
+  const [onPresent1] = useModal(<CustomModal title="Modal 1"/>, false);
 
   return (
     <div>

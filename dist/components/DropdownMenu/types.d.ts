@@ -24,15 +24,12 @@ export interface DropdownMenuProps extends BoxProps {
   mobileMenuCallback?: (s: boolean) => void;
   isMobileNav?: boolean;
 }
-
 export interface StyledDropdownMenuItemProps extends React.ComponentPropsWithoutRef<"button"> {
   disabled?: boolean;
   isActive?: boolean;
 }
-
 export interface StyledDropdownMenuInnerLinkItemProps extends React.ComponentPropsWithoutRef<"div"> {
 }
-
 export interface InternalLink {
   label?: string;
   icon?: string;
@@ -40,14 +37,12 @@ export interface InternalLink {
   fill?: string;
   linkType?: DropdownMenuItemType;
 }
-
 export interface InnerLinksBlockProps {
   links: InternalLink[];
   leftIcon?: string;
   setIsOpen: (o: boolean) => void;
   linkComponent: ElementType;
 }
-
 export interface MenuItemContentProps {
   leftIcon?: string;
   label?: string | React.ReactNode;
@@ -65,12 +60,10 @@ export declare enum DropdownMenuItemType {
   BANNER = 4,
   CONTAINER = 5
 }
-
 export interface LinkStatus {
   text: string;
   color: keyof Colors;
 }
-
 export interface DropdownMenuItems {
   label?: string | React.ReactNode;
   href?: string;
@@ -89,7 +82,6 @@ export interface DropdownMenuItems {
   links?: InternalLink[];
   bannerRenderer?: () => React.ReactNode;
 }
-
 export interface DropdownMenuItemContainerProps extends DropdownMenuItems {
   isActive?: boolean;
   getMenuItemContent: (i: string) => React.ReactNode;

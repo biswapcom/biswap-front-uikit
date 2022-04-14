@@ -14,7 +14,6 @@ export declare const scales: {
 };
 export declare type Tags = typeof tags[keyof typeof tags];
 export declare type Scales = typeof scales[keyof typeof scales];
-
 export interface HeadingProps {
   as?: Tags;
   scale?: Scales;

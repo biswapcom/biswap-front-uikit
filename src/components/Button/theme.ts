@@ -43,6 +43,10 @@ export const styleVariants = {
     ":active": {
       backgroundColor: "primaryPress",
     },
+    ":disabled": {
+      backgroundColor: "primaryPress",
+      color: "white"
+    },
   },
   [variants.DANGER]: {
     backgroundColor: "secondary",

@@ -34,37 +34,29 @@ export interface NavProps extends BSWPriceProps, FooterAboutLinks, FooterProduct
   buyCakeLabel: string;
   setLang: (lang: Language) => void;
 }
-
 export interface FooterStatisticProps {
   footerStatistic: Array<FooterStatisticItem>;
 }
-
 export interface FooterStatisticItem {
   label: string;
   value: number | string;
 }
-
 export interface ConnectMetaProps {
   onClick: () => void;
 }
-
 export interface BSWPriceProps {
   BSWPriceLabel: string;
   BSWPriceValue: number;
 }
-
 export interface FooterAboutLinks {
   aboutLinks: Array<FooterNavItem>;
 }
-
 export interface FooterProductLinks {
   productLinks: Array<FooterNavItem>;
 }
-
 export interface FooterServiceLinks {
   serviceLinks: Array<FooterNavItem>;
 }
-
 export interface FooterNavItem {
   label: string;
   href: string;

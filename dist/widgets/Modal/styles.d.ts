@@ -1,6 +1,5 @@
 import React from "react";
 import {ModalProps} from "./types";
-
 export declare const ModalHeader: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, {
   background?: string | undefined;
 }, never>;
@@ -14,4 +13,5 @@ export declare const ModalBackButton: React.FC<{
 }>;
 export declare const ModalContainer: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, import("../../components/Box").BoxProps & {
   minWidth: string;
+  background?: string | undefined;
 }, never>;

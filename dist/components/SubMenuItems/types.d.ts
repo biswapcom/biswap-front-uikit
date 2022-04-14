@@ -1,5 +1,4 @@
 import {FlexProps} from "../Box";
-
 export declare type SubMenuItemsType = {
   label: string;
   href: string;
@@ -7,7 +6,6 @@ export declare type SubMenuItemsType = {
   iconName?: string;
   isMobileOnly?: boolean;
 };
-
 export interface SubMenuItemsProps extends FlexProps {
   items: SubMenuItemsType[];
   activeItem?: string;

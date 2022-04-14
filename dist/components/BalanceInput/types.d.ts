@@ -13,7 +13,6 @@ export interface BalanceInputProps extends BoxProps {
   unit?: string;
   switchEditingUnits?: () => void;
 }
-
 export interface TextfieldProps {
   label: ReactNode;
   value: ReactText;

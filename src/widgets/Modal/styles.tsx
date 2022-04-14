@@ -49,20 +49,20 @@ export const ModalBackButton: React.FC<{ onBack: ModalProps["onBack"] }> = ({
   );
 };
 
-export const ModalContainer = styled(Box)<{ minWidth: string }>`
+export const ModalContainer = styled(Box)<{ minWidth: string, background?: string }>`
   overflow: hidden;
-  background: ${({ theme }) => theme.modal.background};
-  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1),
+  background: ${({background}) => background || "transparent"};
+  box-shadow: 0 20px 36px -8px rgba(14, 14, 44, 0.1),
     0px 1px 1px rgba(0, 0, 0, 0.05);
-  border: 1px solid ${({ theme }) => theme.colors.cardBorder};
+  border: 1px solid ${({theme}) => theme.colors.cardBorder};
   border-radius: 32px;
   width: 100%;
   max-height: 100vh;
-  z-index: ${({ theme }) => theme.zIndices.modal};
+  z-index: ${({theme}) => theme.zIndices.modal};
 
-  ${({ theme }) => theme.mediaQueries.xs} {
+  ${({theme}) => theme.mediaQueries.xs} {
     width: auto;
-    min-width: ${({ minWidth }) => minWidth};
+    min-width: ${({minWidth}) => minWidth};
     max-width: 100%;
   }
 `;

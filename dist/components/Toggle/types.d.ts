@@ -16,22 +16,18 @@ export interface ToggleProps extends InputHTMLAttributes<HTMLInputElement> {
   startIcon?: (isActive?: boolean) => ReactNode;
   endIcon?: (isActive?: boolean) => ReactNode;
 }
-
 export interface HandleProps {
   scale: Scales;
 }
-
 export interface InputProps {
   scale: Scales;
 }
-
 export interface StyleToggleProps {
   $checked: boolean;
   $checkedColor: keyof Colors;
   $defaultColor: keyof Colors;
   scale: Scales;
 }
-
 export declare const scaleKeys: {
   readonly handleHeight: "handleHeight";
   readonly handleWidth: "handleWidth";

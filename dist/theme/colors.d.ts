@@ -1,5 +1,4 @@
 import {Colors} from "./types";
-
 export declare const baseColors: {
   failure: string;
   primaryBright: string;

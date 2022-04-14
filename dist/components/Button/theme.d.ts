@@ -39,6 +39,10 @@ export declare const styleVariants: {
     ":active": {
       backgroundColor: string;
     };
+    ":disabled": {
+      backgroundColor: string;
+      color: string;
+    };
   };
   danger: {
     backgroundColor: string;

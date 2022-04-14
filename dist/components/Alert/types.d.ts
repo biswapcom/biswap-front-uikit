@@ -1,5 +1,4 @@
 import {MouseEvent, ReactNode} from "react";
-
 export declare type AlertTheme = {
   background: string;
 };
@@ -10,7 +9,6 @@ export declare const variants: {
   readonly WARNING: "warning";
 };
 export declare type Variants = typeof variants[keyof typeof variants];
-
 export interface AlertProps {
   variant?: Variants;
   title: string;

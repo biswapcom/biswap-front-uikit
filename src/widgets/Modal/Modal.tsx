@@ -12,20 +12,27 @@ import {
 } from "./styles";
 import {ModalProps} from "./types";
 
+
 const Modal: React.FC<ModalProps> = ({
-  title,
-  onDismiss,
-  onBack,
-  children,
-  hideCloseButton = false,
-  bodyPadding = "24px",
-  headerBackground = "transparent",
-  minWidth = "320px",
-  ...props
-}) => {
+                                       title,
+                                       onDismiss,
+                                       onBack,
+                                       children,
+                                       hideCloseButton = false,
+                                       bodyPadding = "24px",
+                                       headerBackground = "transparent",
+                                       minWidth = "320px",
+                                       modalBackground = "transparent",
+                                       ...props
+                                     }) => {
   const theme = useTheme();
   return (
-    <ModalContainer minWidth={minWidth} {...props}>
+    <ModalContainer minWidth={minWidth} {...props}
+                    background={getThemeValue(
+                      `colors.${modalBackground}`,
+                      modalBackground
+                    )(theme)}
+    >
       <ModalHeader
         background={getThemeValue(
           `colors.${headerBackground}`,

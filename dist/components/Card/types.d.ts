@@ -22,7 +22,6 @@ export declare type CardTheme = {
   };
   dropShadow: string;
 };
-
 export interface CardProps extends SpaceProps, HTMLAttributes<HTMLDivElement> {
   isActive?: boolean;
   isSuccess?: boolean;

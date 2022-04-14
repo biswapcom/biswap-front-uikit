@@ -1,5 +1,4 @@
 import {MediaQueries, Breakpoints, Spacing} from "./types";
-
 export declare const breakpointMap: {
   [key: string]: number;
 };

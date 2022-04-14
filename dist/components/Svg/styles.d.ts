@@ -1,5 +1,4 @@
 import {Colors} from "../../theme";
-
 export declare const StyledIconContainer: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, {
   activeBackgroundColor?: keyof Colors | undefined;
 }, never>;
