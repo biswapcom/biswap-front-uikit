@@ -39,16 +39,31 @@ export const Default: React.FC = () => {
 export const WithBackground: React.FC = () => {
   const CustomBackgroundModal: React.FC<ModalProps> = ({title, onDismiss}) => {
     return (
-      <Modal title={title} modalBackground="secondary" onDismiss={onDismiss}>
-        test
+      <Modal title={title} modalBackground="secondary" onDismiss={onDismiss} maxWidth="400px">
+        Modal body text
       </Modal>
     );
   };
 
   const [onPresent1] = useModal(
-    <CustomBackgroundModal title="Modal with custom background bla bla bla"/>
+    <CustomBackgroundModal title="Modal with custom background"/>
   );
   return <Button onClick={onPresent1}>Modal with custom background</Button>;
+};
+
+export const WithCustomWidth: React.FC = () => {
+  const CustomWidthModal: React.FC<ModalProps> = ({title, onDismiss}) => {
+    return (
+      <Modal title={title} onDismiss={onDismiss} maxWidth="400px">
+        Modal body text
+      </Modal>
+    );
+  };
+
+  const [onPresent1] = useModal(
+    <CustomWidthModal title="Modal with custom width and test very long title text"/>
+  );
+  return <Button onClick={onPresent1}>Modal with custom width</Button>;
 };
 //-----------
 export const DisableOverlayClick: React.FC = () => {
@@ -87,53 +102,6 @@ export const WithBackButton: React.FC = () => {
   );
 
   return <Button onClick={onPresent1}>Only Back Button</Button>;
-};
-
-export const WithCustomHeader: React.FC = () => {
-  const CustomHeaderModal: React.FC<ModalProps> = ({ title, onDismiss }) => {
-    return (
-      <Modal title={title} headerBackground="primary" onDismiss={onDismiss}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu
-        pretium massa. Donec et gravida eros, eget sollicitudin sapien. Donec
-        imperdiet lorem nulla, at hendrerit purus lacinia ut. Phasellus rhoncus
-        justo in tincidunt cursus. Fusce vulputate, enim id facilisis faucibus,
-        justo nunc consectetur nibh, sit amet euismod ante mauris ut est.
-        Vestibulum eu ligula eu erat eleifend imperdiet et eu nulla. Curabitur
-        sodales ullamcorper nibh sed sagittis. Integer a elit nec nisl cursus
-        vehicula eu a nibh. Donec posuere tortor id egestas ultrices. Aliquam in
-        eros eros. Maecenas fringilla enim varius, fringilla lectus ut, finibus
-        sapien. Phasellus ac vulputate libero, id vehicula massa. Ut dignissim
-        lorem ut risus accumsan feugiat. Quisque odio mi, sollicitudin non
-        elementum nec, tristique non est. Sed faucibus ante hendrerit viverra
-        volutpat. Proin et enim nec ipsum sodales suscipit eu nec lacus. Nulla
-        consequat volutpat scelerisque. Phasellus ligula orci, dictum quis
-        commodo et, tempor quis ligula. Pellentesque eget dapibus leo. Aliquam
-        in ipsum vehicula, suscipit ipsum nec, viverra mauris. Lorem ipsum dolor
-        sit amet, consectetur adipiscing elit. Nullam eu pretium massa. Donec et
-        gravida eros, eget sollicitudin sapien. Donec imperdiet lorem nulla, at
-        hendrerit purus lacinia ut. Phasellus rhoncus justo in tincidunt cursus.
-        Fusce vulputate, enim id facilisis faucibus, justo nunc consectetur
-        nibh, sit amet euismod ante mauris ut est. Vestibulum eu ligula eu erat
-        eleifend imperdiet et eu nulla. Curabitur sodales ullamcorper nibh sed
-        sagittis. Integer a elit nec nisl cursus vehicula eu a nibh. Donec
-        posuere tortor id egestas ultrices. Aliquam in eros eros. Maecenas
-        fringilla enim varius, fringilla lectus ut, finibus sapien. Phasellus ac
-        vulputate libero, id vehicula massa. Ut dignissim lorem ut risus
-        accumsan feugiat. Quisque odio mi, sollicitudin non elementum nec,
-        tristique non est. Sed faucibus ante hendrerit viverra volutpat. Proin
-        et enim nec ipsum sodales suscipit eu nec lacus. Nulla consequat
-        volutpat scelerisque. Phasellus ligula orci, dictum quis commodo et,
-        tempor quis ligula. Pellentesque eget dapibus leo. Aliquam in ipsum
-        vehicula, suscipit ipsum nec, viverra mauris.
-        <Button>This button Does nothing</Button>
-      </Modal>
-    );
-  };
-
-  const [onPresent1] = useModal(
-    <CustomHeaderModal title="Modal with custom header"/>
-  );
-  return <Button onClick={onPresent1}>Modal with custom header</Button>;
 };
 
 export const ReactingToOusideChanges: React.FC = () => {

@@ -11,7 +11,8 @@ export interface ModalProps extends InjectedProps, BoxProps {
     hideCloseButton?: boolean;
     onBack?: () => void;
     bodyPadding?: string;
-    headerBackground?: string;
     minWidth?: string;
+    maxWidth?: string;
     modalBackground?: string;
+    closeBtnColor?: string;
 }
