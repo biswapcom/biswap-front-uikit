@@ -40,6 +40,7 @@
     "@types/lodash": "^4.14.168",
     "@types/react-dom": "^17.0.5",
     "@types/react-router-dom": "^5.3.3",
+    "@types/react-transition-group": "^4.4.0",
     "@types/styled-components": "^5.1.22",
     "i": "^0.3.7",
     "jest-styled-components": "^7.0.3",
@@ -62,7 +63,9 @@
     "@types/styled-system": "^5.1.10",
     "lodash": "^4.17.20",
     "react-popper": "^2.2.5",
-    "styled-system": "^5.1.5"
+    "styled-system": "^5.1.5",
+    "react-share": "^4.4.0",
+    "react-transition-group": "^4.4.1"
   },
   "publishConfig": {
     "access": "public"
