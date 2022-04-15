@@ -32,6 +32,8 @@ export * from "./components/Text";
 export * from "./components/Timeline";
 export * from "./components/Toggle";
 export * from "./components/Badge";
+//TODO must be delete
+export * from "./components/Table";
 
 // Hooks
 export * from "./hooks";

@@ -31,6 +31,7 @@ export * from "./components/Text";
 export * from "./components/Timeline";
 export * from "./components/Toggle";
 export * from "./components/Badge";
+export * from "./components/Table";
 export * from "./hooks";
 export * from "./widgets/Modal";
 export * from "./widgets/Menu";
