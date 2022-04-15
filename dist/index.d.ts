@@ -34,6 +34,7 @@ export * from "./components/Badge";
 export * from "./hooks";
 export * from "./widgets/Modal";
 export * from "./widgets/Menu";
+export * from "./widgets/Toast";
 export * from "./widgets/WalletModal";
 export { default as ResetCSS } from "./ResetCSS";
 export * from "./theme";
