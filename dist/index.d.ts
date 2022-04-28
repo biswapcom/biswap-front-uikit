@@ -24,7 +24,6 @@ export * from "./components/Spinner";
 export * from "./components/BaseMenu";
 export * from "./components/SubMenuItems";
 export * from "./components/Svg";
-export * from "./components/ThemeSwitcher";
 export * from "./components/TabMenu";
 export * from "./components/Tag";
 export * from "./components/Text";

@@ -1,10 +1,11 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import { capitalize } from "lodash";
+import { camelCase, upperCase } from "lodash";
 import React, { useState } from "react";
 import { BrowserRouter, Link } from "react-router-dom";
 import styled from "styled-components";
 import Box from "../Box/Box";
 import Flex from "../Box/Flex";
+import {Heading} from "../Heading";
 import { AddIcon, AutoRenewIcon, LogoIcon } from "../Svg";
 import IconButton from "./IconButton";
 import Button from "./Button";
@@ -17,6 +18,11 @@ export default {
   argTypes: {},
 };
 
+const Wrapper = styled.div`
+  padding: 32px 24px;
+  background: #07162D;
+`
+
 const Row = styled(Flex)`
   margin-bottom: 32px;
   & > button + button,
@@ -26,38 +32,113 @@ const Row = styled(Flex)`
 `;
 
 export const Default: React.FC = () => {
+
+  const baseBtn = {
+    PRIMARY: "primary",
+    DANGER: "danger",
+    SUCCESS: "success",
+    WARNING: "warning",
+    BOOST: "boost",
+  } as const
+
+  const darkBgBtn = {
+    LIGHT_OUT: "LightOut",
+    LIGHT: "light",
+  } as const
+
+  const lightBgBtn = {
+    TERTIARY: "tertiary",
+    TERTIARY_OUT: "tertiaryOut",
+  } as const
+
   return (
-    <>
-      <Box mb="32px">
-        <button type="button">Unstyled Button</button>
-      </Box>
-      <Box mb="32px">
-        {Object.values(variants).map((variant) => {
+    <Wrapper>
+      <Box mb="48px">
+        <Heading color="white" mb="24px">Scales</Heading>
+        {Object.values(scales).map((scale) => {
           return (
-            <Box key={variant} mb="32px">
-              {Object.values(scales).map((scale) => {
-                return (
-                  <Button key={scale} variant={variant} scale={scale} mr="8px">
-                    {`${capitalize(variant)} ${scale.toUpperCase()}`}
-                  </Button>
-                );
-              })}
-            </Box>
+            <Button key="md" variant="primary" scale={scale} mr="8px" mb="8px">
+              {`Primary ${scale}`}
+            </Button>
           );
         })}
       </Box>
-      {/*<Box>*/}
-      {/*  <Button mr="8px" disabled>*/}
-      {/*    Disabled*/}
-      {/*  </Button>*/}
-      {/*  <Button variant="secondary" disabled>*/}
-      {/*    Disabled*/}
-      {/*  </Button>*/}
-      {/*</Box>*/}
-    </>
+
+      <Box mb="48px">
+        <Heading color="white" mb="24px">BASE variants</Heading>
+        {Object.values(baseBtn).map((variant) => {
+          return (
+            <Button key={variant} variant={variant} scale="lg" mr="8px">
+              {`${camelCase(variant)}`}
+            </Button>
+          );
+        })}
+      </Box>
+
+      <Box mb="48px">
+        <Heading color="white" mb="24px">DISABLED</Heading>
+        {Object.values(baseBtn).map((variant) => {
+          return (
+            <Button key={variant} variant={variant} scale="lg" mr="8px" disabled>
+              {`${camelCase(variant)}`}
+            </Button>
+          );
+        })}
+      </Box>
+
+      <Flex justifyContent="space-between">
+        <Box mb="48px">
+          <Heading color="white" mb="16px">Dark background</Heading>
+          {Object.values(darkBgBtn).map((variant) => {
+            return (
+              <Button key="md" variant={variant} scale="lg" mr="8px" mb="8px">
+                {`${camelCase(variant)}`}
+              </Button>
+            );
+          })}
+        </Box>
+        <Box mb="48px">
+          <Heading color="white" mb="16px">Dark background DISABLED</Heading>
+          {Object.values(darkBgBtn).map((variant) => {
+            return (
+              <Button key="md" variant={variant} scale="lg" mr="8px" mb="8px" disabled>
+                {`${camelCase(variant)}`}
+              </Button>
+            );
+          })}
+        </Box>
+      </Flex>
+
+      <Flex justifyContent="space-between" mx="-24px" py="24px" px="24px" background="#F9FAFD">
+        <Box mb="48px">
+          <Heading color="backgroundDark" mb="16px">Light background</Heading>
+          {Object.values(lightBgBtn).map((variant) => {
+            return (
+              <Button key="md" variant={variant} scale="lg" mr="8px" mb="8px">
+                {`${camelCase(variant)}`}
+              </Button>
+            );
+          })}
+        </Box>
+        <Box mb="48px">
+          <Heading color="backgroundDark" mb="16px">Light background DISABLED</Heading>
+          {Object.values(lightBgBtn).map((variant) => {
+            return (
+              <Button key="md" variant={variant} scale="lg" mr="8px" mb="8px" disabled>
+                {`${camelCase(variant)}`}
+              </Button>
+            );
+          })}
+        </Box>
+      </Flex>
+    </Wrapper>
   );
 };
 
+
+
+
+//-----------------------
 export const Anchors: React.FC = () => {
   return (
     <>
@@ -76,7 +157,7 @@ export const Anchors: React.FC = () => {
                     external
                     mr="8px"
                   >
-                    {`${capitalize(variant)} anchor ${scale.toUpperCase()}`}
+                    {`${camelCase(variant)} anchor ${scale.toUpperCase()}`}
                   </Button>
                 );
               })}
@@ -97,7 +178,7 @@ export const Anchors: React.FC = () => {
         <Button
           as="a"
           href="https://pancakeswap.finance"
-          variant="secondary"
+          variant="primary"
           external
           disabled
         >
@@ -113,7 +194,7 @@ export const Variants: React.FC = () => {
     <Box width="640px">
       <BrowserRouter>
         <Row>
-          <Button as={Link} to="/router-link" variant="secondary">
+          <Button as={Link} to="/router-link" variant="primary">
             As an React Router link
           </Button>
         </Row>
@@ -142,7 +223,7 @@ export const Variants: React.FC = () => {
           <IconButton>
             <LogoIcon />
           </IconButton>
-          <IconButton variant="secondary">
+          <IconButton variant="primary">
             <AddIcon />
           </IconButton>
         </Row>

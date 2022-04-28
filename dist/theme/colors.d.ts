@@ -3,6 +3,7 @@ export declare const baseColors: {
     failure: string;
     primaryBright: string;
     primaryDark: string;
+    dark: string;
     primary: string;
     secondary: string;
     success: string;
@@ -12,9 +13,15 @@ export declare const baseColors: {
     backgroundLight: string;
     white: string;
     pastelBlue: string;
+    tooltip: string;
+};
+export declare const brandColors: {
+    binance: string;
+    polygon: string;
+    telegram: string;
+    twitter: string;
 };
 export declare const additionalColors: {
-    binance: string;
     overlay: string;
     gold: string;
     silver: string;
@@ -29,6 +36,14 @@ export declare const additionalColors: {
     warningPress: string;
     boostHover: string;
     boostPress: string;
+    btnTertiary: string;
+    btnTertiaryOut: string;
+    btnTertiaryOutPress: string;
+    btnLightOutBorder: string;
+    btnLightOutBgHover: string;
+    btnLightOutBgPress: string;
+    btnLight: string;
+    toggleBg: string;
     dark900: string;
     dark800: string;
     dark700: string;

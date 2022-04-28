@@ -6,23 +6,22 @@ export const scales = {
   MD: "md",
   LG: "lg",
 } as const;
-export const styleColor = {
+export const variants = {
   LIGHT: "light",
   DARK: "dark",
 } as const;
 
 export type Scales = typeof scales[keyof typeof scales];
-export type StyleColors = typeof styleColor[keyof typeof styleColor];
+export type Variants = typeof variants[keyof typeof variants];
 
 export interface InputProps extends SpaceProps {
   scale?: Scales;
-  styleColor?: StyleColors;
+  variant?: Variants;
   isSuccess?: boolean;
   isWarning?: boolean;
 }
 
-export interface InputGroupProps extends SpaceProps {
-  scale?: Scales;
+export interface InputGroupProps extends SpaceProps, InputProps {
   startIcon?: ReactElement;
   endIcon?: ReactElement;
   children: JSX.Element;

@@ -6,27 +6,25 @@ export const Arrow = styled.div`
     position: absolute;
     width: 10px;
     height: 10px;
-    border-radius: 2px;
     z-index: -1;
   }
 
   &::before {
     content: "";
     transform: rotate(45deg);
-    background: ${({ theme }) => theme.tooltip.background};
+    background: ${({ theme }) => theme.colors.tooltip};
   }
 `;
 
 export const StyledTooltip = styled.div`
-  padding: 16px;
-  font-size: 16px;
-  line-height: 130%;
-  border-radius: 16px;
+  padding: 12px 8px;
+  font-size: 12px;
+  line-height: 16px;
+  border-radius: 8px;
   max-width: 320px;
   z-index: 101;
-  background: ${({ theme }) => theme.tooltip.background};
-  color: ${({ theme }) => theme.tooltip.text};
-  box-shadow: ${({ theme }) => theme.tooltip.boxShadow};
+  background: ${({ theme }) => theme.colors.tooltip};
+  color: ${({ theme }) => theme.colors.white};
 
   &[data-popper-placement^="top"] > ${Arrow} {
     bottom: -4px;

@@ -37,25 +37,25 @@ export const styleVariants = {
     backgroundColor: "primary",
     color: "white",
 
-    ":hover": {
+    ":hover:not(:disabled)": {
       backgroundColor: "primaryHover",
     },
-    ":active": {
+    ":active:not(:disabled)": {
       backgroundColor: "primaryPress",
     },
-    ":disabled": {
-      backgroundColor: "primaryPress",
-      color: "white"
-    },
+    // ":disabled": {
+    //   backgroundColor: "primaryPress",
+    //   color: "white"
+    // },
   },
   [variants.DANGER]: {
     backgroundColor: "secondary",
     color: "white",
 
-    ":hover": {
+    ":hover:not(:disabled)": {
       backgroundColor: "secondaryHover",
     },
-    ":active": {
+    ":active:not(:disabled)": {
       backgroundColor: "secondaryPress",
     },
   },
@@ -63,10 +63,10 @@ export const styleVariants = {
     backgroundColor: "success",
     color: "white",
 
-    ":hover": {
+    ":hover:not(:disabled)": {
       backgroundColor: "successHover",
     },
-    ":active": {
+    ":active:not(:disabled)": {
       backgroundColor: "successPress",
     },
   },
@@ -74,10 +74,10 @@ export const styleVariants = {
     backgroundColor: "warning",
     color: "dark800",
 
-    ":hover": {
+    ":hover:not(:disabled)": {
       backgroundColor: "warningHover",
     },
-    ":active": {
+    ":active:not(:disabled)": {
       backgroundColor: "warningPress",
     },
   },
@@ -85,22 +85,70 @@ export const styleVariants = {
     backgroundColor: "boost",
     color: "white",
 
-    ":hover": {
+    ":hover:not(:disabled)": {
       backgroundColor: "boostHover",
     },
-    ":active": {
+    ":active:not(:disabled)": {
       backgroundColor: "boostPress",
     },
   },
-  [variants.SECONDARY]: {
-    backgroundColor: "transparent",
-    border: "2px solid",
-    borderColor: "primary",
-    boxShadow: "none",
-    color: "primary",
 
-    ":disabled": {
+  [variants.TERTIARY]: {
+    backgroundColor: 'btnTertiary',
+    color: "primary",
+    border: "1px solid transparent",
+
+    ":hover:not(:disabled)": {
+      backgroundColor: 'transparent',
+      borderColor: 'btnTertiary'
+    },
+    ":active:not(:disabled)": {
+      backgroundColor: 'transparent',
+      borderColor: "primary",
+    },
+  },
+  [variants.TERTIARY_OUT]: {
+    color: "primary",
+    backgroundColor: "transparent",
+    border: "1px solid",
+    borderColor: "btnTertiaryOut",
+
+    ":hover:not(:disabled)": {
+      backgroundColor: "btnTertiaryOut",
+      borderColor: "transparent",
+    },
+    ":active:not(:disabled)": {
+      backgroundColor: "btnTertiaryOutPress",
+      borderColor: "transparent",
+    }
+  },
+  [variants.LIGHT_OUT]: {
+    color: "white",
+    border: "1px solid",
+    borderColor: "btnLightOutBorder",
+    backgroundColor: 'transparent',
+
+    ":hover:not(:disabled)": {
+      backgroundColor: "btnLightOutBgHover",
+      borderColor: "transparent"
+    },
+    ":active:not(:disabled)": {
+      backgroundColor: "btnLightOutBgPress",
+      borderColor: "transparent"
+    }
+  },
+  [variants.LIGHT]: {
+    backgroundColor: "btnLight",
+    color: "white",
+    border: "1px solid transparent",
+
+    ":hover:not(:disabled)": {
       backgroundColor: "transparent",
+      borderColor: "btnLight"
+    },
+    ":active:not(:disabled)": {
+      backgroundColor: "transparent",
+      borderColor: "white"
     },
   },
   [variants.TEXT]: {

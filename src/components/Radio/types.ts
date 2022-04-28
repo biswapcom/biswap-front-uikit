@@ -13,4 +13,9 @@ export type Scales = typeof scales[keyof typeof scales];
 
 export interface RadioProps extends SpaceProps {
   scale?: Scales;
+  labelOrientation?: string;
+  label?: string;
+  radioName?: string;
+  onChange: () => void;
+  colorVariant?: string
 }

@@ -3,16 +3,19 @@ export declare const scaleVariants: {
         borderRadius: string;
         height: string;
         fontSize: string;
+        padding: string;
     };
     md: {
         borderRadius: string;
         height: string;
         fontSize: string;
+        padding: string;
     };
     sm: {
         borderRadius: string;
         height: string;
         fontSize: string;
+        padding: string;
     };
 };
 export declare const styleVariants: {

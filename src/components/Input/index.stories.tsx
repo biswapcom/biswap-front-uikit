@@ -24,6 +24,7 @@ const DarkBg = styled.div`
 `
 const LightBg = styled.div`
   padding: 32px 16px;
+  background: ${({ theme }) => theme.colors.white};
 `
 
 export default {
@@ -38,13 +39,13 @@ export const Default: React.FC = () => {
       <LightBg>
         {Object.keys(scales).map((key) => (
           <>
-            <Heading mb="16px">{key}</Heading>
+            <Heading mb="16px" color="backgroundDark">{key} light</Heading>
             <Row>
-              <Input type="text" scale={scales[key]} styleColor='light' value="Value"/>
-              <Input type="text" scale={scales[key]} styleColor='light' placeholder="Placeholder..."/>
-              <Input type="text" scale={scales[key]} styleColor='light' value="Disabled" disabled/>
-              <Input type="text" scale={scales[key]} styleColor='light' value="Success" isSuccess/>
-              <Input type="text" scale={scales[key]} styleColor='light' value="Warning" isWarning/>
+              <Input type="text" scale={scales[key]} variant='light' value="Value"/>
+              <Input type="text" scale={scales[key]} variant='light' placeholder="Placeholder..."/>
+              <Input type="text" scale={scales[key]} variant='light' value="Disabled" disabled/>
+              <Input type="text" scale={scales[key]} variant='light' value="Success" isSuccess/>
+              <Input type="text" scale={scales[key]} variant='light' value="Warning" isWarning/>
             </Row>
           </>
         ))}
@@ -53,13 +54,13 @@ export const Default: React.FC = () => {
       <DarkBg>
         {Object.keys(scales).map((key) => (
           <>
-            <Heading mb="16px" color="white">{key}</Heading>
+            <Heading mb="16px" color="white">{key} dark</Heading>
             <Row>
-              <Input type="text" scale={scales[key]} styleColor='dark' value="Value"/>
-              <Input type="text" scale={scales[key]} styleColor='dark' placeholder="Placeholder..."/>
-              <Input type="text" scale={scales[key]} styleColor='dark' value="Disabled" disabled/>
-              <Input type="text" scale={scales[key]} styleColor='dark' value="Success" isSuccess/>
-              <Input type="text" scale={scales[key]} styleColor='dark' value="Warning" isWarning/>
+              <Input type="text" scale={scales[key]} variant='dark' value="Value"/>
+              <Input type="text" scale={scales[key]} variant='dark' placeholder="Placeholder..."/>
+              <Input type="text" scale={scales[key]} variant='dark' value="Disabled" disabled/>
+              <Input type="text" scale={scales[key]} variant='dark' value="Success" isSuccess/>
+              <Input type="text" scale={scales[key]} variant='dark' value="Warning" isWarning/>
             </Row>
           </>
         ))}
@@ -70,16 +71,61 @@ export const Default: React.FC = () => {
 
 export const Icons: React.FC = () => {
   return (
-    <Box width="300px">
-      <InputGroup startIcon={<Search width="18px"/>} endIcon={<StarFill width="18px"/>} mb="24px" scale="sm">
-        <Input type="text" value="Input Group"/>
-      </InputGroup>
-      <InputGroup startIcon={<Search width="24px"/>} endIcon={<StarFill width="24px"/>} mb="24px" scale="md">
-        <Input type="text" value="Input Group"/>
-      </InputGroup>
-      <InputGroup startIcon={<Search width="32px"/>} endIcon={<StarFill width="32px"/>} mb="24px" scale="lg">
-        <Input type="text" value="Input Group"/>
-      </InputGroup>
-    </Box>
+    <>
+      <Box width="300px" py="24px" px="24px" background="white">
+        <InputGroup
+          startIcon={<Search width="16px" color="gray900"/>}
+          endIcon={<StarFill width="16px" color="gray900"/>}
+          mb="24px"
+          variant='light'
+          scale="sm"
+        >
+          <Input type="text"/>
+        </InputGroup>
+        <InputGroup
+          startIcon={<Search width="20px" color="gray900"/>}
+          endIcon={<StarFill width="20px" color="gray900"/>}
+          mb="24px"
+          variant='light'
+          scale="md">
+          <Input type="text" placeholder="Input Group"/>
+        </InputGroup>
+        <InputGroup
+          startIcon={<Search width="24px" color="gray900"/>}
+          endIcon={<StarFill width="24px" color="gray900"/>}
+          mb="24px"
+          variant='light'
+          scale="lg">
+          <Input type="text" value="Input Group"/>
+        </InputGroup>
+      </Box>
+      <Box width="300px" py="24px" px="24px" background="#07162D">
+        <InputGroup
+          startIcon={<Search width="16px" color="pastelBlue"/>}
+          endIcon={<StarFill width="16px" color="pastelBlue"/>}
+          mb="24px"
+          variant='dark'
+          scale="sm"
+        >
+          <Input type="text"/>
+        </InputGroup>
+        <InputGroup
+          startIcon={<Search width="20px" color="pastelBlue"/>}
+          endIcon={<StarFill width="20px" color="pastelBlue"/>}
+          mb="24px"
+          variant='dark'
+          scale="md">
+          <Input type="text" placeholder="Input Group"/>
+        </InputGroup>
+        <InputGroup
+          startIcon={<Search width="24px" color="pastelBlue"/>}
+          endIcon={<StarFill width="24px" color="pastelBlue"/>}
+          mb="24px"
+          variant='dark'
+          scale="lg">
+          <Input type="text" value="Input Group"/>
+        </InputGroup>
+      </Box>
+    </>
   );
 };

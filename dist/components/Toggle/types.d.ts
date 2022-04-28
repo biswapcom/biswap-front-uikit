@@ -1,4 +1,4 @@
-import { InputHTMLAttributes, ReactNode } from "react";
+import { InputHTMLAttributes } from "react";
 import { Colors } from "../../theme";
 export declare const scales: {
     readonly SM: "sm";
@@ -11,8 +11,6 @@ export interface ToggleProps extends InputHTMLAttributes<HTMLInputElement> {
     checked?: boolean;
     checkedColor?: keyof Colors;
     defaultColor?: keyof Colors;
-    startIcon?: (isActive?: boolean) => ReactNode;
-    endIcon?: (isActive?: boolean) => ReactNode;
 }
 export interface HandleProps {
     scale: Scales;
