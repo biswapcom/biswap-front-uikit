@@ -1,6 +1,4 @@
-import {RadioProps} from "./types";
-
-declare const Radio: import("styled-components").StyledComponent<"input", import("styled-components").DefaultTheme, {
-  type: "radio";
-} & RadioProps, "type">;
+import { FC } from "react";
+import { RadioProps } from "./types";
+declare const Radio: FC<RadioProps>;
 export default Radio;

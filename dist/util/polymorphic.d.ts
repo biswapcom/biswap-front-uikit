@@ -1,10 +1,9 @@
-import {ComponentProps, ElementType, ReactElement} from "react";
-
+import { ComponentProps, ElementType, ReactElement } from "react";
 /**
  * @see https://www.benmvp.com/blog/polymorphic-react-components-typescript/
  */
 export declare type AsProps<E extends ElementType = ElementType> = {
-  as?: E;
+    as?: E;
 };
 export declare type MergeProps<E extends ElementType> = AsProps<E> & Omit<ComponentProps<E>, keyof AsProps>;
 export declare type PolymorphicComponentProps<E extends ElementType, P> = P & MergeProps<E>;

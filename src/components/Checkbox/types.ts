@@ -7,4 +7,7 @@ export type Scales = typeof scales[keyof typeof scales];
 
 export interface CheckboxProps {
   scale?: Scales;
+  labelOrientation?: string;
+  label?: string;
+  colorVariant?: string
 }

@@ -1,32 +1,35 @@
-import {scales, styleColor} from "./types";
+import {scales, variants} from "./types";
 
 export const scaleVariants = {
     [scales.LG]: {
         borderRadius: "10px",
         height: "48px",
         fontSize: "16px",
+        padding: "0 24px",
     },
     [scales.MD]: {
         borderRadius: "8px",
         height: "40px",
         fontSize: "14px",
+        padding: "0 16px",
     },
     [scales.SM]: {
         borderRadius: "8px",
         height: "32px",
         fontSize: "12px",
+        padding: "0 12px",
     },
 }
 export const styleVariants = {
-    [styleColor.LIGHT]: {
+    [variants.LIGHT]: {
         backgroundColor: "gray300",
-        color: "gray900",
+        color: "dark800",
 
         "::placeholder": {
             color: "gray900",
         },
         ":hover:not(:disabled)": {
-            borderColor: "gray900",
+            borderColor: "gray500",
             backgroundColor: "transparent",
             color: "dark800",
         },
@@ -41,9 +44,9 @@ export const styleVariants = {
             cursor: "not-allowed",
         }
     },
-    [styleColor.DARK]: {
+    [variants.DARK]: {
         backgroundColor: "dark500",
-        color: "pastelBlue",
+        color: "white",
 
         "::placeholder": {
             color: "pastelBlue",

@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import getRgba from "../../util/getRgba";
+
 import {
   ToggleProps,
   HandleProps,
@@ -18,14 +20,15 @@ const scaleKeyValues = {
     toggleHeight: "20px",
     toggleWidth: "36px",
   },
+  // TODO now used only MD scale
   md: {
-    handleHeight: "26px",
-    handleWidth: "26px",
-    handleLeft: "3px",
-    handleTop: "3px",
-    checkedLeft: "calc(100% - 30px)",
-    toggleHeight: "32px",
-    toggleWidth: "56px",
+    handleHeight: "16px",
+    handleWidth: "16px",
+    handleLeft: "2px",
+    handleTop: "2px",
+    checkedLeft: "calc(100% - 18px)",
+    toggleHeight: "20px",
+    toggleWidth: "40px",
   },
   lg: {
     handleHeight: "32px",
@@ -45,7 +48,8 @@ const getScale =
   };
 
 export const Handle = styled.div<HandleProps>`
-  background-color: ${({ theme }) => theme.toggle.handleBackground};
+  background-color: ${({ theme }) => theme.colors.white};
+  box-shadow: 0 2px 4px rgba(7, 22, 45, 0.16);
   border-radius: 50%;
   cursor: pointer;
   height: ${getScale("handleHeight")};
@@ -64,26 +68,18 @@ export const Input = styled.input<InputProps>`
   position: absolute;
   width: 100%;
   z-index: 3;
+  margin: 0;
 
   &:checked + ${Handle} {
     left: ${getScale("checkedLeft")};
   }
-
-  &:focus + ${Handle} {
-    box-shadow: ${({ theme }) => theme.shadows.focus};
-  }
-
-  &:hover + ${Handle}:not(:disabled):not(:checked) {
-    box-shadow: ${({ theme }) => theme.shadows.focus};
-  }
 `;
 
 const StyledToggle = styled.div<StyleToggleProps>`
-  align-items: center;
   background-color: ${({ theme, $checked, $checkedColor, $defaultColor }) =>
-    theme.colors[$checked ? $checkedColor : $defaultColor]};
-  border-radius: 24px;
-  box-shadow: ${({ theme }) => theme.shadows.inset};
+  theme.colors[$checked ? $checkedColor : $defaultColor]};
+  align-items: center;
+  border-radius: 26px;
   cursor: pointer;
   display: inline-flex;
   height: ${getScale("toggleHeight")};

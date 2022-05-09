@@ -1,98 +1,142 @@
 export declare const scaleVariants: {
-  xl: {
-    height: string;
-    padding: string;
-    borderRadius: string;
-  };
-  lg: {
-    height: string;
-    padding: string;
-    fontSize: string;
-    borderRadius: string;
-  };
-  md: {
-    height: string;
-    padding: string;
-    fontSize: string;
-    borderRadius: string;
-  };
-  sm: {
-    height: string;
-    padding: string;
-    fontSize: string;
-    borderRadius: string;
-  };
-  xs: {
-    height: string;
-    padding: string;
-    fontSize: string;
-    borderRadius: string;
-  };
+    xl: {
+        height: string;
+        padding: string;
+        borderRadius: string;
+    };
+    lg: {
+        height: string;
+        padding: string;
+        fontSize: string;
+        borderRadius: string;
+    };
+    md: {
+        height: string;
+        padding: string;
+        fontSize: string;
+        borderRadius: string;
+    };
+    sm: {
+        height: string;
+        padding: string;
+        fontSize: string;
+        borderRadius: string;
+    };
+    xs: {
+        height: string;
+        padding: string;
+        fontSize: string;
+        borderRadius: string;
+    };
 };
 export declare const styleVariants: {
-  primary: {
-    backgroundColor: string;
-    color: string;
-    ":hover": {
-      backgroundColor: string;
+    primary: {
+        backgroundColor: string;
+        color: string;
+        ":hover:not(:disabled)": {
+            backgroundColor: string;
+        };
+        ":active:not(:disabled)": {
+            backgroundColor: string;
+        };
     };
-    ":active": {
-      backgroundColor: string;
+    danger: {
+        backgroundColor: string;
+        color: string;
+        ":hover:not(:disabled)": {
+            backgroundColor: string;
+        };
+        ":active:not(:disabled)": {
+            backgroundColor: string;
+        };
     };
-  };
-  danger: {
-    backgroundColor: string;
-    color: string;
-    ":hover": {
-      backgroundColor: string;
+    success: {
+        backgroundColor: string;
+        color: string;
+        ":hover:not(:disabled)": {
+            backgroundColor: string;
+        };
+        ":active:not(:disabled)": {
+            backgroundColor: string;
+        };
     };
-    ":active": {
-      backgroundColor: string;
+    warning: {
+        backgroundColor: string;
+        color: string;
+        ":hover:not(:disabled)": {
+            backgroundColor: string;
+        };
+        ":active:not(:disabled)": {
+            backgroundColor: string;
+        };
     };
-  };
-  success: {
-    backgroundColor: string;
-    color: string;
-    ":hover": {
-      backgroundColor: string;
+    boost: {
+        backgroundColor: string;
+        color: string;
+        ":hover:not(:disabled)": {
+            backgroundColor: string;
+        };
+        ":active:not(:disabled)": {
+            backgroundColor: string;
+        };
     };
-    ":active": {
-      backgroundColor: string;
+    tertiary: {
+        backgroundColor: string;
+        color: string;
+        border: string;
+        ":hover:not(:disabled)": {
+            backgroundColor: string;
+            borderColor: string;
+        };
+        ":active:not(:disabled)": {
+            backgroundColor: string;
+            borderColor: string;
+        };
     };
-  };
-  warning: {
-    backgroundColor: string;
-    color: string;
-    ":hover": {
-      backgroundColor: string;
+    tertiaryOut: {
+        color: string;
+        backgroundColor: string;
+        border: string;
+        borderColor: string;
+        ":hover:not(:disabled)": {
+            backgroundColor: string;
+            borderColor: string;
+        };
+        ":active:not(:disabled)": {
+            backgroundColor: string;
+            borderColor: string;
+        };
     };
-    ":active": {
-      backgroundColor: string;
+    LightOut: {
+        color: string;
+        border: string;
+        borderColor: string;
+        backgroundColor: string;
+        ":hover:not(:disabled)": {
+            backgroundColor: string;
+            borderColor: string;
+        };
+        ":active:not(:disabled)": {
+            backgroundColor: string;
+            borderColor: string;
+        };
     };
-  };
-  boost: {
-    backgroundColor: string;
-    color: string;
-    ":hover": {
-      backgroundColor: string;
+    light: {
+        backgroundColor: string;
+        color: string;
+        border: string;
+        ":hover:not(:disabled)": {
+            backgroundColor: string;
+            borderColor: string;
+        };
+        ":active:not(:disabled)": {
+            backgroundColor: string;
+            borderColor: string;
+        };
     };
-    ":active": {
-      backgroundColor: string;
+    text: {
+        backgroundColor: string;
+        color: string;
+        boxShadow: string;
     };
-  };
-  secondary: {
-    backgroundColor: string;
-    border: string;
-    borderColor: string;
-    boxShadow: string;
-    color: string;
-    ":disabled": {
-      backgroundColor: string;
-    };
-  };
-  text: {
-    backgroundColor: string;
-    color: string;
-    boxShadow: string;
-  };
 };

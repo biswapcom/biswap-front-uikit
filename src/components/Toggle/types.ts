@@ -14,8 +14,6 @@ export interface ToggleProps extends InputHTMLAttributes<HTMLInputElement> {
   checked?: boolean;
   checkedColor?: keyof Colors;
   defaultColor?: keyof Colors;
-  startIcon?: (isActive?: boolean) => ReactNode;
-  endIcon?: (isActive?: boolean) => ReactNode;
 }
 
 export interface HandleProps {

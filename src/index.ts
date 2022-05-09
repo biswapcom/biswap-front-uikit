@@ -25,13 +25,14 @@ export * from "./components/Spinner";
 export * from "./components/BaseMenu";
 export * from "./components/SubMenuItems";
 export * from "./components/Svg";
-export * from "./components/ThemeSwitcher";
 export * from "./components/TabMenu";
 export * from "./components/Tag";
 export * from "./components/Text";
 export * from "./components/Timeline";
 export * from "./components/Toggle";
 export * from "./components/Badge";
+//TODO must be delete
+export * from "./components/Table";
 
 // Hooks
 export * from "./hooks";
@@ -39,6 +40,7 @@ export * from "./hooks";
 // Widgets
 export * from "./widgets/Modal";
 export * from "./widgets/Menu";
+export * from "./widgets/Toast";
 export * from "./widgets/WalletModal";
 
 // Theme

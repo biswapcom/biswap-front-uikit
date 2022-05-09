@@ -12,29 +12,35 @@ import {
 } from "./styles";
 import {ModalProps} from "./types";
 
+
 const Modal: React.FC<ModalProps> = ({
-  title,
-  onDismiss,
-  onBack,
-  children,
-  hideCloseButton = false,
-  bodyPadding = "24px",
-  headerBackground = "transparent",
-  minWidth = "320px",
-  ...props
-}) => {
+                                       title,
+                                       onDismiss,
+                                       onBack,
+                                       children,
+                                       hideCloseButton = false,
+                                       bodyPadding = "24px",
+                                       minWidth = "320px",
+                                       modalBackground = "white",
+                                       closeBtnColor,
+                                       maxWidth,
+                                       ...props
+                                     }) => {
   const theme = useTheme();
   return (
-    <ModalContainer minWidth={minWidth} {...props}>
-      <ModalHeader
-        background={getThemeValue(
-          `colors.${headerBackground}`,
-          headerBackground
-        )(theme)}
-      >
+    <ModalContainer minWidth={minWidth} {...props}
+                    background={getThemeValue(
+                      `colors.${modalBackground}`,
+                      modalBackground
+                    )(theme)}
+                    maxWidth={maxWidth}
+    >
+      <ModalHeader>
         <ModalTitle>
-          {onBack && <ModalBackButton onBack={onBack}/>}
-          <Heading>{title}</Heading>
+          {onBack && <ModalBackButton onBack={onBack} closeBtnColor={closeBtnColor}/>}
+          { title &&
+              <Heading>{title}</Heading>
+          }
         </ModalTitle>
         {!hideCloseButton && <ModalCloseButton onDismiss={onDismiss}/>}
       </ModalHeader>
