@@ -1,6 +1,6 @@
 import React from "react";
+import styled from "styled-components";
 import Button from "../Button/Button";
-import Flex from "../Box/Flex";
 import Dropdown from "./Dropdown";
 
 export default {
@@ -9,31 +9,28 @@ export default {
   argTypes: {},
 };
 
+const WrapperLight = styled.div`
+  background-color: #F9FAFD;
+  padding: 32px;
+`
+const WrapperDark = styled.div`
+  background-color: #07162D;
+  padding: 32px;
+`
+
 export const Default: React.FC = () => {
   return (
-    <div>
-      <Dropdown target={<Button>Hover</Button>}>
-        {[...Array(30)].map(() => (
-          <div>Content</div>
-        ))}
-      </Dropdown>
-    </div>
-  );
-};
-
-export const Top: React.FC = () => {
-  return (
-    <Flex justifyContent="space-between" style={{ marginTop: "400px" }}>
-      <Dropdown position="top-right" target={<Button>Top right</Button>}>
-        {[...Array(20)].map(() => (
-          <div>Content</div>
-        ))}
-      </Dropdown>
-      <Dropdown position="top" target={<Button>Top</Button>}>
-        {[...Array(20)].map(() => (
-          <div>Content</div>
-        ))}
-      </Dropdown>
-    </Flex>
+    <>
+      <WrapperLight>
+        <Dropdown target={<Button>Hover</Button>}>
+          {[...Array(30)].map(() => (
+            <div>Content</div>
+          ))}
+        </Dropdown>
+      </WrapperLight>
+      <WrapperDark>
+        sss
+      </WrapperDark>
+    </>
   );
 };
