@@ -10,4 +10,6 @@ export interface CheckboxProps {
   labelOrientation?: string;
   label?: string;
   colorVariant?: string
+  id?: string
+  defaultChecked?: boolean
 }

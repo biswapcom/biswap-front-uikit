@@ -83,10 +83,23 @@ const StyledText = styled(Text)`
   transition: color .4s ease-in-out;
 `
 
-const Checkbox:FC<CheckboxProps> = ({labelOrientation, label, scale, colorVariant}) => {
+const Checkbox:FC<CheckboxProps> = (
+  {
+    labelOrientation,
+    label,
+    scale,
+    colorVariant,
+    id,
+    defaultChecked
+  }) => {
   return (
     <Wrapper labelOrientation={labelOrientation}>
-      <CheckboxInput scale={scale} colorVariant={colorVariant}/>
+      <CheckboxInput
+        scale={scale}
+        colorVariant={colorVariant}
+        id={id}
+        defaultChecked={defaultChecked}
+      />
       {label && labelOrientation &&
           <StyledText
               as="span"

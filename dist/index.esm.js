@@ -2023,9 +2023,9 @@ var CheckboxInput = styled.input.attrs({ type: "checkbox" })(templateObject_2$x 
 });
 var StyledText$1 = styled(Text)(templateObject_3$j || (templateObject_3$j = __makeTemplateObject(["\n  transition: color .4s ease-in-out;\n"], ["\n  transition: color .4s ease-in-out;\n"])));
 var Checkbox = function (_a) {
-    var labelOrientation = _a.labelOrientation, label = _a.label, scale = _a.scale, colorVariant = _a.colorVariant;
+    var labelOrientation = _a.labelOrientation, label = _a.label, scale = _a.scale, colorVariant = _a.colorVariant, id = _a.id, defaultChecked = _a.defaultChecked;
     return (React.createElement(Wrapper$c, { labelOrientation: labelOrientation },
-        React.createElement(CheckboxInput, { scale: scale, colorVariant: colorVariant }),
+        React.createElement(CheckboxInput, { scale: scale, colorVariant: colorVariant, id: id, defaultChecked: defaultChecked }),
         label && labelOrientation &&
             React.createElement(StyledText$1, { as: "span", fontSize: "12px", fontWeight: "400", color: "gray900", mr: labelOrientation === "left" ? '12px' : 0, ml: labelOrientation === "right" ? '12px' : 0 }, label)));
 };
