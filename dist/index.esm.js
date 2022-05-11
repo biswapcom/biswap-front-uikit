@@ -4691,10 +4691,9 @@ var DropdownMenu = function (_a) {
         })))));
 };
 
-var MenuItemType;
-(function (MenuItemType) {
-    MenuItemType[MenuItemType["DIVIDER"] = 0] = "DIVIDER";
-})(MenuItemType || (MenuItemType = {}));
+var ItemTypes = {
+    DIVIDER: 'DIVIDER',
+};
 
 var openBodyAnimation = keyframes(templateObject_1$c || (templateObject_1$c = __makeTemplateObject(["\n  0% {\n    opacity: 0;\n    height: 0;\n  }\n  100% {\n    opacity: 1;\n    height: auto;\n  }\n"], ["\n  0% {\n    opacity: 0;\n    height: 0;\n  }\n  100% {\n    opacity: 1;\n    height: auto;\n  }\n"])));
 var AccordionBody = styled.div(templateObject_3$3 || (templateObject_3$3 = __makeTemplateObject(["\n  display: ", ";\n  flex-direction: column;\n  overflow: hidden;\n\n  ", "\n"], ["\n  display: ", ";\n  flex-direction: column;\n  overflow: hidden;\n\n  ", "\n"])), function (_a) {
@@ -4827,7 +4826,7 @@ var MenuItems = function (_a) {
             return (visualize && (React.createElement(React.Fragment, null,
                 React.createElement(DropdownMenu, { key: "".concat(label, "#").concat(href, "#").concat(icon), items: menuItems, py: 1, activeItem: activeSubItem, isExtended: isExtended },
                     React.createElement(MenuItem, __assign({}, linkProps, { isActive: isActive, statusColor: statusColor }),
-                        type === MenuItemType.DIVIDER && React.createElement(MenuItemDivider, null),
+                        type === ItemTypes.DIVIDER && React.createElement(MenuItemDivider, null),
                         icon && (React.createElement(IconComponent, { iconName: icon, color: isActive ? "pastelBlue" : "white" })),
                         label && (React.createElement(Text, { ml: "8px", color: isActive ? "pastelBlue" : "white" }, label)))))));
         })));
@@ -5030,7 +5029,7 @@ var links = [
         ],
     },
     {
-        type: MenuItemType.DIVIDER,
+        type: ItemTypes.DIVIDER,
         showItemsOnMobile: true,
     },
     {

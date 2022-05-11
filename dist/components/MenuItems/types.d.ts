@@ -1,8 +1,9 @@
 import { BoxProps } from "../Box";
 import { DropdownMenuItems } from "../DropdownMenu/types";
-export declare enum MenuItemType {
-    DIVIDER = 0
-}
+export declare const ItemTypes: {
+    readonly DIVIDER: "DIVIDER";
+};
+declare type ItemType = typeof ItemTypes[keyof typeof ItemTypes];
 export declare type MenuItemsType = {
     label?: string;
     href?: string;
@@ -12,10 +13,11 @@ export declare type MenuItemsType = {
     showItemsOnMobile?: boolean;
     isExtended?: boolean;
     isMobileNav?: boolean;
-    type?: MenuItemType;
+    type?: ItemType;
 };
 export interface MenuItemsProps extends BoxProps {
     items: MenuItemsType[];
     activeItem?: string;
     activeSubItem?: string;
 }
+export {};

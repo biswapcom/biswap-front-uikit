@@ -5,7 +5,7 @@ import isTouchDevice from "../../util/isTouchDevice";
 import DropdownMenu from "../DropdownMenu/DropdownMenu";
 import MenuItem from "../MenuItem/MenuItem";
 import IconComponent from "../Svg/IconComponent";
-import {MenuItemsProps, MenuItemType} from "./types";
+import {ItemTypes, MenuItemsProps} from "./types";
 import {useMatchBreakpoints} from "../../hooks";
 import MobileDropdownMenu from "../DropdownMenu/MobileMenu/MobileDropdownMenu";
 import MenuItemDivider from "../MenuItem/Divider";
@@ -56,7 +56,7 @@ const MenuItems: React.FC<MenuItemsProps> = ({
                     isActive={isActive}
                     statusColor={statusColor}
                   >
-                    {type === MenuItemType.DIVIDER && <MenuItemDivider/>}
+                    {type === ItemTypes.DIVIDER && <MenuItemDivider/>}
                     {icon && (
                       <IconComponent
                         iconName={icon}
