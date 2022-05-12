@@ -10,4 +10,5 @@ export interface CheckboxProps {
     colorVariant?: string;
     id?: string;
     defaultChecked?: boolean;
+    onChange?: () => void;
 }

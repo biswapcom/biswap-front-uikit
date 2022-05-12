@@ -90,7 +90,8 @@ const Checkbox:FC<CheckboxProps> = (
     scale,
     colorVariant,
     id,
-    defaultChecked
+    defaultChecked,
+    onChange
   }) => {
   return (
     <Wrapper labelOrientation={labelOrientation}>
@@ -99,6 +100,7 @@ const Checkbox:FC<CheckboxProps> = (
         colorVariant={colorVariant}
         id={id}
         defaultChecked={defaultChecked}
+        onChange={onChange}
       />
       {label && labelOrientation &&
           <StyledText
