@@ -5628,10 +5628,10 @@ var WalletButton = styled(Button).attrs({
     py: "16px",
 })(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  align-items: center;\n  display: flex;\n  flex-direction: column;\n  height: auto;\n  justify-content: center;\n  margin-left: auto;\n  margin-right: auto;\n"], ["\n  align-items: center;\n  display: flex;\n  flex-direction: column;\n  height: auto;\n  justify-content: center;\n  margin-left: auto;\n  margin-right: auto;\n"])));
 var MoreWalletCard = function (_a) {
-    var t = _a.t, props = __rest(_a, ["t"]);
+    var props = __rest(_a, []);
     return (React.createElement(WalletButton, __assign({ variant: "tertiary" }, props),
         React.createElement(Icon$7, { width: "40px", mb: "8px", color: "textSubtle" }),
-        React.createElement(Text, { fontSize: "14px" }, t("More"))));
+        React.createElement(Text, { fontSize: "14px" }, "More")));
 };
 var WalletCard = function (_a) {
     var login = _a.login, walletConfig = _a.walletConfig, onDismiss = _a.onDismiss;
@@ -5681,7 +5681,7 @@ var getPreferredConfig = function (walletConfig) {
     ], sortedConfig.filter(function (sortedWalletConfig) { return sortedWalletConfig.title !== preferredWalletName; }), true);
 };
 var ConnectModal = function (_a) {
-    var login = _a.login, _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b, _c = _a.displayCount, displayCount = _c === void 0 ? 3 : _c, t = _a.t;
+    var login = _a.login, _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b, _c = _a.displayCount, displayCount = _c === void 0 ? 3 : _c;
     var _d = useState(false), showMore = _d[0], setShowMore = _d[1];
     useTheme();
     var sortedConfig = getPreferredConfig(connectors);
@@ -5691,22 +5691,22 @@ var ConnectModal = function (_a) {
     return (React.createElement(ModalContainer, { minWidth: "320px" },
         React.createElement(ModalHeader, null,
             React.createElement(ModalTitle, null,
-                React.createElement(Heading, null, t("Connect Wallet"))),
+                React.createElement(Heading, null, "Connect Wallet")),
             React.createElement(ModalCloseButton, { onDismiss: onDismiss })),
         React.createElement(ModalBody$1, { width: ["320px", null, "340px"] },
             React.createElement(WalletWrapper, { py: "24px", maxHeight: "453px", overflowY: "auto" },
                 React.createElement(Grid, { gridTemplateColumns: "1fr 1fr" },
                     displayListConfig.map(function (wallet) { return (React.createElement(Box, { key: wallet.title },
                         React.createElement(WalletCard, { walletConfig: wallet, login: login, onDismiss: onDismiss }))); }),
-                    !showMore && (React.createElement(MoreWalletCard, { t: t, onClick: function () { return setShowMore(true); } })))),
+                    !showMore && (React.createElement(MoreWalletCard, { onClick: function () { return setShowMore(true); } })))),
             React.createElement(Box, { p: "24px" },
-                React.createElement(Text, { textAlign: "center", color: "textSubtle", as: "p", mb: "16px" }, t("Haven’t got a crypto wallet yet?")),
-                React.createElement(Button, __assign({ as: "a", href: "https://docs.pancakeswap.finance/get-started/connection-guide", variant: "warning", width: "100%" }, getExternalLinkProps()), t("Learn How to Connect"))))));
+                React.createElement(Text, { textAlign: "center", color: "textSubtle", as: "p", mb: "16px" }, "Haven\u2019t got a crypto wallet yet?"),
+                React.createElement(Button, __assign({ as: "a", href: "https://docs.pancakeswap.finance/get-started/connection-guide", variant: "warning", width: "100%" }, getExternalLinkProps()), "Learn How to Connect")))));
 };
 var templateObject_1$1;
 
-var useWalletModal = function (login, logout, t) {
-    var onPresentConnectModal = useModal(React.createElement(ConnectModal, { login: login, t: t }))[0];
+var useWalletModal = function (login, logout) {
+    var onPresentConnectModal = useModal(React.createElement(ConnectModal, { login: login }))[0];
     return { onPresentConnectModal: onPresentConnectModal };
 };
 
