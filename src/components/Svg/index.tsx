@@ -5,6 +5,7 @@ export {default as ArrowDropDownIcon} from "./Icons/ArrowDropDown";
 export {default as ArrowDropUpIcon} from "./Icons/ArrowDropUp";
 export {default as ArrowForwardIcon} from "./Icons/ArrowForward";
 export {default as ArrowUpIcon} from "./Icons/ArrowUp";
+export { default as ArrowUpForwardIcon } from "./Icons/ArrowUpForward";
 export {default as AutoRenewIcon} from "./Icons/AutoRenew";
 export {default as BinanceIcon} from "./Icons/Binance";
 export {default as BlockIcon} from "./Icons/Block";
@@ -53,9 +54,6 @@ export {default as SyncAltIcon} from "./Icons/SyncAlt";
 export {default as WarningIcon} from "./Icons/Warning";
 export {default as DownloadIcon} from "./Icons/Download";
 export {default as LinkIcon} from "./Icons/Link";
-export {default as TelegramIcon} from "./Icons/Telegram";
-export {default as TwitterIcon} from "./Icons/Twitter";
-export {default as MediumIcon} from "./Icons/Medium";
 export {default as RocketIcon} from "./Icons/Rocket"
 export {default as FlagIcon} from "./Icons/Flag"
 export {default as WalletIcon} from "./Icons/Wallet"
@@ -91,6 +89,33 @@ export {default as BscNewIcon} from './Icons/BscNew'
 export {default as LogoWithTextIcon} from './Icons/LogoWithText'
 
 export {default as ImgWarnIcon} from './Icons/ImgWarn'
+
+// socials
+export {default as YoutubeIcon} from './Icons/Youtube'
+export {default as InstagramIcon} from './Icons/Instagram'
+export {default as TwitchIcon} from './Icons/Twitch'
+export {default as TelegramIcon} from "./Icons/Telegram";
+export {default as TwitterIcon} from "./Icons/Twitter";
+export {default as MediumIcon} from "./Icons/Medium";
+
+// menu
+export { default as SwapIcon } from "./Icons/Swap";
+export { default as ExpertTradeIcon } from "./Icons/ExpertTrade";
+export { default as LiquidityIcon } from "./Icons/Liquidity";
+export { default as FarmsIcon } from "./Icons/Farms";
+export { default as LaunchIcon } from "./Icons/Launch";
+export { default as ReferralIcon } from "./Icons/Referral";
+export { default as IdoMenuIcon } from "./Icons/IdoMenu";
+export { default as LotteryIcon } from "./Icons/Lottery";
+export { default as CompetitionsIcon } from "./Icons/Competitions";
+export { default as NftLaunchIcon } from "./Icons/NftLaunch";
+export { default as NftEarnIcon } from "./Icons/NftEarn";
+export { default as MarketMenuIcon } from "./Icons/MarketMenu";
+export { default as GameFiIcon } from "./Icons/GameFi";
+export { default as ProductsIcon } from "./Icons/Products";
+export { default as ButtonMenuIcon } from "./Icons/ButtonMenu";
+export { default as ButtonMenuOpenedIcon } from "./Icons/ButtonMenuOpened";
+export { default as CerticAuditedIcon } from "./Icons/Certic";
 
 //chain
 export {default as BSCIcon} from "./Icons/BSC";
