@@ -4,7 +4,7 @@ interface Props {
     login: Login;
     onDismiss?: () => void;
     displayCount?: number;
-    t: (key: string) => string;
+    t: (key: string) => string | string;
 }
 declare const ConnectModal: React.FC<Props>;
 export default ConnectModal;
