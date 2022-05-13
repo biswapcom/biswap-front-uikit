@@ -22,7 +22,7 @@ interface Props {
   login: Login;
   onDismiss?: () => void;
   displayCount?: number;
-  t: (key: string) => string;
+  t: (key: string) => string | string;
 }
 
 const WalletWrapper = styled(Box)`
