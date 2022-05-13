@@ -28,7 +28,7 @@ const WalletButton = styled(Button).attrs({
 `;
 
 interface MoreWalletCardProps extends ButtonProps {
-  t: (key: string) => string;
+  t: (key: string) => string | string;
 }
 
 export const MoreWalletCard: React.FC<MoreWalletCardProps> = ({

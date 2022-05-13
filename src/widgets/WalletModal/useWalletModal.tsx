@@ -10,7 +10,7 @@ interface ReturnType {
 const useWalletModal = (
   login: Login,
   logout: () => void,
-  t: (key: string) => string
+  t: (key: string) => string | string
 ): ReturnType => {
   const [onPresentConnectModal] = useModal(
     <ConnectModal login={login} t={t}/>
