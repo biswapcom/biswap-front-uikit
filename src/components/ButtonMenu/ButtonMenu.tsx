@@ -8,11 +8,13 @@ interface StyledButtonMenuProps extends ButtonMenuProps {
   theme: DefaultTheme;
 }
 
-const getBackgroundColor = ({ theme, variant }: StyledButtonMenuProps) => {
+const getBackgroundColor = ({ theme, variant, withoutBackground }: StyledButtonMenuProps) => {
+  if (withoutBackground) return "transparent";
   return theme.colors[variant === variants.WARNING ? "input" : "tertiary"];
 };
 
-const getBorderColor = ({ theme, variant }: StyledButtonMenuProps) => {
+const getBorderColor = ({ theme, variant, withoutBackground }: StyledButtonMenuProps) => {
+  if (withoutBackground) return "transparent";
   return theme.colors[
     variant === variants.WARNING ? "inputSecondary" : "disabled"
     ];
@@ -20,7 +22,7 @@ const getBorderColor = ({ theme, variant }: StyledButtonMenuProps) => {
 
 const StyledButtonMenu = styled.div<StyledButtonMenuProps>`
   background-color: ${getBackgroundColor};
-  border-radius: 16px;
+  border-radius: ${({ flatBottom }) => (flatBottom ? "8px 8px 0 0" : "16px")};
   display: ${({ fullWidth }) => (fullWidth ? "flex" : "inline-flex")};
   border: 1px solid ${getBorderColor};
   width: ${({ fullWidth }) => (fullWidth ? "100%" : "auto")};
@@ -68,6 +70,8 @@ const ButtonMenu: React.FC<ButtonMenuProps> = ({
   disabled,
   children,
   fullWidth = false,
+  flatBottom= false,
+  withoutBackground= false,
   ...props
 }) => {
   return (
@@ -75,6 +79,8 @@ const ButtonMenu: React.FC<ButtonMenuProps> = ({
       disabled={disabled}
       variant={variant}
       fullWidth={fullWidth}
+      flatBottom={flatBottom}
+      withoutBackground={withoutBackground}
       {...props}
     >
       {Children.map(children, (child: ReactElement, index) => {
@@ -84,6 +90,7 @@ const ButtonMenu: React.FC<ButtonMenuProps> = ({
           scale,
           variant,
           disabled,
+          flatBottom,
         });
       })}
     </StyledButtonMenu>

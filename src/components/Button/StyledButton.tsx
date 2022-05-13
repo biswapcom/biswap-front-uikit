@@ -40,6 +40,15 @@ const getOpacity = ({ $isLoading = false }: TransientButtonProps) => {
   return $isLoading ? ".5" : "1";
 };
 
+const getFlatBottom = ({ flatBottom = false}: BaseButtonProps) => {
+  if (flatBottom) {
+    return `
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+    `
+  }
+}
+
 const StyledButton = styled.button<BaseButtonProps>`
   align-items: center;
   border: 0;
@@ -67,6 +76,7 @@ const StyledButton = styled.button<BaseButtonProps>`
   })}
   ${layout}
   ${space}
+  ${getFlatBottom}
 `;
 
 export default StyledButton;
