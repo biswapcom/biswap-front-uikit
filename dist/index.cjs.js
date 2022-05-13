@@ -2793,9 +2793,9 @@ var InputRadio = styled__default["default"].input.attrs({ type: "radio" })(templ
 }, styledSystem.space);
 var StyledText = styled__default["default"](Text)(templateObject_3$h || (templateObject_3$h = __makeTemplateObject(["\n  transition: color .4s ease-in-out;\n"], ["\n  transition: color .4s ease-in-out;\n"])));
 var Radio = function (_a) {
-    var labelOrientation = _a.labelOrientation, label = _a.label, scale = _a.scale, radioName = _a.radioName, onChange = _a.onChange, colorVariant = _a.colorVariant;
+    var labelOrientation = _a.labelOrientation, label = _a.label, scale = _a.scale, radioName = _a.radioName, onChange = _a.onChange, colorVariant = _a.colorVariant, checked = _a.checked;
     return (React__default["default"].createElement(Wrapper$a, { labelOrientation: labelOrientation },
-        React__default["default"].createElement(InputRadio, { scale: scale, name: radioName, onChange: onChange, colorVariant: colorVariant }),
+        React__default["default"].createElement(InputRadio, { scale: scale, name: radioName, onChange: onChange, colorVariant: colorVariant, checked: checked }),
         label && labelOrientation &&
             React__default["default"].createElement(StyledText, { as: "span", fontSize: "12px", fontWeight: "400", color: "gray900", mr: labelOrientation === "left" ? '12px' : 0, ml: labelOrientation === "right" ? '12px' : 0 }, label)));
 };
