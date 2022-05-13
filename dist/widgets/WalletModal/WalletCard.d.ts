@@ -7,6 +7,7 @@ interface Props {
     onDismiss: () => void;
 }
 interface MoreWalletCardProps extends ButtonProps {
+    t: (key: string) => string;
 }
 export declare const MoreWalletCard: React.FC<MoreWalletCardProps>;
 declare const WalletCard: React.FC<Props>;

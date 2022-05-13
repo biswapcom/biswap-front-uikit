@@ -22,6 +22,7 @@ interface Props {
   login: Login;
   onDismiss?: () => void;
   displayCount?: number;
+  t: (key: string) => string;
 }
 
 const WalletWrapper = styled(Box)`
@@ -64,6 +65,7 @@ const ConnectModal: React.FC<Props> = ({
                                          login,
                                          onDismiss = () => null,
                                          displayCount = 3,
+                                         t,
                                        }) => {
   const [showMore, setShowMore] = useState(false);
   const theme = useTheme();
@@ -76,7 +78,7 @@ const ConnectModal: React.FC<Props> = ({
     <ModalContainer minWidth="320px">
       <ModalHeader>
         <ModalTitle>
-          <Heading>Connect Wallet</Heading>
+          <Heading>{t("Connect Wallet")}</Heading>
         </ModalTitle>
         <ModalCloseButton onDismiss={onDismiss}/>
       </ModalHeader>
@@ -93,13 +95,13 @@ const ConnectModal: React.FC<Props> = ({
               </Box>
             ))}
             {!showMore && (
-              <MoreWalletCard onClick={() => setShowMore(true)}/>
+              <MoreWalletCard t={t} onClick={() => setShowMore(true)}/>
             )}
           </Grid>
         </WalletWrapper>
         <Box p="24px">
           <Text textAlign="center" color="textSubtle" as="p" mb="16px">
-            Haven’t got a crypto wallet yet?
+            {t("Haven’t got a crypto wallet yet?")}
           </Text>
           <Button
             as="a"
@@ -108,7 +110,7 @@ const ConnectModal: React.FC<Props> = ({
             width="100%"
             {...getExternalLinkProps()}
           >
-            Learn How to Connect
+            {t("Learn How to Connect")}
           </Button>
         </Box>
       </ModalBody>
