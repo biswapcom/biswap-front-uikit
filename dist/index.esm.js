@@ -3607,9 +3607,9 @@ var TabMenu = function (_a) {
     }, [widthsArr, activeIndex]);
     var isLight = variant === tabVariants.TAB_LIGHT;
     return (React.createElement(StyledTabBar, __assign({ disabled: disabled, isLight: isLight, fullWidth: fullWidth }, props),
-        React.createElement(Selection, { scale: scale, width: widthsArr[activeIndex], offset: blockOffset + DEFAULT_OFFSET, isLight: isLight }),
+        !disabled && React.createElement(Selection, { scale: scale, width: widthsArr[activeIndex], offset: blockOffset + DEFAULT_OFFSET, isLight: isLight }),
         menuTitles.map(function (title, index) {
-            return React.createElement(TabBarItem, { key: index.toString(), customClass: customClass, isActive: activeIndex === index, onAction: onItemClick, itemIndex: index, setWidth: setWidthsArr, variant: variant, scale: scale }, title);
+            return React.createElement(TabBarItem, { key: index.toString(), disabled: disabled, customClass: customClass, isActive: activeIndex === index, onAction: onItemClick, itemIndex: index, setWidth: setWidthsArr, variant: variant, scale: scale }, title);
         })));
 };
 var templateObject_1$t, templateObject_2$j;
