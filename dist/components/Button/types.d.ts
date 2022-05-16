@@ -14,6 +14,8 @@ export declare const variants: {
     readonly SUCCESS: "success";
     readonly WARNING: "warning";
     readonly BOOST: "boost";
+    readonly SELECT: "select";
+    readonly SELECT_LIGHT: "selectLight";
     readonly LIGHT_OUT: "LightOut";
     readonly LIGHT: "light";
     readonly TERTIARY: "tertiary";
@@ -31,5 +33,6 @@ export interface BaseButtonProps extends LayoutProps, SpaceProps {
     disabled?: boolean;
     startIcon?: ReactNode;
     endIcon?: ReactNode;
+    flatBottom?: boolean;
 }
 export declare type ButtonProps<P extends ElementType = "button"> = PolymorphicComponentProps<P, BaseButtonProps>;

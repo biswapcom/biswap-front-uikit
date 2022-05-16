@@ -73,10 +73,11 @@ const Radio:FC<RadioProps> = (
     radioName,
     onChange,
     colorVariant,
+    checked
   }) => {
   return (
     <Wrapper labelOrientation={labelOrientation}>
-      <InputRadio scale={scale} name={radioName} onChange={onChange} colorVariant={colorVariant}/>
+      <InputRadio scale={scale} name={radioName} onChange={onChange} colorVariant={colorVariant} checked={checked}/>
       {label && labelOrientation &&
           <StyledText
               as="span"

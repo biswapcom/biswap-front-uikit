@@ -3,7 +3,7 @@ import {
   DropdownMenuItems,
   DropdownMenuItemType,
 } from "../../components/DropdownMenu/types";
-import {MenuItemsType, MenuItemType} from "../../components/MenuItems/types";
+import {MenuItemsType, ItemTypes} from "../../components/MenuItems/types";
 import {LinkStatus} from "./types";
 
 const getBanner = () => "<div>BANNER</div>";
@@ -185,7 +185,7 @@ export const links: MenuItemsType[] = [
     ],
   },
   {
-    type: MenuItemType.DIVIDER,
+    type: ItemTypes.DIVIDER,
     showItemsOnMobile: true,
   },
   {
