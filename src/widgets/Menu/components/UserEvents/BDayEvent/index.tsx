@@ -24,24 +24,15 @@ const BDayEvent: FC<any> = ({
   const {isMobile} = useMatchBreakpoints()
 
   const { onPresentConnectModal } = useWalletModal(login, logout);
-  const iconProps = { width: "24px", color: "white", style: { cursor: "pointer" } };
+
+  const onClickHandler = () => {
+    if (account && callback) callback();
+    if (!account) onPresentConnectModal();
+  }
 
   return (
     <Wrapper>
-      {account ?
-      (<StyledBtn flat={isMobile} width={isMobile && '100%'} scale="md" onClick={callback}>B-Day Presents</StyledBtn>) :
-       ( <Button
-          scale={isMobile ? 'xs' : 'md'}
-          onClick={() => {
-            onPresentConnectModal();
-          }}
-        >
-          {!isMobile && (
-            <Wallet {...iconProps} mr="8px" />
-          )}
-          Connect wallet
-        </Button>
-       )}
+      <StyledBtn flat={isMobile} width={isMobile && '100%'} scale="md" onClick={onClickHandler}>B-Day Presents</StyledBtn>
     </Wrapper>
   )
 };

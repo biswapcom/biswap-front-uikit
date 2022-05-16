@@ -401,7 +401,7 @@ var getOpacity$1 = function (_a) {
     var _b = _a.$isLoading, $isLoading = _b === void 0 ? false : _b;
     return $isLoading ? ".5" : "1";
 };
-var getFlat = function (_a) {
+var getFlat$1 = function (_a) {
     var _b = _a.flatBottom, flatBottom = _b === void 0 ? false : _b, _c = _a.flatTop, flatTop = _c === void 0 ? false : _c, _d = _a.flat, flat = _d === void 0 ? false : _d;
     if (flatBottom) {
         return "\n      border-bottom-right-radius: 0;\n      border-bottom-left-radius: 0;\n    ";
@@ -418,7 +418,7 @@ var StyledButton$1 = styled__default["default"].button(templateObject_1$1f || (t
     variants: scaleVariants$2,
 }), styledSystem.variant({
     variants: styleVariants$3,
-}), styledSystem.layout, styledSystem.space, getFlat);
+}), styledSystem.layout, styledSystem.space, getFlat$1);
 var templateObject_1$1f;
 
 var Button = function (props) {
@@ -1984,18 +1984,22 @@ var getBackgroundColor$1 = function (_a) {
         return "transparent";
     return variant === variants$5.SELECT ? theme.colors.tooltip : getRgba(theme.colors.pastelBlue, 0.08);
 };
-var StyledButtonMenu = styled__default["default"].div(templateObject_1$15 || (templateObject_1$15 = __makeTemplateObject(["\n  background-color: ", ";\n  border-radius: ", ";\n  display: ", ";\n  width: ", ";\n  padding: ", ";\n\n  & > button,\n  & > a {\n    flex: ", ";\n  }\n\n  & > button + button,\n  & > a + a {\n    margin-left: 2px; // To avoid focus shadow overlap\n  }\n\n  & > button,\n  & a {\n    box-shadow: none;\n  }\n\n  ", "\n  ", "\n"], ["\n  background-color: ", ";\n  border-radius: ", ";\n  display: ", ";\n  width: ", ";\n  padding: ", ";\n\n  & > button,\n  & > a {\n    flex: ", ";\n  }\n\n  & > button + button,\n  & > a + a {\n    margin-left: 2px; // To avoid focus shadow overlap\n  }\n\n  & > button,\n  & a {\n    box-shadow: none;\n  }\n\n  ", "\n  ", "\n"])), getBackgroundColor$1, function (_a) {
-    var flatBottom = _a.flatBottom;
-    return (flatBottom ? "8px 8px 0 0" : "8px");
-}, function (_a) {
+var getFlat = function (_a) {
+    var flatBottom = _a.flatBottom, flatTop = _a.flatTop;
+    if (flatBottom)
+        return "8px 8px 0 0";
+    if (flatTop)
+        return "0 0 8px 8px";
+};
+var StyledButtonMenu = styled__default["default"].div(templateObject_1$15 || (templateObject_1$15 = __makeTemplateObject(["\n  background-color: ", ";\n  border-radius: ", ";\n  display: ", ";\n  width: ", ";\n  padding: ", ";\n\n  & > button,\n  & > a {\n    flex: ", ";\n  }\n\n  & > button + button,\n  & > a + a {\n    margin-left: 2px; // To avoid focus shadow overlap\n  }\n\n  & > button,\n  & a {\n    box-shadow: none;\n  }\n\n  ", "\n  ", "\n"], ["\n  background-color: ", ";\n  border-radius: ", ";\n  display: ", ";\n  width: ", ";\n  padding: ", ";\n\n  & > button,\n  & > a {\n    flex: ", ";\n  }\n\n  & > button + button,\n  & > a + a {\n    margin-left: 2px; // To avoid focus shadow overlap\n  }\n\n  & > button,\n  & a {\n    box-shadow: none;\n  }\n\n  ", "\n  ", "\n"])), getBackgroundColor$1, getFlat || "8px", function (_a) {
     var fullWidth = _a.fullWidth;
     return (fullWidth ? "flex" : "inline-flex");
 }, function (_a) {
     var fullWidth = _a.fullWidth;
     return (fullWidth ? "100%" : "auto");
 }, function (_a) {
-    var flatBottom = _a.flatBottom;
-    return (flatBottom ? "0" : "4px");
+    var flatBottom = _a.flatBottom, flatTop = _a.flatTop;
+    return (flatBottom || flatTop ? "0" : "4px");
 }, function (_a) {
     var fullWidth = _a.fullWidth;
     return (fullWidth ? 1 : "auto");
@@ -2009,8 +2013,8 @@ var StyledButtonMenu = styled__default["default"].div(templateObject_1$15 || (te
     return "";
 }, styledSystem.space);
 var ButtonMenu = function (_a) {
-    var _b = _a.activeIndex, activeIndex = _b === void 0 ? 0 : _b, _c = _a.scale, scale = _c === void 0 ? scales$8.MD : _c, _d = _a.variant, variant = _d === void 0 ? variants$5.SELECT : _d, onItemClick = _a.onItemClick, disabled = _a.disabled, children = _a.children, _e = _a.fullWidth, fullWidth = _e === void 0 ? false : _e, _f = _a.flatBottom, flatBottom = _f === void 0 ? false : _f, _g = _a.withoutBackground, withoutBackground = _g === void 0 ? false : _g, props = __rest(_a, ["activeIndex", "scale", "variant", "onItemClick", "disabled", "children", "fullWidth", "flatBottom", "withoutBackground"]);
-    return (React__default["default"].createElement(StyledButtonMenu, __assign({ disabled: disabled, variant: variant, fullWidth: fullWidth, flatBottom: flatBottom, withoutBackground: withoutBackground }, props), React.Children.map(children, function (child, index) {
+    var _b = _a.activeIndex, activeIndex = _b === void 0 ? 0 : _b, _c = _a.scale, scale = _c === void 0 ? scales$8.MD : _c, _d = _a.variant, variant = _d === void 0 ? variants$5.SELECT : _d, onItemClick = _a.onItemClick, disabled = _a.disabled, children = _a.children, _e = _a.fullWidth, fullWidth = _e === void 0 ? false : _e, _f = _a.flatBottom, flatBottom = _f === void 0 ? false : _f, _g = _a.flatTop, flatTop = _g === void 0 ? false : _g, _h = _a.withoutBackground, withoutBackground = _h === void 0 ? false : _h, props = __rest(_a, ["activeIndex", "scale", "variant", "onItemClick", "disabled", "children", "fullWidth", "flatBottom", "flatTop", "withoutBackground"]);
+    return (React__default["default"].createElement(StyledButtonMenu, __assign({ disabled: disabled, variant: variant, fullWidth: fullWidth, flatBottom: flatBottom, flatTop: flatTop, withoutBackground: withoutBackground }, props), React.Children.map(children, function (child, index) {
         return React.cloneElement(child, {
             isActive: activeIndex === index,
             onClick: onItemClick ? function () { return onItemClick(index); } : undefined,
@@ -2018,6 +2022,7 @@ var ButtonMenu = function (_a) {
             variant: variant,
             disabled: disabled,
             flatBottom: flatBottom,
+            flatTop: flatTop,
         });
     })));
 };
@@ -6024,14 +6029,14 @@ var BDayEvent = function (_a) {
     var login = _a.login, logout = _a.logout, account = _a.account, callback = _a.callback;
     var isMobile = useMatchBreakpoints().isMobile;
     var onPresentConnectModal = useWalletModal(login, logout).onPresentConnectModal;
-    var iconProps = { width: "24px", color: "white", style: { cursor: "pointer" } };
-    return (React__default["default"].createElement(Wrapper$1, null, account ?
-        (React__default["default"].createElement(StyledBtn, { flat: isMobile, width: isMobile && '100%', scale: "md", onClick: callback }, "B-Day Presents")) :
-        (React__default["default"].createElement(Button, { scale: isMobile ? 'xs' : 'md', onClick: function () {
-                onPresentConnectModal();
-            } },
-            !isMobile && (React__default["default"].createElement(Icon$a, __assign({}, iconProps, { mr: "8px" }))),
-            "Connect wallet"))));
+    var onClickHandler = function () {
+        if (account && callback)
+            callback();
+        if (!account)
+            onPresentConnectModal();
+    };
+    return (React__default["default"].createElement(Wrapper$1, null,
+        React__default["default"].createElement(StyledBtn, { flat: isMobile, width: isMobile && '100%', scale: "md", onClick: onClickHandler }, "B-Day Presents")));
 };
 var templateObject_1$6, templateObject_2$4;
 
