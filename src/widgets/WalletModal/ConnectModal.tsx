@@ -1,53 +1,47 @@
-import React, { useState } from "react";
-import styled, { useTheme } from "styled-components";
-import getExternalLinkProps from "../../util/getExternalLinkProps";
-import Grid from "../../components/Box/Grid";
-import Box from "../../components/Box/Box";
-import getThemeValue from "../../util/getThemeValue";
-import Text from "../../components/Text/Text";
-import Heading from "../../components/Heading/Heading";
-import {Button} from "../../components/Button";
-import {
-  ModalBody,
-  ModalCloseButton,
-  ModalContainer,
-  ModalHeader,
-  ModalTitle,
-} from "../Modal";
-import WalletCard, {MoreWalletCard} from "./WalletCard";
+import React from "react";
+import styled from "styled-components";
+import { Link } from "../../components/Link";
+import { HelpIcon } from "../../components/Svg";
+import { Modal } from "../../widgets/Modal";
+import WalletCard from "./WalletCard";
 import config, { walletLocalStorageKey } from "./config";
 import { Config, Login } from "./types";
 
 interface Props {
   login: Login;
   onDismiss?: () => void;
-  displayCount?: number;
-  t: (key: string) => string;
 }
 
-const WalletWrapper = styled(Box)`
-  border-bottom: 1px solid ${({ theme }) => theme.colors.cardBorder};
-`;
+const HelpLink = styled(Link)`
+  display: flex;
+  align-self: center;
+  align-items: center;
+  margin-top: 40px;
+  
+  ${({ theme }) => theme.mediaQueries.sm} {
+    margin-top: 24px;
+  }
+`
 
-/**
- * Checks local storage if we have saved the last wallet the user connected with
- * If we find something we put it at the top of the list
- *
- * @returns sorted config
- */
+const Wrapper = styled.div`
+`
+
+const WalletCardsWrapper = styled.div`
+  display: grid;
+  grid-gap: 16px;
+  width: 100%;
+  grid-template-columns: repeat(2, 1fr);
+`
+
 const getPreferredConfig = (walletConfig: Config[]) => {
   const preferredWalletName = localStorage.getItem(walletLocalStorageKey);
-  const sortedConfig = walletConfig.sort(
-    (a: Config, b: Config) => a.priority - b.priority
-  );
+  const sortedConfig = walletConfig.sort((a: Config, b: Config) => a.priority - b.priority);
 
   if (!preferredWalletName) {
     return sortedConfig;
   }
 
-  const preferredWallet = sortedConfig.find(
-    (sortedWalletConfig) => sortedWalletConfig.title === preferredWalletName
-  );
+  const preferredWallet = sortedConfig.find((sortedWalletConfig) => sortedWalletConfig.title === preferredWalletName);
 
   if (!preferredWallet) {
     return sortedConfig;
@@ -55,67 +49,37 @@ const getPreferredConfig = (walletConfig: Config[]) => {
 
   return [
     preferredWallet,
-    ...sortedConfig.filter(
-      (sortedWalletConfig) => sortedWalletConfig.title !== preferredWalletName
-    ),
+    ...sortedConfig.filter((sortedWalletConfig) => sortedWalletConfig.title !== preferredWalletName),
   ];
 };
 
-const ConnectModal: React.FC<Props> = ({
-                                         login,
-                                         onDismiss = () => null,
-                                         displayCount = 3,
-                                         t,
-                                       }) => {
-  const [showMore, setShowMore] = useState(false);
-  const theme = useTheme();
+const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => {
+
   const sortedConfig = getPreferredConfig(config);
-  const displayListConfig = showMore
-    ? sortedConfig
-    : sortedConfig.slice(0, displayCount);
 
   return (
-    <ModalContainer minWidth="320px">
-      <ModalHeader>
-        <ModalTitle>
-          <Heading>{t("Connect Wallet")}</Heading>
-        </ModalTitle>
-        <ModalCloseButton onDismiss={onDismiss}/>
-      </ModalHeader>
-      <ModalBody width={["320px", null, "340px"]}>
-        <WalletWrapper py="24px" maxHeight="453px" overflowY="auto">
-          <Grid gridTemplateColumns="1fr 1fr">
-            {displayListConfig.map((wallet) => (
-              <Box key={wallet.title}>
-                <WalletCard
-                  walletConfig={wallet}
-                  login={login}
-                  onDismiss={onDismiss}
-                />
-              </Box>
+      <Modal title="Connect to a wallet" onDismiss={onDismiss}>
+        <Wrapper>
+          <WalletCardsWrapper>
+            {sortedConfig.map((entry) => (
+              <WalletCard
+                key={entry.title}
+                login={login}
+                walletConfig={entry}
+                onDismiss={onDismiss}
+              />
             ))}
-            {!showMore && (
-              <MoreWalletCard t={t} onClick={() => setShowMore(true)}/>
-            )}
-          </Grid>
-        </WalletWrapper>
-        <Box p="24px">
-          <Text textAlign="center" color="textSubtle" as="p" mb="16px">
-            {t("Haven’t got a crypto wallet yet?")}
-          </Text>
-          <Button
-            as="a"
-            href="https://docs.pancakeswap.finance/get-started/connection-guide"
-            variant="warning"
-            width="100%"
-            {...getExternalLinkProps()}
+          </WalletCardsWrapper>
+          <HelpLink
+            href="https://docs.biswap.org/faq/biswap-platform#how-do-i-connect-my-wallet-to-biswap"
+            external
           >
-            {t("Learn How to Connect")}
-          </Button>
-        </Box>
-      </ModalBody>
-    </ModalContainer>
-  );
+            <HelpIcon color="primary" mr="6px" />
+            Learn how to connect
+          </HelpLink>
+        </Wrapper>
+      </Modal>
+    )
 };
 
 export default ConnectModal;
