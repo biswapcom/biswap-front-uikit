@@ -24,10 +24,7 @@ const getDisabledStyles = ({ $isLoading, theme }: TransientButtonProps) => {
   return `
     &:disabled,
     &.button--disabled {
-      background-color: ${theme.colors.backgroundDisabled};
-      border-color: ${theme.colors.backgroundDisabled};
-      box-shadow: none;
-      color: ${theme.colors.textDisabled};
+      opacity: .32;
       cursor: not-allowed;
     }
   `;
@@ -42,6 +39,15 @@ const getDisabledStyles = ({ $isLoading, theme }: TransientButtonProps) => {
 const getOpacity = ({ $isLoading = false }: TransientButtonProps) => {
   return $isLoading ? ".5" : "1";
 };
+
+const getFlatBottom = ({ flatBottom = false}: BaseButtonProps) => {
+  if (flatBottom) {
+    return `
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+    `
+  }
+}
 
 const StyledButton = styled.button<BaseButtonProps>`
   align-items: center;
@@ -70,6 +76,7 @@ const StyledButton = styled.button<BaseButtonProps>`
   })}
   ${layout}
   ${space}
+  ${getFlatBottom}
 `;
 
 export default StyledButton;

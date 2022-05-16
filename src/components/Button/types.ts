@@ -12,16 +12,18 @@ export const scales = {
 
 export const variants = {
   PRIMARY: "primary",
-  SECONDARY: "secondary",
-  TEXT: "text",
   DANGER: "danger",
   SUCCESS: "success",
   WARNING: "warning",
   BOOST: "boost",
+  SELECT: "select",
+  SELECT_LIGHT: "selectLight",
 
-  // TERTIARY: "tertiary",
-  // SUBTLE: "subtle",
-  // LIGHT: "light",
+  LIGHT_OUT: "LightOut",
+  LIGHT: "light",
+  TERTIARY: "tertiary",
+  TERTIARY_OUT: "tertiaryOut",
+  TEXT: "text",
 } as const;
 
 export type Scale = typeof scales[keyof typeof scales];
@@ -36,6 +38,7 @@ export interface BaseButtonProps extends LayoutProps, SpaceProps {
   disabled?: boolean;
   startIcon?: ReactNode;
   endIcon?: ReactNode;
+  flatBottom?: boolean;
 }
 
 export type ButtonProps<P extends ElementType = "button"> =

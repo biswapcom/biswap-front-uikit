@@ -3,28 +3,9 @@ import { variant } from "styled-system";
 import { scaleVariants, styleVariants } from "./theme";
 import { InputProps, scales } from "./types";
 
-interface StyledInputProps extends InputProps {
-  theme: DefaultTheme;
-}
-
-/**
- * Priority: Warning --> Success
- */
-const getBoxShadow = ({
-                        isSuccess = false,
-                        isWarning = false,
-                        theme,
-                      }: StyledInputProps) => {
-  if (isWarning) {
-    return theme.shadows.warning;
-  }
-
-  if (isSuccess) {
-    return theme.shadows.success;
-  }
-
-  return theme.shadows.inset;
-};
+// interface StyledInputProps extends InputProps {
+//   tabindex?: string
+// }
 
 // const getHeight = ({ scale = scales.MD }: StyledInputProps) => {
 //   switch (scale) {
@@ -43,7 +24,6 @@ const Input = styled.input<InputProps>`
   display: block;
   font-size: 16px;
   outline: 0;
-  padding: 0 16px;
   width: 100%;
   border: 1px solid transparent;
   transition: border-color .4s ease, background-color .4s ease, color .4s ease;
@@ -53,7 +33,7 @@ const Input = styled.input<InputProps>`
     variants: scaleVariants,
   })}
   ${variant({
-    prop: "styleColor",
+    prop: "variant",
     variants: styleVariants,
   })}
 `;

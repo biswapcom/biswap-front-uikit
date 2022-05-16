@@ -32,26 +32,11 @@ export type Shadows = {
 
 export type Gradients = {
   bubblegum: string;
-  inverseBubblegum: string;
   cardHeader: string;
-  blue: string;
-  violet: string;
-  violetAlt: string;
-  gold: string;
+  cardBlue: string;
 };
 
 export type Colors = {
-  //BS
-  primary: string;
-  secondary: string;
-  success: string;
-  warning: string;
-  boost: string;
-  backgroundDark: string;
-  backgroundLight: string;
-  white: string;
-  pastelBlue: string;
-
   //
   primaryBright: string;
   primaryDark: string;
@@ -72,6 +57,12 @@ export type Colors = {
   textDisabled: string;
   textSubtle: string;
   disabled: string;
+  header: string;
+  inputBorder: string;
+  borderColor: string;
+  card: string;
+  dropDown: string;
+  footer: string;
 
   // Gradients
   gradients: Gradients;
@@ -82,6 +73,24 @@ export type Colors = {
   gold: string;
   silver: string;
   bronze: string;
+
+  //Brand color
+  polygon: string,
+  telegram: string,
+  twitter: string,
+
+  //BS ---------------------------
+  //Base colors
+  primary: string;
+  secondary: string;
+  success: string;
+  warning: string;
+  boost: string;
+  backgroundDark: string;
+  backgroundLight: string;
+  white: string;
+  pastelBlue: string;
+  tooltip: string;
 
   //BS Additional colors
   primaryHover: string;
@@ -94,6 +103,20 @@ export type Colors = {
   warningPress: string;
   boostHover: string;
   boostPress: string;
+
+  //Button additional colors
+  btnTertiary: string;
+
+  btnTertiaryOut: string;
+  btnTertiaryOutPress: string;
+
+  btnLightOutBorder: string;
+  btnLightOutBgHover: string;
+  btnLightOutBgPress: string;
+
+  btnLight: string;
+
+  toggleBg: string;
 
   //BS dark palette
   dark900: string;

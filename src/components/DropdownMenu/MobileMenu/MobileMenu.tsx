@@ -12,7 +12,6 @@ import {DropdownMenuDivider} from "../styles";
 import {DropdownMenuItemContainer} from "../components";
 import IconComponent from "../../Svg/IconComponent";
 import Accordion from "../../Accordion/Accordion";
-import {MenuItemType} from "../../MenuItems/types";
 
 const StyledMobileMenu = styled.div<{
   $isOpen: boolean;

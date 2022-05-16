@@ -1,5 +1,7 @@
 import React from "react";
-import {TabMenuProps} from "./types";
-
-declare const ButtonMenu: React.FC<TabMenuProps>;
-export default ButtonMenu;
+import { TabBarProps } from "./types";
+interface BarProps extends TabBarProps {
+    onItemClick: (index: number) => void;
+}
+declare const TabMenu: React.FC<BarProps>;
+export default TabMenu;

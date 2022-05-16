@@ -76,9 +76,7 @@ const ConnectModal: React.FC<Props> = ({
 
   return (
     <ModalContainer minWidth="320px">
-      <ModalHeader
-        background={getThemeValue("colors.gradients.bubblegum")(theme)}
-      >
+      <ModalHeader>
         <ModalTitle>
           <Heading>{t("Connect Wallet")}</Heading>
         </ModalTitle>

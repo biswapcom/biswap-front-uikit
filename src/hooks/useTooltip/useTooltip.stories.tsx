@@ -25,6 +25,7 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 200px);
   grid-template-rows: repeat(4, 200px);
+  background-color: #E5E5E5;
 `;
 
 const ExpandableCard = styled.div`

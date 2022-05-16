@@ -1,28 +1,27 @@
+import React, { FC } from "react";
 import styled from "styled-components";
 import { space } from "styled-system";
 import { RadioProps, scales } from "./types";
+import {Text} from "../Text";
 
 const getScale = ({ scale }: RadioProps) => {
   switch (scale) {
     case scales.SM:
-      return "24px";
-    case scales.MD:
-    default:
-      return "32px";
-  }
-};
-
-const getCheckedScale = ({ scale }: RadioProps) => {
-  switch (scale) {
-    case scales.SM:
-      return "12px";
+      return "16px";
     case scales.MD:
     default:
       return "20px";
   }
 };
 
-const Radio = styled.input.attrs({ type: "radio" })<RadioProps>`
+const Wrapper = styled.label<{ labelOrientation?: string }>`
+  display: flex;
+  align-items: center;
+  flex-direction: ${({ labelOrientation }) => labelOrientation === 'left' ? 'row-reverse' : 'row'};
+  cursor: pointer;
+`
+
+const InputRadio = styled.input.attrs({ type: "radio" })<RadioProps>`
   appearance: none;
   overflow: hidden;
   cursor: pointer;
@@ -30,37 +29,29 @@ const Radio = styled.input.attrs({ type: "radio" })<RadioProps>`
   display: inline-block;
   height: ${getScale};
   width: ${getScale};
-  vertical-align: middle;
-  transition: background-color 0.2s ease-in-out;
-  border: 0;
+  transition: border-color 0.4s ease-in-out, border-width 0.3s ease-in-out;
   border-radius: 50%;
-  background-color: ${({ theme }) => theme.colors.input};
-  box-shadow: ${({ theme }) => theme.shadows.inset};
-
-  &:after {
-    border-radius: 50%;
-    content: "";
-    height: ${getCheckedScale};
-    left: 6px;
-    position: absolute;
-    top: 6px;
-    width: ${getCheckedScale};
-  }
+  border: 2px solid ${({ theme }) => theme.colors.pastelBlue};
+  margin: 0;
 
   &:hover:not(:disabled):not(:checked) {
-    box-shadow: ${({ theme }) => theme.shadows.focus};
+    border-color: ${({ theme }) => theme.colors.success};
   }
 
   &:focus {
     outline: none;
-    box-shadow: ${({ theme }) => theme.shadows.focus};
   }
 
   &:checked {
-    background-color: ${({ theme }) => theme.colors.success};
-    &:after {
-      background-color: ${({ theme }) => theme.radio.handleBackground};
-    }
+    border-color: ${({ theme }) => theme.colors.success};
+    border-width: 4px;
+  }
+  &:checked + span {
+    background: ${({colorVariant}) => colorVariant};
+    color: ${({ theme, colorVariant }) => 
+            colorVariant === 'dark' ? theme.colors.white : 
+                    colorVariant === 'light' ? theme.colors.dark800 : 
+                            theme.colors.gray900};
   }
 
   &:disabled {
@@ -70,9 +61,44 @@ const Radio = styled.input.attrs({ type: "radio" })<RadioProps>`
   ${space}
 `;
 
+const StyledText = styled(Text)`
+  transition: color .4s ease-in-out;
+`
+
+const Radio:FC<RadioProps> = (
+  {
+    labelOrientation,
+    label,
+    scale,
+    radioName,
+    onChange,
+    colorVariant,
+    checked
+  }) => {
+  return (
+    <Wrapper labelOrientation={labelOrientation}>
+      <InputRadio scale={scale} name={radioName} onChange={onChange} colorVariant={colorVariant} checked={checked}/>
+      {label && labelOrientation &&
+          <StyledText
+              as="span"
+              fontSize="12px"
+              fontWeight="400"
+              color="gray900"
+              mr={labelOrientation === "left" ? '12px' : 0}
+              ml={labelOrientation === "right" ? '12px' : 0}
+          >
+            {label}
+          </StyledText>
+      }
+    </Wrapper>
+  )
+}
+
 Radio.defaultProps = {
   scale: scales.MD,
   m: 0,
+  labelOrientation: "left",
+  colorVariant: 'light',
 };
 
 export default Radio;

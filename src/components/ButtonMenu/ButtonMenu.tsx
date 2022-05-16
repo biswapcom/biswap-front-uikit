@@ -3,27 +3,23 @@ import styled, { DefaultTheme } from "styled-components";
 import { space } from "styled-system";
 import { scales, variants } from "../Button/types";
 import { ButtonMenuProps } from "./types";
+import getRgba from "../../util/getRgba";
 
 interface StyledButtonMenuProps extends ButtonMenuProps {
   theme: DefaultTheme;
 }
 
-const getBackgroundColor = ({ theme, variant }: StyledButtonMenuProps) => {
-  return theme.colors[variant === variants.WARNING ? "input" : "tertiary"];
-};
-
-const getBorderColor = ({ theme, variant }: StyledButtonMenuProps) => {
-  return theme.colors[
-    variant === variants.WARNING ? "inputSecondary" : "disabled"
-    ];
+const getBackgroundColor = ({ theme, variant, withoutBackground }: StyledButtonMenuProps) => {
+  if (withoutBackground) return "transparent";
+  return variant === variants.SELECT ?  theme.colors.tooltip : getRgba(theme.colors.pastelBlue, 0.08);
 };
 
 const StyledButtonMenu = styled.div<StyledButtonMenuProps>`
   background-color: ${getBackgroundColor};
-  border-radius: 16px;
+  border-radius: ${({ flatBottom }) => (flatBottom ? "8px 8px 0 0" : "8px")};
   display: ${({ fullWidth }) => (fullWidth ? "flex" : "inline-flex")};
-  border: 1px solid ${getBorderColor};
   width: ${({ fullWidth }) => (fullWidth ? "100%" : "auto")};
+  padding: ${({ flatBottom }) => (flatBottom ? "0" : "4px")};
 
   & > button,
   & > a {
@@ -48,9 +44,9 @@ const StyledButtonMenu = styled.div<StyledButtonMenuProps>`
         & > button:disabled {
           background-color: transparent;
           color: ${
-        variant === variants.PRIMARY
-          ? theme.colors.primary
-          : theme.colors.textSubtle
+        variant === variants.SELECT
+          ? theme.colors.pastelBlue
+          : theme.colors.text
       };
         }
     `;
@@ -63,11 +59,13 @@ const StyledButtonMenu = styled.div<StyledButtonMenuProps>`
 const ButtonMenu: React.FC<ButtonMenuProps> = ({
   activeIndex = 0,
   scale = scales.MD,
-  variant = variants.PRIMARY,
+  variant = variants.SELECT,
   onItemClick,
   disabled,
   children,
   fullWidth = false,
+  flatBottom= false,
+  withoutBackground= false,
   ...props
 }) => {
   return (
@@ -75,6 +73,8 @@ const ButtonMenu: React.FC<ButtonMenuProps> = ({
       disabled={disabled}
       variant={variant}
       fullWidth={fullWidth}
+      flatBottom={flatBottom}
+      withoutBackground={withoutBackground}
       {...props}
     >
       {Children.map(children, (child: ReactElement, index) => {
@@ -84,6 +84,7 @@ const ButtonMenu: React.FC<ButtonMenuProps> = ({
           scale,
           variant,
           disabled,
+          flatBottom,
         });
       })}
     </StyledButtonMenu>
