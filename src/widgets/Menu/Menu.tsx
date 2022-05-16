@@ -17,6 +17,7 @@ import {MenuContext} from "./context";
 import NetworkSwitcher, {OptionProps} from "./NetworkSwitcher";
 
 import {BSCIcon, AvalancheIcon} from "../../components/Svg";
+import UserBlock from "./components/UserBlock";
 
 const Wrapper = styled.div`
   position: relative;
@@ -88,7 +89,16 @@ const Menu: React.FC<NavProps> = ({
                                     serviceLinks,
                                     currentNetwork,
                                     networkChangeToBSC,
-                                    networkChangeToAvalanche
+                                    networkChangeToAvalanche,
+                                    account,
+                                    login,
+                                    logout,
+                                    pendingTransactions,
+                                    recentTransaction,
+                                    chainId,
+                                    clearTransaction,
+                                    isSwap,
+                                    transactionsForUIKit,
                                   }) => {
   const {isMobile} = useMatchBreakpoints();
   const [showMenu, setShowMenu] = useState(true);
@@ -170,25 +180,36 @@ const Menu: React.FC<NavProps> = ({
               />
             </Flex>
             <Flex alignItems="center" height="100%">
-              <NetworkSwitcher
-                options={[
-                  {
-                    label: 'BSC',
-                    icon: <BSCIcon className="icon"/>,
-                    value: 56,
-                    bg: '#F0B90B',
-                  },
-                  {
-                    label: 'Avalanche',
-                    icon: <AvalancheIcon className="icon"/>,
-                    value: 43114,
-                    bg: '#E84142',
-                  },
-                ]}
-                onChange={handleNetworkChange}
-                currentNetwork={currentNetwork}
+              {/*<NetworkSwitcher*/}
+              {/*  options={[*/}
+              {/*    {*/}
+              {/*      label: 'BSC',*/}
+              {/*      icon: <BSCIcon className="icon"/>,*/}
+              {/*      value: 56,*/}
+              {/*      bg: '#F0B90B',*/}
+              {/*    },*/}
+              {/*    {*/}
+              {/*      label: 'Avalanche',*/}
+              {/*      icon: <AvalancheIcon className="icon"/>,*/}
+              {/*      value: 43114,*/}
+              {/*      bg: '#E84142',*/}
+              {/*    },*/}
+              {/*  ]}*/}
+              {/*  onChange={handleNetworkChange}*/}
+              {/*  currentNetwork={currentNetwork}*/}
+              {/*/>*/}
+              {/*{userMenu}*/}
+              <UserBlock
+                clearTransaction={clearTransaction}
+                account={account}
+                login={login}
+                logout={logout}
+                recentTransaction={recentTransaction}
+                chainId={chainId}
+                pendingTransactions={pendingTransactions}
+                isSwap={isSwap}
+                transactionsForUIKit={transactionsForUIKit}
               />
-              {userMenu}
             </Flex>
           </StyledNav>
         </FixedContainer>

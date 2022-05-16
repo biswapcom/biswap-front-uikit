@@ -47,7 +47,7 @@ const UserMenuComponent: React.FC<{
       }) => {
   const accountEllipsis = account
     ? `${account.substring(0, 2)}...${account.substring(account.length - 4)}`
-    : null;
+    : undefined;
   return (
     <DropdownMenu items={userMenulinks} py="12px">
       <UserMenu

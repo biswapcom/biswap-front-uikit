@@ -1,11 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import Button from "../../components/Button/Button";
-import Text from "../../components/Text/Text";
-import MoreHorizontal from "../../components/Svg/Icons/MoreHorizontal";
-import { ButtonProps } from "../../components/Button";
+import Button from "../../../../uikit/src/components/Button/Button";
+import Text from "../../../../uikit/src/components/Text/Text";
 import { connectorLocalStorageKey, walletLocalStorageKey } from "./config";
-import { Login, Config, ConnectorNames } from "./types";
+import { Login, Config } from "./types";
 
 interface Props {
   walletConfig: Config;
@@ -13,67 +11,38 @@ interface Props {
   onDismiss: () => void;
 }
 
-const WalletButton = styled(Button).attrs({
-  width: "100%",
-  variant: "text",
-  py: "16px",
-})`
-  align-items: center;
-  display: flex;
+const StyledButton = styled(Button)`
+  display: flex; 
   flex-direction: column;
-  height: auto;
-  justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
-`;
+  justify-content: space-around;
+  padding: 8px 0 0;
+  white-space: nowrap;
+  min-height: 91px;
+`
 
-interface MoreWalletCardProps extends ButtonProps {
-  t: (key: string) => string;
-}
-
-export const MoreWalletCard: React.FC<MoreWalletCardProps> = ({
-                                                                t,
-                                                                ...props
-                                                              }) => {
-  return (
-    <WalletButton variant="tertiary" {...props}>
-      <MoreHorizontal width="40px" mb="8px" color="textSubtle"/>
-      <Text fontSize="14px">{t("More")}</Text>
-    </WalletButton>
-  );
-};
+const StyledText = styled(Text)`
+  font-weight: bold;
+  color: ${({ theme }) => theme.colors.primary};
+`
 
 const WalletCard: React.FC<Props> = ({ login, walletConfig, onDismiss }) => {
   const { title, icon: Icon } = walletConfig;
-
   return (
-    <WalletButton
+    <StyledButton
       variant="tertiary"
       onClick={() => {
-        const isIOS =
-          /iPad|iPhone|iPod/.test(navigator.userAgent);
-          // TODO fix error
-          // /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-
-        // Since iOS does not support Trust Wallet we fall back to WalletConnect
-        if (walletConfig.title === "Trust Wallet" && isIOS) {
-          login(ConnectorNames.WalletConnect);
-        } else {
-          login(walletConfig.connectorId);
-        }
-
+        login(walletConfig.connectorId);
         localStorage.setItem(walletLocalStorageKey, walletConfig.title);
-        localStorage.setItem(
-          connectorLocalStorageKey,
-          walletConfig.connectorId
-        );
+        window.localStorage.setItem(connectorLocalStorageKey, walletConfig.connectorId);
         onDismiss();
       }}
       id={`wallet-connect-${title.toLocaleLowerCase()}`}
     >
-      <Icon width="40px" mb="8px" />
-      <Text fontSize="14px">{title}</Text>
-    </WalletButton>
+      <Icon width="32px" />
+      <StyledText>
+        {title}
+      </StyledText>
+    </StyledButton>
   );
 };
 
