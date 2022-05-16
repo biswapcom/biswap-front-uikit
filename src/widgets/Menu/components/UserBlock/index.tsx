@@ -56,7 +56,7 @@ const UserBlock: React.FC<Props> = ({
           {/* </CurrencyValue> */}
           <Button
             variant={pendingTransactions ? "success" : "primary"}
-            scale={isSm || isXs ? 'xs' : 'sm'}
+            scale={isSm || isXs ? 'md' : 'lg'}
             onClick={() => {
               onPresentAccountModal();
             }}

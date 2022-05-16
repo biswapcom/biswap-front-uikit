@@ -5980,7 +5980,7 @@ var UserBlock = function (_a) {
     var iconProps = { width: "24px", color: "contrast", style: { cursor: "pointer" } };
     var _c = useMatchBreakpoints(), isSm = _c.isSm, isXs = _c.isXs;
     return (React.createElement("div", null, account ? (React.createElement(WalletWrap, null,
-        React.createElement(Button, { variant: pendingTransactions ? "success" : "primary", scale: isSm || isXs ? 'xs' : 'sm', onClick: function () {
+        React.createElement(Button, { variant: pendingTransactions ? "success" : "primary", scale: isSm || isXs ? 'md' : 'lg', onClick: function () {
                 onPresentAccountModal();
             } }, pendingTransactions ? (React.createElement(React.Fragment, null,
             pendingTransactions,
