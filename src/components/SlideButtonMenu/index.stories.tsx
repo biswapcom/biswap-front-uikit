@@ -6,7 +6,7 @@ import {SlideButtonMenu} from "./index";
 
 const Row = styled.div<{isLight?: boolean}>`
   margin-bottom: 32px;
-  padding: ${({ isLight }) => isLight ? '8px' : '0'};
+  padding: 8px;
   background-color: ${({ theme, isLight }) => isLight ? theme.colors.white : 'transparent'};
 `;
 
