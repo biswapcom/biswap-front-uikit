@@ -1,6 +1,6 @@
 import React from "react";
-import Button from "../../../../uikit/src/components/Button/Button";
-import Flex from "../../../../uikit/src/components/Box/Flex";
+import Button from "../../components/Button/Button";
+import Flex from "../../components/Box/Flex";
 import useWalletModal from "./useWalletModal";
 
 export default {

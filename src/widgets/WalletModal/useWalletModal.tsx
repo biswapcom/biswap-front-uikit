@@ -1,5 +1,5 @@
 import React from "react";
-import { useModal } from "../../../../uikit/src/widgets/Modal";
+import { useModal } from "../Modal";
 import ConnectModal from "./ConnectModal";
 import AccountModal from "./AccountModal";
 import { Login } from "./types";

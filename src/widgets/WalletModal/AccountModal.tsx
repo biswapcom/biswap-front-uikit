@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import Button from "../../../../uikit/src/components/Button/Button";
-import Text from "../../../../uikit/src/components/Text/Text";
-import LinkExternal from "../../../../uikit/src/components/Link/LinkExternal";
-import Flex from "../../../../uikit/src/components/Box/Flex";
-import { Modal } from "../../../../uikit/src/widgets/Modal";
+import Button from "../../components/Button/Button";
+import Text from "../../components/Text/Text";
+import LinkExternal from "../../components/Link/LinkExternal";
+import Flex from "../../components/Box/Flex";
+import { Modal } from "../Modal";
 import CopyToClipboard from "./CopyToClipboard";
 import { useWalletModal } from "./index";
 
@@ -105,7 +105,7 @@ const AccountModal: React.FC<Props> = ({transactionsForUIKit, isSwap, account, l
           <Button
             style={{ width: '100%' }}
             mt='24px'
-            variant="secondary"
+            variant="tertiaryOut"
             onClick={() => {
               logout();
               onDismiss();

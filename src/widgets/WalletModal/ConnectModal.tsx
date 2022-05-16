@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "../../../../uikit/src/components/Link";
-import { HelpIcon } from "../../../../uikit/src/components/Svg";
-import { Modal } from "../../../../uikit/src/widgets/Modal";
+import { Link } from "../../components/Link";
+import { HelpIcon } from "../../components/Svg";
+import { Modal } from "../../widgets/Modal";
 import WalletCard from "./WalletCard";
 import config, { walletLocalStorageKey } from "./config";
 import { Config, Login } from "./types";

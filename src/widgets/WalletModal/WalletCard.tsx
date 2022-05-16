@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import Button from "../../../../uikit/src/components/Button/Button";
-import Text from "../../../../uikit/src/components/Text/Text";
+import Button from "../../components/Button/Button";
+import Text from "../../components/Text/Text";
 import { connectorLocalStorageKey, walletLocalStorageKey } from "./config";
 import { Login, Config } from "./types";
 
