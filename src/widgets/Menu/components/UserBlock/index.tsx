@@ -56,7 +56,7 @@ const UserBlock: React.FC<Props> = ({
           {/* </CurrencyValue> */}
           <Button
             variant={pendingTransactions ? "success" : "primary"}
-            scale={isSm || isXs ? 'xs' : 'md'}
+            scale={isSm || isXs ? 'md' : 'lg'}
             onClick={() => {
               onPresentAccountModal();
             }}
@@ -77,7 +77,7 @@ const UserBlock: React.FC<Props> = ({
         </WalletWrap>
       ) : (
         <Button
-          scale={isSm || isXs ? 'xs' : 'md'}
+          scale={isSm || isXs ? 'md' : 'lg'}
           onClick={() => {
             onPresentConnectModal();
           }}
