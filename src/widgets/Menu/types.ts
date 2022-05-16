@@ -61,6 +61,9 @@ export interface NavProps extends
   clearTransaction?:any;
   isSwap?: boolean;
   transactionsForUIKit?: any;
+  //---------
+  withEvent?: boolean,
+  eventCallback?: () => void,
 }
 
 export interface FooterStatisticProps {

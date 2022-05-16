@@ -48,6 +48,8 @@ export interface NavProps extends BSWPriceProps, FooterAboutLinks, FooterProduct
     clearTransaction?: any;
     isSwap?: boolean;
     transactionsForUIKit?: any;
+    withEvent?: boolean;
+    eventCallback?: () => void;
 }
 export interface FooterStatisticProps {
     footerStatistic: Array<FooterStatisticItem>;

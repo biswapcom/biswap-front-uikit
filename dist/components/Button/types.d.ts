@@ -34,5 +34,7 @@ export interface BaseButtonProps extends LayoutProps, SpaceProps {
     startIcon?: ReactNode;
     endIcon?: ReactNode;
     flatBottom?: boolean;
+    flatTop?: boolean;
+    flat?: boolean;
 }
 export declare type ButtonProps<P extends ElementType = "button"> = PolymorphicComponentProps<P, BaseButtonProps>;
