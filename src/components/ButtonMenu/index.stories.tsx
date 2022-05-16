@@ -1,17 +1,15 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 /* eslint-disable import/no-unresolved */
 import { Meta } from "@storybook/react/types-6-0";
-import Box from "../Box/Box";
 import ButtonMenu from "./ButtonMenu";
 import ButtonMenuItem from "./ButtonMenuItem";
+import {Box} from "../Box";
 
-const Row = styled.div`
+const Row = styled.div<{isLight?: boolean}>`
   margin-bottom: 32px;
-
-  & > button + button {
-    margin-left: 16px;
-  }
+  padding: 8px;
+  background-color: ${({ theme, isLight }) => isLight ? theme.colors.white : 'transparent'};
 `;
 
 export default {
@@ -30,7 +28,7 @@ export const Default: React.FC = () => {
   return (
     <>
       <Row>
-        <ButtonMenu activeIndex={index} onItemClick={handleClick}>
+        <ButtonMenu disabled scale='sm' activeIndex={index} onItemClick={handleClick}>
           <ButtonMenuItem>Button 1</ButtonMenuItem>
           <ButtonMenuItem>Button 2</ButtonMenuItem>
           <ButtonMenuItem>Button 3</ButtonMenuItem>
@@ -41,8 +39,6 @@ export const Default: React.FC = () => {
         <ButtonMenu
           activeIndex={index1}
           onItemClick={handleClick1}
-          scale="sm"
-          ml="24px"
         >
           <ButtonMenuItem>Button 1</ButtonMenuItem>
           <ButtonMenuItem>Button 2</ButtonMenuItem>
@@ -50,11 +46,13 @@ export const Default: React.FC = () => {
           <ButtonMenuItem>Button 4</ButtonMenuItem>
         </ButtonMenu>
       </Row>
-      <Row>
+
+      <Row isLight>
         <ButtonMenu
           activeIndex={index}
           onItemClick={handleClick}
-          variant="text"
+          variant="selectLight"
+          scale='sm'
         >
           <ButtonMenuItem>Button 1</ButtonMenuItem>
           <ButtonMenuItem>Button 2</ButtonMenuItem>
@@ -62,13 +60,11 @@ export const Default: React.FC = () => {
           <ButtonMenuItem>Button 4</ButtonMenuItem>
         </ButtonMenu>
       </Row>
-      <Row>
+      <Row isLight>
         <ButtonMenu
-          activeIndex={index1}
-          onItemClick={handleClick1}
-          scale="sm"
-          variant="text"
-          ml="24px"
+            activeIndex={index1}
+            onItemClick={handleClick1}
+            variant="selectLight"
         >
           <ButtonMenuItem>Button 1</ButtonMenuItem>
           <ButtonMenuItem>Button 2</ButtonMenuItem>

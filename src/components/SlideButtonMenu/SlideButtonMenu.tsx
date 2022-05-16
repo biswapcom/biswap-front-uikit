@@ -1,26 +1,26 @@
 import React, {useState, useEffect} from "react";
 import styled, { DefaultTheme } from "styled-components";
-import { space } from "styled-system";
-import {TabBarProps, tabsScales, tabVariants} from "./types";
-import TabBarItem from "./TabBarItem";
+import getRgba from "../../util/getRgba";
+import SlideButtonMenuItem from "./SlideButtonMenuItem";
+import {SlideButtonMenuProps, slideMenuScales, slideMenuVariants} from "./types";
 
-interface StyledTabBarProps extends TabBarProps {
+interface StyledButtonMenuProps extends SlideButtonMenuProps {
   theme: DefaultTheme;
 }
 
-interface BarProps extends TabBarProps {
+interface SlideMenuProps extends SlideButtonMenuProps {
   onItemClick: (index: number) => void;
 }
 
-const getBackgroundColor = ({ theme, isLight }: StyledTabBarProps) => {
-  return theme.colors[isLight ? 'backgroundLight' : 'backgroundDark'];
+const getBackgroundColor = ({ theme, variant }: StyledButtonMenuProps) => {
+  return variant === slideMenuVariants.SELECT_LIGHT ? getRgba(theme.colors.pastelBlue, 0.08) : theme.colors.tooltip;
 };
 
-const getBorderRadius = ({ scale }: StyledTabBarProps) => {
-  return scale === tabsScales.SM ? '8px' : '10px'
+const getBorderRadius = ({ scale }: StyledButtonMenuProps) => {
+  return scale === slideMenuScales.SM ? '8px' : '10px'
 }
 
-const StyledTabBar = styled.div<StyledTabBarProps>`
+const StyledSlideButtonMenu = styled.div<StyledButtonMenuProps>`
   position: relative;
   background-color: ${getBackgroundColor};
   border-radius: ${getBorderRadius};
@@ -46,7 +46,7 @@ const StyledTabBar = styled.div<StyledTabBarProps>`
         & > button:disabled {
           background-color: transparent;
           color: ${
-        variant === tabVariants.TAB
+        variant === slideMenuVariants.PRIMARY
           ? theme.colors.primary
           : theme.colors.textSubtle
       };
@@ -55,34 +55,34 @@ const StyledTabBar = styled.div<StyledTabBarProps>`
     }
     return "";
   }}
-  ${space}
 `;
 
-const Selection = styled.span<{offset: number, width: number, scale: string, isLight: boolean}>`
+const Selection = styled.div<{offset: number, width: number, scale: string, variant: string}>`
+  background-color: ${({ theme, variant }) => theme.colors[variant === slideMenuVariants.SELECT ? 'dropDown' : 'white']};
   width: ${({ width }) => `${width}px`};
   height: calc(100% - 8px);
   position: absolute;
   top: 4px;
   left: ${({ offset }) => `${offset}px`};
   transition: left .3s ease;
-  border-bottom: 2px solid ${({ theme, isLight }) => theme.colors[isLight ? 'primary' : 'warning']};  
-  //color: ${({ theme, isLight }) => theme.colors[isLight ? 'primary' : 'warning']};
+  border-radius: ${({ scale }) => scale === slideMenuScales.SM ? '6px' : '8px'};
   z-index: 1;
 `
 
 const DEFAULT_OFFSET = 4
 
-const TabMenu: React.FC<BarProps> = ({
+const SlideButtonMenu: React.FC<SlideMenuProps> = ({
   customClass = '',
   activeIndex = 0,
-  scale = tabsScales.SM,
-  variant = tabVariants.TAB,
+  scale = slideMenuScales.SM,
+  variant = slideMenuVariants.SELECT,
   onItemClick,
   disabled,
   fullWidth = false,
   menuTitles= [''],
   ...props
 }) => {
+
   const [widthsArr, setWidthsArr] = useState([])
   const [blockOffset, setBlockOffset] = useState(DEFAULT_OFFSET)
 
@@ -93,12 +93,10 @@ const TabMenu: React.FC<BarProps> = ({
     )
   }, [widthsArr, activeIndex])
 
-  const isLight = variant === tabVariants.TAB_LIGHT
-
   return (
-    <StyledTabBar
+    <StyledSlideButtonMenu
       disabled={disabled}
-      isLight={isLight}
+      variant={variant}
       fullWidth={fullWidth}
       {...props}
     >
@@ -106,10 +104,10 @@ const TabMenu: React.FC<BarProps> = ({
           scale={scale}
           width={widthsArr[activeIndex]}
           offset={blockOffset + DEFAULT_OFFSET}
-          isLight={isLight}
+          variant={variant}
       />}
       {menuTitles.map((title, index) =>
-        <TabBarItem
+        <SlideButtonMenuItem
           key={index.toString()}
           disabled={disabled}
           customClass={customClass}
@@ -121,10 +119,10 @@ const TabMenu: React.FC<BarProps> = ({
           scale={scale}
         >
           {title}
-        </TabBarItem>
+        </SlideButtonMenuItem>
       )}
-    </StyledTabBar>
+    </StyledSlideButtonMenu>
   );
 };
 
-export default TabMenu;
+export default SlideButtonMenu;

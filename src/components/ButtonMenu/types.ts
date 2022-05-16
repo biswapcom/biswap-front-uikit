@@ -6,6 +6,19 @@ export interface ButtonMenuItemProps extends BaseButtonProps {
   isActive?: boolean;
 }
 
+export const menuScales = {
+  LG: "lg",
+  MD: "md",
+  SM: "sm",
+} as const;
+
+export const menuVariants = {
+  PRIMARY: "primary",
+  WARNING: "warning",
+  SELECT: "select",
+  SELECT_LIGHT: "selectLight",
+} as const;
+
 export interface ButtonMenuProps extends SpaceProps {
   variant?: Variant;
   activeIndex?: number;
