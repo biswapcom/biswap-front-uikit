@@ -2,67 +2,63 @@ import React, { useState } from "react";
 import styled from "styled-components";
 /* eslint-disable import/no-unresolved */
 import { Meta } from "@storybook/react/types-6-0";
-import TabMenu from "./TabMenu";
-import Tab from "./Tab";
+import {TabMenu} from "./index";
+import {tabVariants} from "./types";
+
+const Row = styled.div<{isLight?: boolean}>`
+  margin-bottom: 32px;
+  padding: 8px;
+  background-color: ${({ theme, isLight }) => isLight ? theme.colors.white : theme.colors.tooltip};
+`;
 
 export default {
-  title: "Components/Tab Menu",
+  title: "Components/Tab Bar",
   component: TabMenu,
   argTypes: {},
 } as Meta;
 
-const Row = styled.div`
-  margin-bottom: 32px;
-`;
-
 export const Default: React.FC = () => {
   const [index, setIndex] = useState(0);
   const [index2, setIndex2] = useState(0);
-  const [index3, setIndex3] = useState(0);
+
   const handleClick = (newIndex) => setIndex(newIndex);
   const handleClick2 = (newIndex) => setIndex2(newIndex);
-  const handleClick3 = (newIndex) => setIndex3(newIndex);
 
   return (
     <>
-      <Row>
-        <TabMenu activeIndex={index} onItemClick={handleClick}>
-          <Tab>Total</Tab>
-          <Tab>Cakers</Tab>
-          <Tab>Flippers</Tab>
-          <Tab>Storm</Tab>
-        </TabMenu>
+        <Row>
+            <TabMenu
+                onItemClick={handleClick}
+                activeIndex={index}
+                menuTitles={['Select 1', 'Select 22', 'Select 333', 'Select 4444']}
+            />
+        </Row>
+        <Row>
+            <TabMenu
+                scale='lg'
+                customClass='dark-lg'
+                onItemClick={handleClick2}
+                activeIndex={index2}
+                menuTitles={['Select 1', 'Select 22', 'Select 333', 'Select 4444']}
+            />
+        </Row>
+      <Row isLight>
+        <TabMenu
+          onItemClick={handleClick}
+          variant={tabVariants.TAB_LIGHT}
+          activeIndex={index}
+          menuTitles={['Select 1', 'Select 22', 'Select 333', 'Select 4444']}
+        />
       </Row>
-      <Row>
-        <TabMenu activeIndex={index2} onItemClick={handleClick2}>
-          <Tab>#1 Team</Tab>
-          <Tab>#2 Team</Tab>
-          <Tab>#3 Team</Tab>
-        </TabMenu>
-      </Row>
-      <Row>
-        <TabMenu activeIndex={index3} onItemClick={handleClick3}>
-          <Tab>Really long tab name</Tab>
-          <Tab>Short</Tab>
-          <Tab>Medium length</Tab>
-        </TabMenu>
-      </Row>
-    </>
-  );
-};
-
-export const Tabs: React.FC = () => {
-  return (
-    <>
-      <Row>
-        <Tab>Default</Tab>
-        <Tab color="primary" backgroundColor="secondary">
-          Custom colors
-        </Tab>
-      </Row>
-      <Row>
-        <Tab scale="md">Small scale (md)</Tab>
-        <Tab scale="lg">Large scale (lg)</Tab>
+      <Row isLight>
+        <TabMenu
+            scale='lg'
+            customClass='light-lg'
+          variant={tabVariants.TAB_LIGHT}
+          onItemClick={handleClick2}
+          activeIndex={index2}
+          menuTitles={['Select 1', 'Select 22', 'Select 333', 'Select 4444']}
+        />
       </Row>
     </>
   );

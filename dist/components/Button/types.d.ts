@@ -14,6 +14,8 @@ export declare const variants: {
     readonly SUCCESS: "success";
     readonly WARNING: "warning";
     readonly BOOST: "boost";
+    readonly SELECT: "select";
+    readonly SELECT_LIGHT: "selectLight";
     readonly LIGHT_OUT: "LightOut";
     readonly LIGHT: "light";
     readonly TERTIARY: "tertiary";
