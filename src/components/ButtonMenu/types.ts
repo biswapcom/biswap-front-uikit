@@ -1,6 +1,6 @@
-import {ReactElement} from "react";
+import { ReactElement } from "react";
 import { SpaceProps } from "styled-system";
-import {BaseButtonProps} from "../Button/types";
+import { BaseButtonProps, Scale, Variant } from "../Button/types";
 
 export interface ButtonMenuItemProps extends BaseButtonProps {
   isActive?: boolean;
@@ -20,11 +20,13 @@ export const menuVariants = {
 } as const;
 
 export interface ButtonMenuProps extends SpaceProps {
-  variant?: typeof menuVariants.PRIMARY | typeof menuVariants.WARNING | typeof menuVariants.SELECT | typeof menuVariants.SELECT_LIGHT;
+  variant?: Variant;
   activeIndex?: number;
   onItemClick?: (index: number) => void;
-  scale?: typeof menuScales[keyof typeof menuScales];
+  scale?: Scale;
   disabled?: boolean;
   children: ReactElement[];
   fullWidth?: boolean;
+  flatBottom?: boolean;
+  withoutBackground?: boolean;
 }
