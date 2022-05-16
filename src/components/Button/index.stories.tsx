@@ -1,6 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import { camelCase, upperCase } from "lodash";
-import React, { useState } from "react";
+import { camelCase } from "lodash";
+import { useState } from "react";
 import { BrowserRouter, Link } from "react-router-dom";
 import styled from "styled-components";
 import Box from "../Box/Box";

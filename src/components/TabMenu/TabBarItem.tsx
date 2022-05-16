@@ -38,7 +38,7 @@ const TabBarItem: FC<TabBarItemProps> = ({
   }, [element])
 
   const handleClick = () => {
-    onAction ? onAction(itemIndex) : undefined
+    onAction(itemIndex)
   }
 
 

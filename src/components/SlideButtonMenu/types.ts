@@ -1,12 +1,13 @@
 import { SpaceProps } from "styled-system";
 import {BaseButtonProps} from "../Button/types";
+import {Dispatch, ReactElement, SetStateAction} from "react";
 
 export interface SlideButtonMenuItemProps extends BaseButtonProps {
   isActive?: boolean;
-  setWidth?: any;
-  itemIndex?: number;
-  children?: any
-  onAction: any
+  setWidth: Dispatch<SetStateAction<any>>;
+  itemIndex: number;
+  children?: string
+  onAction: (index: number) => void;
   customClass?: string
 }
 
@@ -26,7 +27,6 @@ export const slideMenuVariants = {
 export interface SlideButtonMenuProps extends SpaceProps {
   variant?: typeof slideMenuVariants.PRIMARY | typeof slideMenuVariants.WARNING | typeof slideMenuVariants.SELECT | typeof slideMenuVariants.SELECT_LIGHT;
   activeIndex?: number;
-  onItemClick?: (index: number) => void;
   scale?: typeof slideMenuScales[keyof typeof slideMenuScales];
   disabled?: boolean;
   // children?: ReactElement[];

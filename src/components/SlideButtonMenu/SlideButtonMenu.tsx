@@ -8,6 +8,10 @@ interface StyledButtonMenuProps extends SlideButtonMenuProps {
   theme: DefaultTheme;
 }
 
+interface SlideMenuProps extends SlideButtonMenuProps {
+  onItemClick: (index: number) => void;
+}
+
 const getBackgroundColor = ({ theme, variant }: StyledButtonMenuProps) => {
   return variant === slideMenuVariants.SELECT_LIGHT ? getRgba(theme.colors.pastelBlue, 0.08) : theme.colors.tooltip;
 };
@@ -67,7 +71,7 @@ const Selection = styled.div<{offset: number, width: number, scale: string, vari
 
 const DEFAULT_OFFSET = 4
 
-const SlideButtonMenu: React.FC<SlideButtonMenuProps> = ({
+const SlideButtonMenu: React.FC<SlideMenuProps> = ({
   customClass = '',
   activeIndex = 0,
   scale = slideMenuScales.SM,

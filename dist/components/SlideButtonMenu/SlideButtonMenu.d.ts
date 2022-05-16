@@ -1,4 +1,7 @@
 import React from "react";
 import { SlideButtonMenuProps } from "./types";
-declare const SlideButtonMenu: React.FC<SlideButtonMenuProps>;
+interface SlideMenuProps extends SlideButtonMenuProps {
+    onItemClick: (index: number) => void;
+}
+declare const SlideButtonMenu: React.FC<SlideMenuProps>;
 export default SlideButtonMenu;

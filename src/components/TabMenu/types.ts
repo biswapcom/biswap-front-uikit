@@ -1,13 +1,14 @@
 import { SpaceProps } from "styled-system";
 import {BaseButtonProps} from "../Button";
+import {Dispatch, SetStateAction} from "react";
 
 export interface TabBarItemProps extends BaseButtonProps {
   isActive?: boolean;
-  setWidth?: any;
-  itemIndex?: number;
-  children?: any
-  onAction: any
   customClass?: string
+  setWidth: Dispatch<SetStateAction<any>>;
+  itemIndex: number;
+  children?: string
+  onAction: (index: number) => void;
 }
 
 export const tabsScales = {
@@ -24,7 +25,6 @@ export const tabVariants = {
 export interface TabBarProps extends SpaceProps {
   variant?: typeof tabVariants.TAB | typeof tabVariants.TAB_LIGHT;
   activeIndex?: number;
-  onItemClick?: (index: number) => void;
   scale?: typeof tabsScales[keyof typeof tabsScales];
   disabled?: boolean;
   fullWidth?: boolean;

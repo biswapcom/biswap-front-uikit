@@ -2,11 +2,14 @@ import React, {useState, useEffect} from "react";
 import styled, { DefaultTheme } from "styled-components";
 import { space } from "styled-system";
 import {TabBarProps, tabsScales, tabVariants} from "./types";
-import getRgba from "../../util/getRgba";
 import TabBarItem from "./TabBarItem";
 
 interface StyledTabBarProps extends TabBarProps {
   theme: DefaultTheme;
+}
+
+interface BarProps extends TabBarProps {
+  onItemClick: (index: number) => void;
 }
 
 const getBackgroundColor = ({ theme, isLight }: StyledTabBarProps) => {
@@ -69,7 +72,7 @@ const Selection = styled.span<{offset: number, width: number, scale: string, isL
 
 const DEFAULT_OFFSET = 4
 
-const TabMenu: React.FC<TabBarProps> = ({
+const TabMenu: React.FC<BarProps> = ({
   customClass = '',
   activeIndex = 0,
   scale = tabsScales.SM,

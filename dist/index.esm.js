@@ -3548,7 +3548,7 @@ var TabBarItem = function (_a) {
         setWidth(function (prev) { var _a, _b; return __spreadArray(__spreadArray([], prev, true), [(_b = (_a = element.item(0)) === null || _a === void 0 ? void 0 : _a.clientWidth) !== null && _b !== void 0 ? _b : 0], false); });
     }, [element]);
     var handleClick = function () {
-        onAction ? onAction(itemIndex) : undefined;
+        onAction(itemIndex);
     };
     if (!isActive) {
         return React.createElement(InactiveButton, __assign({ onClick: handleClick, className: className, forwardedAs: as, variant: variant }, props));

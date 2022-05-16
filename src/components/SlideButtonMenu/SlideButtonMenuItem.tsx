@@ -33,14 +33,12 @@ const SlideButtonMenuItem: FC<SlideButtonMenuItemProps> = ({
   const className = 'slide-menu-item-' + itemIndex + customClass
   const element = document.getElementsByClassName(className)
 
-  console.log('element', element)
-
   useEffect(() => {
     setWidth((prev: Array<number>) => [...prev, element.item(0)?.clientWidth ?? 0])
   }, [element])
 
   const handleClick = () => {
-    onAction ? onAction(itemIndex) : undefined
+    onAction(itemIndex)
   }
 
   if (!isActive) {
