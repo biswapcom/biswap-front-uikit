@@ -96,15 +96,16 @@ const SlideButtonMenu: React.FC<SlideButtonMenuProps> = ({
       fullWidth={fullWidth}
       {...props}
     >
-      <Selection
-        scale={scale}
-        width={widthsArr[activeIndex]}
-        offset={blockOffset + DEFAULT_OFFSET}
-        variant={variant}
-      />
+      {!disabled && <Selection
+          scale={scale}
+          width={widthsArr[activeIndex]}
+          offset={blockOffset + DEFAULT_OFFSET}
+          variant={variant}
+      />}
       {menuTitles.map((title, index) =>
         <SlideButtonMenuItem
           key={index.toString()}
+          disabled={disabled}
           customClass={customClass}
           isActive={activeIndex === index}
           onAction={onItemClick}

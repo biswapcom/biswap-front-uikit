@@ -28,6 +28,7 @@ export const Default: React.FC = () => {
     <>
         <Row>
             <TabMenu
+                disabled
                 onItemClick={handleClick}
                 activeIndex={index}
                 menuTitles={['Select 1', 'Select 22', 'Select 333', 'Select 4444']}

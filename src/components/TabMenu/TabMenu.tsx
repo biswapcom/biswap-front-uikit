@@ -99,15 +99,16 @@ const TabMenu: React.FC<TabBarProps> = ({
       fullWidth={fullWidth}
       {...props}
     >
-      <Selection
-        scale={scale}
-        width={widthsArr[activeIndex]}
-        offset={blockOffset + DEFAULT_OFFSET}
-        isLight={isLight}
-      />
+      {!disabled && <Selection
+          scale={scale}
+          width={widthsArr[activeIndex]}
+          offset={blockOffset + DEFAULT_OFFSET}
+          isLight={isLight}
+      />}
       {menuTitles.map((title, index) =>
         <TabBarItem
           key={index.toString()}
+          disabled={disabled}
           customClass={customClass}
           isActive={activeIndex === index}
           onAction={onItemClick}

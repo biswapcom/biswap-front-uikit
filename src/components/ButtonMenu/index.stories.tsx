@@ -28,7 +28,7 @@ export const Default: React.FC = () => {
   return (
     <>
       <Row>
-        <ButtonMenu scale='sm' activeIndex={index} onItemClick={handleClick}>
+        <ButtonMenu disabled scale='sm' activeIndex={index} onItemClick={handleClick}>
           <ButtonMenuItem>Button 1</ButtonMenuItem>
           <ButtonMenuItem>Button 2</ButtonMenuItem>
           <ButtonMenuItem>Button 3</ButtonMenuItem>
