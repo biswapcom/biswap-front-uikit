@@ -27,3 +27,4 @@ export declare const StyledDropdownMenu: import("styled-components").StyledCompo
 export declare const LinkStatus: import("styled-components").StyledComponent<"div", DefaultTheme, import("../Text").TextProps & {
     color: keyof Colors;
 }, never>;
+export declare const BannerPlacementItem: import("styled-components").StyledComponent<"div", DefaultTheme, {}, never>;
