@@ -10,7 +10,8 @@ interface ReturnType {
 }
 
 const useWalletModal = (login: Login,
-                        logout: () => void, account?: string,
+                        logout: () => void,
+                        account?: string,
                         recentTransaction?: any,
                         chainId?:any,
                         clearTransaction?: any,

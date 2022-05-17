@@ -14,12 +14,17 @@ const getBackgroundColor = ({ theme, variant, withoutBackground }: StyledButtonM
   return variant === variants.SELECT ?  theme.colors.tooltip : getRgba(theme.colors.pastelBlue, 0.08);
 };
 
+const getFlat = ({ flatBottom, flatTop }: StyledButtonMenuProps) => {
+  if (flatBottom) return "8px 8px 0 0";
+  if (flatTop) return "0 0 8px 8px";
+}
+
 const StyledButtonMenu = styled.div<StyledButtonMenuProps>`
   background-color: ${getBackgroundColor};
-  border-radius: ${({ flatBottom }) => (flatBottom ? "8px 8px 0 0" : "8px")};
+  border-radius:  ${({ flatBottom, flatTop }) => flatBottom || flatTop ? getFlat : "8px"};
   display: ${({ fullWidth }) => (fullWidth ? "flex" : "inline-flex")};
   width: ${({ fullWidth }) => (fullWidth ? "100%" : "auto")};
-  padding: ${({ flatBottom }) => (flatBottom ? "0" : "4px")};
+  padding: ${({ flatBottom, flatTop }) => (flatBottom || flatTop ? "0" : "4px")};
 
   & > button,
   & > a {
@@ -65,6 +70,7 @@ const ButtonMenu: React.FC<ButtonMenuProps> = ({
   children,
   fullWidth = false,
   flatBottom= false,
+  flatTop = false,
   withoutBackground= false,
   ...props
 }) => {
@@ -74,6 +80,7 @@ const ButtonMenu: React.FC<ButtonMenuProps> = ({
       variant={variant}
       fullWidth={fullWidth}
       flatBottom={flatBottom}
+      flatTop={flatTop}
       withoutBackground={withoutBackground}
       {...props}
     >
@@ -85,6 +92,7 @@ const ButtonMenu: React.FC<ButtonMenuProps> = ({
           variant,
           disabled,
           flatBottom,
+          flatTop,
         });
       })}
     </StyledButtonMenu>
