@@ -141,7 +141,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
                               <Text
                                 m={"16px 0"}
                                 fontSize={isTablet ? "20px" : "14px"}
-                                color={isMobile && opened ? "primary" : "text"}
+                                color={isMobile && opened ? "primary" : "backgroundDark"}
                               >
                                 {label}
                               </Text>

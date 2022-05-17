@@ -19,7 +19,7 @@ const getTextColor = ({
   if (disabled) return theme.colors.textDisabled;
   if ($isActive) return theme.colors.primary;
 
-  return theme.colors.text;
+  return theme.colors.backgroundDark;
 };
 
 export const InnerLinksBlockContainer = styled.div<{ padded: boolean }>`
@@ -52,6 +52,7 @@ export const CommonLinkStyle = ({ disabled, $isActive, $hasIcon }: StyledDropdow
           getTextColor({theme, disabled, $isActive})};
   cursor: ${disabled ? "not-allowed" : "pointer"};
   font-weight: ${$isActive ? "600" : "400"};
+  line-height: 20px;
   display: inline-flex;
   font-size: 14px;
   height: 40px;
