@@ -5057,7 +5057,7 @@ var CommonLinkStyle = function (_a) {
     });
 };
 var DropdownMenuItem = styled.button(templateObject_4$3 || (templateObject_4$3 = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), CommonLinkStyle);
-styled(Link$1)(templateObject_5$3 || (templateObject_5$3 = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), CommonLinkStyle);
+var DropdownInternalMenuItem = styled(Link$1)(templateObject_5$3 || (templateObject_5$3 = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), CommonLinkStyle);
 var StyledDropdownMenuItemContainer = styled.div(templateObject_6$2 || (templateObject_6$2 = __makeTemplateObject(["\n  margin-bottom: 16px;\n\n  &:first-child > ", " {\n    border-top-left-radius: 8px;\n    border-top-right-radius: 8px;\n  }\n\n  &:last-child > ", " {\n    border-bottom-left-radius: 8px;\n    border-bottom-right-radius: 8px;\n  }\n\n  ", " {\n    margin-bottom: 24px;\n\n    &:last-of-type {\n      margin-bottom: 0;\n    }\n  }\n"], ["\n  margin-bottom: 16px;\n\n  &:first-child > ", " {\n    border-top-left-radius: 8px;\n    border-top-right-radius: 8px;\n  }\n\n  &:last-child > ", " {\n    border-bottom-left-radius: 8px;\n    border-bottom-right-radius: 8px;\n  }\n\n  ", " {\n    margin-bottom: 24px;\n\n    &:last-of-type {\n      margin-bottom: 0;\n    }\n  }\n"])), DropdownMenuItem, DropdownMenuItem, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.lg;
@@ -5123,7 +5123,7 @@ var DropdownMenuItemContainer = function (_a) {
         type === DropdownMenuItemType.CONTAINER && (React.createElement(React.Fragment, null,
             React.createElement(DropdownMenuItem, __assign({ "$isActive": isActive, "$hasIcon": true, as: "div" }, itemProps), getMenuItemContent("")),
             hasInnerLinks && (React.createElement(InnerLinksBlock, { links: links, leftIcon: leftIcon, setIsOpen: setIsOpen, linkComponent: linkComponent })))),
-        type === DropdownMenuItemType.INTERNAL_LINK && (React.createElement(DropdownMenuItem, __assign({ "$isActive": isActive, "$hasIcon": !!leftIcon, as: linkComponent, to: href, onClick: function () {
+        type === DropdownMenuItemType.INTERNAL_LINK && (React.createElement(DropdownInternalMenuItem, __assign({ "$isActive": isActive, "$hasIcon": !!leftIcon, as: linkComponent, to: href, onClick: function () {
                 setIsOpen(false);
             } }, itemProps), getMenuItemContent("ArrowForward"))),
         type === DropdownMenuItemType.EXTERNAL_LINK && (React.createElement(DropdownMenuItem, __assign({ "$isActive": isActive, "$hasIcon": !!leftIcon, as: "a", href: href, target: isMobile ? "_self" : "_blank", onClick: function () {

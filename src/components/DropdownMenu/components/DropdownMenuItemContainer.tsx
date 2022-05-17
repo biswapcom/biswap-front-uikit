@@ -58,7 +58,7 @@ const DropdownMenuItemContainer: FC<DropdownMenuItemContainerProps> = ({
         </>
       )}
       {type === DropdownMenuItemType.INTERNAL_LINK && (
-        <DropdownMenuItem
+        <DropdownInternalMenuItem
           $isActive={isActive}
           $hasIcon={!!leftIcon}
           as={linkComponent}
@@ -69,7 +69,7 @@ const DropdownMenuItemContainer: FC<DropdownMenuItemContainerProps> = ({
           {...itemProps}
         >
           {getMenuItemContent("ArrowForward")}
-        </DropdownMenuItem>
+        </DropdownInternalMenuItem>
       )}
       {type === DropdownMenuItemType.EXTERNAL_LINK && (
         <DropdownMenuItem
