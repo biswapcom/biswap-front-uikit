@@ -2,10 +2,18 @@ import { ElementType, ReactElement } from "react";
 import { MenuItemsType } from "../../components/MenuItems/types";
 import { SubMenuItemsType } from "../../components/SubMenuItems/types";
 import { Colors } from "../../theme/types";
+import { Login } from "../WalletModal/types";
 export interface Language {
     code: string;
     language: string;
     locale: string;
+}
+export interface Profile {
+    username?: string;
+    image?: string;
+    profileLink: string;
+    noProfileLink: string;
+    showPip?: boolean;
 }
 export interface LinkStatus {
     text: string;
@@ -16,6 +24,10 @@ export interface NavProps extends BSWPriceProps, FooterAboutLinks, FooterProduct
     networkChangeToBSC?: any;
     networkChangeToAvalanche?: any;
     currentNetwork?: any;
+    account?: string;
+    login: Login;
+    profile?: Profile;
+    logout: () => void;
     linkComponent?: ElementType;
     userMenu?: ReactElement;
     banner?: ReactElement;
@@ -30,6 +42,14 @@ export interface NavProps extends BSWPriceProps, FooterAboutLinks, FooterProduct
     currentLang: string;
     buyCakeLabel: string;
     setLang: (lang: Language) => void;
+    pendingTransactions?: number;
+    recentTransaction?: any;
+    chainId?: any;
+    clearTransaction?: any;
+    isSwap?: boolean;
+    transactionsForUIKit?: any;
+    withEvent?: boolean;
+    eventCallback?: () => void;
 }
 export interface FooterStatisticProps {
     footerStatistic: Array<FooterStatisticItem>;

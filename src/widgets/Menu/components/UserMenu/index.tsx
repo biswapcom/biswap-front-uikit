@@ -116,14 +116,14 @@ const UserMenu: React.FC<UserMenuProps> = ({
         <LabelText title={text || account}>{text || accountEllipsis}</LabelText>
         <ChevronDownIcon color="text" width="24px"/>
       </StyledUserMenu>
-      <Menu
-        style={styles.popper}
-        ref={setTooltipRef}
-        {...attributes.popper}
-        isOpen={isOpen}
-      >
-        <Box onClick={() => setIsOpen(false)}>{children}</Box>
-      </Menu>
+      {/*<Menu*/}
+      {/*  style={styles.popper}*/}
+      {/*  ref={setTooltipRef}*/}
+      {/*  {...attributes.popper}*/}
+      {/*  isOpen={isOpen}*/}
+      {/*>*/}
+      {/*  <Box onClick={() => setIsOpen(false)}>{children}</Box>*/}
+      {/*</Menu>*/}
     </Flex>
   );
 };
