@@ -5052,7 +5052,7 @@ var getTextColor = function (_a) {
         return theme.colors.textDisabled;
     if ($isActive)
         return theme.colors.primary;
-    return theme.colors.text;
+    return theme.colors.backgroundDark;
 };
 var InnerLinksBlockContainer = styled__default["default"].div(templateObject_1$h || (templateObject_1$h = __makeTemplateObject(["\n  padding-top: 16px;\n  padding-left: ", ";\n"], ["\n  padding-top: 16px;\n  padding-left: ", ";\n"])), function (_a) {
     var padded = _a.padded;
@@ -5061,7 +5061,7 @@ var InnerLinksBlockContainer = styled__default["default"].div(templateObject_1$h
 var DropdownMenuInnerLinkItem = styled__default["default"](reactRouterDom.Link)(templateObject_2$c || (templateObject_2$c = __makeTemplateObject(["\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n  cursor: pointer;\n\n  &:hover {\n    .inner-chevron {\n      margin-right: 4px;\n      transition: margin-right 150ms linear;\n    }\n  }\n"], ["\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n  cursor: pointer;\n\n  &:hover {\n    .inner-chevron {\n      margin-right: 4px;\n      transition: margin-right 150ms linear;\n    }\n  }\n"])));
 var CommonLinkStyle = function (_a) {
     var disabled = _a.disabled, $isActive = _a.$isActive, $hasIcon = _a.$hasIcon;
-    return styled.css(templateObject_3$5 || (templateObject_3$5 = __makeTemplateObject(["\n  align-items: center;\n  border: 0;\n  //background: transparent;\n  color: ", ";\n  cursor: ", ";\n  font-weight: ", ";\n  display: inline-flex;\n  font-size: 14px;\n  height: 40px;\n  justify-content: space-between;\n  outline: 0;\n  //padding-left: 16px;\n  width: 100%;\n\n  .arrow-icon {\n    visibility: hidden;\n    opacity: 0;\n  }\n\n  &:hover:not(:disabled) {\n    color: ", ";\n\n    svg {\n      opacity: 0.85;\n    }\n\n    .arrow-icon {\n      visibility: visible;\n      transition: visibility 250ms linear, opacity 150ms linear;\n      opacity: 1;\n    }\n  }\n\n  &:active:not(:disabled) {\n    opacity: 0.85;\n    transform: translateY(1px);\n  }\n"], ["\n  align-items: center;\n  border: 0;\n  //background: transparent;\n  color: ", ";\n  cursor: ", ";\n  font-weight: ", ";\n  display: inline-flex;\n  font-size: 14px;\n  height: 40px;\n  justify-content: space-between;\n  outline: 0;\n  //padding-left: 16px;\n  width: 100%;\n\n  .arrow-icon {\n    visibility: hidden;\n    opacity: 0;\n  }\n\n  &:hover:not(:disabled) {\n    color: ", ";\n\n    svg {\n      opacity: 0.85;\n    }\n\n    .arrow-icon {\n      visibility: visible;\n      transition: visibility 250ms linear, opacity 150ms linear;\n      opacity: 1;\n    }\n  }\n\n  &:active:not(:disabled) {\n    opacity: 0.85;\n    transform: translateY(1px);\n  }\n"])), function (_a) {
+    return styled.css(templateObject_3$5 || (templateObject_3$5 = __makeTemplateObject(["\n  align-items: center;\n  border: 0;\n  //background: transparent;\n  color: ", ";\n  cursor: ", ";\n  font-weight: ", ";\n  line-height: 20px;\n  display: inline-flex;\n  font-size: 14px;\n  height: 40px;\n  justify-content: space-between;\n  outline: 0;\n  //padding-left: 16px;\n  width: 100%;\n\n  .arrow-icon {\n    visibility: hidden;\n    opacity: 0;\n  }\n\n  &:hover:not(:disabled) {\n    color: ", ";\n\n    svg {\n      opacity: 0.85;\n    }\n\n    .arrow-icon {\n      visibility: visible;\n      transition: visibility 250ms linear, opacity 150ms linear;\n      opacity: 1;\n    }\n  }\n\n  &:active:not(:disabled) {\n    opacity: 0.85;\n    transform: translateY(1px);\n  }\n"], ["\n  align-items: center;\n  border: 0;\n  //background: transparent;\n  color: ", ";\n  cursor: ", ";\n  font-weight: ", ";\n  line-height: 20px;\n  display: inline-flex;\n  font-size: 14px;\n  height: 40px;\n  justify-content: space-between;\n  outline: 0;\n  //padding-left: 16px;\n  width: 100%;\n\n  .arrow-icon {\n    visibility: hidden;\n    opacity: 0;\n  }\n\n  &:hover:not(:disabled) {\n    color: ", ";\n\n    svg {\n      opacity: 0.85;\n    }\n\n    .arrow-icon {\n      visibility: visible;\n      transition: visibility 250ms linear, opacity 150ms linear;\n      opacity: 1;\n    }\n  }\n\n  &:active:not(:disabled) {\n    opacity: 0.85;\n    transform: translateY(1px);\n  }\n"])), function (_a) {
         var theme = _a.theme;
         return getTextColor({ theme: theme, disabled: disabled, $isActive: $isActive });
     }, disabled ? "not-allowed" : "pointer", $isActive ? "600" : "400", function (_a) {
@@ -5157,7 +5157,7 @@ var MenuItemContent = function (_a) {
         leftIcon && React__default["default"].createElement(IconComponent, { width: 40, iconName: leftIcon }),
         React__default["default"].createElement(Flex, { flexDirection: "column", flex: 1, paddingLeft: leftIcon && "16px" },
             label,
-            description && (React__default["default"].createElement(Text, { fontSize: "12px", color: "gray900" }, description))),
+            description && (React__default["default"].createElement(Text, { fontSize: "12px", color: "gray900", lineHeight: "16px" }, description))),
         rightIcon && (React__default["default"].createElement(IconComponent, { className: "arrow-icon", iconName: rightIcon, color: fill }))));
 };
 
@@ -5175,10 +5175,23 @@ var DropdownMenu = function (_a) {
         modifiers: [{ name: "offset", options: { offset: [0, 0] } }],
     }), styles = _l.styles, attributes = _l.attributes, update = _l.update;
     React.useEffect(function () {
-        var showDropdownMenu = function () {
-            setIsOpen(true);
-            update && update();
-        };
+        var showDropdownMenu = function () { return __awaiter(void 0, void 0, void 0, function () {
+            var _a;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        _a = update;
+                        if (!_a) return [3 /*break*/, 2];
+                        return [4 /*yield*/, update()];
+                    case 1:
+                        _a = (_b.sent());
+                        _b.label = 2;
+                    case 2:
+                        setIsOpen(true);
+                        return [2 /*return*/];
+                }
+            });
+        }); };
         var hideDropdownMenu = function (evt) {
             var target = evt.target;
             return target && !(tooltipRef === null || tooltipRef === void 0 ? void 0 : tooltipRef.contains(target)) && setIsOpen(false);
@@ -5189,7 +5202,7 @@ var DropdownMenu = function (_a) {
             targetRef === null || targetRef === void 0 ? void 0 : targetRef.removeEventListener("mouseenter", showDropdownMenu);
             targetRef === null || targetRef === void 0 ? void 0 : targetRef.removeEventListener("mouseleave", hideDropdownMenu);
         };
-    }, [targetRef, tooltipRef, setIsOpen]);
+    }, [targetRef, tooltipRef, setIsOpen, update]);
     React.useEffect(function () {
         if (setMenuOpenByIndex && index !== undefined) {
             setMenuOpenByIndex(function (prevValue) {
@@ -5306,7 +5319,7 @@ var MobileMenu = function (_a) {
                     React__default["default"].createElement(DropdownMenuDivider, null))),
                 React__default["default"].createElement(Accordion, { label: label, clickable: !isTablet, heading: function (opened) {
                         return (!showItemsOnMobile && (React__default["default"].createElement(React__default["default"].Fragment, null,
-                            React__default["default"].createElement(Text, { m: "16px 0", fontSize: isTablet ? "20px" : "14px", color: isMobile && opened ? "primary" : "text" }, label),
+                            React__default["default"].createElement(Text, { m: "16px 0", fontSize: isTablet ? "20px" : "14px", color: isMobile && opened ? "primary" : "backgroundDark" }, label),
                             !isTablet && (React__default["default"].createElement(IconComponent, { iconName: opened ? "ChevronUp" : "ChevronDown", color: opened ? "primary" : "text" })))));
                     } },
                     React__default["default"].createElement(Grid, { gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)", gridColumnGap: 16 }, innerItems.map(function (_a, itemItem) {

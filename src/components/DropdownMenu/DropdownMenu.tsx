@@ -38,9 +38,9 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
   });
 
   useEffect(() => {
-    const showDropdownMenu = () => {
+    const showDropdownMenu = async () => {
+      update && await update();
       setIsOpen(true);
-      update && update();
     };
 
     const hideDropdownMenu = (evt: MouseEvent | TouchEvent) => {
@@ -55,7 +55,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
       targetRef?.removeEventListener("mouseenter", showDropdownMenu);
       targetRef?.removeEventListener("mouseleave", hideDropdownMenu);
     };
-  }, [targetRef, tooltipRef, setIsOpen]);
+  }, [targetRef, tooltipRef, setIsOpen, update]);
 
   useEffect(() => {
     if (setMenuOpenByIndex && index !== undefined) {
