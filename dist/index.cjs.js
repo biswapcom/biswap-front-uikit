@@ -6431,6 +6431,7 @@ exports.InlineMenuContainer = InlineMenuContainer;
 exports.Input = Input$1;
 exports.InputGroup = InputGroup;
 exports.InstagramIcon = Icon$B;
+exports.ItemTypes = ItemTypes;
 exports.LaunchIcon = Icon$s;
 exports.LevelIcon = Icon$X;
 exports.Link = Link;
