@@ -1,4 +1,6 @@
-import styled, { DefaultTheme } from "styled-components";
+import styled, {css, DefaultTheme} from "styled-components";
+import {Link, LinkProps} from "react-router-dom";
+
 import { Colors } from "../../theme";
 import {Text} from "../Text";
 import {
@@ -25,7 +27,7 @@ export const InnerLinksBlockContainer = styled.div<{ padded: boolean }>`
   padding-left: ${({padded}) => padded && "62px"};
 `;
 
-export const DropdownMenuInnerLinkItem = styled.div<StyledDropdownMenuInnerLinkItemProps>`
+export const DropdownMenuInnerLinkItem = styled(Link)<StyledDropdownMenuInnerLinkItemProps & LinkProps>`
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -39,17 +41,18 @@ export const DropdownMenuInnerLinkItem = styled.div<StyledDropdownMenuInnerLinkI
   }
 `;
 
-export const DropdownMenuItem = styled.button<StyledDropdownMenuItemProps & {
+export const CommonLinkStyle = ({ disabled, $isActive, $hasIcon }: (StyledDropdownMenuItemProps | LinkProps) & {
   $isActive: boolean;
   $hasIcon?: boolean;
-}>`
+  disabled?: boolean;
+}) => css`
   align-items: center;
   border: 0;
   //background: transparent;
-  color: ${({theme, disabled, $isActive}) =>
-  getTextColor({theme, disabled, $isActive})};
-  cursor: ${({disabled}) => (disabled ? "not-allowed" : "pointer")};
-  font-weight: ${({$isActive = false}) => ($isActive ? "600" : "400")};
+  color: ${({theme}) =>
+          getTextColor({theme, disabled, $isActive})};
+  cursor: ${disabled ? "not-allowed" : "pointer"};
+  font-weight: ${$isActive ? "600" : "400"};
   display: inline-flex;
   font-size: 14px;
   height: 40px;
@@ -64,7 +67,7 @@ export const DropdownMenuItem = styled.button<StyledDropdownMenuItemProps & {
   }
 
   &:hover:not(:disabled) {
-    color: ${({theme, $hasIcon}) => !$hasIcon && theme.colors.primary};
+    color: ${({theme}) => !$hasIcon && theme.colors.primary};
 
     svg {
       opacity: 0.85;
@@ -81,7 +84,22 @@ export const DropdownMenuItem = styled.button<StyledDropdownMenuItemProps & {
     opacity: 0.85;
     transform: translateY(1px);
   }
+`
+
+export const DropdownMenuItem = styled.button<StyledDropdownMenuItemProps & {
+  $isActive: boolean;
+  $hasIcon?: boolean;
+}>`
+  ${CommonLinkStyle}
 `;
+
+export const DropdownInternalMenuItem = styled(Link)<LinkProps & StyledDropdownMenuItemProps & {
+  $isActive: boolean;
+  $hasIcon?: boolean;
+}>`
+  ${CommonLinkStyle}
+`;
+
 
 export const StyledDropdownMenuItemContainer = styled.div`
   margin-bottom: 16px;

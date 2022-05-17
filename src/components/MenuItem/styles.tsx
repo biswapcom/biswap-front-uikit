@@ -19,18 +19,19 @@ export const StyledMenuItemContainer = styled.div<StyledMenuItemProps>`
     `};
 `;
 
-const StyledMenuItem = styled.a<StyledMenuItemProps>`
+const CommonLinkStyles = ({ $isActive, $statusColor, $variant }: StyledMenuItemProps) => css`
   position: relative;
   display: flex;
   align-items: center;
 
-  color: ${({theme, $isActive}) =>
-  $isActive ? theme.colors.secondary : theme.colors.white};
-  font-size: 14px;
+  color: ${
+  $isActive ? ({theme}) => theme.colors.secondary: ({theme}) => theme.colors.white
+  };
+  font-size: 14px; 
   font-weight: 400;
   transition: color 0.4s ease;
 
-  ${({$statusColor, theme}) =>
+  ${
   $statusColor &&
   `
     &:after {
@@ -42,7 +43,7 @@ const StyledMenuItem = styled.a<StyledMenuItemProps>`
     }
     `}
 
-  ${({$variant}) =>
+  ${
   $variant === "default"
     ? css`
           padding: 0 8px;
@@ -63,8 +64,12 @@ const StyledMenuItem = styled.a<StyledMenuItemProps>`
     svg {
       fill: ${({theme}) => theme.colors.pastelBlue};
     }
-    ${({$variant}) => $variant === "default" && "border-radius: 16px;"};
+    ${$variant === "default" && "border-radius: 16px;"};
   }
+`;
+
+const StyledMenuItem = styled.a<StyledMenuItemProps>`
+  ${CommonLinkStyles};
 `;
 
 export default StyledMenuItem;

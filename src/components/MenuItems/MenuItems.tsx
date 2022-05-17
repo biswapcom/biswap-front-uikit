@@ -60,13 +60,13 @@ const MenuItems: React.FC<MenuItemsProps> = ({
                     {icon && (
                       <IconComponent
                         iconName={icon}
-                        color={isActive ? "pastelBlue" : "white"}
+                        color="white"
                       />
                     )}
                     {label && (
                       <Text
                         ml={"8px"}
-                        color={isActive ? "pastelBlue" : "white"}
+                        color="white"
                       >
                         {label}
                       </Text>

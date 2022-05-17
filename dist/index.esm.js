@@ -5337,8 +5337,8 @@ var MenuItems = function (_a) {
                 React.createElement(DropdownMenu, { key: "".concat(label, "#").concat(href, "#").concat(icon), items: menuItems, py: 1, activeItem: activeSubItem, isExtended: isExtended },
                     React.createElement(MenuItem, __assign({}, linkProps, { isActive: isActive, statusColor: statusColor }),
                         type === ItemTypes.DIVIDER && React.createElement(MenuItemDivider, null),
-                        icon && (React.createElement(IconComponent, { iconName: icon, color: isActive ? "pastelBlue" : "white" })),
-                        label && (React.createElement(Text, { ml: "8px", color: isActive ? "pastelBlue" : "white" }, label)))))));
+                        icon && (React.createElement(IconComponent, { iconName: icon, color: "white" })),
+                        label && (React.createElement(Text, { ml: "8px", color: "white" }, label)))))));
         })));
 };
 
