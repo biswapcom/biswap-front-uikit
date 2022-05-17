@@ -173,3 +173,7 @@ export const LinkStatus = styled(Text)<{ color: keyof Colors }>`
   color: ${({theme, color}) => theme.colors[color]};
   margin-left: 8px;
 `;
+
+export const BannerPlacementItem = styled.div`
+  margin: 0 -16px -16px;
+`

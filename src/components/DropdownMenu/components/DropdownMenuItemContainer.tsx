@@ -1,6 +1,7 @@
 import React, {FC} from "react";
 import {DropdownMenuItemContainerProps, DropdownMenuItemType} from "../types";
 import {
+  BannerPlacementItem,
   DropdownInternalMenuItem,
   DropdownMenuDivider,
   DropdownMenuItem,
@@ -92,7 +93,7 @@ const DropdownMenuItemContainer: FC<DropdownMenuItemContainerProps> = ({
       {type === DropdownMenuItemType.BANNER &&
         isDesktop &&
         bannerRenderer &&
-        bannerRenderer()}
+        (<BannerPlacementItem>{bannerRenderer()}</BannerPlacementItem>)}
     </StyledDropdownMenuItemContainer>
   );
 };

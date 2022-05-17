@@ -6,7 +6,9 @@ import {
 import {MenuItemsType, ItemTypes} from "../../components/MenuItems/types";
 import {LinkStatus} from "./types";
 
-const getBanner = () => "<div>BANNER</div>";
+// test component
+import {getBanner} from "./components/TestComponents";
+
 
 export const status = {
   LIVE: <LinkStatus>{
