@@ -24,5 +24,6 @@ export interface ButtonMenuProps extends SpaceProps {
     children: ReactElement[];
     fullWidth?: boolean;
     flatBottom?: boolean;
+    flatTop?: boolean;
     withoutBackground?: boolean;
 }

@@ -40,11 +40,22 @@ const getOpacity = ({ $isLoading = false }: TransientButtonProps) => {
   return $isLoading ? ".5" : "1";
 };
 
-const getFlatBottom = ({ flatBottom = false}: BaseButtonProps) => {
+const getFlat = ({ flatBottom = false, flatTop = false, flat = false}: BaseButtonProps) => {
   if (flatBottom) {
     return `
       border-bottom-right-radius: 0;
       border-bottom-left-radius: 0;
+    `
+  }
+  if (flatTop) {
+    return `
+      border-top-right-radius: 0;
+      border-top-left-radius: 0;
+    `
+  }
+  if (flat) {
+    return `
+      border-radius: 0;
     `
   }
 }
@@ -76,7 +87,7 @@ const StyledButton = styled.button<BaseButtonProps>`
   })}
   ${layout}
   ${space}
-  ${getFlatBottom}
+  ${getFlat}
 `;
 
 export default StyledButton;

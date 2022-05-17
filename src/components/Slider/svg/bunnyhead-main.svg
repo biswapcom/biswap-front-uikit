@@ -22,8 +22,8 @@
 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
 </filter>
 <linearGradient id="paint0_linear_bunnyhead_main" x1="14" y1="1" x2="14" y2="25" gradientUnits="userSpaceOnUse">
-<stop stop-color="#53DEE9"/>
-<stop offset="1" stop-color="#1FC7D4"/>
+<stop stopColor="#53DEE9"/>
+<stop offset="1" stopColor="#1FC7D4"/>
 </linearGradient>
 </defs>
 </svg>

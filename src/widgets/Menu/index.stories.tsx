@@ -104,7 +104,7 @@ const defaultProps = {
   currentLang: "EN",
   cakePriceUsd: 0.023158668932877668,
   links,
-  subLinks: links[0].items,
+  // subLinks: links[0].items,
   profile: null,
   userMenu: (
     <UserMenuComponent account="0xbdda50183d817c3289f895a4472eb475967dc980"/>
@@ -113,6 +113,8 @@ const defaultProps = {
   activeItem: "/swap",
   activeSubItem: "https://exchange.pancakeswap.finance",
   buyCakeLabel: "Buy CAKE",
+  withEvent: true,
+  eventCallback: noop,
 };
 
 const ConnectedTemplate: React.FC<NavProps> = (args) => {
@@ -121,14 +123,15 @@ const ConnectedTemplate: React.FC<NavProps> = (args) => {
   return (
     <BrowserRouter>
       <Menu {...args}
-            BSWPriceLabel={BSWPriceLabel}
-            BSWPriceValue={BSWPriceValue}
-            footerStatistic={footerStatistic}
-            onClick={noop}
-            aboutLinks={aboutLinks}
-            productLinks={productLinks}
-            serviceLinks={serviceLinks}>
-        <div>
+        BSWPriceLabel={BSWPriceLabel}
+        BSWPriceValue={BSWPriceValue}
+        footerStatistic={footerStatistic}
+        onClick={noop}
+        aboutLinks={aboutLinks}
+        productLinks={productLinks}
+        serviceLinks={serviceLinks}
+      >
+        <Box>
           <Heading as="h1" mb="8px">
             Page body
           </Heading>
@@ -216,7 +219,7 @@ const ConnectedTemplate: React.FC<NavProps> = (args) => {
             ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
             nostrud exercitation ullamco laboris nisi ut
           </Text>
-        </div>
+        </Box>
       </Menu>
     </BrowserRouter>
   );
