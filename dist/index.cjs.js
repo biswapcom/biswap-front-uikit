@@ -6000,7 +6000,7 @@ var UserBlock = function (_a) {
             " pending ",
             React__default["default"].createElement(Loader, { stroke: "#fff" }))) : (React__default["default"].createElement(React__default["default"].Fragment, null,
             !isSm && !isXs && (React__default["default"].createElement(Icon$a, __assign({}, iconProps, { mr: "8px" }))),
-            accountEllipsis))))) : (React__default["default"].createElement(Button, { scale: isSm || isXs ? 'xs' : 'sm', onClick: function () {
+            accountEllipsis))))) : (React__default["default"].createElement(Button, { scale: isSm || isXs ? 'md' : 'lg', onClick: function () {
             onPresentConnectModal();
         } },
         !isSm && !isXs && (React__default["default"].createElement(Icon$a, __assign({}, iconProps, { mr: "8px" }))),

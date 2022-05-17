@@ -77,7 +77,7 @@ const UserBlock: React.FC<Props> = ({
         </WalletWrap>
       ) : (
         <Button
-          scale={isSm || isXs ? 'xs' : 'sm'}
+          scale={isSm || isXs ? 'md' : 'lg'}
           onClick={() => {
             onPresentConnectModal();
           }}
