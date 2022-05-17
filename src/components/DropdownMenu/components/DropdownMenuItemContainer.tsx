@@ -19,6 +19,8 @@ const DropdownMenuItemContainer: FC<DropdownMenuItemContainerProps> = ({
    href= '/',
    bannerRenderer,
    type,
+   target,
+   mobileTarget,
    ...itemProps
 }) => {
   const {isMobile, isDesktop} = useMatchBreakpoints();
@@ -77,7 +79,7 @@ const DropdownMenuItemContainer: FC<DropdownMenuItemContainerProps> = ({
           $hasIcon={!!leftIcon}
           as="a"
           href={href}
-          target={isMobile ? "_self" : "_blank"}
+          target={isMobile ? (mobileTarget || "_self") : (target || "_blank")}
           onClick={() => {
             setIsOpen(false);
           }}

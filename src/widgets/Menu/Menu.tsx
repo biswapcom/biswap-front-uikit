@@ -102,7 +102,7 @@ const Menu: React.FC<NavProps> = ({
   transactionsForUIKit,
   withEvent,
   eventCallback,
-                                  }) => {
+}) => {
   const {isMobile} = useMatchBreakpoints();
   const [showMenu, setShowMenu] = useState(true);
   const refPrevOffset = useRef(

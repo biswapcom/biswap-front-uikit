@@ -1,4 +1,4 @@
-import React, { isValidElement, cloneElement, Children, useEffect, useState, useLayoutEffect, useRef, forwardRef, createContext, useContext, useCallback, useMemo, useReducer } from 'react';
+import React, { isValidElement, cloneElement, Children, useEffect, useState, useLayoutEffect, useRef, forwardRef, createContext, useContext, useCallback, useMemo, useReducer, Fragment } from 'react';
 import styled, { keyframes, css, useTheme, ThemeProvider, createGlobalStyle } from 'styled-components';
 import { space, typography, layout, variant as variant$1, background, border, position, flexbox, grid } from 'styled-system';
 import get from 'lodash/get';
@@ -5114,7 +5114,7 @@ var InnerLinksBlock = function (_a) {
 };
 
 var DropdownMenuItemContainer = function (_a) {
-    var _b = _a.isActive, isActive = _b === void 0 ? false : _b, leftIcon = _a.leftIcon, getMenuItemContent = _a.getMenuItemContent, _c = _a.links, links = _c === void 0 ? [] : _c, setIsOpen = _a.setIsOpen, linkComponent = _a.linkComponent, _d = _a.href, href = _d === void 0 ? '/' : _d, bannerRenderer = _a.bannerRenderer, type = _a.type, itemProps = __rest(_a, ["isActive", "leftIcon", "getMenuItemContent", "links", "setIsOpen", "linkComponent", "href", "bannerRenderer", "type"]);
+    var _b = _a.isActive, isActive = _b === void 0 ? false : _b, leftIcon = _a.leftIcon, getMenuItemContent = _a.getMenuItemContent, _c = _a.links, links = _c === void 0 ? [] : _c, setIsOpen = _a.setIsOpen, linkComponent = _a.linkComponent, _d = _a.href, href = _d === void 0 ? '/' : _d, bannerRenderer = _a.bannerRenderer, type = _a.type, target = _a.target, mobileTarget = _a.mobileTarget, itemProps = __rest(_a, ["isActive", "leftIcon", "getMenuItemContent", "links", "setIsOpen", "linkComponent", "href", "bannerRenderer", "type", "target", "mobileTarget"]);
     var _e = useMatchBreakpoints(), isMobile = _e.isMobile, isDesktop = _e.isDesktop;
     var hasInnerLinks = links.length > 0;
     // @ts-ignore
@@ -5128,7 +5128,7 @@ var DropdownMenuItemContainer = function (_a) {
             to: href, onClick: function () {
                 setIsOpen(false);
             } }, itemProps), getMenuItemContent("ArrowForward"))),
-        type === DropdownMenuItemType.EXTERNAL_LINK && (React.createElement(DropdownMenuItem, __assign({ "$isActive": isActive, "$hasIcon": !!leftIcon, as: "a", href: href, target: isMobile ? "_self" : "_blank", onClick: function () {
+        type === DropdownMenuItemType.EXTERNAL_LINK && (React.createElement(DropdownMenuItem, __assign({ "$isActive": isActive, "$hasIcon": !!leftIcon, as: "a", href: href, target: isMobile ? (mobileTarget || "_self") : (target || "_blank"), onClick: function () {
                 setIsOpen(false);
             } }, itemProps), getMenuItemContent("ArrowUpForward"))),
         type === DropdownMenuItemType.DIVIDER && React.createElement(DropdownMenuDivider, null),
@@ -5197,13 +5197,13 @@ var DropdownMenu = function (_a) {
                 setIsOpen(function (s) { return !s; });
             } }, children),
         hasItems && (React.createElement(StyledDropdownMenu, __assign({ style: styles.popper, ref: setTooltipRef }, attributes.popper, { "$isOpen": isOpen, "$isExtended": isExtended && hasMoreThanItems }), items.map(function (_a, itemItem) {
-            var _b = _a.type, type = _b === void 0 ? DropdownMenuItemType.INTERNAL_LINK : _b, label = _a.label, rightIconFill = _a.rightIconFill, description = _a.description, _c = _a.href, href = _c === void 0 ? "/" : _c, status = _a.status, _d = _a.leftIcon, leftIcon = _d === void 0 ? "" : _d, _e = _a.rightIcon, rightIcon = _e === void 0 ? "" : _e, _f = _a.links, links = _f === void 0 ? [] : _f, bannerRenderer = _a.bannerRenderer, itemProps = __rest(_a, ["type", "label", "rightIconFill", "description", "href", "status", "leftIcon", "rightIcon", "links", "bannerRenderer"]);
+            var _b = _a.type, type = _b === void 0 ? DropdownMenuItemType.INTERNAL_LINK : _b, label = _a.label, rightIconFill = _a.rightIconFill, description = _a.description, _c = _a.href, href = _c === void 0 ? "/" : _c, status = _a.status, _d = _a.leftIcon, leftIcon = _d === void 0 ? "" : _d, _e = _a.rightIcon, rightIcon = _e === void 0 ? "" : _e, _f = _a.links, links = _f === void 0 ? [] : _f, bannerRenderer = _a.bannerRenderer, target = _a.target, mobileTarget = _a.mobileTarget, itemProps = __rest(_a, ["type", "label", "rightIconFill", "description", "href", "status", "leftIcon", "rightIcon", "links", "bannerRenderer", "target", "mobileTarget"]);
             var getMenuItemContent = function (icon) {
                 if (icon === void 0) { icon = rightIcon; }
                 return (React.createElement(MenuItemContent, { label: label, fill: rightIconFill, leftIcon: leftIcon, rightIcon: icon, description: description, status: status }));
             };
             var isActive = href === activeItem;
-            return (React.createElement(DropdownMenuItemContainer, __assign({ key: itemItem, isActive: isActive, leftIcon: leftIcon, getMenuItemContent: getMenuItemContent, links: links, setIsOpen: setIsOpen, linkComponent: linkComponent, href: href, bannerRenderer: bannerRenderer, type: type }, itemProps)));
+            return (React.createElement(DropdownMenuItemContainer, __assign({ key: itemItem, isActive: isActive, leftIcon: leftIcon, getMenuItemContent: getMenuItemContent, links: links, setIsOpen: setIsOpen, linkComponent: linkComponent, href: href, bannerRenderer: bannerRenderer, type: type, target: target, mobileTarget: mobileTarget }, itemProps)));
         })))));
 };
 
@@ -5339,7 +5339,7 @@ var MenuItems = function (_a) {
                 ? {}
                 : { href: href };
             var visualize = isDesktop || (isTablet && showItemsOnMobile);
-            return (visualize && (React.createElement(React.Fragment, null,
+            return (visualize && (React.createElement(Fragment, { key: "".concat(label, "#").concat(href) },
                 React.createElement(DropdownMenu, { key: "".concat(label, "#").concat(href, "#").concat(icon), items: menuItems, py: 1, activeItem: activeSubItem, isExtended: isExtended },
                     React.createElement(MenuItem, __assign({}, linkProps, { isActive: isActive, statusColor: statusColor }),
                         type === ItemTypes.DIVIDER && React.createElement(MenuItemDivider, null),
@@ -5460,6 +5460,8 @@ var links = [
                 href: "/pool",
                 leftIcon: "Lottery",
                 description: "Item description",
+                target: '_blank',
+                mobileTarget: '_self',
             },
             {
                 label: "Competitions",
@@ -5479,6 +5481,8 @@ var links = [
                 leftIcon: "NftLaunch",
                 description: "Item description",
                 type: DropdownMenuItemType.EXTERNAL_LINK,
+                target: '_blank',
+                mobileTarget: '_self',
             },
             {
                 label: "NFT Earn",
@@ -5486,6 +5490,8 @@ var links = [
                 leftIcon: "NftEarn",
                 description: "Item description",
                 type: DropdownMenuItemType.EXTERNAL_LINK,
+                target: '_self',
+                mobileTarget: '_self',
             },
             {
                 type: DropdownMenuItemType.BANNER,
@@ -6029,7 +6035,7 @@ var BDayEvent = function (_a) {
             onPresentConnectModal();
     };
     return (React.createElement(Wrapper$1, null,
-        React.createElement(StyledBtn, { flat: isMobile, width: isMobile && '100%', scale: "md", onClick: onClickHandler }, "B-Day Presents")));
+        React.createElement(StyledBtn, { flat: isMobile, width: isMobile ? '100%' : 'auto', scale: "lg", onClick: onClickHandler }, "B-Day Presents")));
 };
 var templateObject_1$6, templateObject_2$4;
 

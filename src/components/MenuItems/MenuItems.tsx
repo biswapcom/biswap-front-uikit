@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment} from "react";
 import {Flex} from "../Box";
 import {Text} from "../Text";
 import isTouchDevice from "../../util/isTouchDevice";
@@ -11,11 +11,11 @@ import MobileDropdownMenu from "../DropdownMenu/MobileMenu/MobileDropdownMenu";
 import MenuItemDivider from "../MenuItem/Divider";
 
 const MenuItems: React.FC<MenuItemsProps> = ({
-                                               items = [],
-                                               activeItem,
-                                               activeSubItem,
-                                               ...props
-                                             }) => {
+  items = [],
+  activeItem,
+  activeSubItem,
+  ...props
+}) => {
   const {isDesktop, isTablet} = useMatchBreakpoints();
   return (
     <Flex {...props} alignItems="center">
@@ -43,7 +43,7 @@ const MenuItems: React.FC<MenuItemsProps> = ({
           const visualize = isDesktop || (isTablet && showItemsOnMobile);
           return (
             visualize && (
-              <>
+              <Fragment key={`${label}#${href}`}>
                 <DropdownMenu
                   key={`${label}#${href}#${icon}`}
                   items={menuItems}
@@ -73,7 +73,7 @@ const MenuItems: React.FC<MenuItemsProps> = ({
                     )}
                   </MenuItem>
                 </DropdownMenu>
-              </>
+              </Fragment>
             )
           );
         }

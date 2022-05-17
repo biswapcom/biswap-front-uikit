@@ -108,6 +108,8 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
                 rightIcon = "",
                 links = [],
                 bannerRenderer,
+                target,
+                mobileTarget,
                 ...itemProps
               },
               itemItem
@@ -136,6 +138,8 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
                   href={href}
                   bannerRenderer={bannerRenderer}
                   type={type}
+                  target={target}
+                  mobileTarget={mobileTarget}
                   {...itemProps}
                 />
               );

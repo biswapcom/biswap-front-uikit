@@ -100,6 +100,8 @@ export const links: MenuItemsType[] = [
         href: "/pool",
         leftIcon: "Lottery",
         description: "Item description",
+        target: '_blank',
+        mobileTarget: '_self',
       },
       {
         label: "Competitions",
@@ -119,6 +121,8 @@ export const links: MenuItemsType[] = [
         leftIcon: "NftLaunch",
         description: "Item description",
         type: DropdownMenuItemType.EXTERNAL_LINK,
+        target: '_blank',
+        mobileTarget: '_self',
       },
       {
         label: "NFT Earn",
@@ -126,6 +130,8 @@ export const links: MenuItemsType[] = [
         leftIcon: "NftEarn",
         description: "Item description",
         type: DropdownMenuItemType.EXTERNAL_LINK,
+        target: '_self',
+        mobileTarget: '_self',
       },
       {
         type: DropdownMenuItemType.BANNER,

@@ -14,6 +14,8 @@ export declare type MenuItemsType = {
     isExtended?: boolean;
     isMobileNav?: boolean;
     type?: ItemType;
+    target?: string;
+    mobileTarget?: string;
 };
 export interface MenuItemsProps extends BoxProps {
     items: MenuItemsType[];
