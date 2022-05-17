@@ -5173,10 +5173,11 @@ var DropdownMenu = function (_a) {
         strategy: "fixed",
         placement: "bottom-start",
         modifiers: [{ name: "offset", options: { offset: [0, 0] } }],
-    }), styles = _l.styles, attributes = _l.attributes;
+    }), styles = _l.styles, attributes = _l.attributes, update = _l.update;
     React.useEffect(function () {
         var showDropdownMenu = function () {
             setIsOpen(true);
+            update && update();
         };
         var hideDropdownMenu = function (evt) {
             var target = evt.target;
@@ -5208,6 +5209,7 @@ var DropdownMenu = function (_a) {
     return (React__default["default"].createElement(Box, __assign({ ref: setTargetRef }, props),
         React__default["default"].createElement(Box, { onPointerDown: function () {
                 setIsOpen(function (s) { return !s; });
+                update && update();
             } }, children),
         hasItems && (React__default["default"].createElement(StyledDropdownMenu, __assign({ style: styles.popper, ref: setTooltipRef }, attributes.popper, { "$isOpen": isOpen, "$isExtended": isExtended && hasMoreThanItems }), items.map(function (_a, itemItem) {
             var _b = _a.type, type = _b === void 0 ? exports.DropdownMenuItemType.INTERNAL_LINK : _b, label = _a.label, rightIconFill = _a.rightIconFill, description = _a.description, _c = _a.href, href = _c === void 0 ? "/" : _c, status = _a.status, _d = _a.leftIcon, leftIcon = _d === void 0 ? "" : _d, _e = _a.rightIcon, rightIcon = _e === void 0 ? "" : _e, _f = _a.links, links = _f === void 0 ? [] : _f, bannerRenderer = _a.bannerRenderer, target = _a.target, mobileTarget = _a.mobileTarget, itemProps = __rest(_a, ["type", "label", "rightIconFill", "description", "href", "status", "leftIcon", "rightIcon", "links", "bannerRenderer", "target", "mobileTarget"]);

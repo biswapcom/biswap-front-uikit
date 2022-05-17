@@ -31,7 +31,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
   const [tooltipRef, setTooltipRef] = useState<HTMLDivElement | null>(null);
   const hasItems = items.length > 0;
   const hasMoreThanItems = items.length > 1;
-  const {styles, attributes} = usePopper(targetRef, tooltipRef, {
+  const {styles, attributes, update} = usePopper(targetRef, tooltipRef, {
     strategy: "fixed",
     placement: "bottom-start",
     modifiers: [{name: "offset", options: {offset: [0, 0]}}],
@@ -40,6 +40,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
   useEffect(() => {
     const showDropdownMenu = () => {
       setIsOpen(true);
+      update && update();
     };
 
     const hideDropdownMenu = (evt: MouseEvent | TouchEvent) => {
@@ -83,6 +84,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
       <Box
         onPointerDown={() => {
           setIsOpen((s) => !s);
+          update && update();
         }}
       >
         {children}
