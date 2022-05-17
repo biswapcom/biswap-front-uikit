@@ -41,10 +41,9 @@ export const DropdownMenuInnerLinkItem = styled(Link)<StyledDropdownMenuInnerLin
   }
 `;
 
-export const CommonLinkStyle = ({ disabled, $isActive, $hasIcon }: (StyledDropdownMenuItemProps | LinkProps) & {
+export const CommonLinkStyle = ({ disabled, $isActive, $hasIcon }: StyledDropdownMenuItemProps & {
   $isActive: boolean;
   $hasIcon?: boolean;
-  disabled?: boolean;
 }) => css`
   align-items: center;
   border: 0;
@@ -93,7 +92,7 @@ export const DropdownMenuItem = styled.button<StyledDropdownMenuItemProps & {
   ${CommonLinkStyle}
 `;
 
-export const DropdownInternalMenuItem = styled(Link)<LinkProps & StyledDropdownMenuItemProps & {
+export const DropdownInternalMenuItem = styled(Link)<StyledDropdownMenuItemProps & {
   $isActive: boolean;
   $hasIcon?: boolean;
 }>`

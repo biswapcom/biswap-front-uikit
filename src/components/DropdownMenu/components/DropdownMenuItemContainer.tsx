@@ -16,7 +16,7 @@ const DropdownMenuItemContainer: FC<DropdownMenuItemContainerProps> = ({
    links = [],
    setIsOpen,
    linkComponent,
-   href,
+   href= '/',
    bannerRenderer,
    type,
    ...itemProps
@@ -61,7 +61,7 @@ const DropdownMenuItemContainer: FC<DropdownMenuItemContainerProps> = ({
         <DropdownInternalMenuItem
           $isActive={isActive}
           $hasIcon={!!leftIcon}
-          as={linkComponent}
+          // as={linkComponent}
           to={href}
           onClick={() => {
             setIsOpen(false);

@@ -6,16 +6,15 @@ export declare const InnerLinksBlockContainer: import("styled-components").Style
     padded: boolean;
 }, never>;
 export declare const DropdownMenuInnerLinkItem: import("styled-components").StyledComponent<typeof Link, DefaultTheme, StyledDropdownMenuInnerLinkItemProps & LinkProps<unknown>, never>;
-export declare const CommonLinkStyle: ({ disabled, $isActive, $hasIcon }: (StyledDropdownMenuItemProps | LinkProps<unknown>) & {
+export declare const CommonLinkStyle: ({ disabled, $isActive, $hasIcon }: StyledDropdownMenuItemProps & {
     $isActive: boolean;
     $hasIcon?: boolean | undefined;
-    disabled?: boolean | undefined;
 }) => import("styled-components").FlattenInterpolation<import("styled-components").ThemeProps<DefaultTheme>>;
 export declare const DropdownMenuItem: import("styled-components").StyledComponent<"button", DefaultTheme, StyledDropdownMenuItemProps & {
     $isActive: boolean;
     $hasIcon?: boolean | undefined;
 }, never>;
-export declare const DropdownInternalMenuItem: import("styled-components").StyledComponent<typeof Link, DefaultTheme, LinkProps<unknown> & StyledDropdownMenuItemProps & {
+export declare const DropdownInternalMenuItem: import("styled-components").StyledComponent<typeof Link, DefaultTheme, StyledDropdownMenuItemProps & {
     $isActive: boolean;
     $hasIcon?: boolean | undefined;
 }, never>;
