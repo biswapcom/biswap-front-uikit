@@ -43,7 +43,7 @@ const UserBlock: React.FC<Props> = ({
                                     }) => {
   const { onPresentConnectModal, onPresentAccountModal } = useWalletModal(login, logout, account,recentTransaction, chainId,clearTransaction,isSwap,transactionsForUIKit);
   const accountEllipsis = account ? `${account.substring(0, 4)}...${account.substring(account.length - 4)}` : null;
-  const iconProps = { width: "24px", color: "contrast", style: { cursor: "pointer" } };
+  const iconProps = { width: "24px", color: "white", style: { cursor: "pointer" } };
   const {isSm, isXs} = useMatchBreakpoints()
   return (
     <div>
@@ -77,7 +77,7 @@ const UserBlock: React.FC<Props> = ({
         </WalletWrap>
       ) : (
         <Button
-          scale={isSm || isXs ? 'xs' : 'sm'}
+          scale={isSm || isXs ? 'md' : 'lg'}
           onClick={() => {
             onPresentConnectModal();
           }}

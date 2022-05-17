@@ -8,7 +8,7 @@ import MenuItems from "../../components/MenuItems/MenuItems";
 import {useMatchBreakpoints} from "../../hooks";
 import Logo from "./components/Logo";
 import {
-  MENU_HEIGHT,
+  MENU_HEIGHT, MOBILE_EVENT_BUTTON_HEIGHT,
   TOP_BANNER_HEIGHT,
   TOP_BANNER_HEIGHT_MOBILE,
 } from "./config";
@@ -18,6 +18,7 @@ import NetworkSwitcher, {OptionProps} from "./NetworkSwitcher";
 
 import {BSCIcon, AvalancheIcon} from "../../components/Svg";
 import UserBlock from "./components/UserBlock";
+import BDayEvent from "./components/UserEvents/BDayEvent";
 
 const Wrapper = styled.div`
   position: relative;
@@ -70,35 +71,37 @@ const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
 `;
 
 const Menu: React.FC<NavProps> = ({
-                                    linkComponent = "a",
-                                    userMenu,
-                                    banner,
-                                    isDark,
-                                    links,
-                                    subLinks,
-                                    activeItem,
-                                    activeSubItem,
-                                    children,
-                                    BSWPriceLabel,
-                                    BSWPriceValue,
-                                    footerStatistic,
-                                    onClick,
-                                    buyBswLink,
-                                    aboutLinks,
-                                    productLinks,
-                                    serviceLinks,
-                                    currentNetwork,
-                                    networkChangeToBSC,
-                                    networkChangeToAvalanche,
-                                    account,
-                                    login,
-                                    logout,
-                                    pendingTransactions,
-                                    recentTransaction,
-                                    chainId,
-                                    clearTransaction,
-                                    isSwap,
-                                    transactionsForUIKit,
+  linkComponent = "a",
+  userMenu,
+  banner,
+  isDark,
+  links,
+  subLinks,
+  activeItem,
+  activeSubItem,
+  children,
+  BSWPriceLabel,
+  BSWPriceValue,
+  footerStatistic,
+  onClick,
+  buyBswLink,
+  aboutLinks,
+  productLinks,
+  serviceLinks,
+  currentNetwork,
+  networkChangeToBSC,
+  networkChangeToAvalanche,
+  account,
+  login,
+  logout,
+  pendingTransactions,
+  recentTransaction,
+  chainId,
+  clearTransaction,
+  isSwap,
+  transactionsForUIKit,
+  withEvent,
+  eventCallback,
                                   }) => {
   const {isMobile} = useMatchBreakpoints();
   const [showMenu, setShowMenu] = useState(true);
@@ -110,9 +113,13 @@ const Menu: React.FC<NavProps> = ({
     ? TOP_BANNER_HEIGHT_MOBILE
     : TOP_BANNER_HEIGHT;
 
-  const totalTopMenuHeight = banner
+  const TopMenuWithBannerHeight = banner
     ? MENU_HEIGHT + topBannerHeight
     : MENU_HEIGHT;
+
+  const totalTopMenuHeight = withEvent && isMobile
+    ? TopMenuWithBannerHeight + MOBILE_EVENT_BUTTON_HEIGHT
+    : TopMenuWithBannerHeight;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -199,6 +206,13 @@ const Menu: React.FC<NavProps> = ({
               {/*  currentNetwork={currentNetwork}*/}
               {/*/>*/}
               {/*{userMenu}*/}
+              {withEvent && !isMobile && (
+                <BDayEvent
+                account={account}
+                login={login}
+                logout={logout}
+                callback={eventCallback}
+              />)}
               <UserBlock
                 clearTransaction={clearTransaction}
                 account={account}
@@ -212,6 +226,13 @@ const Menu: React.FC<NavProps> = ({
               />
             </Flex>
           </StyledNav>
+          {withEvent && isMobile && (
+            <BDayEvent
+              account={account}
+              login={login}
+              logout={logout}
+              callback={eventCallback}
+            />)}
         </FixedContainer>
         <BodyWrapper mt={!subLinks ? `${totalTopMenuHeight + 1}px` : "0"}>
           <Inner isPushed={false} showMenu={showMenu}>
