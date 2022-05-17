@@ -25,20 +25,16 @@ const Wrapper = styled.div`
   width: 100%;
 `;
 
-const StyledNav = styled.nav`
+const StyledNav = styled.nav<{ menuBg: boolean }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   height: ${MENU_HEIGHT}px;
-  background-color: ${({theme}) => theme.nav.background};
+  background-color: ${({theme, menuBg }) => menuBg ? theme.nav.background : 'transparent'};
   transform: translate3d(0, 0, 0);
   padding-left: 16px;
   padding-right: 16px;
-
-  ${({theme}) => theme.mediaQueries.sm} {
-    background-color: transparent;
-  }
 `;
 
 const FixedContainer = styled.div<{ showMenu: boolean; height: number }>`
@@ -104,7 +100,9 @@ const Menu: React.FC<NavProps> = ({
   eventCallback,
 }) => {
   const {isMobile} = useMatchBreakpoints();
-  const [showMenu, setShowMenu] = useState(true);
+  const [showMenu, setShowMenu] = useState<boolean>(true);
+  const [menuBg, setMenuBg] = useState<boolean>(true);
+
   const refPrevOffset = useRef(
     typeof window === "undefined" ? 0 : window.pageYOffset
   );
@@ -131,6 +129,7 @@ const Menu: React.FC<NavProps> = ({
       // Always show the menu when user reach the top
       if (isTopOfPage) {
         setShowMenu(true);
+        setMenuBg(false);
       }
       // Avoid triggering anything at the bottom because of layout shift
       else if (!isBottomOfPage) {
@@ -140,9 +139,11 @@ const Menu: React.FC<NavProps> = ({
         ) {
           // Has scroll up
           setShowMenu(true);
+          setMenuBg(true);
         } else {
           // Has scroll down
           setShowMenu(false);
+          setMenuBg(true);
         }
       }
       refPrevOffset.current = currentOffset;
@@ -176,7 +177,7 @@ const Menu: React.FC<NavProps> = ({
               {banner}
             </TopBannerContainer>
           )}
-          <StyledNav>
+          <StyledNav menuBg={menuBg}>
             <Flex>
               <Logo isDark={isDark} href={homeLink?.href ?? "/"}/>
               <MenuItems
