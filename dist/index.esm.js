@@ -4777,7 +4777,7 @@ var ModalBackButton = function (_a) {
     return (React.createElement(IconButton, { variant: "text", onClick: onBack, "area-label": "go back", mr: "8px" },
         React.createElement(Icon$1X, { color: "primary" })));
 };
-var ModalContainer = styled(Box)(templateObject_4$9 || (templateObject_4$9 = __makeTemplateObject(["\n  overflow: hidden;\n  background: ", ";\n  border-radius: 16px 16px 0 0;\n  width: 100% ;\n  max-height: 100vh;\n  z-index: ", ";\n  overflow-y: auto;\n\n  ", " {\n    width: ", ";\n    min-width: ", ";\n    max-width: 100%;\n    border-radius: 16px;\n  }\n"], ["\n  overflow: hidden;\n  background: ", ";\n  border-radius: 16px 16px 0 0;\n  width: 100% ;\n  max-height: 100vh;\n  z-index: ", ";\n  overflow-y: auto;\n\n  ", " {\n    width: ", ";\n    min-width: ", ";\n    max-width: 100%;\n    border-radius: 16px;\n  }\n"])), function (_a) {
+var ModalContainer = styled(Box)(templateObject_4$9 || (templateObject_4$9 = __makeTemplateObject(["\n  overflow: hidden;\n  background: ", ";\n  border-radius: 16px;\n  width: 100% ;\n  max-height: 100vh;\n  z-index: ", ";\n  overflow-y: auto;\n\n  ", " {\n    width: ", ";\n    min-width: ", ";\n    max-width: 100%;\n  }\n"], ["\n  overflow: hidden;\n  background: ", ";\n  border-radius: 16px;\n  width: 100% ;\n  max-height: 100vh;\n  z-index: ", ";\n  overflow-y: auto;\n\n  ", " {\n    width: ", ";\n    min-width: ", ";\n    max-width: 100%;\n  }\n"])), function (_a) {
     var background = _a.background;
     return background || "white";
 }, function (_a) {
