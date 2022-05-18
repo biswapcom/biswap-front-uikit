@@ -2509,7 +2509,10 @@ var style = (_a$6 = {},
         fontSizeLg: "64px",
     },
     _a$6);
-var Heading = styled__default["default"](Text).attrs({ bold: true })(templateObject_1$Z || (templateObject_1$Z = __makeTemplateObject(["\n  font-size: ", ";\n  font-weight: 600;\n  line-height: 1.1;\n\n  ", " {\n    font-size: ", ";\n  }\n"], ["\n  font-size: ", ";\n  font-weight: 600;\n  line-height: 1.1;\n\n  ", " {\n    font-size: ", ";\n  }\n"])), function (_a) {
+var Heading = styled__default["default"](Text).attrs({ bold: true })(templateObject_1$Z || (templateObject_1$Z = __makeTemplateObject(["\n  color: ", ";\n  font-size: ", ";\n  font-weight: 600;\n  line-height: 1.1;\n\n  ", " {\n    font-size: ", ";\n  }\n"], ["\n  color: ", ";\n  font-size: ", ";\n  font-weight: 600;\n  line-height: 1.1;\n\n  ", " {\n    font-size: ", ";\n  }\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.colors.background;
+}, function (_a) {
     var scale = _a.scale;
     return style[scale || scales$5.MD].fontSize;
 }, function (_a) {
@@ -6161,7 +6164,7 @@ var AccountModal = function (_a) {
         React__default["default"].createElement(Wrapper$2, null,
             React__default["default"].createElement(ConnectedWrapper, null,
                 React__default["default"].createElement(Text, { fontSize: '14px', fontWeight: '400', lineHeight: '21px', color: '#1DC872' }, "Connected"),
-                React__default["default"].createElement(Button, { onClick: changeWalletHandler, scale: 'sm', variant: 'primary' }, "Change")),
+                React__default["default"].createElement(Button, { onClick: changeWalletHandler, scale: 'lg', variant: 'primary' }, "Change")),
             React__default["default"].createElement(Text, { fontSize: "14px", fontWeight: '600', color: '#07162D', style: {
                     whiteSpace: "nowrap",
                     overflow: "hidden",
@@ -6178,7 +6181,7 @@ var AccountModal = function (_a) {
                     React__default["default"].createElement(Button, { m: 0, p: 0, scale: 'sm', variant: 'text', onClick: ClearAndDismiss }, "Clear All")),
                 React__default["default"].createElement(React__default["default"].Fragment, null, transactionsForUIKit()))),
             React__default["default"].createElement(Flex, null,
-                React__default["default"].createElement(Button, { style: { width: '100%' }, mt: '24px', variant: "tertiaryOut", onClick: function () {
+                React__default["default"].createElement(Button, { width: '100%', scale: 'xl', mt: '24px', variant: "tertiaryOut", onClick: function () {
                         logout();
                         onDismiss();
                     } }, "Logout")))));

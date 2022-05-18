@@ -2496,7 +2496,10 @@ var style = (_a$6 = {},
         fontSizeLg: "64px",
     },
     _a$6);
-var Heading = styled(Text).attrs({ bold: true })(templateObject_1$Z || (templateObject_1$Z = __makeTemplateObject(["\n  font-size: ", ";\n  font-weight: 600;\n  line-height: 1.1;\n\n  ", " {\n    font-size: ", ";\n  }\n"], ["\n  font-size: ", ";\n  font-weight: 600;\n  line-height: 1.1;\n\n  ", " {\n    font-size: ", ";\n  }\n"])), function (_a) {
+var Heading = styled(Text).attrs({ bold: true })(templateObject_1$Z || (templateObject_1$Z = __makeTemplateObject(["\n  color: ", ";\n  font-size: ", ";\n  font-weight: 600;\n  line-height: 1.1;\n\n  ", " {\n    font-size: ", ";\n  }\n"], ["\n  color: ", ";\n  font-size: ", ";\n  font-weight: 600;\n  line-height: 1.1;\n\n  ", " {\n    font-size: ", ";\n  }\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.colors.background;
+}, function (_a) {
     var scale = _a.scale;
     return style[scale || scales$5.MD].fontSize;
 }, function (_a) {
@@ -6148,7 +6151,7 @@ var AccountModal = function (_a) {
         React.createElement(Wrapper$2, null,
             React.createElement(ConnectedWrapper, null,
                 React.createElement(Text, { fontSize: '14px', fontWeight: '400', lineHeight: '21px', color: '#1DC872' }, "Connected"),
-                React.createElement(Button, { onClick: changeWalletHandler, scale: 'sm', variant: 'primary' }, "Change")),
+                React.createElement(Button, { onClick: changeWalletHandler, scale: 'lg', variant: 'primary' }, "Change")),
             React.createElement(Text, { fontSize: "14px", fontWeight: '600', color: '#07162D', style: {
                     whiteSpace: "nowrap",
                     overflow: "hidden",
@@ -6165,7 +6168,7 @@ var AccountModal = function (_a) {
                     React.createElement(Button, { m: 0, p: 0, scale: 'sm', variant: 'text', onClick: ClearAndDismiss }, "Clear All")),
                 React.createElement(React.Fragment, null, transactionsForUIKit()))),
             React.createElement(Flex, null,
-                React.createElement(Button, { style: { width: '100%' }, mt: '24px', variant: "tertiaryOut", onClick: function () {
+                React.createElement(Button, { width: '100%', scale: 'xl', mt: '24px', variant: "tertiaryOut", onClick: function () {
                         logout();
                         onDismiss();
                     } }, "Logout")))));
