@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Button, ButtonProps } from "../../../../../components/Button";
 import {useMatchBreakpoints} from "../../../../../hooks";
 import {Login, useWalletModal} from "../../../../WalletModal";
+import {PresentIcon} from "../../../icons";
 
 
 interface Props {
@@ -47,12 +48,6 @@ const StyledLink = styled.a<{width?: string , flat: boolean}>`
   };
 `
 
-const StyledImg = styled.img`
-  //height: 40px;
-  //width: auto;
-  margin-right: 6px;
-`
-
 const StyledBtn = styled(Button)<ButtonProps>`
   background: linear-gradient(77.58deg, #2359AA -8.83%, #3A2281 71.19%, #84227E 124.82%);
   padding-left: 0;
@@ -93,7 +88,7 @@ const buttonText = 'B-Day Presents'
           width={isMobile ? '100%' : 'auto'}
           flat={isMobile}
         >
-          <StyledImg width={56} height={40} src="./images/present.png" />
+          <PresentIcon width="56px" mr="4px" />
           {buttonText}
         </StyledLink>) :
         (<StyledBtn
@@ -102,7 +97,7 @@ const buttonText = 'B-Day Presents'
           scale="lg"
           onClick={onClickHandler}
         >
-            <StyledImg width={56} height={40} src={require("./images/present.png")} />
+            <PresentIcon width="56px" mr="4px" />
           {buttonText}
         </StyledBtn>
       )}
