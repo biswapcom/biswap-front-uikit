@@ -51,7 +51,7 @@ export const CommonLinkStyle = ({ disabled, $isActive, $hasIcon }: StyledDropdow
   color: ${({theme}) =>
           getTextColor({theme, disabled, $isActive})};
   cursor: ${disabled ? "not-allowed" : "pointer"};
-  font-weight: ${$isActive ? "600" : "400"};
+  font-weight: 600;
   line-height: 20px;
   display: inline-flex;
   font-size: 14px;

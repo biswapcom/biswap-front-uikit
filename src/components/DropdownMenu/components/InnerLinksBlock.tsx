@@ -47,7 +47,7 @@ const InnerLinksBlock: FC<InnerLinksBlockProps> = ({
                 color={fill}
               />
             )}
-            <Text fontSize={"12px"} color={fill}>
+            <Text bold fontSize={"12px"} color={fill}>
               {label}
             </Text>
           </DropdownMenuInnerLinkItem>

@@ -23,7 +23,8 @@ const CommonLinkStyles = ({ $isActive, $statusColor, $variant }: StyledMenuItemP
   position: relative;
   display: flex;
   align-items: center;
-
+  cursor: pointer;
+  
   color: ${
   $isActive ? ({theme}) => theme.colors.secondary: ({theme}) => theme.colors.white
   };
