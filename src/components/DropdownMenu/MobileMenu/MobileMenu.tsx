@@ -145,6 +145,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
                           !showItemsOnMobile && (
                             <>
                               <Text
+                                bold
                                 m={"16px 0"}
                                 fontSize={isTablet ? "20px" : "14px"}
                                 color={isMobile && opened ? "primary" : "backgroundDark"}

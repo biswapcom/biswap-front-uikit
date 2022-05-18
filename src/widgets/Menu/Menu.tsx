@@ -191,7 +191,7 @@ const Menu: React.FC<NavProps> = ({
           )}
           <StyledNav menuBg={menuBg} isMobileMenuOpened={isMobileMenuOpened}>
             <Flex>
-              <Logo isDark={isDark} href={homeLink?.href ?? "/"}/>
+              <Logo href={homeLink?.href ?? "/"}/>
               <MenuItems
                 items={links}
                 activeItem={activeItem}
