@@ -7,7 +7,7 @@ export interface Props {
 
 const BuyBSW:React.FC<Props> = ({ buyBswLink }) => {
   return (
-    <Button as="a" href={buyBswLink} variant='danger' scale='xs'>Buy BSW</Button>
+    <Button as="a" href={buyBswLink} variant='danger' scale='md'>Buy BSW</Button>
   )
 }
 

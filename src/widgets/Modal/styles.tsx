@@ -62,7 +62,7 @@ export const ModalBackButton: React.FC<
 export const ModalContainer = styled(Box)<{ minWidth: string, maxWidth?: string, background?: string }>`
   overflow: hidden;
   background: ${({background}) => background || "white"};
-  border-radius: 16px 16px 0 0;
+  border-radius: 16px;
   width: 100% ;
   max-height: 100vh;
   z-index: ${({theme}) => theme.zIndices.modal};
@@ -72,6 +72,5 @@ export const ModalContainer = styled(Box)<{ minWidth: string, maxWidth?: string,
     width: ${({ maxWidth }) => maxWidth || "100%"};
     min-width: ${({minWidth}) => minWidth};
     max-width: 100%;
-    border-radius: 16px;
   }
 `;

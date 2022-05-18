@@ -62,7 +62,7 @@ const AccountModal: React.FC<Props> = ({transactionsForUIKit, isSwap, account, l
       <Wrapper>
         <ConnectedWrapper>
           <Text fontSize='14px' fontWeight='400' lineHeight='21px' color='#1DC872'>Connected</Text>
-          <Button onClick={changeWalletHandler} scale='sm' variant='primary'>Change</Button>
+          <Button onClick={changeWalletHandler} scale='lg' variant='primary'>Change</Button>
         </ConnectedWrapper>
         <Text
           fontSize="14px"
@@ -103,7 +103,8 @@ const AccountModal: React.FC<Props> = ({transactionsForUIKit, isSwap, account, l
         }
         <Flex>
           <Button
-            style={{ width: '100%' }}
+            width='100%'
+            scale='xl'
             mt='24px'
             variant="tertiaryOut"
             onClick={() => {
