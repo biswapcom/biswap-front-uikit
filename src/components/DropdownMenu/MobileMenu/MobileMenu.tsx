@@ -52,14 +52,15 @@ const StyledMobileMenu = styled.div<{
 `;
 
 const MobileMenu: FC<MobileMenuProps> = ({
-                                           items,
-                                           mobileMenuCallback,
-                                           children,
-                                           activeItem,
-                                           ...props
-                                         }) => {
+   items,
+   mobileMenuCallback,
+   children,
+   activeItem,
+   ...props
+}) => {
   const {linkComponent} = useContext(MenuContext);
   const [isOpen, setIsOpen] = useState(false);
+
   const [targetRef, setTargetRef] = useState<HTMLDivElement | null>(null);
   const [tooltipRef, setTooltipRef] = useState<HTMLDivElement | null>(null);
   const {isMobile, isTablet} = useMatchBreakpoints();

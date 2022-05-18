@@ -5325,13 +5325,12 @@ var MobileMenu = function (_a) {
 var templateObject_1$g;
 
 var MobileDropdownMenu = function (_a) {
-    var items = _a.items, activeItem = _a.activeItem;
-    var _b = useState(false), isOpened = _b[0], setIsOpened = _b[1];
+    var items = _a.items, activeItem = _a.activeItem, _b = _a.isMobileMenuOpened, isMobileMenuOpened = _b === void 0 ? false : _b, mobileMenuCallback = _a.mobileMenuCallback;
     var isMobile = useMatchBreakpoints().isMobile;
-    return (React.createElement(MobileMenu, { items: items, mobileMenuCallback: setIsOpened, isMobileNav: true, activeItem: activeItem },
+    return (React.createElement(MobileMenu, { items: items, mobileMenuCallback: mobileMenuCallback, isMobileNav: true, activeItem: activeItem },
         React.createElement(MenuItem, null,
-            React.createElement(IconComponent, { iconName: isOpened ? "ButtonMenuOpened" : "ButtonMenu", color: isMobile ? "text" : "white" }),
-            !isMobile && React.createElement(Text, { ml: "8px" }, "Menu"))));
+            React.createElement(IconComponent, { iconName: isMobileMenuOpened ? "ButtonMenuOpened" : "ButtonMenu", color: isMobileMenuOpened && isMobile ? "backgroundDark" : "white" }),
+            !isMobile && React.createElement(Text, { ml: "8px", color: "white" }, "Menu"))));
 };
 
 var Divider = styled(Box)(templateObject_1$f || (templateObject_1$f = __makeTemplateObject(["\n  opacity: 0.16;\n  border: 1px solid ", ";\n"], ["\n  opacity: 0.16;\n  border: 1px solid ", ";\n"])), function (_a) {
@@ -5342,10 +5341,10 @@ var MenuItemDivider = function () { return React.createElement(Divider, { width:
 var templateObject_1$f;
 
 var MenuItems = function (_a) {
-    var _b = _a.items, items = _b === void 0 ? [] : _b, activeItem = _a.activeItem, activeSubItem = _a.activeSubItem, props = __rest(_a, ["items", "activeItem", "activeSubItem"]);
-    var _c = useMatchBreakpoints(), isDesktop = _c.isDesktop, isTablet = _c.isTablet;
+    var _b = _a.items, items = _b === void 0 ? [] : _b, activeItem = _a.activeItem, activeSubItem = _a.activeSubItem, _c = _a.isMobileMenuOpened, isMobileMenuOpened = _c === void 0 ? false : _c, mobileMenuCallback = _a.mobileMenuCallback, props = __rest(_a, ["items", "activeItem", "activeSubItem", "isMobileMenuOpened", "mobileMenuCallback"]);
+    var _d = useMatchBreakpoints(), isDesktop = _d.isDesktop, isTablet = _d.isTablet;
     return (React.createElement(Flex, __assign({}, props, { alignItems: "center" }),
-        !isDesktop && (React.createElement(MobileDropdownMenu, { items: items, activeItem: activeItem })),
+        !isDesktop && (React.createElement(MobileDropdownMenu, { items: items, activeItem: activeItem, isMobileMenuOpened: isMobileMenuOpened, mobileMenuCallback: mobileMenuCallback })),
         items.map(function (_a) {
             var _b, _c;
             var label = _a.label, _d = _a.items, menuItems = _d === void 0 ? [] : _d, href = _a.href, _e = _a.icon, icon = _e === void 0 ? "" : _e, isExtended = _a.isExtended, showItemsOnMobile = _a.showItemsOnMobile, type = _a.type;
@@ -6062,7 +6061,18 @@ var BDayEvent = function (_a) {
 var templateObject_1$6, templateObject_2$4;
 
 var Wrapper = styled.div(templateObject_1$5 || (templateObject_1$5 = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n"], ["\n  position: relative;\n  width: 100%;\n"])));
-var StyledNav = styled.nav(templateObject_2$3 || (templateObject_2$3 = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  height: ", "px;\n  background-color: ", ";\n  transform: translate3d(0, 0, 0);\n  padding-left: 16px;\n  padding-right: 16px;\n"], ["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  height: ", "px;\n  background-color: ", ";\n  transform: translate3d(0, 0, 0);\n  padding-left: 16px;\n  padding-right: 16px;\n"])), MENU_HEIGHT, function (_a) {
+var getBackground = function (_a) {
+    var theme = _a.theme, menuBg = _a.menuBg, isMobileMenuOpened = _a.isMobileMenuOpened;
+    if (isMobileMenuOpened)
+        return theme.card.background;
+    if (menuBg && !isMobileMenuOpened)
+        return theme.nav.background;
+    return 'transparent';
+};
+var StyledNav = styled.nav(templateObject_2$3 || (templateObject_2$3 = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  height: ", "px;\n  background-color: ", ";\n  transform: translate3d(0, 0, 0);\n  padding-left: 16px;\n  padding-right: 16px;\n\n  ", " {\n    background-color: ", ";\n  };\n"], ["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  height: ", "px;\n  background-color: ", ";\n  transform: translate3d(0, 0, 0);\n  padding-left: 16px;\n  padding-right: 16px;\n\n  ", " {\n    background-color: ", ";\n  };\n"])), MENU_HEIGHT, getBackground, function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.sm;
+}, function (_a) {
     var theme = _a.theme, menuBg = _a.menuBg;
     return menuBg ? theme.nav.background : 'transparent';
 });
@@ -6087,10 +6097,17 @@ var BodyWrapper = styled(Box)(templateObject_5$1 || (templateObject_5$1 = __make
 var Inner = styled.div(templateObject_6$1 || (templateObject_6$1 = __makeTemplateObject(["\n  flex-grow: 1;\n  transition: margin-top 0.2s, margin-left 0.2s cubic-bezier(0.4, 0, 0.2, 1);\n  transform: translate3d(0, 0, 0);\n  max-width: 100%;\n"], ["\n  flex-grow: 1;\n  transition: margin-top 0.2s, margin-left 0.2s cubic-bezier(0.4, 0, 0.2, 1);\n  transform: translate3d(0, 0, 0);\n  max-width: 100%;\n"])));
 var Menu = function (_a) {
     var _b;
-    var _c = _a.linkComponent, linkComponent = _c === void 0 ? "a" : _c; _a.userMenu; var banner = _a.banner, isDark = _a.isDark, links = _a.links, subLinks = _a.subLinks, activeItem = _a.activeItem, activeSubItem = _a.activeSubItem, children = _a.children, BSWPriceLabel = _a.BSWPriceLabel, BSWPriceValue = _a.BSWPriceValue, footerStatistic = _a.footerStatistic, onClick = _a.onClick, buyBswLink = _a.buyBswLink, aboutLinks = _a.aboutLinks, productLinks = _a.productLinks, serviceLinks = _a.serviceLinks; _a.currentNetwork; _a.networkChangeToBSC; _a.networkChangeToAvalanche; var account = _a.account, login = _a.login, logout = _a.logout, pendingTransactions = _a.pendingTransactions, recentTransaction = _a.recentTransaction, chainId = _a.chainId, clearTransaction = _a.clearTransaction, isSwap = _a.isSwap, transactionsForUIKit = _a.transactionsForUIKit, withEvent = _a.withEvent, eventCallback = _a.eventCallback;
+    var _c = _a.linkComponent, linkComponent = _c === void 0 ? "a" : _c, 
+    // userMenu,
+    banner = _a.banner, isDark = _a.isDark, links = _a.links, subLinks = _a.subLinks, activeItem = _a.activeItem, activeSubItem = _a.activeSubItem, children = _a.children, BSWPriceLabel = _a.BSWPriceLabel, BSWPriceValue = _a.BSWPriceValue, footerStatistic = _a.footerStatistic, onClick = _a.onClick, buyBswLink = _a.buyBswLink, aboutLinks = _a.aboutLinks, productLinks = _a.productLinks, serviceLinks = _a.serviceLinks, 
+    // currentNetwork,
+    // networkChangeToBSC,
+    // networkChangeToAvalanche,
+    account = _a.account, login = _a.login, logout = _a.logout, pendingTransactions = _a.pendingTransactions, recentTransaction = _a.recentTransaction, chainId = _a.chainId, clearTransaction = _a.clearTransaction, isSwap = _a.isSwap, transactionsForUIKit = _a.transactionsForUIKit, withEvent = _a.withEvent, eventCallback = _a.eventCallback;
     var isMobile = useMatchBreakpoints().isMobile;
     var _d = useState(true), showMenu = _d[0], setShowMenu = _d[1];
     var _e = useState(true), menuBg = _e[0], setMenuBg = _e[1];
+    var _f = useState(false), isMobileMenuOpened = _f[0], setIsMobileMenuOpened = _f[1];
     var refPrevOffset = useRef(typeof window === "undefined" ? 0 : window.pageYOffset);
     var topBannerHeight = isMobile
         ? TOP_BANNER_HEIGHT_MOBILE
@@ -6134,16 +6151,24 @@ var Menu = function (_a) {
             window.removeEventListener("scroll", throttledHandleScroll);
         };
     }, [totalTopMenuHeight]);
+    // const handleNetworkChange = (option: OptionProps): void => {
+    //   if (option.value !== currentNetwork) {
+    //     networkChangeToBSC()
+    //   }
+    //   if (option.value !== currentNetwork) {
+    //     networkChangeToAvalanche()
+    //   }
+    // }
     // Find the home link if provided
     var homeLink = links.find(function (link) { return link.label === "Home"; });
     return (React.createElement(MenuContext.Provider, { value: { linkComponent: linkComponent } },
         React.createElement(Wrapper, null,
             React.createElement(FixedContainer, { showMenu: showMenu, height: totalTopMenuHeight },
                 banner && (React.createElement(TopBannerContainer, { height: topBannerHeight }, banner)),
-                React.createElement(StyledNav, { menuBg: menuBg },
+                React.createElement(StyledNav, { menuBg: menuBg, isMobileMenuOpened: isMobileMenuOpened },
                     React.createElement(Flex, null,
                         React.createElement(Logo$1, { isDark: isDark, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
-                        React.createElement(MenuItems, { items: links, activeItem: activeItem, activeSubItem: activeSubItem, ml: "24px" })),
+                        React.createElement(MenuItems, { items: links, activeItem: activeItem, activeSubItem: activeSubItem, isMobileMenuOpened: isMobileMenuOpened, mobileMenuCallback: setIsMobileMenuOpened, ml: "24px" })),
                     React.createElement(Flex, { alignItems: "center", height: "100%" },
                         withEvent && !isMobile && (React.createElement(BDayEvent, { account: account, login: login, logout: logout, callback: eventCallback })),
                         React.createElement(UserBlock, { clearTransaction: clearTransaction, account: account, login: login, logout: logout, recentTransaction: recentTransaction, chainId: chainId, pendingTransactions: pendingTransactions, isSwap: isSwap, transactionsForUIKit: transactionsForUIKit }))),

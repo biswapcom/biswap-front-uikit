@@ -14,13 +14,15 @@ const MenuItems: React.FC<MenuItemsProps> = ({
   items = [],
   activeItem,
   activeSubItem,
+  isMobileMenuOpened = false,
+  mobileMenuCallback,
   ...props
 }) => {
   const {isDesktop, isTablet} = useMatchBreakpoints();
   return (
     <Flex {...props} alignItems="center">
       {!isDesktop && (
-        <MobileDropdownMenu items={items} activeItem={activeItem}/>
+        <MobileDropdownMenu items={items} activeItem={activeItem} isMobileMenuOpened={isMobileMenuOpened} mobileMenuCallback={mobileMenuCallback} />
       )}
       {items.map(
         ({

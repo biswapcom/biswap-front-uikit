@@ -19,10 +19,14 @@ export type MenuItemsType = {
   type?: ItemType;
   target?: string
   mobileTarget?: string
+  isMobileMenuOpened?: boolean;
+  mobileMenuCallback?: (s: boolean) => void;
 };
 
 export interface MenuItemsProps extends BoxProps {
   items: MenuItemsType[];
   activeItem?: string;
   activeSubItem?: string;
+  isMobileMenuOpened?: boolean;
+  mobileMenuCallback?: (s: boolean) => void;
 }

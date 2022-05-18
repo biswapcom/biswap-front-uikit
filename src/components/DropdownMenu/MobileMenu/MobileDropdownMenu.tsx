@@ -7,23 +7,22 @@ import MobileMenu from "./MobileMenu";
 import {MenuItemsProps} from "../../MenuItems/types";
 import MenuItem from "../../MenuItem";
 
-const MobileDropdownMenu: FC<MenuItemsProps> = ({items, activeItem}) => {
-  const [isOpened, setIsOpened] = useState(false);
+const MobileDropdownMenu: FC<MenuItemsProps> = ({items, activeItem, isMobileMenuOpened = false, mobileMenuCallback}) => {
   const {isMobile} = useMatchBreakpoints();
 
   return (
     <MobileMenu
       items={items}
-      mobileMenuCallback={setIsOpened}
+      mobileMenuCallback={mobileMenuCallback}
       isMobileNav
       activeItem={activeItem}
     >
       <MenuItem>
         <IconComponent
-          iconName={isOpened ? "ButtonMenuOpened" : "ButtonMenu"}
-          color={isMobile ? "text" : "white"}
+          iconName={isMobileMenuOpened ? "ButtonMenuOpened" : "ButtonMenu"}
+          color={isMobileMenuOpened && isMobile ? "backgroundDark" : "white"}
         />
-        {!isMobile && <Text ml="8px">Menu</Text>}
+        {!isMobile && <Text ml="8px" color="white">Menu</Text>}
       </MenuItem>
     </MobileMenu>
   );
