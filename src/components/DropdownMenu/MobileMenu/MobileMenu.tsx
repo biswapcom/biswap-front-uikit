@@ -66,13 +66,18 @@ const MobileMenu: FC<MobileMenuProps> = ({
   const {isMobile, isTablet} = useMatchBreakpoints();
 
   const hasItems = items.length > 0;
-  const {styles, attributes} = usePopper(targetRef, tooltipRef, {
+  const {styles, attributes, update} = usePopper(targetRef, tooltipRef, {
     strategy: "fixed",
-    placement: "auto-start",
+    placement: "bottom",
   });
 
   useEffect(() => {
-    const showDropdownMenu = () => {
+    const showDropdownMenu = async () => {
+      try {
+        update && await update()
+      } catch (e) {
+        console.error(e, 'popover update error')
+      }
       setIsOpen(true);
     };
 

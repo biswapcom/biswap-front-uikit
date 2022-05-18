@@ -5281,12 +5281,33 @@ var MobileMenu = function (_a) {
     var hasItems = items.length > 0;
     var _f = reactPopper.usePopper(targetRef, tooltipRef, {
         strategy: "fixed",
-        placement: "auto-start",
-    }), styles = _f.styles, attributes = _f.attributes;
+        placement: "bottom",
+    }), styles = _f.styles, attributes = _f.attributes, update = _f.update;
     React.useEffect(function () {
-        var showDropdownMenu = function () {
-            setIsOpen(true);
-        };
+        var showDropdownMenu = function () { return __awaiter(void 0, void 0, void 0, function () {
+            var _a, e_1;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        _b.trys.push([0, 3, , 4]);
+                        _a = update;
+                        if (!_a) return [3 /*break*/, 2];
+                        return [4 /*yield*/, update()];
+                    case 1:
+                        _a = (_b.sent());
+                        _b.label = 2;
+                    case 2:
+                        return [3 /*break*/, 4];
+                    case 3:
+                        e_1 = _b.sent();
+                        console.error(e_1, 'popover update error');
+                        return [3 /*break*/, 4];
+                    case 4:
+                        setIsOpen(true);
+                        return [2 /*return*/];
+                }
+            });
+        }); };
         var hideDropdownMenu = function (evt) {
             var target = evt.target;
             return target && !(tooltipRef === null || tooltipRef === void 0 ? void 0 : tooltipRef.contains(target)) && setIsOpen(false);
