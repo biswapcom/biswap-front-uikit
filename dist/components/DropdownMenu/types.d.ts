@@ -34,6 +34,8 @@ export interface InternalLink {
     href?: string;
     fill?: string;
     linkType?: DropdownMenuItemType;
+    target?: string;
+    mobileTarget?: string;
 }
 export interface InnerLinksBlockProps {
     links: InternalLink[];
@@ -78,6 +80,8 @@ export interface DropdownMenuItems {
     description?: string;
     links?: InternalLink[];
     bannerRenderer?: () => React.ReactNode;
+    target?: string;
+    mobileTarget?: string;
 }
 export interface DropdownMenuItemContainerProps extends DropdownMenuItems {
     isActive?: boolean;

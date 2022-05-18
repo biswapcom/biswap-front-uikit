@@ -32,7 +32,7 @@ const BDayEvent: FC<any> = ({
 
   return (
     <Wrapper>
-      <StyledBtn flat={isMobile} width={isMobile && '100%'} scale="md" onClick={onClickHandler}>B-Day Presents</StyledBtn>
+      <StyledBtn flat={isMobile} width={isMobile ? '100%' : 'auto'} scale="lg" onClick={onClickHandler}>B-Day Presents</StyledBtn>
     </Wrapper>
   )
 };

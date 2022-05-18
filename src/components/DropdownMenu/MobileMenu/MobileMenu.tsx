@@ -52,26 +52,32 @@ const StyledMobileMenu = styled.div<{
 `;
 
 const MobileMenu: FC<MobileMenuProps> = ({
-                                           items,
-                                           mobileMenuCallback,
-                                           children,
-                                           activeItem,
-                                           ...props
-                                         }) => {
+   items,
+   mobileMenuCallback,
+   children,
+   activeItem,
+   ...props
+}) => {
   const {linkComponent} = useContext(MenuContext);
   const [isOpen, setIsOpen] = useState(false);
+
   const [targetRef, setTargetRef] = useState<HTMLDivElement | null>(null);
   const [tooltipRef, setTooltipRef] = useState<HTMLDivElement | null>(null);
   const {isMobile, isTablet} = useMatchBreakpoints();
 
   const hasItems = items.length > 0;
-  const {styles, attributes} = usePopper(targetRef, tooltipRef, {
+  const {styles, attributes, update} = usePopper(targetRef, tooltipRef, {
     strategy: "fixed",
-    placement: "auto-start",
+    placement: "bottom",
   });
 
   useEffect(() => {
-    const showDropdownMenu = () => {
+    const showDropdownMenu = async () => {
+      try {
+        update && await update()
+      } catch (e) {
+        console.error(e, 'popover update error')
+      }
       setIsOpen(true);
     };
 
@@ -139,9 +145,10 @@ const MobileMenu: FC<MobileMenuProps> = ({
                           !showItemsOnMobile && (
                             <>
                               <Text
+                                bold
                                 m={"16px 0"}
                                 fontSize={isTablet ? "20px" : "14px"}
-                                color={isMobile && opened ? "primary" : "text"}
+                                color={isMobile && opened ? "primary" : "backgroundDark"}
                               >
                                 {label}
                               </Text>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment} from "react";
 import {Flex} from "../Box";
 import {Text} from "../Text";
 import isTouchDevice from "../../util/isTouchDevice";
@@ -11,16 +11,18 @@ import MobileDropdownMenu from "../DropdownMenu/MobileMenu/MobileDropdownMenu";
 import MenuItemDivider from "../MenuItem/Divider";
 
 const MenuItems: React.FC<MenuItemsProps> = ({
-                                               items = [],
-                                               activeItem,
-                                               activeSubItem,
-                                               ...props
-                                             }) => {
+  items = [],
+  activeItem,
+  activeSubItem,
+  isMobileMenuOpened = false,
+  mobileMenuCallback,
+  ...props
+}) => {
   const {isDesktop, isTablet} = useMatchBreakpoints();
   return (
     <Flex {...props} alignItems="center">
       {!isDesktop && (
-        <MobileDropdownMenu items={items} activeItem={activeItem}/>
+        <MobileDropdownMenu items={items} activeItem={activeItem} isMobileMenuOpened={isMobileMenuOpened} mobileMenuCallback={mobileMenuCallback} />
       )}
       {items.map(
         ({
@@ -43,7 +45,7 @@ const MenuItems: React.FC<MenuItemsProps> = ({
           const visualize = isDesktop || (isTablet && showItemsOnMobile);
           return (
             visualize && (
-              <>
+              <Fragment key={`${label}#${href}`}>
                 <DropdownMenu
                   key={`${label}#${href}#${icon}`}
                   items={menuItems}
@@ -60,20 +62,20 @@ const MenuItems: React.FC<MenuItemsProps> = ({
                     {icon && (
                       <IconComponent
                         iconName={icon}
-                        color={isActive ? "pastelBlue" : "white"}
+                        color="white"
                       />
                     )}
                     {label && (
                       <Text
                         ml={"8px"}
-                        color={isActive ? "pastelBlue" : "white"}
+                        color="white"
                       >
                         {label}
                       </Text>
                     )}
                   </MenuItem>
                 </DropdownMenu>
-              </>
+              </Fragment>
             )
           );
         }

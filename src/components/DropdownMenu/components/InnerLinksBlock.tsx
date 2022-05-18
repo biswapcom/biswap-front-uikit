@@ -33,8 +33,8 @@ const InnerLinksBlock: FC<InnerLinksBlockProps> = ({
         return (
           <DropdownMenuInnerLinkItem
             key={index + label}
-            as={linkComponent}
-            href={href}
+            // as={linkComponent}
+            to={href}
             onClick={() => {
               setIsOpen(false);
             }}
@@ -47,7 +47,7 @@ const InnerLinksBlock: FC<InnerLinksBlockProps> = ({
                 color={fill}
               />
             )}
-            <Text fontSize={"12px"} color={fill}>
+            <Text bold fontSize={"12px"} color={fill}>
               {label}
             </Text>
           </DropdownMenuInnerLinkItem>
