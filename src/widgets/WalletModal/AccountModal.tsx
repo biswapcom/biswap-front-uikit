@@ -21,14 +21,6 @@ interface Props {
   transactionsForUIKit?: any
 }
 
-const Wrapper = styled.div`
-  padding-bottom: 64px;
-
-  ${({ theme }) => theme.mediaQueries.sm} {
-    padding: 0;
-  }
-`
-
 const ConnectedWrapper = styled.div`
   display: flex;
   justify-content: space-between;
@@ -59,7 +51,6 @@ const AccountModal: React.FC<Props> = ({transactionsForUIKit, isSwap, account, l
 
   return (
     <Modal title="Your wallet" onDismiss={onDismiss}>
-      <Wrapper>
         <ConnectedWrapper>
           <Text fontSize='14px' fontWeight='400' lineHeight='21px' color='#1DC872'>Connected</Text>
           <Button onClick={changeWalletHandler} scale='lg' variant='primary'>Change</Button>
@@ -115,7 +106,6 @@ const AccountModal: React.FC<Props> = ({transactionsForUIKit, isSwap, account, l
             Logout
           </Button>
         </Flex>
-      </Wrapper>
     </Modal>
   );
 
