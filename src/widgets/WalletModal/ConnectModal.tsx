@@ -6,6 +6,7 @@ import { Modal } from "../../widgets/Modal";
 import WalletCard from "./WalletCard";
 import config, { walletLocalStorageKey } from "./config";
 import { Config, Login } from "./types";
+import {Box} from "../../components/Box";
 
 interface Props {
   login: Login;
@@ -21,9 +22,6 @@ const HelpLink = styled(Link)`
   ${({ theme }) => theme.mediaQueries.sm} {
     margin-top: 24px;
   }
-`
-
-const Wrapper = styled.div`
 `
 
 const WalletCardsWrapper = styled.div`
@@ -59,7 +57,7 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => {
 
   return (
       <Modal title="Connect to a wallet" onDismiss={onDismiss}>
-        <Wrapper>
+        <Box>
           <WalletCardsWrapper>
             {sortedConfig.map((entry) => (
               <WalletCard
@@ -77,7 +75,7 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => {
             <HelpIcon color="primary" mr="6px" />
             Learn how to connect
           </HelpLink>
-        </Wrapper>
+        </Box>
       </Modal>
     )
 };
