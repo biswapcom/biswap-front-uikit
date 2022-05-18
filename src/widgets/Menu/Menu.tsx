@@ -227,6 +227,8 @@ const Menu: React.FC<NavProps> = ({
                 login={login}
                 logout={logout}
                 callback={eventCallback}
+                isSwap={isSwap}
+                href={homeLink?.href ?? "/"}
               />)}
               <UserBlock
                 clearTransaction={clearTransaction}
