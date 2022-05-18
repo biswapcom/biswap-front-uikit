@@ -3,12 +3,12 @@ import styled, { keyframes, css, useTheme, ThemeProvider, createGlobalStyle } fr
 import { space, typography, layout, variant as variant$1, background, border, position, flexbox, grid } from 'styled-system';
 import get from 'lodash/get';
 import { createPortal } from 'react-dom';
+import { parseInt as parseInt$1, noop as noop$1 } from 'lodash';
 import { usePopper } from 'react-popper';
 import noop from 'lodash/noop';
 import debounce from 'lodash/debounce';
 import throttle from 'lodash/throttle';
 import { Link as Link$1 } from 'react-router-dom';
-import { noop as noop$1 } from 'lodash';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { TwitterShareButton, TelegramShareButton } from 'react-share';
 
@@ -2387,7 +2387,7 @@ var getScale$3 = function (_a) {
             return "20px";
     }
 };
-var Wrapper$d = styled.label(templateObject_1$10 || (templateObject_1$10 = __makeTemplateObject(["\n  display: inline-flex;\n  align-items: center;\n  flex-direction: ", ";\n"], ["\n  display: inline-flex;\n  align-items: center;\n  flex-direction: ", ";\n"])), function (_a) {
+var Wrapper$e = styled.label(templateObject_1$10 || (templateObject_1$10 = __makeTemplateObject(["\n  display: inline-flex;\n  align-items: center;\n  flex-direction: ", ";\n"], ["\n  display: inline-flex;\n  align-items: center;\n  flex-direction: ", ";\n"])), function (_a) {
     var labelOrientation = _a.labelOrientation;
     return labelOrientation === 'left' ? 'row-reverse' : 'row';
 });
@@ -2412,7 +2412,7 @@ var CheckboxInput = styled.input.attrs({ type: "checkbox" })(templateObject_2$D 
 var StyledText$2 = styled(Text)(templateObject_3$l || (templateObject_3$l = __makeTemplateObject(["\n  transition: color .4s ease-in-out;\n"], ["\n  transition: color .4s ease-in-out;\n"])));
 var Checkbox = function (_a) {
     var labelOrientation = _a.labelOrientation, label = _a.label, scale = _a.scale, colorVariant = _a.colorVariant, id = _a.id, defaultChecked = _a.defaultChecked, onChange = _a.onChange;
-    return (React.createElement(Wrapper$d, { labelOrientation: labelOrientation },
+    return (React.createElement(Wrapper$e, { labelOrientation: labelOrientation },
         React.createElement(CheckboxInput, { scale: scale, colorVariant: colorVariant, id: id, defaultChecked: defaultChecked, onChange: onChange }),
         label && labelOrientation &&
             React.createElement(StyledText$2, { as: "span", fontSize: "12px", fontWeight: "400", color: "gray900", mr: labelOrientation === "left" ? '12px' : 0, ml: labelOrientation === "right" ? '12px' : 0 }, label)));
@@ -2531,7 +2531,7 @@ var StyledWrapper = styled.div(templateObject_1$Z || (templateObject_1$Z = __mak
     var $width = _a.$width, $height = _a.$height;
     return ($height / $width) * 100;
 }, space);
-var Wrapper$c = forwardRef(function (_a, ref) {
+var Wrapper$d = forwardRef(function (_a, ref) {
     var width = _a.width, height = _a.height, props = __rest(_a, ["width", "height"]);
     return (React.createElement(StyledWrapper, __assign({ ref: ref, "$width": width, "$height": height }, props)));
 });
@@ -2540,7 +2540,7 @@ var templateObject_1$Z;
 var Placeholder = styled.div(templateObject_1$Y || (templateObject_1$Y = __makeTemplateObject(["\n  height: 100%;\n  left: 0;\n  position: absolute;\n  top: 0;\n  width: 100%;\n"], ["\n  height: 100%;\n  left: 0;\n  position: absolute;\n  top: 0;\n  width: 100%;\n"])));
 var templateObject_1$Y;
 
-var StyledBackgroundImage = styled(Wrapper$c)(templateObject_1$X || (templateObject_1$X = __makeTemplateObject(["\n  background-repeat: no-repeat;\n  background-size: contain;\n"], ["\n  background-repeat: no-repeat;\n  background-size: contain;\n"])));
+var StyledBackgroundImage = styled(Wrapper$d)(templateObject_1$X || (templateObject_1$X = __makeTemplateObject(["\n  background-repeat: no-repeat;\n  background-size: contain;\n"], ["\n  background-repeat: no-repeat;\n  background-size: contain;\n"])));
 var BackgroundImage = function (_a) {
     var loadingPlaceholder = _a.loadingPlaceholder, src = _a.src, width = _a.width, height = _a.height, props = __rest(_a, ["loadingPlaceholder", "src", "width", "height"]);
     var _b = useState(false), isLoaded = _b[0], setIsLoaded = _b[1];
@@ -2604,7 +2604,7 @@ var Image = function (_a) {
             }
         };
     }, [src]);
-    return (React.createElement(Wrapper$c, __assign({ ref: imgRef, height: height, width: width }, props), isLoaded ? React.createElement(StyledImage, { src: src, alt: alt }) : React.createElement(Placeholder, null)));
+    return (React.createElement(Wrapper$d, __assign({ ref: imgRef, height: height, width: width }, props), isLoaded ? React.createElement(StyledImage, { src: src, alt: alt }) : React.createElement(Placeholder, null)));
 };
 var templateObject_1$W;
 
@@ -2663,7 +2663,7 @@ var templateObject_1$U, templateObject_2$B;
 var TokenPairImage = function (_a) {
     var primarySrc = _a.primarySrc, secondarySrc = _a.secondarySrc, width = _a.width, height = _a.height, _b = _a.variant, variant = _b === void 0 ? variants$2.DEFAULT : _b, _c = _a.primaryImageProps, primaryImageProps = _c === void 0 ? {} : _c, _d = _a.secondaryImageProps, secondaryImageProps = _d === void 0 ? {} : _d, props = __rest(_a, ["primarySrc", "secondarySrc", "width", "height", "variant", "primaryImageProps", "secondaryImageProps"]);
     var secondaryImageSize = Math.floor(width / 2);
-    return (React.createElement(Wrapper$c, __assign({ position: "relative", width: width, height: height }, props),
+    return (React.createElement(Wrapper$d, __assign({ position: "relative", width: width, height: height }, props),
         React.createElement(StyledPrimaryImage, __assign({ variant: variant, src: primarySrc, width: width, height: height }, primaryImageProps)),
         React.createElement(StyledSecondaryImage, __assign({ variant: variant, src: secondarySrc, width: secondaryImageSize, height: secondaryImageSize }, secondaryImageProps))));
 };
@@ -3147,7 +3147,7 @@ var getScale$1 = function (_a) {
             return "20px";
     }
 };
-var Wrapper$b = styled.label(templateObject_1$K || (templateObject_1$K = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  flex-direction: ", ";\n  cursor: pointer;\n"], ["\n  display: flex;\n  align-items: center;\n  flex-direction: ", ";\n  cursor: pointer;\n"])), function (_a) {
+var Wrapper$c = styled.label(templateObject_1$K || (templateObject_1$K = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  flex-direction: ", ";\n  cursor: pointer;\n"], ["\n  display: flex;\n  align-items: center;\n  flex-direction: ", ";\n  cursor: pointer;\n"])), function (_a) {
     var labelOrientation = _a.labelOrientation;
     return labelOrientation === 'left' ? 'row-reverse' : 'row';
 });
@@ -3172,7 +3172,7 @@ var InputRadio = styled.input.attrs({ type: "radio" })(templateObject_2$v || (te
 var StyledText$1 = styled(Text)(templateObject_3$j || (templateObject_3$j = __makeTemplateObject(["\n  transition: color .4s ease-in-out;\n"], ["\n  transition: color .4s ease-in-out;\n"])));
 var Radio = function (_a) {
     var labelOrientation = _a.labelOrientation, label = _a.label, scale = _a.scale, radioName = _a.radioName, onChange = _a.onChange, colorVariant = _a.colorVariant, checked = _a.checked;
-    return (React.createElement(Wrapper$b, { labelOrientation: labelOrientation },
+    return (React.createElement(Wrapper$c, { labelOrientation: labelOrientation },
         React.createElement(InputRadio, { scale: scale, name: radioName, onChange: onChange, colorVariant: colorVariant, checked: checked }),
         label && labelOrientation &&
             React.createElement(StyledText$1, { as: "span", fontSize: "12px", fontWeight: "400", color: "gray900", mr: labelOrientation === "left" ? '12px' : 0, ml: labelOrientation === "right" ? '12px' : 0 }, label)));
@@ -3185,78 +3185,123 @@ Radio.defaultProps = {
 };
 var templateObject_1$K, templateObject_2$v, templateObject_3$j;
 
-var bunnyHeadMain = "data:image/svg+xml,%3Csvg%20width%3D%2224%22%20height%3D%2232%22%20viewBox%3D%220%200%2028%2032%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Crect%20x%3D%221%22%20y%3D%2219%22%20width%3D%2217%22%20height%3D%2211%22%20fill%3D%22%231FC7D4%22%2F%3E%3Cpath%20d%3D%22M9.507%2024.706C8.14635%2026.0666%209.73795%2028.2313%2011.7555%2030.2489C13.7731%2032.2665%2015.9378%2033.8581%2017.2984%2032.4974C18.6591%2031.1368%2017.9685%2028.0711%2015.9509%2026.0535C13.9333%2024.0359%2010.8676%2023.3453%209.507%2024.706Z%22%20fill%3D%22%231FC7D4%22%2F%3E%3Cpath%20d%3D%22M15.507%2022.706C14.1463%2024.0666%2015.7379%2026.2313%2017.7555%2028.2489C19.7731%2030.2665%2021.9378%2031.8581%2023.2984%2030.4974C24.6591%2029.1368%2023.9685%2026.0711%2021.9509%2024.0535C19.9333%2022.0359%2016.8676%2021.3453%2015.507%2022.706Z%22%20fill%3D%22%231FC7D4%22%2F%3E%3Cg%20filter%3D%22url%28%23filter0_d%29%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M14.146%206.75159C14.2105%207.10896%2014.2703%207.48131%2014.3281%207.86164C14.2189%207.85865%2014.1095%207.85714%2014%207.85714C13.3803%207.85714%2012.7648%207.90539%2012.159%207.99779C11.879%207.41458%2011.5547%206.82246%2011.1872%206.23145C8.69897%202.22947%206.53826%201.98679%204.67882%202.98366C2.81938%203.98052%202.85628%206.67644%205.26696%209.40538C5.58076%209.76061%205.90097%2010.1398%206.2247%2010.5286C3.69013%2012.4659%202%2015.2644%202%2018.2695C2%2023.8292%207.78518%2025%2014%2025C20.2148%2025%2026%2023.8292%2026%2018.2695C26%2014.8658%2023.8318%2011.7272%2020.7243%209.80476C20.9022%208.86044%2021%207.83019%2021%206.75159C21%202.19612%2019.2549%201%2017.1022%201C14.9495%201%2013.5261%203.31847%2014.146%206.75159Z%22%20fill%3D%22url%28%23paint0_linear_bunnyhead_main%29%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate%282%29%22%3E%3Cpath%20d%3D%22M12.7284%2016.4446C12.796%2017.3149%2012.4446%2019.0556%2010.498%2019.0556%22%20stroke%3D%22%23452A7A%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M12.7457%2016.4446C12.6781%2017.3149%2013.0296%2019.0556%2014.9761%2019.0556%22%20stroke%3D%22%23452A7A%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M9%2014.5C9%2015.6046%208.55228%2016%208%2016C7.44772%2016%207%2015.6046%207%2014.5C7%2013.3954%207.44772%2013%208%2013C8.55228%2013%209%2013.3954%209%2014.5Z%22%20fill%3D%22%23452A7A%22%2F%3E%3Cpath%20d%3D%22M18%2014.5C18%2015.6046%2017.5523%2016%2017%2016C16.4477%2016%2016%2015.6046%2016%2014.5C16%2013.3954%2016.4477%2013%2017%2013C17.5523%2013%2018%2013.3954%2018%2014.5Z%22%20fill%3D%22%23452A7A%22%2F%3E%3C%2Fg%3E%3Cdefs%3E%3Cfilter%20id%3D%22filter0_d%22%3E%3CfeFlood%20flood-opacity%3D%220%22%20result%3D%22BackgroundImageFix%22%2F%3E%3CfeColorMatrix%20in%3D%22SourceAlpha%22%20type%3D%22matrix%22%20values%3D%220%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%20127%200%22%2F%3E%3CfeOffset%20dy%3D%221%22%2F%3E%3CfeGaussianBlur%20stdDeviation%3D%221%22%2F%3E%3CfeColorMatrix%20type%3D%22matrix%22%20values%3D%220%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200.5%200%22%2F%3E%3CfeBlend%20mode%3D%22normal%22%20in2%3D%22BackgroundImageFix%22%20result%3D%22effect1_dropShadow%22%2F%3E%3CfeBlend%20mode%3D%22normal%22%20in%3D%22SourceGraphic%22%20in2%3D%22effect1_dropShadow%22%20result%3D%22shape%22%2F%3E%3C%2Ffilter%3E%3ClinearGradient%20id%3D%22paint0_linear_bunnyhead_main%22%20x1%3D%2214%22%20y1%3D%221%22%20x2%3D%2214%22%20y2%3D%2225%22%20gradientUnits%3D%22userSpaceOnUse%22%3E%3Cstop%20stopColor%3D%22%2353DEE9%22%2F%3E%3Cstop%20offset%3D%221%22%20stopColor%3D%22%231FC7D4%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3C%2Fsvg%3E";
+var SliderIcon = "data:image/svg+xml,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Crect%20x%3D%221%22%20y%3D%221%22%20width%3D%2218%22%20height%3D%2218%22%20rx%3D%225%22%20fill%3D%22%23E4EFFF%22%20stroke%3D%22white%22%20stroke-width%3D%222%22%2F%3E%3Cpath%20d%3D%22M7%207V13%22%20stroke%3D%22%23749BD8%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M10%207V13%22%20stroke%3D%22%23749BD8%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M13%207V13%22%20stroke%3D%22%23749BD8%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E";
 
-var bunnyHeadMax = "data:image/svg+xml,%3Csvg%20width%3D%2224%22%20height%3D%2232%22%20viewBox%3D%220%200%2028%2032%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Crect%20x%3D%221%22%20y%3D%2219%22%20width%3D%2217%22%20height%3D%2211%22%20fill%3D%22%231FC7D4%22%2F%3E%3Cpath%20d%3D%22M9.507%2024.706C8.14635%2026.0666%209.73795%2028.2313%2011.7555%2030.2489C13.7731%2032.2665%2015.9378%2033.8581%2017.2984%2032.4974C18.6591%2031.1368%2017.9685%2028.0711%2015.9509%2026.0535C13.9333%2024.0359%2010.8676%2023.3453%209.507%2024.706Z%22%20fill%3D%22%231FC7D4%22%2F%3E%3Cpath%20d%3D%22M15.507%2022.706C14.1463%2024.0666%2015.7379%2026.2313%2017.7555%2028.2489C19.7731%2030.2665%2021.9378%2031.8581%2023.2984%2030.4974C24.6591%2029.1368%2023.9685%2026.0711%2021.9509%2024.0535C19.9333%2022.0359%2016.8676%2021.3453%2015.507%2022.706Z%22%20fill%3D%22%231FC7D4%22%2F%3E%3Cg%20filter%3D%22url%28%23filter0_d%29%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M14.146%206.75159C14.2105%207.10896%2014.2703%207.48131%2014.3281%207.86164C14.2189%207.85865%2014.1095%207.85714%2014%207.85714C13.3803%207.85714%2012.7648%207.90539%2012.159%207.99779C11.879%207.41458%2011.5547%206.82246%2011.1872%206.23145C8.69897%202.22947%206.53826%201.98679%204.67882%202.98366C2.81938%203.98052%202.85628%206.67644%205.26696%209.40538C5.58076%209.76061%205.90097%2010.1398%206.2247%2010.5286C3.69013%2012.4659%202%2015.2644%202%2018.2695C2%2023.8292%207.78518%2025%2014%2025C20.2148%2025%2026%2023.8292%2026%2018.2695C26%2014.8658%2023.8318%2011.7272%2020.7243%209.80476C20.9022%208.86044%2021%207.83019%2021%206.75159C21%202.19612%2019.2549%201%2017.1022%201C14.9495%201%2013.5261%203.31847%2014.146%206.75159Z%22%20fill%3D%22url%28%23paint0_linear_bunnyhead_max%29%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M11.5047%2016.0634C10.9435%2014.4456%208.79685%2014.4456%208.08131%2016.0635%22%20stroke%3D%22%23452A7A%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M20.8894%2016.0634C20.3283%2014.4456%2018.1816%2014.4456%2017.4661%2016.0635%22%20stroke%3D%22%23452A7A%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M14.7284%2017.4446C14.796%2018.3149%2014.4446%2020.0556%2012.498%2020.0556%22%20stroke%3D%22%23452A7A%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M14.7457%2017.4446C14.6781%2018.3149%2015.0296%2020.0556%2016.9761%2020.0556%22%20stroke%3D%22%23452A7A%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M13.4505%2020.0787C13.4505%2021.5097%2015.955%2021.5097%2015.955%2020.0787%22%20stroke%3D%22%23452A7A%22%20stroke-linecap%3D%22round%22%2F%3E%3Cdefs%3E%3Cfilter%20id%3D%22filter0_d%22%20x%3D%220%22%20y%3D%220%22%20width%3D%2228%22%20height%3D%2228%22%20filterUnits%3D%22userSpaceOnUse%22%20color-interpolation-filters%3D%22sRGB%22%3E%3CfeFlood%20flood-opacity%3D%220%22%20result%3D%22BackgroundImageFix%22%2F%3E%3CfeColorMatrix%20in%3D%22SourceAlpha%22%20type%3D%22matrix%22%20values%3D%220%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%20127%200%22%2F%3E%3CfeOffset%20dy%3D%221%22%2F%3E%3CfeGaussianBlur%20stdDeviation%3D%221%22%2F%3E%3CfeColorMatrix%20type%3D%22matrix%22%20values%3D%220%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200.5%200%22%2F%3E%3CfeBlend%20mode%3D%22normal%22%20in2%3D%22BackgroundImageFix%22%20result%3D%22effect1_dropShadow%22%2F%3E%3CfeBlend%20mode%3D%22normal%22%20in%3D%22SourceGraphic%22%20in2%3D%22effect1_dropShadow%22%20result%3D%22shape%22%2F%3E%3C%2Ffilter%3E%3ClinearGradient%20id%3D%22paint0_linear_bunnyhead_max%22%20x1%3D%2214%22%20y1%3D%221%22%20x2%3D%2214%22%20y2%3D%2225%22%20gradientUnits%3D%22userSpaceOnUse%22%3E%3Cstop%20stopColor%3D%22%2353DEE9%22%2F%3E%3Cstop%20offset%3D%221%22%20stopColor%3D%22%231FC7D4%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3C%2Fsvg%3E";
-
-var bunnyButt = "data:image/svg+xml,%3Csvg%20width%3D%2215%22%20height%3D%2232%22%20viewBox%3D%220%200%2015%2032%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M9.58803%2020.8649C7.72935%2021.3629%208.02539%2024.0334%208.76388%2026.7895C9.50238%2029.5456%2010.5812%2032.0062%2012.4399%2031.5082C14.2986%2031.0102%2015.2334%2028.0099%2014.4949%2025.2538C13.7564%2022.4978%2011.4467%2020.3669%209.58803%2020.8649Z%22%20fill%3D%22%230098A1%22%2F%3E%3Cpath%20d%3D%22M1%2024.4516C1%2020.8885%203.88849%2018%207.45161%2018H15V28H4.54839C2.58867%2028%201%2026.4113%201%2024.4516Z%22%20fill%3D%22%231FC7D4%22%2F%3E%3Cpath%20d%3D%22M6.11115%2017.2246C6.79693%2018.4124%205.77784%2019.3343%204.52793%2020.0559C3.27802%2020.7776%201.97011%2021.1992%201.28433%2020.0114C0.598546%2018.8236%201.1635%2017.1151%202.41341%2016.3935C3.66332%2015.6718%205.42537%2016.0368%206.11115%2017.2246Z%22%20fill%3D%22%2353DEE9%22%2F%3E%3Cpath%20d%3D%22M1.64665%2023.6601C0.285995%2025.0207%201.87759%2027.1854%203.89519%2029.203C5.91279%2031.2206%208.07743%2032.8122%209.43808%2031.4515C10.7987%2030.0909%2010.1082%2027.0252%208.09058%2025.0076C6.07298%2022.99%203.0073%2022.2994%201.64665%2023.6601Z%22%20fill%3D%22%231FC7D4%22%2F%3E%3C%2Fsvg%3E";
-
-var getCursorStyle = function (_a) {
-    var _b = _a.disabled, disabled = _b === void 0 ? false : _b;
-    return disabled ? "not-allowed" : "cursor";
-};
-var getBaseThumbStyles = function (_a) {
-    var isMax = _a.isMax, disabled = _a.disabled;
-    return "\n  -webkit-appearance: none;\n  background-image: url(".concat(isMax ? bunnyHeadMax : bunnyHeadMain, ");\n  background-color: transparent;\n  box-shadow: none;\n  border: 0;\n  cursor: ").concat(getCursorStyle, ";\n  width: 24px;\n  height: 32px;\n  filter: ").concat(disabled ? "grayscale(100%)" : "none", ";\n  transform: translate(-2px, -2px);\n  transition: 200ms transform;\n\n  &:hover {\n    transform: ").concat(disabled
-        ? "scale(1) translate(-2px, -2px)"
-        : "scale(1.1) translate(-3px, -3px)", ";\n  }\n");
-};
-var SliderLabelContainer = styled.div(templateObject_1$J || (templateObject_1$J = __makeTemplateObject(["\n  bottom: 0;\n  position: absolute;\n  left: 14px;\n  width: calc(100% - 30px);\n"], ["\n  bottom: 0;\n  position: absolute;\n  left: 14px;\n  width: calc(100% - 30px);\n"])));
-var SliderLabel = styled(Text)(templateObject_2$u || (templateObject_2$u = __makeTemplateObject(["\n  bottom: 0;\n  font-size: 12px;\n  left: ", ";\n  position: absolute;\n  text-align: center;\n  min-width: 24px; // Slider thumb size\n"], ["\n  bottom: 0;\n  font-size: 12px;\n  left: ", ";\n  position: absolute;\n  text-align: center;\n  min-width: 24px; // Slider thumb size\n"])), function (_a) {
+var Wrapper$b = styled.div(templateObject_1$J || (templateObject_1$J = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n"], ["\n  display: flex;\n  flex-direction: column;\n"])));
+var SliderContainer = styled(Box)(templateObject_2$u || (templateObject_2$u = __makeTemplateObject(["\n  position: relative;\n  top: 0;\n  left: 0;\n"], ["\n  position: relative;\n  top: 0;\n  left: 0;\n"])));
+var BarBackground = styled.div(templateObject_3$i || (templateObject_3$i = __makeTemplateObject(["\n  width: 100%;\n  height: 4px;\n  border-radius: 100px;\n  background-color: ", ";\n"], ["\n  width: 100%;\n  height: 4px;\n  border-radius: 100px;\n  background-color: ", ";\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.colors.success;
+});
+var BarProgress = styled.div(templateObject_4$f || (templateObject_4$f = __makeTemplateObject(["\n  width: ", ";\n  height: 4px;\n  transform: translateY(-100%);\n  border-radius: 100px;\n  background: ", ";\n"], ["\n  width: ", ";\n  height: 4px;\n  transform: translateY(-100%);\n  border-radius: 100px;\n  background: ", ";\n"])), function (_a) {
     var progress = _a.progress;
-    return progress;
-});
-var BunnyButt = styled.div(templateObject_3$i || (templateObject_3$i = __makeTemplateObject(["\n  background: url(", ") no-repeat;\n  height: 32px;\n  filter: ", ";\n  position: absolute;\n  width: 15px;\n"], ["\n  background: url(", ") no-repeat;\n  height: 32px;\n  filter: ", ";\n  position: absolute;\n  width: 15px;\n"])), bunnyButt, function (_a) {
-    var disabled = _a.disabled;
-    return (disabled ? "grayscale(100%)" : "none");
-});
-var BunnySlider = styled.div(templateObject_4$f || (templateObject_4$f = __makeTemplateObject(["\n  position: absolute;\n  left: 14px;\n  width: calc(100% - 14px);\n"], ["\n  position: absolute;\n  left: 14px;\n  width: calc(100% - 14px);\n"])));
-var StyledInput = styled.input(templateObject_5$b || (templateObject_5$b = __makeTemplateObject(["\n  cursor: ", ";\n  height: 32px;\n  position: relative;\n\n  ::-webkit-slider-thumb {\n    ", "\n  }\n\n  ::-moz-range-thumb {\n    ", "\n  }\n\n  ::-ms-thumb {\n    ", "\n  }\n"], ["\n  cursor: ", ";\n  height: 32px;\n  position: relative;\n\n  ::-webkit-slider-thumb {\n    ", "\n  }\n\n  ::-moz-range-thumb {\n    ", "\n  }\n\n  ::-ms-thumb {\n    ", "\n  }\n"])), getCursorStyle, getBaseThumbStyles, getBaseThumbStyles, getBaseThumbStyles);
-var BarBackground = styled.div(templateObject_6$7 || (templateObject_6$7 = __makeTemplateObject(["\n  background-color: ", ";\n  height: 2px;\n  position: absolute;\n  top: 18px;\n  width: 100%;\n"], ["\n  background-color: ", ";\n  height: 2px;\n  position: absolute;\n  top: 18px;\n  width: 100%;\n"])), function (_a) {
-    var theme = _a.theme, disabled = _a.disabled;
-    return theme.colors[disabled ? "textDisabled" : "inputSecondary"];
-});
-var BarProgress = styled.div(templateObject_7$6 || (templateObject_7$6 = __makeTemplateObject(["\n  background-color: ", ";\n  filter: ", ";\n  height: 10px;\n  position: absolute;\n  top: 18px;\n"], ["\n  background-color: ", ";\n  filter: ", ";\n  height: 10px;\n  position: absolute;\n  top: 18px;\n"])), function (_a) {
+    return ("".concat(progress, "%"));
+}, function (_a) {
     var theme = _a.theme;
     return theme.colors.primary;
-}, function (_a) {
-    var disabled = _a.disabled;
-    return (disabled ? "grayscale(100%)" : "none");
 });
-var templateObject_1$J, templateObject_2$u, templateObject_3$i, templateObject_4$f, templateObject_5$b, templateObject_6$7, templateObject_7$6;
-
+var StyledInput = styled.input(templateObject_5$b || (templateObject_5$b = __makeTemplateObject(["\n  height: 16px;\n  position: relative;\n  cursor: pointer;\n  transform: translateY(-100%);\n  margin: 2px 0;\n\n  ::-webkit-slider-thumb {\n    -webkit-appearance: none;\n    width: 16px;\n    height: 16px;\n    cursor: pointer;\n    transition: 0.1s all;\n    background-image: url(", ");\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n  ::-moz-range-thumb {\n    -webkit-appearance: none;\n    width: 16px;\n    height: 16px;\n    cursor: pointer;\n    transition: 0.1s all;\n    // custom moz reset\n    background-color: transparent;\n    border: 0;\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n  ::-ms-thumb {\n    -webkit-appearance: none;\n    width: 16px;\n    height: 16px;\n    cursor: pointer;\n    transition: 0.1s all;\n    background-image: url(", ");\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n"], ["\n  height: 16px;\n  position: relative;\n  cursor: pointer;\n  transform: translateY(-100%);\n  margin: 2px 0;\n\n  ::-webkit-slider-thumb {\n    -webkit-appearance: none;\n    width: 16px;\n    height: 16px;\n    cursor: pointer;\n    transition: 0.1s all;\n    background-image: url(", ");\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n  ::-moz-range-thumb {\n    -webkit-appearance: none;\n    width: 16px;\n    height: 16px;\n    cursor: pointer;\n    transition: 0.1s all;\n    // custom moz reset\n    background-color: transparent;\n    border: 0;\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n  ::-ms-thumb {\n    -webkit-appearance: none;\n    width: 16px;\n    height: 16px;\n    cursor: pointer;\n    transition: 0.1s all;\n    background-image: url(", ");\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n"])), SliderIcon, SliderIcon);
+var BunnySlider = styled.div(templateObject_6$7 || (templateObject_6$7 = __makeTemplateObject(["\n  position: absolute;\n  width: 100%;\n"], ["\n  position: absolute;\n  width: 100%;\n"])));
+var BreakePointsWrap = styled.div(templateObject_7$6 || (templateObject_7$6 = __makeTemplateObject(["\n  padding: 0 8px;\n  display: flex;\n  justify-content: space-between;\n  margin-top: 12px;\n"], ["\n  padding: 0 8px;\n  display: flex;\n  justify-content: space-between;\n  margin-top: 12px;\n"])));
+var Point = styled.div(templateObject_8$2 || (templateObject_8$2 = __makeTemplateObject(["\n  width: 2px;\n  height: 8px;\n  border-radius: 50%;\n  background-color: ", ";\n"], ["\n  width: 2px;\n  height: 8px;\n  border-radius: 50%;\n  background-color: ", ";\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.colors.backgroundDisabled;
+});
+var InfoBlock = styled.div(templateObject_9$2 || (templateObject_9$2 = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n"], ["\n  display: flex;\n  justify-content: space-between;\n"])));
+var TitleText = styled(Text)(templateObject_10$1 || (templateObject_10$1 = __makeTemplateObject(["\n  font-size: 14px;\n  line-height: 150%;\n  color: black;\n  font-weight: 500;\n"], ["\n  font-size: 14px;\n  line-height: 150%;\n  color: black;\n  font-weight: 500;\n"])));
+var PercentageAmount = styled(Text)(templateObject_11 || (templateObject_11 = __makeTemplateObject(["\n  color: ", ";\n  font-size: 14px;\n  margin: 0 4px;\n  font-weight: 600;\n"], ["\n  color: ", ";\n  font-size: 14px;\n  margin: 0 4px;\n  font-weight: 600;\n"])), function (_a) {
+    var color = _a.color;
+    return color;
+});
+var InfoNode = styled.div(templateObject_12 || (templateObject_12 = __makeTemplateObject(["\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n"], ["\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n"])));
+var RBPrice = styled(Text)(templateObject_13 || (templateObject_13 = __makeTemplateObject(["\n  text-align: right;\n  font-size: 12px;\n  line-height: 150%;\n  font-weight: 500;\n  color: black;\n"], ["\n  text-align: right;\n  font-size: 12px;\n  line-height: 150%;\n  font-weight: 500;\n  color: black;\n"
+    // We need to adjust the offset as the percentage increases, as 100% really is 100% - label width. The number 10 is arbitrary, but seems to work...
+])));
+var MIN = 0;
+var MAX = 100;
+var INIT_CHECKPOINTS = [{ value: 0, RB: 1000 }, { value: 25, RB: 2500 }, { value: 50, RB: 5000 }, { value: 75, RB: 7500 }, { value: 90, RB: 10000 }];
 var Slider = function (_a) {
-    var name = _a.name, min = _a.min, max = _a.max, value = _a.value, onValueChanged = _a.onValueChanged, valueLabel = _a.valueLabel, _b = _a.step, step = _b === void 0 ? "any" : _b, _c = _a.disabled, disabled = _c === void 0 ? false : _c, props = __rest(_a, ["name", "min", "max", "value", "onValueChanged", "valueLabel", "step", "disabled"]);
+    var value = _a.value, onValueChanged = _a.onValueChanged, _b = _a.checkPoints, checkPoints = _b === void 0 ? INIT_CHECKPOINTS : _b, isRobiBoost = _a.isRobiBoost, props = __rest(_a, ["value", "onValueChanged", "checkPoints", "isRobiBoost"]);
+    var _c = useState({ value: 0, RB: 0 }), percent = _c[0], setPercent = _c[1];
+    var getRB = function (percentage) {
+        var temp = checkPoints.map(function (item) { return Math.abs(item.value - percentage); });
+        var minValue = Math.min.apply(Math, temp);
+        var res = temp.indexOf(minValue);
+        return checkPoints[res].RB;
+    };
+    useEffect(function () {
+        if (checkPoints === null || checkPoints === void 0 ? void 0 : checkPoints.length) {
+            var RB = getRB(value);
+            setPercent({ value: value, RB: RB });
+        }
+        // eslint-disable-next-line
+    }, [value, checkPoints]);
+    var onMouseLeaveHandleChange = function () {
+        var temp = checkPoints.map(function (item) { return Math.abs(item.value - percent.value); });
+        var minValue = Math.min.apply(Math, temp);
+        var res = temp.indexOf(minValue);
+        onValueChanged(checkPoints[res].value);
+        setPercent(checkPoints[res]);
+    };
     var handleChange = function (_a) {
         var target = _a.target;
-        onValueChanged(parseFloat(target.value));
+        var selectedValue = parseInt$1(target.value);
+        switch (selectedValue) {
+            case checkPoints[0].value: {
+                onValueChanged(0);
+                break;
+            }
+            case checkPoints[1].value: {
+                onValueChanged(checkPoints[1].value);
+                break;
+            }
+            case checkPoints[2].value: {
+                onValueChanged(checkPoints[2].value);
+                break;
+            }
+            case checkPoints[3].value: {
+                onValueChanged(checkPoints[3].value);
+                break;
+            }
+            case checkPoints[4].value: {
+                onValueChanged(checkPoints[4].value);
+                setPercent(function (prev) { return (__assign(__assign({}, prev), { value: checkPoints[4].value })); });
+                break;
+            }
+            default: {
+                if (selectedValue <= checkPoints[4].value)
+                    setPercent(function (prev) { return (__assign(__assign({}, prev), { value: selectedValue })); });
+            }
+        }
     };
-    var progressPercentage = (value / max) * 100;
-    var isMax = value === max;
-    var progressWidth;
-    if (progressPercentage <= 10) {
-        progressWidth = "".concat(progressPercentage + 0.5, "%");
-    }
-    else if (progressPercentage >= 90) {
-        progressWidth = "".concat(progressPercentage - 4, "%");
-    }
-    else if (progressPercentage >= 60) {
-        progressWidth = "".concat(progressPercentage - 2.5, "%");
-    }
-    else {
-        progressWidth = "".concat(progressPercentage, "%");
-    }
-    var labelProgress = isMax ? "calc(100% - 12px)" : "".concat(progressPercentage, "%");
-    var displayValueLabel = isMax ? "MAX" : valueLabel;
-    return (React.createElement(Box, __assign({ position: "relative", height: "48px" }, props),
-        React.createElement(BunnyButt, { disabled: disabled }),
-        React.createElement(BunnySlider, null,
-            React.createElement(BarBackground, { disabled: disabled }),
-            React.createElement(BarProgress, { style: { width: progressWidth }, disabled: disabled }),
-            React.createElement(StyledInput, { name: name, type: "range", min: min, max: max, value: value, step: step, onChange: handleChange, isMax: isMax, disabled: disabled })),
-        valueLabel && (React.createElement(SliderLabelContainer, null,
-            React.createElement(SliderLabel, { progress: labelProgress }, displayValueLabel)))));
+    var progressPercentage = (percent.value / MAX) * 100;
+    // const labelOffset = progressPercentage - progressPercentage / MOVING_SLIDER_LABEL_OFFSET_FACTOR;
+    return (React.createElement(Wrapper$b, null,
+        React.createElement(SliderContainer, __assign({}, props),
+            React.createElement(BunnySlider, null,
+                React.createElement(BarBackground, null),
+                React.createElement(BarProgress, { progress: progressPercentage }),
+                React.createElement(StyledInput, { type: "range", min: MIN, max: MAX, value: percent.value, onChange: handleChange, onClick: function () { return onMouseLeaveHandleChange(); } }))),
+        React.createElement(BreakePointsWrap, null, checkPoints === null || checkPoints === void 0 ? void 0 : checkPoints.map(function (item, index) { return React.createElement(Point, { key: index.toString() }); })),
+        React.createElement(InfoBlock, null,
+            React.createElement(InfoNode, null,
+                React.createElement(TitleText, null, "Fee return"),
+                React.createElement(PercentageAmount, { color: 'primary' },
+                    value,
+                    "%")),
+            React.createElement(InfoNode, null,
+                React.createElement(PercentageAmount, { color: 'success' },
+                    100 - value,
+                    "%"),
+                React.createElement(TitleText, null, isRobiBoost ? 'Robi Boost' : 'Squid Energy'))),
+        React.createElement(RBPrice, null,
+            "price 1",
+            isRobiBoost ? 'RB' : 'SE',
+            " = $",
+            percent.RB,
+            " volume")));
 };
+var templateObject_1$J, templateObject_2$u, templateObject_3$i, templateObject_4$f, templateObject_5$b, templateObject_6$7, templateObject_7$6, templateObject_8$2, templateObject_9$2, templateObject_10$1, templateObject_11, templateObject_12, templateObject_13;
 
 var animation = {
     WAVES: "waves",
