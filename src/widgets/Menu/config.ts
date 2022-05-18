@@ -1,9 +1,6 @@
 import {noop} from "lodash";
-import {
-  DropdownMenuItems,
-  DropdownMenuItemType,
-} from "../../components/DropdownMenu/types";
-import {MenuItemsType, ItemTypes} from "../../components/MenuItems/types";
+import {DropdownMenuItems, DropdownMenuItemType,} from "../../components/DropdownMenu/types";
+import {ItemTypes, MenuItemsType} from "../../components/MenuItems/types";
 import {LinkStatus} from "./types";
 
 // test component
@@ -26,6 +23,11 @@ export const status = {
 };
 
 export const links: MenuItemsType[] = [
+  {
+    label: 'Home',
+    href: '/',
+    hidden: true,
+  },
   {
     label: "Trade",
     href: "/swap",
@@ -71,11 +73,13 @@ export const links: MenuItemsType[] = [
         links: [
           {
             label: "Stake BSW",
-            href: "/polar",
+            href: "https://google.com",
+            linkType: DropdownMenuItemType.EXTERNAL_LINK,
           },
           {
             label: "Stake tokens",
             href: "/polar",
+            linkType: DropdownMenuItemType.INTERNAL_LINK,
           },
         ],
       },
@@ -143,12 +147,11 @@ export const links: MenuItemsType[] = [
   },
   {
     label: "Info",
-    href: "/",
     isExtended: true,
     items: [
       {
         label: "Analytics",
-        href: "/pool",
+        href: "https://google.com",
         description: "Item description",
       },
       {

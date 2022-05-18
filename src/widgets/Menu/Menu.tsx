@@ -81,7 +81,7 @@ const Menu: React.FC<NavProps> = ({
   linkComponent = "a",
   // userMenu,
   banner,
-  isDark,
+  // isDark,
   links,
   subLinks,
   activeItem,
@@ -179,6 +179,9 @@ const Menu: React.FC<NavProps> = ({
 
   // Find the home link if provided
   const homeLink = links.find((link) => link.label === "Home");
+
+  // exclude Home link from displayed in menu
+  const filteredLinks = links.filter((link) => link.label !== "Home");
 
   return (
     <MenuContext.Provider value={{linkComponent}}>

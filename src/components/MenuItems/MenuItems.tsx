@@ -33,6 +33,7 @@ const MenuItems: React.FC<MenuItemsProps> = ({
            isExtended,
            showItemsOnMobile,
            type,
+           hidden,
          }) => {
           const statusColor = menuItems?.find(
             (menuItem) => menuItem.status !== undefined
@@ -42,7 +43,7 @@ const MenuItems: React.FC<MenuItemsProps> = ({
             isTouchDevice() && menuItems && menuItems.length > 0
               ? {}
               : {href};
-          const visualize = isDesktop || (isTablet && showItemsOnMobile);
+          const visualize = (isDesktop || (isTablet && showItemsOnMobile)) && !hidden;
           return (
             visualize && (
               <Fragment key={`${label}#${href}`}>
