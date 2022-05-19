@@ -1,4 +1,4 @@
-import React, {FC} from "react";
+import React, {FC, Fragment} from "react";
 import {
   DropdownMenuDivider,
   DropdownMenuInnerLinkItem, DropdownMenuInnerOuterLinkItem,
@@ -48,7 +48,7 @@ const InnerLinksBlock: FC<InnerLinksBlockProps> = ({
           </>
         )
         return (
-          <>
+          <Fragment key={`${index}#${label}`}>
             {linkType === DropdownMenuItemType.INTERNAL_LINK && (
               <DropdownMenuInnerLinkItem
                 key={index + label}
@@ -72,7 +72,7 @@ const InnerLinksBlock: FC<InnerLinksBlockProps> = ({
                 {getLinkContent()}
               </DropdownMenuInnerOuterLinkItem>
             )}
-          </>
+          </Fragment>
         );
       }
     );
