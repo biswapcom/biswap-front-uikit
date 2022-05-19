@@ -17,6 +17,7 @@ interface Props {
 
 const Wrapper = styled.div`
   margin-right: 0;
+  height: 40px;
 
   ${({theme}) => theme.mediaQueries.sm} {
     margin-right: 10px;
@@ -88,7 +89,7 @@ const buttonText = 'B-Day Presents'
           width={isMobile ? '100%' : 'auto'}
           flat={isMobile}
         >
-          <PresentIcon width="56px" mr="4px" />
+          <PresentIcon width="56px" height={39} mr="4px" />
           {buttonText}
         </StyledLink>) :
         (<StyledBtn
