@@ -27,7 +27,7 @@ export const InnerLinksBlockContainer = styled.div<{ padded: boolean }>`
   padding-left: ${({padded}) => padded && "62px"};
 `;
 
-export const DropdownMenuInnerLinkItem = styled(Link)<StyledDropdownMenuInnerLinkItemProps & LinkProps>`
+const CommonDropdownMenuInnerLinkItem = () => css`
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -39,6 +39,14 @@ export const DropdownMenuInnerLinkItem = styled(Link)<StyledDropdownMenuInnerLin
       transition: margin-right 150ms linear;
     }
   }
+`
+
+export const DropdownMenuInnerLinkItem = styled(Link)<StyledDropdownMenuInnerLinkItemProps & LinkProps>`
+  ${CommonDropdownMenuInnerLinkItem}
+`;
+
+export const DropdownMenuInnerOuterLinkItem = styled.a<StyledDropdownMenuInnerLinkItemProps>`
+  ${CommonDropdownMenuInnerLinkItem}
 `;
 
 export const CommonLinkStyle = ({ disabled, $isActive, $hasIcon }: StyledDropdownMenuItemProps & {

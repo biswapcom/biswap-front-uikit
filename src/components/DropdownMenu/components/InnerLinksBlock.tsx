@@ -1,7 +1,7 @@
 import React, {FC} from "react";
 import {
   DropdownMenuDivider,
-  DropdownMenuInnerLinkItem,
+  DropdownMenuInnerLinkItem, DropdownMenuInnerOuterLinkItem,
   InnerLinksBlockContainer,
 } from "../styles";
 import IconComponent from "../../Svg/IconComponent";
@@ -16,7 +16,7 @@ const InnerLinksBlock: FC<InnerLinksBlockProps> = ({
                                                      setIsOpen,
                                                      linkComponent,
                                                    }) => {
-  const {isTablet} = useMatchBreakpoints();
+  const {isMobile, isTablet} = useMatchBreakpoints();
 
   const renderLinks = () =>
     links.map(
@@ -26,19 +26,14 @@ const InnerLinksBlock: FC<InnerLinksBlockProps> = ({
           href = "/",
           icon = "ChevronRight",
           linkType = DropdownMenuItemType.INTERNAL_LINK,
+          mobileTarget,
+          target,
           fill = "primary",
         },
         index: number
       ) => {
-        return (
-          <DropdownMenuInnerLinkItem
-            key={index + label}
-            // as={linkComponent}
-            to={href}
-            onClick={() => {
-              setIsOpen(false);
-            }}
-          >
+        const getLinkContent = () => (
+          <>
             {icon && (
               <IconComponent
                 className="inner-chevron"
@@ -50,7 +45,34 @@ const InnerLinksBlock: FC<InnerLinksBlockProps> = ({
             <Text bold fontSize={"12px"} color={fill}>
               {label}
             </Text>
-          </DropdownMenuInnerLinkItem>
+          </>
+        )
+        return (
+          <>
+            {linkType === DropdownMenuItemType.INTERNAL_LINK && (
+              <DropdownMenuInnerLinkItem
+                key={index + label}
+                to={href}
+                onClick={() => {
+                  setIsOpen(false);
+                }}
+              >
+                {getLinkContent()}
+              </DropdownMenuInnerLinkItem>
+            )}
+            {linkType === DropdownMenuItemType.EXTERNAL_LINK && (
+              <DropdownMenuInnerOuterLinkItem
+                key={index + label}
+                href={href}
+                target={isMobile ? (mobileTarget || "_self") : (target || "_blank")}
+                onClick={() => {
+                  setIsOpen(false);
+                }}
+              >
+                {getLinkContent()}
+              </DropdownMenuInnerOuterLinkItem>
+            )}
+          </>
         );
       }
     );

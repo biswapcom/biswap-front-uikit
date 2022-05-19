@@ -18,6 +18,7 @@ export declare type MenuItemsType = {
     mobileTarget?: string;
     isMobileMenuOpened?: boolean;
     mobileMenuCallback?: (s: boolean) => void;
+    hidden?: boolean;
 };
 export interface MenuItemsProps extends BoxProps {
     items: MenuItemsType[];
