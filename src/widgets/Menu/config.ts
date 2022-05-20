@@ -142,6 +142,7 @@ export const links: MenuItemsType[] = [
       {
         type: DropdownMenuItemType.BANNER,
         bannerRenderer: getBanner,
+        href: "https://google.com",
       },
     ],
   },
