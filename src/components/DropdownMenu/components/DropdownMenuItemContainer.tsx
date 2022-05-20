@@ -93,7 +93,7 @@ const DropdownMenuItemContainer: FC<DropdownMenuItemContainerProps> = ({
       {type === DropdownMenuItemType.BANNER &&
         isDesktop &&
         bannerRenderer &&
-        (<BannerPlacementItem>{bannerRenderer()}</BannerPlacementItem>)}
+        (<BannerPlacementItem>{bannerRenderer(href, target)}</BannerPlacementItem>)}
     </StyledDropdownMenuItemContainer>
   );
 };
