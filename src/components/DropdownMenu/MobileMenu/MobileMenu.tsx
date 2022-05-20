@@ -127,9 +127,9 @@ const MobileMenu: FC<MobileMenuProps> = ({
           {items
             .filter((item) => item.label && !item.type)
             .map(
-              ({label, items: innerItems = [], showItemsOnMobile}, index) => {
+              ({label, items: innerItems = [], showItemsOnMobile, hidden}, index) => {
                 const visualize =
-                  !showItemsOnMobile || (showItemsOnMobile && isMobile);
+                  (!showItemsOnMobile || (showItemsOnMobile && isMobile) && !hidden);
                 return (
                   <Box key={`${label}#${index}`}>
                     {showItemsOnMobile && isMobile && (
@@ -142,7 +142,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
                       clickable={!isTablet}
                       heading={(opened) => {
                         return (
-                          !showItemsOnMobile && (
+                          !showItemsOnMobile && !hidden && (
                             <>
                               <Text
                                 bold
