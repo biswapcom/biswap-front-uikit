@@ -116,6 +116,7 @@ export { default as ProductsIcon } from "./Icons/Products";
 export { default as ButtonMenuIcon } from "./Icons/ButtonMenu";
 export { default as ButtonMenuOpenedIcon } from "./Icons/ButtonMenuOpened";
 export { default as CerticAuditedIcon } from "./Icons/Certic";
+export { default as FixedStakingIcon } from "./Icons/FixedStaking";
 
 //chain
 export {default as BSCIcon} from "./Icons/BSC";
