@@ -1758,6 +1758,7 @@ var scales$7 = {
 var variants$3 = {
     LIGHT: "light",
     DARK: "dark",
+    TRANSPARENT: "transparent"
 };
 
 var _a$6, _b$4;
@@ -1823,6 +1824,28 @@ var styleVariants$2 = (_b$4 = {},
         ":disabled": {
             backgroundColor: "dark600",
             color: "dark200",
+            cursor: "not-allowed",
+        }
+    },
+    _b$4[variants$3.TRANSPARENT] = {
+        backgroundColor: "transparent",
+        color: "dark800",
+        "::placeholder": {
+            color: "gray900",
+        },
+        ":hover:not(:disabled)": {
+            borderColor: "transparent",
+            backgroundColor: "transparent",
+            color: "dark800",
+        },
+        ":focus:not(:disabled)": {
+            borderColor: "transparent",
+            backgroundColor: "transparent",
+            color: "dark800",
+        },
+        ":disabled": {
+            backgroundColor: "transparent",
+            color: "gray600",
             cursor: "not-allowed",
         }
     },
