@@ -1,11 +1,13 @@
 import React, { useContext } from "react";
-import styled, { keyframes } from "styled-components";
+import {Link} from "react-router-dom";
+import styled, {css, DefaultTheme, keyframes} from "styled-components";
+
+// components
 import Flex from "../../../components/Box/Flex";
 import { LogoIcon, LogoWithTextIcon } from "../../../components/Svg";
 import { MenuContext } from "../context";
 
 interface Props {
-  isDark: boolean;
   href: string;
 }
 
@@ -14,15 +16,17 @@ const blink = keyframes`
   50% { transform:  scaleY(0.1); }
 `;
 
-const StyledLink = styled("a")`
+const CommonLinkStyles = ({ theme }: { theme: DefaultTheme}) => css`
   display: flex;
   align-items: center;
+  
   .mobile-icon {
     width: 32px;
     ${({ theme }) => theme.mediaQueries.nav} {
       display: none;
     }
   }
+  
   .desktop-icon {
     width: 145px;
     display: none;
@@ -41,9 +45,17 @@ const StyledLink = styled("a")`
       animation-iteration-count: 1;
     }
   }
+`
+
+const StyledLink = styled.a`
+  ${CommonLinkStyles};
 `;
 
-const Logo: React.FC<Props> = ({ isDark, href }) => {
+const StyledInnerLink = styled(Link)`
+  ${CommonLinkStyles};
+`
+
+const Logo: React.FC<Props> = ({ href }) => {
   const { linkComponent } = useContext(MenuContext);
   const isAbsoluteUrl = href.startsWith("http");
   const innerLogo = (
@@ -56,20 +68,19 @@ const Logo: React.FC<Props> = ({ isDark, href }) => {
   return (
     <Flex>
       {isAbsoluteUrl ? (
-        <StyledLink as="a" href={href} aria-label="Pancake home page">
+        <StyledLink as="a" href={href} aria-label="Biswap home page">
           {innerLogo}
         </StyledLink>
       ) : (
-        <StyledLink
-          href={href}
-          as={linkComponent}
-          aria-label="Pancake home page"
+        <StyledInnerLink
+          to={href}
+          aria-label="Biswap home page"
         >
           {innerLogo}
-        </StyledLink>
+        </StyledInnerLink>
       )}
     </Flex>
   );
 };
 
-export default React.memo(Logo, (prev, next) => prev.isDark === next.isDark);
+export default Logo;

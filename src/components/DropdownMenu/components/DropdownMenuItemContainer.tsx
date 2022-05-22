@@ -1,6 +1,8 @@
 import React, {FC} from "react";
 import {DropdownMenuItemContainerProps, DropdownMenuItemType} from "../types";
 import {
+  BannerPlacementItem,
+  DropdownInternalMenuItem,
   DropdownMenuDivider,
   DropdownMenuItem,
   StyledDropdownMenuItemContainer,
@@ -9,21 +11,23 @@ import InnerLinksBlock from "./InnerLinksBlock";
 import {useMatchBreakpoints} from "../../../hooks";
 
 const DropdownMenuItemContainer: FC<DropdownMenuItemContainerProps> = ({
-                                                                         isActive = false,
-                                                                         leftIcon,
-                                                                         getMenuItemContent,
-                                                                         links = [],
-                                                                         setIsOpen,
-                                                                         linkComponent,
-                                                                         href,
-                                                                         bannerRenderer,
-                                                                         type,
-                                                                         ...itemProps
-                                                                       }) => {
-  const {isDesktop} = useMatchBreakpoints();
+   isActive = false,
+   leftIcon,
+   getMenuItemContent,
+   links = [],
+   setIsOpen,
+   linkComponent,
+   href= '/',
+   bannerRenderer,
+   type,
+   target,
+   mobileTarget,
+   ...itemProps
+}) => {
+  const {isMobile, isDesktop} = useMatchBreakpoints();
 
   const hasInnerLinks = links.length > 0;
-
+  // @ts-ignore
   return (
     <StyledDropdownMenuItemContainer>
       {type === DropdownMenuItemType.BUTTON && (
@@ -57,18 +61,18 @@ const DropdownMenuItemContainer: FC<DropdownMenuItemContainerProps> = ({
         </>
       )}
       {type === DropdownMenuItemType.INTERNAL_LINK && (
-        <DropdownMenuItem
+        <DropdownInternalMenuItem
           $isActive={isActive}
           $hasIcon={!!leftIcon}
-          as={linkComponent}
-          href={href}
+          // as={linkComponent}
+          to={href}
           onClick={() => {
             setIsOpen(false);
           }}
           {...itemProps}
         >
           {getMenuItemContent("ArrowForward")}
-        </DropdownMenuItem>
+        </DropdownInternalMenuItem>
       )}
       {type === DropdownMenuItemType.EXTERNAL_LINK && (
         <DropdownMenuItem
@@ -76,7 +80,7 @@ const DropdownMenuItemContainer: FC<DropdownMenuItemContainerProps> = ({
           $hasIcon={!!leftIcon}
           as="a"
           href={href}
-          target="_blank"
+          target={isMobile ? (mobileTarget || "_self") : (target || "_blank")}
           onClick={() => {
             setIsOpen(false);
           }}
@@ -89,7 +93,7 @@ const DropdownMenuItemContainer: FC<DropdownMenuItemContainerProps> = ({
       {type === DropdownMenuItemType.BANNER &&
         isDesktop &&
         bannerRenderer &&
-        bannerRenderer()}
+        (<BannerPlacementItem>{bannerRenderer(href, target)}</BannerPlacementItem>)}
     </StyledDropdownMenuItemContainer>
   );
 };

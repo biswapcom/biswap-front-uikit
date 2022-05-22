@@ -1,6 +1,7 @@
 import throttle from "lodash/throttle";
 import React, {useEffect, useRef, useState} from "react";
-import styled from "styled-components";
+import styled, {DefaultTheme} from "styled-components";
+
 import {Box} from "../../components/Box";
 import Flex from "../../components/Box/Flex";
 import Footer from "./components/Footer/Footer";
@@ -14,9 +15,9 @@ import {
 } from "./config";
 import {NavProps} from "./types";
 import {MenuContext} from "./context";
-import NetworkSwitcher, {OptionProps} from "./NetworkSwitcher";
+// import NetworkSwitcher, {OptionProps} from "./NetworkSwitcher";
 
-import {BSCIcon, AvalancheIcon} from "../../components/Svg";
+// import {BSCIcon, AvalancheIcon} from "../../components/Svg";
 import UserBlock from "./components/UserBlock";
 import BDayEvent from "./components/UserEvents/BDayEvent";
 
@@ -25,20 +26,26 @@ const Wrapper = styled.div`
   width: 100%;
 `;
 
-const StyledNav = styled.nav`
+const getBackground = ({ theme, menuBg, isMobileMenuOpened }: { theme: DefaultTheme,  menuBg: boolean, isMobileMenuOpened: boolean }) => {
+  if (isMobileMenuOpened) return theme.card.background;
+  if (menuBg && !isMobileMenuOpened) return theme.nav.background;
+  return 'transparent'
+}
+
+const StyledNav = styled.nav<{ menuBg: boolean, isMobileMenuOpened: boolean }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   height: ${MENU_HEIGHT}px;
-  background-color: ${({theme}) => theme.nav.background};
+  background-color: ${getBackground};
   transform: translate3d(0, 0, 0);
   padding-left: 16px;
   padding-right: 16px;
 
   ${({theme}) => theme.mediaQueries.sm} {
-    background-color: transparent;
-  }
+    background-color: ${({theme, menuBg }) => menuBg ? theme.nav.background : 'transparent'};
+  };
 `;
 
 const FixedContainer = styled.div<{ showMenu: boolean; height: number }>`
@@ -72,9 +79,9 @@ const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
 
 const Menu: React.FC<NavProps> = ({
   linkComponent = "a",
-  userMenu,
+  // userMenu,
   banner,
-  isDark,
+  // isDark,
   links,
   subLinks,
   activeItem,
@@ -88,9 +95,9 @@ const Menu: React.FC<NavProps> = ({
   aboutLinks,
   productLinks,
   serviceLinks,
-  currentNetwork,
-  networkChangeToBSC,
-  networkChangeToAvalanche,
+  // currentNetwork,
+  // networkChangeToBSC,
+  // networkChangeToAvalanche,
   account,
   login,
   logout,
@@ -102,9 +109,12 @@ const Menu: React.FC<NavProps> = ({
   transactionsForUIKit,
   withEvent,
   eventCallback,
-                                  }) => {
+}) => {
   const {isMobile} = useMatchBreakpoints();
-  const [showMenu, setShowMenu] = useState(true);
+  const [showMenu, setShowMenu] = useState<boolean>(true);
+  const [menuBg, setMenuBg] = useState<boolean>(true);
+  const [isMobileMenuOpened, setIsMobileMenuOpened] = useState(false);
+
   const refPrevOffset = useRef(
     typeof window === "undefined" ? 0 : window.pageYOffset
   );
@@ -131,6 +141,7 @@ const Menu: React.FC<NavProps> = ({
       // Always show the menu when user reach the top
       if (isTopOfPage) {
         setShowMenu(true);
+        setMenuBg(false);
       }
       // Avoid triggering anything at the bottom because of layout shift
       else if (!isBottomOfPage) {
@@ -140,9 +151,11 @@ const Menu: React.FC<NavProps> = ({
         ) {
           // Has scroll up
           setShowMenu(true);
+          setMenuBg(true);
         } else {
           // Has scroll down
           setShowMenu(false);
+          setMenuBg(true);
         }
       }
       refPrevOffset.current = currentOffset;
@@ -155,17 +168,20 @@ const Menu: React.FC<NavProps> = ({
     };
   }, [totalTopMenuHeight]);
 
-  const handleNetworkChange = (option: OptionProps): void => {
-    if (option.value !== currentNetwork) {
-      networkChangeToBSC()
-    }
-    if (option.value !== currentNetwork) {
-      networkChangeToAvalanche()
-    }
-  }
+  // const handleNetworkChange = (option: OptionProps): void => {
+  //   if (option.value !== currentNetwork) {
+  //     networkChangeToBSC()
+  //   }
+  //   if (option.value !== currentNetwork) {
+  //     networkChangeToAvalanche()
+  //   }
+  // }
 
   // Find the home link if provided
   const homeLink = links.find((link) => link.label === "Home");
+
+  // exclude Home link from displayed in menu
+  const filteredLinks = links.filter((link) => link.label !== "Home");
 
   return (
     <MenuContext.Provider value={{linkComponent}}>
@@ -176,13 +192,15 @@ const Menu: React.FC<NavProps> = ({
               {banner}
             </TopBannerContainer>
           )}
-          <StyledNav>
+          <StyledNav menuBg={menuBg} isMobileMenuOpened={isMobileMenuOpened}>
             <Flex>
-              <Logo isDark={isDark} href={homeLink?.href ?? "/"}/>
+              <Logo href={homeLink?.href ?? "/"}/>
               <MenuItems
                 items={links}
                 activeItem={activeItem}
                 activeSubItem={activeSubItem}
+                isMobileMenuOpened={isMobileMenuOpened}
+                mobileMenuCallback={setIsMobileMenuOpened}
                 ml="24px"
               />
             </Flex>
@@ -212,6 +230,8 @@ const Menu: React.FC<NavProps> = ({
                 login={login}
                 logout={logout}
                 callback={eventCallback}
+                isSwap={isSwap}
+                href={homeLink?.href ?? "/"}
               />)}
               <UserBlock
                 clearTransaction={clearTransaction}

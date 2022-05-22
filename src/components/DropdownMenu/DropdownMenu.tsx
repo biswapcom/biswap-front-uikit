@@ -31,14 +31,15 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
   const [tooltipRef, setTooltipRef] = useState<HTMLDivElement | null>(null);
   const hasItems = items.length > 0;
   const hasMoreThanItems = items.length > 1;
-  const {styles, attributes} = usePopper(targetRef, tooltipRef, {
+  const {styles, attributes, update} = usePopper(targetRef, tooltipRef, {
     strategy: "fixed",
     placement: "bottom-start",
     modifiers: [{name: "offset", options: {offset: [0, 0]}}],
   });
 
   useEffect(() => {
-    const showDropdownMenu = () => {
+    const showDropdownMenu = async () => {
+      update && await update();
       setIsOpen(true);
     };
 
@@ -54,7 +55,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
       targetRef?.removeEventListener("mouseenter", showDropdownMenu);
       targetRef?.removeEventListener("mouseleave", hideDropdownMenu);
     };
-  }, [targetRef, tooltipRef, setIsOpen]);
+  }, [targetRef, tooltipRef, setIsOpen, update]);
 
   useEffect(() => {
     if (setMenuOpenByIndex && index !== undefined) {
@@ -83,6 +84,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
       <Box
         onPointerDown={() => {
           setIsOpen((s) => !s);
+          update && update();
         }}
       >
         {children}
@@ -108,6 +110,8 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
                 rightIcon = "",
                 links = [],
                 bannerRenderer,
+                target,
+                mobileTarget,
                 ...itemProps
               },
               itemItem
@@ -136,6 +140,8 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
                   href={href}
                   bannerRenderer={bannerRenderer}
                   type={type}
+                  target={target}
+                  mobileTarget={mobileTarget}
                   {...itemProps}
                 />
               );

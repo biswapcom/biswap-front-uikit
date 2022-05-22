@@ -1,4 +1,6 @@
-import styled, { DefaultTheme } from "styled-components";
+import styled, {css, DefaultTheme} from "styled-components";
+import {Link, LinkProps} from "react-router-dom";
+
 import { Colors } from "../../theme";
 import {Text} from "../Text";
 import {
@@ -17,7 +19,7 @@ const getTextColor = ({
   if (disabled) return theme.colors.textDisabled;
   if ($isActive) return theme.colors.primary;
 
-  return theme.colors.text;
+  return theme.colors.backgroundDark;
 };
 
 export const InnerLinksBlockContainer = styled.div<{ padded: boolean }>`
@@ -25,7 +27,7 @@ export const InnerLinksBlockContainer = styled.div<{ padded: boolean }>`
   padding-left: ${({padded}) => padded && "62px"};
 `;
 
-export const DropdownMenuInnerLinkItem = styled.div<StyledDropdownMenuInnerLinkItemProps>`
+const CommonDropdownMenuInnerLinkItem = () => css`
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -37,19 +39,28 @@ export const DropdownMenuInnerLinkItem = styled.div<StyledDropdownMenuInnerLinkI
       transition: margin-right 150ms linear;
     }
   }
+`
+
+export const DropdownMenuInnerLinkItem = styled(Link)<StyledDropdownMenuInnerLinkItemProps & LinkProps>`
+  ${CommonDropdownMenuInnerLinkItem}
 `;
 
-export const DropdownMenuItem = styled.button<StyledDropdownMenuItemProps & {
+export const DropdownMenuInnerOuterLinkItem = styled.a<StyledDropdownMenuInnerLinkItemProps>`
+  ${CommonDropdownMenuInnerLinkItem}
+`;
+
+export const CommonLinkStyle = ({ disabled, $isActive, $hasIcon }: StyledDropdownMenuItemProps & {
   $isActive: boolean;
   $hasIcon?: boolean;
-}>`
+}) => css`
   align-items: center;
   border: 0;
   //background: transparent;
-  color: ${({theme, disabled, $isActive}) =>
-  getTextColor({theme, disabled, $isActive})};
-  cursor: ${({disabled}) => (disabled ? "not-allowed" : "pointer")};
-  font-weight: ${({$isActive = false}) => ($isActive ? "600" : "400")};
+  color: ${({theme}) =>
+          getTextColor({theme, disabled, $isActive})};
+  cursor: ${disabled ? "not-allowed" : "pointer"};
+  font-weight: 600;
+  line-height: 20px;
   display: inline-flex;
   font-size: 14px;
   height: 40px;
@@ -64,7 +75,7 @@ export const DropdownMenuItem = styled.button<StyledDropdownMenuItemProps & {
   }
 
   &:hover:not(:disabled) {
-    color: ${({theme, $hasIcon}) => !$hasIcon && theme.colors.primary};
+    color: ${({theme}) => !$hasIcon && theme.colors.primary};
 
     svg {
       opacity: 0.85;
@@ -81,7 +92,22 @@ export const DropdownMenuItem = styled.button<StyledDropdownMenuItemProps & {
     opacity: 0.85;
     transform: translateY(1px);
   }
+`
+
+export const DropdownMenuItem = styled.button<StyledDropdownMenuItemProps & {
+  $isActive: boolean;
+  $hasIcon?: boolean;
+}>`
+  ${CommonLinkStyle}
 `;
+
+export const DropdownInternalMenuItem = styled(Link)<StyledDropdownMenuItemProps & {
+  $isActive: boolean;
+  $hasIcon?: boolean;
+}>`
+  ${CommonLinkStyle}
+`;
+
 
 export const StyledDropdownMenuItemContainer = styled.div`
   margin-bottom: 16px;
@@ -155,3 +181,7 @@ export const LinkStatus = styled(Text)<{ color: keyof Colors }>`
   color: ${({theme, color}) => theme.colors[color]};
   margin-left: 8px;
 `;
+
+export const BannerPlacementItem = styled.div`
+  margin: 0 -16px -16px;
+`

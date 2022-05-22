@@ -52,26 +52,32 @@ const StyledMobileMenu = styled.div<{
 `;
 
 const MobileMenu: FC<MobileMenuProps> = ({
-                                           items,
-                                           mobileMenuCallback,
-                                           children,
-                                           activeItem,
-                                           ...props
-                                         }) => {
+   items,
+   mobileMenuCallback,
+   children,
+   activeItem,
+   ...props
+}) => {
   const {linkComponent} = useContext(MenuContext);
   const [isOpen, setIsOpen] = useState(false);
+
   const [targetRef, setTargetRef] = useState<HTMLDivElement | null>(null);
   const [tooltipRef, setTooltipRef] = useState<HTMLDivElement | null>(null);
   const {isMobile, isTablet} = useMatchBreakpoints();
 
   const hasItems = items.length > 0;
-  const {styles, attributes} = usePopper(targetRef, tooltipRef, {
+  const {styles, attributes, update} = usePopper(targetRef, tooltipRef, {
     strategy: "fixed",
-    placement: "auto-start",
+    placement: "bottom",
   });
 
   useEffect(() => {
-    const showDropdownMenu = () => {
+    const showDropdownMenu = async () => {
+      try {
+        update && await update()
+      } catch (e) {
+        console.error(e, 'popover update error')
+      }
       setIsOpen(true);
     };
 
@@ -121,9 +127,9 @@ const MobileMenu: FC<MobileMenuProps> = ({
           {items
             .filter((item) => item.label && !item.type)
             .map(
-              ({label, items: innerItems = [], showItemsOnMobile}, index) => {
+              ({label, items: innerItems = [], showItemsOnMobile, hidden}, index) => {
                 const visualize =
-                  !showItemsOnMobile || (showItemsOnMobile && isMobile);
+                  (!showItemsOnMobile || (showItemsOnMobile && isMobile) && !hidden);
                 return (
                   <Box key={`${label}#${index}`}>
                     {showItemsOnMobile && isMobile && (
@@ -136,12 +142,13 @@ const MobileMenu: FC<MobileMenuProps> = ({
                       clickable={!isTablet}
                       heading={(opened) => {
                         return (
-                          !showItemsOnMobile && (
+                          !showItemsOnMobile && !hidden && (
                             <>
                               <Text
+                                bold
                                 m={"16px 0"}
                                 fontSize={isTablet ? "20px" : "14px"}
-                                color={isMobile && opened ? "primary" : "text"}
+                                color={isMobile && opened ? "primary" : "backgroundDark"}
                               >
                                 {label}
                               </Text>

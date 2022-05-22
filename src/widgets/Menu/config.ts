@@ -1,12 +1,11 @@
 import {noop} from "lodash";
-import {
-  DropdownMenuItems,
-  DropdownMenuItemType,
-} from "../../components/DropdownMenu/types";
-import {MenuItemsType, ItemTypes} from "../../components/MenuItems/types";
+import {DropdownMenuItems, DropdownMenuItemType,} from "../../components/DropdownMenu/types";
+import {ItemTypes, MenuItemsType} from "../../components/MenuItems/types";
 import {LinkStatus} from "./types";
 
-const getBanner = () => "<div>BANNER</div>";
+// test component
+import {getBanner} from "./components/TestComponents";
+
 
 export const status = {
   LIVE: <LinkStatus>{
@@ -24,6 +23,11 @@ export const status = {
 };
 
 export const links: MenuItemsType[] = [
+  {
+    label: 'Home',
+    href: '/',
+    hidden: true,
+  },
   {
     label: "Trade",
     href: "/swap",
@@ -69,11 +73,13 @@ export const links: MenuItemsType[] = [
         links: [
           {
             label: "Stake BSW",
-            href: "/polar",
+            href: "https://google.com",
+            linkType: DropdownMenuItemType.EXTERNAL_LINK,
           },
           {
             label: "Stake tokens",
             href: "/polar",
+            linkType: DropdownMenuItemType.INTERNAL_LINK,
           },
         ],
       },
@@ -100,6 +106,8 @@ export const links: MenuItemsType[] = [
         href: "/pool",
         leftIcon: "Lottery",
         description: "Item description",
+        target: '_blank',
+        mobileTarget: '_self',
       },
       {
         label: "Competitions",
@@ -119,6 +127,8 @@ export const links: MenuItemsType[] = [
         leftIcon: "NftLaunch",
         description: "Item description",
         type: DropdownMenuItemType.EXTERNAL_LINK,
+        target: '_blank',
+        mobileTarget: '_self',
       },
       {
         label: "NFT Earn",
@@ -126,21 +136,23 @@ export const links: MenuItemsType[] = [
         leftIcon: "NftEarn",
         description: "Item description",
         type: DropdownMenuItemType.EXTERNAL_LINK,
+        target: '_self',
+        mobileTarget: '_self',
       },
       {
         type: DropdownMenuItemType.BANNER,
         bannerRenderer: getBanner,
+        href: "https://google.com",
       },
     ],
   },
   {
     label: "Info",
-    href: "/",
     isExtended: true,
     items: [
       {
         label: "Analytics",
-        href: "/pool",
+        href: "https://google.com",
         description: "Item description",
       },
       {
