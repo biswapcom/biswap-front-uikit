@@ -8,6 +8,7 @@ export declare const scales: {
 export declare const variants: {
     readonly LIGHT: "light";
     readonly DARK: "dark";
+    readonly TRANSPARENT: "transparent";
 };
 export declare type Scales = typeof scales[keyof typeof scales];
 export declare type Variants = typeof variants[keyof typeof variants];
