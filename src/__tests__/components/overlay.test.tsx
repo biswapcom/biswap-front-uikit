@@ -12,7 +12,7 @@ it("renders correctly", () => {
       left: 0px;
       width: 100%;
       height: 100%;
-      background-color: #280D5F99;
+      background-color: rgb(10, 22, 43);
       z-index: 20;
     }
 

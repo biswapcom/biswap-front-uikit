@@ -1,7 +1,6 @@
 import React, {FC} from "react";
 import styled, {DefaultTheme} from "styled-components";
 import {BadgeProps} from "./types";
-import Text from "../Text/Text";
 import getRgba from "../../util/getRgba";
 
 interface StyledBadgeProps extends BadgeProps {
@@ -74,7 +73,7 @@ const getBadgeColor = ({badgeType = "active", theme}: StyledBadgeProps) => {
 const Wrapper = styled.div<BadgeProps>`
   display: inline-flex;
   justify-content: center;
-  align-content: center;
+  align-items: center;
   padding: ${({isIcon}) => isIcon === 'left' ? '4px 12px 4px 4px' : isIcon === 'right' ? '4px 4px 4px 12px' : '4px 12px'};
   background: ${getBadgeBg};
   color: ${getBadgeColor};
@@ -82,7 +81,6 @@ const Wrapper = styled.div<BadgeProps>`
   height: 20px;
   font-size: ${({fontSize}) => fontSize || "10px"};
   font-weight: ${({fontWeight}) => fontWeight || "400"};
-  line-height: 1;
 `;
 
 const Badge: FC<BadgeProps> = ({children, badgeType, fontSize, fontWeight, isIcon}) => {

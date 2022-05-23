@@ -56,3 +56,4 @@ export declare const SIDEBAR_WIDTH_REDUCED = 56;
 export declare const TOP_BANNER_HEIGHT = 70;
 export declare const TOP_BANNER_HEIGHT_MOBILE = 84;
 export declare const MOBILE_EVENT_BUTTON_HEIGHT = 40;
+export declare const FISHING_BANNER_HEIGHT = 40;
