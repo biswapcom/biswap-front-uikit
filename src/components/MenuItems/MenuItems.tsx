@@ -70,6 +70,8 @@ const MenuItems: React.FC<MenuItemsProps> = ({
                       <Text
                         ml={"8px"}
                         color="white"
+                        fontSize="14px"
+                        fontWeight="600"
                       >
                         {label}
                       </Text>
