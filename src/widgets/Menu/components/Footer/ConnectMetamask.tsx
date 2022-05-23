@@ -21,7 +21,7 @@ const AddToMetamaskBtn = styled.button`
   align-items: center;
   width: 40px;
   height: 40px;
-  background: ${({theme}) => theme.colors.dark700};
+  background: ${({theme}) => theme.colors.dropDown};
   border-radius: 50%;
   box-shadow: none;
   border: 0;
