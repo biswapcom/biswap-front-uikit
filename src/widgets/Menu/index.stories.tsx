@@ -131,7 +131,7 @@ const ConnectedTemplate: React.FC<NavProps> = (args) => {
         productLinks={productLinks}
         serviceLinks={serviceLinks}
       >
-        <Box>
+        <Box pt="113px">
           <Text bold fontSize="24px" as="h1" mb="8px" color="white">
             Page body
           </Text>
