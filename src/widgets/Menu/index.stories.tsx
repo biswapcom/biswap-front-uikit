@@ -132,9 +132,9 @@ const ConnectedTemplate: React.FC<NavProps> = (args) => {
         serviceLinks={serviceLinks}
       >
         <Box>
-          <Heading as="h1" mb="8px">
+          <Text bold fontSize="24px" as="h1" mb="8px" color="white">
             Page body
-          </Heading>
+          </Text>
           <Button scale="sm" onClick={() => setIsOpen(true)}>
             Show mobile drawer
           </Button>
