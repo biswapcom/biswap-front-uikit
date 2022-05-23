@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { BSWPriceProps, FooterStatisticProps } from "../../types";
-// import { formatSpacingAmount } from "../../../../util/formatSpacingAmount";
+import { formatSpacingAmount } from "../../../../util/formatSpacingAmount";
 
 import BSWPrice from "./BSWPrice";
 import ConnectMetamask from "./ConnectMetamask";
@@ -108,8 +108,7 @@ const FooterInfo: React.FC<Props> = (
         {footerStatistic.map((item, index) => (
           <InfoListItem key={index.toString()}>
             <InfoListLabel>{item.label}</InfoListLabel>
-            {/*<InfoListValue>{formatSpacingAmount(item.value)}</InfoListValue>*/}
-            <InfoListValue>{item.value}</InfoListValue>
+            <InfoListValue>{formatSpacingAmount(item.value)}</InfoListValue>
           </InfoListItem>
         ))}
       </InfoList>
