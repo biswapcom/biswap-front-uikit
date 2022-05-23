@@ -331,7 +331,8 @@ const Menu: React.FC<NavProps> = ({
               callback={eventCallback}
             />)}
         </FixedContainer>
-        <BodyWrapper mt={!subLinks ? `${totalTopMenuHeight + 1}px` : "0"}>
+        {/*<BodyWrapper mt={!subLinks ? `${totalTopMenuHeight + 1}px` : "0"}>*/}
+        <BodyWrapper>
           <Inner isPushed={false} showMenu={showMenu}>
             {children}
             <Footer
