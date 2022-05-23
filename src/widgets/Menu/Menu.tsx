@@ -159,7 +159,7 @@ const Menu: React.FC<NavProps> = ({
 }) => {
   const {isMobile} = useMatchBreakpoints();
   const [showMenu, setShowMenu] = useState<boolean>(true);
-  const [menuBg, setMenuBg] = useState<boolean>(true);
+  const [menuBg, setMenuBg] = useState<boolean>(false);
   const [isMobileMenuOpened, setIsMobileMenuOpened] = useState(false);
   const [showFishingWarn, setShowFishingWarn] = useState(true);
 
