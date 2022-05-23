@@ -19,7 +19,7 @@ export const variants = {
   SELECT: "select",
   SELECT_LIGHT: "selectLight",
 
-  LIGHT_OUT: "LightOut",
+  LIGHT_OUT: "lightOut",
   LIGHT: "light",
   TERTIARY: "tertiary",
   TERTIARY_OUT: "tertiaryOut",
