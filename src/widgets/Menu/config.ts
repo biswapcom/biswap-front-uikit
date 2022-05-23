@@ -281,6 +281,11 @@ export const socials = [
           label: "Сhina",
           href: "https://t.me/biswap_china",
         },
+        {
+          icon: 'TRIcon',
+          label: "Turkey",
+          href: "https://t.me/biswap_turkey",
+        },
       ]
     },
   },
