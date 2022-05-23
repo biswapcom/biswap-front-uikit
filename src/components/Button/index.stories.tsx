@@ -42,7 +42,7 @@ export const Default: React.FC = () => {
   } as const
 
   const darkBgBtn = {
-    LIGHT_OUT: "LightOut",
+    LIGHT_OUT: "lightOut",
     LIGHT: "light",
   } as const
 
