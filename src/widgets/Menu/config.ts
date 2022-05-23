@@ -438,3 +438,4 @@ export const SIDEBAR_WIDTH_REDUCED = 56;
 export const TOP_BANNER_HEIGHT = 70;
 export const TOP_BANNER_HEIGHT_MOBILE = 84;
 export const MOBILE_EVENT_BUTTON_HEIGHT = 40;
+export const FISHING_BANNER_HEIGHT = 40;
