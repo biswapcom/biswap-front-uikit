@@ -23,10 +23,12 @@ import {useMatchBreakpoints} from "../../hooks";
 
 // config
 import {
-  FISHING_BANNER_HEIGHT,
-  MENU_HEIGHT, MOBILE_EVENT_BUTTON_HEIGHT,
+  MENU_HEIGHT,
+  MOBILE_EVENT_BUTTON_HEIGHT,
   TOP_BANNER_HEIGHT,
   TOP_BANNER_HEIGHT_MOBILE,
+  FISHING_BANNER_HEIGHT,
+  FISHING_MOBILE_BANNER_HEIGHT,
 } from "./config";
 
 // types
@@ -48,7 +50,7 @@ const FishingWarn = styled.div<{ showFishingWarn: boolean }>`
   display: flex;
   align-items: center;
   background: ${({ theme }) => theme.colors.warning};
-  height: ${({ showFishingWarn }) => (!showFishingWarn ? "0px" : "60px")};
+  height: ${({ showFishingWarn }) => (!showFishingWarn ? "0px" : `${FISHING_MOBILE_BANNER_HEIGHT}px`)};
   padding: 10px 20px 10px 70px;
   transition: height 0.3s ease;
   position: relative;
@@ -56,7 +58,7 @@ const FishingWarn = styled.div<{ showFishingWarn: boolean }>`
 
   ${({ theme }) => theme.mediaQueries.sm} {
     padding: 10px 40px 10px 100px;
-    height: ${({ showFishingWarn }) => (!showFishingWarn ? "0px" : "40px")};
+    height: ${({ showFishingWarn }) => (!showFishingWarn ? "0px" : `${FISHING_BANNER_HEIGHT}px`)};
   }
 `;
 const Label = styled.span`
@@ -167,6 +169,10 @@ const Menu: React.FC<NavProps> = ({
     typeof window === "undefined" ? 0 : window.pageYOffset
   );
 
+  const fishingBannerHeight = isMobile
+    ? FISHING_MOBILE_BANNER_HEIGHT
+    : FISHING_BANNER_HEIGHT
+
   const topBannerHeight = isMobile
     ? TOP_BANNER_HEIGHT_MOBILE
     : TOP_BANNER_HEIGHT;
@@ -177,7 +183,7 @@ const Menu: React.FC<NavProps> = ({
     : MENU_HEIGHT;
 
   const TopMenuWithAllBannersHeight = showFishingWarn
-    ? TopMenuWithBannerHeight + FISHING_BANNER_HEIGHT
+    ? TopMenuWithBannerHeight + fishingBannerHeight
     : TopMenuWithBannerHeight;
 
   const totalTopMenuHeight = withEvent && isMobile
@@ -329,6 +335,8 @@ const Menu: React.FC<NavProps> = ({
               login={login}
               logout={logout}
               callback={eventCallback}
+              href={homeLink?.href ?? "/"}
+              isSwap={isSwap}
             />)}
         </FixedContainer>
         {/*<BodyWrapper mt={!subLinks ? `${totalTopMenuHeight + 1}px` : "0"}>*/}

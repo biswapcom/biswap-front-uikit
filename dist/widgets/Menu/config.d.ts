@@ -57,3 +57,4 @@ export declare const TOP_BANNER_HEIGHT = 70;
 export declare const TOP_BANNER_HEIGHT_MOBILE = 84;
 export declare const MOBILE_EVENT_BUTTON_HEIGHT = 40;
 export declare const FISHING_BANNER_HEIGHT = 40;
+export declare const FISHING_MOBILE_BANNER_HEIGHT = 60;
