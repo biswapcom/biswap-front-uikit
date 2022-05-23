@@ -67,13 +67,13 @@ const StyledAlert = styled(Flex)`
 `;
 
 const StyledBox = styled(Box)`
-  position: relative;
-  left: 8px;
+  position: absolute;
+  right: 8px;
   
-  ${({ theme }) => theme.mediaQueries.sm} {
-    position: static;
-    transform: translateX(-50%);
-  }
+  // ${({ theme }) => theme.mediaQueries.sm} {
+  //   position: static;
+  //   transform: translateX(-50%);
+  //}
 `
 
 const Alert: React.FC<AlertProps> = ({ title, children, variant, onClick, progress }) => {

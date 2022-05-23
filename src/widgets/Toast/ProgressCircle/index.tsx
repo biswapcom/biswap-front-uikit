@@ -19,7 +19,7 @@ const SvgDiag = styled.svg`
 
 const Content = styled.g`
   fill: #000;
-  transform: translate(50%, 25%);
+  transform: translate(49%, 25%);
 `
 
 const StyledButton = styled.button`
