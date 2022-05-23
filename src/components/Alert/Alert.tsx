@@ -70,7 +70,7 @@ const StyledBox = styled(Box)`
   position: relative;
   left: 8px;
   
-  ${({ theme }) => theme.mediaQueries.md} {
+  ${({ theme }) => theme.mediaQueries.sm} {
     position: static;
     transform: translateX(-50%);
   }
