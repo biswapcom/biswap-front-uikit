@@ -41,7 +41,7 @@ export const Default: React.FC = () => {
           <>
             <Heading mb="16px" color="backgroundDark">{key} light</Heading>
             <Row>
-              <Input type="text" scale={scales[key]} variant='light' value="Value"/>
+              <Input type="text" scale={scales[key]} variant='transparent' value="Value"/>
               <Input type="text" scale={scales[key]} variant='light' placeholder="Placeholder..."/>
               <Input type="text" scale={scales[key]} variant='light' value="Disabled" disabled/>
               <Input type="text" scale={scales[key]} variant='light' value="Success" isSuccess/>
