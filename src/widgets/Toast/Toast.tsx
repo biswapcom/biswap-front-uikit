@@ -6,7 +6,7 @@ import { Text } from "../../components/Text";
 import ToastAction from "./ToastAction";
 import { ToastProps, types } from "./types";
 import { Button } from "../../components/Button";
-import { LinkIcon } from "../../components/Svg";
+import {ArrowOpenNew} from "../../components/Svg";
 
 const alertTypeMap = {
   [types.INFO]: alertVariants.INFO,
@@ -22,7 +22,12 @@ interface ClearButtonProps {
 const ClearAllButton = styled(Button)<ClearButtonProps>`
   position: absolute;
   right: 0;
+  background-color: ${({theme})=> theme.colors.contrast};
+  border: ${({theme}) => `1px solid ${theme.colors.dark800}`};
+  border-radius: 16px;
   top: ${({top}) => `${-top}px`};
+  padding: 0;
+  margin: 0;
 `
 
 const StyledToast = styled.div`
@@ -40,38 +45,21 @@ const StyledToast = styled.div`
     transform: none;
     left: auto;
     right: 35px;
-    max-width: 350px;
+    max-width: 352px;
   }
 `;
 
-const ProgressWrapper = styled.div`
-  background-color: ${({theme})=> theme.colors.contrast}
-  bottom: 0;
-  min-height: 5px;
-`
-
-const ProgressLine = styled.div`
-  background-color: ${({theme})=> theme.colors.success};
-  height: 5px;
-  transition: 100ms all;
-  border-radius: 16px;
-`
-
-const AlertWrapper = styled.div`
-  padding: 0 16px;
-`
 const LinkWrapper = styled.div`
-  margin: 14px 0 11px 0;
   display: flex;
   align-items: center;
+  margin: 6px 0;
 `
 
 const LinkStyles = styled.a`
- color: ${({theme})=> theme.colors.primary};
- font-size: 14px;
- font-weight: 700;
- line-height: 21px;
-  text-decoration: underline;
+ color: ${({theme}) => theme.colors.primary};
+ font-size: 12px;
+ font-weight: 500;
+ line-height: 16px;
 `
 
 const SharingText = styled.div`
@@ -80,6 +68,7 @@ const SharingText = styled.div`
 `
 
 const ActionContainer = styled.div`
+    width: 100%;
 `
 
 const Toast: React.FC<ToastProps> = ({
@@ -109,25 +98,26 @@ const Toast: React.FC<ToastProps> = ({
         {
           clearAll && (
             <ClearAllButton
-              variant='text'
-               top={removeButtonPosition}
-              onClick={() => clearAll()}
+                scale='sm'
+                variant='text'
+                top={removeButtonPosition}
+                onClick={() => clearAll()}
             >
-              <Text fontSize='16px' color='#1263F1' lineHeight='19px'>
+              <Text p='0 8px' fontSize='12px' color='dark'>
                 Clear All
               </Text>
             </ClearAllButton>
           )
         }
-        <Alert title={title} variant={alertTypeMap[type]} onClick={handleRemove}>
-            <AlertWrapper>
+        <Alert progress={progress} title={title} variant={alertTypeMap[type]} onClick={handleRemove}>
+            <div>
               {
                 hash &&
                 <LinkWrapper>
                   <LinkStyles target="_blank" href={`https://bscscan.com/tx/${hash}`}>
                     View on bscscan
                   </LinkStyles>
-                  <LinkIcon ml='7px' width='18px' height='18px' color='primary'/>
+                  <ArrowOpenNew ml='6px' width='18px' height='18px' color='primary'/>
                 </LinkWrapper>
               }
               {description ? <Text color="#6B7D98" fontSize="12px" as="p" mb="8px" dangerouslySetInnerHTML={{__html: description}}/> : <></>}
@@ -171,15 +161,15 @@ const Toast: React.FC<ToastProps> = ({
                   </ActionContainer>
                 )
               }
-            </AlertWrapper>
-            <div style={{width: '100%'}}>
-              <ProgressWrapper  style={{width: '100%'}}>
-                {
-                  progress ?  <ProgressLine style={{width: `${100 - progress}%`}}/> : null
-                }
-
-              </ProgressWrapper>
             </div>
+            {/*<div style={{width: '100%'}}>*/}
+            {/*  <ProgressWrapper  style={{width: '100%'}}>*/}
+            {/*    {*/}
+            {/*      progress ?  <ProgressLine style={{width: `${100 - progress}%`}}/> : null*/}
+            {/*    }*/}
+
+            {/*  </ProgressWrapper>*/}
+            {/*</div>*/}
         </Alert>
       </StyledToast>
     </CSSTransition>
