@@ -1,25 +1,37 @@
-import throttle from "lodash/throttle";
 import React, {useEffect, useRef, useState} from "react";
+import throttle from "lodash/throttle";
 import styled, {DefaultTheme} from "styled-components";
 
+// components
 import {Box} from "../../components/Box";
 import Flex from "../../components/Box/Flex";
 import Footer from "./components/Footer/Footer";
 import MenuItems from "../../components/MenuItems/MenuItems";
-import {useMatchBreakpoints} from "../../hooks";
 import Logo from "./components/Logo";
+// import {BSCIcon, AvalancheIcon} from "../../components/Svg";
+import UserBlock from "./components/UserBlock";
+import BDayEvent from "./components/UserEvents/BDayEvent";
+import {CloseIcon, ImgWarnIcon} from "../../components/Svg";
+import {Button} from "../../components/Button";
+// import NetworkSwitcher, {OptionProps} from "./NetworkSwitcher";
+
+// context
+import {MenuContext} from "./context";
+
+// hooks
+import {useMatchBreakpoints} from "../../hooks";
+
+// config
 import {
+  FISHING_BANNER_HEIGHT,
   MENU_HEIGHT, MOBILE_EVENT_BUTTON_HEIGHT,
   TOP_BANNER_HEIGHT,
   TOP_BANNER_HEIGHT_MOBILE,
 } from "./config";
-import {NavProps} from "./types";
-import {MenuContext} from "./context";
-// import NetworkSwitcher, {OptionProps} from "./NetworkSwitcher";
 
-// import {BSCIcon, AvalancheIcon} from "../../components/Svg";
-import UserBlock from "./components/UserBlock";
-import BDayEvent from "./components/UserEvents/BDayEvent";
+// types
+import {NavProps} from "./types";
+
 
 const Wrapper = styled.div`
   position: relative;
@@ -31,6 +43,41 @@ const getBackground = ({ theme, menuBg, isMobileMenuOpened }: { theme: DefaultTh
   if (menuBg && !isMobileMenuOpened) return theme.nav.background;
   return 'transparent'
 }
+
+const FishingWarn = styled.div<{ showFishingWarn: boolean }>`
+  display: flex;
+  align-items: center;
+  background: ${({ theme }) => theme.colors.warning};
+  height: ${({ showFishingWarn }) => (!showFishingWarn ? "0px" : "60px")};
+  padding: 10px 20px 10px 70px;
+  transition: height 0.3s ease;
+  position: relative;
+  overflow: hidden;
+
+  ${({ theme }) => theme.mediaQueries.sm} {
+    padding: 10px 40px 10px 100px;
+    height: ${({ showFishingWarn }) => (!showFishingWarn ? "0px" : "40px")};
+  }
+`;
+const Label = styled.span`
+  font-size: 14px;
+  color: ${({ theme }) => theme.colors.background};
+  flex-grow: 1;
+  font-weight: 600;
+`;
+const StyledImgWarnIcon = styled(ImgWarnIcon)`
+  width: 44px;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-50%);
+
+  ${({ theme }) => theme.mediaQueries.sm} {
+    left: 28px;
+    width: 64px;
+  }
+`;
 
 const StyledNav = styled.nav<{ menuBg: boolean, isMobileMenuOpened: boolean }>`
   display: flex;
@@ -114,6 +161,7 @@ const Menu: React.FC<NavProps> = ({
   const [showMenu, setShowMenu] = useState<boolean>(true);
   const [menuBg, setMenuBg] = useState<boolean>(true);
   const [isMobileMenuOpened, setIsMobileMenuOpened] = useState(false);
+  const [showFishingWarn, setShowFishingWarn] = useState(true);
 
   const refPrevOffset = useRef(
     typeof window === "undefined" ? 0 : window.pageYOffset
@@ -123,13 +171,33 @@ const Menu: React.FC<NavProps> = ({
     ? TOP_BANNER_HEIGHT_MOBILE
     : TOP_BANNER_HEIGHT;
 
+
   const TopMenuWithBannerHeight = banner
     ? MENU_HEIGHT + topBannerHeight
     : MENU_HEIGHT;
 
-  const totalTopMenuHeight = withEvent && isMobile
-    ? TopMenuWithBannerHeight + MOBILE_EVENT_BUTTON_HEIGHT
+  const TopMenuWithAllBannersHeight = showFishingWarn
+    ? TopMenuWithBannerHeight + FISHING_BANNER_HEIGHT
     : TopMenuWithBannerHeight;
+
+  const totalTopMenuHeight = withEvent && isMobile
+    ? TopMenuWithAllBannersHeight + MOBILE_EVENT_BUTTON_HEIGHT
+    : TopMenuWithAllBannersHeight;
+
+  const closeWarn = () => {
+    localStorage.setItem("showFishingWarn", JSON.stringify(false));
+    setShowFishingWarn(false);
+  };
+
+  useEffect(() => {
+    if (!localStorage.getItem("showFishingWarn")) {
+      localStorage.setItem("showFishingWarn", JSON.stringify(true));
+    }
+    if (localStorage.getItem("showFishingWarn") === JSON.stringify(true)) {
+      setShowFishingWarn(true);
+    }
+  }, [showFishingWarn]);
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -187,6 +255,15 @@ const Menu: React.FC<NavProps> = ({
     <MenuContext.Provider value={{linkComponent}}>
       <Wrapper>
         <FixedContainer showMenu={showMenu} height={totalTopMenuHeight}>
+          {showFishingWarn && (
+            <FishingWarn showFishingWarn={showFishingWarn}>
+              <StyledImgWarnIcon />
+              <Label>Beware of fake Biswap websites! Use only official site: biswap.org</Label>
+              <Button variant="text" scale="sm" onClick={closeWarn}>
+                <CloseIcon color="background" />
+              </Button>
+            </FishingWarn>
+          )}
           {banner && (
             <TopBannerContainer height={topBannerHeight}>
               {banner}
