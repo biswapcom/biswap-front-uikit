@@ -19,8 +19,8 @@ const StyledMobileMenu = styled.div<{
   padding: 32px 24px 0 24px;
   background-color: ${({theme}) => theme.card.background};
   width: 100vw;
-  height: 100vh;
-  min-height: 100vh;
+  height: calc(100vh - 72px);
+  min-height: calc(100vh - 72px);
   overflow: auto;
   visibility: visible;
   opacity: 1;
