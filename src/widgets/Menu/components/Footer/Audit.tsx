@@ -14,12 +14,9 @@ const AuditedWrap = styled.div`
 
   ${({ theme }) => theme.mediaQueries.sm} {
     justify-content: flex-start;
-  }
-
-  ${({ theme }) => theme.mediaQueries.xl} {
     margin-top: 24px;
   }
-  
+
   ${({ theme }) => theme.mediaQueries.xll} {
     margin-top: 0;
   }
