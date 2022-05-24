@@ -26,6 +26,7 @@ const ClearAllButton = styled(Button)<ClearButtonProps>`
   border: ${({theme}) => `1px solid ${theme.colors.dark800}`};
   border-radius: 16px;
   top: ${({top}) => `${-top}px`};
+  transform: translateY(50%);
   padding: 0;
   margin: 0;
 `

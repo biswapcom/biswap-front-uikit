@@ -1,4 +1,4 @@
-/* eslint-disable import/no-extraneous-dependencies */
+import React from "react";
 import { camelCase } from "lodash";
 import { useState } from "react";
 import { BrowserRouter, Link } from "react-router-dom";
