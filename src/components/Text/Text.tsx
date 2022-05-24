@@ -27,6 +27,8 @@ const Text = styled.div<TextProps>`
     overflow: hidden;
     text-overflow: ellipsis;`}
 
+  ${({ noWrap }) => noWrap && `white-space: nowrap;`}
+  
   ${space}
   ${typography}
   ${layout}

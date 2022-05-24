@@ -57,7 +57,7 @@ export const Default: React.FC = () => {
         <Heading color="white" mb="24px">Scales</Heading>
         {Object.values(scales).map((scale) => {
           return (
-            <Button key="md" variant="primary" scale={scale} mr="8px" mb="8px">
+            <Button isLoading key="md" variant="primary" scale={scale} mr="8px" mb="8px">
               {`Primary ${scale}`}
             </Button>
           );

@@ -2,6 +2,7 @@ import React from "react";
 /* eslint-disable import/no-unresolved */
 import {Meta} from "@storybook/react/types-6-0";
 import Badge from "./Badge";
+import Text from "../Text/Text"
 import Heading from "../Heading/Heading";
 import styled from "styled-components";
 import {BinanceIcon} from "../Svg";
@@ -25,7 +26,13 @@ export const Default: React.FC = () => {
     <Wrapper>
       <Heading mb={20}>Badges</Heading>
       <BadgeWrapper>
-        <Badge badgeType="notActive">notActive</Badge>
+        <Badge isLarge badgeType="notActive">notActive</Badge>
+        <Badge isLarge badgeType="notActive">
+         <Text fontSize='18px' >notActive</Text>
+        </Badge>
+        <Badge fontSize='18px' isLarge badgeType="notActive">
+         notActive
+        </Badge>
         <Badge badgeType="active">active</Badge>
         <Badge badgeType="success">success</Badge>
         <Badge badgeType="error">error</Badge>
