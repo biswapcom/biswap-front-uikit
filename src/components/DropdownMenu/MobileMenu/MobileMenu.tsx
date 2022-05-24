@@ -95,10 +95,6 @@ const MobileMenu: FC<MobileMenuProps> = ({
     };
   }, [targetRef, tooltipRef, setIsOpen]);
 
-  useEffect(() => {
-    mobileMenuCallback && mobileMenuCallback(isOpen);
-  }, [isOpen]);
-
   useOnClickOutside(
     {
       current: targetRef,
@@ -224,7 +220,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
                         )}
                       </Grid>
                     </Accordion>
-                    {isMobile && !showItemsOnMobile && <DropdownMenuDivider/>}
+                    {isTablet && !showItemsOnMobile && <DropdownMenuDivider/>}
                   </Box>
                 );
               }

@@ -66,10 +66,6 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
     }
   }, [isOpen, setMenuOpenByIndex, index]);
 
-  useEffect(() => {
-    mobileMenuCallback && mobileMenuCallback(isOpen);
-  }, [isOpen]);
-
   useOnClickOutside(
     {
       current: targetRef,
