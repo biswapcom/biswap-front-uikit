@@ -95,14 +95,18 @@ const MobileMenu: FC<MobileMenuProps> = ({
     };
   }, [targetRef, tooltipRef, setIsOpen]);
 
-  useOnClickOutside(
-    {
-      current: targetRef,
-    },
-    () => {
-      setIsOpen(false);
-    }
-  );
+  // useEffect(() => {    
+  //   mobileMenuCallback && mobileMenuCallback(isOpen);
+  // }, [isOpen]);
+
+  // useOnClickOutside(
+  //   {
+  //     current: targetRef,
+  //   },
+  //   () => {
+  //     setIsOpen(false);
+  //   }
+  // );
 
   return (
     <Box ref={setTargetRef} {...props}>
@@ -207,7 +211,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
                                   leftIcon={leftIcon}
                                   getMenuItemContent={getMenuItemContent}
                                   links={links}
-                                  setIsOpen={setIsOpen}
+                                  setIsOpen={()=>{}}
                                   linkComponent={linkComponent}
                                   href={href}
                                   bannerRenderer={bannerRenderer}
