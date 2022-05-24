@@ -7,6 +7,7 @@ import isTouchDevice from "../../util/isTouchDevice";
 import { StyledTooltip, Arrow } from "./StyledTooltip";
 import { TooltipOptions, TooltipRefs } from "./types";
 import getPortalRoot from "../../util/getPortalRoot";
+import {useMatchBreakpoints} from "../index";
 
 const invertTheme = (currentTheme: DefaultTheme) => {
   if (currentTheme.isDark) {
@@ -19,9 +20,11 @@ const useTooltip = (
   content: React.ReactNode,
   options: TooltipOptions
 ): TooltipRefs => {
+  const { isMobile, isTablet } = useMatchBreakpoints()
+
   const {
     placement = "auto",
-    trigger = "hover",
+    trigger = isMobile || isTablet ? "click" : "hover",
     arrowPadding = 16,
     tooltipPadding = {left: 16, right: 16},
     tooltipOffset = [0, 10],

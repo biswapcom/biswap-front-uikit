@@ -1,6 +1,7 @@
 import React from "react";
 import Text from "./Text";
 import TooltipText from "./TooltipText";
+import {Box} from "../Box";
 
 export default {
   title: "Components/Text",

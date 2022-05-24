@@ -52,7 +52,7 @@ export default {
 export const Placement: React.FC = () => {
   // Trigger doesn't matter in this story, it just shows tooltips no matter what
   // TOP
-  const {targetRef: targetRefTopStart, tooltip: tooltipTopStart} = useTooltip(
+  const {targetRef: targetRefTopStart, tooltip: tooltipTopStart, tooltipVisible: tooltipTopStartVisible} = useTooltip(
     "top-start",
     {
       placement: "top-start",
@@ -115,7 +115,7 @@ export const Placement: React.FC = () => {
     <Container>
       <GridCell>
         <ReferenceElement ref={targetRefTopStart}/>
-        {tooltipTopStart}
+        {tooltipTopStartVisible && tooltipTopStart}
       </GridCell>
       <GridCell>
         <ReferenceElement ref={targetRefTop}/>

@@ -19,8 +19,8 @@ const StyledMobileMenu = styled.div<{
   padding: 32px 24px 0 24px;
   background-color: ${({theme}) => theme.card.background};
   width: 100vw;
-  height: 100vh;
-  min-height: 100vh;
+  height: calc(100vh + 52px);
+  min-height: calc(100vh + 52px);
   overflow: auto;
   visibility: visible;
   opacity: 1;
@@ -95,18 +95,18 @@ const MobileMenu: FC<MobileMenuProps> = ({
     };
   }, [targetRef, tooltipRef, setIsOpen]);
 
-  useEffect(() => {
-    mobileMenuCallback && mobileMenuCallback(isOpen);
-  }, [isOpen]);
+  // useEffect(() => {    
+  //   mobileMenuCallback && mobileMenuCallback(isOpen);
+  // }, [isOpen]);
 
-  useOnClickOutside(
-    {
-      current: targetRef,
-    },
-    () => {
-      setIsOpen(false);
-    }
-  );
+  // useOnClickOutside(
+  //   {
+  //     current: targetRef,
+  //   },
+  //   () => {
+  //     setIsOpen(false);
+  //   }
+  // );
 
   return (
     <Box ref={setTargetRef} {...props}>
@@ -211,7 +211,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
                                   leftIcon={leftIcon}
                                   getMenuItemContent={getMenuItemContent}
                                   links={links}
-                                  setIsOpen={setIsOpen}
+                                  setIsOpen={()=>{}}
                                   linkComponent={linkComponent}
                                   href={href}
                                   bannerRenderer={bannerRenderer}

@@ -1,4 +1,4 @@
-/* eslint-disable import/no-extraneous-dependencies */
+import React from "react";
 import { camelCase } from "lodash";
 import { useState } from "react";
 import { BrowserRouter, Link } from "react-router-dom";
@@ -42,7 +42,7 @@ export const Default: React.FC = () => {
   } as const
 
   const darkBgBtn = {
-    LIGHT_OUT: "LightOut",
+    LIGHT_OUT: "lightOut",
     LIGHT: "light",
   } as const
 
@@ -57,7 +57,7 @@ export const Default: React.FC = () => {
         <Heading color="white" mb="24px">Scales</Heading>
         {Object.values(scales).map((scale) => {
           return (
-            <Button key="md" variant="primary" scale={scale} mr="8px" mb="8px">
+            <Button isLoading key="md" variant="primary" scale={scale} mr="8px" mb="8px">
               {`Primary ${scale}`}
             </Button>
           );

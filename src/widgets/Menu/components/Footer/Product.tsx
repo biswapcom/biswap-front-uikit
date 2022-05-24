@@ -91,7 +91,7 @@ const Product: React.FC<FooterProductLinks> = ({ productLinks }) => {
   return (
     <Wrapper>
       <TopAction onClick={() => setIsOpen(!isOpen)}>
-        <Title>Products</Title>
+        <Title>Features</Title>
         <ActionIcon isOpen={isOpen}/>
       </TopAction>
       <NavList isOpen={isOpen} innerHeight={arrLength}>

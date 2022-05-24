@@ -29,7 +29,7 @@ const CommonLinkStyles = ({ $isActive, $statusColor, $variant }: StyledMenuItemP
   $isActive ? ({theme}) => theme.colors.secondary: ({theme}) => theme.colors.white
   };
   font-size: 14px; 
-  font-weight: 400;
+  font-weight: 600;
   transition: color 0.4s ease;
 
   ${

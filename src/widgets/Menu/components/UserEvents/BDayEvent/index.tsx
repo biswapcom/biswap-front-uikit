@@ -74,8 +74,9 @@ const BDayEvent: FC<Props> = ({
 }) => {
   const {isMobile} = useMatchBreakpoints()
   const { onPresentConnectModal } = useWalletModal(login, logout);
-const buttonText = 'B-Day Presents'
+  const buttonText = 'B-Day Presents'
   const isAbsoluteUrl = href.startsWith("http");
+  const pathWithEventParam = isAbsoluteUrl ? `${href}?event=bDay` : href
 
   const onClickHandler = () => {
     if (account && callback) callback();
@@ -88,6 +89,7 @@ const buttonText = 'B-Day Presents'
         (<StyledLink
           width={isMobile ? '100%' : 'auto'}
           flat={isMobile}
+          href={pathWithEventParam}
         >
           <PresentIcon width="56px" height={39} mr="4px" />
           {buttonText}
