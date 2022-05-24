@@ -97,7 +97,9 @@ const StyledNav = styled.nav<{ menuBg: boolean, isMobileMenuOpened: boolean }>`
   };
 `;
 
-const FixedContainer = styled.div<{ showMenu: boolean; height: number }>`
+const FixedContainer = styled.div.attrs({
+  id: 'menu-container',
+})<{ showMenu: boolean; height: number }>`
   position: fixed;
   top: ${({showMenu, height}) => (showMenu ? 0 : `-${height}px`)};
   left: 0;
