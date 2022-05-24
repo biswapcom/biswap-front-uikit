@@ -11,6 +11,7 @@ import About from "./About";
 import Product from "./Product";
 import Service from "./Service";
 import Community from "./Community";
+import Audit from "./Audit";
 // import Support from './Support'
 
 interface Props extends
@@ -41,37 +42,37 @@ const InnerRow = styled.div`
                         "about about"
                         "product product"
                         "service service"
-                        "community .";
+                        "community audit";
 
   ${({ theme }) => theme.mediaQueries.sm} {
     grid-template-columns: repeat(3, minmax(110px, 1fr));
     grid-template-areas: "footer-info footer-info footer-info"
                           "about product service"
-                          "community . .";
+                          "community . audit";
   }
   ${({ theme }) => theme.mediaQueries.md} {
     grid-template-columns: 338px minmax(0, 64px) repeat(3, minmax(110px, 1fr));
     grid-template-areas: "footer-info . about product service "
-                          "footer-info . community . .";
+                          "footer-info . community . audit";
   }
 
   ${({ theme }) => theme.mediaQueries.lg} {
     grid-template-columns: repeat(3, minmax(110px, 1fr));
     grid-template-areas: "footer-info footer-info footer-info"
                           "about product service"
-                          "community . .";
+                          "community . audit";
   }
   
   ${({ theme }) => theme.mediaQueries.xl} {
     grid-template-columns: 338px minmax(0, 64px) repeat(3, minmax(110px, 1fr));
     grid-template-areas: "footer-info . about product service "
-                          "footer-info . community . .";
+                          "footer-info . community . audit";
   }
 
   ${({ theme }) => theme.mediaQueries.xll} {
     grid-template-columns: 424px minmax(0, 64px) repeat(3, minmax(110px, 1fr)) 132px;
     grid-template-areas: "footer-info . about product service community"
-                          "footer-info . about product service .";
+                          "footer-info . about product service audit";
   }
 `;
 
@@ -94,6 +95,7 @@ const Footer: React.FC<Props> = (
         <Product productLinks={productLinks}/>
         <Service serviceLinks={serviceLinks}/>
         <Community/>
+        <Audit/>
         {/* <Support/> */}
         {/* <BtnUp onClick={()=> scroll.scrollToTop()}><ArrowUp color='white'/></BtnUp> */}
       </InnerRow>
