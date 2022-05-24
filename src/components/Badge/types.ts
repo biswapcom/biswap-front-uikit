@@ -3,4 +3,5 @@ export interface BadgeProps {
   fontSize?: string;
   fontWeight?: string;
   isIcon?: string;
+  isLarge?: boolean
 }

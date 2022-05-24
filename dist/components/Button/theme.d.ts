@@ -107,7 +107,7 @@ export declare const styleVariants: {
             borderColor: string;
         };
     };
-    LightOut: {
+    lightOut: {
         color: string;
         border: string;
         borderColor: string;

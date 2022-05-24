@@ -1,7 +1,6 @@
 import React, {FC} from "react";
 import styled, {DefaultTheme} from "styled-components";
 import {BadgeProps} from "./types";
-import Text from "../Text/Text";
 import getRgba from "../../util/getRgba";
 
 interface StyledBadgeProps extends BadgeProps {
@@ -74,21 +73,25 @@ const getBadgeColor = ({badgeType = "active", theme}: StyledBadgeProps) => {
 const Wrapper = styled.div<BadgeProps>`
   display: inline-flex;
   justify-content: center;
-  align-content: center;
-  padding: ${({isIcon}) => isIcon === 'left' ? '4px 12px 4px 4px' : isIcon === 'right' ? '4px 4px 4px 12px' : '4px 12px'};
+  align-items: center;
+  padding: ${({isIcon, isLarge}) => !isLarge ? (
+      isIcon === 'left' ? '4px 12px 4px 4px' : isIcon === 'right' ? '4px 4px 4px 12px' : '4px 12px'
+    ) : (
+      '8px 24px'
+    )
+  };
   background: ${getBadgeBg};
   color: ${getBadgeColor};
   border-radius: 16px;
-  height: 20px;
+  height: ${({isLarge}) => isLarge ? '38px' : '20px'};
   font-size: ${({fontSize}) => fontSize || "10px"};
   font-weight: ${({fontWeight}) => fontWeight || "400"};
-  line-height: 1;
 `;
 
-const Badge: FC<BadgeProps> = ({children, badgeType, fontSize, fontWeight, isIcon}) => {
+const Badge: FC<BadgeProps> = ({children, badgeType, fontSize, fontWeight, isIcon, isLarge}) => {
 
   return (
-    <Wrapper badgeType={badgeType} isIcon={isIcon}>
+    <Wrapper badgeType={badgeType} isIcon={isIcon} isLarge={isLarge} fontSize={fontSize} fontWeight={fontWeight}>
       {children}
     </Wrapper>
   );

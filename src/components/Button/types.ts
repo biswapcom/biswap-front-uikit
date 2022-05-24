@@ -19,7 +19,7 @@ export const variants = {
   SELECT: "select",
   SELECT_LIGHT: "selectLight",
 
-  LIGHT_OUT: "LightOut",
+  LIGHT_OUT: "lightOut",
   LIGHT: "light",
   TERTIARY: "tertiary",
   TERTIARY_OUT: "tertiaryOut",
@@ -33,6 +33,7 @@ export interface BaseButtonProps extends LayoutProps, SpaceProps {
   as?: "a" | "button" | ElementType;
   external?: boolean;
   isLoading?: boolean;
+  loadingTitle?: string;
   scale?: Scale;
   variant?: Variant;
   disabled?: boolean;

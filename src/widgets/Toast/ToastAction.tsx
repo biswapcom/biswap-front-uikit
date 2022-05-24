@@ -21,6 +21,7 @@ const ActionsContainer = styled.div`
   justify-content: flex-start;
 `
 const StyledIcon = styled.img`
+  margin-left: 8px;
   width: 26px;
   filter: drop-shadow(2px 4px 8px rgba(0, 109, 163, 0.4));
 `
@@ -29,21 +30,21 @@ const ToastAction: React.FC<ToastActionProps> = ({title, telegramDescription, tw
 
   return (
     <ActionsContainer>
-      <TwitterShareButton style={{ width:'35%'}}  title={tweeterDescription}
+      <TwitterShareButton style={{ width:'40%', height: '32px' }}  title={tweeterDescription}
                            url={`${url}`}
       >
-        <Button scale="sm" width='100%' style={{backgroundColor: '#16CDFD', alignItems: "center"}}>
+        <Button mr='8px' scale="sm" width='100%' height='100%' style={{backgroundColor: '#16CDFD', alignItems: "center"}}>
           <StyledIcon src={giftImg} alt="gift-icon"/>
-          <Text color='#fff' fontSize='12px' bold>Twitter</Text>
-          <TwitterIcon mr="8px" color="#fff" width="20px" />
+          <Text mr='6px' my='8px' color='#fff' fontSize='12px' >Twitter</Text>
+          <TwitterIcon mr='8px' color="#fff" width="20px" />
         </Button>
       </TwitterShareButton>
-      <TelegramShareButton style={{ width:'35%', marginLeft: "10px", alignItems: "center"}} title={telegramDescription}
+      <TelegramShareButton style={{ width:'40%', height: '32px', marginLeft: "6px" }} title={telegramDescription}
                            url={`${url}`}
       >
-        <Button scale="sm" width='100%' style={{backgroundColor: '#26A6E5', alignItems: "center"}}>
-          <Text color='#fff' fontSize='12px' bold>Telegram</Text>
-          <TelegramIcon mr="8px" color="#fff" width="20px" />
+        <Button mx='8px' scale="sm" width='100%' height='100%' style={{backgroundColor: '#26A6E5', alignItems: "center"}}>
+          <Text color='#fff' fontSize='12px'>Telegram</Text>
+          <TelegramIcon ml='8px' color="#fff" width="20px" />
         </Button>
       </TelegramShareButton>
     </ActionsContainer>

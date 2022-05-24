@@ -224,7 +224,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
                         )}
                       </Grid>
                     </Accordion>
-                    {isTablet && !showItemsOnMobile && <DropdownMenuDivider/>}
+                    {isMobile && !showItemsOnMobile && <DropdownMenuDivider/>}
                   </Box>
                 );
               }

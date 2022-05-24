@@ -66,5 +66,28 @@ export const styleVariants = {
             color: "dark200",
             cursor: "not-allowed",
         }
-    }
+    },
+    [variants.TRANSPARENT]: {
+        backgroundColor: "transparent",
+        color: "dark800",
+
+        "::placeholder": {
+            color: "gray900",
+        },
+        ":hover:not(:disabled)": {
+            borderColor: "transparent",
+            backgroundColor: "transparent",
+            color: "dark800",
+        },
+        ":focus:not(:disabled)": {
+            borderColor: "transparent",
+            backgroundColor: "transparent",
+            color: "dark800",
+        },
+        ":disabled": {
+            backgroundColor: "transparent",
+            color: "gray600",
+            cursor: "not-allowed",
+        }
+    },
 }

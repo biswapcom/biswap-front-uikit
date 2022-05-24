@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { socials } from "../../config";
 import { SvgProps } from "../../../../components/Svg";
 import Link from "../../../../components/Link/Link";
-import * as IconModule from "../../../../components/Svg";
+import * as IconModule from "../../icons";
 
 const Icons = (IconModule as unknown) as { [key: string]: React.FC<SvgProps> };
 
