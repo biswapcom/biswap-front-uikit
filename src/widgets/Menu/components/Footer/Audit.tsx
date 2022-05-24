@@ -24,18 +24,22 @@ const AuditedWrap = styled.div`
     margin-top: 0;
   }
 `
-
+const LinkWrap = styled.a`
+  height: fit-content
+`
 
 const Audit: FC = () => (
   <AuditedWrap>
-    <CerticAuditedIcon 
-      style={{
-        padding: '8px 16px',
-        backgroundColor: "#102648",
-        borderRadius: '8px',
-        width: '140px'       
-      }}
-    />
+    <LinkWrap href='https://www.certik.org/projects/biswap' target="_blank">
+      <CerticAuditedIcon 
+        style={{
+          padding: '8px 16px',
+          backgroundColor: "#102648",
+          borderRadius: '8px',
+          width: '140px'       
+        }}
+      />
+    </LinkWrap>
   </AuditedWrap>
 )
 
