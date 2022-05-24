@@ -1,4 +1,4 @@
-import React, {FC, ReactNode, useState} from "react";
+import React, {FC, ReactNode, useEffect, useState} from "react";
 import styled, {css, keyframes} from "styled-components";
 import {Flex} from "../Box";
 
@@ -43,12 +43,18 @@ const AccordionComponent = styled.div`
 `;
 
 const Accordion: FC<IProps> = ({
-                                 label,
-                                 clickable = true,
-                                 heading,
-                                 children,
-                               }) => {
-  const [isOpened, setIsOpened] = useState(true);
+   label,
+   clickable = true,
+   heading,
+   children,
+}) => {
+  const [isOpened, setIsOpened] = useState(false);
+
+  useEffect(() => {
+    if (!clickable || label === 'Biswap Products') {
+      setIsOpened(true)
+    }
+  }, [label, setIsOpened])
 
   const onTitleClick = () => {
     clickable && setIsOpened((prev) => !prev);

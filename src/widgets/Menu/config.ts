@@ -201,7 +201,7 @@ export const links: MenuItemsType[] = [
     showItemsOnMobile: true,
   },
   {
-    label: "Biswap Products",
+    label: "Biswap Products", // if changed label, also should be changed in Accordion component condition
     href: "/",
     icon: "Products",
     isMobileNav: true,
