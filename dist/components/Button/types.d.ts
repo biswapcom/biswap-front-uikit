@@ -28,6 +28,7 @@ export interface BaseButtonProps extends LayoutProps, SpaceProps {
     as?: "a" | "button" | ElementType;
     external?: boolean;
     isLoading?: boolean;
+    loadingTitle?: string;
     scale?: Scale;
     variant?: Variant;
     disabled?: boolean;
