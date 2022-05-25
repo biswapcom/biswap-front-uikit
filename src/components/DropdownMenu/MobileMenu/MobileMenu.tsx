@@ -211,7 +211,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
                                   leftIcon={leftIcon}
                                   getMenuItemContent={getMenuItemContent}
                                   links={links}
-                                  setIsOpen={()=>{}}
+                                  setIsOpen={setIsOpen}
                                   linkComponent={linkComponent}
                                   href={href}
                                   bannerRenderer={bannerRenderer}
