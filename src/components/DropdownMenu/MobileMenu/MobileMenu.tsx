@@ -95,9 +95,9 @@ const MobileMenu: FC<MobileMenuProps> = ({
     };
   }, [targetRef, tooltipRef, setIsOpen]);
 
-  // useEffect(() => {    
-  //   mobileMenuCallback && mobileMenuCallback(isOpen);
-  // }, [isOpen]);
+  useEffect(() => {
+    mobileMenuCallback && mobileMenuCallback(isOpen);
+  }, [isOpen]);
 
   // useOnClickOutside(
   //   {
