@@ -45,7 +45,7 @@ const ProgressCircle: FC<IProps> = ({ filled = 0, notFilled = 100, onClick }) =>
                   r="15.91549430918954"
                   fill="transparent"
                   stroke="url(#diag-color)"
-                  strokeWidth="3"
+                  strokeWidth="1"
                   strokeDasharray="100 0"
                   strokeDashoffset="0"
               />
@@ -56,7 +56,7 @@ const ProgressCircle: FC<IProps> = ({ filled = 0, notFilled = 100, onClick }) =>
                   r="15.91549430918954"
                   fill="transparent"
                   stroke='#1DC872'
-                  strokeWidth="3"
+                  strokeWidth="1"
                   strokeDasharray={percentToDisplay}
                   strokeDashoffset="25"
                   strokeLinecap="round"
