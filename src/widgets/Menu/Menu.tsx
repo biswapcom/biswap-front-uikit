@@ -262,16 +262,16 @@ const Menu: React.FC<NavProps> = ({
   return (
     <MenuContext.Provider value={{linkComponent}}>
       <Wrapper>
-        <FixedContainer showMenu={showMenu} height={totalTopMenuHeight}>
-          {showFishingWarn && (
-            <FishingWarn showFishingWarn={showFishingWarn}>
-              <StyledImgWarnIcon />
-              <Label>Beware of fake Biswap websites! Use only official site: biswap.org</Label>
-              <Button variant="text" scale="sm" onClick={closeWarn}>
-                <CloseIcon color="background" />
-              </Button>
-            </FishingWarn>
-          )}
+        <FixedContainer showMenu={showMenu} height={TopMenuWithBannerHeight}>
+          {/*{showFishingWarn && (*/}
+          {/*  <FishingWarn showFishingWarn={showFishingWarn}>*/}
+          {/*    <StyledImgWarnIcon />*/}
+          {/*    <Label>Beware of fake Biswap websites! Use only official site: biswap.org</Label>*/}
+          {/*    <Button variant="text" scale="sm" onClick={closeWarn}>*/}
+          {/*      <CloseIcon color="background" />*/}
+          {/*    </Button>*/}
+          {/*  </FishingWarn>*/}
+          {/*)}*/}
           {banner && (
             <TopBannerContainer height={topBannerHeight}>
               {banner}
