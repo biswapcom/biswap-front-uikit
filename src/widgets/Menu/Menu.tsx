@@ -220,7 +220,7 @@ const Menu: React.FC<NavProps> = ({
         setMenuBg(false);
       }
       // Avoid triggering anything at the bottom because of layout shift
-      else if (!isMobile && !isBottomOfPage) {
+      else if (!isBottomOfPage) {
         if (
           currentOffset < refPrevOffset.current ||
           currentOffset <= TopMenuWithBannerHeight

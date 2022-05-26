@@ -19,7 +19,7 @@ const StyledMobileMenu = styled.div<{
   padding: 32px 24px 0 24px;
   background-color: ${({theme}) => theme.card.background};
   width: 100vw;
-  height: calc(100vh - 52px);
+  height: calc(100vh + 40px);
   //min-height: calc(100vh - 52px);
   overflow: auto;
   visibility: visible;
@@ -66,18 +66,14 @@ const MobileMenu: FC<MobileMenuProps> = ({
   const {isMobile, isTablet} = useMatchBreakpoints();
 
   const hasItems = items.length > 0;
-  const {styles, attributes, update} = usePopper(targetRef, tooltipRef, {
+  const {styles, attributes, update, forceUpdate} = usePopper(targetRef, tooltipRef, {
     strategy: "fixed",
     placement: "bottom",
   });
 
   useEffect(() => {
     const showDropdownMenu = async () => {
-      try {
-        update && await update()
-      } catch (e) {
-        console.error(e, 'popover update error')
-      }
+      forceUpdate && await forceUpdate()
       setIsOpen(true);
     };
 
