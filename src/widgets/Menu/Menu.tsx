@@ -230,7 +230,7 @@ const Menu: React.FC<NavProps> = ({
           setMenuBg(true);
         } else {
           // Has scroll down
-          setShowMenu(false);
+          !isMobile && setShowMenu(false);
           setMenuBg(true);
         }
       }
