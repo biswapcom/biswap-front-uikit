@@ -1,13 +1,15 @@
 import React from "react";
 import Link from "./Link";
 import { LinkProps } from "./types";
-import OpenNewIcon from "../Svg/Icons/OpenNew";
+import ArrowUpForward from "../Svg/Icons/ArrowUpForward";
+// import ArrowUpForward from "../Svg/Icons/";
 
 const LinkExternal: React.FC<LinkProps> = ({ children, ...props }) => {
   return (
     <Link external {...props}>
+
       {children}
-      <OpenNewIcon color={props.color ? props.color : "primary"} ml="4px" />
+      <ArrowUpForward color={props.color ? props.color : "primary"} width="16px" ml="4px" />
     </Link>
   );
 };
