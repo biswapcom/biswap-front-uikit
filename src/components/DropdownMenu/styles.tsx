@@ -63,7 +63,7 @@ export const CommonLinkStyle = ({ disabled, $isActive, $hasIcon }: StyledDropdow
   line-height: 20px;
   display: inline-flex;
   font-size: 14px;
-  height: 40px;
+  min-height: 40px;
   justify-content: space-between;
   outline: 0;
   //padding-left: 16px;

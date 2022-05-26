@@ -68,7 +68,7 @@ export const links: MenuItemsType[] = [
         label: "LaunchPools",
         href: "/pool",
         leftIcon: "Launch",
-        description: "Item description",
+        description: "Item description description very long long long",
         type: DropdownMenuItemType.CONTAINER,
         links: [
           {
