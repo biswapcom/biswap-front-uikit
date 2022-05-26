@@ -1,7 +1,7 @@
 import React, {FC, useContext, useEffect, useState} from "react";
 import {MenuContext} from "../../../widgets/Menu/context";
 import {usePopper} from "react-popper";
-import {useMatchBreakpoints, useOnClickOutside} from "../../../hooks";
+import {useMatchBreakpoints} from "../../../hooks";
 import {Box, Grid} from "../../Box";
 import {Text} from "../../Text";
 import styled from "styled-components";
@@ -19,8 +19,7 @@ const StyledMobileMenu = styled.div<{
   padding: 32px 24px 0 24px;
   background-color: ${({theme}) => theme.card.background};
   width: 100vw;
-  height: calc(100vh + 40px);
-  //min-height: calc(100vh - 52px);
+  height: calc(100vh + 12px);
   overflow: auto;
   visibility: visible;
   opacity: 1;
@@ -94,15 +93,6 @@ const MobileMenu: FC<MobileMenuProps> = ({
   useEffect(() => {
     mobileMenuCallback && mobileMenuCallback(isOpen);
   }, [isOpen]);
-
-  // useOnClickOutside(
-  //   {
-  //     current: targetRef,
-  //   },
-  //   () => {
-  //     setIsOpen(false);
-  //   }
-  // );
 
   return (
     <Box ref={setTargetRef} {...props}>
