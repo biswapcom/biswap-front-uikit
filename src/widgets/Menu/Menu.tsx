@@ -12,7 +12,7 @@ import Logo from "./components/Logo";
 import UserBlock from "./components/UserBlock";
 import BDayEvent from "./components/UserEvents/BDayEvent";
 import {CloseIcon, ImgWarnIcon} from "../../components/Svg";
-import {Button} from "../../components/Button";
+// import {Button} from "../../components/Button";
 // import NetworkSwitcher, {OptionProps} from "./NetworkSwitcher";
 
 // context
@@ -165,15 +165,15 @@ const Menu: React.FC<NavProps> = ({
   const [showMenu, setShowMenu] = useState<boolean>(true);
   const [menuBg, setMenuBg] = useState<boolean>(false);
   const [isMobileMenuOpened, setIsMobileMenuOpened] = useState(false);
-  const [showFishingWarn, setShowFishingWarn] = useState(true);
+  // const [showFishingWarn, setShowFishingWarn] = useState(true);
 
   const refPrevOffset = useRef(
     typeof window === "undefined" ? 0 : window.pageYOffset
   );
 
-  const fishingBannerHeight = isMobile
-    ? FISHING_MOBILE_BANNER_HEIGHT
-    : FISHING_BANNER_HEIGHT
+  // const fishingBannerHeight = isMobile
+  //   ? FISHING_MOBILE_BANNER_HEIGHT
+  //   : FISHING_BANNER_HEIGHT
 
   const topBannerHeight = isMobile
     ? TOP_BANNER_HEIGHT_MOBILE
@@ -184,27 +184,27 @@ const Menu: React.FC<NavProps> = ({
     ? MENU_HEIGHT + topBannerHeight
     : MENU_HEIGHT;
 
-  const TopMenuWithAllBannersHeight = showFishingWarn
-    ? TopMenuWithBannerHeight + fishingBannerHeight
-    : TopMenuWithBannerHeight;
+  // const TopMenuWithAllBannersHeight = showFishingWarn
+  //   ? TopMenuWithBannerHeight + fishingBannerHeight
+  //   : TopMenuWithBannerHeight;
 
   const totalTopMenuHeight = withEvent && isMobile
-    ? TopMenuWithAllBannersHeight + MOBILE_EVENT_BUTTON_HEIGHT
-    : TopMenuWithAllBannersHeight;
+    ? TopMenuWithBannerHeight + MOBILE_EVENT_BUTTON_HEIGHT
+    : TopMenuWithBannerHeight;
 
-  const closeWarn = () => {
-    localStorage.setItem("showFishingWarn", JSON.stringify(false));
-    setShowFishingWarn(false);
-  };
-
-  useEffect(() => {
-    if (!localStorage.getItem("showFishingWarn")) {
-      localStorage.setItem("showFishingWarn", JSON.stringify(true));
-    }
-    if (localStorage.getItem("showFishingWarn") === JSON.stringify(true)) {
-      setShowFishingWarn(true);
-    }
-  }, [showFishingWarn]);
+  // const closeWarn = () => {
+  //   localStorage.setItem("showFishingWarn", JSON.stringify(false));
+  //   setShowFishingWarn(false);
+  // };
+  //
+  // useEffect(() => {
+  //   if (!localStorage.getItem("showFishingWarn")) {
+  //     localStorage.setItem("showFishingWarn", JSON.stringify(true));
+  //   }
+  //   if (localStorage.getItem("showFishingWarn") === JSON.stringify(true)) {
+  //     setShowFishingWarn(true);
+  //   }
+  // }, [showFishingWarn]);
 
 
   useEffect(() => {
@@ -263,15 +263,15 @@ const Menu: React.FC<NavProps> = ({
     <MenuContext.Provider value={{linkComponent}}>
       <Wrapper>
         <FixedContainer showMenu={showMenu} height={totalTopMenuHeight}>
-          {showFishingWarn && (
-            <FishingWarn showFishingWarn={showFishingWarn}>
-              <StyledImgWarnIcon />
-              <Label>Beware of fake Biswap websites! Use only official site: biswap.org</Label>
-              <Button variant="text" scale="sm" onClick={closeWarn}>
-                <CloseIcon color="background" />
-              </Button>
-            </FishingWarn>
-          )}
+          {/*{showFishingWarn && (*/}
+          {/*  <FishingWarn showFishingWarn={showFishingWarn}>*/}
+          {/*    <StyledImgWarnIcon />*/}
+          {/*    <Label>Beware of fake Biswap websites! Use only official site: biswap.org</Label>*/}
+          {/*    <Button variant="text" scale="sm" onClick={closeWarn}>*/}
+          {/*      <CloseIcon color="background" />*/}
+          {/*    </Button>*/}
+          {/*  </FishingWarn>*/}
+          {/*)}*/}
           {banner && (
             <TopBannerContainer height={topBannerHeight}>
               {banner}
