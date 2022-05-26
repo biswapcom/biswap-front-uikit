@@ -188,9 +188,9 @@ const Menu: React.FC<NavProps> = ({
   //   ? TopMenuWithBannerHeight + fishingBannerHeight
   //   : TopMenuWithBannerHeight;
 
-  // const totalTopMenuHeight = withEvent && isMobile
-  //   ? TopMenuWithAllBannersHeight + MOBILE_EVENT_BUTTON_HEIGHT
-  //   : TopMenuWithAllBannersHeight;
+  const totalTopMenuHeight = withEvent && isMobile
+    ? TopMenuWithBannerHeight + MOBILE_EVENT_BUTTON_HEIGHT
+    : TopMenuWithBannerHeight;
 
   // const closeWarn = () => {
   //   localStorage.setItem("showFishingWarn", JSON.stringify(false));
@@ -223,7 +223,7 @@ const Menu: React.FC<NavProps> = ({
       else if (!isBottomOfPage) {
         if (
           currentOffset < refPrevOffset.current ||
-          currentOffset <= TopMenuWithBannerHeight
+          currentOffset <= totalTopMenuHeight
         ) {
           // Has scroll up
           setShowMenu(true);
@@ -242,7 +242,7 @@ const Menu: React.FC<NavProps> = ({
     return () => {
       window.removeEventListener("scroll", throttledHandleScroll);
     };
-  }, [TopMenuWithBannerHeight]);
+  }, [totalTopMenuHeight]);
 
   // const handleNetworkChange = (option: OptionProps): void => {
   //   if (option.value !== currentNetwork) {
@@ -262,7 +262,7 @@ const Menu: React.FC<NavProps> = ({
   return (
     <MenuContext.Provider value={{linkComponent}}>
       <Wrapper>
-        <FixedContainer showMenu={showMenu} height={TopMenuWithBannerHeight}>
+        <FixedContainer showMenu={showMenu} height={totalTopMenuHeight}>
           {/*{showFishingWarn && (*/}
           {/*  <FishingWarn showFishingWarn={showFishingWarn}>*/}
           {/*    <StyledImgWarnIcon />*/}
