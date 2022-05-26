@@ -66,14 +66,14 @@ const MobileMenu: FC<MobileMenuProps> = ({
   const {isMobile, isTablet} = useMatchBreakpoints();
 
   const hasItems = items.length > 0;
-  const {styles, attributes, update, forceUpdate} = usePopper(targetRef, tooltipRef, {
+  const {styles, attributes, update} = usePopper(targetRef, tooltipRef, {
     strategy: "fixed",
     placement: "bottom",
   });
 
   useEffect(() => {
     const showDropdownMenu = async () => {
-      forceUpdate && await forceUpdate()
+      update && await update()
       setIsOpen(true);
     };
 
@@ -89,7 +89,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
       targetRef?.removeEventListener("mouseenter", showDropdownMenu);
       targetRef?.removeEventListener("mouseleave", hideDropdownMenu);
     };
-  }, [targetRef, tooltipRef, setIsOpen]);
+  }, [targetRef, tooltipRef, setIsOpen, update]);
 
   useEffect(() => {
     mobileMenuCallback && mobileMenuCallback(isOpen);
