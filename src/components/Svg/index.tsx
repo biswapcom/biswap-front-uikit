@@ -38,7 +38,6 @@ export { default as LogoRoundIcon } from "./Icons/LogoRound";
 export { default as LoaderIcon } from "./Icons/Loader";
 export { default as MetamaskIcon } from "./Icons/Metamask";
 export { default as MinusIcon } from "./Icons/Minus";
-export { default as PlusIcon } from "./Icons/Plus";
 export { default as NoProfileAvatarIcon } from "./Icons/NoProfileAvatar";
 export { default as OpenNewIcon } from "./Icons/OpenNew";
 export { default as PancakesIcon } from "./Icons/Pancakes";
@@ -123,9 +122,16 @@ export { default as ButtonMenuOpenedIcon } from "./Icons/ButtonMenuOpened";
 export { default as CerticAuditedIcon } from "./Icons/Certic";
 export { default as FixedStakingIcon } from "./Icons/FixedStaking";
 
-
+//new
 export { default as ChevronDownCircleSolid} from "./Icons/Arrows/ChevronDownCircleSolid"
 export { default as ChevronDownCircleOpacity} from "./Icons/Arrows/ChevronDownCircleOpacity"
+export { default as ChevronDown} from "./Icons/Arrows/ChevronDown"
+export { default as ChevronRightCircleSolid} from "./Icons/Arrows/ChevronRightCircleSolid"
+export { default as ChevronRightCircleOpacity} from "./Icons/Arrows/ChevronRightCircleOpacity"
+export { default as ChevronRight} from "./Icons/Arrows/ChevronRight"
+
+export { default as PlusIcon} from "./Icons/Plus/Plus"
+export { default as PlusCircleSolidIcon} from "./Icons/Plus/PlusCircleSolid"
 
 //chain
 export {default as BSCIcon} from "./Icons/BSC";
