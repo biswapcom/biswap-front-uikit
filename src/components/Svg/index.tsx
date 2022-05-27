@@ -19,7 +19,6 @@ export {default as CardViewIcon} from "./Icons/CardView";
 export {default as CalculateIcon} from "./Icons/Calculate";
 export {default as CheckmarkIcon} from "./Icons/Checkmark";
 export {default as CheckmarkCircleIcon} from "./Icons/CheckmarkCircle";
-export {default as ChevronLeftIcon} from "./Icons/ChevronLeft";
 export { default as ChevronRightEndIcon } from "./Icons/ChevronRightEnd";
 export { default as ChevronUpIcon } from "./Icons/ChevronUp";
 export { default as CloseIcon } from "./Icons/Close";
@@ -128,10 +127,15 @@ export { default as ChevronDownIcon} from "./Icons/Arrows/ChevronDown"
 export { default as ChevronRightCircleSolidIcon} from "./Icons/Arrows/ChevronRightCircleSolid"
 export { default as ChevronRightCircleOpacityIcon} from "./Icons/Arrows/ChevronRightCircleOpacity"
 export { default as ChevronRightIcon} from "./Icons/Arrows/ChevronRight"
+export { default as ChevronLeftCircleSolidIcon} from "./Icons/Arrows/ChevronLeftCircleSolid"
+export { default as ChevronLeftCircleOpacityIcon} from "./Icons/Arrows/ChevronLeftCircleOpacity"
+export { default as ChevronLeftIcon} from "./Icons/Arrows/ChevronLeft"
 
 //PLUS
 export { default as PlusIcon} from "./Icons/Plus/Plus"
 export { default as PlusCircleSolidIcon} from "./Icons/Plus/PlusCircleSolid"
+export { default as PlusCircleOpacityIcon} from "./Icons/Plus/PlusCircleOpacity"
+
 
 //chain
 export {default as BSCIcon} from "./Icons/BSC";

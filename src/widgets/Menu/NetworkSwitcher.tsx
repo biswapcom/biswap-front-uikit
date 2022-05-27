@@ -1,6 +1,6 @@
 import React, {useState, useRef, useEffect} from "react";
 import styled from "styled-components";
-import ChevronDown from "../../components/Svg/Icons/ChevronDown";
+import ChevronDown from "../../components/Svg/Icons/Arrows/ChevronDown";
 
 export interface SelectProps {
   options: OptionProps[]
