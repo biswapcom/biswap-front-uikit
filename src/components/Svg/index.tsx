@@ -122,7 +122,10 @@ export { default as ButtonMenuIcon } from "./Icons/ButtonMenu";
 export { default as ButtonMenuOpenedIcon } from "./Icons/ButtonMenuOpened";
 export { default as CerticAuditedIcon } from "./Icons/Certic";
 export { default as FixedStakingIcon } from "./Icons/FixedStaking";
-export { default as ArrowDownCircleSolid} from "./Icons/ArrowDownCircleSolid"
+
+
+export { default as ChevronDownCircleSolid} from "./Icons/Arrows/ChevronDownCircleSolid"
+export { default as ChevronDownCircleOpacity} from "./Icons/Arrows/ChevronDownCircleOpacity"
 
 //chain
 export {default as BSCIcon} from "./Icons/BSC";
