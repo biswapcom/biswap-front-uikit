@@ -2,7 +2,7 @@
 import React, { Children, isValidElement, ReactNode } from "react";
 import styled from "styled-components";
 import { space } from "styled-system";
-import ChevronRightIcon from "../Svg/Icons/ChevronRight";
+import ChevronRightIcon from "../Svg/Icons/Arrows/ChevronRight";
 import { BreadcrumbsProps } from "./types";
 
 const Separator = styled.div`

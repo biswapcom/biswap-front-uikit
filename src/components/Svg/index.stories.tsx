@@ -4,12 +4,17 @@ import Flex from "../Box/Flex";
 import Text from "../Text/Text";
 import Svg from "./Svg";
 import AnimatedIconComponent from "./AnimatedIconComponent";
+import styled from "styled-components";
 
 export default {
   title: "Components/Svg Icons",
   component: Svg,
   argTypes: {},
 };
+
+const Label = styled(Text)`
+  word-break: break-word;
+`
 
 export const Default: React.FC = () => {
   return (
@@ -46,11 +51,12 @@ export const Icons: React.FC = () => {
             key={file}
             flexDirection="column"
             alignItems="center"
-            width="128px"
-            height="96px"
+            width="180px"
+            height="106px"
             style={{border: "1px solid #eee"}}
             justifyContent="center"
             py="8px"
+            px="12px"
             m="4px"
           >
             <Flex
@@ -63,9 +69,9 @@ export const Icons: React.FC = () => {
               <Icon width="24px" color="primary" ml="4px"/>
             </Flex>
             <Box py="4px">
-              <Text color="textSubtle" fontSize="14px">
+              <Label color="textSubtle" fontSize="12px">
                 {file}
-              </Text>
+              </Label>
             </Box>
           </Flex>
         );
