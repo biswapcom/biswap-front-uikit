@@ -4,6 +4,7 @@ import { PolymorphicComponent } from "../../util/polymorphic";
 import { BaseButtonProps } from "../Button/types";
 import {SlideButtonMenuItemProps, slideMenuVariants,} from "./types";
 import SlideMenuItem from "./SlideMenuItem";
+import {useMatchBreakpoints} from "../../hooks";
 
 interface InactiveButtonProps extends BaseButtonProps {
   forwardedAs: BaseButtonProps["as"];
@@ -26,16 +27,23 @@ const SlideButtonMenuItem: FC<SlideButtonMenuItemProps> = ({
   setWidth,
   itemIndex,
   onAction,
-                                                   customClass,
+  customClass,
+  blockOffset,
+  widthsArr,
   ...props
 }: SlideButtonMenuItemProps): JSX.Element => {
+  const { isDesktop, isMobile, isTablet } = useMatchBreakpoints()
 
   const className = 'slide-menu-item-' + itemIndex + customClass
   const element = document.getElementsByClassName(className)
 
   useEffect(() => {
-    setWidth((prev: Array<number>) => [...prev, element.item(0)?.clientWidth ?? 0])
-  }, [element])
+    const itemWidth = element.item(0)?.clientWidth ?? 0
+    if (itemWidth) {
+      setWidth((prev: Array<number>) =>
+          prev.map((item, index) => index === itemIndex ? itemWidth : item))
+    }
+  }, [element, blockOffset, isDesktop, isMobile, isTablet])
 
   const handleClick = () => {
     onAction(itemIndex)
