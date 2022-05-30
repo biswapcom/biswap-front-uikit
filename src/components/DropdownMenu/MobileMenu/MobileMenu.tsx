@@ -88,14 +88,14 @@ const MobileMenu: FC<MobileMenuProps> = ({
     mobileMenuCallback && mobileMenuCallback(isOpen);
   }, [isOpen]);
 
+  const onPointerDownHandler = async () => {
+    setIsOpen((s) => !s);
+    update && await update()
+  }
+
   return (
     <Box ref={setTargetRef} {...props}>
-      <Box
-        onPointerDown={async () => {
-          setIsOpen((s) => !s);
-          update && await update()
-        }}
-      >
+      <Box onPointerDown={onPointerDownHandler}>
         {children}
       </Box>
       {hasItems && (
