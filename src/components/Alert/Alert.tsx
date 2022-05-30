@@ -86,8 +86,8 @@ const Alert: React.FC<AlertProps> = ({ title, children, variant, onClick, progre
         </IconLabel>
       </div>
       <Details hasHandler={!!onClick}>
-        <Box mx='10px'>
-          <Text fontSize='16px' color='dark' bold>{title}</Text>
+        <Box ml='10px'>
+          <Text mr='18%' fontSize='16px' color='dark' bold>{title}</Text>
           {typeof children === "string" ? (
               <Text as="p">{children}</Text>
           ) : (
