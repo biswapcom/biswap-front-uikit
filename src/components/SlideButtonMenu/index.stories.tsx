@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 /* eslint-disable import/no-unresolved */
 import { Meta } from "@storybook/react/types-6-0";
@@ -40,6 +40,24 @@ export const Default: React.FC = () => {
             onItemClick={handleClick2}
             activeIndex={index2}
             menuTitles={['Select 1', 'Select 22', 'Select 333', 'Select 4444']}
+        />
+      </Row>
+      <Row>
+        <SlideButtonMenu
+            customClass='dark-lg-five'
+            scale='lg'
+            onItemClick={handleClick2}
+            activeIndex={index2}
+            menuTitles={['Select 1', 'Select 22', 'Select 333', 'Select 4444', 'Select 55555']}
+        />
+      </Row>
+      <Row>
+        <SlideButtonMenu
+            customClass='dark-lg-two'
+            scale='lg'
+            onItemClick={handleClick2}
+            activeIndex={index2}
+            menuTitles={['Select 1', 'Select 22']}
         />
       </Row>
       <Row isLight>
