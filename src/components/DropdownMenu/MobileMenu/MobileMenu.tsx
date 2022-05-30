@@ -71,24 +71,18 @@ const MobileMenu: FC<MobileMenuProps> = ({
   });
 
   useEffect(() => {
-    const showDropdownMenu = async () => {
-      update && await update()
-      setIsOpen(true);
-    };
-
     const hideDropdownMenu = (evt: MouseEvent | TouchEvent) => {
       const target = evt.target as Node;
-      return target && !tooltipRef?.contains(target) && setIsOpen(false);
+      target && !tooltipRef?.contains(target) && setIsOpen(false);
     };
 
-    targetRef?.addEventListener("mouseenter", showDropdownMenu);
     targetRef?.addEventListener("mouseleave", hideDropdownMenu);
 
     return () => {
-      targetRef?.removeEventListener("mouseenter", showDropdownMenu);
       targetRef?.removeEventListener("mouseleave", hideDropdownMenu);
     };
   }, [targetRef, tooltipRef, setIsOpen, update]);
+
 
   useEffect(() => {
     mobileMenuCallback && mobileMenuCallback(isOpen);
@@ -97,8 +91,9 @@ const MobileMenu: FC<MobileMenuProps> = ({
   return (
     <Box ref={setTargetRef} {...props}>
       <Box
-        onPointerDown={() => {
+        onPointerDown={async () => {
           setIsOpen((s) => !s);
+          update && await update()
         }}
       >
         {children}
