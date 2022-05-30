@@ -32,7 +32,7 @@ const SlideButtonMenuItem: FC<SlideButtonMenuItemProps> = ({
   widthsArr,
   ...props
 }: SlideButtonMenuItemProps): JSX.Element => {
-  const { isDesktop, isLg, isMd, isMobile, isSm, isTablet, isXl, isXll, isXs, isXxl } = useMatchBreakpoints()
+  const { isDesktop, isMobile, isTablet } = useMatchBreakpoints()
 
   const className = 'slide-menu-item-' + itemIndex + customClass
   const element = document.getElementsByClassName(className)

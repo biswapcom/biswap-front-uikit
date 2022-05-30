@@ -83,8 +83,7 @@ const SlideButtonMenu: React.FC<SlideMenuProps> = ({
   menuTitles= [''],
   ...props
 }) => {
-  const { isDesktop, isLg, isMd, isMobile, isSm, isTablet, isXl, isXll, isXs, isXxl } = useMatchBreakpoints()
-
+  const { isDesktop, isMobile, isTablet } = useMatchBreakpoints()
 
   const [widthsArr, setWidthsArr] = useState([...Array(menuTitles?.length)].map((e, i) => i - i))
   const [blockOffset, setBlockOffset] = useState(DEFAULT_OFFSET)
