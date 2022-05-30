@@ -43,7 +43,7 @@ const SlideButtonMenuItem: FC<SlideButtonMenuItemProps> = ({
       setWidth((prev: Array<number>) =>
           prev.map((item, index) => index === itemIndex ? itemWidth : item))
     }
-  }, [element, blockOffset, isDesktop, isLg, isMd, isMobile, isSm, isTablet, isXl, isXll, isXs, isXxl])
+  }, [element, blockOffset, isDesktop, isMobile, isTablet])
 
   const handleClick = () => {
     onAction(itemIndex)

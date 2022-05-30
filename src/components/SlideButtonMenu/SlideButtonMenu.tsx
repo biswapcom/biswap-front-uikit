@@ -96,7 +96,7 @@ const SlideButtonMenu: React.FC<SlideMenuProps> = ({
           .reduce((sum, elem) => sum + elem, 0)
       )
     }
-  }, [widthsArr, activeIndex, isDesktop, isLg, isMd, isMobile, isSm, isTablet, isXl, isXll, isXs, isXxl])
+  }, [widthsArr, activeIndex, isDesktop, isMobile, isTablet])
 
   return (
     <StyledSlideButtonMenu

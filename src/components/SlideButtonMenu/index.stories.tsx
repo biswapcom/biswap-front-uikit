@@ -19,20 +19,15 @@ export default {
 export const Default: React.FC = () => {
   const [index, setIndex] = useState(0);
   const [index2, setIndex2] = useState(0);
+  const [index3, setIndex3] = useState(0);
 
   const handleClick = (newIndex) => setIndex(newIndex);
   const handleClick2 = (newIndex) => setIndex2(newIndex);
+  const handleClick3 = (newIndex) => setIndex3(newIndex);
 
   return (
     <>
-      <Row>
-        <SlideButtonMenu
-            disabled
-            onItemClick={handleClick}
-            activeIndex={index}
-            menuTitles={['Select 1', 'Select 22', 'Select 333', 'Select 4444']}
-        />
-      </Row>
+
       <Row>
         <SlideButtonMenu
             customClass='dark-lg'
@@ -46,8 +41,8 @@ export const Default: React.FC = () => {
         <SlideButtonMenu
             customClass='dark-lg-five'
             scale='lg'
-            onItemClick={handleClick2}
-            activeIndex={index2}
+            onItemClick={handleClick3}
+            activeIndex={index3}
             menuTitles={['Select 1', 'Select 22', 'Select 333', 'Select 4444', 'Select 55555']}
         />
       </Row>
