@@ -19,9 +19,6 @@ export {default as CardViewIcon} from "./Icons/CardView";
 export {default as CalculateIcon} from "./Icons/Calculate";
 export {default as CheckmarkIcon} from "./Icons/Checkmark";
 export {default as CheckmarkCircleIcon} from "./Icons/CheckmarkCircle";
-export {default as ChevronDownIcon} from "./Icons/ChevronDown";
-export {default as ChevronLeftIcon} from "./Icons/ChevronLeft";
-export {default as ChevronRightIcon} from "./Icons/ChevronRight";
 export { default as ChevronRightEndIcon } from "./Icons/ChevronRightEnd";
 export { default as ChevronUpIcon } from "./Icons/ChevronUp";
 export { default as CloseIcon } from "./Icons/Close";
@@ -38,7 +35,6 @@ export { default as LogoRoundIcon } from "./Icons/LogoRound";
 export { default as LoaderIcon } from "./Icons/Loader";
 export { default as MetamaskIcon } from "./Icons/Metamask";
 export { default as MinusIcon } from "./Icons/Minus";
-export { default as PlusIcon } from "./Icons/Plus";
 export { default as NoProfileAvatarIcon } from "./Icons/NoProfileAvatar";
 export { default as OpenNewIcon } from "./Icons/OpenNew";
 export { default as PancakesIcon } from "./Icons/Pancakes";
@@ -122,7 +118,24 @@ export { default as ButtonMenuIcon } from "./Icons/ButtonMenu";
 export { default as ButtonMenuOpenedIcon } from "./Icons/ButtonMenuOpened";
 export { default as CerticAuditedIcon } from "./Icons/Certic";
 export { default as FixedStakingIcon } from "./Icons/FixedStaking";
-export { default as ArrowDownCircleSolid} from "./Icons/ArrowDownCircleSolid"
+
+//new
+//ARROWS
+export { default as ChevronDownCircleSolidIcon} from "./Icons/Arrows/ChevronDownCircleSolid"
+export { default as ChevronDownCircleOpacityIcon} from "./Icons/Arrows/ChevronDownCircleOpacity"
+export { default as ChevronDownIcon} from "./Icons/Arrows/ChevronDown"
+export { default as ChevronRightCircleSolidIcon} from "./Icons/Arrows/ChevronRightCircleSolid"
+export { default as ChevronRightCircleOpacityIcon} from "./Icons/Arrows/ChevronRightCircleOpacity"
+export { default as ChevronRightIcon} from "./Icons/Arrows/ChevronRight"
+export { default as ChevronLeftCircleSolidIcon} from "./Icons/Arrows/ChevronLeftCircleSolid"
+export { default as ChevronLeftCircleOpacityIcon} from "./Icons/Arrows/ChevronLeftCircleOpacity"
+export { default as ChevronLeftIcon} from "./Icons/Arrows/ChevronLeft"
+
+//PLUS
+export { default as PlusIcon} from "./Icons/Plus/Plus"
+export { default as PlusCircleSolidIcon} from "./Icons/Plus/PlusCircleSolid"
+export { default as PlusCircleOpacityIcon} from "./Icons/Plus/PlusCircleOpacity"
+
 
 //chain
 export {default as BSCIcon} from "./Icons/BSC";
