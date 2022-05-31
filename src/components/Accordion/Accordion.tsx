@@ -54,7 +54,7 @@ const Accordion: FC<IProps> = ({
     if (!clickable || label === 'Biswap Products') {
       setIsOpened(true)
     }
-  }, [label, setIsOpened])
+  }, [label, clickable, setIsOpened])
 
   const onTitleClick = () => {
     clickable && setIsOpened((prev) => !prev);
