@@ -57,18 +57,18 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
     };
   }, [targetRef, tooltipRef, setIsOpen, update]);
 
-  useEffect(() => {
-    if (setMenuOpenByIndex && index !== undefined) {
-      setMenuOpenByIndex((prevValue) => ({
-        ...prevValue,
-        [index]: isOpen,
-      }));
-    }
-  }, [isOpen, setMenuOpenByIndex, index]);
+  // useEffect(() => {
+  //   if (setMenuOpenByIndex && index !== undefined) {
+  //     setMenuOpenByIndex((prevValue) => ({
+  //       ...prevValue,
+  //       [index]: isOpen,
+  //     }));
+  //   }
+  // }, [isOpen, setMenuOpenByIndex, index]);
 
-  useEffect(() => {
-    mobileMenuCallback && mobileMenuCallback(isOpen);
-  }, [isOpen]);
+  // useEffect(() => {
+  //   mobileMenuCallback && mobileMenuCallback(isOpen);
+  // }, [isOpen]);
 
   // useOnClickOutside(
   //   {
@@ -82,10 +82,10 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
   return (
     <Box ref={setTargetRef} {...props}>
       <Box
-        onPointerDown={() => {
-          setIsOpen((s) => !s);
-          update && update();
-        }}
+        // onPointerDown={() => {
+        //   setIsOpen((s) => !s);
+        //   update && update();
+        // }}
       >
         {children}
       </Box>
