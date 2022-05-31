@@ -52,6 +52,7 @@ const StyledSlideMenuItem = styled.button<BaseButtonProps>`
   line-height: 1;
   opacity: ${getOpacity};
   outline: 0;
+  margin: 0;
   transition: background-color 0.2s, opacity 0.2s;
   z-index: 2;
   //padding: 0;

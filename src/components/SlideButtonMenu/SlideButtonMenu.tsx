@@ -3,6 +3,7 @@ import styled, { DefaultTheme } from "styled-components";
 import getRgba from "../../util/getRgba";
 import SlideButtonMenuItem from "./SlideButtonMenuItem";
 import {SlideButtonMenuProps, slideMenuScales, slideMenuVariants} from "./types";
+import {useMatchBreakpoints} from "../../hooks";
 
 interface StyledButtonMenuProps extends SlideButtonMenuProps {
   theme: DefaultTheme;
@@ -82,16 +83,19 @@ const SlideButtonMenu: React.FC<SlideMenuProps> = ({
   menuTitles= [''],
   ...props
 }) => {
+  const { isDesktop, isMobile, isTablet } = useMatchBreakpoints()
 
-  const [widthsArr, setWidthsArr] = useState([])
+  const [widthsArr, setWidthsArr] = useState([...Array(menuTitles?.length)].map((e, i) => i - i))
   const [blockOffset, setBlockOffset] = useState(DEFAULT_OFFSET)
 
   useEffect(() => {
-    setBlockOffset(
-      widthsArr.slice(0, activeIndex)
+    if (widthsArr) {
+      setBlockOffset(
+        widthsArr.slice(0, activeIndex)
           .reduce((sum, elem) => sum + elem, 0)
-    )
-  }, [widthsArr, activeIndex])
+      )
+    }
+  }, [widthsArr, activeIndex, isDesktop, isMobile, isTablet])
 
   return (
     <StyledSlideButtonMenu
@@ -101,10 +105,10 @@ const SlideButtonMenu: React.FC<SlideMenuProps> = ({
       {...props}
     >
       {!disabled && <Selection
-          scale={scale}
-          width={widthsArr[activeIndex]}
-          offset={blockOffset + DEFAULT_OFFSET}
-          variant={variant}
+        scale={scale}
+        width={widthsArr[activeIndex]}
+        offset={blockOffset + DEFAULT_OFFSET}
+        variant={variant}
       />}
       {menuTitles.map((title, index) =>
         <SlideButtonMenuItem
@@ -114,7 +118,9 @@ const SlideButtonMenu: React.FC<SlideMenuProps> = ({
           isActive={activeIndex === index}
           onAction={onItemClick}
           itemIndex={index}
+          widthsArr={widthsArr}
           setWidth={setWidthsArr}
+          blockOffset={blockOffset}
           variant={variant}
           scale={scale}
         >
