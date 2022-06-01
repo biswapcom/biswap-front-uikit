@@ -53,3 +53,4 @@ export { default as PTIcon } from "./flags/PT";
 export { default as DEIcon } from "./flags/DE";
 export { default as CNIcon } from "./flags/CN";
 export { default as TRIcon } from "./flags/TR";
+export { default as ESIcon } from "./flags/ES";
