@@ -56,6 +56,11 @@ export const Default: React.FC = () => {
           Light MD With double icon
           <ArrowIcon mr="4px"/>
         </Link>
+        <Link href="/" variant="light" scale="md" disabled>
+          <ArrowIcon mr="4px"/>
+          Light MD Disabled
+          <ArrowIcon mr="4px"/>
+        </Link>
       </LightWrap>
       <DarkWrap>
         <Link href="/" variant="light" scale="lg">

@@ -10,6 +10,7 @@ const StyledLink = styled(Text)<LinkProps>`
   display: flex;
   align-items: center;
   width: fit-content;
+  opacity: ${({ disabled }) => disabled ? '0.32' : '1'};
   transition: color 0.4s ease-in-out;
 
   ${variant({
