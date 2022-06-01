@@ -1,6 +1,7 @@
 import React from "react";
 import { PancakesIcon } from "../Svg";
 import { Link, LinkExternal } from "./index";
+import BinanceIcon from '../Svg/Icons/Arrows/ChevronLeftCircleSolid'
 
 export default {
   title: "Components/Link",
@@ -23,7 +24,10 @@ export const Default: React.FC = () => {
   return (
     <div>
       <div>
-        <Link href="/">Default</Link>
+        <Link href="/" variant="light" scale="lg">
+          <BinanceIcon mr="4px"/>
+          Default
+        </Link>
       </div>
       <div>
         <Link href="/" color="text">
