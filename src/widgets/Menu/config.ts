@@ -294,6 +294,11 @@ export const socials = [
           label: "Turkey",
           href: "https://t.me/biswap_turkey",
         },
+        {
+          icon: 'ESIcon',
+          label: "Espanol",
+          href: "https://t.me/biswap_espanol",
+        },
       ]
     },
   },
