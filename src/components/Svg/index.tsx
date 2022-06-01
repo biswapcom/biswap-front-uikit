@@ -126,6 +126,8 @@ export { default as TenProgramIcon } from "./Icons/TenProgram";
 export { default as NewsIcon } from "./Icons/News";
 export { default as DocsIcon } from "./Icons/Docs";
 export { default as AuditIcon } from "./Icons/Audit";
+export { default as SpaceAgentsIcon } from "./Icons/SpaceAgents";
+export { default as CharityIcon } from "./Icons/Charity";
 
 //new
 //ARROWS

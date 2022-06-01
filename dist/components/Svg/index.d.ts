@@ -121,6 +121,8 @@ export { default as TenProgramIcon } from "./Icons/TenProgram";
 export { default as NewsIcon } from "./Icons/News";
 export { default as DocsIcon } from "./Icons/Docs";
 export { default as AuditIcon } from "./Icons/Audit";
+export { default as SpaceAgentsIcon } from "./Icons/SpaceAgents";
+export { default as CharityIcon } from "./Icons/Charity";
 export { default as ChevronDownCircleSolidIcon } from "./Icons/Arrows/ChevronDownCircleSolid";
 export { default as ChevronDownCircleOpacityIcon } from "./Icons/Arrows/ChevronDownCircleOpacity";
 export { default as ChevronDownIcon } from "./Icons/Arrows/ChevronDown";
