@@ -48,11 +48,11 @@ export const Default: React.FC = () => {
       </Row>
       <Row>
         <SlideButtonMenu
+            fullWidth
             customClass='dark-lg-two'
-            scale='lg'
             onItemClick={handleClick2}
             activeIndex={index2}
-            menuTitles={['Select 1', 'Select 22']}
+            menuTitles={['Select 111111111111111111111111111111111111111111', '22']}
         />
       </Row>
       <Row isLight>
