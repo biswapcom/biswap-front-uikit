@@ -28,6 +28,7 @@ const StyledSlideButtonMenu = styled.div<StyledButtonMenuProps>`
   display: ${({ fullWidth }) => (fullWidth ? "flex" : "inline-flex")};
   width: ${({ fullWidth }) => (fullWidth ? "100%" : "auto")};
   padding: 4px;
+  overflow: hidden;
 
   & > button,
   & > a {
@@ -65,7 +66,7 @@ const Selection = styled.div<{offset: number, width: number, scale: string, vari
   position: absolute;
   top: 4px;
   left: ${({ offset }) => `${offset}px`};
-  transition: left .3s ease;
+  transition: left .3s ease, width .3s ease;
   border-radius: ${({ scale }) => scale === slideMenuScales.SM ? '6px' : '8px'};
   z-index: 1;
 `
