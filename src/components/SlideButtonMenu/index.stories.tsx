@@ -5,6 +5,7 @@ import { Meta } from "@storybook/react/types-6-0";
 import {SlideButtonMenu} from "./index";
 
 const Row = styled.div<{isLight?: boolean}>`
+  width: 100%;
   margin-bottom: 32px;
   padding: 8px;
   background-color: ${({ theme, isLight }) => isLight ? theme.colors.white : 'transparent'};
@@ -39,6 +40,7 @@ export const Default: React.FC = () => {
       </Row>
       <Row>
         <SlideButtonMenu
+            fullWidth
             customClass='dark-lg-five'
             scale='lg'
             onItemClick={handleClick3}
