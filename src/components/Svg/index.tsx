@@ -118,6 +118,14 @@ export { default as ButtonMenuIcon } from "./Icons/ButtonMenu";
 export { default as ButtonMenuOpenedIcon } from "./Icons/ButtonMenuOpened";
 export { default as CerticAuditedIcon } from "./Icons/Certic";
 export { default as FixedStakingIcon } from "./Icons/FixedStaking";
+export { default as AnalyticsIcon } from "./Icons/Analytics";
+export { default as VotingIcon } from "./Icons/Voting";
+export { default as AboutBSWIcon } from "./Icons/AboutBSW";
+export { default as TeamIcon } from "./Icons/Team";
+export { default as TenProgramIcon } from "./Icons/TenProgram";
+export { default as NewsIcon } from "./Icons/News";
+export { default as DocsIcon } from "./Icons/Docs";
+export { default as AuditIcon } from "./Icons/Audit";
 
 //new
 //ARROWS

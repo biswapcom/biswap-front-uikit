@@ -152,44 +152,52 @@ export const links: MenuItemsType[] = [
     items: [
       {
         label: "Analytics",
+        leftIcon: "Analytics",
         href: "https://google.com",
         description: "Item description",
       },
       {
         label: "Voting",
+        leftIcon: "Voting",
         href: "/pool",
         description: "Item description",
       },
       {
         label: "About BSW",
+        leftIcon: "AboutBSW",
         href: "/pool",
         description: "Item description",
       },
       {
         label: "Team",
+        leftIcon: "Team",
         href: "/pool",
         description: "Item description",
       },
       {
         label: "$10M Program",
+        leftIcon: "TenProgram",
         href: "/pool",
         description: "Item description",
         type: DropdownMenuItemType.EXTERNAL_LINK,
       },
       {
         label: "News",
+        leftIcon: "News",
         href: "/pool",
         description: "Item description",
         type: DropdownMenuItemType.EXTERNAL_LINK,
       },
       {
         label: "Docs",
+        leftIcon: "Docs",
         href: "/pool",
         description: "Item description",
         type: DropdownMenuItemType.EXTERNAL_LINK,
       },
       {
         label: "Audit",
+        leftIcon: "Audit",
         href: "/pool",
         description: "Item description",
         type: DropdownMenuItemType.EXTERNAL_LINK,
