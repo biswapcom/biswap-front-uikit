@@ -29,6 +29,7 @@ export interface StyleToggleProps {
   $checkedColor: keyof Colors;
   $defaultColor: keyof Colors;
   scale: Scales;
+  disabled?: boolean;
 }
 
 export const scaleKeys = {
