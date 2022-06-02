@@ -20,4 +20,5 @@ export const scales = {
 export const variants = {
   LIGHT: "light",
   DARK: "dark",
+  ICON: "icon",
 } as const;

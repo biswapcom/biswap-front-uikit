@@ -40,4 +40,5 @@ export declare const styleVariants: {
             };
         };
     };
+    icon: {};
 };

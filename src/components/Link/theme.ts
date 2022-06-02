@@ -69,4 +69,7 @@ export const styleVariants = {
       },
     },
   },
+  [variants.ICON]: {
+  //  custom color and color Icon
+  }
 }

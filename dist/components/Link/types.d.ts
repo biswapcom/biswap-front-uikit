@@ -16,4 +16,5 @@ export declare const scales: {
 export declare const variants: {
     readonly LIGHT: "light";
     readonly DARK: "dark";
+    readonly ICON: "icon";
 };
