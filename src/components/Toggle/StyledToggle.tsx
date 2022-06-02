@@ -86,6 +86,7 @@ const StyledToggle = styled.div<StyleToggleProps>`
   position: relative;
   transition: background-color 200ms;
   width: ${getScale("toggleWidth")};
+  opacity: ${({ disabled }) => disabled ? '.32' : '1'};
 `;
 
 export default StyledToggle;
