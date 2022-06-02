@@ -6,6 +6,7 @@ import {useMatchBreakpoints} from "../../../hooks";
 import MobileMenu from "./MobileMenu";
 import {MenuItemsProps} from "../../MenuItems/types";
 import MenuItem from "../../MenuItem";
+import Burger from "./ButtonBurger";
 
 const MobileDropdownMenu: FC<MenuItemsProps> = ({items, activeItem, isMobileMenuOpened = false, mobileMenuCallback}) => {
   const {isMobile} = useMatchBreakpoints();
@@ -18,10 +19,11 @@ const MobileDropdownMenu: FC<MenuItemsProps> = ({items, activeItem, isMobileMenu
       activeItem={activeItem}
     >
       <MenuItem>
-        <IconComponent
+      <Burger open={isMobileMenuOpened} />
+        {/* <IconComponent
           iconName={isMobileMenuOpened ? "ButtonMenuOpened" : "ButtonMenu"}
           color={isMobileMenuOpened && isMobile ? "backgroundDark" : "white"}
-        />
+        /> */}
         {!isMobile && <Text ml="8px" color="white">Menu</Text>}
       </MenuItem>
     </MobileMenu>
