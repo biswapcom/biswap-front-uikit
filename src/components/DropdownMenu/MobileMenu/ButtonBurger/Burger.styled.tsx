@@ -1,5 +1,5 @@
 import styled , { css, keyframes }  from 'styled-components';
-import { boxAnimationBackwards, boxAnimationForward, firstLineAnimationBackwards, firstLineAnimationForward, secondLineAnimationBackwards, secondLineAnimationForward, thirdLineAnimationBackwards, thirdLineAnimationForward } from './animationConfig';
+import { menuAnimationConfig } from './animationConfig';
 
 type StyledBurgerProps = {
     open: boolean
@@ -9,8 +9,8 @@ export const StyledBurger = styled.button<StyledBurgerProps>`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 18.5px;
+  height: 13.5px;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -21,58 +21,57 @@ export const StyledBurger = styled.button<StyledBurgerProps>`
   ${({ open }) => {
     if (open) {
       return css`
-        animation: ${boxAnimationForward} 0.5s linear 0s normal;
+        animation: ${menuAnimationConfig.boxAnimationForward} 0.5s ease-in 0s normal;
         animation-fill-mode: forwards;
         `
       } else{
         return css`
-          animation: ${boxAnimationBackwards} 0.5s linear 0s normal;
-          animation-direction: reverse;    
+          animation: ${menuAnimationConfig.boxAnimationBackwards} 0.5s ease-out 0s normal;
         `
     }
   }}
 
   span {
-    width: 1.5rem;
-    height: 0.1rem;
+    width: 18.5px;
+    height: 1.5px;
     background: ${({ open }) => open ? "rgb(116, 155, 216);" : "rgb(255, 255, 255)"};
     border-radius: 10px;
     transition: all 0.5s linear;
     position: relative;
-    transform-origin: 1px;
+    transform-origin: center;
 
     ${({ open }) => {
       if (open) {
         return css`
           :first-child {
-            animation: ${firstLineAnimationForward} 0.5s linear 0s normal;
+            animation: ${menuAnimationConfig.firstLineAnimationForward} 0.5s ease-in-out 0s normal;
             animation-fill-mode: forwards;
           }
           
           :nth-child(2) {
-            animation: ${secondLineAnimationForward} 0.5s linear 0s normal;
+            animation: ${menuAnimationConfig.secondLineAnimationForward} 0.5s linear 0s normal;
             animation-fill-mode: forwards;
           }
       
           :nth-child(3) {
-            animation: ${thirdLineAnimationForward} 0.5s linear 0s normal; 
+            animation: ${menuAnimationConfig.thirdLineAnimationForward} 0.5s ease-in-out 0s normal; 
             animation-fill-mode: forwards;
           }
         `;
       } else {
         return css`
           :first-child {
-            animation: ${firstLineAnimationBackwards} 0.5s linear 0s normal;
+            animation: ${menuAnimationConfig.firstLineAnimationBackwards} 0.5s ease-in-out 0s normal;
             animation-fill-mode: forwards;
           }
           
           :nth-child(2) {
-            animation: ${secondLineAnimationBackwards} 0.5s linear 0s normal;
+            animation: ${menuAnimationConfig.secondLineAnimationBackwards} 0.5s linear 0s normal;
             animation-fill-mode: forwards;
           }
       
           :nth-child(3) {
-            animation: ${thirdLineAnimationBackwards} 0.5s linear 0s normal; 
+            animation: ${menuAnimationConfig.thirdLineAnimationBackwards} 0.5s ease-in-out 0s normal; 
             animation-fill-mode: forwards;
           `;
       }
