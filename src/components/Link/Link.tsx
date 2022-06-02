@@ -21,9 +21,9 @@ const StyledLink = styled(Text)<LinkProps>`
     variants: styleVariants,
   })}
   
-  svg {
-    transition: fill .4s ease-in-out;
-  }
+  //svg {
+  //  transition: fill .4s ease-in-out;
+  //}
 `;
 
 const Link: React.FC<LinkProps> = ({ external, ...props }) => {

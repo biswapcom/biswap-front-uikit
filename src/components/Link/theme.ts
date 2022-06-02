@@ -4,23 +4,23 @@ export const scaleVariants = {
   [scales.LG]: {
     fontSize: "16px",
 
-    "svg" : {
-      width: "16px"
-    },
+    // "svg" : {
+    //   width: "16px"
+    // },
   },
   [scales.MD]: {
     fontSize: "14px",
 
-    "svg" : {
-      width: "14px"
-    },
+    // "svg" : {
+    //   width: "14px"
+    // },
   },
   [scales.SM]: {
     fontSize: "12px",
 
-    "svg" : {
-      width: "12px"
-    },
+    // "svg" : {
+    //   width: "12px"
+    // },
   },
 }
 
