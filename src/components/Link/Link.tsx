@@ -22,6 +22,7 @@ const StyledLink = styled(Text)<LinkProps>`
   })}
   
   svg {
+    color: inherit;
     transition: fill .4s ease-in-out;
   }
 `;

@@ -172,8 +172,8 @@ const Community: React.FC = () => {
           }
           return (
             <SocialItem key={social.label}>
-              <Link external href={social.href} aria-label={social.label}>
-                <Icon {...iconProps} />
+              <Link external href={social.href} aria-label={social.label} variant='icon'>
+                <Icon {...iconProps}/>
               </Link>
             </SocialItem>
           )
