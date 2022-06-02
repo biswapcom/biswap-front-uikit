@@ -21,13 +21,22 @@ const getBorderRadius = ({ scale }: StyledButtonMenuProps) => {
   return scale === slideMenuScales.SM ? '8px' : '10px'
 }
 
-const StyledSlideButtonMenu = styled.div<StyledButtonMenuProps>`
-  position: relative;
-  background-color: ${getBackgroundColor};
-  border-radius: ${getBorderRadius};
+const OverWrap = styled.div<StyledButtonMenuProps>`
   display: ${({ fullWidth }) => (fullWidth ? "flex" : "inline-flex")};
   width: ${({ fullWidth }) => (fullWidth ? "100%" : "auto")};
+  background-color: ${getBackgroundColor};
+  border-radius: ${getBorderRadius};
   padding: 4px;
+`
+
+const StyledSlideButtonMenu = styled.div<StyledButtonMenuProps>`
+  position: relative;
+  //background-color: ${getBackgroundColor};
+  //border-radius: ${getBorderRadius};
+  border-radius: 4px;
+  display: ${({ fullWidth }) => (fullWidth ? "flex" : "inline-flex")};
+  width: ${({ fullWidth }) => (fullWidth ? "100%" : "auto")};
+  //padding: 4px;
   overflow: hidden;
 
   & > button,
@@ -59,19 +68,24 @@ const StyledSlideButtonMenu = styled.div<StyledButtonMenuProps>`
   }}
 `;
 
-const Selection = styled.div<{offset: number, width: number, scale: string, variant: string}>`
+interface ISelection {
+  offset: number
+  width: number
+  scale: string
+  variant: string
+}
+
+const Selection = styled.div<ISelection>`
   background-color: ${({ theme, variant }) => theme.colors[variant === slideMenuVariants.SELECT ? 'dropDown' : 'white']};
   width: ${({ width }) => `${width}px`};
-  height: calc(100% - 8px);
+  height: 100%;
   position: absolute;
-  top: 4px;
+  top: 0;
   left: ${({ offset }) => `${offset}px`};
-  transition: left .3s ease, width .3s ease;
+  transition: left .3s ease;
   border-radius: ${({ scale }) => scale === slideMenuScales.SM ? '6px' : '8px'};
   z-index: 1;
 `
-
-const DEFAULT_OFFSET = 4
 
 const SlideButtonMenu: React.FC<SlideMenuProps> = ({
   customClass = '',
@@ -87,7 +101,7 @@ const SlideButtonMenu: React.FC<SlideMenuProps> = ({
   const { isDesktop, isMobile, isTablet } = useMatchBreakpoints()
 
   const [widthsArr, setWidthsArr] = useState([...Array(menuTitles?.length)].map((e, i) => i - i))
-  const [blockOffset, setBlockOffset] = useState(DEFAULT_OFFSET)
+  const [blockOffset, setBlockOffset] = useState(0)
 
   useEffect(() => {
     if (widthsArr) {
@@ -99,36 +113,43 @@ const SlideButtonMenu: React.FC<SlideMenuProps> = ({
   }, [widthsArr, activeIndex, isDesktop, isMobile, isTablet])
 
   return (
-    <StyledSlideButtonMenu
-      disabled={disabled}
-      variant={variant}
-      fullWidth={fullWidth}
-      {...props}
-    >
-      {!disabled && <Selection
-        scale={scale}
-        width={widthsArr[activeIndex]}
-        offset={blockOffset + DEFAULT_OFFSET}
-        variant={variant}
-      />}
-      {menuTitles.map((title, index) =>
-        <SlideButtonMenuItem
-          key={index.toString()}
-          disabled={disabled}
-          customClass={customClass}
-          isActive={activeIndex === index}
-          onAction={onItemClick}
-          itemIndex={index}
-          widthsArr={widthsArr}
-          setWidth={setWidthsArr}
-          blockOffset={blockOffset}
+      <OverWrap
+          fullWidth={fullWidth}
           variant={variant}
           scale={scale}
+      >
+        <StyledSlideButtonMenu
+            disabled={disabled}
+            variant={variant}
+            fullWidth={fullWidth}
+            {...props}
         >
-          {title}
-        </SlideButtonMenuItem>
-      )}
-    </StyledSlideButtonMenu>
+          {!disabled && <Selection
+              scale={scale}
+              width={widthsArr[activeIndex]}
+              offset={blockOffset}
+              variant={variant}
+          />}
+          {menuTitles.map((title, index) =>
+              <SlideButtonMenuItem
+                  key={index.toString()}
+                  disabled={disabled}
+                  customClass={customClass}
+                  isActive={activeIndex === index}
+                  onAction={onItemClick}
+                  itemIndex={index}
+                  widthsArr={widthsArr}
+                  setWidth={setWidthsArr}
+                  blockOffset={blockOffset}
+                  variant={variant}
+                  scale={scale}
+              >
+                {title}
+              </SlideButtonMenuItem>
+          )}
+        </StyledSlideButtonMenu>
+      </OverWrap>
+
   );
 };
 

@@ -23,6 +23,7 @@ export interface StyleToggleProps {
     $checkedColor: keyof Colors;
     $defaultColor: keyof Colors;
     scale: Scales;
+    disabled?: boolean;
 }
 export declare const scaleKeys: {
     readonly handleHeight: "handleHeight";
