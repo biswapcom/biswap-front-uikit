@@ -49,41 +49,46 @@ export const Default: React.FC = () => {
         </Link>
         <Link href="/" variant="light" scale="md">
           Light MD With icon
-          <ArrowIcon mr="4px"/>
+          <ArrowIcon ml="4px"/>
         </Link>
         <Link href="/" variant="light" scale="md">
           <ArrowIcon mr="4px"/>
           Light MD With double icon
-          <ArrowIcon mr="4px"/>
+          <ArrowIcon ml="4px"/>
         </Link>
         <Link href="/" variant="light" scale="md" disabled>
           <ArrowIcon mr="4px"/>
           Light MD Disabled
-          <ArrowIcon mr="4px"/>
+          <ArrowIcon ml="4px"/>
         </Link>
       </LightWrap>
       <DarkWrap>
-        <Link href="/" variant="light" scale="lg">
+        <Link href="/" variant="dark" scale="lg">
           Dark LG
         </Link>
-        <Link href="/" variant="light" scale="md">
+        <Link href="/" variant="dark" scale="md">
           Dark MD
         </Link>
-        <Link href="/" variant="light" scale="sm" mb="16px">
+        <Link href="/" variant="dark" scale="sm" mb="16px">
           Dark SM
         </Link>
-        <Link href="/" variant="light" scale="md">
+        <Link href="/" variant="dark" scale="md">
           <ArrowIcon mr="4px"/>
           Dark MD With icon
         </Link>
-        <Link href="/" variant="light" scale="md">
+        <Link href="/" variant="dark" scale="md">
           Dark MD With icon
-          <ArrowIcon mr="4px"/>
+          <ArrowIcon ml="4px"/>
         </Link>
-        <Link href="/" variant="light" scale="md">
+        <Link href="/" variant="dark" scale="md">
           <ArrowIcon mr="4px"/>
           Dark MD With double icon
+          <ArrowIcon ml="4px"/>
+        </Link>
+        <Link href="/" variant="dark" scale="md" disabled>
           <ArrowIcon mr="4px"/>
+          Light MD Disabled
+          <ArrowIcon ml="4px"/>
         </Link>
       </DarkWrap>
 
