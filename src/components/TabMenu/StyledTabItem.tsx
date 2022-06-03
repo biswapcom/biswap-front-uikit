@@ -1,27 +1,27 @@
 import styled, { DefaultTheme } from "styled-components";
 import { space, layout, variant } from "styled-system";
-import {menuScaleVariants, menuStyleVariants} from "./theme";
-import {BaseButtonProps} from "../Button";
+import { menuScaleVariants, menuStyleVariants } from "./theme";
+import { BaseButtonProps } from "../Button";
 
 interface ThemedButtonProps extends BaseButtonProps {
-    theme: DefaultTheme;
+  theme: DefaultTheme;
 }
 
 interface TransientButtonProps extends ThemedButtonProps {
-    $isLoading?: boolean;
+  $isLoading?: boolean;
 }
 
 const getDisabledStyles = ({ $isLoading, theme }: TransientButtonProps) => {
-    if ($isLoading === true) {
-        return `
+  if ($isLoading === true) {
+    return `
       &:disabled,
       &.button--disabled {
         cursor: not-allowed;
       }
     `;
-    }
+  }
 
-    return `
+  return `
     &:disabled,
     &.button--disabled {
       opacity: .32;
@@ -37,7 +37,7 @@ const getDisabledStyles = ({ $isLoading, theme }: TransientButtonProps) => {
  */
 
 const getOpacity = ({ $isLoading = false }: TransientButtonProps) => {
-    return $isLoading ? ".5" : "1";
+  return $isLoading ? ".5" : "1";
 };
 
 const StyledTabItem = styled.button<BaseButtonProps>`
@@ -54,7 +54,7 @@ const StyledTabItem = styled.button<BaseButtonProps>`
   opacity: ${getOpacity};
   outline: 0;
   z-index: 2;
-  transition: color .3s ease;
+  transition: color 0.3s ease;
 
   &:active:not(:disabled):not(.button--disabled):not(.button--disabled) {
   }
@@ -63,12 +63,12 @@ const StyledTabItem = styled.button<BaseButtonProps>`
   ${variant({
     prop: "scale",
     variants: menuScaleVariants,
-})}
+  })}
   ${variant({
     variants: menuStyleVariants,
-})}
+  })}
   ${layout}
   ${space}
 `;
 
-export default StyledTabItem
+export default StyledTabItem;

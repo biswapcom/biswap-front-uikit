@@ -148,9 +148,9 @@ export const Ribbon: React.FC = () => {
   return (
     <div style={{ padding: "32px", width: "500px" }}>
       <Row>
-        <Card ribbon={<CardRibbon text="Ribbon"/>}>
-          <div style={{height: "112px", backgroundColor: "#191326"}}/>
-          <CardBody style={{height: "150px"}}>Body</CardBody>
+        <Card ribbon={<CardRibbon text="Ribbon" />}>
+          <div style={{ height: "112px", backgroundColor: "#191326" }} />
+          <CardBody style={{ height: "150px" }}>Body</CardBody>
         </Card>
       </Row>
       <Row>
@@ -162,19 +162,19 @@ export const Ribbon: React.FC = () => {
             />
           }
         >
-          <CardBody style={{height: "150px"}}>
+          <CardBody style={{ height: "150px" }}>
             Ribbons will truncate when text is too long
           </CardBody>
         </Card>
       </Row>
       <Row>
-        <Card ribbon={<CardRibbon variantColor="success" text="Success"/>}>
-          <CardBody style={{height: "150px"}}>Card</CardBody>
+        <Card ribbon={<CardRibbon variantColor="success" text="Success" />}>
+          <CardBody style={{ height: "150px" }}>Card</CardBody>
         </Card>
       </Row>
       <Row>
-        <Card ribbon={<CardRibbon variantColor="failure" text="Failure"/>}>
-          <CardBody style={{height: "150px"}}>
+        <Card ribbon={<CardRibbon variantColor="failure" text="Failure" />}>
+          <CardBody style={{ height: "150px" }}>
             Any Color in the theme
           </CardBody>
         </Card>
@@ -189,7 +189,7 @@ export const Ribbon: React.FC = () => {
             />
           }
         >
-          <CardBody style={{height: "150px"}}>
+          <CardBody style={{ height: "150px" }}>
             Any Color in the theme
           </CardBody>
         </Card>

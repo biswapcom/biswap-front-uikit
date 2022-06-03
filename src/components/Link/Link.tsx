@@ -10,7 +10,7 @@ const StyledLink = styled(Text)<LinkProps>`
   display: flex;
   align-items: center;
   width: fit-content;
-  opacity: ${({ disabled }) => disabled ? '0.32' : '1'};
+  opacity: ${({ disabled }) => (disabled ? "0.32" : "1")};
   transition: color 0.4s ease-in-out;
 
   ${variant({
@@ -23,13 +23,13 @@ const StyledLink = styled(Text)<LinkProps>`
   
   svg {
     color: inherit;
-    transition: fill .4s ease-in-out;
+    transition: fill 0.4s ease-in-out;
   }
 `;
 
 const Link: React.FC<LinkProps> = ({ external, ...props }) => {
   const internalProps = external ? getExternalLinkProps() : {};
-  return <StyledLink as="a" bold {...internalProps} {...props}/>;
+  return <StyledLink as="a" bold {...internalProps} {...props} />;
 };
 
 Link.defaultProps = {

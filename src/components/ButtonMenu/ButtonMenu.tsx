@@ -9,22 +9,30 @@ interface StyledButtonMenuProps extends ButtonMenuProps {
   theme: DefaultTheme;
 }
 
-const getBackgroundColor = ({ theme, variant, withoutBackground }: StyledButtonMenuProps) => {
+const getBackgroundColor = ({
+  theme,
+  variant,
+  withoutBackground,
+}: StyledButtonMenuProps) => {
   if (withoutBackground) return "transparent";
-  return variant === variants.SELECT ?  theme.colors.tooltip : getRgba(theme.colors.pastelBlue, 0.08);
+  return variant === variants.SELECT
+    ? theme.colors.tooltip
+    : getRgba(theme.colors.pastelBlue, 0.08);
 };
 
 const getFlat = ({ flatBottom, flatTop }: StyledButtonMenuProps) => {
   if (flatBottom) return "8px 8px 0 0";
   if (flatTop) return "0 0 8px 8px";
-}
+};
 
 const StyledButtonMenu = styled.div<StyledButtonMenuProps>`
   background-color: ${getBackgroundColor};
-  border-radius:  ${({ flatBottom, flatTop }) => flatBottom || flatTop ? getFlat : "8px"};
+  border-radius: ${({ flatBottom, flatTop }) =>
+    flatBottom || flatTop ? getFlat : "8px"};
   display: ${({ fullWidth }) => (fullWidth ? "flex" : "inline-flex")};
   width: ${({ fullWidth }) => (fullWidth ? "100%" : "auto")};
-  padding: ${({ flatBottom, flatTop }) => (flatBottom || flatTop ? "0" : "4px")};
+  padding: ${({ flatBottom, flatTop }) =>
+    flatBottom || flatTop ? "0" : "4px"};
 
   & > button,
   & > a {
@@ -49,10 +57,10 @@ const StyledButtonMenu = styled.div<StyledButtonMenuProps>`
         & > button:disabled {
           background-color: transparent;
           color: ${
-        variant === variants.SELECT
-          ? theme.colors.pastelBlue
-          : theme.colors.text
-      };
+            variant === variants.SELECT
+              ? theme.colors.pastelBlue
+              : theme.colors.text
+          };
         }
     `;
     }
@@ -69,9 +77,9 @@ const ButtonMenu: React.FC<ButtonMenuProps> = ({
   disabled,
   children,
   fullWidth = false,
-  flatBottom= false,
+  flatBottom = false,
   flatTop = false,
-  withoutBackground= false,
+  withoutBackground = false,
   ...props
 }) => {
   return (

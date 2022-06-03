@@ -5,7 +5,7 @@ import { RadioTheme } from "../components/Radio/types";
 import { ToggleTheme } from "../components/Toggle/theme";
 import { TooltipTheme } from "../components/Tooltip/types";
 import { NavThemeType } from "../widgets/Menu/theme";
-import {ModalTheme} from "../widgets/Modal/types";
+import { ModalTheme } from "../widgets/Modal/types";
 import {
   Breakpoints,
   Colors,

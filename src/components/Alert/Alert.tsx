@@ -7,7 +7,7 @@ import InfoAction from "../Svg/Icons/InfoAction";
 import { Text } from "../Text";
 import Flex from "../Box/Flex";
 import { AlertProps, variants } from "./types";
-import {Box} from "../Box";
+import { Box } from "../Box";
 import ProgressCircle from "../../widgets/Toast/ProgressCircle";
 
 interface ThemedIconLabel {
@@ -19,14 +19,14 @@ interface ThemedIconLabel {
 const getThemeColor = ({ variant = variants.INFO }: ThemedIconLabel) => {
   switch (variant) {
     case variants.DANGER:
-      return 'rgba(249, 59, 93, 0.16)';
+      return "rgba(249, 59, 93, 0.16)";
     case variants.WARNING:
-      return 'rgba(255, 219, 28, 0.16)';
+      return "rgba(255, 219, 28, 0.16)";
     case variants.SUCCESS:
-      return 'rgba(29, 200, 114, 0.16)';
+      return "rgba(29, 200, 114, 0.16)";
     case variants.INFO:
     default:
-      return 'rgba(18, 99, 241, 0.16)';
+      return "rgba(18, 99, 241, 0.16)";
   }
 };
 
@@ -69,36 +69,44 @@ const StyledAlert = styled(Flex)`
 const StyledBox = styled(Box)`
   position: absolute;
   right: 8px;
-  
+
   // ${({ theme }) => theme.mediaQueries.sm} {
   //   position: static;
   //   transform: translateX(-50%);
   //}
-`
+`;
 
-const Alert: React.FC<AlertProps> = ({ title, children, variant, onClick, progress }) => {
+const Alert: React.FC<AlertProps> = ({
+  title,
+  children,
+  variant,
+  onClick,
+  progress,
+}) => {
   const Icon = getIcon(variant);
   return (
     <StyledAlert>
       <div>
         <IconLabel variant={variant} hasDescription={!!children}>
-          <Icon width="24px"/>
+          <Icon width="24px" />
         </IconLabel>
       </div>
       <Details hasHandler={!!onClick}>
-        <Box ml='10px'>
-          <Text mr='18%' fontSize='16px' color='dark' bold>{title}</Text>
+        <Box ml="10px">
+          <Text mr="18%" fontSize="16px" color="dark" bold>
+            {title}
+          </Text>
           {typeof children === "string" ? (
-              <Text as="p">{children}</Text>
+            <Text as="p">{children}</Text>
           ) : (
-              children
+            children
           )}
         </Box>
         <StyledBox>
           <ProgressCircle
-              onClick={onClick}
-              filled={progress}
-              notFilled={progress ? 100 - progress : 0}
+            onClick={onClick}
+            filled={progress}
+            notFilled={progress ? 100 - progress : 0}
           />
         </StyledBox>
       </Details>

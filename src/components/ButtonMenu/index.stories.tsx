@@ -4,12 +4,13 @@ import styled from "styled-components";
 import { Meta } from "@storybook/react/types-6-0";
 import ButtonMenu from "./ButtonMenu";
 import ButtonMenuItem from "./ButtonMenuItem";
-import {Box} from "../Box";
+import { Box } from "../Box";
 
-const Row = styled.div<{isLight?: boolean}>`
+const Row = styled.div<{ isLight?: boolean }>`
   margin-bottom: 32px;
   padding: 8px;
-  background-color: ${({ theme, isLight }) => isLight ? theme.colors.white : 'transparent'};
+  background-color: ${({ theme, isLight }) =>
+    isLight ? theme.colors.white : "transparent"};
 `;
 
 export default {
@@ -28,7 +29,12 @@ export const Default: React.FC = () => {
   return (
     <>
       <Row>
-        <ButtonMenu disabled scale='sm' activeIndex={index} onItemClick={handleClick}>
+        <ButtonMenu
+          disabled
+          scale="sm"
+          activeIndex={index}
+          onItemClick={handleClick}
+        >
           <ButtonMenuItem>Button 1</ButtonMenuItem>
           <ButtonMenuItem>Button 2</ButtonMenuItem>
           <ButtonMenuItem>Button 3</ButtonMenuItem>
@@ -36,10 +42,7 @@ export const Default: React.FC = () => {
         </ButtonMenu>
       </Row>
       <Row>
-        <ButtonMenu
-          activeIndex={index1}
-          onItemClick={handleClick1}
-        >
+        <ButtonMenu activeIndex={index1} onItemClick={handleClick1}>
           <ButtonMenuItem>Button 1</ButtonMenuItem>
           <ButtonMenuItem>Button 2</ButtonMenuItem>
           <ButtonMenuItem>Button 3</ButtonMenuItem>
@@ -52,7 +55,7 @@ export const Default: React.FC = () => {
           activeIndex={index}
           onItemClick={handleClick}
           variant="selectLight"
-          scale='sm'
+          scale="sm"
         >
           <ButtonMenuItem>Button 1</ButtonMenuItem>
           <ButtonMenuItem>Button 2</ButtonMenuItem>
@@ -62,9 +65,9 @@ export const Default: React.FC = () => {
       </Row>
       <Row isLight>
         <ButtonMenu
-            activeIndex={index1}
-            onItemClick={handleClick1}
-            variant="selectLight"
+          activeIndex={index1}
+          onItemClick={handleClick1}
+          variant="selectLight"
         >
           <ButtonMenuItem>Button 1</ButtonMenuItem>
           <ButtonMenuItem>Button 2</ButtonMenuItem>
@@ -111,7 +114,12 @@ export const FlatBottom: React.FC = () => {
         </ButtonMenu>
       </Row>
       <Row>
-        <ButtonMenu flatBottom activeIndex={index1} onItemClick={handleClick1} variant="warning">
+        <ButtonMenu
+          flatBottom
+          activeIndex={index1}
+          onItemClick={handleClick1}
+          variant="warning"
+        >
           <ButtonMenuItem>Button 1</ButtonMenuItem>
           <ButtonMenuItem>Button 2</ButtonMenuItem>
           <ButtonMenuItem>Button 3</ButtonMenuItem>
@@ -139,7 +147,12 @@ export const FlatTop: React.FC = () => {
         </ButtonMenu>
       </Row>
       <Row>
-        <ButtonMenu flatTop activeIndex={index1} onItemClick={handleClick1} variant="success">
+        <ButtonMenu
+          flatTop
+          activeIndex={index1}
+          onItemClick={handleClick1}
+          variant="success"
+        >
           <ButtonMenuItem>Button 1</ButtonMenuItem>
           <ButtonMenuItem>Button 2</ButtonMenuItem>
           <ButtonMenuItem>Button 3</ButtonMenuItem>
@@ -149,7 +162,6 @@ export const FlatTop: React.FC = () => {
     </>
   );
 };
-
 
 export const WithoutBackground: React.FC = () => {
   const [index, setIndex] = useState(0);
@@ -168,7 +180,11 @@ export const WithoutBackground: React.FC = () => {
         </ButtonMenu>
       </Row>
       <Row>
-        <ButtonMenu withoutBackground activeIndex={index1} onItemClick={handleClick1}>
+        <ButtonMenu
+          withoutBackground
+          activeIndex={index1}
+          onItemClick={handleClick1}
+        >
           <ButtonMenuItem>Button 1</ButtonMenuItem>
           <ButtonMenuItem>Button 2</ButtonMenuItem>
           <ButtonMenuItem>Button 3</ButtonMenuItem>
@@ -176,7 +192,12 @@ export const WithoutBackground: React.FC = () => {
         </ButtonMenu>
       </Row>
       <Row>
-        <ButtonMenu flatBottom withoutBackground activeIndex={index1} onItemClick={handleClick1}>
+        <ButtonMenu
+          flatBottom
+          withoutBackground
+          activeIndex={index1}
+          onItemClick={handleClick1}
+        >
           <ButtonMenuItem>Button 1</ButtonMenuItem>
           <ButtonMenuItem>Button 2</ButtonMenuItem>
           <ButtonMenuItem>Button 3</ButtonMenuItem>
@@ -186,7 +207,6 @@ export const WithoutBackground: React.FC = () => {
     </>
   );
 };
-
 
 export const DisabledMenu: React.FC = () => {
   const [index, setIndex] = useState(0);

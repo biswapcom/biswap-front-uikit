@@ -4,45 +4,45 @@ export const scaleVariants = {
   [scales.LG]: {
     fontSize: "16px",
 
-    "svg" : {
-      width: "16px"
+    svg: {
+      width: "16px",
     },
   },
   [scales.MD]: {
     fontSize: "14px",
 
-    "svg" : {
-      width: "14px"
+    svg: {
+      width: "14px",
     },
   },
   [scales.SM]: {
     fontSize: "12px",
 
-    "svg" : {
-      width: "12px"
+    svg: {
+      width: "12px",
     },
   },
-}
+};
 
 export const styleVariants = {
   [variants.LIGHT]: {
     color: "primary",
 
-    "svg" : {
+    svg: {
       fill: "primary",
     },
 
     ":hover:not(:disabled)": {
       color: "primaryHover",
 
-      "svg" : {
+      svg: {
         fill: "primaryHover",
       },
     },
     ":active:not(:disabled)": {
       color: "primaryPress",
 
-      "svg" : {
+      svg: {
         fill: "primaryPress",
       },
     },
@@ -50,23 +50,23 @@ export const styleVariants = {
   [variants.DARK]: {
     color: "primaryHover",
 
-    "svg" : {
+    svg: {
       fill: "primaryHover",
     },
 
     ":hover:not(:disabled)": {
       color: "primary",
 
-      "svg" : {
+      svg: {
         fill: "primary",
       },
     },
     ":active:not(:disabled)": {
       color: "primaryPress",
 
-      "svg" : {
+      svg: {
         fill: "primaryPress",
       },
     },
   },
-}
+};

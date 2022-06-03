@@ -1,13 +1,13 @@
-import React, { FC } from "react"
-import styled from "styled-components"
-import { CerticAuditedIcon } from "../../../../components/Svg"
+import React, { FC } from "react";
+import styled from "styled-components";
+import { CerticAuditedIcon } from "../../../../components/Svg";
 
 const AuditedWrap = styled.div`
   grid-area: audit;
   margin-top: 8px;
   display: flex;
   flex-direction: row;
-  
+
   ${({ theme }) => theme.mediaQueries.xs} {
     justify-content: flex-end;
   }
@@ -20,24 +20,24 @@ const AuditedWrap = styled.div`
   ${({ theme }) => theme.mediaQueries.xll} {
     margin-top: 0;
   }
-`
+`;
 const LinkWrap = styled.a`
-  height: fit-content
-`
+  height: fit-content;
+`;
 
 const Audit: FC = () => (
   <AuditedWrap>
-    <LinkWrap href='https://www.certik.org/projects/biswap' target="_blank">
-      <CerticAuditedIcon 
+    <LinkWrap href="https://www.certik.org/projects/biswap" target="_blank">
+      <CerticAuditedIcon
         style={{
-          padding: '8px 16px',
+          padding: "8px 16px",
           backgroundColor: "#102648",
-          borderRadius: '8px',
-          width: '140px'       
+          borderRadius: "8px",
+          width: "140px",
         }}
       />
     </LinkWrap>
   </AuditedWrap>
-)
+);
 
-export default Audit
+export default Audit;

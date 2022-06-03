@@ -1,11 +1,13 @@
-import {noop} from "lodash";
-import {DropdownMenuItems, DropdownMenuItemType,} from "../../components/DropdownMenu/types";
-import {ItemTypes, MenuItemsType} from "../../components/MenuItems/types";
-import {LinkStatus} from "./types";
+import { noop } from "lodash";
+import {
+  DropdownMenuItems,
+  DropdownMenuItemType,
+} from "../../components/DropdownMenu/types";
+import { ItemTypes, MenuItemsType } from "../../components/MenuItems/types";
+import { LinkStatus } from "./types";
 
 // test component
-import {getBanner} from "./components/TestComponents";
-
+import { getBanner } from "./components/TestComponents";
 
 export const status = {
   LIVE: <LinkStatus>{
@@ -24,8 +26,8 @@ export const status = {
 
 export const links: MenuItemsType[] = [
   {
-    label: 'Home',
-    href: '/',
+    label: "Home",
+    href: "/",
     hidden: true,
   },
   {
@@ -106,8 +108,8 @@ export const links: MenuItemsType[] = [
         href: "/pool",
         leftIcon: "Lottery",
         description: "Item description",
-        target: '_blank',
-        mobileTarget: '_self',
+        target: "_blank",
+        mobileTarget: "_self",
       },
       {
         label: "Competitions",
@@ -127,8 +129,8 @@ export const links: MenuItemsType[] = [
         leftIcon: "NftLaunch",
         description: "Item description",
         type: DropdownMenuItemType.EXTERNAL_LINK,
-        target: '_blank',
-        mobileTarget: '_self',
+        target: "_blank",
+        mobileTarget: "_self",
       },
       {
         label: "NFT Earn",
@@ -136,8 +138,8 @@ export const links: MenuItemsType[] = [
         leftIcon: "NftEarn",
         description: "Item description",
         type: DropdownMenuItemType.EXTERNAL_LINK,
-        target: '_self',
-        mobileTarget: '_self',
+        target: "_self",
+        mobileTarget: "_self",
       },
       {
         type: DropdownMenuItemType.BANNER,
@@ -239,28 +241,28 @@ export const socials = [
     icon: "TelegramIcon",
     items: {
       channel: {
-        icon: 'LogoIcon',
+        icon: "LogoIcon",
         label: "Channel",
         href: "https://t.me/biswap_news",
       },
       chats: [
         {
-          icon: 'USAIcon',
+          icon: "USAIcon",
           label: "English",
           href: "https://t.me/biswap",
         },
         {
-          icon: 'IDIcon',
+          icon: "IDIcon",
           label: "Bahasa",
           href: "https://t.me/biswap_idn",
         },
         {
-          icon: 'RUIcon',
+          icon: "RUIcon",
           label: "Русский",
           href: "https://t.me/biswap_rus",
         },
         {
-          icon: 'VNIcon',
+          icon: "VNIcon",
           label: "Tiếng Việt",
           href: "https://t.me/biswap_vnm",
         },
@@ -270,36 +272,36 @@ export const socials = [
         //   href: "https://t.me/biswap_bgd",
         // },
         {
-          icon: 'FRIcon',
+          icon: "FRIcon",
           label: "La France",
           href: "https://t.me/biswap_france",
         },
         {
-          icon: 'PTIcon',
+          icon: "PTIcon",
           label: "Portugal",
           href: "https://t.me/biswap_prt",
         },
         {
-          icon: 'DEIcon',
+          icon: "DEIcon",
           label: "Germany",
           href: "https://t.me/biswap_germany",
         },
         {
-          icon: 'CNIcon',
+          icon: "CNIcon",
           label: "Сhina",
           href: "https://t.me/biswap_china",
         },
         {
-          icon: 'TRIcon',
+          icon: "TRIcon",
           label: "Turkey",
           href: "https://t.me/biswap_turkey",
         },
         {
-          icon: 'ESIcon',
+          icon: "ESIcon",
           label: "Espanol",
           href: "https://t.me/biswap_espanol",
         },
-      ]
+      ],
     },
   },
   {
@@ -366,7 +368,7 @@ export const aboutLinks = [
     label: "Contacts",
     href: "/",
   },
-]
+];
 
 export const productLinks = [
   {
@@ -389,7 +391,7 @@ export const productLinks = [
     label: "Bug Bounty?",
     href: "/",
   },
-]
+];
 
 export const serviceLinks = [
   {
@@ -404,7 +406,7 @@ export const serviceLinks = [
     label: "Competitions",
     href: "/",
   },
-]
+];
 
 export const userMenulinks: DropdownMenuItems[] = [
   {

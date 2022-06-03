@@ -13,6 +13,8 @@ export type MergeProps<E extends ElementType> = AsProps<E> &
 export type PolymorphicComponentProps<E extends ElementType, P> = P &
   MergeProps<E>;
 
-export type PolymorphicComponent<P, D extends ElementType = "button"> = <E extends ElementType = D>(
+export type PolymorphicComponent<P, D extends ElementType = "button"> = <
+  E extends ElementType = D
+>(
   props: PolymorphicComponentProps<E, P>
 ) => ReactElement | null;

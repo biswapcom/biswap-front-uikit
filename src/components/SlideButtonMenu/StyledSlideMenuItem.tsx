@@ -1,27 +1,27 @@
 import styled, { DefaultTheme } from "styled-components";
 import { space, layout, variant } from "styled-system";
-import {BaseButtonProps} from "../Button";
-import {slideMenuScaleVariants, slideMenuStyleVariants} from "./theme";
+import { BaseButtonProps } from "../Button";
+import { slideMenuScaleVariants, slideMenuStyleVariants } from "./theme";
 
 interface ThemedButtonProps extends BaseButtonProps {
-    theme: DefaultTheme;
+  theme: DefaultTheme;
 }
 
 interface TransientButtonProps extends ThemedButtonProps {
-    $isLoading?: boolean;
+  $isLoading?: boolean;
 }
 
 const getDisabledStyles = ({ $isLoading, theme }: TransientButtonProps) => {
-    if ($isLoading === true) {
-        return `
+  if ($isLoading === true) {
+    return `
       &:disabled,
       &.button--disabled {
         cursor: not-allowed;
       }
     `;
-    }
+  }
 
-    return `
+  return `
     &:disabled,
     &.button--disabled {
       opacity: .32;
@@ -37,7 +37,7 @@ const getDisabledStyles = ({ $isLoading, theme }: TransientButtonProps) => {
  */
 
 const getOpacity = ({ $isLoading = false }: TransientButtonProps) => {
-    return $isLoading ? ".5" : "1";
+  return $isLoading ? ".5" : "1";
 };
 
 const StyledSlideMenuItem = styled.button<BaseButtonProps>`
@@ -56,7 +56,7 @@ const StyledSlideMenuItem = styled.button<BaseButtonProps>`
   transition: background-color 0.2s, opacity 0.2s;
   z-index: 2;
   //padding: 0;
-   
+
   //&:hover {
   //   //margin: 0;
   //   padding: 0;
@@ -67,12 +67,12 @@ const StyledSlideMenuItem = styled.button<BaseButtonProps>`
   ${variant({
     prop: "scale",
     variants: slideMenuScaleVariants,
-})}
+  })}
   ${variant({
     variants: slideMenuStyleVariants,
-})}
+  })}
   ${layout}
   ${space}
 `;
 
-export default StyledSlideMenuItem
+export default StyledSlideMenuItem;

@@ -40,7 +40,8 @@ export const StyledInput = styled.input<StyledInputProps>`
 
   ::-webkit-slider-thumb {
     -webkit-appearance: none;
-    background-image: url(${({ isCurrentValueMaxValue }) => (isCurrentValueMaxValue ? bunnyHeadMax : bunnyHeadMain)});
+    background-image: url(${({ isCurrentValueMaxValue }) =>
+      isCurrentValueMaxValue ? bunnyHeadMax : bunnyHeadMain});
     width: 24px;
     height: 32px;
     cursor: pointer;
@@ -53,7 +54,8 @@ export const StyledInput = styled.input<StyledInputProps>`
   }
   ::-moz-range-thumb {
     -webkit-appearance: none;
-    background-image: url(${({ isCurrentValueMaxValue }) => (isCurrentValueMaxValue ? bunnyHeadMax : bunnyHeadMain)});
+    background-image: url(${({ isCurrentValueMaxValue }) =>
+      isCurrentValueMaxValue ? bunnyHeadMax : bunnyHeadMain});
     width: 24px;
     height: 32px;
     cursor: pointer;
@@ -69,7 +71,8 @@ export const StyledInput = styled.input<StyledInputProps>`
   }
   ::-ms-thumb {
     -webkit-appearance: none;
-    background-image: url(${({ isCurrentValueMaxValue }) => (isCurrentValueMaxValue ? bunnyHeadMax : bunnyHeadMain)});
+    background-image: url(${({ isCurrentValueMaxValue }) =>
+      isCurrentValueMaxValue ? bunnyHeadMax : bunnyHeadMain});
     width: 24px;
     height: 32px;
     cursor: pointer;
@@ -90,9 +93,13 @@ export const BarBackground = styled.div`
   background-color: ${({ theme }) => theme.colors.inputSecondary};
 `;
 
-export const BarProgress = styled.div<{ progress: number; isCurrentValueMaxValue: boolean }>`
+export const BarProgress = styled.div<{
+  progress: number;
+  isCurrentValueMaxValue: boolean;
+}>`
   position: absolute;
-  width: ${({ progress, isCurrentValueMaxValue }) => (isCurrentValueMaxValue ? "calc(100% - 16px)" : `${progress}%`)};
+  width: ${({ progress, isCurrentValueMaxValue }) =>
+    isCurrentValueMaxValue ? "calc(100% - 16px)" : `${progress}%`};
   height: 10px;
   top: 18px;
 

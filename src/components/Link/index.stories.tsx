@@ -1,17 +1,17 @@
 import React from "react";
 import { PancakesIcon } from "../Svg";
 import { Link, LinkExternal } from "./index";
-import ArrowIcon from '../Svg/Icons/Arrows/ChevronLeftCircleSolid'
+import ArrowIcon from "../Svg/Icons/Arrows/ChevronLeftCircleSolid";
 import styled from "styled-components";
 
 const LightWrap = styled.div`
-  background: #F9FAFD;
+  background: #f9fafd;
   padding: 24px 32px;
-`
+`;
 const DarkWrap = styled.div`
-  background: #07162D;
+  background: #07162d;
   padding: 24px 32px;
-`
+`;
 
 export default {
   title: "Components/Link",
@@ -44,22 +44,22 @@ export const Default: React.FC = () => {
           Light SM
         </Link>
         <Link href="/" variant="light" scale="md">
-          <ArrowIcon mr="4px"/>
+          <ArrowIcon mr="4px" />
           Light MD With icon
         </Link>
         <Link href="/" variant="light" scale="md">
           Light MD With icon
-          <ArrowIcon ml="4px"/>
+          <ArrowIcon ml="4px" />
         </Link>
         <Link href="/" variant="light" scale="md">
-          <ArrowIcon mr="4px"/>
+          <ArrowIcon mr="4px" />
           Light MD With double icon
-          <ArrowIcon ml="4px"/>
+          <ArrowIcon ml="4px" />
         </Link>
         <Link href="/" variant="light" scale="md" disabled>
-          <ArrowIcon mr="4px"/>
+          <ArrowIcon mr="4px" />
           Light MD Disabled
-          <ArrowIcon ml="4px"/>
+          <ArrowIcon ml="4px" />
         </Link>
       </LightWrap>
       <DarkWrap>
@@ -73,22 +73,22 @@ export const Default: React.FC = () => {
           Dark SM
         </Link>
         <Link href="/" variant="dark" scale="md">
-          <ArrowIcon mr="4px"/>
+          <ArrowIcon mr="4px" />
           Dark MD With icon
         </Link>
         <Link href="/" variant="dark" scale="md">
           Dark MD With icon
-          <ArrowIcon ml="4px"/>
+          <ArrowIcon ml="4px" />
         </Link>
         <Link href="/" variant="dark" scale="md">
-          <ArrowIcon mr="4px"/>
+          <ArrowIcon mr="4px" />
           Dark MD With double icon
-          <ArrowIcon ml="4px"/>
+          <ArrowIcon ml="4px" />
         </Link>
         <Link href="/" variant="dark" scale="md" disabled>
-          <ArrowIcon mr="4px"/>
+          <ArrowIcon mr="4px" />
           Light MD Disabled
-          <ArrowIcon ml="4px"/>
+          <ArrowIcon ml="4px" />
         </Link>
       </DarkWrap>
 

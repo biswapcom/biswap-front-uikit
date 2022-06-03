@@ -10,13 +10,13 @@ export default {
 };
 
 const WrapperLight = styled.div`
-  background-color: #F9FAFD;
+  background-color: #f9fafd;
   padding: 32px;
-`
+`;
 const WrapperDark = styled.div`
-  background-color: #07162D;
+  background-color: #07162d;
   padding: 32px;
-`
+`;
 
 export const Default: React.FC = () => {
   return (
@@ -28,9 +28,7 @@ export const Default: React.FC = () => {
           ))}
         </Dropdown>
       </WrapperLight>
-      <WrapperDark>
-        sss
-      </WrapperDark>
+      <WrapperDark>sss</WrapperDark>
     </>
   );
 };

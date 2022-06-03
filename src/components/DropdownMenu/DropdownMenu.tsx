@@ -1,45 +1,45 @@
 /* eslint-disable react/no-array-index-key */
-import React, {useContext, useEffect, useState} from "react";
-import {usePopper} from "react-popper";
-import {useOnClickOutside} from "../../hooks";
-import {MenuContext} from "../../widgets/Menu/context";
-import {Box} from "../Box";
-import {MenuItemContent, DropdownMenuItemContainer} from "./components";
+import React, { useContext, useEffect, useState } from "react";
+import { usePopper } from "react-popper";
+import { useOnClickOutside } from "../../hooks";
+import { MenuContext } from "../../widgets/Menu/context";
+import { Box } from "../Box";
+import { MenuItemContent, DropdownMenuItemContainer } from "./components";
 
 import {
   StyledDropdownMenu,
   // LinkStatus,
 } from "./styles";
-import {DropdownMenuItemType, DropdownMenuProps} from "./types";
+import { DropdownMenuItemType, DropdownMenuProps } from "./types";
 
 const DropdownMenu: React.FC<DropdownMenuProps> = ({
-                                                     children,
-                                                     isMobileNav = false,
-                                                     showItemsOnMobile = false,
-                                                     activeItem = "",
-                                                     items = [],
-                                                     mobileItems = [],
-                                                     index,
-                                                     isExtended = false,
-                                                     setMenuOpenByIndex,
-                                                     mobileMenuCallback,
-                                                     ...props
-                                                   }) => {
+  children,
+  isMobileNav = false,
+  showItemsOnMobile = false,
+  activeItem = "",
+  items = [],
+  mobileItems = [],
+  index,
+  isExtended = false,
+  setMenuOpenByIndex,
+  mobileMenuCallback,
+  ...props
+}) => {
   const { linkComponent } = useContext(MenuContext);
   const [isOpen, setIsOpen] = useState(false);
   const [targetRef, setTargetRef] = useState<HTMLDivElement | null>(null);
   const [tooltipRef, setTooltipRef] = useState<HTMLDivElement | null>(null);
   const hasItems = items.length > 0;
   const hasMoreThanItems = items.length > 1;
-  const {styles, attributes, update} = usePopper(targetRef, tooltipRef, {
+  const { styles, attributes, update } = usePopper(targetRef, tooltipRef, {
     strategy: "fixed",
     placement: "bottom-start",
-    modifiers: [{name: "offset", options: {offset: [0, 0]}}],
+    modifiers: [{ name: "offset", options: { offset: [0, 0] } }],
   });
 
   useEffect(() => {
     const showDropdownMenu = async () => {
-      update && await update();
+      update && (await update());
       setIsOpen(true);
     };
 
@@ -78,14 +78,14 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
   //     setIsOpen(false);
   //   }
   // );
-    
+
   return (
     <Box ref={setTargetRef} {...props}>
       <Box
-        // onPointerDown={() => {
-        //   setIsOpen((s) => !s);
-        //   update && update();
-        // }}
+      // onPointerDown={() => {
+      //   setIsOpen((s) => !s);
+      //   update && update();
+      // }}
       >
         {children}
       </Box>
