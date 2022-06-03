@@ -12,6 +12,7 @@ export declare const scales: {
     LG: string;
     MD: string;
     SM: string;
+    NONE: string;
 };
 export declare const variants: {
     readonly LIGHT: "light";

@@ -1,6 +1,12 @@
 export declare const scaleVariants: {
     [x: string]: {
         fontSize: string;
+        svg: {
+            width: string;
+        };
+    } | {
+        fontSize?: undefined;
+        svg?: undefined;
     };
 };
 export declare const styleVariants: {

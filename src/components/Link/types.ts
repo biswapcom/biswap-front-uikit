@@ -14,7 +14,8 @@ export interface LinkProps extends TextProps, AnchorHTMLAttributes<HTMLAnchorEle
 export const scales = {
   LG: 'lg',
   MD: 'md',
-  SM: 'sm'
+  SM: 'sm',
+  NONE:'none'
 }
 
 export const variants = {
