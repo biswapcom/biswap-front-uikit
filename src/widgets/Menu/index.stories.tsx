@@ -1,6 +1,5 @@
 import noop from "lodash/noop";
 import React, { useState } from "react";
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { BrowserRouter, Link, MemoryRouter } from "react-router-dom";
 import Box from "../../components/Box/Box";
 import Flex from "../../components/Box/Flex";
@@ -256,7 +255,7 @@ export const NotConnected: React.FC = () => {
         setLang={noop}
         currentLang="EN"
         links={links}
-        subLinks={subLinks}
+        //subLinks={subLinks}
       >
         <div>
           <h1>Page body</h1>
@@ -290,7 +289,7 @@ export const WithoutConnectButton: React.FC = () => {
         setLang={noop}
         currentLang="EN"
         links={links}
-        subLinks={subLinks}
+        // subLinks={subLinks}
       >
         <div>
           <h1>No connect button on top</h1>
@@ -312,7 +311,7 @@ export const WithSubmenuSelected: React.FC = () => {
         currentLang="EN"
         cakePriceUsd={0.23158668932877668}
         links={links}
-        subLinks={subLinks}
+        //subLinks={subLinks}
       >
         <div>
           <Heading as="h1" mb="8px">
