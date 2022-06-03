@@ -4,9 +4,6 @@ export declare const scaleVariants: {
         svg: {
             width: string;
         };
-    } | {
-        fontSize?: undefined;
-        svg?: undefined;
     };
 };
 export declare const styleVariants: {
@@ -46,5 +43,4 @@ export declare const styleVariants: {
             };
         };
     };
-    icon: {};
 };

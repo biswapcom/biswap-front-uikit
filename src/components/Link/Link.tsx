@@ -34,8 +34,6 @@ const Link: React.FC<LinkProps> = ({ external, ...props }) => {
 
 Link.defaultProps = {
   color: "primary",
-  variant: 'light',
-  scale: 'none',
 };
 
 export default Link;

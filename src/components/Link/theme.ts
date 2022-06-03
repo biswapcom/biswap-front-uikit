@@ -22,9 +22,6 @@ export const scaleVariants = {
       width: "12px"
     },
   },
-  [scales.NONE]: {
-  //  with custom font size and icon size
-  }
 }
 
 export const styleVariants = {
@@ -72,7 +69,4 @@ export const styleVariants = {
       },
     },
   },
-  [variants.ICON]: {
-  //  custom color and color Icon
-  }
 }
