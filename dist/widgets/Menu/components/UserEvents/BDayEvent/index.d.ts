@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC } from "react";
 import { Login } from "../../../../WalletModal";
 interface Props {
     account?: string;
