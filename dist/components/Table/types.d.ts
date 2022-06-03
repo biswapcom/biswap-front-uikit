@@ -21,7 +21,7 @@ export declare type ColumnStateType<T> = {
     };
     headerRender?: HeaderRenderType;
 };
-export declare type HeaderRenderType = ({ label }: {
+export declare type HeaderRenderType = ({ label, }: {
     label: React.ReactNode;
 }) => React.ReactNode;
 export declare type HeaderType<T> = {
@@ -41,7 +41,7 @@ export declare type DataType = {
 export declare type ColumnByNamesType<T> = {
     [key: string]: ColumnType<T>;
 };
-export declare type RenderFunctionType<T> = ({ value, row }: RenderFunctionArgsType<T>) => React.ReactNode | undefined;
+export declare type RenderFunctionType<T> = ({ value, row, }: RenderFunctionArgsType<T>) => React.ReactNode | undefined;
 declare type RenderFunctionArgsType<T> = {
     value: any;
     row: T;
