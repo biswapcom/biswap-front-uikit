@@ -1,5 +1,7 @@
 import { keyframes }  from 'styled-components';
 
+const translateY = '5px'
+
 export const menuAnimationConfig = {
   boxAnimationBackwards: keyframes`
     0% {
@@ -9,7 +11,7 @@ export const menuAnimationConfig = {
       transform: rotate(0deg);
     }
     50% {
-      transform: rotate(0deg);
+      transform: rotate(-180deg);
     }
     75% {
       transform: rotate(-180deg);
@@ -40,30 +42,30 @@ export const menuAnimationConfig = {
       transform: translateY(0px);
     }
     25% {
-      transform: translateY(4.5px);
+      transform: translateY(${translateY});
     }
     50% {
-      transform: translateY(4.5px);
+      transform: translateY(${translateY});
     }
     75% {
-      transform: translateY(4.5px) rotate(45deg);
+      transform: translateY(${translateY}) rotate(45deg);
     }
     100% {
-      transform: translateY(4.5px) rotate(45deg);
+      transform: translateY(${translateY}) rotate(45deg);
     }
   `,
   firstLineAnimationBackwards: keyframes`
     0% {
-      transform: translateY(4.5px) rotate(45deg);
+      transform: translateY(${translateY}) rotate(45deg);
     }
     25% {
-      transform: translateY(4.5px) rotate(45deg);
+      transform: translateY(${translateY}) rotate(45deg);
     }
     50% {
-      transform: translateY(4.5px);
+      transform: translateY(${translateY});
     }
     75% {
-      transform: translateY(4.5px);
+      transform: translateY(${translateY});
     }
     100% {
       transform: translateY(0px);
@@ -108,30 +110,30 @@ export const menuAnimationConfig = {
       transform: translateY(0px);
     }
     25% {
-      transform: translateY(-4.5px);
+      transform: translateY(-${translateY});
     }
     50% {
-      transform: translateY(-4.5px);
+      transform: translateY(-${translateY});
     }
     75% {
-      transform: translateY(-4.5px) rotate(-45deg);
+      transform: translateY(-${translateY}) rotate(-45deg);
     }
     100% {
-      transform: translateY(-4.5px) rotate(-45deg);
+      transform: translateY(-${translateY}) rotate(-45deg);
     }
   `,
   thirdLineAnimationBackwards: keyframes`
     0% {
-      transform: translateY(-4.5px) rotate(-45deg);
+      transform: translateY(-${translateY}) rotate(-45deg);
     }
     25% {
-      transform: translateY(-4.5px) rotate(-45deg);
+      transform: translateY(-${translateY}) rotate(-45deg);
     }
     50% {
-      transform: translateY(-4.5px);
+      transform: translateY(-${translateY});
     }
     75% {
-      transform: translateY(-4.5px);
+      transform: translateY(-${translateY});
     }
     100% {
       transform: translateY(0px);
