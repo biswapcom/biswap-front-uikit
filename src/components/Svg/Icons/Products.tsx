@@ -1,6 +1,6 @@
 import React from "react";
 import Svg from "../Svg";
-import {SvgProps} from "../types";
+import { SvgProps } from "../types";
 
 const Icon: React.FC<SvgProps> = (props) => {
   return (
@@ -35,8 +35,7 @@ const Icon: React.FC<SvgProps> = (props) => {
         width="6.66667"
         height="6.66667"
         rx="1"
-      />
-      {" "}
+      />{" "}
     </Svg>
   );
 };

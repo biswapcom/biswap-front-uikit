@@ -1,13 +1,13 @@
-import React, {FC} from "react";
+import React, { FC } from "react";
 import styled from "styled-components";
 import IconComponent from "../../Svg/IconComponent";
-import {Flex} from "../../Box";
-import {Text} from "../../Text";
-import {MenuItemContentProps} from "../types";
+import { Flex } from "../../Box";
+import { Text } from "../../Text";
+import { MenuItemContentProps } from "../types";
 
 const IconComponentWrap = styled.div`
   align-self: flex-start;
-`
+`;
 const MenuItemContent: FC<MenuItemContentProps> = ({
   leftIcon,
   label,
@@ -18,7 +18,7 @@ const MenuItemContent: FC<MenuItemContentProps> = ({
   <>
     {leftIcon && (
       <IconComponentWrap>
-        <IconComponent width={40} iconName={leftIcon}/>
+        <IconComponent width={40} iconName={leftIcon} />
       </IconComponentWrap>
     )}
     <Flex flexDirection={"column"} flex={1} paddingLeft={leftIcon && "16px"}>
@@ -30,7 +30,7 @@ const MenuItemContent: FC<MenuItemContentProps> = ({
       )}
     </Flex>
     {rightIcon && (
-      <IconComponent className="arrow-icon" iconName={rightIcon} color={fill}/>
+      <IconComponent className="arrow-icon" iconName={rightIcon} color={fill} />
     )}
   </>
 );

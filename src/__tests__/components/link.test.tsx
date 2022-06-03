@@ -3,7 +3,7 @@ import { renderWithTheme } from "../../testHelpers";
 import { Link, LinkExternal } from "../../components/Link";
 
 it("renders link correctly", () => {
-  const {asFragment} = renderWithTheme(
+  const { asFragment } = renderWithTheme(
     <Link href="https://pancakeswap.finance">Link</Link>
   );
   expect(asFragment()).toMatchInlineSnapshot(`
@@ -46,7 +46,7 @@ it("renders link correctly", () => {
 });
 
 it("renders link external link correctly", () => {
-  const {asFragment} = renderWithTheme(
+  const { asFragment } = renderWithTheme(
     <LinkExternal href="https://pancakeswap.finance">Link</LinkExternal>
   );
   expect(asFragment()).toMatchInlineSnapshot(`

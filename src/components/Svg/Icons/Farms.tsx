@@ -1,11 +1,11 @@
 import React from "react";
 import Svg from "../Svg";
-import {SvgProps} from "../types";
+import { SvgProps } from "../types";
 
 const Icon: React.FC<SvgProps> = (props) => {
   return (
     <Svg viewBox="0 0 40 40" fill="none" {...props}>
-      <rect width="40" height="40" rx="8" fill="#1263F1"/>
+      <rect width="40" height="40" rx="8" fill="#1263F1" />
       <path
         fillRule="evenodd"
         clipRule="evenodd"

@@ -9,8 +9,8 @@ export interface CheckboxProps {
   scale?: Scales;
   labelOrientation?: string;
   label?: string;
-  colorVariant?: string
-  id?: string
-  defaultChecked?: boolean
-  onChange?: () => void
+  colorVariant?: string;
+  id?: string;
+  defaultChecked?: boolean;
+  onChange?: () => void;
 }

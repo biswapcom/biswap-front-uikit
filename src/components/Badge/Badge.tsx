@@ -1,19 +1,19 @@
-import React, {FC} from "react";
-import styled, {DefaultTheme} from "styled-components";
-import {BadgeProps} from "./types";
+import React, { FC } from "react";
+import styled, { DefaultTheme } from "styled-components";
+import { BadgeProps } from "./types";
 import getRgba from "../../util/getRgba";
 
 interface StyledBadgeProps extends BadgeProps {
   theme: DefaultTheme;
 }
 
-const getBadgeBg = ({badgeType = "light", theme}: StyledBadgeProps) => {
+const getBadgeBg = ({ badgeType = "light", theme }: StyledBadgeProps) => {
   if (badgeType === "active") {
-    return getRgba(theme.colors.success, 0.16)
+    return getRgba(theme.colors.success, 0.16);
   }
 
   if (badgeType === "notActive") {
-    return getRgba(theme.colors.secondary, 0.16)
+    return getRgba(theme.colors.secondary, 0.16);
   }
 
   if (badgeType === "success") {
@@ -37,13 +37,13 @@ const getBadgeBg = ({badgeType = "light", theme}: StyledBadgeProps) => {
   }
 
   if (badgeType === "core") {
-    return getRgba(theme.colors.primary, 0.16)
+    return getRgba(theme.colors.primary, 0.16);
   }
 
   return theme.colors.inputSecondary;
 };
 
-const getBadgeColor = ({badgeType = "active", theme}: StyledBadgeProps) => {
+const getBadgeColor = ({ badgeType = "active", theme }: StyledBadgeProps) => {
   if (badgeType === "active") {
     return theme.colors.success;
   }
@@ -60,7 +60,12 @@ const getBadgeColor = ({badgeType = "active", theme}: StyledBadgeProps) => {
     return theme.colors.primary;
   }
 
-  if (badgeType === "new" || badgeType === "primary" || badgeType === "hot" || badgeType === "boost") {
+  if (
+    badgeType === "new" ||
+    badgeType === "primary" ||
+    badgeType === "hot" ||
+    badgeType === "boost"
+  ) {
     return theme.colors.white;
   }
 
@@ -69,29 +74,42 @@ const getBadgeColor = ({badgeType = "active", theme}: StyledBadgeProps) => {
 
 // interface BadgeProps{}
 
-
 const Wrapper = styled.div<BadgeProps>`
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: ${({isIcon, isLarge}) => !isLarge ? (
-      isIcon === 'left' ? '4px 12px 4px 4px' : isIcon === 'right' ? '4px 4px 4px 12px' : '4px 12px'
-    ) : (
-      '8px 24px'
-    )
-  };
+  padding: ${({ isIcon, isLarge }) =>
+    !isLarge
+      ? isIcon === "left"
+        ? "4px 12px 4px 4px"
+        : isIcon === "right"
+        ? "4px 4px 4px 12px"
+        : "4px 12px"
+      : "8px 24px"};
   background: ${getBadgeBg};
   color: ${getBadgeColor};
   border-radius: 16px;
-  height: ${({isLarge}) => isLarge ? '38px' : '20px'};
-  font-size: ${({fontSize}) => fontSize || "10px"};
-  font-weight: ${({fontWeight}) => fontWeight || "400"};
+  height: ${({ isLarge }) => (isLarge ? "38px" : "20px")};
+  font-size: ${({ fontSize }) => fontSize || "10px"};
+  font-weight: ${({ fontWeight }) => fontWeight || "400"};
 `;
 
-const Badge: FC<BadgeProps> = ({children, badgeType, fontSize, fontWeight, isIcon, isLarge}) => {
-
+const Badge: FC<BadgeProps> = ({
+  children,
+  badgeType,
+  fontSize,
+  fontWeight,
+  isIcon,
+  isLarge,
+}) => {
   return (
-    <Wrapper badgeType={badgeType} isIcon={isIcon} isLarge={isLarge} fontSize={fontSize} fontWeight={fontWeight}>
+    <Wrapper
+      badgeType={badgeType}
+      isIcon={isIcon}
+      isLarge={isLarge}
+      fontSize={fontSize}
+      fontWeight={fontWeight}
+    >
       {children}
     </Wrapper>
   );

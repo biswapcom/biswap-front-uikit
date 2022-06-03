@@ -4,7 +4,9 @@ import { TextProps } from "../Text";
 export type Variant = typeof variants[keyof typeof variants];
 export type Scale = typeof scales[keyof typeof scales];
 
-export interface LinkProps extends TextProps, AnchorHTMLAttributes<HTMLAnchorElement> {
+export interface LinkProps
+  extends TextProps,
+    AnchorHTMLAttributes<HTMLAnchorElement> {
   external?: boolean;
   variant?: Variant;
   scale?: Scale;
@@ -12,13 +14,12 @@ export interface LinkProps extends TextProps, AnchorHTMLAttributes<HTMLAnchorEle
 }
 
 export const scales = {
-  LG: 'lg',
-  MD: 'md',
-  SM: 'sm'
-}
+  LG: "lg",
+  MD: "md",
+  SM: "sm",
+};
 
 export const variants = {
   LIGHT: "light",
   DARK: "dark",
-  ICON: "icon",
 } as const;

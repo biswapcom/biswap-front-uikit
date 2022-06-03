@@ -21,24 +21,24 @@ const AddToMetamaskBtn = styled.button`
   align-items: center;
   width: 40px;
   height: 40px;
-  background: ${({theme}) => theme.colors.dark500};
+  background: ${({ theme }) => theme.colors.dark500};
   border-radius: 50%;
   box-shadow: none;
   border: 0;
   cursor: pointer;
-  transition: opacity .3s ease;
-  
+  transition: opacity 0.3s ease;
+
   &:hover {
     opacity: 0.65;
   }
-`
+`;
 
 const ConnectMetamask: React.FC<Props> = (props) => {
   const { onClick } = props;
 
   return (
     <AddToMetamaskBtn type="button" onClick={() => onClick()} as="button">
-      <MetamaskIcon width="22px"/>
+      <MetamaskIcon width="22px" />
     </AddToMetamaskBtn>
   );
 };

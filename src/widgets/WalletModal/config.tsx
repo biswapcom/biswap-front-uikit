@@ -34,7 +34,7 @@ const connectors: Config[] = [
     title: "TokenPocket",
     icon: TokenPocket,
     connectorId: ConnectorNames.Injected,
-    priority: 4
+    priority: 4,
   },
   {
     title: "Coin98",

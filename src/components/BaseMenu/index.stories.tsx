@@ -81,11 +81,11 @@ export const SubMenu: React.FC = () => {
       >
         <Text>Icon</Text>
         <SubMenuComp
-          component={<MoreHorizontal height="16px" width="16px"/>}
+          component={<MoreHorizontal height="16px" width="16px" />}
           options={{
             placement: "right",
             offset: [0, 15],
-            padding: {top: 20},
+            padding: { top: 20 },
           }}
         >
           <SubMenuItem

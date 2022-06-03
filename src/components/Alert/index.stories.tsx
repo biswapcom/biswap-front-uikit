@@ -64,7 +64,7 @@ export const WithHandler: React.FC = () => {
         />
       </Row>
       <Row>
-        <Alert onClick={handleClick} title="Warning" variant="warning"/>
+        <Alert onClick={handleClick} title="Warning" variant="warning" />
       </Row>
     </div>
   );

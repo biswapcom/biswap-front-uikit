@@ -20,13 +20,9 @@ const CustomModal: React.FC<ModalProps> = ({ title, onDismiss, ...props }) => (
 
 export const Default: React.FC = () => {
   const theme = useTheme();
-  const [onPresent1] = useModal(<CustomModal title="Modal 1"/>);
-  const [onPresent2] = useModal(<CustomModal title="Modal 2"/>);
-  const [onPresent3] = useModal(
-    <CustomModal
-      title="Modal 3"
-    />
-  );
+  const [onPresent1] = useModal(<CustomModal title="Modal 1" />);
+  const [onPresent2] = useModal(<CustomModal title="Modal 2" />);
+  const [onPresent3] = useModal(<CustomModal title="Modal 3" />);
   return (
     <div>
       <Button onClick={onPresent1}>Open modal 1</Button>
@@ -37,22 +33,30 @@ export const Default: React.FC = () => {
 };
 
 export const WithBackground: React.FC = () => {
-  const CustomBackgroundModal: React.FC<ModalProps> = ({title, onDismiss}) => {
+  const CustomBackgroundModal: React.FC<ModalProps> = ({
+    title,
+    onDismiss,
+  }) => {
     return (
-      <Modal title={title} modalBackground="secondary" onDismiss={onDismiss} maxWidth="400px">
+      <Modal
+        title={title}
+        modalBackground="secondary"
+        onDismiss={onDismiss}
+        maxWidth="400px"
+      >
         Modal body text
       </Modal>
     );
   };
 
   const [onPresent1] = useModal(
-    <CustomBackgroundModal title="Modal with custom background"/>
+    <CustomBackgroundModal title="Modal with custom background" />
   );
   return <Button onClick={onPresent1}>Modal with custom background</Button>;
 };
 
 export const WithCustomWidth: React.FC = () => {
-  const CustomWidthModal: React.FC<ModalProps> = ({title, onDismiss}) => {
+  const CustomWidthModal: React.FC<ModalProps> = ({ title, onDismiss }) => {
     return (
       <Modal title={title} onDismiss={onDismiss} maxWidth="400px">
         Modal body text
@@ -61,13 +65,13 @@ export const WithCustomWidth: React.FC = () => {
   };
 
   const [onPresent1] = useModal(
-    <CustomWidthModal title="Modal with custom width and test very long title text"/>
+    <CustomWidthModal title="Modal with custom width and test very long title text" />
   );
   return <Button onClick={onPresent1}>Modal with custom width</Button>;
 };
 //-----------
 export const DisableOverlayClick: React.FC = () => {
-  const [onPresent1] = useModal(<CustomModal title="Modal 1"/>, false);
+  const [onPresent1] = useModal(<CustomModal title="Modal 1" />, false);
 
   return (
     <div>
@@ -97,7 +101,7 @@ export const WithBackButton: React.FC = () => {
   };
 
   const [onPresent1] = useModal(
-    <BackButtonModal title="Modal with no X"/>,
+    <BackButtonModal title="Modal with no X" />,
     false
   );
 
@@ -113,10 +117,10 @@ export const ReactingToOusideChanges: React.FC = () => {
     return () => clearInterval(intervalId);
   }, []);
   const ReactiveModal: React.FC<ModalProps & { count: number }> = ({
-                                                                     title,
-                                                                     count,
-                                                                     onDismiss,
-                                                                   }) => {
+    title,
+    count,
+    onDismiss,
+  }) => {
     return (
       <Modal title={title} onDismiss={onDismiss}>
         <h2>Counter: {count}</h2>

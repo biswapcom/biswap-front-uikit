@@ -1,6 +1,6 @@
-import React, {FC, ReactNode, useEffect, useState} from "react";
-import styled, {css, keyframes} from "styled-components";
-import {Flex} from "../Box";
+import React, { FC, ReactNode, useEffect, useState } from "react";
+import styled, { css, keyframes } from "styled-components";
+import { Flex } from "../Box";
 
 interface IProps {
   heading: (s?: boolean) => ReactNode;
@@ -21,13 +21,13 @@ const openBodyAnimation = keyframes`
 `;
 
 const AccordionBody = styled.div<{ opened: boolean }>`
-  display: ${({opened}) => (opened ? "flex" : "none")};
+  display: ${({ opened }) => (opened ? "flex" : "none")};
   flex-direction: column;
   overflow: hidden;
 
-  ${({opened}) =>
-  opened &&
-  css`
+  ${({ opened }) =>
+    opened &&
+    css`
       animation: ${openBodyAnimation} 0.6s ease;
     `}
 `;
@@ -43,18 +43,18 @@ const AccordionComponent = styled.div`
 `;
 
 const Accordion: FC<IProps> = ({
-   label,
-   clickable = true,
-   heading,
-   children,
+  label,
+  clickable = true,
+  heading,
+  children,
 }) => {
   const [isOpened, setIsOpened] = useState(false);
 
   useEffect(() => {
-    if (!clickable || label === 'Biswap Products') {
-      setIsOpened(true)
+    if (!clickable || label === "Biswap Products") {
+      setIsOpened(true);
     }
-  }, [label, clickable, setIsOpened])
+  }, [label, clickable, setIsOpened]);
 
   const onTitleClick = () => {
     clickable && setIsOpened((prev) => !prev);

@@ -1,9 +1,9 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, { useEffect, useRef, useState } from "react";
 import throttle from "lodash/throttle";
-import styled, {DefaultTheme} from "styled-components";
+import styled, { DefaultTheme } from "styled-components";
 
 // components
-import {Box} from "../../components/Box";
+import { Box } from "../../components/Box";
 import Flex from "../../components/Box/Flex";
 import Footer from "./components/Footer/Footer";
 import MenuItems from "../../components/MenuItems/MenuItems";
@@ -11,15 +11,15 @@ import Logo from "./components/Logo";
 // import {BSCIcon, AvalancheIcon} from "../../components/Svg";
 import UserBlock from "./components/UserBlock";
 import BDayEvent from "./components/UserEvents/BDayEvent";
-import {CloseIcon, ImgWarnIcon} from "../../components/Svg";
+import { CloseIcon, ImgWarnIcon } from "../../components/Svg";
 // import {Button} from "../../components/Button";
 // import NetworkSwitcher, {OptionProps} from "./NetworkSwitcher";
 
 // context
-import {MenuContext} from "./context";
+import { MenuContext } from "./context";
 
 // hooks
-import {useMatchBreakpoints} from "../../hooks";
+import { useMatchBreakpoints } from "../../hooks";
 
 // config
 import {
@@ -32,25 +32,33 @@ import {
 } from "./config";
 
 // types
-import {NavProps} from "./types";
-
+import { NavProps } from "./types";
 
 const Wrapper = styled.div`
   position: relative;
   width: 100%;
 `;
 
-const getBackground = ({ theme, menuBg, isMobileMenuOpened }: { theme: DefaultTheme,  menuBg: boolean, isMobileMenuOpened: boolean }) => {
+const getBackground = ({
+  theme,
+  menuBg,
+  isMobileMenuOpened,
+}: {
+  theme: DefaultTheme;
+  menuBg: boolean;
+  isMobileMenuOpened: boolean;
+}) => {
   if (isMobileMenuOpened) return theme.card.background;
   if (menuBg && !isMobileMenuOpened) return theme.nav.background;
-  return 'transparent'
-}
+  return "transparent";
+};
 
 const FishingWarn = styled.div<{ showFishingWarn: boolean }>`
   display: flex;
   align-items: center;
   background: ${({ theme }) => theme.colors.warning};
-  height: ${({ showFishingWarn }) => (!showFishingWarn ? "0px" : `${FISHING_MOBILE_BANNER_HEIGHT}px`)};
+  height: ${({ showFishingWarn }) =>
+    !showFishingWarn ? "0px" : `${FISHING_MOBILE_BANNER_HEIGHT}px`};
   padding: 10px 20px 10px 70px;
   transition: height 0.3s ease;
   position: relative;
@@ -58,7 +66,8 @@ const FishingWarn = styled.div<{ showFishingWarn: boolean }>`
 
   ${({ theme }) => theme.mediaQueries.sm} {
     padding: 10px 40px 10px 100px;
-    height: ${({ showFishingWarn }) => (!showFishingWarn ? "0px" : `${FISHING_BANNER_HEIGHT}px`)};
+    height: ${({ showFishingWarn }) =>
+      !showFishingWarn ? "0px" : `${FISHING_BANNER_HEIGHT}px`};
   }
 `;
 const Label = styled.span`
@@ -81,7 +90,7 @@ const StyledImgWarnIcon = styled(ImgWarnIcon)`
   }
 `;
 
-const StyledNav = styled.nav<{ menuBg: boolean, isMobileMenuOpened: boolean }>`
+const StyledNav = styled.nav<{ menuBg: boolean; isMobileMenuOpened: boolean }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -92,27 +101,28 @@ const StyledNav = styled.nav<{ menuBg: boolean, isMobileMenuOpened: boolean }>`
   padding-left: 16px;
   padding-right: 16px;
 
-  ${({theme}) => theme.mediaQueries.sm} {
-    background-color: ${({theme, menuBg }) => menuBg ? theme.nav.background : 'transparent'};
-  };
+  ${({ theme }) => theme.mediaQueries.sm} {
+    background-color: ${({ theme, menuBg }) =>
+      menuBg ? theme.nav.background : "transparent"};
+  } ;
 `;
 
 const FixedContainer = styled.div.attrs({
-  id: 'menu-container',
+  id: "menu-container",
 })<{ showMenu: boolean; height: number }>`
   position: fixed;
-  top: ${({showMenu, height}) => (showMenu ? 0 : `-${height}px`)};
+  top: ${({ showMenu, height }) => (showMenu ? 0 : `-${height}px`)};
   left: 0;
   transition: top 0.2s;
-  height: ${({height}) => `${height}px`};
+  height: ${({ height }) => `${height}px`};
   width: 100%;
   z-index: 20;
 `;
 
 const TopBannerContainer = styled.div<{ height: number }>`
-  height: ${({height}) => `${height}px`};
-  min-height: ${({height}) => `${height}px`};
-  max-height: ${({height}) => `${height}px`};
+  height: ${({ height }) => `${height}px`};
+  min-height: ${({ height }) => `${height}px`};
+  max-height: ${({ height }) => `${height}px`};
   width: 100%;
 `;
 
@@ -161,7 +171,7 @@ const Menu: React.FC<NavProps> = ({
   withEvent,
   eventCallback,
 }) => {
-  const {isMobile} = useMatchBreakpoints();
+  const { isMobile } = useMatchBreakpoints();
   const [showMenu, setShowMenu] = useState<boolean>(true);
   const [menuBg, setMenuBg] = useState<boolean>(false);
   const [isMobileMenuOpened, setIsMobileMenuOpened] = useState(false);
@@ -179,7 +189,6 @@ const Menu: React.FC<NavProps> = ({
     ? TOP_BANNER_HEIGHT_MOBILE
     : TOP_BANNER_HEIGHT;
 
-
   const TopMenuWithBannerHeight = banner
     ? MENU_HEIGHT + topBannerHeight
     : MENU_HEIGHT;
@@ -188,9 +197,10 @@ const Menu: React.FC<NavProps> = ({
   //   ? TopMenuWithBannerHeight + fishingBannerHeight
   //   : TopMenuWithBannerHeight;
 
-  const totalTopMenuHeight = withEvent && isMobile
-    ? TopMenuWithBannerHeight + MOBILE_EVENT_BUTTON_HEIGHT
-    : TopMenuWithBannerHeight;
+  const totalTopMenuHeight =
+    withEvent && isMobile
+      ? TopMenuWithBannerHeight + MOBILE_EVENT_BUTTON_HEIGHT
+      : TopMenuWithBannerHeight;
 
   // const closeWarn = () => {
   //   localStorage.setItem("showFishingWarn", JSON.stringify(false));
@@ -205,7 +215,6 @@ const Menu: React.FC<NavProps> = ({
   //     setShowFishingWarn(true);
   //   }
   // }, [showFishingWarn]);
-
 
   useEffect(() => {
     const handleScroll = () => {
@@ -260,7 +269,7 @@ const Menu: React.FC<NavProps> = ({
   const filteredLinks = links.filter((link) => link.label !== "Home");
 
   return (
-    <MenuContext.Provider value={{linkComponent}}>
+    <MenuContext.Provider value={{ linkComponent }}>
       <Wrapper>
         <FixedContainer showMenu={showMenu} height={totalTopMenuHeight}>
           {/*{showFishingWarn && (*/}
@@ -279,7 +288,7 @@ const Menu: React.FC<NavProps> = ({
           )}
           <StyledNav menuBg={menuBg} isMobileMenuOpened={isMobileMenuOpened}>
             <Flex>
-              <Logo href={homeLink?.href ?? "/"}/>
+              <Logo href={homeLink?.href ?? "/"} />
               <MenuItems
                 items={links}
                 activeItem={activeItem}
@@ -311,13 +320,14 @@ const Menu: React.FC<NavProps> = ({
               {/*{userMenu}*/}
               {withEvent && !isMobile && (
                 <BDayEvent
-                account={account}
-                login={login}
-                logout={logout}
-                callback={eventCallback}
-                isSwap={isSwap}
-                href={homeLink?.href ?? "/"}
-              />)}
+                  account={account}
+                  login={login}
+                  logout={logout}
+                  callback={eventCallback}
+                  isSwap={isSwap}
+                  href={homeLink?.href ?? "/"}
+                />
+              )}
               <UserBlock
                 clearTransaction={clearTransaction}
                 account={account}
@@ -339,7 +349,8 @@ const Menu: React.FC<NavProps> = ({
               callback={eventCallback}
               href={homeLink?.href ?? "/"}
               isSwap={isSwap}
-            />)}
+            />
+          )}
         </FixedContainer>
         {/*<BodyWrapper mt={!subLinks ? `${totalTopMenuHeight + 1}px` : "0"}>*/}
         <BodyWrapper>

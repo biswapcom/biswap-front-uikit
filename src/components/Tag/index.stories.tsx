@@ -31,19 +31,19 @@ export const Default: React.FC = () => {
               <Tag
                 variant={variant}
                 outline
-                startIcon={<CommunityIcon/>}
+                startIcon={<CommunityIcon />}
                 mr="8px"
               >
                 {`${capitalize(variant)} Icon Left`}
               </Tag>
-              <Tag variant={variant} outline endIcon={<RemoveIcon/>} mr="8px">
+              <Tag variant={variant} outline endIcon={<RemoveIcon />} mr="8px">
                 {`${capitalize(variant)} Icon Right`}
               </Tag>
               <Tag
                 variant={variant}
                 outline
-                startIcon={<CommunityIcon/>}
-                endIcon={<RemoveIcon/>}
+                startIcon={<CommunityIcon />}
+                endIcon={<RemoveIcon />}
               >
                 {`${capitalize(variant)} Both`}
               </Tag>

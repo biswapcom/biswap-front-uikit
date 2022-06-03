@@ -3,7 +3,7 @@ import { renderWithTheme } from "../../testHelpers";
 import { Alert } from "../../components/Alert";
 
 it("renders correctly", () => {
-  const {asFragment} = renderWithTheme(
+  const { asFragment } = renderWithTheme(
     <Alert title="Alert title">Description</Alert>
   );
 

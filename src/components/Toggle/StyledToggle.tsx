@@ -77,7 +77,7 @@ export const Input = styled.input<InputProps>`
 
 const StyledToggle = styled.div<StyleToggleProps>`
   background-color: ${({ theme, $checked, $checkedColor, $defaultColor }) =>
-  theme.colors[$checked ? $checkedColor : $defaultColor]};
+    theme.colors[$checked ? $checkedColor : $defaultColor]};
   align-items: center;
   border-radius: 26px;
   cursor: pointer;
@@ -86,7 +86,7 @@ const StyledToggle = styled.div<StyleToggleProps>`
   position: relative;
   transition: background-color 200ms;
   width: ${getScale("toggleWidth")};
-  opacity: ${({ disabled }) => disabled ? '.32' : '1'};
+  opacity: ${({ disabled }) => (disabled ? ".32" : "1")};
 `;
 
 export default StyledToggle;
