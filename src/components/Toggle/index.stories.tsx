@@ -37,6 +37,16 @@ export const Default: React.FC = () => {
             scale="md"
           />
         </div>
+        <div style={{ marginBottom: "32px" }}>
+          <Toggle
+            checked={isChecked}
+            defaultColor="secondary"
+            checkedColor="success"
+            onChange={toggle}
+            scale="md"
+            disabled={true}
+          />
+        </div>
       </WrapperLight>
       <WrapperDark>
         <div style={{ marginBottom: "32px" }}>
