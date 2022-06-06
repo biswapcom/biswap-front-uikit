@@ -75,9 +75,9 @@ export type Colors = {
   bronze: string;
 
   //Brand color
-  polygon: string,
-  telegram: string,
-  twitter: string,
+  polygon: string;
+  telegram: string;
+  twitter: string;
 
   //BS ---------------------------
   //Base colors

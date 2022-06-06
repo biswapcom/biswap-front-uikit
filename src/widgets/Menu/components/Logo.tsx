@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import {Link} from "react-router-dom";
-import styled, {css, DefaultTheme, keyframes} from "styled-components";
+import { Link } from "react-router-dom";
+import styled, { css, DefaultTheme, keyframes } from "styled-components";
 
 // components
 import Flex from "../../../components/Box/Flex";
@@ -16,17 +16,17 @@ const blink = keyframes`
   50% { transform:  scaleY(0.1); }
 `;
 
-const CommonLinkStyles = ({ theme }: { theme: DefaultTheme}) => css`
+const CommonLinkStyles = ({ theme }: { theme: DefaultTheme }) => css`
   display: flex;
   align-items: center;
-  
+
   .mobile-icon {
     width: 32px;
     ${({ theme }) => theme.mediaQueries.nav} {
       display: none;
     }
   }
-  
+
   .desktop-icon {
     width: 145px;
     display: none;
@@ -45,7 +45,7 @@ const CommonLinkStyles = ({ theme }: { theme: DefaultTheme}) => css`
       animation-iteration-count: 1;
     }
   }
-`
+`;
 
 const StyledLink = styled.a`
   ${CommonLinkStyles};
@@ -53,7 +53,7 @@ const StyledLink = styled.a`
 
 const StyledInnerLink = styled(Link)`
   ${CommonLinkStyles};
-`
+`;
 
 const Logo: React.FC<Props> = ({ href }) => {
   const { linkComponent } = useContext(MenuContext);
@@ -72,10 +72,7 @@ const Logo: React.FC<Props> = ({ href }) => {
           {innerLogo}
         </StyledLink>
       ) : (
-        <StyledInnerLink
-          to={href}
-          aria-label="Biswap home page"
-        >
+        <StyledInnerLink to={href} aria-label="Biswap home page">
           {innerLogo}
         </StyledInnerLink>
       )}

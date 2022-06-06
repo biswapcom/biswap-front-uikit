@@ -5,7 +5,7 @@ import { SvgProps } from "../../../../components/Svg/types";
 const Icon: React.FC<SvgProps> = (props) => {
   return (
     <Svg {...props} viewBox="0 0 14 14">
-    <g clipPath="url(#a)">
+      <g clipPath="url(#a)">
         <path d="M0 7a7 7 0 1 1 14 0A7 7 0 0 1 0 7Z" fill="#E30A17" />
         <mask
           id="b"
@@ -36,7 +36,7 @@ const Icon: React.FC<SvgProps> = (props) => {
           <path fill="#fff" transform="translate(-3)" d="M0 0h22v16H0z" />
         </clipPath>
       </defs>
-  </Svg>
+    </Svg>
   );
 };
 

@@ -13,9 +13,9 @@ type getTextColorProps = {
 };
 
 const getTextColor = ({
-                        eventStatus,
-                        useDark,
-                      }: getTextColorProps): keyof Colors => {
+  eventStatus,
+  useDark,
+}: getTextColorProps): keyof Colors => {
   if (eventStatus === "upcoming")
     return useDark
       ? "textDisabled"

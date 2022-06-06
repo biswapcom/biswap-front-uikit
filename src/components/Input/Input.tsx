@@ -26,8 +26,9 @@ const Input = styled.input<InputProps>`
   outline: 0;
   width: 100%;
   border: 1px solid transparent;
-  transition: border-color .4s ease, background-color .4s ease, color .4s ease;
-  
+  transition: border-color 0.4s ease, background-color 0.4s ease,
+    color 0.4s ease;
+
   ${variant({
     prop: "scale",
     variants: scaleVariants,

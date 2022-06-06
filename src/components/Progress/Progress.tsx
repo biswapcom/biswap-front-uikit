@@ -31,20 +31,20 @@ const Progress: React.FC<ProgressProps> = ({
         <>
           {showProgressBunny && (
             <ProgressBunnyWrapper
-              style={{left: `${stepGuard(primaryStep)}%`}}
+              style={{ left: `${stepGuard(primaryStep)}%` }}
             >
-              <ProgressBunny/>
+              <ProgressBunny />
             </ProgressBunnyWrapper>
           )}
           <Bar
             $useDark={useDark}
             primary
-            style={{width: `${stepGuard(primaryStep)}%`}}
+            style={{ width: `${stepGuard(primaryStep)}%` }}
           />
           {secondaryStep ? (
             <Bar
               $useDark={useDark}
-              style={{width: `${stepGuard(secondaryStep)}%`}}
+              style={{ width: `${stepGuard(secondaryStep)}%` }}
             />
           ) : null}
         </>

@@ -14,7 +14,7 @@ export default {
 
 const Label = styled(Text)`
   word-break: break-word;
-`
+`;
 
 export const Default: React.FC = () => {
   return (
@@ -53,7 +53,7 @@ export const Icons: React.FC = () => {
             alignItems="center"
             width="180px"
             height="106px"
-            style={{border: "1px solid #eee"}}
+            style={{ border: "1px solid #eee" }}
             justifyContent="center"
             py="8px"
             px="12px"
@@ -62,11 +62,11 @@ export const Icons: React.FC = () => {
             <Flex
               alignItems="center"
               justifyContent="center"
-              style={{flex: 1}}
+              style={{ flex: 1 }}
               height="100%"
             >
-              <Icon width="48px"/>
-              <Icon width="24px" color="primary" ml="4px"/>
+              <Icon width="48px" />
+              <Icon width="24px" color="primary" ml="4px" />
             </Flex>
             <Box py="4px">
               <Label color="textSubtle" fontSize="12px">

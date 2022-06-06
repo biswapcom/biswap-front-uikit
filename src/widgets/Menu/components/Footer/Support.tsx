@@ -13,13 +13,13 @@ const Wrapper = styled.div`
   ${({ theme }) => theme.mediaQueries.xll} {
     margin-top: 0;
   }
-`
+`;
 
 const Title = styled.h4`
   font-size: 16px;
   color: ${({ theme }) => theme.colors.white};
   margin-bottom: 16px;
-`
+`;
 
 const LinkBtn = styled.a`
   display: flex;
@@ -27,14 +27,14 @@ const LinkBtn = styled.a`
   align-items: center;
   height: 40px;
   border-radius: 8px;
-  background: #26A6E5;
+  background: #26a6e5;
   color: ${({ theme }) => theme.colors.white};
   transition: opacity 0.3s ease;
-  
+
   &:hover {
     opacity: 0.65;
   }
-`
+`;
 
 const Suport: React.FC = () => {
   return (
@@ -42,10 +42,10 @@ const Suport: React.FC = () => {
       <Title>Support 24/7</Title>
       <LinkBtn href="https://t.me/biswap" target="_blank">
         Contact us
-        <Telegram width="24px" color="contrast" ml="4px"/>
+        <Telegram width="24px" color="contrast" ml="4px" />
       </LinkBtn>
     </Wrapper>
-  )
-}
+  );
+};
 
 export default Suport;

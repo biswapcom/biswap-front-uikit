@@ -1,4 +1,4 @@
-import {baseColors} from "../../theme/colors";
+import { baseColors } from "../../theme/colors";
 
 export interface NavThemeType {
   background: string;

@@ -1,13 +1,13 @@
 import { SpaceProps } from "styled-system";
-import {BaseButtonProps} from "../Button";
-import {Dispatch, SetStateAction} from "react";
+import { BaseButtonProps } from "../Button";
+import { Dispatch, SetStateAction } from "react";
 
 export interface TabBarItemProps extends BaseButtonProps {
   isActive?: boolean;
-  customClass?: string
+  customClass?: string;
   setWidth: Dispatch<SetStateAction<any>>;
   itemIndex: number;
-  children?: string
+  children?: string;
   onAction: (index: number) => void;
 }
 
@@ -28,7 +28,7 @@ export interface TabBarProps extends SpaceProps {
   scale?: typeof tabsScales[keyof typeof tabsScales];
   disabled?: boolean;
   fullWidth?: boolean;
-  menuTitles?: Array<string>
-  customClass?: string
-  isLight?: boolean
+  menuTitles?: Array<string>;
+  customClass?: string;
+  isLight?: boolean;
 }

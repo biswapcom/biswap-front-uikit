@@ -18,5 +18,5 @@ export interface AlertProps {
   title: string;
   children?: ReactNode;
   onClick?: (evt: MouseEvent<HTMLButtonElement>) => void;
-  progress: number | undefined
+  progress: number | undefined;
 }

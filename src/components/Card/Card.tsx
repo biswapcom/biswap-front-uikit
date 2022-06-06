@@ -3,11 +3,11 @@ import { StyledCard, StyledCardInner } from "./StyledCard";
 import { CardProps } from "./types";
 
 const Card: React.FC<CardProps> = ({
-                                     ribbon,
-                                     children,
-                                     background,
-                                     ...props
-                                   }) => {
+  ribbon,
+  children,
+  background,
+  ...props
+}) => {
   return (
     <StyledCard {...props}>
       <StyledCardInner

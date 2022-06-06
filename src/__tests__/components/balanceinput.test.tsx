@@ -5,7 +5,7 @@ import BalanceInput from "../../components/BalanceInput/BalanceInput";
 const handleChange = jest.fn();
 
 it("renders correctly", () => {
-  const {asFragment} = renderWithTheme(
+  const { asFragment } = renderWithTheme(
     <BalanceInput
       value="14"
       currencyValue="15 USD"

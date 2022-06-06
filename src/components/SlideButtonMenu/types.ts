@@ -1,16 +1,16 @@
 import { SpaceProps } from "styled-system";
-import {BaseButtonProps} from "../Button/types";
-import {Dispatch, ReactElement, SetStateAction} from "react";
+import { BaseButtonProps } from "../Button/types";
+import { Dispatch, ReactElement, SetStateAction } from "react";
 
 export interface SlideButtonMenuItemProps extends BaseButtonProps {
   isActive?: boolean;
-  widthsArr: Array<number>
+  widthsArr: Array<number>;
   setWidth: Dispatch<SetStateAction<any>>;
-  blockOffset: number
+  blockOffset: number;
   itemIndex: number;
-  children?: string
+  children?: string;
   onAction: (index: number) => void;
-  customClass?: string
+  customClass?: string;
 }
 
 export const slideMenuScales = {
@@ -27,12 +27,16 @@ export const slideMenuVariants = {
 } as const;
 
 export interface SlideButtonMenuProps extends SpaceProps {
-  variant?: typeof slideMenuVariants.PRIMARY | typeof slideMenuVariants.WARNING | typeof slideMenuVariants.SELECT | typeof slideMenuVariants.SELECT_LIGHT;
+  variant?:
+    | typeof slideMenuVariants.PRIMARY
+    | typeof slideMenuVariants.WARNING
+    | typeof slideMenuVariants.SELECT
+    | typeof slideMenuVariants.SELECT_LIGHT;
   activeIndex?: number;
   scale?: typeof slideMenuScales[keyof typeof slideMenuScales];
   disabled?: boolean;
   // children?: ReactElement[];
   fullWidth?: boolean;
-  menuTitles?: Array<string>
-  customClass?: string
+  menuTitles?: Array<string>;
+  customClass?: string;
 }
