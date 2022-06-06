@@ -66,7 +66,7 @@ const DropDown = styled.div`
   position: relative;
   border-radius: 8px;
   padding: 8px;
-  background-color: ${({ theme }) => theme.colors.dark300};
+  background-color: ${({ theme }) => theme.colors.tooltip};
   bottom: 32px;
   left: 100%;
   transform: translateX(-40%);
@@ -80,7 +80,7 @@ const DropDown = styled.div`
     bottom: -4px;
     left: 28px;
     transform: translateX(-50%) rotate(45deg);
-    background-color: ${({ theme }) => theme.colors.dark300};
+    background-color: ${({ theme }) => theme.colors.tooltip};
   }
 `;
 const DropDownLink = styled.a`
@@ -89,7 +89,7 @@ const DropDownLink = styled.a`
   width: 100%;
   font-size: 12px;
   line-height: 18px;
-  color: ${({ theme }) => theme.colors.text};
+  color: ${({ theme }) => theme.colors.pastelBlue};
   user-select: none;
   transition: all 0.4s ease;
 
@@ -105,7 +105,7 @@ const DropDownLabel = styled.span`
   display: block;
   font-size: 12px;
   line-height: 18px;
-  color: ${({ theme }) => theme.colors.text};
+  color: ${({ theme }) => theme.colors.pastelBlue};
   margin-bottom: 8px;
 `;
 const FlagWrap = styled.div`
