@@ -21,8 +21,14 @@ const Toggle: React.FC<ToggleProps> = ({
       scale={scale}
       disabled={disabled}
     >
-      <Input checked={checked} scale={scale} {...props} type="checkbox" disabled={disabled} />
-      <Handle scale={scale} disabled={disabled}/>
+      <Input
+        checked={checked}
+        scale={scale}
+        {...props}
+        type="checkbox"
+        disabled={disabled}
+      />
+      <Handle scale={scale} disabled={disabled} />
     </StyledToggle>
   );
 };
