@@ -43,6 +43,7 @@ export { default as IdoIcon } from "./Ido";
 export { default as CharityIcon } from "./Charity";
 export { default as StakingIcon } from "./Staking";
 export { default as PresentIcon } from "./Present";
+export { default as InstagramIcon } from "./Instagram";
 
 export { default as USAIcon } from "./flags/USA";
 export { default as IDIcon } from "./flags/ID";

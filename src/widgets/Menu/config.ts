@@ -319,6 +319,11 @@ export const socials = [
     icon: "YoutubeIcon",
     href: "https://www.youtube.com/channel/UCHartwkRUURf2Q7MlKOV84w",
   },
+  {
+    label: "Instagram",
+    icon: "InstagramIcon",
+    href: "https://www.instagram.com/biswap_org/",
+  },
 ];
 
 export const BSWPriceLabel = "BSW";
