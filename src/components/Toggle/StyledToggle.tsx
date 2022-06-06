@@ -51,7 +51,7 @@ export const Handle = styled.div<HandleProps>`
   background-color: ${({ theme }) => theme.colors.white};
   box-shadow: 0 2px 4px rgba(7, 22, 45, 0.16);
   border-radius: 50%;
-  cursor: pointer;
+  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
   height: ${getScale("handleHeight")};
   left: ${getScale("handleLeft")};
   position: absolute;
@@ -62,7 +62,7 @@ export const Handle = styled.div<HandleProps>`
 `;
 
 export const Input = styled.input<InputProps>`
-  cursor: pointer;
+  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
   opacity: 0;
   height: 100%;
   position: absolute;
@@ -80,13 +80,13 @@ const StyledToggle = styled.div<StyleToggleProps>`
     theme.colors[$checked ? $checkedColor : $defaultColor]};
   align-items: center;
   border-radius: 26px;
-  cursor: pointer;
   display: inline-flex;
   height: ${getScale("toggleHeight")};
   position: relative;
   transition: background-color 200ms;
   width: ${getScale("toggleWidth")};
-  opacity: ${({ disabled }) => (disabled ? ".32" : "1")};
+  opacity: ${({ disabled }) => (disabled ? "0.32" : "1")};
+  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
 `;
 
 export default StyledToggle;

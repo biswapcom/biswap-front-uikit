@@ -8,6 +8,7 @@ const Toggle: React.FC<ToggleProps> = ({
   defaultColor = "toggleBg",
   checkedColor = "success",
   scale = scales.LG,
+  disabled,
   ...props
 }) => {
   const isChecked = !!checked;
@@ -18,9 +19,10 @@ const Toggle: React.FC<ToggleProps> = ({
       $checkedColor={checkedColor}
       $defaultColor={defaultColor}
       scale={scale}
+      disabled={disabled}
     >
-      <Input checked={checked} scale={scale} {...props} type="checkbox" />
-      <Handle scale={scale} />
+      <Input checked={checked} scale={scale} {...props} type="checkbox" disabled={disabled} />
+      <Handle scale={scale} disabled={disabled}/>
     </StyledToggle>
   );
 };
