@@ -94,7 +94,7 @@ const Footer: React.FC<Props> = (
         <About aboutLinks={aboutLinks}/>
         <Product productLinks={productLinks}/>
         <Service serviceLinks={serviceLinks}/>
-        <Community/>
+        <Community title="Community"/>
         <Audit/>
         {/* <Support/> */}
         {/* <BtnUp onClick={()=> scroll.scrollToTop()}><ArrowUp color='white'/></BtnUp> */}

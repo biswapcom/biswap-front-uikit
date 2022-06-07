@@ -258,11 +258,11 @@ const Menu: React.FC<NavProps> = ({
 
   // exclude Home link from displayed in menu
   const filteredLinks = links.filter((link) => link.label !== "Home");
-
+  
   return (
     <MenuContext.Provider value={{linkComponent}}>
       <Wrapper>
-        <FixedContainer showMenu={showMenu} height={totalTopMenuHeight}>
+        <FixedContainer showMenu={showMenu} height={isMobileMenuOpened ? 0 : totalTopMenuHeight}>
           {/*{showFishingWarn && (*/}
           {/*  <FishingWarn showFishingWarn={showFishingWarn}>*/}
           {/*    <StyledImgWarnIcon />*/}

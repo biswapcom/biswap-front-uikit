@@ -1,3 +1,11 @@
 import React from "react";
-declare const Community: React.FC;
+export interface CommunityProps {
+    iconSize?: string;
+    justifyContent?: string;
+    title?: string;
+}
+export interface SocialWrapProps {
+    justifyContent?: string;
+}
+declare const Community: React.FC<CommunityProps>;
 export default Community;
