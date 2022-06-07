@@ -7,7 +7,7 @@ export declare const InnerLinksBlockContainer: import("styled-components").Style
 }, never>;
 export declare const DropdownMenuInnerLinkItem: import("styled-components").StyledComponent<typeof Link, DefaultTheme, StyledDropdownMenuInnerLinkItemProps & LinkProps<unknown>, never>;
 export declare const DropdownMenuInnerOuterLinkItem: import("styled-components").StyledComponent<"a", DefaultTheme, StyledDropdownMenuInnerLinkItemProps, never>;
-export declare const CommonLinkStyle: ({ disabled, $isActive, $hasIcon }: StyledDropdownMenuItemProps & {
+export declare const CommonLinkStyle: ({ disabled, $isActive, $hasIcon, }: StyledDropdownMenuItemProps & {
     $isActive: boolean;
     $hasIcon?: boolean | undefined;
 }) => import("styled-components").FlattenInterpolation<import("styled-components").ThemeProps<DefaultTheme>>;

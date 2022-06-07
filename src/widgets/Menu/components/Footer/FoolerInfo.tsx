@@ -9,7 +9,7 @@ import BuyBSW from "./BuyBSW";
 
 interface Props extends BSWPriceProps, FooterStatisticProps {
   onClick: () => void;
-  buyBswLink: string
+  buyBswLink: string;
 }
 
 const Wrapper = styled.div`
@@ -25,12 +25,12 @@ const Wrapper = styled.div`
   ${({ theme }) => theme.mediaQueries.xl} {
     margin-bottom: 0;
   }
-  
+
   ${({ theme }) => theme.mediaQueries.xll} {
     flex-direction: row;
     justify-content: initial;
   }
-`
+`;
 
 const LeftInfo = styled.div`
   display: flex;
@@ -45,12 +45,12 @@ const LeftInfo = styled.div`
     margin-right: 24px;
     margin-bottom: 0;
   }
-`
+`;
 const FlexWrap = styled.div`
   display: flex;
   align-items: center;
   gap: 8px;
-`
+`;
 
 const InfoList = styled.div`
   flex-grow: initial;
@@ -58,50 +58,49 @@ const InfoList = styled.div`
   ${({ theme }) => theme.mediaQueries.xll} {
     flex-grow: 1;
   }
-`
+`;
 const InfoListItem = styled.div`
   display: flex;
   align-items: center;
   line-height: 18px;
-  
+
   &:not(:last-child) {
     margin-bottom: 8px;
   }
-`
+`;
 const InfoListLabel = styled.span`
   font-size: 12px;
   width: 140px;
   min-width: 140px;
   color: ${({ theme }) => theme.colors.gray900};
   font-weight: bold;
-  
+
   ${({ theme }) => theme.mediaQueries.sm} {
     width: 120px;
     min-width: 120px;
   }
-`
+`;
 const InfoListValue = styled.span`
   font-size: 12px;
   color: ${({ theme }) => theme.colors.white};
   padding-left: 4px;
   font-weight: bold;
-`
+`;
 
-const FooterInfo: React.FC<Props> = (
-  {
-     BSWPriceLabel,
-     BSWPriceValue,
-     onClick,
-     footerStatistic,
-     buyBswLink
-  }) => {
+const FooterInfo: React.FC<Props> = ({
+  BSWPriceLabel,
+  BSWPriceValue,
+  onClick,
+  footerStatistic,
+  buyBswLink,
+}) => {
   return (
     <Wrapper>
       <LeftInfo>
         <BSWPrice BSWPriceLabel={BSWPriceLabel} BSWPriceValue={BSWPriceValue} />
         <FlexWrap>
-          <ConnectMetamask onClick={onClick}/>
-          <BuyBSW buyBswLink={buyBswLink}/>
+          <ConnectMetamask onClick={onClick} />
+          <BuyBSW buyBswLink={buyBswLink} />
         </FlexWrap>
       </LeftInfo>
       <InfoList>
@@ -113,7 +112,7 @@ const FooterInfo: React.FC<Props> = (
         ))}
       </InfoList>
     </Wrapper>
-  )
-}
+  );
+};
 
 export default FooterInfo;

@@ -1,7 +1,7 @@
-import React, {FC, ReactNode, useEffect, useState} from "react";
-import styled, {css, keyframes} from "styled-components";
+import React, { FC, ReactNode, useEffect, useState } from "react";
+import styled, { css, keyframes } from "styled-components";
 import { useMatchBreakpoints } from "../../hooks";
-import {Box, Flex} from "../Box";
+import { Box, Flex } from "../Box";
 import { DropdownMenuDivider } from "../DropdownMenu/styles";
 
 interface IProps {
@@ -24,13 +24,13 @@ const openBodyAnimation = keyframes`
 `;
 
 const AccordionBody = styled.div<{ opened: boolean }>`
-  display: ${({opened}) => (opened ? "flex" : "none")};
+  display: ${({ opened }) => (opened ? "flex" : "none")};
   flex-direction: column;
   overflow: hidden;
 
-  ${({opened}) =>
-  opened &&
-  css`
+  ${({ opened }) =>
+    opened &&
+    css`
       animation: ${openBodyAnimation} 0.6s ease;
     `}
 `;
@@ -46,30 +46,30 @@ const AccordionComponent = styled.div`
 `;
 
 const Accordion: FC<IProps> = ({
-   label,
-   clickable = true,
-   heading,
-   children,
-   index
+  label,
+  clickable = true,
+  heading,
+  children,
+  index,
 }) => {
   const [isOpened, setIsOpened] = useState(false);
-  const {isMobile} = useMatchBreakpoints();
+  const { isMobile } = useMatchBreakpoints();
 
   useEffect(() => {
-    if (!clickable || label === 'Biswap Products') {
-      setIsOpened(true)
+    if (!clickable || label === "Biswap Products") {
+      setIsOpened(true);
     }
-  }, [label, clickable, setIsOpened])
+  }, [label, clickable, setIsOpened]);
 
   const onTitleClick = () => {
     clickable && setIsOpened((prev) => !prev);
   };
-  
+
   return (
     <AccordionComponent key={`acc-key-${label}`}>
       {isMobile && index && (
         <Box m={"0 -24px 0"}>
-          <DropdownMenuDivider color='rgba(18, 99, 241, 0.16)'/>
+          <DropdownMenuDivider color="rgba(18, 99, 241, 0.16)" />
         </Box>
       )}
       <AccordionTitle
@@ -82,7 +82,7 @@ const Accordion: FC<IProps> = ({
       <AccordionBody opened={isOpened}>{children}</AccordionBody>
       {isMobile && !index && (
         <Box m={"0 -24px 0"}>
-          <DropdownMenuDivider color='rgba(18, 99, 241, 0.16)'/>
+          <DropdownMenuDivider color="rgba(18, 99, 241, 0.16)" />
         </Box>
       )}
     </AccordionComponent>

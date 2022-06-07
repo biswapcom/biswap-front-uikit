@@ -17,7 +17,7 @@ const createParticle = (
   imgSrc: string,
   options: ParticleOptions = {}
 ) => {
-  const {size, distance} = {...defaultParticleOptions, ...options};
+  const { size, distance } = { ...defaultParticleOptions, ...options };
 
   const particle = document.createElement("particle");
   document.body.appendChild(particle);

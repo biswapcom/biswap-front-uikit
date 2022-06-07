@@ -1,5 +1,5 @@
-import styled, {css} from "styled-components";
-import {StyledMenuItemProps} from "./types";
+import styled, { css } from "styled-components";
+import { StyledMenuItemProps } from "./types";
 
 export const StyledMenuItemContainer = styled.div<StyledMenuItemProps>`
   position: relative;
@@ -19,21 +19,24 @@ export const StyledMenuItemContainer = styled.div<StyledMenuItemProps>`
     `};
 `;
 
-const CommonLinkStyles = ({ $isActive, $statusColor, $variant }: StyledMenuItemProps) => css`
+const CommonLinkStyles = ({
+  $isActive,
+  $statusColor,
+  $variant,
+}: StyledMenuItemProps) => css`
   position: relative;
   display: flex;
   align-items: center;
   cursor: pointer;
-  
-  color: ${
-  $isActive ? ({theme}) => theme.colors.secondary: ({theme}) => theme.colors.white
-  };
-  font-size: 14px; 
+
+  color: ${$isActive
+    ? ({ theme }) => theme.colors.secondary
+    : ({ theme }) => theme.colors.white};
+  font-size: 14px;
   font-weight: 600;
   transition: color 0.4s ease;
 
-  ${
-  $statusColor &&
+  ${$statusColor &&
   `
     &:after {
       content: "";
@@ -44,26 +47,25 @@ const CommonLinkStyles = ({ $isActive, $statusColor, $variant }: StyledMenuItemP
     }
     `}
 
-  ${
-  $variant === "default"
+  ${$variant === "default"
     ? css`
-          padding: 0 8px;
-          height: 48px;
-          ${({theme}) => theme.mediaQueries.lg} {
-            padding: 0 12px;
-          }
-        `
+        padding: 0 8px;
+        height: 48px;
+        ${({ theme }) => theme.mediaQueries.lg} {
+          padding: 0 12px;
+        }
+      `
     : css`
-          padding: 4px 4px 0px 4px;
-          height: 42px;
-        `}
+        padding: 4px 4px 0px 4px;
+        height: 42px;
+      `}
 
   &:hover {
     div {
-      color: ${({theme}) => theme.colors.pastelBlue};
+      color: ${({ theme }) => theme.colors.pastelBlue};
     }
     svg {
-      fill: ${({theme}) => theme.colors.pastelBlue};
+      fill: ${({ theme }) => theme.colors.pastelBlue};
     }
     ${$variant === "default" && "border-radius: 16px;"};
   }

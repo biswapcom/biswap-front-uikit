@@ -1,9 +1,8 @@
-import {ElementType, ReactElement} from "react";
-import {MenuItemsType} from "../../components/MenuItems/types";
-import {SubMenuItemsType} from "../../components/SubMenuItems/types";
-import {Colors} from "../../theme/types";
+import { ElementType, ReactElement } from "react";
+import { MenuItemsType } from "../../components/MenuItems/types";
+import { SubMenuItemsType } from "../../components/SubMenuItems/types";
+import { Colors } from "../../theme/types";
 import { Login } from "../WalletModal/types";
-
 
 export interface Language {
   code: string;
@@ -19,23 +18,22 @@ export interface Profile {
   showPip?: boolean;
 }
 
-
 export interface LinkStatus {
   text: string;
   color: keyof Colors;
 }
 
-export interface NavProps extends
-  BSWPriceProps,
-  FooterAboutLinks,
-  FooterProductLinks,
-  FooterServiceLinks,
-  ConnectMetaProps,
-  FooterStatisticProps {
-  buyBswLink: string
-  networkChangeToBSC?: any,
-  networkChangeToAvalanche?: any,
-  currentNetwork?: any,
+export interface NavProps
+  extends BSWPriceProps,
+    FooterAboutLinks,
+    FooterProductLinks,
+    FooterServiceLinks,
+    ConnectMetaProps,
+    FooterStatisticProps {
+  buyBswLink: string;
+  networkChangeToBSC?: any;
+  networkChangeToAvalanche?: any;
+  currentNetwork?: any;
   account?: string;
   login: Login;
   profile?: Profile;
@@ -58,21 +56,21 @@ export interface NavProps extends
   pendingTransactions?: number;
   recentTransaction?: any;
   chainId?: any;
-  clearTransaction?:any;
+  clearTransaction?: any;
   isSwap?: boolean;
   transactionsForUIKit?: any;
   //---------
-  withEvent?: boolean,
-  eventCallback?: () => void,
+  withEvent?: boolean;
+  eventCallback?: () => void;
 }
 
 export interface FooterStatisticProps {
-  footerStatistic: Array<FooterStatisticItem>
+  footerStatistic: Array<FooterStatisticItem>;
 }
 
 export interface FooterStatisticItem {
-  label: string,
-  value: number | string
+  label: string;
+  value: number | string;
 }
 
 export interface ConnectMetaProps {
@@ -85,19 +83,19 @@ export interface BSWPriceProps {
 }
 
 export interface FooterAboutLinks {
-  aboutLinks: Array<FooterNavItem>
+  aboutLinks: Array<FooterNavItem>;
 }
 
 export interface FooterProductLinks {
-  productLinks: Array<FooterNavItem>
+  productLinks: Array<FooterNavItem>;
 }
 
 export interface FooterServiceLinks {
-  serviceLinks: Array<FooterNavItem>
+  serviceLinks: Array<FooterNavItem>;
 }
 
 export interface FooterNavItem {
-  label: string,
-  href: string,
-  target?: string
+  label: string;
+  href: string;
+  target?: string;
 }

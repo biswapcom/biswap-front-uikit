@@ -9,7 +9,7 @@ export const scales = {
 export const variants = {
   LIGHT: "light",
   DARK: "dark",
-  TRANSPARENT: "transparent"
+  TRANSPARENT: "transparent",
 } as const;
 
 export type Scales = typeof scales[keyof typeof scales];

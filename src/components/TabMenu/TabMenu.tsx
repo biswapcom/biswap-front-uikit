@@ -1,7 +1,7 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import styled, { DefaultTheme } from "styled-components";
 import { space } from "styled-system";
-import {TabBarProps, tabsScales, tabVariants} from "./types";
+import { TabBarProps, tabsScales, tabVariants } from "./types";
 import TabBarItem from "./TabBarItem";
 
 interface StyledTabBarProps extends TabBarProps {
@@ -13,12 +13,12 @@ interface BarProps extends TabBarProps {
 }
 
 const getBackgroundColor = ({ theme, isLight }: StyledTabBarProps) => {
-  return theme.colors[isLight ? 'backgroundLight' : 'backgroundDark'];
+  return theme.colors[isLight ? "backgroundLight" : "backgroundDark"];
 };
 
 const getBorderRadius = ({ scale }: StyledTabBarProps) => {
-  return scale === tabsScales.SM ? '8px' : '10px'
-}
+  return scale === tabsScales.SM ? "8px" : "10px";
+};
 
 const StyledTabBar = styled.div<StyledTabBarProps>`
   position: relative;
@@ -32,7 +32,7 @@ const StyledTabBar = styled.div<StyledTabBarProps>`
   & > a {
     flex: ${({ fullWidth }) => (fullWidth ? 1 : "auto")};
   }
-  
+
   & > button,
   & a {
     box-shadow: none;
@@ -46,10 +46,10 @@ const StyledTabBar = styled.div<StyledTabBarProps>`
         & > button:disabled {
           background-color: transparent;
           color: ${
-        variant === tabVariants.TAB
-          ? theme.colors.primary
-          : theme.colors.textSubtle
-      };
+            variant === tabVariants.TAB
+              ? theme.colors.primary
+              : theme.colors.textSubtle
+          };
         }
     `;
     }
@@ -58,42 +58,48 @@ const StyledTabBar = styled.div<StyledTabBarProps>`
   ${space}
 `;
 
-const Selection = styled.span<{offset: number, width: number, scale: string, isLight: boolean}>`
+const Selection = styled.span<{
+  offset: number;
+  width: number;
+  scale: string;
+  isLight: boolean;
+}>`
   width: ${({ width }) => `${width}px`};
   height: calc(100% - 8px);
   position: absolute;
   top: 4px;
   left: ${({ offset }) => `${offset}px`};
-  transition: left .3s ease;
-  border-bottom: 2px solid ${({ theme, isLight }) => theme.colors[isLight ? 'primary' : 'warning']};  
-  //color: ${({ theme, isLight }) => theme.colors[isLight ? 'primary' : 'warning']};
+  transition: left 0.3s ease;
+  border-bottom: 2px solid
+    ${({ theme, isLight }) => theme.colors[isLight ? "primary" : "warning"]};
+  //color: ${({ theme, isLight }) =>
+    theme.colors[isLight ? "primary" : "warning"]};
   z-index: 1;
-`
+`;
 
-const DEFAULT_OFFSET = 4
+const DEFAULT_OFFSET = 4;
 
 const TabMenu: React.FC<BarProps> = ({
-  customClass = '',
+  customClass = "",
   activeIndex = 0,
   scale = tabsScales.SM,
   variant = tabVariants.TAB,
   onItemClick,
   disabled,
   fullWidth = false,
-  menuTitles= [''],
+  menuTitles = [""],
   ...props
 }) => {
-  const [widthsArr, setWidthsArr] = useState([])
-  const [blockOffset, setBlockOffset] = useState(DEFAULT_OFFSET)
+  const [widthsArr, setWidthsArr] = useState([]);
+  const [blockOffset, setBlockOffset] = useState(DEFAULT_OFFSET);
 
   useEffect(() => {
     setBlockOffset(
-      widthsArr.slice(0, activeIndex)
-          .reduce((sum, elem) => sum + elem, 0)
-    )
-  }, [widthsArr, activeIndex])
+      widthsArr.slice(0, activeIndex).reduce((sum, elem) => sum + elem, 0)
+    );
+  }, [widthsArr, activeIndex]);
 
-  const isLight = variant === tabVariants.TAB_LIGHT
+  const isLight = variant === tabVariants.TAB_LIGHT;
 
   return (
     <StyledTabBar
@@ -102,13 +108,15 @@ const TabMenu: React.FC<BarProps> = ({
       fullWidth={fullWidth}
       {...props}
     >
-      {!disabled && <Selection
+      {!disabled && (
+        <Selection
           scale={scale}
           width={widthsArr[activeIndex]}
           offset={blockOffset + DEFAULT_OFFSET}
           isLight={isLight}
-      />}
-      {menuTitles.map((title, index) =>
+        />
+      )}
+      {menuTitles.map((title, index) => (
         <TabBarItem
           key={index.toString()}
           disabled={disabled}
@@ -122,7 +130,7 @@ const TabMenu: React.FC<BarProps> = ({
         >
           {title}
         </TabBarItem>
-      )}
+      ))}
     </StyledTabBar>
   );
 };

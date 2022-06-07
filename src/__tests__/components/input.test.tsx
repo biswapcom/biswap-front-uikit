@@ -5,8 +5,8 @@ import Input from "../../components/Input/Input";
 const handleChange = jest.fn();
 
 it("renders correctly", () => {
-  const {asFragment} = renderWithTheme(
-    <Input type="text" value="input" onChange={handleChange}/>
+  const { asFragment } = renderWithTheme(
+    <Input type="text" value="input" onChange={handleChange} />
   );
   expect(asFragment()).toMatchInlineSnapshot(`
     <DocumentFragment>

@@ -14,10 +14,12 @@ export interface ToggleProps extends InputHTMLAttributes<HTMLInputElement> {
   checked?: boolean;
   checkedColor?: keyof Colors;
   defaultColor?: keyof Colors;
+  disabled?: boolean;
 }
 
 export interface HandleProps {
   scale: Scales;
+  disabled?: boolean;
 }
 
 export interface InputProps {
@@ -29,6 +31,7 @@ export interface StyleToggleProps {
   $checkedColor: keyof Colors;
   $defaultColor: keyof Colors;
   scale: Scales;
+  disabled?: boolean;
 }
 
 export const scaleKeys = {

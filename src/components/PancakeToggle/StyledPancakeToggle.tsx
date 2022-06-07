@@ -100,10 +100,10 @@ export const PancakeStack = styled.div<HandleProps>`
   }
 
   .pancake:nth-child(1) {
-    background: ${({theme}) => theme.pancakeToggle.handleBackground};
+    background: ${({ theme }) => theme.pancakeToggle.handleBackground};
     box-shadow: 0 ${getScale("pancakeThickness")} 0
       ${getScale("pancakeThickness")}
-      ${({theme}) => theme.pancakeToggle.handleShadow};
+      ${({ theme }) => theme.pancakeToggle.handleShadow};
   }
 
   .pancake:nth-child(2) {
@@ -163,7 +163,7 @@ export const PancakeInput = styled.input<InputProps>`
   width: 40px;
 
   &:focus + label {
-    box-shadow: ${({theme}) => theme.shadows.focus};
+    box-shadow: ${({ theme }) => theme.shadows.focus};
   }
 
   &:checked + label .pancakes {
@@ -196,9 +196,9 @@ export const PancakeInput = styled.input<InputProps>`
 export const PancakeLabel = styled.label<PancakeToggleProps>`
   width: ${getScale("toggleWidth")};
   height: ${getScale("toggleHeight")};
-  background: ${({theme, checked}) =>
-  theme.colors[checked ? "success" : "input"]};
-  box-shadow: ${({theme}) => theme.shadows.inset};
+  background: ${({ theme, checked }) =>
+    theme.colors[checked ? "success" : "input"]};
+  box-shadow: ${({ theme }) => theme.shadows.inset};
   display: inline-block;
   border-radius: 50px;
   position: relative;

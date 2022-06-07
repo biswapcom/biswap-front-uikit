@@ -9,13 +9,13 @@ export default {
 };
 
 const WrapperLight = styled.div`
-  background: #F9FAFD;
+  background: #f9fafd;
   padding: 24px;
-`
+`;
 const WrapperDark = styled.div`
-  background: #07162D;
+  background: #07162d;
   padding: 24px;
-`
+`;
 
 export const Default: React.FC = () => {
   const [isChecked, setIsChecked] = useState(false);
@@ -35,6 +35,16 @@ export const Default: React.FC = () => {
             checkedColor="success"
             onChange={toggle}
             scale="md"
+          />
+        </div>
+        <div style={{ marginBottom: "32px" }}>
+          <Toggle
+            checked={isChecked}
+            defaultColor="secondary"
+            checkedColor="success"
+            onChange={toggle}
+            scale="md"
+            disabled={true}
           />
         </div>
       </WrapperLight>

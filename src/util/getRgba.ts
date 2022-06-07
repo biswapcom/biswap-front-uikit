@@ -10,6 +10,6 @@ const getRgba = (hex: string, alpha?: number) => {
     // return `rgb(${r}, ${g}, ${b}`;
     return "rgba(" + r + ", " + g + ", " + b + ")";
   }
-}
+};
 
 export default getRgba;

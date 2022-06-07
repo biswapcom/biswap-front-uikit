@@ -35,42 +35,45 @@ export const ModalBody = styled(Flex)`
 export const ModalCloseButton: React.FC<{
   onDismiss: ModalProps["onDismiss"];
   closeBtnColor?: string;
-}> = ({onDismiss, closeBtnColor}) => {
+}> = ({ onDismiss, closeBtnColor }) => {
   return (
     <IconButton
       variant="text"
       onClick={onDismiss}
       aria-label="Close the dialog"
     >
-      <CloseIcon color={closeBtnColor || "dark600"} width="24px"/>
+      <CloseIcon color={closeBtnColor || "dark600"} width="24px" />
     </IconButton>
   );
 };
 
-export const ModalBackButton: React.FC<
-  {
-    onBack: ModalProps["onBack"],
-    closeBtnColor?: string
-  }> = ({onBack, closeBtnColor}) => {
+export const ModalBackButton: React.FC<{
+  onBack: ModalProps["onBack"];
+  closeBtnColor?: string;
+}> = ({ onBack, closeBtnColor }) => {
   return (
     <IconButton variant="text" onClick={onBack} area-label="go back" mr="8px">
-      <ArrowBackIcon color="primary"/>
+      <ArrowBackIcon color="primary" />
     </IconButton>
   );
 };
 
-export const ModalContainer = styled(Box)<{ minWidth: string, maxWidth?: string, background?: string }>`
+export const ModalContainer = styled(Box)<{
+  minWidth: string;
+  maxWidth?: string;
+  background?: string;
+}>`
   overflow: hidden;
-  background: ${({background}) => background || "white"};
+  background: ${({ background }) => background || "white"};
   border-radius: 16px;
-  width: 100% ;
+  width: 100%;
   max-height: 100vh;
-  z-index: ${({theme}) => theme.zIndices.modal};
+  z-index: ${({ theme }) => theme.zIndices.modal};
   overflow-y: auto;
 
-  ${({theme}) => theme.mediaQueries.sm} {
+  ${({ theme }) => theme.mediaQueries.sm} {
     width: ${({ maxWidth }) => maxWidth || "100%"};
-    min-width: ${({minWidth}) => minWidth};
+    min-width: ${({ minWidth }) => minWidth};
     max-width: 100%;
   }
 `;

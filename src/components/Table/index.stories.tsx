@@ -4,7 +4,13 @@ import { data, columns } from "./example/const";
 import StyledTh from "./example/header";
 import { DataType } from "./types";
 
-const Table = <T extends DataType>({ _columns, _data }: { _columns: ColumnType<T>[]; _data: T[] }) => {
+const Table = <T extends DataType>({
+  _columns,
+  _data,
+}: {
+  _columns: ColumnType<T>[];
+  _data: T[];
+}) => {
   const { headers, rows } = useTable(_columns, _data, {
     sortable: true,
   });
@@ -14,10 +20,15 @@ const Table = <T extends DataType>({ _columns, _data }: { _columns: ColumnType<T
       <thead>
         <tr>
           {headers.map((header) => (
-            <StyledTh key={`header-${header.id}`} data-testid={`column-${header.name}`}>
+            <StyledTh
+              key={`header-${header.id}`}
+              data-testid={`column-${header.name}`}
+            >
               {header.label}
 
-              {header.sorted && header.sorted.on ? <span data-testid={`sorted-${header.name}`} /> : null}
+              {header.sorted && header.sorted.on ? (
+                <span data-testid={`sorted-${header.name}`} />
+              ) : null}
             </StyledTh>
           ))}
         </tr>

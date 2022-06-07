@@ -94,16 +94,16 @@ export const styleVariants = {
   },
 
   [variants.TERTIARY]: {
-    backgroundColor: 'btnTertiary',
+    backgroundColor: "btnTertiary",
     color: "primary",
     border: "1px solid transparent",
 
     ":hover:not(:disabled)": {
-      backgroundColor: 'transparent',
-      borderColor: 'btnTertiary'
+      backgroundColor: "transparent",
+      borderColor: "btnTertiary",
     },
     ":active:not(:disabled)": {
-      backgroundColor: 'transparent',
+      backgroundColor: "transparent",
       borderColor: "primary",
     },
   },
@@ -120,22 +120,22 @@ export const styleVariants = {
     ":active:not(:disabled)": {
       backgroundColor: "btnTertiaryOutPress",
       borderColor: "transparent",
-    }
+    },
   },
   [variants.LIGHT_OUT]: {
     color: "white",
     border: "1px solid",
     borderColor: "btnLightOutBorder",
-    backgroundColor: 'transparent',
+    backgroundColor: "transparent",
 
     ":hover:not(:disabled)": {
       backgroundColor: "btnLightOutBgHover",
-      borderColor: "transparent"
+      borderColor: "transparent",
     },
     ":active:not(:disabled)": {
       backgroundColor: "btnLightOutBgPress",
-      borderColor: "transparent"
-    }
+      borderColor: "transparent",
+    },
   },
   [variants.LIGHT]: {
     backgroundColor: "btnLight",
@@ -144,11 +144,11 @@ export const styleVariants = {
 
     ":hover:not(:disabled)": {
       backgroundColor: "transparent",
-      borderColor: "btnLight"
+      borderColor: "btnLight",
     },
     ":active:not(:disabled)": {
       backgroundColor: "transparent",
-      borderColor: "white"
+      borderColor: "white",
     },
   },
   [variants.TEXT]: {

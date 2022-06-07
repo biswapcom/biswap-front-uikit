@@ -6,11 +6,11 @@ import StyledSubMenuItems from "./styles";
 import { SubMenuItemsProps } from "./types";
 
 const SubMenuItems: React.FC<SubMenuItemsProps> = ({
-                                                     items = [],
-                                                     activeItem,
-                                                     isMobileOnly = false,
-                                                     ...props
-                                                   }) => {
+  items = [],
+  activeItem,
+  isMobileOnly = false,
+  ...props
+}) => {
   return (
     <StyledSubMenuItems
       justifyContent={[isMobileOnly ? "flex-end" : "start", null, "center"]}
@@ -19,7 +19,7 @@ const SubMenuItems: React.FC<SubMenuItemsProps> = ({
       $isMobileOnly={isMobileOnly}
     >
       {items.map(
-        ({label, href, iconName, itemProps}) =>
+        ({ label, href, iconName, itemProps }) =>
           label && (
             <Box key={label} mr="20px">
               <MenuItem

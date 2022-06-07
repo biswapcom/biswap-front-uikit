@@ -7,8 +7,10 @@ export interface BalanceInputProps extends BoxProps {
   innerRef?: React.RefObject<HTMLInputElement>;
   currencyValue?: ReactNode;
   placeholder?: string;
-  inputProps?: Omit<InputHTMLAttributes<HTMLInputElement>,
-    "value" | "placeholder" | "onChange">;
+  inputProps?: Omit<
+    InputHTMLAttributes<HTMLInputElement>,
+    "value" | "placeholder" | "onChange"
+  >;
   isWarning?: boolean;
   decimals?: number;
   unit?: string;
@@ -20,7 +22,9 @@ export interface TextfieldProps {
   value: ReactText;
   placeholder?: string;
   onUserInput: (input: string) => void;
-  inputProps?: Omit<InputHTMLAttributes<HTMLInputElement>,
-    "value" | "placeholder" | "onChange">;
+  inputProps?: Omit<
+    InputHTMLAttributes<HTMLInputElement>,
+    "value" | "placeholder" | "onChange"
+  >;
   isWarning?: boolean;
 }

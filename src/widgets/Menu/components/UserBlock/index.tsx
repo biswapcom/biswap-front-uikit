@@ -15,8 +15,8 @@ interface Props {
   recentTransaction: any;
   chainId: any;
   clearTransaction: any;
-  isSwap?: boolean,
-  transactionsForUIKit?: any
+  isSwap?: boolean;
+  transactionsForUIKit?: any;
 }
 
 const WalletWrap = styled.div`
@@ -31,20 +31,35 @@ const WalletWrap = styled.div`
 // `;
 
 const UserBlock: React.FC<Props> = ({
-                                      account,
-                                      login,
-                                      logout,
-                                      pendingTransactions,
-                                      recentTransaction,
-                                      chainId,
-                                      clearTransaction,
-                                      isSwap ,
-                                      transactionsForUIKit
-                                    }) => {
-  const { onPresentConnectModal, onPresentAccountModal } = useWalletModal(login, logout, account,recentTransaction, chainId,clearTransaction,isSwap,transactionsForUIKit);
-  const accountEllipsis = account ? `${account.substring(0, 4)}...${account.substring(account.length - 4)}` : null;
-  const iconProps = { width: "24px", color: "white", style: { cursor: "pointer" } };
-  const {isSm, isXs} = useMatchBreakpoints()
+  account,
+  login,
+  logout,
+  pendingTransactions,
+  recentTransaction,
+  chainId,
+  clearTransaction,
+  isSwap,
+  transactionsForUIKit,
+}) => {
+  const { onPresentConnectModal, onPresentAccountModal } = useWalletModal(
+    login,
+    logout,
+    account,
+    recentTransaction,
+    chainId,
+    clearTransaction,
+    isSwap,
+    transactionsForUIKit
+  );
+  const accountEllipsis = account
+    ? `${account.substring(0, 4)}...${account.substring(account.length - 4)}`
+    : null;
+  const iconProps = {
+    width: "24px",
+    color: "white",
+    style: { cursor: "pointer" },
+  };
+  const { isSm, isXs } = useMatchBreakpoints();
   return (
     <div>
       {account ? (
@@ -56,7 +71,7 @@ const UserBlock: React.FC<Props> = ({
           {/* </CurrencyValue> */}
           <Button
             variant={pendingTransactions ? "success" : "primary"}
-            scale={isSm || isXs ? 'md' : 'lg'}
+            scale={isSm || isXs ? "md" : "lg"}
             onClick={() => {
               onPresentAccountModal();
             }}
@@ -67,9 +82,7 @@ const UserBlock: React.FC<Props> = ({
               </>
             ) : (
               <>
-                {!isSm && !isXs && (
-                  <Wallet {...iconProps} mr="8px" />
-                )}
+                {!isSm && !isXs && <Wallet {...iconProps} mr="8px" />}
                 {accountEllipsis}
               </>
             )}
@@ -77,14 +90,12 @@ const UserBlock: React.FC<Props> = ({
         </WalletWrap>
       ) : (
         <Button
-          scale={isSm || isXs ? 'md' : 'lg'}
+          scale={isSm || isXs ? "md" : "lg"}
           onClick={() => {
             onPresentConnectModal();
           }}
         >
-          {!isSm && !isXs && (
-            <Wallet {...iconProps} mr="8px" />
-          )}
+          {!isSm && !isXs && <Wallet {...iconProps} mr="8px" />}
           Connect wallet
         </Button>
       )}

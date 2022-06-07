@@ -5,7 +5,7 @@ import { BrowserRouter, Link } from "react-router-dom";
 import styled from "styled-components";
 import Box from "../Box/Box";
 import Flex from "../Box/Flex";
-import {Heading} from "../Heading";
+import { Heading } from "../Heading";
 import { AddIcon, AutoRenewIcon, LogoIcon } from "../Svg";
 import IconButton from "./IconButton";
 import Button from "./Button";
@@ -20,8 +20,8 @@ export default {
 
 const Wrapper = styled.div`
   padding: 32px 24px;
-  background: #07162D;
-`
+  background: #07162d;
+`;
 
 const Row = styled(Flex)`
   margin-bottom: 32px;
@@ -32,32 +32,40 @@ const Row = styled(Flex)`
 `;
 
 export const Default: React.FC = () => {
-
   const baseBtn = {
     PRIMARY: "primary",
     DANGER: "danger",
     SUCCESS: "success",
     WARNING: "warning",
     BOOST: "boost",
-  } as const
+  } as const;
 
   const darkBgBtn = {
     LIGHT_OUT: "lightOut",
     LIGHT: "light",
-  } as const
+  } as const;
 
   const lightBgBtn = {
     TERTIARY: "tertiary",
     TERTIARY_OUT: "tertiaryOut",
-  } as const
+  } as const;
 
   return (
     <Wrapper>
       <Box mb="48px">
-        <Heading color="white" mb="24px">Scales</Heading>
+        <Heading color="white" mb="24px">
+          Scales
+        </Heading>
         {Object.values(scales).map((scale) => {
           return (
-            <Button isLoading key="md" variant="primary" scale={scale} mr="8px" mb="8px">
+            <Button
+              isLoading
+              key="md"
+              variant="primary"
+              scale={scale}
+              mr="8px"
+              mb="8px"
+            >
               {`Primary ${scale}`}
             </Button>
           );
@@ -65,7 +73,9 @@ export const Default: React.FC = () => {
       </Box>
 
       <Box mb="48px">
-        <Heading color="white" mb="24px">BASE variants</Heading>
+        <Heading color="white" mb="24px">
+          BASE variants
+        </Heading>
         {Object.values(baseBtn).map((variant) => {
           return (
             <Button key={variant} variant={variant} scale="lg" mr="8px">
@@ -76,10 +86,18 @@ export const Default: React.FC = () => {
       </Box>
 
       <Box mb="48px">
-        <Heading color="white" mb="24px">DISABLED</Heading>
+        <Heading color="white" mb="24px">
+          DISABLED
+        </Heading>
         {Object.values(baseBtn).map((variant) => {
           return (
-            <Button key={variant} variant={variant} scale="lg" mr="8px" disabled>
+            <Button
+              key={variant}
+              variant={variant}
+              scale="lg"
+              mr="8px"
+              disabled
+            >
               {`${camelCase(variant)}`}
             </Button>
           );
@@ -88,7 +106,9 @@ export const Default: React.FC = () => {
 
       <Flex justifyContent="space-between">
         <Box mb="48px">
-          <Heading color="white" mb="16px">Dark background</Heading>
+          <Heading color="white" mb="16px">
+            Dark background
+          </Heading>
           {Object.values(darkBgBtn).map((variant) => {
             return (
               <Button key="md" variant={variant} scale="lg" mr="8px" mb="8px">
@@ -98,10 +118,19 @@ export const Default: React.FC = () => {
           })}
         </Box>
         <Box mb="48px">
-          <Heading color="white" mb="16px">Dark background DISABLED</Heading>
+          <Heading color="white" mb="16px">
+            Dark background DISABLED
+          </Heading>
           {Object.values(darkBgBtn).map((variant) => {
             return (
-              <Button key="md" variant={variant} scale="lg" mr="8px" mb="8px" disabled>
+              <Button
+                key="md"
+                variant={variant}
+                scale="lg"
+                mr="8px"
+                mb="8px"
+                disabled
+              >
                 {`${camelCase(variant)}`}
               </Button>
             );
@@ -109,9 +138,17 @@ export const Default: React.FC = () => {
         </Box>
       </Flex>
 
-      <Flex justifyContent="space-between" mx="-24px" py="24px" px="24px" background="#F9FAFD">
+      <Flex
+        justifyContent="space-between"
+        mx="-24px"
+        py="24px"
+        px="24px"
+        background="#F9FAFD"
+      >
         <Box mb="48px">
-          <Heading color="backgroundDark" mb="16px">Light background</Heading>
+          <Heading color="backgroundDark" mb="16px">
+            Light background
+          </Heading>
           {Object.values(lightBgBtn).map((variant) => {
             return (
               <Button key="md" variant={variant} scale="lg" mr="8px" mb="8px">
@@ -121,10 +158,19 @@ export const Default: React.FC = () => {
           })}
         </Box>
         <Box mb="48px">
-          <Heading color="backgroundDark" mb="16px">Light background DISABLED</Heading>
+          <Heading color="backgroundDark" mb="16px">
+            Light background DISABLED
+          </Heading>
           {Object.values(lightBgBtn).map((variant) => {
             return (
-              <Button key="md" variant={variant} scale="lg" mr="8px" mb="8px" disabled>
+              <Button
+                key="md"
+                variant={variant}
+                scale="lg"
+                mr="8px"
+                mb="8px"
+                disabled
+              >
                 {`${camelCase(variant)}`}
               </Button>
             );
@@ -134,9 +180,6 @@ export const Default: React.FC = () => {
     </Wrapper>
   );
 };
-
-
-
 
 //-----------------------
 export const Anchors: React.FC = () => {
@@ -204,7 +247,7 @@ export const Variants: React.FC = () => {
         <Row>
           <Button
             isLoading
-            endIcon={<AutoRenewIcon spin color="currentColor"/>}
+            endIcon={<AutoRenewIcon spin color="currentColor" />}
           >
             Approving
           </Button>
@@ -213,9 +256,9 @@ export const Variants: React.FC = () => {
           </Button>
         </Row>
         <Row>
-          <Button startIcon={<LogoIcon/>}>Start Icon</Button>
-          <Button endIcon={<LogoIcon/>}>End Icon</Button>
-          <Button startIcon={<LogoIcon/>} endIcon={<LogoIcon/>}>
+          <Button startIcon={<LogoIcon />}>Start Icon</Button>
+          <Button endIcon={<LogoIcon />}>End Icon</Button>
+          <Button startIcon={<LogoIcon />} endIcon={<LogoIcon />}>
             Start & End Icon
           </Button>
         </Row>
