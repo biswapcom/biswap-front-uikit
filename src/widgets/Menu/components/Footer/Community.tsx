@@ -5,6 +5,14 @@ import { SvgProps } from "../../../../components/Svg";
 import Link from "../../../../components/Link/Link";
 import * as IconModule from "../../icons";
 
+export interface CommunityProps {
+  iconSize?: string;
+  justifyContent?: string;
+  title?: string;
+}
+export interface SocialWrapProps {
+  justifyContent?: string;
+}
 const Icons = IconModule as unknown as { [key: string]: React.FC<SvgProps> };
 
 const Wrapper = styled.div`
@@ -24,9 +32,12 @@ const Title = styled.h4`
   color: ${({ theme }) => theme.colors.white};
   margin-bottom: 16px;
 `;
-const SocialWrap = styled.div`
+const SocialWrap = styled.div<SocialWrapProps>`
   display: flex;
   margin: 0 -4px;
+  ${({ justifyContent }) =>
+    justifyContent && `justify-content: ${justifyContent}`};
+  align-items: flex-end;
 `;
 const SocialItem = styled.div`
   width: 20px;
@@ -116,16 +127,20 @@ const FlagWrap = styled.div`
   height: 14px;
 `;
 
-const Community: React.FC = () => {
+const Community: React.FC<CommunityProps> = ({
+  iconSize = "20px",
+  title,
+  justifyContent,
+}) => {
   return (
     <Wrapper>
-      <Title>Community</Title>
+      {title && <Title>{title}</Title>}
 
-      <SocialWrap>
+      <SocialWrap justifyContent={justifyContent}>
         {socials.map((social) => {
           const Icon = Icons[social.icon];
           const iconProps = {
-            width: "20px",
+            width: iconSize,
             color: "textSubtle",
             style: { cursor: "pointer" },
           };

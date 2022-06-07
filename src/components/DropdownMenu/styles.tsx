@@ -144,6 +144,11 @@ export const DropdownMenuDivider = styled.hr`
   border-style: solid;
   border-width: 1px 0 0;
   margin: 4px 0;
+  ${({ color }) => `
+    color: ${color};
+    background-color: ${color};
+    border-color: ${color};
+`}
 `;
 
 export const StyledDropdownMenu = styled.div<{

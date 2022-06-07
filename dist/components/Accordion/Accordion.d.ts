@@ -4,6 +4,7 @@ interface IProps {
     children: ReactNode;
     label?: string;
     clickable?: boolean;
+    index: number;
 }
 declare const Accordion: FC<IProps>;
 export default Accordion;
