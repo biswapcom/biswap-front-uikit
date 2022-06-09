@@ -42,7 +42,7 @@ export const ModalCloseButton: React.FC<{
       onClick={onDismiss}
       aria-label="Close the dialog"
     >
-      <CloseIcon color={closeBtnColor || "dark600"} width="24px" />
+      <CloseIcon color={closeBtnColor || "dark600"} width="32px" />
     </IconButton>
   );
 };
