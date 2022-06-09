@@ -106,13 +106,13 @@ const TitleText = styled(Text)`
   font-size: 14px;
   line-height: 20px;
   color: black;
-  font-weight: 500;
+  font-weight: 600;
 `;
 
 const PercentageAmount = styled(Text)`
   font-size: 16px;
   margin: 0 4px;
-  font-weight: 500;
+  font-weight: 600;
 `;
 
 const InfoNode = styled.div`
@@ -125,7 +125,7 @@ const RBPrice = styled(Text)`
   text-align: right;
   font-size: 12px;
   line-height: 16px;
-  font-weight: 500;
+  font-weight: 600;
   color: ${({ theme }) => theme.colors.text};
 `;
 
@@ -172,7 +172,7 @@ const PercentText = styled(Text)`
   color: ${({ theme }) => theme.colors.white};
   font-size: 12px;
   line-height: 16px;
-  font-weight: 500;
+  font-weight: 600;
   min-width: 24px;
   
   &:first-child {
@@ -279,7 +279,6 @@ const Slider: React.FC<SliderProps> = ({
   // const labelOffset = progressPercentage - progressPercentage / MOVING_SLIDER_LABEL_OFFSET_FACTOR;
 
   const [infoVisible, setInfoVisible] = useState<boolean>(false)
-  console.log(infoVisible)
 
   return (
     <Wrapper>
