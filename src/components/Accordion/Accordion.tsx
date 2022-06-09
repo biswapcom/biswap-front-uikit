@@ -1,12 +1,15 @@
 import React, { FC, ReactNode, useEffect, useState } from "react";
 import styled, { css, keyframes } from "styled-components";
-import { Flex } from "../Box";
+import { useMatchBreakpoints } from "../../hooks";
+import { Box, Flex } from "../Box";
+import { DropdownMenuDivider } from "../DropdownMenu/styles";
 
 interface IProps {
   heading: (s?: boolean) => ReactNode;
   children: ReactNode;
   label?: string;
   clickable?: boolean;
+  index: number;
 }
 
 const openBodyAnimation = keyframes`
@@ -47,8 +50,10 @@ const Accordion: FC<IProps> = ({
   clickable = true,
   heading,
   children,
+  index,
 }) => {
   const [isOpened, setIsOpened] = useState(false);
+  const { isMobile } = useMatchBreakpoints();
 
   useEffect(() => {
     if (!clickable || label === "Biswap Products") {
@@ -62,6 +67,11 @@ const Accordion: FC<IProps> = ({
 
   return (
     <AccordionComponent key={`acc-key-${label}`}>
+      {isMobile && index && (
+        <Box m={"0 -24px 0"}>
+          <DropdownMenuDivider color="rgba(18, 99, 241, 0.16)" />
+        </Box>
+      )}
       <AccordionTitle
         alignItems="center"
         justifyContent="space-between"
@@ -70,6 +80,11 @@ const Accordion: FC<IProps> = ({
         {heading(isOpened)}
       </AccordionTitle>
       <AccordionBody opened={isOpened}>{children}</AccordionBody>
+      {isMobile && !index && (
+        <Box m={"0 -24px 0"}>
+          <DropdownMenuDivider color="rgba(18, 99, 241, 0.16)" />
+        </Box>
+      )}
     </AccordionComponent>
   );
 };

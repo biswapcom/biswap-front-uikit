@@ -271,7 +271,10 @@ const Menu: React.FC<NavProps> = ({
   return (
     <MenuContext.Provider value={{ linkComponent }}>
       <Wrapper>
-        <FixedContainer showMenu={showMenu} height={totalTopMenuHeight}>
+        <FixedContainer
+          showMenu={showMenu}
+          height={isMobileMenuOpened ? 0 : totalTopMenuHeight}
+        >
           {/*{showFishingWarn && (*/}
           {/*  <FishingWarn showFishingWarn={showFishingWarn}>*/}
           {/*    <StyledImgWarnIcon />*/}
