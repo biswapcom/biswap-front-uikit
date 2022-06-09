@@ -7,9 +7,10 @@ export declare const InnerLinksBlockContainer: import("styled-components").Style
 }, never>;
 export declare const DropdownMenuInnerLinkItem: import("styled-components").StyledComponent<typeof Link, DefaultTheme, StyledDropdownMenuInnerLinkItemProps & LinkProps<unknown>, never>;
 export declare const DropdownMenuInnerOuterLinkItem: import("styled-components").StyledComponent<"a", DefaultTheme, StyledDropdownMenuInnerLinkItemProps, never>;
-export declare const CommonLinkStyle: ({ disabled, $isActive, $hasIcon, }: StyledDropdownMenuItemProps & {
+export declare const CommonLinkStyle: ({ disabled, $isActive, $hasIcon, label }: StyledDropdownMenuItemProps & {
     $isActive: boolean;
     $hasIcon?: boolean | undefined;
+    label?: string | React.ReactNode;
 }) => import("styled-components").FlattenInterpolation<import("styled-components").ThemeProps<DefaultTheme>>;
 export declare const DropdownMenuItem: import("styled-components").StyledComponent<"button", DefaultTheme, StyledDropdownMenuItemProps & {
     $isActive: boolean;
@@ -18,6 +19,7 @@ export declare const DropdownMenuItem: import("styled-components").StyledCompone
 export declare const DropdownInternalMenuItem: import("styled-components").StyledComponent<typeof Link, DefaultTheme, StyledDropdownMenuItemProps & {
     $isActive: boolean;
     $hasIcon?: boolean | undefined;
+    label?: string | React.ReactNode;
 }, never>;
 export declare const StyledDropdownMenuItemContainer: import("styled-components").StyledComponent<"div", DefaultTheme, {}, never>;
 export declare const DropdownMenuDivider: import("styled-components").StyledComponent<"hr", DefaultTheme, {}, never>;

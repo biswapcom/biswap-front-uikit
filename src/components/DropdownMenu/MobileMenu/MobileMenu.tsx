@@ -22,7 +22,7 @@ const MobileCommunityWrapper = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column-reverse;
-  margin-bottom: 1em;
+  margin-bottom: 24px;
 `;
 
 const StyledMobileMenu = styled.div<{
@@ -159,7 +159,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
                                     iconName={
                                       opened ? "ChevronUp" : "ChevronDown"
                                     }
-                                    color={opened ? "primary" : "text"}
+                                    color={opened ? "primary" : "rgb(8, 22, 46)"}
                                   />
                                 )}
                               </>
@@ -209,6 +209,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
                               return (
                                 visualize && (
                                   <DropdownMenuItemContainer
+                                    label={label}
                                     key={itemItem}
                                     isActive={isActive}
                                     leftIcon={leftIcon}
@@ -242,7 +243,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
           </MainContententWrapper>
           {isMobile && (
             <MobileCommunityWrapper>
-              <Community justifyContent="space-evenly" iconSize="24px" />
+              <Community menuVariant iconSize="24px" />
             </MobileCommunityWrapper>
           )}
         </StyledMobileMenu>

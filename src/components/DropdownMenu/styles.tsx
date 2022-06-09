@@ -7,6 +7,7 @@ import {
   StyledDropdownMenuInnerLinkItemProps,
   StyledDropdownMenuItemProps,
 } from "./types";
+import { useMatchBreakpoints } from "../../hooks";
 
 const getTextColor = ({
   $isActive,
@@ -55,49 +56,57 @@ export const CommonLinkStyle = ({
   disabled,
   $isActive,
   $hasIcon,
+  label
 }: StyledDropdownMenuItemProps & {
   $isActive: boolean;
   $hasIcon?: boolean;
-}) => css`
-  align-items: center;
-  border: 0;
-  //background: transparent;
-  color: ${({ theme }) => getTextColor({ theme, disabled, $isActive })};
-  cursor: ${disabled ? "not-allowed" : "pointer"};
-  font-weight: 600;
-  line-height: 20px;
-  display: inline-flex;
-  font-size: 14px;
-  min-height: 40px;
-  justify-content: space-between;
-  outline: 0;
-  //padding-left: 16px;
-  width: 100%;
-
-  .arrow-icon {
-    visibility: hidden;
-    opacity: 0;
-  }
-
-  &:hover:not(:disabled) {
-    color: ${({ theme }) => !$hasIcon && theme.colors.primary};
-
-    svg {
-      opacity: 0.85;
-    }
-
+  label?: string | React.ReactNode;
+}) => {
+  const { isMobile } = useMatchBreakpoints();
+  
+  return(css`
+    align-items: center;
+    border: 0;
+    //background: transparent;
+    color: ${({ theme }) => getTextColor({ theme, disabled, $isActive })};
+    cursor: ${disabled ? "not-allowed" : "pointer"};
+    font-weight: 600;
+    line-height: 20px;
+    display: inline-flex;
+    font-size: 14px;
+    min-height: 40px;
+    justify-content: space-between;
+    outline: 0;
+    //padding-left: 16px;
+    width: 100%;
+    
     .arrow-icon {
-      visibility: visible;
-      transition: visibility 250ms linear, opacity 150ms linear;
-      opacity: 1;
+      ${!(isMobile && ((label === 'Marketplace') || (label === 'GameFi'))) && (`
+        visibility: hidden;
+        opacity: 0;
+      `)}
     }
-  }
 
-  &:active:not(:disabled) {
-    opacity: 0.85;
-    transform: translateY(1px);
-  }
-`;
+    &:hover:not(:disabled) {
+      color: ${({ theme }) => !$hasIcon && theme.colors.primary};
+
+      svg {
+        opacity: 0.85;
+      }
+
+      .arrow-icon {
+        visibility: visible;
+        transition: visibility 250ms linear, opacity 150ms linear;
+        opacity: 1;
+      }
+    }
+
+    &:active:not(:disabled) {
+      opacity: 0.85;
+      transform: translateY(1px);
+    }
+  `)
+};
 
 export const DropdownMenuItem = styled.button<
   StyledDropdownMenuItemProps & {
@@ -112,6 +121,7 @@ export const DropdownInternalMenuItem = styled(Link)<
   StyledDropdownMenuItemProps & {
     $isActive: boolean;
     $hasIcon?: boolean;
+    label?: string | React.ReactNode
   }
 >`
   ${CommonLinkStyle}

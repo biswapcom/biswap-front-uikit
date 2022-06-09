@@ -37,8 +37,7 @@ export const StyledBurger = styled.button<StyledBurgerProps>`
   span {
     width: 20px;
     height: 2px;
-    background: ${({ open }) =>
-      open ? "rgb(116, 155, 216);" : "rgb(255, 255, 255)"};
+    background: ${({ open }) => open ? "rgb(7, 22, 45)" : "rgb(255, 255, 255)"};
     border-radius: 10px;
     transition: all 0.5s linear;
     position: relative;

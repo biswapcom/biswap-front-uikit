@@ -25,10 +25,6 @@ const MobileDropdownMenu: FC<MenuItemsProps> = ({
     >
       <MenuItem>
         <Burger open={isMobileMenuOpened} />
-        {/* <IconComponent
-          iconName={isMobileMenuOpened ? "ButtonMenuOpened" : "ButtonMenu"}
-          color={isMobileMenuOpened && isMobile ? "backgroundDark" : "white"}
-        /> */}
         {!isMobile && (
           <Text ml="8px" color="white">
             Menu

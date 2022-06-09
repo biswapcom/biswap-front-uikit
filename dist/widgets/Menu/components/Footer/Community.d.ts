@@ -1,11 +1,11 @@
 import React from "react";
 export interface CommunityProps {
     iconSize?: string;
-    justifyContent?: string;
+    menuVariant?: boolean;
     title?: string;
 }
 export interface SocialWrapProps {
-    justifyContent?: string;
+    menuVariant?: boolean;
 }
 declare const Community: React.FC<CommunityProps>;
 export default Community;
