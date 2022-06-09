@@ -7,11 +7,11 @@ import * as IconModule from "../../icons";
 
 export interface CommunityProps {
   iconSize?: string;
-  justifyContent?: string;
+  menuVariant?: boolean;
   title?: string;
 }
 export interface SocialWrapProps {
-  justifyContent?: string;
+  menuVariant?: boolean;
 }
 const Icons = IconModule as unknown as { [key: string]: React.FC<SvgProps> };
 
@@ -35,9 +35,15 @@ const Title = styled.h4`
 const SocialWrap = styled.div<SocialWrapProps>`
   display: flex;
   margin: 0 -4px;
-  ${({ justifyContent }) =>
-    justifyContent && `justify-content: ${justifyContent}`};
-  align-items: flex-end;
+  ${({ menuVariant }) => {
+    if(menuVariant){
+      return(`
+        justify-content: flex-start;
+        align-items: flex-end;
+        gap: 5%;
+      `)
+    }
+  }};
 `;
 const SocialItem = styled.div`
   width: 20px;
@@ -130,13 +136,13 @@ const FlagWrap = styled.div`
 const Community: React.FC<CommunityProps> = ({
   iconSize = "20px",
   title,
-  justifyContent,
+  menuVariant
 }) => {
   return (
     <Wrapper>
       {title && <Title>{title}</Title>}
 
-      <SocialWrap justifyContent={justifyContent}>
+      <SocialWrap menuVariant={menuVariant}>
         {socials.map((social) => {
           const Icon = Icons[social.icon];
           const iconProps = {

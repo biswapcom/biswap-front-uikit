@@ -242,7 +242,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
           </MainContententWrapper>
           {isMobile && (
             <MobileCommunityWrapper>
-              <Community justifyContent="space-evenly" iconSize="24px" />
+              <Community menuVariant iconSize="24px" />
             </MobileCommunityWrapper>
           )}
         </StyledMobileMenu>
