@@ -1,7 +1,7 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
 import styled from "styled-components";
 import { parseInt } from "lodash";
-import { Box, BoxProps } from "../Box";
+import {Box, BoxProps, Flex} from "../Box";
 import SliderIcon from "./Slider.svg";
 import { Text } from "../Text";
 
@@ -20,7 +20,8 @@ const BarBackground = styled.div`
   width: 100%;
   height: 4px;
   border-radius: 100px;
-  background-color: ${({ theme }) => theme.colors.success};
+  opacity: .16;
+  background-color: ${({ theme }) => theme.colors.pastelBlue};
 `;
 
 const BarProgress = styled.div<{ progress: number }>`
@@ -32,16 +33,16 @@ const BarProgress = styled.div<{ progress: number }>`
 `;
 
 const StyledInput = styled.input`
-  height: 16px;
+  height: 20px;
   position: relative;
   cursor: pointer;
-  transform: translateY(-100%);
+  transform: translateY(-18px);
   margin: 2px 0;
 
   ::-webkit-slider-thumb {
     -webkit-appearance: none;
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
     cursor: pointer;
     transition: 0.1s all;
     background-image: url(${SliderIcon});
@@ -52,8 +53,8 @@ const StyledInput = styled.input`
   }
   ::-moz-range-thumb {
     -webkit-appearance: none;
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
     cursor: pointer;
     transition: 0.1s all;
     // custom moz reset
@@ -66,8 +67,8 @@ const StyledInput = styled.input`
   }
   ::-ms-thumb {
     -webkit-appearance: none;
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
     cursor: pointer;
     transition: 0.1s all;
     background-image: url(${SliderIcon});
@@ -83,16 +84,16 @@ const BunnySlider = styled.div`
 `;
 
 const BreakePointsWrap = styled.div`
-  padding: 0 8px;
+  padding: 0 9px;
   display: flex;
   justify-content: space-between;
-  margin-top: 12px;
+  margin-top: 16px;
 `;
 
 const Point = styled.div`
   width: 2px;
   height: 8px;
-  border-radius: 50%;
+  border-radius: 4px;
   background-color: ${({ theme }) => theme.colors.backgroundDisabled};
 `;
 
@@ -103,16 +104,15 @@ const InfoBlock = styled.div`
 
 const TitleText = styled(Text)`
   font-size: 14px;
-  line-height: 150%;
+  line-height: 20px;
   color: black;
   font-weight: 500;
 `;
 
-const PercentageAmount = styled(Text)<{ color: string }>`
-  color: ${({ color }) => color};
-  font-size: 14px;
+const PercentageAmount = styled(Text)`
+  font-size: 16px;
   margin: 0 4px;
-  font-weight: 600;
+  font-weight: 500;
 `;
 
 const InfoNode = styled.div`
@@ -124,10 +124,61 @@ const InfoNode = styled.div`
 const RBPrice = styled(Text)`
   text-align: right;
   font-size: 12px;
-  line-height: 150%;
+  line-height: 16px;
   font-weight: 500;
-  color: black;
+  color: ${({ theme }) => theme.colors.text};
 `;
+
+const PercentWrap = styled.div`
+  width: calc(100% - 20px);
+  margin: 0 10px;
+  position: relative;
+`
+
+const PercentBanner = styled(Flex)<{ left: number, bannerPosition: 'top' | 'bottom' }>`
+  align-items: center;
+  position: absolute;
+  ${({ bannerPosition }) => bannerPosition === 'top' ? 'top: 0' : 'bottom: 0'};
+  left: ${({ left }) => `${left}%`};
+  transform: translateX(-50%) translateY(calc(${({ bannerPosition }) => 
+      bannerPosition === 'top' ? '-100% - 20px' : '100% + 20px'}));
+  border-radius: 8px;
+  padding: 8px 4px;
+  background-color: ${({ theme }) => theme.colors.tooltip};
+  
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 50%;
+    ${({ bannerPosition }) => bannerPosition === 'top' ? 'bottom: 0' : 'top: 0'};
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    transform: translate(-50%, ${({ bannerPosition }) => bannerPosition === 'top' ? '100%' : '-100%'});
+    ${({ bannerPosition, theme }) => 
+        `border-${bannerPosition === 'top' ? 'top' : 'bottom'}: 6px solid ${theme.colors.tooltip}`};
+`
+
+const Divider = styled.span`
+  width: 2px;
+  height: 10px;
+  margin: 0 4px 0 4px;
+  background-color: ${({ theme }) => theme.colors.gray900};
+`
+
+const PercentText = styled(Text)`
+  color: ${({ theme }) => theme.colors.white};
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+  min-width: 24px;
+  
+  &:first-child {
+    text-align: right;
+  }
+`
 
 // We need to adjust the offset as the percentage increases, as 100% really is 100% - label width. The number 10 is arbitrary, but seems to work...
 const MOVING_SLIDER_LABEL_OFFSET_FACTOR = 25;
@@ -138,6 +189,7 @@ interface SliderProps extends BoxProps {
   valueLabel?: string;
   checkPoints?: Checkpoint[];
   isRobiBoost?: boolean;
+  bannerPosition?: 'top' | 'bottom'
 }
 
 interface Checkpoint {
@@ -161,6 +213,7 @@ const Slider: React.FC<SliderProps> = ({
   onValueChanged,
   checkPoints = INIT_CHECKPOINTS,
   isRobiBoost,
+  bannerPosition = 'top',
   ...props
 }) => {
   const [percent, setPercent] = useState({ value: 0, RB: 0 });
@@ -225,13 +278,25 @@ const Slider: React.FC<SliderProps> = ({
 
   // const labelOffset = progressPercentage - progressPercentage / MOVING_SLIDER_LABEL_OFFSET_FACTOR;
 
+  const [infoVisible, setInfoVisible] = useState<boolean>(false)
+  console.log(infoVisible)
+
   return (
     <Wrapper>
       <SliderContainer {...props}>
         <BunnySlider>
+          <PercentWrap>
+            {infoVisible && <PercentBanner className='percent-info-banner' bannerPosition={bannerPosition} left={percent?.value}>
+              <PercentText>{value}</PercentText>
+              <Divider/>
+              <PercentText>{100 - value}</PercentText>
+            </PercentBanner>}
+          </PercentWrap>
           <BarBackground />
           <BarProgress progress={progressPercentage} />
           <StyledInput
+            onMouseDown={() => setInfoVisible(true)}
+            onMouseUp={() => setInfoVisible(false)}
             type="range"
             min={MIN}
             max={MAX}
@@ -257,7 +322,7 @@ const Slider: React.FC<SliderProps> = ({
         </InfoNode>
       </InfoBlock>
       <RBPrice>
-        price 1{isRobiBoost ? "RB" : "SE"} = ${percent.RB} volume
+        price 1{' '}{isRobiBoost ? "RB" : "SE"} = ${percent.RB} volume
       </RBPrice>
     </Wrapper>
   );

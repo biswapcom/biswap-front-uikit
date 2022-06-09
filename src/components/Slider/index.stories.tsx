@@ -10,8 +10,10 @@ export default {
 };
 
 const Col = styled(Flex)`
+  background-color: ${({ theme }) => theme.colors.white};
+  padding: 64px 32px;
   flex-direction: column;
-  width: 300px;
+  width: 360px;
 `;
 
 const SliderVariant = ({ initialValue }: { initialValue: number }) => {
