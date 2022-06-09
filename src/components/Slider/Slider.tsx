@@ -165,7 +165,7 @@ const Divider = styled.span`
   width: 2px;
   height: 10px;
   margin: 0 4px 0 4px;
-  background-color: ${({ theme }) => theme.colors.text};
+  background-color: ${({ theme }) => theme.colors.gray900};
 `
 
 const PercentText = styled(Text)`
@@ -322,7 +322,7 @@ const Slider: React.FC<SliderProps> = ({
         </InfoNode>
       </InfoBlock>
       <RBPrice>
-        price 1{isRobiBoost ? "RB" : "SE"} = ${percent.RB} volume
+        price 1{' '}{isRobiBoost ? "RB" : "SE"} = ${percent.RB} volume
       </RBPrice>
     </Wrapper>
   );
