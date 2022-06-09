@@ -159,7 +159,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
                                     iconName={
                                       opened ? "ChevronUp" : "ChevronDown"
                                     }
-                                    color={opened ? "primary" : "black"}
+                                    color={opened ? "primary" : "rgb(8, 22, 46)"}
                                   />
                                 )}
                               </>
