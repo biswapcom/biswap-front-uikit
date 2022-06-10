@@ -21,8 +21,8 @@ const MainContententWrapper = styled.div`
 const MobileCommunityWrapper = styled.div`
   flex: 1;
   display: flex;
-  flex-direction: column-reverse;
-  margin-bottom: 24px;
+  flex-direction: column;
+  margin-top: 24px;
 `;
 
 const StyledMobileMenu = styled.div<{
