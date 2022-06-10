@@ -2,11 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import Button from "../../components/Button/Button";
 import Text from "../../components/Text/Text";
-import LinkExternal from "../../components/Link/LinkExternal";
 import Flex from "../../components/Box/Flex";
 import { Modal } from "../Modal";
 import CopyToClipboard from "./CopyToClipboard";
 import { useWalletModal } from "./index";
+import {Link} from "../../components/Link";
+import {ArrowOpenNew} from "../../components/Svg";
 
 interface Props {
   account: string;
@@ -92,16 +93,23 @@ const AccountModal: React.FC<Props> = ({
       >
         {account}
       </Text>
-      <Flex mb="32px">
+      <Flex>
         <CopyToClipboard toCopy={account}>Copy Address</CopyToClipboard>
-        <LinkExternal
+        <Link
+          fontWeight='400'
+          scale='xs'
           ml="26px"
           small
           href={`https://bscscan.com/address/${account}`}
           mr="16px"
         >
           View on BscScan
-        </LinkExternal>
+            <ArrowOpenNew
+              color="primary"
+              width="14px"
+              ml="4px"
+            />
+        </Link>
       </Flex>
       {isSwap && (
         <TransactionWrapper>
