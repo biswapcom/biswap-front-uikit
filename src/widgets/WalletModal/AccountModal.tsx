@@ -29,6 +29,7 @@ const ConnectedWrapper = styled.div`
 `;
 
 const TransactionWrapper = styled.div`
+  margin-top: 24px;
   border-radius: 16px;
   padding: 24px;
   background-color: #f2f6fc;
