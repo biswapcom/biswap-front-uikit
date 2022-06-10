@@ -38,6 +38,7 @@ const StyledInput = styled.input`
   cursor: pointer;
   transform: translateY(-18px);
   margin: 2px 0;
+  -webkit-tap-highlight-color: transparent;
 
   ::-webkit-slider-thumb {
     -webkit-appearance: none;
@@ -45,6 +46,7 @@ const StyledInput = styled.input`
     height: 20px;
     cursor: pointer;
     transition: 0.1s all;
+    border-radius: 50%;
     background-image: url(${SliderIcon});
 
     :hover {
@@ -71,6 +73,7 @@ const StyledInput = styled.input`
     height: 20px;
     cursor: pointer;
     transition: 0.1s all;
+    border-radius: 50%;
     background-image: url(${SliderIcon});
     :hover {
       transform: scale(1.1);
@@ -133,6 +136,7 @@ const PercentWrap = styled.div`
   width: calc(100% - 20px);
   margin: 0 10px;
   position: relative;
+  background: transparent;
 `
 
 const PercentBanner = styled(Flex)<{ left: number, bannerPosition: 'top' | 'bottom' }>`
@@ -296,6 +300,8 @@ const Slider: React.FC<SliderProps> = ({
           <StyledInput
             onMouseDown={() => setInfoVisible(true)}
             onMouseUp={() => setInfoVisible(false)}
+            onTouchStart={() => setInfoVisible(true)}
+            onTouchEnd={() => setInfoVisible(false)}
             type="range"
             min={MIN}
             max={MAX}
