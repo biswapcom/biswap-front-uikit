@@ -12,6 +12,7 @@ const StyleButton = styled(Text).attrs({ role: "button" })`
   display: flex;
   align-items: center;
   color: ${({ theme }) => theme.colors.primary};
+  font-weight: 400;
 `;
 
 const Tooltip = styled.div<{ isTooltipDisplayed: boolean }>`
@@ -47,7 +48,7 @@ const CopyToClipboard: React.FC<Props> = ({ toCopy, children, ...props }) => {
       {...props}
     >
       {children}
-      <CopyIcon width="20px" color="primary" ml="4px" />
+      <CopyIcon width="14px" color="primary" ml="4px" />
       <Tooltip isTooltipDisplayed={isTooltipDisplayed}>Copied</Tooltip>
     </StyleButton>
   );

@@ -22,7 +22,6 @@ interface Props {
 const WalletWrap = styled.div`
   display: flex;
   align-items: center;
-  background: ${({ theme }) => theme.colors.card};
   border-radius: 8px;
 `;
 

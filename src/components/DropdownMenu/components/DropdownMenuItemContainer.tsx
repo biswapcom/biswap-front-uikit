@@ -62,6 +62,7 @@ const DropdownMenuItemContainer: FC<DropdownMenuItemContainerProps> = ({
       )}
       {type === DropdownMenuItemType.INTERNAL_LINK && (
         <DropdownInternalMenuItem
+          label={itemProps.label}
           $isActive={isActive}
           $hasIcon={!!leftIcon}
           // as={linkComponent}
@@ -76,6 +77,7 @@ const DropdownMenuItemContainer: FC<DropdownMenuItemContainerProps> = ({
       )}
       {type === DropdownMenuItemType.EXTERNAL_LINK && (
         <DropdownMenuItem
+          label={itemProps.label}
           $isActive={isActive}
           $hasIcon={!!leftIcon}
           as="a"
