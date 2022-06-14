@@ -19,7 +19,7 @@ export interface OptionProps {
     label: string;
     icon?: {
         name: string;
-        color: string;
+        color?: string;
     };
 }
 export declare const scales: {

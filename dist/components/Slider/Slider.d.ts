@@ -6,7 +6,7 @@ interface SliderProps extends BoxProps {
     valueLabel?: string;
     checkPoints?: Checkpoint[];
     isRobiBoost?: boolean;
-    bannerPosition?: 'top' | 'bottom';
+    bannerPosition?: "top" | "bottom";
 }
 interface Checkpoint {
     value: number;

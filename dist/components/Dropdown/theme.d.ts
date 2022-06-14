@@ -55,7 +55,7 @@ export declare const styleVariantsTop: {
                 color: string;
                 borderColor: string;
             };
-            '.arrow': {
+            ".arrow": {
                 fill: string;
             };
         };

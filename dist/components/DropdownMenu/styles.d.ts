@@ -7,7 +7,7 @@ export declare const InnerLinksBlockContainer: import("styled-components").Style
 }, never>;
 export declare const DropdownMenuInnerLinkItem: import("styled-components").StyledComponent<typeof Link, DefaultTheme, StyledDropdownMenuInnerLinkItemProps & LinkProps<unknown>, never>;
 export declare const DropdownMenuInnerOuterLinkItem: import("styled-components").StyledComponent<"a", DefaultTheme, StyledDropdownMenuInnerLinkItemProps, never>;
-export declare const CommonLinkStyle: ({ disabled, $isActive, $hasIcon, label }: StyledDropdownMenuItemProps & {
+export declare const CommonLinkStyle: ({ disabled, $isActive, $hasIcon, label, }: StyledDropdownMenuItemProps & {
     $isActive: boolean;
     $hasIcon?: boolean | undefined;
     label?: string | React.ReactNode;
