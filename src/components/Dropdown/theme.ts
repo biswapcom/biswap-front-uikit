@@ -50,9 +50,9 @@ export const scaleVariantsContent = {
 
 export const scaleVariantItem = {
   [scales.LG]: {
-    height: '48px',
-    fontSize: '16px',
-    padding: '0 24px',
+    height: "48px",
+    fontSize: "16px",
+    padding: "0 24px",
 
     svg: {
       width: "24px",
@@ -60,9 +60,9 @@ export const scaleVariantItem = {
     },
   },
   [scales.MD]: {
-    height: '40px',
-    fontSize: '14px',
-    padding: '0 16px',
+    height: "40px",
+    fontSize: "14px",
+    padding: "0 16px",
 
     svg: {
       width: "20px",
@@ -70,16 +70,16 @@ export const scaleVariantItem = {
     },
   },
   [scales.SM]: {
-    height: '32px',
-    fontSize: '12px',
-    padding: '0 12px',
+    height: "32px",
+    fontSize: "12px",
+    padding: "0 12px",
 
     svg: {
       width: "16px",
       marginRight: "8px",
     },
-  }
-}
+  },
+};
 
 export const styleVariantsTop = {
   [variants.LIGHT]: {
@@ -87,7 +87,7 @@ export const styleVariantsTop = {
     color: "dark800",
 
     ".arrow": {
-      fill: 'gray900'
+      fill: "gray900",
     },
     ":hover": {
       color: "dark800",
@@ -98,12 +98,12 @@ export const styleVariantsTop = {
       borderColor: "primary",
 
       ":hover": {
-        color: 'dark800',
-        borderColor: 'primary'
+        color: "dark800",
+        borderColor: "primary",
       },
 
       ".arrow": {
-        fill: 'primary'
+        fill: "primary",
       },
     },
     "&.disabled": {
@@ -111,12 +111,12 @@ export const styleVariantsTop = {
       borderColor: "gray200",
 
       ":hover": {
-        color: 'gray600',
-        borderColor: 'gray200'
+        color: "gray600",
+        borderColor: "gray200",
       },
-      '.arrow': {
-        fill: 'gray600'
-      }
+      ".arrow": {
+        fill: "gray600",
+      },
     },
   },
   [variants.DARK]: {
@@ -124,22 +124,22 @@ export const styleVariantsTop = {
     color: "white",
 
     ".arrow": {
-      fill: 'pastelBlue'
+      fill: "pastelBlue",
     },
     ":hover": {
       color: "white",
-      borderColor: "dark300"
+      borderColor: "dark300",
     },
     "&.open": {
       color: "white",
       borderColor: "primary",
 
       ":hover": {
-        color: 'white',
-        borderColor: 'primary'
+        color: "white",
+        borderColor: "primary",
       },
       ".arrow": {
-        fill: 'primary'
+        fill: "primary",
       },
     },
     "&.disabled": {
@@ -147,12 +147,12 @@ export const styleVariantsTop = {
       borderColor: "dark600",
 
       ":hover": {
-        color: 'dark200',
-        borderColor: 'dark600'
+        color: "dark200",
+        borderColor: "dark600",
       },
-      '.arrow': {
-        fill: 'dark200'
-      }
+      ".arrow": {
+        fill: "dark200",
+      },
     },
   },
 };

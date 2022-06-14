@@ -16,16 +16,16 @@ export interface DropdownProps extends PositionProps, SpaceProps {
   variant?: Variant;
   scale?: Scale;
   disabled?: boolean;
-  options: Array<OptionProps>
-  onChange?: (option: OptionProps) => void
+  options: Array<OptionProps>;
+  onChange?: (option: OptionProps) => void;
 }
 
 export interface OptionProps {
-  label: string
+  label: string;
   icon?: {
-    name: string
-    color: string
-  }
+    name: string;
+    color: string;
+  };
 }
 
 export const scales = {
