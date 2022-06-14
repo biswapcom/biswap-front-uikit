@@ -56,15 +56,15 @@ export const CommonLinkStyle = ({
   disabled,
   $isActive,
   $hasIcon,
-  label
+  label,
 }: StyledDropdownMenuItemProps & {
   $isActive: boolean;
   $hasIcon?: boolean;
   label?: string | React.ReactNode;
 }) => {
   const { isMobile } = useMatchBreakpoints();
-  
-  return(css`
+
+  return css`
     align-items: center;
     border: 0;
     //background: transparent;
@@ -79,12 +79,13 @@ export const CommonLinkStyle = ({
     outline: 0;
     //padding-left: 16px;
     width: 100%;
-    
+
     .arrow-icon {
-      ${!(isMobile && ((label === 'Marketplace') || (label === 'GameFi'))) && (`
+      ${!(isMobile && (label === "Marketplace" || label === "GameFi")) &&
+      `
         visibility: hidden;
         opacity: 0;
-      `)}
+      `}
     }
 
     &:hover:not(:disabled) {
@@ -105,7 +106,7 @@ export const CommonLinkStyle = ({
       opacity: 0.85;
       transform: translateY(1px);
     }
-  `)
+  `;
 };
 
 export const DropdownMenuItem = styled.button<
@@ -121,7 +122,7 @@ export const DropdownInternalMenuItem = styled(Link)<
   StyledDropdownMenuItemProps & {
     $isActive: boolean;
     $hasIcon?: boolean;
-    label?: string | React.ReactNode
+    label?: string | React.ReactNode;
   }
 >`
   ${CommonLinkStyle}

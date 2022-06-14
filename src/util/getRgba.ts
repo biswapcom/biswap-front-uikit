@@ -4,9 +4,9 @@ const getRgba = (hex: string, alpha?: number) => {
   const b = parseInt(hex.slice(5, 7), 16);
 
   if (alpha) {
-    return `rgba(${  r  }, ${  g  }, ${  b  }, ${  alpha  })`;
+    return `rgba(${r}, ${g}, ${b}, ${alpha})`;
   }
-    return `rgba(${  r  }, ${  g  }, ${  b  })`;
+  return `rgba(${r}, ${g}, ${b})`;
 };
 
 export default getRgba;

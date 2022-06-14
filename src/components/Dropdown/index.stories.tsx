@@ -27,257 +27,241 @@ export const Default: React.FC = () => {
     <>
       <WrapperLight>
         <Dropdown
-          mr='24px'
+          mr="24px"
           maxWidth="250px"
           scale="lg"
           variant="light"
-          options={
-            [
-              {
-                label: 'Text',
-                icon: {
-                  name: 'Binance',
-                  color: 'pastelBlue'
-                }
+          options={[
+            {
+              label: "Text",
+              icon: {
+                name: "Binance",
+                color: "pastelBlue",
               },
-              {
-                label: 'Text2',
-                icon: {
-                  name: 'BSC',
-                  color: 'success'
-                }
+            },
+            {
+              label: "Text2",
+              icon: {
+                name: "BSC",
+                color: "success",
               },
-              {
-                label: 'Text3',
-                icon: {
-                  name: 'Gas',
-                  color: 'secondary'
-                }
-              }
-            ]
-          }
+            },
+            {
+              label: "Text3",
+              icon: {
+                name: "Gas",
+                color: "secondary",
+              },
+            },
+          ]}
         />
 
         <Dropdown
-          mr='24px'
+          mr="24px"
           maxWidth="250px"
           scale="md"
           variant="light"
-          options={
-            [
-              {
-                label: 'Text',
-                icon: {
-                  name: 'Binance',
-                  color: 'pastelBlue'
-                }
+          options={[
+            {
+              label: "Text",
+              icon: {
+                name: "Binance",
+                color: "pastelBlue",
               },
-              {
-                label: 'Text2',
-                icon: {
-                  name: 'Binance',
-                  color: 'pastelBlue'
-                }
+            },
+            {
+              label: "Text2",
+              icon: {
+                name: "Binance",
+                color: "pastelBlue",
               },
-              {
-                label: 'Text3',
-                icon: {
-                  name: 'Binance',
-                  color: 'pastelBlue'
-                }
-              }
-            ]
-          }
+            },
+            {
+              label: "Text3",
+              icon: {
+                name: "Binance",
+                color: "pastelBlue",
+              },
+            },
+          ]}
         />
         <Dropdown
-          mr='24px'
+          mr="24px"
           maxWidth="250px"
           scale="sm"
           variant="light"
-          options={
-            [
-              {
-                label: 'Text',
-                icon: {
-                  name: 'Binance',
-                  color: 'pastelBlue'
-                }
+          options={[
+            {
+              label: "Text",
+              icon: {
+                name: "Binance",
+                color: "pastelBlue",
               },
-              {
-                label: 'Text2',
-                icon: {
-                  name: 'Binance',
-                  color: 'pastelBlue'
-                }
+            },
+            {
+              label: "Text2",
+              icon: {
+                name: "Binance",
+                color: "pastelBlue",
               },
-              {
-                label: 'Text3',
-                icon: {
-                  name: 'Binance',
-                  color: 'pastelBlue'
-                }
-              }
-            ]
-          }
+            },
+            {
+              label: "Text3",
+              icon: {
+                name: "Binance",
+                color: "pastelBlue",
+              },
+            },
+          ]}
         />
         <Dropdown
-          mr='24px'
+          mr="24px"
           maxWidth="250px"
           scale="sm"
           variant="light"
-          options={
-            [
-              {
-                label: 'Text',
-                icon: {
-                  name: 'Binance',
-                  color: 'pastelBlue'
-                }
+          options={[
+            {
+              label: "Text",
+              icon: {
+                name: "Binance",
+                color: "pastelBlue",
               },
-              {
-                label: 'Text2',
-                icon: {
-                  name: 'Binance',
-                  color: 'pastelBlue'
-                }
+            },
+            {
+              label: "Text2",
+              icon: {
+                name: "Binance",
+                color: "pastelBlue",
               },
-              {
-                label: 'Text3',
-                icon: {
-                  name: 'Binance',
-                  color: 'pastelBlue'
-                }
-              }
-            ]
-          }
+            },
+            {
+              label: "Text3",
+              icon: {
+                name: "Binance",
+                color: "pastelBlue",
+              },
+            },
+          ]}
           disabled
         />
       </WrapperLight>
       <WrapperDark>
         <Dropdown
-          mr='24px'
+          mr="24px"
           maxWidth="250px"
           scale="lg"
           variant="dark"
-          options={
-            [
-              {
-                label: 'Text',
-                icon: {
-                  name: 'Binance',
-                  color: 'pastelBlue'
-                }
+          options={[
+            {
+              label: "Text",
+              icon: {
+                name: "Binance",
+                color: "pastelBlue",
               },
-              {
-                label: 'Text2',
-                icon: {
-                  name: 'Binance',
-                  color: 'pastelBlue'
-                }
+            },
+            {
+              label: "Text2",
+              icon: {
+                name: "Binance",
+                color: "pastelBlue",
               },
-              {
-                label: 'Text3',
-                icon: {
-                  name: 'Binance',
-                  color: 'pastelBlue'
-                }
-              }
-            ]
-          }
+            },
+            {
+              label: "Text3",
+              icon: {
+                name: "Binance",
+                color: "pastelBlue",
+              },
+            },
+          ]}
         />
 
         <Dropdown
-          mr='24px'
+          mr="24px"
           maxWidth="250px"
           scale="md"
           variant="dark"
-          options={
-            [
-              {
-                label: 'Text',
-                icon: {
-                  name: 'Binance',
-                  color: 'pastelBlue'
-                }
+          options={[
+            {
+              label: "Text",
+              icon: {
+                name: "Binance",
+                color: "pastelBlue",
               },
-              {
-                label: 'Text2',
-                icon: {
-                  name: 'Binance',
-                  color: 'pastelBlue'
-                }
+            },
+            {
+              label: "Text2",
+              icon: {
+                name: "Binance",
+                color: "pastelBlue",
               },
-              {
-                label: 'Text3',
-                icon: {
-                  name: 'Binance',
-                  color: 'pastelBlue'
-                }
-              }
-            ]
-          }
+            },
+            {
+              label: "Text3",
+              icon: {
+                name: "Binance",
+                color: "pastelBlue",
+              },
+            },
+          ]}
         />
         <Dropdown
-          mr='24px'
+          mr="24px"
           maxWidth="250px"
           scale="sm"
           variant="dark"
-          options={
-            [
-              {
-                label: 'Text',
-                icon: {
-                  name: 'Binance',
-                  color: 'pastelBlue'
-                }
+          options={[
+            {
+              label: "Text",
+              icon: {
+                name: "Binance",
+                color: "pastelBlue",
               },
-              {
-                label: 'Text2',
-                icon: {
-                  name: 'Binance',
-                  color: 'pastelBlue'
-                }
+            },
+            {
+              label: "Text2",
+              icon: {
+                name: "Binance",
+                color: "pastelBlue",
               },
-              {
-                label: 'Text3',
-                icon: {
-                  name: 'Binance',
-                  color: 'pastelBlue'
-                }
-              }
-            ]
-          }
+            },
+            {
+              label: "Text3",
+              icon: {
+                name: "Binance",
+                color: "pastelBlue",
+              },
+            },
+          ]}
         />
         <Dropdown
-          mr='24px'
+          mr="24px"
           maxWidth="250px"
           scale="sm"
           variant="dark"
-          options={
-            [
-              {
-                label: 'Text',
-                icon: {
-                  name: 'Binance',
-                  color: 'pastelBlue'
-                }
+          options={[
+            {
+              label: "Text",
+              icon: {
+                name: "Binance",
+                color: "pastelBlue",
               },
-              {
-                label: 'Text2',
-                icon: {
-                  name: 'Binance',
-                  color: 'pastelBlue'
-                }
+            },
+            {
+              label: "Text2",
+              icon: {
+                name: "Binance",
+                color: "pastelBlue",
               },
-              {
-                label: 'Text3',
-                icon: {
-                  name: 'Binance',
-                  color: 'pastelBlue'
-                }
-              }
-            ]
-          }
+            },
+            {
+              label: "Text3",
+              icon: {
+                name: "Binance",
+                color: "pastelBlue",
+              },
+            },
+          ]}
           disabled
         />
       </WrapperDark>

@@ -51,12 +51,7 @@ export const Default: React.FC = () => {
               {scale} light
             </Heading>
             <Row>
-              <Input
-                type="text"
-                scale={scale}
-                variant="light"
-                value="Value"
-              />
+              <Input type="text" scale={scale} variant="light" value="Value" />
               <Input
                 type="text"
                 scale={scale}
@@ -94,12 +89,7 @@ export const Default: React.FC = () => {
               {scale} dark
             </Heading>
             <Row>
-              <Input
-                type="text"
-                scale={scale}
-                variant="dark"
-                value="Value"
-              />
+              <Input type="text" scale={scale} variant="dark" value="Value" />
               <Input
                 type="text"
                 scale={scale}
