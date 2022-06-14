@@ -23,17 +23,13 @@ export const Default: React.FC = () => {
   const [index2, setIndex2] = useState(0);
   const [index3, setIndex3] = useState(0);
 
-  const handleClick = (newIndex) => setIndex(newIndex);
-  const handleClick2 = (newIndex) => setIndex2(newIndex);
-  const handleClick3 = (newIndex) => setIndex3(newIndex);
-
   return (
     <>
       <Row>
         <SlideButtonMenu
           customClass="dark-lg"
           scale="lg"
-          onItemClick={handleClick2}
+          onItemClick={setIndex2}
           activeIndex={index2}
           menuTitles={["Select 1", "Select 22", "Select 333", "Select 4444"]}
         />
@@ -43,7 +39,7 @@ export const Default: React.FC = () => {
           fullWidth
           customClass="dark-lg-five"
           scale="lg"
-          onItemClick={handleClick3}
+          onItemClick={setIndex3}
           activeIndex={index3}
           menuTitles={[
             "Select 1",
@@ -58,7 +54,7 @@ export const Default: React.FC = () => {
         <SlideButtonMenu
           fullWidth
           customClass="dark-lg-two"
-          onItemClick={handleClick2}
+          onItemClick={setIndex2}
           activeIndex={index2}
           menuTitles={[
             "Select 111111111111111111111111111111111111111111",
@@ -69,7 +65,7 @@ export const Default: React.FC = () => {
       <Row isLight>
         <SlideButtonMenu
           variant="selectLight"
-          onItemClick={handleClick}
+          onItemClick={setIndex}
           activeIndex={index}
           menuTitles={["Select 1", "Select 22", "Select 333", "Select 4444"]}
         />
@@ -79,7 +75,7 @@ export const Default: React.FC = () => {
           customClass="light-lg"
           variant="selectLight"
           scale="lg"
-          onItemClick={handleClick2}
+          onItemClick={setIndex2}
           activeIndex={index2}
           menuTitles={["Select 1", "Select 22", "Select 333", "Select 4444"]}
         />

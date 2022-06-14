@@ -42,7 +42,7 @@ const getOpacity = ({ $isLoading = false }: TransientButtonProps) => {
 
 const StyledTabItem = styled.button<BaseButtonProps>`
   background-color: transparent;
-  align-items: center;
+  align-items: flex-start;
   border: 0;
   cursor: pointer;
   display: inline-flex;
@@ -55,9 +55,9 @@ const StyledTabItem = styled.button<BaseButtonProps>`
   outline: 0;
   z-index: 2;
   transition: color 0.3s ease;
-
-  &:active:not(:disabled):not(.button--disabled):not(.button--disabled) {
-  }
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
 
   ${getDisabledStyles}
   ${variant({

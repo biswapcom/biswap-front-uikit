@@ -38,13 +38,9 @@ const OverWrap = styled.div<StyledButtonMenuProps>`
 
 const StyledSlideButtonMenu = styled.div<StyledButtonMenuProps>`
   position: relative;
-  //background-color: ${getBackgroundColor};
-  //border-radius: ${getBorderRadius};
   border-radius: 4px;
   display: ${({ fullWidth }) => (fullWidth ? "flex" : "inline-flex")};
   width: ${({ fullWidth }) => (fullWidth ? "100%" : "auto")};
-  //padding: 4px;
-  overflow: hidden;
 
   & > button,
   & > a {
@@ -95,6 +91,10 @@ const Selection = styled.div<ISelection>`
   border-radius: ${({ scale }) =>
     scale === slideMenuScales.SM ? "6px" : "8px"};
   z-index: 1;
+
+  ${({ theme, variant }) =>
+    variant === slideMenuVariants.SELECT_LIGHT &&
+    `box-shadow: 0 2px 4px ${getRgba(theme.colors.backgroundDark, 0.08)}`};
 `;
 
 const SlideButtonMenu: React.FC<SlideMenuProps> = ({
