@@ -1,4 +1,4 @@
-/// <reference types="react" />
+import { FC } from "react";
 import { InputGroupProps } from "./types";
-declare const InputGroup: ({ scale, startIcon, endIcon, children, variant, ...props }: InputGroupProps) => JSX.Element;
+declare const InputGroup: FC<InputGroupProps>;
 export default InputGroup;

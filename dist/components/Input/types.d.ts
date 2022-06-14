@@ -1,4 +1,4 @@
-import { ReactElement } from "react";
+/// <reference types="react" />
 import { SpaceProps } from "styled-system";
 export declare const scales: {
     readonly SM: "sm";
@@ -7,7 +7,11 @@ export declare const scales: {
 };
 export declare const variants: {
     readonly LIGHT: "light";
+    readonly LIGHT_WARNING: "lightWarning";
+    readonly LIGHT_ERROR: "lightError";
     readonly DARK: "dark";
+    readonly DARK_WARNING: "darkWarning";
+    readonly DARK_ERROR: "darkError";
     readonly TRANSPARENT: "transparent";
 };
 export declare type Scales = typeof scales[keyof typeof scales];
@@ -15,11 +19,18 @@ export declare type Variants = typeof variants[keyof typeof variants];
 export interface InputProps extends SpaceProps {
     scale?: Scales;
     variant?: Variants;
-    isSuccess?: boolean;
     isWarning?: boolean;
+    isError?: boolean;
+    maxWidth?: string;
+    minWidth?: string;
 }
 export interface InputGroupProps extends SpaceProps, InputProps {
-    startIcon?: ReactElement;
-    endIcon?: ReactElement;
+    startIcon?: IconProps;
+    endIcon?: IconProps;
     children: JSX.Element;
 }
+interface IconProps {
+    iconName: string;
+    color?: string;
+}
+export {};

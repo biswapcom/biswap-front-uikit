@@ -12,6 +12,10 @@ export default {
   argTypes: {},
 };
 
+const Wrapper = styled(Flex)`
+  background: #edf4f9;
+`;
+
 const Label = styled(Text)`
   word-break: break-word;
 `;
@@ -43,7 +47,7 @@ const components = context.keys().reduce((accum, path) => {
 
 export const Icons: React.FC = () => {
   return (
-    <Flex justifyContent="start" alignItems="center" flexWrap="wrap">
+    <Wrapper justifyContent="start" alignItems="center" flexWrap="wrap">
       {Object.keys(components).map((file) => {
         const Icon = components[file].default;
         return (
@@ -76,7 +80,7 @@ export const Icons: React.FC = () => {
           </Flex>
         );
       })}
-    </Flex>
+    </Wrapper>
   );
 };
 

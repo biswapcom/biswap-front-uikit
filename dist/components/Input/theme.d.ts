@@ -4,18 +4,27 @@ export declare const scaleVariants: {
         height: string;
         fontSize: string;
         padding: string;
+        svg: {
+            width: string;
+        };
     };
     md: {
         borderRadius: string;
         height: string;
         fontSize: string;
         padding: string;
+        svg: {
+            width: string;
+        };
     };
     sm: {
         borderRadius: string;
         height: string;
         fontSize: string;
         padding: string;
+        svg: {
+            width: string;
+        };
     };
 };
 export declare const styleVariants: {
@@ -41,6 +50,16 @@ export declare const styleVariants: {
             cursor: string;
         };
     };
+    lightWarning: {
+        borderColor: string;
+        backgroundColor: string;
+        color: string;
+    };
+    lightError: {
+        borderColor: string;
+        backgroundColor: string;
+        color: string;
+    };
     dark: {
         backgroundColor: string;
         color: string;
@@ -62,6 +81,16 @@ export declare const styleVariants: {
             color: string;
             cursor: string;
         };
+    };
+    darkWarning: {
+        borderColor: string;
+        backgroundColor: string;
+        color: string;
+    };
+    darkError: {
+        borderColor: string;
+        backgroundColor: string;
+        color: string;
     };
     transparent: {
         backgroundColor: string;

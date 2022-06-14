@@ -1,7 +1,7 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
 import styled from "styled-components";
 import { parseInt } from "lodash";
-import {Box, BoxProps, Flex} from "../Box";
+import { Box, BoxProps, Flex } from "../Box";
 import SliderIcon from "./Slider.svg";
 import { Text } from "../Text";
 
@@ -20,7 +20,7 @@ const BarBackground = styled.div`
   width: 100%;
   height: 4px;
   border-radius: 100px;
-  opacity: .16;
+  opacity: 0.16;
   background-color: ${({ theme }) => theme.colors.pastelBlue};
 `;
 
@@ -137,15 +137,19 @@ const PercentWrap = styled.div`
   margin: 0 10px;
   position: relative;
   background: transparent;
-`
+`;
 
-const PercentBanner = styled(Flex)<{ left: number, bannerPosition: 'top' | 'bottom' }>`
+const PercentBanner = styled(Flex)<{
+  left: number;
+  bannerPosition: "top" | "bottom";
+}>`
   align-items: center;
   position: absolute;
-  ${({ bannerPosition }) => bannerPosition === 'top' ? 'top: 0' : 'bottom: 0'};
+  ${({ bannerPosition }) =>
+    bannerPosition === "top" ? "top: 0" : "bottom: 0"};
   left: ${({ left }) => `${left}%`};
-  transform: translateX(-50%) translateY(calc(${({ bannerPosition }) => 
-      bannerPosition === 'top' ? '-100% - 20px' : '100% + 20px'}));
+  transform: translateX(-50%) translateY(calc(${({ bannerPosition }) =>
+    bannerPosition === "top" ? "-100% - 20px" : "100% + 20px"}));
   border-radius: 8px;
   padding: 8px 4px;
   background-color: ${({ theme }) => theme.colors.tooltip};
@@ -155,22 +159,26 @@ const PercentBanner = styled(Flex)<{ left: number, bannerPosition: 'top' | 'bott
     display: block;
     position: absolute;
     left: 50%;
-    ${({ bannerPosition }) => bannerPosition === 'top' ? 'bottom: 0' : 'top: 0'};
+    ${({ bannerPosition }) =>
+      bannerPosition === "top" ? "bottom: 0" : "top: 0"};
     width: 0;
     height: 0;
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
-    transform: translate(-50%, ${({ bannerPosition }) => bannerPosition === 'top' ? '100%' : '-100%'});
-    ${({ bannerPosition, theme }) => 
-        `border-${bannerPosition === 'top' ? 'top' : 'bottom'}: 6px solid ${theme.colors.tooltip}`};
-`
+    transform: translate(-50%, ${({ bannerPosition }) =>
+      bannerPosition === "top" ? "100%" : "-100%"});
+    ${({ bannerPosition, theme }) =>
+      `border-${bannerPosition === "top" ? "top" : "bottom"}: 6px solid ${
+        theme.colors.tooltip
+      }`};
+`;
 
 const Divider = styled.span`
   width: 2px;
   height: 10px;
   margin: 0 4px 0 4px;
   background-color: ${({ theme }) => theme.colors.gray900};
-`
+`;
 
 const PercentText = styled(Text)`
   color: ${({ theme }) => theme.colors.white};
@@ -178,11 +186,11 @@ const PercentText = styled(Text)`
   line-height: 16px;
   font-weight: 600;
   min-width: 24px;
-  
+
   &:first-child {
     text-align: right;
   }
-`
+`;
 
 // We need to adjust the offset as the percentage increases, as 100% really is 100% - label width. The number 10 is arbitrary, but seems to work...
 const MOVING_SLIDER_LABEL_OFFSET_FACTOR = 25;
@@ -193,7 +201,7 @@ interface SliderProps extends BoxProps {
   valueLabel?: string;
   checkPoints?: Checkpoint[];
   isRobiBoost?: boolean;
-  bannerPosition?: 'top' | 'bottom'
+  bannerPosition?: "top" | "bottom";
 }
 
 interface Checkpoint {
@@ -217,7 +225,7 @@ const Slider: React.FC<SliderProps> = ({
   onValueChanged,
   checkPoints = INIT_CHECKPOINTS,
   isRobiBoost,
-  bannerPosition = 'top',
+  bannerPosition = "top",
   ...props
 }) => {
   const [percent, setPercent] = useState({ value: 0, RB: 0 });
@@ -282,18 +290,24 @@ const Slider: React.FC<SliderProps> = ({
 
   // const labelOffset = progressPercentage - progressPercentage / MOVING_SLIDER_LABEL_OFFSET_FACTOR;
 
-  const [infoVisible, setInfoVisible] = useState<boolean>(false)
+  const [infoVisible, setInfoVisible] = useState<boolean>(false);
 
   return (
     <Wrapper>
       <SliderContainer {...props}>
         <BunnySlider>
           <PercentWrap>
-            {infoVisible && <PercentBanner className='percent-info-banner' bannerPosition={bannerPosition} left={percent?.value}>
-              <PercentText>{value}</PercentText>
-              <Divider/>
-              <PercentText>{100 - value}</PercentText>
-            </PercentBanner>}
+            {infoVisible && (
+              <PercentBanner
+                className="percent-info-banner"
+                bannerPosition={bannerPosition}
+                left={percent?.value}
+              >
+                <PercentText>{value}</PercentText>
+                <Divider />
+                <PercentText>{100 - value}</PercentText>
+              </PercentBanner>
+            )}
           </PercentWrap>
           <BarBackground />
           <BarProgress progress={progressPercentage} />
@@ -327,7 +341,7 @@ const Slider: React.FC<SliderProps> = ({
         </InfoNode>
       </InfoBlock>
       <RBPrice>
-        price 1{' '}{isRobiBoost ? "RB" : "SE"} = ${percent.RB} volume
+        price 1 {isRobiBoost ? "RB" : "SE"} = ${percent.RB} volume
       </RBPrice>
     </Wrapper>
   );

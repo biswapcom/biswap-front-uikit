@@ -16,15 +16,20 @@ const MenuItemContent: FC<MenuItemContentProps> = ({
   rightIcon,
   fill = "primary",
 }) => {
-  const { isMobile } = useMatchBreakpoints()
-  return(
+  const { isMobile } = useMatchBreakpoints();
+  return (
     <>
       {leftIcon && (
         <IconComponentWrap>
           <IconComponent width={40} iconName={leftIcon} />
         </IconComponentWrap>
       )}
-      <Flex  alignSelf={isMobile ? "stretch" : ""} flexDirection={"column"} flex={1} paddingLeft={leftIcon && "16px"}>
+      <Flex
+        alignSelf={isMobile ? "stretch" : ""}
+        flexDirection={"column"}
+        flex={1}
+        paddingLeft={leftIcon && "16px"}
+      >
         {label}
         {description && (
           <Text fontSize={"12px"} color={"gray900"} lineHeight="16px">
@@ -33,10 +38,14 @@ const MenuItemContent: FC<MenuItemContentProps> = ({
         )}
       </Flex>
       {rightIcon && (
-        <IconComponent className="arrow-icon" iconName={rightIcon} color={fill} />
+        <IconComponent
+          className="arrow-icon"
+          iconName={rightIcon}
+          color={fill}
+        />
       )}
     </>
-  )
+  );
 };
 
 export default MenuItemContent;
