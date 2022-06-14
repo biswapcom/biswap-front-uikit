@@ -1,4 +1,4 @@
-import styled, { DefaultTheme } from "styled-components";
+import styled from "styled-components";
 import { variant } from "styled-system";
 import { scaleVariants, styleVariants } from "./theme";
 import { InputProps, scales } from "./types";
@@ -20,12 +20,16 @@ import { InputProps, scales } from "./types";
 // };
 
 const Input = styled.input<InputProps>`
-  color: ${({ theme }) => theme.colors.text};
   display: block;
+  color: ${({ theme }) => theme.colors.text};
   font-size: 16px;
   outline: 0;
   width: 100%;
-  border: 1px solid transparent;
+  max-width: ${({ maxWidth }) => maxWidth || "none"};
+  min-width: ${({ minWidth }) => minWidth || "0"};
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
   transition: border-color 0.4s ease, background-color 0.4s ease,
     color 0.4s ease;
 
@@ -41,7 +45,7 @@ const Input = styled.input<InputProps>`
 
 Input.defaultProps = {
   scale: scales.MD,
-  isSuccess: false,
+  isError: false,
   isWarning: false,
 };
 

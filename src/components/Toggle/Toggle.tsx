@@ -7,7 +7,7 @@ const Toggle: React.FC<ToggleProps> = ({
   checked,
   defaultColor = "toggleBg",
   checkedColor = "success",
-  scale = scales.LG,
+  scale = scales.MD,
   disabled,
   ...props
 }) => {

@@ -6,18 +6,30 @@ export const scaleVariants = {
     height: "48px",
     fontSize: "16px",
     padding: "0 24px",
+
+    svg: {
+      width: "24px",
+    },
   },
   [scales.MD]: {
     borderRadius: "8px",
     height: "40px",
     fontSize: "14px",
     padding: "0 16px",
+
+    svg: {
+      width: "20px",
+    },
   },
   [scales.SM]: {
     borderRadius: "8px",
     height: "32px",
     fontSize: "12px",
     padding: "0 12px",
+
+    svg: {
+      width: "16px",
+    },
   },
 };
 export const styleVariants = {
@@ -44,6 +56,16 @@ export const styleVariants = {
       cursor: "not-allowed",
     },
   },
+  [variants.LIGHT_WARNING]: {
+    borderColor: "warning",
+    backgroundColor: "transparent",
+    color: "dark800",
+  },
+  [variants.LIGHT_ERROR]: {
+    borderColor: "secondary",
+    backgroundColor: "transparent",
+    color: "dark800",
+  },
   [variants.DARK]: {
     backgroundColor: "dark500",
     color: "white",
@@ -66,6 +88,16 @@ export const styleVariants = {
       color: "dark200",
       cursor: "not-allowed",
     },
+  },
+  [variants.DARK_WARNING]: {
+    borderColor: "warning",
+    backgroundColor: "transparent",
+    color: "white",
+  },
+  [variants.DARK_ERROR]: {
+    borderColor: "secondary",
+    backgroundColor: "transparent",
+    color: "white",
   },
   [variants.TRANSPARENT]: {
     backgroundColor: "transparent",

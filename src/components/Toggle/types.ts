@@ -2,9 +2,9 @@ import { InputHTMLAttributes, ReactNode } from "react";
 import { Colors } from "../../theme";
 
 export const scales = {
-  SM: "sm",
+  // SM: "sm",
   MD: "md",
-  LG: "lg",
+  // LG: "lg",
 } as const;
 
 export type Scales = typeof scales[keyof typeof scales];

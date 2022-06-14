@@ -91,7 +91,7 @@ const Wrapper = styled.div<BadgeProps>`
   border-radius: 16px;
   height: ${({ isLarge }) => (isLarge ? "38px" : "20px")};
   font-size: ${({ fontSize }) => fontSize || "10px"};
-  font-weight: ${({ fontWeight }) => fontWeight || "400"};
+  font-weight: ${({ fontWeight }) => fontWeight || "600"};
 `;
 
 const Badge: FC<BadgeProps> = ({

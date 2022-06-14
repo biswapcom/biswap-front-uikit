@@ -8,7 +8,11 @@ export const scales = {
 } as const;
 export const variants = {
   LIGHT: "light",
+  LIGHT_WARNING: "lightWarning",
+  LIGHT_ERROR: "lightError",
   DARK: "dark",
+  DARK_WARNING: "darkWarning",
+  DARK_ERROR: "darkError",
   TRANSPARENT: "transparent",
 } as const;
 
@@ -18,12 +22,21 @@ export type Variants = typeof variants[keyof typeof variants];
 export interface InputProps extends SpaceProps {
   scale?: Scales;
   variant?: Variants;
-  isSuccess?: boolean;
   isWarning?: boolean;
+  isError?: boolean;
+  maxWidth?: string;
+  minWidth?: string;
 }
 
 export interface InputGroupProps extends SpaceProps, InputProps {
-  startIcon?: ReactElement;
-  endIcon?: ReactElement;
+  // startIcon?: ReactElement;
+  // endIcon?: ReactElement;
+  startIcon?: IconProps;
+  endIcon?: IconProps;
   children: JSX.Element;
+}
+
+interface IconProps {
+  iconName: string;
+  color?: string;
 }
