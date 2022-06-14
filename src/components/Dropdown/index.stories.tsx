@@ -43,15 +43,15 @@ export const Default: React.FC = () => {
               {
                 label: 'Text2',
                 icon: {
-                  name: 'Binance',
-                  color: 'pastelBlue'
+                  name: 'BSC',
+                  color: 'success'
                 }
               },
               {
                 label: 'Text3',
                 icon: {
-                  name: 'Binance',
-                  color: 'pastelBlue'
+                  name: 'Gas',
+                  color: 'secondary'
                 }
               }
             ]

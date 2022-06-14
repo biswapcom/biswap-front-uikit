@@ -108,7 +108,7 @@ const Dropdown: React.FC<DropdownProps> = ({
   }
   const onOptionClicked = (option: OptionProps) => () => {
     setIsOpen(false)
-    console.log(options.indexOf(option))
+    setSelectedOption(options[options.indexOf(option)])
     if (onChange) {
       onChange(option)
     }
