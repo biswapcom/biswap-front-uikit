@@ -18,7 +18,7 @@ const getBottom = ({ position }: PositionProps) => {
   return "auto";
 };
 
-const Container = styled.div<{ maxWidth?: string, minWidth?: string }>`
+const Container = styled.div<{ maxWidth?: string; minWidth?: string }>`
   position: relative;
   width: 100%;
   max-width: ${({ maxWidth }) => maxWidth || "none"};
@@ -27,9 +27,9 @@ const Container = styled.div<{ maxWidth?: string, minWidth?: string }>`
   ${space}
 `;
 const DropdownTop = styled.div<{
-  disabled?: boolean,
-  scale?: string,
-  variant?: string
+  disabled?: boolean;
+  scale?: string;
+  variant?: string;
 }>`
   display: flex;
   align-items: center;
@@ -50,11 +50,11 @@ const DropdownTop = styled.div<{
 const Label = styled.span`
   flex-grow: 1;
 `;
-const StyledArrow = styled(ChevronDown)<{ isOpen: boolean, variant?: string }>`
+const StyledArrow = styled(ChevronDown)<{ isOpen: boolean; variant?: string }>`
   transition: transform 0.4s ease-in-out;
   transform: ${({ isOpen }) => (isOpen ? "scale(1,-1)" : "scale(1,1)")};
 `;
-const DropdownContent = styled.div<{ position?: Position, scale?: string }>`
+const DropdownContent = styled.div<{ position?: Position; scale?: string }>`
   width: 100%;
   position: absolute;
   left: 0;
@@ -69,7 +69,7 @@ const DropdownContent = styled.div<{ position?: Position, scale?: string }>`
     variants: scaleVariantsContent,
   })}
 `;
-const DropdownItem = styled.div<{ scale?: string, selected?: boolean }>`
+const DropdownItem = styled.div<{ scale?: string; selected?: boolean }>`
   display: flex;
   align-items: center;
   color: ${({ theme, selected }) =>
