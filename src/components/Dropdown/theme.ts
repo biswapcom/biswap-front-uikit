@@ -88,7 +88,7 @@ export const scaleVariantItem = {
 
 export const styleVariantsTop = {
   [variants.LIGHT]: {
-    borderColor: "gray00",
+    borderColor: "gray300",
     color: "gray900",
 
     ".arrow": {
