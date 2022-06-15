@@ -1,6 +1,10 @@
-export declare const scaleVariantsTop: {
+export declare const scaleVariantsContainer: {
     [x: string]: {
         height: string;
+    };
+};
+export declare const scaleVariantsTop: {
+    [x: string]: {
         padding: string;
         fontSize: string;
         borderRadius: string;
@@ -37,17 +41,6 @@ export declare const styleVariantsTop: {
             borderColor: string;
         };
         "&.open": {
-            color: string;
-            borderColor: string;
-            ":hover": {
-                color: string;
-                borderColor: string;
-            };
-            ".arrow": {
-                fill: string;
-            };
-        };
-        "&.disabled": {
             color: string;
             borderColor: string;
             ":hover": {

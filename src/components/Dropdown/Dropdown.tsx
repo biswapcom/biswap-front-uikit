@@ -4,6 +4,7 @@ import { variant, space } from "styled-system";
 import { DropdownProps, Position, PositionProps, OptionProps } from "./types";
 import IconComponent from "../Svg/IconComponent";
 import {
+  scaleVariantsContainer,
   scaleVariantsTop,
   scaleVariantsContent,
   styleVariantsTop,
@@ -13,16 +14,25 @@ import ChevronDown from "../Svg/Icons/Arrows/ChevronDown";
 
 const getBottom = ({ position }: PositionProps) => {
   if (position === "top") {
-    return "100%";
+    return "calc(100% + 8px)";
   }
-  return "auto";
+  return "-8px";
 };
 
-const Container = styled.div<{ maxWidth?: string; minWidth?: string }>`
+const Container = styled.div<{
+  maxWidth?: string;
+  minWidth?: string;
+  scale?: string;
+}>`
   position: relative;
   width: 100%;
   max-width: ${({ maxWidth }) => maxWidth || "none"};
   min-width: ${({ minWidth }) => minWidth || "0"};
+
+  ${variant({
+    prop: "scale",
+    variants: scaleVariantsContainer,
+  })}
 
   ${space}
 `;
@@ -34,10 +44,12 @@ const DropdownTop = styled.div<{
   display: flex;
   align-items: center;
   width: 100%;
+  height: 100%;
   border: 1px solid;
   font-weight: 600;
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
   transition: all 0.4s ease-in-out;
+  opacity: ${({ disabled }) => (disabled ? ".56" : "1")};
 
   ${variant({
     prop: "scale",
@@ -60,9 +72,12 @@ const DropdownContent = styled.div<{ position?: Position; scale?: string }>`
   left: 0;
   bottom: ${getBottom};
   z-index: 101;
-  box-shadow: 0 16px 32px rgba(0, 26, 67, 0.24);
+  box-shadow: ${({ position }) =>
+    position === "bottom" ? "0px 16px 32px rgba(0, 26, 67, 0.24)" : "none"};
   background: ${({ theme }) => theme.colors.white};
   overflow: hidden;
+  transform: ${({ position }) =>
+    position === "bottom" ? "translateY(100%)" : "translateY(0)"};
 
   ${variant({
     prop: "scale",
@@ -138,6 +153,7 @@ const Dropdown: React.FC<DropdownProps> = ({
       maxWidth={maxWidth}
       minWidth={minWidth}
       ref={wrapperRef}
+      scale={scale}
       {...props}
     >
       <DropdownTop
@@ -151,7 +167,7 @@ const Dropdown: React.FC<DropdownProps> = ({
           <IconComponent
             iconName={selectedOption.icon.name}
             color={selectedOption.icon.color}
-            mr={scale === 'lg' ? '12px' : '8px'}
+            mr={scale === "lg" ? "12px" : "8px"}
           />
         )}
         <Label>{selectedOption.label}</Label>
