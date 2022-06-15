@@ -31,7 +31,6 @@ const SlideButtonMenuItem: FC<SlideButtonMenuItemProps> = ({
   onAction,
   customClass,
   blockOffset,
-  widthsArr,
   ...props
 }: SlideButtonMenuItemProps): JSX.Element => {
   const { isDesktop, isMobile, isTablet } = useMatchBreakpoints();
