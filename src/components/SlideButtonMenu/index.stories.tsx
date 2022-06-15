@@ -66,7 +66,7 @@ export const Default: React.FC = () => {
         <SlideButtonMenu
           customClass="light-lg"
           scale="lg"
-          variant="selectLight"
+          variant="light"
           onItemClick={setIndex}
           activeIndex={index}
           menuTitles={["Select 1", "Select 2", "Select 3", "Select 4"]}
@@ -76,7 +76,7 @@ export const Default: React.FC = () => {
         <SlideButtonMenu
           customClass="light-md"
           scale="md"
-          variant="selectLight"
+          variant="light"
           onItemClick={setIndex2}
           activeIndex={index2}
           menuTitles={["Select 1", "Select 22", "Select 333", "Select 4444"]}
@@ -86,7 +86,7 @@ export const Default: React.FC = () => {
         <SlideButtonMenu
           customClass="light-sm"
           scale="sm"
-          variant="selectLight"
+          variant="light"
           onItemClick={setIndex2}
           activeIndex={index2}
           menuTitles={["Select 1", "Select 22", "Select 333", "Select 4444"]}

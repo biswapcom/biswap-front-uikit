@@ -19,27 +19,7 @@ export declare const slideMenuScaleVariants: {
     };
 };
 export declare const slideMenuStyleVariants: {
-    primary: {
-        backgroundColor: string;
-        color: string;
-        ":hover:not(:disabled)": {
-            backgroundColor: string;
-        };
-        ":active:not(:disabled)": {
-            backgroundColor: string;
-        };
-    };
-    warning: {
-        backgroundColor: string;
-        color: string;
-        ":hover:not(:disabled)": {
-            backgroundColor: string;
-        };
-        ":active:not(:disabled)": {
-            backgroundColor: string;
-        };
-    };
-    select: {
+    dark: {
         color: string;
         backgroundColor: string;
         transition: string;
@@ -50,7 +30,7 @@ export declare const slideMenuStyleVariants: {
             backgroundColor: string;
         };
     };
-    selectLight: {
+    light: {
         backgroundColor: string;
         color: string;
         transition: string;

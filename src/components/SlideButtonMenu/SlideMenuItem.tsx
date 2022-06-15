@@ -1,11 +1,10 @@
 import React, { ElementType } from "react";
 import getExternalLinkProps from "../../util/getExternalLinkProps";
-import { ButtonProps } from "../Button";
-import { slideMenuScales, slideMenuVariants } from "./types";
+import {SlideButtonProps, slideMenuScales, slideMenuVariants} from "./types";
 import StyledSlideMenuItem from "./StyledSlideMenuItem";
 
 const SlideMenuItem = <E extends ElementType = "button">(
-  props: ButtonProps<E>
+  props: SlideButtonProps<E>
 ): JSX.Element => {
   const {
     startIcon,
@@ -40,8 +39,8 @@ const SlideMenuItem = <E extends ElementType = "button">(
 SlideMenuItem.defaultProps = {
   isLoading: false,
   external: false,
-  variant: slideMenuVariants.PRIMARY,
-  scale: slideMenuScales.MD,
+  variant: slideMenuVariants.DARK,
+  scale: slideMenuScales.SM,
   disabled: false,
 };
 
