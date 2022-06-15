@@ -55,6 +55,7 @@ const StyledSlideMenuItem = styled.button<BaseButtonProps>`
   margin: 0;
   transition: background-color 0.2s, opacity 0.2s;
   z-index: 2;
+  -webkit-tap-highlight-color: transparent;
   //padding: 0;
 
   //&:hover {
