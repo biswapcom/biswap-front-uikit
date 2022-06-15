@@ -151,6 +151,7 @@ const Dropdown: React.FC<DropdownProps> = ({
           <IconComponent
             iconName={selectedOption.icon.name}
             color={selectedOption.icon.color}
+            mr={scale === 'lg' ? '12px' : '8px'}
           />
         )}
         <Label>{selectedOption.label}</Label>
