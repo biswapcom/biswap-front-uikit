@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useRef } from "react";
+import React, { FC, useEffect } from "react";
 import styled from "styled-components";
 import { PolymorphicComponent } from "../../util/polymorphic";
 import { BaseButtonProps } from "../Button/types";
