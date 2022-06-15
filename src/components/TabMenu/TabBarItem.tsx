@@ -4,6 +4,7 @@ import { PolymorphicComponent } from "../../util/polymorphic";
 import { BaseButtonProps } from "../Button/types";
 import { TabBarItemProps, tabVariants } from "./types";
 import TabItem from "./TabItem";
+import { useMatchBreakpoints } from "../../hooks";
 
 interface InactiveButtonProps extends BaseButtonProps {
   forwardedAs: BaseButtonProps["as"];
@@ -29,17 +30,21 @@ const TabBarItem: FC<TabBarItemProps> = ({
   itemIndex,
   onAction,
   customClass,
+  blockOffset,
   ...props
 }: TabBarItemProps): JSX.Element => {
+  const { isDesktop, isMobile, isTablet } = useMatchBreakpoints();
   const className = "tab-bar-item-" + itemIndex + customClass;
   const element = document.getElementsByClassName(className);
 
   useEffect(() => {
-    setWidth((prev: Array<number>) => [
-      ...prev,
-      element.item(0)?.clientWidth ?? 0,
-    ]);
-  }, [element]);
+    const itemWidth = element.item(0)?.clientWidth ?? 0;
+    if (itemWidth) {
+      setWidth((prev: Array<number>) =>
+        prev.map((item, index) => (index === itemIndex ? itemWidth : item))
+      );
+    }
+  }, [element, isDesktop, isMobile, isTablet, blockOffset]);
 
   const handleClick = () => {
     onAction(itemIndex);

@@ -9,6 +9,7 @@ export interface TabBarItemProps extends BaseButtonProps {
   itemIndex: number;
   children?: string;
   onAction: (index: number) => void;
+  blockOffset: number;
 }
 
 export const tabsScales = {

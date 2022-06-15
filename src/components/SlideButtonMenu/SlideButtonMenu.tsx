@@ -147,7 +147,6 @@ const SlideButtonMenu: React.FC<SlideMenuProps> = ({
             isActive={activeIndex === index}
             onAction={onItemClick}
             itemIndex={index}
-            widthsArr={widthsArr}
             setWidth={setWidthsArr}
             blockOffset={blockOffset}
             variant={variant}
