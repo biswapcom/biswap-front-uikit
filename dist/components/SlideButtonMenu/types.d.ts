@@ -3,7 +3,6 @@ import { BaseButtonProps } from "../Button/types";
 import { Dispatch, SetStateAction } from "react";
 export interface SlideButtonMenuItemProps extends BaseButtonProps {
     isActive?: boolean;
-    widthsArr: Array<number>;
     setWidth: Dispatch<SetStateAction<any>>;
     blockOffset: number;
     itemIndex: number;

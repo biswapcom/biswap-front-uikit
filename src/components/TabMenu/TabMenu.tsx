@@ -69,7 +69,9 @@ const TabMenu: React.FC<BarProps> = ({
   menuTitles = [""],
   ...props
 }) => {
-  const [widthsArr, setWidthsArr] = useState([]);
+  const [widthsArr, setWidthsArr] = useState(
+    [...Array(menuTitles?.length)].map((e, i) => i - i)
+  );
   const [blockOffset, setBlockOffset] = useState(0);
 
   useEffect(() => {
@@ -108,6 +110,7 @@ const TabMenu: React.FC<BarProps> = ({
           setWidth={setWidthsArr}
           variant={variant}
           scale={scale}
+          blockOffset={blockOffset}
         >
           {title}
         </TabBarItem>
