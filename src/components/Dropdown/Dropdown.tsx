@@ -73,7 +73,9 @@ const DropdownContent = styled.div<{ position?: Position; scale?: string }>`
   bottom: ${getBottom};
   z-index: 101;
   box-shadow: ${({ position }) =>
-    position === "bottom" ? "0px 16px 32px rgba(0, 26, 67, 0.24)" : "none"};
+    position === "bottom"
+      ? "0px 16px 32px rgba(0, 26, 67, 0.24)"
+      : "box-shadow: 0px -16px 32px rgba(0, 26, 67, 0.24);"};
   background: ${({ theme }) => theme.colors.white};
   overflow: hidden;
   transform: ${({ position }) =>

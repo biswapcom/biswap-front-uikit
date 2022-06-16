@@ -1,4 +1,4 @@
-import styled  from "styled-components";
+import styled from "styled-components";
 import { space, layout, variant } from "styled-system";
 import { BaseButtonProps } from "../Button";
 import { slideMenuScaleVariants, slideMenuStyleVariants } from "./theme";

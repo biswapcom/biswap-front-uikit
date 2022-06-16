@@ -49,11 +49,14 @@ const StyledInputGroup = styled(Box)<{
   variant?: Variants;
   hasStartIcon: boolean;
   hasEndIcon: boolean;
+  disabled?: boolean;
 }>`
   display: block;
   outline: 0;
   width: 100%;
   position: relative;
+  opacity: ${({ disabled }) => (disabled ? ".56" : "1")};
+  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "initial")};
 
   ${variant({
     prop: "scale",
@@ -100,6 +103,7 @@ const InputGroup: FC<InputGroupProps> = ({
   variant,
   isError,
   isWarning,
+  disabled,
   ...props
 }) => {
   return (
@@ -110,6 +114,7 @@ const InputGroup: FC<InputGroupProps> = ({
       position="relative"
       hasStartIcon={!!startIcon}
       hasEndIcon={!!endIcon}
+      disabled={disabled}
       {...props}
     >
       {startIcon && (
@@ -119,7 +124,7 @@ const InputGroup: FC<InputGroupProps> = ({
           scale={scale}
         />
       )}
-      {cloneElement(children, { scale })}
+      {cloneElement(children, { variant, disabled })}
       {!isError && !isWarning && endIcon && (
         <RightIconComponent
           color={endIcon.color}

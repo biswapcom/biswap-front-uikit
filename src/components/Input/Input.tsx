@@ -14,8 +14,8 @@ const Input = styled.input<InputProps>`
   border-width: 1px;
   border-style: solid;
   border-color: transparent;
-  opacity: ${({ disabled }) => disabled ? '.56' : '1'};
-  cursor: ${({ disabled }) => disabled ? 'not-allowed' : 'initial'};
+  opacity: ${({ disabled }) => (disabled ? ".56" : "1")};
+  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "initial")};
   transition: border-color 0.4s ease, background-color 0.4s ease,
     color 0.4s ease;
 
