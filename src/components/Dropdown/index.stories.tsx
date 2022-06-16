@@ -34,6 +34,7 @@ export const Default: React.FC = () => {
           options={[
             {
               label: "Light LG",
+              value: "valueTest",
               icon: {
                 name: "Binance",
                 color: "pastelBlue",
@@ -41,6 +42,7 @@ export const Default: React.FC = () => {
             },
             {
               label: "Text2",
+              value: "valueTest",
               icon: {
                 name: "BSC",
                 color: "success",
@@ -48,6 +50,7 @@ export const Default: React.FC = () => {
             },
             {
               label: "Text3",
+              value: "valueTest",
               icon: {
                 name: "Gas",
                 color: "secondary",
@@ -64,6 +67,7 @@ export const Default: React.FC = () => {
           options={[
             {
               label: "Light MD",
+              value: "valueTest",
               icon: {
                 name: "Binance",
                 color: "pastelBlue",
@@ -71,6 +75,7 @@ export const Default: React.FC = () => {
             },
             {
               label: "Text2",
+              value: "valueTest",
               icon: {
                 name: "Binance",
                 color: "pastelBlue",
@@ -78,6 +83,7 @@ export const Default: React.FC = () => {
             },
             {
               label: "Text3",
+              value: "valueTest",
               icon: {
                 name: "Binance",
                 color: "pastelBlue",
@@ -93,6 +99,7 @@ export const Default: React.FC = () => {
           options={[
             {
               label: "Light SM",
+              value: "valueTest",
               icon: {
                 name: "Binance",
                 color: "pastelBlue",
@@ -100,6 +107,7 @@ export const Default: React.FC = () => {
             },
             {
               label: "Text2",
+              value: "valueTest",
               icon: {
                 name: "Binance",
                 color: "pastelBlue",
@@ -107,6 +115,7 @@ export const Default: React.FC = () => {
             },
             {
               label: "Text3",
+              value: "valueTest",
               icon: {
                 name: "Binance",
                 color: "pastelBlue",
@@ -124,6 +133,7 @@ export const Default: React.FC = () => {
           options={[
             {
               label: "Light open to top",
+              value: "valueTest",
               icon: {
                 name: "Binance",
                 color: "pastelBlue",
@@ -131,6 +141,7 @@ export const Default: React.FC = () => {
             },
             {
               label: "Text2",
+              value: "valueTest",
               icon: {
                 name: "Binance",
                 color: "pastelBlue",
@@ -138,6 +149,7 @@ export const Default: React.FC = () => {
             },
             {
               label: "Text3",
+              value: "valueTest",
               icon: {
                 name: "Binance",
                 color: "pastelBlue",
@@ -154,6 +166,7 @@ export const Default: React.FC = () => {
           options={[
             {
               label: "Light disabled",
+              value: "valueTest",
               icon: {
                 name: "Binance",
                 color: "pastelBlue",
@@ -161,6 +174,7 @@ export const Default: React.FC = () => {
             },
             {
               label: "Text2",
+              value: "valueTest",
               icon: {
                 name: "Binance",
                 color: "pastelBlue",
@@ -168,6 +182,7 @@ export const Default: React.FC = () => {
             },
             {
               label: "Text3",
+              value: "valueTest",
               icon: {
                 name: "Binance",
                 color: "pastelBlue",
@@ -187,6 +202,7 @@ export const Default: React.FC = () => {
           options={[
             {
               label: "Dark LG",
+              value: "valueTest",
               icon: {
                 name: "Binance",
                 color: "pastelBlue",
@@ -194,6 +210,7 @@ export const Default: React.FC = () => {
             },
             {
               label: "Text2",
+              value: "valueTest",
               icon: {
                 name: "Binance",
                 color: "pastelBlue",
@@ -201,6 +218,7 @@ export const Default: React.FC = () => {
             },
             {
               label: "Text3",
+              value: "valueTest",
               icon: {
                 name: "Binance",
                 color: "pastelBlue",
@@ -217,6 +235,7 @@ export const Default: React.FC = () => {
           options={[
             {
               label: "Dark MD",
+              value: "valueTest",
               icon: {
                 name: "Binance",
                 color: "pastelBlue",
@@ -224,6 +243,7 @@ export const Default: React.FC = () => {
             },
             {
               label: "Text2",
+              value: "valueTest",
               icon: {
                 name: "Binance",
                 color: "pastelBlue",
@@ -231,6 +251,7 @@ export const Default: React.FC = () => {
             },
             {
               label: "Text3",
+              value: "valueTest",
               icon: {
                 name: "Binance",
                 color: "pastelBlue",
@@ -246,6 +267,7 @@ export const Default: React.FC = () => {
           options={[
             {
               label: "Dark SM",
+              value: "valueTest",
               icon: {
                 name: "Binance",
                 color: "pastelBlue",
@@ -253,6 +275,7 @@ export const Default: React.FC = () => {
             },
             {
               label: "Text2",
+              value: "valueTest",
               icon: {
                 name: "Binance",
                 color: "pastelBlue",
@@ -260,6 +283,7 @@ export const Default: React.FC = () => {
             },
             {
               label: "Text3",
+              value: "valueTest",
               icon: {
                 name: "Binance",
                 color: "pastelBlue",
@@ -277,6 +301,7 @@ export const Default: React.FC = () => {
           options={[
             {
               label: "Dark open to top",
+              value: "valueTest",
               icon: {
                 name: "Binance",
                 color: "pastelBlue",
@@ -284,6 +309,7 @@ export const Default: React.FC = () => {
             },
             {
               label: "Text2",
+              value: "valueTest",
               icon: {
                 name: "Binance",
                 color: "pastelBlue",
@@ -291,6 +317,7 @@ export const Default: React.FC = () => {
             },
             {
               label: "Text3",
+              value: "valueTest",
               icon: {
                 name: "Binance",
                 color: "pastelBlue",
@@ -307,6 +334,7 @@ export const Default: React.FC = () => {
           options={[
             {
               label: "Dark disabled",
+              value: "valueTest",
               icon: {
                 name: "Binance",
                 color: "pastelBlue",
@@ -314,6 +342,7 @@ export const Default: React.FC = () => {
             },
             {
               label: "Text2",
+              value: "valueTest",
               icon: {
                 name: "Binance",
                 color: "pastelBlue",
@@ -321,6 +350,7 @@ export const Default: React.FC = () => {
             },
             {
               label: "Text3",
+              value: "valueTest",
               icon: {
                 name: "Binance",
                 color: "pastelBlue",
