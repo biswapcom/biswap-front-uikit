@@ -1,6 +1,6 @@
 import React, { ElementType } from "react";
 import getExternalLinkProps from "../../util/getExternalLinkProps";
-import {SlideButtonProps, slideMenuScales, slideMenuVariants} from "./types";
+import { SlideButtonProps, slideMenuScales, slideMenuVariants } from "./types";
 import StyledSlideMenuItem from "./StyledSlideMenuItem";
 
 const SlideMenuItem = <E extends ElementType = "button">(

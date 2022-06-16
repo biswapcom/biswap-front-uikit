@@ -33,7 +33,7 @@ export const Default: React.FC = () => {
           variant="light"
           options={[
             {
-              label: "Text",
+              label: "Light LG",
               icon: {
                 name: "Binance",
                 color: "pastelBlue",
@@ -63,7 +63,7 @@ export const Default: React.FC = () => {
           variant="light"
           options={[
             {
-              label: "Text",
+              label: "Light MD",
               icon: {
                 name: "Binance",
                 color: "pastelBlue",
@@ -92,7 +92,7 @@ export const Default: React.FC = () => {
           variant="light"
           options={[
             {
-              label: "Text",
+              label: "Light SM",
               icon: {
                 name: "Binance",
                 color: "pastelBlue",
@@ -114,6 +114,8 @@ export const Default: React.FC = () => {
             },
           ]}
         />
+      </WrapperLight>
+      <WrapperLight>
         <Dropdown
           mr="24px"
           maxWidth="250px"
@@ -121,7 +123,37 @@ export const Default: React.FC = () => {
           variant="light"
           options={[
             {
-              label: "Text",
+              label: "Light open to top",
+              icon: {
+                name: "Binance",
+                color: "pastelBlue",
+              },
+            },
+            {
+              label: "Text2",
+              icon: {
+                name: "Binance",
+                color: "pastelBlue",
+              },
+            },
+            {
+              label: "Text3",
+              icon: {
+                name: "Binance",
+                color: "pastelBlue",
+              },
+            },
+          ]}
+          position="top"
+        />
+        <Dropdown
+          mr="24px"
+          maxWidth="250px"
+          scale="sm"
+          variant="light"
+          options={[
+            {
+              label: "Light disabled",
               icon: {
                 name: "Binance",
                 color: "pastelBlue",
@@ -145,6 +177,7 @@ export const Default: React.FC = () => {
           disabled
         />
       </WrapperLight>
+
       <WrapperDark>
         <Dropdown
           mr="24px"
@@ -153,7 +186,7 @@ export const Default: React.FC = () => {
           variant="dark"
           options={[
             {
-              label: "Text",
+              label: "Dark LG",
               icon: {
                 name: "Binance",
                 color: "pastelBlue",
@@ -183,7 +216,7 @@ export const Default: React.FC = () => {
           variant="dark"
           options={[
             {
-              label: "Text",
+              label: "Dark MD",
               icon: {
                 name: "Binance",
                 color: "pastelBlue",
@@ -212,7 +245,7 @@ export const Default: React.FC = () => {
           variant="dark"
           options={[
             {
-              label: "Text",
+              label: "Dark SM",
               icon: {
                 name: "Binance",
                 color: "pastelBlue",
@@ -234,6 +267,8 @@ export const Default: React.FC = () => {
             },
           ]}
         />
+      </WrapperDark>
+      <WrapperDark>
         <Dropdown
           mr="24px"
           maxWidth="250px"
@@ -241,7 +276,37 @@ export const Default: React.FC = () => {
           variant="dark"
           options={[
             {
-              label: "Text",
+              label: "Dark open to top",
+              icon: {
+                name: "Binance",
+                color: "pastelBlue",
+              },
+            },
+            {
+              label: "Text2",
+              icon: {
+                name: "Binance",
+                color: "pastelBlue",
+              },
+            },
+            {
+              label: "Text3",
+              icon: {
+                name: "Binance",
+                color: "pastelBlue",
+              },
+            },
+          ]}
+          position="top"
+        />
+        <Dropdown
+          mr="24px"
+          maxWidth="250px"
+          scale="sm"
+          variant="dark"
+          options={[
+            {
+              label: "Dark disabled",
               icon: {
                 name: "Binance",
                 color: "pastelBlue",
