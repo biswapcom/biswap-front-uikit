@@ -1,30 +1,9 @@
 import { SpaceProps } from "styled-system";
-import { BaseButtonProps } from "../Button";
-import { Dispatch, SetStateAction } from "react";
-
-export interface TabBarItemProps extends BaseButtonProps {
-  isActive?: boolean;
-  customClass?: string;
-  setWidth: Dispatch<SetStateAction<any>>;
-  itemIndex: number;
-  children?: string;
-  onAction: (index: number) => void;
-  blockOffset: number;
-}
-
-export const tabsScales = {
-  LG: "lg",
-  MD: "md",
-  SM: "sm",
-} as const;
-
-export const tabVariants = {
-  TAB: "select",
-  TAB_LIGHT: "selectLight",
-} as const;
+import { Dispatch, ElementType, SetStateAction } from "react";
+import { PolymorphicComponentProps } from "../../util/polymorphic";
 
 export interface TabBarProps extends SpaceProps {
-  variant?: typeof tabVariants.TAB | typeof tabVariants.TAB_LIGHT;
+  variant?: typeof tabVariants.DARK | typeof tabVariants.LIGHT;
   activeIndex?: number;
   scale?: typeof tabsScales[keyof typeof tabsScales];
   disabled?: boolean;
@@ -33,3 +12,26 @@ export interface TabBarProps extends SpaceProps {
   customClass?: string;
   isLight?: boolean;
 }
+
+export interface TabBarItemProps extends TabBarProps {
+  isActive?: boolean;
+  setWidth?: Dispatch<SetStateAction<any>>;
+  itemIndex?: number;
+  children?: string;
+  onAction?: (index: number) => void;
+  blockOffset?: number;
+}
+
+export type TabProps<P extends ElementType = "button"> =
+  PolymorphicComponentProps<P, TabBarItemProps>;
+
+export const tabsScales = {
+  LG: "lg",
+  MD: "md",
+  SM: "sm",
+} as const;
+
+export const tabVariants = {
+  DARK: "dark",
+  LIGHT: "light",
+} as const;

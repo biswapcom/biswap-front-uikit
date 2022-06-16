@@ -27,54 +27,66 @@ export const Default: React.FC = () => {
     <>
       <Row>
         <SlideButtonMenu
+          disabled
           customClass="dark-lg"
           scale="lg"
           onItemClick={setIndex2}
           activeIndex={index2}
-          menuTitles={["Select 1", "Select 22", "Select 333", "Select 4444"]}
+          menuTitles={["Select 1", "Select 2", "Select 3", "Select 4"]}
         />
       </Row>
       <Row>
         <SlideButtonMenu
-          fullWidth
-          customClass="dark-lg-five"
+          customClass="dark-lg"
           scale="lg"
-          onItemClick={setIndex3}
-          activeIndex={index3}
-          menuTitles={[
-            "Select 1",
-            "Select 22",
-            "Select 333",
-            "Select 4444",
-            "Select 55555",
-          ]}
-        />
-      </Row>
-      <Row>
-        <SlideButtonMenu
-          fullWidth
-          customClass="dark-lg-two"
           onItemClick={setIndex2}
           activeIndex={index2}
-          menuTitles={[
-            "Select 111111111111111111111111111111111111111111",
-            "22",
-          ]}
+          menuTitles={["Select 1", "Select 2", "Select 3", "Select 4"]}
         />
       </Row>
-      <Row isLight>
+      <Row>
         <SlideButtonMenu
-          variant="selectLight"
-          onItemClick={setIndex}
-          activeIndex={index}
-          menuTitles={["Select 1", "Select 22", "Select 333", "Select 4444"]}
+          customClass="dark-md"
+          scale="md"
+          onItemClick={setIndex3}
+          activeIndex={index3}
+          menuTitles={["Select 1", "Select 2", "Select 3", "Select 4"]}
+        />
+      </Row>
+      <Row>
+        <SlideButtonMenu
+          customClass="dark-sm"
+          scale="sm"
+          onItemClick={setIndex2}
+          activeIndex={index2}
+          menuTitles={["Select 1", "Select 2", "Select 3", "Select 4"]}
         />
       </Row>
       <Row isLight>
         <SlideButtonMenu
           customClass="light-lg"
-          variant="selectLight"
           scale="lg"
+          variant="light"
+          onItemClick={setIndex}
+          activeIndex={index}
+          menuTitles={["Select 1", "Select 2", "Select 3", "Select 4"]}
+        />
+      </Row>
+      <Row isLight>
+        <SlideButtonMenu
+          customClass="light-md"
+          scale="md"
+          variant="light"
+          onItemClick={setIndex2}
+          activeIndex={index2}
+          menuTitles={["Select 1", "Select 22", "Select 333", "Select 4444"]}
+        />
+      </Row>
+      <Row isLight>
+        <SlideButtonMenu
+          customClass="light-sm"
+          scale="sm"
+          variant="light"
           onItemClick={setIndex2}
           activeIndex={index2}
           menuTitles={["Select 1", "Select 22", "Select 333", "Select 4444"]}

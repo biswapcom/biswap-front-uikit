@@ -1,28 +1,8 @@
 import { SpaceProps } from "styled-system";
-import { BaseButtonProps } from "../Button/types";
-import { Dispatch, SetStateAction } from "react";
-export interface SlideButtonMenuItemProps extends BaseButtonProps {
-    isActive?: boolean;
-    setWidth: Dispatch<SetStateAction<any>>;
-    blockOffset: number;
-    itemIndex: number;
-    children?: string;
-    onAction: (index: number) => void;
-    customClass?: string;
-}
-export declare const slideMenuScales: {
-    readonly LG: "lg";
-    readonly MD: "md";
-    readonly SM: "sm";
-};
-export declare const slideMenuVariants: {
-    readonly PRIMARY: "primary";
-    readonly WARNING: "warning";
-    readonly SELECT: "select";
-    readonly SELECT_LIGHT: "selectLight";
-};
+import { Dispatch, ElementType, SetStateAction } from "react";
+import { PolymorphicComponentProps } from "../../util/polymorphic";
 export interface SlideButtonMenuProps extends SpaceProps {
-    variant?: typeof slideMenuVariants.PRIMARY | typeof slideMenuVariants.WARNING | typeof slideMenuVariants.SELECT | typeof slideMenuVariants.SELECT_LIGHT;
+    variant?: typeof slideMenuVariants.DARK | typeof slideMenuVariants.LIGHT;
     activeIndex?: number;
     scale?: typeof slideMenuScales[keyof typeof slideMenuScales];
     disabled?: boolean;
@@ -30,3 +10,20 @@ export interface SlideButtonMenuProps extends SpaceProps {
     menuTitles?: Array<string>;
     customClass?: string;
 }
+export interface SlideButtonMenuItemProps extends SlideButtonMenuProps {
+    isActive?: boolean;
+    setWidth?: Dispatch<SetStateAction<any>>;
+    blockOffset?: number;
+    itemIndex?: number;
+    onAction?: (index: number) => void;
+}
+export declare type SlideButtonProps<P extends ElementType = "button"> = PolymorphicComponentProps<P, SlideButtonMenuItemProps>;
+export declare const slideMenuScales: {
+    readonly LG: "lg";
+    readonly MD: "md";
+    readonly SM: "sm";
+};
+export declare const slideMenuVariants: {
+    readonly DARK: "dark";
+    readonly LIGHT: "light";
+};

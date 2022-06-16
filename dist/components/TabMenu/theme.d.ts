@@ -30,13 +30,13 @@ export declare const sliderScaleVariant: {
     };
 };
 export declare const menuStyleVariants: {
-    select: {
+    dark: {
         color: string;
         ":hover:not(:disabled)": {
             color: string;
         };
     };
-    selectLight: {
+    light: {
         color: string;
         ":hover:not(:disabled)": {
             color: string;

@@ -62,7 +62,7 @@ const TabMenu: React.FC<BarProps> = ({
   customClass = "",
   activeIndex = 0,
   scale = tabsScales.SM,
-  variant = tabVariants.TAB,
+  variant = tabVariants.DARK,
   onItemClick,
   disabled,
   fullWidth = false,
@@ -80,7 +80,7 @@ const TabMenu: React.FC<BarProps> = ({
     );
   }, [widthsArr, activeIndex]);
 
-  const isLight = variant === tabVariants.TAB_LIGHT;
+  const isLight = variant === tabVariants.LIGHT;
 
   return (
     <StyledTabBar

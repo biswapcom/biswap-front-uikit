@@ -34,14 +34,14 @@ export const sliderScaleVariant = {
 };
 
 export const menuStyleVariants = {
-  [tabVariants.TAB]: {
+  [tabVariants.DARK]: {
     color: "white",
 
     ":hover:not(:disabled)": {
       color: "white",
     },
   },
-  [tabVariants.TAB_LIGHT]: {
+  [tabVariants.LIGHT]: {
     color: "backgroundDark",
 
     ":hover:not(:disabled)": {
