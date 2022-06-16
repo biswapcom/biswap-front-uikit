@@ -1,8 +1,18 @@
 import { scales, variants } from "./types";
 
-export const scaleVariantsTop = {
+export const scaleVariantsContainer = {
   [scales.LG]: {
     height: "48px",
+  },
+  [scales.MD]: {
+    height: "40px",
+  },
+  [scales.SM]: {
+    height: "32px",
+  },
+};
+export const scaleVariantsTop = {
+  [scales.LG]: {
     padding: "0 12px 0 24px",
     fontSize: "16px",
     borderRadius: "10px",
@@ -12,7 +22,6 @@ export const scaleVariantsTop = {
     },
   },
   [scales.MD]: {
-    height: "40px",
     padding: "0 10px 0 16px",
     fontSize: "14px",
     borderRadius: "8px",
@@ -22,7 +31,6 @@ export const scaleVariantsTop = {
     },
   },
   [scales.SM]: {
-    height: "32px",
     padding: "0 8px 0 12px",
     fontSize: "12px",
     borderRadius: "8px",
@@ -49,7 +57,7 @@ export const scaleVariantItem = {
   [scales.LG]: {
     height: "48px",
     fontSize: "16px",
-    padding: "0 24px",
+    padding: "0 25px",
 
     svg: {
       width: "24px",
@@ -59,7 +67,7 @@ export const scaleVariantItem = {
   [scales.MD]: {
     height: "40px",
     fontSize: "14px",
-    padding: "0 16px",
+    padding: "0 17px",
 
     svg: {
       width: "20px",
@@ -69,7 +77,7 @@ export const scaleVariantItem = {
   [scales.SM]: {
     height: "32px",
     fontSize: "12px",
-    padding: "0 12px",
+    padding: "0 13px",
 
     svg: {
       width: "16px",
@@ -81,7 +89,7 @@ export const scaleVariantItem = {
 export const styleVariantsTop = {
   [variants.LIGHT]: {
     borderColor: "gray300",
-    color: "dark800",
+    color: "gray900",
 
     ".arrow": {
       fill: "gray900",
@@ -103,22 +111,10 @@ export const styleVariantsTop = {
         fill: "primary",
       },
     },
-    "&.disabled": {
-      color: "gray600",
-      borderColor: "gray200",
-
-      ":hover": {
-        color: "gray600",
-        borderColor: "gray200",
-      },
-      ".arrow": {
-        fill: "gray600",
-      },
-    },
   },
   [variants.DARK]: {
     borderColor: "dark500",
-    color: "white",
+    color: "pastelBlue",
 
     ".arrow": {
       fill: "pastelBlue",
@@ -137,18 +133,6 @@ export const styleVariantsTop = {
       },
       ".arrow": {
         fill: "primary",
-      },
-    },
-    "&.disabled": {
-      color: "dark200",
-      borderColor: "dark600",
-
-      ":hover": {
-        color: "dark200",
-        borderColor: "dark600",
-      },
-      ".arrow": {
-        fill: "dark200",
       },
     },
   },

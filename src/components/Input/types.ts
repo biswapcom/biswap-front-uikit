@@ -29,8 +29,7 @@ export interface InputProps extends SpaceProps {
 }
 
 export interface InputGroupProps extends SpaceProps, InputProps {
-  // startIcon?: ReactElement;
-  // endIcon?: ReactElement;
+  disabled?: boolean;
   startIcon?: IconProps;
   endIcon?: IconProps;
   children: JSX.Element;

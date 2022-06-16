@@ -127,8 +127,175 @@ export const Icons: React.FC = () => {
   return (
     <>
       <LightBg>
-        <Box width="350px" py="24px" px="24px">
-          <InputGroup mb="24px" variant="light" scale="lg">
+        <Heading mb="16px">Input group LG</Heading>
+        <Row>
+          <InputGroup
+            mb="24px"
+            variant="light"
+            scale="lg"
+            mr="16px"
+            maxWidth="300px"
+          >
+            <Input type="text" placeholder="placeholder" />
+          </InputGroup>
+          <InputGroup
+            mb="24px"
+            variant="light"
+            scale="lg"
+            mr="16px"
+            maxWidth="300px"
+          >
+            <Input type="text" placeholder="value" />
+          </InputGroup>
+          <InputGroup
+            mb="24px"
+            variant="light"
+            scale="lg"
+            mr="16px"
+            maxWidth="300px"
+            disabled
+          >
+            <Input type="text" placeholder="disabled" />
+          </InputGroup>
+          <InputGroup
+            mb="24px"
+            variant="lightWarning"
+            scale="lg"
+            mr="16px"
+            maxWidth="300px"
+            isWarning
+          >
+            <Input type="text" placeholder="isWarning" />
+          </InputGroup>
+          <InputGroup
+            mb="24px"
+            variant="lightError"
+            scale="lg"
+            mr="16px"
+            maxWidth="300px"
+            isError
+          >
+            <Input type="text" placeholder="isError" />
+          </InputGroup>
+        </Row>
+
+        <Heading mb="16px">Input group MD</Heading>
+        <Row>
+          <InputGroup
+            mb="24px"
+            variant="light"
+            scale="md"
+            mr="16px"
+            maxWidth="300px"
+          >
+            <Input type="text" placeholder="placeholder" />
+          </InputGroup>
+          <InputGroup
+            mb="24px"
+            variant="light"
+            scale="md"
+            mr="16px"
+            maxWidth="300px"
+          >
+            <Input type="text" placeholder="value" />
+          </InputGroup>
+          <InputGroup
+            mb="24px"
+            variant="light"
+            scale="md"
+            mr="16px"
+            maxWidth="300px"
+            disabled
+          >
+            <Input type="text" placeholder="disabled" />
+          </InputGroup>
+          <InputGroup
+            mb="24px"
+            variant="lightWarning"
+            scale="md"
+            mr="16px"
+            maxWidth="300px"
+            isWarning
+          >
+            <Input type="text" placeholder="isWarning" />
+          </InputGroup>
+          <InputGroup
+            mb="24px"
+            variant="lightError"
+            scale="md"
+            mr="16px"
+            maxWidth="300px"
+            isError
+          >
+            <Input type="text" placeholder="isError" />
+          </InputGroup>
+        </Row>
+
+        <Heading mb="16px">Input group SM</Heading>
+        <Row>
+          <InputGroup
+            mb="24px"
+            variant="light"
+            scale="sm"
+            mr="16px"
+            maxWidth="300px"
+          >
+            <Input type="text" placeholder="placeholder" />
+          </InputGroup>
+          <InputGroup
+            mb="24px"
+            variant="light"
+            scale="sm"
+            mr="16px"
+            maxWidth="300px"
+          >
+            <Input type="text" placeholder="value" />
+          </InputGroup>
+          <InputGroup
+            mb="24px"
+            variant="light"
+            scale="sm"
+            mr="16px"
+            maxWidth="300px"
+            disabled
+          >
+            <Input type="text" placeholder="disabled" />
+          </InputGroup>
+          <InputGroup
+            mb="24px"
+            variant="lightWarning"
+            scale="sm"
+            mr="16px"
+            maxWidth="300px"
+            isWarning
+          >
+            <Input type="text" placeholder="isWarning" />
+          </InputGroup>
+          <InputGroup
+            mb="24px"
+            variant="lightError"
+            scale="sm"
+            mr="16px"
+            maxWidth="300px"
+            isError
+          >
+            <Input type="text" placeholder="isError" />
+          </InputGroup>
+        </Row>
+
+        <Heading mb="16px">Input group with left(start) icon</Heading>
+        <Row>
+          <InputGroup
+            startIcon={{
+              iconName: "Search",
+              color: "gray",
+            }}
+            mb="24px"
+            mr="16px"
+            variant="light"
+            scale="lg"
+            maxWidth="300px"
+          >
             <Input type="text" placeholder="placeholder" />
           </InputGroup>
           <InputGroup
@@ -137,137 +304,626 @@ export const Icons: React.FC = () => {
               color: "gray",
             }}
             mb="24px"
+            mr="16px"
             variant="light"
-            scale="md"
+            scale="lg"
+            maxWidth="300px"
           >
-            <Input type="text" placeholder="Input Group" />
+            <Input type="text" value="value" />
           </InputGroup>
           <InputGroup
             startIcon={{
               iconName: "Search",
               color: "gray",
             }}
-            endIcon={{
-              iconName: "PlusCircleSolid",
-              color: "success",
-            }}
             mb="24px"
+            mr="16px"
             variant="light"
-            scale="sm"
+            scale="lg"
+            maxWidth="300px"
+            disabled
           >
-            <Input type="text" value="Input Group" />
-          </InputGroup>
-
-          <InputGroup
-            endIcon={{
-              iconName: "PlusCircleSolid",
-              color: "success",
-            }}
-            mb="24px"
-            variant="light"
-            scale="md"
-          >
-            <Input type="text" value="Input Group isError" />
+            <Input type="text" value="disabled" />
           </InputGroup>
           <InputGroup
             startIcon={{
               iconName: "Search",
               color: "gray",
             }}
-            endIcon={{
-              iconName: "PlusCircleSolid",
-              color: "success",
-            }}
             mb="24px"
+            mr="16px"
             variant="lightWarning"
-            scale="md"
+            scale="lg"
+            maxWidth="300px"
             isWarning
           >
-            <Input type="text" value="Input Group isWarning" />
+            <Input type="text" value="isWarning" />
           </InputGroup>
           <InputGroup
             startIcon={{
               iconName: "Search",
               color: "gray",
             }}
-            endIcon={{
-              iconName: "PlusCircleSolid",
-              color: "success",
-            }}
             mb="24px"
+            mr="16px"
             variant="lightError"
-            scale="md"
+            scale="lg"
+            maxWidth="300px"
             isError
           >
-            <Input type="text" value="Input Group isWarning" />
+            <Input type="text" value="isError" />
           </InputGroup>
-        </Box>
-      </LightBg>
-      <DarkBg>
-        <Box width="350px" py="24px" px="24px">
-          <InputGroup mb="24px" variant="dark" scale="lg">
-            <Input type="text" />
-          </InputGroup>
+        </Row>
+
+        <Heading mb="16px">Input group with right(end) icon</Heading>
+        <Row>
           <InputGroup
-            startIcon={{
+            endIcon={{
               iconName: "Search",
               color: "gray",
             }}
+            mb="24px"
+            mr="16px"
+            variant="light"
+            scale="lg"
+            maxWidth="300px"
+          >
+            <Input type="text" placeholder="placeholder" />
+          </InputGroup>
+          <InputGroup
+            endIcon={{
+              iconName: "Search",
+              color: "gray",
+            }}
+            mb="24px"
+            mr="16px"
+            variant="light"
+            scale="lg"
+            maxWidth="300px"
+          >
+            <Input type="text" value="value" />
+          </InputGroup>
+          <InputGroup
+            endIcon={{
+              iconName: "Search",
+              color: "gray",
+            }}
+            mb="24px"
+            mr="16px"
+            variant="light"
+            scale="lg"
+            maxWidth="300px"
+            disabled
+          >
+            <Input type="text" value="disabled" />
+          </InputGroup>
+          <InputGroup
+            endIcon={{
+              iconName: "Search",
+              color: "gray",
+            }}
+            mb="24px"
+            mr="16px"
+            variant="lightWarning"
+            scale="lg"
+            maxWidth="300px"
+            isWarning
+          >
+            <Input type="text" value="isWarning" />
+          </InputGroup>
+          <InputGroup
+            endIcon={{
+              iconName: "Search",
+              color: "gray",
+            }}
+            mb="24px"
+            mr="16px"
+            variant="lightError"
+            scale="lg"
+            maxWidth="300px"
+            isError
+          >
+            <Input type="text" value="isError" />
+          </InputGroup>
+        </Row>
+
+        <Heading mb="16px">Input group with double(start, end) icon</Heading>
+        <Row>
+          <InputGroup
+            startIcon={{
+              iconName: "Binance",
+              color: "gray",
+            }}
+            endIcon={{
+              iconName: "Search",
+              color: "gray",
+            }}
+            mb="24px"
+            mr="16px"
+            variant="light"
+            scale="lg"
+            maxWidth="300px"
+          >
+            <Input type="text" placeholder="placeholder" />
+          </InputGroup>
+          <InputGroup
+            startIcon={{
+              iconName: "Binance",
+              color: "gray",
+            }}
+            endIcon={{
+              iconName: "Search",
+              color: "gray",
+            }}
+            mb="24px"
+            mr="16px"
+            variant="light"
+            scale="lg"
+            maxWidth="300px"
+          >
+            <Input type="text" value="value" />
+          </InputGroup>
+          <InputGroup
+            startIcon={{
+              iconName: "Binance",
+              color: "gray",
+            }}
+            endIcon={{
+              iconName: "Search",
+              color: "gray",
+            }}
+            mb="24px"
+            mr="16px"
+            variant="light"
+            scale="lg"
+            maxWidth="300px"
+            disabled
+          >
+            <Input type="text" value="disabled" />
+          </InputGroup>
+          <InputGroup
+            startIcon={{
+              iconName: "Binance",
+              color: "gray",
+            }}
+            endIcon={{
+              iconName: "Search",
+              color: "gray",
+            }}
+            mb="24px"
+            mr="16px"
+            variant="lightWarning"
+            scale="lg"
+            maxWidth="300px"
+            isWarning
+          >
+            <Input type="text" value="isWarning" />
+          </InputGroup>
+          <InputGroup
+            startIcon={{
+              iconName: "Binance",
+              color: "gray",
+            }}
+            endIcon={{
+              iconName: "Search",
+              color: "gray",
+            }}
+            mb="24px"
+            mr="16px"
+            variant="lightError"
+            scale="lg"
+            maxWidth="300px"
+            isError
+          >
+            <Input type="text" value="isError" />
+          </InputGroup>
+        </Row>
+      </LightBg>
+
+      <DarkBg>
+        <Heading mb="16px" color="white">
+          Input group LG
+        </Heading>
+        <Row>
+          <InputGroup
+            mb="24px"
+            variant="dark"
+            scale="lg"
+            mr="16px"
+            maxWidth="300px"
+          >
+            <Input type="text" placeholder="placeholder" />
+          </InputGroup>
+          <InputGroup
+            mb="24px"
+            variant="dark"
+            scale="lg"
+            mr="16px"
+            maxWidth="300px"
+          >
+            <Input type="text" placeholder="value" />
+          </InputGroup>
+          <InputGroup
+            mb="24px"
+            variant="dark"
+            scale="lg"
+            mr="16px"
+            maxWidth="300px"
+            disabled
+          >
+            <Input type="text" placeholder="disabled" />
+          </InputGroup>
+          <InputGroup
+            mb="24px"
+            variant="darkWarning"
+            scale="lg"
+            mr="16px"
+            maxWidth="300px"
+            isWarning
+          >
+            <Input type="text" placeholder="isWarning" />
+          </InputGroup>
+          <InputGroup
+            mb="24px"
+            variant="darkError"
+            scale="lg"
+            mr="16px"
+            maxWidth="300px"
+            isError
+          >
+            <Input type="text" placeholder="isError" />
+          </InputGroup>
+        </Row>
+
+        <Heading mb="16px" color="white">
+          Input group MD
+        </Heading>
+        <Row>
+          <InputGroup
             mb="24px"
             variant="dark"
             scale="md"
+            mr="16px"
+            maxWidth="300px"
           >
-            <Input type="text" placeholder="Input Group" />
+            <Input type="text" placeholder="placeholder" />
           </InputGroup>
           <InputGroup
-            startIcon={{
-              iconName: "Search",
-              color: "gray",
-            }}
-            endIcon={{
-              iconName: "PlusCircleSolid",
-              color: "success",
-            }}
             mb="24px"
             variant="dark"
-            scale="sm"
+            scale="md"
+            mr="16px"
+            maxWidth="300px"
           >
-            <Input type="text" value="Input Group" />
+            <Input type="text" placeholder="value" />
           </InputGroup>
-
           <InputGroup
-            startIcon={{
-              iconName: "Search",
-              color: "gray",
-            }}
-            endIcon={{
-              iconName: "PlusCircleSolid",
-              color: "success",
-            }}
+            mb="24px"
+            variant="dark"
+            scale="md"
+            mr="16px"
+            maxWidth="300px"
+            disabled
+          >
+            <Input type="text" placeholder="disabled" />
+          </InputGroup>
+          <InputGroup
             mb="24px"
             variant="darkWarning"
             scale="md"
+            mr="16px"
+            maxWidth="300px"
             isWarning
           >
-            <Input type="text" value="Input Group isWarning" />
+            <Input type="text" placeholder="isWarning" />
+          </InputGroup>
+          <InputGroup
+            mb="24px"
+            variant="darkError"
+            scale="md"
+            mr="16px"
+            maxWidth="300px"
+            isError
+          >
+            <Input type="text" placeholder="isError" />
+          </InputGroup>
+        </Row>
+
+        <Heading mb="16px" color="white">
+          Input group SM
+        </Heading>
+        <Row>
+          <InputGroup
+            mb="24px"
+            variant="dark"
+            scale="sm"
+            mr="16px"
+            maxWidth="300px"
+          >
+            <Input type="text" placeholder="placeholder" />
+          </InputGroup>
+          <InputGroup
+            mb="24px"
+            variant="dark"
+            scale="sm"
+            mr="16px"
+            maxWidth="300px"
+          >
+            <Input type="text" placeholder="value" />
+          </InputGroup>
+          <InputGroup
+            mb="24px"
+            variant="dark"
+            scale="sm"
+            mr="16px"
+            maxWidth="300px"
+            disabled
+          >
+            <Input type="text" placeholder="disabled" />
+          </InputGroup>
+          <InputGroup
+            mb="24px"
+            variant="darkWarning"
+            scale="sm"
+            mr="16px"
+            maxWidth="300px"
+            isWarning
+          >
+            <Input type="text" placeholder="isWarning" />
+          </InputGroup>
+          <InputGroup
+            mb="24px"
+            variant="darkError"
+            scale="sm"
+            mr="16px"
+            maxWidth="300px"
+            isError
+          >
+            <Input type="text" placeholder="isError" />
+          </InputGroup>
+        </Row>
+
+        <Heading mb="16px" color="white">
+          Input group with left(start) icon
+        </Heading>
+        <Row>
+          <InputGroup
+            startIcon={{
+              iconName: "Search",
+              color: "gray",
+            }}
+            mb="24px"
+            mr="16px"
+            variant="dark"
+            scale="lg"
+            maxWidth="300px"
+          >
+            <Input type="text" placeholder="placeholder" />
           </InputGroup>
           <InputGroup
             startIcon={{
               iconName: "Search",
               color: "gray",
             }}
-            endIcon={{
-              iconName: "PlusCircleSolid",
-              color: "success",
+            mb="24px"
+            mr="16px"
+            variant="dark"
+            scale="lg"
+            maxWidth="300px"
+          >
+            <Input type="text" value="value" />
+          </InputGroup>
+          <InputGroup
+            startIcon={{
+              iconName: "Search",
+              color: "gray",
             }}
             mb="24px"
+            mr="16px"
+            variant="dark"
+            scale="lg"
+            maxWidth="300px"
+            disabled
+          >
+            <Input type="text" value="disabled" />
+          </InputGroup>
+          <InputGroup
+            startIcon={{
+              iconName: "Search",
+              color: "gray",
+            }}
+            mb="24px"
+            mr="16px"
+            variant="darkWarning"
+            scale="lg"
+            maxWidth="300px"
+            isWarning
+          >
+            <Input type="text" value="isWarning" />
+          </InputGroup>
+          <InputGroup
+            startIcon={{
+              iconName: "Search",
+              color: "gray",
+            }}
+            mb="24px"
+            mr="16px"
             variant="darkError"
-            scale="md"
+            scale="lg"
+            maxWidth="300px"
             isError
           >
-            <Input type="text" value="Input Group isWarning" />
+            <Input type="text" value="isError" />
           </InputGroup>
-        </Box>
+        </Row>
+
+        <Heading mb="16px" color="white">
+          Input group with right(end) icon
+        </Heading>
+        <Row>
+          <InputGroup
+            endIcon={{
+              iconName: "Search",
+              color: "gray",
+            }}
+            mb="24px"
+            mr="16px"
+            variant="dark"
+            scale="lg"
+            maxWidth="300px"
+          >
+            <Input type="text" placeholder="placeholder" />
+          </InputGroup>
+          <InputGroup
+            endIcon={{
+              iconName: "Search",
+              color: "gray",
+            }}
+            mb="24px"
+            mr="16px"
+            variant="dark"
+            scale="lg"
+            maxWidth="300px"
+          >
+            <Input type="text" value="value" />
+          </InputGroup>
+          <InputGroup
+            endIcon={{
+              iconName: "Search",
+              color: "gray",
+            }}
+            mb="24px"
+            mr="16px"
+            variant="dark"
+            scale="lg"
+            maxWidth="300px"
+            disabled
+          >
+            <Input type="text" value="disabled" />
+          </InputGroup>
+          <InputGroup
+            endIcon={{
+              iconName: "Search",
+              color: "gray",
+            }}
+            mb="24px"
+            mr="16px"
+            variant="darkWarning"
+            scale="lg"
+            maxWidth="300px"
+            isWarning
+          >
+            <Input type="text" value="isWarning" />
+          </InputGroup>
+          <InputGroup
+            endIcon={{
+              iconName: "Search",
+              color: "gray",
+            }}
+            mb="24px"
+            mr="16px"
+            variant="darkError"
+            scale="lg"
+            maxWidth="300px"
+            isError
+          >
+            <Input type="text" value="isError" />
+          </InputGroup>
+        </Row>
+
+        <Heading mb="16px" color="white">
+          Input group with double(start, end) icon
+        </Heading>
+        <Row>
+          <InputGroup
+            startIcon={{
+              iconName: "Binance",
+              color: "gray",
+            }}
+            endIcon={{
+              iconName: "Search",
+              color: "gray",
+            }}
+            mb="24px"
+            mr="16px"
+            variant="dark"
+            scale="lg"
+            maxWidth="300px"
+          >
+            <Input type="text" placeholder="placeholder" />
+          </InputGroup>
+          <InputGroup
+            startIcon={{
+              iconName: "Binance",
+              color: "gray",
+            }}
+            endIcon={{
+              iconName: "Search",
+              color: "gray",
+            }}
+            mb="24px"
+            mr="16px"
+            variant="dark"
+            scale="lg"
+            maxWidth="300px"
+          >
+            <Input type="text" value="value" />
+          </InputGroup>
+          <InputGroup
+            startIcon={{
+              iconName: "Binance",
+              color: "gray",
+            }}
+            endIcon={{
+              iconName: "Search",
+              color: "gray",
+            }}
+            mb="24px"
+            mr="16px"
+            variant="dark"
+            scale="lg"
+            maxWidth="300px"
+            disabled
+          >
+            <Input type="text" value="disabled" />
+          </InputGroup>
+          <InputGroup
+            startIcon={{
+              iconName: "Binance",
+              color: "gray",
+            }}
+            endIcon={{
+              iconName: "Search",
+              color: "gray",
+            }}
+            mb="24px"
+            mr="16px"
+            variant="darkWarning"
+            scale="lg"
+            maxWidth="300px"
+            isWarning
+          >
+            <Input type="text" value="isWarning" />
+          </InputGroup>
+          <InputGroup
+            startIcon={{
+              iconName: "Binance",
+              color: "gray",
+            }}
+            endIcon={{
+              iconName: "Search",
+              color: "gray",
+            }}
+            mb="24px"
+            mr="16px"
+            variant="darkError"
+            scale="lg"
+            maxWidth="300px"
+            isError
+          >
+            <Input type="text" value="isError" />
+          </InputGroup>
+        </Row>
       </DarkBg>
     </>
   );

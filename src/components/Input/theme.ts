@@ -50,11 +50,6 @@ export const styleVariants = {
       backgroundColor: "transparent",
       color: "dark800",
     },
-    ":disabled": {
-      backgroundColor: "gray200",
-      color: "gray600",
-      cursor: "not-allowed",
-    },
   },
   [variants.LIGHT_WARNING]: {
     borderColor: "warning",
@@ -83,11 +78,6 @@ export const styleVariants = {
       backgroundColor: "transparent",
       color: "white",
     },
-    ":disabled": {
-      backgroundColor: "dark600",
-      color: "dark200",
-      cursor: "not-allowed",
-    },
   },
   [variants.DARK_WARNING]: {
     borderColor: "warning",
@@ -115,11 +105,6 @@ export const styleVariants = {
       borderColor: "transparent",
       backgroundColor: "transparent",
       color: "dark800",
-    },
-    ":disabled": {
-      backgroundColor: "transparent",
-      color: "gray600",
-      cursor: "not-allowed",
     },
   },
 };

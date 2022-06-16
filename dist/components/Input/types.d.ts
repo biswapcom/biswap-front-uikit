@@ -25,6 +25,7 @@ export interface InputProps extends SpaceProps {
     minWidth?: string;
 }
 export interface InputGroupProps extends SpaceProps, InputProps {
+    disabled?: boolean;
     startIcon?: IconProps;
     endIcon?: IconProps;
     children: JSX.Element;

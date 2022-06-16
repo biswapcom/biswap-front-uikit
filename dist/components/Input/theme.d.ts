@@ -44,11 +44,6 @@ export declare const styleVariants: {
             backgroundColor: string;
             color: string;
         };
-        ":disabled": {
-            backgroundColor: string;
-            color: string;
-            cursor: string;
-        };
     };
     lightWarning: {
         borderColor: string;
@@ -76,11 +71,6 @@ export declare const styleVariants: {
             backgroundColor: string;
             color: string;
         };
-        ":disabled": {
-            backgroundColor: string;
-            color: string;
-            cursor: string;
-        };
     };
     darkWarning: {
         borderColor: string;
@@ -107,11 +97,6 @@ export declare const styleVariants: {
             borderColor: string;
             backgroundColor: string;
             color: string;
-        };
-        ":disabled": {
-            backgroundColor: string;
-            color: string;
-            cursor: string;
         };
     };
 };

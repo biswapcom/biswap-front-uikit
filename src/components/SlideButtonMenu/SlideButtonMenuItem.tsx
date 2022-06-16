@@ -4,14 +4,15 @@ import { PolymorphicComponent } from "../../util/polymorphic";
 import { SlideButtonMenuItemProps, slideMenuVariants } from "./types";
 import SlideMenuItem from "./SlideMenuItem";
 import { useMatchBreakpoints } from "../../hooks";
-import {tabVariants} from "../TabMenu/types";
+import { tabVariants } from "../TabMenu/types";
 
 const InactiveButton: PolymorphicComponent<
-    SlideButtonMenuItemProps,
+  SlideButtonMenuItemProps,
   "button"
 > = styled(SlideMenuItem)<SlideButtonMenuItemProps>`
   background-color: transparent;
-  color: ${({ theme, variant }) => theme.colors[variant === tabVariants.DARK ? "pastelBlue" : "gray900"]};
+  color: ${({ theme, variant }) =>
+    theme.colors[variant === tabVariants.DARK ? "pastelBlue" : "gray900"]};
 
   &:hover:not(:disabled):not(:active) {
     background-color: transparent;

@@ -1,7 +1,6 @@
 import { SpaceProps } from "styled-system";
-import {Dispatch, ElementType, SetStateAction} from "react";
-import {PolymorphicComponentProps} from "../../util/polymorphic";
-
+import { Dispatch, ElementType, SetStateAction } from "react";
+import { PolymorphicComponentProps } from "../../util/polymorphic";
 
 export interface SlideButtonMenuProps extends SpaceProps {
   variant?: typeof slideMenuVariants.DARK | typeof slideMenuVariants.LIGHT;
@@ -22,7 +21,7 @@ export interface SlideButtonMenuItemProps extends SlideButtonMenuProps {
 }
 
 export type SlideButtonProps<P extends ElementType = "button"> =
-    PolymorphicComponentProps<P, SlideButtonMenuItemProps>;
+  PolymorphicComponentProps<P, SlideButtonMenuItemProps>;
 
 export const slideMenuScales = {
   LG: "lg",
