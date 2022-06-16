@@ -19,7 +19,7 @@ interface SlideMenuProps extends SlideButtonMenuProps {
 }
 
 const getBackgroundColor = ({ theme, variant }: StyledButtonMenuProps) => {
-  return variant === slideMenuVariants.SELECT_LIGHT
+  return variant === slideMenuVariants.LIGHT
     ? getRgba(theme.colors.pastelBlue, 0.08)
     : theme.colors.tooltip;
 };
@@ -52,18 +52,13 @@ const StyledSlideButtonMenu = styled.div<StyledButtonMenuProps>`
     box-shadow: none;
   }
 
-  ${({ disabled, theme, variant }) => {
+  ${({ disabled }) => {
     if (disabled) {
       return `
         opacity: 0.5;
 
         & > button:disabled {
           background-color: transparent;
-          color: ${
-            variant === slideMenuVariants.PRIMARY
-              ? theme.colors.primary
-              : theme.colors.textSubtle
-          };
         }
     `;
     }
@@ -81,7 +76,7 @@ interface ISelection {
 
 const Selection = styled.div<ISelection>`
   background-color: ${({ theme, variant }) =>
-    theme.colors[variant === slideMenuVariants.SELECT ? "dropDown" : "white"]};
+    theme.colors[variant === slideMenuVariants.DARK ? "dropDown" : "white"]};
   width: ${({ width }) => `${width}px`};
   height: 100%;
   position: absolute;
@@ -93,7 +88,7 @@ const Selection = styled.div<ISelection>`
   z-index: 1;
 
   ${({ theme, variant }) =>
-    variant === slideMenuVariants.SELECT_LIGHT &&
+    variant === slideMenuVariants.LIGHT &&
     `box-shadow: 0 2px 4px ${getRgba(theme.colors.backgroundDark, 0.08)}`};
 `;
 
@@ -101,7 +96,7 @@ const SlideButtonMenu: React.FC<SlideMenuProps> = ({
   customClass = "",
   activeIndex = 0,
   scale = slideMenuScales.SM,
-  variant = slideMenuVariants.SELECT,
+  variant = slideMenuVariants.DARK,
   onItemClick,
   disabled,
   fullWidth = false,
@@ -144,7 +139,7 @@ const SlideButtonMenu: React.FC<SlideMenuProps> = ({
             key={index.toString()}
             disabled={disabled}
             customClass={customClass}
-            isActive={activeIndex === index}
+            isActive={!disabled && activeIndex === index}
             onAction={onItemClick}
             itemIndex={index}
             setWidth={setWidthsArr}

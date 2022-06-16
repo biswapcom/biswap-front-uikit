@@ -22,29 +22,7 @@ export const slideMenuScaleVariants = {
 };
 
 export const slideMenuStyleVariants = {
-  [slideMenuVariants.PRIMARY]: {
-    backgroundColor: "primary",
-    color: "white",
-
-    ":hover:not(:disabled)": {
-      backgroundColor: "primaryHover",
-    },
-    ":active:not(:disabled)": {
-      backgroundColor: "primaryPress",
-    },
-  },
-  [slideMenuVariants.WARNING]: {
-    backgroundColor: "warning",
-    color: "dark800",
-
-    ":hover:not(:disabled)": {
-      backgroundColor: "warningHover",
-    },
-    ":active:not(:disabled)": {
-      backgroundColor: "warningPress",
-    },
-  },
-  [slideMenuVariants.SELECT]: {
+  [slideMenuVariants.DARK]: {
     color: "white",
     backgroundColor: "transparent",
     transition: "color .3s ease",
@@ -56,7 +34,7 @@ export const slideMenuStyleVariants = {
       backgroundColor: "transparent",
     },
   },
-  [slideMenuVariants.SELECT_LIGHT]: {
+  [slideMenuVariants.LIGHT]: {
     backgroundColor: "transparent",
     color: "background",
     transition: "color 1s ease",
