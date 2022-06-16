@@ -64,7 +64,7 @@ export const Default: React.FC = () => {
           scale="lg"
           customClass="light-lg"
           onItemClick={setIndex2}
-          variant={tabVariants.TAB_LIGHT}
+          variant={tabVariants.LIGHT}
           activeIndex={index2}
           menuTitles={["Select 1", "Select 2", "Select 3", "Select 4"]}
         />
@@ -73,7 +73,7 @@ export const Default: React.FC = () => {
         <TabMenu
           scale="md"
           customClass="light-md"
-          variant={tabVariants.TAB_LIGHT}
+          variant={tabVariants.LIGHT}
           onItemClick={setIndex2}
           activeIndex={index2}
           menuTitles={["Select 1", "Select 2", "Select 3", "Select 4"]}
@@ -83,7 +83,7 @@ export const Default: React.FC = () => {
         <TabMenu
           scale="sm"
           customClass="light-sm"
-          variant={tabVariants.TAB_LIGHT}
+          variant={tabVariants.LIGHT}
           onItemClick={setIndex2}
           activeIndex={index2}
           menuTitles={["Select 1", "Select 2", "Select 3", "Select 4"]}

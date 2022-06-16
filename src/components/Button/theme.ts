@@ -156,26 +156,4 @@ export const styleVariants = {
     color: "primary",
     boxShadow: "none",
   },
-  [variants.SELECT]: {
-    backgroundColor: "inputBorder",
-    color: "white",
-
-    ":hover:not(:disabled)": {
-      color: "white",
-    },
-    ":active:not(:disabled)": {
-      color: "pastelBlue",
-    },
-  },
-  [variants.SELECT_LIGHT]: {
-    backgroundColor: "white",
-    color: "backgroundDark",
-
-    ":hover:not(:disabled)": {
-      color: "backgroundDark",
-    },
-    ":active:not(:disabled)": {
-      color: "text",
-    },
-  },
 };
