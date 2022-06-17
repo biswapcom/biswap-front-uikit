@@ -41,7 +41,7 @@ export const ToggleWrap = styled.label<{
   flex-direction: ${({ labelOrientation }) =>
     labelOrientation === "left" ? "row-reverse" : "row"};
   opacity: ${({ disabled }) => (disabled ? "0.32" : "1")};
-  grid-area: ${({ gridArea }) => gridArea && "initial"};
+  grid-area: ${({ gridArea }) => gridArea || "initial"};
 `;
 export const Handle = styled.div<HandleProps>`
   background-color: ${({ theme }) => theme.colors.white};
