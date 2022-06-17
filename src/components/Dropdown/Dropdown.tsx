@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { variant, space } from "styled-system";
 import { DropdownProps, Position, PositionProps, OptionProps } from "./types";
 import IconComponent from "../Svg/IconComponent";
@@ -58,6 +58,21 @@ const DropdownTop = styled.div<{
   ${variant({
     variants: styleVariantsTop,
   })}
+
+  ${(props) =>
+    props.disabled &&
+    props.variant === "light" &&
+    css`
+      border-color: ${({ theme }) => theme.colors.gray300} !important;
+      color: ${({ theme }) => theme.colors.gray900} !important;
+    `}
+  ${(props) =>
+    props.disabled &&
+    props.variant === "dark" &&
+    css`
+      border-color: ${({ theme }) => theme.colors.dark500} !important;
+      color: ${({ theme }) => theme.colors.pastelBlue} !important;
+    `}
 `;
 const Label = styled.span`
   flex-grow: 1;

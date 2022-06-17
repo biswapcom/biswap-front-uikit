@@ -62,7 +62,7 @@ export const Default: React.FC = () => {
                 type="text"
                 scale={scale}
                 variant="light"
-                value="Disabled"
+                placeholder="Disabled"
                 disabled
               />
               <Input
@@ -100,7 +100,7 @@ export const Default: React.FC = () => {
                 type="text"
                 scale={scale}
                 variant="dark"
-                value="Disabled"
+                placeholder="Disabled"
                 disabled
               />
               <Input
@@ -145,7 +145,7 @@ export const Icons: React.FC = () => {
             mr="16px"
             maxWidth="300px"
           >
-            <Input type="text" placeholder="value" />
+            <Input type="text" value="value" />
           </InputGroup>
           <InputGroup
             mb="24px"
@@ -165,7 +165,7 @@ export const Icons: React.FC = () => {
             maxWidth="300px"
             isWarning
           >
-            <Input type="text" placeholder="isWarning" />
+            <Input type="text" value="isWarning" />
           </InputGroup>
           <InputGroup
             mb="24px"
@@ -175,7 +175,7 @@ export const Icons: React.FC = () => {
             maxWidth="300px"
             isError
           >
-            <Input type="text" placeholder="isError" />
+            <Input type="text" value="isError" />
           </InputGroup>
         </Row>
 
@@ -197,7 +197,7 @@ export const Icons: React.FC = () => {
             mr="16px"
             maxWidth="300px"
           >
-            <Input type="text" placeholder="value" />
+            <Input type="text" value="value" />
           </InputGroup>
           <InputGroup
             mb="24px"
@@ -217,7 +217,7 @@ export const Icons: React.FC = () => {
             maxWidth="300px"
             isWarning
           >
-            <Input type="text" placeholder="isWarning" />
+            <Input type="text" value="isWarning" />
           </InputGroup>
           <InputGroup
             mb="24px"
@@ -227,7 +227,7 @@ export const Icons: React.FC = () => {
             maxWidth="300px"
             isError
           >
-            <Input type="text" placeholder="isError" />
+            <Input type="text" value="isError" />
           </InputGroup>
         </Row>
 
@@ -249,7 +249,7 @@ export const Icons: React.FC = () => {
             mr="16px"
             maxWidth="300px"
           >
-            <Input type="text" placeholder="value" />
+            <Input type="text" value="value" />
           </InputGroup>
           <InputGroup
             mb="24px"
@@ -269,7 +269,7 @@ export const Icons: React.FC = () => {
             maxWidth="300px"
             isWarning
           >
-            <Input type="text" placeholder="isWarning" />
+            <Input type="text" value="isWarning" />
           </InputGroup>
           <InputGroup
             mb="24px"
@@ -279,7 +279,7 @@ export const Icons: React.FC = () => {
             maxWidth="300px"
             isError
           >
-            <Input type="text" placeholder="isError" />
+            <Input type="text" value="isError" />
           </InputGroup>
         </Row>
 
@@ -323,7 +323,7 @@ export const Icons: React.FC = () => {
             maxWidth="300px"
             disabled
           >
-            <Input type="text" value="disabled" />
+            <Input type="text" placeholder="disabled" />
           </InputGroup>
           <InputGroup
             startIcon={{
@@ -395,7 +395,7 @@ export const Icons: React.FC = () => {
             maxWidth="300px"
             disabled
           >
-            <Input type="text" value="disabled" />
+            <Input type="text" placeholder="disabled" />
           </InputGroup>
           <InputGroup
             endIcon={{
@@ -479,7 +479,7 @@ export const Icons: React.FC = () => {
             maxWidth="300px"
             disabled
           >
-            <Input type="text" value="disabled" />
+            <Input type="text" placeholder="disabled" />
           </InputGroup>
           <InputGroup
             startIcon={{
@@ -541,7 +541,7 @@ export const Icons: React.FC = () => {
             mr="16px"
             maxWidth="300px"
           >
-            <Input type="text" placeholder="value" />
+            <Input type="text" value="value" />
           </InputGroup>
           <InputGroup
             mb="24px"
@@ -561,7 +561,7 @@ export const Icons: React.FC = () => {
             maxWidth="300px"
             isWarning
           >
-            <Input type="text" placeholder="isWarning" />
+            <Input type="text" value="isWarning" />
           </InputGroup>
           <InputGroup
             mb="24px"
@@ -571,7 +571,7 @@ export const Icons: React.FC = () => {
             maxWidth="300px"
             isError
           >
-            <Input type="text" placeholder="isError" />
+            <Input type="text" value="isError" />
           </InputGroup>
         </Row>
 
@@ -595,7 +595,7 @@ export const Icons: React.FC = () => {
             mr="16px"
             maxWidth="300px"
           >
-            <Input type="text" placeholder="value" />
+            <Input type="text" value="value" />
           </InputGroup>
           <InputGroup
             mb="24px"
@@ -615,7 +615,7 @@ export const Icons: React.FC = () => {
             maxWidth="300px"
             isWarning
           >
-            <Input type="text" placeholder="isWarning" />
+            <Input type="text" value="isWarning" />
           </InputGroup>
           <InputGroup
             mb="24px"
@@ -625,7 +625,7 @@ export const Icons: React.FC = () => {
             maxWidth="300px"
             isError
           >
-            <Input type="text" placeholder="isError" />
+            <Input type="text" value="isError" />
           </InputGroup>
         </Row>
 
@@ -649,7 +649,7 @@ export const Icons: React.FC = () => {
             mr="16px"
             maxWidth="300px"
           >
-            <Input type="text" placeholder="value" />
+            <Input type="text" value="value" />
           </InputGroup>
           <InputGroup
             mb="24px"
@@ -669,7 +669,7 @@ export const Icons: React.FC = () => {
             maxWidth="300px"
             isWarning
           >
-            <Input type="text" placeholder="isWarning" />
+            <Input type="text" value="isWarning" />
           </InputGroup>
           <InputGroup
             mb="24px"
@@ -679,7 +679,7 @@ export const Icons: React.FC = () => {
             maxWidth="300px"
             isError
           >
-            <Input type="text" placeholder="isError" />
+            <Input type="text" value="isError" />
           </InputGroup>
         </Row>
 
@@ -725,7 +725,7 @@ export const Icons: React.FC = () => {
             maxWidth="300px"
             disabled
           >
-            <Input type="text" value="disabled" />
+            <Input type="text" placeholder="disabled" />
           </InputGroup>
           <InputGroup
             startIcon={{
@@ -799,7 +799,7 @@ export const Icons: React.FC = () => {
             maxWidth="300px"
             disabled
           >
-            <Input type="text" value="disabled" />
+            <Input type="text" placeholder="disabled" />
           </InputGroup>
           <InputGroup
             endIcon={{
@@ -885,7 +885,7 @@ export const Icons: React.FC = () => {
             maxWidth="300px"
             disabled
           >
-            <Input type="text" value="disabled" />
+            <Input type="text" placeholder="disabled" />
           </InputGroup>
           <InputGroup
             startIcon={{
