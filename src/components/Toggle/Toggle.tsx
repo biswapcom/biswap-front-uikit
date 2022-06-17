@@ -1,6 +1,5 @@
 import React from "react";
-import StyledToggle, { Input, Handle } from "./StyledToggle";
-import { Text } from "../Text";
+import StyledToggle, { Input, Handle, Label, ToggleWrap } from "./StyledToggle";
 import { ToggleProps, scales } from "./types";
 
 const Toggle: React.FC<ToggleProps> = ({
@@ -9,28 +8,46 @@ const Toggle: React.FC<ToggleProps> = ({
   checkedColor = "success",
   scale = scales.MD,
   disabled,
+  label,
+  labelOrientation,
   ...props
 }) => {
   const isChecked = !!checked;
 
   return (
-    <StyledToggle
-      $checked={isChecked}
-      $checkedColor={checkedColor}
-      $defaultColor={defaultColor}
-      scale={scale}
-      disabled={disabled}
-    >
-      <Input
-        checked={checked}
+    <ToggleWrap labelOrientation={labelOrientation} disabled={disabled}>
+      <StyledToggle
+        $checked={isChecked}
+        $checkedColor={checkedColor}
+        $defaultColor={defaultColor}
         scale={scale}
-        {...props}
-        type="checkbox"
         disabled={disabled}
-      />
-      <Handle scale={scale} disabled={disabled} />
-    </StyledToggle>
+      >
+        <Input
+          checked={checked}
+          scale={scale}
+          {...props}
+          type="checkbox"
+          disabled={disabled}
+        />
+        <Handle scale={scale} disabled={disabled} />
+      </StyledToggle>
+      {label && (
+        <Label
+          labelOrientation={labelOrientation}
+          isChecked={isChecked}
+          disabled={disabled}
+        >
+          {label}
+        </Label>
+      )}
+    </ToggleWrap>
   );
+};
+
+Toggle.defaultProps = {
+  labelOrientation: "left",
+  scale: "md",
 };
 
 export default Toggle;

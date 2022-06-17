@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import getRgba from "../../util/getRgba";
 
 import {
   ToggleProps,
@@ -31,6 +30,16 @@ const getScale =
     return scaleKeyValues[scale][property];
   };
 
+export const ToggleWrap = styled.label<{
+  labelOrientation?: string;
+  disabled?: boolean;
+}>`
+  display: inline-flex;
+  align-items: center;
+  flex-direction: ${({ labelOrientation }) =>
+    labelOrientation === "left" ? "row-reverse" : "row"};
+  opacity: ${({ disabled }) => (disabled ? "0.32" : "1")};
+`;
 export const Handle = styled.div<HandleProps>`
   background-color: ${({ theme }) => theme.colors.white};
   box-shadow: 0 2px 4px rgba(7, 22, 45, 0.16);
@@ -43,6 +52,21 @@ export const Handle = styled.div<HandleProps>`
   transition: left 200ms ease-in;
   width: ${getScale("handleWidth")};
   z-index: 1;
+`;
+
+export const Label = styled.span<{
+  labelOrientation?: string;
+  isChecked: boolean;
+  disabled?: boolean;
+}>`
+  font-size: 12px;
+  font-weight: 400;
+  color: ${({ theme, isChecked }) =>
+    isChecked ? theme.colors.dark800 : theme.colors.gray900};
+  margin: ${({ labelOrientation }) =>
+    labelOrientation === "left" ? "0 12px 0 0" : "0 0 0 12px"};
+  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
+  transition: color 0.2s ease-in-out;
 `;
 
 export const Input = styled.input<InputProps>`
@@ -67,9 +91,8 @@ const StyledToggle = styled.div<StyleToggleProps>`
   display: inline-flex;
   height: ${getScale("toggleHeight")};
   position: relative;
-  transition: background-color 200ms;
+  transition: background-color 0.2s ease-in-out;
   width: ${getScale("toggleWidth")};
-  opacity: ${({ disabled }) => (disabled ? "0.32" : "1")};
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
 `;
 

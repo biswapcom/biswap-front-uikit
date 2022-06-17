@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import IconComponent from "../Svg/IconComponent";
 import Toggle from "./Toggle";
 import styled from "styled-components";
+
+import { Text } from "../Text";
 
 export default {
   title: "Components/Toggle",
@@ -16,6 +17,11 @@ const WrapperDark = styled.div`
   background: #07162d;
   padding: 24px;
 `;
+const Row = styled.div`
+  display: flex;
+  gap: 0 24px;
+  margin-bottom: 32px;
+`;
 
 export const Default: React.FC = () => {
   const [isChecked, setIsChecked] = useState(false);
@@ -25,42 +31,142 @@ export const Default: React.FC = () => {
   return (
     <>
       <WrapperLight>
-        <div style={{ marginBottom: "32px" }}>
+        <Text mb="12px" bold>
+          Default toggle
+        </Text>
+        <Row>
           <Toggle checked={isChecked} onChange={toggle} scale="md" />
-        </div>
-        <div style={{ marginBottom: "32px" }}>
+          <Toggle
+            checked={isChecked}
+            onChange={toggle}
+            scale="md"
+            label="Label LEFT"
+          />
+          <Toggle
+            checked={isChecked}
+            onChange={toggle}
+            scale="md"
+            label="Label RIGHT"
+            labelOrientation="right"
+          />
+        </Row>
+        <Text mb="12px" bold>
+          Toggle with custom colors
+        </Text>
+        <Row>
           <Toggle
             checked={isChecked}
             defaultColor="secondary"
-            checkedColor="success"
+            checkedColor="dark800"
             onChange={toggle}
             scale="md"
           />
-        </div>
-        <div style={{ marginBottom: "32px" }}>
           <Toggle
             checked={isChecked}
-            defaultColor="secondary"
-            checkedColor="success"
             onChange={toggle}
+            defaultColor="secondary"
+            checkedColor="dark800"
             scale="md"
-            disabled={true}
+            label="Label LEFT"
           />
-        </div>
+          <Toggle
+            checked={isChecked}
+            onChange={toggle}
+            defaultColor="secondary"
+            checkedColor="dark800"
+            scale="md"
+            label="Label RIGHT"
+            labelOrientation="right"
+          />
+        </Row>
+        <Text mb="12px" bold>
+          Toggle disabled
+        </Text>
+        <Row>
+          <Toggle checked={isChecked} onChange={toggle} scale="md" disabled />
+          <Toggle
+            checked={isChecked}
+            onChange={toggle}
+            label="Label LEFT"
+            disabled
+          />
+          <Toggle
+            checked={isChecked}
+            onChange={toggle}
+            label="Label RIGHT"
+            labelOrientation="right"
+            disabled
+          />
+        </Row>
       </WrapperLight>
       <WrapperDark>
-        <div style={{ marginBottom: "32px" }}>
+        <Text mb="12px" color="white" bold>
+          Default toggle
+        </Text>
+        <Row>
           <Toggle checked={isChecked} onChange={toggle} scale="md" />
-        </div>
-        <div style={{ marginBottom: "32px" }}>
+          <Toggle
+            checked={isChecked}
+            onChange={toggle}
+            scale="md"
+            label="Label LEFT"
+          />
+          <Toggle
+            checked={isChecked}
+            onChange={toggle}
+            scale="md"
+            label="Label RIGHT"
+            labelOrientation="right"
+          />
+        </Row>
+        <Text mb="12px" color="white" bold>
+          Toggle with custom colors
+        </Text>
+        <Row>
           <Toggle
             checked={isChecked}
             defaultColor="secondary"
-            checkedColor="success"
+            checkedColor="dark800"
             onChange={toggle}
             scale="md"
           />
-        </div>
+          <Toggle
+            checked={isChecked}
+            onChange={toggle}
+            defaultColor="secondary"
+            checkedColor="dark800"
+            scale="md"
+            label="Label LEFT"
+          />
+          <Toggle
+            checked={isChecked}
+            onChange={toggle}
+            defaultColor="secondary"
+            checkedColor="dark800"
+            scale="md"
+            label="Label RIGHT"
+            labelOrientation="right"
+          />
+        </Row>
+        <Text mb="12px" color="white" bold>
+          Toggle disabled
+        </Text>
+        <Row>
+          <Toggle checked={isChecked} onChange={toggle} scale="md" disabled />
+          <Toggle
+            checked={isChecked}
+            onChange={toggle}
+            label="Label LEFT"
+            disabled
+          />
+          <Toggle
+            checked={isChecked}
+            onChange={toggle}
+            label="Label RIGHT"
+            labelOrientation="right"
+            disabled
+          />
+        </Row>
       </WrapperDark>
     </>
   );

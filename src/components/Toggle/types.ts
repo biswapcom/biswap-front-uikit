@@ -15,6 +15,8 @@ export interface ToggleProps extends InputHTMLAttributes<HTMLInputElement> {
   checkedColor?: keyof Colors;
   defaultColor?: keyof Colors;
   disabled?: boolean;
+  label?: string;
+  labelOrientation?: string;
 }
 
 export interface HandleProps {
