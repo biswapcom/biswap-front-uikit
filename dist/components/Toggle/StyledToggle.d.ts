@@ -2,6 +2,7 @@ import { HandleProps, InputProps, StyleToggleProps } from "./types";
 export declare const ToggleWrap: import("styled-components").StyledComponent<"label", import("styled-components").DefaultTheme, {
     labelOrientation?: string | undefined;
     disabled?: boolean | undefined;
+    gridArea?: string | undefined;
 }, never>;
 export declare const Handle: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, HandleProps, never>;
 export declare const Label: import("styled-components").StyledComponent<"span", import("styled-components").DefaultTheme, {

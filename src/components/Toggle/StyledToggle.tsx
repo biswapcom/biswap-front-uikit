@@ -8,6 +8,7 @@ import {
   scales,
   StyleToggleProps,
 } from "./types";
+import { gridArea } from "styled-system";
 
 const scaleKeyValues = {
   // sm: {},
@@ -33,12 +34,14 @@ const getScale =
 export const ToggleWrap = styled.label<{
   labelOrientation?: string;
   disabled?: boolean;
+  gridArea?: string;
 }>`
   display: inline-flex;
   align-items: center;
   flex-direction: ${({ labelOrientation }) =>
     labelOrientation === "left" ? "row-reverse" : "row"};
   opacity: ${({ disabled }) => (disabled ? "0.32" : "1")};
+  grid-area: ${({ gridArea }) => gridArea && "initial"};
 `;
 export const Handle = styled.div<HandleProps>`
   background-color: ${({ theme }) => theme.colors.white};
