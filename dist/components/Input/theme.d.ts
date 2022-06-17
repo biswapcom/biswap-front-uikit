@@ -49,11 +49,17 @@ export declare const styleVariants: {
         borderColor: string;
         backgroundColor: string;
         color: string;
+        "::placeholder": {
+            color: string;
+        };
     };
     lightError: {
         borderColor: string;
         backgroundColor: string;
         color: string;
+        "::placeholder": {
+            color: string;
+        };
     };
     dark: {
         backgroundColor: string;
@@ -76,11 +82,17 @@ export declare const styleVariants: {
         borderColor: string;
         backgroundColor: string;
         color: string;
+        "::placeholder": {
+            color: string;
+        };
     };
     darkError: {
         borderColor: string;
         backgroundColor: string;
         color: string;
+        "::placeholder": {
+            color: string;
+        };
     };
     transparent: {
         backgroundColor: string;
