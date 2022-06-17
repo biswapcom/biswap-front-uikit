@@ -1,6 +1,6 @@
 import React from "react";
-import { Flex } from "../Box";
 import StyledToggle, { Input, Handle } from "./StyledToggle";
+import { Text } from "../Text";
 import { ToggleProps, scales } from "./types";
 
 const Toggle: React.FC<ToggleProps> = ({

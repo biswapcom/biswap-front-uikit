@@ -55,11 +55,19 @@ export const styleVariants = {
     borderColor: "warning",
     backgroundColor: "transparent",
     color: "dark800",
+
+    "::placeholder": {
+      color: "dark800",
+    },
   },
   [variants.LIGHT_ERROR]: {
     borderColor: "secondary",
     backgroundColor: "transparent",
     color: "dark800",
+
+    "::placeholder": {
+      color: "dark800",
+    },
   },
   [variants.DARK]: {
     backgroundColor: "dark500",
@@ -83,11 +91,19 @@ export const styleVariants = {
     borderColor: "warning",
     backgroundColor: "transparent",
     color: "white",
+
+    "::placeholder": {
+      color: "white",
+    },
   },
   [variants.DARK_ERROR]: {
     borderColor: "secondary",
     backgroundColor: "transparent",
     color: "white",
+
+    "::placeholder": {
+      color: "white",
+    },
   },
   [variants.TRANSPARENT]: {
     backgroundColor: "transparent",
