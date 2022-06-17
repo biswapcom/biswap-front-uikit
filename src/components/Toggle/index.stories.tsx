@@ -35,7 +35,7 @@ export const Default: React.FC = () => {
           Default toggle
         </Text>
         <Row>
-          <Toggle checked={isChecked} onChange={toggle} scale="md" />
+          <Toggle checked={isChecked} onChange={toggle} scale="md" gridArea="test"/>
           <Toggle
             checked={isChecked}
             onChange={toggle}
