@@ -10,12 +10,13 @@ const Toggle: React.FC<ToggleProps> = ({
   disabled,
   label,
   labelOrientation,
+  gridArea,
   ...props
 }) => {
   const isChecked = !!checked;
 
   return (
-    <ToggleWrap labelOrientation={labelOrientation} disabled={disabled}>
+    <ToggleWrap labelOrientation={labelOrientation} disabled={disabled} gridArea={gridArea}>
       <StyledToggle
         $checked={isChecked}
         $checkedColor={checkedColor}
