@@ -13,6 +13,7 @@ export interface ToggleProps extends InputHTMLAttributes<HTMLInputElement> {
     label?: string;
     labelOrientation?: string;
     gridArea?: string;
+    variant?: string;
 }
 export interface HandleProps {
     scale: Scales;

@@ -65,11 +65,18 @@ export const Label = styled.span<{
   labelOrientation?: string;
   isChecked: boolean;
   disabled?: boolean;
+  variant?: string;
 }>`
   font-size: 12px;
   font-weight: 400;
   color: ${({ theme, isChecked }) =>
     isChecked ? theme.colors.dark800 : theme.colors.gray900};
+  
+  color: ${({ theme, variant, isChecked }) => 
+          variant === "dark" && isChecked ? theme.colors.white
+          : variant === "light" && isChecked ? theme.colors.dark800
+          : theme.colors.gray900};
+  
   margin: ${({ labelOrientation }) =>
     labelOrientation === "left" ? "0 12px 0 0" : "0 0 0 12px"};
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
