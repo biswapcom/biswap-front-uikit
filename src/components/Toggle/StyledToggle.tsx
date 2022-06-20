@@ -39,7 +39,11 @@ export const ToggleWrap = styled.label<{
   display: inline-flex;
   align-items: center;
   flex-direction: ${({ labelOrientation }) =>
-    labelOrientation === "left" ? "row-reverse" : "row"};
+    labelOrientation === "left"
+      ? "row-reverse"
+      : labelOrientation === "right"
+      ? "row"
+      : "row"};
   opacity: ${({ disabled }) => (disabled ? "0.32" : "1")};
   grid-area: ${({ gridArea }) => gridArea || "initial"};
 `;
