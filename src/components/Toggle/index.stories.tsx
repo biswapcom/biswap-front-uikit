@@ -111,13 +111,32 @@ export const Default: React.FC = () => {
             disabled
           />
         </Row>
+
+        <Text mb="12px" bold>
+          Toggle spaceBetween
+        </Text>
+        <Row>
+          <Toggle
+            checked={isChecked}
+            onChange={toggle}
+            label="Label RIGHT"
+            labelOrientation="right"
+            variant="light"
+            spaceBetween
+          />
+        </Row>
       </WrapperLight>
       <WrapperDark>
         <Text mb="12px" color="white" bold>
           Default toggle
         </Text>
         <Row>
-          <Toggle checked={isChecked} onChange={toggle} scale="md" variant="dark"/>
+          <Toggle
+            checked={isChecked}
+            onChange={toggle}
+            scale="md"
+            variant="dark"
+          />
           <Toggle
             checked={isChecked}
             onChange={toggle}
@@ -170,7 +189,13 @@ export const Default: React.FC = () => {
           Toggle disabled
         </Text>
         <Row>
-          <Toggle checked={isChecked} onChange={toggle} scale="md" disabled variant="dark"/>
+          <Toggle
+            checked={isChecked}
+            onChange={toggle}
+            scale="md"
+            disabled
+            variant="dark"
+          />
           <Toggle
             checked={isChecked}
             onChange={toggle}
@@ -185,6 +210,20 @@ export const Default: React.FC = () => {
             labelOrientation="right"
             disabled
             variant="dark"
+          />
+        </Row>
+
+        <Text mb="12px" color="white" bold>
+          Toggle spaceBetween
+        </Text>
+        <Row>
+          <Toggle
+            checked={isChecked}
+            onChange={toggle}
+            label="Label RIGHT"
+            labelOrientation="right"
+            variant="light"
+            spaceBetween
           />
         </Row>
       </WrapperDark>
