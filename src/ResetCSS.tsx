@@ -1,6 +1,31 @@
 import { createGlobalStyle } from "styled-components";
 
 const ResetCSS = createGlobalStyle`
+  @font-face {
+    font-family: 'CodecPro';
+    font-weight: 600;
+    src: url('assets/fonts/CodecProBold/font.woff2') format('woff2'), url('assets/fonts/CodecProBold/font.woff') format('woff');
+  }
+  @font-face {
+    font-weight: 300;
+    font-family: 'CodecPro';
+    src: url('assets/fonts/CodecProNews/font.woff2') format('woff2'), url('assets/fonts/CodecProNews/font.woff') format('woff');
+  }
+  @font-face {
+    font-family: 'CodecPro';
+    font-weight: 400;
+    src: url('assets/fonts/CodecProRegular/font.woff2') format('woff2'), url('assets/fonts/CodecProRegular/font.woff') format('woff');
+  }
+  @font-face {
+    font-family: 'CodecPro';
+    font-weight: 900;
+    src: url('assets/fonts/CodecProExtraBold/font.woff2') format('woff2'), url('assets/fonts/CodecProExtraBold/font.woff') format('woff');
+  }
+
+  * {
+    font-family: 'CodecPro', sans-serif;
+  }
+  
   /* prettier-ignore */
   html, body, div, span, applet, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
