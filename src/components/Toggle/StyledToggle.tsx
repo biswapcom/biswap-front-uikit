@@ -84,7 +84,7 @@ export const Label = styled.span<{
       : theme.colors.gray900};
 
   margin: ${({ labelOrientation }) =>
-    labelOrientation === "left" ? "0 12px 0 0" : "0 0 0 12px"};
+    labelOrientation === "left" ? "0 8px 0 0" : "0 0 0 8px"};
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
   transition: color 0.2s ease-in-out;
 `;
