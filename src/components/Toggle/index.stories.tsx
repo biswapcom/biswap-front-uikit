@@ -40,12 +40,14 @@ export const Default: React.FC = () => {
             onChange={toggle}
             scale="md"
             gridArea="test"
+            variant="light"
           />
           <Toggle
             checked={isChecked}
             onChange={toggle}
             scale="md"
             label="Label LEFT"
+            variant="light"
           />
           <Toggle
             checked={isChecked}
@@ -53,6 +55,7 @@ export const Default: React.FC = () => {
             scale="md"
             label="Label RIGHT"
             labelOrientation="right"
+            variant="light"
           />
         </Row>
         <Text mb="12px" bold>
@@ -65,6 +68,7 @@ export const Default: React.FC = () => {
             checkedColor="dark800"
             onChange={toggle}
             scale="md"
+            variant="light"
           />
           <Toggle
             checked={isChecked}
@@ -73,6 +77,7 @@ export const Default: React.FC = () => {
             checkedColor="dark800"
             scale="md"
             label="Label LEFT"
+            variant="light"
           />
           <Toggle
             checked={isChecked}
@@ -82,6 +87,7 @@ export const Default: React.FC = () => {
             scale="md"
             label="Label RIGHT"
             labelOrientation="right"
+            variant="light"
           />
         </Row>
         <Text mb="12px" bold>
@@ -93,6 +99,7 @@ export const Default: React.FC = () => {
             checked={isChecked}
             onChange={toggle}
             label="Label LEFT"
+            variant="light"
             disabled
           />
           <Toggle
@@ -100,6 +107,7 @@ export const Default: React.FC = () => {
             onChange={toggle}
             label="Label RIGHT"
             labelOrientation="right"
+            variant="light"
             disabled
           />
         </Row>
@@ -109,12 +117,13 @@ export const Default: React.FC = () => {
           Default toggle
         </Text>
         <Row>
-          <Toggle checked={isChecked} onChange={toggle} scale="md" />
+          <Toggle checked={isChecked} onChange={toggle} scale="md" variant="dark"/>
           <Toggle
             checked={isChecked}
             onChange={toggle}
             scale="md"
             label="Label LEFT"
+            variant="dark"
           />
           <Toggle
             checked={isChecked}
@@ -122,6 +131,7 @@ export const Default: React.FC = () => {
             scale="md"
             label="Label RIGHT"
             labelOrientation="right"
+            variant="dark"
           />
         </Row>
         <Text mb="12px" color="white" bold>
@@ -134,6 +144,7 @@ export const Default: React.FC = () => {
             checkedColor="dark800"
             onChange={toggle}
             scale="md"
+            variant="dark"
           />
           <Toggle
             checked={isChecked}
@@ -142,6 +153,7 @@ export const Default: React.FC = () => {
             checkedColor="dark800"
             scale="md"
             label="Label LEFT"
+            variant="dark"
           />
           <Toggle
             checked={isChecked}
@@ -151,18 +163,20 @@ export const Default: React.FC = () => {
             scale="md"
             label="Label RIGHT"
             labelOrientation="right"
+            variant="dark"
           />
         </Row>
         <Text mb="12px" color="white" bold>
           Toggle disabled
         </Text>
         <Row>
-          <Toggle checked={isChecked} onChange={toggle} scale="md" disabled />
+          <Toggle checked={isChecked} onChange={toggle} scale="md" disabled variant="dark"/>
           <Toggle
             checked={isChecked}
             onChange={toggle}
             label="Label LEFT"
             disabled
+            variant="dark"
           />
           <Toggle
             checked={isChecked}
@@ -170,6 +184,7 @@ export const Default: React.FC = () => {
             label="Label RIGHT"
             labelOrientation="right"
             disabled
+            variant="dark"
           />
         </Row>
       </WrapperDark>
