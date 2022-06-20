@@ -16,7 +16,11 @@ const Toggle: React.FC<ToggleProps> = ({
   const isChecked = !!checked;
 
   return (
-    <ToggleWrap labelOrientation={labelOrientation} disabled={disabled} gridArea={gridArea}>
+    <ToggleWrap
+      labelOrientation={labelOrientation}
+      disabled={disabled}
+      gridArea={gridArea}
+    >
       <StyledToggle
         $checked={isChecked}
         $checkedColor={checkedColor}
@@ -47,7 +51,6 @@ const Toggle: React.FC<ToggleProps> = ({
 };
 
 Toggle.defaultProps = {
-  labelOrientation: "left",
   scale: "md",
 };
 
