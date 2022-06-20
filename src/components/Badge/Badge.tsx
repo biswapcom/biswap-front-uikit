@@ -79,19 +79,19 @@ const Wrapper = styled.div<BadgeProps>`
   justify-content: center;
   align-items: center;
   padding: ${({ isIcon, isLarge }) =>
-    !isLarge
-      ? isIcon === "left"
-        ? "4px 12px 4px 4px"
+    !isLarge 
+            ? isIcon === "left"
+        ? "4px 8px 4px 4px"
         : isIcon === "right"
-        ? "4px 4px 4px 12px"
-        : "4px 12px"
+        ? "4px 4px 4px 8px"
+        : "4px 8px"
       : "8px 24px"};
   background: ${getBadgeBg};
   color: ${getBadgeColor};
   border-radius: 16px;
   height: ${({ isLarge }) => (isLarge ? "38px" : "20px")};
   font-size: ${({ fontSize }) => fontSize || "10px"};
-  font-weight: ${({ fontWeight }) => fontWeight || "600"};
+  font-weight: 600;
 `;
 
 const Badge: FC<BadgeProps> = ({
