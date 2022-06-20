@@ -35,15 +35,19 @@ export const ToggleWrap = styled.label<{
   labelOrientation?: string;
   disabled?: boolean;
   gridArea?: string;
+  spaceBetween?: boolean;
 }>`
   display: inline-flex;
   align-items: center;
+  width: ${({ spaceBetween }) => (spaceBetween ? "100%" : "auto")};
   flex-direction: ${({ labelOrientation }) =>
     labelOrientation === "left"
       ? "row-reverse"
       : labelOrientation === "right"
       ? "row"
       : "row"};
+  justify-content: ${({ spaceBetween }) =>
+    spaceBetween ? "space-between" : "start"};
   opacity: ${({ disabled }) => (disabled ? "0.32" : "1")};
   grid-area: ${({ gridArea }) => gridArea || "initial"};
 `;
@@ -71,12 +75,14 @@ export const Label = styled.span<{
   font-weight: 400;
   color: ${({ theme, isChecked }) =>
     isChecked ? theme.colors.dark800 : theme.colors.gray900};
-  
-  color: ${({ theme, variant, isChecked }) => 
-          variant === "dark" && isChecked ? theme.colors.white
-          : variant === "light" && isChecked ? theme.colors.dark800
-          : theme.colors.gray900};
-  
+
+  color: ${({ theme, variant, isChecked }) =>
+    variant === "dark" && isChecked
+      ? theme.colors.white
+      : variant === "light" && isChecked
+      ? theme.colors.dark800
+      : theme.colors.gray900};
+
   margin: ${({ labelOrientation }) =>
     labelOrientation === "left" ? "0 12px 0 0" : "0 0 0 12px"};
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
