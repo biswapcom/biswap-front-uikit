@@ -18,6 +18,7 @@ export const variants = {
   BOOST: "boost",
   SELECT: "select",
   SELECT_LIGHT: "selectLight",
+  DROPDOWN: "dropdown",
 
   LIGHT_OUT: "lightOut",
   LIGHT: "light",
