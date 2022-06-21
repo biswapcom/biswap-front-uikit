@@ -7,6 +7,7 @@ export interface BadgeProps {
     | "primary"
     | "warning"
     | "core"
+    | "finished"
     | string;
   fontSize?: string;
   fontWeight?: string;
