@@ -64,4 +64,3 @@ export const menuIconScaleVariants = {
     marginRight: "6px",
   },
 };
-

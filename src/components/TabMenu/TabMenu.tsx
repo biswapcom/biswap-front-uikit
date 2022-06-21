@@ -1,9 +1,9 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import styled, { DefaultTheme } from "styled-components";
 import { space, variant } from "styled-system";
 import { TabBarProps, tabsScales, tabVariants } from "./types";
 import TabBarItem from "./TabBarItem";
-import {menuIconScaleVariants, sliderScaleVariant} from "./theme";
+import { menuIconScaleVariants, sliderScaleVariant } from "./theme";
 import { Flex } from "../Box";
 import IconComponent from "../Svg/IconComponent";
 
@@ -85,10 +85,20 @@ const TabMenu: React.FC<BarProps> = ({
 
   const isLight = variant === tabVariants.LIGHT;
 
-  const getTabMenuIcons = (index: number, size: typeof tabsScales[keyof typeof tabsScales]) => {
-    const sizes = menuIconScaleVariants[size]
-    return <IconComponent width={sizes.width} iconName={menuIcons[index]} color="currentColor" mr={sizes.marginRight} />
-  }
+  const getTabMenuIcons = (
+    index: number,
+    size: typeof tabsScales[keyof typeof tabsScales]
+  ) => {
+    const sizes = menuIconScaleVariants[size];
+    return (
+      <IconComponent
+        width={sizes.width}
+        iconName={menuIcons[index]}
+        color="currentColor"
+        mr={sizes.marginRight}
+      />
+    );
+  };
 
   return (
     <StyledTabBar

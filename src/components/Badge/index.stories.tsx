@@ -35,7 +35,7 @@ export const Default: React.FC = () => {
         <Badge fontSize="18px" isLarge badgeType="notActive">
           notActive
         </Badge>
-        <Badge badgeType="finished">finished</Badge>
+        <Badge badgeType="light">light</Badge>
         <Badge badgeType="active">active</Badge>
         <Badge badgeType="success">success</Badge>
         <Badge badgeType="error">error</Badge>
