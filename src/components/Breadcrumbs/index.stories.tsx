@@ -4,6 +4,7 @@ import { BrowserRouter, Link as RouterLink } from "react-router-dom";
 import Text from "../Text/Text";
 import Link from "../Link/Link";
 import LogoIcon from "../Svg/Icons/Logo";
+import PrizeIcon from '../Svg/Icons/Prize'
 import BreadCrumbs from "./Breadcrumbs";
 
 export default {
@@ -36,16 +37,16 @@ export const CustomSeparator: React.FC = () => {
   return (
     <Text p="32px">
       <Text mb="16px">
-        <BreadCrumbs separator={<LogoIcon width="24px" />}>
-          <Link href="/" color="secondary" style={{ fontWeight: 400 }}>
+        <BreadCrumbs separator={<LogoIcon width="12px" />}>
+          <a href="/" color="secondary" style={{ fontWeight: 400 }}>
             Link
-          </Link>
+          </a>
           <Text color="textDisabled">Crumb 1</Text>
           <Text color="textDisabled">Crumb 2</Text>
         </BreadCrumbs>
       </Text>
       <Text mb="16px">
-        <BreadCrumbs separator={<PresentWonIcon width="48px" />}>
+        <BreadCrumbs separator={<PrizeIcon width="18px" />}>
           <Link href="/" color="failure" style={{ fontWeight: 400 }}>
             Link
           </Link>
