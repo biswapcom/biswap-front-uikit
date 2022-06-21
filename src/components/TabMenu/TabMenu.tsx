@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect} from "react";
 import styled, { DefaultTheme } from "styled-components";
 import { space, variant } from "styled-system";
 import { TabBarProps, tabsScales, tabVariants } from "./types";
 import TabBarItem from "./TabBarItem";
-import { sliderScaleVariant } from "./theme";
+import {menuIconScaleVariants, sliderScaleVariant} from "./theme";
+import { Flex } from "../Box";
+import IconComponent from "../Svg/IconComponent";
 
 interface StyledTabBarProps extends TabBarProps {
   theme: DefaultTheme;
@@ -67,6 +69,7 @@ const TabMenu: React.FC<BarProps> = ({
   disabled,
   fullWidth = false,
   menuTitles = [""],
+  menuIcons = [],
   ...props
 }) => {
   const [widthsArr, setWidthsArr] = useState(
@@ -81,6 +84,11 @@ const TabMenu: React.FC<BarProps> = ({
   }, [widthsArr, activeIndex]);
 
   const isLight = variant === tabVariants.LIGHT;
+
+  const getTabMenuIcons = (index: number, size: typeof tabsScales[keyof typeof tabsScales]) => {
+    const sizes = menuIconScaleVariants[size]
+    return <IconComponent width={sizes.width} iconName={menuIcons[index]} color="currentColor" mr={sizes.marginRight} />
+  }
 
   return (
     <StyledTabBar
@@ -112,7 +120,10 @@ const TabMenu: React.FC<BarProps> = ({
           scale={scale}
           blockOffset={blockOffset}
         >
-          {title}
+          <Flex alignItems="center">
+            {getTabMenuIcons(index, scale)}
+            {title}
+          </Flex>
         </TabBarItem>
       ))}
     </StyledTabBar>

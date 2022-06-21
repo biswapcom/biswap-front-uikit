@@ -39,6 +39,7 @@ export const Default: React.FC = () => {
           onItemClick={setIndex2}
           activeIndex={index2}
           menuTitles={["Select 1", "Select 2", "Select 3", "Select 4"]}
+          menuIcons={['ListOpacity', 'VerifiedOpacity', '', 'CommunityOpacity']}
         />
       </Row>
       <Row>
@@ -86,7 +87,9 @@ export const Default: React.FC = () => {
           variant={tabVariants.LIGHT}
           onItemClick={setIndex2}
           activeIndex={index2}
-          menuTitles={["Select 1", "Select 2", "Select 3", "Select 4"]}
+          menuTitles={["Select 1", "Select 2", "Select 3"]}
+          menuIcons={['ListOpacity', 'VerifiedOpacity', 'CommunityOpacity']}
+
         />
       </Row>
     </>
