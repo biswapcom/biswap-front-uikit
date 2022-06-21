@@ -1,10 +1,5 @@
 import { SpaceProps } from "styled-system";
-import {
-  Dispatch,
-  ElementType,
-  SetStateAction,
-  ReactNode,
-} from "react";
+import { Dispatch, ElementType, SetStateAction, ReactNode } from "react";
 import { PolymorphicComponentProps } from "../../util/polymorphic";
 
 export interface TabBarProps extends SpaceProps {
@@ -23,7 +18,7 @@ export interface TabBarItemProps extends TabBarProps {
   isActive?: boolean;
   setWidth?: Dispatch<SetStateAction<any>>;
   itemIndex?: number;
-  children?:ReactNode;
+  children?: ReactNode;
   onAction?: (index: number) => void;
   blockOffset?: number;
 }

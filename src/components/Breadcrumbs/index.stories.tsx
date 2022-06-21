@@ -4,7 +4,7 @@ import { BrowserRouter, Link as RouterLink } from "react-router-dom";
 import Text from "../Text/Text";
 import Link from "../Link/Link";
 import LogoIcon from "../Svg/Icons/Logo";
-import PrizeIcon from '../Svg/Icons/Prize'
+import PrizeIcon from "../Svg/Icons/Prize";
 import BreadCrumbs from "./Breadcrumbs";
 
 export default {
