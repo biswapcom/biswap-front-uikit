@@ -97,6 +97,7 @@ const AccountModal: React.FC<Props> = ({
       <Flex>
         <CopyToClipboard toCopy={account}>Copy Address</CopyToClipboard>
         <Link
+          target="_blank"
           fontWeight="400"
           scale="xs"
           ml="26px"
