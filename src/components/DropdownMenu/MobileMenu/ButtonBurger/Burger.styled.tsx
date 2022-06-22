@@ -40,7 +40,7 @@ export const StyledBurger = styled.button<StyledBurgerProps>`
     height: 2px;
     background: ${({ open, isTablet, theme }) => {
       if(open){
-        return isTablet ? "#556E9A" : theme.colors.dark800
+        return isTablet ? theme.colors.white : theme.colors.dark800
       }else{
         return theme.colors.white
       }
