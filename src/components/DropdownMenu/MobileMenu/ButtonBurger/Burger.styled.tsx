@@ -4,6 +4,7 @@ import { menuAnimationConfig } from "./animationConfig";
 type StyledBurgerProps = {
   open: boolean;
   isLoaded: boolean;
+  isTablet: boolean;
 };
 
 export const StyledBurger = styled.button<StyledBurgerProps>`
@@ -37,8 +38,13 @@ export const StyledBurger = styled.button<StyledBurgerProps>`
   span {
     width: 20px;
     height: 2px;
-    background: ${({ open }) =>
-      open ? "rgb(7, 22, 45)" : "rgb(255, 255, 255)"};
+    background: ${({ open, isTablet }) => {
+      if(open){
+        return isTablet ? "rgba(85, 110, 154, 1)" : "rgb(7, 22, 45)"
+      }else{
+        return "rgb(255, 255, 255)"
+      }
+    }};
     border-radius: 10px;
     transition: all 0.5s linear;
     position: relative;
