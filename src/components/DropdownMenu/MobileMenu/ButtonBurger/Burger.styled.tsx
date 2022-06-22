@@ -38,11 +38,11 @@ export const StyledBurger = styled.button<StyledBurgerProps>`
   span {
     width: 20px;
     height: 2px;
-    background: ${({ open, isTablet }) => {
+    background: ${({ open, isTablet, theme }) => {
       if(open){
-        return isTablet ? "rgba(85, 110, 154, 1)" : "rgb(7, 22, 45)"
+        return isTablet ? "#556E9A" : theme.colors.dark800
       }else{
-        return "rgb(255, 255, 255)"
+        return theme.colors.white
       }
     }};
     border-radius: 10px;
