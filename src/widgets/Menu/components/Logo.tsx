@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 import styled, { css, DefaultTheme, keyframes } from "styled-components";
 
 // components
@@ -66,6 +66,12 @@ const Logo: React.FC<Props> = ({ href }) => {
     </>
   );
 
+  const {push} = useHistory()
+
+  const handleLogoClick = () => {
+    push(href)
+  }
+
   return (
     <Flex>
       {isAbsoluteUrl ? (
@@ -73,9 +79,9 @@ const Logo: React.FC<Props> = ({ href }) => {
           {innerLogo}
         </StyledLink>
       ) : (
-        <StyledInnerLink to={href} aria-label="Biswap home page">
+        <Button onClick={handleLogoClick} aria-label="Biswap home page">
           {innerLogo}
-        </StyledInnerLink>
+        </Button>
       )}
     </Flex>
   );
