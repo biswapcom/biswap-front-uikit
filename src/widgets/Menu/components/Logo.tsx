@@ -67,15 +67,18 @@ const Logo: React.FC<Props> = ({ href }) => {
 
   return (
     <Flex>
-      {isAbsoluteUrl ? (
-        <StyledLink href={href} aria-label="Biswap home page 111">
-          {innerLogo}
-        </StyledLink>
-      ) : (
-        <StyledInnerLink to={href} aria-label="Biswap home page 222">
-          {innerLogo}
-        </StyledInnerLink>
-      )}
+      <StyledLink href={href} aria-label="Biswap home page 111">
+        {innerLogo}
+      </StyledLink>
+      {/*{isAbsoluteUrl ? (*/}
+      {/*  <StyledLink href={href} aria-label="Biswap home page 111">*/}
+      {/*    {innerLogo}*/}
+      {/*  </StyledLink>*/}
+      {/*) : (*/}
+      {/*  <StyledInnerLink to={href} aria-label="Biswap home page 222">*/}
+      {/*    {innerLogo}*/}
+      {/*  </StyledInnerLink>*/}
+      {/*)}*/}
     </Flex>
   );
 };
