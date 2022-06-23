@@ -6,6 +6,7 @@ import styled, { css, DefaultTheme, keyframes } from "styled-components";
 import Flex from "../../../components/Box/Flex";
 import { LogoIcon, LogoWithTextIcon } from "../../../components/Svg";
 import { MenuContext } from "../context";
+import {Button} from "../../../components/Button";
 
 interface Props {
   href: string;
@@ -67,18 +68,15 @@ const Logo: React.FC<Props> = ({ href }) => {
 
   return (
     <Flex>
-      <StyledLink href={href} aria-label="Biswap home page 111">
-        {innerLogo}
-      </StyledLink>
-      {/*{isAbsoluteUrl ? (*/}
-      {/*  <StyledLink href={href} aria-label="Biswap home page 111">*/}
-      {/*    {innerLogo}*/}
-      {/*  </StyledLink>*/}
-      {/*) : (*/}
-      {/*  <StyledInnerLink to={href} aria-label="Biswap home page 222">*/}
-      {/*    {innerLogo}*/}
-      {/*  </StyledInnerLink>*/}
-      {/*)}*/}
+      {isAbsoluteUrl ? (
+        <StyledLink href={href} aria-label="Biswap home page">
+          {innerLogo}
+        </StyledLink>
+      ) : (
+        <Button as={Link} to={href} aria-label="Biswap home page">
+          {innerLogo}
+        </Button>
+      )}
     </Flex>
   );
 };
