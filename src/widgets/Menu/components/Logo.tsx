@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import {Link, useHistory} from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled, { css, DefaultTheme, keyframes } from "styled-components";
 
 // components
@@ -10,7 +10,6 @@ import {Button} from "../../../components/Button";
 
 interface Props {
   href: string;
-  handleLogoClick: any
 }
 
 const blink = keyframes`
@@ -57,7 +56,7 @@ const StyledInnerLink = styled(Link)`
   ${CommonLinkStyles};
 `;
 
-const Logo: React.FC<Props> = ({ href, handleLogoClick }) => {
+const Logo: React.FC<Props> = ({ href }) => {
   const { linkComponent } = useContext(MenuContext);
   const isAbsoluteUrl = href.startsWith("http");
   const innerLogo = (
@@ -74,9 +73,9 @@ const Logo: React.FC<Props> = ({ href, handleLogoClick }) => {
           {innerLogo}
         </StyledLink>
       ) : (
-        <Button onClick={handleLogoClick} aria-label="Biswap home page">
+        <StyledInnerLink to={href} aria-label="Biswap home page">
           {innerLogo}
-        </Button>
+        </StyledInnerLink>
       )}
     </Flex>
   );

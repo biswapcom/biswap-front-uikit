@@ -129,6 +129,7 @@ const TopBannerContainer = styled.div<{ height: number }>`
 const BodyWrapper = styled(Box)`
   position: relative;
   display: flex;
+  z-index: 19;
 `;
 
 const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
@@ -170,7 +171,6 @@ const Menu: React.FC<NavProps> = ({
   transactionsForUIKit,
   withEvent,
   eventCallback,
-  handleLogoClick
 }) => {
   const { isMobile } = useMatchBreakpoints();
   const [showMenu, setShowMenu] = useState<boolean>(true);
@@ -292,7 +292,7 @@ const Menu: React.FC<NavProps> = ({
           )}
           <StyledNav menuBg={menuBg} isMobileMenuOpened={isMobileMenuOpened}>
             <Flex>
-              <Logo href={homeLink?.href ?? "/"} handleLogoClick={handleLogoClick} />
+              <Logo href={homeLink?.href ?? "/"} />
               <MenuItems
                 items={links}
                 activeItem={activeItem}

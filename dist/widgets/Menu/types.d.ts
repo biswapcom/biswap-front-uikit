@@ -50,7 +50,6 @@ export interface NavProps extends BSWPriceProps, FooterAboutLinks, FooterProduct
     transactionsForUIKit?: any;
     withEvent?: boolean;
     eventCallback?: () => void;
-    handleLogoClick: any;
 }
 export interface FooterStatisticProps {
     footerStatistic: Array<FooterStatisticItem>;
