@@ -17,6 +17,8 @@ const blink = keyframes`
 `;
 
 const CommonLinkStyles = ({ theme }: { theme: DefaultTheme }) => css`
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
 
@@ -68,7 +70,7 @@ const Logo: React.FC<Props> = ({ href }) => {
   return (
     <Flex>
       {isAbsoluteUrl ? (
-        <StyledLink as="a" href={href} aria-label="Biswap home page">
+        <StyledLink href={href} aria-label="Biswap home page">
           {innerLogo}
         </StyledLink>
       ) : (
