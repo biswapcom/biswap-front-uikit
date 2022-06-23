@@ -53,6 +53,7 @@ const StyledLink = styled.a`
 `;
 
 const StyledInnerLink = styled(Link)`
+  pointer-events: none;
   ${CommonLinkStyles};
 `;
 
@@ -66,12 +67,6 @@ const Logo: React.FC<Props> = ({ href }) => {
     </>
   );
 
-  const {push} = useHistory()
-
-  const handleLogoClick = () => {
-    push(href)
-  }
-
   return (
     <Flex>
       {isAbsoluteUrl ? (
@@ -79,9 +74,9 @@ const Logo: React.FC<Props> = ({ href }) => {
           {innerLogo}
         </StyledLink>
       ) : (
-        <Button onClick={handleLogoClick} aria-label="Biswap home page">
+        <StyledInnerLink to={href} aria-label="Biswap home page">
           {innerLogo}
-        </Button>
+        </StyledInnerLink>
       )}
     </Flex>
   );
