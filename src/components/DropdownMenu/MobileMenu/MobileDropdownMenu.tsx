@@ -26,7 +26,7 @@ const MobileDropdownMenu: FC<MenuItemsProps> = ({
       <MenuItem>
         <Burger open={isMobileMenuOpened} />
         {!isMobile && (
-          <Text ml="8px" color="white">
+          <Text ml="8px" fontWeight="600" color="white">
             Menu
           </Text>
         )}
