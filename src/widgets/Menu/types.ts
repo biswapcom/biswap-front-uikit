@@ -62,6 +62,7 @@ export interface NavProps
   //---------
   withEvent?: boolean;
   eventCallback?: () => void;
+  handleLogoClick: any
 }
 
 export interface FooterStatisticProps {

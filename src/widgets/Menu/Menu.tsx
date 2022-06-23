@@ -170,6 +170,7 @@ const Menu: React.FC<NavProps> = ({
   transactionsForUIKit,
   withEvent,
   eventCallback,
+  handleLogoClick
 }) => {
   const { isMobile } = useMatchBreakpoints();
   const [showMenu, setShowMenu] = useState<boolean>(true);
@@ -291,7 +292,7 @@ const Menu: React.FC<NavProps> = ({
           )}
           <StyledNav menuBg={menuBg} isMobileMenuOpened={isMobileMenuOpened}>
             <Flex>
-              <Logo href={homeLink?.href ?? "/"} />
+              <Logo href={homeLink?.href ?? "/"} handleLogoClick={handleLogoClick} />
               <MenuItems
                 items={links}
                 activeItem={activeItem}
