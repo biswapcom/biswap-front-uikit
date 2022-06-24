@@ -1,12 +1,11 @@
 import React, { useContext } from "react";
-import {Link, useHistory} from "react-router-dom";
+import {Link} from "react-router-dom";
 import styled, { css, DefaultTheme, keyframes } from "styled-components";
 
 // components
 import Flex from "../../../components/Box/Flex";
 import { LogoIcon, LogoWithTextIcon } from "../../../components/Svg";
 import { MenuContext } from "../context";
-import {Button} from "../../../components/Button";
 
 interface Props {
   href: string;
