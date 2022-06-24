@@ -79,8 +79,8 @@ const Wrapper = styled.div<BadgeProps>`
   justify-content: center;
   align-items: center;
   padding: ${({ isIcon, isLarge }) =>
-    !isLarge 
-            ? isIcon === "left"
+    !isLarge
+      ? isIcon === "left"
         ? "4px 8px 4px 4px"
         : isIcon === "right"
         ? "4px 4px 4px 8px"
