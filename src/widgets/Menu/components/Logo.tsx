@@ -52,7 +52,6 @@ const StyledLink = styled.a`
 `;
 
 const StyledInnerLink = styled(Link)`
-  pointer-events: none;
   ${CommonLinkStyles};
 `;
 

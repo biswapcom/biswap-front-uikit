@@ -129,7 +129,6 @@ const TopBannerContainer = styled.div<{ height: number }>`
 const BodyWrapper = styled(Box)`
   position: relative;
   display: flex;
-  z-index: 19;
 `;
 
 const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
