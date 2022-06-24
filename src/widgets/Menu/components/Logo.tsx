@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled, { css, DefaultTheme, keyframes } from "styled-components";
 
 // components
@@ -68,7 +68,7 @@ const Logo: React.FC<Props> = ({ href }) => {
   return (
     <Flex>
       {isAbsoluteUrl ? (
-        <StyledLink href={href} aria-label="Biswap home page">
+        <StyledLink as="a" href={href} aria-label="Biswap home page">
           {innerLogo}
         </StyledLink>
       ) : (
