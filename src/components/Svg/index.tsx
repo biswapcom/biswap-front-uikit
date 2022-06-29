@@ -284,7 +284,6 @@ export { default as EditSolidIcon } from "./Icons/Edit/EditSolid";
 //LaunchPools
 
 
-
 //Medal
 export { default as MedalIcon } from "./Icons/Medal/Medal";
 
