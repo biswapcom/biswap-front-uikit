@@ -39,10 +39,10 @@ export const StyledBurger = styled.button<StyledBurgerProps>`
     width: 20px;
     height: 2px;
     background: ${({ open, isTablet, theme }) => {
-      if(open){
-        return isTablet ? theme.colors.white : theme.colors.dark800
-      }else{
-        return theme.colors.white
+      if (open) {
+        return isTablet ? theme.colors.white : theme.colors.dark800;
+      } else {
+        return theme.colors.white;
       }
     }};
     border-radius: 10px;
