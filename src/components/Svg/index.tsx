@@ -16,6 +16,7 @@ export { default as CheckmarkCircleIcon } from "./Icons/CheckmarkCircle";
 export { default as ChevronRightEndIcon } from "./Icons/ChevronRightEnd";
 export { default as CogIcon } from "./Icons/Cog";
 export { default as CommunityIcon } from "./Icons/Community";
+export { default as CommunityOpacityIcon } from "./Icons/CommunityOpacity";
 export { default as ErrorIcon } from "./Icons/Error";
 export { default as TileViewIcon } from "./Icons/TileView";
 export { default as LogoIcon } from "./Icons/Logo";
@@ -29,7 +30,7 @@ export { default as PancakeRoundIcon } from "./Icons/PancakeRound";
 export { default as PlayCircleOutlineIcon } from "./Icons/PlayCircleOutline";
 export { default as PrizeIcon } from "./Icons/Prize";
 export { default as RemoveIcon } from "./Icons/Remove";
-export { default as VerifiedIcon } from "./Icons/Verified";
+export { default as VerifiedIcon } from "./Icons/Verified/Verified";
 export { default as ProgressBunny } from "./Icons/ProgressBunny";
 export { default as WaitIcon } from "./Icons/Wait";
 export { default as Won } from "./Icons/Won";
@@ -122,13 +123,11 @@ export { default as ChevronLeftIcon } from "./Icons/Arrows/ChevronLeft";
 export { default as ChevronUpIcon } from "./Icons/Arrows/ChevronUp";
 export { default as ChevronUpCircleSolidIcon } from "./Icons/Arrows/ChevronUpCircleSolid";
 export { default as ChevronUpCircleOpacityIcon } from "./Icons/Arrows/ChevronUpCircleOpacity";
-
 export { default as ArrowRightIcon } from "./Icons/Arrows/ArrowRight";
 export { default as ArrowUpIcon } from "./Icons/Arrows/ArrowUp";
 export { default as ArrowLeftIcon } from "./Icons/Arrows/ArrowLeft";
 export { default as ArrowDownIcon } from "./Icons/Arrows/ArrowDown";
 export { default as ArrowUpForwardIcon } from "./Icons/Arrows/ArrowUpForward";
-
 export { default as ArrowSkipRightIcon } from "./Icons/Arrows/ArrowSkipRight";
 export { default as ArrowSkipLeftIcon } from "./Icons/Arrows/ArrowSkipLeft";
 
@@ -281,14 +280,15 @@ export { default as EditIcon } from "./Icons/Edit/Edit";
 export { default as EditOpacityIcon } from "./Icons/Edit/EditOpacity";
 export { default as EditSolidIcon } from "./Icons/Edit/EditSolid";
 
-//LaunchPools
-
-
 //Medal
 export { default as MedalIcon } from "./Icons/Medal/Medal";
 
 //Gas
 export { default as GasIcon } from "./Icons/Gas/Gas";
+
+//List
+export { default as ListOpacityIcon } from "./Icons/List/ListOpacity";
+export { default as ListSolidIcon } from "./Icons/List/ListSolid";
 
 //History
 export { default as HistoryIcon } from "./Icons/History/History";
@@ -312,6 +312,28 @@ export { default as ExchangeOpacityIcon } from "./Icons/Exchange/ExchangeOpacity
 //ExpertMode
 export { default as ExpertModeSolidIcon } from "./Icons/ExpertMode/ExpertModeSolid";
 export { default as ExpertModeOpacityIcon } from "./Icons/ExpertMode/ExpertModeOpacity";
+
+//LaunchPools
+export { default as PoolsSolidIcon } from "./Icons/Pools/PoolsSolid";
+export { default as PoolsOpacityIcon } from "./Icons/Pools/PoolsOpacity";
+
+//Farms
+export { default as FarmsSolidIcon } from "./Icons/Farms/FarmsSolid";
+export { default as FarmsOpacityIcon } from "./Icons/Farms/FarmsOpacity";
+
+//Referral
+export { default as ReferralSolidIcon } from "./Icons/Referral/ReferralSolid";
+export { default as ReferralOpacityIcon } from "./Icons/Referral/ReferralOpacity";
+
+//Ido
+export { default as IdoSolidIcon } from "./Icons/Ido/IdoSolid";
+export { default as IdoOpacityIcon } from "./Icons/Ido/IdoOpacity";
+
+//Goblet
+export { default as GobletSolidIcon } from "./Icons/Goblet/GobletSolid";
+export { default as GobletOpacityIcon } from "./Icons/Goblet/GobletOpacity";
+
+//Lottery
 
 
 //chain
