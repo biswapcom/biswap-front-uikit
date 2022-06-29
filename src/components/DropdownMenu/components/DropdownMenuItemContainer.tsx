@@ -1,5 +1,5 @@
-import React, {FC} from "react";
-import {DropdownMenuItemContainerProps, DropdownMenuItemType} from "../types";
+import React, { FC } from "react";
+import { DropdownMenuItemContainerProps, DropdownMenuItemType } from "../types";
 import {
   BannerPlacementItem,
   DropdownInternalMenuItem,
@@ -8,23 +8,23 @@ import {
   StyledDropdownMenuItemContainer,
 } from "../styles";
 import InnerLinksBlock from "./InnerLinksBlock";
-import {useMatchBreakpoints} from "../../../hooks";
+import { useMatchBreakpoints } from "../../../hooks";
 
 const DropdownMenuItemContainer: FC<DropdownMenuItemContainerProps> = ({
-   isActive = false,
-   leftIcon,
-   getMenuItemContent,
-   links = [],
-   setIsOpen,
-   linkComponent,
-   href= '/',
-   bannerRenderer,
-   type,
-   target,
-   mobileTarget,
-   ...itemProps
+  isActive = false,
+  leftIcon,
+  getMenuItemContent,
+  links = [],
+  setIsOpen,
+  linkComponent,
+  href = "/",
+  bannerRenderer,
+  type,
+  target,
+  mobileTarget,
+  ...itemProps
 }) => {
-  const {isMobile, isDesktop} = useMatchBreakpoints();
+  const { isMobile, isDesktop } = useMatchBreakpoints();
 
   const hasInnerLinks = links.length > 0;
   // @ts-ignore
@@ -62,6 +62,7 @@ const DropdownMenuItemContainer: FC<DropdownMenuItemContainerProps> = ({
       )}
       {type === DropdownMenuItemType.INTERNAL_LINK && (
         <DropdownInternalMenuItem
+          label={itemProps.label}
           $isActive={isActive}
           $hasIcon={!!leftIcon}
           as={linkComponent}
@@ -76,11 +77,12 @@ const DropdownMenuItemContainer: FC<DropdownMenuItemContainerProps> = ({
       )}
       {type === DropdownMenuItemType.EXTERNAL_LINK && (
         <DropdownMenuItem
+          label={itemProps.label}
           $isActive={isActive}
           $hasIcon={!!leftIcon}
           as="a"
           href={href}
-          target={isMobile ? (mobileTarget || "_self") : (target || "_blank")}
+          target={isMobile ? mobileTarget || "_self" : target || "_blank"}
           onClick={() => {
             setIsOpen(false);
           }}
@@ -89,11 +91,12 @@ const DropdownMenuItemContainer: FC<DropdownMenuItemContainerProps> = ({
           {getMenuItemContent("ArrowUpForward")}
         </DropdownMenuItem>
       )}
-      {type === DropdownMenuItemType.DIVIDER && <DropdownMenuDivider/>}
-      {type === DropdownMenuItemType.BANNER &&
-        isDesktop &&
-        bannerRenderer &&
-        (<BannerPlacementItem>{bannerRenderer(href, target)}</BannerPlacementItem>)}
+      {type === DropdownMenuItemType.DIVIDER && <DropdownMenuDivider />}
+      {type === DropdownMenuItemType.BANNER && isDesktop && bannerRenderer && (
+        <BannerPlacementItem>
+          {bannerRenderer(href, target)}
+        </BannerPlacementItem>
+      )}
     </StyledDropdownMenuItemContainer>
   );
 };

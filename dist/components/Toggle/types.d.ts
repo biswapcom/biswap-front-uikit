@@ -1,9 +1,7 @@
 import { InputHTMLAttributes } from "react";
 import { Colors } from "../../theme";
 export declare const scales: {
-    readonly SM: "sm";
     readonly MD: "md";
-    readonly LG: "lg";
 };
 export declare type Scales = typeof scales[keyof typeof scales];
 export interface ToggleProps extends InputHTMLAttributes<HTMLInputElement> {
@@ -11,9 +9,16 @@ export interface ToggleProps extends InputHTMLAttributes<HTMLInputElement> {
     checked?: boolean;
     checkedColor?: keyof Colors;
     defaultColor?: keyof Colors;
+    disabled?: boolean;
+    label?: string;
+    labelOrientation?: string;
+    gridArea?: string;
+    variant?: string;
+    spaceBetween?: boolean;
 }
 export interface HandleProps {
     scale: Scales;
+    disabled?: boolean;
 }
 export interface InputProps {
     scale: Scales;
@@ -23,6 +28,7 @@ export interface StyleToggleProps {
     $checkedColor: keyof Colors;
     $defaultColor: keyof Colors;
     scale: Scales;
+    disabled?: boolean;
 }
 export declare const scaleKeys: {
     readonly handleHeight: "handleHeight";

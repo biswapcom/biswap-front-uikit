@@ -3,29 +3,40 @@ export declare const menuScaleVariants: {
         height: string;
         padding: string;
         fontSize: string;
-        borderRadius: string;
+        lineHeight: string;
     };
     md: {
         height: string;
         padding: string;
         fontSize: string;
-        borderRadius: string;
+        lineHeight: string;
     };
     sm: {
         height: string;
         padding: string;
         fontSize: string;
-        borderRadius: string;
+        lineHeight: string;
+    };
+};
+export declare const sliderScaleVariant: {
+    lg: {
+        padding: string;
+    };
+    md: {
+        padding: string;
+    };
+    sm: {
+        padding: string;
     };
 };
 export declare const menuStyleVariants: {
-    select: {
+    dark: {
         color: string;
         ":hover:not(:disabled)": {
             color: string;
         };
     };
-    selectLight: {
+    light: {
         color: string;
         ":hover:not(:disabled)": {
             color: string;

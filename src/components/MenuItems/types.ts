@@ -1,11 +1,11 @@
-import {BoxProps} from "../Box";
-import {DropdownMenuItems} from "../DropdownMenu/types";
+import { BoxProps } from "../Box";
+import { DropdownMenuItems } from "../DropdownMenu/types";
 
 export const ItemTypes = {
-  DIVIDER: 'DIVIDER',
-} as const
+  DIVIDER: "DIVIDER",
+} as const;
 
-type ItemType = typeof ItemTypes[keyof typeof ItemTypes]
+type ItemType = typeof ItemTypes[keyof typeof ItemTypes];
 
 export type MenuItemsType = {
   label?: string;
@@ -17,8 +17,8 @@ export type MenuItemsType = {
   isExtended?: boolean;
   isMobileNav?: boolean;
   type?: ItemType;
-  target?: string
-  mobileTarget?: string
+  target?: string;
+  mobileTarget?: string;
   isMobileMenuOpened?: boolean;
   mobileMenuCallback?: (s: boolean) => void;
   hidden?: boolean;

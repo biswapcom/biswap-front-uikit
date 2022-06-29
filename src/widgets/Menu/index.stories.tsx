@@ -13,7 +13,16 @@ import Text from "../../components/Text/Text";
 import { Modal, ModalProps, useModal } from "../Modal";
 import UserMenu from "./components/UserMenu";
 import { Variant, variants } from "./components/UserMenu/types";
-import {BSWPriceValue, BSWPriceLabel, footerStatistic, aboutLinks, productLinks, serviceLinks, links, userMenulinks} from "./config";
+import {
+  BSWPriceValue,
+  BSWPriceLabel,
+  footerStatistic,
+  aboutLinks,
+  productLinks,
+  serviceLinks,
+  links,
+  userMenulinks,
+} from "./config";
 import Menu from "./Menu";
 import { Language, NavProps } from "./types";
 import BottomDrawer from "../../components/BottomDrawer/BottomDrawer";
@@ -40,10 +49,10 @@ const UserMenuComponent: React.FC<{
   text?: string;
   account?: string;
 }> = ({
-        variant = variants.DEFAULT,
-        text,
-        account = "0x8b017905DC96B38f817473dc885F84D4C76bC113",
-      }) => {
+  variant = variants.DEFAULT,
+  text,
+  account = "0x8b017905DC96B38f817473dc885F84D4C76bC113",
+}) => {
   const accountEllipsis = account
     ? `${account.substring(0, 2)}...${account.substring(account.length - 4)}`
     : undefined;
@@ -59,10 +68,10 @@ const UserMenuComponent: React.FC<{
 };
 
 const GlobalMenuModal: React.FC<ModalProps> = ({
-                                                 title,
-                                                 onDismiss,
-                                                 ...props
-                                               }) => (
+  title,
+  onDismiss,
+  ...props
+}) => (
   <Modal title={title} onDismiss={onDismiss} {...props}>
     <Heading>{title}</Heading>
     <Button>This button Does nothing</Button>
@@ -71,19 +80,19 @@ const GlobalMenuModal: React.FC<ModalProps> = ({
 
 const GlobalMenuComponent: React.FC = () => {
   const [onPresent1] = useModal(
-    <GlobalMenuModal title="Display Settings Modal"/>
+    <GlobalMenuModal title="Display Settings Modal" />
   );
   const [onPresent2] = useModal(
-    <GlobalMenuModal title="Global Settings Modal"/>
+    <GlobalMenuModal title="Global Settings Modal" />
   );
 
   return (
     <Flex>
       <IconButton onClick={onPresent1} variant="text" scale="sm" mr="4px">
-        <DownloadIcon height={22} width={22} color="textSubtle"/>
+        <DownloadIcon height={22} width={22} color="textSubtle" />
       </IconButton>
       <IconButton onClick={onPresent2} variant="text" scale="sm" mr="8px">
-        <CogIcon height={22} width={22} color="textSubtle"/>
+        <CogIcon height={22} width={22} color="textSubtle" />
       </IconButton>
     </Flex>
   );
@@ -106,9 +115,9 @@ const defaultProps = {
   // subLinks: links[0].items,
   profile: null,
   userMenu: (
-    <UserMenuComponent account="0xbdda50183d817c3289f895a4472eb475967dc980"/>
+    <UserMenuComponent account="0xbdda50183d817c3289f895a4472eb475967dc980" />
   ),
-  globalMenu: <GlobalMenuComponent/>,
+  globalMenu: <GlobalMenuComponent />,
   activeItem: "/swap",
   activeSubItem: "https://exchange.pancakeswap.finance",
   buyCakeLabel: "Buy CAKE",
@@ -121,7 +130,8 @@ const ConnectedTemplate: React.FC<NavProps> = (args) => {
 
   return (
     <BrowserRouter>
-      <Menu {...args}
+      <Menu
+        {...args}
         BSWPriceLabel={BSWPriceLabel}
         BSWPriceValue={BSWPriceValue}
         footerStatistic={footerStatistic}

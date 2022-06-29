@@ -1,12 +1,12 @@
 import React from "react";
-import { ButtonProps } from "../Button";
+import { SlideButtonProps } from "./types";
 declare const SlideMenuItem: {
-    <E extends React.ElementType<any> = "button">(props: ButtonProps<E>): JSX.Element;
+    <E extends React.ElementType<any> = "button">(props: SlideButtonProps<E>): JSX.Element;
     defaultProps: {
         isLoading: boolean;
         external: boolean;
-        variant: "primary";
-        scale: "md";
+        variant: "dark";
+        scale: "sm";
         disabled: boolean;
     };
 };

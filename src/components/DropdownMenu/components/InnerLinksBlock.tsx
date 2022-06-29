@@ -1,22 +1,23 @@
-import React, {FC, Fragment} from "react";
+import React, { FC, Fragment } from "react";
 import {
   DropdownMenuDivider,
-  DropdownMenuInnerLinkItem, DropdownMenuInnerOuterLinkItem,
+  DropdownMenuInnerLinkItem,
+  DropdownMenuInnerOuterLinkItem,
   InnerLinksBlockContainer,
 } from "../styles";
 import IconComponent from "../../Svg/IconComponent";
-import {Text} from "../../Text";
-import {DropdownMenuItemType, InnerLinksBlockProps} from "../types";
+import { Text } from "../../Text";
+import { DropdownMenuItemType, InnerLinksBlockProps } from "../types";
 import Grid from "../../Box/Grid";
-import {useMatchBreakpoints} from "../../../hooks";
+import { useMatchBreakpoints } from "../../../hooks";
 
 const InnerLinksBlock: FC<InnerLinksBlockProps> = ({
-                                                     links,
-                                                     leftIcon,
-                                                     setIsOpen,
-                                                     linkComponent,
-                                                   }) => {
-  const {isMobile, isTablet} = useMatchBreakpoints();
+  links,
+  leftIcon,
+  setIsOpen,
+  linkComponent,
+}) => {
+  const { isMobile, isTablet } = useMatchBreakpoints();
 
   const renderLinks = () =>
     links.map(
@@ -46,7 +47,7 @@ const InnerLinksBlock: FC<InnerLinksBlockProps> = ({
               {label}
             </Text>
           </>
-        )
+        );
         return (
           <Fragment key={`${index}#${label}`}>
             {linkType === DropdownMenuItemType.INTERNAL_LINK && (
@@ -64,7 +65,7 @@ const InnerLinksBlock: FC<InnerLinksBlockProps> = ({
               <DropdownMenuInnerOuterLinkItem
                 key={index + label}
                 href={href}
-                target={isMobile ? (mobileTarget || "_self") : (target || "_blank")}
+                target={isMobile ? mobileTarget || "_self" : target || "_blank"}
                 onClick={() => {
                   setIsOpen(false);
                 }}
@@ -82,7 +83,7 @@ const InnerLinksBlock: FC<InnerLinksBlockProps> = ({
       <Grid gridTemplateColumns={"1fr 1fr"} gridGap={16} paddingBottom={16}>
         {renderLinks()}
       </Grid>
-      {isMobile && <DropdownMenuDivider/>}
+      {isMobile && <DropdownMenuDivider />}
     </InnerLinksBlockContainer>
   );
 };

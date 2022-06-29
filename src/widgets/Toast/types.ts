@@ -17,7 +17,7 @@ export interface Toast {
   telegramDescription?: string;
   tweeterDescription?: string;
   hash?: string;
-  url?: string,
+  url?: string;
 }
 
 export interface ToastContainerProps {
@@ -25,7 +25,7 @@ export interface ToastContainerProps {
   stackSpacing?: number;
   ttl?: number;
   onRemove: (id: string) => void;
-  clearAll?: () => void | undefined
+  clearAll?: () => void | undefined;
 }
 
 export interface ToastProps {
@@ -34,10 +34,10 @@ export interface ToastProps {
   ttl?: number;
   style: Partial<CSSStyleDeclaration>;
   handleMouseEnter?: any;
-  handleMouseLeave?: any,
+  handleMouseLeave?: any;
   handleRemove?: any;
   progress?: number;
   clearAll?: () => void | undefined;
-  zIndex?: string
-  removeButtonPosition?: number
+  zIndex?: string;
+  removeButtonPosition?: number;
 }

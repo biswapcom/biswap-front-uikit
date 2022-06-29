@@ -4,18 +4,27 @@ export declare const scaleVariants: {
         height: string;
         fontSize: string;
         padding: string;
+        svg: {
+            width: string;
+        };
     };
     md: {
         borderRadius: string;
         height: string;
         fontSize: string;
         padding: string;
+        svg: {
+            width: string;
+        };
     };
     sm: {
         borderRadius: string;
         height: string;
         fontSize: string;
         padding: string;
+        svg: {
+            width: string;
+        };
     };
 };
 export declare const styleVariants: {
@@ -35,10 +44,21 @@ export declare const styleVariants: {
             backgroundColor: string;
             color: string;
         };
-        ":disabled": {
-            backgroundColor: string;
+    };
+    lightWarning: {
+        borderColor: string;
+        backgroundColor: string;
+        color: string;
+        "::placeholder": {
             color: string;
-            cursor: string;
+        };
+    };
+    lightError: {
+        borderColor: string;
+        backgroundColor: string;
+        color: string;
+        "::placeholder": {
+            color: string;
         };
     };
     dark: {
@@ -57,10 +77,21 @@ export declare const styleVariants: {
             backgroundColor: string;
             color: string;
         };
-        ":disabled": {
-            backgroundColor: string;
+    };
+    darkWarning: {
+        borderColor: string;
+        backgroundColor: string;
+        color: string;
+        "::placeholder": {
             color: string;
-            cursor: string;
+        };
+    };
+    darkError: {
+        borderColor: string;
+        backgroundColor: string;
+        color: string;
+        "::placeholder": {
+            color: string;
         };
     };
     transparent: {
@@ -78,11 +109,6 @@ export declare const styleVariants: {
             borderColor: string;
             backgroundColor: string;
             color: string;
-        };
-        ":disabled": {
-            backgroundColor: string;
-            color: string;
-            cursor: string;
         };
     };
 };

@@ -12,18 +12,18 @@ interface Props {
 }
 
 const StyledButton = styled(Button)`
-  display: flex; 
+  display: flex;
   flex-direction: column;
   justify-content: space-around;
   padding: 8px 0 0;
   white-space: nowrap;
   min-height: 91px;
-`
+`;
 
 const StyledText = styled(Text)`
   font-weight: bold;
   color: ${({ theme }) => theme.colors.primary};
-`
+`;
 
 const WalletCard: React.FC<Props> = ({ login, walletConfig, onDismiss }) => {
   const { title, icon: Icon } = walletConfig;
@@ -33,15 +33,16 @@ const WalletCard: React.FC<Props> = ({ login, walletConfig, onDismiss }) => {
       onClick={() => {
         login(walletConfig.connectorId);
         localStorage.setItem(walletLocalStorageKey, walletConfig.title);
-        window.localStorage.setItem(connectorLocalStorageKey, walletConfig.connectorId);
+        window.localStorage.setItem(
+          connectorLocalStorageKey,
+          walletConfig.connectorId
+        );
         onDismiss();
       }}
       id={`wallet-connect-${title.toLocaleLowerCase()}`}
     >
       <Icon width="32px" />
-      <StyledText>
-        {title}
-      </StyledText>
+      <StyledText>{title}</StyledText>
     </StyledButton>
   );
 };

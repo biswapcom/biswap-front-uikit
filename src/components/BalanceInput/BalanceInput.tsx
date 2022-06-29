@@ -8,7 +8,7 @@ import {
   UnitContainer,
   SwitchUnitsButton,
 } from "./styles";
-import {BalanceInputProps} from "./types";
+import { BalanceInputProps } from "./types";
 
 const BalanceInput: React.FC<BalanceInputProps> = ({
   value,
@@ -59,7 +59,7 @@ const BalanceInput: React.FC<BalanceInputProps> = ({
               variant="text"
               onClick={switchEditingUnits}
             >
-              <SwapVertIcon color="textSubtle"/>
+              <SwapVertIcon color="textSubtle" />
             </SwitchUnitsButton>
           </Flex>
         )}

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import getRgba from "../../util/getRgba";
 
 import {
   ToggleProps,
@@ -9,17 +8,10 @@ import {
   scales,
   StyleToggleProps,
 } from "./types";
+import { gridArea } from "styled-system";
 
 const scaleKeyValues = {
-  sm: {
-    handleHeight: "16px",
-    handleWidth: "16px",
-    handleLeft: "2px",
-    handleTop: "2px",
-    checkedLeft: "calc(100% - 18px)",
-    toggleHeight: "20px",
-    toggleWidth: "36px",
-  },
+  // sm: {},
   // TODO now used only MD scale
   md: {
     handleHeight: "16px",
@@ -30,28 +22,40 @@ const scaleKeyValues = {
     toggleHeight: "20px",
     toggleWidth: "40px",
   },
-  lg: {
-    handleHeight: "32px",
-    handleWidth: "32px",
-    handleLeft: "4px",
-    handleTop: "4px",
-    checkedLeft: "calc(100% - 36px)",
-    toggleHeight: "40px",
-    toggleWidth: "72px",
-  },
+  // lg: {},
 };
 
 const getScale =
   (property: ScaleKeys) =>
-  ({ scale = scales.LG }: ToggleProps) => {
+  ({ scale = scales.MD }: ToggleProps) => {
     return scaleKeyValues[scale][property];
   };
 
+export const ToggleWrap = styled.label<{
+  labelOrientation?: string;
+  disabled?: boolean;
+  gridArea?: string;
+  spaceBetween?: boolean;
+}>`
+  display: inline-flex;
+  align-items: center;
+  width: ${({ spaceBetween }) => (spaceBetween ? "100%" : "auto")};
+  flex-direction: ${({ labelOrientation }) =>
+    labelOrientation === "left"
+      ? "row-reverse"
+      : labelOrientation === "right"
+      ? "row"
+      : "row"};
+  justify-content: ${({ spaceBetween }) =>
+    spaceBetween ? "space-between" : "start"};
+  opacity: ${({ disabled }) => (disabled ? "0.32" : "1")};
+  grid-area: ${({ gridArea }) => gridArea || "initial"};
+`;
 export const Handle = styled.div<HandleProps>`
   background-color: ${({ theme }) => theme.colors.white};
   box-shadow: 0 2px 4px rgba(7, 22, 45, 0.16);
   border-radius: 50%;
-  cursor: pointer;
+  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
   height: ${getScale("handleHeight")};
   left: ${getScale("handleLeft")};
   position: absolute;
@@ -61,8 +65,32 @@ export const Handle = styled.div<HandleProps>`
   z-index: 1;
 `;
 
+export const Label = styled.span<{
+  labelOrientation?: string;
+  isChecked: boolean;
+  disabled?: boolean;
+  variant?: string;
+}>`
+  font-size: 12px;
+  font-weight: 400;
+  color: ${({ theme, isChecked }) =>
+    isChecked ? theme.colors.dark800 : theme.colors.gray900};
+
+  color: ${({ theme, variant, isChecked }) =>
+    variant === "dark" && isChecked
+      ? theme.colors.white
+      : variant === "light" && isChecked
+      ? theme.colors.dark800
+      : theme.colors.gray900};
+
+  margin: ${({ labelOrientation }) =>
+    labelOrientation === "left" ? "0 8px 0 0" : "0 0 0 8px"};
+  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
+  transition: color 0.2s ease-in-out;
+`;
+
 export const Input = styled.input<InputProps>`
-  cursor: pointer;
+  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
   opacity: 0;
   height: 100%;
   position: absolute;
@@ -77,15 +105,15 @@ export const Input = styled.input<InputProps>`
 
 const StyledToggle = styled.div<StyleToggleProps>`
   background-color: ${({ theme, $checked, $checkedColor, $defaultColor }) =>
-  theme.colors[$checked ? $checkedColor : $defaultColor]};
+    theme.colors[$checked ? $checkedColor : $defaultColor]};
   align-items: center;
   border-radius: 26px;
-  cursor: pointer;
   display: inline-flex;
   height: ${getScale("toggleHeight")};
   position: relative;
-  transition: background-color 200ms;
+  transition: background-color 0.2s ease-in-out;
   width: ${getScale("toggleWidth")};
+  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
 `;
 
 export default StyledToggle;
