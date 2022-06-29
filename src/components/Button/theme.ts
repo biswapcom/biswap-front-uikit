@@ -156,26 +156,4 @@ export const styleVariants = {
     color: "primary",
     boxShadow: "none",
   },
-  [variants.SELECT]: {
-    backgroundColor: "dropDown",
-    color: "white",
-
-    ":hover:not(:disabled)": {
-      backgroundColor: "transparent",
-    },
-    ":active:not(:disabled)": {
-      backgroundColor: "transparent",
-    },
-  },
-  [variants.SELECT_LIGHT]: {
-    backgroundColor: "white",
-    color: "background",
-
-    ":hover:not(:disabled)": {
-      backgroundColor: "transparent",
-    },
-    ":active:not(:disabled)": {
-      backgroundColor: "transparent",
-    },
-  },
 };
