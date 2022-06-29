@@ -290,6 +290,28 @@ export { default as GasIcon } from "./Icons/Gas/Gas";
 //History
 export { default as HistoryIcon } from "./Icons/History/History";
 
+//Products
+export { default as ProductsSolidIcon } from "./Icons/Products/ProductsSolid";
+export { default as ProductsOpacityIcon } from "./Icons/Products/ProductsOpacity";
+
+//Burger
+export { default as BurgerIcon } from "./Icons/Burger/Burger";
+export { default as BurgerCloseIcon } from "./Icons/Burger/BurgerClose";
+
+//Liquidity
+export { default as LiquiditySolidIcon } from "./Icons/Liquidity/LiquiditySolid";
+export { default as LiquidityOpacityIcon } from "./Icons/Liquidity/LiquidityOpacity";
+
+//Exchange
+export { default as ExchangeSolidIcon } from "./Icons/Exchange/ExchangeSolid";
+export { default as ExchangeOpacityIcon } from "./Icons/Exchange/ExchangeOpacity";
+
+//ExpertMode
+export { default as ExpertModeSolidIcon } from "./Icons/ExpertMode/ExpertModeSolid";
+export { default as ExpertModeOpacityIcon } from "./Icons/ExpertMode/ExpertModeOpacity";
+
+//LaunchPool
+
 //chain
 export { default as BSCIcon } from "./Icons/BSC";
 export { default as PolygonIcon } from "./Icons/Polygon";

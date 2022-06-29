@@ -4,8 +4,8 @@ import { StyledBurger } from "./Burger.styled";
 
 const Burger = ({ open }: { open: boolean }) => {
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
-  const { isTablet } = useMatchBreakpoints()
-  
+  const { isTablet } = useMatchBreakpoints();
+
   useEffect(() => {
     open && setIsLoaded(true);
   }, [open]);
