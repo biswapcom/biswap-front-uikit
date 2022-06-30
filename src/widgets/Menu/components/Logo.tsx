@@ -1,11 +1,12 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 import styled, { css, DefaultTheme, keyframes } from "styled-components";
 
 // components
 import Flex from "../../../components/Box/Flex";
 import { LogoIcon, LogoWithTextIcon } from "../../../components/Svg";
 import { MenuContext } from "../context";
+import {Button} from "../../../components/Button";
 
 interface Props {
   href: string;
@@ -65,6 +66,8 @@ const Logo: React.FC<Props> = ({ href }) => {
     </>
   );
 
+  const { push } = useHistory()
+
   return (
     <Flex>
       {isAbsoluteUrl ? (
@@ -79,7 +82,7 @@ const Logo: React.FC<Props> = ({ href }) => {
           <StyledInnerLink to={href} aria-label="Biswap home page">
             {innerLogo}
           </StyledInnerLink>
-          <Link to={href}>Go to home2</Link>
+          <Button onClick={() => push(href)}>Go to home2</Button>
         </>
       )}
     </Flex>
