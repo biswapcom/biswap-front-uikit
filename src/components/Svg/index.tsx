@@ -72,12 +72,12 @@ export { default as LogoWithTextIcon } from "./Icons/LogoWithText";
 export { default as ImgWarnIcon } from "./Icons/ImgWarn";
 
 // socials
-export { default as YoutubeIcon } from "./Icons/Youtube";
-export { default as InstagramIcon } from "./Icons/Instagram";
-export { default as TwitchIcon } from "./Icons/Twitch";
-export { default as TelegramIcon } from "./Icons/Telegram";
-export { default as TwitterIcon } from "./Icons/Twitter";
-export { default as MediumIcon } from "./Icons/Medium";
+// export { default as YoutubeIcon } from "./Icons/Youtube";
+// export { default as InstagramIcon } from "./Icons/Instagram";
+// export { default as TwitchIcon } from "./Icons/Twitch";
+// export { default as TelegramIcon } from "./Icons/Telegram";
+// export { default as TwitterIcon } from "./Icons/Twitter";
+// export { default as MediumIcon } from "./Icons/Medium";
 
 // menu
 export { default as SwapIcon } from "./Icons/Swap";
@@ -334,7 +334,75 @@ export { default as GobletSolidIcon } from "./Icons/Goblet/GobletSolid";
 export { default as GobletOpacityIcon } from "./Icons/Goblet/GobletOpacity";
 
 //Lottery
+export { default as LotterySolidIcon } from "./Icons/Lottery/LoterySolid";
+export { default as LotteryOpacityIcon } from "./Icons/Lottery/LoteryOpacity";
 
+//Launchpad
+export { default as LaunchpadSolidIcon } from "./Icons/Launchpad/LaunchpadSolid";
+export { default as LaunchpadOpacityIcon } from "./Icons/Launchpad/LaunchpadOpacity";
+
+//NFTEarn
+export { default as NFTEarnSolidIcon } from "./Icons/NFTEarn/NFTEarnSolid";
+export { default as NFTEarnOpacityIcon } from "./Icons/NFTEarn/NFTEarnOpacity";
+
+//FixedStaking
+export { default as FixedStakingSolidIcon } from "./Icons/FixedStaking/FixedStakingSolid";
+export { default as FixedStakingOpacityIcon } from "./Icons/FixedStaking/FixedStakingOpacity";
+
+//Analytics
+export { default as AnalyticsSolidIcon } from "./Icons/Analytics/AnalyticsSolid";
+export { default as AnalyticsOpacityIcon } from "./Icons/Analytics/AnalyticsOpacity";
+
+//Voting
+export { default as VotingSolidIcon } from "./Icons/Voting/VotingSolid";
+export { default as VotingOpacityIcon } from "./Icons/Voting/VotingOpacity";
+
+//Charity
+export { default as CharitySolidIcon } from "./Icons/Charity/CharitySolid";
+export { default as CharityOpacityIcon } from "./Icons/Charity/CharityOpacity";
+
+//AboutBSW
+export { default as AboutBSWSolidIcon } from "./Icons/AboutBSW/AboutBSWSolid";
+export { default as AboutBSWOpacityIcon } from "./Icons/AboutBSW/AboutBSWOpacity";
+
+//Team
+export { default as TeamSolidIcon } from "./Icons/Team/TeamSolid";
+export { default as TeamOpacityIcon } from "./Icons/Team/TeamOpacity";
+
+//Program10m
+export { default as Program10mSolidIcon } from "./Icons/Program10m/Program10mSolid";
+export { default as Program10mOpacityIcon } from "./Icons/Program10m/Program10mOpacity";
+
+//SpaceAgent
+export { default as SpaceAgentSolidIcon } from "./Icons/SpaceAgent/SpaceAgentSolid";
+export { default as SpaceAgentOpacityIcon } from "./Icons/SpaceAgent/SpaceAgentOpacity";
+
+//News
+export { default as NewsSolidIcon } from "./Icons/News/NewsSolid";
+export { default as NewsOpacityIcon } from "./Icons/News/NewsOpacity";
+
+//Docs
+export { default as DocsSolidIcon } from "./Icons/Docs/DocsSolid";
+export { default as DocsOpacityIcon } from "./Icons/Docs/DocsOpacity";
+
+//Audit
+export { default as AuditProtectionOpacityIcon } from "./Icons/Audit/AuditProtectionOpacity";
+export { default as AuditProtectionSolidIcon } from "./Icons/Audit/AuditProtectionSolid";
+export { default as AuditSearchSolidIcon } from "./Icons/Audit/AuditSearchSolid";
+export { default as AuditSearchOpacityIcon } from "./Icons/Audit/AuditSearchOpacity";
+
+//Socials
+export { default as TwitterIcon } from "./Icons/Socials/Twitter";
+export { default as MediumIcon } from "./Icons/Socials/Medium";
+export { default as RedditIcon } from "./Icons/Socials/Reddit";
+export { default as TelegramIcon } from "./Icons/Socials/Telegram";
+export { default as TwitchIcon } from "./Icons/Socials/Twitch";
+export { default as YoutubeIcon } from "./Icons/Socials/Youtube";
+
+//Rank
+export { default as Rank1Icon } from "./Icons/Rank/Rank1";
+export { default as Rank2Icon } from "./Icons/Rank/Rank2";
+export { default as Rank3Icon } from "./Icons/Rank/Rank3";
 
 //chain
 export { default as BSCIcon } from "./Icons/BSC";
