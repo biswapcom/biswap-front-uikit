@@ -257,11 +257,12 @@ export { default as AuditProtectionOpacityIcon } from "./Icons/Audit/AuditProtec
 export { default as AuditProtectionSolidIcon } from "./Icons/Audit/AuditProtectionSolid";
 export { default as AuditSearchSolidIcon } from "./Icons/Audit/AuditSearchSolid";
 export { default as AuditSearchOpacityIcon } from "./Icons/Audit/AuditSearchOpacity";
-export { default as TwitterIcon } from "./Icons/Socials/Twitter";
+export { default as InstagramIcon } from "./Icons/Socials/Instagram";
 export { default as MediumIcon } from "./Icons/Socials/Medium";
 export { default as RedditIcon } from "./Icons/Socials/Reddit";
 export { default as TelegramIcon } from "./Icons/Socials/Telegram";
 export { default as TwitchIcon } from "./Icons/Socials/Twitch";
+export { default as TwitterIcon } from "./Icons/Socials/Twitter";
 export { default as YoutubeIcon } from "./Icons/Socials/Youtube";
 export { default as Rank1Icon } from "./Icons/Rank/Rank1";
 export { default as Rank2Icon } from "./Icons/Rank/Rank2";

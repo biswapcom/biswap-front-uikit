@@ -392,11 +392,12 @@ export { default as AuditSearchSolidIcon } from "./Icons/Audit/AuditSearchSolid"
 export { default as AuditSearchOpacityIcon } from "./Icons/Audit/AuditSearchOpacity";
 
 //Socials
-export { default as TwitterIcon } from "./Icons/Socials/Twitter";
+export { default as InstagramIcon } from "./Icons/Socials/Instagram";
 export { default as MediumIcon } from "./Icons/Socials/Medium";
 export { default as RedditIcon } from "./Icons/Socials/Reddit";
 export { default as TelegramIcon } from "./Icons/Socials/Telegram";
 export { default as TwitchIcon } from "./Icons/Socials/Twitch";
+export { default as TwitterIcon } from "./Icons/Socials/Twitter";
 export { default as YoutubeIcon } from "./Icons/Socials/Youtube";
 
 //Rank
