@@ -37,25 +37,25 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
     modifiers: [{ name: "offset", options: { offset: [0, 0] } }],
   });
 
-  useEffect(() => {
-    const showDropdownMenu = async () => {
-      update && (await update());
-      setIsOpen(true);
-    };
-
-    const hideDropdownMenu = (evt: MouseEvent | TouchEvent) => {
-      const target = evt.target as Node;
-      return target && !tooltipRef?.contains(target) && setIsOpen(false);
-    };
-
-    targetRef?.addEventListener("mouseenter", showDropdownMenu);
-    targetRef?.addEventListener("mouseleave", hideDropdownMenu);
-
-    return () => {
-      targetRef?.removeEventListener("mouseenter", showDropdownMenu);
-      targetRef?.removeEventListener("mouseleave", hideDropdownMenu);
-    };
-  }, [targetRef, tooltipRef, setIsOpen, update]);
+  // useEffect(() => {
+  //   const showDropdownMenu = async () => {
+  //     update && (await update());
+  //     setIsOpen(true);
+  //   };
+  //
+  //   const hideDropdownMenu = (evt: MouseEvent | TouchEvent) => {
+  //     const target = evt.target as Node;
+  //     return target && !tooltipRef?.contains(target) && setIsOpen(false);
+  //   };
+  //
+  //   targetRef?.addEventListener("mouseenter", showDropdownMenu);
+  //   targetRef?.addEventListener("mouseleave", hideDropdownMenu);
+  //
+  //   return () => {
+  //     targetRef?.removeEventListener("mouseenter", showDropdownMenu);
+  //     targetRef?.removeEventListener("mouseleave", hideDropdownMenu);
+  //   };
+  // }, [targetRef, tooltipRef, setIsOpen, update]);
 
   // useEffect(() => {
   //   if (setMenuOpenByIndex && index !== undefined) {
