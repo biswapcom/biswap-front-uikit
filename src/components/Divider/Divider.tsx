@@ -1,12 +1,10 @@
 import React, { FC } from "react";
 import styled from "styled-components";
 
-interface IProps {
+const DividerElement = styled.div<{
   color?: string;
   size?: string;
-}
-
-const DividerElement = styled.div<IProps>`
+}>`
   width: 100%;
   border: ${({ theme, size, color }) =>
     // @ts-ignore
@@ -14,11 +12,16 @@ const DividerElement = styled.div<IProps>`
   border-radius: 4px;
 `;
 
-const Divider: FC<IProps> = ({
-  color = "disabled",
-  size = "1px",
-}): JSX.Element => {
+const Divider: FC<{
+  color?: string;
+  size?: string;
+}> = ({ color, size }) => {
   return <DividerElement color={color} size={size} />;
+};
+
+Divider.defaultProps = {
+  color: "disabled",
+  size: "1px"
 };
 
 export default Divider;
