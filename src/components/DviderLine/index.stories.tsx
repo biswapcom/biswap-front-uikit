@@ -17,7 +17,7 @@ const Wrap = styled(Box)`
 export const Default: FC = (): JSX.Element => {
   return (
     <Wrap>
-      <DividerLine />
+      <DividerLine size='3px' />
     </Wrap>
   );
 };

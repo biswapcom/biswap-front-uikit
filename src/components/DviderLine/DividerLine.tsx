@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const DividerElement = styled.div<{ size?: string }>`
+const DividerElement = styled((props) => <div {...props} />) <{ size?: string }>`
   width: 100%;
   border: ${({ theme, size }) =>
     `${size ?? "1px"} solid ${theme.colors.disabled}`};
