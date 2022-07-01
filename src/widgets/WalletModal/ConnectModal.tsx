@@ -77,7 +77,7 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => {
 
   return (
     <Modal title="Connect to a wallet" onDismiss={onDismiss}>
-      <Flex flexDirection='column'>
+      <Flex flexDirection="column">
         <WalletCardsWrapper>
           {sortedConfig.map((entry) => (
             <WalletCard
@@ -93,7 +93,7 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => {
           external
         >
           <HelpIcon color="primary" mr="6px" />
-          <Text color="primary" fontWeight='400'>
+          <Text color="primary" fontWeight="400">
             Learn how to connect
           </Text>
         </HelpLink>
