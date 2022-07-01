@@ -32,6 +32,7 @@ export * from "./components/Timeline";
 export * from "./components/Toggle";
 export * from "./components/Badge";
 export * from "./components/SlideButtonMenu";
+export * from "./components/Divider";
 //TODO must be delete
 export * from "./components/Table";
 
