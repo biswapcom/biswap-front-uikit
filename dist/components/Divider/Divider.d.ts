@@ -1,7 +1,6 @@
 import { FC } from "react";
-interface IProps {
+declare const Divider: FC<{
     color?: string;
     size?: string;
-}
-declare const Divider: FC<IProps>;
+}>;
 export default Divider;
