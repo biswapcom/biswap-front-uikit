@@ -1,4 +1,5 @@
-declare const DividerLine: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, {
-    size?: string | undefined;
-}, never>;
+import React from "react";
+declare const DividerLine: React.FC<{
+    size?: string;
+}>;
 export default DividerLine;
