@@ -25,6 +25,7 @@ export { default as ArrowUpForwardIcon } from "./Icons/Arrows/ArrowUpForward";
 export { default as ArrowSkipRightIcon } from "./Icons/Arrows/ArrowSkipRight";
 export { default as ArrowSkipLeftIcon } from "./Icons/Arrows/ArrowSkipLeft";
 export { default as ChevronUpDoubleIcon } from "./Icons/Arrows/ChevronUpDouble";
+export { default as ChevronUpTripleIcon } from "./Icons/Arrows/ChevronUpTriple";
 export { default as PlusIcon } from "./Icons/Plus/Plus";
 export { default as PlusCircleSolidIcon } from "./Icons/Plus/PlusCircleSolid";
 export { default as PlusCircleOpacityIcon } from "./Icons/Plus/PlusCircleOpacity";
