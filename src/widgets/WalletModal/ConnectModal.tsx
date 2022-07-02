@@ -6,8 +6,9 @@ import { Modal } from "../../widgets/Modal";
 import WalletCard from "./WalletCard";
 import config, { walletLocalStorageKey } from "./config";
 import { Config, ConnectorNames, Login } from "./types";
-import { Box } from "../../components/Box";
+import { Flex } from "../../components/Box";
 import { useMatchBreakpoints } from "../../hooks";
+import { Text } from "../../components/Text";
 
 interface Props {
   login: Login;
@@ -76,7 +77,7 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => {
 
   return (
     <Modal title="Connect to a wallet" onDismiss={onDismiss}>
-      <Box>
+      <Flex flexDirection="column">
         <WalletCardsWrapper>
           {sortedConfig.map((entry) => (
             <WalletCard
@@ -92,9 +93,11 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => {
           external
         >
           <HelpIcon color="primary" mr="6px" />
-          Learn how to connect
+          <Text color="primary" fontWeight="400">
+            Learn how to connect
+          </Text>
         </HelpLink>
-      </Box>
+      </Flex>
     </Modal>
   );
 };
