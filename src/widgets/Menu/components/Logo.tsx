@@ -7,6 +7,7 @@ import Flex from "../../../components/Box/Flex";
 import { LogoIcon, LogoWithTextIcon } from "../../../components/Svg";
 import { MenuContext } from "../context";
 import { Button } from "../../../components/Button/";
+import {Link} from "../../../components/Link";
 
 interface Props {
   href: string;
@@ -75,9 +76,12 @@ const Logo: React.FC<Props> = ({ href }) => {
   return (
     <Flex>
       {isAbsoluteUrl ? (
-        <StyledLink as="a" href={href} aria-label="Biswap home page">
-          {innerLogo}
-        </StyledLink>
+        <>
+          <StyledLink as="a" href={href} aria-label="Biswap home page">
+            {innerLogo}
+          </StyledLink>
+          <Link href={href}>testNewLink</Link>
+        </>
       ) : (
         <StyledInnerButton
           variant="light"
