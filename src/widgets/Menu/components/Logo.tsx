@@ -78,7 +78,7 @@ const Logo: React.FC<Props> = ({ href }) => {
       {isAbsoluteUrl ? (
         <StyledInnerButton
           variant="light"
-          onClick={() => window.open(href)}
+          onClick={() => window.open(href, "_self")}
           aria-label="Biswap home page"
         >
           {innerLogo}
