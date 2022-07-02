@@ -7,7 +7,6 @@ import Flex from "../../../components/Box/Flex";
 import { LogoIcon, LogoWithTextIcon } from "../../../components/Svg";
 import { MenuContext } from "../context";
 import { Button } from "../../../components/Button/";
-import {Link} from "../../../components/Link";
 
 interface Props {
   href: string;
