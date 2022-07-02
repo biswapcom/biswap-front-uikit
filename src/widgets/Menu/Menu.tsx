@@ -138,11 +138,6 @@ const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
   max-width: 100%;
 `;
 
-const LogoWrapper = styled.div`
-  position: relative;
-  z-index: 1000000000;
-`
-
 const Menu: React.FC<NavProps> = ({
   linkComponent = "a",
   // userMenu,
