@@ -138,6 +138,11 @@ const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
   max-width: 100%;
 `;
 
+const LogoWrapper = styled.div`
+  position: relative;
+  z-index: 1000000000000;
+`
+
 const Menu: React.FC<NavProps> = ({
   linkComponent = "a",
   // userMenu,
@@ -291,7 +296,9 @@ const Menu: React.FC<NavProps> = ({
           )}
           <StyledNav menuBg={menuBg} isMobileMenuOpened={isMobileMenuOpened}>
             <Flex>
-              <Logo href={homeLink?.href ?? "/"} />
+              <LogoWrapper>
+                <Logo href={homeLink?.href ?? "/"} />
+              </LogoWrapper>
               <MenuItems
                 items={links}
                 activeItem={activeItem}
