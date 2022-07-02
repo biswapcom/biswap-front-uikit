@@ -93,10 +93,12 @@ const Checkbox: FC<CheckboxProps> = ({
   id,
   defaultChecked,
   onChange,
+  value
 }) => {
   return (
     <Wrapper labelOrientation={labelOrientation}>
       <CheckboxInput
+        checked={value}
         scale={scale}
         colorVariant={colorVariant}
         id={id}
