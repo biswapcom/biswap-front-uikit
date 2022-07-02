@@ -1,7 +1,7 @@
 import React from "react";
 import StyledProgress, { Bar } from "./StyledProgress";
 import ProgressBunnyWrapper from "./ProgressBunnyWrapper";
-import { ProgressBunny } from "../Svg";
+import { AboutBSWSolidIcon } from "../Svg";
 import { ProgressProps, variants, scales } from "./types";
 
 const stepGuard = (step: number) => {
@@ -33,7 +33,7 @@ const Progress: React.FC<ProgressProps> = ({
             <ProgressBunnyWrapper
               style={{ left: `${stepGuard(primaryStep)}%` }}
             >
-              <ProgressBunny />
+              <AboutBSWSolidIcon />
             </ProgressBunnyWrapper>
           )}
           <Bar

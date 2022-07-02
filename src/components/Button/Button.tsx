@@ -2,7 +2,7 @@ import React, { cloneElement, ElementType, isValidElement } from "react";
 import getExternalLinkProps from "../../util/getExternalLinkProps";
 import StyledButton from "./StyledButton";
 import { ButtonProps, scales, variants } from "./types";
-import { LoaderIcon } from "../Svg";
+import { AutoRenewIcon } from "../Svg";
 
 const Button = <E extends ElementType = "button">(
   props: ButtonProps<E>
@@ -22,7 +22,11 @@ const Button = <E extends ElementType = "button">(
   const isDisabled = isLoading || disabled;
   const classNames = className ? [className] : [];
   const loadingText = loadingTitle ?? "Loading...";
-  const endIconElement = isLoading ? <LoaderIcon color="contrast" /> : endIcon;
+  const endIconElement = isLoading ? (
+    <AutoRenewIcon color="contrast" />
+  ) : (
+    endIcon
+  );
   if (isLoading) {
     classNames.push("button--loading");
   }

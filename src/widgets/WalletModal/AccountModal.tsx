@@ -7,7 +7,7 @@ import { Modal } from "../Modal";
 import CopyToClipboard from "./CopyToClipboard";
 import { useWalletModal } from "./index";
 import { Link } from "../../components/Link";
-import { ArrowOpenNew } from "../../components/Svg";
+import { ArrowUpForwardIcon } from "../../components/Svg";
 
 interface Props {
   account: string;
@@ -106,7 +106,7 @@ const AccountModal: React.FC<Props> = ({
           mr="16px"
         >
           View on BscScan
-          <ArrowOpenNew color="primary" width="14px" ml="4px" />
+          <ArrowUpForwardIcon color="primary" width="14px" ml="4px" />
         </Link>
       </Flex>
       {isSwap && (

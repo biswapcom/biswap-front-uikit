@@ -5,7 +5,7 @@ import Badge from "./Badge";
 import Text from "../Text/Text";
 import Heading from "../Heading/Heading";
 import styled from "styled-components";
-import { BinanceIcon } from "../Svg";
+import { GobletOpacityIcon } from "../Svg";
 
 export default {
   title: "Components/Badge",
@@ -45,12 +45,12 @@ export const Default: React.FC = () => {
         <Badge badgeType="core">core</Badge>
         <Badge badgeType="any">any</Badge>
         <Badge badgeType="core" isIcon="left">
-          <BinanceIcon width="14px" mr="4px" />
+          <GobletOpacityIcon width="14px" mr="4px" />
           icon left
         </Badge>
         <Badge badgeType="core" isIcon="right">
           icon right
-          <BinanceIcon width="14px" ml="4px" />
+          <GobletOpacityIcon width="14px" ml="4px" />
         </Badge>
         {/*<Badge badgeType="warning" fontWeight='700' fontSize='18px'>up to 120%</Badge>*/}
       </BadgeWrapper>

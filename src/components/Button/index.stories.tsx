@@ -6,7 +6,7 @@ import styled from "styled-components";
 import Box from "../Box/Box";
 import Flex from "../Box/Flex";
 import { Heading } from "../Heading";
-import { AddIcon, AutoRenewIcon, LogoIcon } from "../Svg";
+import { PlusIcon, AutoRenewIcon, LogoIcon } from "../Svg";
 import IconButton from "./IconButton";
 import Button from "./Button";
 import { ExpandableButton, ExpandableLabel } from "./ExpandableButton";
@@ -267,7 +267,7 @@ export const Variants: React.FC = () => {
             <LogoIcon />
           </IconButton>
           <IconButton variant="primary">
-            <AddIcon />
+            <PlusIcon />
           </IconButton>
         </Row>
         <Row>
@@ -275,7 +275,7 @@ export const Variants: React.FC = () => {
             <LogoIcon />
           </IconButton>
           <IconButton scale="sm" variant="success">
-            <AddIcon color="currentColor" />
+            <PlusIcon color="currentColor" />
           </IconButton>
         </Row>
       </BrowserRouter>

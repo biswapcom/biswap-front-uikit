@@ -1,9 +1,11 @@
 import React from "react";
 import styled, { DefaultTheme } from "styled-components";
-import ErrorAction from "../Svg/Icons/ErrorAction";
-import WarningAction from "../Svg/Icons/WarningAction";
-import SuccessAction from "../Svg/Icons/SuccessAction";
-import InfoAction from "../Svg/Icons/InfoAction";
+import {
+  CheckSolidIcon,
+  WarningSolidIcon,
+  CloseCircleSolidIcon,
+  InfoSolidIcon,
+} from "../Svg";
 import { Text } from "../Text";
 import Flex from "../Box/Flex";
 import { AlertProps, variants } from "./types";
@@ -33,14 +35,28 @@ const getThemeColor = ({ variant = variants.INFO }: ThemedIconLabel) => {
 const getIcon = (variant: AlertProps["variant"] = variants.INFO) => {
   switch (variant) {
     case variants.DANGER:
-      return ErrorAction;
+      return CloseCircleSolidIcon;
     case variants.WARNING:
-      return WarningAction;
+      return WarningSolidIcon;
     case variants.SUCCESS:
-      return SuccessAction;
+      return CheckSolidIcon;
     case variants.INFO:
     default:
-      return InfoAction;
+      return InfoSolidIcon;
+  }
+};
+
+const getIconColor = (variant: AlertProps["variant"] = variants.INFO) => {
+  switch (variant) {
+    case variants.DANGER:
+      return "secondary";
+    case variants.WARNING:
+      return "warning";
+    case variants.SUCCESS:
+      return "success";
+    case variants.INFO:
+    default:
+      return "primary";
   }
 };
 
@@ -84,11 +100,12 @@ const Alert: React.FC<AlertProps> = ({
   progress,
 }) => {
   const Icon = getIcon(variant);
+  const IconColor = getIconColor(variant);
   return (
     <StyledAlert>
       <div>
         <IconLabel variant={variant} hasDescription={!!children}>
-          <Icon width="24px" />
+          <Icon width="24px" color={IconColor} />
         </IconLabel>
       </div>
       <Details hasHandler={!!onClick}>
