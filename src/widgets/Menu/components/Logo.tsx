@@ -80,7 +80,8 @@ const Logo: React.FC<Props> = ({ href }) => {
           <StyledLink href={href} aria-label="Biswap home page">
             {innerLogo}
           </StyledLink>
-          <Link href={href}>testNewLink</Link>
+          <Link href={href}>uikit Link</Link>
+          <a href={href}>base link</a>
         </>
       ) : (
         <StyledInnerButton
