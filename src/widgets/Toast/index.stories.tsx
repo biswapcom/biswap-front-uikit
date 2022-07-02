@@ -43,12 +43,12 @@ export const Default: React.FC = () => {
 
   return (
     <div>
-      <Button type="button" variant="secondary" onClick={() => handleClick()}>
+      <Button type="button" variant="primary" onClick={() => handleClick()}>
         Random Toast
       </Button>
       <Button
         type="button"
-        variant="secondary"
+        variant="primary"
         ml="8px"
         onClick={() =>
           handleClick("This is a description to explain more about the toast")

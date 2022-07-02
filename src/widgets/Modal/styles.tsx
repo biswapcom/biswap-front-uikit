@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Flex from "../../components/Box/Flex";
 import { Box } from "../../components/Box";
-import { ArrowBackIcon, CloseIcon } from "../../components/Svg";
+import { ArrowLeftIcon, CloseIcon } from "../../components/Svg";
 import { IconButton } from "../../components/Button";
 import { ModalProps } from "./types";
 
@@ -53,7 +53,7 @@ export const ModalBackButton: React.FC<{
 }> = ({ onBack, closeBtnColor }) => {
   return (
     <IconButton variant="text" onClick={onBack} area-label="go back" mr="8px">
-      <ArrowBackIcon color="primary" />
+      <ArrowLeftIcon color="primary" />
     </IconButton>
   );
 };

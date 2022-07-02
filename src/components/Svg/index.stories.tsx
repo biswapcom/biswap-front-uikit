@@ -36,15 +36,14 @@ export const Default: React.FC = () => {
   );
 };
 
-const context = require.context("./Icons", true, /.tsx$/);
-const components = context.keys().reduce((accum, path) => {
+const contextAll = require.context("./Icons", true, /.tsx$/);
+const components = contextAll.keys().reduce((accum, path) => {
   const file = path.substring(2).replace(".tsx", "");
   return {
     ...accum,
-    [file]: context(path),
+    [file]: contextAll(path),
   };
 }, {});
-
 export const Icons: React.FC = () => {
   return (
     <Wrapper justifyContent="start" alignItems="center" flexWrap="wrap">
@@ -89,7 +88,7 @@ const AnimatedIconComponentTemplate: React.FC = (args) => {
     <Box background="white" height="48px" width="48px">
       <AnimatedIconComponent
         activeBackgroundColor="backgroundAlt"
-        iconName="CheckmarkCircle"
+        iconName="CheckSolid"
         height="48px"
         width="48px"
         {...args}

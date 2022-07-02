@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Input from "../../components/Input/Input";
 import Toggle from "../../components/Toggle/Toggle";
 import Text from "../../components/Text/Text";
-import HelpIcon from "../../components/Svg/Icons/Help";
+import HelpIcon from "../../components/Svg/Icons/Help/Help";
 import useTooltip from "./useTooltip";
 import BalanceInput from "../../components/BalanceInput/BalanceInput";
 
