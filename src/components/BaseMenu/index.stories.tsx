@@ -8,7 +8,7 @@ import { LinkExternal } from "../Link";
 import { Box, Flex, Grid } from "../Box";
 import { Text } from "../Text";
 import Button from "../Button/Button";
-import { MoreHorizontal } from "../Svg";
+import { MoreHorizontalIcon } from "../Svg";
 
 export default {
   title: "Components/Menu",
@@ -30,7 +30,7 @@ export const Default: React.FC = () => {
           gridGap="16px"
           gridTemplateColumns="repeat(2, 1fr)"
         >
-          <Button variant="secondary">Clear</Button>
+          <Button variant="primary">Clear</Button>
           <Button>Apply</Button>
         </Grid>
       </InlineMenu>
@@ -81,7 +81,7 @@ export const SubMenu: React.FC = () => {
       >
         <Text>Icon</Text>
         <SubMenuComp
-          component={<MoreHorizontal height="16px" width="16px" />}
+          component={<MoreHorizontalIcon height="16px" width="16px" />}
           options={{
             placement: "right",
             offset: [0, 15],

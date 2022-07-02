@@ -89,7 +89,7 @@ const AnimatedIconComponentTemplate: React.FC = (args) => {
     <Box background="white" height="48px" width="48px">
       <AnimatedIconComponent
         activeBackgroundColor="backgroundAlt"
-        iconName="CheckmarkCircle"
+        iconName="CheckSolid"
         height="48px"
         width="48px"
         {...args}

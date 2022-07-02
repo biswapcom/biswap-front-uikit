@@ -1,113 +1,10 @@
-export { default as AddIcon } from "./Icons/Add";
-export { default as ArrowOpenNew } from "./Icons/ArrowOpenNew";
-export { default as SuccessAction } from "./Icons/SuccessAction";
-export { default as WarningAction } from "./Icons/WarningAction";
-export { default as ErrorAction } from "./Icons/ErrorAction";
-export { default as InfoAction } from "./Icons/InfoAction";
-export { default as ArrowBackIcon } from "./Icons/ArrowBack";
-export { default as ArrowDropDownIcon } from "./Icons/ArrowDropDown";
-export { default as ArrowDropUpIcon } from "./Icons/ArrowDropUp";
-export { default as ArrowForwardIcon } from "./Icons/ArrowForward";
-export { default as AutoRenewIcon } from "./Icons/AutoRenew";
-export { default as BinanceIcon } from "./Icons/Binance";
-export { default as BunnyPlaceholderIcon } from "./Icons/BunnyPlaceholder";
-export { default as CheckmarkIcon } from "./Icons/Checkmark";
-export { default as CheckmarkCircleIcon } from "./Icons/CheckmarkCircle";
-export { default as ChevronRightEndIcon } from "./Icons/ChevronRightEnd";
-export { default as CogIcon } from "./Icons/Cog";
-export { default as CommunityIcon } from "./Icons/Community";
-export { default as CommunityOpacityIcon } from "./Icons/CommunityOpacity";
-export { default as ErrorIcon } from "./Icons/Error";
-export { default as TileViewIcon } from "./Icons/TileView";
 export { default as LogoIcon } from "./Icons/Logo";
-export { default as LogoRoundIcon } from "./Icons/LogoRound";
-export { default as LoaderIcon } from "./Icons/Loader";
-export { default as MetamaskIcon } from "./Icons/Metamask";
-export { default as NoProfileAvatarIcon } from "./Icons/NoProfileAvatar";
-export { default as OpenNewIcon } from "./Icons/OpenNew";
-export { default as PancakesIcon } from "./Icons/Pancakes";
-export { default as PancakeRoundIcon } from "./Icons/PancakeRound";
-export { default as PlayCircleOutlineIcon } from "./Icons/PlayCircleOutline";
-export { default as PrizeIcon } from "./Icons/Prize";
-export { default as RemoveIcon } from "./Icons/Remove";
-export { default as VerifiedIcon } from "./Icons/Verified/Verified";
-export { default as ProgressBunny } from "./Icons/ProgressBunny";
-export { default as WaitIcon } from "./Icons/Wait";
-export { default as Won } from "./Icons/Won";
-export { default as Ticket } from "./Icons/Ticket";
-export { default as TicketRound } from "./Icons/TicketRound";
-export { default as SearchIcon } from "./Icons/Search";
-export { default as SwapVertIcon } from "./Icons/SwapVert";
-export { default as SyncAltIcon } from "./Icons/SyncAlt";
+export { default as LogoWithTextIcon } from "./Icons/LogoWithText";
 export { default as DownloadIcon } from "./Icons/Download";
-export { default as LinkIcon } from "./Icons/Link";
-export { default as RocketIcon } from "./Icons/Rocket";
-export { default as WalletIcon } from "./Icons/Wallet";
-export { default as WaitReloadIcon } from "./Icons/WaitReload";
 export { default as MouseIcon } from "./Icons/Mouse";
-export { default as RatingIcon } from "./Icons/Rating";
-export { default as CupIcon } from "./Icons/Cup";
-export { default as AutoCompaundIcon } from "./Icons/AutoCompaund";
 export { default as FireIcon } from "./Icons/Fire";
 export { default as HourglassIcon } from "./Icons/Hourglass";
-export { default as TradeIcon } from "./Icons/Trade";
-export { default as LevelIcon } from "./Icons/Level";
-export { default as RobiBoostIcon } from "./Icons/RobiBoost";
-export { default as MarketplaceIcon } from "./Icons/MarketPlace";
-export { default as FavoriteFullIcon } from "./Icons/FavoriteFull";
-export { default as ViewIcon } from "./Icons/View";
-export { default as SettingsIcon } from "./Icons/Settings";
-export { default as MarketBagIcon } from "./Icons/MarketBag";
-export { default as IdoIcon } from "./Icons/Ido";
-export { default as SquidIcon } from "./Icons/Squid";
-export { default as SquidV2Icon } from "./Icons/SquidV2";
-export { default as PlayersIcon } from "./Icons/Players";
-export { default as SquidEnergyIcon } from "./Icons/SquidEnergy";
-export { default as VoteIcon } from "./Icons/Vote";
-export { default as AddFilledIcon } from "./Icons/AddFilled";
-export { default as HolderAutoIcon } from "./Icons/HolderAuto";
-export { default as BscNewIcon } from "./Icons/BscNew";
-export { default as LogoWithTextIcon } from "./Icons/LogoWithText";
-
-export { default as ImgWarnIcon } from "./Icons/ImgWarn";
-
-// socials
-// export { default as YoutubeIcon } from "./Icons/Youtube";
-// export { default as InstagramIcon } from "./Icons/Instagram";
-// export { default as TwitchIcon } from "./Icons/Twitch";
-// export { default as TelegramIcon } from "./Icons/Telegram";
-// export { default as TwitterIcon } from "./Icons/Twitter";
-// export { default as MediumIcon } from "./Icons/Medium";
-
-// menu
-export { default as SwapIcon } from "./Icons/Swap";
-export { default as ExpertTradeIcon } from "./Icons/ExpertTrade";
-export { default as LiquidityIcon } from "./Icons/Liquidity";
-export { default as FarmsIcon } from "./Icons/Farms";
-export { default as LaunchIcon } from "./Icons/Launch";
-export { default as ReferralIcon } from "./Icons/Referral";
-export { default as IdoMenuIcon } from "./Icons/IdoMenu";
-export { default as LotteryIcon } from "./Icons/Lottery";
-export { default as CompetitionsIcon } from "./Icons/Competitions";
-export { default as NftLaunchIcon } from "./Icons/NftLaunch";
-export { default as NftEarnIcon } from "./Icons/NftEarn";
-export { default as MarketMenuIcon } from "./Icons/MarketMenu";
-export { default as GameFiIcon } from "./Icons/GameFi";
-export { default as ProductsIcon } from "./Icons/Products";
-export { default as ButtonMenuIcon } from "./Icons/ButtonMenu";
-export { default as ButtonMenuOpenedIcon } from "./Icons/ButtonMenuOpened";
-export { default as CerticAuditedIcon } from "./Icons/Certic";
-export { default as FixedStakingIcon } from "./Icons/FixedStaking";
-export { default as AnalyticsIcon } from "./Icons/Analytics";
-export { default as VotingIcon } from "./Icons/Voting";
-export { default as AboutBSWIcon } from "./Icons/AboutBSW";
-export { default as TeamIcon } from "./Icons/Team";
-export { default as TenProgramIcon } from "./Icons/TenProgram";
-export { default as NewsIcon } from "./Icons/News";
-export { default as DocsIcon } from "./Icons/Docs";
-export { default as AuditIcon } from "./Icons/Audit";
-export { default as SpaceAgentsIcon } from "./Icons/SpaceAgents";
-export { default as CharityIcon } from "./Icons/Charity";
+export { default as BscBlackRoundIcon } from "./Icons/BscBlackRound";
 
 //new
 //ARROWS
@@ -130,6 +27,8 @@ export { default as ArrowDownIcon } from "./Icons/Arrows/ArrowDown";
 export { default as ArrowUpForwardIcon } from "./Icons/Arrows/ArrowUpForward";
 export { default as ArrowSkipRightIcon } from "./Icons/Arrows/ArrowSkipRight";
 export { default as ArrowSkipLeftIcon } from "./Icons/Arrows/ArrowSkipLeft";
+export { default as ChevronUpDoubleIcon } from "./Icons/Arrows/ChevronUpDouble";
+
 
 //PLUS
 export { default as PlusIcon } from "./Icons/Plus/Plus";
@@ -202,8 +101,8 @@ export { default as BellSolidIcon } from "./Icons/Bell/BellSolid";
 export { default as BellOpacityIcon } from "./Icons/Bell/BellOpacity";
 
 //Search
-export { default as SearchSolidIcon } from "./Icons/Search/SeatchSolid";
-export { default as SearchOpacityIcon } from "./Icons/Search/SeatchOpacity";
+export { default as SearchSolidIcon } from "./Icons/Search/SearchSolid";
+export { default as SearchOpacityIcon } from "./Icons/Search/SearchOpacity";
 
 //Star
 export { default as StarIcon } from "./Icons/Star/Star";
@@ -268,11 +167,15 @@ export { default as BlockIcon } from "./Icons/Block/Block";
 export { default as BlockOpacityIcon } from "./Icons/Block/BlockOpacity";
 export { default as BlockSolidIcon } from "./Icons/Block/BlockSolid";
 
-//More
-export { default as MoreIcon } from "./Icons/More/More";
-export { default as MoreSolidIcon } from "./Icons/More/MoreSolid";
-export { default as MoreOpacityIcon } from "./Icons/More/MoreOpacity";
-//--------
+//More vertical
+export { default as MoreVerticalIcon } from "./Icons/More/MoreVertical";
+export { default as MoreVerticalSolidIcon } from "./Icons/More/MoreVerticalSolid";
+export { default as MoreVerticalOpacityIcon } from "./Icons/More/MoreVerticalOpacity";
+//More horizontal
+export { default as MoreHorizontalIcon } from "./Icons/More/MoreHorizontal";
+export { default as MoreHorizontalSolidIcon } from "./Icons/More/MoreHorizontalSolid";
+export { default as MoreHorizontalOpacityIcon } from "./Icons/More/MoreHorizontalOpacity";
+//More2
 export { default as More2Icon } from "./Icons/More/More2";
 
 //Edit
@@ -286,6 +189,23 @@ export { default as MedalIcon } from "./Icons/Medal/Medal";
 //Gas
 export { default as GasIcon } from "./Icons/Gas/Gas";
 
+//Play
+export { default as PlayIcon } from "./Icons/Play/Play";
+
+//AutoRenew
+export { default as AutoRenewSolidIcon } from "./Icons/AutoRenew/AutoRenewSolid";
+export { default as AutoRenewOpacityIcon } from "./Icons/AutoRenew/AutoRenewOpacity";
+export { default as AutoRenewIcon } from "./Icons/AutoRenew/AutoRenew";
+//Animate
+export { default as AutoRenewSolidAnimateIcon } from "./Icons/AutoRenew/AutoRenewSolidAnimate";
+export { default as AutoRenewOpacityAnimateIcon } from "./Icons/AutoRenew/AutoRenewOpacityAnimate";
+export { default as AutoRenewIconAnimate } from "./Icons/AutoRenew/AutoRenewAnimate";
+
+//Refresh
+export { default as RefreshIcon } from "./Icons/Refresh/Refresh";
+export { default as RefreshOpacityIcon } from "./Icons/Refresh/RefreshOpacity";
+export { default as RefreshSolidIcon } from "./Icons/Refresh/RefreshSolid";
+
 //List
 export { default as ListOpacityIcon } from "./Icons/List/ListOpacity";
 export { default as ListSolidIcon } from "./Icons/List/ListSolid";
@@ -294,102 +214,102 @@ export { default as ListSolidIcon } from "./Icons/List/ListSolid";
 export { default as HistoryIcon } from "./Icons/History/History";
 
 //Products
-export { default as ProductsSolidIcon } from "./Icons/Products/ProductsSolid";
-export { default as ProductsOpacityIcon } from "./Icons/Products/ProductsOpacity";
+export { default as ProductsSolidIcon } from "./Icons/Menu/Program10m/Products/ProductsSolid";
+export { default as ProductsOpacityIcon } from "./Icons/Menu/Program10m/Products/ProductsOpacity";
 
 //Burger
 export { default as BurgerIcon } from "./Icons/Burger/Burger";
 export { default as BurgerCloseIcon } from "./Icons/Burger/BurgerClose";
 
 //Liquidity
-export { default as LiquiditySolidIcon } from "./Icons/Liquidity/LiquiditySolid";
-export { default as LiquidityOpacityIcon } from "./Icons/Liquidity/LiquidityOpacity";
+export { default as LiquiditySolidIcon } from "./Icons/Menu/Liquidity/LiquiditySolid";
+export { default as LiquidityOpacityIcon } from "./Icons/Menu/Liquidity/LiquidityOpacity";
 
 //Exchange
-export { default as ExchangeSolidIcon } from "./Icons/Exchange/ExchangeSolid";
-export { default as ExchangeOpacityIcon } from "./Icons/Exchange/ExchangeOpacity";
+export { default as ExchangeSolidIcon } from "./Icons/Menu/Exchange/ExchangeSolid";
+export { default as ExchangeOpacityIcon } from "./Icons/Menu/Exchange/ExchangeOpacity";
 
 //ExpertMode
-export { default as ExpertModeSolidIcon } from "./Icons/ExpertMode/ExpertModeSolid";
-export { default as ExpertModeOpacityIcon } from "./Icons/ExpertMode/ExpertModeOpacity";
+export { default as ExpertModeSolidIcon } from "./Icons/Menu/ExpertMode/ExpertModeSolid";
+export { default as ExpertModeOpacityIcon } from "./Icons/Menu/ExpertMode/ExpertModeOpacity";
 
 //LaunchPools
-export { default as PoolsSolidIcon } from "./Icons/Pools/PoolsSolid";
-export { default as PoolsOpacityIcon } from "./Icons/Pools/PoolsOpacity";
+export { default as PoolsSolidIcon } from "./Icons/Menu/Pools/PoolsSolid";
+export { default as PoolsOpacityIcon } from "./Icons/Menu/Pools/PoolsOpacity";
 
 //Farms
-export { default as FarmsSolidIcon } from "./Icons/Farms/FarmsSolid";
-export { default as FarmsOpacityIcon } from "./Icons/Farms/FarmsOpacity";
+export { default as FarmsSolidIcon } from "./Icons/Menu/Farms/FarmsSolid";
+export { default as FarmsOpacityIcon } from "./Icons/Menu/Farms/FarmsOpacity";
 
 //Referral
-export { default as ReferralSolidIcon } from "./Icons/Referral/ReferralSolid";
-export { default as ReferralOpacityIcon } from "./Icons/Referral/ReferralOpacity";
+export { default as ReferralSolidIcon } from "./Icons/Menu/Referral/ReferralSolid";
+export { default as ReferralOpacityIcon } from "./Icons/Menu/Referral/ReferralOpacity";
 
 //Ido
-export { default as IdoSolidIcon } from "./Icons/Ido/IdoSolid";
-export { default as IdoOpacityIcon } from "./Icons/Ido/IdoOpacity";
+export { default as IdoSolidIcon } from "./Icons/Menu/Ido/IdoSolid";
+export { default as IdoOpacityIcon } from "./Icons/Menu/Ido/IdoOpacity";
 
 //Goblet
-export { default as GobletSolidIcon } from "./Icons/Goblet/GobletSolid";
-export { default as GobletOpacityIcon } from "./Icons/Goblet/GobletOpacity";
+export { default as GobletSolidIcon } from "./Icons/Menu/Goblet/GobletSolid";
+export { default as GobletOpacityIcon } from "./Icons/Menu/Goblet/GobletOpacity";
 
 //Lottery
-export { default as LotterySolidIcon } from "./Icons/Lottery/LoterySolid";
-export { default as LotteryOpacityIcon } from "./Icons/Lottery/LoteryOpacity";
+export { default as LotterySolidIcon } from "./Icons/Menu/Lottery/LoterySolid";
+export { default as LotteryOpacityIcon } from "./Icons/Menu/Lottery/LoteryOpacity";
 
 //Launchpad
-export { default as LaunchpadSolidIcon } from "./Icons/Launchpad/LaunchpadSolid";
-export { default as LaunchpadOpacityIcon } from "./Icons/Launchpad/LaunchpadOpacity";
+export { default as LaunchpadSolidIcon } from "./Icons/Menu/Launchpad/LaunchpadSolid";
+export { default as LaunchpadOpacityIcon } from "./Icons/Menu/Launchpad/LaunchpadOpacity";
 
 //NFTEarn
-export { default as NFTEarnSolidIcon } from "./Icons/NFTEarn/NFTEarnSolid";
-export { default as NFTEarnOpacityIcon } from "./Icons/NFTEarn/NFTEarnOpacity";
+export { default as NFTEarnSolidIcon } from "./Icons/Menu/NFTEarn/NFTEarnSolid";
+export { default as NFTEarnOpacityIcon } from "./Icons/Menu/NFTEarn/NFTEarnOpacity";
 
 //FixedStaking
-export { default as FixedStakingSolidIcon } from "./Icons/FixedStaking/FixedStakingSolid";
-export { default as FixedStakingOpacityIcon } from "./Icons/FixedStaking/FixedStakingOpacity";
+export { default as FixedStakingSolidIcon } from "./Icons/Menu/FixedStaking/FixedStakingSolid";
+export { default as FixedStakingOpacityIcon } from "./Icons/Menu/FixedStaking/FixedStakingOpacity";
 
 //Analytics
-export { default as AnalyticsSolidIcon } from "./Icons/Analytics/AnalyticsSolid";
-export { default as AnalyticsOpacityIcon } from "./Icons/Analytics/AnalyticsOpacity";
+export { default as AnalyticsSolidIcon } from "./Icons/Menu/Analytics/AnalyticsSolid";
+export { default as AnalyticsOpacityIcon } from "./Icons/Menu/Analytics/AnalyticsOpacity";
 
 //Voting
-export { default as VotingSolidIcon } from "./Icons/Voting/VotingSolid";
-export { default as VotingOpacityIcon } from "./Icons/Voting/VotingOpacity";
+export { default as VotingSolidIcon } from "./Icons/Menu/Voting/VotingSolid";
+export { default as VotingOpacityIcon } from "./Icons/Menu/Voting/VotingOpacity";
 
 //Charity
 export { default as CharitySolidIcon } from "./Icons/Charity/CharitySolid";
 export { default as CharityOpacityIcon } from "./Icons/Charity/CharityOpacity";
 
 //AboutBSW
-export { default as AboutBSWSolidIcon } from "./Icons/AboutBSW/AboutBSWSolid";
-export { default as AboutBSWOpacityIcon } from "./Icons/AboutBSW/AboutBSWOpacity";
+export { default as AboutBSWSolidIcon } from "./Icons/Menu/AboutBSW/AboutBSWSolid";
+export { default as AboutBSWOpacityIcon } from "./Icons/Menu/AboutBSW/AboutBSWOpacity";
 
 //Team
-export { default as TeamSolidIcon } from "./Icons/Team/TeamSolid";
-export { default as TeamOpacityIcon } from "./Icons/Team/TeamOpacity";
+export { default as TeamSolidIcon } from "./Icons/Menu/Team/TeamSolid";
+export { default as TeamOpacityIcon } from "./Icons/Menu/Team/TeamOpacity";
 
 //Program10m
-export { default as Program10mSolidIcon } from "./Icons/Program10m/Program10mSolid";
-export { default as Program10mOpacityIcon } from "./Icons/Program10m/Program10mOpacity";
+export { default as Program10mSolidIcon } from "./Icons/Menu/Program10m/Program10mSolid";
+export { default as Program10mOpacityIcon } from "./Icons/Menu/Program10m/Program10mOpacity";
 
 //SpaceAgent
-export { default as SpaceAgentSolidIcon } from "./Icons/SpaceAgent/SpaceAgentSolid";
-export { default as SpaceAgentOpacityIcon } from "./Icons/SpaceAgent/SpaceAgentOpacity";
+export { default as SpaceAgentSolidIcon } from "./Icons/Menu/SpaceAgent/SpaceAgentSolid";
+export { default as SpaceAgentOpacityIcon } from "./Icons/Menu/SpaceAgent/SpaceAgentOpacity";
 
 //News
-export { default as NewsSolidIcon } from "./Icons/News/NewsSolid";
-export { default as NewsOpacityIcon } from "./Icons/News/NewsOpacity";
+export { default as NewsSolidIcon } from "./Icons/Menu/News/NewsSolid";
+export { default as NewsOpacityIcon } from "./Icons/Menu/News/NewsOpacity";
 
 //Docs
-export { default as DocsSolidIcon } from "./Icons/Docs/DocsSolid";
-export { default as DocsOpacityIcon } from "./Icons/Docs/DocsOpacity";
+export { default as DocsSolidIcon } from "./Icons/Menu/Docs/DocsSolid";
+export { default as DocsOpacityIcon } from "./Icons/Menu/Docs/DocsOpacity";
 
 //Audit
-export { default as AuditProtectionOpacityIcon } from "./Icons/Audit/AuditProtectionOpacity";
-export { default as AuditProtectionSolidIcon } from "./Icons/Audit/AuditProtectionSolid";
-export { default as AuditSearchSolidIcon } from "./Icons/Audit/AuditSearchSolid";
-export { default as AuditSearchOpacityIcon } from "./Icons/Audit/AuditSearchOpacity";
+export { default as AuditProtectionOpacityIcon } from "./Icons/Menu/Audit/AuditProtectionOpacity";
+export { default as AuditProtectionSolidIcon } from "./Icons/Menu/Audit/AuditProtectionSolid";
+export { default as AuditSearchSolidIcon } from "./Icons/Menu/Audit/AuditSearchSolid";
+export { default as AuditSearchOpacityIcon } from "./Icons/Menu/Audit/AuditSearchOpacity";
 
 //Socials
 export { default as InstagramIcon } from "./Icons/Socials/Instagram";
@@ -406,9 +326,34 @@ export { default as Rank2Icon } from "./Icons/Rank/Rank2";
 export { default as Rank3Icon } from "./Icons/Rank/Rank3";
 
 //chain
-export { default as BSCIcon } from "./Icons/BSC";
-export { default as PolygonIcon } from "./Icons/Polygon";
-export { default as AvalancheIcon } from "./Icons/Avalanche";
+export { default as BSCIcon } from "./Icons/Chains/BSC";
+export { default as PolygonIcon } from "./Icons/Chains/Polygon";
+export { default as AvalancheIcon } from "./Icons/Chains/Avalanche";
+
+//Other
+export { default as ArrowFiguredIcon } from "./Icons/Other/ArrowFigured";
+export { default as GameFiIcon } from "./Icons/Menu/GameFi/GameFi";
+export { default as GiftIcon } from "./Icons/Other/Gift";
+export { default as MarketIcon } from "./Icons/Menu/Market/Market";
+export { default as MetamaskIcon } from "./Icons/Other/Metamask";
+export { default as RBIcon } from "./Icons/Other/RB";
+export { default as SEIcon } from "./Icons/Other/SE";
+export { default as Ticket2Icon } from "./Icons/Other/Ticket2";
+export { default as VisaIcon } from "./Icons/Other/Visa";
+export { default as CerticAuditedIcon } from "./Icons/Other/Certic";
+
+//Flags
+export { default as USAIcon } from "./Icons/Flags/USA";
+export { default as IDIcon } from "./Icons/Flags/ID";
+export { default as RUIcon } from "./Icons/Flags/RU";
+export { default as VNIcon } from "./Icons/Flags/VN";
+export { default as BDIcon } from "./Icons/Flags/BD";
+export { default as FRIcon } from "./Icons/Flags/FR";
+export { default as PTIcon } from "./Icons/Flags/PT";
+export { default as DEIcon } from "./Icons/Flags/DE";
+export { default as CNIcon } from "./Icons/Flags/CN";
+export { default as TRIcon } from "./Icons/Flags/TR";
+export { default as ESIcon } from "./Icons/Flags/ES";
 
 export { default as Svg } from "./Svg";
 export type { SvgProps } from "./types";

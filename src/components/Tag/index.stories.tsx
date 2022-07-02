@@ -2,7 +2,7 @@ import React from "react";
 import { capitalize } from "lodash";
 import Box from "../Box/Box";
 import Flex from "../Box/Flex";
-import { CommunityIcon, RemoveIcon } from "../Svg";
+import { TeamSolidIcon, MinusCircleSolidIcon } from "../Svg";
 import Tag from "./Tag";
 import { scales, variants } from "./types";
 
@@ -31,19 +31,19 @@ export const Default: React.FC = () => {
               <Tag
                 variant={variant}
                 outline
-                startIcon={<CommunityIcon />}
+                startIcon={<TeamSolidIcon />}
                 mr="8px"
               >
                 {`${capitalize(variant)} Icon Left`}
               </Tag>
-              <Tag variant={variant} outline endIcon={<RemoveIcon />} mr="8px">
+              <Tag variant={variant} outline endIcon={<MinusCircleSolidIcon />} mr="8px">
                 {`${capitalize(variant)} Icon Right`}
               </Tag>
               <Tag
                 variant={variant}
                 outline
-                startIcon={<CommunityIcon />}
-                endIcon={<RemoveIcon />}
+                startIcon={<TeamSolidIcon />}
+                endIcon={<MinusCircleSolidIcon />}
               >
                 {`${capitalize(variant)} Both`}
               </Tag>

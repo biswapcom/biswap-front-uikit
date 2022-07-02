@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Button, ButtonProps } from "../../../../../components/Button";
 import { useMatchBreakpoints } from "../../../../../hooks";
 import { Login, useWalletModal } from "../../../../WalletModal";
-import { PresentIcon } from "../../../icons";
+import { GobletSolidIcon } from "../../../../../components/Svg";
 
 interface Props {
   account?: string;
@@ -65,7 +65,7 @@ const StyledBtn = styled(Button)<ButtonProps>`
     #3a2281 71.19%,
     #84227e 124.82%
   );
-  padding-left: 0;
+  //padding-left: 0;
 
   &:hover {
     opacity: 0.8;
@@ -108,7 +108,7 @@ const BDayEvent: FC<Props> = ({
           flat={isMobile}
           href={pathWithEventParam}
         >
-          <PresentIcon width="56px" height={39} mr="4px" />
+          <GobletSolidIcon width="24px" mr="12px" color="white"/>
           {buttonText}
         </StyledLink>
       ) : (
@@ -118,7 +118,7 @@ const BDayEvent: FC<Props> = ({
           scale="lg"
           onClick={onClickHandler}
         >
-          <PresentIcon width="56px" mr="4px" />
+          <GobletSolidIcon width="24px" mr="12px" color="white"/>
           {buttonText}
         </StyledBtn>
       )}
