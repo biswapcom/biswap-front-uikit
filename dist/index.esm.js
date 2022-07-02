@@ -257,7 +257,7 @@ var Icon$3g = function (props) {
 var Icon$3f = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React.createElement("rect", { opacity: "0.48", width: "24", height: "24", rx: "12", transform: "matrix(-1 0 0 1 24 0)" }),
-        React.createElement("path", { "fill-rule": "evenodd", "clip-rule": "evenodd", d: "M8.29289 13.7071C7.90237 13.3166 7.90237 12.6834 8.29289 12.2929L11.2929 9.29289C11.6834 8.90237 12.3166 8.90237 12.7071 9.29289L15.7071 12.2929C16.0976 12.6834 16.0976 13.3166 15.7071 13.7071C15.3166 14.0976 14.6834 14.0976 14.2929 13.7071L12 11.4142L9.70711 13.7071C9.31658 14.0976 8.68342 14.0976 8.29289 13.7071Z" })));
+        React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M8.29289 13.7071C7.90237 13.3166 7.90237 12.6834 8.29289 12.2929L11.2929 9.29289C11.6834 8.90237 12.3166 8.90237 12.7071 9.29289L15.7071 12.2929C16.0976 12.6834 16.0976 13.3166 15.7071 13.7071C15.3166 14.0976 14.6834 14.0976 14.2929 13.7071L12 11.4142L9.70711 13.7071C9.31658 14.0976 8.68342 14.0976 8.29289 13.7071Z" })));
 };
 
 var Icon$3e = function (props) {
@@ -544,7 +544,7 @@ var Icon$2u = function (props) {
 
 var Icon$2t = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
-        React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M9.5 16C13.0899 16 16 13.0899 16 9.5C16 5.91015 13.0899 3 9.5 3C5.91015 3 3 5.91015 3 9.5C3 13.0899 5.91015 16 9.5 16ZM9.5 18C14.1944 18 18 14.1944 18 9.5C18 4.80558 14.1944 1 9.5 1C4.80558 1 1 4.80558 1 9.5C1 14.1944 4.80558 18 9.5 18Z", "fill-opacity": "0.48" }),
+        React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M9.5 16C13.0899 16 16 13.0899 16 9.5C16 5.91015 13.0899 3 9.5 3C5.91015 3 3 5.91015 3 9.5C3 13.0899 5.91015 16 9.5 16ZM9.5 18C14.1944 18 18 14.1944 18 9.5C18 4.80558 14.1944 1 9.5 1C4.80558 1 1 4.80558 1 9.5C1 14.1944 4.80558 18 9.5 18Z", fillOpacity: "0.48" }),
         React.createElement("path", { d: "M14.7618 16.1761C15.2868 15.7617 15.7617 15.2868 16.1761 14.7618L22.7071 21.2929C23.0977 21.6834 23.0977 22.3166 22.7071 22.7071C22.3166 23.0977 21.6834 23.0977 21.2929 22.7071L14.7618 16.1761Z" })));
 };
 
@@ -598,7 +598,7 @@ var Icon$2l = function (props) {
 var Icon$2k = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React.createElement("rect", { x: "6", y: "1", width: "16", height: "18", rx: "2" }),
-        React.createElement("path", { opacity: "0.48", "fill-rule": "evenodd", "clip-rule": "evenodd", d: "M4 6C2.89543 6 2 6.89543 2 8V19C2 21.2091 3.79086 23 6 23H15C16.1046 23 17 22.1046 17 21V20.7324C16.7058 20.9026 16.3643 21 16 21H7C5.34315 21 4 19.6569 4 18V6Z" })));
+        React.createElement("path", { opacity: "0.48", fillRule: "evenodd", clipRule: "evenodd", d: "M4 6C2.89543 6 2 6.89543 2 8V19C2 21.2091 3.79086 23 6 23H15C16.1046 23 17 22.1046 17 21V20.7324C16.7058 20.9026 16.3643 21 16 21H7C5.34315 21 4 19.6569 4 18V6Z" })));
 };
 
 var Icon$2j = function (props) {
@@ -720,7 +720,7 @@ var Icon$23 = function (props) {
 
 var Icon$22 = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
-        React.createElement("g", { "clip-path": "url(#clip0_1216_17642)" },
+        React.createElement("g", { clipPath: "url(#clip0_1216_17642)" },
             React.createElement("path", { d: "M19.935 6.51244L21.4422 5.00531C21.7168 4.73072 21.7168 4.28555 21.4422 4.01095C21.1676 3.73636 20.7224 3.73636 20.4478 4.01095L18.9407 5.51808C17.2495 4.03688 15.0834 3.08672 12.7031 2.92969V1.40625H13.4062C13.7946 1.40625 14.1094 1.09144 14.1094 0.703125C14.1094 0.314812 13.7946 0 13.4062 0H10.5938C10.2054 0 9.89062 0.314812 9.89062 0.703125C9.89062 1.09144 10.2054 1.40625 10.5938 1.40625H11.2969V2.92969C5.80781 3.2925 1.45312 7.87359 1.45312 13.4531C1.45312 19.2689 6.18422 24 12 24C17.8158 24 22.5469 19.2689 22.5469 13.4531C22.5469 10.7977 21.5607 8.36864 19.935 6.51244ZM12 21.1875C7.73531 21.1875 4.26562 17.7178 4.26562 13.4531C4.26562 9.18844 7.73531 5.71875 12 5.71875C16.2647 5.71875 19.7344 9.18844 19.7344 13.4531C19.7344 17.7178 16.2647 21.1875 12 21.1875Z" }),
             React.createElement("path", { d: "M12 7.125C8.51062 7.125 5.67188 9.96375 5.67188 13.4531C5.67188 16.9425 8.51062 19.7812 12 19.7812C15.4894 19.7812 18.3281 16.9425 18.3281 13.4531C18.3281 9.96375 15.4894 7.125 12 7.125ZM15.4791 10.9688L12.4973 13.9505C12.2227 14.2247 11.7773 14.2252 11.5027 13.9505C11.2284 13.6758 11.2284 13.2305 11.5027 12.9558L14.4844 9.97406C14.7591 9.69937 15.2044 9.69937 15.4791 9.97406C15.7537 10.2487 15.7537 10.6941 15.4791 10.9688Z" })),
         React.createElement("defs", null,
@@ -730,7 +730,7 @@ var Icon$22 = function (props) {
 
 var Icon$21 = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
-        React.createElement("g", { "clip-path": "url(#clip0_1216_17641)" },
+        React.createElement("g", { clipPath: "url(#clip0_1216_17641)" },
             React.createElement("path", { opacity: "0.48", d: "M19.935 6.51244L21.4422 5.00531C21.7168 4.73072 21.7168 4.28555 21.4422 4.01095C21.1676 3.73636 20.7224 3.73636 20.4478 4.01095L18.9407 5.51808C17.2495 4.03688 15.0834 3.08672 12.7031 2.92969V1.40625H13.4062C13.7946 1.40625 14.1094 1.09144 14.1094 0.703125C14.1094 0.314812 13.7946 0 13.4062 0H10.5938C10.2054 0 9.89062 0.314812 9.89062 0.703125C9.89062 1.09144 10.2054 1.40625 10.5938 1.40625H11.2969V2.92969C5.80781 3.2925 1.45312 7.87359 1.45312 13.4531C1.45312 19.2689 6.18422 24 12 24C17.8158 24 22.5469 19.2689 22.5469 13.4531C22.5469 10.7977 21.5607 8.36864 19.935 6.51244ZM12 21.1875C7.73531 21.1875 4.26562 17.7178 4.26562 13.4531C4.26562 9.18844 7.73531 5.71875 12 5.71875C16.2647 5.71875 19.7344 9.18844 19.7344 13.4531C19.7344 17.7178 16.2647 21.1875 12 21.1875Z" }),
             React.createElement("path", { d: "M12 7.125C8.51062 7.125 5.67188 9.96375 5.67188 13.4531C5.67188 16.9425 8.51062 19.7812 12 19.7812C15.4894 19.7812 18.3281 16.9425 18.3281 13.4531C18.3281 9.96375 15.4894 7.125 12 7.125ZM15.4791 10.9688L12.4973 13.9505C12.2227 14.2247 11.7773 14.2252 11.5027 13.9505C11.2284 13.6758 11.2284 13.2305 11.5027 12.9558L14.4844 9.97406C14.7591 9.69937 15.2044 9.69937 15.4791 9.97406C15.7537 10.2487 15.7537 10.6941 15.4791 10.9688Z" })),
         React.createElement("defs", null,
@@ -1400,16 +1400,16 @@ var Icon$u = function (props) {
         React.createElement("g", { filter: "url(#filter5_di_133_5676)" },
             React.createElement("path", { d: "M8.33175 11.0824H9.7985C9.993 11.0824 10.1795 11.0078 10.3171 10.875C10.4546 10.7422 10.5319 10.562 10.5319 10.3742C10.5319 10.1863 10.4546 10.0062 10.3171 9.87339C10.1795 9.74057 9.993 9.66595 9.7985 9.66595H8.33175V8.24949C8.33175 8.06166 8.25448 7.88151 8.11695 7.7487C7.97941 7.61588 7.79288 7.54126 7.59837 7.54126C7.40387 7.54126 7.21733 7.61588 7.0798 7.7487C6.94226 7.88151 6.865 8.06166 6.865 8.24949V9.66595H5.39825C5.20374 9.66595 5.01721 9.74057 4.87967 9.87339C4.74214 10.0062 4.66487 10.1863 4.66487 10.3742C4.66487 10.562 4.74214 10.7422 4.87967 10.875C5.01721 11.0078 5.20374 11.0824 5.39825 11.0824H6.865V12.4989C6.865 12.6867 6.94226 12.8668 7.0798 12.9997C7.21733 13.1325 7.40387 13.2071 7.59837 13.2071C7.79288 13.2071 7.97941 13.1325 8.11695 12.9997C8.25448 12.8668 8.33175 12.6867 8.33175 12.4989V11.0824Z", fill: "#00000D" })),
         React.createElement("defs", null,
-            React.createElement("filter", { id: "filter0_i_133_5676", x: "1", y: "4", width: "22", height: "15.5834", filterUnits: "userSpaceOnUse", "color-interpolation-filters": "sRGB" },
-                React.createElement("feFlood", { "flood-opacity": "0", result: "BackgroundImageFix" }),
+            React.createElement("filter", { id: "filter0_i_133_5676", x: "1", y: "4", width: "22", height: "15.5834", filterUnits: "userSpaceOnUse", colorInterpolationFilters: "sRGB" },
+                React.createElement("feFlood", { floodOpacity: "0", result: "BackgroundImageFix" }),
                 React.createElement("feBlend", { mode: "normal", in: "SourceGraphic", in2: "BackgroundImageFix", result: "shape" }),
                 React.createElement("feColorMatrix", { in: "SourceAlpha", type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0", result: "hardAlpha" }),
                 React.createElement("feOffset", { dy: "-1.4" }),
                 React.createElement("feComposite", { in2: "hardAlpha", operator: "arithmetic", k2: "-1", k3: "1" }),
                 React.createElement("feColorMatrix", { type: "matrix", values: "0 0 0 0 0.627344 0 0 0 0 0.742503 0 0 0 0 0.9125 0 0 0 1 0" }),
                 React.createElement("feBlend", { mode: "normal", in2: "shape", result: "effect1_innerShadow_133_5676" })),
-            React.createElement("filter", { id: "filter1_di_133_5676", x: "13.7491", y: "11.0365", width: "3.83344", height: "3.77063", filterUnits: "userSpaceOnUse", "color-interpolation-filters": "sRGB" },
-                React.createElement("feFlood", { "flood-opacity": "0", result: "BackgroundImageFix" }),
+            React.createElement("filter", { id: "filter1_di_133_5676", x: "13.7491", y: "11.0365", width: "3.83344", height: "3.77063", filterUnits: "userSpaceOnUse", colorInterpolationFilters: "sRGB" },
+                React.createElement("feFlood", { floodOpacity: "0", result: "BackgroundImageFix" }),
                 React.createElement("feColorMatrix", { in: "SourceAlpha", type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0", result: "hardAlpha" }),
                 React.createElement("feOffset", { dy: "0.6" }),
                 React.createElement("feGaussianBlur", { stdDeviation: "0.5" }),
@@ -1422,8 +1422,8 @@ var Icon$u = function (props) {
                 React.createElement("feComposite", { in2: "hardAlpha", operator: "arithmetic", k2: "-1", k3: "1" }),
                 React.createElement("feColorMatrix", { type: "matrix", values: "0 0 0 0 0.285278 0 0 0 0 0.866667 0 0 0 0 0.574272 0 0 0 1 0" }),
                 React.createElement("feBlend", { mode: "normal", in2: "shape", result: "effect2_innerShadow_133_5676" })),
-            React.createElement("filter", { id: "filter2_di_133_5676", x: "15.7659", y: "9.08877", width: "3.83344", height: "3.77063", filterUnits: "userSpaceOnUse", "color-interpolation-filters": "sRGB" },
-                React.createElement("feFlood", { "flood-opacity": "0", result: "BackgroundImageFix" }),
+            React.createElement("filter", { id: "filter2_di_133_5676", x: "15.7659", y: "9.08877", width: "3.83344", height: "3.77063", filterUnits: "userSpaceOnUse", colorInterpolationFilters: "sRGB" },
+                React.createElement("feFlood", { floodOpacity: "0", result: "BackgroundImageFix" }),
                 React.createElement("feColorMatrix", { in: "SourceAlpha", type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0", result: "hardAlpha" }),
                 React.createElement("feOffset", { dy: "0.6" }),
                 React.createElement("feGaussianBlur", { stdDeviation: "0.5" }),
@@ -1436,8 +1436,8 @@ var Icon$u = function (props) {
                 React.createElement("feComposite", { in2: "hardAlpha", operator: "arithmetic", k2: "-1", k3: "1" }),
                 React.createElement("feColorMatrix", { type: "matrix", values: "0 0 0 0 1 0 0 0 0 0.808667 0 0 0 0 0.316667 0 0 0 1 0" }),
                 React.createElement("feBlend", { mode: "normal", in2: "shape", result: "effect2_innerShadow_133_5676" })),
-            React.createElement("filter", { id: "filter3_di_133_5676", x: "13.7491", y: "7.14126", width: "3.83344", height: "3.77063", filterUnits: "userSpaceOnUse", "color-interpolation-filters": "sRGB" },
-                React.createElement("feFlood", { "flood-opacity": "0", result: "BackgroundImageFix" }),
+            React.createElement("filter", { id: "filter3_di_133_5676", x: "13.7491", y: "7.14126", width: "3.83344", height: "3.77063", filterUnits: "userSpaceOnUse", colorInterpolationFilters: "sRGB" },
+                React.createElement("feFlood", { floodOpacity: "0", result: "BackgroundImageFix" }),
                 React.createElement("feColorMatrix", { in: "SourceAlpha", type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0", result: "hardAlpha" }),
                 React.createElement("feOffset", { dy: "0.6" }),
                 React.createElement("feGaussianBlur", { stdDeviation: "0.5" }),
@@ -1450,8 +1450,8 @@ var Icon$u = function (props) {
                 React.createElement("feComposite", { in2: "hardAlpha", operator: "arithmetic", k2: "-1", k3: "1" }),
                 React.createElement("feColorMatrix", { type: "matrix", values: "0 0 0 0 1 0 0 0 0 0.55 0 0 0 0 0.630526 0 0 0 1 0" }),
                 React.createElement("feBlend", { mode: "normal", in2: "shape", result: "effect2_innerShadow_133_5676" })),
-            React.createElement("filter", { id: "filter4_di_133_5676", x: "11.7323", y: "9.08877", width: "3.83344", height: "3.77063", filterUnits: "userSpaceOnUse", "color-interpolation-filters": "sRGB" },
-                React.createElement("feFlood", { "flood-opacity": "0", result: "BackgroundImageFix" }),
+            React.createElement("filter", { id: "filter4_di_133_5676", x: "11.7323", y: "9.08877", width: "3.83344", height: "3.77063", filterUnits: "userSpaceOnUse", colorInterpolationFilters: "sRGB" },
+                React.createElement("feFlood", { floodOpacity: "0", result: "BackgroundImageFix" }),
                 React.createElement("feColorMatrix", { in: "SourceAlpha", type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0", result: "hardAlpha" }),
                 React.createElement("feOffset", { dy: "0.6" }),
                 React.createElement("feGaussianBlur", { stdDeviation: "0.5" }),
@@ -1464,8 +1464,8 @@ var Icon$u = function (props) {
                 React.createElement("feComposite", { in2: "hardAlpha", operator: "arithmetic", k2: "-1", k3: "1" }),
                 React.createElement("feColorMatrix", { type: "matrix", values: "0 0 0 0 0.329167 0 0 0 0 0.572833 0 0 0 0 1 0 0 0 1 0" }),
                 React.createElement("feBlend", { mode: "normal", in2: "shape", result: "effect2_innerShadow_133_5676" })),
-            React.createElement("filter", { id: "filter5_di_133_5676", x: "3.66487", y: "7.14126", width: "7.867", height: "7.66589", filterUnits: "userSpaceOnUse", "color-interpolation-filters": "sRGB" },
-                React.createElement("feFlood", { "flood-opacity": "0", result: "BackgroundImageFix" }),
+            React.createElement("filter", { id: "filter5_di_133_5676", x: "3.66487", y: "7.14126", width: "7.867", height: "7.66589", filterUnits: "userSpaceOnUse", colorInterpolationFilters: "sRGB" },
+                React.createElement("feFlood", { floodOpacity: "0", result: "BackgroundImageFix" }),
                 React.createElement("feColorMatrix", { in: "SourceAlpha", type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0", result: "hardAlpha" }),
                 React.createElement("feOffset", { dy: "0.6" }),
                 React.createElement("feGaussianBlur", { stdDeviation: "0.5" }),
@@ -1479,15 +1479,15 @@ var Icon$u = function (props) {
                 React.createElement("feColorMatrix", { type: "matrix", values: "0 0 0 0 0.427309 0 0 0 0 0.427309 0 0 0 0 0.679167 0 0 0 1 0" }),
                 React.createElement("feBlend", { mode: "normal", in2: "shape", result: "effect2_innerShadow_133_5676" })),
             React.createElement("linearGradient", { id: "paint0_linear_133_5676", x1: "12", y1: "4", x2: "12", y2: "16.375", gradientUnits: "userSpaceOnUse" },
-                React.createElement("stop", { offset: "0.0967989", "stop-color": "white" }),
-                React.createElement("stop", { offset: "1", "stop-color": "#CBDFFF" })))));
+                React.createElement("stop", { offset: "0.0967989", stopColor: "white" }),
+                React.createElement("stop", { offset: "1", stopColor: "#CBDFFF" })))));
 };
 
 var Icon$t = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React.createElement("path", { d: "M17.8835 1.80993C17.5663 1.62679 17.1717 1.60309 16.7188 1.72115C15.4302 2.05702 13.9635 1.66381 13.1094 0.642161C12.7615 0.225887 12.3883 0 12 0C11.6118 0 11.2386 0.225867 10.8906 0.642106C10.0366 1.66375 8.5698 2.05698 7.28127 1.72105C6.82827 1.60295 6.43364 1.62663 6.11641 1.80979C5.78591 2.0006 5.5633 2.35072 5.44203 2.83151C5.12492 4.08874 4.08845 5.12521 2.83122 5.4423C2.35041 5.56357 2.00028 5.78618 1.80946 6.11669C1.62631 6.43391 1.60262 6.82853 1.7207 7.2815C2.0566 8.57001 1.66337 10.0367 0.641848 10.8908C0.225774 11.2387 1.69655e-08 11.6118 0 12C-1.69666e-08 12.3882 0.225808 12.7613 0.641944 13.1093C1.66349 13.9634 2.05669 15.43 1.72088 16.7185C1.60285 17.1714 1.62656 17.566 1.80968 17.8832C2.00053 18.2137 2.35073 18.4364 2.83163 18.5576C4.08892 18.8746 5.12543 19.9111 5.4425 21.1684C5.56376 21.6492 5.78638 21.9994 6.1169 22.1902C6.43406 22.3733 6.82859 22.3971 7.28145 22.2791C8.56997 21.9433 10.0366 22.3365 10.8907 23.358C11.2387 23.7742 11.6118 24 12 24C12.3882 24 12.7614 23.7742 13.1093 23.358C13.9634 22.3364 15.43 21.9432 16.7186 22.2789C17.1714 22.3969 17.5659 22.3732 17.883 22.1901C18.2135 21.9993 18.4361 21.6492 18.5574 21.1684C18.8745 19.9112 19.9109 18.8748 21.1681 18.5576C21.6489 18.4364 21.999 18.2138 22.1898 17.8833C22.3729 17.5661 22.3966 17.1716 22.2786 16.7188C21.9429 15.4302 22.336 13.9635 23.3577 13.1095C23.7741 12.7615 24 12.3883 24 12C24 11.6117 23.7741 11.2385 23.3578 10.8905C22.3362 10.0365 21.943 8.56979 22.2788 7.28124C22.3968 6.82833 22.3731 6.43378 22.19 6.1166C21.9992 5.78616 21.6492 5.56357 21.1685 5.44229C19.9114 5.12506 18.875 4.08867 18.5578 2.83151C18.4365 2.35079 18.214 2.00073 17.8835 1.80993Z", fill: "#FF9AAC" }),
         React.createElement("ellipse", { cx: "12.0003", cy: "12", rx: "8.30769", ry: "8.30769", fill: "#FC4667" }),
-        React.createElement("g", { "clip-path": "url(#clip0_1076_25331)" },
+        React.createElement("g", { clipPath: "url(#clip0_1076_25331)" },
             React.createElement("path", { d: "M16.9615 9.0385H15.1123C15.3877 8.70256 15.5233 8.27361 15.4911 7.84044C15.459 7.40727 15.2615 7.00306 14.9395 6.71146C14.6176 6.41987 14.1959 6.26322 13.7617 6.27396C13.3274 6.28469 12.914 6.46199 12.6068 6.76913C12.4843 6.89679 12.3833 7.04344 12.3077 7.20339C12.232 7.04344 12.131 6.89678 12.0085 6.76911C11.7014 6.46197 11.2879 6.28468 10.8537 6.27395C10.4195 6.26323 9.99773 6.41987 9.6758 6.71147C9.35387 7.00307 9.15639 7.40729 9.12424 7.84046C9.09209 8.27362 9.22773 8.70257 9.50308 9.0385H7.65385C7.42951 9.03875 7.21444 9.12798 7.05581 9.28661C6.89718 9.44524 6.80795 9.66032 6.80769 9.88465V11.577C6.80795 11.8013 6.89718 12.0164 7.05581 12.175C7.21444 12.3336 7.42951 12.4229 7.65385 12.4231V15.8077C7.6541 16.0321 7.74333 16.2471 7.90196 16.4058C8.06059 16.5644 8.27567 16.6536 8.5 16.6539H16.1154C16.3397 16.6536 16.5548 16.5644 16.7134 16.4058C16.8721 16.2471 16.9613 16.0321 16.9615 15.8077V12.4231C17.1859 12.4229 17.401 12.3336 17.5596 12.175C17.7182 12.0164 17.8074 11.8013 17.8077 11.577V9.88465C17.8074 9.66032 17.7182 9.44524 17.5596 9.28661C17.401 9.12798 17.1859 9.03875 16.9615 9.0385ZM13.2051 7.36745C13.2837 7.28885 13.377 7.22649 13.4796 7.18394C13.5823 7.14139 13.6924 7.11948 13.8035 7.11946C13.9146 7.11945 14.0247 7.14133 14.1274 7.18385C14.2301 7.22637 14.3233 7.28871 14.4019 7.36729C14.4805 7.44588 14.5429 7.53917 14.5854 7.64185C14.6279 7.74453 14.6498 7.85459 14.6498 7.96572C14.6498 8.07686 14.6279 8.18691 14.5853 8.28958C14.5428 8.39225 14.4804 8.48553 14.4018 8.5641C14.1405 8.82541 13.3851 8.97215 12.7488 9.02046C12.7971 8.38414 12.9439 7.62874 13.2051 7.36745ZM10.2135 7.36745C10.3724 7.20901 10.5875 7.12003 10.8119 7.12003C11.0362 7.12002 11.2514 7.209 11.4102 7.36744C11.6715 7.62875 11.8183 8.38422 11.8666 9.02045C11.2303 8.97212 10.4749 8.82538 10.2136 8.5641C10.0551 8.40529 9.96616 8.19012 9.96615 7.96579C9.96614 7.74145 10.0551 7.52628 10.2135 7.36745ZM16.9615 11.577H12.7308V15.3847C12.7308 15.4969 12.6862 15.6045 12.6069 15.6838C12.5275 15.7632 12.4199 15.8077 12.3077 15.8077C12.1955 15.8077 12.0879 15.7632 12.0085 15.6838C11.9292 15.6045 11.8846 15.4969 11.8846 15.3847V11.577H7.65385V9.88465H11.8846V11.577H12.7308V9.88465H16.9615L16.9621 11.5769L16.9615 11.577Z", fill: "white" })),
         React.createElement("defs", null,
             React.createElement("clipPath", { id: "clip0_1076_25331" },
@@ -1503,11 +1503,11 @@ var Icon$s = function (props) {
         React.createElement("path", { d: "M11.325 14.1193C11.7871 13.1202 11.6202 13.1177 11.971 12.179C12.4137 10.9887 13.7903 11.3274 14.1702 11.3782C14.7968 11.4629 14.9613 11.2403 16.2822 11.0274C16.3476 11.0177 16.4105 11.0081 16.4734 11.0008C15.375 9.77419 13.7782 9 12 9C9.61209 9 7.5508 10.3935 6.58548 12.4137C8.56451 12.9048 10.7008 13.9718 11.325 14.1193ZM10.0137 10.0452C10.1879 10.0718 11.0347 11.1242 11.1943 13.8266C11.1943 13.8266 10.1056 13.5653 9.87096 13.004C9.67742 12.5419 9.92903 11.9347 10.0137 10.0452ZM16.6839 11.2524C16.6863 11.2573 16.6911 11.2597 16.6935 11.2645C16.679 11.2621 16.6621 11.2621 16.6476 11.2597C16.6597 11.2548 16.6718 11.2548 16.6839 11.2524ZM6 15C6 14.521 6.05565 14.0564 6.1621 13.6113C6.37984 13.7927 6.6121 13.9935 6.85887 14.2234C8.42177 15.6726 10.9645 16.8169 11.8911 15.7524C11.8935 15.7548 11.896 15.7548 11.896 15.7572C11.7266 15.9798 11.0806 16.6839 9.84677 16.4661L7.89677 19.3766C6.73064 18.283 6 16.7274 6 15Z", fill: "url(#paint1_linear_264_6347)" }),
         React.createElement("defs", null,
             React.createElement("linearGradient", { id: "paint0_linear_264_6347", x1: "15.6033", y1: "12.8288", x2: "14.1878", y2: "20.627", gradientUnits: "userSpaceOnUse" },
-                React.createElement("stop", { "stop-color": "#FF496A" }),
-                React.createElement("stop", { offset: "1", "stop-color": "#E42648" })),
+                React.createElement("stop", { stopColor: "#FF496A" }),
+                React.createElement("stop", { offset: "1", stopColor: "#E42648" })),
             React.createElement("linearGradient", { id: "paint1_linear_264_6347", x1: "8.89602", y1: "17.8383", x2: "12.0257", y2: "9", gradientUnits: "userSpaceOnUse" },
-                React.createElement("stop", { offset: "0.00181229", "stop-color": "#1158F1" }),
-                React.createElement("stop", { offset: "1", "stop-color": "#119BED" })))));
+                React.createElement("stop", { offset: "0.00181229", stopColor: "#1158F1" }),
+                React.createElement("stop", { offset: "1", stopColor: "#119BED" })))));
 };
 
 var Icon$r = function (props) {
@@ -1562,28 +1562,28 @@ var Icon$o = function (props) {
         React.createElement("ellipse", { cx: "12.5826", cy: "11.632", rx: "5.26722", ry: "5.1203", transform: "rotate(-30 12.5826 11.632)", fill: "#93A7C4" }),
         React.createElement("path", { d: "M0.454171 12.2413C-0.144154 11.1758 0.41653 10.3447 0.771662 10.0624L4.73524 13.1086L6.56242 15.5822L5.48626 17.6107L6.88662 20.9818C7.53417 21 8.56474 21.1093 7.50657 21.401C6.44839 21.6927 5.75316 21.2862 5.53781 21.0465L4.27366 18.8569C4.13838 18.5499 4.00485 17.8023 4.55296 17.2674C5.2381 16.5988 5.22865 15.4911 5.09223 15.2548C4.95581 15.0186 4.67154 14.4896 3.17603 14.5549C1.68052 14.6202 1.20208 13.5733 0.454171 12.2413Z", fill: "#93A7C4" }),
         React.createElement("path", { d: "M11.6339 11.4731C10.5111 9.7654 9.56928 9.39164 9.44722 9.43892C9.72637 9.9757 9.89935 10.3731 10.0288 10.6704C10.2048 11.0747 10.3002 11.2939 10.4724 11.4266C10.8352 11.7065 11.6339 11.4731 11.6339 11.4731Z", fill: "url(#paint0_linear_1088_17348)" }),
-        React.createElement("path", { "fill-rule": "evenodd", "clip-rule": "evenodd", d: "M1.20621 9.69653C0.90172 9.87233 0.679975 10.1626 0.589753 10.5036C0.499531 10.8446 0.548225 11.2082 0.725119 11.5146L1.75935 13.306C1.91307 13.5723 2.15357 13.7776 2.44009 13.8871C2.72657 13.9966 3.04143 14.0036 3.33135 13.9069C3.76635 13.7625 4.23854 13.7734 4.6681 13.9379C5.09785 14.1024 5.45855 14.4104 5.6892 14.8099C5.91985 15.2094 6.00629 15.6758 5.93389 16.1303C5.8615 16.5847 5.63471 16.9993 5.2919 17.3038C5.06345 17.5065 4.91223 17.7825 4.86385 18.0852C4.81543 18.3881 4.87298 18.699 5.02675 18.9653L6.06098 20.7566C6.23788 21.063 6.52848 21.287 6.86887 21.3794C7.20927 21.4717 7.57155 21.4248 7.87604 21.249C7.87604 21.249 12.727 19.9006 16.1587 17.9193C19.5904 15.938 23.1837 12.4112 23.1837 12.4112C23.4882 12.2354 23.7099 11.945 23.8001 11.6041C23.8904 11.2631 23.8417 10.8995 23.6648 10.5931L22.6305 8.80172C22.4768 8.53541 22.2363 8.3301 21.9498 8.22059C21.6635 8.11116 21.3488 8.10411 21.0591 8.20061C20.6239 8.34522 20.1515 8.33435 19.7218 8.16983C19.292 8.00531 18.9313 7.69725 18.7007 7.29776C18.47 6.89826 18.3836 6.43185 18.456 5.97742C18.5284 5.52318 18.755 5.10879 19.0976 4.80428C19.3263 4.60155 19.4776 4.32537 19.526 4.02252C19.5745 3.71963 19.5169 3.4087 19.3631 3.14242L18.3289 1.35108C18.152 1.04469 17.8614 0.820679 17.521 0.728333C17.1806 0.635989 16.8183 0.682873 16.5138 0.858668C16.5138 0.858668 11.796 4.41944 9.22242 5.90529C6.64885 7.39114 1.20621 9.69653 1.20621 9.69653ZM11.6653 10.7546C11.7279 10.9628 11.7828 11.1452 11.8285 11.616C11.6604 11.6657 11.314 11.7101 10.8707 11.7668C10.1081 11.8645 9.05879 11.9988 8.13684 12.2604C7.99497 10.5811 8.79441 8.90464 10.33 8.01809C11.4734 7.3579 12.7925 7.27129 13.9619 7.66552C13.929 7.68998 13.8969 7.71564 13.8638 7.74204L13.849 7.75388C13.5255 8.01876 13.3342 8.20877 13.1888 8.35323C12.9885 8.55216 12.8752 8.66471 12.6233 8.7674C12.6011 8.77645 12.5737 8.78679 12.5422 8.79868C12.1979 8.92849 11.3606 9.24415 11.5114 10.1075C11.5666 10.4268 11.6181 10.598 11.6653 10.7546ZM14.1949 7.75323L14.1922 7.75189C14.1899 7.75392 14.1875 7.75577 14.1851 7.75761C14.1804 7.76131 14.1756 7.76501 14.1716 7.77011C14.1743 7.76911 14.1771 7.76793 14.1798 7.76667C14.054 7.87916 13.9353 7.99442 13.8245 8.10207C13.7413 8.18297 13.6624 8.25963 13.5882 8.32752C13.1648 8.71652 12.9244 9.34966 13.2168 10.0857C13.345 10.4077 13.4957 10.6061 13.6534 10.8137C13.8177 11.0301 13.9896 11.2564 14.1515 11.6428C14.6582 12.8541 13.9111 13.8865 13.4705 14.4952C13.43 14.5512 13.392 14.6037 13.3579 14.6523C13.1228 14.9849 12.5408 15.7734 12.0908 16.3788C13.0167 16.481 13.9816 16.3009 14.851 15.799C17.0129 14.5508 17.7577 11.7957 16.5151 9.64349C15.9854 8.72603 15.1796 8.06645 14.2626 7.70986C14.2522 7.71374 14.2418 7.71767 14.2299 7.72246L14.1949 7.75323ZM8.73668 14.1688C8.55584 13.8556 8.41627 13.5312 8.31667 13.2006C8.52519 13.2384 8.75035 13.2835 8.9958 13.3421C10.5479 13.7095 12.615 13.5137 12.809 12.4736L12.8139 12.475C12.7891 12.6834 12.6394 13.3835 11.7638 13.6993L11.6086 16.3263C10.4459 16.0442 9.38878 15.2983 8.73668 14.1688Z", fill: "url(#paint1_linear_1088_17348)" }),
+        React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M1.20621 9.69653C0.90172 9.87233 0.679975 10.1626 0.589753 10.5036C0.499531 10.8446 0.548225 11.2082 0.725119 11.5146L1.75935 13.306C1.91307 13.5723 2.15357 13.7776 2.44009 13.8871C2.72657 13.9966 3.04143 14.0036 3.33135 13.9069C3.76635 13.7625 4.23854 13.7734 4.6681 13.9379C5.09785 14.1024 5.45855 14.4104 5.6892 14.8099C5.91985 15.2094 6.00629 15.6758 5.93389 16.1303C5.8615 16.5847 5.63471 16.9993 5.2919 17.3038C5.06345 17.5065 4.91223 17.7825 4.86385 18.0852C4.81543 18.3881 4.87298 18.699 5.02675 18.9653L6.06098 20.7566C6.23788 21.063 6.52848 21.287 6.86887 21.3794C7.20927 21.4717 7.57155 21.4248 7.87604 21.249C7.87604 21.249 12.727 19.9006 16.1587 17.9193C19.5904 15.938 23.1837 12.4112 23.1837 12.4112C23.4882 12.2354 23.7099 11.945 23.8001 11.6041C23.8904 11.2631 23.8417 10.8995 23.6648 10.5931L22.6305 8.80172C22.4768 8.53541 22.2363 8.3301 21.9498 8.22059C21.6635 8.11116 21.3488 8.10411 21.0591 8.20061C20.6239 8.34522 20.1515 8.33435 19.7218 8.16983C19.292 8.00531 18.9313 7.69725 18.7007 7.29776C18.47 6.89826 18.3836 6.43185 18.456 5.97742C18.5284 5.52318 18.755 5.10879 19.0976 4.80428C19.3263 4.60155 19.4776 4.32537 19.526 4.02252C19.5745 3.71963 19.5169 3.4087 19.3631 3.14242L18.3289 1.35108C18.152 1.04469 17.8614 0.820679 17.521 0.728333C17.1806 0.635989 16.8183 0.682873 16.5138 0.858668C16.5138 0.858668 11.796 4.41944 9.22242 5.90529C6.64885 7.39114 1.20621 9.69653 1.20621 9.69653ZM11.6653 10.7546C11.7279 10.9628 11.7828 11.1452 11.8285 11.616C11.6604 11.6657 11.314 11.7101 10.8707 11.7668C10.1081 11.8645 9.05879 11.9988 8.13684 12.2604C7.99497 10.5811 8.79441 8.90464 10.33 8.01809C11.4734 7.3579 12.7925 7.27129 13.9619 7.66552C13.929 7.68998 13.8969 7.71564 13.8638 7.74204L13.849 7.75388C13.5255 8.01876 13.3342 8.20877 13.1888 8.35323C12.9885 8.55216 12.8752 8.66471 12.6233 8.7674C12.6011 8.77645 12.5737 8.78679 12.5422 8.79868C12.1979 8.92849 11.3606 9.24415 11.5114 10.1075C11.5666 10.4268 11.6181 10.598 11.6653 10.7546ZM14.1949 7.75323L14.1922 7.75189C14.1899 7.75392 14.1875 7.75577 14.1851 7.75761C14.1804 7.76131 14.1756 7.76501 14.1716 7.77011C14.1743 7.76911 14.1771 7.76793 14.1798 7.76667C14.054 7.87916 13.9353 7.99442 13.8245 8.10207C13.7413 8.18297 13.6624 8.25963 13.5882 8.32752C13.1648 8.71652 12.9244 9.34966 13.2168 10.0857C13.345 10.4077 13.4957 10.6061 13.6534 10.8137C13.8177 11.0301 13.9896 11.2564 14.1515 11.6428C14.6582 12.8541 13.9111 13.8865 13.4705 14.4952C13.43 14.5512 13.392 14.6037 13.3579 14.6523C13.1228 14.9849 12.5408 15.7734 12.0908 16.3788C13.0167 16.481 13.9816 16.3009 14.851 15.799C17.0129 14.5508 17.7577 11.7957 16.5151 9.64349C15.9854 8.72603 15.1796 8.06645 14.2626 7.70986C14.2522 7.71374 14.2418 7.71767 14.2299 7.72246L14.1949 7.75323ZM8.73668 14.1688C8.55584 13.8556 8.41627 13.5312 8.31667 13.2006C8.52519 13.2384 8.75035 13.2835 8.9958 13.3421C10.5479 13.7095 12.615 13.5137 12.809 12.4736L12.8139 12.475C12.7891 12.6834 12.6394 13.3835 11.7638 13.6993L11.6086 16.3263C10.4459 16.0442 9.38878 15.2983 8.73668 14.1688Z", fill: "url(#paint1_linear_1088_17348)" }),
         React.createElement("path", { d: "M15.6997 17.1172C12.4047 19.0196 7.84865 20.2652 5.98251 20.6502C6.53707 21.8068 7.27659 21.5163 7.6608 21.3715C9.42588 20.8398 13.5979 19.4057 16.1652 17.9234C19.3744 16.0706 22.5759 13.0424 23.4408 12.2125C24.1328 11.5486 23.9498 11.0309 23.688 10.7099C22.3982 12.053 18.9948 15.2148 15.6997 17.1172Z", fill: "#93A7C5" }),
         React.createElement("defs", null,
             React.createElement("linearGradient", { id: "paint0_linear_1088_17348", x1: "20.528", y1: "5.67108", x2: "3.11735", y2: "15.151", gradientUnits: "userSpaceOnUse" },
-                React.createElement("stop", { "stop-color": "#C8D4E6" }),
-                React.createElement("stop", { offset: "0.49518", "stop-color": "#E6F0FF" }),
-                React.createElement("stop", { offset: "1", "stop-color": "#C8D4E6" })),
+                React.createElement("stop", { stopColor: "#C8D4E6" }),
+                React.createElement("stop", { offset: "0.49518", stopColor: "#E6F0FF" }),
+                React.createElement("stop", { offset: "1", stopColor: "#C8D4E6" })),
             React.createElement("linearGradient", { id: "paint1_linear_1088_17348", x1: "20.528", y1: "5.67108", x2: "3.11735", y2: "15.151", gradientUnits: "userSpaceOnUse" },
-                React.createElement("stop", { "stop-color": "#C8D4E6" }),
-                React.createElement("stop", { offset: "0.49518", "stop-color": "#E6F0FF" }),
-                React.createElement("stop", { offset: "1", "stop-color": "#C8D4E6" })))));
+                React.createElement("stop", { stopColor: "#C8D4E6" }),
+                React.createElement("stop", { offset: "0.49518", stopColor: "#E6F0FF" }),
+                React.createElement("stop", { offset: "1", stopColor: "#C8D4E6" })))));
 };
 
 var Icon$n = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
-        React.createElement("g", { "clip-path": "url(#clip0_5648_36356)" },
+        React.createElement("g", { clipPath: "url(#clip0_5648_36356)" },
             React.createElement("path", { d: "M10.4 9.65532H8.45581L9.67183 2.13635H11.6159L10.4 9.65532Z", fill: "#00579F" }),
             React.createElement("path", { d: "M17.4478 2.32011C17.0643 2.16798 16.4561 2 15.704 2C13.7841 2 12.4321 3.02381 12.4238 4.48754C12.4078 5.56748 13.3918 6.1673 14.1277 6.52739C14.8798 6.89534 15.1355 7.13551 15.1355 7.46349C15.1279 7.9672 14.5277 8.1994 13.968 8.1994C13.1918 8.1994 12.7759 8.07969 12.1438 7.79944L11.8878 7.67931L11.6158 9.36715C12.0718 9.57489 12.9119 9.75924 13.7841 9.76732C15.824 9.76732 17.1521 8.75935 17.1678 7.19951C17.1756 6.34357 16.656 5.68772 15.5359 5.15179C14.8559 4.80776 14.4395 4.57578 14.4395 4.22377C14.4475 3.90377 14.7917 3.576 15.5593 3.576C16.1913 3.55995 16.6557 3.71187 17.0075 3.8639L17.1834 3.94374L17.4478 2.32011V2.32011Z", fill: "#00579F" }),
             React.createElement("path", { d: "M20.0317 6.99162C20.1918 6.55966 20.8079 4.88787 20.8079 4.88787C20.7998 4.90392 20.9677 4.44794 21.0637 4.16802L21.1996 4.8159C21.1996 4.8159 21.5677 6.61569 21.6477 6.99162C21.3439 6.99162 20.4157 6.99162 20.0317 6.99162ZM22.4316 2.13635H20.9277C20.464 2.13635 20.1117 2.27222 19.9116 2.7602L17.0238 9.65521H19.0637C19.0637 9.65521 19.3996 8.7272 19.4718 8.52733C19.6956 8.52733 21.68 8.52733 21.9679 8.52733C22.0237 8.7913 22.1999 9.65521 22.1999 9.65521H24L22.4316 2.13635V2.13635Z", fill: "#00579F" }),
             React.createElement("path", { d: "M6.83196 2.13635L4.92798 7.26357L4.71992 6.22371C4.36792 5.02385 3.26395 3.72022 2.03198 3.07202L3.77596 9.64735H5.83187L8.88776 2.13635H6.83196V2.13635Z", fill: "#00579F" }),
             React.createElement("path", { d: "M3.15998 2.13635H0.0320004L0 2.28828C2.44002 2.91223 4.05599 4.41626 4.71993 6.22403L4.03994 2.76839C3.92799 2.28817 3.58396 2.15219 3.15998 2.13635Z", fill: "#FAA61A" })),
-        React.createElement("g", { "clip-path": "url(#clip1_5648_36356)" },
+        React.createElement("g", { clipPath: "url(#clip1_5648_36356)" },
             React.createElement("path", { d: "M14.4011 13.1765H9.5882V21.8234H14.4011V13.1765Z", fill: "#FF5A00" }),
             React.createElement("path", { d: "M9.90858 17.5C9.90858 15.7432 10.7345 14.184 12.0018 13.1765C11.0691 12.4432 9.89256 12 8.60922 12C5.56909 12 3.10922 14.4599 3.10922 17.5C3.10922 20.5401 5.56909 23 8.60922 23C9.89256 23 11.0691 22.5568 12.0018 21.8235C10.7327 20.8303 9.90858 19.2568 9.90858 17.5Z", fill: "#EB001B" }),
             React.createElement("path", { d: "M20.8943 17.5C20.8943 20.5401 18.4345 23 15.3943 23C14.111 23 12.9345 22.5568 12.0018 21.8235C13.2851 20.8142 14.095 19.2568 14.095 17.5C14.095 15.7432 13.2691 14.184 12.0018 13.1765C12.9327 12.4432 14.1092 12 15.3926 12C18.4345 12 20.8943 14.4759 20.8943 17.5Z", fill: "#F79E1B" })),
@@ -2807,14 +2807,14 @@ var getIconColor = function (variant) {
     if (variant === void 0) { variant = variants$7.INFO; }
     switch (variant) {
         case variants$7.DANGER:
-            return 'secondary';
+            return "secondary";
         case variants$7.WARNING:
-            return 'warning';
+            return "warning";
         case variants$7.SUCCESS:
-            return 'success';
+            return "success";
         case variants$7.INFO:
         default:
-            return 'primary';
+            return "primary";
     }
 };
 var IconLabel = styled.div(templateObject_1$1h || (templateObject_1$1h = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background-color: ", ";\n  border-radius: 8px;\n  border: none;\n  padding: 12px;\n"], ["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background-color: ", ";\n  border-radius: 8px;\n  border: none;\n  padding: 12px;\n"])), getThemeColor);
@@ -3024,7 +3024,6 @@ var variants$5 = {
     BOOST: "boost",
     SELECT: "select",
     SELECT_LIGHT: "selectLight",
-    DROPDOWN: "dropdown",
     LIGHT_OUT: "lightOut",
     LIGHT: "light",
     TERTIARY: "tertiary",
@@ -3178,26 +3177,6 @@ var styleVariants$3 = (_b$7 = {},
         color: "primary",
         boxShadow: "none",
     },
-    _b$7[variants$5.SELECT] = {
-        backgroundColor: "dropDown",
-        color: "white",
-        ":hover:not(:disabled)": {
-            backgroundColor: "transparent",
-        },
-        ":active:not(:disabled)": {
-            backgroundColor: "transparent",
-        },
-    },
-    _b$7[variants$5.SELECT_LIGHT] = {
-        backgroundColor: "white",
-        color: "background",
-        ":hover:not(:disabled)": {
-            backgroundColor: "transparent",
-        },
-        ":active:not(:disabled)": {
-            backgroundColor: "transparent",
-        },
-    },
     _b$7);
 
 var getDisabledStyles$1 = function (_a) {
@@ -3242,7 +3221,7 @@ var Button = function (props) {
     var isDisabled = isLoading || disabled;
     var classNames = className ? [className] : [];
     var loadingText = loadingTitle !== null && loadingTitle !== void 0 ? loadingTitle : "Loading...";
-    var endIconElement = isLoading ? React.createElement(Icon$1E, { color: "contrast" }) : endIcon;
+    var endIconElement = isLoading ? (React.createElement(Icon$1E, { color: "contrast" })) : (endIcon);
     if (isLoading) {
         classNames.push("button--loading");
     }
@@ -4816,7 +4795,7 @@ Radio.defaultProps = {
 };
 var templateObject_1$N, templateObject_2$y, templateObject_3$n;
 
-var SliderIcon = "data:image/svg+xml,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20clip-path%3D%22url%28%23clip0_4728_34338%29%22%3E%3Cpath%20d%3D%22M0%2010C0%204.47715%204.47715%200%2010%200C15.5228%200%2020%204.47715%2020%2010C20%2015.5228%2015.5228%2020%2010%2020C4.47715%2020%200%2015.5228%200%2010Z%22%20fill%3D%22%231263F1%22%2F%3E%3Cg%20filter%3D%22url%28%23filter0_d_4728_34338%29%22%3E%3Crect%20x%3D%224%22%20y%3D%224%22%20width%3D%2212%22%20height%3D%2212%22%20rx%3D%226%22%20fill%3D%22white%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3Cdefs%3E%3Cfilter%20id%3D%22filter0_d_4728_34338%22%20x%3D%220%22%20y%3D%222%22%20width%3D%2220%22%20height%3D%2220%22%20filterUnits%3D%22userSpaceOnUse%22%20color-interpolation-filters%3D%22sRGB%22%3E%3CfeFlood%20flood-opacity%3D%220%22%20result%3D%22BackgroundImageFix%22%2F%3E%3CfeColorMatrix%20in%3D%22SourceAlpha%22%20type%3D%22matrix%22%20values%3D%220%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%20127%200%22%20result%3D%22hardAlpha%22%2F%3E%3CfeOffset%20dy%3D%222%22%2F%3E%3CfeGaussianBlur%20stdDeviation%3D%222%22%2F%3E%3CfeComposite%20in2%3D%22hardAlpha%22%20operator%3D%22out%22%2F%3E%3CfeColorMatrix%20type%3D%22matrix%22%20values%3D%220%200%200%200%200.027451%200%200%200%200%200.0862745%200%200%200%200%200.176471%200%200%200%200.32%200%22%2F%3E%3CfeBlend%20mode%3D%22normal%22%20in2%3D%22BackgroundImageFix%22%20result%3D%22effect1_dropShadow_4728_34338%22%2F%3E%3CfeBlend%20mode%3D%22normal%22%20in%3D%22SourceGraphic%22%20in2%3D%22effect1_dropShadow_4728_34338%22%20result%3D%22shape%22%2F%3E%3C%2Ffilter%3E%3CclipPath%20id%3D%22clip0_4728_34338%22%3E%3Crect%20width%3D%2220%22%20height%3D%2220%22%20fill%3D%22white%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3C%2Fsvg%3E";
+var SliderIcon = "data:image/svg+xml,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20clipPath%3D%22url%28%23clip0_4728_34338%29%22%3E%3Cpath%20d%3D%22M0%2010C0%204.47715%204.47715%200%2010%200C15.5228%200%2020%204.47715%2020%2010C20%2015.5228%2015.5228%2020%2010%2020C4.47715%2020%200%2015.5228%200%2010Z%22%20fill%3D%22%231263F1%22%2F%3E%3Cg%20filter%3D%22url%28%23filter0_d_4728_34338%29%22%3E%3Crect%20x%3D%224%22%20y%3D%224%22%20width%3D%2212%22%20height%3D%2212%22%20rx%3D%226%22%20fill%3D%22white%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3Cdefs%3E%3Cfilter%20id%3D%22filter0_d_4728_34338%22%20x%3D%220%22%20y%3D%222%22%20width%3D%2220%22%20height%3D%2220%22%20filterUnits%3D%22userSpaceOnUse%22%20colorInterpolationFilters%3D%22sRGB%22%3E%3CfeFlood%20floodOpacity%3D%220%22%20result%3D%22BackgroundImageFix%22%2F%3E%3CfeColorMatrix%20in%3D%22SourceAlpha%22%20type%3D%22matrix%22%20values%3D%220%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%20127%200%22%20result%3D%22hardAlpha%22%2F%3E%3CfeOffset%20dy%3D%222%22%2F%3E%3CfeGaussianBlur%20stdDeviation%3D%222%22%2F%3E%3CfeComposite%20in2%3D%22hardAlpha%22%20operator%3D%22out%22%2F%3E%3CfeColorMatrix%20type%3D%22matrix%22%20values%3D%220%200%200%200%200.027451%200%200%200%200%200.0862745%200%200%200%200%200.176471%200%200%200%200.32%200%22%2F%3E%3CfeBlend%20mode%3D%22normal%22%20in2%3D%22BackgroundImageFix%22%20result%3D%22effect1_dropShadow_4728_34338%22%2F%3E%3CfeBlend%20mode%3D%22normal%22%20in%3D%22SourceGraphic%22%20in2%3D%22effect1_dropShadow_4728_34338%22%20result%3D%22shape%22%2F%3E%3C%2Ffilter%3E%3CclipPath%20id%3D%22clip0_4728_34338%22%3E%3Crect%20width%3D%2220%22%20height%3D%2220%22%20fill%3D%22white%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3C%2Fsvg%3E";
 
 var Wrapper$a = styled.div(templateObject_1$M || (templateObject_1$M = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n"], ["\n  display: flex;\n  flex-direction: column;\n"])));
 var SliderContainer = styled(Box)(templateObject_2$x || (templateObject_2$x = __makeTemplateObject(["\n  position: relative;\n  top: 0;\n  left: 0;\n"], ["\n  position: relative;\n  top: 0;\n  left: 0;\n"])));
@@ -8055,7 +8034,7 @@ var Icon$1 = function (props) {
     return (React.createElement(Svg, __assign({}, props, { viewBox: "0 0 24 24" }),
         React.createElement("circle", { cx: "12", cy: "12", r: "12", fill: "#1FB75C" }),
         React.createElement("path", { d: "M19.8491 14.9964C19.95 14.4786 20 13.9514 20 13.4237C20.0016 12.3302 19.7837 11.2478 19.3595 10.2421C18.9353 9.23644 18.3136 8.32844 17.5321 7.57316C18.2075 8.25741 17.7142 9.47438 16.7566 9.47148C16.2053 9.47146 15.7277 9.04029 15.6651 8.48606L15.6442 8.48269C15.5818 7.54899 15.2989 6.64406 14.8193 5.84389C14.3013 4.9755 13.5703 4.25732 12.6972 3.75904C11.8241 3.26076 10.8385 2.99929 9.8361 3.00002C9.72599 2.9997 9.61683 3.00274 9.50862 3.00914C10.0799 3.70796 10.4303 4.56446 10.5143 5.46739C10.5279 5.60954 10.5347 5.75361 10.5347 5.89959C10.5357 6.49774 10.4192 7.09011 10.192 7.64232C10.1231 7.8106 10.0439 7.97435 9.95474 8.13262C9.9386 8.13838 9.92295 8.14463 9.90729 8.15135C9.85688 8.25239 9.79388 8.34648 9.71982 8.43131C9.59506 8.57529 9.44136 8.69063 9.26898 8.76964C9.09661 8.84865 8.90955 8.88949 8.72032 8.88945H8.70656C8.52676 8.8886 8.34907 8.85034 8.1845 8.77708C8.07521 8.72892 7.97299 8.66573 7.88077 8.58931C7.72655 8.4632 7.60219 8.30377 7.51678 8.12271C7.43138 7.94164 7.38709 7.74354 7.38719 7.54291C7.38721 7.31642 7.44378 7.0936 7.55164 6.89514C7.6595 6.69668 7.81515 6.529 8.00416 6.40767C6.51002 7.28125 5.33352 8.61835 4.64878 10.2211C4.21841 11.2281 3.99818 12.3269 4.00001 13.4237C4.00001 15.0506 4.55059 16.5933 5.78777 17.6897C6.657 18.4601 7.75364 18.9179 8.90684 18.9919C6.7809 18.792 5.33327 16.6448 5.33504 14.5825C5.33525 14.0305 5.43613 13.4833 5.63262 12.9684C5.98616 12.044 6.63059 11.263 7.46644 10.746C7.65312 10.6307 7.84792 10.5294 8.04925 10.443C8.14559 10.736 8.30358 11.0045 8.51235 11.2298C9.22309 11.997 10.4238 12.1165 11.2674 11.5127C11.9639 11.0142 12.299 10.1112 12.0985 9.27074C12.0904 9.23665 12.0819 9.20303 12.0719 9.16942C11.9913 8.89284 11.8561 8.63566 11.6745 8.4134C11.4929 8.19113 11.2687 8.00838 11.0155 7.87618C11.1655 7.85976 11.3163 7.85159 11.4673 7.85169C12.2687 7.85038 13.0538 8.0808 13.7301 8.51584C14.4943 9.00648 15.083 9.73182 15.4102 10.5856C15.4428 10.6704 15.4729 10.7569 15.5004 10.8449C15.6033 11.1767 15.6656 11.5201 15.686 11.8673L15.6978 11.8707C15.6955 11.8875 15.6955 11.9052 15.6955 11.9225C15.6955 12.0015 15.7108 12.0797 15.7407 12.1527C15.7706 12.2257 15.8144 12.292 15.8697 12.3478C15.9249 12.4037 15.9904 12.4479 16.0625 12.4781C16.1347 12.5083 16.2121 12.5238 16.2901 12.5238C16.3717 12.5238 16.4525 12.5068 16.5274 12.4737C16.6021 12.4407 16.6693 12.3923 16.7248 12.3317C16.8279 12.2206 16.8851 12.0739 16.8848 11.9216C16.8851 11.7892 16.8418 11.6604 16.7618 11.5556C17.2527 11.9561 17.6485 12.4628 17.9203 13.0385C18.1921 13.6141 18.3328 14.2442 18.3323 14.8821C18.3323 16.7679 17.0581 18.4167 15.349 18.9712C16.4096 18.8518 17.409 18.4076 18.2132 17.6977C18.8688 17.119 19.8491 15.9438 19.8491 14.9964Z", fill: "white" }),
-        React.createElement("path", { "fill-rule": "evenodd", "clip-rule": "evenodd", d: "M9.70131 13.0165H14.3049C14.545 13.0158 14.7829 13.0631 15.0049 13.1558C15.2269 13.2484 15.4286 13.3846 15.5984 13.5564C15.7682 13.7282 15.9028 13.9324 15.9943 14.1569C16.086 14.3815 16.1328 14.6223 16.1321 14.8653V17.1463C16.1318 17.6379 15.9388 18.1092 15.5952 18.4567C15.2517 18.8044 14.7859 18.9998 14.3001 19H14.1008C14.1019 18.6071 13.995 18.2218 13.7922 17.8868C13.5894 17.5519 13.2986 17.2805 12.9523 17.1031L12.4777 18.0492C12.6507 18.1374 12.7961 18.2726 12.8975 18.4397C12.9989 18.6068 13.0524 18.7991 13.0519 18.9952H9.70131C9.21553 18.995 8.74972 18.7996 8.40622 18.4519C8.06272 18.1044 7.86963 17.6331 7.86938 17.1415V14.8701C7.86963 14.3786 8.06272 13.9072 8.40622 13.5597C8.74972 13.2121 9.21553 13.0167 9.70131 13.0165ZM9.44378 16.1342C9.54799 16.1778 9.65969 16.2003 9.7725 16.2003L9.77108 16.1979C9.99874 16.1983 10.2172 16.1072 10.3786 15.9446C10.5399 15.7822 10.6309 15.5615 10.6315 15.3311C10.6315 15.217 10.6093 15.1039 10.5661 14.9985C10.523 14.893 10.4597 14.7972 10.3799 14.7165C10.3001 14.6358 10.2055 14.5717 10.1012 14.5281C9.99701 14.4844 9.88531 14.4619 9.7725 14.4619C9.65969 14.4619 9.54799 14.4844 9.44378 14.5281C9.33955 14.5717 9.24485 14.6358 9.16509 14.7165C9.08532 14.7972 9.02205 14.893 8.97888 14.9985C8.9357 15.1039 8.91348 15.217 8.91348 15.3311C8.91348 15.4452 8.9357 15.5583 8.97888 15.6638C9.02205 15.7692 9.08532 15.8651 9.16509 15.9457C9.24485 16.0265 9.33955 16.0905 9.44378 16.1342ZM13.905 16.1342C14.0092 16.1778 14.1209 16.2003 14.2337 16.2003L14.2323 16.1979C14.4599 16.1983 14.6784 16.1072 14.8398 15.9446C15.0011 15.7822 15.0921 15.5615 15.0927 15.3311C15.0927 15.217 15.0705 15.1039 15.0273 14.9985C14.9841 14.893 14.9209 14.7972 14.8411 14.7165C14.7613 14.6358 14.6666 14.5717 14.5624 14.5281C14.4582 14.4844 14.3465 14.4619 14.2337 14.4619C14.1209 14.4619 14.0092 14.4844 13.905 14.5281C13.8007 14.5717 13.706 14.6358 13.6263 14.7165C13.5465 14.7972 13.4832 14.893 13.4401 14.9985C13.3969 15.1039 13.3747 15.217 13.3747 15.3311C13.3747 15.4452 13.3969 15.5583 13.4401 15.6638C13.4832 15.7692 13.5465 15.8651 13.6263 15.9457C13.706 16.0265 13.8007 16.0905 13.905 16.1342Z", fill: "white" })));
+        React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M9.70131 13.0165H14.3049C14.545 13.0158 14.7829 13.0631 15.0049 13.1558C15.2269 13.2484 15.4286 13.3846 15.5984 13.5564C15.7682 13.7282 15.9028 13.9324 15.9943 14.1569C16.086 14.3815 16.1328 14.6223 16.1321 14.8653V17.1463C16.1318 17.6379 15.9388 18.1092 15.5952 18.4567C15.2517 18.8044 14.7859 18.9998 14.3001 19H14.1008C14.1019 18.6071 13.995 18.2218 13.7922 17.8868C13.5894 17.5519 13.2986 17.2805 12.9523 17.1031L12.4777 18.0492C12.6507 18.1374 12.7961 18.2726 12.8975 18.4397C12.9989 18.6068 13.0524 18.7991 13.0519 18.9952H9.70131C9.21553 18.995 8.74972 18.7996 8.40622 18.4519C8.06272 18.1044 7.86963 17.6331 7.86938 17.1415V14.8701C7.86963 14.3786 8.06272 13.9072 8.40622 13.5597C8.74972 13.2121 9.21553 13.0167 9.70131 13.0165ZM9.44378 16.1342C9.54799 16.1778 9.65969 16.2003 9.7725 16.2003L9.77108 16.1979C9.99874 16.1983 10.2172 16.1072 10.3786 15.9446C10.5399 15.7822 10.6309 15.5615 10.6315 15.3311C10.6315 15.217 10.6093 15.1039 10.5661 14.9985C10.523 14.893 10.4597 14.7972 10.3799 14.7165C10.3001 14.6358 10.2055 14.5717 10.1012 14.5281C9.99701 14.4844 9.88531 14.4619 9.7725 14.4619C9.65969 14.4619 9.54799 14.4844 9.44378 14.5281C9.33955 14.5717 9.24485 14.6358 9.16509 14.7165C9.08532 14.7972 9.02205 14.893 8.97888 14.9985C8.9357 15.1039 8.91348 15.217 8.91348 15.3311C8.91348 15.4452 8.9357 15.5583 8.97888 15.6638C9.02205 15.7692 9.08532 15.8651 9.16509 15.9457C9.24485 16.0265 9.33955 16.0905 9.44378 16.1342ZM13.905 16.1342C14.0092 16.1778 14.1209 16.2003 14.2337 16.2003L14.2323 16.1979C14.4599 16.1983 14.6784 16.1072 14.8398 15.9446C15.0011 15.7822 15.0921 15.5615 15.0927 15.3311C15.0927 15.217 15.0705 15.1039 15.0273 14.9985C14.9841 14.893 14.9209 14.7972 14.8411 14.7165C14.7613 14.6358 14.6666 14.5717 14.5624 14.5281C14.4582 14.4844 14.3465 14.4619 14.2337 14.4619C14.1209 14.4619 14.0092 14.4844 13.905 14.5281C13.8007 14.5717 13.706 14.6358 13.6263 14.7165C13.5465 14.7972 13.4832 14.893 13.4401 14.9985C13.3969 15.1039 13.3747 15.217 13.3747 15.3311C13.3747 15.4452 13.3969 15.5583 13.4401 15.6638C13.4832 15.7692 13.5465 15.8651 13.6263 15.9457C13.706 16.0265 13.8007 16.0905 13.905 16.1342Z", fill: "white" })));
 };
 
 var Icon = function (props) {
@@ -8314,7 +8293,7 @@ var UserBlock = function (_a) {
             pendingTransactions,
             " pending ",
             React.createElement(Icon$1y, { color: "white" }))) : (React.createElement(React.Fragment, null,
-            !isSm && !isXs && React.createElement(Icon$2V, __assign({}, iconProps, { mr: "8px" })),
+            !isSm && !isXs && (React.createElement(Icon$2V, __assign({}, iconProps, { mr: "8px" }))),
             accountEllipsis))))) : (React.createElement(Button, { scale: isSm || isXs ? "md" : "lg", onClick: function () {
             onPresentConnectModal();
         } },
