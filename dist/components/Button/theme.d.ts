@@ -139,24 +139,4 @@ export declare const styleVariants: {
         color: string;
         boxShadow: string;
     };
-    select: {
-        backgroundColor: string;
-        color: string;
-        ":hover:not(:disabled)": {
-            backgroundColor: string;
-        };
-        ":active:not(:disabled)": {
-            backgroundColor: string;
-        };
-    };
-    selectLight: {
-        backgroundColor: string;
-        color: string;
-        ":hover:not(:disabled)": {
-            backgroundColor: string;
-        };
-        ":active:not(:disabled)": {
-            backgroundColor: string;
-        };
-    };
 };
