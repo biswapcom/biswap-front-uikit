@@ -76,13 +76,13 @@ const Logo: React.FC<Props> = ({ href }) => {
   return (
     <Flex>
       {isAbsoluteUrl ? (
-        <>
-          <StyledLink href={href} aria-label="Biswap home page">
-            {innerLogo}
-          </StyledLink>
-          <Link href={href}>uikit Link</Link>
-          <a href={href}>base link</a>
-        </>
+        <StyledInnerButton
+          variant="light"
+          onClick={() => window.open(href)}
+          aria-label="Biswap home page"
+        >
+          {innerLogo}
+        </StyledInnerButton>
       ) : (
         <StyledInnerButton
           variant="light"
