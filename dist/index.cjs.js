@@ -2621,7 +2621,7 @@ var IconModule = /*#__PURE__*/Object.freeze({
     AutoRenewIcon: Icon$1E,
     AutoRenewSolidAnimateIcon: Icon$1D,
     AutoRenewOpacityAnimateIcon: Icon$1C,
-    AutoRenewIconAnimate: Icon$1B,
+    AutoRenewAnimateIcon: Icon$1B,
     RefreshIcon: Icon$1A,
     RefreshOpacityIcon: Icon$1z,
     RefreshSolidIcon: Icon$1y,
@@ -3234,7 +3234,7 @@ var Button = function (props) {
     var isDisabled = isLoading || disabled;
     var classNames = className ? [className] : [];
     var loadingText = loadingTitle !== null && loadingTitle !== void 0 ? loadingTitle : "Loading...";
-    var endIconElement = isLoading ? (React__default["default"].createElement(Icon$1E, { color: "contrast" })) : (endIcon);
+    var endIconElement = isLoading ? (React__default["default"].createElement(Icon$1B, { color: "contrast" })) : (endIcon);
     if (isLoading) {
         classNames.push("button--loading");
     }
@@ -8749,8 +8749,8 @@ exports.AuditProtectionOpacityIcon = Icon$M;
 exports.AuditProtectionSolidIcon = Icon$L;
 exports.AuditSearchOpacityIcon = Icon$J;
 exports.AuditSearchSolidIcon = Icon$K;
+exports.AutoRenewAnimateIcon = Icon$1B;
 exports.AutoRenewIcon = Icon$1E;
-exports.AutoRenewIconAnimate = Icon$1B;
 exports.AutoRenewOpacityAnimateIcon = Icon$1C;
 exports.AutoRenewOpacityIcon = Icon$1F;
 exports.AutoRenewSolidAnimateIcon = Icon$1D;

@@ -122,7 +122,7 @@ export { default as AutoRenewOpacityIcon } from "./Icons/AutoRenew/AutoRenewOpac
 export { default as AutoRenewIcon } from "./Icons/AutoRenew/AutoRenew";
 export { default as AutoRenewSolidAnimateIcon } from "./Icons/AutoRenew/AutoRenewSolidAnimate";
 export { default as AutoRenewOpacityAnimateIcon } from "./Icons/AutoRenew/AutoRenewOpacityAnimate";
-export { default as AutoRenewIconAnimate } from "./Icons/AutoRenew/AutoRenewAnimate";
+export { default as AutoRenewAnimateIcon } from "./Icons/AutoRenew/AutoRenewAnimate";
 export { default as RefreshIcon } from "./Icons/Refresh/Refresh";
 export { default as RefreshOpacityIcon } from "./Icons/Refresh/RefreshOpacity";
 export { default as RefreshSolidIcon } from "./Icons/Refresh/RefreshSolid";

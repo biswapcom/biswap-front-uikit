@@ -198,7 +198,7 @@ export { default as AutoRenewIcon } from "./Icons/AutoRenew/AutoRenew";
 //Animate
 export { default as AutoRenewSolidAnimateIcon } from "./Icons/AutoRenew/AutoRenewSolidAnimate";
 export { default as AutoRenewOpacityAnimateIcon } from "./Icons/AutoRenew/AutoRenewOpacityAnimate";
-export { default as AutoRenewIconAnimate } from "./Icons/AutoRenew/AutoRenewAnimate";
+export { default as AutoRenewAnimateIcon } from "./Icons/AutoRenew/AutoRenewAnimate";
 
 //Refresh
 export { default as RefreshIcon } from "./Icons/Refresh/Refresh";
