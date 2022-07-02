@@ -1,11 +1,12 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import styled, { css, DefaultTheme, keyframes } from "styled-components";
 
 // components
 import Flex from "../../../components/Box/Flex";
 import { LogoIcon, LogoWithTextIcon } from "../../../components/Svg";
 import { MenuContext } from "../context";
+import { Button } from "../../../components/Button/";
 
 interface Props {
   href: string;
@@ -51,12 +52,18 @@ const StyledLink = styled.a`
   ${CommonLinkStyles};
 `;
 
-const StyledInnerLink = styled(Link)`
+const StyledInnerButton = styled(Button)`
   ${CommonLinkStyles};
+  height: auto;
+  padding: 0;
+  border: none;
+  background-color: transparent;
 `;
 
 const Logo: React.FC<Props> = ({ href }) => {
   const { linkComponent } = useContext(MenuContext);
+  const { push } = useHistory()
+
   const isAbsoluteUrl = href.startsWith("http");
   const innerLogo = (
     <>
@@ -72,9 +79,13 @@ const Logo: React.FC<Props> = ({ href }) => {
           {innerLogo}
         </StyledLink>
       ) : (
-        <StyledInnerLink to={href} aria-label="Biswap home page">
+        <StyledInnerButton
+          variant="light"
+          onClick={() => push(href)}
+          aria-label="Biswap home page"
+        >
           {innerLogo}
-        </StyledInnerLink>
+        </StyledInnerButton>
       )}
     </Flex>
   );
