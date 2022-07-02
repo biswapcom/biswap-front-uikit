@@ -8206,11 +8206,11 @@ var ConnectModal = function (_a) {
             : connectors);
     }, [isMobile]);
     return (React__default["default"].createElement(Modal, { title: "Connect to a wallet", onDismiss: onDismiss },
-        React__default["default"].createElement(Box, null,
+        React__default["default"].createElement(Flex, { flexDirection: "column" },
             React__default["default"].createElement(WalletCardsWrapper, null, sortedConfig.map(function (entry) { return (React__default["default"].createElement(WalletCard, { key: entry.title, login: login, walletConfig: entry, onDismiss: onDismiss })); })),
             React__default["default"].createElement(HelpLink, { href: "https://docs.biswap.org/faq/biswap-platform#how-do-i-connect-my-wallet-to-biswap", external: true },
                 React__default["default"].createElement(Icon$2P, { color: "primary", mr: "6px" }),
-                "Learn how to connect"))));
+                React__default["default"].createElement(Text, { color: "primary", fontWeight: "400" }, "Learn how to connect")))));
 };
 var templateObject_1$a, templateObject_2$7;
 

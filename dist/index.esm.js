@@ -8193,11 +8193,11 @@ var ConnectModal = function (_a) {
             : connectors);
     }, [isMobile]);
     return (React.createElement(Modal, { title: "Connect to a wallet", onDismiss: onDismiss },
-        React.createElement(Box, null,
+        React.createElement(Flex, { flexDirection: "column" },
             React.createElement(WalletCardsWrapper, null, sortedConfig.map(function (entry) { return (React.createElement(WalletCard, { key: entry.title, login: login, walletConfig: entry, onDismiss: onDismiss })); })),
             React.createElement(HelpLink, { href: "https://docs.biswap.org/faq/biswap-platform#how-do-i-connect-my-wallet-to-biswap", external: true },
                 React.createElement(Icon$2P, { color: "primary", mr: "6px" }),
-                "Learn how to connect"))));
+                React.createElement(Text, { color: "primary", fontWeight: "400" }, "Learn how to connect")))));
 };
 var templateObject_1$a, templateObject_2$7;
 
