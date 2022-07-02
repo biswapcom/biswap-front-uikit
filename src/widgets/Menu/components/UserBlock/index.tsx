@@ -1,7 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import Button from "../../../../components/Button/Button";
-import { WalletOpacityIcon, RefreshSolidIcon } from "../../../../components/Svg";
+import {
+  WalletOpacityIcon,
+  RefreshSolidIcon,
+} from "../../../../components/Svg";
 import { useWalletModal } from "../../../WalletModal";
 import { Login } from "../../../WalletModal";
 import { useMatchBreakpoints } from "../../../../hooks";
@@ -80,7 +83,9 @@ const UserBlock: React.FC<Props> = ({
               </>
             ) : (
               <>
-                {!isSm && !isXs && <WalletOpacityIcon {...iconProps} mr="8px" />}
+                {!isSm && !isXs && (
+                  <WalletOpacityIcon {...iconProps} mr="8px" />
+                )}
                 {accountEllipsis}
               </>
             )}

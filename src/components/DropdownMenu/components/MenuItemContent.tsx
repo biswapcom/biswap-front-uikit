@@ -1,21 +1,27 @@
 import React, { FC } from "react";
-import styled, {DefaultTheme} from "styled-components";
+import styled, { DefaultTheme } from "styled-components";
 import IconComponent from "../../Svg/IconComponent";
 import { Flex } from "../../Box";
 import { Text } from "../../Text";
 import { MenuItemContentProps } from "../types";
 import { useMatchBreakpoints } from "../../../hooks";
 
-const getBG = ({ theme, leftIcon }:{ theme: DefaultTheme; leftIcon: string }) => {
+const getBG = ({
+  theme,
+  leftIcon,
+}: {
+  theme: DefaultTheme;
+  leftIcon: string;
+}) => {
   switch (leftIcon) {
     case "Market":
       return "linear-gradient(136.03deg, #1263F1 -7.36%, #F63D5E 131.43%)";
     case "GameFi":
-      return "radial-gradient(170.13% 152.5% at 50% -32.5%, #FF1C5E 4.9%, #00000D 58.29%, #1EBB95 100%)"
+      return "radial-gradient(170.13% 152.5% at 50% -32.5%, #FF1C5E 4.9%, #00000D 58.29%, #1EBB95 100%)";
     default:
       return theme.colors.primary;
   }
-}
+};
 
 const IconComponentWrap = styled.div`
   display: flex;
@@ -39,7 +45,7 @@ const MenuItemContent: FC<MenuItemContentProps> = ({
     <>
       {leftIcon && (
         <IconComponentWrap leftIcon={leftIcon}>
-          <IconComponent width={24} iconName={leftIcon} color="white"/>
+          <IconComponent width={24} iconName={leftIcon} color="white" />
         </IconComponentWrap>
       )}
       <Flex

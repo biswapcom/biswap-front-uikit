@@ -108,7 +108,7 @@ const BDayEvent: FC<Props> = ({
           flat={isMobile}
           href={pathWithEventParam}
         >
-          <GobletSolidIcon width="24px" mr="12px" color="white"/>
+          <GobletSolidIcon width="24px" mr="12px" color="white" />
           {buttonText}
         </StyledLink>
       ) : (
@@ -118,7 +118,7 @@ const BDayEvent: FC<Props> = ({
           scale="lg"
           onClick={onClickHandler}
         >
-          <GobletSolidIcon width="24px" mr="12px" color="white"/>
+          <GobletSolidIcon width="24px" mr="12px" color="white" />
           {buttonText}
         </StyledBtn>
       )}

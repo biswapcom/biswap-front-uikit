@@ -1,6 +1,11 @@
 import React from "react";
 import styled, { DefaultTheme } from "styled-components";
-import { CheckSolidIcon, WarningSolidIcon, CloseCircleSolidIcon, InfoSolidIcon } from "../Svg";
+import {
+  CheckSolidIcon,
+  WarningSolidIcon,
+  CloseCircleSolidIcon,
+  InfoSolidIcon,
+} from "../Svg";
 import { Text } from "../Text";
 import Flex from "../Box/Flex";
 import { AlertProps, variants } from "./types";
@@ -44,14 +49,14 @@ const getIcon = (variant: AlertProps["variant"] = variants.INFO) => {
 const getIconColor = (variant: AlertProps["variant"] = variants.INFO) => {
   switch (variant) {
     case variants.DANGER:
-      return 'secondary';
+      return "secondary";
     case variants.WARNING:
-      return 'warning';
+      return "warning";
     case variants.SUCCESS:
-      return 'success';
+      return "success";
     case variants.INFO:
     default:
-      return 'primary';
+      return "primary";
   }
 };
 

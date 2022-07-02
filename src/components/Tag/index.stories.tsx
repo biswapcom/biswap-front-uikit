@@ -36,7 +36,12 @@ export const Default: React.FC = () => {
               >
                 {`${capitalize(variant)} Icon Left`}
               </Tag>
-              <Tag variant={variant} outline endIcon={<MinusCircleSolidIcon />} mr="8px">
+              <Tag
+                variant={variant}
+                outline
+                endIcon={<MinusCircleSolidIcon />}
+                mr="8px"
+              >
                 {`${capitalize(variant)} Icon Right`}
               </Tag>
               <Tag

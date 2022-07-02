@@ -22,7 +22,11 @@ const Button = <E extends ElementType = "button">(
   const isDisabled = isLoading || disabled;
   const classNames = className ? [className] : [];
   const loadingText = loadingTitle ?? "Loading...";
-  const endIconElement = isLoading ? <AutoRenewIcon color="contrast" /> : endIcon;
+  const endIconElement = isLoading ? (
+    <AutoRenewIcon color="contrast" />
+  ) : (
+    endIcon
+  );
   if (isLoading) {
     classNames.push("button--loading");
   }
