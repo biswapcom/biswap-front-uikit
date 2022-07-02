@@ -25,6 +25,7 @@ export { default as ArrowUpForwardIcon } from "./Icons/Arrows/ArrowUpForward";
 export { default as ArrowSkipRightIcon } from "./Icons/Arrows/ArrowSkipRight";
 export { default as ArrowSkipLeftIcon } from "./Icons/Arrows/ArrowSkipLeft";
 export { default as ChevronUpDoubleIcon } from "./Icons/Arrows/ChevronUpDouble";
+export { default as ChevronUpTripleIcon } from "./Icons/Arrows/ChevronUpTriple";
 export { default as PlusIcon } from "./Icons/Plus/Plus";
 export { default as PlusCircleSolidIcon } from "./Icons/Plus/PlusCircleSolid";
 export { default as PlusCircleOpacityIcon } from "./Icons/Plus/PlusCircleOpacity";
@@ -122,7 +123,7 @@ export { default as AutoRenewOpacityIcon } from "./Icons/AutoRenew/AutoRenewOpac
 export { default as AutoRenewIcon } from "./Icons/AutoRenew/AutoRenew";
 export { default as AutoRenewSolidAnimateIcon } from "./Icons/AutoRenew/AutoRenewSolidAnimate";
 export { default as AutoRenewOpacityAnimateIcon } from "./Icons/AutoRenew/AutoRenewOpacityAnimate";
-export { default as AutoRenewIconAnimate } from "./Icons/AutoRenew/AutoRenewAnimate";
+export { default as AutoRenewAnimateIcon } from "./Icons/AutoRenew/AutoRenewAnimate";
 export { default as RefreshIcon } from "./Icons/Refresh/Refresh";
 export { default as RefreshOpacityIcon } from "./Icons/Refresh/RefreshOpacity";
 export { default as RefreshSolidIcon } from "./Icons/Refresh/RefreshSolid";

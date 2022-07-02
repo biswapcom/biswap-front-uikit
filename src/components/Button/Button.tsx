@@ -2,7 +2,8 @@ import React, { cloneElement, ElementType, isValidElement } from "react";
 import getExternalLinkProps from "../../util/getExternalLinkProps";
 import StyledButton from "./StyledButton";
 import { ButtonProps, scales, variants } from "./types";
-import { AutoRenewIcon } from "../Svg";
+import { AutoRenewAnimateIcon } from "../Svg";
+import AutoRenewAnimate from "../Svg/Icons/AutoRenew/AutoRenewAnimate";
 
 const Button = <E extends ElementType = "button">(
   props: ButtonProps<E>
@@ -23,7 +24,7 @@ const Button = <E extends ElementType = "button">(
   const classNames = className ? [className] : [];
   const loadingText = loadingTitle ?? "Loading...";
   const endIconElement = isLoading ? (
-    <AutoRenewIcon color="contrast" />
+    <AutoRenewAnimateIcon color="contrast" />
   ) : (
     endIcon
   );
