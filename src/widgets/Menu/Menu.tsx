@@ -140,7 +140,7 @@ const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
 
 const LogoWrapper = styled.div`
   position: relative;
-  z-index: 1000000000000;
+  z-index: 1000000000;
 `
 
 const Menu: React.FC<NavProps> = ({
