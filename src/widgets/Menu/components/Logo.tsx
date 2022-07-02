@@ -49,10 +49,6 @@ const CommonLinkStyles = ({ theme }: { theme: DefaultTheme }) => css`
   }
 `;
 
-const StyledLink = styled.a`
-  ${CommonLinkStyles};
-`;
-
 const StyledInnerButton = styled(Button)`
   ${CommonLinkStyles};
   height: auto;
@@ -76,18 +72,13 @@ const Logo: React.FC<Props> = ({ href }) => {
   return (
     <Flex>
       {isAbsoluteUrl ? (
-        <>
-          <StyledInnerButton
-            variant="light"
-            onClick={() => window.open(href, "_self")}
-            aria-label="Biswap home page"
-          >
-            {innerLogo}
-          </StyledInnerButton>
-          <Link href={href}>uikit link</Link>
-          <a href={href}>base link</a>
-        </>
-
+        <StyledInnerButton
+          variant="light"
+          onClick={() => window.open(href, "_self")}
+          aria-label="Biswap home page"
+        >
+          {innerLogo}
+        </StyledInnerButton>
       ) : (
         <StyledInnerButton
           variant="light"
