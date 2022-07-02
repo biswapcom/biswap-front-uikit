@@ -41,14 +41,6 @@ export const Default: React.FC = () => {
           <ButtonMenuItem>Button 4</ButtonMenuItem>
         </ButtonMenu>
       </Row>
-      <Row>
-        <ButtonMenu activeIndex={index1} onItemClick={handleClick1}>
-          <ButtonMenuItem>Button 1</ButtonMenuItem>
-          <ButtonMenuItem>Button 2</ButtonMenuItem>
-          <ButtonMenuItem>Button 3</ButtonMenuItem>
-          <ButtonMenuItem>Button 4</ButtonMenuItem>
-        </ButtonMenu>
-      </Row>
 
       <Row isLight>
         <ButtonMenu
@@ -63,11 +55,68 @@ export const Default: React.FC = () => {
           <ButtonMenuItem>Button 4</ButtonMenuItem>
         </ButtonMenu>
       </Row>
+
       <Row isLight>
         <ButtonMenu
-          activeIndex={index1}
-          onItemClick={handleClick1}
+          activeIndex={index}
+          onItemClick={handleClick}
           variant="selectLight"
+        >
+          <ButtonMenuItem>Button 1</ButtonMenuItem>
+          <ButtonMenuItem>Button 2</ButtonMenuItem>
+          <ButtonMenuItem>Button 3</ButtonMenuItem>
+          <ButtonMenuItem>Button 4</ButtonMenuItem>
+        </ButtonMenu>
+      </Row>
+
+      <Row isLight>
+        <ButtonMenu
+          activeIndex={index}
+          onItemClick={handleClick}
+          variant="selectLight"
+          scale="lg"
+        >
+          <ButtonMenuItem>Button 1</ButtonMenuItem>
+          <ButtonMenuItem>Button 2</ButtonMenuItem>
+          <ButtonMenuItem>Button 3</ButtonMenuItem>
+          <ButtonMenuItem>Button 4</ButtonMenuItem>
+        </ButtonMenu>
+      </Row>
+
+      <Row isLight>
+        <ButtonMenu
+          activeIndex={index}
+          onItemClick={handleClick}
+          variant="select"
+          scale="sm"
+        >
+          <ButtonMenuItem>Button 1</ButtonMenuItem>
+          <ButtonMenuItem>Button 2</ButtonMenuItem>
+          <ButtonMenuItem>Button 3</ButtonMenuItem>
+          <ButtonMenuItem>Button 4</ButtonMenuItem>
+        </ButtonMenu>
+      </Row>
+
+      <Row isLight>
+        <ButtonMenu
+          activeIndex={index}
+          onItemClick={handleClick}
+          variant="select"
+          scale="md"
+        >
+          <ButtonMenuItem>Button 1</ButtonMenuItem>
+          <ButtonMenuItem>Button 2</ButtonMenuItem>
+          <ButtonMenuItem>Button 3</ButtonMenuItem>
+          <ButtonMenuItem>Button 4</ButtonMenuItem>
+        </ButtonMenu>
+      </Row>
+
+      <Row isLight>
+        <ButtonMenu
+          activeIndex={index}
+          onItemClick={handleClick}
+          variant="select"
+          scale="lg"
         >
           <ButtonMenuItem>Button 1</ButtonMenuItem>
           <ButtonMenuItem>Button 2</ButtonMenuItem>
