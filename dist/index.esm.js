@@ -6541,6 +6541,11 @@ var Modal = function (_a) {
                 onBack && (React.createElement(ModalBackButton, { onBack: onBack, closeBtnColor: closeBtnColor })),
                 title && React.createElement(Heading, { color: "backgroundDark" }, title)),
             !hideCloseButton && React.createElement(ModalCloseButton, { onDismiss: onDismiss })),
+        React.createElement(Box, { p: bodyPadding !== null && bodyPadding !== void 0 ? bodyPadding : defaultBodyPadding },
+            React.createElement(Text, null, bodyPadding !== null && bodyPadding !== void 0 ? bodyPadding : defaultBodyPadding,
+                " BOX")),
+        React.createElement(Text, { p: bodyPadding !== null && bodyPadding !== void 0 ? bodyPadding : defaultBodyPadding }, bodyPadding !== null && bodyPadding !== void 0 ? bodyPadding : defaultBodyPadding,
+            " TEXT"),
         React.createElement(ModalBody$1, { p: bodyPadding !== null && bodyPadding !== void 0 ? bodyPadding : defaultBodyPadding }, children)));
 };
 
