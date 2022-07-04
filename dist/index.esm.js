@@ -6501,9 +6501,15 @@ var ModalHeader = styled.div(templateObject_1$w || (templateObject_1$w = __makeT
     return theme.mediaQueries.sm;
 });
 var ModalTitle = styled(Flex)(templateObject_2$o || (templateObject_2$o = __makeTemplateObject(["\n  align-items: center;\n  flex: 1;\n"], ["\n  align-items: center;\n  flex: 1;\n"])));
-var ModalBody$1 = styled(Flex)(templateObject_3$f || (templateObject_3$f = __makeTemplateObject(["\n  flex-direction: column;\n  //max-height: 90vh;\n  overflow-y: auto;\n  padding: 0 16px 24px;\n\n  ", " {\n    padding: 0 32px 32px;\n  }\n"], ["\n  flex-direction: column;\n  //max-height: 90vh;\n  overflow-y: auto;\n  padding: 0 16px 24px;\n\n  ", " {\n    padding: 0 32px 32px;\n  }\n"])), function (_a) {
+var ModalBody$1 = styled(Flex)(templateObject_3$f || (templateObject_3$f = __makeTemplateObject(["\n  flex-direction: column;\n  //max-height: 90vh;\n  overflow-y: auto;\n  padding: ", ";\n\n  ", " {\n    padding: ", ";\n  }\n"], ["\n  flex-direction: column;\n  //max-height: 90vh;\n  overflow-y: auto;\n  padding: ", ";\n\n  ", " {\n    padding: ", ";\n  }\n"])), function (_a) {
+    var p = _a.p;
+    return p !== null && p !== void 0 ? p : '0 16px 24px';
+}, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
+}, function (_a) {
+    var p = _a.p;
+    return p !== null && p !== void 0 ? p : '0 32px 32px';
 });
 var ModalCloseButton = function (_a) {
     var onDismiss = _a.onDismiss, closeBtnColor = _a.closeBtnColor;

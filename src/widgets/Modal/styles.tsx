@@ -21,14 +21,14 @@ export const ModalTitle = styled(Flex)`
   flex: 1;
 `;
 
-export const ModalBody = styled(Flex)`
+export const ModalBody = styled(Flex)<{ p?: string }>`
   flex-direction: column;
   //max-height: 90vh;
   overflow-y: auto;
-  padding: 0 16px 24px;
+  padding: ${({ p }) => p ?? '0 16px 24px'};
 
   ${({ theme }) => theme.mediaQueries.sm} {
-    padding: 0 32px 32px;
+    padding: ${({ p }) => p ?? '0 32px 32px'};
   }
 `;
 
