@@ -7527,7 +7527,7 @@ var DropdownMenuDivider = styled__default["default"].hr(templateObject_9$1 || (t
     var color = _a.color;
     return "\n    color: ".concat(color, ";\n    background-color: ").concat(color, ";\n    border-color: ").concat(color, ";\n");
 });
-var StyledDropdownMenu = styled__default["default"].div(templateObject_10 || (templateObject_10 = __makeTemplateObject(["\n  background-color: ", ";\n  border: 1px solid ", ";\n  border-radius: 16px;\n\n  padding: 24px;\n  pointer-events: auto;\n  width: 352px;\n  visibility: visible;\n  opacity: 1;\n  transition: opacity 250ms linear, visibility 350ms linear;\n  z-index: 1001;\n  box-shadow: 0 20px 36px -8px rgba(0, 26, 67, 0.24),\n    0px 1px 1px rgba(0, 0, 0, 0.05);\n\n  ", "\n\n  ", "\n"], ["\n  background-color: ", ";\n  border: 1px solid ", ";\n  border-radius: 16px;\n\n  padding: 24px;\n  pointer-events: auto;\n  width: 352px;\n  visibility: visible;\n  opacity: 1;\n  transition: opacity 250ms linear, visibility 350ms linear;\n  z-index: 1001;\n  box-shadow: 0 20px 36px -8px rgba(0, 26, 67, 0.24),\n    0px 1px 1px rgba(0, 0, 0, 0.05);\n\n  ", "\n\n  ", "\n"])), function (_a) {
+var StyledDropdownMenu = styled__default["default"](Grid)(templateObject_10 || (templateObject_10 = __makeTemplateObject(["\n  grid-template-columns: 1fr;\n\n  background-color: ", ";\n  border: 1px solid ", ";\n  border-radius: 16px;\n\n  padding: 24px;\n  pointer-events: auto;\n  width: 352px;\n  visibility: visible;\n  opacity: 1;\n  transition: opacity 250ms linear, visibility 350ms linear;\n  z-index: 1001;\n  box-shadow: 0 20px 36px -8px rgba(0, 26, 67, 0.24),\n    0px 1px 1px rgba(0, 0, 0, 0.05);\n\n  ", "\n\n  ", "\n"], ["\n  grid-template-columns: 1fr;\n\n  background-color: ", ";\n  border: 1px solid ", ";\n  border-radius: 16px;\n\n  padding: 24px;\n  pointer-events: auto;\n  width: 352px;\n  visibility: visible;\n  opacity: 1;\n  transition: opacity 250ms linear, visibility 350ms linear;\n  z-index: 1001;\n  box-shadow: 0 20px 36px -8px rgba(0, 26, 67, 0.24),\n    0px 1px 1px rgba(0, 0, 0, 0.05);\n\n  ", "\n\n  ", "\n"])), function (_a) {
     var theme = _a.theme;
     return theme.card.background;
 }, function (_a) {
@@ -7540,7 +7540,7 @@ var StyledDropdownMenu = styled__default["default"].div(templateObject_10 || (te
 }, function (_a) {
     var $isExtended = _a.$isExtended;
     return $isExtended &&
-        "\n      -webkit-column-count: 2;\n      -moz-column-count: 2;\n      column-count: 2;\n      -webkit-perspective:1;\n      width: 680px;\n  ";
+        "\n    grid-template-columns: repeat(2, 1fr);\n    width: 680px;\n  ";
 });
 styled__default["default"](Text)(templateObject_11 || (templateObject_11 = __makeTemplateObject(["\n  border-radius: ", ";\n  padding: 0 8px;\n  border: 2px solid ", ";\n  box-shadow: none;\n  color: ", ";\n  margin-left: 8px;\n"], ["\n  border-radius: ", ";\n  padding: 0 8px;\n  border: 2px solid ", ";\n  box-shadow: none;\n  color: ", ";\n  margin-left: 8px;\n"])), function (_a) {
     var theme = _a.theme;
@@ -7811,7 +7811,7 @@ var MobileMenu = function (_a) {
                                             : "backgroundDark" }, label),
                                     !isTablet && (React__default["default"].createElement(IconComponent, { iconName: opened ? "ChevronUp" : "ChevronDown", color: opened ? "primary" : "rgb(8, 22, 46)" })))));
                             } },
-                            React__default["default"].createElement(Grid, { gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)", gridColumnGap: 16, mt: 16 }, innerItems.map(function (_a, itemItem) {
+                            React__default["default"].createElement(Grid, { gridTemplateColumns: isMobile ? "1fr" : "repeat(2, 1fr)", gridColumnGap: 16, mt: 16 }, innerItems.map(function (_a, itemItem) {
                                 var _b = _a.type, type = _b === void 0 ? exports.DropdownMenuItemType.INTERNAL_LINK : _b, label = _a.label, rightIconFill = _a.rightIconFill, description = _a.description, _c = _a.href, href = _c === void 0 ? "/" : _c, status = _a.status, _d = _a.leftIcon, leftIcon = _d === void 0 ? "" : _d, _e = _a.rightIcon, rightIcon = _e === void 0 ? "" : _e, _f = _a.links, links = _f === void 0 ? [] : _f, bannerRenderer = _a.bannerRenderer, itemProps = __rest(_a, ["type", "label", "rightIconFill", "description", "href", "status", "leftIcon", "rightIcon", "links", "bannerRenderer"]);
                                 var getMenuItemContent = function (icon) {
                                     if (icon === void 0) { icon = rightIcon; }
