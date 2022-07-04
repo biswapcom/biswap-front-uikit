@@ -11,6 +11,7 @@ import {
   ModalBackButton,
 } from "./styles";
 import { ModalProps } from "./types";
+import {useMatchBreakpoints} from "../../hooks";
 
 const Modal: React.FC<ModalProps> = ({
   title,
@@ -18,7 +19,7 @@ const Modal: React.FC<ModalProps> = ({
   onBack,
   children,
   hideCloseButton = false,
-  bodyPadding = "24px",
+  bodyPadding,
   minWidth = "320px",
   modalBackground = "white",
   closeBtnColor,
@@ -26,6 +27,9 @@ const Modal: React.FC<ModalProps> = ({
   ...props
 }) => {
   const theme = useTheme();
+  const { isMobile } = useMatchBreakpoints()
+  const defaultBodyPadding = isMobile ? "0 16px 24px" : "0 32px 32px"
+
   return (
     <ModalContainer
       minWidth={minWidth}
@@ -45,7 +49,7 @@ const Modal: React.FC<ModalProps> = ({
         </ModalTitle>
         {!hideCloseButton && <ModalCloseButton onDismiss={onDismiss} />}
       </ModalHeader>
-      <ModalBody p={bodyPadding}>{children}</ModalBody>
+      <ModalBody p={bodyPadding ?? defaultBodyPadding}>{children}</ModalBody>
     </ModalContainer>
   );
 };
