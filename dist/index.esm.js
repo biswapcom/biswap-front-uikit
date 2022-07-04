@@ -6501,7 +6501,16 @@ var ModalHeader = styled.div(templateObject_1$w || (templateObject_1$w = __makeT
     return theme.mediaQueries.sm;
 });
 var ModalTitle = styled(Flex)(templateObject_2$o || (templateObject_2$o = __makeTemplateObject(["\n  align-items: center;\n  flex: 1;\n"], ["\n  align-items: center;\n  flex: 1;\n"])));
-var ModalBody$1 = styled(Flex)(templateObject_3$f || (templateObject_3$f = __makeTemplateObject(["\n  flex-direction: column;\n  overflow-y: auto;\n\n  ", "\n"], ["\n  flex-direction: column;\n  overflow-y: auto;\n\n  ", "\n"])), space);
+var ModalBody$1 = styled(Flex)(templateObject_3$f || (templateObject_3$f = __makeTemplateObject(["\n  flex-direction: column;\n  //max-height: 90vh;\n  overflow-y: auto;\n  padding: ", ";\n  \n  ", " {\n    padding: ", ";\n  }\n"], ["\n  flex-direction: column;\n  //max-height: 90vh;\n  overflow-y: auto;\n  padding: ", ";\n  \n  ", " {\n    padding: ", ";\n  }\n"])), function (_a) {
+    var bodyPadding = _a.bodyPadding;
+    return bodyPadding !== null && bodyPadding !== void 0 ? bodyPadding : "0 16px 24px";
+}, function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.sm;
+}, function (_a) {
+    var bodyPadding = _a.bodyPadding;
+    return bodyPadding !== null && bodyPadding !== void 0 ? bodyPadding : "0 32px 32px";
+});
 var ModalCloseButton = function (_a) {
     var onDismiss = _a.onDismiss, closeBtnColor = _a.closeBtnColor;
     return (React.createElement(IconButton, { variant: "text", onClick: onDismiss, "aria-label": "Close the dialog" },
@@ -6541,7 +6550,7 @@ var Modal = function (_a) {
                 onBack && (React.createElement(ModalBackButton, { onBack: onBack, closeBtnColor: closeBtnColor })),
                 title && React.createElement(Heading, { color: "backgroundDark" }, title)),
             !hideCloseButton && React.createElement(ModalCloseButton, { onDismiss: onDismiss })),
-        React.createElement(ModalBody$1, { p: bodyPadding !== null && bodyPadding !== void 0 ? bodyPadding : defaultBodyPadding },
+        React.createElement(ModalBody$1, { bodyPadding: bodyPadding !== null && bodyPadding !== void 0 ? bodyPadding : defaultBodyPadding },
             React.createElement(Box, { p: bodyPadding !== null && bodyPadding !== void 0 ? bodyPadding : defaultBodyPadding },
                 React.createElement(Text, null, bodyPadding !== null && bodyPadding !== void 0 ? bodyPadding : defaultBodyPadding,
                     " BOX")),
