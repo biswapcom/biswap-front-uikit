@@ -21,15 +21,9 @@ export const ModalTitle = styled(Flex)`
   flex: 1;
 `;
 
-export const ModalBody = styled(Flex)<{ p?: string }>`
+export const ModalBody = styled(Flex)`
   flex-direction: column;
-  //max-height: 90vh;
   overflow-y: auto;
-  padding: ${({ p }) => p ?? '0 16px 24px'};
-
-  ${({ theme }) => theme.mediaQueries.sm} {
-    padding: ${({ p }) => p ?? '0 32px 32px'};
-  }
 `;
 
 export const ModalCloseButton: React.FC<{
