@@ -43,3 +43,17 @@ export declare const menuStyleVariants: {
         };
     };
 };
+export declare const menuIconScaleVariants: {
+    lg: {
+        width: string;
+        marginRight: string;
+    };
+    md: {
+        width: string;
+        marginRight: string;
+    };
+    sm: {
+        width: string;
+        marginRight: string;
+    };
+};

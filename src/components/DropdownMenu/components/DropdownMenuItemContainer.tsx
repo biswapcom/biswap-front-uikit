@@ -72,7 +72,7 @@ const DropdownMenuItemContainer: FC<DropdownMenuItemContainerProps> = ({
           }}
           {...itemProps}
         >
-          {getMenuItemContent("ArrowForward")}
+          {getMenuItemContent("ArrowRight")}
         </DropdownInternalMenuItem>
       )}
       {type === DropdownMenuItemType.EXTERNAL_LINK && (

@@ -6,7 +6,7 @@ import styled from "styled-components";
 import Box from "../Box/Box";
 import Flex from "../Box/Flex";
 import { Heading } from "../Heading";
-import { AddIcon, AutoRenewIcon, LogoIcon } from "../Svg";
+import { PlusIcon, AutoRenewIcon, LogoIcon } from "../Svg";
 import IconButton from "./IconButton";
 import Button from "./Button";
 import { ExpandableButton, ExpandableLabel } from "./ExpandableButton";
@@ -59,7 +59,6 @@ export const Default: React.FC = () => {
         {Object.values(scales).map((scale) => {
           return (
             <Button
-              isLoading
               key="md"
               variant="primary"
               scale={scale}
@@ -79,6 +78,19 @@ export const Default: React.FC = () => {
         {Object.values(baseBtn).map((variant) => {
           return (
             <Button key={variant} variant={variant} scale="lg" mr="8px">
+              {`${camelCase(variant)}`}
+            </Button>
+          );
+        })}
+      </Box>
+
+      <Box mb="48px">
+        <Heading color="white" mb="24px">
+          Loading variants
+        </Heading>
+        {Object.values(baseBtn).map((variant) => {
+          return (
+            <Button isLoading key={variant} variant={variant} scale="lg" mr="8px">
               {`${camelCase(variant)}`}
             </Button>
           );
@@ -267,7 +279,7 @@ export const Variants: React.FC = () => {
             <LogoIcon />
           </IconButton>
           <IconButton variant="primary">
-            <AddIcon />
+            <PlusIcon />
           </IconButton>
         </Row>
         <Row>
@@ -275,7 +287,7 @@ export const Variants: React.FC = () => {
             <LogoIcon />
           </IconButton>
           <IconButton scale="sm" variant="success">
-            <AddIcon color="currentColor" />
+            <PlusIcon color="currentColor" />
           </IconButton>
         </Row>
       </BrowserRouter>

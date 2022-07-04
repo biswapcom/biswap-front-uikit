@@ -40,10 +40,14 @@ const getBadgeBg = ({ badgeType = "light", theme }: StyledBadgeProps) => {
     return getRgba(theme.colors.primary, 0.16);
   }
 
+  if (badgeType === "light") {
+    return theme.colors.disabled;
+  }
+
   return theme.colors.inputSecondary;
 };
 
-const getBadgeColor = ({ badgeType = "active", theme }: StyledBadgeProps) => {
+const getBadgeColor = ({ badgeType = "light", theme }: StyledBadgeProps) => {
   if (badgeType === "active") {
     return theme.colors.success;
   }
@@ -58,6 +62,10 @@ const getBadgeColor = ({ badgeType = "active", theme }: StyledBadgeProps) => {
 
   if (badgeType === "core") {
     return theme.colors.primary;
+  }
+
+  if (badgeType === "light") {
+    return theme.colors.background;
   }
 
   if (

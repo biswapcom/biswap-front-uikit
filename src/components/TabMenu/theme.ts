@@ -49,3 +49,18 @@ export const menuStyleVariants = {
     },
   },
 };
+
+export const menuIconScaleVariants = {
+  [tabsScales.LG]: {
+    width: "24px",
+    marginRight: "10px",
+  },
+  [tabsScales.MD]: {
+    width: "20px",
+    marginRight: "8px",
+  },
+  [tabsScales.SM]: {
+    width: "16px",
+    marginRight: "6px",
+  },
+};
