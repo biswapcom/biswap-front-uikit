@@ -6541,12 +6541,13 @@ var Modal = function (_a) {
                 onBack && (React.createElement(ModalBackButton, { onBack: onBack, closeBtnColor: closeBtnColor })),
                 title && React.createElement(Heading, { color: "backgroundDark" }, title)),
             !hideCloseButton && React.createElement(ModalCloseButton, { onDismiss: onDismiss })),
-        React.createElement(Box, { p: bodyPadding !== null && bodyPadding !== void 0 ? bodyPadding : defaultBodyPadding },
-            React.createElement(Text, null, bodyPadding !== null && bodyPadding !== void 0 ? bodyPadding : defaultBodyPadding,
-                " BOX")),
-        React.createElement(Text, { p: bodyPadding !== null && bodyPadding !== void 0 ? bodyPadding : defaultBodyPadding }, bodyPadding !== null && bodyPadding !== void 0 ? bodyPadding : defaultBodyPadding,
-            " TEXT"),
-        React.createElement(ModalBody$1, { p: bodyPadding !== null && bodyPadding !== void 0 ? bodyPadding : defaultBodyPadding }, children)));
+        React.createElement(ModalBody$1, { p: bodyPadding !== null && bodyPadding !== void 0 ? bodyPadding : defaultBodyPadding },
+            React.createElement(Box, { p: bodyPadding !== null && bodyPadding !== void 0 ? bodyPadding : defaultBodyPadding },
+                React.createElement(Text, null, bodyPadding !== null && bodyPadding !== void 0 ? bodyPadding : defaultBodyPadding,
+                    " BOX")),
+            React.createElement(Text, { p: bodyPadding !== null && bodyPadding !== void 0 ? bodyPadding : defaultBodyPadding }, bodyPadding !== null && bodyPadding !== void 0 ? bodyPadding : defaultBodyPadding,
+                " TEXT"),
+            children)));
 };
 
 var StyledModal = styled.div(templateObject_1$v || (templateObject_1$v = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  background-color: ", ";\n  border-radius: 16px 16px 0 0;\n  width: 100%;\n  z-index: ", ";\n  overflow-y: auto;\n  position: relative;\n  top: 0;\n  left: 0;\n  ", " {\n    width: auto;\n    min-width: 416px;\n    max-width: 100%;\n    border-radius: 16px;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  background-color: ", ";\n  border-radius: 16px 16px 0 0;\n  width: 100%;\n  z-index: ", ";\n  overflow-y: auto;\n  position: relative;\n  top: 0;\n  left: 0;\n  ", " {\n    width: auto;\n    min-width: 416px;\n    max-width: 100%;\n    border-radius: 16px;\n  }\n"])), function (_a) {

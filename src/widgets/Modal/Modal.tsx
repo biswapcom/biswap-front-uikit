@@ -51,11 +51,13 @@ const Modal: React.FC<ModalProps> = ({
         </ModalTitle>
         {!hideCloseButton && <ModalCloseButton onDismiss={onDismiss} />}
       </ModalHeader>
-      <Box  p={bodyPadding ?? defaultBodyPadding}>
-        <Text>{bodyPadding ?? defaultBodyPadding} BOX</Text>
-      </Box>
-      <Text  p={bodyPadding ?? defaultBodyPadding}>{bodyPadding ?? defaultBodyPadding} TEXT</Text>
-      <ModalBody p={bodyPadding ?? defaultBodyPadding}>{children}</ModalBody>
+      <ModalBody p={bodyPadding ?? defaultBodyPadding}>
+        <Box  p={bodyPadding ?? defaultBodyPadding}>
+          <Text>{bodyPadding ?? defaultBodyPadding} BOX</Text>
+        </Box>
+        <Text  p={bodyPadding ?? defaultBodyPadding}>{bodyPadding ?? defaultBodyPadding} TEXT</Text>
+        {children}
+      </ModalBody>
     </ModalContainer>
   );
 };
