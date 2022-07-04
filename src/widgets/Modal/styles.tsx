@@ -5,6 +5,7 @@ import { Box } from "../../components/Box";
 import { ArrowLeftIcon, CloseIcon } from "../../components/Svg";
 import { IconButton } from "../../components/Button";
 import { ModalProps } from "./types";
+import {space} from "styled-system";
 
 export const ModalHeader = styled.div`
   display: flex;
@@ -24,6 +25,8 @@ export const ModalTitle = styled(Flex)`
 export const ModalBody = styled(Flex)`
   flex-direction: column;
   overflow-y: auto;
+
+  ${space}
 `;
 
 export const ModalCloseButton: React.FC<{

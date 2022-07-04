@@ -6514,7 +6514,7 @@ var ModalHeader = styled__default["default"].div(templateObject_1$w || (template
     return theme.mediaQueries.sm;
 });
 var ModalTitle = styled__default["default"](Flex)(templateObject_2$o || (templateObject_2$o = __makeTemplateObject(["\n  align-items: center;\n  flex: 1;\n"], ["\n  align-items: center;\n  flex: 1;\n"])));
-var ModalBody$1 = styled__default["default"](Flex)(templateObject_3$f || (templateObject_3$f = __makeTemplateObject(["\n  flex-direction: column;\n  overflow-y: auto;\n"], ["\n  flex-direction: column;\n  overflow-y: auto;\n"])));
+var ModalBody$1 = styled__default["default"](Flex)(templateObject_3$f || (templateObject_3$f = __makeTemplateObject(["\n  flex-direction: column;\n  overflow-y: auto;\n\n  ", "\n"], ["\n  flex-direction: column;\n  overflow-y: auto;\n\n  ", "\n"])), styledSystem.space);
 var ModalCloseButton = function (_a) {
     var onDismiss = _a.onDismiss, closeBtnColor = _a.closeBtnColor;
     return (React__default["default"].createElement(IconButton, { variant: "text", onClick: onDismiss, "aria-label": "Close the dialog" },
