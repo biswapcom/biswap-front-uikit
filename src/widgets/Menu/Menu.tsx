@@ -7,7 +7,7 @@ import { Box } from "../../components/Box";
 import Flex from "../../components/Box/Flex";
 import Footer from "./components/Footer/Footer";
 import MenuItems from "../../components/MenuItems/MenuItems";
-// import Logo from "./components/Logo";
+import Logo from "./components/Logo";
 import UserBlock from "./components/UserBlock";
 import BDayEvent from "./components/UserEvents/BDayEvent";
 import { WarningSolidIcon } from "../../components/Svg";
@@ -288,7 +288,7 @@ const Menu: React.FC<NavProps> = ({
           )}
           <StyledNav menuBg={menuBg} isMobileMenuOpened={isMobileMenuOpened}>
             <Flex>
-              {/*<Logo href={homeLink?.href ?? "/"} />*/}
+              <Logo href={homeLink?.href ?? "/"} />
               <MenuItems
                 items={links}
                 activeItem={activeItem}
