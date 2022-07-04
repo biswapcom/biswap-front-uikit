@@ -1,6 +1,6 @@
 import React from "react";
 import { Flex, Box } from "../Box";
-import { SwapVertIcon } from "../Svg";
+import { SwapVerticalSolidIcon } from "../Svg";
 import Text from "../Text/Text";
 import {
   StyledBalanceInput,
@@ -59,7 +59,7 @@ const BalanceInput: React.FC<BalanceInputProps> = ({
               variant="text"
               onClick={switchEditingUnits}
             >
-              <SwapVertIcon color="textSubtle" />
+              <SwapVerticalSolidIcon color="textSubtle" />
             </SwitchUnitsButton>
           </Flex>
         )}

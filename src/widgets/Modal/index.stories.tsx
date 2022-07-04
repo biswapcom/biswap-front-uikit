@@ -20,7 +20,7 @@ const CustomModal: React.FC<ModalProps> = ({ title, onDismiss, ...props }) => (
 
 export const Default: React.FC = () => {
   const theme = useTheme();
-  const [onPresent1] = useModal(<CustomModal title="Modal 1" />);
+  const [onPresent1] = useModal(<CustomModal p='8px' bodyPadding='0' title="Modal 1" />);
   const [onPresent2] = useModal(<CustomModal title="Modal 2" />);
   const [onPresent3] = useModal(<CustomModal title="Modal 3" />);
   return (

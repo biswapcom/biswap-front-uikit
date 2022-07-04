@@ -37,12 +37,12 @@ export const links: MenuItemsType[] = [
       {
         label: "Swap",
         href: "/swap",
-        leftIcon: "Swap",
+        leftIcon: "ExchangeOpacity",
         description: "Item description",
       },
       {
         label: "Expert Trade",
-        leftIcon: "ExpertTrade",
+        leftIcon: "ExpertModeOpacity",
         // rightIcon: "ArrowUpForward",
         rightIconFill: "primary",
         description: "Item description",
@@ -51,7 +51,7 @@ export const links: MenuItemsType[] = [
       {
         label: "Liquidity",
         href: "/pool",
-        leftIcon: "Liquidity",
+        leftIcon: "LiquidityOpacity",
         description: "Item description",
       },
     ],
@@ -63,13 +63,13 @@ export const links: MenuItemsType[] = [
       {
         label: "Farms",
         href: "/pool",
-        leftIcon: "Farms",
+        leftIcon: "FarmsOpacity",
         description: "Item description",
       },
       {
         label: "LaunchPools",
         href: "/pool",
-        leftIcon: "Launch",
+        leftIcon: "PoolsOpacity",
         description: "Item description description very long long long",
         type: DropdownMenuItemType.CONTAINER,
         links: [
@@ -88,13 +88,13 @@ export const links: MenuItemsType[] = [
       {
         label: "Referral Program",
         href: "/pool",
-        leftIcon: "Referral",
+        leftIcon: "ReferralOpacity",
         description: "Item description",
       },
       {
         label: "IDO",
         href: "/pool",
-        leftIcon: "IdoMenu",
+        leftIcon: "IdoOpacity",
         description: "Item description",
       },
     ],
@@ -106,7 +106,7 @@ export const links: MenuItemsType[] = [
       {
         label: "Lottery",
         href: "/pool",
-        leftIcon: "Lottery",
+        leftIcon: "LotteryOpacity",
         description: "Item description",
         target: "_blank",
         mobileTarget: "_self",
@@ -114,7 +114,7 @@ export const links: MenuItemsType[] = [
       {
         label: "Competitions",
         href: "/pool",
-        leftIcon: "Competitions",
+        leftIcon: "GobletOpacity",
         description: "Item description",
       },
     ],
@@ -126,7 +126,7 @@ export const links: MenuItemsType[] = [
       {
         label: "NFT Launchpad",
         href: "/pool",
-        leftIcon: "NftLaunch",
+        leftIcon: "LaunchpadOpacity",
         description: "Item description",
         type: DropdownMenuItemType.EXTERNAL_LINK,
         target: "_blank",
@@ -135,7 +135,7 @@ export const links: MenuItemsType[] = [
       {
         label: "NFT Earn",
         href: "/pool",
-        leftIcon: "NftEarn",
+        leftIcon: "NFTEarnOpacity",
         description: "Item description",
         type: DropdownMenuItemType.EXTERNAL_LINK,
         target: "_self",
@@ -154,52 +154,52 @@ export const links: MenuItemsType[] = [
     items: [
       {
         label: "Analytics",
-        leftIcon: "Analytics",
+        leftIcon: "AnalyticsOpacity",
         href: "https://google.com",
         description: "Item description",
       },
       {
         label: "Voting",
-        leftIcon: "Voting",
+        leftIcon: "VotingOpacity",
         href: "/pool",
         description: "Item description",
       },
       {
         label: "About BSW",
-        leftIcon: "AboutBSW",
+        leftIcon: "AboutBSWOpacity",
         href: "/pool",
         description: "Item description",
       },
       {
         label: "Team",
-        leftIcon: "Team",
+        leftIcon: "TeamOpacity",
         href: "/pool",
         description: "Item description",
       },
       {
         label: "$10M Program",
-        leftIcon: "TenProgram",
+        leftIcon: "Program10mOpacity",
         href: "/pool",
         description: "Item description",
         type: DropdownMenuItemType.EXTERNAL_LINK,
       },
       {
         label: "News",
-        leftIcon: "News",
+        leftIcon: "NewsOpacity",
         href: "/pool",
         description: "Item description",
         type: DropdownMenuItemType.EXTERNAL_LINK,
       },
       {
         label: "Docs",
-        leftIcon: "Docs",
+        leftIcon: "DocsOpacity",
         href: "/pool",
         description: "Item description",
         type: DropdownMenuItemType.EXTERNAL_LINK,
       },
       {
         label: "Audit",
-        leftIcon: "Audit",
+        leftIcon: "AuditProtectionOpacity",
         href: "/pool",
         description: "Item description",
         type: DropdownMenuItemType.EXTERNAL_LINK,
@@ -213,14 +213,14 @@ export const links: MenuItemsType[] = [
   {
     label: "Biswap Products", // if changed label, also should be changed in Accordion component condition
     href: "/",
-    icon: "Products",
+    icon: "ProductsOpacity",
     isMobileNav: true,
     showItemsOnMobile: true,
     items: [
       {
         label: "Marketplace",
         href: "/pool",
-        leftIcon: "MarketMenu",
+        leftIcon: "Market",
         description: "Item description",
         type: DropdownMenuItemType.EXTERNAL_LINK,
       },

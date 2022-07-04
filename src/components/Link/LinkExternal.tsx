@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "./Link";
 import { LinkProps } from "./types";
-import ArrowUpForward from "../Svg/Icons/ArrowUpForward";
+import ArrowUpForward from "../Svg/Icons/Arrows/ArrowUpForward";
 
 const LinkExternal: React.FC<LinkProps> = ({ children, ...props }) => {
   return (

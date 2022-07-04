@@ -8,12 +8,9 @@ import Flex from "../../components/Box/Flex";
 import Footer from "./components/Footer/Footer";
 import MenuItems from "../../components/MenuItems/MenuItems";
 import Logo from "./components/Logo";
-// import {BSCIcon, AvalancheIcon} from "../../components/Svg";
 import UserBlock from "./components/UserBlock";
 import BDayEvent from "./components/UserEvents/BDayEvent";
-import { CloseIcon, ImgWarnIcon } from "../../components/Svg";
-// import {Button} from "../../components/Button";
-// import NetworkSwitcher, {OptionProps} from "./NetworkSwitcher";
+import { WarningSolidIcon } from "../../components/Svg";
 
 // context
 import { MenuContext } from "./context";
@@ -76,7 +73,7 @@ const Label = styled.span`
   flex-grow: 1;
   font-weight: 600;
 `;
-const StyledImgWarnIcon = styled(ImgWarnIcon)`
+const StyledImgWarnIcon = styled(WarningSolidIcon)`
   width: 44px;
   height: auto;
   position: absolute;

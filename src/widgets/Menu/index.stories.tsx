@@ -1,6 +1,5 @@
 import noop from "lodash/noop";
 import React, { useState } from "react";
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { BrowserRouter, Link, MemoryRouter } from "react-router-dom";
 import Box from "../../components/Box/Box";
 import Flex from "../../components/Box/Flex";
@@ -9,7 +8,7 @@ import IconButton from "../../components/Button/IconButton";
 import DropdownMenu from "../../components/DropdownMenu/DropdownMenu";
 import Heading from "../../components/Heading/Heading";
 import Input from "../../components/Input/Input";
-import { CogIcon, DownloadIcon } from "../../components/Svg";
+import { OptionsSolidIcon, DownloadIcon } from "../../components/Svg";
 import Text from "../../components/Text/Text";
 import { Modal, ModalProps, useModal } from "../Modal";
 import UserMenu from "./components/UserMenu";
@@ -93,7 +92,7 @@ const GlobalMenuComponent: React.FC = () => {
         <DownloadIcon height={22} width={22} color="textSubtle" />
       </IconButton>
       <IconButton onClick={onPresent2} variant="text" scale="sm" mr="8px">
-        <CogIcon height={22} width={22} color="textSubtle" />
+        <OptionsSolidIcon height={22} width={22} color="textSubtle" />
       </IconButton>
     </Flex>
   );
