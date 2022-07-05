@@ -3189,6 +3189,28 @@ var styleVariants$3 = (_b$7 = {},
         color: "primary",
         boxShadow: "none",
     },
+    _b$7[variants$5.SELECT] = {
+        backgroundColor: "dark500",
+        color: "white",
+        ":hover:not(:disabled)": {
+            backgroundColor: "dark500",
+            color: "white",
+        },
+        ":active:not(:disabled)": {
+            backgroundColor: "transparent",
+        },
+    },
+    _b$7[variants$5.SELECT_LIGHT] = {
+        backgroundColor: "white",
+        color: "background",
+        ":hover:not(:disabled)": {
+            backgroundColor: "transparent",
+            color: "background",
+        },
+        ":active:not(:disabled)": {
+            backgroundColor: "transparent",
+        },
+    },
     _b$7);
 
 var getDisabledStyles$1 = function (_a) {
@@ -3399,7 +3421,7 @@ var getFlat = function (_a) {
 };
 var StyledButtonMenu = styled.div(templateObject_1$1b || (templateObject_1$1b = __makeTemplateObject(["\n  background-color: ", ";\n  border-radius: ", ";\n  display: ", ";\n  width: ", ";\n  padding: ", ";\n\n  & > button,\n  & > a {\n    flex: ", ";\n  }\n\n  & > button + button,\n  & > a + a {\n    margin-left: 2px; // To avoid focus shadow overlap\n  }\n\n  & > button,\n  & a {\n    box-shadow: none;\n  }\n\n  ", "\n  ", "\n"], ["\n  background-color: ", ";\n  border-radius: ", ";\n  display: ", ";\n  width: ", ";\n  padding: ", ";\n\n  & > button,\n  & > a {\n    flex: ", ";\n  }\n\n  & > button + button,\n  & > a + a {\n    margin-left: 2px; // To avoid focus shadow overlap\n  }\n\n  & > button,\n  & a {\n    box-shadow: none;\n  }\n\n  ", "\n  ", "\n"])), getBackgroundColor$1, function (_a) {
     var flatBottom = _a.flatBottom, flatTop = _a.flatTop;
-    return flatBottom || flatTop ? getFlat : "8px";
+    return flatBottom || flatTop ? getFlat : "10px";
 }, function (_a) {
     var fullWidth = _a.fullWidth;
     return (fullWidth ? "flex" : "inline-flex");

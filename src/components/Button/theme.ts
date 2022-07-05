@@ -156,4 +156,28 @@ export const styleVariants = {
     color: "primary",
     boxShadow: "none",
   },
+  [variants.SELECT]: {
+    backgroundColor: "dark500",
+    color: "white",
+
+    ":hover:not(:disabled)": {
+      backgroundColor: "dark500",
+      color: "white",
+    },
+    ":active:not(:disabled)": {
+      backgroundColor: "transparent",
+    },
+  },
+  [variants.SELECT_LIGHT]: {
+    backgroundColor: "white",
+    color: "background",
+
+    ":hover:not(:disabled)": {
+      backgroundColor: "transparent",
+      color: "background",
+    },
+    ":active:not(:disabled)": {
+      backgroundColor: "transparent",
+    },
+  },
 };
