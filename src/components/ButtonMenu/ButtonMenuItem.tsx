@@ -1,12 +1,14 @@
 import React from "react";
 import styled from "styled-components";
+import { variant } from "styled-system";
+import { styleVariants } from "./theme";
 import Button from "../Button/Button";
-import { BaseButtonProps, variants } from "../Button/types";
-import { ButtonMenuItemProps } from "./types";
+import { BaseButtonMenuItemProps, ButtonMenuItemProps } from "./types";
+import { variants } from "./types";
 import { PolymorphicComponent } from "../../util/polymorphic";
 
-interface InactiveButtonProps extends BaseButtonProps {
-  forwardedAs: BaseButtonProps["as"];
+interface InactiveButtonProps extends BaseButtonMenuItemProps {
+  forwardedAs: BaseButtonMenuItemProps["as"];
   colorKey: "pastelBlue" | "text";
 }
 
@@ -21,6 +23,12 @@ const InactiveButton: PolymorphicComponent<
     background-color: transparent;
   }
 `;
+
+const MenuItemButton = styled(Button)<BaseButtonMenuItemProps>`
+  ${variant({
+    variants: styleVariants,
+  })}
+`
 
 const ButtonMenuItem: PolymorphicComponent<ButtonMenuItemProps, "button"> = ({
   isActive = false,
@@ -39,7 +47,7 @@ const ButtonMenuItem: PolymorphicComponent<ButtonMenuItemProps, "button"> = ({
     );
   }
 
-  return <Button as={as} variant={variant} {...props} />;
+  return <MenuItemButton as={as} variant={variant} {...props} />;
 };
 
 export default ButtonMenuItem;
