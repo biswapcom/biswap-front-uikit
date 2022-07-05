@@ -1,5 +1,5 @@
-import {ElementType, ReactElement, ReactNode} from "react";
-import {LayoutProps, SpaceProps} from "styled-system";
+import { ElementType, ReactElement, ReactNode } from "react";
+import { LayoutProps, SpaceProps } from "styled-system";
 
 export interface ButtonMenuItemProps extends BaseButtonMenuItemProps {
   isActive?: boolean;
@@ -45,7 +45,6 @@ export interface ButtonMenuProps extends SpaceProps {
   flatTop?: boolean;
   withoutBackground?: boolean;
 }
-
 
 //--------------
 

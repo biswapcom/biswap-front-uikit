@@ -28,7 +28,7 @@ const MenuItemButton = styled(Button)<BaseButtonMenuItemProps>`
   ${variant({
     variants: styleVariants,
   })}
-`
+`;
 
 const ButtonMenuItem: PolymorphicComponent<ButtonMenuItemProps, "button"> = ({
   isActive = false,

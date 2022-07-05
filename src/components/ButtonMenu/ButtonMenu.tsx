@@ -28,7 +28,7 @@ const getFlat = ({ flatBottom, flatTop }: StyledButtonMenuProps) => {
 const StyledButtonMenu = styled.div<StyledButtonMenuProps>`
   background-color: ${getBackgroundColor};
   border-radius: ${({ flatBottom, flatTop }) =>
-          flatBottom || flatTop ? getFlat : "10px"};
+    flatBottom || flatTop ? getFlat : "10px"};
   display: ${({ fullWidth }) => (fullWidth ? "flex" : "inline-flex")};
   width: ${({ fullWidth }) => (fullWidth ? "100%" : "auto")};
   padding: ${({ flatBottom, flatTop }) =>
