@@ -123,7 +123,7 @@ var getThemeValue = function (path, fallback) {
 };
 
 var rotate$3 = styled.keyframes(templateObject_1$1r || (templateObject_1$1r = __makeTemplateObject(["\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n"], ["\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n"])));
-var spinStyle = styled.css(templateObject_2$P || (templateObject_2$P = __makeTemplateObject(["\n  animation: ", " 2s linear infinite;\n"], ["\n  animation: ", " 2s linear infinite;\n"])), rotate$3);
+var spinStyle = styled.css(templateObject_2$Q || (templateObject_2$Q = __makeTemplateObject(["\n  animation: ", " 2s linear infinite;\n"], ["\n  animation: ", " 2s linear infinite;\n"])), rotate$3);
 var Svg = styled__default["default"].svg(templateObject_3$w || (templateObject_3$w = __makeTemplateObject(["\n  align-self: center; // Safari fix\n  fill: ", ";\n  flex-shrink: 0;\n  ", "\n  ", "\n"], ["\n  align-self: center; // Safari fix\n  fill: ", ";\n  flex-shrink: 0;\n  ", "\n  ", "\n"])), function (_a) {
     var theme = _a.theme, color = _a.color;
     return getThemeValue("colors.".concat(color), color)(theme);
@@ -137,7 +137,7 @@ Svg.defaultProps = {
     xmlns: "http://www.w3.org/2000/svg",
     spin: false,
 };
-var templateObject_1$1r, templateObject_2$P, templateObject_3$w;
+var templateObject_1$1r, templateObject_2$Q, templateObject_3$w;
 
 var Icon$3y = function (props) {
     return (React__default["default"].createElement(Svg, __assign({ viewBox: "0 0 40 40", fill: "none" }, props),
@@ -318,13 +318,9 @@ var Icon$38 = function (props) {
 
 var Icon$37 = function (props) {
     return (React__default["default"].createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
-        React__default["default"].createElement("g", { clipPath: "url(#clip0_5396_36343)" },
-            React__default["default"].createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M8 0L12.6872 3.93837C13.0466 4.24034 13.1049 4.79112 12.8174 5.16858C12.5299 5.54604 12.0054 5.60724 11.6461 5.30527L8 2.24171L4.35394 5.30527C3.99455 5.60724 3.47015 5.54604 3.18264 5.16858C2.89513 4.79112 2.9534 4.24034 3.31278 3.93837L8 0Z" }),
-            React__default["default"].createElement("path", { opacity: "0.56", fillRule: "evenodd", clipRule: "evenodd", d: "M8 5.25146L12.6872 9.18984C13.0466 9.49181 13.1049 10.0426 12.8174 10.42C12.5299 10.7975 12.0054 10.8587 11.6461 10.5567L8 7.49318L4.35394 10.5567C3.99455 10.8587 3.47015 10.7975 3.18264 10.42C2.89513 10.0426 2.9534 9.49181 3.31278 9.18984L8 5.25146Z" }),
-            React__default["default"].createElement("path", { opacity: "0.32", fillRule: "evenodd", clipRule: "evenodd", d: "M8 10.5029L12.6872 14.4413C13.0466 14.7433 13.1049 15.2941 12.8174 15.6715C12.5299 16.049 12.0054 16.1102 11.6461 15.8082L8 12.7446L4.35394 15.8082C3.99455 16.1102 3.47015 16.049 3.18264 15.6715C2.89513 15.2941 2.9534 14.7433 3.31278 14.4413L8 10.5029Z" })),
-        React__default["default"].createElement("defs", null,
-            React__default["default"].createElement("clipPath", { id: "clip0_5396_36343" },
-                React__default["default"].createElement("rect", { width: "16", height: "16" })))));
+        React__default["default"].createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M12 1L18.5621 6.01512C19.0652 6.39965 19.1468 7.10101 18.7443 7.58167C18.3418 8.06232 17.6076 8.14025 17.1045 7.75573L12 3.8546L6.89551 7.75573C6.39237 8.14025 5.6582 8.06232 5.25569 7.58167C4.85319 7.10101 4.93476 6.39965 5.4379 6.01512L12 1Z" }),
+        React__default["default"].createElement("path", { opacity: "0.56", fillRule: "evenodd", clipRule: "evenodd", d: "M12 8L18.5621 13.7316C19.0652 14.171 19.1468 14.9726 18.7443 15.5219C18.3418 16.0712 17.6076 16.1603 17.1045 15.7208L12 11.2624L6.89551 15.7208C6.39237 16.1603 5.6582 16.0712 5.25569 15.5219C4.85319 14.9726 4.93476 14.171 5.4379 13.7316L12 8Z" }),
+        React__default["default"].createElement("path", { opacity: "0.32", fillRule: "evenodd", clipRule: "evenodd", d: "M12 16L18.5621 21.0151C19.0652 21.3996 19.1468 22.101 18.7443 22.5817C18.3418 23.0623 17.6076 23.1403 17.1045 22.7557L12 18.8546L6.89551 22.7557C6.39237 23.1403 5.6582 23.0623 5.25569 22.5817C4.85319 22.101 4.93476 21.3996 5.4379 21.0151L12 16Z" })));
 };
 
 var Icon$36 = function (props) {
@@ -902,29 +898,29 @@ var Icon$1E = function (props) {
 };
 
 var rotate$2 = styled.keyframes(templateObject_1$1q || (templateObject_1$1q = __makeTemplateObject(["\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n"], ["\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n"])));
-var Loader$2 = styled__default["default"](Svg)(templateObject_2$O || (templateObject_2$O = __makeTemplateObject(["\n  animation: ", " 2s linear infinite;\n"], ["\n  animation: ", " 2s linear infinite;\n"])), rotate$2);
+var Loader$2 = styled__default["default"](Svg)(templateObject_2$P || (templateObject_2$P = __makeTemplateObject(["\n  animation: ", " 2s linear infinite;\n"], ["\n  animation: ", " 2s linear infinite;\n"])), rotate$2);
 var Icon$1D = function (props) {
     return (React__default["default"].createElement(Loader$2, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React__default["default"].createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24ZM12 7.79V6C8.69 6 6 8.69 6 12C6 12.79 6.15 13.56 6.44 14.25C6.59 14.61 6.48 15.02 6.21 15.29C5.7 15.8 4.84 15.62 4.57 14.95C4.2 14.04 4 13.04 4 12C4 7.58 7.58 4 12 4V2.21C12 1.76 12.54 1.54 12.85 1.85L15.64 4.64C15.84 4.84 15.84 5.15 15.64 5.35L12.85 8.14C12.54 8.46 12 8.24 12 7.79ZM17.56 9.75C17.41 9.4 17.52 8.98 17.79 8.71C18.3 8.2 19.16 8.38 19.43 9.05C19.8 9.96 20 10.96 20 12C20 16.42 16.42 20 12 20V21.8C12 22.24 11.46 22.46 11.15 22.15L8.36 19.36C8.16 19.16 8.16 18.85 8.36 18.65L11.15 15.86C11.46 15.54 12 15.76 12 16.21V18C15.31 18 18 15.31 18 12C18 11.21 17.84 10.45 17.56 9.75Z" })));
 };
-var templateObject_1$1q, templateObject_2$O;
+var templateObject_1$1q, templateObject_2$P;
 
 var rotate$1 = styled.keyframes(templateObject_1$1p || (templateObject_1$1p = __makeTemplateObject(["\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n"], ["\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n"])));
-var Loader$1 = styled__default["default"](Svg)(templateObject_2$N || (templateObject_2$N = __makeTemplateObject(["\n  animation: ", " 2s linear infinite;\n"], ["\n  animation: ", " 2s linear infinite;\n"])), rotate$1);
+var Loader$1 = styled__default["default"](Svg)(templateObject_2$O || (templateObject_2$O = __makeTemplateObject(["\n  animation: ", " 2s linear infinite;\n"], ["\n  animation: ", " 2s linear infinite;\n"])), rotate$1);
 var Icon$1C = function (props) {
     return (React__default["default"].createElement(Loader$1, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React__default["default"].createElement("circle", { opacity: "0.48", cx: "12", cy: "12", r: "12" }),
         React__default["default"].createElement("path", { d: "M12 6V7.79C12 8.24 12.54 8.46 12.85 8.14L15.64 5.35C15.84 5.15 15.84 4.84 15.64 4.64L12.85 1.85C12.54 1.54 12 1.76 12 2.21V4C7.58 4 4 7.58 4 12C4 13.04 4.2 14.04 4.57 14.95C4.84 15.62 5.7 15.8 6.21 15.29C6.48 15.02 6.59 14.61 6.44 14.25C6.15 13.56 6 12.79 6 12C6 8.69 8.69 6 12 6ZM17.79 8.71C17.52 8.98 17.41 9.4 17.56 9.75C17.84 10.45 18 11.21 18 12C18 15.31 15.31 18 12 18V16.21C12 15.76 11.46 15.54 11.15 15.86L8.36 18.65C8.16 18.85 8.16 19.16 8.36 19.36L11.15 22.15C11.46 22.46 12 22.24 12 21.8V20C16.42 20 20 16.42 20 12C20 10.96 19.8 9.96 19.43 9.05C19.16 8.38 18.3 8.2 17.79 8.71Z" })));
 };
-var templateObject_1$1p, templateObject_2$N;
+var templateObject_1$1p, templateObject_2$O;
 
 var rotate = styled.keyframes(templateObject_1$1o || (templateObject_1$1o = __makeTemplateObject(["\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n"], ["\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n"])));
-var Loader = styled__default["default"](Svg)(templateObject_2$M || (templateObject_2$M = __makeTemplateObject(["\n  animation: ", " 2s linear infinite;\n"], ["\n  animation: ", " 2s linear infinite;\n"])), rotate);
+var Loader = styled__default["default"](Svg)(templateObject_2$N || (templateObject_2$N = __makeTemplateObject(["\n  animation: ", " 2s linear infinite;\n"], ["\n  animation: ", " 2s linear infinite;\n"])), rotate);
 var Icon$1B = function (props) {
     return (React__default["default"].createElement(Loader, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React__default["default"].createElement("path", { d: "M12 6V7.79C12 8.24 12.54 8.46 12.85 8.14L15.64 5.35C15.84 5.15 15.84 4.84 15.64 4.64L12.85 1.85C12.54 1.54 12 1.76 12 2.21V4C7.58 4 4 7.58 4 12C4 13.04 4.2 14.04 4.57 14.95C4.84 15.62 5.7 15.8 6.21 15.29C6.48 15.02 6.59 14.61 6.44 14.25C6.15 13.56 6 12.79 6 12C6 8.69 8.69 6 12 6ZM17.79 8.71C17.52 8.98 17.41 9.4 17.56 9.75C17.84 10.45 18 11.21 18 12C18 15.31 15.31 18 12 18V16.21C12 15.76 11.46 15.54 11.15 15.86L8.36 18.65C8.16 18.85 8.16 19.16 8.36 19.36L11.15 22.15C11.46 22.46 12 22.24 12 21.8V20C16.42 20 20 16.42 20 12C20 10.96 19.8 9.96 19.43 9.05C19.16 8.38 18.3 8.2 17.79 8.71Z" })));
 };
-var templateObject_1$1o, templateObject_2$M;
+var templateObject_1$1o, templateObject_2$N;
 
 var Icon$1A = function (props) {
     return (React__default["default"].createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
@@ -2768,7 +2764,7 @@ var templateObject_1$1l;
 var Flex = styled__default["default"](Box)(templateObject_1$1k || (templateObject_1$1k = __makeTemplateObject(["\n  display: flex;\n  ", "\n"], ["\n  display: flex;\n  ", "\n"])), styledSystem.flexbox);
 var templateObject_1$1k;
 
-var variants$7 = {
+var variants$8 = {
     INFO: "info",
     DANGER: "danger",
     SUCCESS: "success",
@@ -2779,7 +2775,7 @@ var Grid = styled__default["default"](Box)(templateObject_1$1j || (templateObjec
 var templateObject_1$1j;
 
 var SvgDiag = styled__default["default"].svg(templateObject_1$1i || (templateObject_1$1i = __makeTemplateObject(["\n  position: relative;\n  top: -10px;\n  left: -25%;\n  width: 43px;\n  height: 42px;\n  overflow: visible;\n"], ["\n  position: relative;\n  top: -10px;\n  left: -25%;\n  width: 43px;\n  height: 42px;\n  overflow: visible;\n"])));
-var Content = styled__default["default"].g(templateObject_2$L || (templateObject_2$L = __makeTemplateObject(["\n  fill: #000;\n  transform: translate(49%, 25%);\n"], ["\n  fill: #000;\n  transform: translate(49%, 25%);\n"])));
+var Content = styled__default["default"].g(templateObject_2$M || (templateObject_2$M = __makeTemplateObject(["\n  fill: #000;\n  transform: translate(49%, 25%);\n"], ["\n  fill: #000;\n  transform: translate(49%, 25%);\n"])));
 var StyledButton$2 = styled__default["default"].button(templateObject_3$v || (templateObject_3$v = __makeTemplateObject(["\n  background-color: transparent;\n  border: none;\n  cursor: pointer;\n"], ["\n  background-color: transparent;\n  border: none;\n  cursor: pointer;\n"])));
 var ProgressCircle = function (_a) {
     var _b = _a.filled, filled = _b === void 0 ? 0 : _b, _c = _a.notFilled, notFilled = _c === void 0 ? 100 : _c, onClick = _a.onClick;
@@ -2798,52 +2794,52 @@ var ProgressCircle = function (_a) {
             React__default["default"].createElement(Content, null,
                 React__default["default"].createElement(Icon$2Z, { width: "20px", color: "currentColor" })))));
 };
-var templateObject_1$1i, templateObject_2$L, templateObject_3$v;
+var templateObject_1$1i, templateObject_2$M, templateObject_3$v;
 
 var getThemeColor = function (_a) {
-    var _b = _a.variant, variant = _b === void 0 ? variants$7.INFO : _b;
+    var _b = _a.variant, variant = _b === void 0 ? variants$8.INFO : _b;
     switch (variant) {
-        case variants$7.DANGER:
+        case variants$8.DANGER:
             return "rgba(249, 59, 93, 0.16)";
-        case variants$7.WARNING:
+        case variants$8.WARNING:
             return "rgba(255, 219, 28, 0.16)";
-        case variants$7.SUCCESS:
+        case variants$8.SUCCESS:
             return "rgba(29, 200, 114, 0.16)";
-        case variants$7.INFO:
+        case variants$8.INFO:
         default:
             return "rgba(18, 99, 241, 0.16)";
     }
 };
 var getIcon = function (variant) {
-    if (variant === void 0) { variant = variants$7.INFO; }
+    if (variant === void 0) { variant = variants$8.INFO; }
     switch (variant) {
-        case variants$7.DANGER:
+        case variants$8.DANGER:
             return Icon$2X;
-        case variants$7.WARNING:
+        case variants$8.WARNING:
             return Icon$2$;
-        case variants$7.SUCCESS:
+        case variants$8.SUCCESS:
             return Icon$2A;
-        case variants$7.INFO:
+        case variants$8.INFO:
         default:
             return Icon$2N;
     }
 };
 var getIconColor = function (variant) {
-    if (variant === void 0) { variant = variants$7.INFO; }
+    if (variant === void 0) { variant = variants$8.INFO; }
     switch (variant) {
-        case variants$7.DANGER:
+        case variants$8.DANGER:
             return "secondary";
-        case variants$7.WARNING:
+        case variants$8.WARNING:
             return "warning";
-        case variants$7.SUCCESS:
+        case variants$8.SUCCESS:
             return "success";
-        case variants$7.INFO:
+        case variants$8.INFO:
         default:
             return "primary";
     }
 };
 var IconLabel = styled__default["default"].div(templateObject_1$1h || (templateObject_1$1h = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background-color: ", ";\n  border-radius: 8px;\n  border: none;\n  padding: 12px;\n"], ["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background-color: ", ";\n  border-radius: 8px;\n  border: none;\n  padding: 12px;\n"])), getThemeColor);
-var Details = styled__default["default"].div(templateObject_2$K || (templateObject_2$K = __makeTemplateObject(["\n  display: flex;\n"], ["\n  display: flex;\n"])));
+var Details = styled__default["default"].div(templateObject_2$L || (templateObject_2$L = __makeTemplateObject(["\n  display: flex;\n"], ["\n  display: flex;\n"])));
 var StyledAlert = styled__default["default"](Flex)(templateObject_3$u || (templateObject_3$u = __makeTemplateObject(["\n  background-color: ", ";\n  border-radius: 16px;\n  box-shadow: 0 20px 36px -8px rgba(14, 14, 44, 0.1),\n    0px 1px 1px rgba(0, 0, 0, 0.05);\n  padding: 12px;\n"], ["\n  background-color: ", ";\n  border-radius: 16px;\n  box-shadow: 0 20px 36px -8px rgba(14, 14, 44, 0.1),\n    0px 1px 1px rgba(0, 0, 0, 0.05);\n  padding: 12px;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.alert.background;
@@ -2867,14 +2863,14 @@ var Alert = function (_a) {
             React__default["default"].createElement(StyledBox, null,
                 React__default["default"].createElement(ProgressCircle, { onClick: onClick, filled: progress, notFilled: progress ? 100 - progress : 0 })))));
 };
-var templateObject_1$1h, templateObject_2$K, templateObject_3$u, templateObject_4$n;
+var templateObject_1$1h, templateObject_2$L, templateObject_3$u, templateObject_4$n;
 
-var scales$9 = {
+var scales$a = {
     SM: "sm",
     MD: "md",
     LG: "lg",
 };
-var variants$6 = {
+var variants$7 = {
     LIGHT: "light",
     LIGHT_WARNING: "lightWarning",
     LIGHT_ERROR: "lightError",
@@ -2884,9 +2880,9 @@ var variants$6 = {
     TRANSPARENT: "transparent",
 };
 
-var _a$a, _b$8;
-var scaleVariants$3 = (_a$a = {},
-    _a$a[scales$9.LG] = {
+var _a$b, _b$8;
+var scaleVariants$3 = (_a$b = {},
+    _a$b[scales$a.LG] = {
         borderRadius: "10px",
         height: "48px",
         fontSize: "16px",
@@ -2895,7 +2891,7 @@ var scaleVariants$3 = (_a$a = {},
             width: "24px",
         },
     },
-    _a$a[scales$9.MD] = {
+    _a$b[scales$a.MD] = {
         borderRadius: "8px",
         height: "40px",
         fontSize: "14px",
@@ -2904,7 +2900,7 @@ var scaleVariants$3 = (_a$a = {},
             width: "20px",
         },
     },
-    _a$a[scales$9.SM] = {
+    _a$b[scales$a.SM] = {
         borderRadius: "8px",
         height: "32px",
         fontSize: "12px",
@@ -2913,9 +2909,9 @@ var scaleVariants$3 = (_a$a = {},
             width: "16px",
         },
     },
-    _a$a);
-var styleVariants$4 = (_b$8 = {},
-    _b$8[variants$6.LIGHT] = {
+    _a$b);
+var styleVariants$5 = (_b$8 = {},
+    _b$8[variants$7.LIGHT] = {
         backgroundColor: "gray300",
         color: "dark800",
         "::placeholder": {
@@ -2932,7 +2928,7 @@ var styleVariants$4 = (_b$8 = {},
             color: "dark800",
         },
     },
-    _b$8[variants$6.LIGHT_WARNING] = {
+    _b$8[variants$7.LIGHT_WARNING] = {
         borderColor: "warning",
         backgroundColor: "transparent",
         color: "dark800",
@@ -2940,7 +2936,7 @@ var styleVariants$4 = (_b$8 = {},
             color: "dark800",
         },
     },
-    _b$8[variants$6.LIGHT_ERROR] = {
+    _b$8[variants$7.LIGHT_ERROR] = {
         borderColor: "secondary",
         backgroundColor: "transparent",
         color: "dark800",
@@ -2948,7 +2944,7 @@ var styleVariants$4 = (_b$8 = {},
             color: "dark800",
         },
     },
-    _b$8[variants$6.DARK] = {
+    _b$8[variants$7.DARK] = {
         backgroundColor: "dark500",
         color: "white",
         "::placeholder": {
@@ -2965,7 +2961,7 @@ var styleVariants$4 = (_b$8 = {},
             color: "white",
         },
     },
-    _b$8[variants$6.DARK_WARNING] = {
+    _b$8[variants$7.DARK_WARNING] = {
         borderColor: "warning",
         backgroundColor: "transparent",
         color: "white",
@@ -2973,7 +2969,7 @@ var styleVariants$4 = (_b$8 = {},
             color: "white",
         },
     },
-    _b$8[variants$6.DARK_ERROR] = {
+    _b$8[variants$7.DARK_ERROR] = {
         borderColor: "secondary",
         backgroundColor: "transparent",
         color: "white",
@@ -2981,7 +2977,7 @@ var styleVariants$4 = (_b$8 = {},
             color: "white",
         },
     },
-    _b$8[variants$6.TRANSPARENT] = {
+    _b$8[variants$7.TRANSPARENT] = {
         backgroundColor: "transparent",
         color: "dark800",
         "::placeholder": {
@@ -3020,10 +3016,10 @@ var Input$1 = styled__default["default"].input(templateObject_1$1g || (templateO
     variants: scaleVariants$3,
 }), styledSystem.variant({
     prop: "variant",
-    variants: styleVariants$4,
+    variants: styleVariants$5,
 }));
 Input$1.defaultProps = {
-    scale: scales$9.MD,
+    scale: scales$a.MD,
     isError: false,
     isWarning: false,
 };
@@ -3034,21 +3030,19 @@ var getExternalLinkProps = function () { return ({
     rel: "noreferrer noopener",
 }); };
 
-var scales$8 = {
+var scales$9 = {
     XL: "xl",
     LG: "lg",
     MD: "md",
     SM: "sm",
     XS: "xs",
 };
-var variants$5 = {
+var variants$6 = {
     PRIMARY: "primary",
     DANGER: "danger",
     SUCCESS: "success",
     WARNING: "warning",
     BOOST: "boost",
-    SELECT: "select",
-    SELECT_LIGHT: "selectLight",
     LIGHT_OUT: "lightOut",
     LIGHT: "light",
     TERTIARY: "tertiary",
@@ -3056,40 +3050,40 @@ var variants$5 = {
     TEXT: "text",
 };
 
-var _a$9, _b$7;
-var scaleVariants$2 = (_a$9 = {},
-    _a$9[scales$8.XL] = {
+var _a$a, _b$7;
+var scaleVariants$2 = (_a$a = {},
+    _a$a[scales$9.XL] = {
         height: "48px",
         padding: "0 24px",
         borderRadius: "10px",
     },
-    _a$9[scales$8.LG] = {
+    _a$a[scales$9.LG] = {
         height: "40px",
         padding: "0 16px",
         fontSize: "14px",
         borderRadius: "8px",
     },
-    _a$9[scales$8.MD] = {
+    _a$a[scales$9.MD] = {
         height: "32px",
         padding: "0 12px",
         fontSize: "12px",
         borderRadius: "8px",
     },
-    _a$9[scales$8.SM] = {
+    _a$a[scales$9.SM] = {
         height: "24px",
         padding: "0 8px",
         fontSize: "12px",
         borderRadius: "6px",
     },
-    _a$9[scales$8.XS] = {
+    _a$a[scales$9.XS] = {
         height: "20px",
         padding: "0 8px",
         fontSize: "12px",
         borderRadius: "6px",
     },
-    _a$9);
-var styleVariants$3 = (_b$7 = {},
-    _b$7[variants$5.PRIMARY] = {
+    _a$a);
+var styleVariants$4 = (_b$7 = {},
+    _b$7[variants$6.PRIMARY] = {
         backgroundColor: "primary",
         color: "white",
         ":hover:not(:disabled)": {
@@ -3103,7 +3097,7 @@ var styleVariants$3 = (_b$7 = {},
         //   color: "white"
         // },
     },
-    _b$7[variants$5.DANGER] = {
+    _b$7[variants$6.DANGER] = {
         backgroundColor: "secondary",
         color: "white",
         ":hover:not(:disabled)": {
@@ -3113,7 +3107,7 @@ var styleVariants$3 = (_b$7 = {},
             backgroundColor: "secondaryPress",
         },
     },
-    _b$7[variants$5.SUCCESS] = {
+    _b$7[variants$6.SUCCESS] = {
         backgroundColor: "success",
         color: "white",
         ":hover:not(:disabled)": {
@@ -3123,7 +3117,7 @@ var styleVariants$3 = (_b$7 = {},
             backgroundColor: "successPress",
         },
     },
-    _b$7[variants$5.WARNING] = {
+    _b$7[variants$6.WARNING] = {
         backgroundColor: "warning",
         color: "dark800",
         ":hover:not(:disabled)": {
@@ -3133,7 +3127,7 @@ var styleVariants$3 = (_b$7 = {},
             backgroundColor: "warningPress",
         },
     },
-    _b$7[variants$5.BOOST] = {
+    _b$7[variants$6.BOOST] = {
         backgroundColor: "boost",
         color: "white",
         ":hover:not(:disabled)": {
@@ -3143,7 +3137,7 @@ var styleVariants$3 = (_b$7 = {},
             backgroundColor: "boostPress",
         },
     },
-    _b$7[variants$5.TERTIARY] = {
+    _b$7[variants$6.TERTIARY] = {
         backgroundColor: "btnTertiary",
         color: "primary",
         border: "1px solid transparent",
@@ -3156,7 +3150,7 @@ var styleVariants$3 = (_b$7 = {},
             borderColor: "primary",
         },
     },
-    _b$7[variants$5.TERTIARY_OUT] = {
+    _b$7[variants$6.TERTIARY_OUT] = {
         color: "primary",
         backgroundColor: "transparent",
         border: "1px solid",
@@ -3170,7 +3164,7 @@ var styleVariants$3 = (_b$7 = {},
             borderColor: "transparent",
         },
     },
-    _b$7[variants$5.LIGHT_OUT] = {
+    _b$7[variants$6.LIGHT_OUT] = {
         color: "white",
         border: "1px solid",
         borderColor: "btnLightOutBorder",
@@ -3184,7 +3178,7 @@ var styleVariants$3 = (_b$7 = {},
             borderColor: "transparent",
         },
     },
-    _b$7[variants$5.LIGHT] = {
+    _b$7[variants$6.LIGHT] = {
         backgroundColor: "btnLight",
         color: "white",
         border: "1px solid transparent",
@@ -3197,7 +3191,7 @@ var styleVariants$3 = (_b$7 = {},
             borderColor: "white",
         },
     },
-    _b$7[variants$5.TEXT] = {
+    _b$7[variants$6.TEXT] = {
         backgroundColor: "transparent",
         color: "primary",
         boxShadow: "none",
@@ -3236,7 +3230,7 @@ var StyledButton$1 = styled__default["default"].button(templateObject_1$1f || (t
     prop: "scale",
     variants: scaleVariants$2,
 }), styledSystem.variant({
-    variants: styleVariants$3,
+    variants: styleVariants$4,
 }), styledSystem.layout, styledSystem.space, getFlat$1);
 var templateObject_1$1f;
 
@@ -3268,8 +3262,8 @@ var Button = function (props) {
 Button.defaultProps = {
     isLoading: false,
     external: false,
-    variant: variants$5.PRIMARY,
-    scale: scales$8.MD,
+    variant: variants$6.PRIMARY,
+    scale: scales$9.MD,
     disabled: false,
 };
 
@@ -3277,7 +3271,7 @@ var IconButton = styled__default["default"](Button)(templateObject_1$1e || (temp
 var templateObject_1$1e;
 
 var SwitchUnitsButton = styled__default["default"](IconButton)(templateObject_1$1d || (templateObject_1$1d = __makeTemplateObject(["\n  width: 16px;\n"], ["\n  width: 16px;\n"])));
-var UnitContainer = styled__default["default"](Text)(templateObject_2$J || (templateObject_2$J = __makeTemplateObject(["\n  margin-left: 4px;\n  text-align: right;\n  color: ", ";\n  white-space: nowrap;\n"], ["\n  margin-left: 4px;\n  text-align: right;\n  color: ", ";\n  white-space: nowrap;\n"])), function (_a) {
+var UnitContainer = styled__default["default"](Text)(templateObject_2$K || (templateObject_2$K = __makeTemplateObject(["\n  margin-left: 4px;\n  text-align: right;\n  color: ", ";\n  white-space: nowrap;\n"], ["\n  margin-left: 4px;\n  text-align: right;\n  color: ", ";\n  white-space: nowrap;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.textSubtle;
 });
@@ -3298,7 +3292,7 @@ var StyledInput$1 = styled__default["default"](Input$1)(templateObject_4$m || (t
     var theme = _a.theme;
     return theme.colors.textSubtle;
 });
-var templateObject_1$1d, templateObject_2$J, templateObject_3$t, templateObject_4$m;
+var templateObject_1$1d, templateObject_2$K, templateObject_3$t, templateObject_4$m;
 
 var BalanceInput = function (_a) {
     var value = _a.value, _b = _a.placeholder, placeholder = _b === void 0 ? "0.0" : _b, onUserInput = _a.onUserInput, currencyValue = _a.currencyValue, inputProps = _a.inputProps, innerRef = _a.innerRef, _c = _a.isWarning, isWarning = _c === void 0 ? false : _c, _d = _a.decimals, decimals = _d === void 0 ? 18 : _d, unit = _a.unit, switchEditingUnits = _a.switchEditingUnits, props = __rest(_a, ["value", "placeholder", "onUserInput", "currencyValue", "inputProps", "innerRef", "isWarning", "decimals", "unit", "switchEditingUnits"]);
@@ -3339,7 +3333,7 @@ var Separator = styled__default["default"].div(templateObject_1$1c || (templateO
     var theme = _a.theme;
     return theme.mediaQueries.md;
 });
-var StyledBreadcrumbs = styled__default["default"].ul(templateObject_2$I || (templateObject_2$I = __makeTemplateObject(["\n  align-items: center;\n  display: flex;\n  flex-wrap: wrap;\n  list-style-type: none;\n\n  a {\n    color: ", ";\n\n    &:hover {\n      color: ", ";\n    }\n  }\n\n  ", "\n"], ["\n  align-items: center;\n  display: flex;\n  flex-wrap: wrap;\n  list-style-type: none;\n\n  a {\n    color: ", ";\n\n    &:hover {\n      color: ", ";\n    }\n  }\n\n  ", "\n"])), function (_a) {
+var StyledBreadcrumbs = styled__default["default"].ul(templateObject_2$J || (templateObject_2$J = __makeTemplateObject(["\n  align-items: center;\n  display: flex;\n  flex-wrap: wrap;\n  list-style-type: none;\n\n  a {\n    color: ", ";\n\n    &:hover {\n      color: ", ";\n    }\n  }\n\n  ", "\n"], ["\n  align-items: center;\n  display: flex;\n  flex-wrap: wrap;\n  list-style-type: none;\n\n  a {\n    color: ", ";\n\n    &:hover {\n      color: ", ";\n    }\n  }\n\n  ", "\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.primary;
 }, function (_a) {
@@ -3366,7 +3360,7 @@ var Breadcrumbs = function (_a) {
     var items = insertSeparators(validItems, separator);
     return (React__default["default"].createElement(StyledBreadcrumbs, null, items.map(function (item, index) { return (React__default["default"].createElement("li", { key: "child-".concat(index) }, item)); })));
 };
-var templateObject_1$1c, templateObject_2$I;
+var templateObject_1$1c, templateObject_2$J;
 
 var ExpandableButton = function (_a) {
     var onClick = _a.onClick, expanded = _a.expanded, children = _a.children;
@@ -3383,6 +3377,21 @@ var ExpandableLabel = function (_a) {
 };
 ExpandableLabel.defaultProps = {
     expanded: false,
+};
+
+//--------------
+var scales$8 = {
+    XL: "xl",
+    LG: "lg",
+    MD: "md",
+    SM: "sm",
+    XS: "xs",
+};
+var variants$5 = {
+    PRIMARY: "primary",
+    WARNING: "warning",
+    SELECT: "select",
+    SELECT_LIGHT: "selectLight",
 };
 
 var getRgba = function (hex, alpha) {
@@ -3412,7 +3421,7 @@ var getFlat = function (_a) {
 };
 var StyledButtonMenu = styled__default["default"].div(templateObject_1$1b || (templateObject_1$1b = __makeTemplateObject(["\n  background-color: ", ";\n  border-radius: ", ";\n  display: ", ";\n  width: ", ";\n  padding: ", ";\n\n  & > button,\n  & > a {\n    flex: ", ";\n  }\n\n  & > button + button,\n  & > a + a {\n    margin-left: 2px; // To avoid focus shadow overlap\n  }\n\n  & > button,\n  & a {\n    box-shadow: none;\n  }\n\n  ", "\n  ", "\n"], ["\n  background-color: ", ";\n  border-radius: ", ";\n  display: ", ";\n  width: ", ";\n  padding: ", ";\n\n  & > button,\n  & > a {\n    flex: ", ";\n  }\n\n  & > button + button,\n  & > a + a {\n    margin-left: 2px; // To avoid focus shadow overlap\n  }\n\n  & > button,\n  & a {\n    box-shadow: none;\n  }\n\n  ", "\n  ", "\n"])), getBackgroundColor$1, function (_a) {
     var flatBottom = _a.flatBottom, flatTop = _a.flatTop;
-    return flatBottom || flatTop ? getFlat : "8px";
+    return flatBottom || flatTop ? getFlat : "10px";
 }, function (_a) {
     var fullWidth = _a.fullWidth;
     return (fullWidth ? "flex" : "inline-flex");
@@ -3450,18 +3459,71 @@ var ButtonMenu = function (_a) {
 };
 var templateObject_1$1b;
 
+var _a$9;
+var styleVariants$3 = (_a$9 = {},
+    _a$9[variants$5.PRIMARY] = {
+        backgroundColor: "primary",
+        color: "white",
+        ":hover:not(:disabled)": {
+            backgroundColor: "primaryHover",
+        },
+        ":active:not(:disabled)": {
+            backgroundColor: "primaryPress",
+        },
+        // ":disabled": {
+        //   backgroundColor: "primaryPress",
+        //   color: "white"
+        // },
+    },
+    _a$9[variants$5.WARNING] = {
+        backgroundColor: "warning",
+        color: "dark800",
+        ":hover:not(:disabled)": {
+            backgroundColor: "warningHover",
+        },
+        ":active:not(:disabled)": {
+            backgroundColor: "warningPress",
+        },
+    },
+    _a$9[variants$5.SELECT] = {
+        backgroundColor: "dark500",
+        color: "white",
+        ":hover:not(:disabled)": {
+            backgroundColor: "dark500",
+            color: "white",
+        },
+        ":active:not(:disabled)": {
+            backgroundColor: "transparent",
+        },
+    },
+    _a$9[variants$5.SELECT_LIGHT] = {
+        backgroundColor: "white",
+        color: "background",
+        ":hover:not(:disabled)": {
+            backgroundColor: "transparent",
+            color: "background",
+        },
+        ":active:not(:disabled)": {
+            backgroundColor: "transparent",
+        },
+    },
+    _a$9);
+
 var InactiveButton$2 = styled__default["default"](Button)(templateObject_1$1a || (templateObject_1$1a = __makeTemplateObject(["\n  background-color: transparent;\n  color: ", ";\n  transition: color 0.3s ease;\n  &:hover:not(:disabled):not(:active) {\n    background-color: transparent;\n  }\n"], ["\n  background-color: transparent;\n  color: ", ";\n  transition: color 0.3s ease;\n  &:hover:not(:disabled):not(:active) {\n    background-color: transparent;\n  }\n"])), function (_a) {
     var theme = _a.theme, colorKey = _a.colorKey;
     return theme.colors[colorKey];
 });
+var MenuItemButton = styled__default["default"](Button)(templateObject_2$I || (templateObject_2$I = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), styledSystem.variant({
+    variants: styleVariants$3,
+}));
 var ButtonMenuItem = function (_a) {
     var _b = _a.isActive, isActive = _b === void 0 ? false : _b, _c = _a.variant, variant = _c === void 0 ? variants$5.SELECT : _c, as = _a.as, props = __rest(_a, ["isActive", "variant", "as"]);
     if (!isActive) {
         return (React__default["default"].createElement(InactiveButton$2, __assign({ forwardedAs: as, variant: variant, colorKey: variant === variants$5.SELECT ? "pastelBlue" : "text" }, props)));
     }
-    return React__default["default"].createElement(Button, __assign({ as: as, variant: variant }, props));
+    return React__default["default"].createElement(MenuItemButton, __assign({ as: as, variant: variant }, props));
 };
-var templateObject_1$1a;
+var templateObject_1$1a, templateObject_2$I;
 
 var useOnClickOutside = function (ref, handler) {
     React.useEffect(function () {
@@ -4327,32 +4389,32 @@ var templateObject_1$V, templateObject_2$C;
 var getPadding = function (scale, hasIcon) {
     if (!hasIcon) {
         switch (scale) {
-            case scales$9.SM:
+            case scales$a.SM:
                 return "12px";
-            case scales$9.LG:
+            case scales$a.LG:
                 return "24px";
-            case scales$9.MD:
+            case scales$a.MD:
             default:
                 return "16px";
         }
     }
     switch (scale) {
-        case scales$9.SM:
+        case scales$a.SM:
             return "36px";
-        case scales$9.LG:
+        case scales$a.LG:
             return "60px";
-        case scales$9.MD:
+        case scales$a.MD:
         default:
             return "44px";
     }
 };
 var getIconPosition = function (scale) {
     switch (scale) {
-        case scales$9.LG:
+        case scales$a.LG:
             return "24px";
-        case scales$9.MD:
+        case scales$a.MD:
             return "16px";
-        case scales$9.SM:
+        case scales$a.SM:
         default:
             return "12px";
     }
@@ -4368,7 +4430,7 @@ var StyledInputGroup = styled__default["default"](Box)(templateObject_1$U || (te
     variants: scaleVariants$3,
 }), Input$1, styledSystem.variant({
     prop: "variant",
-    variants: styleVariants$4,
+    variants: styleVariants$5,
 }), function (_a) {
     var hasStartIcon = _a.hasStartIcon, scale = _a.scale;
     return getPadding(scale, hasStartIcon);
@@ -4386,7 +4448,7 @@ var RightIconComponent = styled__default["default"](StyledIconComponent)(templat
     return getIconPosition(scale);
 });
 var InputGroup = function (_a) {
-    var _b = _a.scale, scale = _b === void 0 ? scales$9.MD : _b, startIcon = _a.startIcon, endIcon = _a.endIcon, children = _a.children, variant = _a.variant, isError = _a.isError, isWarning = _a.isWarning, disabled = _a.disabled, props = __rest(_a, ["scale", "startIcon", "endIcon", "children", "variant", "isError", "isWarning", "disabled"]);
+    var _b = _a.scale, scale = _b === void 0 ? scales$a.MD : _b, startIcon = _a.startIcon, endIcon = _a.endIcon, children = _a.children, variant = _a.variant, isError = _a.isError, isWarning = _a.isWarning, disabled = _a.disabled, props = __rest(_a, ["scale", "startIcon", "endIcon", "children", "variant", "isError", "isWarning", "disabled"]);
     return (React__default["default"].createElement(StyledInputGroup, __assign({ scale: scale, variant: variant, width: "100%", position: "relative", hasStartIcon: !!startIcon, hasEndIcon: !!endIcon, disabled: disabled }, props),
         startIcon && (React__default["default"].createElement(LeftIconComponent, { color: startIcon.color, iconName: startIcon.iconName, scale: scale })),
         React.cloneElement(children, { variant: variant, disabled: disabled }),
@@ -8579,10 +8641,10 @@ var types = {
 
 var _a;
 var alertTypeMap = (_a = {},
-    _a[types.INFO] = variants$7.INFO,
-    _a[types.SUCCESS] = variants$7.SUCCESS,
-    _a[types.DANGER] = variants$7.DANGER,
-    _a[types.WARNING] = variants$7.WARNING,
+    _a[types.INFO] = variants$8.INFO,
+    _a[types.SUCCESS] = variants$8.SUCCESS,
+    _a[types.DANGER] = variants$8.DANGER,
+    _a[types.WARNING] = variants$8.WARNING,
     _a);
 var ClearAllButton = styled__default["default"](Button)(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  position: absolute;\n  right: 0;\n  background-color: ", ";\n  border: ", ";\n  border-radius: 16px;\n  top: ", ";\n  transform: translateY(50%);\n  padding: 0;\n  margin: 0;\n"], ["\n  position: absolute;\n  right: 0;\n  background-color: ", ";\n  border: ", ";\n  border-radius: 16px;\n  top: ", ";\n  transform: translateY(50%);\n  padding: 0;\n  margin: 0;\n"])), function (_a) {
     var theme = _a.theme;
@@ -9029,7 +9091,7 @@ exports.WarningIcon = Icon$2_;
 exports.WarningOpacityIcon = Icon$30;
 exports.WarningSolidIcon = Icon$2$;
 exports.YoutubeIcon = Icon$C;
-exports.alertVariants = variants$7;
+exports.alertVariants = variants$8;
 exports.byTextAscending = byTextAscending;
 exports.byTextDescending = byTextDescending;
 exports.connectorLocalStorageKey = connectorLocalStorageKey;
