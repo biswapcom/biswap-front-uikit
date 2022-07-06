@@ -196,11 +196,7 @@ export const FlatTop: React.FC = () => {
         </ButtonMenu>
       </Row>
       <Row>
-        <ButtonMenu
-          flatTop
-          activeIndex={index1}
-          onItemClick={handleClick1}
-        >
+        <ButtonMenu flatTop activeIndex={index1} onItemClick={handleClick1}>
           <ButtonMenuItem>Button 1</ButtonMenuItem>
           <ButtonMenuItem>Button 2</ButtonMenuItem>
           <ButtonMenuItem>Button 3</ButtonMenuItem>
