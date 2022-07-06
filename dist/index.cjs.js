@@ -7884,11 +7884,12 @@ var Burger = function (_a) {
 
 var MobileDropdownMenu = function (_a) {
     var items = _a.items, activeItem = _a.activeItem, _b = _a.isMobileMenuOpened, isMobileMenuOpened = _b === void 0 ? false : _b, mobileMenuCallback = _a.mobileMenuCallback;
-    var isMobile = useMatchBreakpoints().isMobile;
-    var _c = React.useState(items), configItems = _c[0], setConfigItems = _c[1];
+    var _c = useMatchBreakpoints(), isXs = _c.isXs, isSm = _c.isSm;
+    var isMobile = isXs || isSm;
+    var _d = React.useState(items), configItems = _d[0], setConfigItems = _d[1];
     React.useEffect(function () {
-        if (isMobile) {
-            var configMobile = items;
+        if (isXs || isSm) {
+            var configMobile = lodash.cloneDeep(items);
             setConfigItems(configMobile.map(function (item) {
                 if (item.isExtended) {
                     item.items = item.items && item.items

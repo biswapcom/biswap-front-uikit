@@ -5,6 +5,7 @@ import MobileMenu from "./MobileMenu";
 import { MenuItemsProps } from "../../MenuItems/types";
 import MenuItem from "../../MenuItem";
 import Burger from "./ButtonBurger";
+import {cloneDeep} from "lodash";
 
 const MobileDropdownMenu: FC<MenuItemsProps> = ({
   items,
@@ -12,13 +13,14 @@ const MobileDropdownMenu: FC<MenuItemsProps> = ({
   isMobileMenuOpened = false,
   mobileMenuCallback,
 }) => {
-  const { isMobile } = useMatchBreakpoints();
+  const { isXs, isSm } = useMatchBreakpoints();
+  const isMobile = isXs || isSm
 
   const [configItems, setConfigItems] = useState(items)
 
   useEffect(() => {
-    if (isMobile) {
-      const configMobile = items
+    if (isXs || isSm) {
+      const configMobile = cloneDeep(items)
 
       setConfigItems(configMobile.map(item => {
         if (item.isExtended) {
