@@ -144,10 +144,6 @@ export const StyledDropdownMenuItemContainer = styled.div`
 
   ${({ theme }) => theme.mediaQueries.lg} {
     margin-bottom: 24px;
-
-    &:last-of-type {
-      margin-bottom: 0;
-    }
   }
 `;
 
@@ -173,7 +169,7 @@ export const StyledDropdownMenu = styled(Grid)<{
   border: 1px solid ${({ theme }) => theme.colors.cardBorder};
   border-radius: 16px;
 
-  padding: 24px;
+  padding: 24px 24px 0;
   pointer-events: auto;
   width: 352px;
   visibility: visible;
