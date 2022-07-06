@@ -11,7 +11,7 @@ import {
   ModalBackButton,
 } from "./styles";
 import { ModalProps } from "./types";
-import {useMatchBreakpoints} from "../../hooks";
+import { useMatchBreakpoints } from "../../hooks";
 
 const Modal: React.FC<ModalProps> = ({
   title,
@@ -27,8 +27,8 @@ const Modal: React.FC<ModalProps> = ({
   ...props
 }) => {
   const theme = useTheme();
-  const { isMobile } = useMatchBreakpoints()
-  const defaultBodyPadding = isMobile ? "0 16px 24px" : "0 32px 32px"
+  const { isMobile } = useMatchBreakpoints();
+  const defaultBodyPadding = isMobile ? "0 16px 24px" : "0 32px 32px";
 
   return (
     <ModalContainer

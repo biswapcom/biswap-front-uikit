@@ -78,7 +78,7 @@ export interface DropdownMenuItems {
     rightIcon?: string;
     rightIconFill?: string;
     description?: string;
-    links?: InternalLink[];
+    links?: InternalLink[] | (() => InternalLink[]) | (() => Promise<InternalLink[]>);
     bannerRenderer?: (h?: string, t?: string) => React.ReactNode;
     target?: string;
     mobileTarget?: string;
