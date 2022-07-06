@@ -118,7 +118,7 @@ export const Default: React.FC = () => {
           variant="select"
           scale="lg"
         >
-          <ButtonMenuItem>Button 1</ButtonMenuItem>
+          <ButtonMenuItem as="a">Button 1</ButtonMenuItem>
           <ButtonMenuItem>Button 2</ButtonMenuItem>
           <ButtonMenuItem>Button 3</ButtonMenuItem>
           <ButtonMenuItem>Button 4</ButtonMenuItem>

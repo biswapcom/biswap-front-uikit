@@ -16,6 +16,7 @@ export interface BaseButtonMenuItemProps extends LayoutProps, SpaceProps {
     flatBottom?: boolean;
     flatTop?: boolean;
     flat?: boolean;
+    isActive?: boolean;
 }
 export declare const menuScales: {
     readonly LG: "lg";
