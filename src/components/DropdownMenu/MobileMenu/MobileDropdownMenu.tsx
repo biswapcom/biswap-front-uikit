@@ -14,24 +14,27 @@ const MobileDropdownMenu: FC<MenuItemsProps> = ({
 }) => {
   const { isMobile } = useMatchBreakpoints();
 
-  let mobileConfig: MenuItemsType[] = []
+  const [configItems, setConfigItems] = useState(items)
 
   useEffect(() => {
-    const config = items
-    mobileConfig = config.map(item => {
-      if (item.isExtended) {
-        item.items = item.items && item.items
+    if (isMobile) {
+      setConfigItems(items.map(item => {
+        if (item.isExtended) {
+          item.items = item.items && item.items
           .filter((extendItem, index) => (index % 2) === 0)
           .concat(item.items.filter((extendItem, index) => (index % 2) === 1));
-      }
+        }
 
-      return item
-    })
-  }, [])
+        return item
+      }))
+    } else {
+      setConfigItems(items)
+    }
+  }, [isMobile])
 
   return (
     <MobileMenu
-      items={isMobile ? mobileConfig : items}
+      items={configItems}
       mobileMenuCallback={mobileMenuCallback}
       isMobileNav
       activeItem={activeItem}
