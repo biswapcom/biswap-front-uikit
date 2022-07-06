@@ -1,8 +1,8 @@
-import React, { FC, useEffect } from "react";
+import React, {FC, useEffect, useState} from "react";
 import { Text } from "../../Text";
 import { useMatchBreakpoints } from "../../../hooks";
 import MobileMenu from "./MobileMenu";
-import { MenuItemsProps } from "../../MenuItems/types";
+import {MenuItemsProps, MenuItemsType} from "../../MenuItems/types";
 import MenuItem from "../../MenuItem";
 import Burger from "./ButtonBurger";
 
@@ -13,9 +13,10 @@ const MobileDropdownMenu: FC<MenuItemsProps> = ({
   mobileMenuCallback,
 }) => {
   const { isMobile } = useMatchBreakpoints();
+  const [configItems, setConfigItems] = useState(items)
 
   useEffect(() => {
-    items = items.map(item => {
+    const sortedItems = items.map(item => {
       if (item.isExtended) {
         item.items = item.items && item.items
           .filter((extendItem, index) => (index % 2) === 0)
@@ -24,11 +25,13 @@ const MobileDropdownMenu: FC<MenuItemsProps> = ({
 
       return item
     })
-  }, [])
+
+    if (isMobile) setConfigItems(sortedItems)
+  }, [isMobile])
 
   return (
     <MobileMenu
-      items={items}
+      items={configItems}
       mobileMenuCallback={mobileMenuCallback}
       isMobileNav
       activeItem={activeItem}
