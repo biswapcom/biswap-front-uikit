@@ -16,7 +16,8 @@ const MobileDropdownMenu: FC<MenuItemsProps> = ({
   const [configItems, setConfigItems] = useState(items)
 
   useEffect(() => {
-    const sortedItems = items.map(item => {
+    const config = items
+    const sortedItems = config.map(item => {
       if (item.isExtended) {
         item.items = item.items && item.items
           .filter((extendItem, index) => (index % 2) === 0)
@@ -27,7 +28,7 @@ const MobileDropdownMenu: FC<MenuItemsProps> = ({
     })
 
     if (isMobile) setConfigItems(sortedItems)
-  }, [isMobile])
+  }, [])
 
   return (
     <MobileMenu

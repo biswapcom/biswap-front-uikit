@@ -7887,7 +7887,8 @@ var MobileDropdownMenu = function (_a) {
     var isMobile = useMatchBreakpoints().isMobile;
     var _c = React.useState(items), configItems = _c[0], setConfigItems = _c[1];
     React.useEffect(function () {
-        var sortedItems = items.map(function (item) {
+        var config = items;
+        var sortedItems = config.map(function (item) {
             if (item.isExtended) {
                 item.items = item.items && item.items
                     .filter(function (extendItem, index) { return (index % 2) === 0; })
@@ -7897,7 +7898,7 @@ var MobileDropdownMenu = function (_a) {
         });
         if (isMobile)
             setConfigItems(sortedItems);
-    }, [isMobile]);
+    }, []);
     return (React__default["default"].createElement(MobileMenu, { items: configItems, mobileMenuCallback: mobileMenuCallback, isMobileNav: true, activeItem: activeItem },
         React__default["default"].createElement(MenuItem, null,
             React__default["default"].createElement(Burger, { open: isMobileMenuOpened }),
