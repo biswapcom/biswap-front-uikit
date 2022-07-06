@@ -7888,7 +7888,8 @@ var MobileDropdownMenu = function (_a) {
     var _c = React.useState(items), configItems = _c[0], setConfigItems = _c[1];
     React.useEffect(function () {
         if (isMobile) {
-            setConfigItems(items.map(function (item) {
+            var configMobile = items;
+            setConfigItems(configMobile.map(function (item) {
                 if (item.isExtended) {
                     item.items = item.items && item.items
                         .filter(function (extendItem, index) { return (index % 2) === 0; })

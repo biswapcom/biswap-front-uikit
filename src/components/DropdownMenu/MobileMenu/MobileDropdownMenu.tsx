@@ -2,7 +2,7 @@ import React, {FC, useEffect, useState} from "react";
 import { Text } from "../../Text";
 import { useMatchBreakpoints } from "../../../hooks";
 import MobileMenu from "./MobileMenu";
-import {MenuItemsProps, MenuItemsType} from "../../MenuItems/types";
+import { MenuItemsProps } from "../../MenuItems/types";
 import MenuItem from "../../MenuItem";
 import Burger from "./ButtonBurger";
 
@@ -18,7 +18,9 @@ const MobileDropdownMenu: FC<MenuItemsProps> = ({
 
   useEffect(() => {
     if (isMobile) {
-      setConfigItems(items.map(item => {
+      const configMobile = items
+
+      setConfigItems(configMobile.map(item => {
         if (item.isExtended) {
           item.items = item.items && item.items
           .filter((extendItem, index) => (index % 2) === 0)
