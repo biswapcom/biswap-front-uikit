@@ -1,4 +1,36 @@
-import { variants } from "./types";
+import { variants, scales } from "./types";
+
+export const scaleVariants = {
+  [scales.XL]: {
+    height: "48px",
+    padding: "0 24px",
+    borderRadius: "10px",
+  },
+  [scales.LG]: {
+    height: "40px",
+    padding: "0 16px",
+    fontSize: "14px",
+    borderRadius: "8px",
+  },
+  [scales.MD]: {
+    height: "32px",
+    padding: "0 12px",
+    fontSize: "12px",
+    borderRadius: "8px",
+  },
+  [scales.SM]: {
+    height: "24px",
+    padding: "0 8px",
+    fontSize: "12px",
+    borderRadius: "6px",
+  },
+  [scales.XS]: {
+    height: "20px",
+    padding: "0 8px",
+    fontSize: "12px",
+    borderRadius: "6px",
+  },
+};
 
 export const styleVariants = {
   [variants.PRIMARY]: {

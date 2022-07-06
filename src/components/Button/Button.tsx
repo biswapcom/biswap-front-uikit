@@ -18,6 +18,7 @@ const Button = <E extends ElementType = "button">(
     loadingTitle,
     ...rest
   } = props;
+
   const internalProps = external ? getExternalLinkProps() : {};
   const isDisabled = isLoading || disabled;
   const classNames = className ? [className] : [];

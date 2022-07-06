@@ -1,3 +1,34 @@
+export declare const scaleVariants: {
+    xl: {
+        height: string;
+        padding: string;
+        borderRadius: string;
+    };
+    lg: {
+        height: string;
+        padding: string;
+        fontSize: string;
+        borderRadius: string;
+    };
+    md: {
+        height: string;
+        padding: string;
+        fontSize: string;
+        borderRadius: string;
+    };
+    sm: {
+        height: string;
+        padding: string;
+        fontSize: string;
+        borderRadius: string;
+    };
+    xs: {
+        height: string;
+        padding: string;
+        fontSize: string;
+        borderRadius: string;
+    };
+};
 export declare const styleVariants: {
     primary: {
         backgroundColor: string;

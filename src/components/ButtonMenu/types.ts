@@ -1,9 +1,12 @@
 import { ElementType, ReactElement, ReactNode } from "react";
 import { LayoutProps, SpaceProps } from "styled-system";
+import { PolymorphicComponentProps } from "../../util/polymorphic";
 
 export interface ButtonMenuItemProps extends BaseButtonMenuItemProps {
   isActive?: boolean;
 }
+// export type ButtonMenuItemProps<P extends ElementType = "button"> =
+//   PolymorphicComponentProps<P, BaseButtonMenuItemProps>;
 
 export interface BaseButtonMenuItemProps extends LayoutProps, SpaceProps {
   as?: "a" | "button" | ElementType;
@@ -18,6 +21,7 @@ export interface BaseButtonMenuItemProps extends LayoutProps, SpaceProps {
   flatBottom?: boolean;
   flatTop?: boolean;
   flat?: boolean;
+  isActive?: boolean;
 }
 
 export const menuScales = {
