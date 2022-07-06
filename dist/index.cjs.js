@@ -7981,7 +7981,24 @@ var Burger = function (_a) {
 var MobileDropdownMenu = function (_a) {
     var items = _a.items, activeItem = _a.activeItem, _b = _a.isMobileMenuOpened, isMobileMenuOpened = _b === void 0 ? false : _b, mobileMenuCallback = _a.mobileMenuCallback;
     var isMobile = useMatchBreakpoints().isMobile;
-    return (React__default["default"].createElement(MobileMenu, { items: items, mobileMenuCallback: mobileMenuCallback, isMobileNav: true, activeItem: activeItem },
+    var _c = React.useState(items), configItems = _c[0], setConfigItems = _c[1];
+    React.useEffect(function () {
+        if (isMobile) {
+            var configMobile = lodash.cloneDeep(items);
+            setConfigItems(configMobile.map(function (item) {
+                if (item.isExtended) {
+                    item.items = item.items && item.items
+                        .filter(function (extendItem, index) { return (index % 2) === 0; })
+                        .concat(item.items.filter(function (extendItem, index) { return (index % 2) === 1; }));
+                }
+                return item;
+            }));
+        }
+        else {
+            setConfigItems(items);
+        }
+    }, [isMobile]);
+    return (React__default["default"].createElement(MobileMenu, { items: configItems, mobileMenuCallback: mobileMenuCallback, isMobileNav: true, activeItem: activeItem },
         React__default["default"].createElement(MenuItem, null,
             React__default["default"].createElement(Burger, { open: isMobileMenuOpened }),
             !isMobile && (React__default["default"].createElement(Text, { ml: "8px", fontWeight: "600", color: "white" }, "Menu")))));
