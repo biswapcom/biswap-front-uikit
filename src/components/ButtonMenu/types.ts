@@ -1,8 +1,26 @@
-import { ReactElement } from "react";
-import { SpaceProps } from "styled-system";
-import { BaseButtonProps, Scale, Variant } from "../Button/types";
+import { ElementType, ReactElement, ReactNode } from "react";
+import { LayoutProps, SpaceProps } from "styled-system";
+import { PolymorphicComponentProps } from "../../util/polymorphic";
 
-export interface ButtonMenuItemProps extends BaseButtonProps {
+export interface ButtonMenuItemProps extends BaseButtonMenuItemProps {
+  isActive?: boolean;
+}
+// export type ButtonMenuItemProps<P extends ElementType = "button"> =
+//   PolymorphicComponentProps<P, BaseButtonMenuItemProps>;
+
+export interface BaseButtonMenuItemProps extends LayoutProps, SpaceProps {
+  as?: "a" | "button" | ElementType;
+  external?: boolean;
+  isLoading?: boolean;
+  loadingTitle?: string;
+  scale?: Scale;
+  variant?: Variant;
+  disabled?: boolean;
+  startIcon?: ReactNode;
+  endIcon?: ReactNode;
+  flatBottom?: boolean;
+  flatTop?: boolean;
+  flat?: boolean;
   isActive?: boolean;
 }
 
@@ -31,3 +49,23 @@ export interface ButtonMenuProps extends SpaceProps {
   flatTop?: boolean;
   withoutBackground?: boolean;
 }
+
+//--------------
+
+export const scales = {
+  XL: "xl",
+  LG: "lg",
+  MD: "md",
+  SM: "sm",
+  XS: "xs",
+} as const;
+
+export const variants = {
+  PRIMARY: "primary",
+  WARNING: "warning",
+  SELECT: "select",
+  SELECT_LIGHT: "selectLight",
+} as const;
+
+export type Scale = typeof scales[keyof typeof scales];
+export type Variant = typeof variants[keyof typeof variants];

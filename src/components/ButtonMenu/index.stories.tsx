@@ -118,7 +118,7 @@ export const Default: React.FC = () => {
           variant="select"
           scale="lg"
         >
-          <ButtonMenuItem>Button 1</ButtonMenuItem>
+          <ButtonMenuItem as="a">Button 1</ButtonMenuItem>
           <ButtonMenuItem>Button 2</ButtonMenuItem>
           <ButtonMenuItem>Button 3</ButtonMenuItem>
           <ButtonMenuItem>Button 4</ButtonMenuItem>
@@ -200,7 +200,6 @@ export const FlatTop: React.FC = () => {
           flatTop
           activeIndex={index1}
           onItemClick={handleClick1}
-          variant="success"
         >
           <ButtonMenuItem>Button 1</ButtonMenuItem>
           <ButtonMenuItem>Button 2</ButtonMenuItem>
@@ -286,7 +285,6 @@ export const DisabledMenu: React.FC = () => {
           activeIndex={index1}
           onItemClick={handleClick1}
           scale="sm"
-          variant="text"
           ml="24px"
         >
           <ButtonMenuItem>Button 1</ButtonMenuItem>
@@ -301,7 +299,6 @@ export const DisabledMenu: React.FC = () => {
           activeIndex={index1}
           onItemClick={handleClick1}
           scale="sm"
-          variant="text"
           ml="24px"
         >
           <ButtonMenuItem>Disabled 1</ButtonMenuItem>
@@ -332,7 +329,7 @@ export const FullWidthMenu: React.FC = () => {
         <ButtonMenuItem>Button 3</ButtonMenuItem>
         <ButtonMenuItem>Button 4</ButtonMenuItem>
       </ButtonMenu>
-      <ButtonMenu activeIndex={index} fullWidth scale="sm" variant="text">
+      <ButtonMenu activeIndex={index} fullWidth scale="sm">
         <ButtonMenuItem as="a" href="https://pancakeswap.finance">
           Link 1
         </ButtonMenuItem>

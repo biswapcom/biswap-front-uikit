@@ -58,13 +58,7 @@ export const Default: React.FC = () => {
         </Heading>
         {Object.values(scales).map((scale) => {
           return (
-            <Button
-              key="md"
-              variant="primary"
-              scale={scale}
-              mr="8px"
-              mb="8px"
-            >
+            <Button key="md" variant="primary" scale={scale} mr="8px" mb="8px">
               {`Primary ${scale}`}
             </Button>
           );
@@ -90,7 +84,13 @@ export const Default: React.FC = () => {
         </Heading>
         {Object.values(baseBtn).map((variant) => {
           return (
-            <Button isLoading key={variant} variant={variant} scale="lg" mr="8px">
+            <Button
+              isLoading
+              key={variant}
+              variant={variant}
+              scale="lg"
+              mr="8px"
+            >
               {`${camelCase(variant)}`}
             </Button>
           );

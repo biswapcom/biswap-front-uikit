@@ -1,12 +1,14 @@
-import React from "react";
+import React, { ElementType } from "react";
 import styled from "styled-components";
+import { variant } from "styled-system";
+import { styleVariants, scaleVariants } from "./theme";
 import Button from "../Button/Button";
-import { BaseButtonProps, variants } from "../Button/types";
-import { ButtonMenuItemProps } from "./types";
+import { BaseButtonMenuItemProps, ButtonMenuItemProps } from "./types";
+import { variants } from "./types";
 import { PolymorphicComponent } from "../../util/polymorphic";
 
-interface InactiveButtonProps extends BaseButtonProps {
-  forwardedAs: BaseButtonProps["as"];
+interface InactiveButtonProps extends BaseButtonMenuItemProps {
+  forwardedAs: BaseButtonMenuItemProps["as"];
   colorKey: "pastelBlue" | "text";
 }
 
@@ -14,12 +16,48 @@ const InactiveButton: PolymorphicComponent<
   InactiveButtonProps,
   "button"
 > = styled(Button)<InactiveButtonProps>`
+  align-items: center;
+  border: 0;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: inherit;
+  //font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1;
+  outline: 0;
+  transition: background-color 0.2s, opacity 0.2s;
+
   background-color: transparent;
   color: ${({ theme, colorKey }) => theme.colors[colorKey]};
-  transition: color 0.3s ease;
   &:hover:not(:disabled):not(:active) {
     background-color: transparent;
   }
+`;
+
+const MenuItemButton: PolymorphicComponent<
+  BaseButtonMenuItemProps,
+  "button"
+> = styled.button<BaseButtonMenuItemProps>`
+  align-items: center;
+  border: 0;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: inherit;
+  //font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1;
+  outline: 0;
+  transition: background-color 0.2s, opacity 0.2s;
+
+  ${variant({
+    variants: styleVariants,
+  })}
+  ${variant({
+    prop: "scale",
+    variants: scaleVariants,
+  })}
 `;
 
 const ButtonMenuItem: PolymorphicComponent<ButtonMenuItemProps, "button"> = ({
@@ -39,7 +77,7 @@ const ButtonMenuItem: PolymorphicComponent<ButtonMenuItemProps, "button"> = ({
     );
   }
 
-  return <Button as={as} variant={variant} {...props} />;
+  return <MenuItemButton as={as} variant={variant} {...props} />;
 };
 
 export default ButtonMenuItem;
