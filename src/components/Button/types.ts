@@ -16,9 +16,6 @@ export const variants = {
   SUCCESS: "success",
   WARNING: "warning",
   BOOST: "boost",
-  SELECT: "select",
-  SELECT_LIGHT: "selectLight",
-
   LIGHT_OUT: "lightOut",
   LIGHT: "light",
   TERTIARY: "tertiary",
