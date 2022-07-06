@@ -1,6 +1,4 @@
-import React, { FC, useState } from "react";
-import IconComponent from "../../Svg/IconComponent";
-import { Flex } from "../../Box";
+import React, { FC, useEffect } from "react";
 import { Text } from "../../Text";
 import { useMatchBreakpoints } from "../../../hooks";
 import MobileMenu from "./MobileMenu";
@@ -15,6 +13,18 @@ const MobileDropdownMenu: FC<MenuItemsProps> = ({
   mobileMenuCallback,
 }) => {
   const { isMobile } = useMatchBreakpoints();
+
+  useEffect(() => {
+    items = items.map(item => {
+      if (item.isExtended) {
+        item.items = item.items && item.items
+          .filter((extendItem, index) => (index % 2) === 0)
+          .concat(item.items.filter((extendItem, index) => (index % 2) === 1));
+      }
+
+      return item
+    })
+  }, [])
 
   return (
     <MobileMenu

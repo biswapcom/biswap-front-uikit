@@ -7872,6 +7872,16 @@ var Burger = function (_a) {
 var MobileDropdownMenu = function (_a) {
     var items = _a.items, activeItem = _a.activeItem, _b = _a.isMobileMenuOpened, isMobileMenuOpened = _b === void 0 ? false : _b, mobileMenuCallback = _a.mobileMenuCallback;
     var isMobile = useMatchBreakpoints().isMobile;
+    useEffect(function () {
+        items = items.map(function (item) {
+            if (item.isExtended) {
+                item.items = item.items && item.items
+                    .filter(function (extendItem, index) { return (index % 2) === 0; })
+                    .concat(item.items.filter(function (extendItem, index) { return (index % 2) === 1; }));
+            }
+            return item;
+        });
+    }, []);
     return (React.createElement(MobileMenu, { items: items, mobileMenuCallback: mobileMenuCallback, isMobileNav: true, activeItem: activeItem },
         React.createElement(MenuItem, null,
             React.createElement(Burger, { open: isMobileMenuOpened }),
