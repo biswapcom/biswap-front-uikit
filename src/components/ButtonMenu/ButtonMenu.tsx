@@ -1,7 +1,7 @@
 import React, { cloneElement, Children, ReactElement } from "react";
 import styled, { DefaultTheme } from "styled-components";
 import { space } from "styled-system";
-import { scales, variants } from "../Button/types";
+import { scales, variants } from "./types";
 import { ButtonMenuProps } from "./types";
 import getRgba from "../../util/getRgba";
 
@@ -28,7 +28,7 @@ const getFlat = ({ flatBottom, flatTop }: StyledButtonMenuProps) => {
 const StyledButtonMenu = styled.div<StyledButtonMenuProps>`
   background-color: ${getBackgroundColor};
   border-radius: ${({ flatBottom, flatTop }) =>
-    flatBottom || flatTop ? getFlat : "8px"};
+    flatBottom || flatTop ? getFlat : "10px"};
   display: ${({ fullWidth }) => (fullWidth ? "flex" : "inline-flex")};
   width: ${({ fullWidth }) => (fullWidth ? "100%" : "auto")};
   padding: ${({ flatBottom, flatTop }) =>

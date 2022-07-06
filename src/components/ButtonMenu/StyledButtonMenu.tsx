@@ -1,5 +1,5 @@
 import styled, { DefaultTheme } from "styled-components";
-import { Variant, variants } from "../Button/types";
+import { Variant, variants } from "./types";
 import getRgba from "../../util/getRgba";
 
 type StyledButtonMenuProps = {

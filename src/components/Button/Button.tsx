@@ -3,7 +3,6 @@ import getExternalLinkProps from "../../util/getExternalLinkProps";
 import StyledButton from "./StyledButton";
 import { ButtonProps, scales, variants } from "./types";
 import { AutoRenewAnimateIcon } from "../Svg";
-import AutoRenewAnimate from "../Svg/Icons/AutoRenew/AutoRenewAnimate";
 
 const Button = <E extends ElementType = "button">(
   props: ButtonProps<E>
@@ -19,6 +18,7 @@ const Button = <E extends ElementType = "button">(
     loadingTitle,
     ...rest
   } = props;
+
   const internalProps = external ? getExternalLinkProps() : {};
   const isDisabled = isLoading || disabled;
   const classNames = className ? [className] : [];
