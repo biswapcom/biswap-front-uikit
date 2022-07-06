@@ -1,11 +1,12 @@
 import React, {FC, useEffect, useState} from "react";
+import { cloneDeep } from "lodash";
+
 import { Text } from "../../Text";
 import { useMatchBreakpoints } from "../../../hooks";
 import MobileMenu from "./MobileMenu";
 import { MenuItemsProps } from "../../MenuItems/types";
 import MenuItem from "../../MenuItem";
 import Burger from "./ButtonBurger";
-import {cloneDeep} from "lodash";
 
 const MobileDropdownMenu: FC<MenuItemsProps> = ({
   items,
@@ -13,13 +14,12 @@ const MobileDropdownMenu: FC<MenuItemsProps> = ({
   isMobileMenuOpened = false,
   mobileMenuCallback,
 }) => {
-  const { isXs, isSm } = useMatchBreakpoints();
-  const isMobile = isXs || isSm
+  const { isMobile } = useMatchBreakpoints();
 
   const [configItems, setConfigItems] = useState(items)
 
   useEffect(() => {
-    if (isXs || isSm) {
+    if (isMobile) {
       const configMobile = cloneDeep(items)
 
       setConfigItems(configMobile.map(item => {
