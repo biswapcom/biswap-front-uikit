@@ -8,6 +8,7 @@ import {
   StyledDropdownMenuItemProps,
 } from "./types";
 import { useMatchBreakpoints } from "../../hooks";
+import Grid from "../Box/Grid";
 
 const getTextColor = ({
   $isActive,
@@ -143,10 +144,6 @@ export const StyledDropdownMenuItemContainer = styled.div`
 
   ${({ theme }) => theme.mediaQueries.lg} {
     margin-bottom: 24px;
-
-    &:last-of-type {
-      margin-bottom: 0;
-    }
   }
 `;
 
@@ -162,15 +159,17 @@ export const DropdownMenuDivider = styled.hr`
 `}
 `;
 
-export const StyledDropdownMenu = styled.div<{
+export const StyledDropdownMenu = styled(Grid)<{
   $isOpen: boolean;
   $isExtended?: boolean;
 }>`
+  grid-template-columns: 1fr;
+
   background-color: ${({ theme }) => theme.card.background};
   border: 1px solid ${({ theme }) => theme.colors.cardBorder};
   border-radius: 16px;
 
-  padding: 24px;
+  padding: 24px 24px 0;
   pointer-events: auto;
   width: 352px;
   visibility: visible;
@@ -181,7 +180,7 @@ export const StyledDropdownMenu = styled.div<{
     0px 1px 1px rgba(0, 0, 0, 0.05);
 
   ${({ $isOpen }) =>
-    !$isOpen &&
+  !$isOpen &&
     `
     pointer-events: none;
     visibility: hidden;
@@ -189,13 +188,10 @@ export const StyledDropdownMenu = styled.div<{
   `}
 
   ${({ $isExtended }) =>
-    $isExtended &&
-    `
-      -webkit-column-count: 2;
-      -moz-column-count: 2;
-      column-count: 2;
-      -webkit-perspective:1;
-      width: 680px;
+  $isExtended &&
+  `
+    grid-template-columns: repeat(2, 1fr);
+    width: 680px;
   `}
 `;
 
