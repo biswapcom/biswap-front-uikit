@@ -180,7 +180,7 @@ export const StyledDropdownMenu = styled(Grid)<{
     0px 1px 1px rgba(0, 0, 0, 0.05);
 
   ${({ $isOpen }) =>
-  !$isOpen &&
+    !$isOpen &&
     `
     pointer-events: none;
     visibility: hidden;
@@ -188,8 +188,8 @@ export const StyledDropdownMenu = styled(Grid)<{
   `}
 
   ${({ $isExtended }) =>
-  $isExtended &&
-  `
+    $isExtended &&
+    `
     grid-template-columns: repeat(2, 1fr);
     width: 680px;
   `}
