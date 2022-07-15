@@ -79,6 +79,12 @@ const connectors: Config[] = [
     connectorId: ConnectorNames.Injected,
     priority: 999,
   },
+  {
+    title: "Blocto",
+    icon: BitKeepWallet,
+    connectorId: ConnectorNames.Blocto,
+    priority: 999,
+  },
 ];
 
 export default connectors;

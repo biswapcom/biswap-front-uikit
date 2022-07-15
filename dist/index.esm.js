@@ -12,7 +12,7 @@ import { Link as Link$1, useHistory } from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { TwitterShareButton, TelegramShareButton } from 'react-share';
 
-/*! *****************************************************************************
+/******************************************************************************
 Copyright (c) Microsoft Corporation.
 
 Permission to use, copy, modify, and/or distribute this software for any
@@ -8173,6 +8173,7 @@ var ConnectorNames;
     ConnectorNames["WalletConnect"] = "walletconnect";
     ConnectorNames["BSC"] = "bsc";
     ConnectorNames["WalletLink"] = "walletlink";
+    ConnectorNames["Blocto"] = "blocto";
 })(ConnectorNames || (ConnectorNames = {}));
 
 var connectors = [
@@ -8240,6 +8241,12 @@ var connectors = [
         title: "BitKeep Wallet",
         icon: Icon,
         connectorId: ConnectorNames.Injected,
+        priority: 999,
+    },
+    {
+        title: "Blocto",
+        icon: Icon,
+        connectorId: ConnectorNames.Blocto,
         priority: 999,
     },
 ];

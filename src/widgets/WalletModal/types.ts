@@ -6,6 +6,7 @@ export enum ConnectorNames {
   WalletConnect = "walletconnect",
   BSC = "bsc",
   WalletLink = "walletlink",
+  Blocto = "blocto",
 }
 
 export type Login = (connectorId: ConnectorNames) => void;

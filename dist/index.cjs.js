@@ -25,7 +25,7 @@ var debounce__default = /*#__PURE__*/_interopDefaultLegacy(debounce);
 var noop__default = /*#__PURE__*/_interopDefaultLegacy(noop);
 var throttle__default = /*#__PURE__*/_interopDefaultLegacy(throttle);
 
-/*! *****************************************************************************
+/******************************************************************************
 Copyright (c) Microsoft Corporation.
 
 Permission to use, copy, modify, and/or distribute this software for any
@@ -8186,6 +8186,7 @@ exports.ConnectorNames = void 0;
     ConnectorNames["WalletConnect"] = "walletconnect";
     ConnectorNames["BSC"] = "bsc";
     ConnectorNames["WalletLink"] = "walletlink";
+    ConnectorNames["Blocto"] = "blocto";
 })(exports.ConnectorNames || (exports.ConnectorNames = {}));
 
 var connectors = [
@@ -8253,6 +8254,12 @@ var connectors = [
         title: "BitKeep Wallet",
         icon: Icon,
         connectorId: exports.ConnectorNames.Injected,
+        priority: 999,
+    },
+    {
+        title: "Blocto",
+        icon: Icon,
+        connectorId: exports.ConnectorNames.Blocto,
         priority: 999,
     },
 ];

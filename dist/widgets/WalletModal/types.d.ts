@@ -4,7 +4,8 @@ export declare enum ConnectorNames {
     Injected = "injected",
     WalletConnect = "walletconnect",
     BSC = "bsc",
-    WalletLink = "walletlink"
+    WalletLink = "walletlink",
+    Blocto = "blocto"
 }
 export declare type Login = (connectorId: ConnectorNames) => void;
 export interface Config {
