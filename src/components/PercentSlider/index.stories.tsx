@@ -3,7 +3,6 @@ import styled from "styled-components";
 import Flex from "../Box/Flex";
 import Box from "../Box/Box";
 import Text from "../Text/Text";
-import Button from "../Button/Button";
 import PercentSlider from "./PercentSlider";
 
 export default {
@@ -32,7 +31,7 @@ const SliderVariant = ({ initialValue }: { initialValue: number }) => {
 
 export const Default: React.FC = () => {
   return (
-    <Col ml='20px'>
+    <Col ml="20px">
       <SliderVariant initialValue={5} />
     </Col>
   );
@@ -47,7 +46,14 @@ export const Variants: React.FC = () => {
 
   return (
     <Col>
-      <PercentSlider name="sliderdisabled" value={value} onValueChanged={handleChange} min={1} max={20} disabled />
+      <PercentSlider
+        name="sliderdisabled"
+        value={value}
+        onValueChanged={handleChange}
+        min={1}
+        max={20}
+        disabled
+      />
     </Col>
   );
 };
@@ -65,10 +71,23 @@ export const Balance: React.FC = () => {
 
   return (
     <Box width="420px">
-      <PercentSlider shortcutCheckpoints={percentShortcuts} name="slider" min={0} max={100} value={balance} onValueChanged={handleChange} />
+      <PercentSlider
+        shortcutCheckpoints={percentShortcuts}
+        name="slider"
+        min={0}
+        max={100}
+        value={balance}
+        onValueChanged={handleChange}
+      />
       <Text>{`Current Balance: ${balance}`}</Text>
-      <Text fontSize="12px" color="textSubtle">{`Initial Balance: ${initialBalance}`}</Text>
-      <Text fontSize="12px" color="textSubtle">{`Max Balance: ${maxBalance}`}</Text>
+      <Text
+        fontSize="12px"
+        color="textSubtle"
+      >{`Initial Balance: ${initialBalance}`}</Text>
+      <Text
+        fontSize="12px"
+        color="textSubtle"
+      >{`Max Balance: ${maxBalance}`}</Text>
     </Box>
   );
 };
