@@ -23,7 +23,7 @@ export declare const DropdownInternalMenuItem: import("styled-components").Style
 }, never>;
 export declare const StyledDropdownMenuItemContainer: import("styled-components").StyledComponent<"div", DefaultTheme, {}, never>;
 export declare const DropdownMenuDivider: import("styled-components").StyledComponent<"hr", DefaultTheme, {}, never>;
-export declare const StyledDropdownMenu: import("styled-components").StyledComponent<"div", DefaultTheme, {
+export declare const StyledDropdownMenu: import("styled-components").StyledComponent<"div", DefaultTheme, import("../Box").BoxProps & import("../Box").GridProps & {
     $isOpen: boolean;
     $isExtended?: boolean | undefined;
 }, never>;

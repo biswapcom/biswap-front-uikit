@@ -171,7 +171,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
                       >
                         <Grid
                           gridTemplateColumns={
-                            isMobile ? "1fr" : "repeat(3, 1fr)"
+                            isMobile ? "1fr" : "repeat(2, 1fr)"
                           }
                           gridColumnGap={16}
                           mt={16}
