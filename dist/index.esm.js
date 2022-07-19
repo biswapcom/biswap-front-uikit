@@ -8,7 +8,7 @@ import { usePopper } from 'react-popper';
 import debounce from 'lodash/debounce';
 import noop from 'lodash/noop';
 import throttle from 'lodash/throttle';
-import { Link as Link$1, useHistory } from 'react-router-dom';
+import { Link as Link$1 } from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { TwitterShareButton, TelegramShareButton } from 'react-share';
 
@@ -7684,9 +7684,7 @@ var DropdownMenuItemContainer = function (_a) {
         type === DropdownMenuItemType.CONTAINER && (React.createElement(React.Fragment, null,
             React.createElement(DropdownMenuItem, __assign({ "$isActive": isActive, "$hasIcon": true, as: "div" }, itemProps), getMenuItemContent("")),
             hasInnerLinks && (React.createElement(InnerLinksBlock, { links: links, leftIcon: leftIcon, setIsOpen: setIsOpen, linkComponent: linkComponent })))),
-        type === DropdownMenuItemType.INTERNAL_LINK && (React.createElement(DropdownInternalMenuItem, __assign({ label: itemProps.label, "$isActive": isActive, "$hasIcon": !!leftIcon, 
-            // as={linkComponent}
-            to: href, onClick: function () {
+        type === DropdownMenuItemType.INTERNAL_LINK && (React.createElement(DropdownInternalMenuItem, __assign({ label: itemProps.label, "$isActive": isActive, "$hasIcon": !!leftIcon, as: linkComponent, to: href, onClick: function () {
                 setIsOpen(false);
             } }, itemProps), getMenuItemContent("ArrowRight"))),
         type === DropdownMenuItemType.EXTERNAL_LINK && (React.createElement(DropdownMenuItem, __assign({ label: itemProps.label, "$isActive": isActive, "$hasIcon": !!leftIcon, as: "a", href: href, target: isMobile ? mobileTarget || "_self" : target || "_blank", onClick: function () {
@@ -8050,13 +8048,13 @@ var CommonLinkStyles = function (_a) {
 var StyledInnerButton = styled(Button)(templateObject_3$3 || (templateObject_3$3 = __makeTemplateObject(["\n  ", ";\n  height: auto;\n  padding: 0;\n  border: none;\n  background-color: transparent;\n"], ["\n  ", ";\n  height: auto;\n  padding: 0;\n  border: none;\n  background-color: transparent;\n"])), CommonLinkStyles);
 var Logo = function (_a) {
     var href = _a.href;
-    useContext(MenuContext).linkComponent;
-    var push = useHistory().push;
+    var linkComponent = useContext(MenuContext).linkComponent;
+    // const { push } = useHistory()
     var isAbsoluteUrl = href.startsWith("http");
     var innerLogo = (React.createElement(React.Fragment, null,
         React.createElement(Icon$3A, { className: "mobile-icon" }),
         React.createElement(Icon$3z, { className: "desktop-icon" })));
-    return (React.createElement(Flex, null, isAbsoluteUrl ? (React.createElement(StyledInnerButton, { variant: "light", onClick: function () { return window.open(href, "_self"); }, "aria-label": "Biswap home page" }, innerLogo)) : (React.createElement(StyledInnerButton, { variant: "light", onClick: function () { return push(href); }, "aria-label": "Biswap home page" }, innerLogo))));
+    return (React.createElement(Flex, null, isAbsoluteUrl ? (React.createElement(StyledInnerButton, { variant: "light", onClick: function () { return window.open(href, "_self"); }, "aria-label": "Biswap home page" }, innerLogo)) : (React.createElement(StyledInnerButton, { href: href, as: linkComponent, variant: "light", "aria-label": "Biswap home page" }, innerLogo))));
 };
 var templateObject_1$c, templateObject_2$9, templateObject_3$3;
 

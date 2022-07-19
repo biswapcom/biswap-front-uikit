@@ -7697,9 +7697,7 @@ var DropdownMenuItemContainer = function (_a) {
         type === exports.DropdownMenuItemType.CONTAINER && (React__default["default"].createElement(React__default["default"].Fragment, null,
             React__default["default"].createElement(DropdownMenuItem, __assign({ "$isActive": isActive, "$hasIcon": true, as: "div" }, itemProps), getMenuItemContent("")),
             hasInnerLinks && (React__default["default"].createElement(InnerLinksBlock, { links: links, leftIcon: leftIcon, setIsOpen: setIsOpen, linkComponent: linkComponent })))),
-        type === exports.DropdownMenuItemType.INTERNAL_LINK && (React__default["default"].createElement(DropdownInternalMenuItem, __assign({ label: itemProps.label, "$isActive": isActive, "$hasIcon": !!leftIcon, 
-            // as={linkComponent}
-            to: href, onClick: function () {
+        type === exports.DropdownMenuItemType.INTERNAL_LINK && (React__default["default"].createElement(DropdownInternalMenuItem, __assign({ label: itemProps.label, "$isActive": isActive, "$hasIcon": !!leftIcon, as: linkComponent, to: href, onClick: function () {
                 setIsOpen(false);
             } }, itemProps), getMenuItemContent("ArrowRight"))),
         type === exports.DropdownMenuItemType.EXTERNAL_LINK && (React__default["default"].createElement(DropdownMenuItem, __assign({ label: itemProps.label, "$isActive": isActive, "$hasIcon": !!leftIcon, as: "a", href: href, target: isMobile ? mobileTarget || "_self" : target || "_blank", onClick: function () {
@@ -8063,13 +8061,13 @@ var CommonLinkStyles = function (_a) {
 var StyledInnerButton = styled__default["default"](Button)(templateObject_3$3 || (templateObject_3$3 = __makeTemplateObject(["\n  ", ";\n  height: auto;\n  padding: 0;\n  border: none;\n  background-color: transparent;\n"], ["\n  ", ";\n  height: auto;\n  padding: 0;\n  border: none;\n  background-color: transparent;\n"])), CommonLinkStyles);
 var Logo = function (_a) {
     var href = _a.href;
-    React.useContext(MenuContext).linkComponent;
-    var push = reactRouterDom.useHistory().push;
+    var linkComponent = React.useContext(MenuContext).linkComponent;
+    // const { push } = useHistory()
     var isAbsoluteUrl = href.startsWith("http");
     var innerLogo = (React__default["default"].createElement(React__default["default"].Fragment, null,
         React__default["default"].createElement(Icon$3A, { className: "mobile-icon" }),
         React__default["default"].createElement(Icon$3z, { className: "desktop-icon" })));
-    return (React__default["default"].createElement(Flex, null, isAbsoluteUrl ? (React__default["default"].createElement(StyledInnerButton, { variant: "light", onClick: function () { return window.open(href, "_self"); }, "aria-label": "Biswap home page" }, innerLogo)) : (React__default["default"].createElement(StyledInnerButton, { variant: "light", onClick: function () { return push(href); }, "aria-label": "Biswap home page" }, innerLogo))));
+    return (React__default["default"].createElement(Flex, null, isAbsoluteUrl ? (React__default["default"].createElement(StyledInnerButton, { variant: "light", onClick: function () { return window.open(href, "_self"); }, "aria-label": "Biswap home page" }, innerLogo)) : (React__default["default"].createElement(StyledInnerButton, { href: href, as: linkComponent, variant: "light", "aria-label": "Biswap home page" }, innerLogo))));
 };
 var templateObject_1$c, templateObject_2$9, templateObject_3$3;
 
