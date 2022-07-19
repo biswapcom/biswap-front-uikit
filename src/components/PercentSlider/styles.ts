@@ -1,7 +1,7 @@
 import { InputHTMLAttributes } from "react";
 import styled from "styled-components";
 import circle from "./circle.svg";
-import {Flex} from "../Box";
+import { Flex } from "../Box";
 
 interface DisabledProp {
   disabled?: boolean;
@@ -11,7 +11,9 @@ const getCursorStyle = ({ disabled = false }: DisabledProp) => {
   return disabled ? "not-allowed" : "cursor";
 };
 
-const getBaseThumbStyles = ({ disabled }: InputHTMLAttributes<HTMLInputElement>) => `
+const getBaseThumbStyles = ({
+  disabled,
+}: InputHTMLAttributes<HTMLInputElement>) => `
   -webkit-appearance: none;
   background-image: url(${circle});
   background-color: transparent;
@@ -25,7 +27,9 @@ const getBaseThumbStyles = ({ disabled }: InputHTMLAttributes<HTMLInputElement>)
   transform: translateY(4px);
 
   &:hover {
-    transform: ${disabled ? "scale(1) translateY(4px)" : "scale(1.1) translateY(4px)"};
+    transform: ${
+      disabled ? "scale(1) translateY(4px)" : "scale(1.1) translateY(4px)"
+    };
   }
 `;
 
@@ -51,7 +55,8 @@ export const StyledInput = styled.input<InputHTMLAttributes<HTMLInputElement>>`
 `;
 
 export const BarBackground = styled.div<DisabledProp>`
-  background-color: ${({ theme, disabled }) => theme.colors[disabled ? "textDisabled" : "gray900"]};
+  background-color: ${({ theme, disabled }) =>
+    theme.colors[disabled ? "textDisabled" : "gray900"]};
   height: 4px;
   position: absolute;
   top: 18px;
@@ -69,4 +74,4 @@ export const BarProgress = styled.div<DisabledProp>`
 export const PointsContainer = styled(Flex)`
   position: relative;
   top: -20px;
-`
+`;

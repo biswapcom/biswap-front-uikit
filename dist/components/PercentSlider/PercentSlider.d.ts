@@ -1,4 +1,4 @@
 import React from "react";
-import SliderProps from "./types";
-declare const PercentSlider: React.FC<SliderProps>;
+import { PercentSliderProps } from "./types";
+declare const PercentSlider: React.FC<PercentSliderProps>;
 export default PercentSlider;
