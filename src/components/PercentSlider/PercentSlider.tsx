@@ -16,7 +16,7 @@ const PercentSlider: React.FC<PercentSliderProps> = ({
   max = 100,
   value,
   onValueChanged,
-  disabled = true,
+  disabled = false,
   enableShortcuts,
   shortcutCheckpoints = [0, 25, 50, 75, 100],
   ...props
