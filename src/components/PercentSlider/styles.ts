@@ -3,38 +3,23 @@ import styled from "styled-components";
 import circle from "./circle.svg";
 import { Flex } from "../Box";
 
-interface DisabledProp {
-  disabled?: boolean;
-}
-
-const getCursorStyle = ({ disabled = false }: DisabledProp) => {
-  return disabled ? "not-allowed" : "cursor";
-};
-
-const getBaseThumbStyles = ({
-  disabled,
-}: InputHTMLAttributes<HTMLInputElement>) => `
+const getBaseThumbStyles = () => `
   -webkit-appearance: none;
   background-image: url(${circle});
   background-color: transparent;
   box-shadow: none;
   border: 0;
-  cursor: ${getCursorStyle};
   width: 20px;
   height: 20px;
-  filter: ${disabled ? "grayscale(100%)" : "none"};
   transition: 200ms transform;
   transform: translateY(2px);
 
   &:hover {
-    transform: ${
-      disabled ? "scale(1) translateY(2px)" : "scale(1.1) translateY(2px)"
-    };
+    transform: scale(1.1) translateY(2px);
   }
 `;
 
 export const StyledInput = styled.input<InputHTMLAttributes<HTMLInputElement>>`
-  cursor: ${getCursorStyle};
   position: relative;
   z-index: 1;
   margin: 0;
@@ -56,7 +41,7 @@ export const StyledInput = styled.input<InputHTMLAttributes<HTMLInputElement>>`
   }
 `;
 
-export const BarBackground = styled.div<DisabledProp>`
+export const BarBackground = styled.div<{ disabled: boolean }>`
   background-color: ${({ theme, disabled }) =>
     theme.colors[disabled ? "textDisabled" : "gray300"]};
   height: 4px;
@@ -66,9 +51,8 @@ export const BarBackground = styled.div<DisabledProp>`
   border-radius: 20px;
 `;
 
-export const BarProgress = styled.div<DisabledProp>`
+export const BarProgress = styled.div`
   background-color: ${({ theme }) => theme.colors.primary};
-  filter: ${({ disabled }) => (disabled ? "grayscale(100%)" : "none")};
   height: 4px;
   margin-left: 2px;
   position: absolute;
