@@ -6285,7 +6285,7 @@ var circle = "data:image/svg+xml,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%2
 
 var getCursorStyle = function (_a) {
     var _b = _a.disabled, disabled = _b === void 0 ? false : _b;
-    return disabled ? "not-allowed" : "cursor";
+    return disabled ? "not-allowed" : "pointer";
 };
 var getBaseThumbStyles = function (_a) {
     var disabled = _a.disabled;

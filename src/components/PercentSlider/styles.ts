@@ -8,7 +8,7 @@ interface DisabledProp {
 }
 
 const getCursorStyle = ({ disabled = false }: DisabledProp) => {
-  return disabled ? "not-allowed" : "cursor";
+  return disabled ? "not-allowed" : "pointer";
 };
 
 const getBaseThumbStyles = ({
