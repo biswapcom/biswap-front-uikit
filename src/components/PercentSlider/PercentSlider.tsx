@@ -11,7 +11,7 @@ import Flex from "../Box/Flex";
 import CircleIcon from "./CircleIcon";
 
 const PercentSlider: React.FC<PercentSliderProps> = ({
-  name = 'slider',
+  name = "slider",
   min = 0,
   max = 100,
   value,
@@ -47,9 +47,11 @@ const PercentSlider: React.FC<PercentSliderProps> = ({
   return (
     <Flex position="relative" flexDirection="column" {...props}>
       <div>
-        <BarBackground disabled={disabled} />
+        <Flex justifyContent="center">
+          <BarBackground disabled={disabled} />
+        </Flex>
         <BarProgress
-          style={{ width: `${displayPercent}%` }}
+          style={{ width: `calc(${displayPercent}% - 5px)` }}
           disabled={disabled}
         />
         <StyledInput
@@ -68,7 +70,7 @@ const PercentSlider: React.FC<PercentSliderProps> = ({
               <CircleIcon
                 key={index.toString()}
                 width="10px"
-                color={value >= pointPercent ? "primary" : "gray900"}
+                color={value >= pointPercent ? "primary" : "gray300"}
               />
             ))}
           </PointsContainer>
@@ -76,8 +78,9 @@ const PercentSlider: React.FC<PercentSliderProps> = ({
       </div>
       {enableShortcuts && shortcutCheckpoints && (
         <Flex justifyContent="space-between" py="16px">
-          {shortcutCheckpoints.map((percent) => (
+          {shortcutCheckpoints.map((percent, index) => (
             <Button
+              key={index.toString()}
               scale="sm"
               variant="primary"
               onClick={() => {

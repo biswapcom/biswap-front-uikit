@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { useHistory } from "react-router-dom";
+//import { useHistory } from "react-router-dom";
 import styled, { css, DefaultTheme, keyframes } from "styled-components";
 
 // components
@@ -58,7 +58,7 @@ const StyledInnerButton = styled(Button)`
 
 const Logo: React.FC<Props> = ({ href }) => {
   const { linkComponent } = useContext(MenuContext);
-  const { push } = useHistory();
+  // const { push } = useHistory()
 
   const isAbsoluteUrl = href.startsWith("http");
   const innerLogo = (
@@ -80,8 +80,10 @@ const Logo: React.FC<Props> = ({ href }) => {
         </StyledInnerButton>
       ) : (
         <StyledInnerButton
+            href={href}
+            as={linkComponent}
           variant="light"
-          onClick={() => push(href)}
+          // onClick={() => push(href)}
           aria-label="Biswap home page"
         >
           {innerLogo}

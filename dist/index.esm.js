@@ -8,7 +8,7 @@ import { usePopper } from 'react-popper';
 import debounce from 'lodash/debounce';
 import noop from 'lodash/noop';
 import throttle from 'lodash/throttle';
-import { Link as Link$1, useHistory } from 'react-router-dom';
+import { Link as Link$1 } from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { TwitterShareButton, TelegramShareButton } from 'react-share';
 
@@ -6276,21 +6276,21 @@ var getCursorStyle = function (_a) {
 };
 var getBaseThumbStyles = function (_a) {
     var disabled = _a.disabled;
-    return "\n  -webkit-appearance: none;\n  background-image: url(".concat(circle, ");\n  background-color: transparent;\n  box-shadow: none;\n  border: 0;\n  cursor: ").concat(getCursorStyle, ";\n  width: 20px;\n  height: 20px;\n  filter: ").concat(disabled ? "grayscale(100%)" : "none", ";\n  transition: 200ms transform;\n  transform: translateY(4px);\n\n  &:hover {\n    transform: ").concat(disabled ? "scale(1) translateY(4px)" : "scale(1.1) translateY(4px)", ";\n  }\n");
+    return "\n  -webkit-appearance: none;\n  background-image: url(".concat(circle, ");\n  background-color: transparent;\n  box-shadow: none;\n  border: 0;\n  cursor: ").concat(getCursorStyle, ";\n  width: 20px;\n  height: 20px;\n  filter: ").concat(disabled ? "grayscale(100%)" : "none", ";\n  transition: 200ms transform;\n  transform: translateY(2px);\n\n  &:hover {\n    transform: ").concat(disabled ? "scale(1) translateY(2px)" : "scale(1.1) translateY(2px)", ";\n  }\n");
 };
-var StyledInput = styled.input(templateObject_1$x || (templateObject_1$x = __makeTemplateObject(["\n  cursor: ", ";\n  height: 32px;\n  position: relative;\n  z-index: 1;\n  margin: 0;\n  padding: 0;\n\n  ::-webkit-slider-thumb {\n    ", "\n  }\n\n  ::-moz-range-thumb {\n    ", "\n  }\n\n  ::-ms-thumb {\n    ", "\n  }\n"], ["\n  cursor: ", ";\n  height: 32px;\n  position: relative;\n  z-index: 1;\n  margin: 0;\n  padding: 0;\n\n  ::-webkit-slider-thumb {\n    ", "\n  }\n\n  ::-moz-range-thumb {\n    ", "\n  }\n\n  ::-ms-thumb {\n    ", "\n  }\n"])), getCursorStyle, getBaseThumbStyles, getBaseThumbStyles, getBaseThumbStyles);
-var BarBackground = styled.div(templateObject_2$p || (templateObject_2$p = __makeTemplateObject(["\n  background-color: ", ";\n  height: 4px;\n  position: absolute;\n  top: 18px;\n  width: 100%;\n"], ["\n  background-color: ", ";\n  height: 4px;\n  position: absolute;\n  top: 18px;\n  width: 100%;\n"])), function (_a) {
+var StyledInput = styled.input(templateObject_1$x || (templateObject_1$x = __makeTemplateObject(["\n  cursor: ", ";\n  position: relative;\n  z-index: 1;\n  margin: 0;\n  padding: 0;\n  width: 100%;\n  border: none;\n  background-color: transparent;\n\n  ::-webkit-slider-thumb {\n    ", "\n  }\n\n  ::-moz-range-thumb {\n    ", "\n  }\n\n  ::-ms-thumb {\n    ", "\n  }\n"], ["\n  cursor: ", ";\n  position: relative;\n  z-index: 1;\n  margin: 0;\n  padding: 0;\n  width: 100%;\n  border: none;\n  background-color: transparent;\n\n  ::-webkit-slider-thumb {\n    ", "\n  }\n\n  ::-moz-range-thumb {\n    ", "\n  }\n\n  ::-ms-thumb {\n    ", "\n  }\n"])), getCursorStyle, getBaseThumbStyles, getBaseThumbStyles, getBaseThumbStyles);
+var BarBackground = styled.div(templateObject_2$p || (templateObject_2$p = __makeTemplateObject(["\n  background-color: ", ";\n  height: 4px;\n  position: absolute;\n  top: 10px;\n  width: calc(100% - 8px);\n  border-radius: 20px;\n"], ["\n  background-color: ", ";\n  height: 4px;\n  position: absolute;\n  top: 10px;\n  width: calc(100% - 8px);\n  border-radius: 20px;\n"])), function (_a) {
     var theme = _a.theme, disabled = _a.disabled;
-    return theme.colors[disabled ? "textDisabled" : "gray900"];
+    return theme.colors[disabled ? "textDisabled" : "gray300"];
 });
-var BarProgress = styled.div(templateObject_3$g || (templateObject_3$g = __makeTemplateObject(["\n  background-color: ", ";\n  filter: ", ";\n  height: 4px;\n  position: absolute;\n  top: 18px;\n"], ["\n  background-color: ", ";\n  filter: ", ";\n  height: 4px;\n  position: absolute;\n  top: 18px;\n"])), function (_a) {
+var BarProgress = styled.div(templateObject_3$g || (templateObject_3$g = __makeTemplateObject(["\n  background-color: ", ";\n  filter: ", ";\n  height: 4px;\n  margin-left: 2px;\n  position: absolute;\n  top: 10px;\n"], ["\n  background-color: ", ";\n  filter: ", ";\n  height: 4px;\n  margin-left: 2px;\n  position: absolute;\n  top: 10px;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.primary;
 }, function (_a) {
     var disabled = _a.disabled;
     return (disabled ? "grayscale(100%)" : "none");
 });
-var PointsContainer = styled(Flex)(templateObject_4$d || (templateObject_4$d = __makeTemplateObject(["\n  position: relative;\n  top: -20px;\n"], ["\n  position: relative;\n  top: -20px;\n"])));
+var PointsContainer = styled(Flex)(templateObject_4$d || (templateObject_4$d = __makeTemplateObject(["\n  position: relative;\n  top: -16px;\n"], ["\n  position: relative;\n  top: -16px;\n"])));
 var templateObject_1$x, templateObject_2$p, templateObject_3$g, templateObject_4$d;
 
 var CircleIcon = function (props) {
@@ -6314,7 +6314,7 @@ var CircleIcon = function (props) {
 };
 
 var PercentSlider = function (_a) {
-    var _b = _a.name, name = _b === void 0 ? 'slider' : _b, _c = _a.min, min = _c === void 0 ? 0 : _c, _d = _a.max, max = _d === void 0 ? 100 : _d, value = _a.value, onValueChanged = _a.onValueChanged, _e = _a.disabled, disabled = _e === void 0 ? false : _e, enableShortcuts = _a.enableShortcuts, shortcutCheckpoints = _a.shortcutCheckpoints, props = __rest(_a, ["name", "min", "max", "value", "onValueChanged", "disabled", "enableShortcuts", "shortcutCheckpoints"]);
+    var _b = _a.name, name = _b === void 0 ? "slider" : _b, _c = _a.min, min = _c === void 0 ? 0 : _c, _d = _a.max, max = _d === void 0 ? 100 : _d, value = _a.value, onValueChanged = _a.onValueChanged, _e = _a.disabled, disabled = _e === void 0 ? false : _e, enableShortcuts = _a.enableShortcuts, shortcutCheckpoints = _a.shortcutCheckpoints, props = __rest(_a, ["name", "min", "max", "value", "onValueChanged", "disabled", "enableShortcuts", "shortcutCheckpoints"]);
     var _f = useState(value.toString()), displayPercent = _f[0], setDisplayPercent = _f[1];
     useEffect(function () {
         if (value !== parseInt(displayPercent)) {
@@ -6332,12 +6332,13 @@ var PercentSlider = function (_a) {
         ? __spreadArray([0], shortcutCheckpoints, true) : null;
     return (React.createElement(Flex, __assign({ position: "relative", flexDirection: "column" }, props),
         React.createElement("div", null,
-            React.createElement(BarBackground, { disabled: disabled }),
-            React.createElement(BarProgress, { style: { width: "".concat(displayPercent, "%") }, disabled: disabled }),
+            React.createElement(Flex, { justifyContent: "center" },
+                React.createElement(BarBackground, { disabled: disabled })),
+            React.createElement(BarProgress, { style: { width: "calc(".concat(displayPercent, "% - 5px)") }, disabled: disabled }),
             React.createElement(StyledInput, { name: name, type: "range", min: min, max: max, value: displayPercent, step: "any", onChange: handleChange, disabled: disabled }),
-            pointsCoordinates && (React.createElement(PointsContainer, { justifyContent: "space-between" }, pointsCoordinates.map(function (pointPercent, index) { return (React.createElement(CircleIcon, { key: index.toString(), width: "10px", color: value >= pointPercent ? "primary" : "gray900" })); })))),
+            pointsCoordinates && (React.createElement(PointsContainer, { justifyContent: "space-between" }, pointsCoordinates.map(function (pointPercent, index) { return (React.createElement(CircleIcon, { key: index.toString(), width: "10px", color: value >= pointPercent ? "primary" : "gray300" })); })))),
         enableShortcuts && shortcutCheckpoints && (React.createElement(Flex, { justifyContent: "space-between", py: "16px" },
-            shortcutCheckpoints.map(function (percent) { return (React.createElement(Button, { scale: "sm", variant: "primary", onClick: function () {
+            shortcutCheckpoints.map(function (percent, index) { return (React.createElement(Button, { key: index.toString(), scale: "sm", variant: "primary", onClick: function () {
                     setDisplayPercent(percent.toString());
                 } },
                 percent,
@@ -8127,13 +8128,13 @@ var CommonLinkStyles = function (_a) {
 var StyledInnerButton = styled(Button)(templateObject_3$3 || (templateObject_3$3 = __makeTemplateObject(["\n  ", ";\n  height: auto;\n  padding: 0;\n  border: none;\n  background-color: transparent;\n"], ["\n  ", ";\n  height: auto;\n  padding: 0;\n  border: none;\n  background-color: transparent;\n"])), CommonLinkStyles);
 var Logo = function (_a) {
     var href = _a.href;
-    useContext(MenuContext).linkComponent;
-    var push = useHistory().push;
+    var linkComponent = useContext(MenuContext).linkComponent;
+    // const { push } = useHistory()
     var isAbsoluteUrl = href.startsWith("http");
     var innerLogo = (React.createElement(React.Fragment, null,
         React.createElement(Icon$3A, { className: "mobile-icon" }),
         React.createElement(Icon$3z, { className: "desktop-icon" })));
-    return (React.createElement(Flex, null, isAbsoluteUrl ? (React.createElement(StyledInnerButton, { variant: "light", onClick: function () { return window.open(href, "_self"); }, "aria-label": "Biswap home page" }, innerLogo)) : (React.createElement(StyledInnerButton, { variant: "light", onClick: function () { return push(href); }, "aria-label": "Biswap home page" }, innerLogo))));
+    return (React.createElement(Flex, null, isAbsoluteUrl ? (React.createElement(StyledInnerButton, { variant: "light", onClick: function () { return window.open(href, "_self"); }, "aria-label": "Biswap home page" }, innerLogo)) : (React.createElement(StyledInnerButton, { href: href, as: linkComponent, variant: "light", "aria-label": "Biswap home page" }, innerLogo))));
 };
 var templateObject_1$c, templateObject_2$9, templateObject_3$3;
 
