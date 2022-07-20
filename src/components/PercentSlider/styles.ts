@@ -34,7 +34,6 @@ const getBaseThumbStyles = ({
 `;
 
 export const StyledInput = styled.input<InputHTMLAttributes<HTMLInputElement>>`
-  cursor: ${getCursorStyle};
   position: relative;
   z-index: 1;
   margin: 0;
@@ -43,10 +42,6 @@ export const StyledInput = styled.input<InputHTMLAttributes<HTMLInputElement>>`
   border: none;
   background-color: transparent;
   -webkit-appearance: none;
-
-  &::-webkit-slider-runnable-track {
-    ${getBaseThumbStyles}
-  }
 
   &::-webkit-slider-thumb {
     ${getBaseThumbStyles}
