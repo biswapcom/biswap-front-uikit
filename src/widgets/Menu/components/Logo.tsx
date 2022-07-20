@@ -58,7 +58,7 @@ const StyledInnerButton = styled(Button)`
 
 const Logo: React.FC<Props> = ({ href }) => {
   const { linkComponent } = useContext(MenuContext);
-  const { push } = useHistory();
+  const { push } = useHistory()
 
   const isAbsoluteUrl = href.startsWith("http");
   const innerLogo = (
