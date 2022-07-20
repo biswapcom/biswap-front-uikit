@@ -6324,6 +6324,9 @@ var PercentSlider = function (_a) {
             onValueChanged(parseInt(displayPercent));
         }
     }, [displayPercent]);
+    React.useEffect(function () {
+        setDisplayPercent(value.toString());
+    }, [value]);
     var handleChange = React.useCallback(function (_a) {
         var target = _a.target;
         setDisplayPercent(target.value);
