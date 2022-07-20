@@ -6294,7 +6294,7 @@ var getBaseThumbStyles = function (_a) {
 var StyledInput = styled__default["default"].input(templateObject_1$x || (templateObject_1$x = __makeTemplateObject(["\n  cursor: ", ";\n  position: relative;\n  z-index: 1;\n  margin: 0;\n  padding: 0;\n  width: 100%;\n  border: none;\n  background-color: transparent;\n\n  ::-webkit-slider-thumb {\n    ", "\n  }\n\n  ::-moz-range-thumb {\n    ", "\n  }\n\n  ::-ms-thumb {\n    ", "\n  }\n"], ["\n  cursor: ", ";\n  position: relative;\n  z-index: 1;\n  margin: 0;\n  padding: 0;\n  width: 100%;\n  border: none;\n  background-color: transparent;\n\n  ::-webkit-slider-thumb {\n    ", "\n  }\n\n  ::-moz-range-thumb {\n    ", "\n  }\n\n  ::-ms-thumb {\n    ", "\n  }\n"])), getCursorStyle, getBaseThumbStyles, getBaseThumbStyles, getBaseThumbStyles);
 var BarBackground = styled__default["default"].div(templateObject_2$p || (templateObject_2$p = __makeTemplateObject(["\n  background-color: ", ";\n  height: 4px;\n  position: absolute;\n  top: 10px;\n  width: calc(100% - 8px);\n  border-radius: 20px;\n"], ["\n  background-color: ", ";\n  height: 4px;\n  position: absolute;\n  top: 10px;\n  width: calc(100% - 8px);\n  border-radius: 20px;\n"])), function (_a) {
     var theme = _a.theme, disabled = _a.disabled;
-    return theme.colors[disabled ? "textDisabled" : "gray900"];
+    return theme.colors[disabled ? "textDisabled" : "gray300"];
 });
 var BarProgress = styled__default["default"].div(templateObject_3$g || (templateObject_3$g = __makeTemplateObject(["\n  background-color: ", ";\n  filter: ", ";\n  height: 4px;\n  margin-left: 2px;\n  position: absolute;\n  top: 10px;\n"], ["\n  background-color: ", ";\n  filter: ", ";\n  height: 4px;\n  margin-left: 2px;\n  position: absolute;\n  top: 10px;\n"])), function (_a) {
     var theme = _a.theme;
@@ -6349,7 +6349,7 @@ var PercentSlider = function (_a) {
                 React__default["default"].createElement(BarBackground, { disabled: disabled })),
             React__default["default"].createElement(BarProgress, { style: { width: "calc(".concat(displayPercent, "% - 5px)") }, disabled: disabled }),
             React__default["default"].createElement(StyledInput, { name: name, type: "range", min: min, max: max, value: displayPercent, step: "any", onChange: handleChange, disabled: disabled }),
-            pointsCoordinates && (React__default["default"].createElement(PointsContainer, { justifyContent: "space-between" }, pointsCoordinates.map(function (pointPercent, index) { return (React__default["default"].createElement(CircleIcon, { key: index.toString(), width: "10px", color: value >= pointPercent ? "primary" : "gray900" })); })))),
+            pointsCoordinates && (React__default["default"].createElement(PointsContainer, { justifyContent: "space-between" }, pointsCoordinates.map(function (pointPercent, index) { return (React__default["default"].createElement(CircleIcon, { key: index.toString(), width: "10px", color: value >= pointPercent ? "primary" : "gray300" })); })))),
         enableShortcuts && shortcutCheckpoints && (React__default["default"].createElement(Flex, { justifyContent: "space-between", py: "16px" },
             shortcutCheckpoints.map(function (percent, index) { return (React__default["default"].createElement(Button, { key: index.toString(), scale: "sm", variant: "primary", onClick: function () {
                     setDisplayPercent(percent.toString());

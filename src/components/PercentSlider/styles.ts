@@ -58,7 +58,7 @@ export const StyledInput = styled.input<InputHTMLAttributes<HTMLInputElement>>`
 
 export const BarBackground = styled.div<DisabledProp>`
   background-color: ${({ theme, disabled }) =>
-    theme.colors[disabled ? "textDisabled" : "gray900"]};
+    theme.colors[disabled ? "textDisabled" : "gray300"]};
   height: 4px;
   position: absolute;
   top: 10px;

@@ -70,7 +70,7 @@ const PercentSlider: React.FC<PercentSliderProps> = ({
               <CircleIcon
                 key={index.toString()}
                 width="10px"
-                color={value >= pointPercent ? "primary" : "gray900"}
+                color={value >= pointPercent ? "primary" : "gray300"}
               />
             ))}
           </PointsContainer>
