@@ -18,7 +18,7 @@ const PercentSlider: React.FC<PercentSliderProps> = ({
   onValueChanged,
   disabled = false,
   enableShortcuts,
-  shortcutCheckpoints,
+  shortcutCheckpoints = [0, 25, 50, 75, 100],
   ...props
 }) => {
   const [displayPercent, setDisplayPercent] = useState(value.toString());
@@ -40,20 +40,13 @@ const PercentSlider: React.FC<PercentSliderProps> = ({
     setDisplayPercent(max.toString());
   }, [max]);
 
-  const pointsCoordinates = shortcutCheckpoints
-    ? [0, ...shortcutCheckpoints]
-    : null;
-
   return (
     <Flex position="relative" flexDirection="column" {...props}>
       <div>
         <Flex justifyContent="center">
           <BarBackground disabled={disabled} />
         </Flex>
-        <BarProgress
-          style={{ width: `calc(${displayPercent}% - 5px)` }}
-          disabled={disabled}
-        />
+        <BarProgress style={{ width: `calc(${displayPercent}% - 5px)` }} />
         <StyledInput
           name={name}
           type="range"
@@ -64,13 +57,19 @@ const PercentSlider: React.FC<PercentSliderProps> = ({
           onChange={handleChange}
           disabled={disabled}
         />
-        {pointsCoordinates && (
+        {shortcutCheckpoints && (
           <PointsContainer justifyContent="space-between">
-            {pointsCoordinates.map((pointPercent, index) => (
+            {shortcutCheckpoints.map((pointPercent, index) => (
               <CircleIcon
                 key={index.toString()}
                 width="10px"
-                color={value >= pointPercent ? "primary" : "gray300"}
+                color={
+                  value >= pointPercent
+                    ? "primary"
+                    : disabled
+                    ? "textDisabled"
+                    : "gray300"
+                }
               />
             ))}
           </PointsContainer>

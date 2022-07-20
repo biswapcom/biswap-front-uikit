@@ -17,15 +17,10 @@ const Col = styled(Flex)`
 `;
 
 const SliderVariant = ({ initialValue }: { initialValue: number }) => {
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState(40);
 
   return (
-    <PercentSlider
-      name="slider"
-      value={value}
-      onValueChanged={setValue}
-      shortcutCheckpoints={[25, 50, 75, 100]}
-    />
+    <PercentSlider name="slider" value={value} onValueChanged={setValue} />
   );
 };
 
