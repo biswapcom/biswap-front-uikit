@@ -24,22 +24,24 @@ const getBaseThumbStyles = ({
   height: 20px;
   filter: ${disabled ? "grayscale(100%)" : "none"};
   transition: 200ms transform;
-  transform: translateY(4px);
+  transform: translateY(2px);
 
   &:hover {
     transform: ${
-      disabled ? "scale(1) translateY(4px)" : "scale(1.1) translateY(4px)"
+      disabled ? "scale(1) translateY(2px)" : "scale(1.1) translateY(2px)"
     };
   }
 `;
 
 export const StyledInput = styled.input<InputHTMLAttributes<HTMLInputElement>>`
   cursor: ${getCursorStyle};
-  height: 32px;
   position: relative;
   z-index: 1;
   margin: 0;
   padding: 0;
+  width: 100%;
+  border: none;
+  background-color: transparent;
 
   ::-webkit-slider-thumb {
     ${getBaseThumbStyles}
@@ -59,19 +61,21 @@ export const BarBackground = styled.div<DisabledProp>`
     theme.colors[disabled ? "textDisabled" : "gray900"]};
   height: 4px;
   position: absolute;
-  top: 18px;
-  width: 100%;
+  top: 10px;
+  width: calc(100% - 8px);
+  border-radius: 20px;
 `;
 
 export const BarProgress = styled.div<DisabledProp>`
   background-color: ${({ theme }) => theme.colors.primary};
   filter: ${({ disabled }) => (disabled ? "grayscale(100%)" : "none")};
   height: 4px;
+  margin-left: 2px;
   position: absolute;
-  top: 18px;
+  top: 10px;
 `;
 
 export const PointsContainer = styled(Flex)`
   position: relative;
-  top: -20px;
+  top: -16px;
 `;
