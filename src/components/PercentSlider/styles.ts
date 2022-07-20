@@ -43,15 +43,19 @@ export const StyledInput = styled.input<InputHTMLAttributes<HTMLInputElement>>`
   border: none;
   background-color: transparent;
 
-  ::-webkit-slider-thumb {
+  &::-webkit-slider-runnable-track {
     ${getBaseThumbStyles}
   }
 
-  ::-moz-range-thumb {
+  &::-webkit-slider-thumb {
     ${getBaseThumbStyles}
   }
 
-  ::-ms-thumb {
+  &::-moz-range-thumb {
+    ${getBaseThumbStyles}
+  }
+
+  &::-ms-thumb {
     ${getBaseThumbStyles}
   }
 `;
