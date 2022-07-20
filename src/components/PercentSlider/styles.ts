@@ -42,6 +42,7 @@ export const StyledInput = styled.input<InputHTMLAttributes<HTMLInputElement>>`
   width: 100%;
   border: none;
   background-color: transparent;
+  -webkit-appearance: none;
 
   &::-webkit-slider-runnable-track {
     ${getBaseThumbStyles}
