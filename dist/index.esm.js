@@ -8315,7 +8315,7 @@ var connectors = [
         title: "BitKeep Wallet",
         icon: Icon,
         connectorId: ConnectorNames.Injected,
-        priority: 999,
+        priority: 5,
     },
     {
         title: "Coin98",
