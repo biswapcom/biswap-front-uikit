@@ -6,7 +6,6 @@ interface CircleProps extends SvgProps {
 }
 
 const CircleIcon: React.FC<CircleProps> = (props) => {
-  console.log(props.darkMode, "props.darkMode");
   return (
     <Svg viewBox="0 0 20 20" {...props}>
       <g clipPath="url(#clip0_4728_34338)">
