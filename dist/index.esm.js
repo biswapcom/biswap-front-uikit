@@ -6306,7 +6306,6 @@ var PercentSliderLabel = styled(Flex)(templateObject_5$b || (templateObject_5$b 
 var templateObject_1$x, templateObject_2$p, templateObject_3$g, templateObject_4$d, templateObject_5$b;
 
 var CircleIcon = function (props) {
-    console.log(props.darkMode, "props.darkMode");
     return (React.createElement(Svg, __assign({ viewBox: "0 0 20 20" }, props),
         React.createElement("g", { clipPath: "url(#clip0_4728_34338)" },
             React.createElement("path", { d: "M0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10C20 15.5228 15.5228 20 10 20C4.47715 20 0 15.5228 0 10Z" }),
