@@ -42,9 +42,12 @@ export const StyledInput = styled.input<InputHTMLAttributes<HTMLInputElement>>`
   }
 `;
 
-export const BarBackground = styled.div<{ disabled: boolean }>`
-  background-color: ${({ theme, disabled }) =>
-    theme.colors[disabled ? "textDisabled" : "gray300"]};
+export const BarBackground = styled.div<{
+  darkMode?: boolean;
+  disabled: boolean;
+}>`
+  background-color: ${({ theme, disabled, darkMode }) =>
+    theme.colors[disabled ? "textDisabled" : darkMode ? "dark400" : "gray300"]};
   height: 4px;
   position: absolute;
   top: 10px;
@@ -63,4 +66,38 @@ export const BarProgress = styled.div`
 export const PointsContainer = styled(Flex)`
   position: relative;
   top: -16px;
+`;
+
+export const PercentSliderLabel = styled(Flex)<{
+  left: number;
+  bannerPosition: "top" | "bottom";
+}>`
+  align-items: center;
+  position: absolute;
+  ${({ bannerPosition }) =>
+    bannerPosition === "top" ? "top: 0" : "bottom: 0"};
+  left: ${({ left }) => `${left}%`};
+  transform: translateX(-50%) translateY(calc(${({ bannerPosition }) =>
+    bannerPosition === "top" ? "-100% - 10px" : "100%"}));
+  border-radius: 8px;
+  padding: 8px 12px;
+  background-color: ${({ theme }) => theme.colors.tooltip};
+  
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 50%;
+    ${({ bannerPosition }) =>
+      bannerPosition === "top" ? "bottom: 0" : "top: 0"};
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    transform: translate(-50%, ${({ bannerPosition }) =>
+      bannerPosition === "top" ? "100%" : "-100%"});
+    ${({ bannerPosition, theme }) =>
+      `border-${bannerPosition === "top" ? "top" : "bottom"}: 6px solid ${
+        theme.colors.tooltip
+      }`};
 `;
