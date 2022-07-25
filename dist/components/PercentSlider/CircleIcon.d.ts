@@ -1,4 +1,7 @@
 import React from "react";
 import { SvgProps } from "../Svg";
-declare const CircleIcon: React.FC<SvgProps>;
+interface CircleProps extends SvgProps {
+    darkMode?: boolean;
+}
+declare const CircleIcon: React.FC<CircleProps>;
 export default CircleIcon;

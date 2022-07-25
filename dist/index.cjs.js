@@ -4151,7 +4151,7 @@ var DropdownTop = styled__default["default"].div(templateObject_4$k || (template
         return theme.colors.pastelBlue;
     });
 });
-var Label$1 = styled__default["default"].span(templateObject_5$f || (templateObject_5$f = __makeTemplateObject(["\n  flex-grow: 1;\n"], ["\n  flex-grow: 1;\n"])));
+var Label$1 = styled__default["default"].span(templateObject_5$g || (templateObject_5$g = __makeTemplateObject(["\n  flex-grow: 1;\n"], ["\n  flex-grow: 1;\n"])));
 var StyledArrow = styled__default["default"](Icon$3s)(templateObject_6$a || (templateObject_6$a = __makeTemplateObject(["\n  transition: transform 0.4s ease-in-out;\n  transform: ", ";\n"], ["\n  transition: transform 0.4s ease-in-out;\n  transform: ", ";\n"])), function (_a) {
     var isOpen = _a.isOpen;
     return (isOpen ? "scale(1,-1)" : "scale(1,1)");
@@ -4224,7 +4224,7 @@ var Dropdown = function (_a) {
 Dropdown.defaultProps = {
     position: "bottom",
 };
-var templateObject_1$12, templateObject_2$F, templateObject_3$q, templateObject_4$k, templateObject_5$f, templateObject_6$a, templateObject_7$9, templateObject_8$5;
+var templateObject_1$12, templateObject_2$F, templateObject_3$q, templateObject_4$k, templateObject_5$g, templateObject_6$a, templateObject_7$9, templateObject_8$5;
 
 var tags = {
     H1: "h1",
@@ -4944,7 +4944,7 @@ var BarProgress$1 = styled__default["default"].div(templateObject_4$i || (templa
     var theme = _a.theme;
     return theme.colors.primary;
 });
-var StyledInput$1 = styled__default["default"].input(templateObject_5$e || (templateObject_5$e = __makeTemplateObject(["\n  height: 20px;\n  position: relative;\n  cursor: pointer;\n  transform: translateY(-18px);\n  margin: 2px 0;\n  -webkit-tap-highlight-color: transparent;\n\n  ::-webkit-slider-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    border-radius: 50%;\n    background-image: url(", ");\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n  ::-moz-range-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    // custom moz reset\n    background-color: transparent;\n    border: 0;\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n  ::-ms-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    border-radius: 50%;\n    background-image: url(", ");\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n"], ["\n  height: 20px;\n  position: relative;\n  cursor: pointer;\n  transform: translateY(-18px);\n  margin: 2px 0;\n  -webkit-tap-highlight-color: transparent;\n\n  ::-webkit-slider-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    border-radius: 50%;\n    background-image: url(", ");\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n  ::-moz-range-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    // custom moz reset\n    background-color: transparent;\n    border: 0;\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n  ::-ms-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    border-radius: 50%;\n    background-image: url(", ");\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n"])), SliderIcon, SliderIcon);
+var StyledInput$1 = styled__default["default"].input(templateObject_5$f || (templateObject_5$f = __makeTemplateObject(["\n  height: 20px;\n  position: relative;\n  cursor: pointer;\n  transform: translateY(-18px);\n  margin: 2px 0;\n  -webkit-tap-highlight-color: transparent;\n\n  ::-webkit-slider-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    border-radius: 50%;\n    background-image: url(", ");\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n  ::-moz-range-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    // custom moz reset\n    background-color: transparent;\n    border: 0;\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n  ::-ms-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    border-radius: 50%;\n    background-image: url(", ");\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n"], ["\n  height: 20px;\n  position: relative;\n  cursor: pointer;\n  transform: translateY(-18px);\n  margin: 2px 0;\n  -webkit-tap-highlight-color: transparent;\n\n  ::-webkit-slider-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    border-radius: 50%;\n    background-image: url(", ");\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n  ::-moz-range-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    // custom moz reset\n    background-color: transparent;\n    border: 0;\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n  ::-ms-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    border-radius: 50%;\n    background-image: url(", ");\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n"])), SliderIcon, SliderIcon);
 var BunnySlider = styled__default["default"].div(templateObject_6$9 || (templateObject_6$9 = __makeTemplateObject(["\n  position: absolute;\n  width: 100%;\n"], ["\n  position: absolute;\n  width: 100%;\n"])));
 var BreakePointsWrap = styled__default["default"].div(templateObject_7$8 || (templateObject_7$8 = __makeTemplateObject(["\n  padding: 0 9px;\n  display: flex;\n  justify-content: space-between;\n  margin-top: 16px;\n"], ["\n  padding: 0 9px;\n  display: flex;\n  justify-content: space-between;\n  margin-top: 16px;\n"])));
 var Point = styled__default["default"].div(templateObject_8$4 || (templateObject_8$4 = __makeTemplateObject(["\n  width: 2px;\n  height: 8px;\n  border-radius: 4px;\n  background-color: ", ";\n"], ["\n  width: 2px;\n  height: 8px;\n  border-radius: 4px;\n  background-color: ", ";\n"])), function (_a) {
@@ -5087,7 +5087,7 @@ var Slider = function (_a) {
             percent.RB,
             " volume")));
 };
-var templateObject_1$N, templateObject_2$y, templateObject_3$n, templateObject_4$i, templateObject_5$e, templateObject_6$9, templateObject_7$8, templateObject_8$4, templateObject_9$3, templateObject_10$2, templateObject_11$1, templateObject_12$1, templateObject_13, templateObject_14, templateObject_15, templateObject_16, templateObject_17;
+var templateObject_1$N, templateObject_2$y, templateObject_3$n, templateObject_4$i, templateObject_5$f, templateObject_6$9, templateObject_7$8, templateObject_8$4, templateObject_9$3, templateObject_10$2, templateObject_11$1, templateObject_12$1, templateObject_13, templateObject_14, templateObject_15, templateObject_16, templateObject_17;
 
 var animation = {
     WAVES: "waves",
@@ -5108,7 +5108,7 @@ var Root = styled__default["default"].div(templateObject_3$m || (templateObject_
     return variant$1 === variant.CIRCLE ? theme.radii.circle : theme.radii.small;
 }, styledSystem.layout, styledSystem.space);
 var Pulse = styled__default["default"](Root)(templateObject_4$h || (templateObject_4$h = __makeTemplateObject(["\n  animation: ", " 2s infinite ease-out;\n  transform: translate3d(0, 0, 0);\n"], ["\n  animation: ", " 2s infinite ease-out;\n  transform: translate3d(0, 0, 0);\n"])), pulse);
-var Waves = styled__default["default"](Root)(templateObject_5$d || (templateObject_5$d = __makeTemplateObject(["\n  position: relative;\n  overflow: hidden;\n  transform: translate3d(0, 0, 0);\n  &:before {\n    content: \"\";\n    position: absolute;\n    background-image: linear-gradient(\n      90deg,\n      transparent,\n      rgba(243, 243, 243, 0.5),\n      transparent\n    );\n    top: 0;\n    left: -150px;\n    height: 100%;\n    width: 150px;\n    animation: ", " 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;\n  }\n"], ["\n  position: relative;\n  overflow: hidden;\n  transform: translate3d(0, 0, 0);\n  &:before {\n    content: \"\";\n    position: absolute;\n    background-image: linear-gradient(\n      90deg,\n      transparent,\n      rgba(243, 243, 243, 0.5),\n      transparent\n    );\n    top: 0;\n    left: -150px;\n    height: 100%;\n    width: 150px;\n    animation: ", " 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;\n  }\n"])), waves);
+var Waves = styled__default["default"](Root)(templateObject_5$e || (templateObject_5$e = __makeTemplateObject(["\n  position: relative;\n  overflow: hidden;\n  transform: translate3d(0, 0, 0);\n  &:before {\n    content: \"\";\n    position: absolute;\n    background-image: linear-gradient(\n      90deg,\n      transparent,\n      rgba(243, 243, 243, 0.5),\n      transparent\n    );\n    top: 0;\n    left: -150px;\n    height: 100%;\n    width: 150px;\n    animation: ", " 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;\n  }\n"], ["\n  position: relative;\n  overflow: hidden;\n  transform: translate3d(0, 0, 0);\n  &:before {\n    content: \"\";\n    position: absolute;\n    background-image: linear-gradient(\n      90deg,\n      transparent,\n      rgba(243, 243, 243, 0.5),\n      transparent\n    );\n    top: 0;\n    left: -150px;\n    height: 100%;\n    width: 150px;\n    animation: ", " 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;\n  }\n"])), waves);
 var Skeleton = function (_a) {
     var _b = _a.variant, variant$1 = _b === void 0 ? variant.RECT : _b, _c = _a.animation, animation$1 = _c === void 0 ? animation.PULSE : _c, props = __rest(_a, ["variant", "animation"]);
     if (animation$1 === animation.WAVES) {
@@ -5116,7 +5116,7 @@ var Skeleton = function (_a) {
     }
     return React__default["default"].createElement(Pulse, __assign({ variant: variant$1 }, props));
 };
-var templateObject_1$M, templateObject_2$x, templateObject_3$m, templateObject_4$h, templateObject_5$d;
+var templateObject_1$M, templateObject_2$x, templateObject_3$m, templateObject_4$h, templateObject_5$e;
 
 var InlineMenuContainer = styled__default["default"](Box)(templateObject_1$L || (templateObject_1$L = __makeTemplateObject(["\n  background-color: ", ";\n  border-radius: ", ";\n  box-shadow: ", ";\n"], ["\n  background-color: ", ";\n  border-radius: ", ";\n  box-shadow: ", ";\n"])), function (_a) {
     var theme = _a.theme;
@@ -5251,8 +5251,8 @@ var CommonLinkStyles$1 = function (_a) {
         return theme.colors.pastelBlue;
     }, $variant === "default" && "border-radius: 16px;");
 };
-var StyledMenuItem = styled__default["default"].a(templateObject_5$c || (templateObject_5$c = __makeTemplateObject(["\n  ", ";\n"], ["\n  ", ";\n"])), CommonLinkStyles$1);
-var templateObject_1$K, templateObject_2$v, templateObject_3$k, templateObject_4$f, templateObject_5$c;
+var StyledMenuItem = styled__default["default"].a(templateObject_5$d || (templateObject_5$d = __makeTemplateObject(["\n  ", ";\n"], ["\n  ", ";\n"])), CommonLinkStyles$1);
+var templateObject_1$K, templateObject_2$v, templateObject_3$k, templateObject_4$f, templateObject_5$d;
 
 var MenuItem = function (_a) {
     var children = _a.children, href = _a.href, _b = _a.isActive, isActive = _b === void 0 ? false : _b, _c = _a.variant, variant = _c === void 0 ? "default" : _c, statusColor = _a.statusColor, props = __rest(_a, ["children", "href", "isActive", "variant", "statusColor"]);
@@ -5996,14 +5996,14 @@ var Input = styled__default["default"].input(templateObject_4$e || (templateObje
     var disabled = _a.disabled;
     return (disabled ? "not-allowed" : "pointer");
 }, Handle, getScale("checkedLeft"));
-var StyledToggle = styled__default["default"].div(templateObject_5$b || (templateObject_5$b = __makeTemplateObject(["\n  background-color: ", ";\n  align-items: center;\n  border-radius: 26px;\n  display: inline-flex;\n  height: ", ";\n  position: relative;\n  transition: background-color 0.2s ease-in-out;\n  width: ", ";\n  cursor: ", ";\n"], ["\n  background-color: ", ";\n  align-items: center;\n  border-radius: 26px;\n  display: inline-flex;\n  height: ", ";\n  position: relative;\n  transition: background-color 0.2s ease-in-out;\n  width: ", ";\n  cursor: ", ";\n"])), function (_a) {
+var StyledToggle = styled__default["default"].div(templateObject_5$c || (templateObject_5$c = __makeTemplateObject(["\n  background-color: ", ";\n  align-items: center;\n  border-radius: 26px;\n  display: inline-flex;\n  height: ", ";\n  position: relative;\n  transition: background-color 0.2s ease-in-out;\n  width: ", ";\n  cursor: ", ";\n"], ["\n  background-color: ", ";\n  align-items: center;\n  border-radius: 26px;\n  display: inline-flex;\n  height: ", ";\n  position: relative;\n  transition: background-color 0.2s ease-in-out;\n  width: ", ";\n  cursor: ", ";\n"])), function (_a) {
     var theme = _a.theme, $checked = _a.$checked, $checkedColor = _a.$checkedColor, $defaultColor = _a.$defaultColor;
     return theme.colors[$checked ? $checkedColor : $defaultColor];
 }, getScale("toggleHeight"), getScale("toggleWidth"), function (_a) {
     var disabled = _a.disabled;
     return (disabled ? "not-allowed" : "pointer");
 });
-var templateObject_1$C, templateObject_2$r, templateObject_3$i, templateObject_4$e, templateObject_5$b;
+var templateObject_1$C, templateObject_2$r, templateObject_3$i, templateObject_4$e, templateObject_5$c;
 
 var Toggle = function (_a) {
     var checked = _a.checked, _b = _a.defaultColor, defaultColor = _b === void 0 ? "toggleBg" : _b, _c = _a.checkedColor, checkedColor = _c === void 0 ? "success" : _c, _d = _a.scale, scale = _d === void 0 ? scales.MD : _d, disabled = _a.disabled, label = _a.label, labelOrientation = _a.labelOrientation, gridArea = _a.gridArea, variant = _a.variant, spaceBetween = _a.spaceBetween, props = __rest(_a, ["checked", "defaultColor", "checkedColor", "scale", "disabled", "label", "labelOrientation", "gridArea", "variant", "spaceBetween"]);
@@ -6286,22 +6286,45 @@ var circle = "data:image/svg+xml,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%2
 var getBaseThumbStyles = function () { return "\n  -webkit-appearance: none;\n  background-image: url(".concat(circle, ");\n  background-color: transparent;\n  box-shadow: none;\n  border: 0;\n  width: 20px;\n  height: 20px;\n  transition: 200ms transform;\n  transform: translateY(2px);\n\n  &:hover {\n    transform: scale(1.1) translateY(2px);\n  }\n"); };
 var StyledInput = styled__default["default"].input(templateObject_1$x || (templateObject_1$x = __makeTemplateObject(["\n  position: relative;\n  z-index: 1;\n  margin: 0;\n  padding: 0;\n  width: 100%;\n  border: none;\n  background-color: transparent;\n\n  ::-webkit-slider-thumb {\n    ", "\n  }\n\n  ::-moz-range-thumb {\n    ", "\n  }\n\n  ::-ms-thumb {\n    ", "\n  }\n"], ["\n  position: relative;\n  z-index: 1;\n  margin: 0;\n  padding: 0;\n  width: 100%;\n  border: none;\n  background-color: transparent;\n\n  ::-webkit-slider-thumb {\n    ", "\n  }\n\n  ::-moz-range-thumb {\n    ", "\n  }\n\n  ::-ms-thumb {\n    ", "\n  }\n"])), getBaseThumbStyles, getBaseThumbStyles, getBaseThumbStyles);
 var BarBackground = styled__default["default"].div(templateObject_2$p || (templateObject_2$p = __makeTemplateObject(["\n  background-color: ", ";\n  height: 4px;\n  position: absolute;\n  top: 10px;\n  width: calc(100% - 8px);\n  border-radius: 20px;\n"], ["\n  background-color: ", ";\n  height: 4px;\n  position: absolute;\n  top: 10px;\n  width: calc(100% - 8px);\n  border-radius: 20px;\n"])), function (_a) {
-    var theme = _a.theme, disabled = _a.disabled;
-    return theme.colors[disabled ? "textDisabled" : "gray300"];
+    var theme = _a.theme, disabled = _a.disabled, darkMode = _a.darkMode;
+    return theme.colors[disabled ? "textDisabled" : darkMode ? "dark400" : "gray300"];
 });
 var BarProgress = styled__default["default"].div(templateObject_3$g || (templateObject_3$g = __makeTemplateObject(["\n  background-color: ", ";\n  height: 4px;\n  margin-left: 2px;\n  position: absolute;\n  top: 10px;\n"], ["\n  background-color: ", ";\n  height: 4px;\n  margin-left: 2px;\n  position: absolute;\n  top: 10px;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.primary;
 });
 var PointsContainer = styled__default["default"](Flex)(templateObject_4$d || (templateObject_4$d = __makeTemplateObject(["\n  position: relative;\n  top: -16px;\n"], ["\n  position: relative;\n  top: -16px;\n"])));
-var templateObject_1$x, templateObject_2$p, templateObject_3$g, templateObject_4$d;
+var PercentSliderLabel = styled__default["default"](Flex)(templateObject_5$b || (templateObject_5$b = __makeTemplateObject(["\n  align-items: center;\n  position: absolute;\n  ", ";\n  left: ", ";\n  transform: translateX(-50%) translateY(calc(", "));\n  border-radius: 8px;\n  padding: 8px 12px;\n  background-color: ", ";\n  \n  &:after {\n    content: '';\n    display: block;\n    position: absolute;\n    left: 50%;\n    ", ";\n    width: 0;\n    height: 0;\n    border-left: 6px solid transparent;\n    border-right: 6px solid transparent;\n    transform: translate(-50%, ", ");\n    ", ";\n"], ["\n  align-items: center;\n  position: absolute;\n  ", ";\n  left: ", ";\n  transform: translateX(-50%) translateY(calc(", "));\n  border-radius: 8px;\n  padding: 8px 12px;\n  background-color: ", ";\n  \n  &:after {\n    content: '';\n    display: block;\n    position: absolute;\n    left: 50%;\n    ", ";\n    width: 0;\n    height: 0;\n    border-left: 6px solid transparent;\n    border-right: 6px solid transparent;\n    transform: translate(-50%, ", ");\n    ", ";\n"])), function (_a) {
+    var bannerPosition = _a.bannerPosition;
+    return bannerPosition === "top" ? "top: 0" : "bottom: 0";
+}, function (_a) {
+    var left = _a.left;
+    return "".concat(left, "%");
+}, function (_a) {
+    var bannerPosition = _a.bannerPosition;
+    return bannerPosition === "top" ? "-100% - 10px" : "100%";
+}, function (_a) {
+    var theme = _a.theme;
+    return theme.colors.tooltip;
+}, function (_a) {
+    var bannerPosition = _a.bannerPosition;
+    return bannerPosition === "top" ? "bottom: 0" : "top: 0";
+}, function (_a) {
+    var bannerPosition = _a.bannerPosition;
+    return bannerPosition === "top" ? "100%" : "-100%";
+}, function (_a) {
+    var bannerPosition = _a.bannerPosition, theme = _a.theme;
+    return "border-".concat(bannerPosition === "top" ? "top" : "bottom", ": 6px solid ").concat(theme.colors.tooltip);
+});
+var templateObject_1$x, templateObject_2$p, templateObject_3$g, templateObject_4$d, templateObject_5$b;
 
 var CircleIcon = function (props) {
+    console.log(props.darkMode, "props.darkMode");
     return (React__default["default"].createElement(Svg, __assign({ viewBox: "0 0 20 20" }, props),
         React__default["default"].createElement("g", { clipPath: "url(#clip0_4728_34338)" },
             React__default["default"].createElement("path", { d: "M0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10C20 15.5228 15.5228 20 10 20C4.47715 20 0 15.5228 0 10Z" }),
             React__default["default"].createElement("g", { filter: "url(#filter0_d_4728_34338)" },
-                React__default["default"].createElement("rect", { x: "4", y: "4", width: "12", height: "12", rx: "6", fill: "white" }))),
+                React__default["default"].createElement("rect", { x: "4", y: "4", width: "12", height: "12", rx: "6", fill: props.darkMode ? "#071C3C" : "white" }))),
         React__default["default"].createElement("defs", null,
             React__default["default"].createElement("filter", { id: "filter0_d_4728_34338", x: "0", y: "2", width: "20", height: "20", filterUnits: "userSpaceOnUse", colorInterpolationFilters: "sRGB" },
                 React__default["default"].createElement("feFlood", { floodOpacity: "0", result: "BackgroundImageFix" }),
@@ -6317,34 +6340,43 @@ var CircleIcon = function (props) {
 };
 
 var PercentSlider = function (_a) {
-    var _b = _a.name, name = _b === void 0 ? "slider" : _b, _c = _a.min, min = _c === void 0 ? 0 : _c, _d = _a.max, max = _d === void 0 ? 100 : _d, value = _a.value, onValueChanged = _a.onValueChanged, _e = _a.disabled, disabled = _e === void 0 ? false : _e, enableShortcuts = _a.enableShortcuts, _f = _a.shortcutCheckpoints, shortcutCheckpoints = _f === void 0 ? [0, 25, 50, 75, 100] : _f, props = __rest(_a, ["name", "min", "max", "value", "onValueChanged", "disabled", "enableShortcuts", "shortcutCheckpoints"]);
-    var _g = React.useState(value.toString()), displayPercent = _g[0], setDisplayPercent = _g[1];
+    var _b = _a.name, name = _b === void 0 ? "slider" : _b, _c = _a.min, min = _c === void 0 ? 0 : _c, _d = _a.max, max = _d === void 0 ? 100 : _d, value = _a.value, onValueChanged = _a.onValueChanged, _e = _a.disabled, disabled = _e === void 0 ? false : _e, enableShortcuts = _a.enableShortcuts, _f = _a.shortcutCheckpoints, shortcutCheckpoints = _f === void 0 ? [0, 25, 50, 75, 100] : _f, withTooltip = _a.withTooltip, _g = _a.bannerPosition, bannerPosition = _g === void 0 ? "bottom" : _g, _h = _a.darkMode, darkMode = _h === void 0 ? false : _h, props = __rest(_a, ["name", "min", "max", "value", "onValueChanged", "disabled", "enableShortcuts", "shortcutCheckpoints", "withTooltip", "bannerPosition", "darkMode"]);
+    var _j = React.useState(value.toString()), displayPercent = _j[0], setDisplayPercent = _j[1];
     React.useEffect(function () {
         if (value !== parseInt(displayPercent)) {
-            onValueChanged(parseInt(displayPercent));
+            setDisplayPercent(value.toString());
         }
-    }, [displayPercent]);
-    React.useEffect(function () {
-        setDisplayPercent(value.toString());
     }, [value]);
     var handleChange = React.useCallback(function (_a) {
         var target = _a.target;
         setDisplayPercent(target.value);
+        onValueChanged(parseInt(target.value));
     }, []);
     var setMax = React.useCallback(function () {
         setDisplayPercent(max.toString());
+        onValueChanged(max);
     }, [max]);
+    var _k = React.useState(false), infoVisible = _k[0], setInfoVisible = _k[1];
+    var getCirclesColor = function (pointPercent) {
+        return value >= pointPercent
+            ? "primary"
+            : disabled
+                ? "textDisabled"
+                : darkMode
+                    ? "dark400"
+                    : "gray300";
+    };
     return (React__default["default"].createElement(Flex, __assign({ position: "relative", flexDirection: "column" }, props),
         React__default["default"].createElement("div", null,
             React__default["default"].createElement(Flex, { justifyContent: "center" },
-                React__default["default"].createElement(BarBackground, { disabled: disabled })),
+                React__default["default"].createElement(BarBackground, { darkMode: darkMode, disabled: disabled })),
             React__default["default"].createElement(BarProgress, { style: { width: "calc(".concat(displayPercent, "% - 5px)") } }),
-            React__default["default"].createElement(StyledInput, { name: name, type: "range", min: min, max: max, value: displayPercent, step: "any", onChange: handleChange, disabled: disabled }),
-            shortcutCheckpoints && (React__default["default"].createElement(PointsContainer, { justifyContent: "space-between" }, shortcutCheckpoints.map(function (pointPercent, index) { return (React__default["default"].createElement(CircleIcon, { key: index.toString(), width: "10px", color: value >= pointPercent
-                    ? "primary"
-                    : disabled
-                        ? "textDisabled"
-                        : "gray300" })); })))),
+            React__default["default"].createElement(StyledInput, { name: name, onMouseDown: function () { return setInfoVisible(true); }, onMouseUp: function () { return setInfoVisible(false); }, onTouchStart: function () { return setInfoVisible(true); }, onTouchEnd: function () { return setInfoVisible(false); }, type: "range", min: min, max: max, value: displayPercent, step: "any", onChange: handleChange, disabled: disabled }),
+            withTooltip && infoVisible && (React__default["default"].createElement(PercentSliderLabel, { className: "percent-info-banner", bannerPosition: bannerPosition, left: Number(displayPercent) },
+                React__default["default"].createElement(Text, { color: "white" },
+                    value,
+                    "%"))),
+            shortcutCheckpoints && (React__default["default"].createElement(PointsContainer, { justifyContent: "space-between" }, shortcutCheckpoints.map(function (pointPercent, index) { return (React__default["default"].createElement(CircleIcon, { darkMode: darkMode, key: index.toString(), width: "10px", color: getCirclesColor(pointPercent) })); })))),
         enableShortcuts && shortcutCheckpoints && (React__default["default"].createElement(Flex, { justifyContent: "space-between", py: "16px" },
             shortcutCheckpoints.map(function (percent, index) { return (React__default["default"].createElement(Button, { key: index.toString(), scale: "sm", variant: "primary", onClick: function () {
                     setDisplayPercent(percent.toString());

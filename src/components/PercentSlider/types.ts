@@ -1,5 +1,4 @@
 import { BoxProps } from "../Box";
-
 export interface PercentSliderProps extends BoxProps {
   name?: string;
   min?: number;
@@ -9,4 +8,7 @@ export interface PercentSliderProps extends BoxProps {
   disabled?: boolean;
   enableShortcuts?: boolean;
   shortcutCheckpoints?: Array<number>;
+  withTooltip?: boolean;
+  bannerPosition?: "top" | "bottom";
+  darkMode?: boolean;
 }
