@@ -2,7 +2,6 @@ export { default as LogoIcon } from "./Icons/Logo";
 export { default as LogoWithTextIcon } from "./Icons/LogoWithText";
 export { default as DownloadIcon } from "./Icons/Download";
 export { default as MouseIcon } from "./Icons/Mouse";
-export { default as FireIcon } from "./Icons/Fire";
 export { default as HourglassIcon } from "./Icons/Hourglass";
 export { default as BscBlackRoundIcon } from "./Icons/BscBlackRound";
 
@@ -63,6 +62,11 @@ export { default as CalculateIcon } from "./Icons/Calculate/Calculate";
 export { default as HelpOpacityIcon } from "./Icons/Help/HelpOpacity";
 export { default as HelpSolidIcon } from "./Icons/Help/HelpSolid";
 export { default as HelpIcon } from "./Icons/Help/Help";
+
+// Fire
+export { default as FireIcon } from "./Icons/Fire/Fire";
+export { default as FireSolidIcon } from "./Icons/Fire/FireSolid";
+export { default as FireOpacityIcon } from "./Icons/Fire/FireOpacity";
 
 //Info
 export { default as InfoIcon } from "./Icons/Info/Info";
