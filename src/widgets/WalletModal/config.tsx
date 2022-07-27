@@ -41,7 +41,7 @@ const connectors: Config[] = [
     title: "BitKeep Wallet",
     icon: BitKeepWallet,
     connectorId: ConnectorNames.Injected,
-    priority: 5,
+    priority: 999,
   },
   {
     title: "Coin98",
