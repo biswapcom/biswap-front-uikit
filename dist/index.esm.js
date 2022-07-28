@@ -8312,12 +8312,6 @@ var connectors = [
         priority: 4,
     },
     {
-        title: "BitKeep Wallet",
-        icon: Icon,
-        connectorId: ConnectorNames.Injected,
-        priority: 5,
-    },
-    {
         title: "Coin98",
         icon: Icon$3,
         connectorId: ConnectorNames.Injected,
@@ -8350,6 +8344,12 @@ var connectors = [
     {
         title: "iToken",
         icon: Icon$1,
+        connectorId: ConnectorNames.Injected,
+        priority: 999,
+    },
+    {
+        title: "BitKeep Wallet",
+        icon: Icon,
         connectorId: ConnectorNames.Injected,
         priority: 999,
     },
