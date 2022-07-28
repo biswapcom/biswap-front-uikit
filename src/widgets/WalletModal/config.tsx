@@ -38,12 +38,6 @@ const connectors: Config[] = [
     priority: 4,
   },
   {
-    title: "BitKeep Wallet",
-    icon: BitKeepWallet,
-    connectorId: ConnectorNames.Injected,
-    priority: 5,
-  },
-  {
     title: "Coin98",
     icon: Coin98,
     connectorId: ConnectorNames.Injected,
@@ -76,6 +70,12 @@ const connectors: Config[] = [
   {
     title: "iToken",
     icon: iToken,
+    connectorId: ConnectorNames.Injected,
+    priority: 999,
+  },
+  {
+    title: "BitKeep Wallet",
+    icon: BitKeepWallet,
     connectorId: ConnectorNames.Injected,
     priority: 999,
   },
