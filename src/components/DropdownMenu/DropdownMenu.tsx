@@ -112,6 +112,8 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
                 bannerRenderer,
                 target,
                 mobileTarget,
+                badgeType,
+                badgeTitle,
                 ...itemProps
               },
               itemItem
@@ -142,6 +144,8 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
                   type={type}
                   target={target}
                   mobileTarget={mobileTarget}
+                  badgeTitle={badgeTitle}
+                  badgeType={badgeType}
                   {...itemProps}
                 />
               );

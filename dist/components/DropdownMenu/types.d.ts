@@ -82,6 +82,8 @@ export interface DropdownMenuItems {
     bannerRenderer?: (h?: string, t?: string) => React.ReactNode;
     target?: string;
     mobileTarget?: string;
+    badgeType?: string;
+    badgeTitle?: string;
 }
 export interface DropdownMenuItemContainerProps extends DropdownMenuItems {
     isActive?: boolean;
