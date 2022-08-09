@@ -30,8 +30,8 @@ const PercentSlider: React.FC<PercentSliderProps> = ({
   }, [displayPercent]);
 
   useEffect(() => {
-    setDisplayPercent(value.toString())
-  }, [value])
+    setDisplayPercent(value.toString());
+  }, [value]);
 
   const handleChange = useCallback(
     ({ target }: ChangeEvent<HTMLInputElement>): void => {
