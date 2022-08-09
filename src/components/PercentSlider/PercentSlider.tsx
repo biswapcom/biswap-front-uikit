@@ -2,13 +2,15 @@ import React, { ChangeEvent, useCallback, useEffect, useState } from "react";
 import {
   BarBackground,
   BarProgress,
+  PercentSliderLabel,
   PointsContainer,
   StyledInput,
 } from "./styles";
-import { PercentSliderProps } from "./types";
 import Button from "../Button/Button";
 import Flex from "../Box/Flex";
 import CircleIcon from "./CircleIcon";
+import { PercentSliderProps } from "./types";
+import { Text } from "../Text";
 
 const PercentSlider: React.FC<PercentSliderProps> = ({
   name = "slider",
@@ -19,40 +21,57 @@ const PercentSlider: React.FC<PercentSliderProps> = ({
   disabled = false,
   enableShortcuts,
   shortcutCheckpoints = [0, 25, 50, 75, 100],
+  withTooltip,
+  bannerPosition = "bottom",
+  darkMode = false,
   ...props
 }) => {
   const [displayPercent, setDisplayPercent] = useState(value.toString());
 
   useEffect(() => {
     if (value !== parseInt(displayPercent)) {
-      onValueChanged(parseInt(displayPercent));
+      setDisplayPercent(value.toString());
     }
-  }, [displayPercent]);
-
-  useEffect(() => {
-    setDisplayPercent(value.toString());
   }, [value]);
 
   const handleChange = useCallback(
     ({ target }: ChangeEvent<HTMLInputElement>): void => {
       setDisplayPercent(target.value);
+      onValueChanged(parseInt(target.value));
     },
     []
   );
 
   const setMax = useCallback(() => {
     setDisplayPercent(max.toString());
+    onValueChanged(max);
   }, [max]);
+
+  const [infoVisible, setInfoVisible] = useState<boolean>(false);
+
+  const getCirclesColor = (pointPercent: number) => {
+    return value >= pointPercent
+      ? "primary"
+      : disabled
+      ? "textDisabled"
+      : darkMode
+      ? "dark400"
+      : "gray300";
+  };
 
   return (
     <Flex position="relative" flexDirection="column" {...props}>
       <div>
         <Flex justifyContent="center">
-          <BarBackground disabled={disabled} />
+          <BarBackground darkMode={darkMode} disabled={disabled} />
         </Flex>
         <BarProgress style={{ width: `calc(${displayPercent}% - 5px)` }} />
         <StyledInput
           name={name}
+          onMouseDown={() => setInfoVisible(true)}
+          onMouseUp={() => setInfoVisible(false)}
+          onTouchStart={() => setInfoVisible(true)}
+          onTouchEnd={() => setInfoVisible(false)}
           type="range"
           min={min}
           max={max}
@@ -61,19 +80,23 @@ const PercentSlider: React.FC<PercentSliderProps> = ({
           onChange={handleChange}
           disabled={disabled}
         />
+        {withTooltip && infoVisible && (
+          <PercentSliderLabel
+            className="percent-info-banner"
+            bannerPosition={bannerPosition}
+            left={Number(displayPercent)}
+          >
+            <Text color="white">{value}%</Text>
+          </PercentSliderLabel>
+        )}
         {shortcutCheckpoints && (
           <PointsContainer justifyContent="space-between">
             {shortcutCheckpoints.map((pointPercent, index) => (
               <CircleIcon
+                darkMode={darkMode}
                 key={index.toString()}
                 width="10px"
-                color={
-                  value >= pointPercent
-                    ? "primary"
-                    : disabled
-                    ? "textDisabled"
-                    : "gray300"
-                }
+                color={getCirclesColor(pointPercent)}
               />
             ))}
           </PointsContainer>

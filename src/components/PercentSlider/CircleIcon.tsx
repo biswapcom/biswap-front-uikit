@@ -1,13 +1,24 @@
 import React from "react";
 import { Svg, SvgProps } from "../Svg";
 
-const CircleIcon: React.FC<SvgProps> = (props) => {
+interface CircleProps extends SvgProps {
+  darkMode?: boolean;
+}
+
+const CircleIcon: React.FC<CircleProps> = (props) => {
   return (
     <Svg viewBox="0 0 20 20" {...props}>
       <g clipPath="url(#clip0_4728_34338)">
         <path d="M0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10C20 15.5228 15.5228 20 10 20C4.47715 20 0 15.5228 0 10Z" />
         <g filter="url(#filter0_d_4728_34338)">
-          <rect x="4" y="4" width="12" height="12" rx="6" fill="white" />
+          <rect
+            x="4"
+            y="4"
+            width="12"
+            height="12"
+            rx="6"
+            fill={props.darkMode ? "#071C3C" : "white"}
+          />
         </g>
       </g>
       <defs>
