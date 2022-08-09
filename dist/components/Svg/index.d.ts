@@ -136,6 +136,9 @@ export { default as ProductsSolidIcon } from "./Icons/Menu/Program10m/Products/P
 export { default as ProductsOpacityIcon } from "./Icons/Menu/Program10m/Products/ProductsOpacity";
 export { default as BurgerIcon } from "./Icons/Burger/Burger";
 export { default as BurgerCloseIcon } from "./Icons/Burger/BurgerClose";
+export { default as UsdOpacityIcon } from "./Icons/Usd/UsdOpacity";
+export { default as UsdSolidIcon } from "./Icons/Usd/UsdSolid";
+export { default as UsdLineIcon } from "./Icons/Usd/UsdLine";
 export { default as LiquiditySolidIcon } from "./Icons/Menu/Liquidity/LiquiditySolid";
 export { default as LiquidityOpacityIcon } from "./Icons/Menu/Liquidity/LiquidityOpacity";
 export { default as ExchangeSolidIcon } from "./Icons/Menu/Exchange/ExchangeSolid";
@@ -174,6 +177,8 @@ export { default as Program10mSolidIcon } from "./Icons/Menu/Program10m/Program1
 export { default as Program10mOpacityIcon } from "./Icons/Menu/Program10m/Program10mOpacity";
 export { default as SpaceAgentSolidIcon } from "./Icons/Menu/SpaceAgent/SpaceAgentSolid";
 export { default as SpaceAgentOpacityIcon } from "./Icons/Menu/SpaceAgent/SpaceAgentOpacity";
+export { default as MultiPoolOpacityIcon } from "./Icons/Menu/MultiPool/MultiPoolOpacity";
+export { default as MultiPoolSolidIcon } from "./Icons/Menu/MultiPool/MultiPoolSolid";
 export { default as NewsSolidIcon } from "./Icons/Menu/News/NewsSolid";
 export { default as NewsOpacityIcon } from "./Icons/Menu/News/NewsOpacity";
 export { default as DocsSolidIcon } from "./Icons/Menu/Docs/DocsSolid";

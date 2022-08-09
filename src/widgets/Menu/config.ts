@@ -39,6 +39,8 @@ export const links: MenuItemsType[] = [
         href: "/swap",
         leftIcon: "ExchangeOpacity",
         description: "Item description",
+        badgeType: "success",
+        badgeTitle: "New",
       },
       {
         label: "Expert Trade",
@@ -67,6 +69,8 @@ export const links: MenuItemsType[] = [
         description: "Item description",
       },
       {
+        badgeType: "success",
+        badgeTitle: "New",
         label: "LaunchPools",
         href: "/pool",
         leftIcon: "PoolsOpacity",
