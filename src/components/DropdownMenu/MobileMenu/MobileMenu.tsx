@@ -188,6 +188,8 @@ const MobileMenu: FC<MobileMenuProps> = ({
                                 leftIcon = "",
                                 rightIcon = "",
                                 links = [],
+                                badgeTitle,
+                                badgeType,
                                 bannerRenderer,
                                 ...itemProps
                               },
@@ -222,6 +224,8 @@ const MobileMenu: FC<MobileMenuProps> = ({
                                     href={href}
                                     bannerRenderer={bannerRenderer}
                                     type={type}
+                                    badgeTitle={badgeTitle}
+                                    badgeType={badgeType}
                                     {...itemProps}
                                   />
                                 )

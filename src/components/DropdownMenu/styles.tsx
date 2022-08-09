@@ -131,6 +131,7 @@ export const DropdownInternalMenuItem = styled(Link)<
 
 export const StyledDropdownMenuItemContainer = styled.div`
   margin-bottom: 16px;
+  position: relative;
 
   &:first-child > ${DropdownMenuItem} {
     border-top-left-radius: 8px;
