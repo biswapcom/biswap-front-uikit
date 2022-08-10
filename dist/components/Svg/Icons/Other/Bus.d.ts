@@ -1,3 +1,4 @@
-/// <reference types="react" />
-declare const Bus: () => JSX.Element;
-export default Bus;
+import React from 'react';
+import { SvgProps } from "../../types";
+declare const Icon: React.FC<SvgProps>;
+export default Icon;
