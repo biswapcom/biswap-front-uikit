@@ -7873,7 +7873,7 @@ var getBG = function (_a) {
             return theme.colors.primary;
     }
 };
-var IconComponentWrap = styled__default["default"].div(templateObject_1$i || (templateObject_1$i = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background: ", ";\n  width: 40px;\n  height: 40px;\n  border-radius: 8px;\n  align-self: flex-start;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background: ", ";\n  width: 40px;\n  height: 40px;\n  border-radius: 8px;\n  align-self: flex-start;\n"])), getBG);
+var IconComponentWrap = styled__default["default"].div(templateObject_1$j || (templateObject_1$j = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background: ", ";\n  width: 40px;\n  height: 40px;\n  border-radius: 8px;\n  align-self: flex-start;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background: ", ";\n  width: 40px;\n  height: 40px;\n  border-radius: 8px;\n  align-self: flex-start;\n"])), getBG);
 var MenuItemContent = function (_a) {
     var leftIcon = _a.leftIcon, label = _a.label, description = _a.description, rightIcon = _a.rightIcon, _b = _a.fill, fill = _b === void 0 ? "primary" : _b;
     var isMobile = useMatchBreakpoints().isMobile;
@@ -7885,7 +7885,7 @@ var MenuItemContent = function (_a) {
             description && (React__default["default"].createElement(Text, { fontSize: "12px", color: "gray900", lineHeight: "16px" }, description))),
         rightIcon && (React__default["default"].createElement(IconComponent, { className: "arrow-icon", iconName: rightIcon, color: fill }))));
 };
-var templateObject_1$i;
+var templateObject_1$j;
 
 var DropdownMenu = function (_a) {
     var children = _a.children; _a.isMobileNav; _a.showItemsOnMobile; var _d = _a.activeItem, activeItem = _d === void 0 ? "" : _d, _e = _a.items, items = _e === void 0 ? [] : _e; _a.mobileItems; _a.index; var _g = _a.isExtended, isExtended = _g === void 0 ? false : _g; _a.setMenuOpenByIndex; _a.mobileMenuCallback; var props = __rest(_a, ["children", "isMobileNav", "showItemsOnMobile", "activeItem", "items", "mobileItems", "index", "isExtended", "setMenuOpenByIndex", "mobileMenuCallback"]);
@@ -7966,7 +7966,7 @@ var DropdownMenu = function (_a) {
         })))));
 };
 
-var openBodyAnimation = styled.keyframes(templateObject_1$h || (templateObject_1$h = __makeTemplateObject(["\n  0% {\n    opacity: 0;\n    height: 0;\n  }\n  100% {\n    opacity: 1;\n    height: auto;\n  }\n"], ["\n  0% {\n    opacity: 0;\n    height: 0;\n  }\n  100% {\n    opacity: 1;\n    height: auto;\n  }\n"])));
+var openBodyAnimation = styled.keyframes(templateObject_1$i || (templateObject_1$i = __makeTemplateObject(["\n  0% {\n    opacity: 0;\n    height: 0;\n  }\n  100% {\n    opacity: 1;\n    height: auto;\n  }\n"], ["\n  0% {\n    opacity: 0;\n    height: 0;\n  }\n  100% {\n    opacity: 1;\n    height: auto;\n  }\n"])));
 var AccordionBody = styled__default["default"].div(templateObject_3$7 || (templateObject_3$7 = __makeTemplateObject(["\n  display: ", ";\n  flex-direction: column;\n  overflow: hidden;\n\n  ", "\n"], ["\n  display: ", ";\n  flex-direction: column;\n  overflow: hidden;\n\n  ", "\n"])), function (_a) {
     var opened = _a.opened;
     return (opened ? "flex" : "none");
@@ -7997,7 +7997,16 @@ var Accordion = function (_a) {
         isMobile && !index && (React__default["default"].createElement(Box, { m: "0 -24px 0" },
             React__default["default"].createElement(DropdownMenuDivider, { color: "rgba(18, 99, 241, 0.16)" })))));
 };
-var templateObject_1$h, templateObject_2$d, templateObject_3$7, templateObject_4$4, templateObject_5$4;
+var templateObject_1$i, templateObject_2$d, templateObject_3$7, templateObject_4$4, templateObject_5$4;
+
+var Marker = styled__default["default"](Box)(templateObject_1$h || (templateObject_1$h = __makeTemplateObject(["\n  position: absolute;\n  top: 0;\n  right: -4px;\n  width: 6px;\n  height: 6px;\n  transform: translateX(100%);\n  border-radius: 50%;\n  background-color: ", ";\n\n  &:before {\n    display: block;\n    content: \"\";\n    position: absolute;\n    width: 10px;\n    height: 10px;\n    border-radius: 50%;\n    top: -2px;\n    left: -2px;\n    z-index: 1;\n    animation: pulse-white 2s infinite;\n  }\n\n  @keyframes pulse-white {\n    0% {\n      transform: scale(0.95);\n      box-shadow: 0 0 0 0 ", ";\n    }\n\n    70% {\n      transform: scale(1);\n      box-shadow: 0 0 0 4px rgba(51, 217, 178, 0);\n    }\n\n    100% {\n      transform: scale(0.95);\n      box-shadow: 0 0 0 0 rgba(51, 217, 178, 0);\n    }\n"], ["\n  position: absolute;\n  top: 0;\n  right: -4px;\n  width: 6px;\n  height: 6px;\n  transform: translateX(100%);\n  border-radius: 50%;\n  background-color: ", ";\n\n  &:before {\n    display: block;\n    content: \"\";\n    position: absolute;\n    width: 10px;\n    height: 10px;\n    border-radius: 50%;\n    top: -2px;\n    left: -2px;\n    z-index: 1;\n    animation: pulse-white 2s infinite;\n  }\n\n  @keyframes pulse-white {\n    0% {\n      transform: scale(0.95);\n      box-shadow: 0 0 0 0 ", ";\n    }\n\n    70% {\n      transform: scale(1);\n      box-shadow: 0 0 0 4px rgba(51, 217, 178, 0);\n    }\n\n    100% {\n      transform: scale(0.95);\n      box-shadow: 0 0 0 0 rgba(51, 217, 178, 0);\n    }\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.colors.success;
+}, function (_a) {
+    var theme = _a.theme;
+    return getRgba(theme.colors.success, 0.7);
+});
+var templateObject_1$h;
 
 var MainContententWrapper = styled__default["default"].div(templateObject_1$g || (templateObject_1$g = __makeTemplateObject(["\n  flex: 1;\n"], ["\n  flex: 1;\n"])));
 var MobileCommunityWrapper = styled__default["default"].div(templateObject_2$c || (templateObject_2$c = __makeTemplateObject(["\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  margin-top: 24px;\n"], ["\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  margin-top: 24px;\n"])));
@@ -8060,6 +8069,7 @@ var MobileMenu = function (_a) {
                     .filter(function (item) { return item.label && !item.type; })
                     .map(function (_a, index) {
                     var label = _a.label, _b = _a.items, innerItems = _b === void 0 ? [] : _b, showItemsOnMobile = _a.showItemsOnMobile, hidden = _a.hidden;
+                    var isMarker = !!(innerItems === null || innerItems === void 0 ? void 0 : innerItems.find(function (i) { return i.badgeTitle; }));
                     if (!innerItems.length)
                         return null;
                     var visualize = !showItemsOnMobile ||
@@ -8068,9 +8078,11 @@ var MobileMenu = function (_a) {
                         React__default["default"].createElement(Accordion, { index: index, label: label, clickable: !isTablet, heading: function (opened) {
                                 return (!showItemsOnMobile &&
                                     !hidden && (React__default["default"].createElement(React__default["default"].Fragment, null,
-                                    React__default["default"].createElement(Text, { bold: true, m: "16px 0", fontSize: isTablet ? "20px" : "14px", color: isMobile && opened
-                                            ? "primary"
-                                            : "backgroundDark" }, label),
+                                    React__default["default"].createElement(Box, { m: "16px 0", position: "relative" },
+                                        isMobile && isMarker && React__default["default"].createElement(Marker, null),
+                                        React__default["default"].createElement(Text, { bold: true, fontSize: isTablet ? "20px" : "14px", lineHeight: isTablet ? "26px" : "20px", color: isMobile && opened
+                                                ? "primary"
+                                                : "backgroundDark" }, label)),
                                     !isTablet && (React__default["default"].createElement(IconComponent, { iconName: opened ? "ChevronUp" : "ChevronDown", color: opened ? "primary" : "rgb(8, 22, 46)" })))));
                             } },
                             React__default["default"].createElement(Grid, { gridTemplateColumns: isMobile ? "1fr" : "repeat(2, 1fr)", gridColumnGap: 16, mt: 16 }, innerItems.map(function (_a, itemItem) {
@@ -8187,6 +8199,7 @@ var MenuItems = function (_a) {
         items.map(function (_a) {
             var _b, _c;
             var label = _a.label, _d = _a.items, menuItems = _d === void 0 ? [] : _d, href = _a.href, _e = _a.icon, icon = _e === void 0 ? "" : _e, isExtended = _a.isExtended, showItemsOnMobile = _a.showItemsOnMobile, type = _a.type, hidden = _a.hidden;
+            var isMarker = !!(menuItems === null || menuItems === void 0 ? void 0 : menuItems.find(function (i) { return i.badgeTitle; }));
             var statusColor = (_c = (_b = menuItems === null || menuItems === void 0 ? void 0 : menuItems.find(function (menuItem) { return menuItem.status !== undefined; })) === null || _b === void 0 ? void 0 : _b.status) === null || _c === void 0 ? void 0 : _c.color;
             var isActive = activeItem === href;
             var linkProps = isTouchDevice() && menuItems && menuItems.length > 0
@@ -8198,7 +8211,9 @@ var MenuItems = function (_a) {
                     React__default["default"].createElement(MenuItem, __assign({}, linkProps, { isActive: isActive, statusColor: statusColor }),
                         type === ItemTypes.DIVIDER && React__default["default"].createElement(MenuItemDivider, null),
                         icon && React__default["default"].createElement(IconComponent, { iconName: icon, color: "white" }),
-                        label && (React__default["default"].createElement(Text, { ml: "8px", color: "white", fontSize: "14px", fontWeight: "600" }, label)))))));
+                        label && (React__default["default"].createElement(Box, { ml: "8px", position: "relative" },
+                            isMarker && React__default["default"].createElement(Marker, null),
+                            React__default["default"].createElement(Text, { color: "white", fontSize: "14px", lineHeight: "20px", fontWeight: "600" }, label))))))));
         })));
 };
 
