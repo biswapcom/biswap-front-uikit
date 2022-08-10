@@ -13,6 +13,7 @@ import { DropdownMenuItemContainer } from "../components";
 import IconComponent from "../../Svg/IconComponent";
 import Accordion from "../../Accordion/Accordion";
 import Community from "../../../widgets/Menu/components/Footer/Community";
+import Marker from "../../MenuItem/Marker";
 
 const MainContententWrapper = styled.div`
   flex: 1;
@@ -127,6 +128,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
                   { label, items: innerItems = [], showItemsOnMobile, hidden },
                   index
                 ) => {
+                  const isMarker = !!innerItems?.find((i) => i.badgeTitle);
                   if (!innerItems.length) return null;
                   const visualize =
                     !showItemsOnMobile ||
@@ -142,18 +144,22 @@ const MobileMenu: FC<MobileMenuProps> = ({
                             !showItemsOnMobile &&
                             !hidden && (
                               <>
-                                <Text
-                                  bold
-                                  m={"16px 0"}
-                                  fontSize={isTablet ? "20px" : "14px"}
-                                  color={
-                                    isMobile && opened
-                                      ? "primary"
-                                      : "backgroundDark"
-                                  }
-                                >
-                                  {label}
-                                </Text>
+                                <Box m="16px 0" position="relative">
+                                  {isMobile && isMarker && <Marker />}
+                                  <Text
+                                    bold
+                                    fontSize={isTablet ? "20px" : "14px"}
+                                    lineHeight={isTablet ? "26px" : "20px"}
+                                    color={
+                                      isMobile && opened
+                                        ? "primary"
+                                        : "backgroundDark"
+                                    }
+                                  >
+                                    {label}
+                                  </Text>
+                                </Box>
+
                                 {!isTablet && (
                                   <IconComponent
                                     iconName={
