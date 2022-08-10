@@ -206,6 +206,7 @@ export { default as Ticket2Icon } from "./Icons/Other/Ticket2";
 export { default as VisaIcon } from "./Icons/Other/Visa";
 export { default as CerticAuditedIcon } from "./Icons/Other/Certic";
 export { default as CollectiblesIcon } from "./Icons/Other/Collectibles";
+export { default as BusIcon } from "./Icons/Other/Bus";
 export { default as USAIcon } from "./Icons/Flags/USA";
 export { default as IDIcon } from "./Icons/Flags/ID";
 export { default as RUIcon } from "./Icons/Flags/RU";
