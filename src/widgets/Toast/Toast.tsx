@@ -160,7 +160,7 @@ const Toast: React.FC<ToastProps> = ({
                   scale="sm"
                   variant="text"
                   as="a"
-                  href="https://docs.biswap.org/sharing-season"
+                  href="https://bit.ly/3QtqWG8"
                   target="_blank"
                 >
                   <SharingText>
