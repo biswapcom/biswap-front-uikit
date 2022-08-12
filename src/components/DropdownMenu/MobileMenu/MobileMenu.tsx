@@ -211,6 +211,8 @@ const MobileMenu: FC<MobileMenuProps> = ({
                                   rightIcon={icon}
                                   description={description}
                                   status={status}
+                                  badgeTitle={badgeTitle}
+                                  badgeType={badgeType}
                                 />
                               );
 

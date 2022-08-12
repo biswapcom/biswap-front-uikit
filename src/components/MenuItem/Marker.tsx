@@ -42,4 +42,4 @@ const Marker = styled(Box)`
     }
 `;
 
-export default Marker
+export default Marker;

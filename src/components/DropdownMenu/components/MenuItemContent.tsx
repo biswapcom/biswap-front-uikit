@@ -5,6 +5,7 @@ import { Flex } from "../../Box";
 import { Text } from "../../Text";
 import { MenuItemContentProps } from "../types";
 import { useMatchBreakpoints } from "../../../hooks";
+import { Badge } from "../../Badge";
 
 const getBG = ({
   theme,
@@ -39,6 +40,8 @@ const MenuItemContent: FC<MenuItemContentProps> = ({
   description,
   rightIcon,
   fill = "primary",
+  badgeTitle,
+  badgeType,
 }) => {
   const { isMobile } = useMatchBreakpoints();
   return (
@@ -54,7 +57,15 @@ const MenuItemContent: FC<MenuItemContentProps> = ({
         flex={1}
         paddingLeft={leftIcon && "16px"}
       >
-        {label}
+        <Flex alignItems="center">
+          {label}
+          {badgeTitle && (
+            <Badge ml="4px" badgeType={badgeType ?? "success"}>
+              {badgeTitle}
+            </Badge>
+          )}
+        </Flex>
+
         {description && (
           <Text fontSize={"12px"} color={"gray900"} lineHeight="16px">
             {description}
