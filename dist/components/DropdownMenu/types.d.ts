@@ -50,6 +50,8 @@ export interface MenuItemContentProps {
     status?: LinkStatus;
     rightIcon?: string;
     fill?: string;
+    badgeType?: string;
+    badgeTitle?: string;
 }
 export declare enum DropdownMenuItemType {
     INTERNAL_LINK = 0,
