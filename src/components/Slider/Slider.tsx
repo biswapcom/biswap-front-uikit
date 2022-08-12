@@ -14,6 +14,7 @@ const SliderContainer = styled(Box)`
   position: relative;
   top: 0;
   left: 0;
+  margin-bottom: 24px;
 `;
 
 const BarBackground = styled.div`
@@ -39,6 +40,7 @@ const StyledInput = styled.input`
   transform: translateY(-18px);
   margin: 2px 0;
   -webkit-tap-highlight-color: transparent;
+  z-index: 2;
 
   ::-webkit-slider-thumb {
     -webkit-appearance: none;
@@ -48,6 +50,7 @@ const StyledInput = styled.input`
     transition: 0.1s all;
     border-radius: 50%;
     background-image: url(${SliderIcon});
+    position: relative;
 
     :hover {
       transform: scale(1.1);
@@ -75,6 +78,7 @@ const StyledInput = styled.input`
     transition: 0.1s all;
     border-radius: 50%;
     background-image: url(${SliderIcon});
+    
     :hover {
       transform: scale(1.1);
     }
@@ -86,18 +90,22 @@ const BunnySlider = styled.div`
   width: 100%;
 `;
 
-const BreakePointsWrap = styled.div`
-  padding: 0 9px;
+const BreakPointsWrap = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-top: 16px;
+  position: absolute;
+  width: 100%;
+  top: -3px;
+  left: 0;
+  z-index: 1;
 `;
 
 const Point = styled.div`
-  width: 2px;
-  height: 8px;
-  border-radius: 4px;
-  background-color: ${({ theme }) => theme.colors.backgroundDisabled};
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: ${({ theme }) => theme.colors.white};
+  border: 3px solid ${({ theme }) => theme.colors. gray300};
 `;
 
 const InfoBlock = styled.div`
@@ -323,13 +331,13 @@ const Slider: React.FC<SliderProps> = ({
             onChange={handleChange}
             onClick={() => onMouseLeaveHandleChange()}
           />
+          <BreakPointsWrap>
+            {checkPoints?.map((item, index) => (
+              <Point key={index.toString()} />
+            ))}
+          </BreakPointsWrap>
         </BunnySlider>
       </SliderContainer>
-      <BreakePointsWrap>
-        {checkPoints?.map((item, index) => (
-          <Point key={index.toString()} />
-        ))}
-      </BreakePointsWrap>
       <InfoBlock>
         <InfoNode>
           <TitleText>Fee return</TitleText>

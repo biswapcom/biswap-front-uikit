@@ -25,6 +25,7 @@ const SliderVariant = ({ initialValue }: { initialValue: number }) => {
       {/*<Button onClick={() => setValue(0)}>test</Button>*/}
       <PercentSlider
         withTooltip
+        darkMode
         name="slider"
         value={value}
         onValueChanged={setValue}
