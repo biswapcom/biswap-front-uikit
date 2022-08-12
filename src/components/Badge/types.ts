@@ -1,4 +1,6 @@
-export interface BadgeProps {
+import { SpaceProps } from "styled-system";
+
+export interface BadgeProps extends SpaceProps {
   badgeType:
     | "success"
     | "error"

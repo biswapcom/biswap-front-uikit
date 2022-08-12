@@ -47,11 +47,6 @@ const DropdownMenuItemContainer: FC<DropdownMenuItemContainerProps> = ({
   // @ts-ignore
   return (
     <StyledDropdownMenuItemContainer>
-      {badgeTitle && (
-        <Box position="absolute" top="2px" right="28px">
-          <Badge badgeType={badgeType ?? "success"}>{badgeTitle}</Badge>
-        </Box>
-      )}
       {type === DropdownMenuItemType.BUTTON && (
         <DropdownMenuItem
           $isActive={isActive}
