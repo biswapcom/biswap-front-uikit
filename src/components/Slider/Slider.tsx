@@ -4,6 +4,7 @@ import { parseInt } from "lodash";
 import { Box, BoxProps, Flex } from "../Box";
 import SliderIcon from "./Slider.svg";
 import { Text } from "../Text";
+import {Colors} from "../../theme";
 
 const Wrapper = styled.div`
   display: flex;
@@ -100,12 +101,13 @@ const BreakPointsWrap = styled.div`
   z-index: 1;
 `;
 
-const Point = styled.div`
+const Point = styled.span<{ pointColor: keyof Colors }>`
+  display: block;
   width: 10px;
   height: 10px;
   border-radius: 50%;
   background: ${({ theme }) => theme.colors.white};
-  border: 3px solid ${({ theme }) => theme.colors. gray300};
+  border: ${({ theme, pointColor }) => `3px solid ${theme.colors[pointColor]}`};
 `;
 
 const InfoBlock = styled.div`
@@ -210,6 +212,7 @@ interface SliderProps extends BoxProps {
   checkPoints?: Checkpoint[];
   isRobiBoost?: boolean;
   bannerPosition?: "top" | "bottom";
+  darkMode?: boolean,
 }
 
 interface Checkpoint {
@@ -234,6 +237,7 @@ const Slider: React.FC<SliderProps> = ({
   checkPoints = INIT_CHECKPOINTS,
   isRobiBoost,
   bannerPosition = "top",
+  darkMode = false,
   ...props
 }) => {
   const [percent, setPercent] = useState({ value: 0, RB: 0 });
@@ -261,6 +265,10 @@ const Slider: React.FC<SliderProps> = ({
     const res = temp.indexOf(minValue);
     onValueChanged(checkPoints[res].value);
     setPercent(checkPoints[res]);
+  };
+
+  const getCirclesColor = (pointPercent: number): keyof Colors => {
+    return percent.value >= pointPercent && pointPercent !== 90 ? "primary" : darkMode ? "dark400" : "gray300"
   };
 
   const handleChange = ({ target }: ChangeEvent<HTMLInputElement>) => {
@@ -299,7 +307,6 @@ const Slider: React.FC<SliderProps> = ({
   // const labelOffset = progressPercentage - progressPercentage / MOVING_SLIDER_LABEL_OFFSET_FACTOR;
 
   const [infoVisible, setInfoVisible] = useState<boolean>(false);
-
   return (
     <Wrapper>
       <SliderContainer {...props}>
@@ -333,7 +340,7 @@ const Slider: React.FC<SliderProps> = ({
           />
           <BreakPointsWrap>
             {checkPoints?.map((item, index) => (
-              <Point key={index.toString()} />
+              <Point key={index.toString()} pointColor={getCirclesColor(item.value)}/>
             ))}
           </BreakPointsWrap>
         </BunnySlider>
