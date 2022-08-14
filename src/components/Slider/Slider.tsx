@@ -4,7 +4,7 @@ import { parseInt } from "lodash";
 import { Box, BoxProps, Flex } from "../Box";
 import SliderIcon from "./Slider.svg";
 import { Text } from "../Text";
-import {Colors} from "../../theme";
+import { Colors } from "../../theme";
 
 const Wrapper = styled.div`
   display: flex;
@@ -79,7 +79,7 @@ const StyledInput = styled.input`
     transition: 0.1s all;
     border-radius: 50%;
     background-image: url(${SliderIcon});
-    
+
     :hover {
       transform: scale(1.1);
     }
@@ -212,7 +212,7 @@ interface SliderProps extends BoxProps {
   checkPoints?: Checkpoint[];
   isRobiBoost?: boolean;
   bannerPosition?: "top" | "bottom";
-  darkMode?: boolean,
+  darkMode?: boolean;
 }
 
 interface Checkpoint {
@@ -268,7 +268,11 @@ const Slider: React.FC<SliderProps> = ({
   };
 
   const getCirclesColor = (pointPercent: number): keyof Colors => {
-    return percent.value >= pointPercent && pointPercent !== 90 ? "primary" : darkMode ? "dark400" : "gray300"
+    return percent.value >= pointPercent && pointPercent !== 90
+      ? "primary"
+      : darkMode
+      ? "dark400"
+      : "gray300";
   };
 
   const handleChange = ({ target }: ChangeEvent<HTMLInputElement>) => {
@@ -340,7 +344,10 @@ const Slider: React.FC<SliderProps> = ({
           />
           <BreakPointsWrap>
             {checkPoints?.map((item, index) => (
-              <Point key={index.toString()} pointColor={getCirclesColor(item.value)}/>
+              <Point
+                key={index.toString()}
+                pointColor={getCirclesColor(item.value)}
+              />
             ))}
           </BreakPointsWrap>
         </BunnySlider>

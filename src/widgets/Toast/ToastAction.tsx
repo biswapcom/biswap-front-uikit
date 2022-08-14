@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { TelegramShareButton, TwitterShareButton } from "react-share";
+// import { TelegramShareButton, TwitterShareButton } from "react-share";
 import { Button } from "../../components/Button";
 import { TelegramIcon, TwitterIcon } from "../../components/Svg";
 import { Text } from "../../components/Text";
@@ -35,43 +35,43 @@ const ToastAction: React.FC<ToastActionProps> = ({
 }) => {
   return (
     <ActionsContainer>
-      <TwitterShareButton
-        style={{ width: "40%", height: "32px" }}
-        title={tweeterDescription}
-        url={`${url}`}
+      {/*<TwitterShareButton*/}
+      {/*  style={{ width: "40%", height: "32px" }}*/}
+      {/*  title={tweeterDescription}*/}
+      {/*  url={`${url}`}*/}
+      {/*>*/}
+      <Button
+        mr="8px"
+        scale="sm"
+        width="100%"
+        height="100%"
+        style={{ backgroundColor: "#16CDFD", alignItems: "center" }}
       >
-        <Button
-          mr="8px"
-          scale="sm"
-          width="100%"
-          height="100%"
-          style={{ backgroundColor: "#16CDFD", alignItems: "center" }}
-        >
-          <StyledIcon src={giftImg} alt="gift-icon" />
-          <Text mr="6px" my="8px" color="#fff" fontSize="12px">
-            Twitter
-          </Text>
-          <TwitterIcon mr="8px" color="#fff" width="20px" />
-        </Button>
-      </TwitterShareButton>
-      <TelegramShareButton
-        style={{ width: "40%", height: "32px", marginLeft: "6px" }}
-        title={telegramDescription}
-        url={`${url}`}
+        <StyledIcon src={giftImg} alt="gift-icon" />
+        <Text mr="6px" my="8px" color="#fff" fontSize="12px">
+          Twitter
+        </Text>
+        <TwitterIcon mr="8px" color="#fff" width="20px" />
+      </Button>
+      {/*</TwitterShareButton>*/}
+      {/*<TelegramShareButton*/}
+      {/*  style={{ width: "40%", height: "32px", marginLeft: "6px" }}*/}
+      {/*  title={telegramDescription}*/}
+      {/*  url={`${url}`}*/}
+      {/*>*/}
+      <Button
+        mx="8px"
+        scale="sm"
+        width="100%"
+        height="100%"
+        style={{ backgroundColor: "#26A6E5", alignItems: "center" }}
       >
-        <Button
-          mx="8px"
-          scale="sm"
-          width="100%"
-          height="100%"
-          style={{ backgroundColor: "#26A6E5", alignItems: "center" }}
-        >
-          <Text color="#fff" fontSize="12px">
-            Telegram
-          </Text>
-          <TelegramIcon ml="8px" color="#fff" width="20px" />
-        </Button>
-      </TelegramShareButton>
+        <Text color="#fff" fontSize="12px">
+          Telegram
+        </Text>
+        <TelegramIcon ml="8px" color="#fff" width="20px" />
+      </Button>
+      {/*</TelegramShareButton>*/}
     </ActionsContainer>
   );
 };

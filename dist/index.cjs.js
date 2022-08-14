@@ -14,7 +14,6 @@ var noop = require('lodash/noop');
 var throttle = require('lodash/throttle');
 var reactRouterDom = require('react-router-dom');
 var reactTransitionGroup = require('react-transition-group');
-var reactShare = require('react-share');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
@@ -25,7 +24,7 @@ var debounce__default = /*#__PURE__*/_interopDefaultLegacy(debounce);
 var noop__default = /*#__PURE__*/_interopDefaultLegacy(noop);
 var throttle__default = /*#__PURE__*/_interopDefaultLegacy(throttle);
 
-/*! *****************************************************************************
+/******************************************************************************
 Copyright (c) Microsoft Corporation.
 
 Permission to use, copy, modify, and/or distribute this software for any
@@ -4995,7 +4994,7 @@ var BarProgress$1 = styled__default["default"].div(templateObject_4$i || (templa
     var theme = _a.theme;
     return theme.colors.primary;
 });
-var StyledInput$1 = styled__default["default"].input(templateObject_5$f || (templateObject_5$f = __makeTemplateObject(["\n  height: 20px;\n  position: relative;\n  cursor: pointer;\n  transform: translateY(-18px);\n  margin: 2px 0;\n  -webkit-tap-highlight-color: transparent;\n  z-index: 2;\n\n  ::-webkit-slider-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    border-radius: 50%;\n    background-image: url(", ");\n    position: relative;\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n  ::-moz-range-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    // custom moz reset\n    background-color: transparent;\n    border: 0;\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n  ::-ms-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    border-radius: 50%;\n    background-image: url(", ");\n    \n    :hover {\n      transform: scale(1.1);\n    }\n  }\n"], ["\n  height: 20px;\n  position: relative;\n  cursor: pointer;\n  transform: translateY(-18px);\n  margin: 2px 0;\n  -webkit-tap-highlight-color: transparent;\n  z-index: 2;\n\n  ::-webkit-slider-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    border-radius: 50%;\n    background-image: url(", ");\n    position: relative;\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n  ::-moz-range-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    // custom moz reset\n    background-color: transparent;\n    border: 0;\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n  ::-ms-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    border-radius: 50%;\n    background-image: url(", ");\n    \n    :hover {\n      transform: scale(1.1);\n    }\n  }\n"])), SliderIcon, SliderIcon);
+var StyledInput$1 = styled__default["default"].input(templateObject_5$f || (templateObject_5$f = __makeTemplateObject(["\n  height: 20px;\n  position: relative;\n  cursor: pointer;\n  transform: translateY(-18px);\n  margin: 2px 0;\n  -webkit-tap-highlight-color: transparent;\n  z-index: 2;\n\n  ::-webkit-slider-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    border-radius: 50%;\n    background-image: url(", ");\n    position: relative;\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n  ::-moz-range-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    // custom moz reset\n    background-color: transparent;\n    border: 0;\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n  ::-ms-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    border-radius: 50%;\n    background-image: url(", ");\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n"], ["\n  height: 20px;\n  position: relative;\n  cursor: pointer;\n  transform: translateY(-18px);\n  margin: 2px 0;\n  -webkit-tap-highlight-color: transparent;\n  z-index: 2;\n\n  ::-webkit-slider-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    border-radius: 50%;\n    background-image: url(", ");\n    position: relative;\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n  ::-moz-range-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    // custom moz reset\n    background-color: transparent;\n    border: 0;\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n  ::-ms-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    border-radius: 50%;\n    background-image: url(", ");\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n"])), SliderIcon, SliderIcon);
 var BunnySlider = styled__default["default"].div(templateObject_6$9 || (templateObject_6$9 = __makeTemplateObject(["\n  position: absolute;\n  width: 100%;\n"], ["\n  position: absolute;\n  width: 100%;\n"])));
 var BreakPointsWrap = styled__default["default"].div(templateObject_7$8 || (templateObject_7$8 = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  position: absolute;\n  width: 100%;\n  top: -3px;\n  left: 0;\n  z-index: 1;\n"], ["\n  display: flex;\n  justify-content: space-between;\n  position: absolute;\n  width: 100%;\n  top: -3px;\n  left: 0;\n  z-index: 1;\n"])));
 var Point = styled__default["default"].span(templateObject_8$4 || (templateObject_8$4 = __makeTemplateObject(["\n  display: block;\n  width: 10px;\n  height: 10px;\n  border-radius: 50%;\n  background: ", ";\n  border: ", ";\n"], ["\n  display: block;\n  width: 10px;\n  height: 10px;\n  border-radius: 50%;\n  background: ", ";\n  border: ", ";\n"])), function (_a) {
@@ -5079,7 +5078,11 @@ var Slider = function (_a) {
         setPercent(checkPoints[res]);
     };
     var getCirclesColor = function (pointPercent) {
-        return percent.value >= pointPercent && pointPercent !== 90 ? "primary" : darkMode ? "dark400" : "gray300";
+        return percent.value >= pointPercent && pointPercent !== 90
+            ? "primary"
+            : darkMode
+                ? "dark400"
+                : "gray300";
     };
     var handleChange = function (_a) {
         var target = _a.target;
@@ -8849,17 +8852,15 @@ var giftImg = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkz
 var ActionsContainer = styled__default["default"].div(templateObject_1$3 || (templateObject_1$3 = __makeTemplateObject(["\n  display: flex;\n  justify-content: flex-start;\n"], ["\n  display: flex;\n  justify-content: flex-start;\n"])));
 var StyledIcon = styled__default["default"].img(templateObject_2$1 || (templateObject_2$1 = __makeTemplateObject(["\n  margin-left: 8px;\n  width: 26px;\n  filter: drop-shadow(2px 4px 8px rgba(0, 109, 163, 0.4));\n"], ["\n  margin-left: 8px;\n  width: 26px;\n  filter: drop-shadow(2px 4px 8px rgba(0, 109, 163, 0.4));\n"])));
 var ToastAction = function (_a) {
-    _a.title; var telegramDescription = _a.telegramDescription, tweeterDescription = _a.tweeterDescription, url = _a.url; _a.thx;
+    _a.title; _a.telegramDescription; _a.tweeterDescription; _a.url; _a.thx;
     return (React__default["default"].createElement(ActionsContainer, null,
-        React__default["default"].createElement(reactShare.TwitterShareButton, { style: { width: "40%", height: "32px" }, title: tweeterDescription, url: "".concat(url) },
-            React__default["default"].createElement(Button, { mr: "8px", scale: "sm", width: "100%", height: "100%", style: { backgroundColor: "#16CDFD", alignItems: "center" } },
-                React__default["default"].createElement(StyledIcon, { src: giftImg, alt: "gift-icon" }),
-                React__default["default"].createElement(Text, { mr: "6px", my: "8px", color: "#fff", fontSize: "12px" }, "Twitter"),
-                React__default["default"].createElement(Icon$D, { mr: "8px", color: "#fff", width: "20px" }))),
-        React__default["default"].createElement(reactShare.TelegramShareButton, { style: { width: "40%", height: "32px", marginLeft: "6px" }, title: telegramDescription, url: "".concat(url) },
-            React__default["default"].createElement(Button, { mx: "8px", scale: "sm", width: "100%", height: "100%", style: { backgroundColor: "#26A6E5", alignItems: "center" } },
-                React__default["default"].createElement(Text, { color: "#fff", fontSize: "12px" }, "Telegram"),
-                React__default["default"].createElement(Icon$F, { ml: "8px", color: "#fff", width: "20px" })))));
+        React__default["default"].createElement(Button, { mr: "8px", scale: "sm", width: "100%", height: "100%", style: { backgroundColor: "#16CDFD", alignItems: "center" } },
+            React__default["default"].createElement(StyledIcon, { src: giftImg, alt: "gift-icon" }),
+            React__default["default"].createElement(Text, { mr: "6px", my: "8px", color: "#fff", fontSize: "12px" }, "Twitter"),
+            React__default["default"].createElement(Icon$D, { mr: "8px", color: "#fff", width: "20px" })),
+        React__default["default"].createElement(Button, { mx: "8px", scale: "sm", width: "100%", height: "100%", style: { backgroundColor: "#26A6E5", alignItems: "center" } },
+            React__default["default"].createElement(Text, { color: "#fff", fontSize: "12px" }, "Telegram"),
+            React__default["default"].createElement(Icon$F, { ml: "8px", color: "#fff", width: "20px" }))));
 };
 var templateObject_1$3, templateObject_2$1;
 

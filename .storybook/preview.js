@@ -1,5 +1,6 @@
 import React from "react";
-import { withThemesProvider } from "themeprovider-storybook";
+//import { withThemesProvider } from "themeprovider-storybook";
+import {withThemesProvider} from 'storybook-addon-styled-component-theme';
 import light from "../src/theme/light";
 import dark from "../src/theme/dark";
 import ResetCSS from "../src/ResetCSS";
@@ -30,4 +31,11 @@ const themes = [
     },
 ];
 
-export const decorators = [globalDecorator, withThemesProvider(themes)];
+export const decorators = [globalDecorator
+//     ,{
+//     name: "Dark",
+//     backgroundColor: dark.colors.background,
+//     ...dark,
+// },
+   ,withThemesProvider(themes)
+];

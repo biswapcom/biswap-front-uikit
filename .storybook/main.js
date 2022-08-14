@@ -1,5 +1,8 @@
 module.exports = {
     stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
+    features: {
+        postcss: false,
+    },
     addons: [
         {
             name: "@storybook/addon-essentials",
@@ -9,6 +12,7 @@ module.exports = {
         },
         "@storybook/addon-links",
         "@storybook/addon-a11y",
-        "themeprovider-storybook/register",
+        "storybook-addon-styled-component-theme/dist/preset"
+        //"themeprovider-storybook/register",
     ],
 };
