@@ -9,4 +9,5 @@ export interface BaseMenuProps {
     component: ReactNode;
     options?: MenuOptions;
     isOpen?: boolean;
+    children: ReactNode;
 }

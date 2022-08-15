@@ -52,6 +52,7 @@ const Button = <E extends ElementType = "button">(
         {isLoading ? loadingText : children}
         {isValidElement(endIconElement) &&
           cloneElement(endIconElement, {
+            // @ts-ignore
             ml: "0.5rem",
           })}
       </>

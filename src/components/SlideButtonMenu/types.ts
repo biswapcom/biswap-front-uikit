@@ -1,5 +1,5 @@
 import { SpaceProps } from "styled-system";
-import { Dispatch, ElementType, SetStateAction } from "react";
+import { Dispatch, ElementType, ReactNode, SetStateAction } from "react";
 import { PolymorphicComponentProps } from "../../util/polymorphic";
 
 export interface SlideButtonMenuProps extends SpaceProps {
@@ -18,6 +18,7 @@ export interface SlideButtonMenuItemProps extends SlideButtonMenuProps {
   blockOffset?: number;
   itemIndex?: number;
   onAction?: (index: number) => void;
+  children: ReactNode;
 }
 
 export type SlideButtonProps<P extends ElementType = "button"> =

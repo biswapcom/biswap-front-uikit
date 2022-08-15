@@ -68,7 +68,8 @@ const BaseMenu: React.FC<BaseMenuProps> = ({
   const menu = (
     <div ref={setMenuElement} style={styles.popper} {...attributes.popper}>
       {typeof children === "function"
-        ? children({ toggle, open, close })
+        ? // @ts-ignore
+          children({ toggle, open, close })
         : children}
     </div>
   );

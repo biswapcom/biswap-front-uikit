@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import styled from "styled-components";
 import { CloseIcon } from "../../components/Svg";
 import { IconButton } from "../../components/Button";
@@ -9,6 +9,7 @@ interface Props extends InjectedProps {
   backBtnColor?: string;
   background?: string;
   p?: string;
+  children: ReactNode;
 }
 
 const StyledModal = styled.div`

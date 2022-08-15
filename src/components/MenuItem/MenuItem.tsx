@@ -23,6 +23,7 @@ const MenuItem: React.FC<MenuItemProps> = ({
   return (
     <StyledMenuItemContainer $isActive={isActive} $variant={variant}>
       <StyledMenuItem
+        // @ts-ignore
         {...itemLinkProps}
         $isActive={isActive}
         $variant={variant}

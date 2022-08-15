@@ -1,4 +1,2 @@
-declare const StyledSubMenuItems: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, import("../Box").BoxProps & import("../Box").FlexProps & {
-    $isMobileOnly: boolean;
-}, never>;
+declare const StyledSubMenuItems: any;
 export default StyledSubMenuItems;

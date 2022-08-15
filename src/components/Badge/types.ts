@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export interface BadgeProps {
   badgeType:
     | "success"
@@ -13,4 +15,5 @@ export interface BadgeProps {
   fontWeight?: string;
   isIcon?: string;
   isLarge?: boolean;
+  children: ReactNode;
 }

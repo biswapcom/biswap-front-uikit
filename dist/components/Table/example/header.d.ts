@@ -1,2 +1,2 @@
-declare const StyledTh: import("styled-components").StyledComponent<"th", import("styled-components").DefaultTheme, {}, never>;
+declare const StyledTh: any;
 export default StyledTh;
