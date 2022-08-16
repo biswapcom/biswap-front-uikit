@@ -7777,7 +7777,7 @@ var StyledDropdownMenu = styled__default["default"](Grid)(templateObject_10 || (
 }, function (_a) {
     var $isExtended = _a.$isExtended;
     return $isExtended &&
-        "\n    grid-template-columns: repeat(2, 1fr);\n    width: 680px;\n  ";
+        "\n    grid-template-columns: repeat(2, 1fr);\n    grid-column-gap: 24px;\n    width: 680px;\n  ";
 });
 styled__default["default"](Text)(templateObject_11 || (templateObject_11 = __makeTemplateObject(["\n  border-radius: ", ";\n  padding: 0 8px;\n  border: 2px solid ", ";\n  box-shadow: none;\n  color: ", ";\n  margin-left: 8px;\n"], ["\n  border-radius: ", ";\n  padding: 0 8px;\n  border: 2px solid ", ";\n  box-shadow: none;\n  color: ", ";\n  margin-left: 8px;\n"])), function (_a) {
     var theme = _a.theme;
