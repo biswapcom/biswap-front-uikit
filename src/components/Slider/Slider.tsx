@@ -217,18 +217,18 @@ interface SliderProps extends BoxProps {
 
 interface Checkpoint {
   value: number;
-  RB: number;
+  RB: string;
 }
 
 const MIN = 0;
 const MAX = 100;
 
 const INIT_CHECKPOINTS: Checkpoint[] = [
-  { value: 0, RB: 1000 },
-  { value: 25, RB: 2500 },
-  { value: 50, RB: 5000 },
-  { value: 75, RB: 7500 },
-  { value: 90, RB: 10000 },
+  { value: 0, RB: '1000' },
+  { value: 25, RB: '2500' },
+  { value: 50, RB: '5000' },
+  { value: 75, RB: '7500' },
+  { value: 90, RB: '10000' },
 ];
 
 const Slider: React.FC<SliderProps> = ({
@@ -240,7 +240,7 @@ const Slider: React.FC<SliderProps> = ({
   darkMode = false,
   ...props
 }) => {
-  const [percent, setPercent] = useState({ value: 0, RB: 0 });
+  const [percent, setPercent] = useState({ value: 0, RB: '0' });
 
   const getRB = (percentage: number) => {
     const temp = checkPoints.map((item) => Math.abs(item.value - percentage));

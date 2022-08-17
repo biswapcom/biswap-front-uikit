@@ -5034,15 +5034,15 @@ var PercentText = styled(Text)(templateObject_17 || (templateObject_17 = __makeT
 var MIN = 0;
 var MAX = 100;
 var INIT_CHECKPOINTS = [
-    { value: 0, RB: 1000 },
-    { value: 25, RB: 2500 },
-    { value: 50, RB: 5000 },
-    { value: 75, RB: 7500 },
-    { value: 90, RB: 10000 },
+    { value: 0, RB: '1000' },
+    { value: 25, RB: '2500' },
+    { value: 50, RB: '5000' },
+    { value: 75, RB: '7500' },
+    { value: 90, RB: '10000' },
 ];
 var Slider = function (_a) {
     var value = _a.value, onValueChanged = _a.onValueChanged, _b = _a.checkPoints, checkPoints = _b === void 0 ? INIT_CHECKPOINTS : _b, isRobiBoost = _a.isRobiBoost, _c = _a.bannerPosition, bannerPosition = _c === void 0 ? "top" : _c, _d = _a.darkMode, darkMode = _d === void 0 ? false : _d, props = __rest(_a, ["value", "onValueChanged", "checkPoints", "isRobiBoost", "bannerPosition", "darkMode"]);
-    var _e = useState({ value: 0, RB: 0 }), percent = _e[0], setPercent = _e[1];
+    var _e = useState({ value: 0, RB: '0' }), percent = _e[0], setPercent = _e[1];
     var getRB = function (percentage) {
         var temp = checkPoints.map(function (item) { return Math.abs(item.value - percentage); });
         var minValue = Math.min.apply(Math, temp);
