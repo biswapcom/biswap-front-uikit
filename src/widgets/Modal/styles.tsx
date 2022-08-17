@@ -8,7 +8,7 @@ import { ModalProps } from "./types";
 
 export const ModalHeader = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   padding: 24px 16px;
 
   ${({ theme }) => theme.mediaQueries.sm} {
@@ -34,9 +34,10 @@ export const ModalCloseButton: React.FC<{
     <IconButton
       variant="text"
       onClick={onDismiss}
+      scale="sm"
       aria-label="Close the dialog"
     >
-      <CloseIcon color={closeBtnColor || "dark600"} width="32px" />
+      <CloseIcon color={closeBtnColor || "dark600"} width="24px" />
     </IconButton>
   );
 };

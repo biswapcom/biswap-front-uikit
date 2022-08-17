@@ -9,6 +9,8 @@ import {
 } from "../styles";
 import InnerLinksBlock from "./InnerLinksBlock";
 import { useMatchBreakpoints } from "../../../hooks";
+import { Badge } from "../../Badge";
+import { Box } from "../../Box";
 
 const DropdownMenuItemContainer: FC<DropdownMenuItemContainerProps> = ({
   isActive = false,
@@ -22,6 +24,8 @@ const DropdownMenuItemContainer: FC<DropdownMenuItemContainerProps> = ({
   type,
   target,
   mobileTarget,
+  badgeTitle,
+  badgeType,
   ...itemProps
 }) => {
   const [linksItems, setLinkItems] = useState<any>([]);
