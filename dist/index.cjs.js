@@ -8545,7 +8545,7 @@ var AccountModal = function (_a) {
             } }, account),
         React__default["default"].createElement(Flex, null,
             React__default["default"].createElement(CopyToClipboard, { toCopy: account }, "Copy Address"),
-            React__default["default"].createElement(Link, { target: "_blank", fontWeight: "400", scale: "xs", ml: "26px", small: true, href: "https://bscscan.com/address/".concat(account), mr: "16px" },
+            React__default["default"].createElement(Link, { color: "primary", target: "_blank", fontWeight: "400", scale: "xs", ml: "26px", small: true, href: "https://bscscan.com/address/".concat(account), mr: "16px" },
                 "View on BscScan",
                 React__default["default"].createElement(Icon$3j, { color: "primary", width: "14px", ml: "4px" }))),
         isSwap && (React__default["default"].createElement(TransactionWrapper, null,
