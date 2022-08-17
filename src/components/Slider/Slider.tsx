@@ -217,7 +217,7 @@ interface SliderProps extends BoxProps {
 
 interface Checkpoint {
   value: number;
-  RB: number | string;
+  RB: number;
 }
 
 const MIN = 0;

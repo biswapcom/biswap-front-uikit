@@ -1,2 +1,2 @@
-declare const getRgba: (hex: string, alpha?: number | undefined) => string;
+declare const getRgba: (hex: string, alpha?: number) => string;
 export default getRgba;

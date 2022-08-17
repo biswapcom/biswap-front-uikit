@@ -11,7 +11,7 @@ interface SliderProps extends BoxProps {
 }
 interface Checkpoint {
     value: number;
-    RB: number | string;
+    RB: number;
 }
 declare const Slider: React.FC<SliderProps>;
 export default Slider;
