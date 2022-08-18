@@ -1,15 +1,31 @@
 import React, { FC, Fragment } from "react";
+import styled from "styled-components";
+
+// common styles
 import {
   DropdownMenuDivider,
   DropdownMenuInnerLinkItem,
   DropdownMenuInnerOuterLinkItem,
   InnerLinksBlockContainer,
 } from "../styles";
+
+// components
 import IconComponent from "../../Svg/IconComponent";
 import { Text } from "../../Text";
-import { DropdownMenuItemType, InnerLinksBlockProps } from "../types";
 import Grid from "../../Box/Grid";
+
+// types
+import { DropdownMenuItemType, InnerLinksBlockProps } from "../types";
+
+// hooks
 import { useMatchBreakpoints } from "../../../hooks";
+
+const LabelText = styled(Text)`
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 95px;
+`;
 
 const InnerLinksBlock: FC<InnerLinksBlockProps> = ({
   links,
@@ -43,9 +59,9 @@ const InnerLinksBlock: FC<InnerLinksBlockProps> = ({
                 color={fill}
               />
             )}
-            <Text bold fontSize={"12px"} color={fill}>
+            <LabelText bold fontSize={"12px"} color={fill}>
               {label}
-            </Text>
+            </LabelText>
           </>
         );
         return (
