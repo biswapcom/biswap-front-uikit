@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Button from "../../../../components/Button/Button";
 import {
   WalletOpacityIcon,
-  RefreshSolidIcon,
+  AutoRenewSolidAnimateIcon,
 } from "../../../../components/Svg";
 import { useWalletModal } from "../../../WalletModal";
 import { Login } from "../../../WalletModal";
@@ -79,7 +79,7 @@ const UserBlock: React.FC<Props> = ({
           >
             {pendingTransactions ? (
               <>
-                {pendingTransactions} pending <RefreshSolidIcon color="white" />
+                {pendingTransactions} pending <AutoRenewSolidAnimateIcon color="white" ml="4px" />
               </>
             ) : (
               <>
