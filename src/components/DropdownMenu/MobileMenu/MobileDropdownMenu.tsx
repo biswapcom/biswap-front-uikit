@@ -1,6 +1,4 @@
-import React, { FC, useState } from "react";
-import IconComponent from "../../Svg/IconComponent";
-import { Flex } from "../../Box";
+import React, { FC } from "react";
 import { Text } from "../../Text";
 import { useMatchBreakpoints } from "../../../hooks";
 import MobileMenu from "./MobileMenu";

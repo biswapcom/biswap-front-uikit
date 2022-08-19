@@ -1,8 +1,9 @@
-/// <reference types="react" />
+import { ReactNode } from "react";
 export declare type Position = "top" | "top-right" | "bottom";
 export interface PositionProps {
     position?: Position;
 }
 export interface DropdownProps extends PositionProps {
     target: React.ReactElement;
+    children: ReactNode;
 }

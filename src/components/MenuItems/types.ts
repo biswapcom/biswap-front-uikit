@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import { BoxProps } from "../Box";
 import { DropdownMenuItems } from "../DropdownMenu/types";
 
@@ -30,4 +31,5 @@ export interface MenuItemsProps extends BoxProps {
   activeSubItem?: string;
   isMobileMenuOpened?: boolean;
   mobileMenuCallback?: (s: boolean) => void;
+  children: ReactNode,
 }
