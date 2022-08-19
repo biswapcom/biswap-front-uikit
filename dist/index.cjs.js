@@ -4001,9 +4001,9 @@ var CheckboxInput = styled__default["default"].input.attrs({ type: "checkbox" })
 });
 var StyledText$2 = styled__default["default"](Text)(templateObject_3$r || (templateObject_3$r = __makeTemplateObject(["\n  transition: color 0.4s ease-in-out;\n"], ["\n  transition: color 0.4s ease-in-out;\n"])));
 var Checkbox = function (_a) {
-    var labelOrientation = _a.labelOrientation, label = _a.label, scale = _a.scale, colorVariant = _a.colorVariant, id = _a.id, defaultChecked = _a.defaultChecked, onChange = _a.onChange;
+    var labelOrientation = _a.labelOrientation, label = _a.label, scale = _a.scale, colorVariant = _a.colorVariant, id = _a.id, defaultChecked = _a.defaultChecked, onChange = _a.onChange, value = _a.value;
     return (React__default["default"].createElement(Wrapper$d, { labelOrientation: labelOrientation },
-        React__default["default"].createElement(CheckboxInput, { scale: scale, colorVariant: colorVariant, id: id, defaultChecked: defaultChecked, onChange: onChange }),
+        React__default["default"].createElement(CheckboxInput, { checked: value, scale: scale, colorVariant: colorVariant, id: id, defaultChecked: defaultChecked, onChange: onChange }),
         label && labelOrientation && (React__default["default"].createElement(StyledText$2, { as: "span", fontSize: "12px", fontWeight: "400", color: "gray900", mr: labelOrientation === "left" ? "12px" : 0, ml: labelOrientation === "right" ? "12px" : 0 }, label))));
 };
 Checkbox.defaultProps = {
@@ -8611,8 +8611,10 @@ var UserBlock = function (_a) {
                 onPresentAccountModal();
             } }, pendingTransactions ? (React__default["default"].createElement(React__default["default"].Fragment, null,
             pendingTransactions,
+            " ",
+            " ",
             " pending ",
-            React__default["default"].createElement(Icon$1D, { color: "white" }))) : (React__default["default"].createElement(React__default["default"].Fragment, null,
+            React__default["default"].createElement(Icon$1I, { color: "white", ml: "4px" }))) : (React__default["default"].createElement(React__default["default"].Fragment, null,
             !isSm && !isXs && (React__default["default"].createElement(Icon$31, __assign({}, iconProps, { mr: "8px" }))),
             accountEllipsis))))) : (React__default["default"].createElement(Button, { scale: isSm || isXs ? "md" : "lg", onClick: function () {
             onPresentConnectModal();

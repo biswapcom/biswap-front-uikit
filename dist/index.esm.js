@@ -3988,9 +3988,9 @@ var CheckboxInput = styled.input.attrs({ type: "checkbox" })(templateObject_2$G 
 });
 var StyledText$2 = styled(Text)(templateObject_3$r || (templateObject_3$r = __makeTemplateObject(["\n  transition: color 0.4s ease-in-out;\n"], ["\n  transition: color 0.4s ease-in-out;\n"])));
 var Checkbox = function (_a) {
-    var labelOrientation = _a.labelOrientation, label = _a.label, scale = _a.scale, colorVariant = _a.colorVariant, id = _a.id, defaultChecked = _a.defaultChecked, onChange = _a.onChange;
+    var labelOrientation = _a.labelOrientation, label = _a.label, scale = _a.scale, colorVariant = _a.colorVariant, id = _a.id, defaultChecked = _a.defaultChecked, onChange = _a.onChange, value = _a.value;
     return (React.createElement(Wrapper$d, { labelOrientation: labelOrientation },
-        React.createElement(CheckboxInput, { scale: scale, colorVariant: colorVariant, id: id, defaultChecked: defaultChecked, onChange: onChange }),
+        React.createElement(CheckboxInput, { checked: value, scale: scale, colorVariant: colorVariant, id: id, defaultChecked: defaultChecked, onChange: onChange }),
         label && labelOrientation && (React.createElement(StyledText$2, { as: "span", fontSize: "12px", fontWeight: "400", color: "gray900", mr: labelOrientation === "left" ? "12px" : 0, ml: labelOrientation === "right" ? "12px" : 0 }, label))));
 };
 Checkbox.defaultProps = {
@@ -8598,8 +8598,10 @@ var UserBlock = function (_a) {
                 onPresentAccountModal();
             } }, pendingTransactions ? (React.createElement(React.Fragment, null,
             pendingTransactions,
+            " ",
+            " ",
             " pending ",
-            React.createElement(Icon$1D, { color: "white" }))) : (React.createElement(React.Fragment, null,
+            React.createElement(Icon$1I, { color: "white", ml: "4px" }))) : (React.createElement(React.Fragment, null,
             !isSm && !isXs && (React.createElement(Icon$31, __assign({}, iconProps, { mr: "8px" }))),
             accountEllipsis))))) : (React.createElement(Button, { scale: isSm || isXs ? "md" : "lg", onClick: function () {
             onPresentConnectModal();
