@@ -8598,8 +8598,6 @@ var UserBlock = function (_a) {
                 onPresentAccountModal();
             } }, pendingTransactions ? (React.createElement(React.Fragment, null,
             pendingTransactions,
-            " ",
-            " ",
             " pending ",
             React.createElement(Icon$1I, { color: "white", ml: "4px" }))) : (React.createElement(React.Fragment, null,
             !isSm && !isXs && (React.createElement(Icon$31, __assign({}, iconProps, { mr: "8px" }))),

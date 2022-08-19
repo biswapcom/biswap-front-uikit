@@ -8611,8 +8611,6 @@ var UserBlock = function (_a) {
                 onPresentAccountModal();
             } }, pendingTransactions ? (React__default["default"].createElement(React__default["default"].Fragment, null,
             pendingTransactions,
-            " ",
-            " ",
             " pending ",
             React__default["default"].createElement(Icon$1I, { color: "white", ml: "4px" }))) : (React__default["default"].createElement(React__default["default"].Fragment, null,
             !isSm && !isXs && (React__default["default"].createElement(Icon$31, __assign({}, iconProps, { mr: "8px" }))),
