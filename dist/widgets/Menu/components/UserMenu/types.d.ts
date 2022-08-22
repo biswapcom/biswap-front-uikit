@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import { FlexProps } from "styled-system";
 export declare const variants: {
     readonly DEFAULT: "default";
@@ -11,6 +12,7 @@ export interface UserMenuProps extends FlexProps {
     text?: string;
     avatarSrc?: string;
     variant?: Variant;
+    children: ReactNode;
 }
 export interface UserMenuItemProps {
     disabled?: boolean;

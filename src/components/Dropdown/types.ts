@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import { SpaceProps } from "styled-system";
 
 export type Position = "top" | "bottom";
@@ -18,6 +19,7 @@ export interface DropdownProps extends PositionProps, SpaceProps {
   disabled?: boolean;
   options: Array<OptionProps>;
   onChange?: (option: OptionProps) => void;
+  children?: ReactNode,
 }
 
 export interface OptionProps {
