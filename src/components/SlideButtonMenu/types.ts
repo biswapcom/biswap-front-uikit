@@ -1,17 +1,27 @@
 import { SpaceProps } from "styled-system";
-import { BaseButtonProps } from "../Button/types";
-import { Dispatch, ReactElement, SetStateAction } from "react";
+import { Dispatch, ElementType, SetStateAction } from "react";
+import { PolymorphicComponentProps } from "../../util/polymorphic";
 
-export interface SlideButtonMenuItemProps extends BaseButtonProps {
-  isActive?: boolean;
-  widthsArr: Array<number>;
-  setWidth: Dispatch<SetStateAction<any>>;
-  blockOffset: number;
-  itemIndex: number;
-  children?: string;
-  onAction: (index: number) => void;
+export interface SlideButtonMenuProps extends SpaceProps {
+  variant?: typeof slideMenuVariants.DARK | typeof slideMenuVariants.LIGHT;
+  activeIndex?: number;
+  scale?: typeof slideMenuScales[keyof typeof slideMenuScales];
+  disabled?: boolean;
+  fullWidth?: boolean;
+  menuTitles?: Array<string>;
   customClass?: string;
 }
+
+export interface SlideButtonMenuItemProps extends SlideButtonMenuProps {
+  isActive?: boolean;
+  setWidth?: Dispatch<SetStateAction<any>>;
+  blockOffset?: number;
+  itemIndex?: number;
+  onAction?: (index: number) => void;
+}
+
+export type SlideButtonProps<P extends ElementType = "button"> =
+  PolymorphicComponentProps<P, SlideButtonMenuItemProps>;
 
 export const slideMenuScales = {
   LG: "lg",
@@ -20,23 +30,6 @@ export const slideMenuScales = {
 } as const;
 
 export const slideMenuVariants = {
-  PRIMARY: "primary",
-  WARNING: "warning",
-  SELECT: "select",
-  SELECT_LIGHT: "selectLight",
+  DARK: "dark",
+  LIGHT: "light",
 } as const;
-
-export interface SlideButtonMenuProps extends SpaceProps {
-  variant?:
-    | typeof slideMenuVariants.PRIMARY
-    | typeof slideMenuVariants.WARNING
-    | typeof slideMenuVariants.SELECT
-    | typeof slideMenuVariants.SELECT_LIGHT;
-  activeIndex?: number;
-  scale?: typeof slideMenuScales[keyof typeof slideMenuScales];
-  disabled?: boolean;
-  // children?: ReactElement[];
-  fullWidth?: boolean;
-  menuTitles?: Array<string>;
-  customClass?: string;
-}

@@ -16,7 +16,7 @@ export interface RadioProps extends SpaceProps {
   labelOrientation?: string;
   label?: string;
   radioName?: string;
-  onChange: () => void;
+  onChange: any;
   colorVariant?: string;
   checked?: boolean;
 }

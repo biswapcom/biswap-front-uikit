@@ -1,47 +1,45 @@
 import React, { ElementType } from "react";
 import getExternalLinkProps from "../../util/getExternalLinkProps";
-import { ButtonProps } from "../Button";
-import { tabsScales, tabVariants } from "./types";
-import StyledMenuItem from "./StyledTabItem";
+import { TabProps, tabsScales, tabVariants } from "./types";
+import StyledTabItem from "./StyledTabItem";
 
 const TabItem = <E extends ElementType = "button">(
-  props: ButtonProps<E>
+  props: TabProps<E>
 ): JSX.Element => {
   const {
     startIcon,
     endIcon,
     external,
     className,
-    isLoading,
     disabled,
     children,
+    variant,
     ...rest
   } = props;
   const internalProps = external ? getExternalLinkProps() : {};
-  const isDisabled = isLoading || disabled;
   const classNames = className ? [className] : [];
 
-  if (isDisabled && !isLoading) {
+  if (disabled) {
     classNames.push("button--disabled");
   }
 
   return (
-    <StyledMenuItem
+    <StyledTabItem
       className={classNames.join(" ")}
-      disabled={isDisabled}
+      disabled={disabled}
+      variant={variant}
       {...internalProps}
       {...rest}
     >
       {children}
-    </StyledMenuItem>
+    </StyledTabItem>
   );
 };
 
 TabItem.defaultProps = {
-  isLoading: false,
   external: false,
-  variant: tabVariants.TAB,
-  scale: tabsScales.MD,
+  variant: tabVariants.DARK,
+  scale: tabsScales.SM,
   disabled: false,
 };
 

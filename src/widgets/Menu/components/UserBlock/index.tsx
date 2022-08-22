@@ -1,10 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import Button from "../../../../components/Button/Button";
-import Wallet from "../../icons/Wallet";
-import Pending from "../../icons/Pending";
+import {
+  WalletOpacityIcon,
+  RefreshSolidIcon,
+} from "../../../../components/Svg";
 import { useWalletModal } from "../../../WalletModal";
-import { Login } from "../../../WalletModal/types";
+import { Login } from "../../../WalletModal";
 import { useMatchBreakpoints } from "../../../../hooks";
 
 interface Props {
@@ -77,11 +79,13 @@ const UserBlock: React.FC<Props> = ({
           >
             {pendingTransactions ? (
               <>
-                {pendingTransactions} pending <Pending stroke="#fff" />
+                {pendingTransactions} pending <RefreshSolidIcon color="white" />
               </>
             ) : (
               <>
-                {!isSm && !isXs && <Wallet {...iconProps} mr="8px" />}
+                {!isSm && !isXs && (
+                  <WalletOpacityIcon {...iconProps} mr="8px" />
+                )}
                 {accountEllipsis}
               </>
             )}
@@ -94,7 +98,7 @@ const UserBlock: React.FC<Props> = ({
             onPresentConnectModal();
           }}
         >
-          {!isSm && !isXs && <Wallet {...iconProps} mr="8px" />}
+          {!isSm && !isXs && <WalletOpacityIcon {...iconProps} mr="8px" />}
           Connect wallet
         </Button>
       )}

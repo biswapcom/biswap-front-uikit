@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { socials } from "../../config";
 import { SvgProps } from "../../../../components/Svg";
 import Link from "../../../../components/Link/Link";
-import * as IconModule from "../../icons";
+import * as IconModule from "../../../../components/Svg";
 
 export interface CommunityProps {
   iconSize?: string;
@@ -36,12 +36,12 @@ const SocialWrap = styled.div<SocialWrapProps>`
   display: flex;
   margin: 0 -4px;
   ${({ menuVariant }) => {
-    if(menuVariant){
-      return(`
+    if (menuVariant) {
+      return `
         justify-content: flex-start;
         align-items: flex-end;
         gap: 5%;
-      `)
+      `;
     }
   }};
 `;
@@ -136,7 +136,7 @@ const FlagWrap = styled.div`
 const Community: React.FC<CommunityProps> = ({
   iconSize = "20px",
   title,
-  menuVariant
+  menuVariant,
 }) => {
   return (
     <Wrapper>

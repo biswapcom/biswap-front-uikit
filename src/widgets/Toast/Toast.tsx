@@ -6,7 +6,7 @@ import { Text } from "../../components/Text";
 import ToastAction from "./ToastAction";
 import { ToastProps, types } from "./types";
 import { Button } from "../../components/Button";
-import { ArrowOpenNew } from "../../components/Svg";
+import { ArrowUpForwardIcon } from "../../components/Svg";
 
 const alertTypeMap = {
   [types.INFO]: alertVariants.INFO,
@@ -127,7 +127,7 @@ const Toast: React.FC<ToastProps> = ({
                 >
                   View on bscscan
                 </LinkStyles>
-                <ArrowOpenNew
+                <ArrowUpForwardIcon
                   ml="6px"
                   width="18px"
                   height="18px"
@@ -160,7 +160,7 @@ const Toast: React.FC<ToastProps> = ({
                   scale="sm"
                   variant="text"
                   as="a"
-                  href="https://docs.biswap.org/sharing-season"
+                  href="https://bit.ly/3QtqWG8"
                   target="_blank"
                 >
                   <SharingText>

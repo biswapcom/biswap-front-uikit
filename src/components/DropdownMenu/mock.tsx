@@ -41,7 +41,7 @@ const ItemsMock: DropdownMenuItems[] = [
     label: "Expert Trade",
     href: "/pool",
     leftIcon: "ExpertTrade",
-    rightIcon: "ArrowForward",
+    rightIcon: "ArrowRightIcon",
     rightIconFill: "primary",
     description: "Item description",
   },

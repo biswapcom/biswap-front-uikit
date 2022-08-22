@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 /* eslint-disable import/no-unresolved */
 import { Meta } from "@storybook/react/types-6-0";
@@ -7,7 +7,7 @@ import { tabVariants } from "./types";
 
 const Row = styled.div<{ isLight?: boolean }>`
   margin-bottom: 32px;
-  padding: 8px;
+  padding: 24px;
   background-color: ${({ theme, isLight }) =>
     isLight ? theme.colors.white : theme.colors.tooltip};
 `;
@@ -22,15 +22,12 @@ export const Default: React.FC = () => {
   const [index, setIndex] = useState(0);
   const [index2, setIndex2] = useState(0);
 
-  const handleClick = (newIndex) => setIndex(newIndex);
-  const handleClick2 = (newIndex) => setIndex2(newIndex);
-
   return (
     <>
       <Row>
         <TabMenu
           disabled
-          onItemClick={handleClick}
+          onItemClick={setIndex}
           activeIndex={index}
           menuTitles={["Select 1", "Select 22", "Select 333", "Select 4444"]}
         />
@@ -39,27 +36,59 @@ export const Default: React.FC = () => {
         <TabMenu
           scale="lg"
           customClass="dark-lg"
-          onItemClick={handleClick2}
+          onItemClick={setIndex2}
+          activeIndex={index2}
+          menuTitles={["Select 1", "Select 2", "Select 3", "Select 4"]}
+          menuIcons={["ListOpacity", "VerifiedOpacity", "", "CommunityOpacity"]}
+        />
+      </Row>
+      <Row>
+        <TabMenu
+          scale="md"
+          customClass="dark-md"
+          onItemClick={setIndex2}
           activeIndex={index2}
           menuTitles={["Select 1", "Select 22", "Select 333", "Select 4444"]}
         />
       </Row>
-      <Row isLight>
+      <Row>
         <TabMenu
-          onItemClick={handleClick}
-          variant={tabVariants.TAB_LIGHT}
-          activeIndex={index}
-          menuTitles={["Select 1", "Select 22", "Select 333", "Select 4444"]}
+          scale="sm"
+          customClass="dark-sm"
+          onItemClick={setIndex2}
+          activeIndex={index2}
+          menuTitles={["Select 1", "Select 2", "Select 3", "Select 4"]}
         />
       </Row>
       <Row isLight>
         <TabMenu
           scale="lg"
           customClass="light-lg"
-          variant={tabVariants.TAB_LIGHT}
-          onItemClick={handleClick2}
+          onItemClick={setIndex2}
+          variant={tabVariants.LIGHT}
           activeIndex={index2}
-          menuTitles={["Select 1", "Select 22", "Select 333", "Select 4444"]}
+          menuTitles={["Select 1", "Select 2", "Select 3", "Select 4"]}
+        />
+      </Row>
+      <Row isLight>
+        <TabMenu
+          scale="md"
+          customClass="light-md"
+          variant={tabVariants.LIGHT}
+          onItemClick={setIndex2}
+          activeIndex={index2}
+          menuTitles={["Select 1", "Select 2", "Select 3", "Select 4"]}
+        />
+      </Row>
+      <Row isLight>
+        <TabMenu
+          scale="sm"
+          customClass="light-sm"
+          variant={tabVariants.LIGHT}
+          onItemClick={setIndex2}
+          activeIndex={index2}
+          menuTitles={["Select 1", "Select 2", "Select 3"]}
+          menuIcons={["ListOpacity", "VerifiedOpacity", "CommunityOpacity"]}
         />
       </Row>
     </>

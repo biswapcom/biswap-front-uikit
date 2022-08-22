@@ -112,6 +112,8 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
                 bannerRenderer,
                 target,
                 mobileTarget,
+                badgeType,
+                badgeTitle,
                 ...itemProps
               },
               itemItem
@@ -124,6 +126,8 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
                   rightIcon={icon}
                   description={description}
                   status={status}
+                  badgeType={badgeType}
+                  badgeTitle={badgeTitle}
                 />
               );
               const isActive = href === activeItem;

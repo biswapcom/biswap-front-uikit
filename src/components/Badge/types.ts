@@ -1,5 +1,7 @@
 import { ReactNode } from 'react'
-export interface BadgeProps {
+import { SpaceProps } from "styled-system";
+
+export interface BadgeProps extends SpaceProps {
   badgeType:
     | "success"
     | "error"
@@ -8,6 +10,7 @@ export interface BadgeProps {
     | "primary"
     | "warning"
     | "core"
+    | "light"
     | string;
   fontSize?: string;
   fontWeight?: string;

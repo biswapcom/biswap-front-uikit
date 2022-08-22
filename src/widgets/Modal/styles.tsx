@@ -2,13 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import Flex from "../../components/Box/Flex";
 import { Box } from "../../components/Box";
-import { ArrowBackIcon, CloseIcon } from "../../components/Svg";
+import { ArrowLeftIcon, CloseIcon } from "../../components/Svg";
 import { IconButton } from "../../components/Button";
 import { ModalProps } from "./types";
 
 export const ModalHeader = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   padding: 24px 16px;
 
   ${({ theme }) => theme.mediaQueries.sm} {
@@ -23,13 +23,7 @@ export const ModalTitle = styled(Flex)`
 
 export const ModalBody = styled(Flex)`
   flex-direction: column;
-  //max-height: 90vh;
   overflow-y: auto;
-  padding: 0 16px 24px;
-
-  ${({ theme }) => theme.mediaQueries.sm} {
-    padding: 0 32px 32px;
-  }
 `;
 
 export const ModalCloseButton: React.FC<{
@@ -40,9 +34,10 @@ export const ModalCloseButton: React.FC<{
     <IconButton
       variant="text"
       onClick={onDismiss}
+      scale="sm"
       aria-label="Close the dialog"
     >
-      <CloseIcon color={closeBtnColor || "dark600"} width="32px" />
+      <CloseIcon color={closeBtnColor || "dark600"} width="24px" />
     </IconButton>
   );
 };
@@ -53,7 +48,7 @@ export const ModalBackButton: React.FC<{
 }> = ({ onBack, closeBtnColor }) => {
   return (
     <IconButton variant="text" onClick={onBack} area-label="go back" mr="8px">
-      <ArrowBackIcon color="primary" />
+      <ArrowLeftIcon color="primary" />
     </IconButton>
   );
 };

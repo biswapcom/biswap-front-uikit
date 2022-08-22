@@ -61,6 +61,8 @@ export interface MenuItemContentProps {
   status?: LinkStatus;
   rightIcon?: string;
   fill?: string;
+  badgeType?: string;
+  badgeTitle?: string;
 }
 
 export enum DropdownMenuItemType {
@@ -92,10 +94,15 @@ export interface DropdownMenuItems {
   rightIcon?: string;
   rightIconFill?: string;
   description?: string;
-  links?: InternalLink[];
+  links?:
+    | InternalLink[]
+    | (() => InternalLink[])
+    | (() => Promise<InternalLink[]>);
   bannerRenderer?: (h?: string, t?: string) => React.ReactNode;
   target?: string;
   mobileTarget?: string;
+  badgeType?: string;
+  badgeTitle?: string;
 }
 
 export interface DropdownMenuItemContainerProps extends DropdownMenuItems {

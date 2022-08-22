@@ -6,8 +6,8 @@ import Flex from "../../components/Box/Flex";
 import { Modal } from "../Modal";
 import CopyToClipboard from "./CopyToClipboard";
 import { useWalletModal } from "./index";
-import {Link} from "../../components/Link";
-import {ArrowOpenNew} from "../../components/Svg";
+import { Link } from "../../components/Link";
+import { ArrowUpForwardIcon } from "../../components/Svg";
 
 interface Props {
   account: string;
@@ -97,19 +97,17 @@ const AccountModal: React.FC<Props> = ({
       <Flex>
         <CopyToClipboard toCopy={account}>Copy Address</CopyToClipboard>
         <Link
-          fontWeight='400'
-          scale='xs'
+          color="primary"
+          target="_blank"
+          fontWeight="400"
+          scale="xs"
           ml="26px"
           small
           href={`https://bscscan.com/address/${account}`}
           mr="16px"
         >
           View on BscScan
-            <ArrowOpenNew
-              color="primary"
-              width="14px"
-              ml="4px"
-            />
+          <ArrowUpForwardIcon color="primary" width="14px" ml="4px" />
         </Link>
       </Flex>
       {isSwap && (

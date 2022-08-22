@@ -1,31 +1,21 @@
-import styled, { DefaultTheme } from "styled-components";
+import styled from "styled-components";
 import { variant } from "styled-system";
 import { scaleVariants, styleVariants } from "./theme";
 import { InputProps, scales } from "./types";
 
-// interface StyledInputProps extends InputProps {
-//   tabindex?: string
-// }
-
-// const getHeight = ({ scale = scales.MD }: StyledInputProps) => {
-//   switch (scale) {
-//     case scales.LG:
-//       return "48px";
-//     case scales.SM:
-//       return "32px";
-//     case scales.MD:
-//     default:
-//       return "40px";
-//   }
-// };
-
 const Input = styled.input<InputProps>`
-  color: ${({ theme }) => theme.colors.text};
   display: block;
+  color: ${({ theme }) => theme.colors.text};
   font-size: 16px;
   outline: 0;
   width: 100%;
-  border: 1px solid transparent;
+  max-width: ${({ maxWidth }) => maxWidth || "none"};
+  min-width: ${({ minWidth }) => minWidth || "0"};
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  opacity: ${({ disabled }) => (disabled ? ".56" : "1")};
+  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "initial")};
   transition: border-color 0.4s ease, background-color 0.4s ease,
     color 0.4s ease;
 
@@ -41,7 +31,7 @@ const Input = styled.input<InputProps>`
 
 Input.defaultProps = {
   scale: scales.MD,
-  isSuccess: false,
+  isError: false,
   isWarning: false,
 };
 

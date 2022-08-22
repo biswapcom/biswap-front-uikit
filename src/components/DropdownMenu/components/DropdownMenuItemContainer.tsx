@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useEffect, useState } from "react";
 import { DropdownMenuItemContainerProps, DropdownMenuItemType } from "../types";
 import {
   BannerPlacementItem,
@@ -9,6 +9,8 @@ import {
 } from "../styles";
 import InnerLinksBlock from "./InnerLinksBlock";
 import { useMatchBreakpoints } from "../../../hooks";
+import { Badge } from "../../Badge";
+import { Box } from "../../Box";
 
 const DropdownMenuItemContainer: FC<DropdownMenuItemContainerProps> = ({
   isActive = false,
@@ -22,11 +24,26 @@ const DropdownMenuItemContainer: FC<DropdownMenuItemContainerProps> = ({
   type,
   target,
   mobileTarget,
+  badgeTitle,
+  badgeType,
   ...itemProps
 }) => {
+  const [linksItems, setLinkItems] = useState<any>([]);
   const { isMobile, isDesktop } = useMatchBreakpoints();
 
-  const hasInnerLinks = links.length > 0;
+  useEffect(() => {
+    (async () => {
+      if (typeof links === "function") {
+        const res = await links();
+        setLinkItems(res);
+      } else {
+        setLinkItems(links);
+      }
+    })();
+  }, []);
+
+  const hasInnerLinks = linksItems.length > 0;
+
   // @ts-ignore
   return (
     <StyledDropdownMenuItemContainer>
@@ -50,9 +67,10 @@ const DropdownMenuItemContainer: FC<DropdownMenuItemContainerProps> = ({
           >
             {getMenuItemContent("")}
           </DropdownMenuItem>
+
           {hasInnerLinks && (
             <InnerLinksBlock
-              links={links}
+              links={linksItems}
               leftIcon={leftIcon}
               setIsOpen={setIsOpen}
               linkComponent={linkComponent}
@@ -72,7 +90,7 @@ const DropdownMenuItemContainer: FC<DropdownMenuItemContainerProps> = ({
           }}
           {...itemProps}
         >
-          {getMenuItemContent("ArrowForward")}
+          {getMenuItemContent("ArrowRight")}
         </DropdownInternalMenuItem>
       )}
       {type === DropdownMenuItemType.EXTERNAL_LINK && (

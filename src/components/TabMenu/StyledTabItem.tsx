@@ -1,21 +1,22 @@
 import styled, { DefaultTheme } from "styled-components";
 import { space, layout, variant } from "styled-system";
 import { menuScaleVariants, menuStyleVariants } from "./theme";
-import { BaseButtonProps } from "../Button";
+import { TabBarItemProps } from "./types";
 
-interface ThemedButtonProps extends BaseButtonProps {
+interface ThemedTabProps extends TabBarItemProps {
   theme: DefaultTheme;
 }
 
-interface TransientButtonProps extends ThemedButtonProps {
-  $isLoading?: boolean;
+interface TransientButtonProps extends ThemedTabProps {
+  disabled?: boolean;
 }
 
-const getDisabledStyles = ({ $isLoading, theme }: TransientButtonProps) => {
-  if ($isLoading === true) {
+const getDisabledStyles = ({ disabled }: TransientButtonProps) => {
+  if (disabled === true) {
     return `
       &:disabled,
       &.button--disabled {
+        opacity: .32;
         cursor: not-allowed;
       }
     `;
@@ -36,13 +37,9 @@ const getDisabledStyles = ({ $isLoading, theme }: TransientButtonProps) => {
  * @see https://github.com/styled-components/styled-components/issues/135
  */
 
-const getOpacity = ({ $isLoading = false }: TransientButtonProps) => {
-  return $isLoading ? ".5" : "1";
-};
-
-const StyledTabItem = styled.button<BaseButtonProps>`
+const StyledTabItem = styled.button<TabBarItemProps>`
   background-color: transparent;
-  align-items: center;
+  align-items: flex-start;
   border: 0;
   cursor: pointer;
   display: inline-flex;
@@ -51,13 +48,12 @@ const StyledTabItem = styled.button<BaseButtonProps>`
   font-weight: 600;
   justify-content: center;
   line-height: 1;
-  opacity: ${getOpacity};
   outline: 0;
   z-index: 2;
   transition: color 0.3s ease;
-
-  &:active:not(:disabled):not(.button--disabled):not(.button--disabled) {
-  }
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
 
   ${getDisabledStyles}
   ${variant({

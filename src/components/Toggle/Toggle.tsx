@@ -1,36 +1,62 @@
 import React from "react";
-import { Flex } from "../Box";
-import StyledToggle, { Input, Handle } from "./StyledToggle";
+import StyledToggle, { Input, Handle, Label, ToggleWrap } from "./StyledToggle";
 import { ToggleProps, scales } from "./types";
 
 const Toggle: React.FC<ToggleProps> = ({
   checked,
   defaultColor = "toggleBg",
   checkedColor = "success",
-  scale = scales.LG,
+  scale = scales.MD,
   disabled,
+  label,
+  labelOrientation,
+  gridArea,
+  variant,
+  spaceBetween,
   ...props
 }) => {
   const isChecked = !!checked;
 
   return (
-    <StyledToggle
-      $checked={isChecked}
-      $checkedColor={checkedColor}
-      $defaultColor={defaultColor}
-      scale={scale}
+    <ToggleWrap
+      labelOrientation={labelOrientation}
       disabled={disabled}
+      gridArea={gridArea}
+      spaceBetween={spaceBetween}
     >
-      <Input
-        checked={checked}
+      <StyledToggle
+        $checked={isChecked}
+        $checkedColor={checkedColor}
+        $defaultColor={defaultColor}
         scale={scale}
-        {...props}
-        type="checkbox"
         disabled={disabled}
-      />
-      <Handle scale={scale} disabled={disabled} />
-    </StyledToggle>
+      >
+        <Input
+          checked={checked}
+          scale={scale}
+          {...props}
+          type="checkbox"
+          disabled={disabled}
+        />
+        <Handle scale={scale} disabled={disabled} />
+      </StyledToggle>
+      {label && (
+        <Label
+          labelOrientation={labelOrientation}
+          isChecked={isChecked}
+          disabled={disabled}
+          variant={variant}
+        >
+          {label}
+        </Label>
+      )}
+    </ToggleWrap>
   );
+};
+
+Toggle.defaultProps = {
+  scale: "md",
+  variant: "light",
 };
 
 export default Toggle;

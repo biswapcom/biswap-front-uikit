@@ -22,7 +22,6 @@ const style = {
 };
 
 const Heading = styled(Text).attrs({ bold: true })<HeadingProps>`
-  color: ${({ theme }) => theme.colors.background};
   font-size: ${({ scale }) => style[scale || scales.MD].fontSize};
   font-weight: 600;
   line-height: 1.1;

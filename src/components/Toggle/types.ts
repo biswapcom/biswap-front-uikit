@@ -2,9 +2,9 @@ import { InputHTMLAttributes, ReactNode } from "react";
 import { Colors } from "../../theme";
 
 export const scales = {
-  SM: "sm",
+  // SM: "sm",
   MD: "md",
-  LG: "lg",
+  // LG: "lg",
 } as const;
 
 export type Scales = typeof scales[keyof typeof scales];
@@ -15,6 +15,11 @@ export interface ToggleProps extends InputHTMLAttributes<HTMLInputElement> {
   checkedColor?: keyof Colors;
   defaultColor?: keyof Colors;
   disabled?: boolean;
+  label?: string;
+  labelOrientation?: string;
+  gridArea?: string;
+  variant?: string;
+  spaceBetween?: boolean;
 }
 
 export interface HandleProps {

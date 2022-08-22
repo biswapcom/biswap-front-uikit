@@ -13,6 +13,7 @@ import { DropdownMenuItemContainer } from "../components";
 import IconComponent from "../../Svg/IconComponent";
 import Accordion from "../../Accordion/Accordion";
 import Community from "../../../widgets/Menu/components/Footer/Community";
+import Marker from "../../MenuItem/Marker";
 
 const MainContententWrapper = styled.div`
   flex: 1;
@@ -127,6 +128,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
                   { label, items: innerItems = [], showItemsOnMobile, hidden },
                   index
                 ) => {
+                  const isMarker = !!innerItems?.find((i) => i.badgeTitle);
                   if (!innerItems.length) return null;
                   const visualize =
                     !showItemsOnMobile ||
@@ -142,24 +144,30 @@ const MobileMenu: FC<MobileMenuProps> = ({
                             !showItemsOnMobile &&
                             !hidden && (
                               <>
-                                <Text
-                                  bold
-                                  m={"16px 0"}
-                                  fontSize={isTablet ? "20px" : "14px"}
-                                  color={
-                                    isMobile && opened
-                                      ? "primary"
-                                      : "backgroundDark"
-                                  }
-                                >
-                                  {label}
-                                </Text>
+                                <Box m="16px 0" position="relative">
+                                  {isMobile && isMarker && <Marker />}
+                                  <Text
+                                    bold
+                                    fontSize={isTablet ? "20px" : "14px"}
+                                    lineHeight={isTablet ? "26px" : "20px"}
+                                    color={
+                                      isMobile && opened
+                                        ? "primary"
+                                        : "backgroundDark"
+                                    }
+                                  >
+                                    {label}
+                                  </Text>
+                                </Box>
+
                                 {!isTablet && (
                                   <IconComponent
                                     iconName={
                                       opened ? "ChevronUp" : "ChevronDown"
                                     }
-                                    color={opened ? "primary" : "rgb(8, 22, 46)"}
+                                    color={
+                                      opened ? "primary" : "rgb(8, 22, 46)"
+                                    }
                                   />
                                 )}
                               </>
@@ -169,7 +177,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
                       >
                         <Grid
                           gridTemplateColumns={
-                            isMobile ? "1fr" : "repeat(3, 1fr)"
+                            isMobile ? "1fr" : "repeat(2, 1fr)"
                           }
                           gridColumnGap={16}
                           mt={16}
@@ -186,6 +194,8 @@ const MobileMenu: FC<MobileMenuProps> = ({
                                 leftIcon = "",
                                 rightIcon = "",
                                 links = [],
+                                badgeTitle,
+                                badgeType,
                                 bannerRenderer,
                                 ...itemProps
                               },
@@ -201,6 +211,8 @@ const MobileMenu: FC<MobileMenuProps> = ({
                                   rightIcon={icon}
                                   description={description}
                                   status={status}
+                                  badgeTitle={badgeTitle}
+                                  badgeType={badgeType}
                                 />
                               );
 
@@ -220,6 +232,8 @@ const MobileMenu: FC<MobileMenuProps> = ({
                                     href={href}
                                     bannerRenderer={bannerRenderer}
                                     type={type}
+                                    badgeTitle={badgeTitle}
+                                    badgeType={badgeType}
                                     {...itemProps}
                                   />
                                 )

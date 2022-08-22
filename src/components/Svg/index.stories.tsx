@@ -12,6 +12,10 @@ export default {
   argTypes: {},
 };
 
+const Wrapper = styled(Flex)`
+  background: #edf4f9;
+`;
+
 const Label = styled(Text)`
   word-break: break-word;
 `;
@@ -32,18 +36,17 @@ export const Default: React.FC = () => {
   );
 };
 
-const context = require.context("./Icons", true, /.tsx$/);
-const components = context.keys().reduce((accum, path) => {
+const contextAll = require.context("./Icons", true, /.tsx$/);
+const components = contextAll.keys().reduce((accum, path) => {
   const file = path.substring(2).replace(".tsx", "");
   return {
     ...accum,
-    [file]: context(path),
+    [file]: contextAll(path),
   };
 }, {});
-
 export const Icons: React.FC = () => {
   return (
-    <Flex justifyContent="start" alignItems="center" flexWrap="wrap">
+    <Wrapper justifyContent="start" alignItems="center" flexWrap="wrap">
       {Object.keys(components).map((file) => {
         const Icon = components[file].default;
         return (
@@ -76,7 +79,7 @@ export const Icons: React.FC = () => {
           </Flex>
         );
       })}
-    </Flex>
+    </Wrapper>
   );
 };
 
@@ -85,7 +88,7 @@ const AnimatedIconComponentTemplate: React.FC = (args) => {
     <Box background="white" height="48px" width="48px">
       <AnimatedIconComponent
         activeBackgroundColor="backgroundAlt"
-        iconName="CheckmarkCircle"
+        iconName="CheckSolid"
         height="48px"
         width="48px"
         {...args}

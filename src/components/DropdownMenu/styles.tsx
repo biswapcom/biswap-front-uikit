@@ -8,6 +8,7 @@ import {
   StyledDropdownMenuItemProps,
 } from "./types";
 import { useMatchBreakpoints } from "../../hooks";
+import Grid from "../Box/Grid";
 
 const getTextColor = ({
   $isActive,
@@ -56,15 +57,15 @@ export const CommonLinkStyle = ({
   disabled,
   $isActive,
   $hasIcon,
-  label
+  label,
 }: StyledDropdownMenuItemProps & {
   $isActive: boolean;
   $hasIcon?: boolean;
   label?: string | React.ReactNode;
 }) => {
   const { isMobile } = useMatchBreakpoints();
-  
-  return(css`
+
+  return css`
     align-items: center;
     border: 0;
     //background: transparent;
@@ -79,12 +80,13 @@ export const CommonLinkStyle = ({
     outline: 0;
     //padding-left: 16px;
     width: 100%;
-    
+
     .arrow-icon {
-      ${!(isMobile && ((label === 'Marketplace') || (label === 'GameFi'))) && (`
+      ${!(isMobile && (label === "Marketplace" || label === "GameFi")) &&
+      `
         visibility: hidden;
         opacity: 0;
-      `)}
+      `}
     }
 
     &:hover:not(:disabled) {
@@ -105,7 +107,7 @@ export const CommonLinkStyle = ({
       opacity: 0.85;
       transform: translateY(1px);
     }
-  `)
+  `;
 };
 
 export const DropdownMenuItem = styled.button<
@@ -121,7 +123,7 @@ export const DropdownInternalMenuItem = styled(Link)<
   StyledDropdownMenuItemProps & {
     $isActive: boolean;
     $hasIcon?: boolean;
-    label?: string | React.ReactNode
+    label?: string | React.ReactNode;
   }
 >`
   ${CommonLinkStyle}
@@ -129,6 +131,7 @@ export const DropdownInternalMenuItem = styled(Link)<
 
 export const StyledDropdownMenuItemContainer = styled.div`
   margin-bottom: 16px;
+  position: relative;
 
   &:first-child > ${DropdownMenuItem} {
     border-top-left-radius: 8px;
@@ -142,10 +145,6 @@ export const StyledDropdownMenuItemContainer = styled.div`
 
   ${({ theme }) => theme.mediaQueries.lg} {
     margin-bottom: 24px;
-
-    &:last-of-type {
-      margin-bottom: 0;
-    }
   }
 `;
 
@@ -161,21 +160,25 @@ export const DropdownMenuDivider = styled.hr`
 `}
 `;
 
-export const StyledDropdownMenu = styled.div<{
+export const StyledDropdownMenu = styled(Grid)<{
   $isOpen: boolean;
   $isExtended?: boolean;
 }>`
+  grid-template-columns: 1fr;
+
   background-color: ${({ theme }) => theme.card.background};
   border: 1px solid ${({ theme }) => theme.colors.cardBorder};
   border-radius: 16px;
 
-  padding: 24px;
+  padding: 24px 24px 0;
   pointer-events: auto;
   width: 352px;
   visibility: visible;
   opacity: 1;
   transition: opacity 250ms linear, visibility 350ms linear;
   z-index: 1001;
+  box-shadow: 0 20px 36px -8px rgba(0, 26, 67, 0.24),
+    0px 1px 1px rgba(0, 0, 0, 0.05);
 
   ${({ $isOpen }) =>
     !$isOpen &&
@@ -188,11 +191,9 @@ export const StyledDropdownMenu = styled.div<{
   ${({ $isExtended }) =>
     $isExtended &&
     `
-      -webkit-column-count: 2;
-      -moz-column-count: 2;
-      column-count: 2;
-      -webkit-perspective:1;
-      width: 680px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 24px;
+    width: 680px;
   `}
 `;
 

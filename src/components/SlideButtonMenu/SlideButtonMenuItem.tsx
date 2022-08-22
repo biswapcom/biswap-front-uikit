@@ -1,21 +1,18 @@
 import React, { FC, useEffect } from "react";
 import styled from "styled-components";
 import { PolymorphicComponent } from "../../util/polymorphic";
-import { BaseButtonProps } from "../Button/types";
 import { SlideButtonMenuItemProps, slideMenuVariants } from "./types";
 import SlideMenuItem from "./SlideMenuItem";
 import { useMatchBreakpoints } from "../../hooks";
-
-interface InactiveButtonProps extends BaseButtonProps {
-  forwardedAs: BaseButtonProps["as"];
-}
+import { tabVariants } from "../TabMenu/types";
 
 const InactiveButton: PolymorphicComponent<
-  InactiveButtonProps,
+  SlideButtonMenuItemProps,
   "button"
-> = styled(SlideMenuItem)<InactiveButtonProps>`
+> = styled(SlideMenuItem)<SlideButtonMenuItemProps>`
   background-color: transparent;
-  color: ${({ theme }) => theme.colors.pastelBlue};
+  color: ${({ theme, variant }) =>
+    theme.colors[variant === tabVariants.DARK ? "pastelBlue" : "gray900"]};
 
   &:hover:not(:disabled):not(:active) {
     background-color: transparent;
@@ -24,14 +21,12 @@ const InactiveButton: PolymorphicComponent<
 
 const SlideButtonMenuItem: FC<SlideButtonMenuItemProps> = ({
   isActive = false,
-  variant = slideMenuVariants.SELECT,
-  as,
+  variant = slideMenuVariants.DARK,
   setWidth,
   itemIndex,
   onAction,
   customClass,
   blockOffset,
-  widthsArr,
   ...props
 }: SlideButtonMenuItemProps): JSX.Element => {
   const { isDesktop, isMobile, isTablet } = useMatchBreakpoints();
@@ -41,7 +36,7 @@ const SlideButtonMenuItem: FC<SlideButtonMenuItemProps> = ({
 
   useEffect(() => {
     const itemWidth = element.item(0)?.clientWidth ?? 0;
-    if (itemWidth) {
+    if (itemWidth && setWidth) {
       setWidth((prev: Array<number>) =>
         prev.map((item, index) => (index === itemIndex ? itemWidth : item))
       );
@@ -49,7 +44,7 @@ const SlideButtonMenuItem: FC<SlideButtonMenuItemProps> = ({
   }, [element, blockOffset, isDesktop, isMobile, isTablet]);
 
   const handleClick = () => {
-    onAction(itemIndex);
+    if (onAction) onAction(itemIndex ?? 0);
   };
 
   if (!isActive) {
@@ -57,7 +52,6 @@ const SlideButtonMenuItem: FC<SlideButtonMenuItemProps> = ({
       <InactiveButton
         onClick={handleClick}
         className={className}
-        forwardedAs={as}
         variant={variant}
         {...props}
       />
@@ -68,7 +62,6 @@ const SlideButtonMenuItem: FC<SlideButtonMenuItemProps> = ({
     <SlideMenuItem
       onClick={handleClick}
       className={className}
-      as={as}
       variant={variant}
       {...props}
     />

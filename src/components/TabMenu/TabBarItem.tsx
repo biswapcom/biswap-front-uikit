@@ -1,48 +1,42 @@
 import React, { FC, useEffect } from "react";
 import styled from "styled-components";
 import { PolymorphicComponent } from "../../util/polymorphic";
-import { BaseButtonProps } from "../Button/types";
 import { TabBarItemProps, tabVariants } from "./types";
 import TabItem from "./TabItem";
+import { useMatchBreakpoints } from "../../hooks";
 
-interface InactiveButtonProps extends BaseButtonProps {
-  forwardedAs: BaseButtonProps["as"];
-}
-
-const InactiveButton: PolymorphicComponent<
-  InactiveButtonProps,
-  "button"
-> = styled(TabItem)<InactiveButtonProps>`
-  background-color: transparent;
-  color: ${({ theme }) => theme.colors.pastelBlue};
-
-  &:hover:not(:disabled):not(:active) {
-    background-color: transparent;
-  }
+const InactiveButton: PolymorphicComponent<TabBarItemProps, "button"> = styled(
+  TabItem
+)<TabBarItemProps>`
+  color: ${({ theme, variant }) =>
+    theme.colors[variant === tabVariants.DARK ? "pastelBlue" : "gray900"]};
 `;
 
 const TabBarItem: FC<TabBarItemProps> = ({
   isActive = false,
-  variant = tabVariants.TAB,
-  as,
+  variant,
   setWidth,
   itemIndex,
   onAction,
   customClass,
+  blockOffset,
   ...props
 }: TabBarItemProps): JSX.Element => {
+  const { isDesktop, isMobile, isTablet } = useMatchBreakpoints();
   const className = "tab-bar-item-" + itemIndex + customClass;
   const element = document.getElementsByClassName(className);
 
   useEffect(() => {
-    setWidth((prev: Array<number>) => [
-      ...prev,
-      element.item(0)?.clientWidth ?? 0,
-    ]);
-  }, [element]);
+    const itemWidth = element.item(0)?.clientWidth ?? 0;
+    if (setWidth && itemWidth) {
+      setWidth((prev: Array<number>) =>
+        prev.map((item, index) => (index === itemIndex ? itemWidth : item))
+      );
+    }
+  }, [element, isDesktop, isMobile, isTablet, blockOffset]);
 
   const handleClick = () => {
-    onAction(itemIndex);
+    if (onAction) onAction(itemIndex ?? 0);
   };
 
   if (!isActive) {
@@ -50,7 +44,6 @@ const TabBarItem: FC<TabBarItemProps> = ({
       <InactiveButton
         onClick={handleClick}
         className={className}
-        forwardedAs={as}
         variant={variant}
         {...props}
       />
@@ -61,7 +54,6 @@ const TabBarItem: FC<TabBarItemProps> = ({
     <TabItem
       onClick={handleClick}
       className={className}
-      as={as}
       variant={variant}
       {...props}
     />

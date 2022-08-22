@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import styled, { DefaultTheme } from "styled-components";
 import { BadgeProps } from "./types";
 import getRgba from "../../util/getRgba";
+import { space } from "styled-system";
 
 interface StyledBadgeProps extends BadgeProps {
   theme: DefaultTheme;
@@ -40,10 +41,14 @@ const getBadgeBg = ({ badgeType = "light", theme }: StyledBadgeProps) => {
     return getRgba(theme.colors.primary, 0.16);
   }
 
+  if (badgeType === "light") {
+    return theme.colors.disabled;
+  }
+
   return theme.colors.inputSecondary;
 };
 
-const getBadgeColor = ({ badgeType = "active", theme }: StyledBadgeProps) => {
+const getBadgeColor = ({ badgeType = "light", theme }: StyledBadgeProps) => {
   if (badgeType === "active") {
     return theme.colors.success;
   }
@@ -58,6 +63,10 @@ const getBadgeColor = ({ badgeType = "active", theme }: StyledBadgeProps) => {
 
   if (badgeType === "core") {
     return theme.colors.primary;
+  }
+
+  if (badgeType === "light") {
+    return theme.colors.background;
   }
 
   if (
@@ -81,17 +90,19 @@ const Wrapper = styled.div<BadgeProps>`
   padding: ${({ isIcon, isLarge }) =>
     !isLarge
       ? isIcon === "left"
-        ? "4px 12px 4px 4px"
+        ? "4px 8px 4px 4px"
         : isIcon === "right"
-        ? "4px 4px 4px 12px"
-        : "4px 12px"
+        ? "4px 4px 4px 8px"
+        : "4px 8px"
       : "8px 24px"};
   background: ${getBadgeBg};
   color: ${getBadgeColor};
   border-radius: 16px;
   height: ${({ isLarge }) => (isLarge ? "38px" : "20px")};
   font-size: ${({ fontSize }) => fontSize || "10px"};
-  font-weight: ${({ fontWeight }) => fontWeight || "400"};
+  font-weight: 600;
+
+  ${space}
 `;
 
 const Badge: FC<BadgeProps> = ({
@@ -101,6 +112,7 @@ const Badge: FC<BadgeProps> = ({
   fontWeight,
   isIcon,
   isLarge,
+  ...props
 }) => {
   return (
     <Wrapper
@@ -109,6 +121,7 @@ const Badge: FC<BadgeProps> = ({
       isLarge={isLarge}
       fontSize={fontSize}
       fontWeight={fontWeight}
+      {...props}
     >
       {children}
     </Wrapper>
