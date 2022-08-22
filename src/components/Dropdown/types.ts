@@ -19,7 +19,7 @@ export interface DropdownProps extends PositionProps, SpaceProps {
   disabled?: boolean;
   options: Array<OptionProps>;
   onChange?: (option: OptionProps) => void;
-  children: ReactNode,
+  children?: ReactNode,
 }
 
 export interface OptionProps {
