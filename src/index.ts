@@ -38,7 +38,7 @@ export * from "./components/Table";
 export * from "./hooks";
 
 // Utils
-export * from "./hooks";
+export * from "./util";
 
 // Widgets
 export * from "./widgets/Modal";
