@@ -109,7 +109,7 @@ const Checkbox: FC<CheckboxProps> = ({
         <StyledText
           as="span"
           fontSize="12px"
-          fontWeight="400"
+          fontWeight="600"
           color="gray900"
           mr={labelOrientation === "left" ? "12px" : 0}
           ml={labelOrientation === "right" ? "12px" : 0}
