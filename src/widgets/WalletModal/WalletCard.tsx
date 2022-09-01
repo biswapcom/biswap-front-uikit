@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import styled from "styled-components";
 import Button from "../../components/Button/Button";
 import Text from "../../components/Text/Text";
@@ -26,19 +26,27 @@ const StyledText = styled(Text)`
 `;
 
 const WalletCard: React.FC<Props> = ({ login, walletConfig, onDismiss }) => {
+  const handleClick = useCallback(() => {
+    try{
+      login(walletConfig.connectorId);
+    } catch(e) {
+      console.log(e, 'login');
+      const helpWindow = window.open(walletConfig.helpHref, '_blank');
+      helpWindow?.focus();
+    }
+    localStorage.setItem(walletLocalStorageKey, walletConfig.title);
+    window.localStorage.setItem(
+      connectorLocalStorageKey,
+      walletConfig.connectorId
+    );
+    onDismiss();
+  }, [])
+
   const { title, icon: Icon } = walletConfig;
   return (
     <StyledButton
       variant="tertiary"
-      onClick={() => {
-        login(walletConfig.connectorId);
-        localStorage.setItem(walletLocalStorageKey, walletConfig.title);
-        window.localStorage.setItem(
-          connectorLocalStorageKey,
-          walletConfig.connectorId
-        );
-        onDismiss();
-      }}
+      onClick={handleClick}
       id={`wallet-connect-${title.toLocaleLowerCase()}`}
     >
       <Icon width="32px" />

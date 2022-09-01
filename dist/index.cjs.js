@@ -8382,66 +8382,77 @@ var connectors = [
         icon: Icon$a,
         connectorId: exports.ConnectorNames.Injected,
         priority: 1,
+        helpHref: 'https://bit.ly/3arAKkq'
     },
     {
         title: "TrustWallet",
         icon: Icon$7,
         connectorId: exports.ConnectorNames.WalletConnect,
         priority: 2,
+        helpHref: 'https://bit.ly/3BwkxWo'
     },
     {
         title: "MathWallet",
         icon: Icon$9,
         connectorId: exports.ConnectorNames.Injected,
         priority: 999,
+        helpHref: 'https://bit.ly/3BI649I'
     },
     {
         title: "TokenPocket",
         icon: Icon$8,
         connectorId: exports.ConnectorNames.Injected,
         priority: 4,
+        helpHref: 'https://bit.ly/3zu4yoW'
     },
     {
         title: "Coin98",
         icon: Icon$3,
         connectorId: exports.ConnectorNames.Injected,
         priority: 999,
+        helpHref: 'https://bit.ly/3PUMFGS'
     },
     {
         title: "WalletConnect",
         icon: Icon$6,
         connectorId: exports.ConnectorNames.WalletConnect,
         priority: 3,
+        helpHref: 'https://bit.ly/3SnDkZR'
     },
     {
         title: "Binance Chain",
         icon: Icon$5,
         connectorId: exports.ConnectorNames.BSC,
         priority: 999,
+        helpHref: 'https://bit.ly/3BDTLLI'
     },
     {
         title: "SafePal Wallet",
         icon: Icon$4,
         connectorId: exports.ConnectorNames.Injected,
         priority: 999,
+        helpHref: 'https://bit.ly/3zMM7gO'
     },
     {
         title: "Coinbase Wallet",
         icon: Icon$2,
         connectorId: exports.ConnectorNames.Injected,
         priority: 999,
+        helpHref: 'https://bit.ly/3oLQMcr'
     },
     {
         title: "iToken",
         icon: Icon$1,
         connectorId: exports.ConnectorNames.Injected,
         priority: 999,
+        helpHref: 'https://bit.ly/3vwZP4O'
     },
     {
         title: "BitKeep Wallet",
         icon: Icon,
         connectorId: exports.ConnectorNames.Injected,
         priority: 999,
+        helpHref: 'https://bit.ly/3nsp57T'
     },
 ];
 var connectorLocalStorageKey = "connectorId";
@@ -8454,13 +8465,21 @@ var StyledText = styled__default["default"](Text)(templateObject_2$8 || (templat
 });
 var WalletCard = function (_a) {
     var login = _a.login, walletConfig = _a.walletConfig, onDismiss = _a.onDismiss;
-    var title = walletConfig.title, Icon = walletConfig.icon;
-    return (React__default["default"].createElement(StyledButton, { variant: "tertiary", onClick: function () {
+    var handleClick = React.useCallback(function () {
+        try {
             login(walletConfig.connectorId);
-            localStorage.setItem(walletLocalStorageKey, walletConfig.title);
-            window.localStorage.setItem(connectorLocalStorageKey, walletConfig.connectorId);
-            onDismiss();
-        }, id: "wallet-connect-".concat(title.toLocaleLowerCase()) },
+        }
+        catch (e) {
+            console.log(e, 'login');
+            var helpWindow = window.open(walletConfig.helpHref, '_blank');
+            helpWindow === null || helpWindow === void 0 ? void 0 : helpWindow.focus();
+        }
+        localStorage.setItem(walletLocalStorageKey, walletConfig.title);
+        window.localStorage.setItem(connectorLocalStorageKey, walletConfig.connectorId);
+        onDismiss();
+    }, []);
+    var title = walletConfig.title, Icon = walletConfig.icon;
+    return (React__default["default"].createElement(StyledButton, { variant: "tertiary", onClick: handleClick, id: "wallet-connect-".concat(title.toLocaleLowerCase()) },
         React__default["default"].createElement(Icon, { width: "32px" }),
         React__default["default"].createElement(StyledText, null, title)));
 };
