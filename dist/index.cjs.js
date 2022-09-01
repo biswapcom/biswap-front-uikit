@@ -6746,6 +6746,16 @@ var useTable = function (columns, data, options) {
     };
 };
 
+// eslint-disable-next-line import/prefer-default-export
+var formatSpacingAmount = function (x) {
+    if (x) {
+        var parts = x.toString().split(".");
+        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+        return parts.join(".");
+    }
+    return null;
+};
+
 var ModalHeader = styled__default["default"].div(templateObject_1$y || (templateObject_1$y = __makeTemplateObject(["\n  display: flex;\n  align-items: flex-start;\n  padding: 24px 16px;\n\n  ", " {\n    padding: 32px 32px 24px;\n  }\n"], ["\n  display: flex;\n  align-items: flex-start;\n  padding: 24px 16px;\n\n  ", " {\n    padding: 32px 32px 24px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
@@ -6923,16 +6933,6 @@ var useModal = function (modal, closeOnOverlayClick, updateOnPropsChange, modalI
         setCloseOnOverlayClick(closeOnOverlayClick);
     }, [closeOnOverlayClick, setCloseOnOverlayClick]);
     return [onPresentCallback, onDismiss];
-};
-
-// eslint-disable-next-line import/prefer-default-export
-var formatSpacingAmount = function (x) {
-    if (x) {
-        var parts = x.toString().split(".");
-        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-        return parts.join(".");
-    }
-    return null;
 };
 
 // import { formatSpacingAmount } from "../../../util/formatSpacingAmount";
@@ -9348,6 +9348,12 @@ exports.byTextDescending = byTextDescending;
 exports.connectorLocalStorageKey = connectorLocalStorageKey;
 exports.dark = darkTheme;
 exports.darkColors = darkColors;
+exports.formatSpacingAmount = formatSpacingAmount;
+exports.getExternalLinkProps = getExternalLinkProps;
+exports.getPortalRoot = getPortalRoot;
+exports.getRgba = getRgba;
+exports.getThemeValue = getThemeValue;
+exports.isTouchDevice = isTouchDevice;
 exports.light = lightTheme;
 exports.lightColors = lightColors;
 exports.makeRender = makeRender;
