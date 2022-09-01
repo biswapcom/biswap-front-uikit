@@ -4,4 +4,4 @@ export { default as getPortalRoot } from "./getPortalRoot";
 export { default as getRgba } from "./getRgba";
 export { default as getThemeValue } from "./getThemeValue";
 export { default as isTouchDevice } from "./isTouchDevice";
-export type { AsProps, MergeProps, PolymorphicComponentProps, PolymorphicComponent } from './polymorphic';
+export type { AsProps, MergeProps, PolymorphicComponentProps, PolymorphicComponent, } from "./polymorphic";

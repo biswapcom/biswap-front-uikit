@@ -28,7 +28,8 @@ const Marker = styled(Box)`
   @keyframes pulse-white {
     0% {
       transform: scale(0.95);
-      box-shadow: 0 0 0 0 ${({ theme }) => getRgba(theme.colors.success, theme, 0.7)};
+      box-shadow: 0 0 0 0 ${({ theme }) =>
+        getRgba(theme.colors.success, theme, 0.7)};
     }
 
     70% {

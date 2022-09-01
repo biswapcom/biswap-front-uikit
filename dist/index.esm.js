@@ -3447,7 +3447,9 @@ var variants$5 = {
 
 var getRgba = function (color, theme, alpha) {
     var hexRegEx = /^#[0-9A-F]{6}$/i;
-    var hex = hexRegEx.test(color) ? color : getThemeValue("colors.".concat(color), color)(theme);
+    var hex = hexRegEx.test(color)
+        ? color
+        : getThemeValue("colors.".concat(color), color)(theme);
     var r = parseInt(hex.slice(1, 3), 16);
     var g = parseInt(hex.slice(3, 5), 16);
     var b = parseInt(hex.slice(5, 7), 16);
@@ -6781,7 +6783,7 @@ var Modal = function (_a) {
 
 var StyledModal = styled.div(templateObject_1$x || (templateObject_1$x = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  background-color: ", ";\n  border-radius: 16px 16px 0 0;\n  width: 100%;\n  z-index: ", ";\n  overflow-y: auto;\n  position: relative;\n  top: 0;\n  left: 0;\n  ", " {\n    width: auto;\n    min-width: 416px;\n    max-width: 100%;\n    border-radius: 16px;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  background-color: ", ";\n  border-radius: 16px 16px 0 0;\n  width: 100%;\n  z-index: ", ";\n  overflow-y: auto;\n  position: relative;\n  top: 0;\n  left: 0;\n  ", " {\n    width: auto;\n    min-width: 416px;\n    max-width: 100%;\n    border-radius: 16px;\n  }\n"])), function (_a) {
     var theme = _a.theme, backgroundTransparent = _a.backgroundTransparent;
-    return backgroundTransparent ? 'transparent' : theme.colors.contrast;
+    return backgroundTransparent ? "transparent" : theme.colors.contrast;
 }, function (_a) {
     var theme = _a.theme;
     return theme.zIndices.modal;
@@ -8605,7 +8607,8 @@ var UserBlock = function (_a) {
                 onPresentAccountModal();
             } }, pendingTransactions ? (React.createElement(React.Fragment, null,
             pendingTransactions,
-            " pending ",
+            " pending",
+            " ",
             React.createElement(Icon$1I, { color: "white", ml: "4px" }))) : (React.createElement(React.Fragment, null,
             !isSm && !isXs && (React.createElement(Icon$31, __assign({}, iconProps, { mr: "8px" }))),
             accountEllipsis))))) : (React.createElement(Button, { scale: isSm || isXs ? "md" : "lg", onClick: function () {

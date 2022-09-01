@@ -79,7 +79,8 @@ const UserBlock: React.FC<Props> = ({
           >
             {pendingTransactions ? (
               <>
-                {pendingTransactions} pending <AutoRenewSolidAnimateIcon color="white" ml="4px" />
+                {pendingTransactions} pending{" "}
+                <AutoRenewSolidAnimateIcon color="white" ml="4px" />
               </>
             ) : (
               <>
