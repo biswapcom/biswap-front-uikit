@@ -3447,7 +3447,9 @@ var variants$5 = {
 
 var getRgba = function (color, theme, alpha) {
     var hexRegEx = /^#[0-9A-F]{6}$/i;
-    var hex = hexRegEx.test(color) ? color : getThemeValue("colors.".concat(color), color)(theme);
+    var hex = hexRegEx.test(color)
+        ? color
+        : getThemeValue("colors.".concat(color), color)(theme);
     var r = parseInt(hex.slice(1, 3), 16);
     var g = parseInt(hex.slice(3, 5), 16);
     var b = parseInt(hex.slice(5, 7), 16);
