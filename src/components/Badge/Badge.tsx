@@ -10,11 +10,11 @@ interface StyledBadgeProps extends BadgeProps {
 
 const getBadgeBg = ({ badgeType = "light", theme }: StyledBadgeProps) => {
   if (badgeType === "active") {
-    return getRgba(theme.colors.success, 0.16);
+    return getRgba(theme.colors.success, theme, 0.16);
   }
 
   if (badgeType === "notActive") {
-    return getRgba(theme.colors.secondary, 0.16);
+    return getRgba(theme.colors.secondary, theme, 0.16);
   }
 
   if (badgeType === "success") {
@@ -38,7 +38,7 @@ const getBadgeBg = ({ badgeType = "light", theme }: StyledBadgeProps) => {
   }
 
   if (badgeType === "core") {
-    return getRgba(theme.colors.primary, 0.16);
+    return getRgba(theme.colors.primary, theme, 0.16);
   }
 
   if (badgeType === "light") {
