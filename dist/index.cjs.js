@@ -25,7 +25,7 @@ var debounce__default = /*#__PURE__*/_interopDefaultLegacy(debounce);
 var noop__default = /*#__PURE__*/_interopDefaultLegacy(noop);
 var throttle__default = /*#__PURE__*/_interopDefaultLegacy(throttle);
 
-/*! *****************************************************************************
+/******************************************************************************
 Copyright (c) Microsoft Corporation.
 
 Permission to use, copy, modify, and/or distribute this software for any
@@ -3458,7 +3458,11 @@ var variants$5 = {
     SELECT_LIGHT: "selectLight",
 };
 
-var getRgba = function (hex, alpha) {
+var getRgba = function (color, theme, alpha) {
+    var hexRegEx = /^#[0-9A-F]{6}$/i;
+    var hex = hexRegEx.test(color)
+        ? color
+        : getThemeValue("colors.".concat(color), color)(theme);
     var r = parseInt(hex.slice(1, 3), 16);
     var g = parseInt(hex.slice(3, 5), 16);
     var b = parseInt(hex.slice(5, 7), 16);
@@ -3474,7 +3478,7 @@ var getBackgroundColor$1 = function (_a) {
         return "transparent";
     return variant === variants$5.SELECT
         ? theme.colors.tooltip
-        : getRgba(theme.colors.pastelBlue, 0.08);
+        : getRgba(theme.colors.pastelBlue, theme, 0.08);
 };
 var getFlat = function (_a) {
     var flatBottom = _a.flatBottom, flatTop = _a.flatTop;
@@ -3981,7 +3985,7 @@ var Wrapper$d = styled__default["default"].label(templateObject_1$15 || (templat
 });
 var CheckboxInput = styled__default["default"].input.attrs({ type: "checkbox" })(templateObject_2$G || (templateObject_2$G = __makeTemplateObject(["\n  appearance: none;\n  overflow: hidden;\n  cursor: pointer;\n  position: relative;\n  display: inline-block;\n  height: ", ";\n  width: ", ";\n  border: 2px solid transparent;\n  border-radius: 4px;\n  background-color: ", ";\n  transition: background-color 0.4s ease-in-out, border-color 0.4s ease;\n\n  &:after {\n    content: \"\";\n    position: absolute;\n    border-bottom: 2px solid;\n    border-left: 2px solid;\n    border-color: transparent;\n    top: 25%;\n    left: 0;\n    right: 0;\n    width: 65%;\n    height: 37%;\n    margin: auto;\n    transform: rotate(-50deg);\n    transition: border-color 0.2s ease-in-out;\n  }\n\n  &:hover:not(:disabled):not(:checked) {\n    border-color: ", ";\n  }\n\n  &:focus {\n    outline: none;\n  }\n\n  &:checked {\n    background-color: ", ";\n    &:after {\n      border-color: white;\n    }\n  }\n\n  &:checked + span {\n    background: ", ";\n    color: ", ";\n  }\n\n  &:disabled {\n    cursor: default;\n    opacity: 0.6;\n  }\n"], ["\n  appearance: none;\n  overflow: hidden;\n  cursor: pointer;\n  position: relative;\n  display: inline-block;\n  height: ", ";\n  width: ", ";\n  border: 2px solid transparent;\n  border-radius: 4px;\n  background-color: ", ";\n  transition: background-color 0.4s ease-in-out, border-color 0.4s ease;\n\n  &:after {\n    content: \"\";\n    position: absolute;\n    border-bottom: 2px solid;\n    border-left: 2px solid;\n    border-color: transparent;\n    top: 25%;\n    left: 0;\n    right: 0;\n    width: 65%;\n    height: 37%;\n    margin: auto;\n    transform: rotate(-50deg);\n    transition: border-color 0.2s ease-in-out;\n  }\n\n  &:hover:not(:disabled):not(:checked) {\n    border-color: ", ";\n  }\n\n  &:focus {\n    outline: none;\n  }\n\n  &:checked {\n    background-color: ", ";\n    &:after {\n      border-color: white;\n    }\n  }\n\n  &:checked + span {\n    background: ", ";\n    color: ", ";\n  }\n\n  &:disabled {\n    cursor: default;\n    opacity: 0.6;\n  }\n"])), getScale$2, getScale$2, function (_a) {
     var theme = _a.theme;
-    return getRgba(theme.colors.pastelBlue, 0.16);
+    return getRgba(theme.colors.pastelBlue, theme, 0.16);
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.success;
@@ -6073,10 +6077,10 @@ Toggle.defaultProps = {
 var getBadgeBg = function (_a) {
     var _b = _a.badgeType, badgeType = _b === void 0 ? "light" : _b, theme = _a.theme;
     if (badgeType === "active") {
-        return getRgba(theme.colors.success, 0.16);
+        return getRgba(theme.colors.success, theme, 0.16);
     }
     if (badgeType === "notActive") {
-        return getRgba(theme.colors.secondary, 0.16);
+        return getRgba(theme.colors.secondary, theme, 0.16);
     }
     if (badgeType === "success") {
         return theme.colors.success;
@@ -6094,7 +6098,7 @@ var getBadgeBg = function (_a) {
         return theme.colors.boost;
     }
     if (badgeType === "core") {
-        return getRgba(theme.colors.primary, 0.16);
+        return getRgba(theme.colors.primary, theme, 0.16);
     }
     if (badgeType === "light") {
         return theme.colors.disabled;
@@ -6268,7 +6272,7 @@ var templateObject_1$B;
 var getBackgroundColor = function (_a) {
     var theme = _a.theme, variant = _a.variant;
     return variant === slideMenuVariants.LIGHT
-        ? getRgba(theme.colors.pastelBlue, 0.08)
+        ? getRgba(theme.colors.pastelBlue, theme, 0.08)
         : theme.colors.tooltip;
 };
 var getBorderRadius = function (_a) {
@@ -6313,7 +6317,7 @@ var Selection = styled__default["default"].div(templateObject_3$h || (templateOb
 }, function (_a) {
     var theme = _a.theme, variant = _a.variant;
     return variant === slideMenuVariants.LIGHT &&
-        "box-shadow: 0 2px 4px ".concat(getRgba(theme.colors.backgroundDark, 0.08));
+        "box-shadow: 0 2px 4px ".concat(getRgba(theme.colors.backgroundDark, theme, 0.08));
 });
 var SlideButtonMenu = function (_a) {
     var _b = _a.customClass, customClass = _b === void 0 ? "" : _b, _c = _a.activeIndex, activeIndex = _c === void 0 ? 0 : _c, _d = _a.scale, scale = _d === void 0 ? slideMenuScales.SM : _d, _e = _a.variant, variant = _e === void 0 ? slideMenuVariants.DARK : _e, onItemClick = _a.onItemClick, disabled = _a.disabled, _f = _a.fullWidth, fullWidth = _f === void 0 ? false : _f, _g = _a.menuTitles, menuTitles = _g === void 0 ? [""] : _g, props = __rest(_a, ["customClass", "activeIndex", "scale", "variant", "onItemClick", "disabled", "fullWidth", "menuTitles"]);
@@ -6742,6 +6746,16 @@ var useTable = function (columns, data, options) {
     };
 };
 
+// eslint-disable-next-line import/prefer-default-export
+var formatSpacingAmount = function (x) {
+    if (x) {
+        var parts = x.toString().split(".");
+        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+        return parts.join(".");
+    }
+    return null;
+};
+
 var ModalHeader = styled__default["default"].div(templateObject_1$y || (templateObject_1$y = __makeTemplateObject(["\n  display: flex;\n  align-items: flex-start;\n  padding: 24px 16px;\n\n  ", " {\n    padding: 32px 32px 24px;\n  }\n"], ["\n  display: flex;\n  align-items: flex-start;\n  padding: 24px 16px;\n\n  ", " {\n    padding: 32px 32px 24px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
@@ -6919,16 +6933,6 @@ var useModal = function (modal, closeOnOverlayClick, updateOnPropsChange, modalI
         setCloseOnOverlayClick(closeOnOverlayClick);
     }, [closeOnOverlayClick, setCloseOnOverlayClick]);
     return [onPresentCallback, onDismiss];
-};
-
-// eslint-disable-next-line import/prefer-default-export
-var formatSpacingAmount = function (x) {
-    if (x) {
-        var parts = x.toString().split(".");
-        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-        return parts.join(".");
-    }
-    return null;
 };
 
 // import { formatSpacingAmount } from "../../../util/formatSpacingAmount";
@@ -8004,7 +8008,7 @@ var Marker = styled__default["default"](Box)(templateObject_1$h || (templateObje
     return theme.colors.success;
 }, function (_a) {
     var theme = _a.theme;
-    return getRgba(theme.colors.success, 0.7);
+    return getRgba(theme.colors.success, theme, 0.7);
 });
 var templateObject_1$h;
 
@@ -9344,6 +9348,12 @@ exports.byTextDescending = byTextDescending;
 exports.connectorLocalStorageKey = connectorLocalStorageKey;
 exports.dark = darkTheme;
 exports.darkColors = darkColors;
+exports.formatSpacingAmount = formatSpacingAmount;
+exports.getExternalLinkProps = getExternalLinkProps;
+exports.getPortalRoot = getPortalRoot;
+exports.getRgba = getRgba;
+exports.getThemeValue = getThemeValue;
+exports.isTouchDevice = isTouchDevice;
 exports.light = lightTheme;
 exports.lightColors = lightColors;
 exports.makeRender = makeRender;
