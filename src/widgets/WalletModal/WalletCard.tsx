@@ -27,13 +27,7 @@ const StyledText = styled(Text)`
 
 const WalletCard: React.FC<Props> = ({ login, walletConfig, onDismiss }) => {
   const handleClick = useCallback(() => {
-    try{
-      login(walletConfig.connectorId, walletConfig.instanceCheckRule);
-    } catch(e) {
-      console.log(e, 'login');
-      const helpWindow = window.open(walletConfig.helpHref, '_blank');
-      helpWindow?.focus();
-    }
+    login(walletConfig.connectorId, walletConfig.instanceCheckRule, walletConfig.helpHref);
     localStorage.setItem(walletLocalStorageKey, walletConfig.title);
     window.localStorage.setItem(
       connectorLocalStorageKey,
