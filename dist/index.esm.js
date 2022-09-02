@@ -2931,9 +2931,9 @@ var variants$7 = {
     TRANSPARENT: "transparent",
 };
 
-var _a$b, _b$9;
-var scaleVariants$4 = (_a$b = {},
-    _a$b[scales$a.LG] = {
+var _a$c, _b$9;
+var scaleVariants$4 = (_a$c = {},
+    _a$c[scales$a.LG] = {
         borderRadius: "10px",
         height: "48px",
         fontSize: "16px",
@@ -2942,7 +2942,7 @@ var scaleVariants$4 = (_a$b = {},
             width: "24px",
         },
     },
-    _a$b[scales$a.MD] = {
+    _a$c[scales$a.MD] = {
         borderRadius: "8px",
         height: "40px",
         fontSize: "14px",
@@ -2951,7 +2951,7 @@ var scaleVariants$4 = (_a$b = {},
             width: "20px",
         },
     },
-    _a$b[scales$a.SM] = {
+    _a$c[scales$a.SM] = {
         borderRadius: "8px",
         height: "32px",
         fontSize: "12px",
@@ -2960,7 +2960,7 @@ var scaleVariants$4 = (_a$b = {},
             width: "16px",
         },
     },
-    _a$b);
+    _a$c);
 var styleVariants$5 = (_b$9 = {},
     _b$9[variants$7.LIGHT] = {
         backgroundColor: "gray300",
@@ -3101,38 +3101,38 @@ var variants$6 = {
     TEXT: "text",
 };
 
-var _a$a, _b$8;
-var scaleVariants$3 = (_a$a = {},
-    _a$a[scales$9.XL] = {
+var _a$b, _b$8;
+var scaleVariants$3 = (_a$b = {},
+    _a$b[scales$9.XL] = {
         height: "48px",
         padding: "0 24px",
         borderRadius: "10px",
     },
-    _a$a[scales$9.LG] = {
+    _a$b[scales$9.LG] = {
         height: "40px",
         padding: "0 16px",
         fontSize: "14px",
         borderRadius: "8px",
     },
-    _a$a[scales$9.MD] = {
+    _a$b[scales$9.MD] = {
         height: "32px",
         padding: "0 12px",
         fontSize: "12px",
         borderRadius: "8px",
     },
-    _a$a[scales$9.SM] = {
+    _a$b[scales$9.SM] = {
         height: "24px",
         padding: "0 8px",
         fontSize: "12px",
         borderRadius: "6px",
     },
-    _a$a[scales$9.XS] = {
+    _a$b[scales$9.XS] = {
         height: "20px",
         padding: "0 8px",
         fontSize: "12px",
         borderRadius: "6px",
     },
-    _a$a);
+    _a$b);
 var styleVariants$4 = (_b$8 = {},
     _b$8[variants$6.PRIMARY] = {
         backgroundColor: "primary",
@@ -3510,38 +3510,38 @@ var ButtonMenu = function (_a) {
 };
 var templateObject_1$1e;
 
-var _a$9, _b$7;
-var scaleVariants$2 = (_a$9 = {},
-    _a$9[scales$8.XL] = {
+var _a$a, _b$7;
+var scaleVariants$2 = (_a$a = {},
+    _a$a[scales$8.XL] = {
         height: "48px",
         padding: "0 24px",
         borderRadius: "10px",
     },
-    _a$9[scales$8.LG] = {
+    _a$a[scales$8.LG] = {
         height: "40px",
         padding: "0 16px",
         fontSize: "14px",
         borderRadius: "8px",
     },
-    _a$9[scales$8.MD] = {
+    _a$a[scales$8.MD] = {
         height: "32px",
         padding: "0 12px",
         fontSize: "12px",
         borderRadius: "8px",
     },
-    _a$9[scales$8.SM] = {
+    _a$a[scales$8.SM] = {
         height: "24px",
         padding: "0 8px",
         fontSize: "12px",
         borderRadius: "6px",
     },
-    _a$9[scales$8.XS] = {
+    _a$a[scales$8.XS] = {
         height: "20px",
         padding: "0 8px",
         fontSize: "12px",
         borderRadius: "6px",
     },
-    _a$9);
+    _a$a);
 var styleVariants$3 = (_b$7 = {},
     _b$7[variants$5.PRIMARY] = {
         backgroundColor: "primary",
@@ -4017,18 +4017,18 @@ var variants$4 = {
     LIGHT: "light",
 };
 
-var _a$8, _b$6, _c$1, _d$1, _e;
-var scaleVariantsContainer = (_a$8 = {},
-    _a$8[scales$6.LG] = {
+var _a$9, _b$6, _c$1, _d$1, _e;
+var scaleVariantsContainer = (_a$9 = {},
+    _a$9[scales$6.LG] = {
         height: "48px",
     },
-    _a$8[scales$6.MD] = {
+    _a$9[scales$6.MD] = {
         height: "40px",
     },
-    _a$8[scales$6.SM] = {
+    _a$9[scales$6.SM] = {
         height: "32px",
     },
-    _a$8);
+    _a$9);
 var scaleVariantsTop = (_b$6 = {},
     _b$6[scales$6.LG] = {
         padding: "0 12px 0 24px",
@@ -4279,25 +4279,25 @@ var scales$5 = {
     XXL: "xxl",
 };
 
-var _a$7;
-var style = (_a$7 = {},
-    _a$7[scales$5.MD] = {
+var _a$8;
+var style = (_a$8 = {},
+    _a$8[scales$5.MD] = {
         fontSize: "20px",
         fontSizeLg: "20px",
     },
-    _a$7[scales$5.LG] = {
+    _a$8[scales$5.LG] = {
         fontSize: "24px",
         fontSizeLg: "24px",
     },
-    _a$7[scales$5.XL] = {
+    _a$8[scales$5.XL] = {
         fontSize: "32px",
         fontSizeLg: "40px",
     },
-    _a$7[scales$5.XXL] = {
+    _a$8[scales$5.XXL] = {
         fontSize: "48px",
         fontSizeLg: "64px",
     },
-    _a$7);
+    _a$8);
 var Heading = styled(Text).attrs({ bold: true })(templateObject_1$13 || (templateObject_1$13 = __makeTemplateObject(["\n  font-size: ", ";\n  font-weight: 600;\n  line-height: 1.1;\n\n  ", " {\n    font-size: ", ";\n  }\n"], ["\n  font-size: ", ";\n  font-weight: 600;\n  line-height: 1.1;\n\n  ", " {\n    font-size: ", ";\n  }\n"])), function (_a) {
     var scale = _a.scale;
     return style[scale || scales$5.MD].fontSize;
@@ -4414,29 +4414,29 @@ var variants$3 = {
     INVERTED: "inverted",
 };
 
-var _a$6, _b$5;
+var _a$7, _b$5;
 var StyledPrimaryImage = styled(TokenImage)(templateObject_1$Z || (templateObject_1$Z = __makeTemplateObject(["\n  position: absolute;\n  width: ", "; // 92, 82 are arbitrary numbers to fit the variant\n\n  ", "\n"], ["\n  position: absolute;\n  width: ", "; // 92, 82 are arbitrary numbers to fit the variant\n\n  ", "\n"])), function (_a) {
     var variant = _a.variant;
     return variant === variants$3.DEFAULT
         ? "92%"
         : "82%";
 }, variant$1({
-    variants: (_a$6 = {},
-        _a$6[variants$3.DEFAULT] = {
+    variants: (_a$7 = {},
+        _a$7[variants$3.DEFAULT] = {
             bottom: "auto",
             left: 0,
             right: "auto",
             top: 0,
             zIndex: 5,
         },
-        _a$6[variants$3.INVERTED] = {
+        _a$7[variants$3.INVERTED] = {
             bottom: 0,
             left: "auto",
             right: 0,
             top: "auto",
             zIndex: 6,
         },
-        _a$6),
+        _a$7),
 }));
 var StyledSecondaryImage = styled(TokenImage)(templateObject_2$E || (templateObject_2$E = __makeTemplateObject(["\n  position: absolute;\n  width: 50%;\n\n  ", "\n"], ["\n  position: absolute;\n  width: 50%;\n\n  ", "\n"])), variant$1({
     variants: (_b$5 = {},
@@ -4571,27 +4571,27 @@ var variants$2 = {
     DARK: "dark",
 };
 
-var _a$5, _b$4;
-var scaleVariants$1 = (_a$5 = {},
-    _a$5[scales$4.LG] = {
+var _a$6, _b$4;
+var scaleVariants$1 = (_a$6 = {},
+    _a$6[scales$4.LG] = {
         fontSize: "16px",
         svg: {
             width: "16px",
         },
     },
-    _a$5[scales$4.MD] = {
+    _a$6[scales$4.MD] = {
         fontSize: "14px",
         svg: {
             width: "14px",
         },
     },
-    _a$5[scales$4.SM] = {
+    _a$6[scales$4.SM] = {
         fontSize: "12px",
         svg: {
             width: "12px",
         },
     },
-    _a$5);
+    _a$6);
 var styleVariants$2 = (_b$4 = {},
     _b$4[variants$2.LIGHT] = {
         color: "primary",
@@ -4843,15 +4843,15 @@ var scales$3 = {
     SM: "sm",
 };
 
-var _a$4, _b$3;
-var styleVariants$1 = (_a$4 = {},
-    _a$4[variants$1.ROUND] = {
+var _a$5, _b$3;
+var styleVariants$1 = (_a$5 = {},
+    _a$5[variants$1.ROUND] = {
         borderRadius: "32px",
     },
-    _a$4[variants$1.FLAT] = {
+    _a$5[variants$1.FLAT] = {
         borderRadius: 0,
     },
-    _a$4);
+    _a$5);
 var styleScales = (_b$3 = {},
     _b$3[scales$3.MD] = {
         height: "16px",
@@ -5340,27 +5340,27 @@ var tabVariants = {
     LIGHT: "light",
 };
 
-var _a$3, _b$2, _c, _d;
-var menuScaleVariants = (_a$3 = {},
-    _a$3[tabsScales.LG] = {
+var _a$4, _b$2, _c, _d;
+var menuScaleVariants = (_a$4 = {},
+    _a$4[tabsScales.LG] = {
         height: "40px",
         padding: "0 16px",
         fontSize: "16px",
         lineHeight: "24px",
     },
-    _a$3[tabsScales.MD] = {
+    _a$4[tabsScales.MD] = {
         height: "32px",
         padding: "0 12px",
         fontSize: "14px",
         lineHeight: "20px",
     },
-    _a$3[tabsScales.SM] = {
+    _a$4[tabsScales.SM] = {
         height: "24px",
         padding: "0 8px",
         fontSize: "12px",
         lineHeight: "16px",
     },
-    _a$3);
+    _a$4);
 var sliderScaleVariant = (_b$2 = {},
     _b$2[tabsScales.LG] = {
         padding: "0 16px",
@@ -5836,19 +5836,19 @@ var scales$1 = {
     SM: "sm",
 };
 
-var _a$2, _b$1;
-var scaleVariants = (_a$2 = {},
-    _a$2[scales$1.MD] = {
+var _a$3, _b$1;
+var scaleVariants = (_a$3 = {},
+    _a$3[scales$1.MD] = {
         height: "28px",
         padding: "0 8px",
         fontSize: "14px",
     },
-    _a$2[scales$1.SM] = {
+    _a$3[scales$1.SM] = {
         height: "24px",
         padding: "0 4px",
         fontSize: "12px",
     },
-    _a$2);
+    _a$3);
 var styleVariants = (_b$1 = {},
     _b$1[variants.PRIMARY] = {
         backgroundColor: "primary",
@@ -6146,27 +6146,27 @@ var slideMenuVariants = {
     LIGHT: "light",
 };
 
-var _a$1, _b;
-var slideMenuScaleVariants = (_a$1 = {},
-    _a$1[slideMenuScales.LG] = {
+var _a$2, _b;
+var slideMenuScaleVariants = (_a$2 = {},
+    _a$2[slideMenuScales.LG] = {
         height: "40px",
         padding: "0 16px",
         fontSize: "14px",
         borderRadius: "8px",
     },
-    _a$1[slideMenuScales.MD] = {
+    _a$2[slideMenuScales.MD] = {
         height: "32px",
         padding: "0 12px",
         fontSize: "12px",
         borderRadius: "8px",
     },
-    _a$1[slideMenuScales.SM] = {
+    _a$2[slideMenuScales.SM] = {
         height: "24px",
         padding: "0 8px",
         fontSize: "12px",
         borderRadius: "6px",
     },
-    _a$1);
+    _a$2);
 var slideMenuStyleVariants = (_b = {},
     _b[slideMenuVariants.DARK] = {
         color: "white",
@@ -8355,6 +8355,21 @@ var Icon = function (props) {
         React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M18.6173 8.72146V9.4736C18.6173 9.54622 18.5982 9.61756 18.5619 9.68044C18.5256 9.74333 18.4734 9.79555 18.4105 9.83184L15.9871 11.2307L18.1516 12.4765C18.2931 12.5582 18.4106 12.6758 18.4923 12.8173C18.574 12.9589 18.6169 13.1195 18.6168 13.2829V15.2871C18.617 15.4506 18.5741 15.6113 18.4924 15.753C18.4107 15.8946 18.2931 16.0122 18.1516 16.094L12.4575 19.3605C12.316 19.4422 12.1556 19.4852 11.9922 19.4852C11.8289 19.4852 11.6685 19.4422 11.527 19.3605L9.66602 18.2848C9.63458 18.2667 9.60845 18.2405 9.5903 18.2091C9.57212 18.1776 9.56255 18.142 9.56255 18.1057C9.56255 18.0694 9.57212 18.0337 9.5903 18.0022C9.60845 17.9708 9.63458 17.9447 9.66602 17.9266L15.8176 14.3861C15.8334 14.377 15.8465 14.3639 15.8556 14.3482C15.8647 14.3324 15.8695 14.3146 15.8695 14.2964C15.8695 14.2782 15.8647 14.2603 15.8556 14.2446C15.8465 14.2288 15.8334 14.2157 15.8176 14.2067L13.5337 12.8874C13.4709 12.8512 13.3996 12.832 13.327 12.832C13.2544 12.832 13.1831 12.8512 13.1202 12.8874L6.86837 16.4864C6.82122 16.5136 6.76773 16.5279 6.71329 16.5279C6.65884 16.5279 6.60535 16.5136 6.55821 16.4864L5.85104 16.0811C5.70869 15.9996 5.5904 15.882 5.50816 15.7401C5.42591 15.5982 5.38262 15.4371 5.38269 15.2731V14.4528C5.38266 14.3982 5.39697 14.3447 5.42419 14.2976C5.45142 14.2504 5.49059 14.2112 5.53777 14.1839L14.4984 9.03678C14.5141 9.02774 14.5273 9.01468 14.5364 8.99894C14.5455 8.9832 14.5503 8.96528 14.5503 8.9471C14.5503 8.92892 14.5455 8.91101 14.5364 8.89527C14.5273 8.87952 14.5141 8.86646 14.4984 8.85743L12.2109 7.53404C12.1481 7.49775 12.0767 7.47864 12.0041 7.47864C11.9315 7.47864 11.8602 7.49775 11.7974 7.53404L5.69751 11.0441C5.66605 11.0622 5.63036 11.0718 5.59404 11.0718C5.55772 11.0718 5.52204 11.0622 5.4906 11.044C5.45915 11.0258 5.43306 10.9996 5.41493 10.9682C5.3968 10.9367 5.38729 10.901 5.38734 10.8647V8.71165C5.38741 8.54784 5.4307 8.38699 5.51284 8.24532C5.59499 8.10362 5.71308 7.98614 5.85517 7.90468L11.5461 4.63869C11.6873 4.5575 11.8472 4.51477 12.0101 4.51477C12.1729 4.51477 12.3329 4.5575 12.474 4.63869L18.1542 7.91453C18.2954 7.99653 18.4125 8.11428 18.4938 8.25594C18.5751 8.39757 18.6177 8.55812 18.6173 8.72146Z", fill: "white" })));
 };
 
+var _a$1;
+var ConnectorsNameTypes;
+(function (ConnectorsNameTypes) {
+    ConnectorsNameTypes["Metamask"] = "Metamask";
+    ConnectorsNameTypes["TrustWallet"] = "TrustWallet";
+    ConnectorsNameTypes["MathWallet"] = "MathWallet";
+    ConnectorsNameTypes["TokenPocket"] = "TokenPocket";
+    ConnectorsNameTypes["Coin98"] = "Coin98";
+    ConnectorsNameTypes["WalletConnect"] = "WalletConnect";
+    ConnectorsNameTypes["BinanceChain"] = "Binance Chain";
+    ConnectorsNameTypes["SafePal"] = "SafePal Wallet";
+    ConnectorsNameTypes["Coinbase"] = "Coinbase Wallet";
+    ConnectorsNameTypes["iToken"] = "iToken";
+    ConnectorsNameTypes["BitKeep"] = "BitKeep Wallet";
+})(ConnectorsNameTypes || (ConnectorsNameTypes = {}));
 var ConnectorNames;
 (function (ConnectorNames) {
     ConnectorNames["Injected"] = "injected";
@@ -8362,84 +8377,108 @@ var ConnectorNames;
     ConnectorNames["BSC"] = "bsc";
     ConnectorNames["WalletLink"] = "walletlink";
 })(ConnectorNames || (ConnectorNames = {}));
+var InstanceCheckRules = (_a$1 = {},
+    _a$1[ConnectorsNameTypes.Metamask] = 'isMetaMask',
+    _a$1[ConnectorsNameTypes.TrustWallet] = 'isTrustWallet',
+    _a$1[ConnectorsNameTypes.MathWallet] = 'isMathWallet',
+    _a$1[ConnectorsNameTypes.TokenPocket] = 'isTokenPocket',
+    _a$1[ConnectorsNameTypes.Coin98] = 'isCoin98',
+    _a$1[ConnectorsNameTypes.WalletConnect] = 'isWalletConnect',
+    _a$1[ConnectorsNameTypes.BinanceChain] = 'BinanceChain',
+    _a$1[ConnectorsNameTypes.SafePal] = 'isSafePal',
+    _a$1[ConnectorsNameTypes.Coinbase] = 'isCoinbase',
+    _a$1[ConnectorsNameTypes.iToken] = 'isiToken',
+    _a$1[ConnectorsNameTypes.BitKeep] = 'isBitKeep',
+    _a$1);
 
 var connectors = [
     {
-        title: "Metamask",
+        title: ConnectorsNameTypes.Metamask,
         icon: Icon$a,
         connectorId: ConnectorNames.Injected,
         priority: 1,
-        helpHref: 'https://bit.ly/3arAKkq'
+        helpHref: 'https://bit.ly/3arAKkq',
+        instanceCheckRule: InstanceCheckRules[ConnectorsNameTypes.Metamask]
     },
     {
-        title: "TrustWallet",
+        title: ConnectorsNameTypes.TrustWallet,
         icon: Icon$7,
         connectorId: ConnectorNames.WalletConnect,
         priority: 2,
-        helpHref: 'https://bit.ly/3BwkxWo'
+        helpHref: 'https://bit.ly/3BwkxWo',
+        instanceCheckRule: InstanceCheckRules[ConnectorsNameTypes.TrustWallet]
     },
     {
-        title: "MathWallet",
+        title: ConnectorsNameTypes.MathWallet,
         icon: Icon$9,
         connectorId: ConnectorNames.Injected,
         priority: 999,
-        helpHref: 'https://bit.ly/3BI649I'
+        helpHref: 'https://bit.ly/3BI649I',
+        instanceCheckRule: InstanceCheckRules[ConnectorsNameTypes.MathWallet]
     },
     {
-        title: "TokenPocket",
+        title: ConnectorsNameTypes.TokenPocket,
         icon: Icon$8,
         connectorId: ConnectorNames.Injected,
         priority: 4,
-        helpHref: 'https://bit.ly/3zu4yoW'
+        helpHref: 'https://bit.ly/3zu4yoW',
+        instanceCheckRule: InstanceCheckRules[ConnectorsNameTypes.TokenPocket]
     },
     {
-        title: "Coin98",
+        title: ConnectorsNameTypes.Coin98,
         icon: Icon$3,
         connectorId: ConnectorNames.Injected,
         priority: 999,
-        helpHref: 'https://bit.ly/3PUMFGS'
+        helpHref: 'https://bit.ly/3PUMFGS',
+        instanceCheckRule: InstanceCheckRules[ConnectorsNameTypes.Coin98]
     },
     {
-        title: "WalletConnect",
+        title: ConnectorsNameTypes.WalletConnect,
         icon: Icon$6,
         connectorId: ConnectorNames.WalletConnect,
         priority: 3,
-        helpHref: 'https://bit.ly/3SnDkZR'
+        helpHref: 'https://bit.ly/3SnDkZR',
+        instanceCheckRule: InstanceCheckRules[ConnectorsNameTypes.WalletConnect]
     },
     {
-        title: "Binance Chain",
+        title: ConnectorsNameTypes.BinanceChain,
         icon: Icon$5,
         connectorId: ConnectorNames.BSC,
         priority: 999,
-        helpHref: 'https://bit.ly/3BDTLLI'
+        helpHref: 'https://bit.ly/3BDTLLI',
+        instanceCheckRule: InstanceCheckRules[ConnectorsNameTypes.BinanceChain]
     },
     {
-        title: "SafePal Wallet",
+        title: ConnectorsNameTypes.SafePal,
         icon: Icon$4,
         connectorId: ConnectorNames.Injected,
         priority: 999,
-        helpHref: 'https://bit.ly/3zMM7gO'
+        helpHref: 'https://bit.ly/3zMM7gO',
+        instanceCheckRule: InstanceCheckRules[ConnectorsNameTypes.SafePal]
     },
     {
-        title: "Coinbase Wallet",
+        title: ConnectorsNameTypes.Coinbase,
         icon: Icon$2,
         connectorId: ConnectorNames.Injected,
         priority: 999,
-        helpHref: 'https://bit.ly/3oLQMcr'
+        helpHref: 'https://bit.ly/3oLQMcr',
+        instanceCheckRule: InstanceCheckRules[ConnectorsNameTypes.Coinbase]
     },
     {
-        title: "iToken",
+        title: ConnectorsNameTypes.iToken,
         icon: Icon$1,
         connectorId: ConnectorNames.Injected,
         priority: 999,
-        helpHref: 'https://bit.ly/3vwZP4O'
+        helpHref: 'https://bit.ly/3vwZP4O',
+        instanceCheckRule: InstanceCheckRules[ConnectorsNameTypes.iToken]
     },
     {
-        title: "BitKeep Wallet",
+        title: ConnectorsNameTypes.BitKeep,
         icon: Icon,
         connectorId: ConnectorNames.Injected,
         priority: 999,
-        helpHref: 'https://bit.ly/3nsp57T'
+        helpHref: 'https://bit.ly/3nsp57T',
+        instanceCheckRule: InstanceCheckRules[ConnectorsNameTypes.BitKeep]
     },
 ];
 var connectorLocalStorageKey = "connectorId";
@@ -8454,7 +8493,7 @@ var WalletCard = function (_a) {
     var login = _a.login, walletConfig = _a.walletConfig, onDismiss = _a.onDismiss;
     var handleClick = useCallback(function () {
         try {
-            login(walletConfig.connectorId);
+            login(walletConfig.connectorId, walletConfig.instanceCheckRule);
         }
         catch (e) {
             console.log(e, 'login');
