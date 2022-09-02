@@ -9,6 +9,7 @@ import Coin98 from "./icons/Coin98";
 import CoinbaseIcon from "./icons/Coinbase";
 import iToken from "./icons/iToken";
 import BitKeepWallet from "./icons/BitKeepWallet";
+import BraveWallet from "./icons/BraveWallet";
 
 import { Config, ConnectorNames } from "./types";
 
@@ -76,6 +77,12 @@ const connectors: Config[] = [
   {
     title: "BitKeep Wallet",
     icon: BitKeepWallet,
+    connectorId: ConnectorNames.Injected,
+    priority: 999,
+  },
+  {
+    title: "Brave Wallet",
+    icon: BraveWallet,
     connectorId: ConnectorNames.Injected,
     priority: 999,
   },
