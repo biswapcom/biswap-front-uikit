@@ -1608,16 +1608,24 @@ var Icon$r = function (props) {
 
 var Icon$q = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
-        React.createElement("circle", { cx: "12.9989", cy: "12", r: "12", fill: "#1263F1" }),
-        React.createElement("path", { d: "M10.3024 23.6954L13.9011 11.1V7.49999L16.2525 0.445679C21.3002 1.86321 25.0011 6.49941 25.0011 12C25.0011 18.6274 19.6285 24 13.0011 24C12.0732 24 11.1698 23.8947 10.3024 23.6954Z", fill: "#F93B5D" }),
-        React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M15.6819 0.301025L5.80005 14.7771H11.9715L9.64874 23.5261C10.0046 23.6294 10.3673 23.7166 10.736 23.787L20.6115 9.83993H14.4401L16.7685 0.603966C16.4133 0.48656 16.0509 0.38529 15.6819 0.301025Z", fill: "white" })));
+        React.createElement("g", { clipPath: "url(#clip0_1747_20886)" },
+            React.createElement("circle", { cx: "11.9989", cy: "12", r: "12", fill: "#1263F1" }),
+            React.createElement("path", { d: "M9.30243 23.6954L12.9011 11.1V7.49999L15.2525 0.445679C20.3002 1.86321 24.0011 6.49941 24.0011 12C24.0011 18.6274 18.6285 24 12.0011 24C11.0732 24 10.1699 23.8947 9.30243 23.6954Z", fill: "#F93B5D" }),
+            React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M14.6819 0.301025L4.80006 14.7771H10.9715L8.64876 23.5261C9.00463 23.6294 9.36732 23.7166 9.73599 23.787L19.6115 9.83993H13.4401L15.7685 0.603966C15.4134 0.48656 15.0509 0.38529 14.6819 0.301025Z", fill: "white" })),
+        React.createElement("defs", null,
+            React.createElement("clipPath", { id: "clip0_1747_20886" },
+                React.createElement("rect", { width: "24", height: "24", fill: "white" })))));
 };
 
 var Icon$p = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
-        React.createElement("circle", { cx: "12.9989", cy: "12", r: "12", fill: "#1EBB95" }),
-        React.createElement("path", { d: "M10.3024 23.6954L13.9011 11.1V7.49999L16.2525 0.445679C21.3002 1.86321 25.0011 6.49941 25.0011 12C25.0011 18.6274 19.6285 24 13.0011 24C12.0732 24 11.1698 23.8947 10.3024 23.6954Z", fill: "#FF1C5E" }),
-        React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M15.6819 0.301025L5.80005 14.7771H11.9715L9.64874 23.5261C10.0046 23.6294 10.3673 23.7166 10.736 23.787L20.6115 9.83993H14.4401L16.7685 0.603966C16.4133 0.48656 16.0509 0.38529 15.6819 0.301025Z", fill: "white" })));
+        React.createElement("g", { clipPath: "url(#clip0_1754_20593)" },
+            React.createElement("circle", { cx: "11.9989", cy: "12", r: "12", fill: "#1EBB95" }),
+            React.createElement("path", { d: "M9.30241 23.6954L12.9011 11.1V7.49999L15.2525 0.445679C20.3002 1.86321 24.0011 6.49941 24.0011 12C24.0011 18.6274 18.6285 24 12.0011 24C11.0732 24 10.1698 23.8947 9.30241 23.6954Z", fill: "#FF1C5E" }),
+            React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M14.6819 0.301025L4.80005 14.7771H10.9715L8.64874 23.5261C9.00461 23.6294 9.3673 23.7166 9.73598 23.787L19.6115 9.83993H13.4401L15.7685 0.603966C15.4133 0.48656 15.0509 0.38529 14.6819 0.301025Z", fill: "white" })),
+        React.createElement("defs", null,
+            React.createElement("clipPath", { id: "clip0_1754_20593" },
+                React.createElement("rect", { width: "24", height: "24", fill: "white" })))));
 };
 
 var Icon$o = function (props) {
@@ -5000,7 +5008,7 @@ var InfoBlock = styled.div(templateObject_9$3 || (templateObject_9$3 = __makeTem
 var TitleText = styled(Text)(templateObject_10$2 || (templateObject_10$2 = __makeTemplateObject(["\n  font-size: 14px;\n  line-height: 20px;\n  color: black;\n  font-weight: 600;\n"], ["\n  font-size: 14px;\n  line-height: 20px;\n  color: black;\n  font-weight: 600;\n"])));
 var PercentageAmount = styled(Text)(templateObject_11$1 || (templateObject_11$1 = __makeTemplateObject(["\n  font-size: 16px;\n  margin: 0 4px;\n  font-weight: 600;\n"], ["\n  font-size: 16px;\n  margin: 0 4px;\n  font-weight: 600;\n"])));
 var InfoNode = styled.div(templateObject_12$1 || (templateObject_12$1 = __makeTemplateObject(["\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n"], ["\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n"])));
-var RBPrice = styled(Text)(templateObject_13 || (templateObject_13 = __makeTemplateObject(["\n  text-align: right;\n  font-size: 12px;\n  line-height: 16px;\n  font-weight: 600;\n  color: ", ";\n"], ["\n  text-align: right;\n  font-size: 12px;\n  line-height: 16px;\n  font-weight: 600;\n  color: ", ";\n"])), function (_a) {
+var RBPrice = styled(Text)(templateObject_13 || (templateObject_13 = __makeTemplateObject(["\n  text-align: right;\n  font-size: 12px;\n  line-height: 16px;\n  color: ", ";\n"], ["\n  text-align: right;\n  font-size: 12px;\n  line-height: 16px;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.text;
 });
@@ -8554,7 +8562,7 @@ var AccountModal = function (_a) {
         React.createElement(ConnectedWrapper, null,
             React.createElement(Text, { fontSize: "14px", fontWeight: "400", lineHeight: "21px", color: "#1DC872" }, "Connected"),
             React.createElement(Button, { onClick: changeWalletHandler, scale: "lg", variant: "primary" }, "Change")),
-        React.createElement(Text, { fontSize: "14px", fontWeight: "600", color: "#07162D", style: {
+        React.createElement(Text, { fontSize: "14px", fontWeight: "600", color: "primary", style: {
                 whiteSpace: "nowrap",
                 overflow: "hidden",
                 textOverflow: "ellipsis",
@@ -8563,7 +8571,7 @@ var AccountModal = function (_a) {
             } }, account),
         React.createElement(Flex, null,
             React.createElement(CopyToClipboard, { toCopy: account }, "Copy Address"),
-            React.createElement(Link, { target: "_blank", fontWeight: "400", scale: "xs", ml: "26px", small: true, href: "https://bscscan.com/address/".concat(account), mr: "16px" },
+            React.createElement(Link, { target: "_blank", fontWeight: "400", scale: "xs", ml: "26px", small: true, href: "https://bscscan.com/address/".concat(account), mr: "16px", color: "primary" },
                 "View on BscScan",
                 React.createElement(Icon$3j, { color: "primary", width: "14px", ml: "4px" }))),
         isSwap && (React.createElement(TransactionWrapper, null,
