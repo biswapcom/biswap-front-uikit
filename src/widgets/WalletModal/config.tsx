@@ -12,7 +12,7 @@ import BitKeepWallet from "./icons/BitKeepWallet";
 
 import { Config, ConnectorNames, ConnectorsTitleTypes, InstanceCheckRules } from "./types";
 
-export const connectors: Config[] = [
+const connectors: Config[] = [
   {
     title: ConnectorsTitleTypes.Metamask,
     icon: Metamask,

@@ -37,10 +37,10 @@ export const InstanceCheckRules = {
 }
 
 export type Login = (
-  title: ConnectorsTitleTypes,
   connectorId: ConnectorNames, 
-  instanceCheckRule: InstanceCheckRuleType, 
-  helpHref: string
+  title?: ConnectorsTitleTypes,
+  instanceCheckRule?: InstanceCheckRuleType, 
+  helpHref?: string
 ) => void;
 
 export type InstanceCheckRuleType = typeof InstanceCheckRules[ConnectorsTitleTypes]

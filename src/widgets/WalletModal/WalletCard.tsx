@@ -28,8 +28,8 @@ const StyledText = styled(Text)`
 const WalletCard: React.FC<Props> = ({ login, walletConfig, onDismiss }) => {
   const handleClick = useCallback(() => {
     login(
-      walletConfig.title, 
       walletConfig.connectorId, 
+      walletConfig.title, 
       walletConfig.instanceCheckRule, 
       walletConfig.helpHref
     );
