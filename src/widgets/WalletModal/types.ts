@@ -36,7 +36,7 @@ export const InstanceCheckRules = {
   [ConnectorsNameTypes.BitKeep]: 'isBitKeep',
 }
 
-export type Login = (connectorId: ConnectorNames, instanceCheckRule: InstanceCheckRuleType, helpHref: string) => void;
+export type Login = (walletConfig: Config) => void;
 
 export type InstanceCheckRuleType = typeof InstanceCheckRules[ConnectorsNameTypes]
 export interface Config {

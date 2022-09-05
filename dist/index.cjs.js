@@ -8505,7 +8505,7 @@ var StyledText = styled__default["default"](Text)(templateObject_2$8 || (templat
 var WalletCard = function (_a) {
     var login = _a.login, walletConfig = _a.walletConfig, onDismiss = _a.onDismiss;
     var handleClick = React.useCallback(function () {
-        login(walletConfig.connectorId, walletConfig.instanceCheckRule, walletConfig.helpHref);
+        login(walletConfig);
         localStorage.setItem(walletLocalStorageKey, walletConfig.title);
         window.localStorage.setItem(connectorLocalStorageKey, walletConfig.connectorId);
         onDismiss();
