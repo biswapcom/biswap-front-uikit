@@ -24,7 +24,7 @@ export enum ConnectorNames {
 
 export const InstanceCheckRules = {
   [ConnectorsTitleTypes.Metamask]: 'isMetaMask',
-  [ConnectorsTitleTypes.TrustWallet]: 'isWalletConnect',
+  [ConnectorsTitleTypes.TrustWallet]: 'isTrustWallet',
   [ConnectorsTitleTypes.MathWallet]: 'isMathWallet',
   [ConnectorsTitleTypes.TokenPocket]: 'isTokenPocket',
   [ConnectorsTitleTypes.Coin98]: 'isCoin98',

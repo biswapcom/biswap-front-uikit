@@ -8379,7 +8379,7 @@ var ConnectorNames;
 })(ConnectorNames || (ConnectorNames = {}));
 var InstanceCheckRules = (_a$1 = {},
     _a$1[ConnectorsTitleTypes.Metamask] = 'isMetaMask',
-    _a$1[ConnectorsTitleTypes.TrustWallet] = 'isWalletConnect',
+    _a$1[ConnectorsTitleTypes.TrustWallet] = 'isTrustWallet',
     _a$1[ConnectorsTitleTypes.MathWallet] = 'isMathWallet',
     _a$1[ConnectorsTitleTypes.TokenPocket] = 'isTokenPocket',
     _a$1[ConnectorsTitleTypes.Coin98] = 'isCoin98',
@@ -8406,7 +8406,7 @@ var connectors = [
         connectorId: ConnectorNames.WalletConnect,
         priority: 2,
         helpHref: 'https://bit.ly/3BwkxWo',
-        instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.WalletConnect]
+        instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.TrustWallet]
     },
     {
         title: ConnectorsTitleTypes.MathWallet,
