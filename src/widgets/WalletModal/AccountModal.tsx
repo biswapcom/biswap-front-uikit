@@ -83,7 +83,7 @@ const AccountModal: React.FC<Props> = ({
       <Text
         fontSize="14px"
         fontWeight="600"
-        color="#07162D"
+        color="primary"
         style={{
           whiteSpace: "nowrap",
           overflow: "hidden",
@@ -104,6 +104,7 @@ const AccountModal: React.FC<Props> = ({
           small
           href={`https://bscscan.com/address/${account}`}
           mr="16px"
+          color="primary"
         >
           View on BscScan
           <ArrowUpForwardIcon color="primary" width="14px" ml="4px" />
