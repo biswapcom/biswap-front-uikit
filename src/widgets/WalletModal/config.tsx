@@ -10,96 +10,96 @@ import CoinbaseIcon from "./icons/Coinbase";
 import iToken from "./icons/iToken";
 import BitKeepWallet from "./icons/BitKeepWallet";
 
-import { Config, ConnectorNames, ConnectorsNameTypes, InstanceCheckRules } from "./types";
+import { Config, ConnectorNames, ConnectorsTitleTypes, InstanceCheckRules } from "./types";
 
 export const connectors: Config[] = [
   {
-    title: ConnectorsNameTypes.Metamask,
+    title: ConnectorsTitleTypes.Metamask,
     icon: Metamask,
     connectorId: ConnectorNames.Injected,
     priority: 1,
     helpHref: 'https://bit.ly/3arAKkq',
-    instanceCheckRule: InstanceCheckRules[ConnectorsNameTypes.Metamask]
+    instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.Metamask]
   },
   {
-    title: ConnectorsNameTypes.TrustWallet,
+    title: ConnectorsTitleTypes.TrustWallet,
     icon: TrustWallet,
     connectorId: ConnectorNames.WalletConnect,
     priority: 2,
     helpHref: 'https://bit.ly/3BwkxWo',
-    instanceCheckRule: InstanceCheckRules[ConnectorsNameTypes.TrustWallet]
+    instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.TrustWallet]
   },
   {
-    title: ConnectorsNameTypes.MathWallet,
+    title: ConnectorsTitleTypes.MathWallet,
     icon: MathWallet,
     connectorId: ConnectorNames.Injected,
     priority: 999,
     helpHref: 'https://bit.ly/3BI649I',
-    instanceCheckRule: InstanceCheckRules[ConnectorsNameTypes.MathWallet]
+    instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.MathWallet]
   },
   {
-    title: ConnectorsNameTypes.TokenPocket,
+    title: ConnectorsTitleTypes.TokenPocket,
     icon: TokenPocket,
     connectorId: ConnectorNames.Injected,
     priority: 4,
     helpHref: 'https://bit.ly/3zu4yoW',
-    instanceCheckRule: InstanceCheckRules[ConnectorsNameTypes.TokenPocket]
+    instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.TokenPocket]
   },
   {
-    title: ConnectorsNameTypes.Coin98,
+    title: ConnectorsTitleTypes.Coin98,
     icon: Coin98,
     connectorId: ConnectorNames.Injected,
     priority: 999,
     helpHref: 'https://bit.ly/3PUMFGS',
-    instanceCheckRule: InstanceCheckRules[ConnectorsNameTypes.Coin98]
+    instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.Coin98]
   },
   {
-    title: ConnectorsNameTypes.WalletConnect,
+    title: ConnectorsTitleTypes.WalletConnect,
     icon: WalletConnect,
     connectorId: ConnectorNames.WalletConnect,
     priority: 3,
     helpHref: 'https://bit.ly/3SnDkZR',
-    instanceCheckRule: InstanceCheckRules[ConnectorsNameTypes.WalletConnect]
+    instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.WalletConnect]
   },
   {
-    title: ConnectorsNameTypes.BinanceChain,
+    title: ConnectorsTitleTypes.BinanceChain,
     icon: BinanceChain,
     connectorId: ConnectorNames.BSC,
     priority: 999,
     helpHref: 'https://bit.ly/3BDTLLI',
-    instanceCheckRule: InstanceCheckRules[ConnectorsNameTypes.BinanceChain]
+    instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.BinanceChain]
   },
   {
-    title: ConnectorsNameTypes.SafePal,
+    title: ConnectorsTitleTypes.SafePal,
     icon: SafePalWallet,
     connectorId: ConnectorNames.Injected,
     priority: 999,
     helpHref: 'https://bit.ly/3zMM7gO',
-    instanceCheckRule: InstanceCheckRules[ConnectorsNameTypes.SafePal]
+    instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.SafePal]
   },
   {
-    title: ConnectorsNameTypes.Coinbase,
+    title: ConnectorsTitleTypes.Coinbase,
     icon: CoinbaseIcon,
     connectorId: ConnectorNames.Injected,
     priority: 999,
     helpHref: 'https://bit.ly/3oLQMcr',
-    instanceCheckRule: InstanceCheckRules[ConnectorsNameTypes.Coinbase]
+    instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.Coinbase]
   },
   {
-    title: ConnectorsNameTypes.iToken,
+    title: ConnectorsTitleTypes.iToken,
     icon: iToken,
     connectorId: ConnectorNames.Injected,
     priority: 999,
     helpHref: 'https://bit.ly/3vwZP4O',
-    instanceCheckRule: InstanceCheckRules[ConnectorsNameTypes.iToken]
+    instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.iToken]
   },
   {
-    title: ConnectorsNameTypes.BitKeep,
+    title: ConnectorsTitleTypes.BitKeep,
     icon: BitKeepWallet,
     connectorId: ConnectorNames.Injected,
     priority: 999,
     helpHref: 'https://bit.ly/3nsp57T',
-    instanceCheckRule: InstanceCheckRules[ConnectorsNameTypes.BitKeep]
+    instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.BitKeep]
   },
 ];
 

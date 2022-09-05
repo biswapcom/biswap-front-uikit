@@ -26,9 +26,13 @@ const StyledText = styled(Text)`
 `;
 
 const WalletCard: React.FC<Props> = ({ login, walletConfig, onDismiss }) => {
-  
   const handleClick = useCallback(() => {
-    login(walletConfig);
+    login(
+      walletConfig.title, 
+      walletConfig.connectorId, 
+      walletConfig.instanceCheckRule, 
+      walletConfig.helpHref
+    );
     localStorage.setItem(walletLocalStorageKey, walletConfig.title);
     window.localStorage.setItem(
       connectorLocalStorageKey,

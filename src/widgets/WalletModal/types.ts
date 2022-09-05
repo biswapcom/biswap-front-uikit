@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { SvgProps } from "../../components/Svg/types";
 
-export enum ConnectorsNameTypes { 
+export enum ConnectorsTitleTypes { 
   Metamask = 'Metamask',
   TrustWallet = 'TrustWallet',
   MathWallet = 'MathWallet',
@@ -23,25 +23,30 @@ export enum ConnectorNames {
 }
 
 export const InstanceCheckRules = {
-  [ConnectorsNameTypes.Metamask]: 'isMetaMask',
-  [ConnectorsNameTypes.TrustWallet]: 'isTrustWallet',
-  [ConnectorsNameTypes.MathWallet]: 'isMathWallet',
-  [ConnectorsNameTypes.TokenPocket]: 'isTokenPocket',
-  [ConnectorsNameTypes.Coin98]: 'isCoin98',
-  [ConnectorsNameTypes.WalletConnect]: 'isWalletConnect',
-  [ConnectorsNameTypes.BinanceChain]: 'BinanceChain',
-  [ConnectorsNameTypes.SafePal]: 'isSafePal',
-  [ConnectorsNameTypes.Coinbase]: 'isCoinbase',
-  [ConnectorsNameTypes.iToken]: 'isiToken',
-  [ConnectorsNameTypes.BitKeep]: 'isBitKeep',
+  [ConnectorsTitleTypes.Metamask]: 'isMetaMask',
+  [ConnectorsTitleTypes.TrustWallet]: 'isTrustWallet',
+  [ConnectorsTitleTypes.MathWallet]: 'isMathWallet',
+  [ConnectorsTitleTypes.TokenPocket]: 'isTokenPocket',
+  [ConnectorsTitleTypes.Coin98]: 'isCoin98',
+  [ConnectorsTitleTypes.WalletConnect]: 'isWalletConnect',
+  [ConnectorsTitleTypes.BinanceChain]: 'BinanceChain',
+  [ConnectorsTitleTypes.SafePal]: 'isSafePal',
+  [ConnectorsTitleTypes.Coinbase]: 'isCoinbase',
+  [ConnectorsTitleTypes.iToken]: 'isiToken',
+  [ConnectorsTitleTypes.BitKeep]: 'isBitKeep',
 }
 
-export type Login = (walletConfig: Config) => void;
+export type Login = (
+  title: ConnectorsTitleTypes,
+  connectorId: ConnectorNames, 
+  instanceCheckRule: InstanceCheckRuleType, 
+  helpHref: string
+) => void;
 
-export type InstanceCheckRuleType = typeof InstanceCheckRules[ConnectorsNameTypes]
+export type InstanceCheckRuleType = typeof InstanceCheckRules[ConnectorsTitleTypes]
 export interface Config {
   priority: number;
-  title: string;
+  title: ConnectorsTitleTypes;
   icon: FC<SvgProps>;
   connectorId: ConnectorNames;
   helpHref: string;

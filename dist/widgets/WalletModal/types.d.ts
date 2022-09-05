@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { SvgProps } from "../../components/Svg/types";
-export declare enum ConnectorsNameTypes {
+export declare enum ConnectorsTitleTypes {
     Metamask = "Metamask",
     TrustWallet = "TrustWallet",
     MathWallet = "MathWallet",
@@ -32,11 +32,11 @@ export declare const InstanceCheckRules: {
     iToken: string;
     "BitKeep Wallet": string;
 };
-export declare type Login = (walletConfig: Config) => void;
-export declare type InstanceCheckRuleType = typeof InstanceCheckRules[ConnectorsNameTypes];
+export declare type Login = (title: ConnectorsTitleTypes, connectorId: ConnectorNames, instanceCheckRule: InstanceCheckRuleType, helpHref: string) => void;
+export declare type InstanceCheckRuleType = typeof InstanceCheckRules[ConnectorsTitleTypes];
 export interface Config {
     priority: number;
-    title: string;
+    title: ConnectorsTitleTypes;
     icon: FC<SvgProps>;
     connectorId: ConnectorNames;
     helpHref: string;

@@ -8369,20 +8369,20 @@ var Icon = function (props) {
 };
 
 var _a$1;
-exports.ConnectorsNameTypes = void 0;
-(function (ConnectorsNameTypes) {
-    ConnectorsNameTypes["Metamask"] = "Metamask";
-    ConnectorsNameTypes["TrustWallet"] = "TrustWallet";
-    ConnectorsNameTypes["MathWallet"] = "MathWallet";
-    ConnectorsNameTypes["TokenPocket"] = "TokenPocket";
-    ConnectorsNameTypes["Coin98"] = "Coin98";
-    ConnectorsNameTypes["WalletConnect"] = "WalletConnect";
-    ConnectorsNameTypes["BinanceChain"] = "Binance Chain";
-    ConnectorsNameTypes["SafePal"] = "SafePal Wallet";
-    ConnectorsNameTypes["Coinbase"] = "Coinbase Wallet";
-    ConnectorsNameTypes["iToken"] = "iToken";
-    ConnectorsNameTypes["BitKeep"] = "BitKeep Wallet";
-})(exports.ConnectorsNameTypes || (exports.ConnectorsNameTypes = {}));
+exports.ConnectorsTitleTypes = void 0;
+(function (ConnectorsTitleTypes) {
+    ConnectorsTitleTypes["Metamask"] = "Metamask";
+    ConnectorsTitleTypes["TrustWallet"] = "TrustWallet";
+    ConnectorsTitleTypes["MathWallet"] = "MathWallet";
+    ConnectorsTitleTypes["TokenPocket"] = "TokenPocket";
+    ConnectorsTitleTypes["Coin98"] = "Coin98";
+    ConnectorsTitleTypes["WalletConnect"] = "WalletConnect";
+    ConnectorsTitleTypes["BinanceChain"] = "Binance Chain";
+    ConnectorsTitleTypes["SafePal"] = "SafePal Wallet";
+    ConnectorsTitleTypes["Coinbase"] = "Coinbase Wallet";
+    ConnectorsTitleTypes["iToken"] = "iToken";
+    ConnectorsTitleTypes["BitKeep"] = "BitKeep Wallet";
+})(exports.ConnectorsTitleTypes || (exports.ConnectorsTitleTypes = {}));
 exports.ConnectorNames = void 0;
 (function (ConnectorNames) {
     ConnectorNames["Injected"] = "injected";
@@ -8391,107 +8391,107 @@ exports.ConnectorNames = void 0;
     ConnectorNames["WalletLink"] = "walletlink";
 })(exports.ConnectorNames || (exports.ConnectorNames = {}));
 var InstanceCheckRules = (_a$1 = {},
-    _a$1[exports.ConnectorsNameTypes.Metamask] = 'isMetaMask',
-    _a$1[exports.ConnectorsNameTypes.TrustWallet] = 'isTrustWallet',
-    _a$1[exports.ConnectorsNameTypes.MathWallet] = 'isMathWallet',
-    _a$1[exports.ConnectorsNameTypes.TokenPocket] = 'isTokenPocket',
-    _a$1[exports.ConnectorsNameTypes.Coin98] = 'isCoin98',
-    _a$1[exports.ConnectorsNameTypes.WalletConnect] = 'isWalletConnect',
-    _a$1[exports.ConnectorsNameTypes.BinanceChain] = 'BinanceChain',
-    _a$1[exports.ConnectorsNameTypes.SafePal] = 'isSafePal',
-    _a$1[exports.ConnectorsNameTypes.Coinbase] = 'isCoinbase',
-    _a$1[exports.ConnectorsNameTypes.iToken] = 'isiToken',
-    _a$1[exports.ConnectorsNameTypes.BitKeep] = 'isBitKeep',
+    _a$1[exports.ConnectorsTitleTypes.Metamask] = 'isMetaMask',
+    _a$1[exports.ConnectorsTitleTypes.TrustWallet] = 'isTrustWallet',
+    _a$1[exports.ConnectorsTitleTypes.MathWallet] = 'isMathWallet',
+    _a$1[exports.ConnectorsTitleTypes.TokenPocket] = 'isTokenPocket',
+    _a$1[exports.ConnectorsTitleTypes.Coin98] = 'isCoin98',
+    _a$1[exports.ConnectorsTitleTypes.WalletConnect] = 'isWalletConnect',
+    _a$1[exports.ConnectorsTitleTypes.BinanceChain] = 'BinanceChain',
+    _a$1[exports.ConnectorsTitleTypes.SafePal] = 'isSafePal',
+    _a$1[exports.ConnectorsTitleTypes.Coinbase] = 'isCoinbase',
+    _a$1[exports.ConnectorsTitleTypes.iToken] = 'isiToken',
+    _a$1[exports.ConnectorsTitleTypes.BitKeep] = 'isBitKeep',
     _a$1);
 
 var connectors = [
     {
-        title: exports.ConnectorsNameTypes.Metamask,
+        title: exports.ConnectorsTitleTypes.Metamask,
         icon: Icon$a,
         connectorId: exports.ConnectorNames.Injected,
         priority: 1,
         helpHref: 'https://bit.ly/3arAKkq',
-        instanceCheckRule: InstanceCheckRules[exports.ConnectorsNameTypes.Metamask]
+        instanceCheckRule: InstanceCheckRules[exports.ConnectorsTitleTypes.Metamask]
     },
     {
-        title: exports.ConnectorsNameTypes.TrustWallet,
+        title: exports.ConnectorsTitleTypes.TrustWallet,
         icon: Icon$7,
         connectorId: exports.ConnectorNames.WalletConnect,
         priority: 2,
         helpHref: 'https://bit.ly/3BwkxWo',
-        instanceCheckRule: InstanceCheckRules[exports.ConnectorsNameTypes.TrustWallet]
+        instanceCheckRule: InstanceCheckRules[exports.ConnectorsTitleTypes.TrustWallet]
     },
     {
-        title: exports.ConnectorsNameTypes.MathWallet,
+        title: exports.ConnectorsTitleTypes.MathWallet,
         icon: Icon$9,
         connectorId: exports.ConnectorNames.Injected,
         priority: 999,
         helpHref: 'https://bit.ly/3BI649I',
-        instanceCheckRule: InstanceCheckRules[exports.ConnectorsNameTypes.MathWallet]
+        instanceCheckRule: InstanceCheckRules[exports.ConnectorsTitleTypes.MathWallet]
     },
     {
-        title: exports.ConnectorsNameTypes.TokenPocket,
+        title: exports.ConnectorsTitleTypes.TokenPocket,
         icon: Icon$8,
         connectorId: exports.ConnectorNames.Injected,
         priority: 4,
         helpHref: 'https://bit.ly/3zu4yoW',
-        instanceCheckRule: InstanceCheckRules[exports.ConnectorsNameTypes.TokenPocket]
+        instanceCheckRule: InstanceCheckRules[exports.ConnectorsTitleTypes.TokenPocket]
     },
     {
-        title: exports.ConnectorsNameTypes.Coin98,
+        title: exports.ConnectorsTitleTypes.Coin98,
         icon: Icon$3,
         connectorId: exports.ConnectorNames.Injected,
         priority: 999,
         helpHref: 'https://bit.ly/3PUMFGS',
-        instanceCheckRule: InstanceCheckRules[exports.ConnectorsNameTypes.Coin98]
+        instanceCheckRule: InstanceCheckRules[exports.ConnectorsTitleTypes.Coin98]
     },
     {
-        title: exports.ConnectorsNameTypes.WalletConnect,
+        title: exports.ConnectorsTitleTypes.WalletConnect,
         icon: Icon$6,
         connectorId: exports.ConnectorNames.WalletConnect,
         priority: 3,
         helpHref: 'https://bit.ly/3SnDkZR',
-        instanceCheckRule: InstanceCheckRules[exports.ConnectorsNameTypes.WalletConnect]
+        instanceCheckRule: InstanceCheckRules[exports.ConnectorsTitleTypes.WalletConnect]
     },
     {
-        title: exports.ConnectorsNameTypes.BinanceChain,
+        title: exports.ConnectorsTitleTypes.BinanceChain,
         icon: Icon$5,
         connectorId: exports.ConnectorNames.BSC,
         priority: 999,
         helpHref: 'https://bit.ly/3BDTLLI',
-        instanceCheckRule: InstanceCheckRules[exports.ConnectorsNameTypes.BinanceChain]
+        instanceCheckRule: InstanceCheckRules[exports.ConnectorsTitleTypes.BinanceChain]
     },
     {
-        title: exports.ConnectorsNameTypes.SafePal,
+        title: exports.ConnectorsTitleTypes.SafePal,
         icon: Icon$4,
         connectorId: exports.ConnectorNames.Injected,
         priority: 999,
         helpHref: 'https://bit.ly/3zMM7gO',
-        instanceCheckRule: InstanceCheckRules[exports.ConnectorsNameTypes.SafePal]
+        instanceCheckRule: InstanceCheckRules[exports.ConnectorsTitleTypes.SafePal]
     },
     {
-        title: exports.ConnectorsNameTypes.Coinbase,
+        title: exports.ConnectorsTitleTypes.Coinbase,
         icon: Icon$2,
         connectorId: exports.ConnectorNames.Injected,
         priority: 999,
         helpHref: 'https://bit.ly/3oLQMcr',
-        instanceCheckRule: InstanceCheckRules[exports.ConnectorsNameTypes.Coinbase]
+        instanceCheckRule: InstanceCheckRules[exports.ConnectorsTitleTypes.Coinbase]
     },
     {
-        title: exports.ConnectorsNameTypes.iToken,
+        title: exports.ConnectorsTitleTypes.iToken,
         icon: Icon$1,
         connectorId: exports.ConnectorNames.Injected,
         priority: 999,
         helpHref: 'https://bit.ly/3vwZP4O',
-        instanceCheckRule: InstanceCheckRules[exports.ConnectorsNameTypes.iToken]
+        instanceCheckRule: InstanceCheckRules[exports.ConnectorsTitleTypes.iToken]
     },
     {
-        title: exports.ConnectorsNameTypes.BitKeep,
+        title: exports.ConnectorsTitleTypes.BitKeep,
         icon: Icon,
         connectorId: exports.ConnectorNames.Injected,
         priority: 999,
         helpHref: 'https://bit.ly/3nsp57T',
-        instanceCheckRule: InstanceCheckRules[exports.ConnectorsNameTypes.BitKeep]
+        instanceCheckRule: InstanceCheckRules[exports.ConnectorsTitleTypes.BitKeep]
     },
 ];
 var connectorLocalStorageKey = "connectorId";
@@ -8505,7 +8505,7 @@ var StyledText = styled__default["default"](Text)(templateObject_2$8 || (templat
 var WalletCard = function (_a) {
     var login = _a.login, walletConfig = _a.walletConfig, onDismiss = _a.onDismiss;
     var handleClick = React.useCallback(function () {
-        login(walletConfig);
+        login(walletConfig.title, walletConfig.connectorId, walletConfig.instanceCheckRule, walletConfig.helpHref);
         localStorage.setItem(walletLocalStorageKey, walletConfig.title);
         window.localStorage.setItem(connectorLocalStorageKey, walletConfig.connectorId);
         onDismiss();
@@ -9394,7 +9394,6 @@ exports.alertVariants = variants$8;
 exports.byTextAscending = byTextAscending;
 exports.byTextDescending = byTextDescending;
 exports.connectorLocalStorageKey = connectorLocalStorageKey;
-exports.connectors = connectors;
 exports.dark = darkTheme;
 exports.darkColors = darkColors;
 exports.light = lightTheme;
