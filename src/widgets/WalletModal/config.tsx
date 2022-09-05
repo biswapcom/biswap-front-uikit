@@ -27,7 +27,7 @@ const connectors: Config[] = [
     connectorId: ConnectorNames.WalletConnect,
     priority: 2,
     helpHref: 'https://bit.ly/3BwkxWo',
-    instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.TrustWallet]
+    instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.WalletConnect]
   },
   {
     title: ConnectorsTitleTypes.MathWallet,
