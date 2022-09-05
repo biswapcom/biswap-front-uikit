@@ -1622,16 +1622,24 @@ var Icon$r = function (props) {
 
 var Icon$q = function (props) {
     return (React__default["default"].createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
-        React__default["default"].createElement("circle", { cx: "12.9989", cy: "12", r: "12", fill: "#1263F1" }),
-        React__default["default"].createElement("path", { d: "M10.3024 23.6954L13.9011 11.1V7.49999L16.2525 0.445679C21.3002 1.86321 25.0011 6.49941 25.0011 12C25.0011 18.6274 19.6285 24 13.0011 24C12.0732 24 11.1698 23.8947 10.3024 23.6954Z", fill: "#F93B5D" }),
-        React__default["default"].createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M15.6819 0.301025L5.80005 14.7771H11.9715L9.64874 23.5261C10.0046 23.6294 10.3673 23.7166 10.736 23.787L20.6115 9.83993H14.4401L16.7685 0.603966C16.4133 0.48656 16.0509 0.38529 15.6819 0.301025Z", fill: "white" })));
+        React__default["default"].createElement("g", { clipPath: "url(#clip0_1747_20886)" },
+            React__default["default"].createElement("circle", { cx: "11.9989", cy: "12", r: "12", fill: "#1263F1" }),
+            React__default["default"].createElement("path", { d: "M9.30243 23.6954L12.9011 11.1V7.49999L15.2525 0.445679C20.3002 1.86321 24.0011 6.49941 24.0011 12C24.0011 18.6274 18.6285 24 12.0011 24C11.0732 24 10.1699 23.8947 9.30243 23.6954Z", fill: "#F93B5D" }),
+            React__default["default"].createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M14.6819 0.301025L4.80006 14.7771H10.9715L8.64876 23.5261C9.00463 23.6294 9.36732 23.7166 9.73599 23.787L19.6115 9.83993H13.4401L15.7685 0.603966C15.4134 0.48656 15.0509 0.38529 14.6819 0.301025Z", fill: "white" })),
+        React__default["default"].createElement("defs", null,
+            React__default["default"].createElement("clipPath", { id: "clip0_1747_20886" },
+                React__default["default"].createElement("rect", { width: "24", height: "24", fill: "white" })))));
 };
 
 var Icon$p = function (props) {
     return (React__default["default"].createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
-        React__default["default"].createElement("circle", { cx: "12.9989", cy: "12", r: "12", fill: "#1EBB95" }),
-        React__default["default"].createElement("path", { d: "M10.3024 23.6954L13.9011 11.1V7.49999L16.2525 0.445679C21.3002 1.86321 25.0011 6.49941 25.0011 12C25.0011 18.6274 19.6285 24 13.0011 24C12.0732 24 11.1698 23.8947 10.3024 23.6954Z", fill: "#FF1C5E" }),
-        React__default["default"].createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M15.6819 0.301025L5.80005 14.7771H11.9715L9.64874 23.5261C10.0046 23.6294 10.3673 23.7166 10.736 23.787L20.6115 9.83993H14.4401L16.7685 0.603966C16.4133 0.48656 16.0509 0.38529 15.6819 0.301025Z", fill: "white" })));
+        React__default["default"].createElement("g", { clipPath: "url(#clip0_1754_20593)" },
+            React__default["default"].createElement("circle", { cx: "11.9989", cy: "12", r: "12", fill: "#1EBB95" }),
+            React__default["default"].createElement("path", { d: "M9.30241 23.6954L12.9011 11.1V7.49999L15.2525 0.445679C20.3002 1.86321 24.0011 6.49941 24.0011 12C24.0011 18.6274 18.6285 24 12.0011 24C11.0732 24 10.1698 23.8947 9.30241 23.6954Z", fill: "#FF1C5E" }),
+            React__default["default"].createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M14.6819 0.301025L4.80005 14.7771H10.9715L8.64874 23.5261C9.00461 23.6294 9.3673 23.7166 9.73598 23.787L19.6115 9.83993H13.4401L15.7685 0.603966C15.4133 0.48656 15.0509 0.38529 14.6819 0.301025Z", fill: "white" })),
+        React__default["default"].createElement("defs", null,
+            React__default["default"].createElement("clipPath", { id: "clip0_1754_20593" },
+                React__default["default"].createElement("rect", { width: "24", height: "24", fill: "white" })))));
 };
 
 var Icon$o = function (props) {
@@ -5001,7 +5009,7 @@ var BarProgress$1 = styled__default["default"].div(templateObject_4$i || (templa
 });
 var StyledInput$1 = styled__default["default"].input(templateObject_5$e || (templateObject_5$e = __makeTemplateObject(["\n  height: 20px;\n  position: relative;\n  cursor: pointer;\n  transform: translateY(-18px);\n  margin: 2px 0;\n  -webkit-tap-highlight-color: transparent;\n\n  ::-webkit-slider-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    border-radius: 50%;\n    background-image: url(", ");\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n  ::-moz-range-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    // custom moz reset\n    background-color: transparent;\n    border: 0;\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n  ::-ms-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    border-radius: 50%;\n    background-image: url(", ");\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n"], ["\n  height: 20px;\n  position: relative;\n  cursor: pointer;\n  transform: translateY(-18px);\n  margin: 2px 0;\n  -webkit-tap-highlight-color: transparent;\n\n  ::-webkit-slider-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    border-radius: 50%;\n    background-image: url(", ");\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n  ::-moz-range-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    // custom moz reset\n    background-color: transparent;\n    border: 0;\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n  ::-ms-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    border-radius: 50%;\n    background-image: url(", ");\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n"])), SliderIcon, SliderIcon);
 var BunnySlider = styled__default["default"].div(templateObject_6$9 || (templateObject_6$9 = __makeTemplateObject(["\n  position: absolute;\n  width: 100%;\n"], ["\n  position: absolute;\n  width: 100%;\n"])));
-var BreakePointsWrap = styled__default["default"].div(templateObject_7$8 || (templateObject_7$8 = __makeTemplateObject(["\n  padding: 0 9px;\n  display: flex;\n  justify-content: space-between;\n  margin-top: 16px;\n"], ["\n  padding: 0 9px;\n  display: flex;\n  justify-content: space-between;\n  margin-top: 16px;\n"])));
+var BreakPointsWrap = styled__default["default"].div(templateObject_7$8 || (templateObject_7$8 = __makeTemplateObject(["\n  padding: 0 9px;\n  display: flex;\n  justify-content: space-between;\n  margin-top: 16px;\n"], ["\n  padding: 0 9px;\n  display: flex;\n  justify-content: space-between;\n  margin-top: 16px;\n"])));
 var Point = styled__default["default"].div(templateObject_8$4 || (templateObject_8$4 = __makeTemplateObject(["\n  width: 2px;\n  height: 8px;\n  border-radius: 4px;\n  background-color: ", ";\n"], ["\n  width: 2px;\n  height: 8px;\n  border-radius: 4px;\n  background-color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.backgroundDisabled;
@@ -5010,7 +5018,7 @@ var InfoBlock = styled__default["default"].div(templateObject_9$3 || (templateOb
 var TitleText = styled__default["default"](Text)(templateObject_10$2 || (templateObject_10$2 = __makeTemplateObject(["\n  font-size: 14px;\n  line-height: 20px;\n  color: black;\n  font-weight: 600;\n"], ["\n  font-size: 14px;\n  line-height: 20px;\n  color: black;\n  font-weight: 600;\n"])));
 var PercentageAmount = styled__default["default"](Text)(templateObject_11$1 || (templateObject_11$1 = __makeTemplateObject(["\n  font-size: 16px;\n  margin: 0 4px;\n  font-weight: 600;\n"], ["\n  font-size: 16px;\n  margin: 0 4px;\n  font-weight: 600;\n"])));
 var InfoNode = styled__default["default"].div(templateObject_12$1 || (templateObject_12$1 = __makeTemplateObject(["\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n"], ["\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n"])));
-var RBPrice = styled__default["default"](Text)(templateObject_13 || (templateObject_13 = __makeTemplateObject(["\n  text-align: right;\n  font-size: 12px;\n  line-height: 16px;\n  font-weight: 600;\n  color: ", ";\n"], ["\n  text-align: right;\n  font-size: 12px;\n  line-height: 16px;\n  font-weight: 600;\n  color: ", ";\n"])), function (_a) {
+var RBPrice = styled__default["default"](Text)(templateObject_13 || (templateObject_13 = __makeTemplateObject(["\n  text-align: right;\n  font-size: 12px;\n  line-height: 16px;\n  color: ", ";\n"], ["\n  text-align: right;\n  font-size: 12px;\n  line-height: 16px;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.text;
 });
@@ -5123,7 +5131,7 @@ var Slider = function (_a) {
                 React__default["default"].createElement(BarBackground$1, null),
                 React__default["default"].createElement(BarProgress$1, { progress: progressPercentage }),
                 React__default["default"].createElement(StyledInput$1, { onMouseDown: function () { return setInfoVisible(true); }, onMouseUp: function () { return setInfoVisible(false); }, onTouchStart: function () { return setInfoVisible(true); }, onTouchEnd: function () { return setInfoVisible(false); }, type: "range", min: MIN, max: MAX, value: percent.value, onChange: handleChange, onClick: function () { return onMouseLeaveHandleChange(); } }))),
-        React__default["default"].createElement(BreakePointsWrap, null, checkPoints === null || checkPoints === void 0 ? void 0 : checkPoints.map(function (item, index) { return (React__default["default"].createElement(Point, { key: index.toString() })); })),
+        React__default["default"].createElement(BreakPointsWrap, null, checkPoints === null || checkPoints === void 0 ? void 0 : checkPoints.map(function (item, index) { return (React__default["default"].createElement(Point, { key: index.toString() })); })),
         React__default["default"].createElement(InfoBlock, null,
             React__default["default"].createElement(InfoNode, null,
                 React__default["default"].createElement(TitleText, null, "Fee return"),
