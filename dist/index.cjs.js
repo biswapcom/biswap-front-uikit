@@ -9394,6 +9394,7 @@ exports.alertVariants = variants$8;
 exports.byTextAscending = byTextAscending;
 exports.byTextDescending = byTextDescending;
 exports.connectorLocalStorageKey = connectorLocalStorageKey;
+exports.connectors = connectors;
 exports.dark = darkTheme;
 exports.darkColors = darkColors;
 exports.light = lightTheme;
