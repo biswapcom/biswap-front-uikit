@@ -138,7 +138,6 @@ const RBPrice = styled(Text)`
   text-align: right;
   font-size: 12px;
   line-height: 16px;
-  font-weight: 600;
   color: ${({ theme }) => theme.colors.text};
 `;
 
