@@ -12,7 +12,7 @@ import { Link as Link$1, useHistory } from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { TwitterShareButton, TelegramShareButton } from 'react-share';
 
-/******************************************************************************
+/*! *****************************************************************************
 Copyright (c) Microsoft Corporation.
 
 Permission to use, copy, modify, and/or distribute this software for any
@@ -6795,7 +6795,7 @@ var Modal = function (_a) {
             React.createElement(ModalTitle, null,
                 onBack && (React.createElement(ModalBackButton, { onBack: onBack, closeBtnColor: closeBtnColor })),
                 title && React.createElement(Heading, { color: "backgroundDark" }, title)),
-            !hideCloseButton && React.createElement(ModalCloseButton, { onDismiss: onDismiss })),
+            !hideCloseButton && React.createElement(ModalCloseButton, { closeBtnColor: closeBtnColor, onDismiss: onDismiss })),
         React.createElement(ModalBody$1, { p: bodyPadding !== null && bodyPadding !== void 0 ? bodyPadding : defaultBodyPadding }, children)));
 };
 
