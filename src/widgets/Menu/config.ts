@@ -305,6 +305,11 @@ export const socials = [
           label: "Espanol",
           href: "https://t.me/biswap_espanol",
         },
+        {
+          icon: "INIcon",
+          label: "India",
+          href: "https://t.me/biswap_india",
+        },
       ],
     },
   },
