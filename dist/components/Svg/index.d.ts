@@ -221,5 +221,6 @@ export { default as DEIcon } from "./Icons/Flags/DE";
 export { default as CNIcon } from "./Icons/Flags/CN";
 export { default as TRIcon } from "./Icons/Flags/TR";
 export { default as ESIcon } from "./Icons/Flags/ES";
+export { default as INIcon } from "./Icons/Flags/IN";
 export { default as Svg } from "./Svg";
 export type { SvgProps } from "./types";
