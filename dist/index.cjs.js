@@ -25,7 +25,7 @@ var debounce__default = /*#__PURE__*/_interopDefaultLegacy(debounce);
 var noop__default = /*#__PURE__*/_interopDefaultLegacy(noop);
 var throttle__default = /*#__PURE__*/_interopDefaultLegacy(throttle);
 
-/******************************************************************************
+/*! *****************************************************************************
 Copyright (c) Microsoft Corporation.
 
 Permission to use, copy, modify, and/or distribute this software for any
@@ -6808,7 +6808,7 @@ var Modal = function (_a) {
             React__default["default"].createElement(ModalTitle, null,
                 onBack && (React__default["default"].createElement(ModalBackButton, { onBack: onBack, closeBtnColor: closeBtnColor })),
                 title && React__default["default"].createElement(Heading, { color: "backgroundDark" }, title)),
-            !hideCloseButton && React__default["default"].createElement(ModalCloseButton, { onDismiss: onDismiss })),
+            !hideCloseButton && React__default["default"].createElement(ModalCloseButton, { closeBtnColor: closeBtnColor, onDismiss: onDismiss })),
         React__default["default"].createElement(ModalBody$1, { p: bodyPadding !== null && bodyPadding !== void 0 ? bodyPadding : defaultBodyPadding }, children)));
 };
 
