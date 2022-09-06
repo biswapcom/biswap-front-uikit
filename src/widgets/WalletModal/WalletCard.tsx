@@ -29,7 +29,6 @@ const WalletCard: React.FC<Props> = ({ login, walletConfig, onDismiss }) => {
   const handleClick = useCallback(() => {
     login(
       walletConfig.connectorId, 
-      walletConfig.title, 
       walletConfig.instanceCheckRule, 
       walletConfig.helpHref
     );

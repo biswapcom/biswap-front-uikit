@@ -8492,7 +8492,7 @@ var StyledText = styled(Text)(templateObject_2$8 || (templateObject_2$8 = __make
 var WalletCard = function (_a) {
     var login = _a.login, walletConfig = _a.walletConfig, onDismiss = _a.onDismiss;
     var handleClick = useCallback(function () {
-        login(walletConfig.connectorId, walletConfig.title, walletConfig.instanceCheckRule, walletConfig.helpHref);
+        login(walletConfig.connectorId, walletConfig.instanceCheckRule, walletConfig.helpHref);
         localStorage.setItem(walletLocalStorageKey, walletConfig.title);
         window.localStorage.setItem(connectorLocalStorageKey, walletConfig.connectorId);
         onDismiss();
