@@ -1622,16 +1622,24 @@ var Icon$r = function (props) {
 
 var Icon$q = function (props) {
     return (React__default["default"].createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
-        React__default["default"].createElement("circle", { cx: "12.9989", cy: "12", r: "12", fill: "#1263F1" }),
-        React__default["default"].createElement("path", { d: "M10.3024 23.6954L13.9011 11.1V7.49999L16.2525 0.445679C21.3002 1.86321 25.0011 6.49941 25.0011 12C25.0011 18.6274 19.6285 24 13.0011 24C12.0732 24 11.1698 23.8947 10.3024 23.6954Z", fill: "#F93B5D" }),
-        React__default["default"].createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M15.6819 0.301025L5.80005 14.7771H11.9715L9.64874 23.5261C10.0046 23.6294 10.3673 23.7166 10.736 23.787L20.6115 9.83993H14.4401L16.7685 0.603966C16.4133 0.48656 16.0509 0.38529 15.6819 0.301025Z", fill: "white" })));
+        React__default["default"].createElement("g", { clipPath: "url(#clip0_1747_20886)" },
+            React__default["default"].createElement("circle", { cx: "11.9989", cy: "12", r: "12", fill: "#1263F1" }),
+            React__default["default"].createElement("path", { d: "M9.30243 23.6954L12.9011 11.1V7.49999L15.2525 0.445679C20.3002 1.86321 24.0011 6.49941 24.0011 12C24.0011 18.6274 18.6285 24 12.0011 24C11.0732 24 10.1699 23.8947 9.30243 23.6954Z", fill: "#F93B5D" }),
+            React__default["default"].createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M14.6819 0.301025L4.80006 14.7771H10.9715L8.64876 23.5261C9.00463 23.6294 9.36732 23.7166 9.73599 23.787L19.6115 9.83993H13.4401L15.7685 0.603966C15.4134 0.48656 15.0509 0.38529 14.6819 0.301025Z", fill: "white" })),
+        React__default["default"].createElement("defs", null,
+            React__default["default"].createElement("clipPath", { id: "clip0_1747_20886" },
+                React__default["default"].createElement("rect", { width: "24", height: "24", fill: "white" })))));
 };
 
 var Icon$p = function (props) {
     return (React__default["default"].createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
-        React__default["default"].createElement("circle", { cx: "12.9989", cy: "12", r: "12", fill: "#1EBB95" }),
-        React__default["default"].createElement("path", { d: "M10.3024 23.6954L13.9011 11.1V7.49999L16.2525 0.445679C21.3002 1.86321 25.0011 6.49941 25.0011 12C25.0011 18.6274 19.6285 24 13.0011 24C12.0732 24 11.1698 23.8947 10.3024 23.6954Z", fill: "#FF1C5E" }),
-        React__default["default"].createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M15.6819 0.301025L5.80005 14.7771H11.9715L9.64874 23.5261C10.0046 23.6294 10.3673 23.7166 10.736 23.787L20.6115 9.83993H14.4401L16.7685 0.603966C16.4133 0.48656 16.0509 0.38529 15.6819 0.301025Z", fill: "white" })));
+        React__default["default"].createElement("g", { clipPath: "url(#clip0_1754_20593)" },
+            React__default["default"].createElement("circle", { cx: "11.9989", cy: "12", r: "12", fill: "#1EBB95" }),
+            React__default["default"].createElement("path", { d: "M9.30241 23.6954L12.9011 11.1V7.49999L15.2525 0.445679C20.3002 1.86321 24.0011 6.49941 24.0011 12C24.0011 18.6274 18.6285 24 12.0011 24C11.0732 24 10.1698 23.8947 9.30241 23.6954Z", fill: "#FF1C5E" }),
+            React__default["default"].createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M14.6819 0.301025L4.80005 14.7771H10.9715L8.64874 23.5261C9.00461 23.6294 9.3673 23.7166 9.73598 23.787L19.6115 9.83993H13.4401L15.7685 0.603966C15.4133 0.48656 15.0509 0.38529 14.6819 0.301025Z", fill: "white" })),
+        React__default["default"].createElement("defs", null,
+            React__default["default"].createElement("clipPath", { id: "clip0_1754_20593" },
+                React__default["default"].createElement("rect", { width: "24", height: "24", fill: "white" })))));
 };
 
 var Icon$o = function (props) {
@@ -3458,7 +3466,11 @@ var variants$5 = {
     SELECT_LIGHT: "selectLight",
 };
 
-var getRgba = function (hex, alpha) {
+var getRgba = function (color, theme, alpha) {
+    var hexRegEx = /^#[0-9A-F]{6}$/i;
+    var hex = hexRegEx.test(color)
+        ? color
+        : getThemeValue("colors.".concat(color), color)(theme);
     var r = parseInt(hex.slice(1, 3), 16);
     var g = parseInt(hex.slice(3, 5), 16);
     var b = parseInt(hex.slice(5, 7), 16);
@@ -3474,7 +3486,7 @@ var getBackgroundColor$1 = function (_a) {
         return "transparent";
     return variant === variants$5.SELECT
         ? theme.colors.tooltip
-        : getRgba(theme.colors.pastelBlue, 0.08);
+        : getRgba(theme.colors.pastelBlue, theme, 0.08);
 };
 var getFlat = function (_a) {
     var flatBottom = _a.flatBottom, flatTop = _a.flatTop;
@@ -3981,7 +3993,7 @@ var Wrapper$d = styled__default["default"].label(templateObject_1$15 || (templat
 });
 var CheckboxInput = styled__default["default"].input.attrs({ type: "checkbox" })(templateObject_2$G || (templateObject_2$G = __makeTemplateObject(["\n  appearance: none;\n  overflow: hidden;\n  cursor: pointer;\n  position: relative;\n  display: inline-block;\n  height: ", ";\n  width: ", ";\n  border: 2px solid transparent;\n  border-radius: 4px;\n  background-color: ", ";\n  transition: background-color 0.4s ease-in-out, border-color 0.4s ease;\n\n  &:after {\n    content: \"\";\n    position: absolute;\n    border-bottom: 2px solid;\n    border-left: 2px solid;\n    border-color: transparent;\n    top: 25%;\n    left: 0;\n    right: 0;\n    width: 65%;\n    height: 37%;\n    margin: auto;\n    transform: rotate(-50deg);\n    transition: border-color 0.2s ease-in-out;\n  }\n\n  &:hover:not(:disabled):not(:checked) {\n    border-color: ", ";\n  }\n\n  &:focus {\n    outline: none;\n  }\n\n  &:checked {\n    background-color: ", ";\n    &:after {\n      border-color: white;\n    }\n  }\n\n  &:checked + span {\n    background: ", ";\n    color: ", ";\n  }\n\n  &:disabled {\n    cursor: default;\n    opacity: 0.6;\n  }\n"], ["\n  appearance: none;\n  overflow: hidden;\n  cursor: pointer;\n  position: relative;\n  display: inline-block;\n  height: ", ";\n  width: ", ";\n  border: 2px solid transparent;\n  border-radius: 4px;\n  background-color: ", ";\n  transition: background-color 0.4s ease-in-out, border-color 0.4s ease;\n\n  &:after {\n    content: \"\";\n    position: absolute;\n    border-bottom: 2px solid;\n    border-left: 2px solid;\n    border-color: transparent;\n    top: 25%;\n    left: 0;\n    right: 0;\n    width: 65%;\n    height: 37%;\n    margin: auto;\n    transform: rotate(-50deg);\n    transition: border-color 0.2s ease-in-out;\n  }\n\n  &:hover:not(:disabled):not(:checked) {\n    border-color: ", ";\n  }\n\n  &:focus {\n    outline: none;\n  }\n\n  &:checked {\n    background-color: ", ";\n    &:after {\n      border-color: white;\n    }\n  }\n\n  &:checked + span {\n    background: ", ";\n    color: ", ";\n  }\n\n  &:disabled {\n    cursor: default;\n    opacity: 0.6;\n  }\n"])), getScale$2, getScale$2, function (_a) {
     var theme = _a.theme;
-    return getRgba(theme.colors.pastelBlue, 0.16);
+    return getRgba(theme.colors.pastelBlue, theme, 0.16);
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.success;
@@ -4997,7 +5009,7 @@ var BarProgress$1 = styled__default["default"].div(templateObject_4$i || (templa
 });
 var StyledInput$1 = styled__default["default"].input(templateObject_5$e || (templateObject_5$e = __makeTemplateObject(["\n  height: 20px;\n  position: relative;\n  cursor: pointer;\n  transform: translateY(-18px);\n  margin: 2px 0;\n  -webkit-tap-highlight-color: transparent;\n\n  ::-webkit-slider-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    border-radius: 50%;\n    background-image: url(", ");\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n  ::-moz-range-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    // custom moz reset\n    background-color: transparent;\n    border: 0;\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n  ::-ms-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    border-radius: 50%;\n    background-image: url(", ");\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n"], ["\n  height: 20px;\n  position: relative;\n  cursor: pointer;\n  transform: translateY(-18px);\n  margin: 2px 0;\n  -webkit-tap-highlight-color: transparent;\n\n  ::-webkit-slider-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    border-radius: 50%;\n    background-image: url(", ");\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n  ::-moz-range-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    // custom moz reset\n    background-color: transparent;\n    border: 0;\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n  ::-ms-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    border-radius: 50%;\n    background-image: url(", ");\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n"])), SliderIcon, SliderIcon);
 var BunnySlider = styled__default["default"].div(templateObject_6$9 || (templateObject_6$9 = __makeTemplateObject(["\n  position: absolute;\n  width: 100%;\n"], ["\n  position: absolute;\n  width: 100%;\n"])));
-var BreakePointsWrap = styled__default["default"].div(templateObject_7$8 || (templateObject_7$8 = __makeTemplateObject(["\n  padding: 0 9px;\n  display: flex;\n  justify-content: space-between;\n  margin-top: 16px;\n"], ["\n  padding: 0 9px;\n  display: flex;\n  justify-content: space-between;\n  margin-top: 16px;\n"])));
+var BreakPointsWrap = styled__default["default"].div(templateObject_7$8 || (templateObject_7$8 = __makeTemplateObject(["\n  padding: 0 9px;\n  display: flex;\n  justify-content: space-between;\n  margin-top: 16px;\n"], ["\n  padding: 0 9px;\n  display: flex;\n  justify-content: space-between;\n  margin-top: 16px;\n"])));
 var Point = styled__default["default"].div(templateObject_8$4 || (templateObject_8$4 = __makeTemplateObject(["\n  width: 2px;\n  height: 8px;\n  border-radius: 4px;\n  background-color: ", ";\n"], ["\n  width: 2px;\n  height: 8px;\n  border-radius: 4px;\n  background-color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.backgroundDisabled;
@@ -5006,7 +5018,7 @@ var InfoBlock = styled__default["default"].div(templateObject_9$3 || (templateOb
 var TitleText = styled__default["default"](Text)(templateObject_10$2 || (templateObject_10$2 = __makeTemplateObject(["\n  font-size: 14px;\n  line-height: 20px;\n  color: black;\n  font-weight: 600;\n"], ["\n  font-size: 14px;\n  line-height: 20px;\n  color: black;\n  font-weight: 600;\n"])));
 var PercentageAmount = styled__default["default"](Text)(templateObject_11$1 || (templateObject_11$1 = __makeTemplateObject(["\n  font-size: 16px;\n  margin: 0 4px;\n  font-weight: 600;\n"], ["\n  font-size: 16px;\n  margin: 0 4px;\n  font-weight: 600;\n"])));
 var InfoNode = styled__default["default"].div(templateObject_12$1 || (templateObject_12$1 = __makeTemplateObject(["\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n"], ["\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n"])));
-var RBPrice = styled__default["default"](Text)(templateObject_13 || (templateObject_13 = __makeTemplateObject(["\n  text-align: right;\n  font-size: 12px;\n  line-height: 16px;\n  font-weight: 600;\n  color: ", ";\n"], ["\n  text-align: right;\n  font-size: 12px;\n  line-height: 16px;\n  font-weight: 600;\n  color: ", ";\n"])), function (_a) {
+var RBPrice = styled__default["default"](Text)(templateObject_13 || (templateObject_13 = __makeTemplateObject(["\n  text-align: right;\n  font-size: 12px;\n  line-height: 16px;\n  color: ", ";\n"], ["\n  text-align: right;\n  font-size: 12px;\n  line-height: 16px;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.text;
 });
@@ -5119,7 +5131,7 @@ var Slider = function (_a) {
                 React__default["default"].createElement(BarBackground$1, null),
                 React__default["default"].createElement(BarProgress$1, { progress: progressPercentage }),
                 React__default["default"].createElement(StyledInput$1, { onMouseDown: function () { return setInfoVisible(true); }, onMouseUp: function () { return setInfoVisible(false); }, onTouchStart: function () { return setInfoVisible(true); }, onTouchEnd: function () { return setInfoVisible(false); }, type: "range", min: MIN, max: MAX, value: percent.value, onChange: handleChange, onClick: function () { return onMouseLeaveHandleChange(); } }))),
-        React__default["default"].createElement(BreakePointsWrap, null, checkPoints === null || checkPoints === void 0 ? void 0 : checkPoints.map(function (item, index) { return (React__default["default"].createElement(Point, { key: index.toString() })); })),
+        React__default["default"].createElement(BreakPointsWrap, null, checkPoints === null || checkPoints === void 0 ? void 0 : checkPoints.map(function (item, index) { return (React__default["default"].createElement(Point, { key: index.toString() })); })),
         React__default["default"].createElement(InfoBlock, null,
             React__default["default"].createElement(InfoNode, null,
                 React__default["default"].createElement(TitleText, null, "Fee return"),
@@ -6073,10 +6085,10 @@ Toggle.defaultProps = {
 var getBadgeBg = function (_a) {
     var _b = _a.badgeType, badgeType = _b === void 0 ? "light" : _b, theme = _a.theme;
     if (badgeType === "active") {
-        return getRgba(theme.colors.success, 0.16);
+        return getRgba(theme.colors.success, theme, 0.16);
     }
     if (badgeType === "notActive") {
-        return getRgba(theme.colors.secondary, 0.16);
+        return getRgba(theme.colors.secondary, theme, 0.16);
     }
     if (badgeType === "success") {
         return theme.colors.success;
@@ -6094,7 +6106,7 @@ var getBadgeBg = function (_a) {
         return theme.colors.boost;
     }
     if (badgeType === "core") {
-        return getRgba(theme.colors.primary, 0.16);
+        return getRgba(theme.colors.primary, theme, 0.16);
     }
     if (badgeType === "light") {
         return theme.colors.disabled;
@@ -6268,7 +6280,7 @@ var templateObject_1$B;
 var getBackgroundColor = function (_a) {
     var theme = _a.theme, variant = _a.variant;
     return variant === slideMenuVariants.LIGHT
-        ? getRgba(theme.colors.pastelBlue, 0.08)
+        ? getRgba(theme.colors.pastelBlue, theme, 0.08)
         : theme.colors.tooltip;
 };
 var getBorderRadius = function (_a) {
@@ -6313,7 +6325,7 @@ var Selection = styled__default["default"].div(templateObject_3$h || (templateOb
 }, function (_a) {
     var theme = _a.theme, variant = _a.variant;
     return variant === slideMenuVariants.LIGHT &&
-        "box-shadow: 0 2px 4px ".concat(getRgba(theme.colors.backgroundDark, 0.08));
+        "box-shadow: 0 2px 4px ".concat(getRgba(theme.colors.backgroundDark, theme, 0.08));
 });
 var SlideButtonMenu = function (_a) {
     var _b = _a.customClass, customClass = _b === void 0 ? "" : _b, _c = _a.activeIndex, activeIndex = _c === void 0 ? 0 : _c, _d = _a.scale, scale = _d === void 0 ? slideMenuScales.SM : _d, _e = _a.variant, variant = _e === void 0 ? slideMenuVariants.DARK : _e, onItemClick = _a.onItemClick, disabled = _a.disabled, _f = _a.fullWidth, fullWidth = _f === void 0 ? false : _f, _g = _a.menuTitles, menuTitles = _g === void 0 ? [""] : _g, props = __rest(_a, ["customClass", "activeIndex", "scale", "variant", "onItemClick", "disabled", "fullWidth", "menuTitles"]);
@@ -6742,6 +6754,16 @@ var useTable = function (columns, data, options) {
     };
 };
 
+// eslint-disable-next-line import/prefer-default-export
+var formatSpacingAmount = function (x) {
+    if (x) {
+        var parts = x.toString().split(".");
+        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+        return parts.join(".");
+    }
+    return null;
+};
+
 var ModalHeader = styled__default["default"].div(templateObject_1$y || (templateObject_1$y = __makeTemplateObject(["\n  display: flex;\n  align-items: flex-start;\n  padding: 24px 16px;\n\n  ", " {\n    padding: 32px 32px 24px;\n  }\n"], ["\n  display: flex;\n  align-items: flex-start;\n  padding: 24px 16px;\n\n  ", " {\n    padding: 32px 32px 24px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
@@ -6786,7 +6808,7 @@ var Modal = function (_a) {
             React__default["default"].createElement(ModalTitle, null,
                 onBack && (React__default["default"].createElement(ModalBackButton, { onBack: onBack, closeBtnColor: closeBtnColor })),
                 title && React__default["default"].createElement(Heading, { color: "backgroundDark" }, title)),
-            !hideCloseButton && React__default["default"].createElement(ModalCloseButton, { onDismiss: onDismiss })),
+            !hideCloseButton && React__default["default"].createElement(ModalCloseButton, { closeBtnColor: closeBtnColor, onDismiss: onDismiss })),
         React__default["default"].createElement(ModalBody$1, { p: bodyPadding !== null && bodyPadding !== void 0 ? bodyPadding : defaultBodyPadding }, children)));
 };
 
@@ -6919,16 +6941,6 @@ var useModal = function (modal, closeOnOverlayClick, updateOnPropsChange, modalI
         setCloseOnOverlayClick(closeOnOverlayClick);
     }, [closeOnOverlayClick, setCloseOnOverlayClick]);
     return [onPresentCallback, onDismiss];
-};
-
-// eslint-disable-next-line import/prefer-default-export
-var formatSpacingAmount = function (x) {
-    if (x) {
-        var parts = x.toString().split(".");
-        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-        return parts.join(".");
-    }
-    return null;
 };
 
 // import { formatSpacingAmount } from "../../../util/formatSpacingAmount";
@@ -8004,7 +8016,7 @@ var Marker = styled__default["default"](Box)(templateObject_1$h || (templateObje
     return theme.colors.success;
 }, function (_a) {
     var theme = _a.theme;
-    return getRgba(theme.colors.success, 0.7);
+    return getRgba(theme.colors.success, theme, 0.7);
 });
 var templateObject_1$h;
 
@@ -9396,6 +9408,12 @@ exports.byTextDescending = byTextDescending;
 exports.connectorLocalStorageKey = connectorLocalStorageKey;
 exports.dark = darkTheme;
 exports.darkColors = darkColors;
+exports.formatSpacingAmount = formatSpacingAmount;
+exports.getExternalLinkProps = getExternalLinkProps;
+exports.getPortalRoot = getPortalRoot;
+exports.getRgba = getRgba;
+exports.getThemeValue = getThemeValue;
+exports.isTouchDevice = isTouchDevice;
 exports.light = lightTheme;
 exports.lightColors = lightColors;
 exports.makeRender = makeRender;

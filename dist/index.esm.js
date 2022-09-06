@@ -1609,16 +1609,24 @@ var Icon$r = function (props) {
 
 var Icon$q = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
-        React.createElement("circle", { cx: "12.9989", cy: "12", r: "12", fill: "#1263F1" }),
-        React.createElement("path", { d: "M10.3024 23.6954L13.9011 11.1V7.49999L16.2525 0.445679C21.3002 1.86321 25.0011 6.49941 25.0011 12C25.0011 18.6274 19.6285 24 13.0011 24C12.0732 24 11.1698 23.8947 10.3024 23.6954Z", fill: "#F93B5D" }),
-        React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M15.6819 0.301025L5.80005 14.7771H11.9715L9.64874 23.5261C10.0046 23.6294 10.3673 23.7166 10.736 23.787L20.6115 9.83993H14.4401L16.7685 0.603966C16.4133 0.48656 16.0509 0.38529 15.6819 0.301025Z", fill: "white" })));
+        React.createElement("g", { clipPath: "url(#clip0_1747_20886)" },
+            React.createElement("circle", { cx: "11.9989", cy: "12", r: "12", fill: "#1263F1" }),
+            React.createElement("path", { d: "M9.30243 23.6954L12.9011 11.1V7.49999L15.2525 0.445679C20.3002 1.86321 24.0011 6.49941 24.0011 12C24.0011 18.6274 18.6285 24 12.0011 24C11.0732 24 10.1699 23.8947 9.30243 23.6954Z", fill: "#F93B5D" }),
+            React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M14.6819 0.301025L4.80006 14.7771H10.9715L8.64876 23.5261C9.00463 23.6294 9.36732 23.7166 9.73599 23.787L19.6115 9.83993H13.4401L15.7685 0.603966C15.4134 0.48656 15.0509 0.38529 14.6819 0.301025Z", fill: "white" })),
+        React.createElement("defs", null,
+            React.createElement("clipPath", { id: "clip0_1747_20886" },
+                React.createElement("rect", { width: "24", height: "24", fill: "white" })))));
 };
 
 var Icon$p = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
-        React.createElement("circle", { cx: "12.9989", cy: "12", r: "12", fill: "#1EBB95" }),
-        React.createElement("path", { d: "M10.3024 23.6954L13.9011 11.1V7.49999L16.2525 0.445679C21.3002 1.86321 25.0011 6.49941 25.0011 12C25.0011 18.6274 19.6285 24 13.0011 24C12.0732 24 11.1698 23.8947 10.3024 23.6954Z", fill: "#FF1C5E" }),
-        React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M15.6819 0.301025L5.80005 14.7771H11.9715L9.64874 23.5261C10.0046 23.6294 10.3673 23.7166 10.736 23.787L20.6115 9.83993H14.4401L16.7685 0.603966C16.4133 0.48656 16.0509 0.38529 15.6819 0.301025Z", fill: "white" })));
+        React.createElement("g", { clipPath: "url(#clip0_1754_20593)" },
+            React.createElement("circle", { cx: "11.9989", cy: "12", r: "12", fill: "#1EBB95" }),
+            React.createElement("path", { d: "M9.30241 23.6954L12.9011 11.1V7.49999L15.2525 0.445679C20.3002 1.86321 24.0011 6.49941 24.0011 12C24.0011 18.6274 18.6285 24 12.0011 24C11.0732 24 10.1698 23.8947 9.30241 23.6954Z", fill: "#FF1C5E" }),
+            React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M14.6819 0.301025L4.80005 14.7771H10.9715L8.64874 23.5261C9.00461 23.6294 9.3673 23.7166 9.73598 23.787L19.6115 9.83993H13.4401L15.7685 0.603966C15.4133 0.48656 15.0509 0.38529 14.6819 0.301025Z", fill: "white" })),
+        React.createElement("defs", null,
+            React.createElement("clipPath", { id: "clip0_1754_20593" },
+                React.createElement("rect", { width: "24", height: "24", fill: "white" })))));
 };
 
 var Icon$o = function (props) {
@@ -3445,7 +3453,11 @@ var variants$5 = {
     SELECT_LIGHT: "selectLight",
 };
 
-var getRgba = function (hex, alpha) {
+var getRgba = function (color, theme, alpha) {
+    var hexRegEx = /^#[0-9A-F]{6}$/i;
+    var hex = hexRegEx.test(color)
+        ? color
+        : getThemeValue("colors.".concat(color), color)(theme);
     var r = parseInt(hex.slice(1, 3), 16);
     var g = parseInt(hex.slice(3, 5), 16);
     var b = parseInt(hex.slice(5, 7), 16);
@@ -3461,7 +3473,7 @@ var getBackgroundColor$1 = function (_a) {
         return "transparent";
     return variant === variants$5.SELECT
         ? theme.colors.tooltip
-        : getRgba(theme.colors.pastelBlue, 0.08);
+        : getRgba(theme.colors.pastelBlue, theme, 0.08);
 };
 var getFlat = function (_a) {
     var flatBottom = _a.flatBottom, flatTop = _a.flatTop;
@@ -3968,7 +3980,7 @@ var Wrapper$d = styled.label(templateObject_1$15 || (templateObject_1$15 = __mak
 });
 var CheckboxInput = styled.input.attrs({ type: "checkbox" })(templateObject_2$G || (templateObject_2$G = __makeTemplateObject(["\n  appearance: none;\n  overflow: hidden;\n  cursor: pointer;\n  position: relative;\n  display: inline-block;\n  height: ", ";\n  width: ", ";\n  border: 2px solid transparent;\n  border-radius: 4px;\n  background-color: ", ";\n  transition: background-color 0.4s ease-in-out, border-color 0.4s ease;\n\n  &:after {\n    content: \"\";\n    position: absolute;\n    border-bottom: 2px solid;\n    border-left: 2px solid;\n    border-color: transparent;\n    top: 25%;\n    left: 0;\n    right: 0;\n    width: 65%;\n    height: 37%;\n    margin: auto;\n    transform: rotate(-50deg);\n    transition: border-color 0.2s ease-in-out;\n  }\n\n  &:hover:not(:disabled):not(:checked) {\n    border-color: ", ";\n  }\n\n  &:focus {\n    outline: none;\n  }\n\n  &:checked {\n    background-color: ", ";\n    &:after {\n      border-color: white;\n    }\n  }\n\n  &:checked + span {\n    background: ", ";\n    color: ", ";\n  }\n\n  &:disabled {\n    cursor: default;\n    opacity: 0.6;\n  }\n"], ["\n  appearance: none;\n  overflow: hidden;\n  cursor: pointer;\n  position: relative;\n  display: inline-block;\n  height: ", ";\n  width: ", ";\n  border: 2px solid transparent;\n  border-radius: 4px;\n  background-color: ", ";\n  transition: background-color 0.4s ease-in-out, border-color 0.4s ease;\n\n  &:after {\n    content: \"\";\n    position: absolute;\n    border-bottom: 2px solid;\n    border-left: 2px solid;\n    border-color: transparent;\n    top: 25%;\n    left: 0;\n    right: 0;\n    width: 65%;\n    height: 37%;\n    margin: auto;\n    transform: rotate(-50deg);\n    transition: border-color 0.2s ease-in-out;\n  }\n\n  &:hover:not(:disabled):not(:checked) {\n    border-color: ", ";\n  }\n\n  &:focus {\n    outline: none;\n  }\n\n  &:checked {\n    background-color: ", ";\n    &:after {\n      border-color: white;\n    }\n  }\n\n  &:checked + span {\n    background: ", ";\n    color: ", ";\n  }\n\n  &:disabled {\n    cursor: default;\n    opacity: 0.6;\n  }\n"])), getScale$2, getScale$2, function (_a) {
     var theme = _a.theme;
-    return getRgba(theme.colors.pastelBlue, 0.16);
+    return getRgba(theme.colors.pastelBlue, theme, 0.16);
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.success;
@@ -4984,7 +4996,7 @@ var BarProgress$1 = styled.div(templateObject_4$i || (templateObject_4$i = __mak
 });
 var StyledInput$1 = styled.input(templateObject_5$e || (templateObject_5$e = __makeTemplateObject(["\n  height: 20px;\n  position: relative;\n  cursor: pointer;\n  transform: translateY(-18px);\n  margin: 2px 0;\n  -webkit-tap-highlight-color: transparent;\n\n  ::-webkit-slider-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    border-radius: 50%;\n    background-image: url(", ");\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n  ::-moz-range-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    // custom moz reset\n    background-color: transparent;\n    border: 0;\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n  ::-ms-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    border-radius: 50%;\n    background-image: url(", ");\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n"], ["\n  height: 20px;\n  position: relative;\n  cursor: pointer;\n  transform: translateY(-18px);\n  margin: 2px 0;\n  -webkit-tap-highlight-color: transparent;\n\n  ::-webkit-slider-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    border-radius: 50%;\n    background-image: url(", ");\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n  ::-moz-range-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    // custom moz reset\n    background-color: transparent;\n    border: 0;\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n  ::-ms-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    border-radius: 50%;\n    background-image: url(", ");\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n"])), SliderIcon, SliderIcon);
 var BunnySlider = styled.div(templateObject_6$9 || (templateObject_6$9 = __makeTemplateObject(["\n  position: absolute;\n  width: 100%;\n"], ["\n  position: absolute;\n  width: 100%;\n"])));
-var BreakePointsWrap = styled.div(templateObject_7$8 || (templateObject_7$8 = __makeTemplateObject(["\n  padding: 0 9px;\n  display: flex;\n  justify-content: space-between;\n  margin-top: 16px;\n"], ["\n  padding: 0 9px;\n  display: flex;\n  justify-content: space-between;\n  margin-top: 16px;\n"])));
+var BreakPointsWrap = styled.div(templateObject_7$8 || (templateObject_7$8 = __makeTemplateObject(["\n  padding: 0 9px;\n  display: flex;\n  justify-content: space-between;\n  margin-top: 16px;\n"], ["\n  padding: 0 9px;\n  display: flex;\n  justify-content: space-between;\n  margin-top: 16px;\n"])));
 var Point = styled.div(templateObject_8$4 || (templateObject_8$4 = __makeTemplateObject(["\n  width: 2px;\n  height: 8px;\n  border-radius: 4px;\n  background-color: ", ";\n"], ["\n  width: 2px;\n  height: 8px;\n  border-radius: 4px;\n  background-color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.backgroundDisabled;
@@ -4993,7 +5005,7 @@ var InfoBlock = styled.div(templateObject_9$3 || (templateObject_9$3 = __makeTem
 var TitleText = styled(Text)(templateObject_10$2 || (templateObject_10$2 = __makeTemplateObject(["\n  font-size: 14px;\n  line-height: 20px;\n  color: black;\n  font-weight: 600;\n"], ["\n  font-size: 14px;\n  line-height: 20px;\n  color: black;\n  font-weight: 600;\n"])));
 var PercentageAmount = styled(Text)(templateObject_11$1 || (templateObject_11$1 = __makeTemplateObject(["\n  font-size: 16px;\n  margin: 0 4px;\n  font-weight: 600;\n"], ["\n  font-size: 16px;\n  margin: 0 4px;\n  font-weight: 600;\n"])));
 var InfoNode = styled.div(templateObject_12$1 || (templateObject_12$1 = __makeTemplateObject(["\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n"], ["\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n"])));
-var RBPrice = styled(Text)(templateObject_13 || (templateObject_13 = __makeTemplateObject(["\n  text-align: right;\n  font-size: 12px;\n  line-height: 16px;\n  font-weight: 600;\n  color: ", ";\n"], ["\n  text-align: right;\n  font-size: 12px;\n  line-height: 16px;\n  font-weight: 600;\n  color: ", ";\n"])), function (_a) {
+var RBPrice = styled(Text)(templateObject_13 || (templateObject_13 = __makeTemplateObject(["\n  text-align: right;\n  font-size: 12px;\n  line-height: 16px;\n  color: ", ";\n"], ["\n  text-align: right;\n  font-size: 12px;\n  line-height: 16px;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.text;
 });
@@ -5106,7 +5118,7 @@ var Slider = function (_a) {
                 React.createElement(BarBackground$1, null),
                 React.createElement(BarProgress$1, { progress: progressPercentage }),
                 React.createElement(StyledInput$1, { onMouseDown: function () { return setInfoVisible(true); }, onMouseUp: function () { return setInfoVisible(false); }, onTouchStart: function () { return setInfoVisible(true); }, onTouchEnd: function () { return setInfoVisible(false); }, type: "range", min: MIN, max: MAX, value: percent.value, onChange: handleChange, onClick: function () { return onMouseLeaveHandleChange(); } }))),
-        React.createElement(BreakePointsWrap, null, checkPoints === null || checkPoints === void 0 ? void 0 : checkPoints.map(function (item, index) { return (React.createElement(Point, { key: index.toString() })); })),
+        React.createElement(BreakPointsWrap, null, checkPoints === null || checkPoints === void 0 ? void 0 : checkPoints.map(function (item, index) { return (React.createElement(Point, { key: index.toString() })); })),
         React.createElement(InfoBlock, null,
             React.createElement(InfoNode, null,
                 React.createElement(TitleText, null, "Fee return"),
@@ -6060,10 +6072,10 @@ Toggle.defaultProps = {
 var getBadgeBg = function (_a) {
     var _b = _a.badgeType, badgeType = _b === void 0 ? "light" : _b, theme = _a.theme;
     if (badgeType === "active") {
-        return getRgba(theme.colors.success, 0.16);
+        return getRgba(theme.colors.success, theme, 0.16);
     }
     if (badgeType === "notActive") {
-        return getRgba(theme.colors.secondary, 0.16);
+        return getRgba(theme.colors.secondary, theme, 0.16);
     }
     if (badgeType === "success") {
         return theme.colors.success;
@@ -6081,7 +6093,7 @@ var getBadgeBg = function (_a) {
         return theme.colors.boost;
     }
     if (badgeType === "core") {
-        return getRgba(theme.colors.primary, 0.16);
+        return getRgba(theme.colors.primary, theme, 0.16);
     }
     if (badgeType === "light") {
         return theme.colors.disabled;
@@ -6255,7 +6267,7 @@ var templateObject_1$B;
 var getBackgroundColor = function (_a) {
     var theme = _a.theme, variant = _a.variant;
     return variant === slideMenuVariants.LIGHT
-        ? getRgba(theme.colors.pastelBlue, 0.08)
+        ? getRgba(theme.colors.pastelBlue, theme, 0.08)
         : theme.colors.tooltip;
 };
 var getBorderRadius = function (_a) {
@@ -6300,7 +6312,7 @@ var Selection = styled.div(templateObject_3$h || (templateObject_3$h = __makeTem
 }, function (_a) {
     var theme = _a.theme, variant = _a.variant;
     return variant === slideMenuVariants.LIGHT &&
-        "box-shadow: 0 2px 4px ".concat(getRgba(theme.colors.backgroundDark, 0.08));
+        "box-shadow: 0 2px 4px ".concat(getRgba(theme.colors.backgroundDark, theme, 0.08));
 });
 var SlideButtonMenu = function (_a) {
     var _b = _a.customClass, customClass = _b === void 0 ? "" : _b, _c = _a.activeIndex, activeIndex = _c === void 0 ? 0 : _c, _d = _a.scale, scale = _d === void 0 ? slideMenuScales.SM : _d, _e = _a.variant, variant = _e === void 0 ? slideMenuVariants.DARK : _e, onItemClick = _a.onItemClick, disabled = _a.disabled, _f = _a.fullWidth, fullWidth = _f === void 0 ? false : _f, _g = _a.menuTitles, menuTitles = _g === void 0 ? [""] : _g, props = __rest(_a, ["customClass", "activeIndex", "scale", "variant", "onItemClick", "disabled", "fullWidth", "menuTitles"]);
@@ -6729,6 +6741,16 @@ var useTable = function (columns, data, options) {
     };
 };
 
+// eslint-disable-next-line import/prefer-default-export
+var formatSpacingAmount = function (x) {
+    if (x) {
+        var parts = x.toString().split(".");
+        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+        return parts.join(".");
+    }
+    return null;
+};
+
 var ModalHeader = styled.div(templateObject_1$y || (templateObject_1$y = __makeTemplateObject(["\n  display: flex;\n  align-items: flex-start;\n  padding: 24px 16px;\n\n  ", " {\n    padding: 32px 32px 24px;\n  }\n"], ["\n  display: flex;\n  align-items: flex-start;\n  padding: 24px 16px;\n\n  ", " {\n    padding: 32px 32px 24px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
@@ -6773,7 +6795,7 @@ var Modal = function (_a) {
             React.createElement(ModalTitle, null,
                 onBack && (React.createElement(ModalBackButton, { onBack: onBack, closeBtnColor: closeBtnColor })),
                 title && React.createElement(Heading, { color: "backgroundDark" }, title)),
-            !hideCloseButton && React.createElement(ModalCloseButton, { onDismiss: onDismiss })),
+            !hideCloseButton && React.createElement(ModalCloseButton, { closeBtnColor: closeBtnColor, onDismiss: onDismiss })),
         React.createElement(ModalBody$1, { p: bodyPadding !== null && bodyPadding !== void 0 ? bodyPadding : defaultBodyPadding }, children)));
 };
 
@@ -6906,16 +6928,6 @@ var useModal = function (modal, closeOnOverlayClick, updateOnPropsChange, modalI
         setCloseOnOverlayClick(closeOnOverlayClick);
     }, [closeOnOverlayClick, setCloseOnOverlayClick]);
     return [onPresentCallback, onDismiss];
-};
-
-// eslint-disable-next-line import/prefer-default-export
-var formatSpacingAmount = function (x) {
-    if (x) {
-        var parts = x.toString().split(".");
-        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-        return parts.join(".");
-    }
-    return null;
 };
 
 // import { formatSpacingAmount } from "../../../util/formatSpacingAmount";
@@ -7991,7 +8003,7 @@ var Marker = styled(Box)(templateObject_1$h || (templateObject_1$h = __makeTempl
     return theme.colors.success;
 }, function (_a) {
     var theme = _a.theme;
-    return getRgba(theme.colors.success, 0.7);
+    return getRgba(theme.colors.success, theme, 0.7);
 });
 var templateObject_1$h;
 
@@ -9079,4 +9091,4 @@ var ResetCSS = createGlobalStyle(templateObject_1 || (templateObject_1 = __makeT
 });
 var templateObject_1;
 
-export { Icon$Z as AboutBSWOpacityIcon, Icon$_ as AboutBSWSolidIcon, Alert, Icon$13 as AnalyticsOpacityIcon, Icon$14 as AnalyticsSolidIcon, Icon$3k as ArrowDownIcon, Icon$v as ArrowFiguredIcon, Icon$3l as ArrowLeftIcon, Icon$3n as ArrowRightIcon, Icon$3h as ArrowSkipLeftIcon, Icon$3i as ArrowSkipRightIcon, Icon$3j as ArrowUpForwardIcon, Icon$3m as ArrowUpIcon, Icon$2b as AuctionIcon, Icon$29 as AuctionOpacityIcon, Icon$2a as AuctionSolidIcon, Icon$M as AuditProtectionOpacityIcon, Icon$L as AuditProtectionSolidIcon, Icon$J as AuditSearchOpacityIcon, Icon$K as AuditSearchSolidIcon, Icon$1G as AutoRenewAnimateIcon, Icon$1J as AutoRenewIcon, Icon$1H as AutoRenewOpacityAnimateIcon, Icon$1K as AutoRenewOpacityIcon, Icon$1I as AutoRenewSolidAnimateIcon, Icon$1L as AutoRenewSolidIcon, Icon$w as AvalancheIcon, Icon$h as BDIcon, Icon$y as BSCIcon, BackgroundImage, Badge, BalanceInput, GridLayout$1 as BaseLayout, BaseMenu, Icon$2A as BellOpacityIcon, Icon$2B as BellSolidIcon, Icon$1$ as BlockIcon, Icon$1_ as BlockOpacityIcon, Icon$1Z as BlockSolidIcon, Icon$2h as BookIcon, Icon$2f as BookOpacityIcon, Icon$2g as BookSolidIcon, BottomDrawer, Box, Breadcrumbs, Icon$3A as BscBlackRoundIcon, Icon$1w as BurgerCloseIcon, Icon$1x as BurgerIcon, Button, ButtonMenu, ButtonMenuItem, Icon$d as CNIcon, Icon$2_ as CalculateIcon, Icon$30 as CalculateOpacityIcon, Icon$2$ as CalculateSolidIcon, Card, CardBody, CardFooter, CardHeader, CardRibbon, Icon$2J as CardViewIcon, GridLayout as CardsLayout, Icon$m as CerticAuditedIcon, Icon$$ as CharityOpacityIcon, Icon$10 as CharitySolidIcon, Icon$2G as CheckIcon, Icon$2E as CheckOpacityIcon, Icon$2F as CheckSolidIcon, Checkbox, Icon$3y as ChevronDownCircleOpacityIcon, Icon$3z as ChevronDownCircleSolidIcon, Icon$3x as ChevronDownIcon, Icon$3s as ChevronLeftCircleOpacityIcon, Icon$3t as ChevronLeftCircleSolidIcon, Icon$3r as ChevronLeftIcon, Icon$3v as ChevronRightCircleOpacityIcon, Icon$3w as ChevronRightCircleSolidIcon, Icon$3u as ChevronRightIcon, Icon$3o as ChevronUpCircleOpacityIcon, Icon$3p as ChevronUpCircleSolidIcon, Icon$3g as ChevronUpDoubleIcon, Icon$3q as ChevronUpIcon, Icon$3f as ChevronUpTripleIcon, ClickableElementContainer, Icon$34 as CloseCircleOpacityIcon, Icon$33 as CloseCircleSolidIcon, Icon$35 as CloseIcon, ConnectorNames, ConnectorsTitleTypes, Icon$2q as CopyIcon, Icon$2o as CopyOpacityIcon, Icon$2p as CopySolidIcon, Icon$e as DEIcon, Icon$N as DocsOpacityIcon, Icon$O as DocsSolidIcon, Icon$3D as DownloadIcon, Dropdown, DropdownMenuItemType, Icon$b as ESIcon, Icon$1R as EditIcon, Icon$1Q as EditOpacityIcon, Icon$1P as EditSolidIcon, Icon$1p as ExchangeOpacityIcon, Icon$1q as ExchangeSolidIcon, ExpandableButton, ExpandableLabel, Icon$1n as ExpertModeOpacityIcon, Icon$1o as ExpertModeSolidIcon, Icon$2H as EyeCloseIcon, Icon$2I as EyeOpenIcon, Icon$g as FRIcon, Icon$1j as FarmsOpacityIcon, Icon$1k as FarmsSolidIcon, Icon$2M as FavoriteEmptyIcon, Icon$2L as FavoriteSolidIcon, Icon$2e as FileIcon, Icon$2c as FileOpacityIcon, Icon$2d as FileSolidIcon, Icon$2k as FilterIcon, Icon$2i as FilterOpacityIcon, Icon$2j as FilterSolidIcon, Icon$2W as FireIcon, Icon$2U as FireOpacityIcon, Icon$2V as FireSolidIcon, Icon$15 as FixedStakingOpacityIcon, Icon$16 as FixedStakingSolidIcon, Icon$22 as FlagIcon, Icon$21 as FlagOpacityIcon, Icon$20 as FlagSolidIcon, Flex, Icon$u as GameFiIcon, Icon$1N as GasIcon, Icon$t as GiftIcon, Icon$1d as GobletOpacityIcon, Icon$1e as GobletSolidIcon, Grid, Heading, Icon$2X as HelpIcon, Icon$2Z as HelpOpacityIcon, Icon$2Y as HelpSolidIcon, Icon$1A as HistoryIcon, Icon$3B as HourglassIcon, Icon$k as IDIcon, IconButton, Icon$1f as IdoOpacityIcon, Icon$1g as IdoSolidIcon, Image, Icon$2T as InfoIcon, Icon$2R as InfoOpacityIcon, Icon$2S as InfoSolidIcon, InlineMenu, InlineMenuContainer, Input$1 as Input, InputGroup, Icon$I as InstagramIcon, InstanceCheckRules, ItemTypes, Icon$19 as LaunchpadOpacityIcon, Icon$1a as LaunchpadSolidIcon, Link, LinkExternal, Icon$1r as LiquidityOpacityIcon, Icon$1s as LiquiditySolidIcon, Icon$1C as ListOpacityIcon, Icon$1B as ListSolidIcon, Icon$2K as ListViewIcon, Icon$3F as LogoIcon, Icon$3E as LogoWithTextIcon, Icon$1b as LotteryOpacityIcon, Icon$1c as LotterySolidIcon, Icon$s as MarketIcon, Icon$1O as MedalIcon, Icon$H as MediumIcon, Menu, Icon$r as MetamaskIcon, Icon$39 as MinusCircleOpacityIcon, Icon$3a as MinusCircleSolidIcon, Icon$3b as MinusIcon, Modal, ModalBackButton, ModalBody$1 as ModalBody, ModalCloseButton, ModalContainer, ModalHeader, ModalProvider, ModalTitle, ModalWithBackground, Icon$1S as More2Icon, Icon$1V as MoreHorizontalIcon, Icon$1T as MoreHorizontalOpacityIcon, Icon$1U as MoreHorizontalSolidIcon, Icon$1Y as MoreVerticalIcon, Icon$1W as MoreVerticalOpacityIcon, Icon$1X as MoreVerticalSolidIcon, Icon$3C as MouseIcon, Icon$S as MultiPoolOpacityIcon, Icon$R as MultiPoolSolidIcon, Icon$17 as NFTEarnOpacityIcon, Icon$18 as NFTEarnSolidIcon, Icon$P as NewsOpacityIcon, Icon$Q as NewsSolidIcon, NotificationDot, Icon$2t as OptionsOpacityIcon, Icon$2u as OptionsSolidIcon, Overlay, Icon$f as PTIcon, PercentSlider, Icon$1M as PlayIcon, Icon$3c as PlusCircleOpacityIcon, Icon$3d as PlusCircleSolidIcon, Icon$3e as PlusIcon, Icon$x as PolygonIcon, Icon$1l as PoolsOpacityIcon, Icon$1m as PoolsSolidIcon, Icon$1y as ProductsOpacityIcon, Icon$1z as ProductsSolidIcon, ProfileAvatar, Icon$V as Program10mOpacityIcon, Icon$W as Program10mSolidIcon, Progress, Bar as ProgressBar, Icon$q as RBIcon, Icon$j as RUIcon, Radio, Icon$B as Rank1Icon, Icon$A as Rank2Icon, Icon$z as Rank3Icon, Icon$G as RedditIcon, Icon$1h as ReferralOpacityIcon, Icon$1i as ReferralSolidIcon, Icon$1F as RefreshIcon, Icon$1E as RefreshOpacityIcon, Icon$1D as RefreshSolidIcon, ResetCSS, Icon$p as SEIcon, Icon$2y as SearchOpacityIcon, Icon$2z as SearchSolidIcon, Icon$2n as ShareIcon, Icon$2l as ShareOpacityIcon, Icon$2m as ShareSolidIcon, Skeleton, SlideButtonMenu, SlideButtonMenuItem, Slider, Icon$T as SpaceAgentOpacityIcon, Icon$U as SpaceAgentSolidIcon, Icon$2x as StarIcon, Icon$2w as StarOpacityIcon, Icon$2v as StarSolidIcon, SubMenu, SubMenuContainer, SubMenuItem, SubMenuItems, Svg, Icon$2Q as SwapHorizontalOpacityIcon, Icon$2P as SwapHorizontalSolidIcon, Icon$2O as SwapVerticalOpacityIcon, Icon$2N as SwapVerticalSolidIcon, Icon$c as TRIcon, TabMenu, Tag, Icon$X as TeamOpacityIcon, Icon$Y as TeamSolidIcon, Icon$F as TelegramIcon, Icon$25 as TestIcon, Icon$24 as TestOpacityIcon, Icon$23 as TestSolidIcon, Text, Textfield as TextField, Icon$o as Ticket2Icon, Timeline, Icon$28 as TimerIcon, Icon$26 as TimerOpacityIcon, Icon$27 as TimerSolidIcon, ToastContainer, Toggle, TokenImage, TokenPairImage, TooltipText, Icon$E as TwitchIcon, Icon$D as TwitterIcon, Icon$l as USAIcon, Icon$1t as UsdLineIcon, Icon$1v as UsdOpacityIcon, Icon$1u as UsdSolidIcon, UserMenuDivider, UserMenuItem, Icon$2C as UserOpacityIcon, Icon$2D as UserSolidIcon, Icon$i as VNIcon, Icon$2r as VerifiedOpacityIcon, Icon$2s as VerifiedSolidIcon, Icon$n as VisaIcon, Icon$11 as VotingOpacityIcon, Icon$12 as VotingSolidIcon, Icon$31 as WalletOpacityIcon, Icon$32 as WalletSolidIcon, Icon$36 as WarningIcon, Icon$38 as WarningOpacityIcon, Icon$37 as WarningSolidIcon, Icon$C as YoutubeIcon, variants$8 as alertVariants, byTextAscending, byTextDescending, connectorLocalStorageKey, darkTheme as dark, darkColors, lightTheme as light, lightColors, makeRender, links as menuConfig, status as menuStatus, types as toastTypes, useDelayedUnmount, useKonamiCheatCode, useMatchBreakpoints, useModal, useOnClickOutside, useParticleBurst, useTable, useTooltip, useWalletModal };
+export { Icon$Z as AboutBSWOpacityIcon, Icon$_ as AboutBSWSolidIcon, Alert, Icon$13 as AnalyticsOpacityIcon, Icon$14 as AnalyticsSolidIcon, Icon$3k as ArrowDownIcon, Icon$v as ArrowFiguredIcon, Icon$3l as ArrowLeftIcon, Icon$3n as ArrowRightIcon, Icon$3h as ArrowSkipLeftIcon, Icon$3i as ArrowSkipRightIcon, Icon$3j as ArrowUpForwardIcon, Icon$3m as ArrowUpIcon, Icon$2b as AuctionIcon, Icon$29 as AuctionOpacityIcon, Icon$2a as AuctionSolidIcon, Icon$M as AuditProtectionOpacityIcon, Icon$L as AuditProtectionSolidIcon, Icon$J as AuditSearchOpacityIcon, Icon$K as AuditSearchSolidIcon, Icon$1G as AutoRenewAnimateIcon, Icon$1J as AutoRenewIcon, Icon$1H as AutoRenewOpacityAnimateIcon, Icon$1K as AutoRenewOpacityIcon, Icon$1I as AutoRenewSolidAnimateIcon, Icon$1L as AutoRenewSolidIcon, Icon$w as AvalancheIcon, Icon$h as BDIcon, Icon$y as BSCIcon, BackgroundImage, Badge, BalanceInput, GridLayout$1 as BaseLayout, BaseMenu, Icon$2A as BellOpacityIcon, Icon$2B as BellSolidIcon, Icon$1$ as BlockIcon, Icon$1_ as BlockOpacityIcon, Icon$1Z as BlockSolidIcon, Icon$2h as BookIcon, Icon$2f as BookOpacityIcon, Icon$2g as BookSolidIcon, BottomDrawer, Box, Breadcrumbs, Icon$3A as BscBlackRoundIcon, Icon$1w as BurgerCloseIcon, Icon$1x as BurgerIcon, Button, ButtonMenu, ButtonMenuItem, Icon$d as CNIcon, Icon$2_ as CalculateIcon, Icon$30 as CalculateOpacityIcon, Icon$2$ as CalculateSolidIcon, Card, CardBody, CardFooter, CardHeader, CardRibbon, Icon$2J as CardViewIcon, GridLayout as CardsLayout, Icon$m as CerticAuditedIcon, Icon$$ as CharityOpacityIcon, Icon$10 as CharitySolidIcon, Icon$2G as CheckIcon, Icon$2E as CheckOpacityIcon, Icon$2F as CheckSolidIcon, Checkbox, Icon$3y as ChevronDownCircleOpacityIcon, Icon$3z as ChevronDownCircleSolidIcon, Icon$3x as ChevronDownIcon, Icon$3s as ChevronLeftCircleOpacityIcon, Icon$3t as ChevronLeftCircleSolidIcon, Icon$3r as ChevronLeftIcon, Icon$3v as ChevronRightCircleOpacityIcon, Icon$3w as ChevronRightCircleSolidIcon, Icon$3u as ChevronRightIcon, Icon$3o as ChevronUpCircleOpacityIcon, Icon$3p as ChevronUpCircleSolidIcon, Icon$3g as ChevronUpDoubleIcon, Icon$3q as ChevronUpIcon, Icon$3f as ChevronUpTripleIcon, ClickableElementContainer, Icon$34 as CloseCircleOpacityIcon, Icon$33 as CloseCircleSolidIcon, Icon$35 as CloseIcon, ConnectorNames, ConnectorsTitleTypes, Icon$2q as CopyIcon, Icon$2o as CopyOpacityIcon, Icon$2p as CopySolidIcon, Icon$e as DEIcon, Icon$N as DocsOpacityIcon, Icon$O as DocsSolidIcon, Icon$3D as DownloadIcon, Dropdown, DropdownMenuItemType, Icon$b as ESIcon, Icon$1R as EditIcon, Icon$1Q as EditOpacityIcon, Icon$1P as EditSolidIcon, Icon$1p as ExchangeOpacityIcon, Icon$1q as ExchangeSolidIcon, ExpandableButton, ExpandableLabel, Icon$1n as ExpertModeOpacityIcon, Icon$1o as ExpertModeSolidIcon, Icon$2H as EyeCloseIcon, Icon$2I as EyeOpenIcon, Icon$g as FRIcon, Icon$1j as FarmsOpacityIcon, Icon$1k as FarmsSolidIcon, Icon$2M as FavoriteEmptyIcon, Icon$2L as FavoriteSolidIcon, Icon$2e as FileIcon, Icon$2c as FileOpacityIcon, Icon$2d as FileSolidIcon, Icon$2k as FilterIcon, Icon$2i as FilterOpacityIcon, Icon$2j as FilterSolidIcon, Icon$2W as FireIcon, Icon$2U as FireOpacityIcon, Icon$2V as FireSolidIcon, Icon$15 as FixedStakingOpacityIcon, Icon$16 as FixedStakingSolidIcon, Icon$22 as FlagIcon, Icon$21 as FlagOpacityIcon, Icon$20 as FlagSolidIcon, Flex, Icon$u as GameFiIcon, Icon$1N as GasIcon, Icon$t as GiftIcon, Icon$1d as GobletOpacityIcon, Icon$1e as GobletSolidIcon, Grid, Heading, Icon$2X as HelpIcon, Icon$2Z as HelpOpacityIcon, Icon$2Y as HelpSolidIcon, Icon$1A as HistoryIcon, Icon$3B as HourglassIcon, Icon$k as IDIcon, IconButton, Icon$1f as IdoOpacityIcon, Icon$1g as IdoSolidIcon, Image, Icon$2T as InfoIcon, Icon$2R as InfoOpacityIcon, Icon$2S as InfoSolidIcon, InlineMenu, InlineMenuContainer, Input$1 as Input, InputGroup, Icon$I as InstagramIcon, InstanceCheckRules, ItemTypes, Icon$19 as LaunchpadOpacityIcon, Icon$1a as LaunchpadSolidIcon, Link, LinkExternal, Icon$1r as LiquidityOpacityIcon, Icon$1s as LiquiditySolidIcon, Icon$1C as ListOpacityIcon, Icon$1B as ListSolidIcon, Icon$2K as ListViewIcon, Icon$3F as LogoIcon, Icon$3E as LogoWithTextIcon, Icon$1b as LotteryOpacityIcon, Icon$1c as LotterySolidIcon, Icon$s as MarketIcon, Icon$1O as MedalIcon, Icon$H as MediumIcon, Menu, Icon$r as MetamaskIcon, Icon$39 as MinusCircleOpacityIcon, Icon$3a as MinusCircleSolidIcon, Icon$3b as MinusIcon, Modal, ModalBackButton, ModalBody$1 as ModalBody, ModalCloseButton, ModalContainer, ModalHeader, ModalProvider, ModalTitle, ModalWithBackground, Icon$1S as More2Icon, Icon$1V as MoreHorizontalIcon, Icon$1T as MoreHorizontalOpacityIcon, Icon$1U as MoreHorizontalSolidIcon, Icon$1Y as MoreVerticalIcon, Icon$1W as MoreVerticalOpacityIcon, Icon$1X as MoreVerticalSolidIcon, Icon$3C as MouseIcon, Icon$S as MultiPoolOpacityIcon, Icon$R as MultiPoolSolidIcon, Icon$17 as NFTEarnOpacityIcon, Icon$18 as NFTEarnSolidIcon, Icon$P as NewsOpacityIcon, Icon$Q as NewsSolidIcon, NotificationDot, Icon$2t as OptionsOpacityIcon, Icon$2u as OptionsSolidIcon, Overlay, Icon$f as PTIcon, PercentSlider, Icon$1M as PlayIcon, Icon$3c as PlusCircleOpacityIcon, Icon$3d as PlusCircleSolidIcon, Icon$3e as PlusIcon, Icon$x as PolygonIcon, Icon$1l as PoolsOpacityIcon, Icon$1m as PoolsSolidIcon, Icon$1y as ProductsOpacityIcon, Icon$1z as ProductsSolidIcon, ProfileAvatar, Icon$V as Program10mOpacityIcon, Icon$W as Program10mSolidIcon, Progress, Bar as ProgressBar, Icon$q as RBIcon, Icon$j as RUIcon, Radio, Icon$B as Rank1Icon, Icon$A as Rank2Icon, Icon$z as Rank3Icon, Icon$G as RedditIcon, Icon$1h as ReferralOpacityIcon, Icon$1i as ReferralSolidIcon, Icon$1F as RefreshIcon, Icon$1E as RefreshOpacityIcon, Icon$1D as RefreshSolidIcon, ResetCSS, Icon$p as SEIcon, Icon$2y as SearchOpacityIcon, Icon$2z as SearchSolidIcon, Icon$2n as ShareIcon, Icon$2l as ShareOpacityIcon, Icon$2m as ShareSolidIcon, Skeleton, SlideButtonMenu, SlideButtonMenuItem, Slider, Icon$T as SpaceAgentOpacityIcon, Icon$U as SpaceAgentSolidIcon, Icon$2x as StarIcon, Icon$2w as StarOpacityIcon, Icon$2v as StarSolidIcon, SubMenu, SubMenuContainer, SubMenuItem, SubMenuItems, Svg, Icon$2Q as SwapHorizontalOpacityIcon, Icon$2P as SwapHorizontalSolidIcon, Icon$2O as SwapVerticalOpacityIcon, Icon$2N as SwapVerticalSolidIcon, Icon$c as TRIcon, TabMenu, Tag, Icon$X as TeamOpacityIcon, Icon$Y as TeamSolidIcon, Icon$F as TelegramIcon, Icon$25 as TestIcon, Icon$24 as TestOpacityIcon, Icon$23 as TestSolidIcon, Text, Textfield as TextField, Icon$o as Ticket2Icon, Timeline, Icon$28 as TimerIcon, Icon$26 as TimerOpacityIcon, Icon$27 as TimerSolidIcon, ToastContainer, Toggle, TokenImage, TokenPairImage, TooltipText, Icon$E as TwitchIcon, Icon$D as TwitterIcon, Icon$l as USAIcon, Icon$1t as UsdLineIcon, Icon$1v as UsdOpacityIcon, Icon$1u as UsdSolidIcon, UserMenuDivider, UserMenuItem, Icon$2C as UserOpacityIcon, Icon$2D as UserSolidIcon, Icon$i as VNIcon, Icon$2r as VerifiedOpacityIcon, Icon$2s as VerifiedSolidIcon, Icon$n as VisaIcon, Icon$11 as VotingOpacityIcon, Icon$12 as VotingSolidIcon, Icon$31 as WalletOpacityIcon, Icon$32 as WalletSolidIcon, Icon$36 as WarningIcon, Icon$38 as WarningOpacityIcon, Icon$37 as WarningSolidIcon, Icon$C as YoutubeIcon, variants$8 as alertVariants, byTextAscending, byTextDescending, connectorLocalStorageKey, darkTheme as dark, darkColors, formatSpacingAmount, getExternalLinkProps, getPortalRoot, getRgba, getThemeValue, isTouchDevice, lightTheme as light, lightColors, makeRender, links as menuConfig, status as menuStatus, types as toastTypes, useDelayedUnmount, useKonamiCheatCode, useMatchBreakpoints, useModal, useOnClickOutside, useParticleBurst, useTable, useTooltip, useWalletModal };
