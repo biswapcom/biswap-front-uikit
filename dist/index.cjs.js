@@ -7340,14 +7340,6 @@ var links = [
         href: "/",
         items: [
             {
-                label: "Lottery",
-                href: "/pool",
-                leftIcon: "LotteryOpacity",
-                description: "Item description",
-                target: "_blank",
-                mobileTarget: "_self",
-            },
-            {
                 label: "Competitions",
                 href: "/pool",
                 leftIcon: "GobletOpacity",
