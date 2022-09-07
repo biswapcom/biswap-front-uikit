@@ -15,10 +15,12 @@ export interface SocialWrapProps {
 }
 const Icons = IconModule as unknown as { [key: string]: React.FC<SvgProps> };
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<{menuVariant?: boolean}>`
   grid-area: community;
   margin-top: 8px;
-  max-width: 136px;
+  ${({ menuVariant }) => (
+    !menuVariant && "max-width: 136px;"
+  )}
   ${({ theme }) => theme.mediaQueries.sm} {
     max-width: none;
     margin-top: 24px;
@@ -139,7 +141,7 @@ const Community: React.FC<CommunityProps> = ({
   menuVariant,
 }) => {
   return (
-    <Wrapper>
+    <Wrapper menuVariant={menuVariant}>
       {title && <Title>{title}</Title>}
 
       <SocialWrap menuVariant={menuVariant}>
