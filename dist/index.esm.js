@@ -8857,11 +8857,11 @@ var StyledIcon = styled.img(templateObject_2$1 || (templateObject_2$1 = __makeTe
 var ToastAction = function (_a) {
     _a.title; _a.telegramDescription; _a.tweeterDescription; _a.url; _a.thx;
     return (React.createElement(ActionsContainer, null,
-        React.createElement(Button, { mr: "8px", scale: "sm", width: "100%", height: "100%", style: { backgroundColor: "#16CDFD", alignItems: "center" } },
+        React.createElement(Button, { mr: "8px", scale: "md", width: "100%", style: { backgroundColor: "#16CDFD" } },
             React.createElement(StyledIcon, { src: giftImg, alt: "gift-icon" }),
             React.createElement(Text, { mr: "6px", my: "8px", color: "#fff", fontSize: "12px" }, "Twitter"),
             React.createElement(Icon$D, { mr: "8px", color: "#fff", width: "20px" })),
-        React.createElement(Button, { mx: "8px", scale: "sm", width: "100%", height: "100%", style: { backgroundColor: "#26A6E5", alignItems: "center" } },
+        React.createElement(Button, { mx: "8px", scale: "md", width: "100%", style: { backgroundColor: "#26A6E5" } },
             React.createElement(Text, { color: "#fff", fontSize: "12px" }, "Telegram"),
             React.createElement(Icon$F, { ml: "8px", color: "#fff", width: "20px" }))));
 };
