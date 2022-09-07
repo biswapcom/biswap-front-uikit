@@ -333,6 +333,11 @@ export const socials = [
     icon: "InstagramIcon",
     href: "https://www.instagram.com/biswap_org/",
   },
+  {
+    label: "Facebook",
+    icon: "FacebookIcon",
+    href: "https://www.facebook.com/profile.php?id=100082146264626",
+  },
 ];
 
 export const BSWPriceLabel = "BSW";
