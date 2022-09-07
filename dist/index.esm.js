@@ -7612,7 +7612,10 @@ var FISHING_BANNER_HEIGHT = 40;
 var FISHING_MOBILE_BANNER_HEIGHT = 60;
 
 var Icons = IconModule;
-var Wrapper$3 = styled.div(templateObject_1$o || (templateObject_1$o = __makeTemplateObject(["\n  grid-area: community;\n  margin-top: 8px;\n  max-width: 136px;\n  ", " {\n    max-width: none;\n    margin-top: 24px;\n  }\n\n  ", " {\n    margin-top: 0;\n  }\n"], ["\n  grid-area: community;\n  margin-top: 8px;\n  max-width: 136px;\n  ", " {\n    max-width: none;\n    margin-top: 24px;\n  }\n\n  ", " {\n    margin-top: 0;\n  }\n"])), function (_a) {
+var Wrapper$3 = styled.div(templateObject_1$o || (templateObject_1$o = __makeTemplateObject(["\n  grid-area: community;\n  margin-top: 8px;\n  ", "\n  ", " {\n    max-width: none;\n    margin-top: 24px;\n  }\n\n  ", " {\n    margin-top: 0;\n  }\n"], ["\n  grid-area: community;\n  margin-top: 8px;\n  ", "\n  ", " {\n    max-width: none;\n    margin-top: 24px;\n  }\n\n  ", " {\n    margin-top: 0;\n  }\n"])), function (_a) {
+    var menuVariant = _a.menuVariant;
+    return (!menuVariant && "max-width: 136px;");
+}, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 }, function (_a) {
@@ -7653,7 +7656,7 @@ var DropDownLabel = styled.span(templateObject_9$2 || (templateObject_9$2 = __ma
 var FlagWrap = styled.div(templateObject_10$1 || (templateObject_10$1 = __makeTemplateObject(["\n  border-radius: 50%;\n  margin-right: 8px;\n  overflow: hidden;\n  width: 14px;\n  height: 14px;\n"], ["\n  border-radius: 50%;\n  margin-right: 8px;\n  overflow: hidden;\n  width: 14px;\n  height: 14px;\n"])));
 var Community = function (_a) {
     var _b = _a.iconSize, iconSize = _b === void 0 ? "20px" : _b, title = _a.title, menuVariant = _a.menuVariant;
-    return (React.createElement(Wrapper$3, null,
+    return (React.createElement(Wrapper$3, { menuVariant: menuVariant },
         title && React.createElement(Title, null, title),
         React.createElement(SocialWrap, { menuVariant: menuVariant }, socials.map(function (social) {
             var Icon = Icons[social.icon];
