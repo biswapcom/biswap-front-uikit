@@ -9,7 +9,7 @@ import Footer from "./components/Footer/Footer";
 import MenuItems from "../../components/MenuItems/MenuItems";
 import Logo from "./components/Logo";
 import UserBlock from "./components/UserBlock";
-import BDayEvent from "./components/UserEvents/BDayEvent";
+import BlockChainWeekEvent from "./components/UserEvents/BlockChainWeekEvent";
 import { WarningSolidIcon } from "../../components/Svg";
 
 // context
@@ -167,6 +167,7 @@ const Menu: React.FC<NavProps> = ({
   transactionsForUIKit,
   withEvent,
   eventCallback,
+  eventButtonLogo,
 }) => {
   const { isMobile } = useMatchBreakpoints();
   const [showMenu, setShowMenu] = useState<boolean>(true);
@@ -319,12 +320,8 @@ const Menu: React.FC<NavProps> = ({
               {/*/>*/}
               {/*{userMenu}*/}
               {withEvent && !isMobile && (
-                <BDayEvent
-                  account={account}
-                  login={login}
-                  logout={logout}
-                  callback={eventCallback}
-                  isSwap={isSwap}
+                <BlockChainWeekEvent
+                  eventButtonLogo={eventButtonLogo}
                   href={homeLink?.href ?? "/"}
                 />
               )}
@@ -342,13 +339,9 @@ const Menu: React.FC<NavProps> = ({
             </Flex>
           </StyledNav>
           {withEvent && isMobile && (
-            <BDayEvent
-              account={account}
-              login={login}
-              logout={logout}
-              callback={eventCallback}
+            <BlockChainWeekEvent
+              eventButtonLogo={eventButtonLogo}
               href={homeLink?.href ?? "/"}
-              isSwap={isSwap}
             />
           )}
         </FixedContainer>
