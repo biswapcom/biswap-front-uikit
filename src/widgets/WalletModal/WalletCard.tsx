@@ -13,14 +13,15 @@ interface Props {
 
 const StyledButton = styled(Button)`
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  padding: 8px 0 0;
+  flex-direction: row;
+  justify-content: flex-start;
   white-space: nowrap;
-  min-height: 91px;
+  height: 48px;
+  width: 172px;
+  background: ${({ theme }) => theme.colors.gray200};
 `;
 
-const StyledText = styled(Text)`
+const StyledText = styled(Text)` 
   font-weight: bold;
   color: ${({ theme }) => theme.colors.primary};
 `;
@@ -48,7 +49,7 @@ const WalletCard: React.FC<Props> = ({ login, walletConfig, onDismiss }) => {
       id={`wallet-connect-${title.toLocaleLowerCase()}`}
     >
       <Icon width="32px" />
-      <StyledText>{title}</StyledText>
+      <StyledText pl="8px" fontSize="12px" >{title}</StyledText>
     </StyledButton>
   );
 };

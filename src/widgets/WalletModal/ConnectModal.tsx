@@ -6,7 +6,7 @@ import { Modal } from "../../widgets/Modal";
 import WalletCard from "./WalletCard";
 import config, { walletLocalStorageKey } from "./config";
 import { Config, ConnectorNames, Login } from "./types";
-import { Flex } from "../../components/Box";
+import { Flex, Box } from "../../components/Box";
 import { useMatchBreakpoints } from "../../hooks";
 import { Text } from "../../components/Text";
 
@@ -28,9 +28,11 @@ const HelpLink = styled(Link)`
 
 const WalletCardsWrapper = styled.div`
   display: grid;
-  grid-gap: 16px;
-  width: 100%;
+  grid-gap: 8px;
+  width: 352px;
   grid-template-columns: repeat(2, 1fr);
+  max-height: 328px;
+  margin-left: 32px;
 `;
 
 const getPreferredConfig = (walletConfig: Config[]) => {
@@ -59,6 +61,21 @@ const getPreferredConfig = (walletConfig: Config[]) => {
   ];
 };
 
+const ScrollWrapper = styled(Box)`
+  margin-right: 14px;
+  overflow-x: hidden;
+  &::-webkit-scrollbar{
+    width: 4px;
+  }
+  &::-webkit-scrollbar-track{
+    background-color: ${({ theme }) => theme.colors.gray200};
+    box-shadow: none;
+  }
+  &::-webkit-scrollbar-thumb{
+    background-color: ${({ theme }) => theme.colors.textSubtle};
+  }
+`
+
 const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => {
   const { isMobile } = useMatchBreakpoints();
   const sortedConfig = useMemo(
@@ -76,8 +93,14 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => {
   );
 
   return (
-    <Modal title="Connect to a wallet" onDismiss={onDismiss}>
-      <Flex flexDirection="column">
+    <Modal 
+      title="Connect to a wallet" 
+      onDismiss={onDismiss}
+      maxWidth="416px"
+      bodyPadding=""
+      walletModal
+    >
+      <ScrollWrapper>
         <WalletCardsWrapper>
           {sortedConfig.map((entry) => (
             <WalletCard
@@ -88,16 +111,17 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => {
             />
           ))}
         </WalletCardsWrapper>
-        <HelpLink
-          href="https://docs.biswap.org/faq/biswap-platform#how-do-i-connect-my-wallet-to-biswap"
-          external
-        >
-          <HelpIcon color="primary" mr="6px" />
-          <Text color="primary" fontWeight="400">
-            Learn how to connect
-          </Text>
-        </HelpLink>
-      </Flex>
+      </ScrollWrapper>
+
+      <HelpLink
+        href="https://docs.biswap.org/faq/biswap-platform#how-do-i-connect-my-wallet-to-biswap"
+        external
+      >
+      <HelpIcon color="primary" mr="6px" />
+        <Text color="primary" fontWeight="400">
+          Learn how to connect
+        </Text>
+      </HelpLink>
     </Modal>
   );
 };

@@ -19,4 +19,5 @@ export interface ModalProps extends InjectedProps, BoxProps {
   maxWidth?: string;
   modalBackground?: string;
   closeBtnColor?: string;
+  walletModal?: boolean;
 }

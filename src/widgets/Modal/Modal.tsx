@@ -24,6 +24,7 @@ const Modal: React.FC<ModalProps> = ({
   modalBackground = "white",
   closeBtnColor,
   maxWidth = "420px",
+  walletModal,
   ...props
 }) => {
   const theme = useTheme();
@@ -39,6 +40,7 @@ const Modal: React.FC<ModalProps> = ({
         modalBackground
       )(theme)}
       maxWidth={maxWidth}
+      walletModal={walletModal}
     >
       <ModalHeader>
         <ModalTitle>
