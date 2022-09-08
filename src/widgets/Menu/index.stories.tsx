@@ -44,10 +44,6 @@ const TowerImg = styled.img`
   margin-right: 8px;
 `;
 
-const eventButtonLogo = (): JSX.Element => (
-  <TowerImg src="https://fotooboi.ru/upload/resize_cache/iblock/cdb/9000_220_1d7a58ff99b324185ccb5ad5dfbdb5e85/cdbc11704d623213e5b872861dd5923d.jpg" />
-);
-
 const langs: Language[] = [...Array(20)].map((_, i) => ({
   code: `en${i}`,
   language: `English${i}`,
@@ -149,7 +145,6 @@ const ConnectedTemplate: React.FC<NavProps> = (args) => {
         aboutLinks={aboutLinks}
         productLinks={productLinks}
         serviceLinks={serviceLinks}
-        eventButtonLogo={eventButtonLogo}
       >
         <Box pt="113px">
           <Text bold fontSize="24px" as="h1" mb="8px" color="white">
