@@ -6827,7 +6827,7 @@ var Modal = function (_a) {
             React__default["default"].createElement(ModalTitle, null,
                 onBack && (React__default["default"].createElement(ModalBackButton, { onBack: onBack, closeBtnColor: closeBtnColor })),
                 title && React__default["default"].createElement(Heading, { color: "backgroundDark" }, title)),
-            !hideCloseButton && React__default["default"].createElement(ModalCloseButton, { closeBtnColor: closeBtnColor, onDismiss: onDismiss })),
+            !hideCloseButton && (React__default["default"].createElement(ModalCloseButton, { closeBtnColor: closeBtnColor, onDismiss: onDismiss }))),
         React__default["default"].createElement(ModalBody$1, { p: bodyPadding !== null && bodyPadding !== void 0 ? bodyPadding : defaultBodyPadding }, children)));
 };
 
@@ -7627,7 +7627,7 @@ var FISHING_MOBILE_BANNER_HEIGHT = 60;
 var Icons = IconModule;
 var Wrapper$3 = styled__default["default"].div(templateObject_1$o || (templateObject_1$o = __makeTemplateObject(["\n  grid-area: community;\n  margin-top: 8px;\n  ", "\n  ", " {\n    max-width: none;\n    margin-top: 24px;\n  }\n\n  ", " {\n    margin-top: 0;\n  }\n"], ["\n  grid-area: community;\n  margin-top: 8px;\n  ", "\n  ", " {\n    max-width: none;\n    margin-top: 24px;\n  }\n\n  ", " {\n    margin-top: 0;\n  }\n"])), function (_a) {
     var menuVariant = _a.menuVariant;
-    return (!menuVariant && "max-width: 136px;");
+    return !menuVariant && "max-width: 136px;";
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
@@ -8671,44 +8671,39 @@ var UserBlock = function (_a) {
 };
 var templateObject_1$7;
 
-var Wrapper$1 = styled__default["default"].div(templateObject_1$6 || (templateObject_1$6 = __makeTemplateObject(["\n  margin-right: 0;\n  height: 40px;\n\n  ", " {\n    margin-right: 10px;\n  }\n"], ["\n  margin-right: 0;\n  height: 40px;\n\n  ", " {\n    margin-right: 10px;\n  }\n"])), function (_a) {
-    var theme = _a.theme;
-    return theme.mediaQueries.sm;
-});
-var StyledLink = styled__default["default"].a(templateObject_2$4 || (templateObject_2$4 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 40px;\n  width: ", ";\n\n  padding: 0 16px 0 0;\n  font-size: 14px;\n  font-weight: 600;\n  line-height: 1;\n  color: ", ";\n  border-radius: ", ";\n  background: linear-gradient(\n    77.58deg,\n    #2359aa -8.83%,\n    #3a2281 71.19%,\n    #84227e 124.82%\n  );\n  cursor: pointer;\n\n  &:hover {\n    opacity: 0.8;\n  }\n\n  ", " {\n    background: linear-gradient(\n      79.91deg,\n      #1263f1 -19.82%,\n      #543fd7 48.01%,\n      #f93b5d 173.07%\n    );\n  } ;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 40px;\n  width: ", ";\n\n  padding: 0 16px 0 0;\n  font-size: 14px;\n  font-weight: 600;\n  line-height: 1;\n  color: ", ";\n  border-radius: ", ";\n  background: linear-gradient(\n    77.58deg,\n    #2359aa -8.83%,\n    #3a2281 71.19%,\n    #84227e 124.82%\n  );\n  cursor: pointer;\n\n  &:hover {\n    opacity: 0.8;\n  }\n\n  ", " {\n    background: linear-gradient(\n      79.91deg,\n      #1263f1 -19.82%,\n      #543fd7 48.01%,\n      #f93b5d 173.07%\n    );\n  } ;\n"])), function (_a) {
-    var width = _a.width;
-    return width || "auto";
-}, function (_a) {
-    var theme = _a.theme;
-    return theme.colors.white;
-}, function (_a) {
+var Wrapper$1 = styled__default["default"](Flex)(templateObject_1$6 || (templateObject_1$6 = __makeTemplateObject(["\n  position: relative;\n  align-items: center;\n  justify-content: center;\n  height: 40px;\n  border-radius: ", ";\n  background: linear-gradient(258.91deg, #ffdb1c 52.52%, #ff5c00 95.56%);\n  cursor: pointer;\n  transition: opacity 0.3s ease;\n\n  ", " {\n    margin-right: 10px;\n\n    &:before {\n      display: block;\n      content: \"\";\n      position: absolute;\n      width: calc(100% + 8px);\n      height: calc(100% + 8px);\n      border-radius: 8px;\n      top: calc(50%);\n      left: calc(50%);\n      z-index: 1;\n      animation: pulse-whiteCustom 2s infinite;\n    }\n\n    @keyframes pulse-whiteCustom {\n      0% {\n        transform: scale(1) translateY(-50%) translateX(-50%);\n        box-shadow: 0 0 0 0 #ffa310;\n      }\n\n      70% {\n        transform: scale(calc(1)) translateY(-50%) translateX(-50%);\n        box-shadow: 0 0 0 4px rgba(51, 217, 178, 0);\n      }\n\n      100% {\n        transform: scale(1) translateY(-50%) translateX(-50%);\n        box-shadow: 0 0 0 0 rgba(51, 217, 178, 0);\n      }\n    }\n  }\n\n  &:hover {\n    opacity: 0.8;\n  }\n"], ["\n  position: relative;\n  align-items: center;\n  justify-content: center;\n  height: 40px;\n  border-radius: ", ";\n  background: linear-gradient(258.91deg, #ffdb1c 52.52%, #ff5c00 95.56%);\n  cursor: pointer;\n  transition: opacity 0.3s ease;\n\n  ", " {\n    margin-right: 10px;\n\n    &:before {\n      display: block;\n      content: \"\";\n      position: absolute;\n      width: calc(100% + 8px);\n      height: calc(100% + 8px);\n      border-radius: 8px;\n      top: calc(50%);\n      left: calc(50%);\n      z-index: 1;\n      animation: pulse-whiteCustom 2s infinite;\n    }\n\n    @keyframes pulse-whiteCustom {\n      0% {\n        transform: scale(1) translateY(-50%) translateX(-50%);\n        box-shadow: 0 0 0 0 #ffa310;\n      }\n\n      70% {\n        transform: scale(calc(1)) translateY(-50%) translateX(-50%);\n        box-shadow: 0 0 0 4px rgba(51, 217, 178, 0);\n      }\n\n      100% {\n        transform: scale(1) translateY(-50%) translateX(-50%);\n        box-shadow: 0 0 0 0 rgba(51, 217, 178, 0);\n      }\n    }\n  }\n\n  &:hover {\n    opacity: 0.8;\n  }\n"])), function (_a) {
     var flat = _a.flat;
     return (flat ? 0 : "8px");
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var StyledBtn = styled__default["default"](Button)(templateObject_3$2 || (templateObject_3$2 = __makeTemplateObject(["\n  background: linear-gradient(\n    77.58deg,\n    #2359aa -8.83%,\n    #3a2281 71.19%,\n    #84227e 124.82%\n  );\n  //padding-left: 0;\n\n  &:hover {\n    opacity: 0.8;\n  }\n\n  ", " {\n    background: linear-gradient(\n      79.91deg,\n      #1263f1 -19.82%,\n      #543fd7 48.01%,\n      #f93b5d 173.07%\n    );\n  } ;\n"], ["\n  background: linear-gradient(\n    77.58deg,\n    #2359aa -8.83%,\n    #3a2281 71.19%,\n    #84227e 124.82%\n  );\n  //padding-left: 0;\n\n  &:hover {\n    opacity: 0.8;\n  }\n\n  ", " {\n    background: linear-gradient(\n      79.91deg,\n      #1263f1 -19.82%,\n      #543fd7 48.01%,\n      #f93b5d 173.07%\n    );\n  } ;\n"])), function (_a) {
+var StyledLink = styled__default["default"].a(templateObject_2$4 || (templateObject_2$4 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 40px;\n  width: 100%;\n  padding-right: 16px;\n  overflow: hidden;\n\n  font-size: 14px;\n  font-weight: 600;\n  line-height: 20px;\n  color: ", ";\n\n  ", " {\n    width: auto;\n    border-radius: 8px 0 0 8px;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 40px;\n  width: 100%;\n  padding-right: 16px;\n  overflow: hidden;\n\n  font-size: 14px;\n  font-weight: 600;\n  line-height: 20px;\n  color: ", ";\n\n  ", " {\n    width: auto;\n    border-radius: 8px 0 0 8px;\n  }\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.colors.dark800;
+}, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var BDayEvent = function (_a) {
-    var login = _a.login, logout = _a.logout, account = _a.account, callback = _a.callback; _a.isSwap; var _c = _a.href, href = _c === void 0 ? "/" : _c;
+var StyledRouterLink = styled__default["default"](reactRouterDom.Link)(templateObject_3$2 || (templateObject_3$2 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 40px;\n  width: 100%;\n  padding-right: 16px;\n  overflow: hidden;\n\n  font-size: 14px;\n  font-weight: 600;\n  line-height: 20px;\n  color: ", ";\n\n  ", " {\n    width: auto;\n    border-radius: 8px 0 0 8px;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 40px;\n  width: 100%;\n  padding-right: 16px;\n  overflow: hidden;\n\n  font-size: 14px;\n  font-weight: 600;\n  line-height: 20px;\n  color: ", ";\n\n  ", " {\n    width: auto;\n    border-radius: 8px 0 0 8px;\n  }\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.colors.dark800;
+}, function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.sm;
+});
+var BlockChainWeekEvent = function (_a) {
+    var _b = _a.href, href = _b === void 0 ? "/" : _b, eventButtonLogo = _a.eventButtonLogo;
     var isMobile = useMatchBreakpoints().isMobile;
-    var onPresentConnectModal = useWalletModal(login, logout).onPresentConnectModal;
-    var buttonText = "B-Day Presents";
+    var buttonText = "Grant Event";
     var isAbsoluteUrl = href.startsWith("http");
-    var pathWithEventParam = isAbsoluteUrl ? "".concat(href, "?event=bDay") : href;
-    var onClickHandler = function () {
-        if (account && callback)
-            callback();
-        if (!account)
-            onPresentConnectModal();
-    };
-    return (React__default["default"].createElement(Wrapper$1, null, isAbsoluteUrl ? (React__default["default"].createElement(StyledLink, { width: isMobile ? "100%" : "auto", flat: isMobile, href: pathWithEventParam },
-        React__default["default"].createElement(Icon$1g, { width: "24px", mr: "12px", color: "white" }),
-        buttonText)) : (React__default["default"].createElement(StyledBtn, { flat: isMobile, width: isMobile ? "100%" : "auto", scale: "lg", onClick: onClickHandler },
-        React__default["default"].createElement(Icon$1g, { width: "24px", mr: "12px", color: "white" }),
+    var pathWithEventParam = isAbsoluteUrl
+        ? "".concat(href, "/blockchain_week")
+        : "/blockchain_week";
+    return (React__default["default"].createElement(Wrapper$1, { pl: eventButtonLogo ? '0' : '16px', flat: isMobile }, isAbsoluteUrl ? (React__default["default"].createElement(StyledLink, { href: pathWithEventParam },
+        eventButtonLogo && eventButtonLogo(),
+        buttonText)) : (React__default["default"].createElement(StyledRouterLink, { to: pathWithEventParam },
+        eventButtonLogo && eventButtonLogo(),
         buttonText))));
 };
 var templateObject_1$6, templateObject_2$4, templateObject_3$2;
@@ -8781,7 +8776,7 @@ var Menu = function (_a) {
     // currentNetwork,
     // networkChangeToBSC,
     // networkChangeToAvalanche,
-    account = _a.account, login = _a.login, logout = _a.logout, pendingTransactions = _a.pendingTransactions, recentTransaction = _a.recentTransaction, chainId = _a.chainId, clearTransaction = _a.clearTransaction, isSwap = _a.isSwap, transactionsForUIKit = _a.transactionsForUIKit, withEvent = _a.withEvent, eventCallback = _a.eventCallback;
+    account = _a.account, login = _a.login, logout = _a.logout, pendingTransactions = _a.pendingTransactions, recentTransaction = _a.recentTransaction, chainId = _a.chainId, clearTransaction = _a.clearTransaction, isSwap = _a.isSwap, transactionsForUIKit = _a.transactionsForUIKit, withEvent = _a.withEvent; _a.eventCallback; var eventButtonLogo = _a.eventButtonLogo;
     var isMobile = useMatchBreakpoints().isMobile;
     var _f = React.useState(true), showMenu = _f[0], setShowMenu = _f[1];
     var _g = React.useState(false), menuBg = _g[0], setMenuBg = _g[1];
@@ -8870,9 +8865,9 @@ var Menu = function (_a) {
                         React__default["default"].createElement(Logo, { href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
                         React__default["default"].createElement(MenuItems, { items: links, activeItem: activeItem, activeSubItem: activeSubItem, isMobileMenuOpened: isMobileMenuOpened, mobileMenuCallback: setIsMobileMenuOpened, ml: "24px" })),
                     React__default["default"].createElement(Flex, { alignItems: "center", height: "100%" },
-                        withEvent && !isMobile && (React__default["default"].createElement(BDayEvent, { account: account, login: login, logout: logout, callback: eventCallback, isSwap: isSwap, href: (_c = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _c !== void 0 ? _c : "/" })),
+                        withEvent && !isMobile && (React__default["default"].createElement(BlockChainWeekEvent, { eventButtonLogo: eventButtonLogo, href: (_c = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _c !== void 0 ? _c : "/" })),
                         React__default["default"].createElement(UserBlock, { clearTransaction: clearTransaction, account: account, login: login, logout: logout, recentTransaction: recentTransaction, chainId: chainId, pendingTransactions: pendingTransactions, isSwap: isSwap, transactionsForUIKit: transactionsForUIKit }))),
-                withEvent && isMobile && (React__default["default"].createElement(BDayEvent, { account: account, login: login, logout: logout, callback: eventCallback, href: (_d = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _d !== void 0 ? _d : "/", isSwap: isSwap }))),
+                withEvent && isMobile && (React__default["default"].createElement(BlockChainWeekEvent, { eventButtonLogo: eventButtonLogo, href: (_d = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _d !== void 0 ? _d : "/" }))),
             React__default["default"].createElement(BodyWrapper, null,
                 React__default["default"].createElement(Inner, { isPushed: false, showMenu: showMenu },
                     children,
