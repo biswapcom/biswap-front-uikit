@@ -17,8 +17,11 @@ const StyledButton = styled(Button)`
   justify-content: flex-start;
   white-space: nowrap;
   height: 48px;
-  width: 172px;
+  width: 100%;
   background: ${({ theme }) => theme.colors.gray200};
+  ${({ theme }) => theme.mediaQueries.sm}{
+    width: 172px;
+  }
 `;
 
 const StyledText = styled(Text)` 
