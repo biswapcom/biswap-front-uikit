@@ -51,7 +51,12 @@ const Modal: React.FC<ModalProps> = ({
           )}
           {title && <Heading color="backgroundDark">{title}</Heading>}
         </ModalTitle>
-        {!hideCloseButton && <ModalCloseButton closeBtnColor={closeBtnColor} onDismiss={onDismiss} />}
+        {!hideCloseButton && (
+          <ModalCloseButton
+            closeBtnColor={closeBtnColor}
+            onDismiss={onDismiss}
+          />
+        )}
       </ModalHeader>
       <ModalBody p={bodyPadding ?? defaultBodyPadding} {...modalBodyProps} >{children}</ModalBody>
     </ModalContainer>
