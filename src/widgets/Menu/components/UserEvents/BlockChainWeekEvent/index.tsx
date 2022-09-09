@@ -66,7 +66,7 @@ const StyledLink = styled.a`
   width: 100%;
   padding-right: 16px;
   overflow: hidden;
-  z-index: 2;
+  z-index: 10;
 
   font-size: 14px;
   font-weight: 600;
@@ -87,7 +87,7 @@ const StyledRouterLink = styled(Link)`
   width: 100%;
   padding-right: 16px;
   overflow: hidden;
-  z-index: 2;
+  z-index: 10;
 
   font-size: 14px;
   font-weight: 600;
