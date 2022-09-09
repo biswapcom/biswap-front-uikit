@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import styled from "styled-components";
 import { useMatchBreakpoints } from "../../../../../hooks";
-import { Flex } from "../../../../../components/Box";
+// import { Flex } from "../../../../../components/Box";
 import { Link } from "react-router-dom";
 
 interface Props {
@@ -9,18 +9,43 @@ interface Props {
   eventButtonLogo?: () => JSX.Element;
 }
 
-const Wrapper = styled(Flex)<{ flat: boolean }>`
+// const Wrapper = styled(Flex)<{ flat: boolean }>`
+//   position: relative;
+//   align-items: center;
+//   justify-content: center;
+//   height: 40px;
+//   border-radius: ${({ flat }) => (flat ? 0 : "8px")};
+//   background: linear-gradient(258.91deg, #ffdb1c 52.52%, #ff5c00 95.56%);
+//   cursor: pointer;
+//   transition: opacity 0.3s ease;
+// `;
+
+const StyledLink = styled.a<{ flat: boolean; isLogo: boolean }>`
   position: relative;
+  display: flex;
   align-items: center;
   justify-content: center;
   height: 40px;
+  width: 100%;
+  padding-right: 16px;
+  overflow: hidden;
+  z-index: 30;
   border-radius: ${({ flat }) => (flat ? 0 : "8px")};
+  padding-left: ${({ isLogo }) => (isLogo ? 0 : "16px")};
   background: linear-gradient(258.91deg, #ffdb1c 52.52%, #ff5c00 95.56%);
   cursor: pointer;
   transition: opacity 0.3s ease;
 
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  color: ${({ theme }) => theme.colors.dark800};
+
   ${({ theme }) => theme.mediaQueries.sm} {
     margin-right: 10px;
+    z-index: 10;
+    width: auto;
+    border-radius: 8px 0 0 8px;
 
     &:before {
       display: block;
@@ -58,7 +83,8 @@ const Wrapper = styled(Flex)<{ flat: boolean }>`
   }
 `;
 
-const StyledLink = styled.a`
+const StyledRouterLink = styled(Link)<{ flat: boolean; isLogo: boolean }>`
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -67,6 +93,11 @@ const StyledLink = styled.a`
   padding-right: 16px;
   overflow: hidden;
   z-index: 30;
+  border-radius: ${({ flat }) => (flat ? 0 : "8px")};
+  padding-left: ${({ isLogo }) => (isLogo ? 0 : "16px")};
+  background: linear-gradient(258.91deg, #ffdb1c 52.52%, #ff5c00 95.56%);
+  cursor: pointer;
+  transition: opacity 0.3s ease;
 
   font-size: 14px;
   font-weight: 600;
@@ -74,31 +105,44 @@ const StyledLink = styled.a`
   color: ${({ theme }) => theme.colors.dark800};
 
   ${({ theme }) => theme.mediaQueries.sm} {
+    margin-right: 10px;
     z-index: 10;
     width: auto;
     border-radius: 8px 0 0 8px;
+
+    &:before {
+      display: block;
+      content: "";
+      position: absolute;
+      width: calc(100% + 8px);
+      height: calc(100% + 8px);
+      border-radius: 8px;
+      top: calc(50%);
+      left: calc(50%);
+      z-index: 1;
+      animation: pulse-whiteCustom 2s infinite;
+    }
+
+    @keyframes pulse-whiteCustom {
+      0% {
+        transform: scale(1) translateY(-50%) translateX(-50%);
+        box-shadow: 0 0 0 0 #ffa310;
+      }
+
+      70% {
+        transform: scale(calc(1)) translateY(-50%) translateX(-50%);
+        box-shadow: 0 0 0 4px rgba(51, 217, 178, 0);
+      }
+
+      100% {
+        transform: scale(1) translateY(-50%) translateX(-50%);
+        box-shadow: 0 0 0 0 rgba(51, 217, 178, 0);
+      }
+    }
   }
-`;
 
-const StyledRouterLink = styled(Link)`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 40px;
-  width: 100%;
-  padding-right: 16px;
-  overflow: hidden;
-  z-index: 30;
-
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 20px;
-  color: ${({ theme }) => theme.colors.dark800};
-
-  ${({ theme }) => theme.mediaQueries.sm} {
-    z-index: 30;
-    width: auto;
-    border-radius: 8px 0 0 8px;
+  &:hover {
+    opacity: 0.8;
   }
 `;
 
@@ -111,19 +155,27 @@ const BlockChainWeekEvent: FC<Props> = ({ href = "/", eventButtonLogo }) => {
     : "/blockchain_week";
 
   return (
-    <Wrapper pl={eventButtonLogo ? '0' : '16px'} flat={isMobile}>
+    <>
       {isAbsoluteUrl ? (
-        <StyledLink href={pathWithEventParam}>
+        <StyledLink
+          isLogo={!!eventButtonLogo}
+          flat={isMobile}
+          href={pathWithEventParam}
+        >
           {eventButtonLogo && eventButtonLogo()}
           {buttonText}
         </StyledLink>
       ) : (
-        <StyledRouterLink to={pathWithEventParam}>
+        <StyledRouterLink
+          isLogo={!!eventButtonLogo}
+          flat={isMobile}
+          to={pathWithEventParam}
+        >
           {eventButtonLogo && eventButtonLogo()}
           {buttonText}
         </StyledRouterLink>
       )}
-    </Wrapper>
+    </>
   );
 };
 
