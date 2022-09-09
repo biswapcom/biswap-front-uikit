@@ -18,10 +18,8 @@ const Wrapper = styled(Flex)<{ flat: boolean }>`
   background: linear-gradient(258.91deg, #ffdb1c 52.52%, #ff5c00 95.56%);
   cursor: pointer;
   transition: opacity 0.3s ease;
-
   ${({ theme }) => theme.mediaQueries.sm} {
     margin-right: 10px;
-
     &:before {
       display: block;
       content: "";
@@ -34,25 +32,21 @@ const Wrapper = styled(Flex)<{ flat: boolean }>`
       z-index: 1;
       animation: pulse-whiteCustom 2s infinite;
     }
-
     @keyframes pulse-whiteCustom {
       0% {
         transform: scale(1) translateY(-50%) translateX(-50%);
         box-shadow: 0 0 0 0 #ffa310;
       }
-
       70% {
         transform: scale(calc(1)) translateY(-50%) translateX(-50%);
         box-shadow: 0 0 0 4px rgba(51, 217, 178, 0);
       }
-
       100% {
         transform: scale(1) translateY(-50%) translateX(-50%);
         box-shadow: 0 0 0 0 rgba(51, 217, 178, 0);
       }
     }
   }
-
   &:hover {
     opacity: 0.8;
   }
@@ -67,12 +61,10 @@ const StyledLink = styled.a`
   padding-right: 16px;
   overflow: hidden;
   z-index: 30;
-
   font-size: 14px;
   font-weight: 600;
   line-height: 20px;
   color: ${({ theme }) => theme.colors.dark800};
-
   ${({ theme }) => theme.mediaQueries.sm} {
     z-index: 10;
     width: auto;
@@ -89,12 +81,10 @@ const StyledRouterLink = styled(Link)`
   padding-right: 16px;
   overflow: hidden;
   z-index: 30;
-
   font-size: 14px;
   font-weight: 600;
   line-height: 20px;
   color: ${({ theme }) => theme.colors.dark800};
-
   ${({ theme }) => theme.mediaQueries.sm} {
     z-index: 30;
     width: auto;
@@ -111,7 +101,7 @@ const BlockChainWeekEvent: FC<Props> = ({ href = "/", eventButtonLogo }) => {
     : "/blockchain_week";
 
   return (
-    <Wrapper pl={eventButtonLogo ? '0' : '16px'} flat={isMobile}>
+    <Wrapper pl={eventButtonLogo ? "0" : "16px"} flat={isMobile}>
       {isAbsoluteUrl ? (
         <StyledLink href={pathWithEventParam}>
           {eventButtonLogo && eventButtonLogo()}
