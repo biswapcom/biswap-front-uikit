@@ -66,7 +66,7 @@ const StyledLink = styled.a`
   width: 100%;
   padding-right: 16px;
   overflow: hidden;
-  z-index: 10;
+  z-index: 30;
 
   font-size: 14px;
   font-weight: 600;
@@ -74,6 +74,7 @@ const StyledLink = styled.a`
   color: ${({ theme }) => theme.colors.dark800};
 
   ${({ theme }) => theme.mediaQueries.sm} {
+    z-index: 10;
     width: auto;
     border-radius: 8px 0 0 8px;
   }
@@ -87,7 +88,7 @@ const StyledRouterLink = styled(Link)`
   width: 100%;
   padding-right: 16px;
   overflow: hidden;
-  z-index: 10;
+  z-index: 30;
 
   font-size: 14px;
   font-weight: 600;
@@ -95,6 +96,7 @@ const StyledRouterLink = styled(Link)`
   color: ${({ theme }) => theme.colors.dark800};
 
   ${({ theme }) => theme.mediaQueries.sm} {
+    z-index: 30;
     width: auto;
     border-radius: 8px 0 0 8px;
   }
@@ -102,7 +104,7 @@ const StyledRouterLink = styled(Link)`
 
 const BlockChainWeekEvent: FC<Props> = ({ href = "/", eventButtonLogo }) => {
   const { isMobile } = useMatchBreakpoints();
-  const buttonText = "Grant Event";
+  const buttonText = "Grand Event";
   const isAbsoluteUrl = href.startsWith("http");
   const pathWithEventParam = isAbsoluteUrl
     ? `${href}/blockchain_week`
