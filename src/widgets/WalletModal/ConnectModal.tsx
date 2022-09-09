@@ -119,7 +119,7 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => {
       <StyledText fontSize="12px" ml={isMobile ? "16px" : "32px"} mb="24px">
         By connecting a wallet, you agree to Biswap's{' '}
         <Text fontSize="12px" as="span" color="primary">
-          <a href="/">
+          <a href={`${process.env.REACT_APP_FRONT_1}/terms`}>
             Terms of Use
           </a>
         </Text>
@@ -145,6 +145,7 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => {
         as="a" 
         color="primary" 
         m={isMobile ? "16px 16px 16px" : "16px 32px 32px"}
+        href="https://docs.biswap.org/faq/biswap-platform#how-do-i-connect-my-wallet-to-biswap"
       >
         <HelpOpacityIcon color="white"/>
         <Text 

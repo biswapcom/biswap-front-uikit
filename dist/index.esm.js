@@ -8576,11 +8576,11 @@ var ConnectModal = function (_a) {
             "By connecting a wallet, you agree to Biswap's",
             ' ',
             React.createElement(Text, { fontSize: "12px", as: "span", color: "primary" },
-                React.createElement("a", { href: "/" }, "Terms of Use"))),
+                React.createElement("a", { href: "".concat(process.env.REACT_APP_FRONT_1, "/terms") }, "Terms of Use"))),
         React.createElement(ScrollWrapper, null,
             React.createElement(WalletCardsWrapper, null, sortedConfig.map(function (entry) { return (React.createElement(WalletCard, { key: entry.title, login: login, walletConfig: entry, onDismiss: onDismiss })); }))),
         React.createElement(Text, { mt: "24px", textAlign: "center", fontSize: "12px" }, "Haven\u2019t got a crypto wallet yet?"),
-        React.createElement(Button, { height: "48px", width: isMobile ? "306px" : "352px", as: "a", color: "primary", m: isMobile ? "16px 16px 16px" : "16px 32px 32px" },
+        React.createElement(Button, { height: "48px", width: isMobile ? "306px" : "352px", as: "a", color: "primary", m: isMobile ? "16px 16px 16px" : "16px 32px 32px", href: "https://docs.biswap.org/faq/biswap-platform#how-do-i-connect-my-wallet-to-biswap" },
             React.createElement(Icon$2Z, { color: "white" }),
             React.createElement(Text, { color: "contrast", bold: true, ml: "12px" }, "Learn How to Connect")),
         isMobile && (React.createElement(StyledButton, { color: "primary", mb: "32px", variant: "text", onClick: onDismiss }, "Close Window"))));

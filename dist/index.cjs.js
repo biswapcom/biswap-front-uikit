@@ -8589,11 +8589,11 @@ var ConnectModal = function (_a) {
             "By connecting a wallet, you agree to Biswap's",
             ' ',
             React__default["default"].createElement(Text, { fontSize: "12px", as: "span", color: "primary" },
-                React__default["default"].createElement("a", { href: "/" }, "Terms of Use"))),
+                React__default["default"].createElement("a", { href: "".concat(process.env.REACT_APP_FRONT_1, "/terms") }, "Terms of Use"))),
         React__default["default"].createElement(ScrollWrapper, null,
             React__default["default"].createElement(WalletCardsWrapper, null, sortedConfig.map(function (entry) { return (React__default["default"].createElement(WalletCard, { key: entry.title, login: login, walletConfig: entry, onDismiss: onDismiss })); }))),
         React__default["default"].createElement(Text, { mt: "24px", textAlign: "center", fontSize: "12px" }, "Haven\u2019t got a crypto wallet yet?"),
-        React__default["default"].createElement(Button, { height: "48px", width: isMobile ? "306px" : "352px", as: "a", color: "primary", m: isMobile ? "16px 16px 16px" : "16px 32px 32px" },
+        React__default["default"].createElement(Button, { height: "48px", width: isMobile ? "306px" : "352px", as: "a", color: "primary", m: isMobile ? "16px 16px 16px" : "16px 32px 32px", href: "https://docs.biswap.org/faq/biswap-platform#how-do-i-connect-my-wallet-to-biswap" },
             React__default["default"].createElement(Icon$2Z, { color: "white" }),
             React__default["default"].createElement(Text, { color: "contrast", bold: true, ml: "12px" }, "Learn How to Connect")),
         isMobile && (React__default["default"].createElement(StyledButton, { color: "primary", mb: "32px", variant: "text", onClick: onDismiss }, "Close Window"))));
