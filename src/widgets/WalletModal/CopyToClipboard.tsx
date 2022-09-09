@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, ReactNode } from "react";
 import styled from "styled-components";
 import Text from "../../components/Text/Text";
 import { CopyIcon } from "../../components/Svg";
 
 interface Props {
   toCopy: string;
+  children: ReactNode;
 }
 
 const StyleButton = styled(Text).attrs({ role: "button" })`

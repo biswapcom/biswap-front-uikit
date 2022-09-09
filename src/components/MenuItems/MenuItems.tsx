@@ -17,6 +17,7 @@ const MenuItems: React.FC<MenuItemsProps> = ({
   activeSubItem,
   isMobileMenuOpened = false,
   mobileMenuCallback,
+  children,
   ...props
 }) => {
   const { isDesktop, isTablet } = useMatchBreakpoints();
