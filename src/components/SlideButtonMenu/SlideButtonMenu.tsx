@@ -20,7 +20,7 @@ interface SlideMenuProps extends SlideButtonMenuProps {
 
 const getBackgroundColor = ({ theme, variant }: StyledButtonMenuProps) => {
   return variant === slideMenuVariants.LIGHT
-    ? getRgba(theme.colors.pastelBlue, 0.08)
+    ? getRgba(theme.colors.pastelBlue, theme, 0.08)
     : theme.colors.tooltip;
 };
 
@@ -89,7 +89,11 @@ const Selection = styled.div<ISelection>`
 
   ${({ theme, variant }) =>
     variant === slideMenuVariants.LIGHT &&
-    `box-shadow: 0 2px 4px ${getRgba(theme.colors.backgroundDark, 0.08)}`};
+    `box-shadow: 0 2px 4px ${getRgba(
+      theme.colors.backgroundDark,
+      theme,
+      0.08
+    )}`};
 `;
 
 const SlideButtonMenu: React.FC<SlideMenuProps> = ({

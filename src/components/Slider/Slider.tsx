@@ -86,7 +86,7 @@ const BunnySlider = styled.div`
   width: 100%;
 `;
 
-const BreakePointsWrap = styled.div`
+const BreakPointsWrap = styled.div`
   padding: 0 9px;
   display: flex;
   justify-content: space-between;
@@ -128,7 +128,6 @@ const RBPrice = styled(Text)`
   text-align: right;
   font-size: 12px;
   line-height: 16px;
-  font-weight: 600;
   color: ${({ theme }) => theme.colors.text};
 `;
 
@@ -325,11 +324,11 @@ const Slider: React.FC<SliderProps> = ({
           />
         </BunnySlider>
       </SliderContainer>
-      <BreakePointsWrap>
+      <BreakPointsWrap>
         {checkPoints?.map((item, index) => (
           <Point key={index.toString()} />
         ))}
-      </BreakePointsWrap>
+      </BreakPointsWrap>
       <InfoBlock>
         <InfoNode>
           <TitleText>Fee return</TitleText>

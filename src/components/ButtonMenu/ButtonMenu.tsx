@@ -17,7 +17,7 @@ const getBackgroundColor = ({
   if (withoutBackground) return "transparent";
   return variant === variants.SELECT
     ? theme.colors.tooltip
-    : getRgba(theme.colors.pastelBlue, 0.08);
+    : getRgba(theme.colors.pastelBlue, theme, 0.08);
 };
 
 const getFlat = ({ flatBottom, flatTop }: StyledButtonMenuProps) => {

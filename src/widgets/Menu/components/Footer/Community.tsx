@@ -15,11 +15,12 @@ export interface SocialWrapProps {
 }
 const Icons = IconModule as unknown as { [key: string]: React.FC<SvgProps> };
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<{ menuVariant?: boolean }>`
   grid-area: community;
   margin-top: 8px;
-
+  ${({ menuVariant }) => !menuVariant && "max-width: 136px;"}
   ${({ theme }) => theme.mediaQueries.sm} {
+    max-width: none;
     margin-top: 24px;
   }
 
@@ -34,7 +35,8 @@ const Title = styled.h4`
 `;
 const SocialWrap = styled.div<SocialWrapProps>`
   display: flex;
-  margin: 0 -4px;
+  flex-wrap: wrap;
+  gap: 18px;
   ${({ menuVariant }) => {
     if (menuVariant) {
       return `
@@ -46,11 +48,9 @@ const SocialWrap = styled.div<SocialWrapProps>`
   }};
 `;
 const SocialItem = styled.div`
-  width: 20px;
-  height: 20px;
-  margin: 0 4px;
+  width: 18px;
+  height: 18px;
   transition: opacity 0.3s ease;
-
   &:hover {
     opacity: 0.65;
   }
@@ -139,7 +139,7 @@ const Community: React.FC<CommunityProps> = ({
   menuVariant,
 }) => {
   return (
-    <Wrapper>
+    <Wrapper menuVariant={menuVariant}>
       {title && <Title>{title}</Title>}
 
       <SocialWrap menuVariant={menuVariant}>

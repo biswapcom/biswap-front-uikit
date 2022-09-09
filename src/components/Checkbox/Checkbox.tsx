@@ -31,7 +31,8 @@ const CheckboxInput = styled.input.attrs({ type: "checkbox" })<CheckboxProps>`
   width: ${getScale};
   border: 2px solid transparent;
   border-radius: 4px;
-  background-color: ${({ theme }) => getRgba(theme.colors.pastelBlue, 0.16)};
+  background-color: ${({ theme }) =>
+    getRgba(theme.colors.pastelBlue, theme, 0.16)};
   transition: background-color 0.4s ease-in-out, border-color 0.4s ease;
 
   &:after {
@@ -93,7 +94,7 @@ const Checkbox: FC<CheckboxProps> = ({
   id,
   defaultChecked,
   onChange,
-  value
+  value,
 }) => {
   return (
     <Wrapper labelOrientation={labelOrientation}>
@@ -109,7 +110,7 @@ const Checkbox: FC<CheckboxProps> = ({
         <StyledText
           as="span"
           fontSize="12px"
-          fontWeight="400"
+          fontWeight="600"
           color="gray900"
           mr={labelOrientation === "left" ? "12px" : 0}
           ml={labelOrientation === "right" ? "12px" : 0}
