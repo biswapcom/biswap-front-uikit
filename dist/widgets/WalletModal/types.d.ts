@@ -32,7 +32,7 @@ export declare const InstanceCheckRules: {
     iToken: string;
     "BitKeep Wallet": string;
 };
-export declare type Login = (connectorId: ConnectorNames, instanceCheckRule: InstanceCheckRuleType, helpHref: string) => void;
+export declare type Login = (connectorId: ConnectorNames, instanceCheckRule?: InstanceCheckRuleType, helpHref?: string) => void;
 export declare type InstanceCheckRuleType = typeof InstanceCheckRules[ConnectorsTitleTypes];
 export interface Config {
     priority: number;
