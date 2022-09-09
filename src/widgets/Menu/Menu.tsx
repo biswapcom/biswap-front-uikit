@@ -338,7 +338,7 @@ const Menu: React.FC<NavProps> = ({
               />
             </Flex>
           </StyledNav>
-          {withEvent && isMobile && (
+          {withEvent && isMobile && !isMobileMenuOpened && (
             <BlockChainWeekEvent
               eventButtonLogo={eventButtonLogo}
               href={homeLink?.href ?? "/"}
