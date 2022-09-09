@@ -24,7 +24,7 @@ const WalletCardsWrapper = styled.div`
   max-height: 328px;
   margin-left: 16px;
   padding-right: 6px;
-  ${({ theme }) => theme.mediaQueries.sm}{
+  ${({ theme }) => theme.mediaQueries.sm} {
     padding-right: 0;
     width: 352px;
     margin-left: 32px;
@@ -61,29 +61,29 @@ const ScrollWrapper = styled(Box)`
   overflow-x: hidden;
   margin-right: 6px;
   align-self: stretch;
-  ${({ theme }) => theme.mediaQueries.sm}{
+  ${({ theme }) => theme.mediaQueries.sm} {
     margin-right: 14px;
   }
-  &::-webkit-scrollbar{
+  &::-webkit-scrollbar {
     width: 4px;
   }
-  &::-webkit-scrollbar-track{
+  &::-webkit-scrollbar-track {
     background-color: ${({ theme }) => theme.colors.gray200};
     box-shadow: none;
   }
-  &::-webkit-scrollbar-thumb{
+  &::-webkit-scrollbar-thumb {
     background-color: ${({ theme }) => theme.colors.textSubtle};
   }
-`
+`;
 
 const StyledText = styled(Text)`
   align-self: flex-start;
-`
+`;
 
 const StyledButton = styled(Button)`
   font-size: 16px;
   font-weight: 500;
-`
+`;
 
 const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => {
   const { isMobile } = useMatchBreakpoints();
@@ -102,9 +102,9 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => {
   );
 
   return (
-    <Modal 
+    <Modal
       walletModal
-      title="Connect to a wallet" 
+      title="Connect to a wallet"
       onDismiss={onDismiss}
       width={isMobile ? "100%" : "auto"}
       maxWidth={!isMobile ? "416px" : "none"}
@@ -117,11 +117,9 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => {
       }}
     >
       <StyledText fontSize="12px" ml={isMobile ? "16px" : "32px"} mb="24px">
-        By connecting a wallet, you agree to Biswap's{' '}
+        By connecting a wallet, you agree to Biswap's{" "}
         <Text fontSize="12px" as="span" color="primary">
-          <a href={`${process.env.REACT_APP_FRONT_1}/terms`}>
-            Terms of Use
-          </a>
+          <a href={`${process.env.REACT_APP_FRONT_1}/terms`}>Terms of Use</a>
         </Text>
       </StyledText>
       <ScrollWrapper>
@@ -139,26 +137,22 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => {
       <Text mt="24px" textAlign="center" fontSize="12px">
         Haven’t got a crypto wallet yet?
       </Text>
-      <Button 
-        height="48px" 
-        width={isMobile ? "306px" : "352px"} 
-        as="a" 
-        color="primary" 
+      <Button
+        height="48px"
+        width={isMobile ? "306px" : "352px"}
+        as="a"
+        color="primary"
         m={isMobile ? "16px 16px 16px" : "16px 32px 32px"}
         href="https://docs.biswap.org/faq/biswap-platform#how-do-i-connect-my-wallet-to-biswap"
       >
-        <HelpOpacityIcon color="white"/>
-        <Text 
-          color="contrast" 
-          bold
-          ml="12px"
-        >
+        <HelpOpacityIcon color="white" />
+        <Text color="contrast" bold ml="12px">
           Learn How to Connect
         </Text>
       </Button>
       {isMobile && (
         <StyledButton
-          color="primary" 
+          color="primary"
           mb="32px"
           variant="text"
           onClick={onDismiss}

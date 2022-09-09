@@ -19,12 +19,12 @@ const StyledButton = styled(Button)`
   height: 48px;
   width: 100%;
   background: ${({ theme }) => theme.colors.gray200};
-  ${({ theme }) => theme.mediaQueries.sm}{
+  ${({ theme }) => theme.mediaQueries.sm} {
     width: 172px;
   }
 `;
 
-const StyledText = styled(Text)` 
+const StyledText = styled(Text)`
   font-weight: bold;
   color: ${({ theme }) => theme.colors.primary};
 `;
@@ -32,8 +32,8 @@ const StyledText = styled(Text)`
 const WalletCard: React.FC<Props> = ({ login, walletConfig, onDismiss }) => {
   const handleClick = useCallback(() => {
     login(
-      walletConfig.connectorId, 
-      walletConfig.instanceCheckRule, 
+      walletConfig.connectorId,
+      walletConfig.instanceCheckRule,
       walletConfig.helpHref
     );
     localStorage.setItem(walletLocalStorageKey, walletConfig.title);
@@ -42,7 +42,7 @@ const WalletCard: React.FC<Props> = ({ login, walletConfig, onDismiss }) => {
       walletConfig.connectorId
     );
     onDismiss();
-  }, [])
+  }, []);
 
   const { title, icon: Icon } = walletConfig;
   return (
@@ -52,7 +52,9 @@ const WalletCard: React.FC<Props> = ({ login, walletConfig, onDismiss }) => {
       id={`wallet-connect-${title.toLocaleLowerCase()}`}
     >
       <Icon width="32px" />
-      <StyledText pl="8px" fontSize="12px" >{title}</StyledText>
+      <StyledText pl="8px" fontSize="12px">
+        {title}
+      </StyledText>
     </StyledButton>
   );
 };

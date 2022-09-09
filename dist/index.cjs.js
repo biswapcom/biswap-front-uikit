@@ -6810,7 +6810,8 @@ var ModalContainer = styled__default["default"](Box)(templateObject_4$d || (temp
     return theme.zIndices.modal;
 }, function (_a) {
     var walletModal = _a.walletModal;
-    return !walletModal && "\n    max-height: 100vh;\n    overflow-y: auto;\n  ";
+    return !walletModal &&
+        "\n    max-height: 100vh;\n    overflow-y: auto;\n  ";
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
@@ -8441,17 +8442,17 @@ exports.ConnectorNames = void 0;
     ConnectorNames["WalletLink"] = "walletlink";
 })(exports.ConnectorNames || (exports.ConnectorNames = {}));
 var InstanceCheckRules = (_a$1 = {},
-    _a$1[exports.ConnectorsTitleTypes.Metamask] = 'isMetaMask',
-    _a$1[exports.ConnectorsTitleTypes.TrustWallet] = 'isTrustWallet',
-    _a$1[exports.ConnectorsTitleTypes.MathWallet] = 'isMathWallet',
-    _a$1[exports.ConnectorsTitleTypes.TokenPocket] = 'isTokenPocket',
-    _a$1[exports.ConnectorsTitleTypes.Coin98] = 'isCoin98',
-    _a$1[exports.ConnectorsTitleTypes.WalletConnect] = 'isWalletConnect',
-    _a$1[exports.ConnectorsTitleTypes.BinanceChain] = 'BinanceChain',
-    _a$1[exports.ConnectorsTitleTypes.SafePal] = 'isSafePal',
-    _a$1[exports.ConnectorsTitleTypes.Coinbase] = 'isCoinbaseWallet',
-    _a$1[exports.ConnectorsTitleTypes.iToken] = 'isiToken',
-    _a$1[exports.ConnectorsTitleTypes.BitKeep] = 'isBitKeep',
+    _a$1[exports.ConnectorsTitleTypes.Metamask] = "isMetaMask",
+    _a$1[exports.ConnectorsTitleTypes.TrustWallet] = "isTrustWallet",
+    _a$1[exports.ConnectorsTitleTypes.MathWallet] = "isMathWallet",
+    _a$1[exports.ConnectorsTitleTypes.TokenPocket] = "isTokenPocket",
+    _a$1[exports.ConnectorsTitleTypes.Coin98] = "isCoin98",
+    _a$1[exports.ConnectorsTitleTypes.WalletConnect] = "isWalletConnect",
+    _a$1[exports.ConnectorsTitleTypes.BinanceChain] = "BinanceChain",
+    _a$1[exports.ConnectorsTitleTypes.SafePal] = "isSafePal",
+    _a$1[exports.ConnectorsTitleTypes.Coinbase] = "isCoinbaseWallet",
+    _a$1[exports.ConnectorsTitleTypes.iToken] = "isiToken",
+    _a$1[exports.ConnectorsTitleTypes.BitKeep] = "isBitKeep",
     _a$1);
 
 var connectors = [
@@ -8460,101 +8461,101 @@ var connectors = [
         icon: Icon$a,
         connectorId: exports.ConnectorNames.Injected,
         priority: 1,
-        helpHref: 'https://bit.ly/3arAKkq',
-        instanceCheckRule: InstanceCheckRules[exports.ConnectorsTitleTypes.Metamask]
+        helpHref: "https://bit.ly/3arAKkq",
+        instanceCheckRule: InstanceCheckRules[exports.ConnectorsTitleTypes.Metamask],
     },
     {
         title: exports.ConnectorsTitleTypes.TrustWallet,
         icon: Icon$7,
         connectorId: exports.ConnectorNames.WalletConnect,
         priority: 2,
-        helpHref: 'https://bit.ly/3BwkxWo',
-        instanceCheckRule: InstanceCheckRules[exports.ConnectorsTitleTypes.TrustWallet]
+        helpHref: "https://bit.ly/3BwkxWo",
+        instanceCheckRule: InstanceCheckRules[exports.ConnectorsTitleTypes.TrustWallet],
     },
     {
         title: exports.ConnectorsTitleTypes.MathWallet,
         icon: Icon$9,
         connectorId: exports.ConnectorNames.Injected,
         priority: 999,
-        helpHref: 'https://bit.ly/3BI649I',
-        instanceCheckRule: InstanceCheckRules[exports.ConnectorsTitleTypes.MathWallet]
+        helpHref: "https://bit.ly/3BI649I",
+        instanceCheckRule: InstanceCheckRules[exports.ConnectorsTitleTypes.MathWallet],
     },
     {
         title: exports.ConnectorsTitleTypes.TokenPocket,
         icon: Icon$8,
         connectorId: exports.ConnectorNames.Injected,
         priority: 4,
-        helpHref: 'https://bit.ly/3zu4yoW',
-        instanceCheckRule: InstanceCheckRules[exports.ConnectorsTitleTypes.TokenPocket]
+        helpHref: "https://bit.ly/3zu4yoW",
+        instanceCheckRule: InstanceCheckRules[exports.ConnectorsTitleTypes.TokenPocket],
     },
     {
         title: exports.ConnectorsTitleTypes.Coin98,
         icon: Icon$3,
         connectorId: exports.ConnectorNames.Injected,
         priority: 999,
-        helpHref: 'https://bit.ly/3PUMFGS',
-        instanceCheckRule: InstanceCheckRules[exports.ConnectorsTitleTypes.Coin98]
+        helpHref: "https://bit.ly/3PUMFGS",
+        instanceCheckRule: InstanceCheckRules[exports.ConnectorsTitleTypes.Coin98],
     },
     {
         title: exports.ConnectorsTitleTypes.WalletConnect,
         icon: Icon$6,
         connectorId: exports.ConnectorNames.WalletConnect,
         priority: 3,
-        helpHref: 'https://bit.ly/3SnDkZR',
-        instanceCheckRule: InstanceCheckRules[exports.ConnectorsTitleTypes.WalletConnect]
+        helpHref: "https://bit.ly/3SnDkZR",
+        instanceCheckRule: InstanceCheckRules[exports.ConnectorsTitleTypes.WalletConnect],
     },
     {
         title: exports.ConnectorsTitleTypes.BinanceChain,
         icon: Icon$5,
         connectorId: exports.ConnectorNames.BSC,
         priority: 999,
-        helpHref: 'https://bit.ly/3BDTLLI',
-        instanceCheckRule: InstanceCheckRules[exports.ConnectorsTitleTypes.BinanceChain]
+        helpHref: "https://bit.ly/3BDTLLI",
+        instanceCheckRule: InstanceCheckRules[exports.ConnectorsTitleTypes.BinanceChain],
     },
     {
         title: exports.ConnectorsTitleTypes.SafePal,
         icon: Icon$4,
         connectorId: exports.ConnectorNames.Injected,
         priority: 999,
-        helpHref: 'https://bit.ly/3zMM7gO',
-        instanceCheckRule: InstanceCheckRules[exports.ConnectorsTitleTypes.SafePal]
+        helpHref: "https://bit.ly/3zMM7gO",
+        instanceCheckRule: InstanceCheckRules[exports.ConnectorsTitleTypes.SafePal],
     },
     {
         title: exports.ConnectorsTitleTypes.Coinbase,
         icon: Icon$2,
         connectorId: exports.ConnectorNames.Injected,
         priority: 999,
-        helpHref: 'https://bit.ly/3oLQMcr',
-        instanceCheckRule: InstanceCheckRules[exports.ConnectorsTitleTypes.Coinbase]
+        helpHref: "https://bit.ly/3oLQMcr",
+        instanceCheckRule: InstanceCheckRules[exports.ConnectorsTitleTypes.Coinbase],
     },
     {
         title: exports.ConnectorsTitleTypes.iToken,
         icon: Icon$1,
         connectorId: exports.ConnectorNames.Injected,
         priority: 999,
-        helpHref: 'https://bit.ly/3vwZP4O',
-        instanceCheckRule: InstanceCheckRules[exports.ConnectorsTitleTypes.iToken]
+        helpHref: "https://bit.ly/3vwZP4O",
+        instanceCheckRule: InstanceCheckRules[exports.ConnectorsTitleTypes.iToken],
     },
     {
         title: exports.ConnectorsTitleTypes.BitKeep,
         icon: Icon,
         connectorId: exports.ConnectorNames.Injected,
         priority: 999,
-        helpHref: 'https://bit.ly/3nsp57T',
-        instanceCheckRule: InstanceCheckRules[exports.ConnectorsTitleTypes.BitKeep]
+        helpHref: "https://bit.ly/3nsp57T",
+        instanceCheckRule: InstanceCheckRules[exports.ConnectorsTitleTypes.BitKeep],
     },
 ];
 var connectorLocalStorageKey = "connectorId";
 var walletLocalStorageKey = "wallet";
 
-var StyledButton$1 = styled__default["default"](Button)(templateObject_1$b || (templateObject_1$b = __makeTemplateObject(["\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-start;\n  white-space: nowrap;\n  height: 48px;\n  width: 100%;\n  background: ", ";\n  ", "{\n    width: 172px;\n  }\n"], ["\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-start;\n  white-space: nowrap;\n  height: 48px;\n  width: 100%;\n  background: ", ";\n  ", "{\n    width: 172px;\n  }\n"])), function (_a) {
+var StyledButton$1 = styled__default["default"](Button)(templateObject_1$b || (templateObject_1$b = __makeTemplateObject(["\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-start;\n  white-space: nowrap;\n  height: 48px;\n  width: 100%;\n  background: ", ";\n  ", " {\n    width: 172px;\n  }\n"], ["\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-start;\n  white-space: nowrap;\n  height: 48px;\n  width: 100%;\n  background: ", ";\n  ", " {\n    width: 172px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.gray200;
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var StyledText$1 = styled__default["default"](Text)(templateObject_2$8 || (templateObject_2$8 = __makeTemplateObject([" \n  font-weight: bold;\n  color: ", ";\n"], [" \n  font-weight: bold;\n  color: ", ";\n"])), function (_a) {
+var StyledText$1 = styled__default["default"](Text)(templateObject_2$8 || (templateObject_2$8 = __makeTemplateObject(["\n  font-weight: bold;\n  color: ", ";\n"], ["\n  font-weight: bold;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.primary;
 });
@@ -8573,7 +8574,7 @@ var WalletCard = function (_a) {
 };
 var templateObject_1$b, templateObject_2$8;
 
-var WalletCardsWrapper = styled__default["default"].div(templateObject_1$a || (templateObject_1$a = __makeTemplateObject(["\n  display: grid;\n  grid-gap: 8px;\n  grid-template-columns: repeat(2, 1fr);\n  max-height: 328px;\n  margin-left: 16px;\n  padding-right: 6px;\n  ", "{\n    padding-right: 0;\n    width: 352px;\n    margin-left: 32px;\n  }\n"], ["\n  display: grid;\n  grid-gap: 8px;\n  grid-template-columns: repeat(2, 1fr);\n  max-height: 328px;\n  margin-left: 16px;\n  padding-right: 6px;\n  ", "{\n    padding-right: 0;\n    width: 352px;\n    margin-left: 32px;\n  }\n"])), function (_a) {
+var WalletCardsWrapper = styled__default["default"].div(templateObject_1$a || (templateObject_1$a = __makeTemplateObject(["\n  display: grid;\n  grid-gap: 8px;\n  grid-template-columns: repeat(2, 1fr);\n  max-height: 328px;\n  margin-left: 16px;\n  padding-right: 6px;\n  ", " {\n    padding-right: 0;\n    width: 352px;\n    margin-left: 32px;\n  }\n"], ["\n  display: grid;\n  grid-gap: 8px;\n  grid-template-columns: repeat(2, 1fr);\n  max-height: 328px;\n  margin-left: 16px;\n  padding-right: 6px;\n  ", " {\n    padding-right: 0;\n    width: 352px;\n    margin-left: 32px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
@@ -8591,7 +8592,7 @@ var getPreferredConfig = function (walletConfig) {
         preferredWallet
     ], sortedConfig.filter(function (sortedWalletConfig) { return sortedWalletConfig.title !== preferredWalletName; }), true);
 };
-var ScrollWrapper = styled__default["default"](Box)(templateObject_2$7 || (templateObject_2$7 = __makeTemplateObject(["\n  overflow-x: hidden;\n  margin-right: 6px;\n  align-self: stretch;\n  ", "{\n    margin-right: 14px;\n  }\n  &::-webkit-scrollbar{\n    width: 4px;\n  }\n  &::-webkit-scrollbar-track{\n    background-color: ", ";\n    box-shadow: none;\n  }\n  &::-webkit-scrollbar-thumb{\n    background-color: ", ";\n  }\n"], ["\n  overflow-x: hidden;\n  margin-right: 6px;\n  align-self: stretch;\n  ", "{\n    margin-right: 14px;\n  }\n  &::-webkit-scrollbar{\n    width: 4px;\n  }\n  &::-webkit-scrollbar-track{\n    background-color: ", ";\n    box-shadow: none;\n  }\n  &::-webkit-scrollbar-thumb{\n    background-color: ", ";\n  }\n"])), function (_a) {
+var ScrollWrapper = styled__default["default"](Box)(templateObject_2$7 || (templateObject_2$7 = __makeTemplateObject(["\n  overflow-x: hidden;\n  margin-right: 6px;\n  align-self: stretch;\n  ", " {\n    margin-right: 14px;\n  }\n  &::-webkit-scrollbar {\n    width: 4px;\n  }\n  &::-webkit-scrollbar-track {\n    background-color: ", ";\n    box-shadow: none;\n  }\n  &::-webkit-scrollbar-thumb {\n    background-color: ", ";\n  }\n"], ["\n  overflow-x: hidden;\n  margin-right: 6px;\n  align-self: stretch;\n  ", " {\n    margin-right: 14px;\n  }\n  &::-webkit-scrollbar {\n    width: 4px;\n  }\n  &::-webkit-scrollbar-track {\n    background-color: ", ";\n    box-shadow: none;\n  }\n  &::-webkit-scrollbar-thumb {\n    background-color: ", ";\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 }, function (_a) {
@@ -8619,7 +8620,7 @@ var ConnectModal = function (_a) {
         } },
         React__default["default"].createElement(StyledText, { fontSize: "12px", ml: isMobile ? "16px" : "32px", mb: "24px" },
             "By connecting a wallet, you agree to Biswap's",
-            ' ',
+            " ",
             React__default["default"].createElement(Text, { fontSize: "12px", as: "span", color: "primary" },
                 React__default["default"].createElement("a", { href: "".concat(process.env.REACT_APP_FRONT_1, "/terms") }, "Terms of Use"))),
         React__default["default"].createElement(ScrollWrapper, null,
@@ -8783,7 +8784,7 @@ var BlockChainWeekEvent = function (_a) {
     var pathWithEventParam = isAbsoluteUrl
         ? "".concat(href, "/blockchain_week")
         : "/blockchain_week";
-    return (React__default["default"].createElement(Wrapper$1, { pl: eventButtonLogo ? '0' : '16px', flat: isMobile }, isAbsoluteUrl ? (React__default["default"].createElement(StyledLink, { href: pathWithEventParam },
+    return (React__default["default"].createElement(Wrapper$1, { pl: eventButtonLogo ? "0" : "16px", flat: isMobile }, isAbsoluteUrl ? (React__default["default"].createElement(StyledLink, { href: pathWithEventParam },
         eventButtonLogo && eventButtonLogo(),
         buttonText)) : (React__default["default"].createElement(StyledRouterLink, { to: pathWithEventParam },
         eventButtonLogo && eventButtonLogo(),

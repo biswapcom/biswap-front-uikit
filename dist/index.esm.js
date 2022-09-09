@@ -6797,7 +6797,8 @@ var ModalContainer = styled(Box)(templateObject_4$d || (templateObject_4$d = __m
     return theme.zIndices.modal;
 }, function (_a) {
     var walletModal = _a.walletModal;
-    return !walletModal && "\n    max-height: 100vh;\n    overflow-y: auto;\n  ";
+    return !walletModal &&
+        "\n    max-height: 100vh;\n    overflow-y: auto;\n  ";
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
@@ -8428,17 +8429,17 @@ var ConnectorNames;
     ConnectorNames["WalletLink"] = "walletlink";
 })(ConnectorNames || (ConnectorNames = {}));
 var InstanceCheckRules = (_a$1 = {},
-    _a$1[ConnectorsTitleTypes.Metamask] = 'isMetaMask',
-    _a$1[ConnectorsTitleTypes.TrustWallet] = 'isTrustWallet',
-    _a$1[ConnectorsTitleTypes.MathWallet] = 'isMathWallet',
-    _a$1[ConnectorsTitleTypes.TokenPocket] = 'isTokenPocket',
-    _a$1[ConnectorsTitleTypes.Coin98] = 'isCoin98',
-    _a$1[ConnectorsTitleTypes.WalletConnect] = 'isWalletConnect',
-    _a$1[ConnectorsTitleTypes.BinanceChain] = 'BinanceChain',
-    _a$1[ConnectorsTitleTypes.SafePal] = 'isSafePal',
-    _a$1[ConnectorsTitleTypes.Coinbase] = 'isCoinbaseWallet',
-    _a$1[ConnectorsTitleTypes.iToken] = 'isiToken',
-    _a$1[ConnectorsTitleTypes.BitKeep] = 'isBitKeep',
+    _a$1[ConnectorsTitleTypes.Metamask] = "isMetaMask",
+    _a$1[ConnectorsTitleTypes.TrustWallet] = "isTrustWallet",
+    _a$1[ConnectorsTitleTypes.MathWallet] = "isMathWallet",
+    _a$1[ConnectorsTitleTypes.TokenPocket] = "isTokenPocket",
+    _a$1[ConnectorsTitleTypes.Coin98] = "isCoin98",
+    _a$1[ConnectorsTitleTypes.WalletConnect] = "isWalletConnect",
+    _a$1[ConnectorsTitleTypes.BinanceChain] = "BinanceChain",
+    _a$1[ConnectorsTitleTypes.SafePal] = "isSafePal",
+    _a$1[ConnectorsTitleTypes.Coinbase] = "isCoinbaseWallet",
+    _a$1[ConnectorsTitleTypes.iToken] = "isiToken",
+    _a$1[ConnectorsTitleTypes.BitKeep] = "isBitKeep",
     _a$1);
 
 var connectors = [
@@ -8447,101 +8448,101 @@ var connectors = [
         icon: Icon$a,
         connectorId: ConnectorNames.Injected,
         priority: 1,
-        helpHref: 'https://bit.ly/3arAKkq',
-        instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.Metamask]
+        helpHref: "https://bit.ly/3arAKkq",
+        instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.Metamask],
     },
     {
         title: ConnectorsTitleTypes.TrustWallet,
         icon: Icon$7,
         connectorId: ConnectorNames.WalletConnect,
         priority: 2,
-        helpHref: 'https://bit.ly/3BwkxWo',
-        instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.TrustWallet]
+        helpHref: "https://bit.ly/3BwkxWo",
+        instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.TrustWallet],
     },
     {
         title: ConnectorsTitleTypes.MathWallet,
         icon: Icon$9,
         connectorId: ConnectorNames.Injected,
         priority: 999,
-        helpHref: 'https://bit.ly/3BI649I',
-        instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.MathWallet]
+        helpHref: "https://bit.ly/3BI649I",
+        instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.MathWallet],
     },
     {
         title: ConnectorsTitleTypes.TokenPocket,
         icon: Icon$8,
         connectorId: ConnectorNames.Injected,
         priority: 4,
-        helpHref: 'https://bit.ly/3zu4yoW',
-        instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.TokenPocket]
+        helpHref: "https://bit.ly/3zu4yoW",
+        instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.TokenPocket],
     },
     {
         title: ConnectorsTitleTypes.Coin98,
         icon: Icon$3,
         connectorId: ConnectorNames.Injected,
         priority: 999,
-        helpHref: 'https://bit.ly/3PUMFGS',
-        instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.Coin98]
+        helpHref: "https://bit.ly/3PUMFGS",
+        instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.Coin98],
     },
     {
         title: ConnectorsTitleTypes.WalletConnect,
         icon: Icon$6,
         connectorId: ConnectorNames.WalletConnect,
         priority: 3,
-        helpHref: 'https://bit.ly/3SnDkZR',
-        instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.WalletConnect]
+        helpHref: "https://bit.ly/3SnDkZR",
+        instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.WalletConnect],
     },
     {
         title: ConnectorsTitleTypes.BinanceChain,
         icon: Icon$5,
         connectorId: ConnectorNames.BSC,
         priority: 999,
-        helpHref: 'https://bit.ly/3BDTLLI',
-        instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.BinanceChain]
+        helpHref: "https://bit.ly/3BDTLLI",
+        instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.BinanceChain],
     },
     {
         title: ConnectorsTitleTypes.SafePal,
         icon: Icon$4,
         connectorId: ConnectorNames.Injected,
         priority: 999,
-        helpHref: 'https://bit.ly/3zMM7gO',
-        instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.SafePal]
+        helpHref: "https://bit.ly/3zMM7gO",
+        instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.SafePal],
     },
     {
         title: ConnectorsTitleTypes.Coinbase,
         icon: Icon$2,
         connectorId: ConnectorNames.Injected,
         priority: 999,
-        helpHref: 'https://bit.ly/3oLQMcr',
-        instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.Coinbase]
+        helpHref: "https://bit.ly/3oLQMcr",
+        instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.Coinbase],
     },
     {
         title: ConnectorsTitleTypes.iToken,
         icon: Icon$1,
         connectorId: ConnectorNames.Injected,
         priority: 999,
-        helpHref: 'https://bit.ly/3vwZP4O',
-        instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.iToken]
+        helpHref: "https://bit.ly/3vwZP4O",
+        instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.iToken],
     },
     {
         title: ConnectorsTitleTypes.BitKeep,
         icon: Icon,
         connectorId: ConnectorNames.Injected,
         priority: 999,
-        helpHref: 'https://bit.ly/3nsp57T',
-        instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.BitKeep]
+        helpHref: "https://bit.ly/3nsp57T",
+        instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.BitKeep],
     },
 ];
 var connectorLocalStorageKey = "connectorId";
 var walletLocalStorageKey = "wallet";
 
-var StyledButton$1 = styled(Button)(templateObject_1$b || (templateObject_1$b = __makeTemplateObject(["\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-start;\n  white-space: nowrap;\n  height: 48px;\n  width: 100%;\n  background: ", ";\n  ", "{\n    width: 172px;\n  }\n"], ["\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-start;\n  white-space: nowrap;\n  height: 48px;\n  width: 100%;\n  background: ", ";\n  ", "{\n    width: 172px;\n  }\n"])), function (_a) {
+var StyledButton$1 = styled(Button)(templateObject_1$b || (templateObject_1$b = __makeTemplateObject(["\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-start;\n  white-space: nowrap;\n  height: 48px;\n  width: 100%;\n  background: ", ";\n  ", " {\n    width: 172px;\n  }\n"], ["\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-start;\n  white-space: nowrap;\n  height: 48px;\n  width: 100%;\n  background: ", ";\n  ", " {\n    width: 172px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.gray200;
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var StyledText$1 = styled(Text)(templateObject_2$8 || (templateObject_2$8 = __makeTemplateObject([" \n  font-weight: bold;\n  color: ", ";\n"], [" \n  font-weight: bold;\n  color: ", ";\n"])), function (_a) {
+var StyledText$1 = styled(Text)(templateObject_2$8 || (templateObject_2$8 = __makeTemplateObject(["\n  font-weight: bold;\n  color: ", ";\n"], ["\n  font-weight: bold;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.primary;
 });
@@ -8560,7 +8561,7 @@ var WalletCard = function (_a) {
 };
 var templateObject_1$b, templateObject_2$8;
 
-var WalletCardsWrapper = styled.div(templateObject_1$a || (templateObject_1$a = __makeTemplateObject(["\n  display: grid;\n  grid-gap: 8px;\n  grid-template-columns: repeat(2, 1fr);\n  max-height: 328px;\n  margin-left: 16px;\n  padding-right: 6px;\n  ", "{\n    padding-right: 0;\n    width: 352px;\n    margin-left: 32px;\n  }\n"], ["\n  display: grid;\n  grid-gap: 8px;\n  grid-template-columns: repeat(2, 1fr);\n  max-height: 328px;\n  margin-left: 16px;\n  padding-right: 6px;\n  ", "{\n    padding-right: 0;\n    width: 352px;\n    margin-left: 32px;\n  }\n"])), function (_a) {
+var WalletCardsWrapper = styled.div(templateObject_1$a || (templateObject_1$a = __makeTemplateObject(["\n  display: grid;\n  grid-gap: 8px;\n  grid-template-columns: repeat(2, 1fr);\n  max-height: 328px;\n  margin-left: 16px;\n  padding-right: 6px;\n  ", " {\n    padding-right: 0;\n    width: 352px;\n    margin-left: 32px;\n  }\n"], ["\n  display: grid;\n  grid-gap: 8px;\n  grid-template-columns: repeat(2, 1fr);\n  max-height: 328px;\n  margin-left: 16px;\n  padding-right: 6px;\n  ", " {\n    padding-right: 0;\n    width: 352px;\n    margin-left: 32px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
@@ -8578,7 +8579,7 @@ var getPreferredConfig = function (walletConfig) {
         preferredWallet
     ], sortedConfig.filter(function (sortedWalletConfig) { return sortedWalletConfig.title !== preferredWalletName; }), true);
 };
-var ScrollWrapper = styled(Box)(templateObject_2$7 || (templateObject_2$7 = __makeTemplateObject(["\n  overflow-x: hidden;\n  margin-right: 6px;\n  align-self: stretch;\n  ", "{\n    margin-right: 14px;\n  }\n  &::-webkit-scrollbar{\n    width: 4px;\n  }\n  &::-webkit-scrollbar-track{\n    background-color: ", ";\n    box-shadow: none;\n  }\n  &::-webkit-scrollbar-thumb{\n    background-color: ", ";\n  }\n"], ["\n  overflow-x: hidden;\n  margin-right: 6px;\n  align-self: stretch;\n  ", "{\n    margin-right: 14px;\n  }\n  &::-webkit-scrollbar{\n    width: 4px;\n  }\n  &::-webkit-scrollbar-track{\n    background-color: ", ";\n    box-shadow: none;\n  }\n  &::-webkit-scrollbar-thumb{\n    background-color: ", ";\n  }\n"])), function (_a) {
+var ScrollWrapper = styled(Box)(templateObject_2$7 || (templateObject_2$7 = __makeTemplateObject(["\n  overflow-x: hidden;\n  margin-right: 6px;\n  align-self: stretch;\n  ", " {\n    margin-right: 14px;\n  }\n  &::-webkit-scrollbar {\n    width: 4px;\n  }\n  &::-webkit-scrollbar-track {\n    background-color: ", ";\n    box-shadow: none;\n  }\n  &::-webkit-scrollbar-thumb {\n    background-color: ", ";\n  }\n"], ["\n  overflow-x: hidden;\n  margin-right: 6px;\n  align-self: stretch;\n  ", " {\n    margin-right: 14px;\n  }\n  &::-webkit-scrollbar {\n    width: 4px;\n  }\n  &::-webkit-scrollbar-track {\n    background-color: ", ";\n    box-shadow: none;\n  }\n  &::-webkit-scrollbar-thumb {\n    background-color: ", ";\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 }, function (_a) {
@@ -8606,7 +8607,7 @@ var ConnectModal = function (_a) {
         } },
         React.createElement(StyledText, { fontSize: "12px", ml: isMobile ? "16px" : "32px", mb: "24px" },
             "By connecting a wallet, you agree to Biswap's",
-            ' ',
+            " ",
             React.createElement(Text, { fontSize: "12px", as: "span", color: "primary" },
                 React.createElement("a", { href: "".concat(process.env.REACT_APP_FRONT_1, "/terms") }, "Terms of Use"))),
         React.createElement(ScrollWrapper, null,
@@ -8770,7 +8771,7 @@ var BlockChainWeekEvent = function (_a) {
     var pathWithEventParam = isAbsoluteUrl
         ? "".concat(href, "/blockchain_week")
         : "/blockchain_week";
-    return (React.createElement(Wrapper$1, { pl: eventButtonLogo ? '0' : '16px', flat: isMobile }, isAbsoluteUrl ? (React.createElement(StyledLink, { href: pathWithEventParam },
+    return (React.createElement(Wrapper$1, { pl: eventButtonLogo ? "0" : "16px", flat: isMobile }, isAbsoluteUrl ? (React.createElement(StyledLink, { href: pathWithEventParam },
         eventButtonLogo && eventButtonLogo(),
         buttonText)) : (React.createElement(StyledRouterLink, { to: pathWithEventParam },
         eventButtonLogo && eventButtonLogo(),

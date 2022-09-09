@@ -58,7 +58,9 @@ const Modal: React.FC<ModalProps> = ({
           />
         )}
       </ModalHeader>
-      <ModalBody p={bodyPadding ?? defaultBodyPadding} {...modalBodyProps} >{children}</ModalBody>
+      <ModalBody p={bodyPadding ?? defaultBodyPadding} {...modalBodyProps}>
+        {children}
+      </ModalBody>
     </ModalContainer>
   );
 };

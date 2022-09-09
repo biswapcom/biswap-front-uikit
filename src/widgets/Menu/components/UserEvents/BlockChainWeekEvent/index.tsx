@@ -109,7 +109,7 @@ const BlockChainWeekEvent: FC<Props> = ({ href = "/", eventButtonLogo }) => {
     : "/blockchain_week";
 
   return (
-    <Wrapper pl={eventButtonLogo ? '0' : '16px'} flat={isMobile}>
+    <Wrapper pl={eventButtonLogo ? "0" : "16px"} flat={isMobile}>
       {isAbsoluteUrl ? (
         <StyledLink href={pathWithEventParam}>
           {eventButtonLogo && eventButtonLogo()}
