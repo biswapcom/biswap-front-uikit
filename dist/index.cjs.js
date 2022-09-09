@@ -8678,14 +8678,14 @@ var Wrapper$1 = styled__default["default"](Flex)(templateObject_1$6 || (template
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var StyledLink = styled__default["default"].a(templateObject_2$4 || (templateObject_2$4 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 40px;\n  width: 100%;\n  padding-right: 16px;\n  overflow: hidden;\n  z-index: 10;\n\n  font-size: 14px;\n  font-weight: 600;\n  line-height: 20px;\n  color: ", ";\n\n  ", " {\n    width: auto;\n    border-radius: 8px 0 0 8px;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 40px;\n  width: 100%;\n  padding-right: 16px;\n  overflow: hidden;\n  z-index: 10;\n\n  font-size: 14px;\n  font-weight: 600;\n  line-height: 20px;\n  color: ", ";\n\n  ", " {\n    width: auto;\n    border-radius: 8px 0 0 8px;\n  }\n"])), function (_a) {
+var StyledLink = styled__default["default"].a(templateObject_2$4 || (templateObject_2$4 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 40px;\n  width: 100%;\n  padding-right: 16px;\n  overflow: hidden;\n  z-index: 30;\n\n  font-size: 14px;\n  font-weight: 600;\n  line-height: 20px;\n  color: ", ";\n\n  ", " {\n    z-index: 10;\n    width: auto;\n    border-radius: 8px 0 0 8px;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 40px;\n  width: 100%;\n  padding-right: 16px;\n  overflow: hidden;\n  z-index: 30;\n\n  font-size: 14px;\n  font-weight: 600;\n  line-height: 20px;\n  color: ", ";\n\n  ", " {\n    z-index: 10;\n    width: auto;\n    border-radius: 8px 0 0 8px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.dark800;
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var StyledRouterLink = styled__default["default"](reactRouterDom.Link)(templateObject_3$2 || (templateObject_3$2 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 40px;\n  width: 100%;\n  padding-right: 16px;\n  overflow: hidden;\n  z-index: 10;\n\n  font-size: 14px;\n  font-weight: 600;\n  line-height: 20px;\n  color: ", ";\n\n  ", " {\n    width: auto;\n    border-radius: 8px 0 0 8px;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 40px;\n  width: 100%;\n  padding-right: 16px;\n  overflow: hidden;\n  z-index: 10;\n\n  font-size: 14px;\n  font-weight: 600;\n  line-height: 20px;\n  color: ", ";\n\n  ", " {\n    width: auto;\n    border-radius: 8px 0 0 8px;\n  }\n"])), function (_a) {
+var StyledRouterLink = styled__default["default"](reactRouterDom.Link)(templateObject_3$2 || (templateObject_3$2 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 40px;\n  width: 100%;\n  padding-right: 16px;\n  overflow: hidden;\n  z-index: 30;\n\n  font-size: 14px;\n  font-weight: 600;\n  line-height: 20px;\n  color: ", ";\n\n  ", " {\n    z-index: 30;\n    width: auto;\n    border-radius: 8px 0 0 8px;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 40px;\n  width: 100%;\n  padding-right: 16px;\n  overflow: hidden;\n  z-index: 30;\n\n  font-size: 14px;\n  font-weight: 600;\n  line-height: 20px;\n  color: ", ";\n\n  ", " {\n    z-index: 30;\n    width: auto;\n    border-radius: 8px 0 0 8px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.dark800;
 }, function (_a) {
@@ -8695,7 +8695,7 @@ var StyledRouterLink = styled__default["default"](reactRouterDom.Link)(templateO
 var BlockChainWeekEvent = function (_a) {
     var _b = _a.href, href = _b === void 0 ? "/" : _b, eventButtonLogo = _a.eventButtonLogo;
     var isMobile = useMatchBreakpoints().isMobile;
-    var buttonText = "Grant Event";
+    var buttonText = "Grand Event";
     var isAbsoluteUrl = href.startsWith("http");
     var pathWithEventParam = isAbsoluteUrl
         ? "".concat(href, "/blockchain_week")
