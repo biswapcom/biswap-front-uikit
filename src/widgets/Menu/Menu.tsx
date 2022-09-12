@@ -16,7 +16,7 @@ import { WarningSolidIcon } from "../../components/Svg";
 import { MenuContext } from "./context";
 
 // hooks
-import { useMatchBreakpoints } from "../../hooks";
+import { useMatchBreakpoints } from "../../contexts";
 
 // config
 import {

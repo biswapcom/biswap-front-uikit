@@ -11,7 +11,7 @@ import {
   ModalBackButton,
 } from "./styles";
 import { ModalProps } from "./types";
-import { useMatchBreakpoints } from "../../hooks";
+import { useMatchBreakpoints } from "../../contexts";
 
 const Modal: React.FC<ModalProps> = ({
   title,

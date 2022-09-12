@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { PolymorphicComponent } from "../../util/polymorphic";
 import { SlideButtonMenuItemProps, slideMenuVariants } from "./types";
 import SlideMenuItem from "./SlideMenuItem";
-import { useMatchBreakpoints } from "../../hooks";
+import { useMatchBreakpoints } from "../../contexts";
 import { tabVariants } from "../TabMenu/types";
 
 const InactiveButton: PolymorphicComponent<

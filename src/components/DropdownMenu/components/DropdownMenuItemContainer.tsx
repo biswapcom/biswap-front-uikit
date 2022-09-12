@@ -8,7 +8,7 @@ import {
   StyledDropdownMenuItemContainer,
 } from "../styles";
 import InnerLinksBlock from "./InnerLinksBlock";
-import { useMatchBreakpoints } from "../../../hooks";
+import { useMatchBreakpoints } from "../../../contexts";
 import { Badge } from "../../Badge";
 import { Box } from "../../Box";
 

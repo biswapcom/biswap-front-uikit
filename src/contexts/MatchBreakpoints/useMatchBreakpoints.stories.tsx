@@ -1,12 +1,12 @@
-import React from "react";
+import React, { FC, PropsWithChildren } from "react";
 import useMatchBreakpoints from "./useMatchBreakpoints";
 
 export default {
-  title: "Hooks/useMatchBreakpoints",
+  title: "Context/useMatchBreakpoints",
   argTypes: {},
 };
 
-export const Default: React.FC = () => {
+export const Default: FC<PropsWithChildren> = () => {
   const state = useMatchBreakpoints();
 
   return (

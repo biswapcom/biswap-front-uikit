@@ -6,7 +6,7 @@ import { DrawerContainer } from "./styles";
 import { CloseIcon } from "../Svg";
 import { Box } from "../Box";
 import { IconButton } from "../Button";
-import useMatchBreakpoints from "../../hooks/useMatchBreakpoints";
+import { useMatchBreakpoints } from "../../contexts";
 import { Overlay } from "../Overlay";
 import getPortalRoot from "../../util/getPortalRoot";
 

@@ -1,6 +1,6 @@
 import React, { FC, ReactNode, useEffect, useState } from "react";
 import styled, { css, keyframes } from "styled-components";
-import { useMatchBreakpoints } from "../../hooks";
+import { useMatchBreakpoints } from "../../contexts";
 import { Box, Flex } from "../Box";
 import { DropdownMenuDivider } from "../DropdownMenu/styles";
 

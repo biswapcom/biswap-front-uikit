@@ -7,7 +7,7 @@ import {
   slideMenuScales,
   slideMenuVariants,
 } from "./types";
-import { useMatchBreakpoints } from "../../hooks";
+import { useMatchBreakpoints } from "../../contexts";
 import { space } from "styled-system";
 
 interface StyledButtonMenuProps extends SlideButtonMenuProps {

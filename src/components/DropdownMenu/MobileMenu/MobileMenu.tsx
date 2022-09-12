@@ -1,7 +1,7 @@
 import React, { FC, useContext, useEffect, useState } from "react";
 import { MenuContext } from "../../../widgets/Menu/context";
 import { usePopper } from "react-popper";
-import { useMatchBreakpoints } from "../../../hooks";
+import { useMatchBreakpoints } from "../../../contexts";
 import { Box, Grid } from "../../Box";
 import { Text } from "../../Text";
 import styled from "styled-components";

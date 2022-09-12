@@ -1,12 +1,12 @@
-import React, { useState, useEffect, isValidElement, cloneElement, Children, useLayoutEffect, useRef, forwardRef, createContext, useContext, useCallback, useMemo, useReducer, Fragment } from 'react';
+import React, { useState, useEffect, isValidElement, cloneElement, Children, useLayoutEffect, createContext, useContext, useRef, forwardRef, useCallback, useMemo, useReducer, Fragment } from 'react';
 import styled, { keyframes, css, ThemeProvider, useTheme, createGlobalStyle } from 'styled-components';
 import { space, typography, layout, background, border, position, flexbox, grid, variant as variant$1 } from 'styled-system';
 import get from 'lodash/get';
 import { createPortal } from 'react-dom';
 import { parseInt as parseInt$1, noop as noop$1, cloneDeep } from 'lodash';
 import { usePopper } from 'react-popper';
-import debounce from 'lodash/debounce';
 import noop from 'lodash/noop';
+import debounce from 'lodash/debounce';
 import throttle from 'lodash/throttle';
 import { Link as Link$1 } from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
@@ -3758,51 +3758,69 @@ var mediaQueries = (function () {
 var getKey = function (size) {
     return "is".concat(size.charAt(0).toUpperCase()).concat(size.slice(1));
 };
-var getState = function () {
-    var s = Object.keys(mediaQueries).reduce(function (accum, size) {
-        var _a, _b;
-        var _c;
-        var key = getKey(size);
-        if (typeof window === "undefined") {
-            return __assign(__assign({}, accum), (_a = {}, _a[key] = false, _a));
-        }
-        var mql = window.matchMedia(mediaQueries[size]);
-        return __assign(__assign({}, accum), (_b = {}, _b[key] = (_c = mql === null || mql === void 0 ? void 0 : mql.matches) !== null && _c !== void 0 ? _c : false, _b));
-    }, {});
-    return s;
+var getState = function () { return Object.keys(mediaQueries).reduce(function (accum, size) {
+    var _a, _b;
+    var _c;
+    var key = getKey(size);
+    if (typeof window === "undefined") {
+        return __assign(__assign({}, accum), (_a = {}, _a[key] = false, _a));
+    }
+    var mql = window.matchMedia(mediaQueries[size]);
+    return __assign(__assign({}, accum), (_b = {}, _b[key] = (_c = mql === null || mql === void 0 ? void 0 : mql.matches) !== null && _c !== void 0 ? _c : false, _b));
+}, {}); };
+var MatchBreakpointsContext = createContext({
+    isMobile: false,
+    isTablet: false,
+    isDesktop: false,
+});
+var getBreakpointChecks = function (state) {
+    return __assign(__assign({}, state), { isMobile: state.isXs || state.isSm, isTablet: state.isMd || state.isLg, isDesktop: state.isXl || state.isXxl });
 };
-var useMatchBreakpoints = function () {
-    var _a = useState(function () { return getState(); }), state = _a[0], setState = _a[1];
+var MatchBreakpointsProvider = function (_a) {
+    var children = _a.children;
+    var _b = useState(function () { return getBreakpointChecks(getState()); }), state = _b[0], setState = _b[1];
     useIsomorphicEffect(function () {
         // Create listeners for each media query returning a function to unsubscribe
         var handlers = Object.keys(mediaQueries).map(function (size) {
-            var mql = window.matchMedia(mediaQueries[size]);
-            var handler = function (matchMediaQuery) {
-                var key = getKey(size);
-                setState(function (prevState) {
-                    var _a;
-                    return (__assign(__assign({}, prevState), (_a = {}, _a[key] = matchMediaQuery.matches, _a)));
-                });
-            };
-            // Safari < 14 fix
-            if (mql.addEventListener) {
-                mql.addEventListener("change", handler);
+            var mql;
+            var handler;
+            if (typeof (window === null || window === void 0 ? void 0 : window.matchMedia) === "function") {
+                mql = window.matchMedia(mediaQueries[size]);
+                handler = function (matchMediaQuery) {
+                    var key = getKey(size);
+                    setState(function (prevState) {
+                        var _a;
+                        return getBreakpointChecks(__assign(__assign({}, prevState), (_a = {}, _a[key] = matchMediaQuery.matches, _a)));
+                    });
+                };
+                // Safari < 14 fix
+                if (mql.addEventListener) {
+                    mql.addEventListener("change", handler);
+                }
             }
             return function () {
                 // Safari < 14 fix
-                if (mql.removeEventListener) {
+                if (mql === null || mql === void 0 ? void 0 : mql.removeEventListener) {
                     mql.removeEventListener("change", handler);
                 }
             };
         });
-        setState(getState());
+        setState(getBreakpointChecks(getState()));
         return function () {
             handlers.forEach(function (unsubscribe) {
                 unsubscribe();
             });
         };
     }, []);
-    return __assign(__assign({}, state), { isMobile: state.isXs || state.isSm, isTablet: state.isMd || state.isLg, isDesktop: state.isXl || state.isXll || state.isXxl });
+    return React.createElement(MatchBreakpointsContext.Provider, { value: state }, children);
+};
+
+var useMatchBreakpoints = function () {
+    var matchBreakpointContext = useContext(MatchBreakpointsContext);
+    if (matchBreakpointContext === undefined) {
+        throw new Error("Match Breakpoint context is undefined");
+    }
+    return matchBreakpointContext;
 };
 
 var StyledOverlay = styled(Box)(templateObject_1$19 || (templateObject_1$19 = __makeTemplateObject(["\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  background-color: rgb(10, 22, 43);\n  z-index: 20;\n  opacity: 0.55;\n"], ["\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  background-color: rgb(10, 22, 43);\n  z-index: 20;\n  opacity: 0.55;\n"])));
@@ -5462,137 +5480,174 @@ TabItem.defaultProps = {
     disabled: false,
 };
 
-var defaultParticleOptions = {
-    size: 30,
-    distance: 500,
-};
-var createParticle = function (x, y, imgSrc, options) {
-    if (options === void 0) { options = {}; }
-    var _a = __assign(__assign({}, defaultParticleOptions), options), size = _a.size, distance = _a.distance;
-    var particle = document.createElement("particle");
-    document.body.appendChild(particle);
-    var width = Math.floor(Math.random() * size + 8);
-    var height = width;
-    var destinationX = (Math.random() - 0.5) * distance;
-    var destinationY = (Math.random() - 0.5) * distance;
-    var rotation = Math.random() * 520;
-    var delay = Math.random() * 200;
-    particle.style.backgroundRepeat = "no-repeat";
-    particle.style.backgroundSize = "contain";
-    particle.style.backgroundImage = "url(".concat(imgSrc, ")");
-    particle.style.left = "0";
-    particle.style.top = "0";
-    particle.style.opacity = "0";
-    particle.style.pointerEvents = "none";
-    particle.style.position = "fixed";
-    particle.style.width = "".concat(width, "px");
-    particle.style.height = "".concat(height, "px");
-    var animation = particle.animate([
-        {
-            transform: "translate(-50%, -50%) translate(".concat(x, "px, ").concat(y, "px) rotate(0deg)"),
-            opacity: 1,
-        },
-        {
-            transform: "translate(-50%, -50%) translate(".concat(x + destinationX, "px, ").concat(y + destinationY, "px) rotate(").concat(rotation, "deg)"),
-            opacity: 0,
-        },
-    ], {
-        duration: Math.random() * 1000 + 5000,
-        easing: "cubic-bezier(0, .9, .57, 1)",
-        delay: delay,
-    });
-    animation.onfinish = function () {
-        particle.remove();
-    };
-};
-var defaultOptions = {
-    numberOfParticles: 30,
-    debounceDuration: 200,
-    particleOptions: {},
-};
-/**
- * @see https://css-tricks.com/playing-with-particles-using-the-web-animations-api/
- */
-var useParticleBurst = function (options) {
-    var _a = __assign(__assign({}, defaultOptions), options), selector = _a.selector, numberOfParticles = _a.numberOfParticles, debounceDuration = _a.debounceDuration, imgSrc = _a.imgSrc, disableWhen = _a.disableWhen, particleOptions = _a.particleOptions;
-    var makeListener = useCallback(function () {
-        return debounce(function (event) {
-            var isDisabled = disableWhen && disableWhen();
-            if (!isDisabled) {
-                var node = event.currentTarget;
-                if (event.clientX === 0 && event.clientY === 0) {
-                    var _a = node.getBoundingClientRect(), left = _a.left, width = _a.width, top_1 = _a.top, height = _a.height;
-                    var x = left + width / 2;
-                    var y = top_1 + height / 2;
-                    for (var i = 0; i < numberOfParticles; i += 1) {
-                        createParticle(x, y, imgSrc, particleOptions);
-                    }
-                }
-                else {
-                    for (var i = 0; i < numberOfParticles; i += 1) {
-                        createParticle(event.clientX, event.clientY + window.scrollY, imgSrc, particleOptions);
-                    }
-                }
-            }
-        }, debounceDuration, { leading: true });
-    }, [debounceDuration, numberOfParticles, imgSrc, disableWhen, particleOptions]);
-    var listener = makeListener();
-    var initialize = useCallback(function () {
-        if (selector) {
-            document.querySelectorAll(selector).forEach(function (element) {
-                element.addEventListener("click", listener);
-            });
-        }
-        else {
-            document.addEventListener("click", listener);
-        }
-    }, [selector, listener]);
-    var teardown = useCallback(function () {
-        if (selector) {
-            document.querySelectorAll(selector).forEach(function (element) {
-                element.removeEventListener("click", listener);
-            });
-        }
-        else {
-            document.removeEventListener("click", listener);
-        }
-    }, [selector, listener]);
+var InactiveButton$1 = styled(TabItem)(templateObject_1$H || (templateObject_1$H = __makeTemplateObject(["\n  color: ", ";\n"], ["\n  color: ", ";\n"])), function (_a) {
+    var theme = _a.theme, variant = _a.variant;
+    return theme.colors[variant === tabVariants.DARK ? "pastelBlue" : "gray900"];
+});
+var TabBarItem = function (_a) {
+    var _b = _a.isActive, isActive = _b === void 0 ? false : _b, variant = _a.variant, setWidth = _a.setWidth, itemIndex = _a.itemIndex, onAction = _a.onAction, customClass = _a.customClass, blockOffset = _a.blockOffset, props = __rest(_a, ["isActive", "variant", "setWidth", "itemIndex", "onAction", "customClass", "blockOffset"]);
+    var _c = useMatchBreakpoints(), isDesktop = _c.isDesktop, isMobile = _c.isMobile, isTablet = _c.isTablet;
+    var className = "tab-bar-item-" + itemIndex + customClass;
+    var element = document.getElementsByClassName(className);
     useEffect(function () {
-        initialize();
-        return function () { return teardown(); };
-    }, [initialize, teardown]);
-    return { initialize: initialize, teardown: teardown };
+        var _a, _b;
+        var itemWidth = (_b = (_a = element.item(0)) === null || _a === void 0 ? void 0 : _a.clientWidth) !== null && _b !== void 0 ? _b : 0;
+        if (setWidth && itemWidth) {
+            setWidth(function (prev) {
+                return prev.map(function (item, index) { return (index === itemIndex ? itemWidth : item); });
+            });
+        }
+    }, [element, isDesktop, isMobile, isTablet, blockOffset]);
+    var handleClick = function () {
+        if (onAction)
+            onAction(itemIndex !== null && itemIndex !== void 0 ? itemIndex : 0);
+    };
+    if (!isActive) {
+        return (React.createElement(InactiveButton$1, __assign({ onClick: handleClick, className: className, variant: variant }, props)));
+    }
+    return (React.createElement(TabItem, __assign({ onClick: handleClick, className: className, variant: variant }, props)));
+};
+var templateObject_1$H;
+
+var StyledTabBar = styled.div(templateObject_1$G || (templateObject_1$G = __makeTemplateObject(["\n  position: relative;\n  display: ", ";\n  width: ", ";\n\n  & > button,\n  & > a {\n    flex: ", ";\n  }\n\n  & > button,\n  & a {\n    box-shadow: none;\n  }\n  ", "\n"], ["\n  position: relative;\n  display: ", ";\n  width: ", ";\n\n  & > button,\n  & > a {\n    flex: ", ";\n  }\n\n  & > button,\n  & a {\n    box-shadow: none;\n  }\n  ", "\n"])), function (_a) {
+    var fullWidth = _a.fullWidth;
+    return (fullWidth ? "flex" : "inline-flex");
+}, function (_a) {
+    var fullWidth = _a.fullWidth;
+    return (fullWidth ? "100%" : "auto");
+}, function (_a) {
+    var fullWidth = _a.fullWidth;
+    return (fullWidth ? 1 : "auto");
+}, space);
+var Selection$1 = styled.div(templateObject_2$u || (templateObject_2$u = __makeTemplateObject(["\n  width: ", ";\n  height: 2px;\n  position: absolute;\n  bottom: 0;\n  left: ", ";\n  transition: left 0.3s ease;\n  padding: 0 8px;\n  z-index: 1;\n\n  ", "\n"], ["\n  width: ", ";\n  height: 2px;\n  position: absolute;\n  bottom: 0;\n  left: ", ";\n  transition: left 0.3s ease;\n  padding: 0 8px;\n  z-index: 1;\n\n  ", "\n"])), function (_a) {
+    var width = _a.width;
+    return "".concat(width, "px");
+}, function (_a) {
+    var offset = _a.offset;
+    return "".concat(offset, "px");
+}, variant$1({
+    prop: "scale",
+    variants: sliderScaleVariant,
+}));
+var ColorSection = styled.div(templateObject_3$j || (templateObject_3$j = __makeTemplateObject(["\n  width: 100%;\n  height: 100%;\n  background: ", ";\n"], ["\n  width: 100%;\n  height: 100%;\n  background: ", ";\n"])), function (_a) {
+    var theme = _a.theme, isLight = _a.isLight;
+    return theme.colors[isLight ? "primary" : "warning"];
+});
+var TabMenu = function (_a) {
+    var _b = _a.customClass, customClass = _b === void 0 ? "" : _b, _c = _a.activeIndex, activeIndex = _c === void 0 ? 0 : _c, _d = _a.scale, scale = _d === void 0 ? tabsScales.SM : _d, _e = _a.variant, variant = _e === void 0 ? tabVariants.DARK : _e, onItemClick = _a.onItemClick, disabled = _a.disabled, _f = _a.fullWidth, fullWidth = _f === void 0 ? false : _f, _g = _a.menuTitles, menuTitles = _g === void 0 ? [""] : _g, _h = _a.menuIcons, menuIcons = _h === void 0 ? [] : _h, props = __rest(_a, ["customClass", "activeIndex", "scale", "variant", "onItemClick", "disabled", "fullWidth", "menuTitles", "menuIcons"]);
+    var _j = useState(__spreadArray([], Array(menuTitles === null || menuTitles === void 0 ? void 0 : menuTitles.length), true).map(function (e, i) { return i - i; })), widthsArr = _j[0], setWidthsArr = _j[1];
+    var _k = useState(0), blockOffset = _k[0], setBlockOffset = _k[1];
+    useEffect(function () {
+        setBlockOffset(widthsArr.slice(0, activeIndex).reduce(function (sum, elem) { return sum + elem; }, 0));
+    }, [widthsArr, activeIndex]);
+    var isLight = variant === tabVariants.LIGHT;
+    var getTabMenuIcons = function (index, size) {
+        var sizes = menuIconScaleVariants[size];
+        return (React.createElement(IconComponent, { width: sizes.width, iconName: menuIcons[index], color: "currentColor", mr: sizes.marginRight }));
+    };
+    return (React.createElement(StyledTabBar, __assign({ disabled: disabled, isLight: isLight, fullWidth: fullWidth }, props),
+        !disabled && (React.createElement(Selection$1, { scale: scale, width: widthsArr[activeIndex], offset: blockOffset, isLight: isLight },
+            React.createElement(ColorSection, { isLight: isLight }))),
+        menuTitles.map(function (title, index) { return (React.createElement(TabBarItem, { key: index.toString(), disabled: disabled, customClass: customClass, isActive: !disabled && activeIndex === index, onAction: onItemClick, itemIndex: index, setWidth: setWidthsArr, variant: variant, scale: scale, blockOffset: blockOffset },
+            React.createElement(Flex, { alignItems: "center" },
+                getTabMenuIcons(index, scale),
+                title))); })));
+};
+var templateObject_1$G, templateObject_2$u, templateObject_3$j;
+
+var variants = {
+    PRIMARY: "primary",
+    SECONDARY: "secondary",
+    SUCCESS: "success",
+    TEXTDISABLED: "textDisabled",
+    TEXTSUBTLE: "textSubtle",
+    BINANCE: "binance",
+    FAILURE: "failure",
+    WARNING: "warning",
+};
+var scales$1 = {
+    MD: "md",
+    SM: "sm",
 };
 
-var useKonamiCheatCode = function (matchedCodeHandler) {
-    useEffect(function () {
-        var pattern = [
-            "ArrowUp",
-            "ArrowUp",
-            "ArrowDown",
-            "ArrowDown",
-            "ArrowLeft",
-            "ArrowRight",
-            "ArrowLeft",
-            "ArrowRight",
-        ];
-        var currentIndex = 0;
-        var onKeyUpHandler = function (event) {
-            var key = event.key;
-            // is key in correct order otherwise reset
-            if (key !== pattern[currentIndex]) {
-                currentIndex = 0;
-                return;
-            }
-            currentIndex += 1;
-            if (pattern.length === currentIndex) {
-                currentIndex = 0;
-                matchedCodeHandler();
-            }
-        };
-        document.addEventListener("keyup", onKeyUpHandler);
-        return function () { return document.removeEventListener("keyup", onKeyUpHandler); };
-    }, [matchedCodeHandler]);
+var _a$2, _b$1;
+var scaleVariants = (_a$2 = {},
+    _a$2[scales$1.MD] = {
+        height: "28px",
+        padding: "0 8px",
+        fontSize: "14px",
+    },
+    _a$2[scales$1.SM] = {
+        height: "24px",
+        padding: "0 4px",
+        fontSize: "12px",
+    },
+    _a$2);
+var styleVariants = (_b$1 = {},
+    _b$1[variants.PRIMARY] = {
+        backgroundColor: "primary",
+    },
+    _b$1[variants.SECONDARY] = {
+        backgroundColor: "secondary",
+    },
+    _b$1[variants.SUCCESS] = {
+        backgroundColor: "success",
+    },
+    _b$1[variants.TEXTDISABLED] = {
+        backgroundColor: "textDisabled",
+    },
+    _b$1[variants.TEXTSUBTLE] = {
+        backgroundColor: "textSubtle",
+    },
+    _b$1[variants.BINANCE] = {
+        backgroundColor: "binance",
+    },
+    _b$1[variants.FAILURE] = {
+        backgroundColor: "failure",
+    },
+    _b$1[variants.WARNING] = {
+        backgroundColor: "warning",
+    },
+    _b$1);
+
+var getOutlineStyles = function (_a) {
+    var outline = _a.outline, theme = _a.theme, _b = _a.variant, variantKey = _b === void 0 ? variants.PRIMARY : _b;
+    if (outline) {
+        var themeColorKey = styleVariants[variantKey]
+            .backgroundColor;
+        var color = theme.colors[themeColorKey];
+        return "\n      color: ".concat(color, ";\n      background: ").concat(theme.colors.background, ";\n      border: 2px solid ").concat(color, ";\n    ");
+    }
+    return "";
+};
+var StyledTag = styled.div(templateObject_1$F || (templateObject_1$F = __makeTemplateObject(["\n  align-items: center;\n  border-radius: 16px;\n  color: #ffffff;\n  display: inline-flex;\n  font-weight: 400;\n  white-space: nowrap;\n\n  & > svg {\n    fill: currentColor;\n  }\n\n  ", "\n\n  ", "\n  ", "\n  ", "\n  ", "\n\n  ", "\n"], ["\n  align-items: center;\n  border-radius: 16px;\n  color: #ffffff;\n  display: inline-flex;\n  font-weight: 400;\n  white-space: nowrap;\n\n  & > svg {\n    fill: currentColor;\n  }\n\n  ", "\n\n  ", "\n  ", "\n  ", "\n  ", "\n\n  ", "\n"])), function (_a) {
+    var textTransform = _a.textTransform;
+    return textTransform && "text-transform: ".concat(textTransform, ";");
+}, variant$1({
+    prop: "scale",
+    variants: scaleVariants,
+}), variant$1({
+    variants: styleVariants,
+}), space, typography, getOutlineStyles);
+var templateObject_1$F;
+
+var Tag = function (_a) {
+    var startIcon = _a.startIcon, endIcon = _a.endIcon, children = _a.children, props = __rest(_a, ["startIcon", "endIcon", "children"]);
+    return (React.createElement(StyledTag, __assign({}, props),
+        React.isValidElement(startIcon) &&
+            React.cloneElement(startIcon, {
+                mr: "0.5em",
+            }),
+        children,
+        React.isValidElement(endIcon) &&
+            React.cloneElement(endIcon, {
+                ml: "0.5em",
+            })));
+};
+Tag.defaultProps = {
+    variant: "primary",
+    scale: scales$1.MD,
+    outline: false,
 };
 
 var isTouchDevice = function () {
@@ -5600,18 +5655,18 @@ var isTouchDevice = function () {
         ("ontouchstart" in window || navigator.maxTouchPoints > 0));
 };
 
-var Arrow = styled.div(templateObject_1$H || (templateObject_1$H = __makeTemplateObject(["\n  &,\n  &::before {\n    position: absolute;\n    width: 10px;\n    height: 10px;\n    z-index: -1;\n  }\n\n  &::before {\n    content: \"\";\n    transform: rotate(45deg);\n    background: ", ";\n  }\n"], ["\n  &,\n  &::before {\n    position: absolute;\n    width: 10px;\n    height: 10px;\n    z-index: -1;\n  }\n\n  &::before {\n    content: \"\";\n    transform: rotate(45deg);\n    background: ", ";\n  }\n"])), function (_a) {
+var Arrow = styled.div(templateObject_1$E || (templateObject_1$E = __makeTemplateObject(["\n  &,\n  &::before {\n    position: absolute;\n    width: 10px;\n    height: 10px;\n    z-index: -1;\n  }\n\n  &::before {\n    content: \"\";\n    transform: rotate(45deg);\n    background: ", ";\n  }\n"], ["\n  &,\n  &::before {\n    position: absolute;\n    width: 10px;\n    height: 10px;\n    z-index: -1;\n  }\n\n  &::before {\n    content: \"\";\n    transform: rotate(45deg);\n    background: ", ";\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.tooltip;
 });
-var StyledTooltip = styled.div(templateObject_2$u || (templateObject_2$u = __makeTemplateObject(["\n  padding: 12px 8px;\n  font-size: 12px;\n  line-height: 16px;\n  border-radius: 8px;\n  max-width: 320px;\n  z-index: 101;\n  background: ", ";\n  color: ", ";\n\n  &[data-popper-placement^=\"top\"] > ", " {\n    bottom: -4px;\n  }\n\n  &[data-popper-placement^=\"bottom\"] > ", " {\n    top: -4px;\n  }\n\n  &[data-popper-placement^=\"left\"] > ", " {\n    right: -4px;\n  }\n\n  &[data-popper-placement^=\"right\"] > ", " {\n    left: -4px;\n  }\n"], ["\n  padding: 12px 8px;\n  font-size: 12px;\n  line-height: 16px;\n  border-radius: 8px;\n  max-width: 320px;\n  z-index: 101;\n  background: ", ";\n  color: ", ";\n\n  &[data-popper-placement^=\"top\"] > ", " {\n    bottom: -4px;\n  }\n\n  &[data-popper-placement^=\"bottom\"] > ", " {\n    top: -4px;\n  }\n\n  &[data-popper-placement^=\"left\"] > ", " {\n    right: -4px;\n  }\n\n  &[data-popper-placement^=\"right\"] > ", " {\n    left: -4px;\n  }\n"])), function (_a) {
+var StyledTooltip = styled.div(templateObject_2$t || (templateObject_2$t = __makeTemplateObject(["\n  padding: 12px 8px;\n  font-size: 12px;\n  line-height: 16px;\n  border-radius: 8px;\n  max-width: 320px;\n  z-index: 101;\n  background: ", ";\n  color: ", ";\n\n  &[data-popper-placement^=\"top\"] > ", " {\n    bottom: -4px;\n  }\n\n  &[data-popper-placement^=\"bottom\"] > ", " {\n    top: -4px;\n  }\n\n  &[data-popper-placement^=\"left\"] > ", " {\n    right: -4px;\n  }\n\n  &[data-popper-placement^=\"right\"] > ", " {\n    left: -4px;\n  }\n"], ["\n  padding: 12px 8px;\n  font-size: 12px;\n  line-height: 16px;\n  border-radius: 8px;\n  max-width: 320px;\n  z-index: 101;\n  background: ", ";\n  color: ", ";\n\n  &[data-popper-placement^=\"top\"] > ", " {\n    bottom: -4px;\n  }\n\n  &[data-popper-placement^=\"bottom\"] > ", " {\n    top: -4px;\n  }\n\n  &[data-popper-placement^=\"left\"] > ", " {\n    right: -4px;\n  }\n\n  &[data-popper-placement^=\"right\"] > ", " {\n    left: -4px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.tooltip;
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.white;
 }, Arrow, Arrow, Arrow, Arrow);
-var templateObject_1$H, templateObject_2$u;
+var templateObject_1$E, templateObject_2$t;
 
 var invertTheme = function (currentTheme) {
     if (currentTheme.isDark) {
@@ -5769,176 +5824,6 @@ var useTooltip = function (content, options) {
         tooltip: tooltipInPortal !== null && tooltipInPortal !== void 0 ? tooltipInPortal : tooltip,
         tooltipVisible: visible,
     };
-};
-
-var InactiveButton$1 = styled(TabItem)(templateObject_1$G || (templateObject_1$G = __makeTemplateObject(["\n  color: ", ";\n"], ["\n  color: ", ";\n"])), function (_a) {
-    var theme = _a.theme, variant = _a.variant;
-    return theme.colors[variant === tabVariants.DARK ? "pastelBlue" : "gray900"];
-});
-var TabBarItem = function (_a) {
-    var _b = _a.isActive, isActive = _b === void 0 ? false : _b, variant = _a.variant, setWidth = _a.setWidth, itemIndex = _a.itemIndex, onAction = _a.onAction, customClass = _a.customClass, blockOffset = _a.blockOffset, props = __rest(_a, ["isActive", "variant", "setWidth", "itemIndex", "onAction", "customClass", "blockOffset"]);
-    var _c = useMatchBreakpoints(), isDesktop = _c.isDesktop, isMobile = _c.isMobile, isTablet = _c.isTablet;
-    var className = "tab-bar-item-" + itemIndex + customClass;
-    var element = document.getElementsByClassName(className);
-    useEffect(function () {
-        var _a, _b;
-        var itemWidth = (_b = (_a = element.item(0)) === null || _a === void 0 ? void 0 : _a.clientWidth) !== null && _b !== void 0 ? _b : 0;
-        if (setWidth && itemWidth) {
-            setWidth(function (prev) {
-                return prev.map(function (item, index) { return (index === itemIndex ? itemWidth : item); });
-            });
-        }
-    }, [element, isDesktop, isMobile, isTablet, blockOffset]);
-    var handleClick = function () {
-        if (onAction)
-            onAction(itemIndex !== null && itemIndex !== void 0 ? itemIndex : 0);
-    };
-    if (!isActive) {
-        return (React.createElement(InactiveButton$1, __assign({ onClick: handleClick, className: className, variant: variant }, props)));
-    }
-    return (React.createElement(TabItem, __assign({ onClick: handleClick, className: className, variant: variant }, props)));
-};
-var templateObject_1$G;
-
-var StyledTabBar = styled.div(templateObject_1$F || (templateObject_1$F = __makeTemplateObject(["\n  position: relative;\n  display: ", ";\n  width: ", ";\n\n  & > button,\n  & > a {\n    flex: ", ";\n  }\n\n  & > button,\n  & a {\n    box-shadow: none;\n  }\n  ", "\n"], ["\n  position: relative;\n  display: ", ";\n  width: ", ";\n\n  & > button,\n  & > a {\n    flex: ", ";\n  }\n\n  & > button,\n  & a {\n    box-shadow: none;\n  }\n  ", "\n"])), function (_a) {
-    var fullWidth = _a.fullWidth;
-    return (fullWidth ? "flex" : "inline-flex");
-}, function (_a) {
-    var fullWidth = _a.fullWidth;
-    return (fullWidth ? "100%" : "auto");
-}, function (_a) {
-    var fullWidth = _a.fullWidth;
-    return (fullWidth ? 1 : "auto");
-}, space);
-var Selection$1 = styled.div(templateObject_2$t || (templateObject_2$t = __makeTemplateObject(["\n  width: ", ";\n  height: 2px;\n  position: absolute;\n  bottom: 0;\n  left: ", ";\n  transition: left 0.3s ease;\n  padding: 0 8px;\n  z-index: 1;\n\n  ", "\n"], ["\n  width: ", ";\n  height: 2px;\n  position: absolute;\n  bottom: 0;\n  left: ", ";\n  transition: left 0.3s ease;\n  padding: 0 8px;\n  z-index: 1;\n\n  ", "\n"])), function (_a) {
-    var width = _a.width;
-    return "".concat(width, "px");
-}, function (_a) {
-    var offset = _a.offset;
-    return "".concat(offset, "px");
-}, variant$1({
-    prop: "scale",
-    variants: sliderScaleVariant,
-}));
-var ColorSection = styled.div(templateObject_3$j || (templateObject_3$j = __makeTemplateObject(["\n  width: 100%;\n  height: 100%;\n  background: ", ";\n"], ["\n  width: 100%;\n  height: 100%;\n  background: ", ";\n"])), function (_a) {
-    var theme = _a.theme, isLight = _a.isLight;
-    return theme.colors[isLight ? "primary" : "warning"];
-});
-var TabMenu = function (_a) {
-    var _b = _a.customClass, customClass = _b === void 0 ? "" : _b, _c = _a.activeIndex, activeIndex = _c === void 0 ? 0 : _c, _d = _a.scale, scale = _d === void 0 ? tabsScales.SM : _d, _e = _a.variant, variant = _e === void 0 ? tabVariants.DARK : _e, onItemClick = _a.onItemClick, disabled = _a.disabled, _f = _a.fullWidth, fullWidth = _f === void 0 ? false : _f, _g = _a.menuTitles, menuTitles = _g === void 0 ? [""] : _g, _h = _a.menuIcons, menuIcons = _h === void 0 ? [] : _h, props = __rest(_a, ["customClass", "activeIndex", "scale", "variant", "onItemClick", "disabled", "fullWidth", "menuTitles", "menuIcons"]);
-    var _j = useState(__spreadArray([], Array(menuTitles === null || menuTitles === void 0 ? void 0 : menuTitles.length), true).map(function (e, i) { return i - i; })), widthsArr = _j[0], setWidthsArr = _j[1];
-    var _k = useState(0), blockOffset = _k[0], setBlockOffset = _k[1];
-    useEffect(function () {
-        setBlockOffset(widthsArr.slice(0, activeIndex).reduce(function (sum, elem) { return sum + elem; }, 0));
-    }, [widthsArr, activeIndex]);
-    var isLight = variant === tabVariants.LIGHT;
-    var getTabMenuIcons = function (index, size) {
-        var sizes = menuIconScaleVariants[size];
-        return (React.createElement(IconComponent, { width: sizes.width, iconName: menuIcons[index], color: "currentColor", mr: sizes.marginRight }));
-    };
-    return (React.createElement(StyledTabBar, __assign({ disabled: disabled, isLight: isLight, fullWidth: fullWidth }, props),
-        !disabled && (React.createElement(Selection$1, { scale: scale, width: widthsArr[activeIndex], offset: blockOffset, isLight: isLight },
-            React.createElement(ColorSection, { isLight: isLight }))),
-        menuTitles.map(function (title, index) { return (React.createElement(TabBarItem, { key: index.toString(), disabled: disabled, customClass: customClass, isActive: !disabled && activeIndex === index, onAction: onItemClick, itemIndex: index, setWidth: setWidthsArr, variant: variant, scale: scale, blockOffset: blockOffset },
-            React.createElement(Flex, { alignItems: "center" },
-                getTabMenuIcons(index, scale),
-                title))); })));
-};
-var templateObject_1$F, templateObject_2$t, templateObject_3$j;
-
-var variants = {
-    PRIMARY: "primary",
-    SECONDARY: "secondary",
-    SUCCESS: "success",
-    TEXTDISABLED: "textDisabled",
-    TEXTSUBTLE: "textSubtle",
-    BINANCE: "binance",
-    FAILURE: "failure",
-    WARNING: "warning",
-};
-var scales$1 = {
-    MD: "md",
-    SM: "sm",
-};
-
-var _a$2, _b$1;
-var scaleVariants = (_a$2 = {},
-    _a$2[scales$1.MD] = {
-        height: "28px",
-        padding: "0 8px",
-        fontSize: "14px",
-    },
-    _a$2[scales$1.SM] = {
-        height: "24px",
-        padding: "0 4px",
-        fontSize: "12px",
-    },
-    _a$2);
-var styleVariants = (_b$1 = {},
-    _b$1[variants.PRIMARY] = {
-        backgroundColor: "primary",
-    },
-    _b$1[variants.SECONDARY] = {
-        backgroundColor: "secondary",
-    },
-    _b$1[variants.SUCCESS] = {
-        backgroundColor: "success",
-    },
-    _b$1[variants.TEXTDISABLED] = {
-        backgroundColor: "textDisabled",
-    },
-    _b$1[variants.TEXTSUBTLE] = {
-        backgroundColor: "textSubtle",
-    },
-    _b$1[variants.BINANCE] = {
-        backgroundColor: "binance",
-    },
-    _b$1[variants.FAILURE] = {
-        backgroundColor: "failure",
-    },
-    _b$1[variants.WARNING] = {
-        backgroundColor: "warning",
-    },
-    _b$1);
-
-var getOutlineStyles = function (_a) {
-    var outline = _a.outline, theme = _a.theme, _b = _a.variant, variantKey = _b === void 0 ? variants.PRIMARY : _b;
-    if (outline) {
-        var themeColorKey = styleVariants[variantKey]
-            .backgroundColor;
-        var color = theme.colors[themeColorKey];
-        return "\n      color: ".concat(color, ";\n      background: ").concat(theme.colors.background, ";\n      border: 2px solid ").concat(color, ";\n    ");
-    }
-    return "";
-};
-var StyledTag = styled.div(templateObject_1$E || (templateObject_1$E = __makeTemplateObject(["\n  align-items: center;\n  border-radius: 16px;\n  color: #ffffff;\n  display: inline-flex;\n  font-weight: 400;\n  white-space: nowrap;\n\n  & > svg {\n    fill: currentColor;\n  }\n\n  ", "\n\n  ", "\n  ", "\n  ", "\n  ", "\n\n  ", "\n"], ["\n  align-items: center;\n  border-radius: 16px;\n  color: #ffffff;\n  display: inline-flex;\n  font-weight: 400;\n  white-space: nowrap;\n\n  & > svg {\n    fill: currentColor;\n  }\n\n  ", "\n\n  ", "\n  ", "\n  ", "\n  ", "\n\n  ", "\n"])), function (_a) {
-    var textTransform = _a.textTransform;
-    return textTransform && "text-transform: ".concat(textTransform, ";");
-}, variant$1({
-    prop: "scale",
-    variants: scaleVariants,
-}), variant$1({
-    variants: styleVariants,
-}), space, typography, getOutlineStyles);
-var templateObject_1$E;
-
-var Tag = function (_a) {
-    var startIcon = _a.startIcon, endIcon = _a.endIcon, children = _a.children, props = __rest(_a, ["startIcon", "endIcon", "children"]);
-    return (React.createElement(StyledTag, __assign({}, props),
-        React.isValidElement(startIcon) &&
-            React.cloneElement(startIcon, {
-                mr: "0.5em",
-            }),
-        children,
-        React.isValidElement(endIcon) &&
-            React.cloneElement(endIcon, {
-                ml: "0.5em",
-            })));
-};
-Tag.defaultProps = {
-    variant: "primary",
-    scale: scales$1.MD,
-    outline: false,
 };
 
 var InfoTooltip = function (_a) {
@@ -6783,6 +6668,139 @@ var useTable = function (columns, data, options) {
         pagination: state.pagination,
         toggleAllState: state.toggleAllState,
     };
+};
+
+var defaultParticleOptions = {
+    size: 30,
+    distance: 500,
+};
+var createParticle = function (x, y, imgSrc, options) {
+    if (options === void 0) { options = {}; }
+    var _a = __assign(__assign({}, defaultParticleOptions), options), size = _a.size, distance = _a.distance;
+    var particle = document.createElement("particle");
+    document.body.appendChild(particle);
+    var width = Math.floor(Math.random() * size + 8);
+    var height = width;
+    var destinationX = (Math.random() - 0.5) * distance;
+    var destinationY = (Math.random() - 0.5) * distance;
+    var rotation = Math.random() * 520;
+    var delay = Math.random() * 200;
+    particle.style.backgroundRepeat = "no-repeat";
+    particle.style.backgroundSize = "contain";
+    particle.style.backgroundImage = "url(".concat(imgSrc, ")");
+    particle.style.left = "0";
+    particle.style.top = "0";
+    particle.style.opacity = "0";
+    particle.style.pointerEvents = "none";
+    particle.style.position = "fixed";
+    particle.style.width = "".concat(width, "px");
+    particle.style.height = "".concat(height, "px");
+    var animation = particle.animate([
+        {
+            transform: "translate(-50%, -50%) translate(".concat(x, "px, ").concat(y, "px) rotate(0deg)"),
+            opacity: 1,
+        },
+        {
+            transform: "translate(-50%, -50%) translate(".concat(x + destinationX, "px, ").concat(y + destinationY, "px) rotate(").concat(rotation, "deg)"),
+            opacity: 0,
+        },
+    ], {
+        duration: Math.random() * 1000 + 5000,
+        easing: "cubic-bezier(0, .9, .57, 1)",
+        delay: delay,
+    });
+    animation.onfinish = function () {
+        particle.remove();
+    };
+};
+var defaultOptions = {
+    numberOfParticles: 30,
+    debounceDuration: 200,
+    particleOptions: {},
+};
+/**
+ * @see https://css-tricks.com/playing-with-particles-using-the-web-animations-api/
+ */
+var useParticleBurst = function (options) {
+    var _a = __assign(__assign({}, defaultOptions), options), selector = _a.selector, numberOfParticles = _a.numberOfParticles, debounceDuration = _a.debounceDuration, imgSrc = _a.imgSrc, disableWhen = _a.disableWhen, particleOptions = _a.particleOptions;
+    var makeListener = useCallback(function () {
+        return debounce(function (event) {
+            var isDisabled = disableWhen && disableWhen();
+            if (!isDisabled) {
+                var node = event.currentTarget;
+                if (event.clientX === 0 && event.clientY === 0) {
+                    var _a = node.getBoundingClientRect(), left = _a.left, width = _a.width, top_1 = _a.top, height = _a.height;
+                    var x = left + width / 2;
+                    var y = top_1 + height / 2;
+                    for (var i = 0; i < numberOfParticles; i += 1) {
+                        createParticle(x, y, imgSrc, particleOptions);
+                    }
+                }
+                else {
+                    for (var i = 0; i < numberOfParticles; i += 1) {
+                        createParticle(event.clientX, event.clientY + window.scrollY, imgSrc, particleOptions);
+                    }
+                }
+            }
+        }, debounceDuration, { leading: true });
+    }, [debounceDuration, numberOfParticles, imgSrc, disableWhen, particleOptions]);
+    var listener = makeListener();
+    var initialize = useCallback(function () {
+        if (selector) {
+            document.querySelectorAll(selector).forEach(function (element) {
+                element.addEventListener("click", listener);
+            });
+        }
+        else {
+            document.addEventListener("click", listener);
+        }
+    }, [selector, listener]);
+    var teardown = useCallback(function () {
+        if (selector) {
+            document.querySelectorAll(selector).forEach(function (element) {
+                element.removeEventListener("click", listener);
+            });
+        }
+        else {
+            document.removeEventListener("click", listener);
+        }
+    }, [selector, listener]);
+    useEffect(function () {
+        initialize();
+        return function () { return teardown(); };
+    }, [initialize, teardown]);
+    return { initialize: initialize, teardown: teardown };
+};
+
+var useKonamiCheatCode = function (matchedCodeHandler) {
+    useEffect(function () {
+        var pattern = [
+            "ArrowUp",
+            "ArrowUp",
+            "ArrowDown",
+            "ArrowDown",
+            "ArrowLeft",
+            "ArrowRight",
+            "ArrowLeft",
+            "ArrowRight",
+        ];
+        var currentIndex = 0;
+        var onKeyUpHandler = function (event) {
+            var key = event.key;
+            // is key in correct order otherwise reset
+            if (key !== pattern[currentIndex]) {
+                currentIndex = 0;
+                return;
+            }
+            currentIndex += 1;
+            if (pattern.length === currentIndex) {
+                currentIndex = 0;
+                matchedCodeHandler();
+            }
+        };
+        document.addEventListener("keyup", onKeyUpHandler);
+        return function () { return document.removeEventListener("keyup", onKeyUpHandler); };
+    }, [matchedCodeHandler]);
 };
 
 // eslint-disable-next-line import/prefer-default-export
@@ -9037,4 +9055,4 @@ var ResetCSS = createGlobalStyle(templateObject_1 || (templateObject_1 = __makeT
 });
 var templateObject_1;
 
-export { Icon$Z as AboutBSWOpacityIcon, Icon$_ as AboutBSWSolidIcon, Alert, Icon$13 as AnalyticsOpacityIcon, Icon$14 as AnalyticsSolidIcon, Icon$3k as ArrowDownIcon, Icon$v as ArrowFiguredIcon, Icon$3l as ArrowLeftIcon, Icon$3n as ArrowRightIcon, Icon$3h as ArrowSkipLeftIcon, Icon$3i as ArrowSkipRightIcon, Icon$3j as ArrowUpForwardIcon, Icon$3m as ArrowUpIcon, Icon$2b as AuctionIcon, Icon$29 as AuctionOpacityIcon, Icon$2a as AuctionSolidIcon, Icon$M as AuditProtectionOpacityIcon, Icon$L as AuditProtectionSolidIcon, Icon$J as AuditSearchOpacityIcon, Icon$K as AuditSearchSolidIcon, Icon$1G as AutoRenewAnimateIcon, Icon$1J as AutoRenewIcon, Icon$1H as AutoRenewOpacityAnimateIcon, Icon$1K as AutoRenewOpacityIcon, Icon$1I as AutoRenewSolidAnimateIcon, Icon$1L as AutoRenewSolidIcon, Icon$w as AvalancheIcon, Icon$h as BDIcon, Icon$y as BSCIcon, BackgroundImage, Badge, BalanceInput, GridLayout$1 as BaseLayout, BaseMenu, Icon$2A as BellOpacityIcon, Icon$2B as BellSolidIcon, Icon$1$ as BlockIcon, Icon$1_ as BlockOpacityIcon, Icon$1Z as BlockSolidIcon, Icon$2h as BookIcon, Icon$2f as BookOpacityIcon, Icon$2g as BookSolidIcon, BottomDrawer, Box, Breadcrumbs, Icon$3A as BscBlackRoundIcon, Icon$1w as BurgerCloseIcon, Icon$1x as BurgerIcon, Button, ButtonMenu, ButtonMenuItem, Icon$d as CNIcon, Icon$2_ as CalculateIcon, Icon$30 as CalculateOpacityIcon, Icon$2$ as CalculateSolidIcon, Card, CardBody, CardFooter, CardHeader, CardRibbon, Icon$2J as CardViewIcon, GridLayout as CardsLayout, Icon$m as CerticAuditedIcon, Icon$$ as CharityOpacityIcon, Icon$10 as CharitySolidIcon, Icon$2G as CheckIcon, Icon$2E as CheckOpacityIcon, Icon$2F as CheckSolidIcon, Checkbox, Icon$3y as ChevronDownCircleOpacityIcon, Icon$3z as ChevronDownCircleSolidIcon, Icon$3x as ChevronDownIcon, Icon$3s as ChevronLeftCircleOpacityIcon, Icon$3t as ChevronLeftCircleSolidIcon, Icon$3r as ChevronLeftIcon, Icon$3v as ChevronRightCircleOpacityIcon, Icon$3w as ChevronRightCircleSolidIcon, Icon$3u as ChevronRightIcon, Icon$3o as ChevronUpCircleOpacityIcon, Icon$3p as ChevronUpCircleSolidIcon, Icon$3g as ChevronUpDoubleIcon, Icon$3q as ChevronUpIcon, Icon$3f as ChevronUpTripleIcon, ClickableElementContainer, Icon$34 as CloseCircleOpacityIcon, Icon$33 as CloseCircleSolidIcon, Icon$35 as CloseIcon, ConnectorNames, Icon$2q as CopyIcon, Icon$2o as CopyOpacityIcon, Icon$2p as CopySolidIcon, Icon$e as DEIcon, Icon$N as DocsOpacityIcon, Icon$O as DocsSolidIcon, Icon$3D as DownloadIcon, Dropdown, DropdownMenuItemType, Icon$b as ESIcon, Icon$1R as EditIcon, Icon$1Q as EditOpacityIcon, Icon$1P as EditSolidIcon, Icon$1p as ExchangeOpacityIcon, Icon$1q as ExchangeSolidIcon, ExpandableButton, ExpandableLabel, Icon$1n as ExpertModeOpacityIcon, Icon$1o as ExpertModeSolidIcon, Icon$2H as EyeCloseIcon, Icon$2I as EyeOpenIcon, Icon$g as FRIcon, Icon$1j as FarmsOpacityIcon, Icon$1k as FarmsSolidIcon, Icon$2M as FavoriteEmptyIcon, Icon$2L as FavoriteSolidIcon, Icon$2e as FileIcon, Icon$2c as FileOpacityIcon, Icon$2d as FileSolidIcon, Icon$2k as FilterIcon, Icon$2i as FilterOpacityIcon, Icon$2j as FilterSolidIcon, Icon$2W as FireIcon, Icon$2U as FireOpacityIcon, Icon$2V as FireSolidIcon, Icon$15 as FixedStakingOpacityIcon, Icon$16 as FixedStakingSolidIcon, Icon$22 as FlagIcon, Icon$21 as FlagOpacityIcon, Icon$20 as FlagSolidIcon, Flex, Icon$u as GameFiIcon, Icon$1N as GasIcon, Icon$t as GiftIcon, Icon$1d as GobletOpacityIcon, Icon$1e as GobletSolidIcon, Grid, Heading, Icon$2X as HelpIcon, Icon$2Z as HelpOpacityIcon, Icon$2Y as HelpSolidIcon, Icon$1A as HistoryIcon, Icon$3B as HourglassIcon, Icon$k as IDIcon, IconButton, Icon$1f as IdoOpacityIcon, Icon$1g as IdoSolidIcon, Image, Icon$2T as InfoIcon, Icon$2R as InfoOpacityIcon, Icon$2S as InfoSolidIcon, InlineMenu, InlineMenuContainer, Input$1 as Input, InputGroup, Icon$I as InstagramIcon, ItemTypes, Icon$19 as LaunchpadOpacityIcon, Icon$1a as LaunchpadSolidIcon, Link, LinkExternal, Icon$1r as LiquidityOpacityIcon, Icon$1s as LiquiditySolidIcon, Icon$1C as ListOpacityIcon, Icon$1B as ListSolidIcon, Icon$2K as ListViewIcon, Icon$3F as LogoIcon, Icon$3E as LogoWithTextIcon, Icon$1b as LotteryOpacityIcon, Icon$1c as LotterySolidIcon, Icon$s as MarketIcon, Icon$1O as MedalIcon, Icon$H as MediumIcon, Menu, Icon$r as MetamaskIcon, Icon$39 as MinusCircleOpacityIcon, Icon$3a as MinusCircleSolidIcon, Icon$3b as MinusIcon, Modal, ModalBackButton, ModalBody$1 as ModalBody, ModalCloseButton, ModalContainer, ModalHeader, ModalProvider, ModalTitle, ModalWithBackground, Icon$1S as More2Icon, Icon$1V as MoreHorizontalIcon, Icon$1T as MoreHorizontalOpacityIcon, Icon$1U as MoreHorizontalSolidIcon, Icon$1Y as MoreVerticalIcon, Icon$1W as MoreVerticalOpacityIcon, Icon$1X as MoreVerticalSolidIcon, Icon$3C as MouseIcon, Icon$S as MultiPoolOpacityIcon, Icon$R as MultiPoolSolidIcon, Icon$17 as NFTEarnOpacityIcon, Icon$18 as NFTEarnSolidIcon, Icon$P as NewsOpacityIcon, Icon$Q as NewsSolidIcon, NotificationDot, Icon$2t as OptionsOpacityIcon, Icon$2u as OptionsSolidIcon, Overlay, Icon$f as PTIcon, PercentSlider, Icon$1M as PlayIcon, Icon$3c as PlusCircleOpacityIcon, Icon$3d as PlusCircleSolidIcon, Icon$3e as PlusIcon, Icon$x as PolygonIcon, Icon$1l as PoolsOpacityIcon, Icon$1m as PoolsSolidIcon, Icon$1y as ProductsOpacityIcon, Icon$1z as ProductsSolidIcon, ProfileAvatar, Icon$V as Program10mOpacityIcon, Icon$W as Program10mSolidIcon, Progress, Bar as ProgressBar, Icon$q as RBIcon, Icon$j as RUIcon, Radio, Icon$B as Rank1Icon, Icon$A as Rank2Icon, Icon$z as Rank3Icon, Icon$G as RedditIcon, Icon$1h as ReferralOpacityIcon, Icon$1i as ReferralSolidIcon, Icon$1F as RefreshIcon, Icon$1E as RefreshOpacityIcon, Icon$1D as RefreshSolidIcon, ResetCSS, Icon$p as SEIcon, Icon$2y as SearchOpacityIcon, Icon$2z as SearchSolidIcon, Icon$2n as ShareIcon, Icon$2l as ShareOpacityIcon, Icon$2m as ShareSolidIcon, Skeleton, SlideButtonMenu, SlideButtonMenuItem, Slider, Icon$T as SpaceAgentOpacityIcon, Icon$U as SpaceAgentSolidIcon, Icon$2x as StarIcon, Icon$2w as StarOpacityIcon, Icon$2v as StarSolidIcon, SubMenu, SubMenuContainer, SubMenuItem, SubMenuItems, Svg, Icon$2Q as SwapHorizontalOpacityIcon, Icon$2P as SwapHorizontalSolidIcon, Icon$2O as SwapVerticalOpacityIcon, Icon$2N as SwapVerticalSolidIcon, Icon$c as TRIcon, TabMenu, Tag, Icon$X as TeamOpacityIcon, Icon$Y as TeamSolidIcon, Icon$F as TelegramIcon, Icon$25 as TestIcon, Icon$24 as TestOpacityIcon, Icon$23 as TestSolidIcon, Text, Textfield as TextField, Icon$o as Ticket2Icon, Timeline, Icon$28 as TimerIcon, Icon$26 as TimerOpacityIcon, Icon$27 as TimerSolidIcon, ToastContainer, Toggle, TokenImage, TokenPairImage, TooltipText, Icon$E as TwitchIcon, Icon$D as TwitterIcon, Icon$l as USAIcon, Icon$1t as UsdLineIcon, Icon$1v as UsdOpacityIcon, Icon$1u as UsdSolidIcon, UserMenuDivider, UserMenuItem, Icon$2C as UserOpacityIcon, Icon$2D as UserSolidIcon, Icon$i as VNIcon, Icon$2r as VerifiedOpacityIcon, Icon$2s as VerifiedSolidIcon, Icon$n as VisaIcon, Icon$11 as VotingOpacityIcon, Icon$12 as VotingSolidIcon, Icon$31 as WalletOpacityIcon, Icon$32 as WalletSolidIcon, Icon$36 as WarningIcon, Icon$38 as WarningOpacityIcon, Icon$37 as WarningSolidIcon, Icon$C as YoutubeIcon, variants$8 as alertVariants, byTextAscending, byTextDescending, connectorLocalStorageKey, darkTheme as dark, darkColors, formatSpacingAmount, getExternalLinkProps, getPortalRoot, getRgba, getThemeValue, isTouchDevice, lightTheme as light, lightColors, makeRender, links as menuConfig, status as menuStatus, types as toastTypes, useDelayedUnmount, useKonamiCheatCode, useMatchBreakpoints, useModal, useOnClickOutside, useParticleBurst, useTable, useTooltip, useWalletModal };
+export { Icon$Z as AboutBSWOpacityIcon, Icon$_ as AboutBSWSolidIcon, Alert, Icon$13 as AnalyticsOpacityIcon, Icon$14 as AnalyticsSolidIcon, Icon$3k as ArrowDownIcon, Icon$v as ArrowFiguredIcon, Icon$3l as ArrowLeftIcon, Icon$3n as ArrowRightIcon, Icon$3h as ArrowSkipLeftIcon, Icon$3i as ArrowSkipRightIcon, Icon$3j as ArrowUpForwardIcon, Icon$3m as ArrowUpIcon, Icon$2b as AuctionIcon, Icon$29 as AuctionOpacityIcon, Icon$2a as AuctionSolidIcon, Icon$M as AuditProtectionOpacityIcon, Icon$L as AuditProtectionSolidIcon, Icon$J as AuditSearchOpacityIcon, Icon$K as AuditSearchSolidIcon, Icon$1G as AutoRenewAnimateIcon, Icon$1J as AutoRenewIcon, Icon$1H as AutoRenewOpacityAnimateIcon, Icon$1K as AutoRenewOpacityIcon, Icon$1I as AutoRenewSolidAnimateIcon, Icon$1L as AutoRenewSolidIcon, Icon$w as AvalancheIcon, Icon$h as BDIcon, Icon$y as BSCIcon, BackgroundImage, Badge, BalanceInput, GridLayout$1 as BaseLayout, BaseMenu, Icon$2A as BellOpacityIcon, Icon$2B as BellSolidIcon, Icon$1$ as BlockIcon, Icon$1_ as BlockOpacityIcon, Icon$1Z as BlockSolidIcon, Icon$2h as BookIcon, Icon$2f as BookOpacityIcon, Icon$2g as BookSolidIcon, BottomDrawer, Box, Breadcrumbs, Icon$3A as BscBlackRoundIcon, Icon$1w as BurgerCloseIcon, Icon$1x as BurgerIcon, Button, ButtonMenu, ButtonMenuItem, Icon$d as CNIcon, Icon$2_ as CalculateIcon, Icon$30 as CalculateOpacityIcon, Icon$2$ as CalculateSolidIcon, Card, CardBody, CardFooter, CardHeader, CardRibbon, Icon$2J as CardViewIcon, GridLayout as CardsLayout, Icon$m as CerticAuditedIcon, Icon$$ as CharityOpacityIcon, Icon$10 as CharitySolidIcon, Icon$2G as CheckIcon, Icon$2E as CheckOpacityIcon, Icon$2F as CheckSolidIcon, Checkbox, Icon$3y as ChevronDownCircleOpacityIcon, Icon$3z as ChevronDownCircleSolidIcon, Icon$3x as ChevronDownIcon, Icon$3s as ChevronLeftCircleOpacityIcon, Icon$3t as ChevronLeftCircleSolidIcon, Icon$3r as ChevronLeftIcon, Icon$3v as ChevronRightCircleOpacityIcon, Icon$3w as ChevronRightCircleSolidIcon, Icon$3u as ChevronRightIcon, Icon$3o as ChevronUpCircleOpacityIcon, Icon$3p as ChevronUpCircleSolidIcon, Icon$3g as ChevronUpDoubleIcon, Icon$3q as ChevronUpIcon, Icon$3f as ChevronUpTripleIcon, ClickableElementContainer, Icon$34 as CloseCircleOpacityIcon, Icon$33 as CloseCircleSolidIcon, Icon$35 as CloseIcon, ConnectorNames, Icon$2q as CopyIcon, Icon$2o as CopyOpacityIcon, Icon$2p as CopySolidIcon, Icon$e as DEIcon, Icon$N as DocsOpacityIcon, Icon$O as DocsSolidIcon, Icon$3D as DownloadIcon, Dropdown, DropdownMenuItemType, Icon$b as ESIcon, Icon$1R as EditIcon, Icon$1Q as EditOpacityIcon, Icon$1P as EditSolidIcon, Icon$1p as ExchangeOpacityIcon, Icon$1q as ExchangeSolidIcon, ExpandableButton, ExpandableLabel, Icon$1n as ExpertModeOpacityIcon, Icon$1o as ExpertModeSolidIcon, Icon$2H as EyeCloseIcon, Icon$2I as EyeOpenIcon, Icon$g as FRIcon, Icon$1j as FarmsOpacityIcon, Icon$1k as FarmsSolidIcon, Icon$2M as FavoriteEmptyIcon, Icon$2L as FavoriteSolidIcon, Icon$2e as FileIcon, Icon$2c as FileOpacityIcon, Icon$2d as FileSolidIcon, Icon$2k as FilterIcon, Icon$2i as FilterOpacityIcon, Icon$2j as FilterSolidIcon, Icon$2W as FireIcon, Icon$2U as FireOpacityIcon, Icon$2V as FireSolidIcon, Icon$15 as FixedStakingOpacityIcon, Icon$16 as FixedStakingSolidIcon, Icon$22 as FlagIcon, Icon$21 as FlagOpacityIcon, Icon$20 as FlagSolidIcon, Flex, Icon$u as GameFiIcon, Icon$1N as GasIcon, Icon$t as GiftIcon, Icon$1d as GobletOpacityIcon, Icon$1e as GobletSolidIcon, Grid, Heading, Icon$2X as HelpIcon, Icon$2Z as HelpOpacityIcon, Icon$2Y as HelpSolidIcon, Icon$1A as HistoryIcon, Icon$3B as HourglassIcon, Icon$k as IDIcon, IconButton, Icon$1f as IdoOpacityIcon, Icon$1g as IdoSolidIcon, Image, Icon$2T as InfoIcon, Icon$2R as InfoOpacityIcon, Icon$2S as InfoSolidIcon, InlineMenu, InlineMenuContainer, Input$1 as Input, InputGroup, Icon$I as InstagramIcon, ItemTypes, Icon$19 as LaunchpadOpacityIcon, Icon$1a as LaunchpadSolidIcon, Link, LinkExternal, Icon$1r as LiquidityOpacityIcon, Icon$1s as LiquiditySolidIcon, Icon$1C as ListOpacityIcon, Icon$1B as ListSolidIcon, Icon$2K as ListViewIcon, Icon$3F as LogoIcon, Icon$3E as LogoWithTextIcon, Icon$1b as LotteryOpacityIcon, Icon$1c as LotterySolidIcon, Icon$s as MarketIcon, MatchBreakpointsProvider, Icon$1O as MedalIcon, Icon$H as MediumIcon, Menu, Icon$r as MetamaskIcon, Icon$39 as MinusCircleOpacityIcon, Icon$3a as MinusCircleSolidIcon, Icon$3b as MinusIcon, Modal, ModalBackButton, ModalBody$1 as ModalBody, ModalCloseButton, ModalContainer, ModalHeader, ModalProvider, ModalTitle, ModalWithBackground, Icon$1S as More2Icon, Icon$1V as MoreHorizontalIcon, Icon$1T as MoreHorizontalOpacityIcon, Icon$1U as MoreHorizontalSolidIcon, Icon$1Y as MoreVerticalIcon, Icon$1W as MoreVerticalOpacityIcon, Icon$1X as MoreVerticalSolidIcon, Icon$3C as MouseIcon, Icon$S as MultiPoolOpacityIcon, Icon$R as MultiPoolSolidIcon, Icon$17 as NFTEarnOpacityIcon, Icon$18 as NFTEarnSolidIcon, Icon$P as NewsOpacityIcon, Icon$Q as NewsSolidIcon, NotificationDot, Icon$2t as OptionsOpacityIcon, Icon$2u as OptionsSolidIcon, Overlay, Icon$f as PTIcon, PercentSlider, Icon$1M as PlayIcon, Icon$3c as PlusCircleOpacityIcon, Icon$3d as PlusCircleSolidIcon, Icon$3e as PlusIcon, Icon$x as PolygonIcon, Icon$1l as PoolsOpacityIcon, Icon$1m as PoolsSolidIcon, Icon$1y as ProductsOpacityIcon, Icon$1z as ProductsSolidIcon, ProfileAvatar, Icon$V as Program10mOpacityIcon, Icon$W as Program10mSolidIcon, Progress, Bar as ProgressBar, Icon$q as RBIcon, Icon$j as RUIcon, Radio, Icon$B as Rank1Icon, Icon$A as Rank2Icon, Icon$z as Rank3Icon, Icon$G as RedditIcon, Icon$1h as ReferralOpacityIcon, Icon$1i as ReferralSolidIcon, Icon$1F as RefreshIcon, Icon$1E as RefreshOpacityIcon, Icon$1D as RefreshSolidIcon, ResetCSS, Icon$p as SEIcon, Icon$2y as SearchOpacityIcon, Icon$2z as SearchSolidIcon, Icon$2n as ShareIcon, Icon$2l as ShareOpacityIcon, Icon$2m as ShareSolidIcon, Skeleton, SlideButtonMenu, SlideButtonMenuItem, Slider, Icon$T as SpaceAgentOpacityIcon, Icon$U as SpaceAgentSolidIcon, Icon$2x as StarIcon, Icon$2w as StarOpacityIcon, Icon$2v as StarSolidIcon, SubMenu, SubMenuContainer, SubMenuItem, SubMenuItems, Svg, Icon$2Q as SwapHorizontalOpacityIcon, Icon$2P as SwapHorizontalSolidIcon, Icon$2O as SwapVerticalOpacityIcon, Icon$2N as SwapVerticalSolidIcon, Icon$c as TRIcon, TabMenu, Tag, Icon$X as TeamOpacityIcon, Icon$Y as TeamSolidIcon, Icon$F as TelegramIcon, Icon$25 as TestIcon, Icon$24 as TestOpacityIcon, Icon$23 as TestSolidIcon, Text, Textfield as TextField, Icon$o as Ticket2Icon, Timeline, Icon$28 as TimerIcon, Icon$26 as TimerOpacityIcon, Icon$27 as TimerSolidIcon, ToastContainer, Toggle, TokenImage, TokenPairImage, TooltipText, Icon$E as TwitchIcon, Icon$D as TwitterIcon, Icon$l as USAIcon, Icon$1t as UsdLineIcon, Icon$1v as UsdOpacityIcon, Icon$1u as UsdSolidIcon, UserMenuDivider, UserMenuItem, Icon$2C as UserOpacityIcon, Icon$2D as UserSolidIcon, Icon$i as VNIcon, Icon$2r as VerifiedOpacityIcon, Icon$2s as VerifiedSolidIcon, Icon$n as VisaIcon, Icon$11 as VotingOpacityIcon, Icon$12 as VotingSolidIcon, Icon$31 as WalletOpacityIcon, Icon$32 as WalletSolidIcon, Icon$36 as WarningIcon, Icon$38 as WarningOpacityIcon, Icon$37 as WarningSolidIcon, Icon$C as YoutubeIcon, variants$8 as alertVariants, byTextAscending, byTextDescending, connectorLocalStorageKey, darkTheme as dark, darkColors, formatSpacingAmount, getExternalLinkProps, getPortalRoot, getRgba, getThemeValue, isTouchDevice, lightTheme as light, lightColors, makeRender, links as menuConfig, status as menuStatus, types as toastTypes, useDelayedUnmount, useKonamiCheatCode, useMatchBreakpoints, useModal, useOnClickOutside, useParticleBurst, useTable, useTooltip, useWalletModal };

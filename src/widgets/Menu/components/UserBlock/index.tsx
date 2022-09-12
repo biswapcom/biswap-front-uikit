@@ -7,7 +7,7 @@ import {
 } from "../../../../components/Svg";
 import { useWalletModal } from "../../../WalletModal";
 import { Login } from "../../../WalletModal";
-import { useMatchBreakpoints } from "../../../../hooks";
+import { useMatchBreakpoints } from "../../../../contexts";
 
 interface Props {
   account?: string;

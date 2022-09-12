@@ -9,7 +9,7 @@ import IconComponent from "../../Svg/IconComponent";
 import { Text } from "../../Text";
 import { DropdownMenuItemType, InnerLinksBlockProps } from "../types";
 import Grid from "../../Box/Grid";
-import { useMatchBreakpoints } from "../../../hooks";
+import { useMatchBreakpoints } from "../../../contexts";
 
 const InnerLinksBlock: FC<InnerLinksBlockProps> = ({
   links,

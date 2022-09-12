@@ -6,7 +6,7 @@ import DropdownMenu from "../DropdownMenu/DropdownMenu";
 import MenuItem from "../MenuItem/MenuItem";
 import IconComponent from "../Svg/IconComponent";
 import { ItemTypes, MenuItemsProps } from "./types";
-import { useMatchBreakpoints } from "../../hooks";
+import { useMatchBreakpoints } from "../../contexts";
 import MobileDropdownMenu from "../DropdownMenu/MobileMenu/MobileDropdownMenu";
 import MenuItemDivider from "../MenuItem/Divider";
 
