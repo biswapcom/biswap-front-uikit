@@ -1,4 +1,4 @@
-import { ElementType, ReactElement } from "react";
+import { ElementType, ReactElement, ReactNode } from "react";
 import { MenuItemsType } from "../../components/MenuItems/types";
 import { SubMenuItemsType } from "../../components/SubMenuItems/types";
 import { Colors } from "../../theme/types";
@@ -62,6 +62,8 @@ export interface NavProps
   //---------
   withEvent?: boolean;
   eventCallback?: () => void;
+  children: ReactNode;
+  eventButtonLogo?: () => JSX.Element;
 }
 
 export interface FooterStatisticProps {

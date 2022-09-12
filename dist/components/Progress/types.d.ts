@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 export declare const variants: {
     readonly ROUND: "round";
     readonly FLAT: "flat";
@@ -15,4 +16,5 @@ export interface ProgressProps {
     secondaryStep?: number;
     showProgressBunny?: boolean;
     useDark?: boolean;
+    children: ReactNode;
 }

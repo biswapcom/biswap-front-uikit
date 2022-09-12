@@ -332,6 +332,7 @@ export { default as TelegramIcon } from "./Icons/Socials/Telegram";
 export { default as TwitchIcon } from "./Icons/Socials/Twitch";
 export { default as TwitterIcon } from "./Icons/Socials/Twitter";
 export { default as YoutubeIcon } from "./Icons/Socials/Youtube";
+export { default as FacebookIcon } from "./Icons/Socials/Facebook";
 
 //Rank
 export { default as Rank1Icon } from "./Icons/Rank/Rank1";
@@ -367,6 +368,7 @@ export { default as DEIcon } from "./Icons/Flags/DE";
 export { default as CNIcon } from "./Icons/Flags/CN";
 export { default as TRIcon } from "./Icons/Flags/TR";
 export { default as ESIcon } from "./Icons/Flags/ES";
+export { default as INIcon } from "./Icons/Flags/IN";
 
 export { default as Svg } from "./Svg";
 export type { SvgProps } from "./types";
