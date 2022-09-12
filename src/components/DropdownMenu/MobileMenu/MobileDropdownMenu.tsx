@@ -2,7 +2,7 @@ import React, { FC, useEffect, useState } from "react";
 import { cloneDeep } from "lodash";
 
 import { Text } from "../../Text";
-import { useMatchBreakpoints } from "../../../hooks";
+import { useMatchBreakpoints } from "../../../contexts";
 import MobileMenu from "./MobileMenu";
 import { MenuItemsProps } from "../../MenuItems/types";
 import MenuItem from "../../MenuItem";

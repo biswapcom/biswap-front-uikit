@@ -9,8 +9,8 @@ var get = require('lodash/get');
 var reactDom = require('react-dom');
 var lodash = require('lodash');
 var reactPopper = require('react-popper');
-var debounce = require('lodash/debounce');
 var noop = require('lodash/noop');
+var debounce = require('lodash/debounce');
 var throttle = require('lodash/throttle');
 var reactRouterDom = require('react-router-dom');
 var reactTransitionGroup = require('react-transition-group');
@@ -20,8 +20,8 @@ function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'defau
 var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 var styled__default = /*#__PURE__*/_interopDefaultLegacy(styled);
 var get__default = /*#__PURE__*/_interopDefaultLegacy(get);
-var debounce__default = /*#__PURE__*/_interopDefaultLegacy(debounce);
 var noop__default = /*#__PURE__*/_interopDefaultLegacy(noop);
+var debounce__default = /*#__PURE__*/_interopDefaultLegacy(debounce);
 var throttle__default = /*#__PURE__*/_interopDefaultLegacy(throttle);
 
 /******************************************************************************
@@ -3771,51 +3771,69 @@ var mediaQueries = (function () {
 var getKey = function (size) {
     return "is".concat(size.charAt(0).toUpperCase()).concat(size.slice(1));
 };
-var getState = function () {
-    var s = Object.keys(mediaQueries).reduce(function (accum, size) {
-        var _a, _b;
-        var _c;
-        var key = getKey(size);
-        if (typeof window === "undefined") {
-            return __assign(__assign({}, accum), (_a = {}, _a[key] = false, _a));
-        }
-        var mql = window.matchMedia(mediaQueries[size]);
-        return __assign(__assign({}, accum), (_b = {}, _b[key] = (_c = mql === null || mql === void 0 ? void 0 : mql.matches) !== null && _c !== void 0 ? _c : false, _b));
-    }, {});
-    return s;
+var getState = function () { return Object.keys(mediaQueries).reduce(function (accum, size) {
+    var _a, _b;
+    var _c;
+    var key = getKey(size);
+    if (typeof window === "undefined") {
+        return __assign(__assign({}, accum), (_a = {}, _a[key] = false, _a));
+    }
+    var mql = window.matchMedia(mediaQueries[size]);
+    return __assign(__assign({}, accum), (_b = {}, _b[key] = (_c = mql === null || mql === void 0 ? void 0 : mql.matches) !== null && _c !== void 0 ? _c : false, _b));
+}, {}); };
+var MatchBreakpointsContext = React.createContext({
+    isMobile: false,
+    isTablet: false,
+    isDesktop: false,
+});
+var getBreakpointChecks = function (state) {
+    return __assign(__assign({}, state), { isMobile: state.isXs || state.isSm, isTablet: state.isMd || state.isLg, isDesktop: state.isXl || state.isXxl });
 };
-var useMatchBreakpoints = function () {
-    var _a = React.useState(function () { return getState(); }), state = _a[0], setState = _a[1];
+var MatchBreakpointsProvider = function (_a) {
+    var children = _a.children;
+    var _b = React.useState(function () { return getBreakpointChecks(getState()); }), state = _b[0], setState = _b[1];
     useIsomorphicEffect(function () {
         // Create listeners for each media query returning a function to unsubscribe
         var handlers = Object.keys(mediaQueries).map(function (size) {
-            var mql = window.matchMedia(mediaQueries[size]);
-            var handler = function (matchMediaQuery) {
-                var key = getKey(size);
-                setState(function (prevState) {
-                    var _a;
-                    return (__assign(__assign({}, prevState), (_a = {}, _a[key] = matchMediaQuery.matches, _a)));
-                });
-            };
-            // Safari < 14 fix
-            if (mql.addEventListener) {
-                mql.addEventListener("change", handler);
+            var mql;
+            var handler;
+            if (typeof (window === null || window === void 0 ? void 0 : window.matchMedia) === "function") {
+                mql = window.matchMedia(mediaQueries[size]);
+                handler = function (matchMediaQuery) {
+                    var key = getKey(size);
+                    setState(function (prevState) {
+                        var _a;
+                        return getBreakpointChecks(__assign(__assign({}, prevState), (_a = {}, _a[key] = matchMediaQuery.matches, _a)));
+                    });
+                };
+                // Safari < 14 fix
+                if (mql.addEventListener) {
+                    mql.addEventListener("change", handler);
+                }
             }
             return function () {
                 // Safari < 14 fix
-                if (mql.removeEventListener) {
+                if (mql === null || mql === void 0 ? void 0 : mql.removeEventListener) {
                     mql.removeEventListener("change", handler);
                 }
             };
         });
-        setState(getState());
+        setState(getBreakpointChecks(getState()));
         return function () {
             handlers.forEach(function (unsubscribe) {
                 unsubscribe();
             });
         };
     }, []);
-    return __assign(__assign({}, state), { isMobile: state.isXs || state.isSm, isTablet: state.isMd || state.isLg, isDesktop: state.isXl || state.isXll || state.isXxl });
+    return React__default["default"].createElement(MatchBreakpointsContext.Provider, { value: state }, children);
+};
+
+var useMatchBreakpoints = function () {
+    var matchBreakpointContext = React.useContext(MatchBreakpointsContext);
+    if (matchBreakpointContext === undefined) {
+        throw new Error("Match Breakpoint context is undefined");
+    }
+    return matchBreakpointContext;
 };
 
 var StyledOverlay = styled__default["default"](Box)(templateObject_1$19 || (templateObject_1$19 = __makeTemplateObject(["\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  background-color: rgb(10, 22, 43);\n  z-index: 20;\n  opacity: 0.55;\n"], ["\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  background-color: rgb(10, 22, 43);\n  z-index: 20;\n  opacity: 0.55;\n"])));
@@ -5475,137 +5493,174 @@ TabItem.defaultProps = {
     disabled: false,
 };
 
-var defaultParticleOptions = {
-    size: 30,
-    distance: 500,
-};
-var createParticle = function (x, y, imgSrc, options) {
-    if (options === void 0) { options = {}; }
-    var _a = __assign(__assign({}, defaultParticleOptions), options), size = _a.size, distance = _a.distance;
-    var particle = document.createElement("particle");
-    document.body.appendChild(particle);
-    var width = Math.floor(Math.random() * size + 8);
-    var height = width;
-    var destinationX = (Math.random() - 0.5) * distance;
-    var destinationY = (Math.random() - 0.5) * distance;
-    var rotation = Math.random() * 520;
-    var delay = Math.random() * 200;
-    particle.style.backgroundRepeat = "no-repeat";
-    particle.style.backgroundSize = "contain";
-    particle.style.backgroundImage = "url(".concat(imgSrc, ")");
-    particle.style.left = "0";
-    particle.style.top = "0";
-    particle.style.opacity = "0";
-    particle.style.pointerEvents = "none";
-    particle.style.position = "fixed";
-    particle.style.width = "".concat(width, "px");
-    particle.style.height = "".concat(height, "px");
-    var animation = particle.animate([
-        {
-            transform: "translate(-50%, -50%) translate(".concat(x, "px, ").concat(y, "px) rotate(0deg)"),
-            opacity: 1,
-        },
-        {
-            transform: "translate(-50%, -50%) translate(".concat(x + destinationX, "px, ").concat(y + destinationY, "px) rotate(").concat(rotation, "deg)"),
-            opacity: 0,
-        },
-    ], {
-        duration: Math.random() * 1000 + 5000,
-        easing: "cubic-bezier(0, .9, .57, 1)",
-        delay: delay,
-    });
-    animation.onfinish = function () {
-        particle.remove();
-    };
-};
-var defaultOptions = {
-    numberOfParticles: 30,
-    debounceDuration: 200,
-    particleOptions: {},
-};
-/**
- * @see https://css-tricks.com/playing-with-particles-using-the-web-animations-api/
- */
-var useParticleBurst = function (options) {
-    var _a = __assign(__assign({}, defaultOptions), options), selector = _a.selector, numberOfParticles = _a.numberOfParticles, debounceDuration = _a.debounceDuration, imgSrc = _a.imgSrc, disableWhen = _a.disableWhen, particleOptions = _a.particleOptions;
-    var makeListener = React.useCallback(function () {
-        return debounce__default["default"](function (event) {
-            var isDisabled = disableWhen && disableWhen();
-            if (!isDisabled) {
-                var node = event.currentTarget;
-                if (event.clientX === 0 && event.clientY === 0) {
-                    var _a = node.getBoundingClientRect(), left = _a.left, width = _a.width, top_1 = _a.top, height = _a.height;
-                    var x = left + width / 2;
-                    var y = top_1 + height / 2;
-                    for (var i = 0; i < numberOfParticles; i += 1) {
-                        createParticle(x, y, imgSrc, particleOptions);
-                    }
-                }
-                else {
-                    for (var i = 0; i < numberOfParticles; i += 1) {
-                        createParticle(event.clientX, event.clientY + window.scrollY, imgSrc, particleOptions);
-                    }
-                }
-            }
-        }, debounceDuration, { leading: true });
-    }, [debounceDuration, numberOfParticles, imgSrc, disableWhen, particleOptions]);
-    var listener = makeListener();
-    var initialize = React.useCallback(function () {
-        if (selector) {
-            document.querySelectorAll(selector).forEach(function (element) {
-                element.addEventListener("click", listener);
-            });
-        }
-        else {
-            document.addEventListener("click", listener);
-        }
-    }, [selector, listener]);
-    var teardown = React.useCallback(function () {
-        if (selector) {
-            document.querySelectorAll(selector).forEach(function (element) {
-                element.removeEventListener("click", listener);
-            });
-        }
-        else {
-            document.removeEventListener("click", listener);
-        }
-    }, [selector, listener]);
+var InactiveButton$1 = styled__default["default"](TabItem)(templateObject_1$H || (templateObject_1$H = __makeTemplateObject(["\n  color: ", ";\n"], ["\n  color: ", ";\n"])), function (_a) {
+    var theme = _a.theme, variant = _a.variant;
+    return theme.colors[variant === tabVariants.DARK ? "pastelBlue" : "gray900"];
+});
+var TabBarItem = function (_a) {
+    var _b = _a.isActive, isActive = _b === void 0 ? false : _b, variant = _a.variant, setWidth = _a.setWidth, itemIndex = _a.itemIndex, onAction = _a.onAction, customClass = _a.customClass, blockOffset = _a.blockOffset, props = __rest(_a, ["isActive", "variant", "setWidth", "itemIndex", "onAction", "customClass", "blockOffset"]);
+    var _c = useMatchBreakpoints(), isDesktop = _c.isDesktop, isMobile = _c.isMobile, isTablet = _c.isTablet;
+    var className = "tab-bar-item-" + itemIndex + customClass;
+    var element = document.getElementsByClassName(className);
     React.useEffect(function () {
-        initialize();
-        return function () { return teardown(); };
-    }, [initialize, teardown]);
-    return { initialize: initialize, teardown: teardown };
+        var _a, _b;
+        var itemWidth = (_b = (_a = element.item(0)) === null || _a === void 0 ? void 0 : _a.clientWidth) !== null && _b !== void 0 ? _b : 0;
+        if (setWidth && itemWidth) {
+            setWidth(function (prev) {
+                return prev.map(function (item, index) { return (index === itemIndex ? itemWidth : item); });
+            });
+        }
+    }, [element, isDesktop, isMobile, isTablet, blockOffset]);
+    var handleClick = function () {
+        if (onAction)
+            onAction(itemIndex !== null && itemIndex !== void 0 ? itemIndex : 0);
+    };
+    if (!isActive) {
+        return (React__default["default"].createElement(InactiveButton$1, __assign({ onClick: handleClick, className: className, variant: variant }, props)));
+    }
+    return (React__default["default"].createElement(TabItem, __assign({ onClick: handleClick, className: className, variant: variant }, props)));
+};
+var templateObject_1$H;
+
+var StyledTabBar = styled__default["default"].div(templateObject_1$G || (templateObject_1$G = __makeTemplateObject(["\n  position: relative;\n  display: ", ";\n  width: ", ";\n\n  & > button,\n  & > a {\n    flex: ", ";\n  }\n\n  & > button,\n  & a {\n    box-shadow: none;\n  }\n  ", "\n"], ["\n  position: relative;\n  display: ", ";\n  width: ", ";\n\n  & > button,\n  & > a {\n    flex: ", ";\n  }\n\n  & > button,\n  & a {\n    box-shadow: none;\n  }\n  ", "\n"])), function (_a) {
+    var fullWidth = _a.fullWidth;
+    return (fullWidth ? "flex" : "inline-flex");
+}, function (_a) {
+    var fullWidth = _a.fullWidth;
+    return (fullWidth ? "100%" : "auto");
+}, function (_a) {
+    var fullWidth = _a.fullWidth;
+    return (fullWidth ? 1 : "auto");
+}, styledSystem.space);
+var Selection$1 = styled__default["default"].div(templateObject_2$u || (templateObject_2$u = __makeTemplateObject(["\n  width: ", ";\n  height: 2px;\n  position: absolute;\n  bottom: 0;\n  left: ", ";\n  transition: left 0.3s ease;\n  padding: 0 8px;\n  z-index: 1;\n\n  ", "\n"], ["\n  width: ", ";\n  height: 2px;\n  position: absolute;\n  bottom: 0;\n  left: ", ";\n  transition: left 0.3s ease;\n  padding: 0 8px;\n  z-index: 1;\n\n  ", "\n"])), function (_a) {
+    var width = _a.width;
+    return "".concat(width, "px");
+}, function (_a) {
+    var offset = _a.offset;
+    return "".concat(offset, "px");
+}, styledSystem.variant({
+    prop: "scale",
+    variants: sliderScaleVariant,
+}));
+var ColorSection = styled__default["default"].div(templateObject_3$j || (templateObject_3$j = __makeTemplateObject(["\n  width: 100%;\n  height: 100%;\n  background: ", ";\n"], ["\n  width: 100%;\n  height: 100%;\n  background: ", ";\n"])), function (_a) {
+    var theme = _a.theme, isLight = _a.isLight;
+    return theme.colors[isLight ? "primary" : "warning"];
+});
+var TabMenu = function (_a) {
+    var _b = _a.customClass, customClass = _b === void 0 ? "" : _b, _c = _a.activeIndex, activeIndex = _c === void 0 ? 0 : _c, _d = _a.scale, scale = _d === void 0 ? tabsScales.SM : _d, _e = _a.variant, variant = _e === void 0 ? tabVariants.DARK : _e, onItemClick = _a.onItemClick, disabled = _a.disabled, _f = _a.fullWidth, fullWidth = _f === void 0 ? false : _f, _g = _a.menuTitles, menuTitles = _g === void 0 ? [""] : _g, _h = _a.menuIcons, menuIcons = _h === void 0 ? [] : _h, props = __rest(_a, ["customClass", "activeIndex", "scale", "variant", "onItemClick", "disabled", "fullWidth", "menuTitles", "menuIcons"]);
+    var _j = React.useState(__spreadArray([], Array(menuTitles === null || menuTitles === void 0 ? void 0 : menuTitles.length), true).map(function (e, i) { return i - i; })), widthsArr = _j[0], setWidthsArr = _j[1];
+    var _k = React.useState(0), blockOffset = _k[0], setBlockOffset = _k[1];
+    React.useEffect(function () {
+        setBlockOffset(widthsArr.slice(0, activeIndex).reduce(function (sum, elem) { return sum + elem; }, 0));
+    }, [widthsArr, activeIndex]);
+    var isLight = variant === tabVariants.LIGHT;
+    var getTabMenuIcons = function (index, size) {
+        var sizes = menuIconScaleVariants[size];
+        return (React__default["default"].createElement(IconComponent, { width: sizes.width, iconName: menuIcons[index], color: "currentColor", mr: sizes.marginRight }));
+    };
+    return (React__default["default"].createElement(StyledTabBar, __assign({ disabled: disabled, isLight: isLight, fullWidth: fullWidth }, props),
+        !disabled && (React__default["default"].createElement(Selection$1, { scale: scale, width: widthsArr[activeIndex], offset: blockOffset, isLight: isLight },
+            React__default["default"].createElement(ColorSection, { isLight: isLight }))),
+        menuTitles.map(function (title, index) { return (React__default["default"].createElement(TabBarItem, { key: index.toString(), disabled: disabled, customClass: customClass, isActive: !disabled && activeIndex === index, onAction: onItemClick, itemIndex: index, setWidth: setWidthsArr, variant: variant, scale: scale, blockOffset: blockOffset },
+            React__default["default"].createElement(Flex, { alignItems: "center" },
+                getTabMenuIcons(index, scale),
+                title))); })));
+};
+var templateObject_1$G, templateObject_2$u, templateObject_3$j;
+
+var variants = {
+    PRIMARY: "primary",
+    SECONDARY: "secondary",
+    SUCCESS: "success",
+    TEXTDISABLED: "textDisabled",
+    TEXTSUBTLE: "textSubtle",
+    BINANCE: "binance",
+    FAILURE: "failure",
+    WARNING: "warning",
+};
+var scales$1 = {
+    MD: "md",
+    SM: "sm",
 };
 
-var useKonamiCheatCode = function (matchedCodeHandler) {
-    React.useEffect(function () {
-        var pattern = [
-            "ArrowUp",
-            "ArrowUp",
-            "ArrowDown",
-            "ArrowDown",
-            "ArrowLeft",
-            "ArrowRight",
-            "ArrowLeft",
-            "ArrowRight",
-        ];
-        var currentIndex = 0;
-        var onKeyUpHandler = function (event) {
-            var key = event.key;
-            // is key in correct order otherwise reset
-            if (key !== pattern[currentIndex]) {
-                currentIndex = 0;
-                return;
-            }
-            currentIndex += 1;
-            if (pattern.length === currentIndex) {
-                currentIndex = 0;
-                matchedCodeHandler();
-            }
-        };
-        document.addEventListener("keyup", onKeyUpHandler);
-        return function () { return document.removeEventListener("keyup", onKeyUpHandler); };
-    }, [matchedCodeHandler]);
+var _a$2, _b$1;
+var scaleVariants = (_a$2 = {},
+    _a$2[scales$1.MD] = {
+        height: "28px",
+        padding: "0 8px",
+        fontSize: "14px",
+    },
+    _a$2[scales$1.SM] = {
+        height: "24px",
+        padding: "0 4px",
+        fontSize: "12px",
+    },
+    _a$2);
+var styleVariants = (_b$1 = {},
+    _b$1[variants.PRIMARY] = {
+        backgroundColor: "primary",
+    },
+    _b$1[variants.SECONDARY] = {
+        backgroundColor: "secondary",
+    },
+    _b$1[variants.SUCCESS] = {
+        backgroundColor: "success",
+    },
+    _b$1[variants.TEXTDISABLED] = {
+        backgroundColor: "textDisabled",
+    },
+    _b$1[variants.TEXTSUBTLE] = {
+        backgroundColor: "textSubtle",
+    },
+    _b$1[variants.BINANCE] = {
+        backgroundColor: "binance",
+    },
+    _b$1[variants.FAILURE] = {
+        backgroundColor: "failure",
+    },
+    _b$1[variants.WARNING] = {
+        backgroundColor: "warning",
+    },
+    _b$1);
+
+var getOutlineStyles = function (_a) {
+    var outline = _a.outline, theme = _a.theme, _b = _a.variant, variantKey = _b === void 0 ? variants.PRIMARY : _b;
+    if (outline) {
+        var themeColorKey = styleVariants[variantKey]
+            .backgroundColor;
+        var color = theme.colors[themeColorKey];
+        return "\n      color: ".concat(color, ";\n      background: ").concat(theme.colors.background, ";\n      border: 2px solid ").concat(color, ";\n    ");
+    }
+    return "";
+};
+var StyledTag = styled__default["default"].div(templateObject_1$F || (templateObject_1$F = __makeTemplateObject(["\n  align-items: center;\n  border-radius: 16px;\n  color: #ffffff;\n  display: inline-flex;\n  font-weight: 400;\n  white-space: nowrap;\n\n  & > svg {\n    fill: currentColor;\n  }\n\n  ", "\n\n  ", "\n  ", "\n  ", "\n  ", "\n\n  ", "\n"], ["\n  align-items: center;\n  border-radius: 16px;\n  color: #ffffff;\n  display: inline-flex;\n  font-weight: 400;\n  white-space: nowrap;\n\n  & > svg {\n    fill: currentColor;\n  }\n\n  ", "\n\n  ", "\n  ", "\n  ", "\n  ", "\n\n  ", "\n"])), function (_a) {
+    var textTransform = _a.textTransform;
+    return textTransform && "text-transform: ".concat(textTransform, ";");
+}, styledSystem.variant({
+    prop: "scale",
+    variants: scaleVariants,
+}), styledSystem.variant({
+    variants: styleVariants,
+}), styledSystem.space, styledSystem.typography, getOutlineStyles);
+var templateObject_1$F;
+
+var Tag = function (_a) {
+    var startIcon = _a.startIcon, endIcon = _a.endIcon, children = _a.children, props = __rest(_a, ["startIcon", "endIcon", "children"]);
+    return (React__default["default"].createElement(StyledTag, __assign({}, props),
+        React__default["default"].isValidElement(startIcon) &&
+            React__default["default"].cloneElement(startIcon, {
+                mr: "0.5em",
+            }),
+        children,
+        React__default["default"].isValidElement(endIcon) &&
+            React__default["default"].cloneElement(endIcon, {
+                ml: "0.5em",
+            })));
+};
+Tag.defaultProps = {
+    variant: "primary",
+    scale: scales$1.MD,
+    outline: false,
 };
 
 var isTouchDevice = function () {
@@ -5613,18 +5668,18 @@ var isTouchDevice = function () {
         ("ontouchstart" in window || navigator.maxTouchPoints > 0));
 };
 
-var Arrow = styled__default["default"].div(templateObject_1$H || (templateObject_1$H = __makeTemplateObject(["\n  &,\n  &::before {\n    position: absolute;\n    width: 10px;\n    height: 10px;\n    z-index: -1;\n  }\n\n  &::before {\n    content: \"\";\n    transform: rotate(45deg);\n    background: ", ";\n  }\n"], ["\n  &,\n  &::before {\n    position: absolute;\n    width: 10px;\n    height: 10px;\n    z-index: -1;\n  }\n\n  &::before {\n    content: \"\";\n    transform: rotate(45deg);\n    background: ", ";\n  }\n"])), function (_a) {
+var Arrow = styled__default["default"].div(templateObject_1$E || (templateObject_1$E = __makeTemplateObject(["\n  &,\n  &::before {\n    position: absolute;\n    width: 10px;\n    height: 10px;\n    z-index: -1;\n  }\n\n  &::before {\n    content: \"\";\n    transform: rotate(45deg);\n    background: ", ";\n  }\n"], ["\n  &,\n  &::before {\n    position: absolute;\n    width: 10px;\n    height: 10px;\n    z-index: -1;\n  }\n\n  &::before {\n    content: \"\";\n    transform: rotate(45deg);\n    background: ", ";\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.tooltip;
 });
-var StyledTooltip = styled__default["default"].div(templateObject_2$u || (templateObject_2$u = __makeTemplateObject(["\n  padding: 12px 8px;\n  font-size: 12px;\n  line-height: 16px;\n  border-radius: 8px;\n  max-width: 320px;\n  z-index: 101;\n  background: ", ";\n  color: ", ";\n\n  &[data-popper-placement^=\"top\"] > ", " {\n    bottom: -4px;\n  }\n\n  &[data-popper-placement^=\"bottom\"] > ", " {\n    top: -4px;\n  }\n\n  &[data-popper-placement^=\"left\"] > ", " {\n    right: -4px;\n  }\n\n  &[data-popper-placement^=\"right\"] > ", " {\n    left: -4px;\n  }\n"], ["\n  padding: 12px 8px;\n  font-size: 12px;\n  line-height: 16px;\n  border-radius: 8px;\n  max-width: 320px;\n  z-index: 101;\n  background: ", ";\n  color: ", ";\n\n  &[data-popper-placement^=\"top\"] > ", " {\n    bottom: -4px;\n  }\n\n  &[data-popper-placement^=\"bottom\"] > ", " {\n    top: -4px;\n  }\n\n  &[data-popper-placement^=\"left\"] > ", " {\n    right: -4px;\n  }\n\n  &[data-popper-placement^=\"right\"] > ", " {\n    left: -4px;\n  }\n"])), function (_a) {
+var StyledTooltip = styled__default["default"].div(templateObject_2$t || (templateObject_2$t = __makeTemplateObject(["\n  padding: 12px 8px;\n  font-size: 12px;\n  line-height: 16px;\n  border-radius: 8px;\n  max-width: 320px;\n  z-index: 101;\n  background: ", ";\n  color: ", ";\n\n  &[data-popper-placement^=\"top\"] > ", " {\n    bottom: -4px;\n  }\n\n  &[data-popper-placement^=\"bottom\"] > ", " {\n    top: -4px;\n  }\n\n  &[data-popper-placement^=\"left\"] > ", " {\n    right: -4px;\n  }\n\n  &[data-popper-placement^=\"right\"] > ", " {\n    left: -4px;\n  }\n"], ["\n  padding: 12px 8px;\n  font-size: 12px;\n  line-height: 16px;\n  border-radius: 8px;\n  max-width: 320px;\n  z-index: 101;\n  background: ", ";\n  color: ", ";\n\n  &[data-popper-placement^=\"top\"] > ", " {\n    bottom: -4px;\n  }\n\n  &[data-popper-placement^=\"bottom\"] > ", " {\n    top: -4px;\n  }\n\n  &[data-popper-placement^=\"left\"] > ", " {\n    right: -4px;\n  }\n\n  &[data-popper-placement^=\"right\"] > ", " {\n    left: -4px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.tooltip;
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.white;
 }, Arrow, Arrow, Arrow, Arrow);
-var templateObject_1$H, templateObject_2$u;
+var templateObject_1$E, templateObject_2$t;
 
 var invertTheme = function (currentTheme) {
     if (currentTheme.isDark) {
@@ -5782,176 +5837,6 @@ var useTooltip = function (content, options) {
         tooltip: tooltipInPortal !== null && tooltipInPortal !== void 0 ? tooltipInPortal : tooltip,
         tooltipVisible: visible,
     };
-};
-
-var InactiveButton$1 = styled__default["default"](TabItem)(templateObject_1$G || (templateObject_1$G = __makeTemplateObject(["\n  color: ", ";\n"], ["\n  color: ", ";\n"])), function (_a) {
-    var theme = _a.theme, variant = _a.variant;
-    return theme.colors[variant === tabVariants.DARK ? "pastelBlue" : "gray900"];
-});
-var TabBarItem = function (_a) {
-    var _b = _a.isActive, isActive = _b === void 0 ? false : _b, variant = _a.variant, setWidth = _a.setWidth, itemIndex = _a.itemIndex, onAction = _a.onAction, customClass = _a.customClass, blockOffset = _a.blockOffset, props = __rest(_a, ["isActive", "variant", "setWidth", "itemIndex", "onAction", "customClass", "blockOffset"]);
-    var _c = useMatchBreakpoints(), isDesktop = _c.isDesktop, isMobile = _c.isMobile, isTablet = _c.isTablet;
-    var className = "tab-bar-item-" + itemIndex + customClass;
-    var element = document.getElementsByClassName(className);
-    React.useEffect(function () {
-        var _a, _b;
-        var itemWidth = (_b = (_a = element.item(0)) === null || _a === void 0 ? void 0 : _a.clientWidth) !== null && _b !== void 0 ? _b : 0;
-        if (setWidth && itemWidth) {
-            setWidth(function (prev) {
-                return prev.map(function (item, index) { return (index === itemIndex ? itemWidth : item); });
-            });
-        }
-    }, [element, isDesktop, isMobile, isTablet, blockOffset]);
-    var handleClick = function () {
-        if (onAction)
-            onAction(itemIndex !== null && itemIndex !== void 0 ? itemIndex : 0);
-    };
-    if (!isActive) {
-        return (React__default["default"].createElement(InactiveButton$1, __assign({ onClick: handleClick, className: className, variant: variant }, props)));
-    }
-    return (React__default["default"].createElement(TabItem, __assign({ onClick: handleClick, className: className, variant: variant }, props)));
-};
-var templateObject_1$G;
-
-var StyledTabBar = styled__default["default"].div(templateObject_1$F || (templateObject_1$F = __makeTemplateObject(["\n  position: relative;\n  display: ", ";\n  width: ", ";\n\n  & > button,\n  & > a {\n    flex: ", ";\n  }\n\n  & > button,\n  & a {\n    box-shadow: none;\n  }\n  ", "\n"], ["\n  position: relative;\n  display: ", ";\n  width: ", ";\n\n  & > button,\n  & > a {\n    flex: ", ";\n  }\n\n  & > button,\n  & a {\n    box-shadow: none;\n  }\n  ", "\n"])), function (_a) {
-    var fullWidth = _a.fullWidth;
-    return (fullWidth ? "flex" : "inline-flex");
-}, function (_a) {
-    var fullWidth = _a.fullWidth;
-    return (fullWidth ? "100%" : "auto");
-}, function (_a) {
-    var fullWidth = _a.fullWidth;
-    return (fullWidth ? 1 : "auto");
-}, styledSystem.space);
-var Selection$1 = styled__default["default"].div(templateObject_2$t || (templateObject_2$t = __makeTemplateObject(["\n  width: ", ";\n  height: 2px;\n  position: absolute;\n  bottom: 0;\n  left: ", ";\n  transition: left 0.3s ease;\n  padding: 0 8px;\n  z-index: 1;\n\n  ", "\n"], ["\n  width: ", ";\n  height: 2px;\n  position: absolute;\n  bottom: 0;\n  left: ", ";\n  transition: left 0.3s ease;\n  padding: 0 8px;\n  z-index: 1;\n\n  ", "\n"])), function (_a) {
-    var width = _a.width;
-    return "".concat(width, "px");
-}, function (_a) {
-    var offset = _a.offset;
-    return "".concat(offset, "px");
-}, styledSystem.variant({
-    prop: "scale",
-    variants: sliderScaleVariant,
-}));
-var ColorSection = styled__default["default"].div(templateObject_3$j || (templateObject_3$j = __makeTemplateObject(["\n  width: 100%;\n  height: 100%;\n  background: ", ";\n"], ["\n  width: 100%;\n  height: 100%;\n  background: ", ";\n"])), function (_a) {
-    var theme = _a.theme, isLight = _a.isLight;
-    return theme.colors[isLight ? "primary" : "warning"];
-});
-var TabMenu = function (_a) {
-    var _b = _a.customClass, customClass = _b === void 0 ? "" : _b, _c = _a.activeIndex, activeIndex = _c === void 0 ? 0 : _c, _d = _a.scale, scale = _d === void 0 ? tabsScales.SM : _d, _e = _a.variant, variant = _e === void 0 ? tabVariants.DARK : _e, onItemClick = _a.onItemClick, disabled = _a.disabled, _f = _a.fullWidth, fullWidth = _f === void 0 ? false : _f, _g = _a.menuTitles, menuTitles = _g === void 0 ? [""] : _g, _h = _a.menuIcons, menuIcons = _h === void 0 ? [] : _h, props = __rest(_a, ["customClass", "activeIndex", "scale", "variant", "onItemClick", "disabled", "fullWidth", "menuTitles", "menuIcons"]);
-    var _j = React.useState(__spreadArray([], Array(menuTitles === null || menuTitles === void 0 ? void 0 : menuTitles.length), true).map(function (e, i) { return i - i; })), widthsArr = _j[0], setWidthsArr = _j[1];
-    var _k = React.useState(0), blockOffset = _k[0], setBlockOffset = _k[1];
-    React.useEffect(function () {
-        setBlockOffset(widthsArr.slice(0, activeIndex).reduce(function (sum, elem) { return sum + elem; }, 0));
-    }, [widthsArr, activeIndex]);
-    var isLight = variant === tabVariants.LIGHT;
-    var getTabMenuIcons = function (index, size) {
-        var sizes = menuIconScaleVariants[size];
-        return (React__default["default"].createElement(IconComponent, { width: sizes.width, iconName: menuIcons[index], color: "currentColor", mr: sizes.marginRight }));
-    };
-    return (React__default["default"].createElement(StyledTabBar, __assign({ disabled: disabled, isLight: isLight, fullWidth: fullWidth }, props),
-        !disabled && (React__default["default"].createElement(Selection$1, { scale: scale, width: widthsArr[activeIndex], offset: blockOffset, isLight: isLight },
-            React__default["default"].createElement(ColorSection, { isLight: isLight }))),
-        menuTitles.map(function (title, index) { return (React__default["default"].createElement(TabBarItem, { key: index.toString(), disabled: disabled, customClass: customClass, isActive: !disabled && activeIndex === index, onAction: onItemClick, itemIndex: index, setWidth: setWidthsArr, variant: variant, scale: scale, blockOffset: blockOffset },
-            React__default["default"].createElement(Flex, { alignItems: "center" },
-                getTabMenuIcons(index, scale),
-                title))); })));
-};
-var templateObject_1$F, templateObject_2$t, templateObject_3$j;
-
-var variants = {
-    PRIMARY: "primary",
-    SECONDARY: "secondary",
-    SUCCESS: "success",
-    TEXTDISABLED: "textDisabled",
-    TEXTSUBTLE: "textSubtle",
-    BINANCE: "binance",
-    FAILURE: "failure",
-    WARNING: "warning",
-};
-var scales$1 = {
-    MD: "md",
-    SM: "sm",
-};
-
-var _a$2, _b$1;
-var scaleVariants = (_a$2 = {},
-    _a$2[scales$1.MD] = {
-        height: "28px",
-        padding: "0 8px",
-        fontSize: "14px",
-    },
-    _a$2[scales$1.SM] = {
-        height: "24px",
-        padding: "0 4px",
-        fontSize: "12px",
-    },
-    _a$2);
-var styleVariants = (_b$1 = {},
-    _b$1[variants.PRIMARY] = {
-        backgroundColor: "primary",
-    },
-    _b$1[variants.SECONDARY] = {
-        backgroundColor: "secondary",
-    },
-    _b$1[variants.SUCCESS] = {
-        backgroundColor: "success",
-    },
-    _b$1[variants.TEXTDISABLED] = {
-        backgroundColor: "textDisabled",
-    },
-    _b$1[variants.TEXTSUBTLE] = {
-        backgroundColor: "textSubtle",
-    },
-    _b$1[variants.BINANCE] = {
-        backgroundColor: "binance",
-    },
-    _b$1[variants.FAILURE] = {
-        backgroundColor: "failure",
-    },
-    _b$1[variants.WARNING] = {
-        backgroundColor: "warning",
-    },
-    _b$1);
-
-var getOutlineStyles = function (_a) {
-    var outline = _a.outline, theme = _a.theme, _b = _a.variant, variantKey = _b === void 0 ? variants.PRIMARY : _b;
-    if (outline) {
-        var themeColorKey = styleVariants[variantKey]
-            .backgroundColor;
-        var color = theme.colors[themeColorKey];
-        return "\n      color: ".concat(color, ";\n      background: ").concat(theme.colors.background, ";\n      border: 2px solid ").concat(color, ";\n    ");
-    }
-    return "";
-};
-var StyledTag = styled__default["default"].div(templateObject_1$E || (templateObject_1$E = __makeTemplateObject(["\n  align-items: center;\n  border-radius: 16px;\n  color: #ffffff;\n  display: inline-flex;\n  font-weight: 400;\n  white-space: nowrap;\n\n  & > svg {\n    fill: currentColor;\n  }\n\n  ", "\n\n  ", "\n  ", "\n  ", "\n  ", "\n\n  ", "\n"], ["\n  align-items: center;\n  border-radius: 16px;\n  color: #ffffff;\n  display: inline-flex;\n  font-weight: 400;\n  white-space: nowrap;\n\n  & > svg {\n    fill: currentColor;\n  }\n\n  ", "\n\n  ", "\n  ", "\n  ", "\n  ", "\n\n  ", "\n"])), function (_a) {
-    var textTransform = _a.textTransform;
-    return textTransform && "text-transform: ".concat(textTransform, ";");
-}, styledSystem.variant({
-    prop: "scale",
-    variants: scaleVariants,
-}), styledSystem.variant({
-    variants: styleVariants,
-}), styledSystem.space, styledSystem.typography, getOutlineStyles);
-var templateObject_1$E;
-
-var Tag = function (_a) {
-    var startIcon = _a.startIcon, endIcon = _a.endIcon, children = _a.children, props = __rest(_a, ["startIcon", "endIcon", "children"]);
-    return (React__default["default"].createElement(StyledTag, __assign({}, props),
-        React__default["default"].isValidElement(startIcon) &&
-            React__default["default"].cloneElement(startIcon, {
-                mr: "0.5em",
-            }),
-        children,
-        React__default["default"].isValidElement(endIcon) &&
-            React__default["default"].cloneElement(endIcon, {
-                ml: "0.5em",
-            })));
-};
-Tag.defaultProps = {
-    variant: "primary",
-    scale: scales$1.MD,
-    outline: false,
 };
 
 var InfoTooltip = function (_a) {
@@ -6796,6 +6681,139 @@ var useTable = function (columns, data, options) {
         pagination: state.pagination,
         toggleAllState: state.toggleAllState,
     };
+};
+
+var defaultParticleOptions = {
+    size: 30,
+    distance: 500,
+};
+var createParticle = function (x, y, imgSrc, options) {
+    if (options === void 0) { options = {}; }
+    var _a = __assign(__assign({}, defaultParticleOptions), options), size = _a.size, distance = _a.distance;
+    var particle = document.createElement("particle");
+    document.body.appendChild(particle);
+    var width = Math.floor(Math.random() * size + 8);
+    var height = width;
+    var destinationX = (Math.random() - 0.5) * distance;
+    var destinationY = (Math.random() - 0.5) * distance;
+    var rotation = Math.random() * 520;
+    var delay = Math.random() * 200;
+    particle.style.backgroundRepeat = "no-repeat";
+    particle.style.backgroundSize = "contain";
+    particle.style.backgroundImage = "url(".concat(imgSrc, ")");
+    particle.style.left = "0";
+    particle.style.top = "0";
+    particle.style.opacity = "0";
+    particle.style.pointerEvents = "none";
+    particle.style.position = "fixed";
+    particle.style.width = "".concat(width, "px");
+    particle.style.height = "".concat(height, "px");
+    var animation = particle.animate([
+        {
+            transform: "translate(-50%, -50%) translate(".concat(x, "px, ").concat(y, "px) rotate(0deg)"),
+            opacity: 1,
+        },
+        {
+            transform: "translate(-50%, -50%) translate(".concat(x + destinationX, "px, ").concat(y + destinationY, "px) rotate(").concat(rotation, "deg)"),
+            opacity: 0,
+        },
+    ], {
+        duration: Math.random() * 1000 + 5000,
+        easing: "cubic-bezier(0, .9, .57, 1)",
+        delay: delay,
+    });
+    animation.onfinish = function () {
+        particle.remove();
+    };
+};
+var defaultOptions = {
+    numberOfParticles: 30,
+    debounceDuration: 200,
+    particleOptions: {},
+};
+/**
+ * @see https://css-tricks.com/playing-with-particles-using-the-web-animations-api/
+ */
+var useParticleBurst = function (options) {
+    var _a = __assign(__assign({}, defaultOptions), options), selector = _a.selector, numberOfParticles = _a.numberOfParticles, debounceDuration = _a.debounceDuration, imgSrc = _a.imgSrc, disableWhen = _a.disableWhen, particleOptions = _a.particleOptions;
+    var makeListener = React.useCallback(function () {
+        return debounce__default["default"](function (event) {
+            var isDisabled = disableWhen && disableWhen();
+            if (!isDisabled) {
+                var node = event.currentTarget;
+                if (event.clientX === 0 && event.clientY === 0) {
+                    var _a = node.getBoundingClientRect(), left = _a.left, width = _a.width, top_1 = _a.top, height = _a.height;
+                    var x = left + width / 2;
+                    var y = top_1 + height / 2;
+                    for (var i = 0; i < numberOfParticles; i += 1) {
+                        createParticle(x, y, imgSrc, particleOptions);
+                    }
+                }
+                else {
+                    for (var i = 0; i < numberOfParticles; i += 1) {
+                        createParticle(event.clientX, event.clientY + window.scrollY, imgSrc, particleOptions);
+                    }
+                }
+            }
+        }, debounceDuration, { leading: true });
+    }, [debounceDuration, numberOfParticles, imgSrc, disableWhen, particleOptions]);
+    var listener = makeListener();
+    var initialize = React.useCallback(function () {
+        if (selector) {
+            document.querySelectorAll(selector).forEach(function (element) {
+                element.addEventListener("click", listener);
+            });
+        }
+        else {
+            document.addEventListener("click", listener);
+        }
+    }, [selector, listener]);
+    var teardown = React.useCallback(function () {
+        if (selector) {
+            document.querySelectorAll(selector).forEach(function (element) {
+                element.removeEventListener("click", listener);
+            });
+        }
+        else {
+            document.removeEventListener("click", listener);
+        }
+    }, [selector, listener]);
+    React.useEffect(function () {
+        initialize();
+        return function () { return teardown(); };
+    }, [initialize, teardown]);
+    return { initialize: initialize, teardown: teardown };
+};
+
+var useKonamiCheatCode = function (matchedCodeHandler) {
+    React.useEffect(function () {
+        var pattern = [
+            "ArrowUp",
+            "ArrowUp",
+            "ArrowDown",
+            "ArrowDown",
+            "ArrowLeft",
+            "ArrowRight",
+            "ArrowLeft",
+            "ArrowRight",
+        ];
+        var currentIndex = 0;
+        var onKeyUpHandler = function (event) {
+            var key = event.key;
+            // is key in correct order otherwise reset
+            if (key !== pattern[currentIndex]) {
+                currentIndex = 0;
+                return;
+            }
+            currentIndex += 1;
+            if (pattern.length === currentIndex) {
+                currentIndex = 0;
+                matchedCodeHandler();
+            }
+        };
+        document.addEventListener("keyup", onKeyUpHandler);
+        return function () { return document.removeEventListener("keyup", onKeyUpHandler); };
+    }, [matchedCodeHandler]);
 };
 
 // eslint-disable-next-line import/prefer-default-export
@@ -8870,11 +8888,11 @@ var StyledIcon = styled__default["default"].img(templateObject_2$1 || (templateO
 var ToastAction = function (_a) {
     _a.title; _a.telegramDescription; _a.tweeterDescription; _a.url; _a.thx;
     return (React__default["default"].createElement(ActionsContainer, null,
-        React__default["default"].createElement(Button, { mr: "8px", scale: "sm", width: "100%", height: "100%", style: { backgroundColor: "#16CDFD", alignItems: "center" } },
+        React__default["default"].createElement(Button, { mr: "8px", scale: "md", width: "100%", style: { backgroundColor: "#16CDFD" } },
             React__default["default"].createElement(StyledIcon, { src: giftImg, alt: "gift-icon" }),
             React__default["default"].createElement(Text, { mr: "6px", my: "8px", color: "#fff", fontSize: "12px" }, "Twitter"),
             React__default["default"].createElement(Icon$D, { mr: "8px", color: "#fff", width: "20px" })),
-        React__default["default"].createElement(Button, { mx: "8px", scale: "sm", width: "100%", height: "100%", style: { backgroundColor: "#26A6E5", alignItems: "center" } },
+        React__default["default"].createElement(Button, { mx: "8px", scale: "md", width: "100%", style: { backgroundColor: "#26A6E5" } },
             React__default["default"].createElement(Text, { color: "#fff", fontSize: "12px" }, "Telegram"),
             React__default["default"].createElement(Icon$F, { ml: "8px", color: "#fff", width: "20px" }))));
 };
@@ -9217,6 +9235,7 @@ exports.LogoWithTextIcon = Icon$3E;
 exports.LotteryOpacityIcon = Icon$1b;
 exports.LotterySolidIcon = Icon$1c;
 exports.MarketIcon = Icon$s;
+exports.MatchBreakpointsProvider = MatchBreakpointsProvider;
 exports.MedalIcon = Icon$1O;
 exports.MediumIcon = Icon$H;
 exports.Menu = Menu;

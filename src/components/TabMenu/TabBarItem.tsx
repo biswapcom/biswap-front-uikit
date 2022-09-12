@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { PolymorphicComponent } from "../../util/polymorphic";
 import { TabBarItemProps, tabVariants } from "./types";
 import TabItem from "./TabItem";
-import { useMatchBreakpoints } from "../../hooks";
+import { useMatchBreakpoints } from "../../contexts";
 
 const InactiveButton: PolymorphicComponent<TabBarItemProps, "button"> = styled(
   TabItem

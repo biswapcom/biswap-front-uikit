@@ -7,7 +7,7 @@ import isTouchDevice from "../../util/isTouchDevice";
 import { StyledTooltip, Arrow } from "./StyledTooltip";
 import { TooltipOptions, TooltipRefs } from "./types";
 import getPortalRoot from "../../util/getPortalRoot";
-import { useMatchBreakpoints } from "../index";
+import { useMatchBreakpoints } from "../../contexts";
 
 const invertTheme = (currentTheme: DefaultTheme) => {
   if (currentTheme.isDark) {

@@ -35,17 +35,11 @@ const ToastAction: React.FC<ToastActionProps> = ({
 }) => {
   return (
     <ActionsContainer>
-      {/*<TwitterShareButton*/}
-      {/*  style={{ width: "40%", height: "32px" }}*/}
-      {/*  title={tweeterDescription}*/}
-      {/*  url={`${url}`}*/}
-      {/*>*/}
       <Button
         mr="8px"
-        scale="sm"
+        scale="md"
         width="100%"
-        height="100%"
-        style={{ backgroundColor: "#16CDFD", alignItems: "center" }}
+        style={{ backgroundColor: "#16CDFD" }}
       >
         <StyledIcon src={giftImg} alt="gift-icon" />
         <Text mr="6px" my="8px" color="#fff" fontSize="12px">
@@ -53,27 +47,55 @@ const ToastAction: React.FC<ToastActionProps> = ({
         </Text>
         <TwitterIcon mr="8px" color="#fff" width="20px" />
       </Button>
-      {/*</TwitterShareButton>*/}
-      {/*<TelegramShareButton*/}
-      {/*  style={{ width: "40%", height: "32px", marginLeft: "6px" }}*/}
-      {/*  title={telegramDescription}*/}
-      {/*  url={`${url}`}*/}
-      {/*>*/}
+
       <Button
         mx="8px"
-        scale="sm"
+        scale="md"
         width="100%"
-        height="100%"
-        style={{ backgroundColor: "#26A6E5", alignItems: "center" }}
+        style={{ backgroundColor: "#26A6E5" }}
       >
         <Text color="#fff" fontSize="12px">
           Telegram
         </Text>
         <TelegramIcon ml="8px" color="#fff" width="20px" />
       </Button>
-      {/*</TelegramShareButton>*/}
     </ActionsContainer>
   );
 };
-
+{
+  /*<TwitterShareButton*/
+}
+{
+  /*  style={{ width: "40%", height: "32px" }}*/
+}
+{
+  /*  title={tweeterDescription}*/
+}
+{
+  /*  url={`${url}`}*/
+}
+{
+  /*>*/
+}
+{
+  /*</TwitterShareButton>*/
+}
+{
+  /*<TelegramShareButton*/
+}
+{
+  /*  style={{ width: "40%", height: "32px", marginLeft: "6px" }}*/
+}
+{
+  /*  title={telegramDescription}*/
+}
+{
+  /*  url={`${url}`}*/
+}
+{
+  /*>*/
+}
+{
+  /*</TelegramShareButton>*/
+}
 export default ToastAction;

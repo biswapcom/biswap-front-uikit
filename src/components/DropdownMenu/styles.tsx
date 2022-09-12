@@ -7,7 +7,7 @@ import {
   StyledDropdownMenuInnerLinkItemProps,
   StyledDropdownMenuItemProps,
 } from "./types";
-import { useMatchBreakpoints } from "../../hooks";
+import { useMatchBreakpoints } from "../../contexts";
 import Grid from "../Box/Grid";
 
 const getTextColor = ({

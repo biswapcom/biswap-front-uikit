@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import styled from "styled-components";
 import { Button, ButtonProps } from "../../../../../components/Button";
-import { useMatchBreakpoints } from "../../../../../hooks";
+import { useMatchBreakpoints } from "../../../../../contexts";
 import { Login, useWalletModal } from "../../../../WalletModal";
 import { GobletSolidIcon } from "../../../../../components/Svg";
 

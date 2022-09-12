@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { breakpointMap } from "../theme/base";
-import { useIsomorphicEffect } from "./useIsomorphicEffect";
+import React, { FC, PropsWithChildren, useState, createContext } from "react";
+import { breakpointMap } from "../../theme/base";
+import { useIsomorphicEffect } from "../../hooks/useIsomorphicEffect";
 
 type State = {
   [key: string]: boolean;
@@ -47,8 +47,8 @@ const mediaQueries: MediaQueries = (() => {
 const getKey = (size: string) =>
   `is${size.charAt(0).toUpperCase()}${size.slice(1)}`;
 
-const getState = () => {
-  const s = Object.keys(mediaQueries).reduce((accum, size) => {
+const getState = () =>
+  Object.keys(mediaQueries).reduce((accum, size) => {
     const key = getKey(size);
     if (typeof window === "undefined") {
       return {
@@ -59,39 +59,64 @@ const getState = () => {
     const mql = window.matchMedia(mediaQueries[size]);
     return { ...accum, [key]: mql?.matches ?? false };
   }, {});
-  return s;
+
+export const MatchBreakpointsContext = createContext<BreakpointChecks>({
+  isMobile: false,
+  isTablet: false,
+  isDesktop: false,
+});
+
+export const getBreakpointChecks = (state: State): BreakpointChecks => {
+  return {
+    ...state,
+    isMobile: state.isXs || state.isSm,
+    isTablet: state.isMd || state.isLg,
+    isDesktop: state.isXl || state.isXxl,
+  };
 };
 
-const useMatchBreakpoints = (): BreakpointChecks => {
-  const [state, setState] = useState<State>(() => getState());
+export const MatchBreakpointsProvider: FC<PropsWithChildren> = ({
+  children,
+}) => {
+  const [state, setState] = useState<BreakpointChecks>(() =>
+    getBreakpointChecks(getState())
+  );
 
   useIsomorphicEffect(() => {
     // Create listeners for each media query returning a function to unsubscribe
     const handlers = Object.keys(mediaQueries).map((size) => {
-      const mql = window.matchMedia(mediaQueries[size]);
+      let mql: MediaQueryList;
+      let handler: (matchMediaQuery: MediaQueryListEvent) => void;
 
-      const handler = (matchMediaQuery: MediaQueryListEvent) => {
-        const key = getKey(size);
-        setState((prevState) => ({
-          ...prevState,
-          [key]: matchMediaQuery.matches,
-        }));
-      };
+      if (typeof window?.matchMedia === "function") {
+        mql = window.matchMedia(mediaQueries[size]);
 
-      // Safari < 14 fix
-      if (mql.addEventListener) {
-        mql.addEventListener("change", handler);
+        handler = (matchMediaQuery: MediaQueryListEvent) => {
+          const key = getKey(size);
+
+          setState((prevState) =>
+            getBreakpointChecks({
+              ...prevState,
+              [key]: matchMediaQuery.matches,
+            })
+          );
+        };
+
+        // Safari < 14 fix
+        if (mql.addEventListener) {
+          mql.addEventListener("change", handler);
+        }
       }
 
       return () => {
         // Safari < 14 fix
-        if (mql.removeEventListener) {
+        if (mql?.removeEventListener) {
           mql.removeEventListener("change", handler);
         }
       };
     });
 
-    setState(getState());
+    setState(getBreakpointChecks(getState()));
 
     return () => {
       handlers.forEach((unsubscribe) => {
@@ -100,12 +125,9 @@ const useMatchBreakpoints = (): BreakpointChecks => {
     };
   }, []);
 
-  return {
-    ...state,
-    isMobile: state.isXs || state.isSm,
-    isTablet: state.isMd || state.isLg,
-    isDesktop: state.isXl || state.isXll || state.isXxl,
-  };
+  return (
+    <MatchBreakpointsContext.Provider value={state}>
+      {children}
+    </MatchBreakpointsContext.Provider>
+  );
 };
-
-export default useMatchBreakpoints;

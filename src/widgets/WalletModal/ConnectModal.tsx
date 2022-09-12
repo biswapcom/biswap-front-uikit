@@ -7,7 +7,7 @@ import WalletCard from "./WalletCard";
 import config, { walletLocalStorageKey } from "./config";
 import { Config, ConnectorNames, Login } from "./types";
 import { Flex } from "../../components/Box";
-import { useMatchBreakpoints } from "../../hooks";
+import { useMatchBreakpoints } from "../../contexts";
 import { Text } from "../../components/Text";
 
 interface Props {

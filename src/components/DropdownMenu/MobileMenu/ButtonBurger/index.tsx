@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useMatchBreakpoints } from "../../../../hooks";
+import { useMatchBreakpoints } from "../../../../contexts";
 import { StyledBurger } from "./Burger.styled";
 
 const Burger = ({ open }: { open: boolean }) => {

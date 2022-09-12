@@ -4,7 +4,7 @@ import IconComponent from "../../Svg/IconComponent";
 import { Flex } from "../../Box";
 import { Text } from "../../Text";
 import { MenuItemContentProps } from "../types";
-import { useMatchBreakpoints } from "../../../hooks";
+import { useMatchBreakpoints } from "../../../contexts";
 
 const getBG = ({
   theme,
