@@ -6827,7 +6827,7 @@ var Modal = function (_a) {
 
 var StyledModal = styled.div(templateObject_1$x || (templateObject_1$x = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  background-color: ", ";\n  border-radius: 16px 16px 0 0;\n  width: 100%;\n  z-index: ", ";\n  overflow-y: auto;\n  position: relative;\n  top: 0;\n  left: 0;\n  ", " {\n    width: auto;\n    min-width: 416px;\n    max-width: 100%;\n    border-radius: 16px;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  background-color: ", ";\n  border-radius: 16px 16px 0 0;\n  width: 100%;\n  z-index: ", ";\n  overflow-y: auto;\n  position: relative;\n  top: 0;\n  left: 0;\n  ", " {\n    width: auto;\n    min-width: 416px;\n    max-width: 100%;\n    border-radius: 16px;\n  }\n"])), function (_a) {
     var theme = _a.theme, backgroundTransparent = _a.backgroundTransparent;
-    return backgroundTransparent ? 'transparent' : theme.colors.contrast;
+    return backgroundTransparent ? "transparent" : theme.colors.contrast;
 }, function (_a) {
     var theme = _a.theme;
     return theme.zIndices.modal;
