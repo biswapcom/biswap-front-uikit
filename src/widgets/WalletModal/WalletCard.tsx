@@ -24,11 +24,6 @@ const StyledButton = styled(Button)`
   }
 `;
 
-const StyledText = styled(Text)`
-  font-weight: bold;
-  color: ${({ theme }) => theme.colors.primary};
-`;
-
 const WalletCard: React.FC<Props> = ({ login, walletConfig, onDismiss }) => {
   const handleClick = () => {
     login(
@@ -54,9 +49,9 @@ const WalletCard: React.FC<Props> = ({ login, walletConfig, onDismiss }) => {
       p="0 12px"
       startIcon={<Icon width="32px" />}
     >
-      <StyledText pl="8px" fontSize="12px">
+      <Text bold color="primary" pl="8px" fontSize="12px">
         {title}
-      </StyledText>
+      </Text>
     </StyledButton>
   );
 };

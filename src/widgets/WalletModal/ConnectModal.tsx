@@ -14,6 +14,7 @@ import { useMatchBreakpoints } from "../../hooks";
 import { Text } from "../../components/Text";
 import { Button } from "../../components/Button";
 import { alignItems } from "styled-system";
+import { getRgba } from "../../util";
 
 interface Props {
   login: Login;
@@ -77,7 +78,8 @@ const ScrollWrapper = styled(Box)`
     box-shadow: none;
   }
   &::-webkit-scrollbar-thumb {
-    background-color: ${({ theme }) => theme.colors.textSubtle}3d;
+    background-color: ${({ theme }) =>
+      getRgba(theme.colors.textSubtle, theme, 0.24)};
   }
 `;
 

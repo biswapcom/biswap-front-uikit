@@ -29,7 +29,7 @@ const MobileCommunityWrapper = styled.div`
 const StyledMobileMenu = styled.div<{
   $isOpen: boolean;
 }>`
-  padding: 32px 24px 0 24px;
+  padding: 32px 24px 0;
   background-color: ${({ theme }) => theme.card.background};
   width: 100vw;
   height: calc(100vh - 60px);
