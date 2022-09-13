@@ -3758,27 +3758,31 @@ var mediaQueries = (function () {
 var getKey = function (size) {
     return "is".concat(size.charAt(0).toUpperCase()).concat(size.slice(1));
 };
-var getState = function () { return Object.keys(mediaQueries).reduce(function (accum, size) {
-    var _a, _b;
-    var _c;
-    var key = getKey(size);
-    if (typeof window === "undefined") {
-        return __assign(__assign({}, accum), (_a = {}, _a[key] = false, _a));
-    }
-    var mql = window.matchMedia(mediaQueries[size]);
-    return __assign(__assign({}, accum), (_b = {}, _b[key] = (_c = mql === null || mql === void 0 ? void 0 : mql.matches) !== null && _c !== void 0 ? _c : false, _b));
-}, {}); };
+var getState = function () {
+    return Object.keys(mediaQueries).reduce(function (accum, size) {
+        var _a, _b;
+        var _c;
+        var key = getKey(size);
+        if (typeof window === "undefined") {
+            return __assign(__assign({}, accum), (_a = {}, _a[key] = false, _a));
+        }
+        var mql = window.matchMedia(mediaQueries[size]);
+        return __assign(__assign({}, accum), (_b = {}, _b[key] = (_c = mql === null || mql === void 0 ? void 0 : mql.matches) !== null && _c !== void 0 ? _c : false, _b));
+    }, {});
+};
 var MatchBreakpointsContext = createContext({
     isMobile: false,
     isTablet: false,
     isDesktop: false,
 });
 var getBreakpointChecks = function (state) {
-    return __assign(__assign({}, state), { isMobile: state.isXs || state.isSm, isTablet: state.isMd || state.isLg, isDesktop: state.isXl || state.isXxl });
+    return __assign(__assign({}, state), { isMobile: state.isXs || state.isSm, isTablet: state.isMd || state.isLg, isDesktop: state.isXl || state.isXll || state.isXxl });
 };
 var MatchBreakpointsProvider = function (_a) {
     var children = _a.children;
-    var _b = useState(function () { return getBreakpointChecks(getState()); }), state = _b[0], setState = _b[1];
+    var _b = useState(function () {
+        return getBreakpointChecks(getState());
+    }), state = _b[0], setState = _b[1];
     useIsomorphicEffect(function () {
         // Create listeners for each media query returning a function to unsubscribe
         var handlers = Object.keys(mediaQueries).map(function (size) {
@@ -3812,7 +3816,7 @@ var MatchBreakpointsProvider = function (_a) {
             });
         };
     }, []);
-    return React.createElement(MatchBreakpointsContext.Provider, { value: state }, children);
+    return (React.createElement(MatchBreakpointsContext.Provider, { value: state }, children));
 };
 
 var useMatchBreakpoints = function () {
