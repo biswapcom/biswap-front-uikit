@@ -4,7 +4,10 @@ import { Link } from "../../components/Link";
 import { HelpIcon, HelpOpacityIcon, HelpSolidIcon } from "../../components/Svg";
 import { Modal } from "../../widgets/Modal";
 import WalletCard from "./WalletCard";
-import config, { walletLocalStorageKey } from "./config";
+import config, {
+  HOW_TO_CONNECT_WALLET_LINK,
+  walletLocalStorageKey,
+} from "./config";
 import { Config, ConnectorNames, Login } from "./types";
 import { Flex, Box } from "../../components/Box";
 import { useMatchBreakpoints } from "../../hooks";
@@ -24,6 +27,7 @@ const WalletCardsWrapper = styled.div`
   max-height: 328px;
   margin-left: 16px;
   padding-right: 6px;
+
   ${({ theme }) => theme.mediaQueries.sm} {
     padding-right: 0;
     width: 352px;
@@ -61,6 +65,7 @@ const ScrollWrapper = styled(Box)`
   overflow-x: hidden;
   margin-right: 6px;
   align-self: stretch;
+
   ${({ theme }) => theme.mediaQueries.sm} {
     margin-right: 14px;
   }
@@ -72,7 +77,7 @@ const ScrollWrapper = styled(Box)`
     box-shadow: none;
   }
   &::-webkit-scrollbar-thumb {
-    background-color: ${({ theme }) => theme.colors.textSubtle};
+    background-color: ${({ theme }) => theme.colors.textSubtle}3d;
   }
 `;
 
@@ -80,9 +85,8 @@ const StyledText = styled(Text)`
   align-self: flex-start;
 `;
 
-const StyledButton = styled(Button)`
-  font-size: 16px;
-  font-weight: 500;
+const DefaultTextButton = styled(Button)`
+  font-weight: 400;
 `;
 
 const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => {
@@ -110,8 +114,8 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => {
       maxWidth={!isMobile ? "416px" : "none"}
       bodyPadding="0"
       position={isMobile ? "absolute" : "relative"}
-      bottom={isMobile ? "0" : null}
-      borderRadius={isMobile ? "16px 16px 0 0" : null}
+      bottom="0"
+      borderRadius={isMobile ? "16px 16px 0 0" : "16px"}
       modalBodyProps={{
         alignItems: "center",
       }}
@@ -134,31 +138,32 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => {
           ))}
         </WalletCardsWrapper>
       </ScrollWrapper>
-      <Text mt="24px" textAlign="center" fontSize="12px">
+      <Text as="span" mt="24px" textAlign="center" fontSize="12px">
         Haven’t got a crypto wallet yet?
       </Text>
       <Button
+        startIcon={<HelpOpacityIcon color="white" />}
         height="48px"
         width={isMobile ? "306px" : "352px"}
         as="a"
         color="primary"
-        m={isMobile ? "16px 16px 16px" : "16px 32px 32px"}
-        href="https://docs.biswap.org/faq/biswap-platform#how-do-i-connect-my-wallet-to-biswap"
+        m={isMobile ? "16px" : "16px 32px 32px"}
+        href={HOW_TO_CONNECT_WALLET_LINK}
       >
-        <HelpOpacityIcon color="white" />
-        <Text color="contrast" bold ml="12px">
+        <Text as="span" color="contrast" bold>
           Learn How to Connect
         </Text>
       </Button>
       {isMobile && (
-        <StyledButton
+        <DefaultTextButton
           color="primary"
           mb="32px"
           variant="text"
           onClick={onDismiss}
+          scale="xl"
         >
           Close Window
-        </StyledButton>
+        </DefaultTextButton>
       )}
     </Modal>
   );

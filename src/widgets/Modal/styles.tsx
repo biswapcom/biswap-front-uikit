@@ -61,7 +61,6 @@ export const ModalContainer = styled(Box)<{
 }>`
   overflow: hidden;
   background: ${({ background }) => background || "white"};
-  border-radius: 16px;
   width: ${({ width }) => width ?? "100%"};
   z-index: ${({ theme }) => theme.zIndices.modal};
   ${({ walletModal }) =>

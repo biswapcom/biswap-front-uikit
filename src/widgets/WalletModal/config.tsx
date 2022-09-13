@@ -106,7 +106,98 @@ const connectors: Config[] = [
     helpHref: "https://bit.ly/3nsp57T",
     instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.BitKeep],
   },
+  {
+    title: ConnectorsTitleTypes.Metamask,
+    icon: Metamask,
+    connectorId: ConnectorNames.Injected,
+    priority: 1,
+    helpHref: "https://bit.ly/3arAKkq",
+    instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.Metamask],
+  },
+  {
+    title: ConnectorsTitleTypes.TrustWallet,
+    icon: TrustWallet,
+    connectorId: ConnectorNames.WalletConnect,
+    priority: 2,
+    helpHref: "https://bit.ly/3BwkxWo",
+    instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.TrustWallet],
+  },
+  {
+    title: ConnectorsTitleTypes.MathWallet,
+    icon: MathWallet,
+    connectorId: ConnectorNames.Injected,
+    priority: 999,
+    helpHref: "https://bit.ly/3BI649I",
+    instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.MathWallet],
+  },
+  {
+    title: ConnectorsTitleTypes.TokenPocket,
+    icon: TokenPocket,
+    connectorId: ConnectorNames.Injected,
+    priority: 4,
+    helpHref: "https://bit.ly/3zu4yoW",
+    instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.TokenPocket],
+  },
+  {
+    title: ConnectorsTitleTypes.Coin98,
+    icon: Coin98,
+    connectorId: ConnectorNames.Injected,
+    priority: 999,
+    helpHref: "https://bit.ly/3PUMFGS",
+    instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.Coin98],
+  },
+  {
+    title: ConnectorsTitleTypes.WalletConnect,
+    icon: WalletConnect,
+    connectorId: ConnectorNames.WalletConnect,
+    priority: 3,
+    helpHref: "https://bit.ly/3SnDkZR",
+    instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.WalletConnect],
+  },
+  {
+    title: ConnectorsTitleTypes.BinanceChain,
+    icon: BinanceChain,
+    connectorId: ConnectorNames.BSC,
+    priority: 999,
+    helpHref: "https://bit.ly/3BDTLLI",
+    instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.BinanceChain],
+  },
+  {
+    title: ConnectorsTitleTypes.SafePal,
+    icon: SafePalWallet,
+    connectorId: ConnectorNames.Injected,
+    priority: 999,
+    helpHref: "https://bit.ly/3zMM7gO",
+    instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.SafePal],
+  },
+  {
+    title: ConnectorsTitleTypes.Coinbase,
+    icon: CoinbaseIcon,
+    connectorId: ConnectorNames.Injected,
+    priority: 999,
+    helpHref: "https://bit.ly/3oLQMcr",
+    instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.Coinbase],
+  },
+  {
+    title: ConnectorsTitleTypes.iToken,
+    icon: iToken,
+    connectorId: ConnectorNames.Injected,
+    priority: 999,
+    helpHref: "https://bit.ly/3vwZP4O",
+    instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.iToken],
+  },
+  {
+    title: ConnectorsTitleTypes.BitKeep,
+    icon: BitKeepWallet,
+    connectorId: ConnectorNames.Injected,
+    priority: 999,
+    helpHref: "https://bit.ly/3nsp57T",
+    instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.BitKeep],
+  },
 ];
+
+export const HOW_TO_CONNECT_WALLET_LINK =
+  "https://docs.biswap.org/faq/biswap-platform#how-do-i-connect-my-wallet-to-biswap";
 
 export default connectors;
 export const connectorLocalStorageKey = "connectorId";

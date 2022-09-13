@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React from "react";
 import styled from "styled-components";
 import Button from "../../components/Button/Button";
 import Text from "../../components/Text/Text";
@@ -13,12 +13,12 @@ interface Props {
 
 const StyledButton = styled(Button)`
   display: flex;
-  flex-direction: row;
   justify-content: flex-start;
   white-space: nowrap;
-  height: 48px;
   width: 100%;
+
   background: ${({ theme }) => theme.colors.gray200};
+
   ${({ theme }) => theme.mediaQueries.sm} {
     width: 172px;
   }
@@ -30,7 +30,7 @@ const StyledText = styled(Text)`
 `;
 
 const WalletCard: React.FC<Props> = ({ login, walletConfig, onDismiss }) => {
-  const handleClick = useCallback(() => {
+  const handleClick = () => {
     login(
       walletConfig.connectorId,
       walletConfig.instanceCheckRule,
@@ -42,16 +42,18 @@ const WalletCard: React.FC<Props> = ({ login, walletConfig, onDismiss }) => {
       walletConfig.connectorId
     );
     onDismiss();
-  }, []);
+  };
 
   const { title, icon: Icon } = walletConfig;
   return (
     <StyledButton
+      scale="xl"
       variant="tertiary"
       onClick={handleClick}
       id={`wallet-connect-${title.toLocaleLowerCase()}`}
+      p="0 12px"
+      startIcon={<Icon width="32px" />}
     >
-      <Icon width="32px" />
       <StyledText pl="8px" fontSize="12px">
         {title}
       </StyledText>
@@ -59,4 +61,4 @@ const WalletCard: React.FC<Props> = ({ login, walletConfig, onDismiss }) => {
   );
 };
 
-export default WalletCard;
+export default React.memo(WalletCard);

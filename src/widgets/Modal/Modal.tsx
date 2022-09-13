@@ -43,6 +43,7 @@ const Modal: React.FC<ModalProps> = ({
       maxWidth={maxWidth}
       walletModal={walletModal}
       width={props.width}
+      borderRadius={props.borderRadius ?? "16px"}
     >
       <ModalHeader>
         <ModalTitle>
