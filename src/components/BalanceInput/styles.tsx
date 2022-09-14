@@ -12,7 +12,7 @@ export const SwitchUnitsButton = styled(IconButton)`
 export const UnitContainer = styled(Text)`
   margin-left: 4px;
   text-align: right;
-  color: ${({ theme }) => theme.colors.textSubtle};
+  color: ${({ theme }) => theme.colors.pastelBlue};
   white-space: nowrap;
 `;
 
@@ -37,7 +37,7 @@ export const StyledInput = styled(Input)<{ textAlign?: string }>`
   border: none;
 
   ::placeholder {
-    color: ${({ theme }) => theme.colors.textSubtle};
+    color: ${({ theme }) => theme.colors.pastelBlue};
   }
 
   &:focus:not(:disabled) {

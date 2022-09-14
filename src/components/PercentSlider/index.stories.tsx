@@ -77,11 +77,11 @@ export const Balance: React.FC = () => {
       <Text>{`Current Balance: ${balance}`}</Text>
       <Text
         fontSize="12px"
-        color="textSubtle"
+        color="pastelBlue"
       >{`Initial Balance: ${initialBalance}`}</Text>
       <Text
         fontSize="12px"
-        color="textSubtle"
+        color="pastelBlue"
       >{`Max Balance: ${maxBalance}`}</Text>
     </Box>
   );

@@ -2845,7 +2845,7 @@ var templateObject_1$1q;
 
 var TooltipText = styled__default["default"](Text)(templateObject_1$1p || (templateObject_1$1p = __makeTemplateObject(["\n  text-decoration: ", ";\n  text-underline-offset: 0.1em;\n"], ["\n  text-decoration: ", ";\n  text-underline-offset: 0.1em;\n"])), function (_a) {
     var theme = _a.theme;
-    return "underline dotted ".concat(theme.colors.textSubtle);
+    return "underline dotted ".concat(theme.colors.pastelBlue);
 });
 var templateObject_1$1p;
 
@@ -3364,7 +3364,7 @@ var templateObject_1$1h;
 var SwitchUnitsButton = styled__default["default"](IconButton)(templateObject_1$1g || (templateObject_1$1g = __makeTemplateObject(["\n  width: 16px;\n"], ["\n  width: 16px;\n"])));
 var UnitContainer = styled__default["default"](Text)(templateObject_2$K || (templateObject_2$K = __makeTemplateObject(["\n  margin-left: 4px;\n  text-align: right;\n  color: ", ";\n  white-space: nowrap;\n"], ["\n  margin-left: 4px;\n  text-align: right;\n  color: ", ";\n  white-space: nowrap;\n"])), function (_a) {
     var theme = _a.theme;
-    return theme.colors.textSubtle;
+    return theme.colors.pastelBlue;
 });
 var StyledBalanceInput = styled__default["default"](Box)(templateObject_3$v || (templateObject_3$v = __makeTemplateObject(["\n  background-color: ", ";\n  border: 1px solid ", ";\n  border-radius: 16px;\n  box-shadow: ", ";\n  padding: 8px 16px;\n"], ["\n  background-color: ", ";\n  border: 1px solid ", ";\n  border-radius: 16px;\n  box-shadow: ", ";\n  padding: 8px 16px;\n"])), function (_a) {
     var theme = _a.theme;
@@ -3381,7 +3381,7 @@ var StyledInput$2 = styled__default["default"](Input$1)(templateObject_4$o || (t
     return textAlign;
 }, function (_a) {
     var theme = _a.theme;
-    return theme.colors.textSubtle;
+    return theme.colors.pastelBlue;
 });
 var templateObject_1$1g, templateObject_2$K, templateObject_3$v, templateObject_4$o;
 
@@ -3398,10 +3398,10 @@ var BalanceInput = function (_a) {
                 React__default["default"].createElement(Flex, { alignItems: "center" },
                     React__default["default"].createElement(StyledInput$2, __assign({ pattern: "^[0-9]*[.,]?[0-9]{0,".concat(decimals, "}$"), inputMode: "decimal", min: "0", value: value, onChange: handleOnChange, placeholder: placeholder, ref: innerRef }, inputProps)),
                     unit && React__default["default"].createElement(UnitContainer, null, unit)),
-                currencyValue && (React__default["default"].createElement(Text, { fontSize: "12px", textAlign: "right", color: "textSubtle" }, currencyValue))),
+                currencyValue && (React__default["default"].createElement(Text, { fontSize: "12px", textAlign: "right", color: "pastelBlue" }, currencyValue))),
             switchEditingUnits && (React__default["default"].createElement(Flex, { alignItems: "center", pl: "12px" },
                 React__default["default"].createElement(SwitchUnitsButton, { scale: "sm", variant: "text", onClick: switchEditingUnits },
-                    React__default["default"].createElement(Icon$2P, { color: "textSubtle" })))))));
+                    React__default["default"].createElement(Icon$2P, { color: "pastelBlue" })))))));
 };
 
 var Textfield = function (_a) {
@@ -5369,7 +5369,7 @@ var SubMenuItems = function (_a) {
         var label = _a.label, href = _a.href, iconName = _a.iconName, itemProps = _a.itemProps;
         return label && (React__default["default"].createElement(Box, { key: label, mr: "20px" },
             React__default["default"].createElement(MenuItem, __assign({ href: href, isActive: href === activeItem, variant: "subMenu" }, itemProps),
-                iconName && (React__default["default"].createElement(IconComponent, { color: href === activeItem ? "secondary" : "textSubtle", iconName: iconName, mr: "4px" })),
+                iconName && (React__default["default"].createElement(IconComponent, { color: href === activeItem ? "secondary" : "pastelBlue", iconName: iconName, mr: "4px" })),
                 label)));
     })));
 };
@@ -5961,7 +5961,7 @@ Tag.defaultProps = {
 };
 
 var InfoTooltip = function (_a) {
-    var text = _a.text, _b = _a.iconColor, iconColor = _b === void 0 ? "textSubtle" : _b, props = __rest(_a, ["text", "iconColor"]);
+    var text = _a.text, _b = _a.iconColor, iconColor = _b === void 0 ? "pastelBlue" : _b, props = __rest(_a, ["text", "iconColor"]);
     var _c = useTooltip(text, {}), targetRef = _c.targetRef, tooltip = _c.tooltip, tooltipVisible = _c.tooltipVisible;
     return (React__default["default"].createElement(Flex, __assign({}, props, { alignItems: "center" }),
         tooltipVisible && tooltip,
@@ -5972,7 +5972,7 @@ var InfoTooltip = function (_a) {
 var TimelineContainer = styled__default["default"].ul(templateObject_1$F || (templateObject_1$F = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  list-style: none;\n"], ["\n  display: flex;\n  flex-direction: column;\n  list-style: none;\n"])));
 var TimelineEvent = styled__default["default"].li(templateObject_2$r || (templateObject_2$r = __makeTemplateObject(["\n  display: flex;\n  position: relative;\n  margin-bottom: 14px;\n\n  &:after {\n    content: \"\";\n    position: absolute;\n    left: 9px;\n    top: 26px;\n    width: 2px;\n    height: 10px;\n    background-color: ", ";\n  }\n\n  &:last-child:after {\n    display: none;\n  }\n"], ["\n  display: flex;\n  position: relative;\n  margin-bottom: 14px;\n\n  &:after {\n    content: \"\";\n    position: absolute;\n    left: 9px;\n    top: 26px;\n    width: 2px;\n    height: 10px;\n    background-color: ", ";\n  }\n\n  &:last-child:after {\n    display: none;\n  }\n"])), function (_a) {
     var theme = _a.theme, $useDark = _a.$useDark;
-    return $useDark ? theme.colors.textSubtle : lightColors.textSubtle;
+    return $useDark ? theme.colors.pastelBlue : lightColors.pastelBlue;
 });
 var templateObject_1$F, templateObject_2$r;
 
@@ -5984,7 +5984,7 @@ var getTextColor$1 = function (_a) {
             : lightColors.textDisabled;
     if (eventStatus === "live")
         return "success";
-    return useDark ? "textSubtle" : lightColors.textSubtle;
+    return useDark ? "pastelBlue" : lightColors.pastelBlue;
 };
 var Timeline = function (_a) {
     var events = _a.events, _b = _a.useDark, useDark = _b === void 0 ? true : _b;
@@ -5997,10 +5997,10 @@ var Timeline = function (_a) {
             React__default["default"].createElement(Flex, { mr: "10px", alignItems: "center" },
                 isUpcoming && (React__default["default"].createElement(IconComponent, { iconName: "CircleOutline", color: useDark ? "textDisabled" : lightColors.textDisabled })),
                 isLive && React__default["default"].createElement(IconComponent, { iconName: "Logo" }),
-                isPast && (React__default["default"].createElement(IconComponent, { iconName: "CheckmarkCircleFill", color: useDark ? "textSubtle" : lightColors.textSubtle }))),
+                isPast && (React__default["default"].createElement(IconComponent, { iconName: "CheckmarkCircleFill", color: useDark ? "pastelBlue" : lightColors.pastelBlue }))),
             React__default["default"].createElement(Text, { color: getTextColor$1({ eventStatus: status, useDark: useDark }), bold: true }, text),
             altText && (React__default["default"].createElement(Text, { color: "warning", ml: "2px", bold: true }, altText)),
-            infoText && (React__default["default"].createElement(InfoTooltip, { text: infoText, ml: "10px", iconColor: useDark ? "textSubtle" : lightColors.textSubtle }))));
+            infoText && (React__default["default"].createElement(InfoTooltip, { text: infoText, ml: "10px", iconColor: useDark ? "pastelBlue" : lightColors.pastelBlue }))));
     })));
 };
 
@@ -7683,7 +7683,7 @@ var Community = function (_a) {
             var Icon = Icons[social.icon];
             var iconProps = {
                 width: iconSize,
-                color: "textSubtle",
+                color: "pastelBlue",
                 style: { cursor: "pointer" },
             };
             if (social.items) {
@@ -8598,7 +8598,7 @@ var ScrollWrapper = styled__default["default"](Box)(templateObject_2$7 || (templ
     return theme.colors.gray200;
 }, function (_a) {
     var theme = _a.theme;
-    return getRgba(theme.colors.textSubtle, theme, 0.24);
+    return getRgba(theme.colors.pastelBlue, theme, 0.24);
 });
 var StyledText = styled__default["default"](Text)(templateObject_3$3 || (templateObject_3$3 = __makeTemplateObject(["\n  align-self: flex-start;\n"], ["\n  align-self: flex-start;\n"])));
 var DefaultTextButton = styled__default["default"](Button)(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  font-weight: 400;\n"], ["\n  font-weight: 400;\n"])));
@@ -8962,7 +8962,7 @@ var UserMenuDivider = styled__default["default"].hr(templateObject_1$4 || (templ
 });
 var UserMenuItem = styled__default["default"].button(templateObject_2$2 || (templateObject_2$2 = __makeTemplateObject(["\n  align-items: center;\n  border: 0;\n  background: transparent;\n  color: ", ";\n  cursor: ", ";\n  display: flex;\n  font-size: 16px;\n  height: 48px;\n  justify-content: space-between;\n  outline: 0;\n  padding-left: 16px;\n  padding-right: 16px;\n  width: 100%;\n\n  &:hover:not(:disabled) {\n    background-color: ", ";\n  }\n\n  &:active:not(:disabled) {\n    opacity: 0.85;\n    transform: translateY(1px);\n  }\n"], ["\n  align-items: center;\n  border: 0;\n  background: transparent;\n  color: ", ";\n  cursor: ", ";\n  display: flex;\n  font-size: 16px;\n  height: 48px;\n  justify-content: space-between;\n  outline: 0;\n  padding-left: 16px;\n  padding-right: 16px;\n  width: 100%;\n\n  &:hover:not(:disabled) {\n    background-color: ", ";\n  }\n\n  &:active:not(:disabled) {\n    opacity: 0.85;\n    transform: translateY(1px);\n  }\n"])), function (_a) {
     var theme = _a.theme, disabled = _a.disabled;
-    return theme.colors[disabled ? "textDisabled" : "textSubtle"];
+    return theme.colors[disabled ? "textDisabled" : "pastelBlue"];
 }, function (_a) {
     var disabled = _a.disabled;
     return (disabled ? "not-allowed" : "pointer");
@@ -9154,7 +9154,7 @@ var templateObject_1$1;
 
 var ResetCSS = styled.createGlobalStyle(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  @font-face {\n    font-family: 'CodecPro';\n    font-weight: 600;\n    src: url('assets/fonts/CodecProBold/font.woff2') format('woff2'), url('assets/fonts/CodecProBold/font.woff') format('woff');\n  }\n  @font-face {\n    font-weight: 300;\n    font-family: 'CodecPro';\n    src: url('assets/fonts/CodecProNews/font.woff2') format('woff2'), url('assets/fonts/CodecProNews/font.woff') format('woff');\n  }\n  @font-face {\n    font-family: 'CodecPro';\n    font-weight: 400;\n    src: url('assets/fonts/CodecProRegular/font.woff2') format('woff2'), url('assets/fonts/CodecProRegular/font.woff') format('woff');\n  }\n  @font-face {\n    font-family: 'CodecPro';\n    font-weight: 900;\n    src: url('assets/fonts/CodecProExtraBold/font.woff2') format('woff2'), url('assets/fonts/CodecProExtraBold/font.woff') format('woff');\n  }\n\n  * {\n    font-family: 'CodecPro', sans-serif;\n  }\n  \n  /* prettier-ignore */\n  html, body, div, span, applet, object, iframe,\n  h1, h2, h3, h4, h5, h6, p, blockquote, pre,\n  a, abbr, acronym, address, big, cite, code,\n  del, dfn, em, img, ins, kbd, q, s, samp,\n  small, strike, strong, sub, sup, tt, var,\n  b, u, i, center,\n  dl, dt, dd, ol, ul, li,\n  fieldset, form, label, legend,\n  table, caption, tbody, tfoot, thead, tr, th, td,\n  article, aside, canvas, details, embed, \n  figure, figcaption, footer, header, hgroup, \n  menu, nav, output, ruby, section, summary,\n  time, mark, audio, video {\n    margin: 0;\n    padding: 0;\n    border: 0;\n    font-size: 100%;\n    vertical-align: baseline;\n  }\n  /* HTML5 display-role reset for older browsers */\n  /* prettier-ignore */\n  article, aside, details, figcaption, figure, \n  footer, header, hgroup, menu, nav, section {\n    display: block;\n  }\n  body {\n    line-height: 1;\n    font-size: 16px;\n  }\n  ol,\n  ul {\n    list-style: disc;\n    list-style-position: inside;\n  }\n  blockquote,\n  q {\n    quotes: none;\n  }\n  blockquote:before,\n  blockquote:after,\n  q:before,\n  q:after {\n    content: \"\";\n    content: none;\n  }\n  table {\n    border-collapse: collapse;\n    border-spacing: 0;\n  }\n  a {\n    color: inherit;\n    text-decoration: none;\n  }\n  [role=\"button\"] {\n    cursor: pointer;\n  }\n  *,\n  *::before,\n  *::after {\n    box-sizing: border-box;\n  }\n  * {\n    font-family: 'CodecPro', sans-serif;\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n  }\n\n  /* Number */\n  input::-webkit-outer-spin-button,\n  input::-webkit-inner-spin-button {\n    -webkit-appearance: none;\n    margin: 0;\n  }\n  input[type=number] {\n    -moz-appearance: textfield;\n  }\n\n  /* Scrollbar */\n  ::-webkit-scrollbar {\n    width: 8px;\n  }\n  ::-webkit-scrollbar-thumb {\n    background: ", "; \n    border-radius: 8px;\n  }\n  ::-webkit-scrollbar-track {\n    box-shadow: inset 0 0 5px ", "; \n    border-radius: 10px;\n  }\n\n  /* Slider */ \n  input[type=range] {\n    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */\n    width: 100%; /* Specific width is required for Firefox. */\n    background: transparent; /* Otherwise white in Chrome */\n  }\n  input[type=range]::-webkit-slider-thumb {\n    -webkit-appearance: none;\n  }\n  input[type=range]:focus {\n    outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */\n  }\n  input[type=range]::-ms-track {\n    width: 100%;\n    cursor: pointer;\n    /* Hides the slider so custom styles can be added */\n    background: transparent; \n    border-color: transparent;\n    color: transparent;\n  }  \n"], ["\n  @font-face {\n    font-family: 'CodecPro';\n    font-weight: 600;\n    src: url('assets/fonts/CodecProBold/font.woff2') format('woff2'), url('assets/fonts/CodecProBold/font.woff') format('woff');\n  }\n  @font-face {\n    font-weight: 300;\n    font-family: 'CodecPro';\n    src: url('assets/fonts/CodecProNews/font.woff2') format('woff2'), url('assets/fonts/CodecProNews/font.woff') format('woff');\n  }\n  @font-face {\n    font-family: 'CodecPro';\n    font-weight: 400;\n    src: url('assets/fonts/CodecProRegular/font.woff2') format('woff2'), url('assets/fonts/CodecProRegular/font.woff') format('woff');\n  }\n  @font-face {\n    font-family: 'CodecPro';\n    font-weight: 900;\n    src: url('assets/fonts/CodecProExtraBold/font.woff2') format('woff2'), url('assets/fonts/CodecProExtraBold/font.woff') format('woff');\n  }\n\n  * {\n    font-family: 'CodecPro', sans-serif;\n  }\n  \n  /* prettier-ignore */\n  html, body, div, span, applet, object, iframe,\n  h1, h2, h3, h4, h5, h6, p, blockquote, pre,\n  a, abbr, acronym, address, big, cite, code,\n  del, dfn, em, img, ins, kbd, q, s, samp,\n  small, strike, strong, sub, sup, tt, var,\n  b, u, i, center,\n  dl, dt, dd, ol, ul, li,\n  fieldset, form, label, legend,\n  table, caption, tbody, tfoot, thead, tr, th, td,\n  article, aside, canvas, details, embed, \n  figure, figcaption, footer, header, hgroup, \n  menu, nav, output, ruby, section, summary,\n  time, mark, audio, video {\n    margin: 0;\n    padding: 0;\n    border: 0;\n    font-size: 100%;\n    vertical-align: baseline;\n  }\n  /* HTML5 display-role reset for older browsers */\n  /* prettier-ignore */\n  article, aside, details, figcaption, figure, \n  footer, header, hgroup, menu, nav, section {\n    display: block;\n  }\n  body {\n    line-height: 1;\n    font-size: 16px;\n  }\n  ol,\n  ul {\n    list-style: disc;\n    list-style-position: inside;\n  }\n  blockquote,\n  q {\n    quotes: none;\n  }\n  blockquote:before,\n  blockquote:after,\n  q:before,\n  q:after {\n    content: \"\";\n    content: none;\n  }\n  table {\n    border-collapse: collapse;\n    border-spacing: 0;\n  }\n  a {\n    color: inherit;\n    text-decoration: none;\n  }\n  [role=\"button\"] {\n    cursor: pointer;\n  }\n  *,\n  *::before,\n  *::after {\n    box-sizing: border-box;\n  }\n  * {\n    font-family: 'CodecPro', sans-serif;\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n  }\n\n  /* Number */\n  input::-webkit-outer-spin-button,\n  input::-webkit-inner-spin-button {\n    -webkit-appearance: none;\n    margin: 0;\n  }\n  input[type=number] {\n    -moz-appearance: textfield;\n  }\n\n  /* Scrollbar */\n  ::-webkit-scrollbar {\n    width: 8px;\n  }\n  ::-webkit-scrollbar-thumb {\n    background: ", "; \n    border-radius: 8px;\n  }\n  ::-webkit-scrollbar-track {\n    box-shadow: inset 0 0 5px ", "; \n    border-radius: 10px;\n  }\n\n  /* Slider */ \n  input[type=range] {\n    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */\n    width: 100%; /* Specific width is required for Firefox. */\n    background: transparent; /* Otherwise white in Chrome */\n  }\n  input[type=range]::-webkit-slider-thumb {\n    -webkit-appearance: none;\n  }\n  input[type=range]:focus {\n    outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */\n  }\n  input[type=range]::-ms-track {\n    width: 100%;\n    cursor: pointer;\n    /* Hides the slider so custom styles can be added */\n    background: transparent; \n    border-color: transparent;\n    color: transparent;\n  }  \n"])), function (_a) {
     var theme = _a.theme;
-    return theme.colors.textSubtle;
+    return theme.colors.pastelBlue;
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.input;

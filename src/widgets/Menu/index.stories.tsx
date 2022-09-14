@@ -95,10 +95,10 @@ const GlobalMenuComponent: React.FC = () => {
   return (
     <Flex>
       <IconButton onClick={onPresent1} variant="text" scale="sm" mr="4px">
-        <DownloadIcon height={22} width={22} color="textSubtle" />
+        <DownloadIcon height={22} width={22} color="pastelBlue" />
       </IconButton>
       <IconButton onClick={onPresent2} variant="text" scale="sm" mr="8px">
-        <OptionsSolidIcon height={22} width={22} color="textSubtle" />
+        <OptionsSolidIcon height={22} width={22} color="pastelBlue" />
       </IconButton>
     </Flex>
   );

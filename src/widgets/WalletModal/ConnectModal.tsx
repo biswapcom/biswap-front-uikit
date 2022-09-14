@@ -79,7 +79,7 @@ const ScrollWrapper = styled(Box)`
   }
   &::-webkit-scrollbar-thumb {
     background-color: ${({ theme }) =>
-      getRgba(theme.colors.textSubtle, theme, 0.24)};
+      getRgba(theme.colors.pastelBlue, theme, 0.24)};
   }
 `;
 
