@@ -1,4 +1,4 @@
-import { BoxProps } from "../../components/Box";
+import { BoxProps, FlexProps } from "../../components/Box";
 
 export interface ModalTheme {
   background: string;
@@ -19,4 +19,6 @@ export interface ModalProps extends InjectedProps, BoxProps {
   maxWidth?: string;
   modalBackground?: string;
   closeBtnColor?: string;
+  walletModal?: boolean;
+  modalBodyProps?: FlexProps;
 }

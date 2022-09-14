@@ -57,14 +57,18 @@ export const ModalContainer = styled(Box)<{
   minWidth: string;
   maxWidth?: string;
   background?: string;
+  walletModal?: boolean;
 }>`
   overflow: hidden;
   background: ${({ background }) => background || "white"};
-  border-radius: 16px;
-  width: 100%;
-  max-height: 100vh;
+  width: ${({ width }) => width ?? "100%"};
   z-index: ${({ theme }) => theme.zIndices.modal};
-  overflow-y: auto;
+  ${({ walletModal }) =>
+    !walletModal &&
+    `
+    max-height: 100vh;
+    overflow-y: auto;
+  `}
 
   ${({ theme }) => theme.mediaQueries.sm} {
     width: ${({ maxWidth }) => maxWidth || "100%"};
