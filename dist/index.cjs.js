@@ -8545,17 +8545,108 @@ var connectors = [
         helpHref: "https://bit.ly/3nsp57T",
         instanceCheckRule: InstanceCheckRules[exports.ConnectorsTitleTypes.BitKeep],
     },
+    {
+        title: exports.ConnectorsTitleTypes.Metamask,
+        icon: Icon$a,
+        connectorId: exports.ConnectorNames.Injected,
+        priority: 1,
+        helpHref: "https://bit.ly/3arAKkq",
+        instanceCheckRule: InstanceCheckRules[exports.ConnectorsTitleTypes.Metamask],
+    },
+    {
+        title: exports.ConnectorsTitleTypes.TrustWallet,
+        icon: Icon$7,
+        connectorId: exports.ConnectorNames.WalletConnect,
+        priority: 2,
+        helpHref: "https://bit.ly/3BwkxWo",
+        instanceCheckRule: InstanceCheckRules[exports.ConnectorsTitleTypes.TrustWallet],
+    },
+    {
+        title: exports.ConnectorsTitleTypes.MathWallet,
+        icon: Icon$9,
+        connectorId: exports.ConnectorNames.Injected,
+        priority: 999,
+        helpHref: "https://bit.ly/3BI649I",
+        instanceCheckRule: InstanceCheckRules[exports.ConnectorsTitleTypes.MathWallet],
+    },
+    {
+        title: exports.ConnectorsTitleTypes.TokenPocket,
+        icon: Icon$8,
+        connectorId: exports.ConnectorNames.Injected,
+        priority: 4,
+        helpHref: "https://bit.ly/3zu4yoW",
+        instanceCheckRule: InstanceCheckRules[exports.ConnectorsTitleTypes.TokenPocket],
+    },
+    {
+        title: exports.ConnectorsTitleTypes.Coin98,
+        icon: Icon$3,
+        connectorId: exports.ConnectorNames.Injected,
+        priority: 999,
+        helpHref: "https://bit.ly/3PUMFGS",
+        instanceCheckRule: InstanceCheckRules[exports.ConnectorsTitleTypes.Coin98],
+    },
+    {
+        title: exports.ConnectorsTitleTypes.WalletConnect,
+        icon: Icon$6,
+        connectorId: exports.ConnectorNames.WalletConnect,
+        priority: 3,
+        helpHref: "https://bit.ly/3SnDkZR",
+        instanceCheckRule: InstanceCheckRules[exports.ConnectorsTitleTypes.WalletConnect],
+    },
+    {
+        title: exports.ConnectorsTitleTypes.BinanceChain,
+        icon: Icon$5,
+        connectorId: exports.ConnectorNames.BSC,
+        priority: 999,
+        helpHref: "https://bit.ly/3BDTLLI",
+        instanceCheckRule: InstanceCheckRules[exports.ConnectorsTitleTypes.BinanceChain],
+    },
+    {
+        title: exports.ConnectorsTitleTypes.SafePal,
+        icon: Icon$4,
+        connectorId: exports.ConnectorNames.Injected,
+        priority: 999,
+        helpHref: "https://bit.ly/3zMM7gO",
+        instanceCheckRule: InstanceCheckRules[exports.ConnectorsTitleTypes.SafePal],
+    },
+    {
+        title: exports.ConnectorsTitleTypes.Coinbase,
+        icon: Icon$2,
+        connectorId: exports.ConnectorNames.Injected,
+        priority: 999,
+        helpHref: "https://bit.ly/3oLQMcr",
+        instanceCheckRule: InstanceCheckRules[exports.ConnectorsTitleTypes.Coinbase],
+    },
+    {
+        title: exports.ConnectorsTitleTypes.iToken,
+        icon: Icon$1,
+        connectorId: exports.ConnectorNames.Injected,
+        priority: 999,
+        helpHref: "https://bit.ly/3vwZP4O",
+        instanceCheckRule: InstanceCheckRules[exports.ConnectorsTitleTypes.iToken],
+    },
+    {
+        title: exports.ConnectorsTitleTypes.BitKeep,
+        icon: Icon,
+        connectorId: exports.ConnectorNames.Injected,
+        priority: 999,
+        helpHref: "https://bit.ly/3nsp57T",
+        instanceCheckRule: InstanceCheckRules[exports.ConnectorsTitleTypes.BitKeep],
+    },
 ];
 var HOW_TO_CONNECT_WALLET_LINK = "https://docs.biswap.org/faq/biswap-platform#how-do-i-connect-my-wallet-to-biswap";
 var connectorLocalStorageKey = "connectorId";
 var walletLocalStorageKey = "wallet";
 
-var StyledButton = styled__default["default"](Button)(templateObject_1$b || (templateObject_1$b = __makeTemplateObject(["\n  display: flex;\n  justify-content: flex-start;\n  white-space: nowrap;\n  width: 100%;\n\n  background: ", ";\n\n  ", " {\n    width: 172px;\n  }\n"], ["\n  display: flex;\n  justify-content: flex-start;\n  white-space: nowrap;\n  width: 100%;\n\n  background: ", ";\n\n  ", " {\n    width: 172px;\n  }\n"])), function (_a) {
+var StyledButton = styled__default["default"](Button)(templateObject_1$b || (templateObject_1$b = __makeTemplateObject(["\n  display: flex;\n  justify-content: flex-start;\n  white-space: nowrap;\n  width: 100%;\n\n  background: ", ";\n\n  ", " {\n    width: 172px;\n  }\n\n  &:hover > div {\n    color: ", ";\n  }\n"], ["\n  display: flex;\n  justify-content: flex-start;\n  white-space: nowrap;\n  width: 100%;\n\n  background: ", ";\n\n  ", " {\n    width: 172px;\n  }\n\n  &:hover > div {\n    color: ", ";\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.gray200;
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
+}, function (_a) {
+    var theme = _a.theme;
+    return theme.colors.primaryHover;
 });
 var WalletCard = function (_a) {
     var login = _a.login, walletConfig = _a.walletConfig, onDismiss = _a.onDismiss;
@@ -8572,7 +8663,7 @@ var WalletCard = function (_a) {
 var WalletCard$1 = React__default["default"].memo(WalletCard);
 var templateObject_1$b;
 
-var WalletCardsWrapper = styled__default["default"].div(templateObject_1$a || (templateObject_1$a = __makeTemplateObject(["\n  display: grid;\n  grid-gap: 8px;\n  grid-template-columns: repeat(2, 1fr);\n  max-height: 328px;\n  margin-left: 16px;\n  padding-right: 6px;\n\n  ", " {\n    padding-right: 0;\n    width: 352px;\n    margin-left: 32px;\n  }\n"], ["\n  display: grid;\n  grid-gap: 8px;\n  grid-template-columns: repeat(2, 1fr);\n  max-height: 328px;\n  margin-left: 16px;\n  padding-right: 6px;\n\n  ", " {\n    padding-right: 0;\n    width: 352px;\n    margin-left: 32px;\n  }\n"])), function (_a) {
+var WalletCardsWrapper = styled__default["default"].div(templateObject_1$a || (templateObject_1$a = __makeTemplateObject(["\n  display: grid;\n  grid-gap: 8px;\n  grid-template-columns: repeat(2, 1fr);\n  max-height: 50vh;\n  margin-left: 16px;\n  padding-right: 6px;\n\n  ", " {\n    padding-right: 0;\n    width: 352px;\n    margin-left: 32px;\n  }\n"], ["\n  display: grid;\n  grid-gap: 8px;\n  grid-template-columns: repeat(2, 1fr);\n  max-height: 50vh;\n  margin-left: 16px;\n  padding-right: 6px;\n\n  ", " {\n    padding-right: 0;\n    width: 352px;\n    margin-left: 32px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
@@ -8601,10 +8692,11 @@ var ScrollWrapper = styled__default["default"](Box)(templateObject_2$7 || (templ
     return getRgba(theme.colors.pastelBlue, theme, 0.24);
 });
 var StyledText = styled__default["default"](Text)(templateObject_3$3 || (templateObject_3$3 = __makeTemplateObject(["\n  align-self: flex-start;\n"], ["\n  align-self: flex-start;\n"])));
-var DefaultTextButton = styled__default["default"](Button)(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  font-weight: 400;\n"], ["\n  font-weight: 400;\n"])));
+var DefaultTextButton = styled__default["default"](Button)(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  font-size: 14px;\n  font-weight: 400;\n"], ["\n  font-size: 14px;\n  font-weight: 400;\n"])));
 var ConnectModal = function (_a) {
     var login = _a.login, _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b;
     var isMobile = useMatchBreakpoints().isMobile;
+    styled.useTheme();
     var sortedConfig = React.useMemo(function () {
         return getPreferredConfig(isMobile
             ? connectors.map(function (item) {
@@ -8616,17 +8708,17 @@ var ConnectModal = function (_a) {
     return (React__default["default"].createElement(Modal, { walletModal: true, title: "Connect to a wallet", onDismiss: onDismiss, width: isMobile ? "100%" : "auto", maxWidth: !isMobile ? "416px" : "none", bodyPadding: "0", position: isMobile ? "absolute" : "relative", bottom: "0", borderRadius: isMobile ? "16px 16px 0 0" : "16px", modalBodyProps: {
             alignItems: "center",
         } },
-        React__default["default"].createElement(StyledText, { fontSize: "12px", ml: isMobile ? "16px" : "32px", mb: "24px" },
+        React__default["default"].createElement(StyledText, { color: "pastelBlue", fontSize: "12px", ml: isMobile ? "16px" : "32px", mb: "24px" },
             "By connecting a wallet, you agree to Biswap's",
             " ",
             React__default["default"].createElement(Text, { fontSize: "12px", as: "span", color: "primary" },
-                React__default["default"].createElement("a", { href: "".concat(process.env.REACT_APP_FRONT_1, "/terms") }, "Terms of Use"))),
+                React__default["default"].createElement("a", { href: "".concat(process.env.REACT_APP_FRONT_1, "/terms"), target: isMobile ? "_self" : "_blank" }, "Terms of Use"))),
         React__default["default"].createElement(ScrollWrapper, null,
             React__default["default"].createElement(WalletCardsWrapper, null, sortedConfig.map(function (entry) { return (React__default["default"].createElement(WalletCard$1, { key: entry.title, login: login, walletConfig: entry, onDismiss: onDismiss })); }))),
         React__default["default"].createElement(Text, { as: "span", mt: "24px", textAlign: "center", fontSize: "12px" }, "Haven\u2019t got a crypto wallet yet?"),
-        React__default["default"].createElement(Button, { startIcon: React__default["default"].createElement(Icon$2$, { color: "white" }), height: "48px", width: isMobile ? "306px" : "352px", as: "a", color: "primary", m: isMobile ? "16px" : "16px 32px 32px", href: HOW_TO_CONNECT_WALLET_LINK },
+        React__default["default"].createElement(Button, { startIcon: React__default["default"].createElement(Icon$2$, { color: "white", width: "24px" }), height: "48px", width: isMobile ? "306px" : "352px", as: "a", color: "primary", m: isMobile ? "16px" : "16px 32px 32px", href: HOW_TO_CONNECT_WALLET_LINK, target: isMobile ? "_self" : "_blank" },
             React__default["default"].createElement(Text, { as: "span", color: "contrast", bold: true }, "Learn How to Connect")),
-        isMobile && (React__default["default"].createElement(DefaultTextButton, { color: "primary", mb: "32px", variant: "text", onClick: onDismiss, scale: "xl" }, "Close Window"))));
+        isMobile && (React__default["default"].createElement(DefaultTextButton, { color: "primary", mb: "32px", variant: "text", onClick: onDismiss, scale: "xl", height: "auto" }, "Close Window"))));
 };
 var templateObject_1$a, templateObject_2$7, templateObject_3$3, templateObject_4$2;
 

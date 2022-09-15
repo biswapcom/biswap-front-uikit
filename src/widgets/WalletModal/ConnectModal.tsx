@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import { Link } from "../../components/Link";
 import { HelpIcon, HelpOpacityIcon, HelpSolidIcon } from "../../components/Svg";
 import { Modal } from "../../widgets/Modal";
@@ -25,7 +25,7 @@ const WalletCardsWrapper = styled.div`
   display: grid;
   grid-gap: 8px;
   grid-template-columns: repeat(2, 1fr);
-  max-height: 328px;
+  max-height: 50vh;
   margin-left: 16px;
   padding-right: 6px;
 
@@ -88,11 +88,14 @@ const StyledText = styled(Text)`
 `;
 
 const DefaultTextButton = styled(Button)`
+  font-size: 14px;
   font-weight: 400;
 `;
 
 const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => {
   const { isMobile } = useMatchBreakpoints();
+  const theme = useTheme();
+
   const sortedConfig = useMemo(
     () =>
       getPreferredConfig(
@@ -122,10 +125,20 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => {
         alignItems: "center",
       }}
     >
-      <StyledText fontSize="12px" ml={isMobile ? "16px" : "32px"} mb="24px">
+      <StyledText
+        color="pastelBlue"
+        fontSize="12px"
+        ml={isMobile ? "16px" : "32px"}
+        mb="24px"
+      >
         By connecting a wallet, you agree to Biswap's{" "}
         <Text fontSize="12px" as="span" color="primary">
-          <a href={`${process.env.REACT_APP_FRONT_1}/terms`}>Terms of Use</a>
+          <a
+            href={`${process.env.REACT_APP_FRONT_1}/terms`}
+            target={isMobile ? "_self" : "_blank"}
+          >
+            Terms of Use
+          </a>
         </Text>
       </StyledText>
       <ScrollWrapper>
@@ -144,13 +157,14 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => {
         Haven’t got a crypto wallet yet?
       </Text>
       <Button
-        startIcon={<HelpOpacityIcon color="white" />}
+        startIcon={<HelpOpacityIcon color="white" width="24px" />}
         height="48px"
         width={isMobile ? "306px" : "352px"}
         as="a"
         color="primary"
         m={isMobile ? "16px" : "16px 32px 32px"}
         href={HOW_TO_CONNECT_WALLET_LINK}
+        target={isMobile ? "_self" : "_blank"}
       >
         <Text as="span" color="contrast" bold>
           Learn How to Connect
@@ -163,6 +177,7 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => {
           variant="text"
           onClick={onDismiss}
           scale="xl"
+          height="auto"
         >
           Close Window
         </DefaultTextButton>

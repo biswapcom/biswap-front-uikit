@@ -8532,17 +8532,108 @@ var connectors = [
         helpHref: "https://bit.ly/3nsp57T",
         instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.BitKeep],
     },
+    {
+        title: ConnectorsTitleTypes.Metamask,
+        icon: Icon$a,
+        connectorId: ConnectorNames.Injected,
+        priority: 1,
+        helpHref: "https://bit.ly/3arAKkq",
+        instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.Metamask],
+    },
+    {
+        title: ConnectorsTitleTypes.TrustWallet,
+        icon: Icon$7,
+        connectorId: ConnectorNames.WalletConnect,
+        priority: 2,
+        helpHref: "https://bit.ly/3BwkxWo",
+        instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.TrustWallet],
+    },
+    {
+        title: ConnectorsTitleTypes.MathWallet,
+        icon: Icon$9,
+        connectorId: ConnectorNames.Injected,
+        priority: 999,
+        helpHref: "https://bit.ly/3BI649I",
+        instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.MathWallet],
+    },
+    {
+        title: ConnectorsTitleTypes.TokenPocket,
+        icon: Icon$8,
+        connectorId: ConnectorNames.Injected,
+        priority: 4,
+        helpHref: "https://bit.ly/3zu4yoW",
+        instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.TokenPocket],
+    },
+    {
+        title: ConnectorsTitleTypes.Coin98,
+        icon: Icon$3,
+        connectorId: ConnectorNames.Injected,
+        priority: 999,
+        helpHref: "https://bit.ly/3PUMFGS",
+        instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.Coin98],
+    },
+    {
+        title: ConnectorsTitleTypes.WalletConnect,
+        icon: Icon$6,
+        connectorId: ConnectorNames.WalletConnect,
+        priority: 3,
+        helpHref: "https://bit.ly/3SnDkZR",
+        instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.WalletConnect],
+    },
+    {
+        title: ConnectorsTitleTypes.BinanceChain,
+        icon: Icon$5,
+        connectorId: ConnectorNames.BSC,
+        priority: 999,
+        helpHref: "https://bit.ly/3BDTLLI",
+        instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.BinanceChain],
+    },
+    {
+        title: ConnectorsTitleTypes.SafePal,
+        icon: Icon$4,
+        connectorId: ConnectorNames.Injected,
+        priority: 999,
+        helpHref: "https://bit.ly/3zMM7gO",
+        instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.SafePal],
+    },
+    {
+        title: ConnectorsTitleTypes.Coinbase,
+        icon: Icon$2,
+        connectorId: ConnectorNames.Injected,
+        priority: 999,
+        helpHref: "https://bit.ly/3oLQMcr",
+        instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.Coinbase],
+    },
+    {
+        title: ConnectorsTitleTypes.iToken,
+        icon: Icon$1,
+        connectorId: ConnectorNames.Injected,
+        priority: 999,
+        helpHref: "https://bit.ly/3vwZP4O",
+        instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.iToken],
+    },
+    {
+        title: ConnectorsTitleTypes.BitKeep,
+        icon: Icon,
+        connectorId: ConnectorNames.Injected,
+        priority: 999,
+        helpHref: "https://bit.ly/3nsp57T",
+        instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.BitKeep],
+    },
 ];
 var HOW_TO_CONNECT_WALLET_LINK = "https://docs.biswap.org/faq/biswap-platform#how-do-i-connect-my-wallet-to-biswap";
 var connectorLocalStorageKey = "connectorId";
 var walletLocalStorageKey = "wallet";
 
-var StyledButton = styled(Button)(templateObject_1$b || (templateObject_1$b = __makeTemplateObject(["\n  display: flex;\n  justify-content: flex-start;\n  white-space: nowrap;\n  width: 100%;\n\n  background: ", ";\n\n  ", " {\n    width: 172px;\n  }\n"], ["\n  display: flex;\n  justify-content: flex-start;\n  white-space: nowrap;\n  width: 100%;\n\n  background: ", ";\n\n  ", " {\n    width: 172px;\n  }\n"])), function (_a) {
+var StyledButton = styled(Button)(templateObject_1$b || (templateObject_1$b = __makeTemplateObject(["\n  display: flex;\n  justify-content: flex-start;\n  white-space: nowrap;\n  width: 100%;\n\n  background: ", ";\n\n  ", " {\n    width: 172px;\n  }\n\n  &:hover > div {\n    color: ", ";\n  }\n"], ["\n  display: flex;\n  justify-content: flex-start;\n  white-space: nowrap;\n  width: 100%;\n\n  background: ", ";\n\n  ", " {\n    width: 172px;\n  }\n\n  &:hover > div {\n    color: ", ";\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.gray200;
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
+}, function (_a) {
+    var theme = _a.theme;
+    return theme.colors.primaryHover;
 });
 var WalletCard = function (_a) {
     var login = _a.login, walletConfig = _a.walletConfig, onDismiss = _a.onDismiss;
@@ -8559,7 +8650,7 @@ var WalletCard = function (_a) {
 var WalletCard$1 = React.memo(WalletCard);
 var templateObject_1$b;
 
-var WalletCardsWrapper = styled.div(templateObject_1$a || (templateObject_1$a = __makeTemplateObject(["\n  display: grid;\n  grid-gap: 8px;\n  grid-template-columns: repeat(2, 1fr);\n  max-height: 328px;\n  margin-left: 16px;\n  padding-right: 6px;\n\n  ", " {\n    padding-right: 0;\n    width: 352px;\n    margin-left: 32px;\n  }\n"], ["\n  display: grid;\n  grid-gap: 8px;\n  grid-template-columns: repeat(2, 1fr);\n  max-height: 328px;\n  margin-left: 16px;\n  padding-right: 6px;\n\n  ", " {\n    padding-right: 0;\n    width: 352px;\n    margin-left: 32px;\n  }\n"])), function (_a) {
+var WalletCardsWrapper = styled.div(templateObject_1$a || (templateObject_1$a = __makeTemplateObject(["\n  display: grid;\n  grid-gap: 8px;\n  grid-template-columns: repeat(2, 1fr);\n  max-height: 50vh;\n  margin-left: 16px;\n  padding-right: 6px;\n\n  ", " {\n    padding-right: 0;\n    width: 352px;\n    margin-left: 32px;\n  }\n"], ["\n  display: grid;\n  grid-gap: 8px;\n  grid-template-columns: repeat(2, 1fr);\n  max-height: 50vh;\n  margin-left: 16px;\n  padding-right: 6px;\n\n  ", " {\n    padding-right: 0;\n    width: 352px;\n    margin-left: 32px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
@@ -8588,10 +8679,11 @@ var ScrollWrapper = styled(Box)(templateObject_2$7 || (templateObject_2$7 = __ma
     return getRgba(theme.colors.pastelBlue, theme, 0.24);
 });
 var StyledText = styled(Text)(templateObject_3$3 || (templateObject_3$3 = __makeTemplateObject(["\n  align-self: flex-start;\n"], ["\n  align-self: flex-start;\n"])));
-var DefaultTextButton = styled(Button)(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  font-weight: 400;\n"], ["\n  font-weight: 400;\n"])));
+var DefaultTextButton = styled(Button)(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  font-size: 14px;\n  font-weight: 400;\n"], ["\n  font-size: 14px;\n  font-weight: 400;\n"])));
 var ConnectModal = function (_a) {
     var login = _a.login, _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b;
     var isMobile = useMatchBreakpoints().isMobile;
+    useTheme();
     var sortedConfig = useMemo(function () {
         return getPreferredConfig(isMobile
             ? connectors.map(function (item) {
@@ -8603,17 +8695,17 @@ var ConnectModal = function (_a) {
     return (React.createElement(Modal, { walletModal: true, title: "Connect to a wallet", onDismiss: onDismiss, width: isMobile ? "100%" : "auto", maxWidth: !isMobile ? "416px" : "none", bodyPadding: "0", position: isMobile ? "absolute" : "relative", bottom: "0", borderRadius: isMobile ? "16px 16px 0 0" : "16px", modalBodyProps: {
             alignItems: "center",
         } },
-        React.createElement(StyledText, { fontSize: "12px", ml: isMobile ? "16px" : "32px", mb: "24px" },
+        React.createElement(StyledText, { color: "pastelBlue", fontSize: "12px", ml: isMobile ? "16px" : "32px", mb: "24px" },
             "By connecting a wallet, you agree to Biswap's",
             " ",
             React.createElement(Text, { fontSize: "12px", as: "span", color: "primary" },
-                React.createElement("a", { href: "".concat(process.env.REACT_APP_FRONT_1, "/terms") }, "Terms of Use"))),
+                React.createElement("a", { href: "".concat(process.env.REACT_APP_FRONT_1, "/terms"), target: isMobile ? "_self" : "_blank" }, "Terms of Use"))),
         React.createElement(ScrollWrapper, null,
             React.createElement(WalletCardsWrapper, null, sortedConfig.map(function (entry) { return (React.createElement(WalletCard$1, { key: entry.title, login: login, walletConfig: entry, onDismiss: onDismiss })); }))),
         React.createElement(Text, { as: "span", mt: "24px", textAlign: "center", fontSize: "12px" }, "Haven\u2019t got a crypto wallet yet?"),
-        React.createElement(Button, { startIcon: React.createElement(Icon$2$, { color: "white" }), height: "48px", width: isMobile ? "306px" : "352px", as: "a", color: "primary", m: isMobile ? "16px" : "16px 32px 32px", href: HOW_TO_CONNECT_WALLET_LINK },
+        React.createElement(Button, { startIcon: React.createElement(Icon$2$, { color: "white", width: "24px" }), height: "48px", width: isMobile ? "306px" : "352px", as: "a", color: "primary", m: isMobile ? "16px" : "16px 32px 32px", href: HOW_TO_CONNECT_WALLET_LINK, target: isMobile ? "_self" : "_blank" },
             React.createElement(Text, { as: "span", color: "contrast", bold: true }, "Learn How to Connect")),
-        isMobile && (React.createElement(DefaultTextButton, { color: "primary", mb: "32px", variant: "text", onClick: onDismiss, scale: "xl" }, "Close Window"))));
+        isMobile && (React.createElement(DefaultTextButton, { color: "primary", mb: "32px", variant: "text", onClick: onDismiss, scale: "xl", height: "auto" }, "Close Window"))));
 };
 var templateObject_1$a, templateObject_2$7, templateObject_3$3, templateObject_4$2;
 

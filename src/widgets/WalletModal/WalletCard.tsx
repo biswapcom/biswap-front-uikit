@@ -22,6 +22,10 @@ const StyledButton = styled(Button)`
   ${({ theme }) => theme.mediaQueries.sm} {
     width: 172px;
   }
+
+  &:hover > div {
+    color: ${({ theme }) => theme.colors.primaryHover};
+  }
 `;
 
 const WalletCard: React.FC<Props> = ({ login, walletConfig, onDismiss }) => {
