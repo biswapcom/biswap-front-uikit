@@ -8451,7 +8451,7 @@ var connectors = [
         title: "TokenPocket",
         icon: Icon$9,
         connectorId: ConnectorNames.Injected,
-        priority: 4,
+        priority: 5,
     },
     {
         title: "Coin98",
@@ -8499,7 +8499,7 @@ var connectors = [
         title: "Brave Wallet",
         icon: Icon,
         connectorId: ConnectorNames.Injected,
-        priority: 999,
+        priority: 4,
     },
 ];
 var connectorLocalStorageKey = "connectorId";
