@@ -11,7 +11,8 @@ export declare enum ConnectorsTitleTypes {
     SafePal = "SafePal Wallet",
     Coinbase = "Coinbase Wallet",
     iToken = "iToken",
-    BitKeep = "BitKeep Wallet"
+    BitKeep = "BitKeep Wallet",
+    BraveWallet = "Brave Wallet"
 }
 export declare enum ConnectorNames {
     Injected = "injected",
@@ -31,6 +32,7 @@ export declare const InstanceCheckRules: {
     "Coinbase Wallet": string;
     iToken: string;
     "BitKeep Wallet": string;
+    "Brave Wallet": string;
 };
 export declare type Login = (connectorId: ConnectorNames, instanceCheckRule?: InstanceCheckRuleType, helpHref?: string) => void;
 export declare type InstanceCheckRuleType = typeof InstanceCheckRules[ConnectorsTitleTypes];
