@@ -5,7 +5,7 @@ import { SvgProps } from "../../types";
 const Icon: React.FC<SvgProps> = (props) => {
   return (
     <Svg width="14" height="14" {...props}>
-      <g clip-path="url(#clip0_6798_36400)">
+      <g clipPath="url(#clip0_6798_36400)">
         <circle cx="7" cy="7" r="7" fill="url(#pattern0)" />
       </g>
       <defs>
