@@ -112,7 +112,7 @@ const connectors: Config[] = [
     icon: BraveWallet,
     connectorId: ConnectorNames.Injected,
     priority: 4,
-    helpHref: "https://bit.ly/3nsp57T",
+    helpHref: "",
     instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.BraveWallet],
   },
 ];

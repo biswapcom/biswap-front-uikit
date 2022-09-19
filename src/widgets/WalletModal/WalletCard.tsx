@@ -33,14 +33,14 @@ const WalletCard: React.FC<Props> = ({ login, walletConfig, onDismiss }) => {
     login(
       walletConfig.connectorId,
       walletConfig.instanceCheckRule,
-      walletConfig.helpHref
+      walletConfig.helpHref,
+      onDismiss
     );
     localStorage.setItem(walletLocalStorageKey, walletConfig.title);
     window.localStorage.setItem(
       connectorLocalStorageKey,
       walletConfig.connectorId
     );
-    onDismiss();
   };
 
   const { title, icon: Icon } = walletConfig;
@@ -51,9 +51,9 @@ const WalletCard: React.FC<Props> = ({ login, walletConfig, onDismiss }) => {
       onClick={handleClick}
       id={`wallet-connect-${title.toLocaleLowerCase()}`}
       p="0 12px"
-      startIcon={<Icon width="32px" />}
+      startIcon={<Icon width="24px" />}
     >
-      <Text bold color="primary" pl="8px" fontSize="12px">
+      <Text bold color="primary" fontSize="12px">
         {title}
       </Text>
     </StyledButton>

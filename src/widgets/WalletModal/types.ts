@@ -41,7 +41,8 @@ export const InstanceCheckRules = {
 export type Login = (
   connectorId: ConnectorNames,
   instanceCheckRule?: InstanceCheckRuleType,
-  helpHref?: string
+  helpHref?: string,
+  onDismiss?: () => void
 ) => void;
 
 export type InstanceCheckRuleType =

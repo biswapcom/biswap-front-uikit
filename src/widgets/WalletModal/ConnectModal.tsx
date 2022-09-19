@@ -125,12 +125,7 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => {
         alignItems: "center",
       }}
     >
-      <StyledText
-        color="pastelBlue"
-        fontSize="12px"
-        ml={isMobile ? "16px" : "32px"}
-        mb="24px"
-      >
+      <StyledText fontSize="12px" ml={isMobile ? "16px" : "32px"} mb="24px">
         By connecting a wallet, you agree to Biswap's{" "}
         <Text fontSize="12px" as="span" color="primary">
           <a

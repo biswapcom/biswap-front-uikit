@@ -8560,7 +8560,7 @@ var connectors = [
         icon: Icon,
         connectorId: ConnectorNames.Injected,
         priority: 4,
-        helpHref: "https://bit.ly/3nsp57T",
+        helpHref: "",
         instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.BraveWallet],
     },
 ];
@@ -8581,14 +8581,13 @@ var StyledButton = styled(Button)(templateObject_1$b || (templateObject_1$b = __
 var WalletCard = function (_a) {
     var login = _a.login, walletConfig = _a.walletConfig, onDismiss = _a.onDismiss;
     var handleClick = function () {
-        login(walletConfig.connectorId, walletConfig.instanceCheckRule, walletConfig.helpHref);
+        login(walletConfig.connectorId, walletConfig.instanceCheckRule, walletConfig.helpHref, onDismiss);
         localStorage.setItem(walletLocalStorageKey, walletConfig.title);
         window.localStorage.setItem(connectorLocalStorageKey, walletConfig.connectorId);
-        onDismiss();
     };
     var title = walletConfig.title, Icon = walletConfig.icon;
-    return (React.createElement(StyledButton, { scale: "xl", variant: "tertiary", onClick: handleClick, id: "wallet-connect-".concat(title.toLocaleLowerCase()), p: "0 12px", startIcon: React.createElement(Icon, { width: "32px" }) },
-        React.createElement(Text, { bold: true, color: "primary", pl: "8px", fontSize: "12px" }, title)));
+    return (React.createElement(StyledButton, { scale: "xl", variant: "tertiary", onClick: handleClick, id: "wallet-connect-".concat(title.toLocaleLowerCase()), p: "0 12px", startIcon: React.createElement(Icon, { width: "24px" }) },
+        React.createElement(Text, { bold: true, color: "primary", fontSize: "12px" }, title)));
 };
 var WalletCard$1 = React.memo(WalletCard);
 var templateObject_1$b;
@@ -8638,7 +8637,7 @@ var ConnectModal = function (_a) {
     return (React.createElement(Modal, { walletModal: true, title: "Connect to a wallet", onDismiss: onDismiss, width: isMobile ? "100%" : "auto", maxWidth: !isMobile ? "416px" : "none", bodyPadding: "0", position: isMobile ? "absolute" : "relative", bottom: "0", borderRadius: isMobile ? "16px 16px 0 0" : "16px", modalBodyProps: {
             alignItems: "center",
         } },
-        React.createElement(StyledText, { color: "pastelBlue", fontSize: "12px", ml: isMobile ? "16px" : "32px", mb: "24px" },
+        React.createElement(StyledText, { fontSize: "12px", ml: isMobile ? "16px" : "32px", mb: "24px" },
             "By connecting a wallet, you agree to Biswap's",
             " ",
             React.createElement(Text, { fontSize: "12px", as: "span", color: "primary" },
