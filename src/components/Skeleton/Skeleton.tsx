@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import styled, { keyframes } from "styled-components";
 import { space, layout } from "styled-system";
 import {
@@ -48,15 +48,17 @@ const Waves = styled(Root)`
   position: relative;
   overflow: hidden;
   transform: translate3d(0, 0, 0);
+  
   &:before {
     content: "";
     position: absolute;
     background-image: linear-gradient(
       90deg,
       transparent,
-      rgba(243, 243, 243, 0.5),
+      rgba(116, 155, 216, 0.16),
       transparent
     );
+    
     top: 0;
     left: -150px;
     height: 100%;
@@ -65,7 +67,7 @@ const Waves = styled(Root)`
   }
 `;
 
-const Skeleton: React.FC<SkeletonProps> = ({
+const Skeleton:FC<SkeletonProps> = ({
   variant = VARIANT.RECT,
   animation = ANIMATION.PULSE,
   ...props
