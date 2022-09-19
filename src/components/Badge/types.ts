@@ -1,3 +1,4 @@
+import { ReactNode } from 'react'
 import { SpaceProps } from "styled-system";
 
 export interface BadgeProps extends SpaceProps {
@@ -15,4 +16,5 @@ export interface BadgeProps extends SpaceProps {
   fontWeight?: string;
   isIcon?: string;
   isLarge?: boolean;
+  children: ReactNode;
 }
