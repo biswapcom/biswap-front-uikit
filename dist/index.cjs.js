@@ -8650,7 +8650,7 @@ var UserBlock = function (_a) {
             } }, pendingTransactions ? (React__default["default"].createElement(React__default["default"].Fragment, null,
             pendingTransactions,
             " pending ",
-            React__default["default"].createElement(Icon$1D, { color: "white" }))) : (React__default["default"].createElement(React__default["default"].Fragment, null,
+            React__default["default"].createElement(Icon$1G, { color: "white", ml: "4px" }))) : (React__default["default"].createElement(React__default["default"].Fragment, null,
             !isSm && !isXs && (React__default["default"].createElement(Icon$31, __assign({}, iconProps, { mr: "8px" }))),
             accountEllipsis))))) : (React__default["default"].createElement(Button, { scale: isSm || isXs ? "md" : "lg", onClick: function () {
             onPresentConnectModal();

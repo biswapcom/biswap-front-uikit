@@ -8637,7 +8637,7 @@ var UserBlock = function (_a) {
             } }, pendingTransactions ? (React.createElement(React.Fragment, null,
             pendingTransactions,
             " pending ",
-            React.createElement(Icon$1D, { color: "white" }))) : (React.createElement(React.Fragment, null,
+            React.createElement(Icon$1G, { color: "white", ml: "4px" }))) : (React.createElement(React.Fragment, null,
             !isSm && !isXs && (React.createElement(Icon$31, __assign({}, iconProps, { mr: "8px" }))),
             accountEllipsis))))) : (React.createElement(Button, { scale: isSm || isXs ? "md" : "lg", onClick: function () {
             onPresentConnectModal();
