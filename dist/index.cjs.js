@@ -8649,7 +8649,8 @@ var UserBlock = function (_a) {
                 onPresentAccountModal();
             } }, pendingTransactions ? (React__default["default"].createElement(React__default["default"].Fragment, null,
             pendingTransactions,
-            " pending ",
+            " pending",
+            " ",
             React__default["default"].createElement(Icon$1G, { color: "white", ml: "4px" }))) : (React__default["default"].createElement(React__default["default"].Fragment, null,
             !isSm && !isXs && (React__default["default"].createElement(Icon$31, __assign({}, iconProps, { mr: "8px" }))),
             accountEllipsis))))) : (React__default["default"].createElement(Button, { scale: isSm || isXs ? "md" : "lg", onClick: function () {
@@ -8885,20 +8886,44 @@ var UserMenuItem = styled__default["default"].button(templateObject_2$2 || (temp
 });
 var templateObject_1$4, templateObject_2$2;
 
-var giftImg = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAANWSURBVHgB7ZTdaxRXGMafc+ZjZ8zudrJht2uT6MYYU5WSgFAKvbFQWqS9EWpbclEQCqWXgfaid70oQqFg/4FC6VXBgk1LrwpFaKsxKiZ+RQ3qBj+iJuvOZndn5+N8eGbUIMSYXe8U32GYM2cO5zfP+z7vAV7GCxuV+fkdtVptvN31dL0Fd8rlvcuue7jRaIw+mluYnS1FrvseQvau53l9aCPIegtuX7lymOr6iOU43cHlq3tR6mvIVusXWnH/JIvVPfzytTKs1Bt6JG/lvhx7+9lBl+a+4Ro9IAlx7VeyDhcCuLsEuViBSSjYwl0QDhi7dqL100S6+MPXzSfto68FuPHtwY/opo3f8/9PbjHfHAUt5h1CCMTvf4P9OwXJBUJKoKe7YKazEKPbkWJNA+0quvHJFyMyxI9CiN2MR7APfAXZ0w31DjF9AQvfHYRUV8QZqFLUOzyMdC4PbexDN/fWru61QKsUNbf2fr7439RuziK0wgh9fgu09sAzWi6LmteAEqb+UF1q4N+rwrYz0Berjty3TyOHDvEngVa5zurf+IcwKCLBIKXE8szZB2qEhOh2QDMbEHKeKArVzzSWa4B6V2mGWxhZ04GrQHZu6zEt3zPtRUoRC1E9fhJhGCIIfHgtD2RoAI0oQD3y0VKp1a0UaMqEDCIwKkptgwofv9Po3fP+WLYnB9swEJ2YgViqwFBj0zThbH8dGcNE1rSRNhREmUIwla26SumOwYG2QXGUPvt0dkOxcEcnGixdhzdzDpTS5La2bUnqoxGS1Cr0Q0ilXrp1aJbV3xEoDs00f42f8abR3LWk8HHom/sTYOJXqUAsAFeplUsusG1zT8egrnx+Qp0IyX7B+Ysr89yyYBVfTcwRR8QYWBBAVmrQhku3OgalhjadNpx0XVlPed6DP3/94RcJa+fww5EEE1yBfIiqC0nlzY5BA/v3u2Ymc0omiwia52dXvhmlvsT6CUxZP/KVItVzQXV5qmNQoqrLnogrHqePla+vzFtDgwkoZqmTD6FSxO/V/yoMDs49Ewii9bM09SNMo5P1M+fKXDVm3LykWFBFtFXfqJoRiabqKb9e/e1pW617ej8ek5OTQ1TQ1zjhpGhZ00fGx+EAjhlS+cHRf+bxMp7ruA9B8HiZzFdvegAAAABJRU5ErkJggg==";
+var socialLinks = {
+    twitter: function (_a) {
+        var _b = _a.message, message = _b === void 0 ? "" : _b, _c = _a.link, link = _c === void 0 ? "" : _c;
+        return "https://twitter.com/intent/tweet/?text=".concat(encodeURIComponent(message), "&url=").concat(encodeURIComponent(link));
+    },
+    telegram: function (_a) {
+        var _b = _a.message, message = _b === void 0 ? "" : _b, _c = _a.link, link = _c === void 0 ? "" : _c;
+        return "https://telegram.me/share/url?text=".concat(encodeURIComponent(message), "&url=").concat(encodeURIComponent(link));
+    },
+};
+var socialStyles = function (_a) {
+    var _b = _a === void 0 ? {} : _a, _c = _b.size, size = _c === void 0 ? "20px" : _c, _d = _b.color, color = _d === void 0 ? "white" : _d;
+    return ({
+        twitter: {
+            icon: React__default["default"].createElement(Icon$D, { width: size, color: color }),
+            backgroundColor: "#16CDFD",
+        },
+        telegram: {
+            icon: React__default["default"].createElement(Icon$F, { width: size, color: color }),
+            backgroundColor: "#26A6E5",
+        },
+    });
+};
+
+var SocialShareButton = function (_a) {
+    var social = _a.social, link = _a.link, name = _a.name, message = _a.message, _b = _a.scale, scale = _b === void 0 ? "lg" : _b, _c = _a.target, target = _c === void 0 ? "_blank" : _c, _d = _a.width, width = _d === void 0 ? "100%" : _d, props = __rest(_a, ["social", "link", "name", "message", "scale", "target", "width"]);
+    var defaultName = social.charAt(0).toUpperCase() + social.slice(1);
+    var _e = socialStyles()[social], icon = _e.icon, backgroundColor = _e.backgroundColor;
+    return (React__default["default"].createElement(Button, __assign({ as: "a", href: socialLinks[social]({ link: link, message: message }), scale: scale, startIcon: icon, style: { backgroundColor: backgroundColor }, target: target, width: width }, props), name || defaultName));
+};
 
 var ActionsContainer = styled__default["default"].div(templateObject_1$3 || (templateObject_1$3 = __makeTemplateObject(["\n  display: flex;\n  justify-content: flex-start;\n"], ["\n  display: flex;\n  justify-content: flex-start;\n"])));
-var StyledIcon = styled__default["default"].img(templateObject_2$1 || (templateObject_2$1 = __makeTemplateObject(["\n  margin-left: 8px;\n  width: 26px;\n  filter: drop-shadow(2px 4px 8px rgba(0, 109, 163, 0.4));\n"], ["\n  margin-left: 8px;\n  width: 26px;\n  filter: drop-shadow(2px 4px 8px rgba(0, 109, 163, 0.4));\n"])));
+styled__default["default"].img(templateObject_2$1 || (templateObject_2$1 = __makeTemplateObject(["\n  margin-left: 8px;\n  width: 26px;\n  filter: drop-shadow(2px 4px 8px rgba(0, 109, 163, 0.4));\n"], ["\n  margin-left: 8px;\n  width: 26px;\n  filter: drop-shadow(2px 4px 8px rgba(0, 109, 163, 0.4));\n"])));
 var ToastAction = function (_a) {
-    _a.title; _a.telegramDescription; _a.tweeterDescription; _a.url; _a.thx;
+    _a.title; var telegramDescription = _a.telegramDescription, tweeterDescription = _a.tweeterDescription, url = _a.url; _a.thx;
     return (React__default["default"].createElement(ActionsContainer, null,
-        React__default["default"].createElement(Button, { mr: "8px", scale: "md", width: "100%", style: { backgroundColor: "#16CDFD" } },
-            React__default["default"].createElement(StyledIcon, { src: giftImg, alt: "gift-icon" }),
-            React__default["default"].createElement(Text, { mr: "6px", my: "8px", color: "#fff", fontSize: "12px" }, "Twitter"),
-            React__default["default"].createElement(Icon$D, { mr: "8px", color: "#fff", width: "20px" })),
-        React__default["default"].createElement(Button, { mx: "8px", scale: "md", width: "100%", style: { backgroundColor: "#26A6E5" } },
-            React__default["default"].createElement(Text, { color: "#fff", fontSize: "12px" }, "Telegram"),
-            React__default["default"].createElement(Icon$F, { ml: "8px", color: "#fff", width: "20px" }))));
+        React__default["default"].createElement(SocialShareButton, { social: "twitter", message: tweeterDescription, link: url, mr: "8px" }),
+        React__default["default"].createElement(SocialShareButton, { social: "telegram", message: telegramDescription, link: url })));
 };
 var templateObject_1$3, templateObject_2$1;
 
