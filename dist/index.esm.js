@@ -8293,7 +8293,7 @@ var StyledButton = styled(Button)(templateObject_1$b || (templateObject_1$b = __
 var WalletCard = function (_a) {
     var login = _a.login, walletConfig = _a.walletConfig, onDismiss = _a.onDismiss;
     var handleClick = function () {
-        login(walletConfig.connectorId, walletConfig.instanceCheckRule, walletConfig.helpHref, onDismiss);
+        login(walletConfig.connectorId, walletConfig.instanceCheckRule, walletConfig.helpHref, walletConfig.title, onDismiss);
     };
     var title = walletConfig.title, Icon = walletConfig.icon;
     return (React.createElement(StyledButton, { scale: "xl", variant: "tertiary", onClick: handleClick, id: "wallet-connect-".concat(title.toLocaleLowerCase()), p: "0 12px", startIcon: React.createElement(Icon, { width: "24px" }) },

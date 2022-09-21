@@ -42,6 +42,7 @@ export type Login = (
   connectorId: ConnectorNames,
   instanceCheckRule?: InstanceCheckRuleType,
   helpHref?: string,
+  title?: ConnectorsTitleTypes,
   onDismiss?: () => void
 ) => void;
 

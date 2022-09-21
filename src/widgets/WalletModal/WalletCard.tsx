@@ -34,6 +34,7 @@ const WalletCard: React.FC<Props> = ({ login, walletConfig, onDismiss }) => {
       walletConfig.connectorId,
       walletConfig.instanceCheckRule,
       walletConfig.helpHref,
+      walletConfig.title,
       onDismiss
     );
   };
