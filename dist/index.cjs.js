@@ -9519,3 +9519,4 @@ exports.useParticleBurst = useParticleBurst;
 exports.useTable = useTable;
 exports.useTooltip = useTooltip;
 exports.useWalletModal = useWalletModal;
+exports.walletLocalStorageKey = walletLocalStorageKey;
