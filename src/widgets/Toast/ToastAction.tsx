@@ -1,9 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 // import { TelegramShareButton, TwitterShareButton } from "react-share";
+
+// components
 import { Button } from "../../components/Button";
 import { TelegramIcon, TwitterIcon } from "../../components/Svg";
 import { Text } from "../../components/Text";
+import SocialShareButton from "./SocialShareButton";
+
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import giftImg from "./shared/gift.png";
@@ -35,30 +39,41 @@ const ToastAction: React.FC<ToastActionProps> = ({
 }) => {
   return (
     <ActionsContainer>
-      <Button
-        mr="8px"
-        scale="md"
-        width="100%"
-        style={{ backgroundColor: "#16CDFD" }}
-      >
-        <StyledIcon src={giftImg} alt="gift-icon" />
-        <Text mr="6px" my="8px" color="#fff" fontSize="12px">
-          Twitter
-        </Text>
-        <TwitterIcon mr="8px" color="#fff" width="20px" />
-      </Button>
+      {/*<Button*/}
+      {/*  mr="8px"*/}
+      {/*  scale="md"*/}
+      {/*  width="100%"*/}
+      {/*  style={{ backgroundColor: "#16CDFD" }}*/}
+      {/*>*/}
+      {/*  <StyledIcon src={giftImg} alt="gift-icon" />*/}
+      {/*  <Text mr="6px" my="8px" color="#fff" fontSize="12px">*/}
+      {/*    Twitter*/}
+      {/*  </Text>*/}
+      {/*  <TwitterIcon mr="8px" color="#fff" width="20px" />*/}
+      {/*</Button>*/}
 
-      <Button
-        mx="8px"
-        scale="md"
-        width="100%"
-        style={{ backgroundColor: "#26A6E5" }}
-      >
-        <Text color="#fff" fontSize="12px">
-          Telegram
-        </Text>
-        <TelegramIcon ml="8px" color="#fff" width="20px" />
-      </Button>
+      {/*<Button*/}
+      {/*  mx="8px"*/}
+      {/*  scale="md"*/}
+      {/*  width="100%"*/}
+      {/*  style={{ backgroundColor: "#26A6E5" }}*/}
+      {/*>*/}
+      {/*  <Text color="#fff" fontSize="12px">*/}
+      {/*    Telegram*/}
+      {/*  </Text>*/}
+      {/*  <TelegramIcon ml="8px" color="#fff" width="20px" />*/}
+      {/*</Button>*/}
+      <SocialShareButton
+        social="twitter"
+        message={tweeterDescription}
+        link={url}
+        mr="8px"
+      />
+      <SocialShareButton
+        social="telegram"
+        message={telegramDescription}
+        link={url}
+      />
     </ActionsContainer>
   );
 };

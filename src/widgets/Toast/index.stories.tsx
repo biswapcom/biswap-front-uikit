@@ -3,7 +3,6 @@ import { sample } from "lodash";
 import { alertVariants } from "../../components/Alert";
 import Button from "../../components/Button/Button";
 import ToastContainer from "./ToastContainer";
-import { Text } from "../../components/Text";
 
 export default {
   title: "Widgets/Toast",
@@ -26,6 +25,7 @@ export const Default: React.FC = () => {
       description,
       hash: "hash",
       type: alertVariants[sample(Object.keys(alertVariants))],
+      url: `https://github.com`,
     };
 
     setToasts((prevToasts) => [randomToast, ...prevToasts]);
