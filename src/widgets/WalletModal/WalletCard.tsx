@@ -36,11 +36,6 @@ const WalletCard: React.FC<Props> = ({ login, walletConfig, onDismiss }) => {
       walletConfig.helpHref,
       onDismiss
     );
-    localStorage.setItem(walletLocalStorageKey, walletConfig.title);
-    window.localStorage.setItem(
-      connectorLocalStorageKey,
-      walletConfig.connectorId
-    );
   };
 
   const { title, icon: Icon } = walletConfig;

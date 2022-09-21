@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
-import styled, { useTheme } from "styled-components";
-import { Link } from "../../components/Link";
-import { HelpIcon, HelpOpacityIcon, HelpSolidIcon } from "../../components/Svg";
+import styled from "styled-components";
+
+import { HelpOpacityIcon } from "../../components/Svg";
 import { Modal } from "../../widgets/Modal";
 import WalletCard from "./WalletCard";
 import config, {
@@ -9,11 +9,10 @@ import config, {
   walletLocalStorageKey,
 } from "./config";
 import { Config, ConnectorNames, Login } from "./types";
-import { Flex, Box } from "../../components/Box";
+import { Box } from "../../components/Box";
 import { useMatchBreakpoints } from "../../hooks";
 import { Text } from "../../components/Text";
 import { Button } from "../../components/Button";
-import { alignItems } from "styled-system";
 import { getRgba } from "../../util";
 
 interface Props {
@@ -94,7 +93,6 @@ const DefaultTextButton = styled(Button)`
 
 const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => {
   const { isMobile } = useMatchBreakpoints();
-  const theme = useTheme();
 
   const sortedConfig = useMemo(
     () =>
