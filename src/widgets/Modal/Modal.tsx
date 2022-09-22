@@ -24,6 +24,7 @@ const Modal: React.FC<ModalProps> = ({
   modalBackground = "white",
   closeBtnColor,
   maxWidth = "420px",
+  titleSize = "md",
   ...props
 }) => {
   const theme = useTheme();
@@ -45,7 +46,11 @@ const Modal: React.FC<ModalProps> = ({
           {onBack && (
             <ModalBackButton onBack={onBack} closeBtnColor={closeBtnColor} />
           )}
-          {title && <Heading color="backgroundDark">{title}</Heading>}
+          {title && (
+            <Heading scale={titleSize} color="backgroundDark">
+              {title}
+            </Heading>
+          )}
         </ModalTitle>
         {!hideCloseButton && <ModalCloseButton onDismiss={onDismiss} />}
       </ModalHeader>
