@@ -24,7 +24,7 @@ const Modal: React.FC<ModalProps> = ({
   modalBackground = "white",
   closeBtnColor,
   maxWidth = "420px",
-  titleSize = "md",
+  titleSize = "lg",
   ...props
 }) => {
   const theme = useTheme();
