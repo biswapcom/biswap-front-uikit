@@ -8475,7 +8475,7 @@ var ConnectorNames;
 })(ConnectorNames || (ConnectorNames = {}));
 var InstanceCheckRules = (_a$1 = {},
     _a$1[ConnectorsTitleTypes.Metamask] = "isMetaMask",
-    _a$1[ConnectorsTitleTypes.TrustWallet] = "isTrustWallet",
+    _a$1[ConnectorsTitleTypes.TrustWallet] = "isTrust",
     _a$1[ConnectorsTitleTypes.MathWallet] = "isMathWallet",
     _a$1[ConnectorsTitleTypes.TokenPocket] = "isTokenPocket",
     _a$1[ConnectorsTitleTypes.Coin98] = "isCoin98",
@@ -8483,7 +8483,7 @@ var InstanceCheckRules = (_a$1 = {},
     _a$1[ConnectorsTitleTypes.BinanceChain] = "BinanceChain",
     _a$1[ConnectorsTitleTypes.SafePal] = "isSafePal",
     _a$1[ConnectorsTitleTypes.Coinbase] = "isCoinbaseWallet",
-    _a$1[ConnectorsTitleTypes.iToken] = "isiToken",
+    _a$1[ConnectorsTitleTypes.iToken] = "isHbWallet",
     _a$1[ConnectorsTitleTypes.BitKeep] = "isBitKeep",
     _a$1[ConnectorsTitleTypes.BraveWallet] = "isBraveWallet",
     _a$1);
