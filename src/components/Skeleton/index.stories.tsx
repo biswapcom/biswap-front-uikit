@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { FC, useState, useEffect } from "react";
 import Skeleton from "./Skeleton";
+import {Box} from "../Box";
 
 export default {
   title: "Components/Skeleton",
@@ -11,7 +12,11 @@ export default {
 };
 
 export const Default: React.FC = (args) => {
-  return <Skeleton {...args} />;
+  return (
+    <Box width="500px" mt="24px" ml="24px">
+      <Skeleton {...args} />
+    </Box>
+  );
 };
 
 export const Avatar = Default.bind({});
@@ -28,7 +33,7 @@ Animation.args = {
   animation: "waves",
 };
 
-export const ParentSize: React.FC = (args) => {
+export const ParentSize: FC = (args) => {
   return (
     <div style={{ width: 200, height: 90 }}>
       {" "}

@@ -5,7 +5,7 @@ import { SvgProps } from "../../../components/Svg";
 const Icon: React.FC<SvgProps> = (props) => {
   return (
     <Svg viewBox="0 0 24 24" {...props}>
-      <g clip-path="url(#clip0_6690_35566)">
+      <g clipPath="url(#clip0_6690_35566)">
         <path
           d="M0 5.38317C0 2.41013 2.41013 0 5.38317 0H18.6168C21.5899 0 24 2.41013 24 5.38317V18.6168C24 21.5899 21.5899 24 18.6168 24H5.38317C2.41013 24 0 21.5899 0 18.6168V5.38317Z"
           fill="#4B21EF"
