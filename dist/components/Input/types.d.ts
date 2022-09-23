@@ -29,6 +29,7 @@ export interface InputGroupProps extends SpaceProps, InputProps {
     startIcon?: IconProps;
     endIcon?: IconProps;
     children: JSX.Element;
+    description?: string;
 }
 interface IconProps {
     iconName: string;
