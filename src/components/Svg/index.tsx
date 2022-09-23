@@ -355,6 +355,9 @@ export { default as SEIcon } from "./Icons/Other/SE";
 export { default as Ticket2Icon } from "./Icons/Other/Ticket2";
 export { default as VisaIcon } from "./Icons/Other/Visa";
 export { default as CerticAuditedIcon } from "./Icons/Other/Certic";
+export { default as LockIcon } from "./Icons/Other/Lock";
+export { default as UnlockIcon } from "./Icons/Other/Unlock";
+
 
 //Flags
 export { default as USAIcon } from "./Icons/Flags/USA";
