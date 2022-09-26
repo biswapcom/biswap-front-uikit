@@ -112,13 +112,14 @@ const connectors: Config[] = [
     icon: BraveWallet,
     connectorId: ConnectorNames.Injected,
     priority: 4,
-    helpHref: "",
+    helpHref:
+      "https://biswap.zendesk.com/hc/en-us/articles/9255441933073-Brave-Wallet-Guide-Settings-Connection-to-Biswap-",
     instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.BraveWallet],
   },
 ];
 
 export const HOW_TO_CONNECT_WALLET_LINK =
-  "https://docs.biswap.org/faq/biswap-platform#how-do-i-connect-my-wallet-to-biswap";
+  "https://biswap.zendesk.com/hc/en-us/articles/9302726358033-Connect-Crypto-Wallet-Enjoy-Biswap-to-the-Fullest-";
 
 export default connectors;
 export const connectorLocalStorageKey = "connectorId";

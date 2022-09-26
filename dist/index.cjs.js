@@ -5190,7 +5190,7 @@ var Root = styled__default["default"].div(templateObject_3$n || (templateObject_
     return variant$1 === variant.CIRCLE ? theme.radii.circle : theme.radii.small;
 }, styledSystem.layout, styledSystem.space);
 var Pulse = styled__default["default"](Root)(templateObject_4$i || (templateObject_4$i = __makeTemplateObject(["\n  animation: ", " 2s infinite ease-out;\n  transform: translate3d(0, 0, 0);\n"], ["\n  animation: ", " 2s infinite ease-out;\n  transform: translate3d(0, 0, 0);\n"])), pulse);
-var Waves = styled__default["default"](Root)(templateObject_5$d || (templateObject_5$d = __makeTemplateObject(["\n  position: relative;\n  overflow: hidden;\n  transform: translate3d(0, 0, 0);\n  \n  &:before {\n    content: \"\";\n    position: absolute;\n    background-image: linear-gradient(\n      90deg,\n      transparent,\n      rgba(116, 155, 216, 0.16),\n      transparent\n    );\n    \n    top: 0;\n    left: -150px;\n    height: 100%;\n    width: 150px;\n    animation: ", " 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;\n  }\n"], ["\n  position: relative;\n  overflow: hidden;\n  transform: translate3d(0, 0, 0);\n  \n  &:before {\n    content: \"\";\n    position: absolute;\n    background-image: linear-gradient(\n      90deg,\n      transparent,\n      rgba(116, 155, 216, 0.16),\n      transparent\n    );\n    \n    top: 0;\n    left: -150px;\n    height: 100%;\n    width: 150px;\n    animation: ", " 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;\n  }\n"])), waves);
+var Waves = styled__default["default"](Root)(templateObject_5$d || (templateObject_5$d = __makeTemplateObject(["\n  position: relative;\n  overflow: hidden;\n  transform: translate3d(0, 0, 0);\n\n  &:before {\n    content: \"\";\n    position: absolute;\n    background-image: linear-gradient(\n      90deg,\n      transparent,\n      rgba(116, 155, 216, 0.16),\n      transparent\n    );\n\n    top: 0;\n    left: -150px;\n    height: 100%;\n    width: 150px;\n    animation: ", " 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;\n  }\n"], ["\n  position: relative;\n  overflow: hidden;\n  transform: translate3d(0, 0, 0);\n\n  &:before {\n    content: \"\";\n    position: absolute;\n    background-image: linear-gradient(\n      90deg,\n      transparent,\n      rgba(116, 155, 216, 0.16),\n      transparent\n    );\n\n    top: 0;\n    left: -150px;\n    height: 100%;\n    width: 150px;\n    animation: ", " 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;\n  }\n"])), waves);
 var Skeleton = function (_a) {
     var _b = _a.variant, variant$1 = _b === void 0 ? variant.RECT : _b, _c = _a.animation, animation$1 = _c === void 0 ? animation.PULSE : _c, props = __rest(_a, ["variant", "animation"]);
     if (animation$1 === animation.WAVES) {
@@ -8595,11 +8595,11 @@ var connectors = [
         icon: Icon,
         connectorId: exports.ConnectorNames.Injected,
         priority: 4,
-        helpHref: "",
+        helpHref: "https://biswap.zendesk.com/hc/en-us/articles/9255441933073-Brave-Wallet-Guide-Settings-Connection-to-Biswap-",
         instanceCheckRule: InstanceCheckRules[exports.ConnectorsTitleTypes.BraveWallet],
     },
 ];
-var HOW_TO_CONNECT_WALLET_LINK = "https://docs.biswap.org/faq/biswap-platform#how-do-i-connect-my-wallet-to-biswap";
+var HOW_TO_CONNECT_WALLET_LINK = "https://biswap.zendesk.com/hc/en-us/articles/9302726358033-Connect-Crypto-Wallet-Enjoy-Biswap-to-the-Fullest-";
 var connectorLocalStorageKey = "connectorId";
 var walletLocalStorageKey = "wallet";
 
