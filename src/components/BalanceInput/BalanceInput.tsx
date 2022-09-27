@@ -47,7 +47,7 @@ const BalanceInput: React.FC<BalanceInputProps> = ({
             {unit && <UnitContainer>{unit}</UnitContainer>}
           </Flex>
           {currencyValue && (
-            <Text fontSize="12px" textAlign="right" color="textSubtle">
+            <Text fontSize="12px" textAlign="right" color="pastelBlue">
               {currencyValue}
             </Text>
           )}
@@ -59,7 +59,7 @@ const BalanceInput: React.FC<BalanceInputProps> = ({
               variant="text"
               onClick={switchEditingUnits}
             >
-              <SwapVerticalSolidIcon color="textSubtle" />
+              <SwapVerticalSolidIcon color="pastelBlue" />
             </SwitchUnitsButton>
           </Flex>
         )}
