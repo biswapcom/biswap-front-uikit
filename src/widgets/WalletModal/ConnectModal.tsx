@@ -163,18 +163,6 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => {
           Learn How to Connect
         </Text>
       </Button>
-      {isMobile && (
-        <DefaultTextButton
-          color="primary"
-          mb="32px"
-          variant="text"
-          onClick={onDismiss}
-          scale="xl"
-          height="auto"
-        >
-          Close Window
-        </DefaultTextButton>
-      )}
     </Modal>
   );
 };
