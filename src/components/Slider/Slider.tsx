@@ -118,7 +118,7 @@ const InfoBlock = styled.div`
 const TitleText = styled(Text)`
   font-size: 14px;
   line-height: 20px;
-  color: black;
+  color: ${({ theme }) => theme.colors.dark800};
   font-weight: 600;
 `;
 

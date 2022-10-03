@@ -2781,7 +2781,7 @@ var IconModule = /*#__PURE__*/Object.freeze({
     Svg: Svg
 });
 
-var getColor = function (_a) {
+var getColor$1 = function (_a) {
     var color = _a.color, theme = _a.theme;
     return getThemeValue("colors.".concat(color), color)(theme);
 };
@@ -2789,7 +2789,7 @@ var getFontSize = function (_a) {
     var fontSize = _a.fontSize, small = _a.small;
     return small ? "14px" : fontSize || "16px";
 };
-var Text = styled.div(templateObject_1$1o || (templateObject_1$1o = __makeTemplateObject(["\n  color: ", ";\n  font-size: ", ";\n  font-weight: ", ";\n  line-height: 1.5;\n  ", "\n  ", "\n\n  ", "\n  \n  ", "\n  ", "\n  ", "\n"], ["\n  color: ", ";\n  font-size: ", ";\n  font-weight: ", ";\n  line-height: 1.5;\n  ", "\n  ", "\n\n  ", "\n  \n  ", "\n  ", "\n  ", "\n"])), getColor, getFontSize, function (_a) {
+var Text = styled.div(templateObject_1$1o || (templateObject_1$1o = __makeTemplateObject(["\n  color: ", ";\n  font-size: ", ";\n  font-weight: ", ";\n  line-height: 1.5;\n  ", "\n  ", "\n\n  ", "\n  \n  ", "\n  ", "\n  ", "\n"], ["\n  color: ", ";\n  font-size: ", ";\n  font-weight: ", ";\n  line-height: 1.5;\n  ", "\n  ", "\n\n  ", "\n  \n  ", "\n  ", "\n  ", "\n"])), getColor$1, getFontSize, function (_a) {
     var bold = _a.bold;
     return (bold ? 600 : 400);
 }, function (_a) {
@@ -5027,7 +5027,10 @@ var Point = styled.span(templateObject_8$4 || (templateObject_8$4 = __makeTempla
     return "3px solid ".concat(theme.colors[pointColor]);
 });
 var InfoBlock = styled.div(templateObject_9$3 || (templateObject_9$3 = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n"], ["\n  display: flex;\n  justify-content: space-between;\n"])));
-var TitleText = styled(Text)(templateObject_10$2 || (templateObject_10$2 = __makeTemplateObject(["\n  font-size: 14px;\n  line-height: 20px;\n  color: black;\n  font-weight: 600;\n"], ["\n  font-size: 14px;\n  line-height: 20px;\n  color: black;\n  font-weight: 600;\n"])));
+var TitleText = styled(Text)(templateObject_10$2 || (templateObject_10$2 = __makeTemplateObject(["\n  font-size: 14px;\n  line-height: 20px;\n  color: ", ";\n  font-weight: 600;\n"], ["\n  font-size: 14px;\n  line-height: 20px;\n  color: ", ";\n  font-weight: 600;\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.colors.dark800;
+});
 var PercentageAmount = styled(Text)(templateObject_11$1 || (templateObject_11$1 = __makeTemplateObject(["\n  font-size: 16px;\n  margin: 0 4px;\n  font-weight: 600;\n"], ["\n  font-size: 16px;\n  margin: 0 4px;\n  font-weight: 600;\n"])));
 var InfoNode = styled.div(templateObject_12$1 || (templateObject_12$1 = __makeTemplateObject(["\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n"], ["\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n"])));
 var RBPrice = styled(Text)(templateObject_13 || (templateObject_13 = __makeTemplateObject(["\n  text-align: right;\n  font-size: 12px;\n  line-height: 16px;\n  color: ", ";\n"], ["\n  text-align: right;\n  font-size: 12px;\n  line-height: 16px;\n  color: ", ";\n"])), function (_a) {
@@ -6270,24 +6273,14 @@ var PercentSliderLabel = styled(Flex)(templateObject_5$b || (templateObject_5$b 
 });
 var templateObject_1$x, templateObject_2$p, templateObject_3$g, templateObject_4$d, templateObject_5$b;
 
+var getColor = function (_a) {
+    var color = _a.color, theme = _a.theme;
+    return getThemeValue("colors.".concat(color), color)(theme);
+};
 var CircleIcon = function (props) {
-    return (React.createElement(Svg, __assign({ viewBox: "0 0 20 20" }, props),
-        React.createElement("g", { clipPath: "url(#clip0_4728_34338)" },
-            React.createElement("path", { d: "M0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10C20 15.5228 15.5228 20 10 20C4.47715 20 0 15.5228 0 10Z" }),
-            React.createElement("g", { filter: "url(#filter0_d_4728_34338)" },
-                React.createElement("rect", { x: "4", y: "4", width: "12", height: "12", rx: "6", fill: props.darkMode ? "#071C3C" : "white" }))),
-        React.createElement("defs", null,
-            React.createElement("filter", { id: "filter0_d_4728_34338", x: "0", y: "2", width: "20", height: "20", filterUnits: "userSpaceOnUse", colorInterpolationFilters: "sRGB" },
-                React.createElement("feFlood", { floodOpacity: "0", result: "BackgroundImageFix" }),
-                React.createElement("feColorMatrix", { in: "SourceAlpha", type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0", result: "hardAlpha" }),
-                React.createElement("feOffset", { dy: "2" }),
-                React.createElement("feGaussianBlur", { stdDeviation: "2" }),
-                React.createElement("feComposite", { in2: "hardAlpha", operator: "out" }),
-                React.createElement("feColorMatrix", { type: "matrix", values: "0 0 0 0 0.027451 0 0 0 0 0.0862745 0 0 0 0 0.176471 0 0 0 0.32 0" }),
-                React.createElement("feBlend", { mode: "normal", in2: "BackgroundImageFix", result: "effect1_dropShadow_4728_34338" }),
-                React.createElement("feBlend", { mode: "normal", in: "SourceGraphic", in2: "effect1_dropShadow_4728_34338", result: "shape" })),
-            React.createElement("clipPath", { id: "clip0_4728_34338" },
-                React.createElement("rect", { width: "20", height: "20", fill: "white" })))));
+    var theme = useTheme();
+    return (React.createElement(Svg, __assign({ viewBox: "0 0 10 10" }, props),
+        React.createElement("rect", { x: "1.5", y: "1.5", width: "7", height: "7", rx: "3.5", fill: props.darkMode ? "#071C3C" : "white", stroke: getColor({ color: props.color, theme: theme }), strokeWidth: "3" })));
 };
 
 var PercentSlider = function (_a) {
