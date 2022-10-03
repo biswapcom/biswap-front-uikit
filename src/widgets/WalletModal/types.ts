@@ -14,6 +14,7 @@ export enum ConnectorsTitleTypes {
   iToken = "iToken",
   BitKeep = "BitKeep Wallet",
   BraveWallet = "Brave Wallet",
+  Gnosis = "Gnosis Safe",
 }
 
 export enum ConnectorNames {
@@ -36,6 +37,7 @@ export const InstanceCheckRules = {
   [ConnectorsTitleTypes.iToken]: "isHbWallet",
   [ConnectorsTitleTypes.BitKeep]: "isBitKeep",
   [ConnectorsTitleTypes.BraveWallet]: "isBraveWallet",
+  [ConnectorsTitleTypes.Gnosis]: "gnosis",
 };
 
 export type Login = (
