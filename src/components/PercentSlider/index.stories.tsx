@@ -30,6 +30,12 @@ const SliderVariant = ({ initialValue }: { initialValue: number }) => {
         value={value}
         onValueChanged={setValue}
       />
+      <PercentSlider
+        withTooltip
+        name="slider"
+        value={value}
+        onValueChanged={setValue}
+      />
     </Box>
   );
 };
