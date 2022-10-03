@@ -17,7 +17,7 @@ export const Arrow = styled.div`
 `;
 
 export const StyledTooltip = styled.div`
-  padding: 12px 8px;
+  padding: 8px 12px;
   font-size: 12px;
   line-height: 16px;
   border-radius: 8px;
