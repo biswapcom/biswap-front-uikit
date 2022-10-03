@@ -26,7 +26,7 @@ const CircleIcon: React.FC<CircleProps> = (props) => {
         width="7"
         height="7"
         rx="3.5"
-        fill={props.darkMode ? "#071C3C" : "white"}
+        fill={props.darkMode ? theme.colors.dark700 : "white"}
         stroke={getColor({ color: props.color, theme })}
         strokeWidth="3"
       />

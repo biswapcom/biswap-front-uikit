@@ -6293,7 +6293,7 @@ var getColor = function (_a) {
 var CircleIcon = function (props) {
     var theme = styled.useTheme();
     return (React__default["default"].createElement(Svg, __assign({ viewBox: "0 0 10 10" }, props),
-        React__default["default"].createElement("rect", { x: "1.5", y: "1.5", width: "7", height: "7", rx: "3.5", fill: props.darkMode ? "#071C3C" : "white", stroke: getColor({ color: props.color, theme: theme }), strokeWidth: "3" })));
+        React__default["default"].createElement("rect", { x: "1.5", y: "1.5", width: "7", height: "7", rx: "3.5", fill: props.darkMode ? theme.colors.dark700 : "white", stroke: getColor({ color: props.color, theme: theme }), strokeWidth: "3" })));
 };
 
 var PercentSlider = function (_a) {
