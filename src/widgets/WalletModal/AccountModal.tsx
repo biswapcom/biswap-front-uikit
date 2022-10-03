@@ -76,7 +76,7 @@ const AccountModal: React.FC<Props> = ({
         >
           Connected
         </Text>
-        <Button onClick={changeWalletHandler} scale="lg" variant="primary">
+        <Button onClick={changeWalletHandler} scale="md" variant="primary">
           Change
         </Button>
       </ConnectedWrapper>
@@ -124,7 +124,7 @@ const AccountModal: React.FC<Props> = ({
             <Button
               m={0}
               p={0}
-              scale="sm"
+              scale="lg"
               variant="text"
               onClick={ClearAndDismiss}
             >
