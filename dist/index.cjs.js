@@ -25,7 +25,7 @@ var debounce__default = /*#__PURE__*/_interopDefaultLegacy(debounce);
 var noop__default = /*#__PURE__*/_interopDefaultLegacy(noop);
 var throttle__default = /*#__PURE__*/_interopDefaultLegacy(throttle);
 
-/*! *****************************************************************************
+/******************************************************************************
 Copyright (c) Microsoft Corporation.
 
 Permission to use, copy, modify, and/or distribute this software for any
@@ -8655,7 +8655,7 @@ var ConnectModal = function (_a) {
         React__default["default"].createElement(ScrollWrapper, null,
             React__default["default"].createElement(WalletCardsWrapper, null, sortedConfig.map(function (entry) { return (React__default["default"].createElement(WalletCard$1, { key: entry.title, login: login, walletConfig: entry, onDismiss: onDismiss })); }))),
         React__default["default"].createElement(Text, { as: "span", mt: "24px", textAlign: "center", fontSize: "12px" }, "Haven\u2019t got a crypto wallet yet?"),
-        React__default["default"].createElement(Button, { startIcon: React__default["default"].createElement(Icon$30, { color: "white", width: "24px" }), height: "48px", width: isMobile ? "306px" : "352px", as: "a", color: "primary", m: isMobile ? "16px" : "16px 32px 32px", href: HOW_TO_CONNECT_WALLET_LINK, target: isMobile ? "_self" : "_blank" },
+        React__default["default"].createElement(Button, { startIcon: React__default["default"].createElement(Icon$30, { color: "white", width: "24px" }), height: "48px", width: isMobile ? "306px" : "352px", as: "a", color: "primary", m: isMobile ? "16px 16px 32px" : "16px 32px 32px", href: HOW_TO_CONNECT_WALLET_LINK, target: isMobile ? "_self" : "_blank" },
             React__default["default"].createElement(Text, { as: "span", color: "contrast", bold: true }, "Learn How to Connect"))));
 };
 var templateObject_1$a, templateObject_2$7, templateObject_3$3, templateObject_4$2;
