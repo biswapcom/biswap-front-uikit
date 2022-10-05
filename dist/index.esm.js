@@ -8621,7 +8621,7 @@ var ScrollWrapper = styled(Box)(templateObject_2$7 || (templateObject_2$7 = __ma
     return getRgba(theme.colors.pastelBlue, theme, 0.24);
 });
 var StyledText = styled(Text)(templateObject_3$3 || (templateObject_3$3 = __makeTemplateObject(["\n  align-self: flex-start;\n"], ["\n  align-self: flex-start;\n"])));
-var DefaultTextButton = styled(Button)(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  font-size: 14px;\n  font-weight: 400;\n"], ["\n  font-size: 14px;\n  font-weight: 400;\n"])));
+styled(Button)(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  font-size: 14px;\n  font-weight: 400;\n"], ["\n  font-size: 14px;\n  font-weight: 400;\n"])));
 var ConnectModal = function (_a) {
     var login = _a.login, _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b;
     var isMobile = useMatchBreakpoints().isMobile;
@@ -8644,9 +8644,8 @@ var ConnectModal = function (_a) {
         React.createElement(ScrollWrapper, null,
             React.createElement(WalletCardsWrapper, null, sortedConfig.map(function (entry) { return (React.createElement(WalletCard$1, { key: entry.title, login: login, walletConfig: entry, onDismiss: onDismiss })); }))),
         React.createElement(Text, { as: "span", mt: "24px", textAlign: "center", fontSize: "12px" }, "Haven\u2019t got a crypto wallet yet?"),
-        React.createElement(Button, { startIcon: React.createElement(Icon$30, { color: "white", width: "24px" }), height: "48px", width: isMobile ? "306px" : "352px", as: "a", color: "primary", m: isMobile ? "16px" : "16px 32px 32px", href: HOW_TO_CONNECT_WALLET_LINK, target: isMobile ? "_self" : "_blank" },
-            React.createElement(Text, { as: "span", color: "contrast", bold: true }, "Learn How to Connect")),
-        isMobile && (React.createElement(DefaultTextButton, { color: "primary", mb: "32px", variant: "text", onClick: onDismiss, scale: "xl", height: "auto" }, "Close Window"))));
+        React.createElement(Button, { startIcon: React.createElement(Icon$30, { color: "white", width: "24px" }), height: "48px", width: isMobile ? "306px" : "352px", as: "a", color: "primary", m: isMobile ? "16px 16px 32px" : "16px 32px 32px", href: HOW_TO_CONNECT_WALLET_LINK, target: isMobile ? "_self" : "_blank" },
+            React.createElement(Text, { as: "span", color: "contrast", bold: true }, "Learn How to Connect"))));
 };
 var templateObject_1$a, templateObject_2$7, templateObject_3$3, templateObject_4$2;
 
