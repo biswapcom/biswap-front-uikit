@@ -25,7 +25,7 @@ var debounce__default = /*#__PURE__*/_interopDefaultLegacy(debounce);
 var noop__default = /*#__PURE__*/_interopDefaultLegacy(noop);
 var throttle__default = /*#__PURE__*/_interopDefaultLegacy(throttle);
 
-/*! *****************************************************************************
+/******************************************************************************
 Copyright (c) Microsoft Corporation.
 
 Permission to use, copy, modify, and/or distribute this software for any
@@ -8293,28 +8293,6 @@ var Logo = function (_a) {
 };
 var templateObject_1$c, templateObject_2$8, templateObject_3$4;
 
-var StyledButton = styled__default["default"](Button)(templateObject_1$b || (templateObject_1$b = __makeTemplateObject(["\n  display: flex;\n  justify-content: flex-start;\n  white-space: nowrap;\n  width: 100%;\n\n  background: ", ";\n\n  ", " {\n    width: 172px;\n  }\n\n  &:hover > div {\n    color: ", ";\n  }\n"], ["\n  display: flex;\n  justify-content: flex-start;\n  white-space: nowrap;\n  width: 100%;\n\n  background: ", ";\n\n  ", " {\n    width: 172px;\n  }\n\n  &:hover > div {\n    color: ", ";\n  }\n"])), function (_a) {
-    var theme = _a.theme;
-    return theme.colors.gray200;
-}, function (_a) {
-    var theme = _a.theme;
-    return theme.mediaQueries.sm;
-}, function (_a) {
-    var theme = _a.theme;
-    return theme.colors.primaryHover;
-});
-var WalletCard = function (_a) {
-    var login = _a.login, walletConfig = _a.walletConfig, onDismiss = _a.onDismiss;
-    var handleClick = function () {
-        login(walletConfig.connectorId, walletConfig.instanceCheckRule, walletConfig.helpHref, walletConfig.title, onDismiss);
-    };
-    var title = walletConfig.title, Icon = walletConfig.icon;
-    return (React__default["default"].createElement(StyledButton, { scale: "xl", variant: "tertiary", onClick: handleClick, id: "wallet-connect-".concat(title.toLocaleLowerCase()), p: "0 12px", startIcon: React__default["default"].createElement(Icon, { width: "24px" }) },
-        React__default["default"].createElement(Text, { bold: true, color: "primary", fontSize: "12px" }, title)));
-};
-var WalletCard$1 = React__default["default"].memo(WalletCard);
-var templateObject_1$b;
-
 var Icon$b = function (props) {
     return (React__default["default"].createElement(Svg, __assign({ viewBox: "0 0 96 96" }, props),
         React__default["default"].createElement("circle", { cx: "48", cy: "48", r: "48", fill: "white" }),
@@ -8602,6 +8580,30 @@ var connectors = [
 var HOW_TO_CONNECT_WALLET_LINK = "https://biswap.zendesk.com/hc/en-us/articles/9302726358033-Connect-Crypto-Wallet-Enjoy-Biswap-to-the-Fullest-";
 var connectorLocalStorageKey = "connectorId";
 var walletLocalStorageKey = "wallet";
+
+var StyledButton = styled__default["default"](Button)(templateObject_1$b || (templateObject_1$b = __makeTemplateObject(["\n  display: flex;\n  justify-content: flex-start;\n  white-space: nowrap;\n  width: 100%;\n\n  background: ", ";\n\n  ", " {\n    width: 172px;\n  }\n\n  &:hover > div {\n    color: ", ";\n  }\n"], ["\n  display: flex;\n  justify-content: flex-start;\n  white-space: nowrap;\n  width: 100%;\n\n  background: ", ";\n\n  ", " {\n    width: 172px;\n  }\n\n  &:hover > div {\n    color: ", ";\n  }\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.colors.gray200;
+}, function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.sm;
+}, function (_a) {
+    var theme = _a.theme;
+    return theme.colors.primaryHover;
+});
+var WalletCard = function (_a) {
+    var login = _a.login, walletConfig = _a.walletConfig, onDismiss = _a.onDismiss;
+    var title = walletConfig.title, Icon = walletConfig.icon;
+    return (React__default["default"].createElement(StyledButton, { scale: "xl", variant: "tertiary", onClick: function () {
+            login(walletConfig.connectorId, walletConfig.instanceCheckRule);
+            localStorage.setItem(walletLocalStorageKey, walletConfig.title);
+            window.localStorage.setItem(connectorLocalStorageKey, walletConfig.connectorId);
+            onDismiss();
+        }, id: "wallet-connect-".concat(title.toLocaleLowerCase()), p: "0 12px", startIcon: React__default["default"].createElement(Icon, { width: "24px" }) },
+        React__default["default"].createElement(Text, { bold: true, color: "primary", fontSize: "12px" }, title)));
+};
+var WalletCard$1 = React__default["default"].memo(WalletCard);
+var templateObject_1$b;
 
 var WalletCardsWrapper = styled__default["default"].div(templateObject_1$a || (templateObject_1$a = __makeTemplateObject(["\n  display: grid;\n  grid-gap: 8px;\n  grid-template-columns: repeat(2, 1fr);\n  max-height: 50vh;\n  margin-left: 16px;\n  padding-right: 6px;\n\n  ", " {\n    padding-right: 0;\n    width: 352px;\n    margin-left: 32px;\n  }\n"], ["\n  display: grid;\n  grid-gap: 8px;\n  grid-template-columns: repeat(2, 1fr);\n  max-height: 50vh;\n  margin-left: 16px;\n  padding-right: 6px;\n\n  ", " {\n    padding-right: 0;\n    width: 352px;\n    margin-left: 32px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
