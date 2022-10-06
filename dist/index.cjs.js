@@ -25,7 +25,7 @@ var debounce__default = /*#__PURE__*/_interopDefaultLegacy(debounce);
 var noop__default = /*#__PURE__*/_interopDefaultLegacy(noop);
 var throttle__default = /*#__PURE__*/_interopDefaultLegacy(throttle);
 
-/*! *****************************************************************************
+/******************************************************************************
 Copyright (c) Microsoft Corporation.
 
 Permission to use, copy, modify, and/or distribute this software for any
@@ -7925,15 +7925,13 @@ var getBG = function (_a) {
 };
 var IconComponentWrap = styled__default["default"].div(templateObject_1$j || (templateObject_1$j = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background: ", ";\n  width: 40px;\n  height: 40px;\n  border-radius: 8px;\n  align-self: flex-start;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background: ", ";\n  width: 40px;\n  height: 40px;\n  border-radius: 8px;\n  align-self: flex-start;\n"])), getBG);
 var MenuItemContent = function (_a) {
-    var leftIcon = _a.leftIcon, label = _a.label, description = _a.description, rightIcon = _a.rightIcon, _b = _a.fill, fill = _b === void 0 ? "primary" : _b, badgeTitle = _a.badgeTitle, badgeType = _a.badgeType;
+    var leftIcon = _a.leftIcon, label = _a.label, description = _a.description, rightIcon = _a.rightIcon, _b = _a.fill, fill = _b === void 0 ? "primary" : _b; _a.badgeTitle; _a.badgeType;
     var isMobile = useMatchBreakpoints().isMobile;
     return (React__default["default"].createElement(React__default["default"].Fragment, null,
         leftIcon && (React__default["default"].createElement(IconComponentWrap, { leftIcon: leftIcon },
             React__default["default"].createElement(IconComponent, { width: 24, iconName: leftIcon, color: "white" }))),
         React__default["default"].createElement(Flex, { alignSelf: isMobile ? "stretch" : "", flexDirection: "column", flex: 1, paddingLeft: leftIcon && "16px" },
-            React__default["default"].createElement(Flex, { alignItems: "center" },
-                label,
-                badgeTitle && (React__default["default"].createElement(Badge, { ml: "4px", badgeType: badgeType !== null && badgeType !== void 0 ? badgeType : "success" }, badgeTitle))),
+            React__default["default"].createElement(Flex, { alignItems: "center" }, label),
             description && (React__default["default"].createElement(Text, { fontSize: "12px", color: "gray900", lineHeight: "16px" }, description))),
         rightIcon && (React__default["default"].createElement(IconComponent, { className: "arrow-icon", iconName: rightIcon, color: fill }))));
 };

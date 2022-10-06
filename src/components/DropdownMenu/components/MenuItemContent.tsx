@@ -59,11 +59,11 @@ const MenuItemContent: FC<MenuItemContentProps> = ({
       >
         <Flex alignItems="center">
           {label}
-          {badgeTitle && (
-            <Badge ml="4px" badgeType={badgeType ?? "success"}>
-              {badgeTitle}
-            </Badge>
-          )}
+          {/*{badgeTitle && (*/}
+          {/*  <Badge ml="4px" badgeType={badgeType ?? "success"}>*/}
+          {/*    {badgeTitle}*/}
+          {/*  </Badge>*/}
+          {/*)}*/}
         </Flex>
 
         {description && (

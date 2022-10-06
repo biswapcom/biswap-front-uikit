@@ -12,7 +12,7 @@ import { Link as Link$1, useHistory } from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { TwitterShareButton, TelegramShareButton } from 'react-share';
 
-/*! *****************************************************************************
+/******************************************************************************
 Copyright (c) Microsoft Corporation.
 
 Permission to use, copy, modify, and/or distribute this software for any
@@ -7912,15 +7912,13 @@ var getBG = function (_a) {
 };
 var IconComponentWrap = styled.div(templateObject_1$j || (templateObject_1$j = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background: ", ";\n  width: 40px;\n  height: 40px;\n  border-radius: 8px;\n  align-self: flex-start;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background: ", ";\n  width: 40px;\n  height: 40px;\n  border-radius: 8px;\n  align-self: flex-start;\n"])), getBG);
 var MenuItemContent = function (_a) {
-    var leftIcon = _a.leftIcon, label = _a.label, description = _a.description, rightIcon = _a.rightIcon, _b = _a.fill, fill = _b === void 0 ? "primary" : _b, badgeTitle = _a.badgeTitle, badgeType = _a.badgeType;
+    var leftIcon = _a.leftIcon, label = _a.label, description = _a.description, rightIcon = _a.rightIcon, _b = _a.fill, fill = _b === void 0 ? "primary" : _b; _a.badgeTitle; _a.badgeType;
     var isMobile = useMatchBreakpoints().isMobile;
     return (React.createElement(React.Fragment, null,
         leftIcon && (React.createElement(IconComponentWrap, { leftIcon: leftIcon },
             React.createElement(IconComponent, { width: 24, iconName: leftIcon, color: "white" }))),
         React.createElement(Flex, { alignSelf: isMobile ? "stretch" : "", flexDirection: "column", flex: 1, paddingLeft: leftIcon && "16px" },
-            React.createElement(Flex, { alignItems: "center" },
-                label,
-                badgeTitle && (React.createElement(Badge, { ml: "4px", badgeType: badgeType !== null && badgeType !== void 0 ? badgeType : "success" }, badgeTitle))),
+            React.createElement(Flex, { alignItems: "center" }, label),
             description && (React.createElement(Text, { fontSize: "12px", color: "gray900", lineHeight: "16px" }, description))),
         rightIcon && (React.createElement(IconComponent, { className: "arrow-icon", iconName: rightIcon, color: fill }))));
 };
