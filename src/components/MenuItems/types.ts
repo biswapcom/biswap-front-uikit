@@ -23,6 +23,7 @@ export type MenuItemsType = {
   isMobileMenuOpened?: boolean;
   mobileMenuCallback?: (s: boolean) => void;
   hidden?: boolean;
+  showNavBadge?: boolean;
 };
 
 export interface MenuItemsProps extends BoxProps {

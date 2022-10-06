@@ -7352,6 +7352,7 @@ var links = [
     {
         label: "Win",
         href: "/",
+        showNavBadge: true,
         items: [
             {
                 label: "Lottery",
@@ -7372,6 +7373,7 @@ var links = [
     {
         label: "NFT",
         href: "/",
+        showNavBadge: true,
         items: [
             {
                 label: "NFT Launchpad",
@@ -8248,11 +8250,11 @@ var MenuItems = function (_a) {
     var _d = useMatchBreakpoints(), isDesktop = _d.isDesktop, isTablet = _d.isTablet;
     return (React__default["default"].createElement(Flex, __assign({}, props, { alignItems: "center" }),
         !isDesktop && (React__default["default"].createElement(MobileDropdownMenu, { items: items, activeItem: activeItem, isMobileMenuOpened: isMobileMenuOpened, mobileMenuCallback: mobileMenuCallback })),
-        items.map(function (_a) {
-            var _b, _c;
-            var label = _a.label, _d = _a.items, menuItems = _d === void 0 ? [] : _d, href = _a.href, _e = _a.icon, icon = _e === void 0 ? "" : _e, isExtended = _a.isExtended, showItemsOnMobile = _a.showItemsOnMobile, type = _a.type, hidden = _a.hidden;
-            var isMarker = !!(menuItems === null || menuItems === void 0 ? void 0 : menuItems.find(function (i) { return i.badgeTitle; }));
-            var statusColor = (_c = (_b = menuItems === null || menuItems === void 0 ? void 0 : menuItems.find(function (menuItem) { return menuItem.status !== undefined; })) === null || _b === void 0 ? void 0 : _b.status) === null || _c === void 0 ? void 0 : _c.color;
+        items.map(function (_a, index) {
+            var _b, _c, _d;
+            var label = _a.label, _e = _a.items, menuItems = _e === void 0 ? [] : _e, href = _a.href, _f = _a.icon, icon = _f === void 0 ? "" : _f, isExtended = _a.isExtended, showItemsOnMobile = _a.showItemsOnMobile, type = _a.type, hidden = _a.hidden; _a.showNavBadge;
+            var isMarker = !!((_b = items[index]) === null || _b === void 0 ? void 0 : _b.showNavBadge);
+            var statusColor = (_d = (_c = menuItems === null || menuItems === void 0 ? void 0 : menuItems.find(function (menuItem) { return menuItem.status !== undefined; })) === null || _c === void 0 ? void 0 : _c.status) === null || _d === void 0 ? void 0 : _d.color;
             var isActive = activeItem === href;
             var linkProps = isTouchDevice() && menuItems && menuItems.length > 0
                 ? {}
