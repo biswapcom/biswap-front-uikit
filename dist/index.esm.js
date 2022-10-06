@@ -7339,6 +7339,7 @@ var links = [
     {
         label: "Win",
         href: "/",
+        showNavBadge: true,
         items: [
             {
                 label: "Lottery",
@@ -7359,6 +7360,7 @@ var links = [
     {
         label: "NFT",
         href: "/",
+        showNavBadge: true,
         items: [
             {
                 label: "NFT Launchpad",
@@ -7912,13 +7914,15 @@ var getBG = function (_a) {
 };
 var IconComponentWrap = styled.div(templateObject_1$j || (templateObject_1$j = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background: ", ";\n  width: 40px;\n  height: 40px;\n  border-radius: 8px;\n  align-self: flex-start;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background: ", ";\n  width: 40px;\n  height: 40px;\n  border-radius: 8px;\n  align-self: flex-start;\n"])), getBG);
 var MenuItemContent = function (_a) {
-    var leftIcon = _a.leftIcon, label = _a.label, description = _a.description, rightIcon = _a.rightIcon, _b = _a.fill, fill = _b === void 0 ? "primary" : _b; _a.badgeTitle; _a.badgeType;
+    var leftIcon = _a.leftIcon, label = _a.label, description = _a.description, rightIcon = _a.rightIcon, _b = _a.fill, fill = _b === void 0 ? "primary" : _b, badgeTitle = _a.badgeTitle, badgeType = _a.badgeType;
     var isMobile = useMatchBreakpoints().isMobile;
     return (React.createElement(React.Fragment, null,
         leftIcon && (React.createElement(IconComponentWrap, { leftIcon: leftIcon },
             React.createElement(IconComponent, { width: 24, iconName: leftIcon, color: "white" }))),
         React.createElement(Flex, { alignSelf: isMobile ? "stretch" : "", flexDirection: "column", flex: 1, paddingLeft: leftIcon && "16px" },
-            React.createElement(Flex, { alignItems: "center" }, label),
+            React.createElement(Flex, { alignItems: "center" },
+                label,
+                badgeTitle && (React.createElement(Badge, { ml: "4px", badgeType: badgeType !== null && badgeType !== void 0 ? badgeType : "success" }, badgeTitle))),
             description && (React.createElement(Text, { fontSize: "12px", color: "gray900", lineHeight: "16px" }, description))),
         rightIcon && (React.createElement(IconComponent, { className: "arrow-icon", iconName: rightIcon, color: fill }))));
 };
@@ -8233,11 +8237,11 @@ var MenuItems = function (_a) {
     var _d = useMatchBreakpoints(), isDesktop = _d.isDesktop, isTablet = _d.isTablet;
     return (React.createElement(Flex, __assign({}, props, { alignItems: "center" }),
         !isDesktop && (React.createElement(MobileDropdownMenu, { items: items, activeItem: activeItem, isMobileMenuOpened: isMobileMenuOpened, mobileMenuCallback: mobileMenuCallback })),
-        items.map(function (_a) {
-            var _b, _c;
-            var label = _a.label, _d = _a.items, menuItems = _d === void 0 ? [] : _d, href = _a.href, _e = _a.icon, icon = _e === void 0 ? "" : _e, isExtended = _a.isExtended, showItemsOnMobile = _a.showItemsOnMobile, type = _a.type, hidden = _a.hidden;
-            var isMarker = !!(menuItems === null || menuItems === void 0 ? void 0 : menuItems.find(function (i) { return i.badgeTitle; }));
-            var statusColor = (_c = (_b = menuItems === null || menuItems === void 0 ? void 0 : menuItems.find(function (menuItem) { return menuItem.status !== undefined; })) === null || _b === void 0 ? void 0 : _b.status) === null || _c === void 0 ? void 0 : _c.color;
+        items.map(function (_a, index) {
+            var _b, _c, _d;
+            var label = _a.label, _e = _a.items, menuItems = _e === void 0 ? [] : _e, href = _a.href, _f = _a.icon, icon = _f === void 0 ? "" : _f, isExtended = _a.isExtended, showItemsOnMobile = _a.showItemsOnMobile, type = _a.type, hidden = _a.hidden; _a.showNavBadge;
+            var isMarker = !!((_b = items[index]) === null || _b === void 0 ? void 0 : _b.showNavBadge);
+            var statusColor = (_d = (_c = menuItems === null || menuItems === void 0 ? void 0 : menuItems.find(function (menuItem) { return menuItem.status !== undefined; })) === null || _c === void 0 ? void 0 : _c.status) === null || _d === void 0 ? void 0 : _d.color;
             var isActive = activeItem === href;
             var linkProps = isTouchDevice() && menuItems && menuItems.length > 0
                 ? {}
