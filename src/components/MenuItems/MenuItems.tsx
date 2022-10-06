@@ -46,7 +46,7 @@ const MenuItems: React.FC<MenuItemsProps> = ({
           },
           index
         ) => {
-          const isMarker = !!items[index]?.showNavBadge;
+          const isMarker = items[index]?.showNavBadge;
           const statusColor = menuItems?.find(
             (menuItem) => menuItem.status !== undefined
           )?.status?.color;
