@@ -12,14 +12,14 @@ import { ArrowUpForwardIcon } from "../../components/Svg";
 interface Props {
   account: string;
   logout: () => void;
-  login: any;
+  login: () => void;
   onDismiss?: () => void;
   recentTransaction?: any;
   rowStatus?: any;
   chainId?: any;
-  clearTransaction?: any;
-  isSwap?: any;
-  transactionsForUIKit?: any;
+  clearTransaction?: () => void;
+  isSwap?: boolean;
+  transactionsForUIKit?:() => JSX.Element;
 }
 
 const ConnectedWrapper = styled.div`
@@ -131,7 +131,7 @@ const AccountModal: React.FC<Props> = ({
               Clear All
             </Button>
           </Flex>
-          <>{transactionsForUIKit()}</>
+          <>{transactionsForUIKit?.()}</>
         </TransactionWrapper>
       )}
       <Flex>

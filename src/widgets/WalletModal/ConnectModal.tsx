@@ -1,20 +1,31 @@
 import React, { useMemo } from "react";
+
+// ui
 import styled from "styled-components";
+
+// components
 import { Link } from "../../components/Link";
 import { HelpIcon } from "../../components/Svg";
 import { Modal } from "../../widgets/Modal";
 import WalletCard from "./WalletCard";
-import config, { walletLocalStorageKey } from "./config";
-import { Config, ConnectorNames, Login } from "./types";
-import { Flex } from "../../components/Box";
-import { useMatchBreakpoints } from "../../contexts";
 import { Text } from "../../components/Text";
+import { Flex } from "../../components/Box";
 
-interface Props {
-  login: Login;
+// utils
+import config, { walletLocalStorageKey } from "./config";
+import {Login, WalletConfig} from "./types";
+
+// hooks
+import { useMatchBreakpoints } from "../../contexts";
+
+// props
+interface Props<T> {
+  login: Login<T>;
   onDismiss?: () => void;
+  wallets: WalletConfig<T>[];
 }
 
+// styles
 const HelpLink = styled(Link)`
   display: flex;
   align-self: center;
@@ -33,19 +44,26 @@ const WalletCardsWrapper = styled.div`
   grid-template-columns: repeat(2, 1fr);
 `;
 
-const getPreferredConfig = (walletConfig: Config[]) => {
-  const preferredWalletName = localStorage.getItem(walletLocalStorageKey);
+const getPriority = (priority: WalletConfig["priority"]) => (typeof priority === "function" ? priority() : priority);
+
+/**
+ * Checks local storage if we have saved the last wallet the user connected with
+ * If we find something we put it at the top of the list
+ *
+ * @returns sorted config
+ */
+function getPreferredConfig<T>(walletConfig: WalletConfig<T>[]) {
   const sortedConfig = walletConfig.sort(
-    (a: Config, b: Config) => a.priority - b.priority
+      (a: WalletConfig<T>, b: WalletConfig<T>) => getPriority(a.priority) - getPriority(b.priority)
   );
+
+  const preferredWalletName = localStorage?.getItem(walletLocalStorageKey);
 
   if (!preferredWalletName) {
     return sortedConfig;
   }
 
-  const preferredWallet = sortedConfig.find(
-    (sortedWalletConfig) => sortedWalletConfig.title === preferredWalletName
-  );
+  const preferredWallet = sortedConfig.find((sortedWalletConfig) => sortedWalletConfig.title === preferredWalletName);
 
   if (!preferredWallet) {
     return sortedConfig;
@@ -53,27 +71,24 @@ const getPreferredConfig = (walletConfig: Config[]) => {
 
   return [
     preferredWallet,
-    ...sortedConfig.filter(
-      (sortedWalletConfig) => sortedWalletConfig.title !== preferredWalletName
-    ),
+    ...sortedConfig.filter((sortedWalletConfig) => sortedWalletConfig.title !== preferredWalletName),
   ];
-};
+}
 
-const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => {
+function ConnectModal<T> ({ login, onDismiss = () => null, wallets: connectors }: Props<T>) {
+
   const { isMobile } = useMatchBreakpoints();
-  const sortedConfig = useMemo(
-    () =>
-      getPreferredConfig(
-        isMobile
-          ? config.map((item) =>
-              item.title === "TrustWallet"
-                ? { ...item, connectorId: ConnectorNames.Injected }
-                : item
-            )
-          : config
-      ),
-    [isMobile]
-  );
+
+  const sortedConfig = getPreferredConfig(connectors);
+
+  // Filter out WalletConnect if user is inside TrustWallet built-in browser
+  const walletsToShow =
+      // @ts-ignore
+      window.ethereum?.isTrust &&
+      // @ts-ignore
+      !window?.ethereum?.isSafePal
+          ? sortedConfig.filter((wallet) => wallet.title !== "WalletConnect")
+          : sortedConfig;
 
   return (
     <Modal title="Connect to a wallet" onDismiss={onDismiss}>
@@ -100,6 +115,6 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => {
       </Flex>
     </Modal>
   );
-};
+}
 
 export default ConnectModal;
