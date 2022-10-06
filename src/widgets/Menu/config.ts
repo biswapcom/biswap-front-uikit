@@ -33,6 +33,7 @@ export const links: MenuItemsType[] = [
   {
     label: "Trade",
     href: "/swap",
+    showNavBadge: true,
     items: [
       {
         label: "Swap",
@@ -106,7 +107,6 @@ export const links: MenuItemsType[] = [
   {
     label: "Win",
     href: "/",
-    showNavBadge: true,
     items: [
       {
         label: "Lottery",

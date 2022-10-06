@@ -7266,6 +7266,7 @@ var links = [
     {
         label: "Trade",
         href: "/swap",
+        showNavBadge: true,
         items: [
             {
                 label: "Swap",
@@ -7339,7 +7340,6 @@ var links = [
     {
         label: "Win",
         href: "/",
-        showNavBadge: true,
         items: [
             {
                 label: "Lottery",
@@ -8110,7 +8110,7 @@ var MobileMenu = function (_a) {
                     .filter(function (item) { return item.label && !item.type; })
                     .map(function (_a, index) {
                     var label = _a.label, _b = _a.items, innerItems = _b === void 0 ? [] : _b, showItemsOnMobile = _a.showItemsOnMobile, hidden = _a.hidden;
-                    var isMarker = !!(innerItems === null || innerItems === void 0 ? void 0 : innerItems.find(function (i) { return i.badgeTitle; }));
+                    var isMarker = items[index].showNavBadge;
                     if (!innerItems.length)
                         return null;
                     var visualize = !showItemsOnMobile ||
@@ -8120,7 +8120,7 @@ var MobileMenu = function (_a) {
                                 return (!showItemsOnMobile &&
                                     !hidden && (React.createElement(React.Fragment, null,
                                     React.createElement(Box, { m: "16px 0", position: "relative" },
-                                        isMobile && isMarker && React.createElement(Marker, null),
+                                        isMarker && React.createElement(Marker, null),
                                         React.createElement(Text, { bold: true, fontSize: isTablet ? "20px" : "14px", lineHeight: isTablet ? "26px" : "20px", color: isMobile && opened
                                                 ? "primary"
                                                 : "backgroundDark" }, label)),
@@ -8240,7 +8240,7 @@ var MenuItems = function (_a) {
         items.map(function (_a, index) {
             var _b, _c, _d;
             var label = _a.label, _e = _a.items, menuItems = _e === void 0 ? [] : _e, href = _a.href, _f = _a.icon, icon = _f === void 0 ? "" : _f, isExtended = _a.isExtended, showItemsOnMobile = _a.showItemsOnMobile, type = _a.type, hidden = _a.hidden; _a.showNavBadge;
-            var isMarker = !!((_b = items[index]) === null || _b === void 0 ? void 0 : _b.showNavBadge);
+            var isMarker = (_b = items[index]) === null || _b === void 0 ? void 0 : _b.showNavBadge;
             var statusColor = (_d = (_c = menuItems === null || menuItems === void 0 ? void 0 : menuItems.find(function (menuItem) { return menuItem.status !== undefined; })) === null || _c === void 0 ? void 0 : _c.status) === null || _d === void 0 ? void 0 : _d.color;
             var isActive = activeItem === href;
             var linkProps = isTouchDevice() && menuItems && menuItems.length > 0
