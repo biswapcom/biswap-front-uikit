@@ -45,6 +45,7 @@ const Wrapper = styled.div<IWrapper>`
   display: ${({ fullWidth }) => (fullWidth ? "flex" : "inline-flex")};
   width: ${({ fullWidth }) => (fullWidth ? "100%" : "auto")};
   border-radius: 10px;
+  overflow: hidden;
 
   padding: ${({ flatBottom, flatTop }) =>
     flatBottom || flatTop ? "0 4px" : "4px"};
@@ -130,7 +131,7 @@ const Selection = styled.div<ISelection>`
   top: 50%;
   transform: translateY(-50%);
   left: ${({ offset }) => `${offset + 4}px`};
-  transition: left 0.3s ease;
+  transition: left .3s ease, width .3s ease;
   border-radius: ${({ scale }) => (scale === scales.SM ? "6px" : "8px")};
 
   ${({ flatTop, scale }) =>

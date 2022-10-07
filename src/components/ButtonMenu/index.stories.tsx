@@ -105,16 +105,16 @@ export const Default: React.FC = () => {
           variant="dark"
           scale="md"
         >
-          <ButtonMenuItem>But</ButtonMenuItem>
+          <ButtonMenuItem>Button 1 defd</ButtonMenuItem>
           <ButtonMenuItem>Button</ButtonMenuItem>
-          <ButtonMenuItem>Button 3</ButtonMenuItem>
-          <ButtonMenuItem>Button 4lkj</ButtonMenuItem>
+          <ButtonMenuItem>Button 3uyuihuhu</ButtonMenuItem>
+          <ButtonMenuItem>t</ButtonMenuItem>
         </ButtonMenu>
       </Row>
 
       <Row>
         <ButtonMenu
-          fullWidth
+          scrollX
           activeIndex={index}
           onItemClick={handleClick}
           variant="warningDark"
