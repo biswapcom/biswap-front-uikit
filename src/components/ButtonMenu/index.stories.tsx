@@ -46,7 +46,7 @@ export const Default: React.FC = () => {
         <ButtonMenu
           activeIndex={index}
           onItemClick={handleClick}
-          variant="selectLight"
+          variant="light"
           scale="sm"
         >
           <ButtonMenuItem>Button 1</ButtonMenuItem>
@@ -60,7 +60,7 @@ export const Default: React.FC = () => {
         <ButtonMenu
           activeIndex={index}
           onItemClick={handleClick}
-          variant="selectLight"
+          variant="light"
         >
           <ButtonMenuItem>Button 1</ButtonMenuItem>
           <ButtonMenuItem>Button 2</ButtonMenuItem>
@@ -73,7 +73,8 @@ export const Default: React.FC = () => {
         <ButtonMenu
           activeIndex={index}
           onItemClick={handleClick}
-          variant="selectLight"
+          variant="warningLight"
+          flatBottom
           scale="lg"
         >
           <ButtonMenuItem>Button 1</ButtonMenuItem>
@@ -87,7 +88,7 @@ export const Default: React.FC = () => {
         <ButtonMenu
           activeIndex={index}
           onItemClick={handleClick}
-          variant="select"
+          variant="dark"
           scale="sm"
         >
           <ButtonMenuItem>Button 1</ButtonMenuItem>
@@ -101,21 +102,22 @@ export const Default: React.FC = () => {
         <ButtonMenu
           activeIndex={index}
           onItemClick={handleClick}
-          variant="select"
+          variant="dark"
           scale="md"
         >
-          <ButtonMenuItem>Button 1</ButtonMenuItem>
-          <ButtonMenuItem>Button 2</ButtonMenuItem>
+          <ButtonMenuItem>But</ButtonMenuItem>
+          <ButtonMenuItem>Button</ButtonMenuItem>
           <ButtonMenuItem>Button 3</ButtonMenuItem>
-          <ButtonMenuItem>Button 4</ButtonMenuItem>
+          <ButtonMenuItem>Button 4lkj</ButtonMenuItem>
         </ButtonMenu>
       </Row>
 
-      <Row isLight>
+      <Row>
         <ButtonMenu
+          fullWidth
           activeIndex={index}
           onItemClick={handleClick}
-          variant="select"
+          variant="warningDark"
           scale="lg"
         >
           <ButtonMenuItem as="a">Button 1</ButtonMenuItem>
@@ -130,19 +132,34 @@ export const Default: React.FC = () => {
 
 export const AsLinks: React.FC = () => {
   return (
-    <Row>
-      <ButtonMenu activeIndex={0}>
-        <ButtonMenuItem as="a" href="https://pancakeswap.finance">
-          Link 1
-        </ButtonMenuItem>
-        <ButtonMenuItem as="a" href="https://pancakeswap.finance">
-          Link 2
-        </ButtonMenuItem>
-        <ButtonMenuItem as="a" href="https://pancakeswap.finance">
-          Link 3
-        </ButtonMenuItem>
-      </ButtonMenu>
-    </Row>
+    <>
+      <Row>
+        <ButtonMenu activeIndex={0}>
+          <ButtonMenuItem as="a" href="https://pancakeswap.finance">
+            Link 1
+          </ButtonMenuItem>
+          <ButtonMenuItem as="a" href="https://pancakeswap.finance">
+            Link 2
+          </ButtonMenuItem>
+          <ButtonMenuItem as="a" href="https://pancakeswap.finance">
+            Link 3
+          </ButtonMenuItem>
+        </ButtonMenu>
+      </Row>
+      <Row>
+        <ButtonMenu fullWidth activeIndex={0}>
+          <ButtonMenuItem as="a" href="https://pancakeswap.finance">
+            Link 1
+          </ButtonMenuItem>
+          <ButtonMenuItem as="a" href="https://pancakeswap.finance">
+            Link 2
+          </ButtonMenuItem>
+          <ButtonMenuItem as="a" href="https://pancakeswap.finance">
+            Link 3
+          </ButtonMenuItem>
+        </ButtonMenu>
+      </Row>
+    </>
   );
 };
 
@@ -163,12 +180,7 @@ export const FlatBottom: React.FC = () => {
         </ButtonMenu>
       </Row>
       <Row>
-        <ButtonMenu
-          flatBottom
-          activeIndex={index1}
-          onItemClick={handleClick1}
-          variant="warning"
-        >
+        <ButtonMenu flatBottom activeIndex={index1} onItemClick={handleClick1}>
           <ButtonMenuItem>Button 1</ButtonMenuItem>
           <ButtonMenuItem>Button 2</ButtonMenuItem>
           <ButtonMenuItem>Button 3</ButtonMenuItem>
@@ -197,6 +209,19 @@ export const FlatTop: React.FC = () => {
       </Row>
       <Row>
         <ButtonMenu flatTop activeIndex={index1} onItemClick={handleClick1}>
+          <ButtonMenuItem>Button 1</ButtonMenuItem>
+          <ButtonMenuItem>Button 2</ButtonMenuItem>
+          <ButtonMenuItem>Button 3</ButtonMenuItem>
+          <ButtonMenuItem>Button 4</ButtonMenuItem>
+        </ButtonMenu>
+      </Row>
+      <Row>
+        <ButtonMenu
+          flatTop
+          fullWidth
+          activeIndex={index1}
+          onItemClick={handleClick1}
+        >
           <ButtonMenuItem>Button 1</ButtonMenuItem>
           <ButtonMenuItem>Button 2</ButtonMenuItem>
           <ButtonMenuItem>Button 3</ButtonMenuItem>
@@ -239,6 +264,20 @@ export const WithoutBackground: React.FC = () => {
         <ButtonMenu
           flatBottom
           withoutBackground
+          activeIndex={index1}
+          onItemClick={handleClick1}
+        >
+          <ButtonMenuItem>Button 1</ButtonMenuItem>
+          <ButtonMenuItem>Button 2</ButtonMenuItem>
+          <ButtonMenuItem>Button 3</ButtonMenuItem>
+          <ButtonMenuItem>Button 4</ButtonMenuItem>
+        </ButtonMenu>
+      </Row>
+      <Row>
+        <ButtonMenu
+          flatBottom
+          withoutBackground
+          fullWidth
           activeIndex={index1}
           onItemClick={handleClick1}
         >

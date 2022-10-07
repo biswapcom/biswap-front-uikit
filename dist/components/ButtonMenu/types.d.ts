@@ -1,7 +1,11 @@
-import { ElementType, ReactElement, ReactNode } from "react";
+import { Dispatch, ElementType, ReactElement, ReactNode, RefObject, SetStateAction } from "react";
 import { LayoutProps, SpaceProps } from "styled-system";
 export interface ButtonMenuItemProps extends BaseButtonMenuItemProps {
     isActive?: boolean;
+    setWidth?: Dispatch<SetStateAction<any>>;
+    itemIndex?: number;
+    blockOffset?: number;
+    elementRef?: RefObject<HTMLButtonElement>;
 }
 export interface BaseButtonMenuItemProps extends LayoutProps, SpaceProps {
     as?: "a" | "button" | ElementType;
@@ -40,6 +44,7 @@ export interface ButtonMenuProps extends SpaceProps {
     flatBottom?: boolean;
     flatTop?: boolean;
     withoutBackground?: boolean;
+    scrollX?: boolean;
 }
 export declare const scales: {
     readonly XL: "xl";
@@ -49,10 +54,12 @@ export declare const scales: {
     readonly XS: "xs";
 };
 export declare const variants: {
-    readonly PRIMARY: "primary";
-    readonly WARNING: "warning";
-    readonly SELECT: "select";
-    readonly SELECT_LIGHT: "selectLight";
+    readonly DARK: "dark";
+    readonly LIGHT: "light";
+    readonly WARNING_LIGHT: "warningLight";
+    readonly WARNING_DARK: "warningDark";
 };
 export declare type Scale = typeof scales[keyof typeof scales];
 export declare type Variant = typeof variants[keyof typeof variants];
+export declare type ColorKey = "pastelBlue" | "gray900";
+export declare type HoverKey = "white" | "dark800";

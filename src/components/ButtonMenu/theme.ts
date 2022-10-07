@@ -33,54 +33,54 @@ export const scaleVariants = {
 };
 
 export const styleVariants = {
-  [variants.PRIMARY]: {
-    backgroundColor: "primary",
+  [variants.DARK]: {
     color: "white",
+    backgroundColor: "transparent",
+    transition: "color .3s ease",
 
-    ":hover:not(:disabled)": {
-      backgroundColor: "primaryHover",
+    // ":hover:not(:disabled)": {
+    //   color: "white",
+    // },
+    ":active:not(:disabled)": {
+      backgroundColor: "transparent",
+    },
+  },
+  [variants.LIGHT]: {
+    backgroundColor: "transparent",
+    color: "dark800",
+    transition: "color .3s ease",
+
+    ":hover(:disabled)": {
+      color: "dark800",
     },
     ":active:not(:disabled)": {
-      backgroundColor: "primaryPress",
+      color: "text",
     },
-    // ":disabled": {
-    //   backgroundColor: "primaryPress",
-    //   color: "white"
-    // },
   },
-  [variants.WARNING]: {
-    backgroundColor: "warning",
+  [variants.WARNING_DARK]: {
+    backgroundColor: "transparent",
+    color: "dark800",
+    transition: "color .3s ease",
+
+    ":hover(:disabled)": {
+      color: "dark800",
+    },
+    ":active:not(:disabled)": {
+      color: "dark800",
+    },
+    ":active": {
+      backgroundColor: "transparent",
+    },
+  },
+  [variants.WARNING_LIGHT]: {
+    backgroundColor: "transparent",
     color: "dark800",
 
-    ":hover:not(:disabled)": {
-      backgroundColor: "warningHover",
+    ":hover(:disabled)": {
+      color: "dark800",
     },
     ":active:not(:disabled)": {
-      backgroundColor: "warningPress",
-    },
-  },
-  [variants.SELECT]: {
-    backgroundColor: "dark500",
-    color: "white",
-
-    ":hover:not(:disabled)": {
-      backgroundColor: "dark500",
-      color: "white",
-    },
-    ":active:not(:disabled)": {
-      backgroundColor: "transparent",
-    },
-  },
-  [variants.SELECT_LIGHT]: {
-    backgroundColor: "white",
-    color: "background",
-
-    ":hover:not(:disabled)": {
-      backgroundColor: "transparent",
-      color: "background",
-    },
-    ":active:not(:disabled)": {
-      backgroundColor: "transparent",
+      color: "dark800",
     },
   },
 };
