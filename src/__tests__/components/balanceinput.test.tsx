@@ -149,7 +149,7 @@ it("renders correctly", () => {
             </div>
             <div
               class="c5"
-              color="textSubtle"
+              color="pastelBlue"
               font-size="12px"
             >
               15 USD
@@ -327,7 +327,7 @@ it("renders correctly with unit prop", () => {
             </div>
             <div
               class="c7"
-              color="textSubtle"
+              color="pastelBlue"
               font-size="12px"
             >
               15 USD
@@ -586,7 +586,7 @@ it("renders correctly with unit prop and switchEditingUnits", () => {
             </div>
             <div
               class="c7"
-              color="textSubtle"
+              color="pastelBlue"
               font-size="12px"
             >
               15 USD
@@ -601,7 +601,7 @@ it("renders correctly with unit prop and switchEditingUnits", () => {
             >
               <svg
                 class="c12"
-                color="textSubtle"
+                color="pastelBlue"
                 viewBox="0 0 24 25"
                 width="20px"
                 xmlns="http://www.w3.org/2000/svg"

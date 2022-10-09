@@ -10,7 +10,7 @@ type InfoTooltip = {
 
 const InfoTooltip: React.FC<InfoTooltip> = ({
   text,
-  iconColor = "textSubtle",
+  iconColor = "pastelBlue",
   ...props
 }) => {
   const { targetRef, tooltip, tooltipVisible } = useTooltip(text, {});

@@ -11,82 +11,115 @@ import iToken from "./icons/iToken";
 import BitKeepWallet from "./icons/BitKeepWallet";
 import BraveWallet from "./icons/BraveWallet";
 
-import { Config, ConnectorNames } from "./types";
+import {
+  Config,
+  ConnectorNames,
+  ConnectorsTitleTypes,
+  InstanceCheckRules,
+} from "./types";
 
 const connectors: Config[] = [
   {
-    title: "Metamask",
+    title: ConnectorsTitleTypes.Metamask,
     icon: Metamask,
     connectorId: ConnectorNames.Injected,
     priority: 1,
+    helpHref: "https://bit.ly/3arAKkq",
+    instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.Metamask],
   },
   {
-    title: "TrustWallet",
+    title: ConnectorsTitleTypes.TrustWallet,
     icon: TrustWallet,
     connectorId: ConnectorNames.WalletConnect,
     priority: 2,
+    helpHref: "https://bit.ly/3BwkxWo",
+    instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.TrustWallet],
   },
   {
-    title: "MathWallet",
+    title: ConnectorsTitleTypes.MathWallet,
     icon: MathWallet,
     connectorId: ConnectorNames.Injected,
     priority: 999,
+    helpHref: "https://bit.ly/3BI649I",
+    instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.MathWallet],
   },
   {
-    title: "TokenPocket",
+    title: ConnectorsTitleTypes.TokenPocket,
     icon: TokenPocket,
     connectorId: ConnectorNames.Injected,
     priority: 5,
+    helpHref: "https://bit.ly/3zu4yoW",
+    instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.TokenPocket],
   },
   {
-    title: "Coin98",
+    title: ConnectorsTitleTypes.Coin98,
     icon: Coin98,
     connectorId: ConnectorNames.Injected,
     priority: 999,
+    helpHref: "https://bit.ly/3PUMFGS",
+    instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.Coin98],
   },
   {
-    title: "WalletConnect",
+    title: ConnectorsTitleTypes.WalletConnect,
     icon: WalletConnect,
     connectorId: ConnectorNames.WalletConnect,
     priority: 3,
+    helpHref: "https://bit.ly/3SnDkZR",
+    instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.WalletConnect],
   },
   {
-    title: "Binance Chain",
+    title: ConnectorsTitleTypes.BinanceChain,
     icon: BinanceChain,
     connectorId: ConnectorNames.BSC,
     priority: 999,
+    helpHref: "https://bit.ly/3BDTLLI",
+    instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.BinanceChain],
   },
   {
-    title: "SafePal Wallet",
+    title: ConnectorsTitleTypes.SafePal,
     icon: SafePalWallet,
     connectorId: ConnectorNames.Injected,
     priority: 999,
+    helpHref: "https://bit.ly/3zMM7gO",
+    instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.SafePal],
   },
   {
-    title: "Coinbase Wallet",
+    title: ConnectorsTitleTypes.Coinbase,
     icon: CoinbaseIcon,
     connectorId: ConnectorNames.Injected,
     priority: 999,
+    helpHref: "https://bit.ly/3oLQMcr",
+    instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.Coinbase],
   },
   {
-    title: "iToken",
+    title: ConnectorsTitleTypes.iToken,
     icon: iToken,
     connectorId: ConnectorNames.Injected,
     priority: 999,
+    helpHref: "https://bit.ly/3vwZP4O",
+    instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.iToken],
   },
   {
-    title: "BitKeep Wallet",
+    title: ConnectorsTitleTypes.BitKeep,
     icon: BitKeepWallet,
     connectorId: ConnectorNames.Injected,
     priority: 999,
+    helpHref: "https://bit.ly/3nsp57T",
+    instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.BitKeep],
   },
   {
-    title: "Brave Wallet",
+    title: ConnectorsTitleTypes.BraveWallet,
     icon: BraveWallet,
     connectorId: ConnectorNames.Injected,
     priority: 4,
+    helpHref:
+      "https://biswap.zendesk.com/hc/en-us/articles/9255441933073-Brave-Wallet-Guide-Settings-Connection-to-Biswap-",
+    instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.BraveWallet],
   },
 ];
+
+export const HOW_TO_CONNECT_WALLET_LINK =
+  "https://biswap.zendesk.com/hc/en-us/articles/9302726358033-Connect-Crypto-Wallet-Enjoy-Biswap-to-the-Fullest-";
 
 export default connectors;
 export const connectorLocalStorageKey = "connectorId";

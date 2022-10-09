@@ -20,7 +20,7 @@ export const TimelineEvent = styled.li<{ $useDark: boolean }>`
     width: 2px;
     height: 10px;
     background-color: ${({ theme, $useDark }) =>
-      $useDark ? theme.colors.textSubtle : lightColors.textSubtle};
+      $useDark ? theme.colors.pastelBlue : lightColors.pastelBlue};
   }
 
   &:last-child:after {

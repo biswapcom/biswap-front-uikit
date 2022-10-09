@@ -72,7 +72,7 @@ export const Icons: React.FC = () => {
               <Icon width="24px" color="primary" ml="4px" />
             </Flex>
             <Box py="4px">
-              <Label color="textSubtle" fontSize="12px">
+              <Label color="pastelBlue" fontSize="12px">
                 {file}
               </Label>
             </Box>

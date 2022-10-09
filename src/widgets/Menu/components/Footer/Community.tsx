@@ -147,7 +147,7 @@ const Community: React.FC<CommunityProps> = ({
           const Icon = Icons[social.icon];
           const iconProps = {
             width: iconSize,
-            color: "textSubtle",
+            color: "pastelBlue",
             style: { cursor: "pointer" },
           };
           if (social.items) {

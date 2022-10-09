@@ -29,7 +29,7 @@ const MobileCommunityWrapper = styled.div`
 const StyledMobileMenu = styled.div<{
   $isOpen: boolean;
 }>`
-  padding: 32px 24px 0 24px;
+  padding: 32px 24px 0;
   background-color: ${({ theme }) => theme.card.background};
   width: 100vw;
   height: calc(100vh - 60px);
@@ -128,7 +128,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
                   { label, items: innerItems = [], showItemsOnMobile, hidden },
                   index
                 ) => {
-                  const isMarker = !!innerItems?.find((i) => i.badgeTitle);
+                  const isMarker = items[index].showNavBadge;
                   if (!innerItems.length) return null;
                   const visualize =
                     !showItemsOnMobile ||
@@ -145,7 +145,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
                             !hidden && (
                               <>
                                 <Box m="16px 0" position="relative">
-                                  {isMobile && isMarker && <Marker />}
+                                  {isMarker && <Marker />}
                                   <Text
                                     bold
                                     fontSize={isTablet ? "20px" : "14px"}

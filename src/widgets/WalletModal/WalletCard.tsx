@@ -13,25 +13,29 @@ interface Props {
 
 const StyledButton = styled(Button)`
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  padding: 8px 0 0;
+  justify-content: flex-start;
   white-space: nowrap;
-  min-height: 91px;
-`;
+  width: 100%;
 
-const StyledText = styled(Text)`
-  font-weight: bold;
-  color: ${({ theme }) => theme.colors.primary};
+  background: ${({ theme }) => theme.colors.gray200};
+
+  ${({ theme }) => theme.mediaQueries.sm} {
+    width: 172px;
+  }
+
+  &:hover > div {
+    color: ${({ theme }) => theme.colors.primaryHover};
+  }
 `;
 
 const WalletCard: React.FC<Props> = ({ login, walletConfig, onDismiss }) => {
   const { title, icon: Icon } = walletConfig;
   return (
     <StyledButton
+      scale="xl"
       variant="tertiary"
       onClick={() => {
-        login(walletConfig.connectorId);
+        login(walletConfig.connectorId, walletConfig.instanceCheckRule);
         localStorage.setItem(walletLocalStorageKey, walletConfig.title);
         window.localStorage.setItem(
           connectorLocalStorageKey,
@@ -40,11 +44,14 @@ const WalletCard: React.FC<Props> = ({ login, walletConfig, onDismiss }) => {
         onDismiss();
       }}
       id={`wallet-connect-${title.toLocaleLowerCase()}`}
+      p="0 12px"
+      startIcon={<Icon width="24px" />}
     >
-      <Icon width="32px" />
-      <StyledText>{title}</StyledText>
+      <Text bold color="primary" fontSize="12px">
+        {title}
+      </Text>
     </StyledButton>
   );
 };
 
-export default WalletCard;
+export default React.memo(WalletCard);
