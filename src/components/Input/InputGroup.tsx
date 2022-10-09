@@ -165,7 +165,7 @@ const InputGroup: FC<InputGroupProps> = ({
       </StyledInputGroup>
       {description && (
         <TextDescription mt="4px" fontSize="12px" variant={variant}>
-          description
+          {description}
         </TextDescription>
       )}
     </StyledInputWrapper>
