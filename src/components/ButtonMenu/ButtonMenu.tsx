@@ -84,6 +84,10 @@ const StyledButtonMenu = styled.div<StyledButtonMenuProps>`
   & > div,
   & > a {
     flex-grow: 1;
+    
+    ${({ equalElementWidth }) => equalElementWidth && css`
+      flex: 1;
+    `}
   }
 
   & > button,
@@ -166,6 +170,7 @@ const ButtonMenu: React.FC<ButtonMenuProps> = ({
   flatTop = false,
   withoutBackground = false,
   scrollX = false,
+  equalElementWidth,
   ...props
 }) => {
   const { isDesktop, isMobile, isTablet } = useMatchBreakpoints();
@@ -207,6 +212,7 @@ const ButtonMenu: React.FC<ButtonMenuProps> = ({
         variant={variant}
         fullWidth={fullWidth}
         withoutBackground={withoutBackground}
+        equalElementWidth={equalElementWidth}
         {...props}
       >
         {Children.map(children, (child: ReactElement, index) => {

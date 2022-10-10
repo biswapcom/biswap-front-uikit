@@ -132,14 +132,13 @@ export const Default: React.FC = () => {
           scrollX
           fullWidth
           activeIndex={index}
+          equalElementWidth
           onItemClick={handleClick}
           variant="warningDark"
           scale="lg"
         >
-          <ButtonMenuItem as="a">Button 1</ButtonMenuItem>
-          <ButtonMenuItem>Button 2</ButtonMenuItem>
-          <ButtonMenuItem>Button 3</ButtonMenuItem>
-          <ButtonMenuItem>Button 4</ButtonMenuItem>
+          <ButtonMenuItem as="a">Button</ButtonMenuItem>
+          <ButtonMenuItem>ButtonButton</ButtonMenuItem>
         </ButtonMenu>
       </Row>
     </>

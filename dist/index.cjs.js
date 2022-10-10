@@ -4172,12 +4172,15 @@ var Wrapper$e = styled__default["default"].div(templateObject_4$o || (templateOb
     var flatBottom = _a.flatBottom;
     return flatBottom && styled.css(templateObject_3$v || (templateObject_3$v = __makeTemplateObject(["\n      border-radius: 8px 8px 0 0;\n    "], ["\n      border-radius: 8px 8px 0 0;\n    "])));
 }, styledSystem.space);
-var StyledButtonMenu = styled__default["default"].div(templateObject_5$g || (templateObject_5$g = __makeTemplateObject(["\n  position: relative;\n  display: ", ";\n  width: ", ";\n\n  & > button,\n  & > div,\n  & > a {\n    flex-grow: 1;\n  }\n\n  & > button,\n  & > div,\n  & a {\n    box-shadow: none;\n  }\n\n  ", "\n"], ["\n  position: relative;\n  display: ", ";\n  width: ", ";\n\n  & > button,\n  & > div,\n  & > a {\n    flex-grow: 1;\n  }\n\n  & > button,\n  & > div,\n  & a {\n    box-shadow: none;\n  }\n\n  ", "\n"])), function (_a) {
+var StyledButtonMenu = styled__default["default"].div(templateObject_6$b || (templateObject_6$b = __makeTemplateObject(["\n  position: relative;\n  display: ", ";\n  width: ", ";\n\n  & > button,\n  & > div,\n  & > a {\n    flex-grow: 1;\n    \n    ", "\n  }\n\n  & > button,\n  & > div,\n  & a {\n    box-shadow: none;\n  }\n\n  ", "\n"], ["\n  position: relative;\n  display: ", ";\n  width: ", ";\n\n  & > button,\n  & > div,\n  & > a {\n    flex-grow: 1;\n    \n    ", "\n  }\n\n  & > button,\n  & > div,\n  & a {\n    box-shadow: none;\n  }\n\n  ", "\n"])), function (_a) {
     var fullWidth = _a.fullWidth;
     return (fullWidth ? "flex" : "inline-flex");
 }, function (_a) {
     var fullWidth = _a.fullWidth;
     return (fullWidth ? "100%" : "auto");
+}, function (_a) {
+    var equalElementWidth = _a.equalElementWidth;
+    return equalElementWidth && styled.css(templateObject_5$g || (templateObject_5$g = __makeTemplateObject(["\n      flex: 1;\n    "], ["\n      flex: 1;\n    "])));
 }, function (_a) {
     var disabled = _a.disabled, theme = _a.theme, variant = _a.variant;
     if (disabled) {
@@ -4187,7 +4190,7 @@ var StyledButtonMenu = styled__default["default"].div(templateObject_5$g || (tem
     }
     return "";
 });
-var Selection$2 = styled__default["default"].div(templateObject_8$6 || (templateObject_8$6 = __makeTemplateObject(["\n  background-color: ", ";\n  width: ", ";\n  height: calc(100% - 8px);\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  left: ", ";\n  transition: left 0.3s ease, width 0.3s ease;\n  border-radius: ", ";\n\n  ", "\n\n  ", "\n\n  ", ";\n"], ["\n  background-color: ", ";\n  width: ", ";\n  height: calc(100% - 8px);\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  left: ", ";\n  transition: left 0.3s ease, width 0.3s ease;\n  border-radius: ", ";\n\n  ", "\n\n  ", "\n\n  ", ";\n"])), function (_a) {
+var Selection$2 = styled__default["default"].div(templateObject_9$4 || (templateObject_9$4 = __makeTemplateObject(["\n  background-color: ", ";\n  width: ", ";\n  height: calc(100% - 8px);\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  left: ", ";\n  transition: left 0.3s ease, width 0.3s ease;\n  border-radius: ", ";\n\n  ", "\n\n  ", "\n\n  ", ";\n"], ["\n  background-color: ", ";\n  width: ", ";\n  height: calc(100% - 8px);\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  left: ", ";\n  transition: left 0.3s ease, width 0.3s ease;\n  border-radius: ", ";\n\n  ", "\n\n  ", "\n\n  ", ";\n"])), function (_a) {
     var theme = _a.theme, variant = _a.variant;
     return theme.colors[variant === variants$5.DARK
         ? "dropDown"
@@ -4205,17 +4208,17 @@ var Selection$2 = styled__default["default"].div(templateObject_8$6 || (template
     return (scale === scales$8.SM ? "6px" : "8px");
 }, function (_a) {
     var flatTop = _a.flatTop, scale = _a.scale;
-    return flatTop && styled.css(templateObject_6$b || (templateObject_6$b = __makeTemplateObject(["\n      border-radius: ", ";\n      height: calc(100% - 4px);\n      top: calc(50% - 2px);\n    "], ["\n      border-radius: ", ";\n      height: calc(100% - 4px);\n      top: calc(50% - 2px);\n    "])), scale === scales$8.SM ? "0 0 6px 6px" : "0 0 8px 8px");
+    return flatTop && styled.css(templateObject_7$a || (templateObject_7$a = __makeTemplateObject(["\n      border-radius: ", ";\n      height: calc(100% - 4px);\n      top: calc(50% - 2px);\n    "], ["\n      border-radius: ", ";\n      height: calc(100% - 4px);\n      top: calc(50% - 2px);\n    "])), scale === scales$8.SM ? "0 0 6px 6px" : "0 0 8px 8px");
 }, function (_a) {
     var flatBottom = _a.flatBottom, scale = _a.scale;
-    return flatBottom && styled.css(templateObject_7$a || (templateObject_7$a = __makeTemplateObject(["\n      border-radius: ", ";\n      height: calc(100% - 4px);\n      top: calc(50% + 2px);\n    "], ["\n      border-radius: ", ";\n      height: calc(100% - 4px);\n      top: calc(50% + 2px);\n    "])), scale === scales$8.SM ? "6px 6px 0 0" : "8px 8px 0 0");
+    return flatBottom && styled.css(templateObject_8$6 || (templateObject_8$6 = __makeTemplateObject(["\n      border-radius: ", ";\n      height: calc(100% - 4px);\n      top: calc(50% + 2px);\n    "], ["\n      border-radius: ", ";\n      height: calc(100% - 4px);\n      top: calc(50% + 2px);\n    "])), scale === scales$8.SM ? "6px 6px 0 0" : "8px 8px 0 0");
 }, function (_a) {
     var theme = _a.theme, variant = _a.variant;
     return variant === variants$5.DARK &&
         "box-shadow: 0 2px 4px ".concat(getRgba(theme.colors.backgroundDark, theme, 0.08));
 });
 var ButtonMenu = function (_a) {
-    var _b = _a.activeIndex, activeIndex = _b === void 0 ? 0 : _b, _c = _a.scale, scale = _c === void 0 ? scales$8.MD : _c, _d = _a.variant, variant = _d === void 0 ? variants$5.DARK : _d, onItemClick = _a.onItemClick, disabled = _a.disabled, children = _a.children, _e = _a.fullWidth, fullWidth = _e === void 0 ? false : _e, _f = _a.flatBottom, flatBottom = _f === void 0 ? false : _f, _g = _a.flatTop, flatTop = _g === void 0 ? false : _g, _h = _a.withoutBackground, withoutBackground = _h === void 0 ? false : _h, _j = _a.scrollX, scrollX = _j === void 0 ? false : _j, props = __rest(_a, ["activeIndex", "scale", "variant", "onItemClick", "disabled", "children", "fullWidth", "flatBottom", "flatTop", "withoutBackground", "scrollX"]);
+    var _b = _a.activeIndex, activeIndex = _b === void 0 ? 0 : _b, _c = _a.scale, scale = _c === void 0 ? scales$8.MD : _c, _d = _a.variant, variant = _d === void 0 ? variants$5.DARK : _d, onItemClick = _a.onItemClick, disabled = _a.disabled, children = _a.children, _e = _a.fullWidth, fullWidth = _e === void 0 ? false : _e, _f = _a.flatBottom, flatBottom = _f === void 0 ? false : _f, _g = _a.flatTop, flatTop = _g === void 0 ? false : _g, _h = _a.withoutBackground, withoutBackground = _h === void 0 ? false : _h, _j = _a.scrollX, scrollX = _j === void 0 ? false : _j, equalElementWidth = _a.equalElementWidth, props = __rest(_a, ["activeIndex", "scale", "variant", "onItemClick", "disabled", "children", "fullWidth", "flatBottom", "flatTop", "withoutBackground", "scrollX", "equalElementWidth"]);
     var _k = useMatchBreakpoints(), isDesktop = _k.isDesktop, isMobile = _k.isMobile, isTablet = _k.isTablet;
     var _l = React.useState([]), widthsArr = _l[0], setWidthsArr = _l[1];
     var _m = React.useState(0), blockOffset = _m[0], setBlockOffset = _m[1];
@@ -4226,7 +4229,7 @@ var ButtonMenu = function (_a) {
     }, [widthsArr, activeIndex, isDesktop, isMobile, isTablet]);
     return (React__default["default"].createElement(Wrapper$e, __assign({ flatBottom: flatBottom, flatTop: flatTop, fullWidth: fullWidth, withoutBackground: withoutBackground, variant: variant, scrollX: scrollX }, props),
         !disabled && (React__default["default"].createElement(Selection$2, { flatTop: flatTop, flatBottom: flatBottom, scale: scale, width: widthsArr[activeIndex], offset: blockOffset, variant: variant })),
-        React__default["default"].createElement(StyledButtonMenu, __assign({ disabled: disabled, variant: variant, fullWidth: fullWidth, withoutBackground: withoutBackground }, props), React.Children.map(children, function (child, index) {
+        React__default["default"].createElement(StyledButtonMenu, __assign({ disabled: disabled, variant: variant, fullWidth: fullWidth, withoutBackground: withoutBackground, equalElementWidth: equalElementWidth }, props), React.Children.map(children, function (child, index) {
             return React.cloneElement(child, {
                 isActive: activeIndex === index,
                 onClick: onItemClick ? function () { return onItemClick(index); } : undefined,
@@ -4241,7 +4244,7 @@ var ButtonMenu = function (_a) {
             });
         }))));
 };
-var templateObject_1$1d, templateObject_2$I, templateObject_3$v, templateObject_4$o, templateObject_5$g, templateObject_6$b, templateObject_7$a, templateObject_8$6;
+var templateObject_1$1d, templateObject_2$I, templateObject_3$v, templateObject_4$o, templateObject_5$g, templateObject_6$b, templateObject_7$a, templateObject_8$6, templateObject_9$4;
 
 var _a$a, _b$7;
 var scaleVariants$2 = (_a$a = {},
