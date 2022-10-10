@@ -34,6 +34,7 @@ const MenuItemButton: PolymorphicComponent<
   transition: background-color 0.2s, opacity 0.3s, color 0.3s;
   background-color: transparent;
   white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
 
   ${variant({
     variants: styleVariants,
