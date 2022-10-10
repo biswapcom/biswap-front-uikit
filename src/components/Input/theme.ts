@@ -124,3 +124,26 @@ export const styleVariants = {
     },
   },
 };
+export const styleTextVariants = {
+  [variants.LIGHT]: {
+    color: "gray700",
+  },
+  [variants.LIGHT_WARNING]: {
+    color: "warning",
+  },
+  [variants.LIGHT_ERROR]: {
+    color: "secondary",
+  },
+  [variants.DARK]: {
+    color: "white",
+  },
+  [variants.DARK_WARNING]: {
+    color: "warning",
+  },
+  [variants.DARK_ERROR]: {
+    color: "secondary",
+  },
+  [variants.TRANSPARENT]: {
+    color: "dark800",
+  },
+};
