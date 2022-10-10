@@ -76,14 +76,14 @@ const AccountModal: React.FC<Props> = ({
         >
           Connected
         </Text>
-        <Button onClick={changeWalletHandler} scale="lg" variant="primary">
+        <Button onClick={changeWalletHandler} scale="md" variant="primary">
           Change
         </Button>
       </ConnectedWrapper>
       <Text
         fontSize="14px"
         fontWeight="600"
-        color="primary"
+        color="backgroundDark"
         style={{
           whiteSpace: "nowrap",
           overflow: "hidden",
