@@ -6249,7 +6249,7 @@ var BarProgress = styled.div(templateObject_3$g || (templateObject_3$g = __makeT
     return theme.colors.primary;
 });
 var PointsContainer = styled(Flex)(templateObject_4$d || (templateObject_4$d = __makeTemplateObject(["\n  position: relative;\n  top: -16px;\n"], ["\n  position: relative;\n  top: -16px;\n"])));
-var PercentSliderLabel = styled(Flex)(templateObject_5$b || (templateObject_5$b = __makeTemplateObject(["\n  align-items: center;\n  position: absolute;\n  ", ";\n  left: ", ";\n  transform: translateX(-50%) translateY(calc(", "));\n  border-radius: 8px;\n  padding: 8px 12px;\n  background-color: ", ";\n  \n  &:after {\n    content: '';\n    display: block;\n    position: absolute;\n    left: 50%;\n    ", ";\n    width: 0;\n    height: 0;\n    border-left: 6px solid transparent;\n    border-right: 6px solid transparent;\n    transform: translate(-50%, ", ");\n    ", ";\n"], ["\n  align-items: center;\n  position: absolute;\n  ", ";\n  left: ", ";\n  transform: translateX(-50%) translateY(calc(", "));\n  border-radius: 8px;\n  padding: 8px 12px;\n  background-color: ", ";\n  \n  &:after {\n    content: '';\n    display: block;\n    position: absolute;\n    left: 50%;\n    ", ";\n    width: 0;\n    height: 0;\n    border-left: 6px solid transparent;\n    border-right: 6px solid transparent;\n    transform: translate(-50%, ", ");\n    ", ";\n"])), function (_a) {
+var PercentSliderLabel = styled(Flex)(templateObject_5$b || (templateObject_5$b = __makeTemplateObject(["\n  align-items: center;\n  position: absolute;\n  ", ";\n  left: ", ";\n  transform: translateX(-50%) translateY(calc(", "));\n  border-radius: 8px;\n  padding: 8px 12px;\n  background-color: ", ";\n  z-index: ", ";\n\n  &:after {\n    content: '';\n    display: block;\n    position: absolute;\n    left: 50%;\n    ", ";\n    width: 0;\n    height: 0;\n    border-left: 6px solid transparent;\n    border-right: 6px solid transparent;\n    z-index: ", ";\n    transform: translate(-50%, ", ");\n    ", ";\n"], ["\n  align-items: center;\n  position: absolute;\n  ", ";\n  left: ", ";\n  transform: translateX(-50%) translateY(calc(", "));\n  border-radius: 8px;\n  padding: 8px 12px;\n  background-color: ", ";\n  z-index: ", ";\n\n  &:after {\n    content: '';\n    display: block;\n    position: absolute;\n    left: 50%;\n    ", ";\n    width: 0;\n    height: 0;\n    border-left: 6px solid transparent;\n    border-right: 6px solid transparent;\n    z-index: ", ";\n    transform: translate(-50%, ", ");\n    ", ";\n"])), function (_a) {
     var bannerPosition = _a.bannerPosition;
     return bannerPosition === "top" ? "top: 0" : "bottom: 0";
 }, function (_a) {
@@ -6262,8 +6262,14 @@ var PercentSliderLabel = styled(Flex)(templateObject_5$b || (templateObject_5$b 
     var theme = _a.theme;
     return theme.colors.tooltip;
 }, function (_a) {
+    var theme = _a.theme;
+    return theme.zIndices.dropdown;
+}, function (_a) {
     var bannerPosition = _a.bannerPosition;
     return bannerPosition === "top" ? "bottom: 0" : "top: 0";
+}, function (_a) {
+    var theme = _a.theme;
+    return theme.zIndices.dropdown;
 }, function (_a) {
     var bannerPosition = _a.bannerPosition;
     return bannerPosition === "top" ? "100%" : "-100%";
