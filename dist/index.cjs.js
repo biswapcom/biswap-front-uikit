@@ -4172,18 +4172,12 @@ var Wrapper$e = styled__default["default"].div(templateObject_4$o || (templateOb
     var flatBottom = _a.flatBottom;
     return flatBottom && styled.css(templateObject_3$v || (templateObject_3$v = __makeTemplateObject(["\n      border-radius: 8px 8px 0 0;\n    "], ["\n      border-radius: 8px 8px 0 0;\n    "])));
 }, styledSystem.space);
-var StyledButtonMenu = styled__default["default"].div(templateObject_6$b || (templateObject_6$b = __makeTemplateObject(["\n  position: relative;\n  display: ", ";\n  width: ", ";\n\n  & > button,\n  & > div,\n  & > a {\n    flex: ", ";\n    ", "\n  }\n\n  & > button,\n  & > div,\n  & a {\n    box-shadow: none;\n  }\n\n  ", "\n"], ["\n  position: relative;\n  display: ", ";\n  width: ", ";\n\n  & > button,\n  & > div,\n  & > a {\n    flex: ", ";\n    ", "\n  }\n\n  & > button,\n  & > div,\n  & a {\n    box-shadow: none;\n  }\n\n  ", "\n"])), function (_a) {
+var StyledButtonMenu = styled__default["default"].div(templateObject_5$g || (templateObject_5$g = __makeTemplateObject(["\n  position: relative;\n  display: ", ";\n  width: ", ";\n\n  & > button,\n  & > div,\n  & > a {\n    flex-grow: 1;\n  }\n\n  & > button,\n  & > div,\n  & a {\n    box-shadow: none;\n  }\n\n  ", "\n"], ["\n  position: relative;\n  display: ", ";\n  width: ", ";\n\n  & > button,\n  & > div,\n  & > a {\n    flex-grow: 1;\n  }\n\n  & > button,\n  & > div,\n  & a {\n    box-shadow: none;\n  }\n\n  ", "\n"])), function (_a) {
     var fullWidth = _a.fullWidth;
     return (fullWidth ? "flex" : "inline-flex");
 }, function (_a) {
     var fullWidth = _a.fullWidth;
     return (fullWidth ? "100%" : "auto");
-}, function (_a) {
-    var fullWidth = _a.fullWidth;
-    return (fullWidth ? 1 : "auto");
-}, function (_a) {
-    var fullWidth = _a.fullWidth;
-    return fullWidth && styled.css(templateObject_5$g || (templateObject_5$g = __makeTemplateObject(["\n        padding: 0;\n      "], ["\n        padding: 0;\n      "])));
 }, function (_a) {
     var disabled = _a.disabled, theme = _a.theme, variant = _a.variant;
     if (disabled) {
@@ -4193,7 +4187,7 @@ var StyledButtonMenu = styled__default["default"].div(templateObject_6$b || (tem
     }
     return "";
 });
-var Selection$2 = styled__default["default"].div(templateObject_9$4 || (templateObject_9$4 = __makeTemplateObject(["\n  background-color: ", ";\n  width: ", ";\n  height: calc(100% - 8px);\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  left: ", ";\n  transition: left .3s ease, width .3s ease;\n  border-radius: ", ";\n\n  ", "\n\n  ", "\n\n  ", ";\n"], ["\n  background-color: ", ";\n  width: ", ";\n  height: calc(100% - 8px);\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  left: ", ";\n  transition: left .3s ease, width .3s ease;\n  border-radius: ", ";\n\n  ", "\n\n  ", "\n\n  ", ";\n"])), function (_a) {
+var Selection$2 = styled__default["default"].div(templateObject_8$6 || (templateObject_8$6 = __makeTemplateObject(["\n  background-color: ", ";\n  width: ", ";\n  height: calc(100% - 8px);\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  left: ", ";\n  transition: left 0.3s ease, width 0.3s ease;\n  border-radius: ", ";\n\n  ", "\n\n  ", "\n\n  ", ";\n"], ["\n  background-color: ", ";\n  width: ", ";\n  height: calc(100% - 8px);\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  left: ", ";\n  transition: left 0.3s ease, width 0.3s ease;\n  border-radius: ", ";\n\n  ", "\n\n  ", "\n\n  ", ";\n"])), function (_a) {
     var theme = _a.theme, variant = _a.variant;
     return theme.colors[variant === variants$5.DARK
         ? "dropDown"
@@ -4211,10 +4205,10 @@ var Selection$2 = styled__default["default"].div(templateObject_9$4 || (template
     return (scale === scales$8.SM ? "6px" : "8px");
 }, function (_a) {
     var flatTop = _a.flatTop, scale = _a.scale;
-    return flatTop && styled.css(templateObject_7$a || (templateObject_7$a = __makeTemplateObject(["\n      border-radius: ", ";\n      height: calc(100% - 4px);\n      top: calc(50% - 2px);\n    "], ["\n      border-radius: ", ";\n      height: calc(100% - 4px);\n      top: calc(50% - 2px);\n    "])), scale === scales$8.SM ? "0 0 6px 6px" : "0 0 8px 8px");
+    return flatTop && styled.css(templateObject_6$b || (templateObject_6$b = __makeTemplateObject(["\n      border-radius: ", ";\n      height: calc(100% - 4px);\n      top: calc(50% - 2px);\n    "], ["\n      border-radius: ", ";\n      height: calc(100% - 4px);\n      top: calc(50% - 2px);\n    "])), scale === scales$8.SM ? "0 0 6px 6px" : "0 0 8px 8px");
 }, function (_a) {
     var flatBottom = _a.flatBottom, scale = _a.scale;
-    return flatBottom && styled.css(templateObject_8$6 || (templateObject_8$6 = __makeTemplateObject(["\n      border-radius: ", ";\n      height: calc(100% - 4px);\n      top: calc(50% + 2px);\n    "], ["\n      border-radius: ", ";\n      height: calc(100% - 4px);\n      top: calc(50% + 2px);\n    "])), scale === scales$8.SM ? "6px 6px 0 0" : "8px 8px 0 0");
+    return flatBottom && styled.css(templateObject_7$a || (templateObject_7$a = __makeTemplateObject(["\n      border-radius: ", ";\n      height: calc(100% - 4px);\n      top: calc(50% + 2px);\n    "], ["\n      border-radius: ", ";\n      height: calc(100% - 4px);\n      top: calc(50% + 2px);\n    "])), scale === scales$8.SM ? "6px 6px 0 0" : "8px 8px 0 0");
 }, function (_a) {
     var theme = _a.theme, variant = _a.variant;
     return variant === variants$5.DARK &&
@@ -4227,7 +4221,6 @@ var ButtonMenu = function (_a) {
     var _m = React.useState(0), blockOffset = _m[0], setBlockOffset = _m[1];
     React.useEffect(function () {
         if (widthsArr) {
-            console.log("widthsArr", widthsArr);
             setBlockOffset(widthsArr.slice(0, activeIndex).reduce(function (sum, elem) { return sum + elem; }, 0));
         }
     }, [widthsArr, activeIndex, isDesktop, isMobile, isTablet]);
@@ -4248,7 +4241,7 @@ var ButtonMenu = function (_a) {
             });
         }))));
 };
-var templateObject_1$1d, templateObject_2$I, templateObject_3$v, templateObject_4$o, templateObject_5$g, templateObject_6$b, templateObject_7$a, templateObject_8$6, templateObject_9$4;
+var templateObject_1$1d, templateObject_2$I, templateObject_3$v, templateObject_4$o, templateObject_5$g, templateObject_6$b, templateObject_7$a, templateObject_8$6;
 
 var _a$a, _b$7;
 var scaleVariants$2 = (_a$a = {},
@@ -4256,6 +4249,7 @@ var scaleVariants$2 = (_a$a = {},
         height: "48px",
         padding: "0 24px",
         borderRadius: "10px",
+        fontSize: "16px",
     },
     _a$a[scales$8.LG] = {
         height: "40px",
@@ -4287,9 +4281,6 @@ var styleVariants$3 = (_b$7 = {},
         color: "white",
         backgroundColor: "transparent",
         transition: "color .3s ease",
-        // ":hover:not(:disabled)": {
-        //   color: "white",
-        // },
         ":active:not(:disabled)": {
             backgroundColor: "transparent",
         },
@@ -4356,19 +4347,19 @@ var getHoverKey = function (variant) {
     }
 };
 
-var InactiveButton$2 = styled__default["default"](Button)(templateObject_1$1c || (templateObject_1$1c = __makeTemplateObject(["\n  width: 100%;\n  align-items: center;\n  border: 0;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-weight: 600;\n  justify-content: center;\n  line-height: 1;\n  outline: 0;\n  transition: background-color 0.2s, opacity 0.2s, color 0.3s ease;\n  white-space: nowrap;\n\n  &:hover {\n    color: ", ";\n  }\n\n  background-color: transparent;\n  color: ", ";\n  &:hover:not(:disabled):not(:active) {\n    background-color: transparent;\n  }\n"], ["\n  width: 100%;\n  align-items: center;\n  border: 0;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-weight: 600;\n  justify-content: center;\n  line-height: 1;\n  outline: 0;\n  transition: background-color 0.2s, opacity 0.2s, color 0.3s ease;\n  white-space: nowrap;\n\n  &:hover {\n    color: ", ";\n  }\n\n  background-color: transparent;\n  color: ", ";\n  &:hover:not(:disabled):not(:active) {\n    background-color: transparent;\n  }\n"])), function (_a) {
-    var theme = _a.theme, hoverKey = _a.hoverKey;
-    return theme.colors[hoverKey];
-}, function (_a) {
-    var theme = _a.theme, colorKey = _a.colorKey;
-    return theme.colors[colorKey];
-});
-var MenuItemButton = styled__default["default"].button(templateObject_2$H || (templateObject_2$H = __makeTemplateObject(["\n  align-items: center;\n  border: 0;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-weight: 600;\n  justify-content: center;\n  line-height: 1;\n  outline: 0;\n  transition: background-color 0.2s, opacity 0.2s, color 0.3s;\n  background-color: transparent;\n  white-space: nowrap;\n\n  ", "\n  ", "\n"], ["\n  align-items: center;\n  border: 0;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-weight: 600;\n  justify-content: center;\n  line-height: 1;\n  outline: 0;\n  transition: background-color 0.2s, opacity 0.2s, color 0.3s;\n  background-color: transparent;\n  white-space: nowrap;\n\n  ", "\n  ", "\n"])), styledSystem.variant({
+var MenuItemButton = styled__default["default"].button(templateObject_1$1c || (templateObject_1$1c = __makeTemplateObject(["\n  align-items: center;\n  border: 0;\n  cursor: pointer;\n  display: flex;\n  font-family: inherit;\n  font-weight: 600;\n  justify-content: center;\n  line-height: 1;\n  outline: 0;\n  transition: background-color 0.2s, opacity 0.2s, color 0.3s;\n  background-color: transparent;\n  white-space: nowrap;\n\n  ", "\n  ", "\n"], ["\n  align-items: center;\n  border: 0;\n  cursor: pointer;\n  display: flex;\n  font-family: inherit;\n  font-weight: 600;\n  justify-content: center;\n  line-height: 1;\n  outline: 0;\n  transition: background-color 0.2s, opacity 0.2s, color 0.3s;\n  background-color: transparent;\n  white-space: nowrap;\n\n  ", "\n  ", "\n"])), styledSystem.variant({
     variants: styleVariants$3,
 }), styledSystem.variant({
     prop: "scale",
     variants: scaleVariants$2,
 }));
+var InactiveButton$2 = styled__default["default"](MenuItemButton)(templateObject_2$H || (templateObject_2$H = __makeTemplateObject(["\n  color: ", ";\n\n  &:hover {\n    color: ", ";\n  }\n\n  &:hover:not(:disabled):not(:active) {\n    background-color: transparent;\n  }\n"], ["\n  color: ", ";\n\n  &:hover {\n    color: ", ";\n  }\n\n  &:hover:not(:disabled):not(:active) {\n    background-color: transparent;\n  }\n"])), function (_a) {
+    var theme = _a.theme, colorKey = _a.colorKey;
+    return theme.colors[colorKey];
+}, function (_a) {
+    var theme = _a.theme, hoverKey = _a.hoverKey;
+    return theme.colors[hoverKey];
+});
 var ButtonMenuItem = function (_a) {
     var _b, _c, _d;
     var _e = _a.isActive, isActive = _e === void 0 ? false : _e, _f = _a.variant, variant = _f === void 0 ? variants$5.DARK : _f, as = _a.as, setWidth = _a.setWidth, _g = _a.itemIndex, itemIndex = _g === void 0 ? 0 : _g, blockOffset = _a.blockOffset, props = __rest(_a, ["isActive", "variant", "as", "setWidth", "itemIndex", "blockOffset"]);
@@ -4376,7 +4367,6 @@ var ButtonMenuItem = function (_a) {
     var activeRef = React.useRef(null);
     var inactiveRef = React.useRef(null);
     var itemWidth = (_c = (_b = activeRef.current) === null || _b === void 0 ? void 0 : _b.clientWidth) !== null && _c !== void 0 ? _c : (_d = inactiveRef.current) === null || _d === void 0 ? void 0 : _d.clientWidth;
-    console.log("itemIndex", itemIndex, itemWidth);
     React.useEffect(function () {
         if (itemWidth && setWidth) {
             setWidth(function (prev) {
@@ -4387,8 +4377,7 @@ var ButtonMenuItem = function (_a) {
         }
     }, [blockOffset, itemWidth, isXs, isSm, isMs, isLg, isXl, isXll, isXxl]);
     if (!isActive) {
-        return (React__default["default"].createElement(Flex, { ref: inactiveRef, alignItems: "center", justifyContent: "center" },
-            React__default["default"].createElement(InactiveButton$2, __assign({ forwardedAs: as, variant: variant, hoverKey: getHoverKey(variant), colorKey: getColorKey(variant) }, props))));
+        return (React__default["default"].createElement(InactiveButton$2, __assign({ ref: inactiveRef, forwardedAs: as, variant: variant, hoverKey: getHoverKey(variant), colorKey: getColorKey(variant) }, props)));
     }
     return (React__default["default"].createElement(MenuItemButton, __assign({ ref: activeRef, as: as, variant: variant }, props)));
 };

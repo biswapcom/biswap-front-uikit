@@ -83,12 +83,7 @@ const StyledButtonMenu = styled.div<StyledButtonMenuProps>`
   & > button,
   & > div,
   & > a {
-    flex: ${({ fullWidth }) => (fullWidth ? 1 : "auto")};
-    ${({ fullWidth }) =>
-      fullWidth &&
-      css`
-        padding: 0;
-      `}
+    flex-grow: 1;
   }
 
   & > button,
@@ -131,7 +126,7 @@ const Selection = styled.div<ISelection>`
   top: 50%;
   transform: translateY(-50%);
   left: ${({ offset }) => `${offset + 4}px`};
-  transition: left .3s ease, width .3s ease;
+  transition: left 0.3s ease, width 0.3s ease;
   border-radius: ${({ scale }) => (scale === scales.SM ? "6px" : "8px")};
 
   ${({ flatTop, scale }) =>
@@ -181,7 +176,6 @@ const ButtonMenu: React.FC<ButtonMenuProps> = ({
 
   useEffect(() => {
     if (widthsArr) {
-      console.log("widthsArr", widthsArr);
       setBlockOffset(
         widthsArr.slice(0, activeIndex).reduce((sum, elem) => sum + elem, 0)
       );

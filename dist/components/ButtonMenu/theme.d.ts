@@ -3,6 +3,7 @@ export declare const scaleVariants: {
         height: string;
         padding: string;
         borderRadius: string;
+        fontSize: string;
     };
     lg: {
         height: string;

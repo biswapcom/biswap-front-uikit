@@ -1,4 +1,4 @@
-import {ColorKey, HoverKey, Variant, variants} from "./types";
+import { ColorKey, HoverKey, Variant, variants } from "./types";
 
 export const getColorKey = (variant: Variant): ColorKey => {
   switch (variant) {

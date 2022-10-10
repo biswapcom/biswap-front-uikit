@@ -82,5 +82,5 @@ export const variants = {
 export type Scale = typeof scales[keyof typeof scales];
 export type Variant = typeof variants[keyof typeof variants];
 
-export type ColorKey = "pastelBlue" | "gray900"
-export type HoverKey = "white" | "dark800"
+export type ColorKey = "pastelBlue" | "gray900";
+export type HoverKey = "white" | "dark800";

@@ -5,6 +5,7 @@ export const scaleVariants = {
     height: "48px",
     padding: "0 24px",
     borderRadius: "10px",
+    fontSize: "16px",
   },
   [scales.LG]: {
     height: "40px",
@@ -38,9 +39,6 @@ export const styleVariants = {
     backgroundColor: "transparent",
     transition: "color .3s ease",
 
-    // ":hover:not(:disabled)": {
-    //   color: "white",
-    // },
     ":active:not(:disabled)": {
       backgroundColor: "transparent",
     },

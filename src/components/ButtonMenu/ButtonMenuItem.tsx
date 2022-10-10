@@ -2,12 +2,15 @@ import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { variant } from "styled-system";
 import { styleVariants, scaleVariants } from "./theme";
-import Button from "../Button/Button";
-import {BaseButtonMenuItemProps, ButtonMenuItemProps, ColorKey, HoverKey} from "./types";
+import {
+  BaseButtonMenuItemProps,
+  ButtonMenuItemProps,
+  ColorKey,
+  HoverKey,
+} from "./types";
 import { variants } from "./types";
 import { PolymorphicComponent } from "../../util";
 import { useMatchBreakpoints } from "../../hooks";
-import { Flex } from "../Box";
 import { getColorKey, getHoverKey } from "./helpers";
 
 interface InactiveButtonProps extends BaseButtonMenuItemProps {
@@ -16,34 +19,6 @@ interface InactiveButtonProps extends BaseButtonMenuItemProps {
   hoverKey: HoverKey;
 }
 
-const InactiveButton: PolymorphicComponent<
-  InactiveButtonProps,
-  "button"
-> = styled(Button)<InactiveButtonProps>`
-  width: 100%;
-  align-items: center;
-  border: 0;
-  cursor: pointer;
-  display: inline-flex;
-  font-family: inherit;
-  font-weight: 600;
-  justify-content: center;
-  line-height: 1;
-  outline: 0;
-  transition: background-color 0.2s, opacity 0.2s, color 0.3s ease;
-  white-space: nowrap;
-
-  &:hover {
-    color: ${({ theme, hoverKey }) => theme.colors[hoverKey]};
-  }
-
-  background-color: transparent;
-  color: ${({ theme, colorKey }) => theme.colors[colorKey]};
-  &:hover:not(:disabled):not(:active) {
-    background-color: transparent;
-  }
-`;
-
 const MenuItemButton: PolymorphicComponent<
   BaseButtonMenuItemProps,
   "button"
@@ -51,7 +26,7 @@ const MenuItemButton: PolymorphicComponent<
   align-items: center;
   border: 0;
   cursor: pointer;
-  display: inline-flex;
+  display: flex;
   font-family: inherit;
   font-weight: 600;
   justify-content: center;
@@ -70,6 +45,21 @@ const MenuItemButton: PolymorphicComponent<
   })}
 `;
 
+const InactiveButton: PolymorphicComponent<
+  InactiveButtonProps,
+  "button"
+> = styled(MenuItemButton)<InactiveButtonProps>`
+  color: ${({ theme, colorKey }) => theme.colors[colorKey]};
+
+  &:hover {
+    color: ${({ theme, hoverKey }) => theme.colors[hoverKey]};
+  }
+
+  &:hover:not(:disabled):not(:active) {
+    background-color: transparent;
+  }
+`;
+
 const ButtonMenuItem: PolymorphicComponent<ButtonMenuItemProps, "button"> = ({
   isActive = false,
   variant = variants.DARK,
@@ -82,12 +72,10 @@ const ButtonMenuItem: PolymorphicComponent<ButtonMenuItemProps, "button"> = ({
   const { isXs, isSm, isMs, isLg, isXl, isXll, isXxl } = useMatchBreakpoints();
 
   const activeRef = useRef<HTMLButtonElement>(null);
-  const inactiveRef = useRef<HTMLDivElement>(null);
+  const inactiveRef = useRef<HTMLButtonElement>(null);
 
   const itemWidth =
     activeRef.current?.clientWidth ?? inactiveRef.current?.clientWidth;
-
-  console.log("itemIndex", itemIndex, itemWidth);
 
   useEffect(() => {
     if (itemWidth && setWidth) {
@@ -101,15 +89,14 @@ const ButtonMenuItem: PolymorphicComponent<ButtonMenuItemProps, "button"> = ({
 
   if (!isActive) {
     return (
-      <Flex ref={inactiveRef} alignItems="center" justifyContent="center">
-        <InactiveButton
-          forwardedAs={as}
-          variant={variant}
-          hoverKey={getHoverKey(variant)}
-          colorKey={getColorKey(variant)}
-          {...props}
-        />
-      </Flex>
+      <InactiveButton
+        ref={inactiveRef}
+        forwardedAs={as}
+        variant={variant}
+        hoverKey={getHoverKey(variant)}
+        colorKey={getColorKey(variant)}
+        {...props}
+      />
     );
   }
 
