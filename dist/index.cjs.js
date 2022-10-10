@@ -4377,7 +4377,7 @@ var ButtonMenuItem = function (_a) {
         }
     }, [blockOffset, itemWidth, isXs, isSm, isMs, isLg, isXl, isXll, isXxl]);
     if (!isActive) {
-        return (React__default["default"].createElement(InactiveButton$2, __assign({ ref: inactiveRef, forwardedAs: as, variant: variant, hoverKey: getHoverKey(variant), colorKey: getColorKey(variant) }, props)));
+        return (React__default["default"].createElement(InactiveButton$2, __assign({ ref: inactiveRef, as: as, variant: variant, hoverKey: getHoverKey(variant), colorKey: getColorKey(variant) }, props)));
     }
     return (React__default["default"].createElement(MenuItemButton, __assign({ ref: activeRef, as: as, variant: variant }, props)));
 };

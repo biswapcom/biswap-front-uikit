@@ -14,7 +14,7 @@ import { useMatchBreakpoints } from "../../hooks";
 import { getColorKey, getHoverKey } from "./helpers";
 
 interface InactiveButtonProps extends BaseButtonMenuItemProps {
-  forwardedAs: BaseButtonMenuItemProps["as"];
+  // forwardedAs: BaseButtonMenuItemProps["as"];
   colorKey: ColorKey;
   hoverKey: HoverKey;
 }
@@ -91,7 +91,7 @@ const ButtonMenuItem: PolymorphicComponent<ButtonMenuItemProps, "button"> = ({
     return (
       <InactiveButton
         ref={inactiveRef}
-        forwardedAs={as}
+        as={as}
         variant={variant}
         hoverKey={getHoverKey(variant)}
         colorKey={getColorKey(variant)}
