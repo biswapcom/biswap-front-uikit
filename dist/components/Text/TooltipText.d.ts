@@ -1,2 +1,2 @@
-declare const TooltipText: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, import("./types").TextProps, never>;
+declare const TooltipText: any;
 export default TooltipText;

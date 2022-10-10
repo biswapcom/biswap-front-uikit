@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Text from "../Text/Text";
-import { tags, scales, HeadingProps } from "./types";
+import { tags, scales, HeadingProps, Scales } from "./types";
 
 const style = {
   [scales.MD]: {
@@ -22,12 +22,12 @@ const style = {
 };
 
 const Heading = styled(Text).attrs({ bold: true })<HeadingProps>`
-  font-size: ${({ scale }) => style[scale || scales.MD].fontSize};
+  font-size: ${({ scale } : { scale: Scales }) => style[scale || scales.MD].fontSize};
   font-weight: 600;
   line-height: 1.1;
 
   ${({ theme }) => theme.mediaQueries.lg} {
-    font-size: ${({ scale }) => style[scale || scales.LG].fontSize};
+    font-size: ${({ scale } : { scale: Scales }) => style[scale || scales.LG].fontSize};
   }
 `;
 

@@ -1,4 +1,2 @@
-import { DefaultTheme } from "styled-components";
-import { TextProps } from "./types";
-declare const Text: import("styled-components").StyledComponent<"div", DefaultTheme, TextProps, never>;
+declare const Text: any;
 export default Text;

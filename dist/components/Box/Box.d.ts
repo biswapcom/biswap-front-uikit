@@ -1,3 +1,2 @@
-import { BoxProps } from "./types";
-declare const Box: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, BoxProps, never>;
+declare const Box: any;
 export default Box;

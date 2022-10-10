@@ -1,2 +1,2 @@
-declare const Placeholder: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, {}, never>;
+declare const Placeholder: any;
 export default Placeholder;
