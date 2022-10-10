@@ -4267,7 +4267,6 @@ var styleVariants$3 = (_b$7 = {},
     _b$7[variants$5.DARK] = {
         color: "white",
         backgroundColor: "transparent",
-        transition: "color .3s ease",
         ":active:not(:disabled)": {
             backgroundColor: "transparent",
         },
@@ -4275,7 +4274,6 @@ var styleVariants$3 = (_b$7 = {},
     _b$7[variants$5.LIGHT] = {
         backgroundColor: "transparent",
         color: "dark800",
-        transition: "color .3s ease",
         ":hover(:disabled)": {
             color: "dark800",
         },
@@ -4286,7 +4284,6 @@ var styleVariants$3 = (_b$7 = {},
     _b$7[variants$5.WARNING_DARK] = {
         backgroundColor: "transparent",
         color: "dark800",
-        transition: "color .3s ease",
         ":hover(:disabled)": {
             color: "dark800",
         },
@@ -4334,18 +4331,20 @@ var getHoverKey = function (variant) {
     }
 };
 
-var MenuItemButton = styled.button(templateObject_1$1c || (templateObject_1$1c = __makeTemplateObject(["\n  align-items: center;\n  border: 0;\n  cursor: pointer;\n  display: flex;\n  font-family: inherit;\n  font-weight: 600;\n  justify-content: center;\n  line-height: 1;\n  outline: 0;\n  transition: background-color 0.2s, opacity 0.2s, color 0.3s;\n  background-color: transparent;\n  white-space: nowrap;\n\n  ", "\n  ", "\n"], ["\n  align-items: center;\n  border: 0;\n  cursor: pointer;\n  display: flex;\n  font-family: inherit;\n  font-weight: 600;\n  justify-content: center;\n  line-height: 1;\n  outline: 0;\n  transition: background-color 0.2s, opacity 0.2s, color 0.3s;\n  background-color: transparent;\n  white-space: nowrap;\n\n  ", "\n  ", "\n"])), variant$1({
+var MenuItemButton = styled.button(templateObject_2$H || (templateObject_2$H = __makeTemplateObject(["\n  align-items: center;\n  border: 0;\n  cursor: pointer;\n  display: flex;\n  font-family: inherit;\n  font-weight: 600;\n  justify-content: center;\n  line-height: 1;\n  outline: 0;\n  transition: background-color 0.2s, opacity 0.3s, color 0.3s;\n  background-color: transparent;\n  white-space: nowrap;\n\n  ", "\n  ", "\n\n  ", "\n"], ["\n  align-items: center;\n  border: 0;\n  cursor: pointer;\n  display: flex;\n  font-family: inherit;\n  font-weight: 600;\n  justify-content: center;\n  line-height: 1;\n  outline: 0;\n  transition: background-color 0.2s, opacity 0.3s, color 0.3s;\n  background-color: transparent;\n  white-space: nowrap;\n\n  ", "\n  ", "\n\n  ", "\n"])), variant$1({
     variants: styleVariants$3,
 }), variant$1({
     prop: "scale",
     variants: scaleVariants$2,
-}));
-var InactiveButton$2 = styled(MenuItemButton)(templateObject_2$H || (templateObject_2$H = __makeTemplateObject(["\n  color: ", ";\n\n  &:hover {\n    color: ", ";\n  }\n\n  &:hover:not(:disabled):not(:active) {\n    background-color: transparent;\n  }\n"], ["\n  color: ", ";\n\n  &:hover {\n    color: ", ";\n  }\n\n  &:hover:not(:disabled):not(:active) {\n    background-color: transparent;\n  }\n"])), function (_a) {
-    var theme = _a.theme, colorKey = _a.colorKey;
-    return theme.colors[colorKey];
-}, function (_a) {
-    var theme = _a.theme, hoverKey = _a.hoverKey;
-    return theme.colors[hoverKey];
+}), function (_a) {
+    var isActive = _a.isActive, colorKey = _a.colorKey, hoverKey = _a.hoverKey;
+    return !isActive && css(templateObject_1$1c || (templateObject_1$1c = __makeTemplateObject(["\n      color: ", ";\n\n      &:hover {\n        color: ", ";\n      }\n\n      &:hover:not(:disabled):not(:active) {\n        background-color: transparent;\n      }\n    "], ["\n      color: ", ";\n\n      &:hover {\n        color: ", ";\n      }\n\n      &:hover:not(:disabled):not(:active) {\n        background-color: transparent;\n      }\n    "])), function (_a) {
+        var theme = _a.theme;
+        return theme.colors[colorKey];
+    }, function (_a) {
+        var theme = _a.theme;
+        return theme.colors[hoverKey];
+    });
 });
 var ButtonMenuItem = function (_a) {
     var _b, _c, _d;
@@ -4363,10 +4362,7 @@ var ButtonMenuItem = function (_a) {
             });
         }
     }, [blockOffset, itemWidth, isXs, isSm, isMs, isLg, isXl, isXll, isXxl]);
-    if (!isActive) {
-        return (React.createElement(InactiveButton$2, __assign({ ref: inactiveRef, as: as, variant: variant, hoverKey: getHoverKey(variant), colorKey: getColorKey(variant) }, props)));
-    }
-    return (React.createElement(MenuItemButton, __assign({ ref: activeRef, as: as, variant: variant }, props)));
+    return (React.createElement(MenuItemButton, __assign({ isActive: isActive, ref: activeRef, as: as, variant: variant, hoverKey: getHoverKey(variant), colorKey: getColorKey(variant) }, props)));
 };
 var templateObject_1$1c, templateObject_2$H;
 

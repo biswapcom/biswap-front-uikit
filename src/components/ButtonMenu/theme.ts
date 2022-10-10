@@ -37,7 +37,6 @@ export const styleVariants = {
   [variants.DARK]: {
     color: "white",
     backgroundColor: "transparent",
-    transition: "color .3s ease",
 
     ":active:not(:disabled)": {
       backgroundColor: "transparent",
@@ -46,7 +45,6 @@ export const styleVariants = {
   [variants.LIGHT]: {
     backgroundColor: "transparent",
     color: "dark800",
-    transition: "color .3s ease",
 
     ":hover(:disabled)": {
       color: "dark800",
@@ -58,7 +56,6 @@ export const styleVariants = {
   [variants.WARNING_DARK]: {
     backgroundColor: "transparent",
     color: "dark800",
-    transition: "color .3s ease",
 
     ":hover(:disabled)": {
       color: "dark800",

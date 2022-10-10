@@ -34,7 +34,6 @@ export declare const styleVariants: {
     dark: {
         color: string;
         backgroundColor: string;
-        transition: string;
         ":active:not(:disabled)": {
             backgroundColor: string;
         };
@@ -42,7 +41,6 @@ export declare const styleVariants: {
     light: {
         backgroundColor: string;
         color: string;
-        transition: string;
         ":hover(:disabled)": {
             color: string;
         };
@@ -53,7 +51,6 @@ export declare const styleVariants: {
     warningDark: {
         backgroundColor: string;
         color: string;
-        transition: string;
         ":hover(:disabled)": {
             color: string;
         };

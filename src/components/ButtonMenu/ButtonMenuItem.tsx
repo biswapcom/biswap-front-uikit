@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { variant } from "styled-system";
 import { styleVariants, scaleVariants } from "./theme";
 import {
@@ -13,16 +13,15 @@ import { PolymorphicComponent } from "../../util";
 import { useMatchBreakpoints } from "../../hooks";
 import { getColorKey, getHoverKey } from "./helpers";
 
-interface InactiveButtonProps extends BaseButtonMenuItemProps {
-  // forwardedAs: BaseButtonMenuItemProps["as"];
+interface ItemButtonProps extends BaseButtonMenuItemProps {
   colorKey: ColorKey;
   hoverKey: HoverKey;
 }
 
 const MenuItemButton: PolymorphicComponent<
-  BaseButtonMenuItemProps,
+  ItemButtonProps,
   "button"
-> = styled.button<BaseButtonMenuItemProps>`
+> = styled.button<ItemButtonProps>`
   align-items: center;
   border: 0;
   cursor: pointer;
@@ -32,7 +31,7 @@ const MenuItemButton: PolymorphicComponent<
   justify-content: center;
   line-height: 1;
   outline: 0;
-  transition: background-color 0.2s, opacity 0.2s, color 0.3s;
+  transition: background-color 0.2s, opacity 0.3s, color 0.3s;
   background-color: transparent;
   white-space: nowrap;
 
@@ -43,21 +42,20 @@ const MenuItemButton: PolymorphicComponent<
     prop: "scale",
     variants: scaleVariants,
   })}
-`;
 
-const InactiveButton: PolymorphicComponent<
-  InactiveButtonProps,
-  "button"
-> = styled(MenuItemButton)<InactiveButtonProps>`
-  color: ${({ theme, colorKey }) => theme.colors[colorKey]};
+  ${({ isActive, colorKey, hoverKey }) =>
+    !isActive &&
+    css`
+      color: ${({ theme }) => theme.colors[colorKey]};
 
-  &:hover {
-    color: ${({ theme, hoverKey }) => theme.colors[hoverKey]};
-  }
+      &:hover {
+        color: ${({ theme }) => theme.colors[hoverKey]};
+      }
 
-  &:hover:not(:disabled):not(:active) {
-    background-color: transparent;
-  }
+      &:hover:not(:disabled):not(:active) {
+        background-color: transparent;
+      }
+    `}
 `;
 
 const ButtonMenuItem: PolymorphicComponent<ButtonMenuItemProps, "button"> = ({
@@ -87,21 +85,16 @@ const ButtonMenuItem: PolymorphicComponent<ButtonMenuItemProps, "button"> = ({
     }
   }, [blockOffset, itemWidth, isXs, isSm, isMs, isLg, isXl, isXll, isXxl]);
 
-  if (!isActive) {
-    return (
-      <InactiveButton
-        ref={inactiveRef}
-        as={as}
-        variant={variant}
-        hoverKey={getHoverKey(variant)}
-        colorKey={getColorKey(variant)}
-        {...props}
-      />
-    );
-  }
-
   return (
-    <MenuItemButton ref={activeRef} as={as} variant={variant} {...props} />
+    <MenuItemButton
+      isActive={isActive}
+      ref={activeRef}
+      as={as}
+      variant={variant}
+      hoverKey={getHoverKey(variant)}
+      colorKey={getColorKey(variant)}
+      {...props}
+    />
   );
 };
 
