@@ -60,7 +60,8 @@ export interface ButtonMenuProps extends SpaceProps {
   flatTop?: boolean;
   withoutBackground?: boolean;
   scrollX?: boolean;
-  equalElementWidth?: boolean
+  equalElementWidth?: boolean;
+  withoutAnimation?: boolean;
 }
 
 //--------------

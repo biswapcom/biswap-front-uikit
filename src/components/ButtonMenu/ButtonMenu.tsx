@@ -32,6 +32,7 @@ interface ISelection {
   variant: string;
   flatTop: boolean;
   flatBottom: boolean;
+  withoutAnimation: boolean;
 }
 
 const Wrapper = styled.div<IWrapper>`
@@ -84,10 +85,12 @@ const StyledButtonMenu = styled.div<StyledButtonMenuProps>`
   & > div,
   & > a {
     flex-grow: 1;
-    
-    ${({ equalElementWidth }) => equalElementWidth && css`
-      flex: 1;
-    `}
+
+    ${({ equalElementWidth }) =>
+      equalElementWidth &&
+      css`
+        flex: 1;
+      `}
   }
 
   & > button,
@@ -130,8 +133,13 @@ const Selection = styled.div<ISelection>`
   top: 50%;
   transform: translateY(-50%);
   left: ${({ offset }) => `${offset + 4}px`};
-  transition: left 0.3s ease, width 0.3s ease;
   border-radius: ${({ scale }) => (scale === scales.SM ? "6px" : "8px")};
+
+  ${({ withoutAnimation }) =>
+    !withoutAnimation &&
+    css`
+      transition: left 0.3s ease, width 0.3s ease;
+    `}
 
   ${({ flatTop, scale }) =>
     flatTop &&
@@ -171,6 +179,7 @@ const ButtonMenu: React.FC<ButtonMenuProps> = ({
   withoutBackground = false,
   scrollX = false,
   equalElementWidth,
+  withoutAnimation = false,
   ...props
 }) => {
   const { isDesktop, isMobile, isTablet } = useMatchBreakpoints();
@@ -205,6 +214,7 @@ const ButtonMenu: React.FC<ButtonMenuProps> = ({
           width={widthsArr[activeIndex]}
           offset={blockOffset}
           variant={variant}
+          withoutAnimation={withoutAnimation}
         />
       )}
       <StyledButtonMenu

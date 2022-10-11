@@ -114,6 +114,7 @@ export const Default: React.FC = () => {
 
       <Row>
         <ButtonMenu
+          withoutAnimation
           scrollX
           activeIndex={index}
           onItemClick={handleClick}
