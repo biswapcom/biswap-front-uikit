@@ -6825,7 +6825,7 @@ var ModalBody$1 = styled(Flex)(templateObject_3$f || (templateObject_3$f = __mak
 var ModalCloseButton = function (_a) {
     var onDismiss = _a.onDismiss, closeBtnColor = _a.closeBtnColor;
     return (React.createElement(IconButton, { variant: "text", onClick: onDismiss, "aria-label": "Close the dialog" },
-        React.createElement(Icon$35, { color: closeBtnColor || "dark600", width: "32px" })));
+        React.createElement(Icon$35, { color: closeBtnColor || "dark600", width: "24px" })));
 };
 var ModalBackButton = function (_a) {
     var onBack = _a.onBack; _a.closeBtnColor;
@@ -8582,8 +8582,8 @@ var AccountModal = function (_a) {
     return (React.createElement(Modal, { title: "Your wallet", onDismiss: onDismiss },
         React.createElement(ConnectedWrapper, null,
             React.createElement(Text, { fontSize: "14px", fontWeight: "400", lineHeight: "21px", color: "#1DC872" }, "Connected"),
-            React.createElement(Button, { onClick: changeWalletHandler, scale: "lg", variant: "primary" }, "Change")),
-        React.createElement(Text, { fontSize: "14px", fontWeight: "600", color: "primary", style: {
+            React.createElement(Button, { onClick: changeWalletHandler, scale: "md", variant: "primary" }, "Change")),
+        React.createElement(Text, { fontSize: "14px", fontWeight: "600", color: "backgroundDark", style: {
                 whiteSpace: "nowrap",
                 overflow: "hidden",
                 textOverflow: "ellipsis",
