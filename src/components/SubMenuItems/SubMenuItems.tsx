@@ -30,7 +30,7 @@ const SubMenuItems: React.FC<SubMenuItemsProps> = ({
               >
                 {iconName && (
                   <IconComponent
-                    color={href === activeItem ? "secondary" : "textSubtle"}
+                    color={href === activeItem ? "secondary" : "pastelBlue"}
                     iconName={iconName}
                     mr="4px"
                   />

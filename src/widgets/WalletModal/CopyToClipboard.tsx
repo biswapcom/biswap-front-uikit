@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from "react";
+import React, { useState, ReactNode } from "react";
 import styled from "styled-components";
 import Text from "../../components/Text/Text";
 import { CopyIcon } from "../../components/Svg";

@@ -62,7 +62,8 @@ export interface NavProps
   //---------
   withEvent?: boolean;
   eventCallback?: () => void;
-  children: ReactNode;
+  children?: ReactNode;
+  eventButtonLogo?: () => JSX.Element;
 }
 
 export interface FooterStatisticProps {

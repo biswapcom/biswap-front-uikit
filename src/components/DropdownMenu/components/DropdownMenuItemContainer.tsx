@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useEffect, useState } from "react";
 import { DropdownMenuItemContainerProps, DropdownMenuItemType } from "../types";
 import {
   BannerPlacementItem,
@@ -28,17 +28,25 @@ const DropdownMenuItemContainer: FC<DropdownMenuItemContainerProps> = ({
   badgeType,
   ...itemProps
 }) => {
+  const [linksItems, setLinkItems] = useState<any>([]);
   const { isMobile, isDesktop } = useMatchBreakpoints();
 
-  const hasInnerLinks = links.length > 0;
+  useEffect(() => {
+    (async () => {
+      if (typeof links === "function") {
+        const res = await links();
+        setLinkItems(res);
+      } else {
+        setLinkItems(links);
+      }
+    })();
+  }, []);
+
+  const hasInnerLinks = linksItems.length > 0;
+
   // @ts-ignore
   return (
     <StyledDropdownMenuItemContainer>
-      {badgeTitle && (
-        <Box position="absolute" top="2px" right="28px">
-          <Badge badgeType={badgeType ?? "success"}>{badgeTitle}</Badge>
-        </Box>
-      )}
       {type === DropdownMenuItemType.BUTTON && (
         <DropdownMenuItem
           $isActive={isActive}
@@ -59,9 +67,10 @@ const DropdownMenuItemContainer: FC<DropdownMenuItemContainerProps> = ({
           >
             {getMenuItemContent("")}
           </DropdownMenuItem>
+
           {hasInnerLinks && (
             <InnerLinksBlock
-              links={links}
+              links={linksItems}
               leftIcon={leftIcon}
               setIsOpen={setIsOpen}
               linkComponent={linkComponent}

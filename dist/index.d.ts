@@ -32,7 +32,6 @@ export * from "./components/SlideButtonMenu";
 export * from "./components/PercentSlider";
 export * from "./components/Table";
 export * from "./hooks";
-export * from "./contexts";
 export * from "./util";
 export * from "./widgets/Modal";
 export * from "./widgets/Menu";

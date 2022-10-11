@@ -192,6 +192,7 @@ export const StyledDropdownMenu = styled(Grid)<{
     $isExtended &&
     `
     grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 24px;
     width: 680px;
   `}
 `;

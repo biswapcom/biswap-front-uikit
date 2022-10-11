@@ -4,6 +4,7 @@ interface Props extends InjectedProps {
     hideCloseButton?: boolean;
     backBtnColor?: string;
     background?: string;
+    backgroundTransparent?: boolean;
     p?: string;
     children: ReactNode;
 }

@@ -1698,7 +1698,7 @@ exports[`renders correctly 1`] = `
                   >
                     <svg
                       class="c18"
-                      color="textSubtle"
+                      color="pastelBlue"
                       viewBox="0 0 24 24"
                       width="20px"
                       xmlns="http://www.w3.org/2000/svg"
@@ -1880,7 +1880,7 @@ exports[`renders correctly 1`] = `
               </svg>
               <div
                 class="c29"
-                color="textSubtle"
+                color="pastelBlue"
               >
                 $0.232
               </div>
@@ -1898,7 +1898,7 @@ exports[`renders correctly 1`] = `
               >
                 <svg
                   class="c33"
-                  color="textSubtle"
+                  color="pastelBlue"
                   viewBox="0 0 24 24"
                   width="24px"
                   xmlns="http://www.w3.org/2000/svg"
@@ -2108,7 +2108,7 @@ exports[`renders correctly 1`] = `
             >
               <svg
                 class="c46"
-                color="textSubtle"
+                color="pastelBlue"
                 viewBox="0 0 24 24"
                 width="20px"
                 xmlns="http://www.w3.org/2000/svg"
@@ -2470,7 +2470,7 @@ exports[`renders correctly 1`] = `
                   <a
                     aria-label="English"
                     class="c29 c62"
-                    color="textSubtle"
+                    color="pastelBlue"
                     href="https://t.me/pancakeswap"
                     rel="noreferrer noopener"
                     target="_blank"
@@ -2480,7 +2480,7 @@ exports[`renders correctly 1`] = `
                   <a
                     aria-label="Bahasa Indonesia"
                     class="c29 c62"
-                    color="textSubtle"
+                    color="pastelBlue"
                     href="https://t.me/PancakeSwapIndonesia"
                     rel="noreferrer noopener"
                     target="_blank"
@@ -2490,7 +2490,7 @@ exports[`renders correctly 1`] = `
                   <a
                     aria-label="中文"
                     class="c29 c62"
-                    color="textSubtle"
+                    color="pastelBlue"
                     href="https://t.me/PancakeSwap_CN"
                     rel="noreferrer noopener"
                     target="_blank"
@@ -2500,7 +2500,7 @@ exports[`renders correctly 1`] = `
                   <a
                     aria-label="Tiếng Việt"
                     class="c29 c62"
-                    color="textSubtle"
+                    color="pastelBlue"
                     href="https://t.me/PancakeSwapVN"
                     rel="noreferrer noopener"
                     target="_blank"
@@ -2510,7 +2510,7 @@ exports[`renders correctly 1`] = `
                   <a
                     aria-label="Italiano"
                     class="c29 c62"
-                    color="textSubtle"
+                    color="pastelBlue"
                     href="https://t.me/pancakeswap_ita"
                     rel="noreferrer noopener"
                     target="_blank"
@@ -2520,7 +2520,7 @@ exports[`renders correctly 1`] = `
                   <a
                     aria-label="русский"
                     class="c29 c62"
-                    color="textSubtle"
+                    color="pastelBlue"
                     href="https://t.me/pancakeswap_ru"
                     rel="noreferrer noopener"
                     target="_blank"
@@ -2530,7 +2530,7 @@ exports[`renders correctly 1`] = `
                   <a
                     aria-label="Türkiye"
                     class="c29 c62"
-                    color="textSubtle"
+                    color="pastelBlue"
                     href="https://t.me/pancakeswapturkiye"
                     rel="noreferrer noopener"
                     target="_blank"
@@ -2540,7 +2540,7 @@ exports[`renders correctly 1`] = `
                   <a
                     aria-label="Português"
                     class="c29 c62"
-                    color="textSubtle"
+                    color="pastelBlue"
                     href="https://t.me/PancakeSwapPortuguese"
                     rel="noreferrer noopener"
                     target="_blank"
@@ -2550,7 +2550,7 @@ exports[`renders correctly 1`] = `
                   <a
                     aria-label="Español"
                     class="c29 c62"
-                    color="textSubtle"
+                    color="pastelBlue"
                     href="https://t.me/PancakeswapEs"
                     rel="noreferrer noopener"
                     target="_blank"
@@ -2560,7 +2560,7 @@ exports[`renders correctly 1`] = `
                   <a
                     aria-label="日本語"
                     class="c29 c62"
-                    color="textSubtle"
+                    color="pastelBlue"
                     href="https://t.me/pancakeswapjp"
                     rel="noreferrer noopener"
                     target="_blank"
@@ -2570,7 +2570,7 @@ exports[`renders correctly 1`] = `
                   <a
                     aria-label="Français"
                     class="c29 c62"
-                    color="textSubtle"
+                    color="pastelBlue"
                     href="https://t.me/pancakeswapfr"
                     rel="noreferrer noopener"
                     target="_blank"
@@ -2580,7 +2580,7 @@ exports[`renders correctly 1`] = `
                   <a
                     aria-label="Datch"
                     class="c29 c62"
-                    color="textSubtle"
+                    color="pastelBlue"
                     href="https://t.me/PancakeSwap_DE"
                     rel="noreferrer noopener"
                     target="_blank"
@@ -2590,7 +2590,7 @@ exports[`renders correctly 1`] = `
                   <a
                     aria-label="Filipino"
                     class="c29 c62"
-                    color="textSubtle"
+                    color="pastelBlue"
                     href="https://t.me/Pancakeswap_Ph"
                     rel="noreferrer noopener"
                     target="_blank"
@@ -2600,7 +2600,7 @@ exports[`renders correctly 1`] = `
                   <a
                     aria-label="ქართული ენა"
                     class="c29 c62"
-                    color="textSubtle"
+                    color="pastelBlue"
                     href="https://t.me/PancakeSwapGeorgia"
                     rel="noreferrer noopener"
                     target="_blank"
@@ -2610,7 +2610,7 @@ exports[`renders correctly 1`] = `
                   <a
                     aria-label="Announcements"
                     class="c29 c62"
-                    color="textSubtle"
+                    color="pastelBlue"
                     href="https://t.me/PancakeSwapAnn"
                     rel="noreferrer noopener"
                     target="_blank"

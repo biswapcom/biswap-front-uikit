@@ -21,7 +21,7 @@ const getTextColor = ({
       ? "textDisabled"
       : (lightColors.textDisabled as keyof Colors);
   if (eventStatus === "live") return "success";
-  return useDark ? "textSubtle" : (lightColors.textSubtle as keyof Colors);
+  return useDark ? "pastelBlue" : (lightColors.pastelBlue as keyof Colors);
 };
 
 const Timeline: React.FC<TimelineProps> = ({ events, useDark = true }) => {
@@ -44,7 +44,7 @@ const Timeline: React.FC<TimelineProps> = ({ events, useDark = true }) => {
               {isPast && (
                 <IconComponent
                   iconName="CheckmarkCircleFill"
-                  color={useDark ? "textSubtle" : lightColors.textSubtle}
+                  color={useDark ? "pastelBlue" : lightColors.pastelBlue}
                 />
               )}
             </Flex>
@@ -60,7 +60,7 @@ const Timeline: React.FC<TimelineProps> = ({ events, useDark = true }) => {
               <InfoTooltip
                 text={infoText}
                 ml="10px"
-                iconColor={useDark ? "textSubtle" : lightColors.textSubtle}
+                iconColor={useDark ? "pastelBlue" : lightColors.pastelBlue}
               />
             )}
           </TimelineEvent>

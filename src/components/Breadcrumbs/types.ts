@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import { SpaceProps } from "styled-system";
 import { ReactNode } from "react";
 

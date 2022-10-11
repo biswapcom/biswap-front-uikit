@@ -1,5 +1,4 @@
-import { BoxProps } from "../../components/Box";
-import { Scales } from "../../components/Heading/types";
+import { BoxProps, FlexProps } from "../../components/Box";
 export interface ModalTheme {
     background: string;
 }
@@ -16,5 +15,6 @@ export interface ModalProps extends InjectedProps, BoxProps {
     maxWidth?: string;
     modalBackground?: string;
     closeBtnColor?: string;
-    titleSize?: Scales;
+    walletModal?: boolean;
+    modalBodyProps?: FlexProps;
 }

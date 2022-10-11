@@ -1,5 +1,6 @@
 import noop from "lodash/noop";
 import React, { useState } from "react";
+import styled from "styled-components";
 import { BrowserRouter, Link, MemoryRouter } from "react-router-dom";
 import Box from "../../components/Box/Box";
 import Flex from "../../components/Box/Flex";
@@ -37,6 +38,11 @@ export default {
     },
   },
 };
+
+const TowerImg = styled.img`
+  width: 56px;
+  margin-right: 8px;
+`;
 
 const langs: Language[] = [...Array(20)].map((_, i) => ({
   code: `en${i}`,
@@ -89,10 +95,10 @@ const GlobalMenuComponent: React.FC = () => {
   return (
     <Flex>
       <IconButton onClick={onPresent1} variant="text" scale="sm" mr="4px">
-        <DownloadIcon height={22} width={22} color="textSubtle" />
+        <DownloadIcon height={22} width={22} color="pastelBlue" />
       </IconButton>
       <IconButton onClick={onPresent2} variant="text" scale="sm" mr="8px">
-        <OptionsSolidIcon height={22} width={22} color="textSubtle" />
+        <OptionsSolidIcon height={22} width={22} color="pastelBlue" />
       </IconButton>
     </Flex>
   );

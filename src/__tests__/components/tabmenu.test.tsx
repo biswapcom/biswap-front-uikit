@@ -149,7 +149,7 @@ it("renders correctly", () => {
           </button>
           <button
             class="c5"
-            color="textSubtle"
+            color="pastelBlue"
             scale="md"
           >
             Item 2
