@@ -36,7 +36,7 @@ export declare const InstanceCheckRules: {
     "Brave Wallet": string;
     "Gnosis Safe": string;
 };
-export declare type Login = (connectorId: ConnectorNames, instanceCheckRule?: InstanceCheckRuleType, helpHref?: string, title?: ConnectorsTitleTypes, onDismiss?: () => void) => void;
+export declare type Login = (connectorID: ConnectorNames, instanceCheckRule?: InstanceCheckRuleType) => void;
 export declare type InstanceCheckRuleType = typeof InstanceCheckRules[ConnectorsTitleTypes];
 export interface Config {
     priority: number;

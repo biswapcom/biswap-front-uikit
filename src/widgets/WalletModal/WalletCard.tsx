@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Button from "../../components/Button/Button";
 import Text from "../../components/Text/Text";
+import { connectorLocalStorageKey, walletLocalStorageKey } from "./config";
 import { Login, Config } from "./types";
 
 interface Props {
@@ -28,22 +29,20 @@ const StyledButton = styled(Button)`
 `;
 
 const WalletCard: React.FC<Props> = ({ login, walletConfig, onDismiss }) => {
-  const handleClick = () => {
-    login(
-      walletConfig.connectorId,
-      walletConfig.instanceCheckRule,
-      walletConfig.helpHref,
-      walletConfig.title,
-      onDismiss
-    );
-  };
-
   const { title, icon: Icon } = walletConfig;
   return (
     <StyledButton
       scale="xl"
       variant="tertiary"
-      onClick={handleClick}
+      onClick={() => {
+        login(walletConfig.connectorId, walletConfig.instanceCheckRule);
+        localStorage.setItem(walletLocalStorageKey, walletConfig.title);
+        window.localStorage.setItem(
+          connectorLocalStorageKey,
+          walletConfig.connectorId
+        );
+        onDismiss();
+      }}
       id={`wallet-connect-${title.toLocaleLowerCase()}`}
       p="0 12px"
       startIcon={<Icon width="24px" />}

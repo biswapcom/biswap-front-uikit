@@ -2971,7 +2971,7 @@ var variants$7 = {
     TRANSPARENT: "transparent",
 };
 
-var _a$c, _b$9;
+var _a$c, _b$9, _c$2;
 var scaleVariants$4 = (_a$c = {},
     _a$c[scales$a.LG] = {
         borderRadius: "10px",
@@ -3086,6 +3086,29 @@ var styleVariants$5 = (_b$9 = {},
         },
     },
     _b$9);
+var styleTextVariants = (_c$2 = {},
+    _c$2[variants$7.LIGHT] = {
+        color: "gray700",
+    },
+    _c$2[variants$7.LIGHT_WARNING] = {
+        color: "warning",
+    },
+    _c$2[variants$7.LIGHT_ERROR] = {
+        color: "secondary",
+    },
+    _c$2[variants$7.DARK] = {
+        color: "white",
+    },
+    _c$2[variants$7.DARK_WARNING] = {
+        color: "warning",
+    },
+    _c$2[variants$7.DARK_ERROR] = {
+        color: "secondary",
+    },
+    _c$2[variants$7.TRANSPARENT] = {
+        color: "dark800",
+    },
+    _c$2);
 
 var Input$1 = styled__default["default"].input(templateObject_1$1j || (templateObject_1$1j = __makeTemplateObject(["\n  display: block;\n  color: ", ";\n  font-size: 16px;\n  outline: 0;\n  width: 100%;\n  max-width: ", ";\n  min-width: ", ";\n  border-width: 1px;\n  border-style: solid;\n  border-color: transparent;\n  opacity: ", ";\n  cursor: ", ";\n  transition: border-color 0.4s ease, background-color 0.4s ease,\n    color 0.4s ease;\n\n  ", "\n  ", "\n"], ["\n  display: block;\n  color: ", ";\n  font-size: 16px;\n  outline: 0;\n  width: 100%;\n  max-width: ", ";\n  min-width: ", ";\n  border-width: 1px;\n  border-style: solid;\n  border-color: transparent;\n  opacity: ", ";\n  cursor: ", ";\n  transition: border-color 0.4s ease, background-color 0.4s ease,\n    color 0.4s ease;\n\n  ", "\n  ", "\n"])), function (_a) {
     var theme = _a.theme;
@@ -4233,8 +4256,8 @@ var DropdownTop = styled__default["default"].div(templateObject_4$l || (template
         return theme.colors.pastelBlue;
     });
 });
-var Label$1 = styled__default["default"].span(templateObject_5$f || (templateObject_5$f = __makeTemplateObject(["\n  flex-grow: 1;\n"], ["\n  flex-grow: 1;\n"])));
-var StyledArrow = styled__default["default"](Icon$3B)(templateObject_6$a || (templateObject_6$a = __makeTemplateObject(["\n  transition: transform 0.4s ease-in-out;\n  transform: ", ";\n"], ["\n  transition: transform 0.4s ease-in-out;\n  transform: ", ";\n"])), function (_a) {
+var Label$1 = styled__default["default"].span(templateObject_5$g || (templateObject_5$g = __makeTemplateObject(["\n  flex-grow: 1;\n"], ["\n  flex-grow: 1;\n"])));
+var StyledArrow = styled__default["default"](Icon$3B)(templateObject_6$b || (templateObject_6$b = __makeTemplateObject(["\n  transition: transform 0.4s ease-in-out;\n  transform: ", ";\n"], ["\n  transition: transform 0.4s ease-in-out;\n  transform: ", ";\n"])), function (_a) {
     var isOpen = _a.isOpen;
     return (isOpen ? "scale(1,-1)" : "scale(1,1)");
 });
@@ -4306,7 +4329,7 @@ var Dropdown = function (_a) {
 Dropdown.defaultProps = {
     position: "bottom",
 };
-var templateObject_1$14, templateObject_2$E, templateObject_3$r, templateObject_4$l, templateObject_5$f, templateObject_6$a, templateObject_7$9, templateObject_8$5;
+var templateObject_1$14, templateObject_2$E, templateObject_3$r, templateObject_4$l, templateObject_5$g, templateObject_6$b, templateObject_7$9, templateObject_8$5;
 
 var tags = {
     H1: "h1",
@@ -4548,13 +4571,14 @@ var getIconPosition = function (scale) {
             return "12px";
     }
 };
-var StyledInputGroup = styled__default["default"](Box)(templateObject_1$X || (templateObject_1$X = __makeTemplateObject(["\n  display: block;\n  outline: 0;\n  width: 100%;\n  position: relative;\n  opacity: ", ";\n  cursor: ", ";\n\n  ", "\n\n  ", " {\n    position: absolute;\n    width: 100%;\n    height: 100%;\n    left: 0;\n    top: 0;\n    z-index: 1;\n\n    ", "\n\n    padding-left: ", ";\n    padding-right: ", ";\n  }\n"], ["\n  display: block;\n  outline: 0;\n  width: 100%;\n  position: relative;\n  opacity: ", ";\n  cursor: ", ";\n\n  ", "\n\n  ", " {\n    position: absolute;\n    width: 100%;\n    height: 100%;\n    left: 0;\n    top: 0;\n    z-index: 1;\n\n    ", "\n\n    padding-left: ", ";\n    padding-right: ", ";\n  }\n"])), function (_a) {
+var StyledInputWrapper = styled__default["default"](Box)(templateObject_1$X || (templateObject_1$X = __makeTemplateObject(["\n  display: block;\n  outline: 0;\n  width: 100%;\n  position: relative;\n  opacity: ", ";\n  cursor: ", ";\n"], ["\n  display: block;\n  outline: 0;\n  width: 100%;\n  position: relative;\n  opacity: ", ";\n  cursor: ", ";\n"])), function (_a) {
     var disabled = _a.disabled;
     return (disabled ? ".56" : "1");
 }, function (_a) {
     var disabled = _a.disabled;
     return (disabled ? "not-allowed" : "initial");
-}, styledSystem.variant({
+});
+var StyledInputGroup = styled__default["default"](Box)(templateObject_2$B || (templateObject_2$B = __makeTemplateObject(["\n  ", "\n\n  ", " {\n    position: absolute;\n    width: 100%;\n    height: 100%;\n    left: 0;\n    top: 0;\n    z-index: 1;\n\n    ", "\n\n    padding-left: ", ";\n    padding-right: ", ";\n  }\n"], ["\n  ", "\n\n  ", " {\n    position: absolute;\n    width: 100%;\n    height: 100%;\n    left: 0;\n    top: 0;\n    z-index: 1;\n\n    ", "\n\n    padding-left: ", ";\n    padding-right: ", ";\n  }\n"])), styledSystem.variant({
     prop: "scale",
     variants: scaleVariants$4,
 }), Input$1, styledSystem.variant({
@@ -4567,25 +4591,31 @@ var StyledInputGroup = styled__default["default"](Box)(templateObject_1$X || (te
     var hasEndIcon = _a.hasEndIcon, scale = _a.scale;
     return getPadding(scale, hasEndIcon);
 });
-var StyledIconComponent = styled__default["default"](IconComponent)(templateObject_2$B || (templateObject_2$B = __makeTemplateObject(["\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  z-index: 2;\n"], ["\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  z-index: 2;\n"])));
-var LeftIconComponent = styled__default["default"](StyledIconComponent)(templateObject_3$q || (templateObject_3$q = __makeTemplateObject(["\n  left: ", ";\n"], ["\n  left: ", ";\n"])), function (_a) {
+var StyledIconComponent = styled__default["default"](IconComponent)(templateObject_3$q || (templateObject_3$q = __makeTemplateObject(["\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  z-index: 2;\n"], ["\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  z-index: 2;\n"])));
+var LeftIconComponent = styled__default["default"](StyledIconComponent)(templateObject_4$k || (templateObject_4$k = __makeTemplateObject(["\n  left: ", ";\n"], ["\n  left: ", ";\n"])), function (_a) {
     var scale = _a.scale;
     return getIconPosition(scale);
 });
-var RightIconComponent = styled__default["default"](StyledIconComponent)(templateObject_4$k || (templateObject_4$k = __makeTemplateObject(["\n  right: ", ";\n"], ["\n  right: ", ";\n"])), function (_a) {
+var RightIconComponent = styled__default["default"](StyledIconComponent)(templateObject_5$f || (templateObject_5$f = __makeTemplateObject(["\n  right: ", ";\n"], ["\n  right: ", ";\n"])), function (_a) {
     var scale = _a.scale;
     return getIconPosition(scale);
 });
+var TextDescription = styled__default["default"](Text)(templateObject_6$a || (templateObject_6$a = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), styledSystem.variant({
+    prop: "variant",
+    variants: styleTextVariants,
+}));
 var InputGroup = function (_a) {
-    var _b = _a.scale, scale = _b === void 0 ? scales$a.MD : _b, startIcon = _a.startIcon, endIcon = _a.endIcon, children = _a.children, variant = _a.variant, isError = _a.isError, isWarning = _a.isWarning, disabled = _a.disabled, props = __rest(_a, ["scale", "startIcon", "endIcon", "children", "variant", "isError", "isWarning", "disabled"]);
-    return (React__default["default"].createElement(StyledInputGroup, __assign({ scale: scale, variant: variant, width: "100%", position: "relative", hasStartIcon: !!startIcon, hasEndIcon: !!endIcon, disabled: disabled }, props),
-        startIcon && (React__default["default"].createElement(LeftIconComponent, { color: startIcon.color, iconName: startIcon.iconName, scale: scale })),
-        React.cloneElement(children, { variant: variant, disabled: disabled }),
-        !isError && !isWarning && endIcon && (React__default["default"].createElement(RightIconComponent, { color: endIcon.color, iconName: endIcon.iconName, scale: scale })),
-        isError && (React__default["default"].createElement(RightIconComponent, { iconName: "CloseCircleSolid", color: "secondary", scale: scale })),
-        isWarning && (React__default["default"].createElement(RightIconComponent, { iconName: "WarningSolid", color: "warning", scale: scale }))));
+    var _b = _a.scale, scale = _b === void 0 ? scales$a.MD : _b, startIcon = _a.startIcon, endIcon = _a.endIcon, children = _a.children, variant = _a.variant, isError = _a.isError, isWarning = _a.isWarning, disabled = _a.disabled, description = _a.description, props = __rest(_a, ["scale", "startIcon", "endIcon", "children", "variant", "isError", "isWarning", "disabled", "description"]);
+    return (React__default["default"].createElement(StyledInputWrapper, __assign({ width: "100%", position: "relative", disabled: disabled }, props),
+        React__default["default"].createElement(StyledInputGroup, { scale: scale, variant: variant, width: "100%", position: "relative", hasStartIcon: !!startIcon, hasEndIcon: !!endIcon },
+            startIcon && (React__default["default"].createElement(LeftIconComponent, { color: startIcon.color, iconName: startIcon.iconName, scale: scale })),
+            React.cloneElement(children, { variant: variant, disabled: disabled }),
+            !isError && !isWarning && endIcon && (React__default["default"].createElement(RightIconComponent, { color: endIcon.color, iconName: endIcon.iconName, scale: scale })),
+            isError && (React__default["default"].createElement(RightIconComponent, { iconName: "CloseCircleSolid", color: "secondary", scale: scale })),
+            isWarning && (React__default["default"].createElement(RightIconComponent, { iconName: "WarningSolid", color: "warning", scale: scale }))),
+        description && (React__default["default"].createElement(TextDescription, { mt: "4px", fontSize: "12px", variant: variant }, description))));
 };
-var templateObject_1$X, templateObject_2$B, templateObject_3$q, templateObject_4$k;
+var templateObject_1$X, templateObject_2$B, templateObject_3$q, templateObject_4$k, templateObject_5$f, templateObject_6$a;
 
 var GridLayout$1 = styled__default["default"](Grid)(templateObject_1$W || (templateObject_1$W = __makeTemplateObject(["\n  grid-template-columns: repeat(6, 1fr);\n  grid-gap: 16px;\n  ", " {\n    grid-template-columns: repeat(8, 1fr);\n    grid-gap: 24px;\n  }\n  ", " {\n    grid-template-columns: repeat(12, 1fr);\n    grid-gap: 24px;\n  }\n  ", " {\n    grid-template-columns: repeat(12, 1fr);\n    grid-gap: 32px;\n  }\n"], ["\n  grid-template-columns: repeat(6, 1fr);\n  grid-gap: 16px;\n  ", " {\n    grid-template-columns: repeat(8, 1fr);\n    grid-gap: 24px;\n  }\n  ", " {\n    grid-template-columns: repeat(12, 1fr);\n    grid-gap: 24px;\n  }\n  ", " {\n    grid-template-columns: repeat(12, 1fr);\n    grid-gap: 32px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
@@ -7279,6 +7309,7 @@ var links = [
     {
         label: "Trade",
         href: "/swap",
+        showNavBadge: true,
         items: [
             {
                 label: "Swap",
@@ -7372,6 +7403,7 @@ var links = [
     {
         label: "NFT",
         href: "/",
+        showNavBadge: true,
         items: [
             {
                 label: "NFT Launchpad",
@@ -8121,7 +8153,7 @@ var MobileMenu = function (_a) {
                     .filter(function (item) { return item.label && !item.type; })
                     .map(function (_a, index) {
                     var label = _a.label, _b = _a.items, innerItems = _b === void 0 ? [] : _b, showItemsOnMobile = _a.showItemsOnMobile, hidden = _a.hidden;
-                    var isMarker = !!(innerItems === null || innerItems === void 0 ? void 0 : innerItems.find(function (i) { return i.badgeTitle; }));
+                    var isMarker = items[index].showNavBadge;
                     if (!innerItems.length)
                         return null;
                     var visualize = !showItemsOnMobile ||
@@ -8131,7 +8163,7 @@ var MobileMenu = function (_a) {
                                 return (!showItemsOnMobile &&
                                     !hidden && (React__default["default"].createElement(React__default["default"].Fragment, null,
                                     React__default["default"].createElement(Box, { m: "16px 0", position: "relative" },
-                                        isMobile && isMarker && React__default["default"].createElement(Marker, null),
+                                        isMarker && React__default["default"].createElement(Marker, null),
                                         React__default["default"].createElement(Text, { bold: true, fontSize: isTablet ? "20px" : "14px", lineHeight: isTablet ? "26px" : "20px", color: isMobile && opened
                                                 ? "primary"
                                                 : "backgroundDark" }, label)),
@@ -8248,11 +8280,11 @@ var MenuItems = function (_a) {
     var _d = useMatchBreakpoints(), isDesktop = _d.isDesktop, isTablet = _d.isTablet;
     return (React__default["default"].createElement(Flex, __assign({}, props, { alignItems: "center" }),
         !isDesktop && (React__default["default"].createElement(MobileDropdownMenu, { items: items, activeItem: activeItem, isMobileMenuOpened: isMobileMenuOpened, mobileMenuCallback: mobileMenuCallback })),
-        items.map(function (_a) {
-            var _b, _c;
-            var label = _a.label, _d = _a.items, menuItems = _d === void 0 ? [] : _d, href = _a.href, _e = _a.icon, icon = _e === void 0 ? "" : _e, isExtended = _a.isExtended, showItemsOnMobile = _a.showItemsOnMobile, type = _a.type, hidden = _a.hidden;
-            var isMarker = !!(menuItems === null || menuItems === void 0 ? void 0 : menuItems.find(function (i) { return i.badgeTitle; }));
-            var statusColor = (_c = (_b = menuItems === null || menuItems === void 0 ? void 0 : menuItems.find(function (menuItem) { return menuItem.status !== undefined; })) === null || _b === void 0 ? void 0 : _b.status) === null || _c === void 0 ? void 0 : _c.color;
+        items.map(function (_a, index) {
+            var _b, _c, _d;
+            var label = _a.label, _e = _a.items, menuItems = _e === void 0 ? [] : _e, href = _a.href, _f = _a.icon, icon = _f === void 0 ? "" : _f, isExtended = _a.isExtended, showItemsOnMobile = _a.showItemsOnMobile, type = _a.type, hidden = _a.hidden; _a.showNavBadge;
+            var isMarker = (_b = items[index]) === null || _b === void 0 ? void 0 : _b.showNavBadge;
+            var statusColor = (_d = (_c = menuItems === null || menuItems === void 0 ? void 0 : menuItems.find(function (menuItem) { return menuItem.status !== undefined; })) === null || _c === void 0 ? void 0 : _c.status) === null || _d === void 0 ? void 0 : _d.color;
             var isActive = activeItem === href;
             var linkProps = isTouchDevice() && menuItems && menuItems.length > 0
                 ? {}
@@ -8292,28 +8324,6 @@ var Logo = function (_a) {
     return (React__default["default"].createElement(Flex, null, isAbsoluteUrl ? (React__default["default"].createElement(StyledInnerButton, { variant: "light", onClick: function () { return window.open(href, "_self"); }, "aria-label": "Biswap home page" }, innerLogo)) : (React__default["default"].createElement(StyledInnerButton, { variant: "light", onClick: function () { return push(href); }, "aria-label": "Biswap home page" }, innerLogo))));
 };
 var templateObject_1$c, templateObject_2$8, templateObject_3$4;
-
-var StyledButton = styled__default["default"](Button)(templateObject_1$b || (templateObject_1$b = __makeTemplateObject(["\n  display: flex;\n  justify-content: flex-start;\n  white-space: nowrap;\n  width: 100%;\n\n  background: ", ";\n\n  ", " {\n    width: 172px;\n  }\n\n  &:hover > div {\n    color: ", ";\n  }\n"], ["\n  display: flex;\n  justify-content: flex-start;\n  white-space: nowrap;\n  width: 100%;\n\n  background: ", ";\n\n  ", " {\n    width: 172px;\n  }\n\n  &:hover > div {\n    color: ", ";\n  }\n"])), function (_a) {
-    var theme = _a.theme;
-    return theme.colors.gray200;
-}, function (_a) {
-    var theme = _a.theme;
-    return theme.mediaQueries.sm;
-}, function (_a) {
-    var theme = _a.theme;
-    return theme.colors.primaryHover;
-});
-var WalletCard = function (_a) {
-    var login = _a.login, walletConfig = _a.walletConfig, onDismiss = _a.onDismiss;
-    var handleClick = function () {
-        login(walletConfig.connectorId, walletConfig.instanceCheckRule, walletConfig.helpHref, walletConfig.title, onDismiss);
-    };
-    var title = walletConfig.title, Icon = walletConfig.icon;
-    return (React__default["default"].createElement(StyledButton, { scale: "xl", variant: "tertiary", onClick: handleClick, id: "wallet-connect-".concat(title.toLocaleLowerCase()), p: "0 12px", startIcon: React__default["default"].createElement(Icon, { width: "24px" }) },
-        React__default["default"].createElement(Text, { bold: true, color: "primary", fontSize: "12px" }, title)));
-};
-var WalletCard$1 = React__default["default"].memo(WalletCard);
-var templateObject_1$b;
 
 var Icon$c = function (props) {
     return (React__default["default"].createElement(Svg, __assign({ viewBox: "0 0 96 96" }, props),
@@ -8623,6 +8633,30 @@ var HOW_TO_CONNECT_WALLET_LINK = "https://biswap.zendesk.com/hc/en-us/articles/9
 var connectorLocalStorageKey = "connectorId";
 var walletLocalStorageKey = "wallet";
 
+var StyledButton = styled__default["default"](Button)(templateObject_1$b || (templateObject_1$b = __makeTemplateObject(["\n  display: flex;\n  justify-content: flex-start;\n  white-space: nowrap;\n  width: 100%;\n\n  background: ", ";\n\n  ", " {\n    width: 172px;\n  }\n\n  &:hover > div {\n    color: ", ";\n  }\n"], ["\n  display: flex;\n  justify-content: flex-start;\n  white-space: nowrap;\n  width: 100%;\n\n  background: ", ";\n\n  ", " {\n    width: 172px;\n  }\n\n  &:hover > div {\n    color: ", ";\n  }\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.colors.gray200;
+}, function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.sm;
+}, function (_a) {
+    var theme = _a.theme;
+    return theme.colors.primaryHover;
+});
+var WalletCard = function (_a) {
+    var login = _a.login, walletConfig = _a.walletConfig, onDismiss = _a.onDismiss;
+    var title = walletConfig.title, Icon = walletConfig.icon;
+    return (React__default["default"].createElement(StyledButton, { scale: "xl", variant: "tertiary", onClick: function () {
+            login(walletConfig.connectorId, walletConfig.instanceCheckRule);
+            localStorage.setItem(walletLocalStorageKey, walletConfig.title);
+            window.localStorage.setItem(connectorLocalStorageKey, walletConfig.connectorId);
+            onDismiss();
+        }, id: "wallet-connect-".concat(title.toLocaleLowerCase()), p: "0 12px", startIcon: React__default["default"].createElement(Icon, { width: "24px" }) },
+        React__default["default"].createElement(Text, { bold: true, color: "primary", fontSize: "12px" }, title)));
+};
+var WalletCard$1 = React__default["default"].memo(WalletCard);
+var templateObject_1$b;
+
 var WalletCardsWrapper = styled__default["default"].div(templateObject_1$a || (templateObject_1$a = __makeTemplateObject(["\n  display: grid;\n  grid-gap: 8px;\n  grid-template-columns: repeat(2, 1fr);\n  max-height: 50vh;\n  margin-left: 16px;\n  padding-right: 6px;\n\n  ", " {\n    padding-right: 0;\n    width: 352px;\n    margin-left: 32px;\n  }\n"], ["\n  display: grid;\n  grid-gap: 8px;\n  grid-template-columns: repeat(2, 1fr);\n  max-height: 50vh;\n  margin-left: 16px;\n  padding-right: 6px;\n\n  ", " {\n    padding-right: 0;\n    width: 352px;\n    margin-left: 32px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
@@ -8652,7 +8686,7 @@ var ScrollWrapper = styled__default["default"](Box)(templateObject_2$7 || (templ
     return getRgba(theme.colors.pastelBlue, theme, 0.24);
 });
 var StyledText = styled__default["default"](Text)(templateObject_3$3 || (templateObject_3$3 = __makeTemplateObject(["\n  align-self: flex-start;\n"], ["\n  align-self: flex-start;\n"])));
-var DefaultTextButton = styled__default["default"](Button)(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  font-size: 14px;\n  font-weight: 400;\n"], ["\n  font-size: 14px;\n  font-weight: 400;\n"])));
+styled__default["default"](Button)(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  font-size: 14px;\n  font-weight: 400;\n"], ["\n  font-size: 14px;\n  font-weight: 400;\n"])));
 var ConnectModal = function (_a) {
     var login = _a.login, _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b;
     var isMobile = useMatchBreakpoints().isMobile;
@@ -8675,9 +8709,8 @@ var ConnectModal = function (_a) {
         React__default["default"].createElement(ScrollWrapper, null,
             React__default["default"].createElement(WalletCardsWrapper, null, sortedConfig.map(function (entry) { return (React__default["default"].createElement(WalletCard$1, { key: entry.title, login: login, walletConfig: entry, onDismiss: onDismiss })); }))),
         React__default["default"].createElement(Text, { as: "span", mt: "24px", textAlign: "center", fontSize: "12px" }, "Haven\u2019t got a crypto wallet yet?"),
-        React__default["default"].createElement(Button, { startIcon: React__default["default"].createElement(Icon$31, { color: "white", width: "24px" }), height: "48px", width: isMobile ? "306px" : "352px", as: "a", color: "primary", m: isMobile ? "16px" : "16px 32px 32px", href: HOW_TO_CONNECT_WALLET_LINK, target: isMobile ? "_self" : "_blank" },
-            React__default["default"].createElement(Text, { as: "span", color: "contrast", bold: true }, "Learn How to Connect")),
-        isMobile && (React__default["default"].createElement(DefaultTextButton, { color: "primary", mb: "32px", variant: "text", onClick: onDismiss, scale: "xl", height: "auto" }, "Close Window"))));
+        React__default["default"].createElement(Button, { startIcon: React__default["default"].createElement(Icon$31, { color: "white", width: "24px" }), height: "48px", width: isMobile ? "306px" : "352px", as: "a", color: "primary", m: isMobile ? "16px 16px 32px" : "16px 32px 32px", href: HOW_TO_CONNECT_WALLET_LINK, target: isMobile ? "_self" : "_blank" },
+            React__default["default"].createElement(Text, { as: "span", color: "contrast", bold: true }, "Learn How to Connect"))));
 };
 var templateObject_1$a, templateObject_2$7, templateObject_3$3, templateObject_4$2;
 

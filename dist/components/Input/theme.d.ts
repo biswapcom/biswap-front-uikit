@@ -112,3 +112,26 @@ export declare const styleVariants: {
         };
     };
 };
+export declare const styleTextVariants: {
+    light: {
+        color: string;
+    };
+    lightWarning: {
+        color: string;
+    };
+    lightError: {
+        color: string;
+    };
+    dark: {
+        color: string;
+    };
+    darkWarning: {
+        color: string;
+    };
+    darkError: {
+        color: string;
+    };
+    transparent: {
+        color: string;
+    };
+};

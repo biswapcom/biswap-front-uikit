@@ -155,7 +155,7 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => {
         width={isMobile ? "306px" : "352px"}
         as="a"
         color="primary"
-        m={isMobile ? "16px" : "16px 32px 32px"}
+        m={isMobile ? "16px 16px 32px" : "16px 32px 32px"}
         href={HOW_TO_CONNECT_WALLET_LINK}
         target={isMobile ? "_self" : "_blank"}
       >
@@ -163,18 +163,6 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => {
           Learn How to Connect
         </Text>
       </Button>
-      {isMobile && (
-        <DefaultTextButton
-          color="primary"
-          mb="32px"
-          variant="text"
-          onClick={onDismiss}
-          scale="xl"
-          height="auto"
-        >
-          Close Window
-        </DefaultTextButton>
-      )}
     </Modal>
   );
 };

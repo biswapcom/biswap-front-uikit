@@ -33,6 +33,7 @@ export const links: MenuItemsType[] = [
   {
     label: "Trade",
     href: "/swap",
+    showNavBadge: true,
     items: [
       {
         label: "Swap",
@@ -126,6 +127,7 @@ export const links: MenuItemsType[] = [
   {
     label: "NFT",
     href: "/",
+    showNavBadge: true,
     items: [
       {
         label: "NFT Launchpad",

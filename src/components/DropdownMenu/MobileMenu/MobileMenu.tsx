@@ -128,7 +128,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
                   { label, items: innerItems = [], showItemsOnMobile, hidden },
                   index
                 ) => {
-                  const isMarker = !!innerItems?.find((i) => i.badgeTitle);
+                  const isMarker = items[index].showNavBadge;
                   if (!innerItems.length) return null;
                   const visualize =
                     !showItemsOnMobile ||
@@ -145,7 +145,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
                             !hidden && (
                               <>
                                 <Box m="16px 0" position="relative">
-                                  {isMobile && isMarker && <Marker />}
+                                  {isMarker && <Marker />}
                                   <Text
                                     bold
                                     fontSize={isTablet ? "20px" : "14px"}

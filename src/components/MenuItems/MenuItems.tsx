@@ -32,17 +32,21 @@ const MenuItems: React.FC<MenuItemsProps> = ({
         />
       )}
       {items.map(
-        ({
-          label,
-          items: menuItems = [],
-          href,
-          icon = "",
-          isExtended,
-          showItemsOnMobile,
-          type,
-          hidden,
-        }) => {
-          const isMarker = !!menuItems?.find((i) => i.badgeTitle);
+        (
+          {
+            label,
+            items: menuItems = [],
+            href,
+            icon = "",
+            isExtended,
+            showItemsOnMobile,
+            type,
+            hidden,
+            showNavBadge,
+          },
+          index
+        ) => {
+          const isMarker = items[index]?.showNavBadge;
           const statusColor = menuItems?.find(
             (menuItem) => menuItem.status !== undefined
           )?.status?.color;
