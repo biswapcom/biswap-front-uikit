@@ -46,6 +46,7 @@ export interface ButtonMenuProps extends SpaceProps {
     withoutBackground?: boolean;
     scrollX?: boolean;
     equalElementWidth?: boolean;
+    withoutAnimation?: boolean;
 }
 export declare const scales: {
     readonly XL: "xl";
