@@ -11,6 +11,7 @@ import { scales, variants } from "./types";
 import { ButtonMenuProps } from "./types";
 import getRgba from "../../util/getRgba";
 import { useMatchBreakpoints } from "../../hooks";
+import { getOffset } from "./helpers";
 
 interface StyledButtonMenuProps extends ButtonMenuProps {
   theme: DefaultTheme;
@@ -47,9 +48,7 @@ const Wrapper = styled.div<IWrapper>`
   width: ${({ fullWidth }) => (fullWidth ? "100%" : "auto")};
   border-radius: 10px;
   overflow: hidden;
-
-  padding: ${({ flatBottom, flatTop }) =>
-    flatBottom || flatTop ? "0 4px" : "4px"};
+  padding: 4px;
 
   ${({ scrollX }) =>
     scrollX &&
@@ -61,12 +60,14 @@ const Wrapper = styled.div<IWrapper>`
     flatTop &&
     css`
       border-radius: 0 0 8px 8px;
+      padding: 0;
     `}
 
   ${({ flatBottom }) =>
     flatBottom &&
     css`
       border-radius: 8px 8px 0 0;
+      padding: 0;
     `}
 
   &::-webkit-scrollbar {
@@ -132,7 +133,7 @@ const Selection = styled.div<ISelection>`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  left: ${({ offset }) => `${offset + 4}px`};
+  left: ${({ offset }) => `${offset}px`};
   border-radius: ${({ scale }) => (scale === scales.SM ? "6px" : "8px")};
 
   ${({ withoutAnimation }) =>
@@ -212,7 +213,7 @@ const ButtonMenu: React.FC<ButtonMenuProps> = ({
           flatBottom={flatBottom}
           scale={scale}
           width={widthsArr[activeIndex]}
-          offset={blockOffset}
+          offset={getOffset(blockOffset, flatTop || flatBottom)}
           variant={variant}
           withoutAnimation={withoutAnimation}
         />
@@ -228,7 +229,7 @@ const ButtonMenu: React.FC<ButtonMenuProps> = ({
         {Children.map(children, (child: ReactElement, index) => {
           return cloneElement(child, {
             isActive: activeIndex === index,
-            onClick: onItemClick ? () => onItemClick(index) : undefined,
+            onItemClick: onItemClick ? () => onItemClick(index) : undefined,
             setWidth: setWidthsArr,
             itemIndex: index,
             blockOffset,

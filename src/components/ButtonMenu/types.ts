@@ -7,7 +7,6 @@ import {
   SetStateAction,
 } from "react";
 import { LayoutProps, SpaceProps } from "styled-system";
-import { PolymorphicComponentProps } from "../../util/polymorphic";
 
 export interface ButtonMenuItemProps extends BaseButtonMenuItemProps {
   isActive?: boolean;
@@ -15,6 +14,8 @@ export interface ButtonMenuItemProps extends BaseButtonMenuItemProps {
   itemIndex?: number;
   blockOffset?: number;
   elementRef?: RefObject<HTMLButtonElement>;
+  onItemClick?: (index: number) => void;
+  onClick?: any;
 }
 // export type ButtonMenuItemProps<P extends ElementType = "button"> =
 //   PolymorphicComponentProps<P, BaseButtonMenuItemProps>;

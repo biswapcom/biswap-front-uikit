@@ -114,7 +114,6 @@ export const Default: React.FC = () => {
 
       <Row>
         <ButtonMenu
-          withoutAnimation
           scrollX
           activeIndex={index}
           onItemClick={handleClick}
@@ -122,7 +121,9 @@ export const Default: React.FC = () => {
           scale="lg"
         >
           <ButtonMenuItem as="a">Button 1</ButtonMenuItem>
-          <ButtonMenuItem>Button 2</ButtonMenuItem>
+          <ButtonMenuItem onClick={() => console.log("CLICK")}>
+            Button 2
+          </ButtonMenuItem>
           <ButtonMenuItem>Button 3</ButtonMenuItem>
           <ButtonMenuItem>Button 4</ButtonMenuItem>
         </ButtonMenu>

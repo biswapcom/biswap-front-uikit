@@ -24,3 +24,6 @@ export const getHoverKey = (variant: Variant): HoverKey => {
       return "white";
   }
 };
+
+export const getOffset = (offset: number, isFlat: boolean): number =>
+  isFlat ? offset : offset + 4;

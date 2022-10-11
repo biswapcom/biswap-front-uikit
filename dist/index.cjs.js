@@ -4146,7 +4146,35 @@ var useDelayedUnmount = function (isMounted, delayTime) {
     return shouldRender;
 };
 
-var Wrapper$e = styled__default["default"].div(templateObject_4$o || (templateObject_4$o = __makeTemplateObject(["\n  background-color: ", ";\n  position: relative;\n  display: ", ";\n  width: ", ";\n  border-radius: 10px;\n  overflow: hidden;\n\n  padding: ", ";\n\n  ", ";\n\n  ", "\n\n  ", "\n\n  &::-webkit-scrollbar {\n    display: none;\n  }\n\n  ", "\n"], ["\n  background-color: ", ";\n  position: relative;\n  display: ", ";\n  width: ", ";\n  border-radius: 10px;\n  overflow: hidden;\n\n  padding: ", ";\n\n  ", ";\n\n  ", "\n\n  ", "\n\n  &::-webkit-scrollbar {\n    display: none;\n  }\n\n  ", "\n"])), function (_a) {
+var getColorKey = function (variant) {
+    switch (variant) {
+        case variants$5.DARK:
+            return "pastelBlue";
+        case variants$5.LIGHT:
+            return "gray900";
+        case variants$5.WARNING_LIGHT:
+            return "gray900";
+        case variants$5.WARNING_DARK:
+            return "pastelBlue";
+    }
+};
+var getHoverKey = function (variant) {
+    switch (variant) {
+        case variants$5.DARK:
+            return "white";
+        case variants$5.LIGHT:
+            return "dark800";
+        case variants$5.WARNING_LIGHT:
+            return "dark800";
+        case variants$5.WARNING_DARK:
+            return "white";
+    }
+};
+var getOffset = function (offset, isFlat) {
+    return isFlat ? offset : offset + 4;
+};
+
+var Wrapper$e = styled__default["default"].div(templateObject_4$o || (templateObject_4$o = __makeTemplateObject(["\n  background-color: ", ";\n  position: relative;\n  display: ", ";\n  width: ", ";\n  border-radius: 10px;\n  overflow: hidden;\n  padding: 4px;\n\n  ", ";\n\n  ", "\n\n  ", "\n\n  &::-webkit-scrollbar {\n    display: none;\n  }\n\n  ", "\n"], ["\n  background-color: ", ";\n  position: relative;\n  display: ", ";\n  width: ", ";\n  border-radius: 10px;\n  overflow: hidden;\n  padding: 4px;\n\n  ", ";\n\n  ", "\n\n  ", "\n\n  &::-webkit-scrollbar {\n    display: none;\n  }\n\n  ", "\n"])), function (_a) {
     var theme = _a.theme, withoutBackground = _a.withoutBackground, variant = _a.variant;
     return withoutBackground
         ? "transparent"
@@ -4160,17 +4188,14 @@ var Wrapper$e = styled__default["default"].div(templateObject_4$o || (templateOb
     var fullWidth = _a.fullWidth;
     return (fullWidth ? "100%" : "auto");
 }, function (_a) {
-    var flatBottom = _a.flatBottom, flatTop = _a.flatTop;
-    return flatBottom || flatTop ? "0 4px" : "4px";
-}, function (_a) {
     var scrollX = _a.scrollX;
     return scrollX && styled.css(templateObject_1$1d || (templateObject_1$1d = __makeTemplateObject(["\n      overflow-x: scroll;\n    "], ["\n      overflow-x: scroll;\n    "])));
 }, function (_a) {
     var flatTop = _a.flatTop;
-    return flatTop && styled.css(templateObject_2$I || (templateObject_2$I = __makeTemplateObject(["\n      border-radius: 0 0 8px 8px;\n    "], ["\n      border-radius: 0 0 8px 8px;\n    "])));
+    return flatTop && styled.css(templateObject_2$I || (templateObject_2$I = __makeTemplateObject(["\n      border-radius: 0 0 8px 8px;\n      padding: 0;\n    "], ["\n      border-radius: 0 0 8px 8px;\n      padding: 0;\n    "])));
 }, function (_a) {
     var flatBottom = _a.flatBottom;
-    return flatBottom && styled.css(templateObject_3$v || (templateObject_3$v = __makeTemplateObject(["\n      border-radius: 8px 8px 0 0;\n    "], ["\n      border-radius: 8px 8px 0 0;\n    "])));
+    return flatBottom && styled.css(templateObject_3$v || (templateObject_3$v = __makeTemplateObject(["\n      border-radius: 8px 8px 0 0;\n      padding: 0;\n    "], ["\n      border-radius: 8px 8px 0 0;\n      padding: 0;\n    "])));
 }, styledSystem.space);
 var StyledButtonMenu = styled__default["default"].div(templateObject_6$b || (templateObject_6$b = __makeTemplateObject(["\n  position: relative;\n  display: ", ";\n  width: ", ";\n\n  & > button,\n  & > div,\n  & > a {\n    flex-grow: 1;\n\n    ", "\n  }\n\n  & > button,\n  & > div,\n  & a {\n    box-shadow: none;\n  }\n\n  ", "\n"], ["\n  position: relative;\n  display: ", ";\n  width: ", ";\n\n  & > button,\n  & > div,\n  & > a {\n    flex-grow: 1;\n\n    ", "\n  }\n\n  & > button,\n  & > div,\n  & a {\n    box-shadow: none;\n  }\n\n  ", "\n"])), function (_a) {
     var fullWidth = _a.fullWidth;
@@ -4202,7 +4227,7 @@ var Selection$2 = styled__default["default"].div(templateObject_10$3 || (templat
     return "".concat(width, "px");
 }, function (_a) {
     var offset = _a.offset;
-    return "".concat(offset + 4, "px");
+    return "".concat(offset, "px");
 }, function (_a) {
     var scale = _a.scale;
     return (scale === scales$8.SM ? "6px" : "8px");
@@ -4231,11 +4256,11 @@ var ButtonMenu = function (_a) {
         }
     }, [widthsArr, activeIndex, isDesktop, isMobile, isTablet]);
     return (React__default["default"].createElement(Wrapper$e, __assign({ flatBottom: flatBottom, flatTop: flatTop, fullWidth: fullWidth, withoutBackground: withoutBackground, variant: variant, scrollX: scrollX }, props),
-        !disabled && (React__default["default"].createElement(Selection$2, { flatTop: flatTop, flatBottom: flatBottom, scale: scale, width: widthsArr[activeIndex], offset: blockOffset, variant: variant, withoutAnimation: withoutAnimation })),
+        !disabled && (React__default["default"].createElement(Selection$2, { flatTop: flatTop, flatBottom: flatBottom, scale: scale, width: widthsArr[activeIndex], offset: getOffset(blockOffset, flatTop || flatBottom), variant: variant, withoutAnimation: withoutAnimation })),
         React__default["default"].createElement(StyledButtonMenu, __assign({ disabled: disabled, variant: variant, fullWidth: fullWidth, withoutBackground: withoutBackground, equalElementWidth: equalElementWidth }, props), React.Children.map(children, function (child, index) {
             return React.cloneElement(child, {
                 isActive: activeIndex === index,
-                onClick: onItemClick ? function () { return onItemClick(index); } : undefined,
+                onItemClick: onItemClick ? function () { return onItemClick(index); } : undefined,
                 setWidth: setWidthsArr,
                 itemIndex: index,
                 blockOffset: blockOffset,
@@ -4325,31 +4350,6 @@ var styleVariants$3 = (_b$7 = {},
     },
     _b$7);
 
-var getColorKey = function (variant) {
-    switch (variant) {
-        case variants$5.DARK:
-            return "pastelBlue";
-        case variants$5.LIGHT:
-            return "gray900";
-        case variants$5.WARNING_LIGHT:
-            return "gray900";
-        case variants$5.WARNING_DARK:
-            return "pastelBlue";
-    }
-};
-var getHoverKey = function (variant) {
-    switch (variant) {
-        case variants$5.DARK:
-            return "white";
-        case variants$5.LIGHT:
-            return "dark800";
-        case variants$5.WARNING_LIGHT:
-            return "dark800";
-        case variants$5.WARNING_DARK:
-            return "white";
-    }
-};
-
 var MenuItemButton = styled__default["default"].button(templateObject_2$H || (templateObject_2$H = __makeTemplateObject(["\n  align-items: center;\n  border: 0;\n  cursor: pointer;\n  display: flex;\n  font-family: inherit;\n  font-weight: 600;\n  justify-content: center;\n  line-height: 1;\n  outline: 0;\n  transition: background-color 0.2s, opacity 0.3s, color 0.3s;\n  background-color: transparent;\n  white-space: nowrap;\n  -webkit-tap-highlight-color: transparent;\n\n  ", "\n  ", "\n\n  ", "\n"], ["\n  align-items: center;\n  border: 0;\n  cursor: pointer;\n  display: flex;\n  font-family: inherit;\n  font-weight: 600;\n  justify-content: center;\n  line-height: 1;\n  outline: 0;\n  transition: background-color 0.2s, opacity 0.3s, color 0.3s;\n  background-color: transparent;\n  white-space: nowrap;\n  -webkit-tap-highlight-color: transparent;\n\n  ", "\n  ", "\n\n  ", "\n"])), styledSystem.variant({
     variants: styleVariants$3,
 }), styledSystem.variant({
@@ -4366,12 +4366,11 @@ var MenuItemButton = styled__default["default"].button(templateObject_2$H || (te
     });
 });
 var ButtonMenuItem = function (_a) {
-    var _b, _c, _d;
-    var _e = _a.isActive, isActive = _e === void 0 ? false : _e, _f = _a.variant, variant = _f === void 0 ? variants$5.DARK : _f, as = _a.as, setWidth = _a.setWidth, _g = _a.itemIndex, itemIndex = _g === void 0 ? 0 : _g, blockOffset = _a.blockOffset, props = __rest(_a, ["isActive", "variant", "as", "setWidth", "itemIndex", "blockOffset"]);
+    var _b;
+    var _c = _a.isActive, isActive = _c === void 0 ? false : _c, _d = _a.variant, variant = _d === void 0 ? variants$5.DARK : _d, as = _a.as, setWidth = _a.setWidth, _e = _a.itemIndex, itemIndex = _e === void 0 ? 0 : _e, blockOffset = _a.blockOffset, _f = _a.onItemClick, onItemClick = _f === void 0 ? function () { } : _f, _g = _a.onClick, onClick = _g === void 0 ? function () { } : _g, props = __rest(_a, ["isActive", "variant", "as", "setWidth", "itemIndex", "blockOffset", "onItemClick", "onClick"]);
     var _h = useMatchBreakpoints(), isXs = _h.isXs, isSm = _h.isSm, isMs = _h.isMs, isLg = _h.isLg, isXl = _h.isXl, isXll = _h.isXll, isXxl = _h.isXxl;
-    var activeRef = React.useRef(null);
-    var inactiveRef = React.useRef(null);
-    var itemWidth = (_c = (_b = activeRef.current) === null || _b === void 0 ? void 0 : _b.clientWidth) !== null && _c !== void 0 ? _c : (_d = inactiveRef.current) === null || _d === void 0 ? void 0 : _d.clientWidth;
+    var ref = React.useRef(null);
+    var itemWidth = (_b = ref.current) === null || _b === void 0 ? void 0 : _b.clientWidth;
     React.useEffect(function () {
         if (itemWidth && setWidth) {
             setWidth(function (prev) {
@@ -4381,7 +4380,11 @@ var ButtonMenuItem = function (_a) {
             });
         }
     }, [blockOffset, itemWidth, isXs, isSm, isMs, isLg, isXl, isXll, isXxl]);
-    return (React__default["default"].createElement(MenuItemButton, __assign({ isActive: isActive, ref: activeRef, as: as, variant: variant, hoverKey: getHoverKey(variant), colorKey: getColorKey(variant) }, props)));
+    var omItemClickHandler = function () {
+        onItemClick(itemIndex);
+        onClick();
+    };
+    return (React__default["default"].createElement(MenuItemButton, __assign({ onClick: omItemClickHandler, isActive: isActive, ref: ref, as: as, variant: variant, hoverKey: getHoverKey(variant), colorKey: getColorKey(variant) }, props)));
 };
 var templateObject_1$1c, templateObject_2$H;
 

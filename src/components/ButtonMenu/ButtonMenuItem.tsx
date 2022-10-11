@@ -66,15 +66,15 @@ const ButtonMenuItem: PolymorphicComponent<ButtonMenuItemProps, "button"> = ({
   setWidth,
   itemIndex = 0,
   blockOffset,
+  onItemClick = () => {},
+  onClick = () => {},
   ...props
 }: ButtonMenuItemProps) => {
   const { isXs, isSm, isMs, isLg, isXl, isXll, isXxl } = useMatchBreakpoints();
 
-  const activeRef = useRef<HTMLButtonElement>(null);
-  const inactiveRef = useRef<HTMLButtonElement>(null);
+  const ref = useRef<HTMLButtonElement>(null);
 
-  const itemWidth =
-    activeRef.current?.clientWidth ?? inactiveRef.current?.clientWidth;
+  const itemWidth = ref.current?.clientWidth;
 
   useEffect(() => {
     if (itemWidth && setWidth) {
@@ -86,10 +86,16 @@ const ButtonMenuItem: PolymorphicComponent<ButtonMenuItemProps, "button"> = ({
     }
   }, [blockOffset, itemWidth, isXs, isSm, isMs, isLg, isXl, isXll, isXxl]);
 
+  const omItemClickHandler = () => {
+    onItemClick(itemIndex);
+    onClick();
+  };
+
   return (
     <MenuItemButton
+      onClick={omItemClickHandler}
       isActive={isActive}
-      ref={activeRef}
+      ref={ref}
       as={as}
       variant={variant}
       hoverKey={getHoverKey(variant)}
