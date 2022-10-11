@@ -10,7 +10,7 @@ import { Text } from "../../components/Text";
 import { Button } from "../../components/Button";
 
 // hooks
-import { useMatchBreakpoints } from "../../hooks";
+import { useMatchBreakpoints } from "../../contexts";
 
 // utils
 import { getRgba } from "../../util";

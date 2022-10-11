@@ -105,7 +105,6 @@ const AccountModal: React.FC<Props> = ({
           small
           href={`https://bscscan.com/address/${account}`}
           mr="16px"
-          color="primary"
         >
           View on BscScan
           <ArrowUpForwardIcon color="primary" width="14px" ml="4px" />

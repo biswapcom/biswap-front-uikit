@@ -1,16 +1,15 @@
-import React, { useState, useEffect, isValidElement, cloneElement, Children, useLayoutEffect, useRef, forwardRef, createContext, useContext, useCallback, useMemo, useReducer, Fragment } from 'react';
+import React, { useState, useEffect, isValidElement, cloneElement, Children, useLayoutEffect, createContext, useContext, useRef, forwardRef, useCallback, useMemo, useReducer, Fragment } from 'react';
 import styled, { keyframes, css, ThemeProvider, useTheme, createGlobalStyle } from 'styled-components';
 import { space, typography, layout, background, border, position, flexbox, grid, variant as variant$1 } from 'styled-system';
 import get from 'lodash/get';
 import { createPortal } from 'react-dom';
 import { parseInt as parseInt$1, noop as noop$1, cloneDeep } from 'lodash';
 import { usePopper } from 'react-popper';
-import debounce from 'lodash/debounce';
 import noop from 'lodash/noop';
+import debounce from 'lodash/debounce';
 import throttle from 'lodash/throttle';
-import { Link as Link$1, useHistory } from 'react-router-dom';
+import { Link as Link$1 } from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import { TwitterShareButton, TelegramShareButton } from 'react-share';
 
 /******************************************************************************
 Copyright (c) Microsoft Corporation.
@@ -2801,7 +2800,7 @@ var IconModule = /*#__PURE__*/Object.freeze({
     Svg: Svg
 });
 
-var getColor = function (_a) {
+var getColor$1 = function (_a) {
     var color = _a.color, theme = _a.theme;
     return getThemeValue("colors.".concat(color), color)(theme);
 };
@@ -2809,7 +2808,7 @@ var getFontSize = function (_a) {
     var fontSize = _a.fontSize, small = _a.small;
     return small ? "14px" : fontSize || "16px";
 };
-var Text = styled.div(templateObject_1$1q || (templateObject_1$1q = __makeTemplateObject(["\n  color: ", ";\n  font-size: ", ";\n  font-weight: ", ";\n  line-height: 1.5;\n  ", "\n  ", "\n\n  ", "\n  \n  ", "\n  ", "\n  ", "\n"], ["\n  color: ", ";\n  font-size: ", ";\n  font-weight: ", ";\n  line-height: 1.5;\n  ", "\n  ", "\n\n  ", "\n  \n  ", "\n  ", "\n  ", "\n"])), getColor, getFontSize, function (_a) {
+var Text = styled.div(templateObject_1$1q || (templateObject_1$1q = __makeTemplateObject(["\n  color: ", ";\n  font-size: ", ";\n  font-weight: ", ";\n  line-height: 1.5;\n  ", "\n  ", "\n\n  ", "\n  \n  ", "\n  ", "\n  ", "\n"], ["\n  color: ", ";\n  font-size: ", ";\n  font-weight: ", ";\n  line-height: 1.5;\n  ", "\n  ", "\n\n  ", "\n  \n  ", "\n  ", "\n  ", "\n"])), getColor$1, getFontSize, function (_a) {
     var bold = _a.bold;
     return (bold ? 600 : 400);
 }, function (_a) {
@@ -3357,6 +3356,7 @@ var Button = function (props) {
             isLoading ? loadingText : children,
             isValidElement(endIconElement) &&
                 cloneElement(endIconElement, {
+                    // @ts-ignore
                     ml: "0.5rem",
                 }))));
 };
@@ -3801,7 +3801,7 @@ var getKey = function (size) {
     return "is".concat(size.charAt(0).toUpperCase()).concat(size.slice(1));
 };
 var getState = function () {
-    var s = Object.keys(mediaQueries).reduce(function (accum, size) {
+    return Object.keys(mediaQueries).reduce(function (accum, size) {
         var _a, _b;
         var _c;
         var key = getKey(size);
@@ -3811,40 +3811,62 @@ var getState = function () {
         var mql = window.matchMedia(mediaQueries[size]);
         return __assign(__assign({}, accum), (_b = {}, _b[key] = (_c = mql === null || mql === void 0 ? void 0 : mql.matches) !== null && _c !== void 0 ? _c : false, _b));
     }, {});
-    return s;
 };
-var useMatchBreakpoints = function () {
-    var _a = useState(function () { return getState(); }), state = _a[0], setState = _a[1];
+var MatchBreakpointsContext = createContext({
+    isMobile: false,
+    isTablet: false,
+    isDesktop: false,
+});
+var getBreakpointChecks = function (state) {
+    return __assign(__assign({}, state), { isMobile: state.isXs || state.isSm, isTablet: state.isMd || state.isLg, isDesktop: state.isXl || state.isXll || state.isXxl });
+};
+var MatchBreakpointsProvider = function (_a) {
+    var children = _a.children;
+    var _b = useState(function () {
+        return getBreakpointChecks(getState());
+    }), state = _b[0], setState = _b[1];
     useIsomorphicEffect(function () {
         // Create listeners for each media query returning a function to unsubscribe
         var handlers = Object.keys(mediaQueries).map(function (size) {
-            var mql = window.matchMedia(mediaQueries[size]);
-            var handler = function (matchMediaQuery) {
-                var key = getKey(size);
-                setState(function (prevState) {
-                    var _a;
-                    return (__assign(__assign({}, prevState), (_a = {}, _a[key] = matchMediaQuery.matches, _a)));
-                });
-            };
-            // Safari < 14 fix
-            if (mql.addEventListener) {
-                mql.addEventListener("change", handler);
+            var mql;
+            var handler;
+            if (typeof (window === null || window === void 0 ? void 0 : window.matchMedia) === "function") {
+                mql = window.matchMedia(mediaQueries[size]);
+                handler = function (matchMediaQuery) {
+                    var key = getKey(size);
+                    setState(function (prevState) {
+                        var _a;
+                        return getBreakpointChecks(__assign(__assign({}, prevState), (_a = {}, _a[key] = matchMediaQuery.matches, _a)));
+                    });
+                };
+                // Safari < 14 fix
+                if (mql.addEventListener) {
+                    mql.addEventListener("change", handler);
+                }
             }
             return function () {
                 // Safari < 14 fix
-                if (mql.removeEventListener) {
+                if (mql === null || mql === void 0 ? void 0 : mql.removeEventListener) {
                     mql.removeEventListener("change", handler);
                 }
             };
         });
-        setState(getState());
+        setState(getBreakpointChecks(getState()));
         return function () {
             handlers.forEach(function (unsubscribe) {
                 unsubscribe();
             });
         };
     }, []);
-    return __assign(__assign({}, state), { isMobile: state.isXs || state.isSm, isTablet: state.isMd || state.isLg, isDesktop: state.isXl || state.isXll || state.isXxl });
+    return (React.createElement(MatchBreakpointsContext.Provider, { value: state }, children));
+};
+
+var useMatchBreakpoints = function () {
+    var matchBreakpointContext = useContext(MatchBreakpointsContext);
+    if (matchBreakpointContext === undefined) {
+        throw new Error("Match Breakpoint context is undefined");
+    }
+    return matchBreakpointContext;
 };
 
 var StyledOverlay = styled(Box)(templateObject_1$1b || (templateObject_1$1b = __makeTemplateObject(["\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  background-color: rgb(10, 22, 43);\n  z-index: 20;\n  opacity: 0.55;\n"], ["\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  background-color: rgb(10, 22, 43);\n  z-index: 20;\n  opacity: 0.55;\n"])));
@@ -4243,7 +4265,7 @@ var DropdownTop = styled.div(templateObject_4$l || (templateObject_4$l = __makeT
         return theme.colors.pastelBlue;
     });
 });
-var Label$1 = styled.span(templateObject_5$g || (templateObject_5$g = __makeTemplateObject(["\n  flex-grow: 1;\n"], ["\n  flex-grow: 1;\n"])));
+var Label$1 = styled.span(templateObject_5$h || (templateObject_5$h = __makeTemplateObject(["\n  flex-grow: 1;\n"], ["\n  flex-grow: 1;\n"])));
 var StyledArrow = styled(Icon$3A)(templateObject_6$b || (templateObject_6$b = __makeTemplateObject(["\n  transition: transform 0.4s ease-in-out;\n  transform: ", ";\n"], ["\n  transition: transform 0.4s ease-in-out;\n  transform: ", ";\n"])), function (_a) {
     var isOpen = _a.isOpen;
     return (isOpen ? "scale(1,-1)" : "scale(1,1)");
@@ -4316,7 +4338,7 @@ var Dropdown = function (_a) {
 Dropdown.defaultProps = {
     position: "bottom",
 };
-var templateObject_1$14, templateObject_2$E, templateObject_3$r, templateObject_4$l, templateObject_5$g, templateObject_6$b, templateObject_7$9, templateObject_8$5;
+var templateObject_1$14, templateObject_2$E, templateObject_3$r, templateObject_4$l, templateObject_5$h, templateObject_6$b, templateObject_7$9, templateObject_8$5;
 
 var tags = {
     H1: "h1",
@@ -4583,7 +4605,7 @@ var LeftIconComponent = styled(StyledIconComponent)(templateObject_4$k || (templ
     var scale = _a.scale;
     return getIconPosition(scale);
 });
-var RightIconComponent = styled(StyledIconComponent)(templateObject_5$f || (templateObject_5$f = __makeTemplateObject(["\n  right: ", ";\n"], ["\n  right: ", ";\n"])), function (_a) {
+var RightIconComponent = styled(StyledIconComponent)(templateObject_5$g || (templateObject_5$g = __makeTemplateObject(["\n  right: ", ";\n"], ["\n  right: ", ";\n"])), function (_a) {
     var scale = _a.scale;
     return getIconPosition(scale);
 });
@@ -4602,7 +4624,7 @@ var InputGroup = function (_a) {
             isWarning && (React.createElement(RightIconComponent, { iconName: "WarningSolid", color: "warning", scale: scale }))),
         description && (React.createElement(TextDescription, { mt: "4px", fontSize: "12px", variant: variant }, description))));
 };
-var templateObject_1$X, templateObject_2$B, templateObject_3$q, templateObject_4$k, templateObject_5$f, templateObject_6$a;
+var templateObject_1$X, templateObject_2$B, templateObject_3$q, templateObject_4$k, templateObject_5$g, templateObject_6$a;
 
 var GridLayout$1 = styled(Grid)(templateObject_1$W || (templateObject_1$W = __makeTemplateObject(["\n  grid-template-columns: repeat(6, 1fr);\n  grid-gap: 16px;\n  ", " {\n    grid-template-columns: repeat(8, 1fr);\n    grid-gap: 24px;\n  }\n  ", " {\n    grid-template-columns: repeat(12, 1fr);\n    grid-gap: 24px;\n  }\n  ", " {\n    grid-template-columns: repeat(12, 1fr);\n    grid-gap: 32px;\n  }\n"], ["\n  grid-template-columns: repeat(6, 1fr);\n  grid-gap: 16px;\n  ", " {\n    grid-template-columns: repeat(8, 1fr);\n    grid-gap: 24px;\n  }\n  ", " {\n    grid-template-columns: repeat(12, 1fr);\n    grid-gap: 24px;\n  }\n  ", " {\n    grid-template-columns: repeat(12, 1fr);\n    grid-gap: 32px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
@@ -5028,10 +5050,10 @@ Radio.defaultProps = {
 };
 var templateObject_1$Q, templateObject_2$y, templateObject_3$p;
 
-var SliderIcon = "data:image/svg+xml,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20clipPath%3D%22url%28%23clip0_4728_34338%29%22%3E%3Cpath%20d%3D%22M0%2010C0%204.47715%204.47715%200%2010%200C15.5228%200%2020%204.47715%2020%2010C20%2015.5228%2015.5228%2020%2010%2020C4.47715%2020%200%2015.5228%200%2010Z%22%20fill%3D%22%231263F1%22%2F%3E%3Cg%20filter%3D%22url%28%23filter0_d_4728_34338%29%22%3E%3Crect%20x%3D%224%22%20y%3D%224%22%20width%3D%2212%22%20height%3D%2212%22%20rx%3D%226%22%20fill%3D%22white%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3Cdefs%3E%3Cfilter%20id%3D%22filter0_d_4728_34338%22%20x%3D%220%22%20y%3D%222%22%20width%3D%2220%22%20height%3D%2220%22%20filterUnits%3D%22userSpaceOnUse%22%20colorInterpolationFilters%3D%22sRGB%22%3E%3CfeFlood%20floodOpacity%3D%220%22%20result%3D%22BackgroundImageFix%22%2F%3E%3CfeColorMatrix%20in%3D%22SourceAlpha%22%20type%3D%22matrix%22%20values%3D%220%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%20127%200%22%20result%3D%22hardAlpha%22%2F%3E%3CfeOffset%20dy%3D%222%22%2F%3E%3CfeGaussianBlur%20stdDeviation%3D%222%22%2F%3E%3CfeComposite%20in2%3D%22hardAlpha%22%20operator%3D%22out%22%2F%3E%3CfeColorMatrix%20type%3D%22matrix%22%20values%3D%220%200%200%200%200.027451%200%200%200%200%200.0862745%200%200%200%200%200.176471%200%200%200%200.32%200%22%2F%3E%3CfeBlend%20mode%3D%22normal%22%20in2%3D%22BackgroundImageFix%22%20result%3D%22effect1_dropShadow_4728_34338%22%2F%3E%3CfeBlend%20mode%3D%22normal%22%20in%3D%22SourceGraphic%22%20in2%3D%22effect1_dropShadow_4728_34338%22%20result%3D%22shape%22%2F%3E%3C%2Ffilter%3E%3CclipPath%20id%3D%22clip0_4728_34338%22%3E%3Crect%20width%3D%2220%22%20height%3D%2220%22%20fill%3D%22white%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3C%2Fsvg%3E";
+var SliderIcon = "data:image/svg+xml,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20clip-path%3D%22url%28%23clip0_4728_34338%29%22%3E%3Cpath%20d%3D%22M0%2010C0%204.47715%204.47715%200%2010%200C15.5228%200%2020%204.47715%2020%2010C20%2015.5228%2015.5228%2020%2010%2020C4.47715%2020%200%2015.5228%200%2010Z%22%20fill%3D%22%231263F1%22%2F%3E%3Cg%20filter%3D%22url%28%23filter0_d_4728_34338%29%22%3E%3Crect%20x%3D%224%22%20y%3D%224%22%20width%3D%2212%22%20height%3D%2212%22%20rx%3D%226%22%20fill%3D%22white%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3Cdefs%3E%3Cfilter%20id%3D%22filter0_d_4728_34338%22%20x%3D%220%22%20y%3D%222%22%20width%3D%2220%22%20height%3D%2220%22%20filterUnits%3D%22userSpaceOnUse%22%20color-interpolation-filters%3D%22sRGB%22%3E%3CfeFlood%20flood-opacity%3D%220%22%20result%3D%22BackgroundImageFix%22%2F%3E%3CfeColorMatrix%20in%3D%22SourceAlpha%22%20type%3D%22matrix%22%20values%3D%220%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%20127%200%22%20result%3D%22hardAlpha%22%2F%3E%3CfeOffset%20dy%3D%222%22%2F%3E%3CfeGaussianBlur%20stdDeviation%3D%222%22%2F%3E%3CfeComposite%20in2%3D%22hardAlpha%22%20operator%3D%22out%22%2F%3E%3CfeColorMatrix%20type%3D%22matrix%22%20values%3D%220%200%200%200%200.027451%200%200%200%200%200.0862745%200%200%200%200%200.176471%200%200%200%200.32%200%22%2F%3E%3CfeBlend%20mode%3D%22normal%22%20in2%3D%22BackgroundImageFix%22%20result%3D%22effect1_dropShadow_4728_34338%22%2F%3E%3CfeBlend%20mode%3D%22normal%22%20in%3D%22SourceGraphic%22%20in2%3D%22effect1_dropShadow_4728_34338%22%20result%3D%22shape%22%2F%3E%3C%2Ffilter%3E%3CclipPath%20id%3D%22clip0_4728_34338%22%3E%3Crect%20width%3D%2220%22%20height%3D%2220%22%20fill%3D%22white%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3C%2Fsvg%3E";
 
 var Wrapper$a = styled.div(templateObject_1$P || (templateObject_1$P = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n"], ["\n  display: flex;\n  flex-direction: column;\n"])));
-var SliderContainer = styled(Box)(templateObject_2$x || (templateObject_2$x = __makeTemplateObject(["\n  position: relative;\n  top: 0;\n  left: 0;\n"], ["\n  position: relative;\n  top: 0;\n  left: 0;\n"])));
+var SliderContainer = styled(Box)(templateObject_2$x || (templateObject_2$x = __makeTemplateObject(["\n  position: relative;\n  top: 0;\n  left: 0;\n  margin-bottom: 24px;\n"], ["\n  position: relative;\n  top: 0;\n  left: 0;\n  margin-bottom: 24px;\n"])));
 var BarBackground$1 = styled.div(templateObject_3$o || (templateObject_3$o = __makeTemplateObject(["\n  width: 100%;\n  height: 4px;\n  border-radius: 100px;\n  opacity: 0.16;\n  background-color: ", ";\n"], ["\n  width: 100%;\n  height: 4px;\n  border-radius: 100px;\n  opacity: 0.16;\n  background-color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.pastelBlue;
@@ -5043,15 +5065,21 @@ var BarProgress$1 = styled.div(templateObject_4$j || (templateObject_4$j = __mak
     var theme = _a.theme;
     return theme.colors.primary;
 });
-var StyledInput$1 = styled.input(templateObject_5$e || (templateObject_5$e = __makeTemplateObject(["\n  height: 20px;\n  position: relative;\n  cursor: pointer;\n  transform: translateY(-18px);\n  margin: 2px 0;\n  -webkit-tap-highlight-color: transparent;\n\n  ::-webkit-slider-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    border-radius: 50%;\n    background-image: url(", ");\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n  ::-moz-range-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    // custom moz reset\n    background-color: transparent;\n    border: 0;\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n  ::-ms-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    border-radius: 50%;\n    background-image: url(", ");\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n"], ["\n  height: 20px;\n  position: relative;\n  cursor: pointer;\n  transform: translateY(-18px);\n  margin: 2px 0;\n  -webkit-tap-highlight-color: transparent;\n\n  ::-webkit-slider-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    border-radius: 50%;\n    background-image: url(", ");\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n  ::-moz-range-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    // custom moz reset\n    background-color: transparent;\n    border: 0;\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n  ::-ms-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    border-radius: 50%;\n    background-image: url(", ");\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n"])), SliderIcon, SliderIcon);
+var StyledInput$1 = styled.input(templateObject_5$f || (templateObject_5$f = __makeTemplateObject(["\n  height: 20px;\n  position: relative;\n  cursor: pointer;\n  transform: translateY(-18px);\n  margin: 2px 0;\n  -webkit-tap-highlight-color: transparent;\n  z-index: 2;\n\n  ::-webkit-slider-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    border-radius: 50%;\n    background-image: url(", ");\n    position: relative;\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n  ::-moz-range-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    // custom moz reset\n    background-color: transparent;\n    border: 0;\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n  ::-ms-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    border-radius: 50%;\n    background-image: url(", ");\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n"], ["\n  height: 20px;\n  position: relative;\n  cursor: pointer;\n  transform: translateY(-18px);\n  margin: 2px 0;\n  -webkit-tap-highlight-color: transparent;\n  z-index: 2;\n\n  ::-webkit-slider-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    border-radius: 50%;\n    background-image: url(", ");\n    position: relative;\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n  ::-moz-range-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    // custom moz reset\n    background-color: transparent;\n    border: 0;\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n  ::-ms-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    border-radius: 50%;\n    background-image: url(", ");\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n"])), SliderIcon, SliderIcon);
 var BunnySlider = styled.div(templateObject_6$9 || (templateObject_6$9 = __makeTemplateObject(["\n  position: absolute;\n  width: 100%;\n"], ["\n  position: absolute;\n  width: 100%;\n"])));
-var BreakPointsWrap = styled.div(templateObject_7$8 || (templateObject_7$8 = __makeTemplateObject(["\n  padding: 0 9px;\n  display: flex;\n  justify-content: space-between;\n  margin-top: 16px;\n"], ["\n  padding: 0 9px;\n  display: flex;\n  justify-content: space-between;\n  margin-top: 16px;\n"])));
-var Point = styled.div(templateObject_8$4 || (templateObject_8$4 = __makeTemplateObject(["\n  width: 2px;\n  height: 8px;\n  border-radius: 4px;\n  background-color: ", ";\n"], ["\n  width: 2px;\n  height: 8px;\n  border-radius: 4px;\n  background-color: ", ";\n"])), function (_a) {
+var BreakPointsWrap = styled.div(templateObject_7$8 || (templateObject_7$8 = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  position: absolute;\n  width: 100%;\n  top: -3px;\n  left: 0;\n  z-index: 1;\n"], ["\n  display: flex;\n  justify-content: space-between;\n  position: absolute;\n  width: 100%;\n  top: -3px;\n  left: 0;\n  z-index: 1;\n"])));
+var Point = styled.span(templateObject_8$4 || (templateObject_8$4 = __makeTemplateObject(["\n  display: block;\n  width: 10px;\n  height: 10px;\n  border-radius: 50%;\n  background: ", ";\n  border: ", ";\n"], ["\n  display: block;\n  width: 10px;\n  height: 10px;\n  border-radius: 50%;\n  background: ", ";\n  border: ", ";\n"])), function (_a) {
     var theme = _a.theme;
-    return theme.colors.backgroundDisabled;
+    return theme.colors.white;
+}, function (_a) {
+    var theme = _a.theme, pointColor = _a.pointColor;
+    return "3px solid ".concat(theme.colors[pointColor]);
 });
 var InfoBlock = styled.div(templateObject_9$3 || (templateObject_9$3 = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n"], ["\n  display: flex;\n  justify-content: space-between;\n"])));
-var TitleText = styled(Text)(templateObject_10$2 || (templateObject_10$2 = __makeTemplateObject(["\n  font-size: 14px;\n  line-height: 20px;\n  color: black;\n  font-weight: 600;\n"], ["\n  font-size: 14px;\n  line-height: 20px;\n  color: black;\n  font-weight: 600;\n"])));
+var TitleText = styled(Text)(templateObject_10$2 || (templateObject_10$2 = __makeTemplateObject(["\n  font-size: 14px;\n  line-height: 20px;\n  color: ", ";\n  font-weight: 600;\n"], ["\n  font-size: 14px;\n  line-height: 20px;\n  color: ", ";\n  font-weight: 600;\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.colors.dark800;
+});
 var PercentageAmount = styled(Text)(templateObject_11$1 || (templateObject_11$1 = __makeTemplateObject(["\n  font-size: 16px;\n  margin: 0 4px;\n  font-weight: 600;\n"], ["\n  font-size: 16px;\n  margin: 0 4px;\n  font-weight: 600;\n"])));
 var InfoNode = styled.div(templateObject_12$1 || (templateObject_12$1 = __makeTemplateObject(["\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n"], ["\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n"])));
 var RBPrice = styled(Text)(templateObject_13 || (templateObject_13 = __makeTemplateObject(["\n  text-align: right;\n  font-size: 12px;\n  line-height: 16px;\n  color: ", ";\n"], ["\n  text-align: right;\n  font-size: 12px;\n  line-height: 16px;\n  color: ", ";\n"])), function (_a) {
@@ -5092,15 +5120,15 @@ var PercentText = styled(Text)(templateObject_17 || (templateObject_17 = __makeT
 var MIN = 0;
 var MAX = 100;
 var INIT_CHECKPOINTS = [
-    { value: 0, RB: 1000 },
-    { value: 25, RB: 2500 },
-    { value: 50, RB: 5000 },
-    { value: 75, RB: 7500 },
-    { value: 90, RB: 10000 },
+    { value: 0, RB: "1000" },
+    { value: 25, RB: "2500" },
+    { value: 50, RB: "5000" },
+    { value: 75, RB: "7500" },
+    { value: 90, RB: "10000" },
 ];
 var Slider = function (_a) {
-    var value = _a.value, onValueChanged = _a.onValueChanged, _b = _a.checkPoints, checkPoints = _b === void 0 ? INIT_CHECKPOINTS : _b, isRobiBoost = _a.isRobiBoost, _c = _a.bannerPosition, bannerPosition = _c === void 0 ? "top" : _c, props = __rest(_a, ["value", "onValueChanged", "checkPoints", "isRobiBoost", "bannerPosition"]);
-    var _d = useState({ value: 0, RB: 0 }), percent = _d[0], setPercent = _d[1];
+    var value = _a.value, onValueChanged = _a.onValueChanged, _b = _a.checkPoints, checkPoints = _b === void 0 ? INIT_CHECKPOINTS : _b, isRobiBoost = _a.isRobiBoost, _c = _a.bannerPosition, bannerPosition = _c === void 0 ? "top" : _c, _d = _a.darkMode, darkMode = _d === void 0 ? false : _d, props = __rest(_a, ["value", "onValueChanged", "checkPoints", "isRobiBoost", "bannerPosition", "darkMode"]);
+    var _e = useState({ value: 0, RB: "0" }), percent = _e[0], setPercent = _e[1];
     var getRB = function (percentage) {
         var temp = checkPoints.map(function (item) { return Math.abs(item.value - percentage); });
         var minValue = Math.min.apply(Math, temp);
@@ -5122,6 +5150,13 @@ var Slider = function (_a) {
         var res = temp.indexOf(minValue);
         onValueChanged(checkPoints[res].value);
         setPercent(checkPoints[res]);
+    };
+    var getCirclesColor = function (pointPercent) {
+        return percent.value >= pointPercent && pointPercent !== 90
+            ? "primary"
+            : darkMode
+                ? "dark400"
+                : "gray300";
     };
     var handleChange = function (_a) {
         var target = _a.target;
@@ -5156,7 +5191,7 @@ var Slider = function (_a) {
     };
     var progressPercentage = (percent.value / MAX) * 100;
     // const labelOffset = progressPercentage - progressPercentage / MOVING_SLIDER_LABEL_OFFSET_FACTOR;
-    var _e = useState(false), infoVisible = _e[0], setInfoVisible = _e[1];
+    var _f = useState(false), infoVisible = _f[0], setInfoVisible = _f[1];
     return (React.createElement(Wrapper$a, null,
         React.createElement(SliderContainer, __assign({}, props),
             React.createElement(BunnySlider, null,
@@ -5166,8 +5201,8 @@ var Slider = function (_a) {
                     React.createElement(PercentText, null, 100 - value)))),
                 React.createElement(BarBackground$1, null),
                 React.createElement(BarProgress$1, { progress: progressPercentage }),
-                React.createElement(StyledInput$1, { onMouseDown: function () { return setInfoVisible(true); }, onMouseUp: function () { return setInfoVisible(false); }, onTouchStart: function () { return setInfoVisible(true); }, onTouchEnd: function () { return setInfoVisible(false); }, type: "range", min: MIN, max: MAX, value: percent.value, onChange: handleChange, onClick: function () { return onMouseLeaveHandleChange(); } }))),
-        React.createElement(BreakPointsWrap, null, checkPoints === null || checkPoints === void 0 ? void 0 : checkPoints.map(function (item, index) { return (React.createElement(Point, { key: index.toString() })); })),
+                React.createElement(StyledInput$1, { onMouseDown: function () { return setInfoVisible(true); }, onMouseUp: function () { return setInfoVisible(false); }, onTouchStart: function () { return setInfoVisible(true); }, onTouchEnd: function () { return setInfoVisible(false); }, type: "range", min: MIN, max: MAX, value: percent.value, onChange: handleChange, onClick: function () { return onMouseLeaveHandleChange(); } }),
+                React.createElement(BreakPointsWrap, null, checkPoints === null || checkPoints === void 0 ? void 0 : checkPoints.map(function (item, index) { return (React.createElement(Point, { key: index.toString(), pointColor: getCirclesColor(item.value) })); })))),
         React.createElement(InfoBlock, null,
             React.createElement(InfoNode, null,
                 React.createElement(TitleText, null, "Fee return"),
@@ -5186,7 +5221,7 @@ var Slider = function (_a) {
             percent.RB,
             " volume")));
 };
-var templateObject_1$P, templateObject_2$x, templateObject_3$o, templateObject_4$j, templateObject_5$e, templateObject_6$9, templateObject_7$8, templateObject_8$4, templateObject_9$3, templateObject_10$2, templateObject_11$1, templateObject_12$1, templateObject_13, templateObject_14, templateObject_15, templateObject_16, templateObject_17;
+var templateObject_1$P, templateObject_2$x, templateObject_3$o, templateObject_4$j, templateObject_5$f, templateObject_6$9, templateObject_7$8, templateObject_8$4, templateObject_9$3, templateObject_10$2, templateObject_11$1, templateObject_12$1, templateObject_13, templateObject_14, templateObject_15, templateObject_16, templateObject_17;
 
 var animation = {
     WAVES: "waves",
@@ -5207,7 +5242,7 @@ var Root = styled.div(templateObject_3$n || (templateObject_3$n = __makeTemplate
     return variant$1 === variant.CIRCLE ? theme.radii.circle : theme.radii.small;
 }, layout, space);
 var Pulse = styled(Root)(templateObject_4$i || (templateObject_4$i = __makeTemplateObject(["\n  animation: ", " 2s infinite ease-out;\n  transform: translate3d(0, 0, 0);\n"], ["\n  animation: ", " 2s infinite ease-out;\n  transform: translate3d(0, 0, 0);\n"])), pulse);
-var Waves = styled(Root)(templateObject_5$d || (templateObject_5$d = __makeTemplateObject(["\n  position: relative;\n  overflow: hidden;\n  transform: translate3d(0, 0, 0);\n\n  &:before {\n    content: \"\";\n    position: absolute;\n    background-image: linear-gradient(\n      90deg,\n      transparent,\n      rgba(116, 155, 216, 0.16),\n      transparent\n    );\n\n    top: 0;\n    left: -150px;\n    height: 100%;\n    width: 150px;\n    animation: ", " 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;\n  }\n"], ["\n  position: relative;\n  overflow: hidden;\n  transform: translate3d(0, 0, 0);\n\n  &:before {\n    content: \"\";\n    position: absolute;\n    background-image: linear-gradient(\n      90deg,\n      transparent,\n      rgba(116, 155, 216, 0.16),\n      transparent\n    );\n\n    top: 0;\n    left: -150px;\n    height: 100%;\n    width: 150px;\n    animation: ", " 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;\n  }\n"])), waves);
+var Waves = styled(Root)(templateObject_5$e || (templateObject_5$e = __makeTemplateObject(["\n  position: relative;\n  overflow: hidden;\n  transform: translate3d(0, 0, 0);\n\n  &:before {\n    content: \"\";\n    position: absolute;\n    background-image: linear-gradient(\n      90deg,\n      transparent,\n      rgba(116, 155, 216, 0.16),\n      transparent\n    );\n\n    top: 0;\n    left: -150px;\n    height: 100%;\n    width: 150px;\n    animation: ", " 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;\n  }\n"], ["\n  position: relative;\n  overflow: hidden;\n  transform: translate3d(0, 0, 0);\n\n  &:before {\n    content: \"\";\n    position: absolute;\n    background-image: linear-gradient(\n      90deg,\n      transparent,\n      rgba(116, 155, 216, 0.16),\n      transparent\n    );\n\n    top: 0;\n    left: -150px;\n    height: 100%;\n    width: 150px;\n    animation: ", " 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;\n  }\n"])), waves);
 var Skeleton = function (_a) {
     var _b = _a.variant, variant$1 = _b === void 0 ? variant.RECT : _b, _c = _a.animation, animation$1 = _c === void 0 ? animation.PULSE : _c, props = __rest(_a, ["variant", "animation"]);
     if (animation$1 === animation.WAVES) {
@@ -5215,7 +5250,7 @@ var Skeleton = function (_a) {
     }
     return React.createElement(Pulse, __assign({ variant: variant$1 }, props));
 };
-var templateObject_1$O, templateObject_2$w, templateObject_3$n, templateObject_4$i, templateObject_5$d;
+var templateObject_1$O, templateObject_2$w, templateObject_3$n, templateObject_4$i, templateObject_5$e;
 
 var InlineMenuContainer = styled(Box)(templateObject_1$N || (templateObject_1$N = __makeTemplateObject(["\n  background-color: ", ";\n  border-radius: ", ";\n  box-shadow: ", ";\n"], ["\n  background-color: ", ";\n  border-radius: ", ";\n  box-shadow: ", ";\n"])), function (_a) {
     var theme = _a.theme;
@@ -5296,7 +5331,8 @@ var BaseMenu = function (_a) {
         ],
     }), styles = _j.styles, attributes = _j.attributes;
     var menu = (React.createElement("div", __assign({ ref: setMenuElement, style: styles.popper }, attributes.popper), typeof children === "function"
-        ? children({ toggle: toggle, open: open, close: close })
+        ? // @ts-ignore
+            children({ toggle: toggle, open: open, close: close })
         : children));
     var portal = getPortalRoot();
     var renderMenu = portal ? createPortal(menu, portal) : menu;
@@ -5350,8 +5386,8 @@ var CommonLinkStyles$1 = function (_a) {
         return theme.colors.pastelBlue;
     }, $variant === "default" && "border-radius: 16px;");
 };
-var StyledMenuItem = styled.a(templateObject_5$c || (templateObject_5$c = __makeTemplateObject(["\n  ", ";\n"], ["\n  ", ";\n"])), CommonLinkStyles$1);
-var templateObject_1$M, templateObject_2$u, templateObject_3$l, templateObject_4$g, templateObject_5$c;
+var StyledMenuItem = styled.a(templateObject_5$d || (templateObject_5$d = __makeTemplateObject(["\n  ", ";\n"], ["\n  ", ";\n"])), CommonLinkStyles$1);
+var templateObject_1$M, templateObject_2$u, templateObject_3$l, templateObject_4$g, templateObject_5$d;
 
 var MenuItem = function (_a) {
     var children = _a.children, href = _a.href, _b = _a.isActive, isActive = _b === void 0 ? false : _b, _c = _a.variant, variant = _c === void 0 ? "default" : _c, statusColor = _a.statusColor, props = __rest(_a, ["children", "href", "isActive", "variant", "statusColor"]);
@@ -5365,7 +5401,9 @@ var MenuItem = function (_a) {
             as: "div",
         };
     return (React.createElement(StyledMenuItemContainer, { "$isActive": isActive, "$variant": variant },
-        React.createElement(StyledMenuItem, __assign({}, itemLinkProps, { "$isActive": isActive, "$variant": variant, "$statusColor": statusColor }, props), children)));
+        React.createElement(StyledMenuItem
+        // @ts-ignore
+        , __assign({}, itemLinkProps, { "$isActive": isActive, "$variant": variant, "$statusColor": statusColor }, props), children)));
 };
 
 var StyledSubMenuItems = styled(Flex)(templateObject_1$L || (templateObject_1$L = __makeTemplateObject(["\n  ", " {\n    ", ";\n  }\n  flex-grow: 1;\n  background-color: ", ";\n  box-shadow: inset 0px -2px 0px -8px rgba(133, 133, 133, 0.1);\n  overflow-x: scroll;\n  scrollbar-width: none;\n  -ms-overflow-style: none;\n  &::-webkit-scrollbar {\n    display: none;\n  }\n"], ["\n  ", " {\n    ", ";\n  }\n  flex-grow: 1;\n  background-color: ", ";\n  box-shadow: inset 0px -2px 0px -8px rgba(133, 133, 133, 0.1);\n  overflow-x: scroll;\n  scrollbar-width: none;\n  -ms-overflow-style: none;\n  &::-webkit-scrollbar {\n    display: none;\n  }\n"])), function (_a) {
@@ -5498,137 +5536,174 @@ TabItem.defaultProps = {
     disabled: false,
 };
 
-var defaultParticleOptions = {
-    size: 30,
-    distance: 500,
-};
-var createParticle = function (x, y, imgSrc, options) {
-    if (options === void 0) { options = {}; }
-    var _a = __assign(__assign({}, defaultParticleOptions), options), size = _a.size, distance = _a.distance;
-    var particle = document.createElement("particle");
-    document.body.appendChild(particle);
-    var width = Math.floor(Math.random() * size + 8);
-    var height = width;
-    var destinationX = (Math.random() - 0.5) * distance;
-    var destinationY = (Math.random() - 0.5) * distance;
-    var rotation = Math.random() * 520;
-    var delay = Math.random() * 200;
-    particle.style.backgroundRepeat = "no-repeat";
-    particle.style.backgroundSize = "contain";
-    particle.style.backgroundImage = "url(".concat(imgSrc, ")");
-    particle.style.left = "0";
-    particle.style.top = "0";
-    particle.style.opacity = "0";
-    particle.style.pointerEvents = "none";
-    particle.style.position = "fixed";
-    particle.style.width = "".concat(width, "px");
-    particle.style.height = "".concat(height, "px");
-    var animation = particle.animate([
-        {
-            transform: "translate(-50%, -50%) translate(".concat(x, "px, ").concat(y, "px) rotate(0deg)"),
-            opacity: 1,
-        },
-        {
-            transform: "translate(-50%, -50%) translate(".concat(x + destinationX, "px, ").concat(y + destinationY, "px) rotate(").concat(rotation, "deg)"),
-            opacity: 0,
-        },
-    ], {
-        duration: Math.random() * 1000 + 5000,
-        easing: "cubic-bezier(0, .9, .57, 1)",
-        delay: delay,
-    });
-    animation.onfinish = function () {
-        particle.remove();
-    };
-};
-var defaultOptions = {
-    numberOfParticles: 30,
-    debounceDuration: 200,
-    particleOptions: {},
-};
-/**
- * @see https://css-tricks.com/playing-with-particles-using-the-web-animations-api/
- */
-var useParticleBurst = function (options) {
-    var _a = __assign(__assign({}, defaultOptions), options), selector = _a.selector, numberOfParticles = _a.numberOfParticles, debounceDuration = _a.debounceDuration, imgSrc = _a.imgSrc, disableWhen = _a.disableWhen, particleOptions = _a.particleOptions;
-    var makeListener = useCallback(function () {
-        return debounce(function (event) {
-            var isDisabled = disableWhen && disableWhen();
-            if (!isDisabled) {
-                var node = event.currentTarget;
-                if (event.clientX === 0 && event.clientY === 0) {
-                    var _a = node.getBoundingClientRect(), left = _a.left, width = _a.width, top_1 = _a.top, height = _a.height;
-                    var x = left + width / 2;
-                    var y = top_1 + height / 2;
-                    for (var i = 0; i < numberOfParticles; i += 1) {
-                        createParticle(x, y, imgSrc, particleOptions);
-                    }
-                }
-                else {
-                    for (var i = 0; i < numberOfParticles; i += 1) {
-                        createParticle(event.clientX, event.clientY + window.scrollY, imgSrc, particleOptions);
-                    }
-                }
-            }
-        }, debounceDuration, { leading: true });
-    }, [debounceDuration, numberOfParticles, imgSrc, disableWhen, particleOptions]);
-    var listener = makeListener();
-    var initialize = useCallback(function () {
-        if (selector) {
-            document.querySelectorAll(selector).forEach(function (element) {
-                element.addEventListener("click", listener);
-            });
-        }
-        else {
-            document.addEventListener("click", listener);
-        }
-    }, [selector, listener]);
-    var teardown = useCallback(function () {
-        if (selector) {
-            document.querySelectorAll(selector).forEach(function (element) {
-                element.removeEventListener("click", listener);
-            });
-        }
-        else {
-            document.removeEventListener("click", listener);
-        }
-    }, [selector, listener]);
+var InactiveButton$1 = styled(TabItem)(templateObject_1$J || (templateObject_1$J = __makeTemplateObject(["\n  color: ", ";\n"], ["\n  color: ", ";\n"])), function (_a) {
+    var theme = _a.theme, variant = _a.variant;
+    return theme.colors[variant === tabVariants.DARK ? "pastelBlue" : "gray900"];
+});
+var TabBarItem = function (_a) {
+    var _b = _a.isActive, isActive = _b === void 0 ? false : _b, variant = _a.variant, setWidth = _a.setWidth, itemIndex = _a.itemIndex, onAction = _a.onAction, customClass = _a.customClass, blockOffset = _a.blockOffset, props = __rest(_a, ["isActive", "variant", "setWidth", "itemIndex", "onAction", "customClass", "blockOffset"]);
+    var _c = useMatchBreakpoints(), isDesktop = _c.isDesktop, isMobile = _c.isMobile, isTablet = _c.isTablet;
+    var className = "tab-bar-item-" + itemIndex + customClass;
+    var element = document.getElementsByClassName(className);
     useEffect(function () {
-        initialize();
-        return function () { return teardown(); };
-    }, [initialize, teardown]);
-    return { initialize: initialize, teardown: teardown };
+        var _a, _b;
+        var itemWidth = (_b = (_a = element.item(0)) === null || _a === void 0 ? void 0 : _a.clientWidth) !== null && _b !== void 0 ? _b : 0;
+        if (setWidth && itemWidth) {
+            setWidth(function (prev) {
+                return prev.map(function (item, index) { return (index === itemIndex ? itemWidth : item); });
+            });
+        }
+    }, [element, isDesktop, isMobile, isTablet, blockOffset]);
+    var handleClick = function () {
+        if (onAction)
+            onAction(itemIndex !== null && itemIndex !== void 0 ? itemIndex : 0);
+    };
+    if (!isActive) {
+        return (React.createElement(InactiveButton$1, __assign({ onClick: handleClick, className: className, variant: variant }, props)));
+    }
+    return (React.createElement(TabItem, __assign({ onClick: handleClick, className: className, variant: variant }, props)));
+};
+var templateObject_1$J;
+
+var StyledTabBar = styled.div(templateObject_1$I || (templateObject_1$I = __makeTemplateObject(["\n  position: relative;\n  display: ", ";\n  width: ", ";\n\n  & > button,\n  & > a {\n    flex: ", ";\n  }\n\n  & > button,\n  & a {\n    box-shadow: none;\n  }\n  ", "\n"], ["\n  position: relative;\n  display: ", ";\n  width: ", ";\n\n  & > button,\n  & > a {\n    flex: ", ";\n  }\n\n  & > button,\n  & a {\n    box-shadow: none;\n  }\n  ", "\n"])), function (_a) {
+    var fullWidth = _a.fullWidth;
+    return (fullWidth ? "flex" : "inline-flex");
+}, function (_a) {
+    var fullWidth = _a.fullWidth;
+    return (fullWidth ? "100%" : "auto");
+}, function (_a) {
+    var fullWidth = _a.fullWidth;
+    return (fullWidth ? 1 : "auto");
+}, space);
+var Selection$1 = styled.div(templateObject_2$t || (templateObject_2$t = __makeTemplateObject(["\n  width: ", ";\n  height: 2px;\n  position: absolute;\n  bottom: 0;\n  left: ", ";\n  transition: left 0.3s ease;\n  padding: 0 8px;\n  z-index: 1;\n\n  ", "\n"], ["\n  width: ", ";\n  height: 2px;\n  position: absolute;\n  bottom: 0;\n  left: ", ";\n  transition: left 0.3s ease;\n  padding: 0 8px;\n  z-index: 1;\n\n  ", "\n"])), function (_a) {
+    var width = _a.width;
+    return "".concat(width, "px");
+}, function (_a) {
+    var offset = _a.offset;
+    return "".concat(offset, "px");
+}, variant$1({
+    prop: "scale",
+    variants: sliderScaleVariant,
+}));
+var ColorSection = styled.div(templateObject_3$k || (templateObject_3$k = __makeTemplateObject(["\n  width: 100%;\n  height: 100%;\n  background: ", ";\n"], ["\n  width: 100%;\n  height: 100%;\n  background: ", ";\n"])), function (_a) {
+    var theme = _a.theme, isLight = _a.isLight;
+    return theme.colors[isLight ? "primary" : "warning"];
+});
+var TabMenu = function (_a) {
+    var _b = _a.customClass, customClass = _b === void 0 ? "" : _b, _c = _a.activeIndex, activeIndex = _c === void 0 ? 0 : _c, _d = _a.scale, scale = _d === void 0 ? tabsScales.SM : _d, _e = _a.variant, variant = _e === void 0 ? tabVariants.DARK : _e, onItemClick = _a.onItemClick, disabled = _a.disabled, _f = _a.fullWidth, fullWidth = _f === void 0 ? false : _f, _g = _a.menuTitles, menuTitles = _g === void 0 ? [""] : _g, _h = _a.menuIcons, menuIcons = _h === void 0 ? [] : _h, props = __rest(_a, ["customClass", "activeIndex", "scale", "variant", "onItemClick", "disabled", "fullWidth", "menuTitles", "menuIcons"]);
+    var _j = useState(__spreadArray([], Array(menuTitles === null || menuTitles === void 0 ? void 0 : menuTitles.length), true).map(function (e, i) { return i - i; })), widthsArr = _j[0], setWidthsArr = _j[1];
+    var _k = useState(0), blockOffset = _k[0], setBlockOffset = _k[1];
+    useEffect(function () {
+        setBlockOffset(widthsArr.slice(0, activeIndex).reduce(function (sum, elem) { return sum + elem; }, 0));
+    }, [widthsArr, activeIndex]);
+    var isLight = variant === tabVariants.LIGHT;
+    var getTabMenuIcons = function (index, size) {
+        var sizes = menuIconScaleVariants[size];
+        return (React.createElement(IconComponent, { width: sizes.width, iconName: menuIcons[index], color: "currentColor", mr: sizes.marginRight }));
+    };
+    return (React.createElement(StyledTabBar, __assign({ disabled: disabled, isLight: isLight, fullWidth: fullWidth }, props),
+        !disabled && (React.createElement(Selection$1, { scale: scale, width: widthsArr[activeIndex], offset: blockOffset, isLight: isLight },
+            React.createElement(ColorSection, { isLight: isLight }))),
+        menuTitles.map(function (title, index) { return (React.createElement(TabBarItem, { key: index.toString(), disabled: disabled, customClass: customClass, isActive: !disabled && activeIndex === index, onAction: onItemClick, itemIndex: index, setWidth: setWidthsArr, variant: variant, scale: scale, blockOffset: blockOffset },
+            React.createElement(Flex, { alignItems: "center" },
+                getTabMenuIcons(index, scale),
+                title))); })));
+};
+var templateObject_1$I, templateObject_2$t, templateObject_3$k;
+
+var variants = {
+    PRIMARY: "primary",
+    SECONDARY: "secondary",
+    SUCCESS: "success",
+    TEXTDISABLED: "textDisabled",
+    TEXTSUBTLE: "textSubtle",
+    BINANCE: "binance",
+    FAILURE: "failure",
+    WARNING: "warning",
+};
+var scales$1 = {
+    MD: "md",
+    SM: "sm",
 };
 
-var useKonamiCheatCode = function (matchedCodeHandler) {
-    useEffect(function () {
-        var pattern = [
-            "ArrowUp",
-            "ArrowUp",
-            "ArrowDown",
-            "ArrowDown",
-            "ArrowLeft",
-            "ArrowRight",
-            "ArrowLeft",
-            "ArrowRight",
-        ];
-        var currentIndex = 0;
-        var onKeyUpHandler = function (event) {
-            var key = event.key;
-            // is key in correct order otherwise reset
-            if (key !== pattern[currentIndex]) {
-                currentIndex = 0;
-                return;
-            }
-            currentIndex += 1;
-            if (pattern.length === currentIndex) {
-                currentIndex = 0;
-                matchedCodeHandler();
-            }
-        };
-        document.addEventListener("keyup", onKeyUpHandler);
-        return function () { return document.removeEventListener("keyup", onKeyUpHandler); };
-    }, [matchedCodeHandler]);
+var _a$3, _b$1;
+var scaleVariants = (_a$3 = {},
+    _a$3[scales$1.MD] = {
+        height: "28px",
+        padding: "0 8px",
+        fontSize: "14px",
+    },
+    _a$3[scales$1.SM] = {
+        height: "24px",
+        padding: "0 4px",
+        fontSize: "12px",
+    },
+    _a$3);
+var styleVariants = (_b$1 = {},
+    _b$1[variants.PRIMARY] = {
+        backgroundColor: "primary",
+    },
+    _b$1[variants.SECONDARY] = {
+        backgroundColor: "secondary",
+    },
+    _b$1[variants.SUCCESS] = {
+        backgroundColor: "success",
+    },
+    _b$1[variants.TEXTDISABLED] = {
+        backgroundColor: "textDisabled",
+    },
+    _b$1[variants.TEXTSUBTLE] = {
+        backgroundColor: "textSubtle",
+    },
+    _b$1[variants.BINANCE] = {
+        backgroundColor: "binance",
+    },
+    _b$1[variants.FAILURE] = {
+        backgroundColor: "failure",
+    },
+    _b$1[variants.WARNING] = {
+        backgroundColor: "warning",
+    },
+    _b$1);
+
+var getOutlineStyles = function (_a) {
+    var outline = _a.outline, theme = _a.theme, _b = _a.variant, variantKey = _b === void 0 ? variants.PRIMARY : _b;
+    if (outline) {
+        var themeColorKey = styleVariants[variantKey]
+            .backgroundColor;
+        var color = theme.colors[themeColorKey];
+        return "\n      color: ".concat(color, ";\n      background: ").concat(theme.colors.background, ";\n      border: 2px solid ").concat(color, ";\n    ");
+    }
+    return "";
+};
+var StyledTag = styled.div(templateObject_1$H || (templateObject_1$H = __makeTemplateObject(["\n  align-items: center;\n  border-radius: 16px;\n  color: #ffffff;\n  display: inline-flex;\n  font-weight: 400;\n  white-space: nowrap;\n\n  & > svg {\n    fill: currentColor;\n  }\n\n  ", "\n\n  ", "\n  ", "\n  ", "\n  ", "\n\n  ", "\n"], ["\n  align-items: center;\n  border-radius: 16px;\n  color: #ffffff;\n  display: inline-flex;\n  font-weight: 400;\n  white-space: nowrap;\n\n  & > svg {\n    fill: currentColor;\n  }\n\n  ", "\n\n  ", "\n  ", "\n  ", "\n  ", "\n\n  ", "\n"])), function (_a) {
+    var textTransform = _a.textTransform;
+    return textTransform && "text-transform: ".concat(textTransform, ";");
+}, variant$1({
+    prop: "scale",
+    variants: scaleVariants,
+}), variant$1({
+    variants: styleVariants,
+}), space, typography, getOutlineStyles);
+var templateObject_1$H;
+
+var Tag = function (_a) {
+    var startIcon = _a.startIcon, endIcon = _a.endIcon, children = _a.children, props = __rest(_a, ["startIcon", "endIcon", "children"]);
+    return (React.createElement(StyledTag, __assign({}, props),
+        React.isValidElement(startIcon) &&
+            React.cloneElement(startIcon, {
+                mr: "0.5em",
+            }),
+        children,
+        React.isValidElement(endIcon) &&
+            React.cloneElement(endIcon, {
+                ml: "0.5em",
+            })));
+};
+Tag.defaultProps = {
+    variant: "primary",
+    scale: scales$1.MD,
+    outline: false,
 };
 
 var isTouchDevice = function () {
@@ -5636,18 +5711,18 @@ var isTouchDevice = function () {
         ("ontouchstart" in window || navigator.maxTouchPoints > 0));
 };
 
-var Arrow = styled.div(templateObject_1$J || (templateObject_1$J = __makeTemplateObject(["\n  &,\n  &::before {\n    position: absolute;\n    width: 10px;\n    height: 10px;\n    z-index: -1;\n  }\n\n  &::before {\n    content: \"\";\n    transform: rotate(45deg);\n    background: ", ";\n  }\n"], ["\n  &,\n  &::before {\n    position: absolute;\n    width: 10px;\n    height: 10px;\n    z-index: -1;\n  }\n\n  &::before {\n    content: \"\";\n    transform: rotate(45deg);\n    background: ", ";\n  }\n"])), function (_a) {
+var Arrow = styled.div(templateObject_1$G || (templateObject_1$G = __makeTemplateObject(["\n  &,\n  &::before {\n    position: absolute;\n    width: 10px;\n    height: 10px;\n    z-index: -1;\n  }\n\n  &::before {\n    content: \"\";\n    transform: rotate(45deg);\n    background: ", ";\n  }\n"], ["\n  &,\n  &::before {\n    position: absolute;\n    width: 10px;\n    height: 10px;\n    z-index: -1;\n  }\n\n  &::before {\n    content: \"\";\n    transform: rotate(45deg);\n    background: ", ";\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.tooltip;
 });
-var StyledTooltip = styled.div(templateObject_2$t || (templateObject_2$t = __makeTemplateObject(["\n  padding: 12px 8px;\n  font-size: 12px;\n  line-height: 16px;\n  border-radius: 8px;\n  max-width: 320px;\n  z-index: 101;\n  background: ", ";\n  color: ", ";\n\n  &[data-popper-placement^=\"top\"] > ", " {\n    bottom: -4px;\n  }\n\n  &[data-popper-placement^=\"bottom\"] > ", " {\n    top: -4px;\n  }\n\n  &[data-popper-placement^=\"left\"] > ", " {\n    right: -4px;\n  }\n\n  &[data-popper-placement^=\"right\"] > ", " {\n    left: -4px;\n  }\n"], ["\n  padding: 12px 8px;\n  font-size: 12px;\n  line-height: 16px;\n  border-radius: 8px;\n  max-width: 320px;\n  z-index: 101;\n  background: ", ";\n  color: ", ";\n\n  &[data-popper-placement^=\"top\"] > ", " {\n    bottom: -4px;\n  }\n\n  &[data-popper-placement^=\"bottom\"] > ", " {\n    top: -4px;\n  }\n\n  &[data-popper-placement^=\"left\"] > ", " {\n    right: -4px;\n  }\n\n  &[data-popper-placement^=\"right\"] > ", " {\n    left: -4px;\n  }\n"])), function (_a) {
+var StyledTooltip = styled.div(templateObject_2$s || (templateObject_2$s = __makeTemplateObject(["\n  padding: 8px 12px;\n  font-size: 12px;\n  line-height: 16px;\n  border-radius: 8px;\n  max-width: 320px;\n  z-index: 101;\n  background: ", ";\n  color: ", ";\n\n  &[data-popper-placement^=\"top\"] > ", " {\n    bottom: -4px;\n  }\n\n  &[data-popper-placement^=\"bottom\"] > ", " {\n    top: -4px;\n  }\n\n  &[data-popper-placement^=\"left\"] > ", " {\n    right: -4px;\n  }\n\n  &[data-popper-placement^=\"right\"] > ", " {\n    left: -4px;\n  }\n"], ["\n  padding: 8px 12px;\n  font-size: 12px;\n  line-height: 16px;\n  border-radius: 8px;\n  max-width: 320px;\n  z-index: 101;\n  background: ", ";\n  color: ", ";\n\n  &[data-popper-placement^=\"top\"] > ", " {\n    bottom: -4px;\n  }\n\n  &[data-popper-placement^=\"bottom\"] > ", " {\n    top: -4px;\n  }\n\n  &[data-popper-placement^=\"left\"] > ", " {\n    right: -4px;\n  }\n\n  &[data-popper-placement^=\"right\"] > ", " {\n    left: -4px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.tooltip;
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.white;
 }, Arrow, Arrow, Arrow, Arrow);
-var templateObject_1$J, templateObject_2$t;
+var templateObject_1$G, templateObject_2$s;
 
 var invertTheme = function (currentTheme) {
     if (currentTheme.isDark) {
@@ -5807,176 +5882,6 @@ var useTooltip = function (content, options) {
     };
 };
 
-var InactiveButton$1 = styled(TabItem)(templateObject_1$I || (templateObject_1$I = __makeTemplateObject(["\n  color: ", ";\n"], ["\n  color: ", ";\n"])), function (_a) {
-    var theme = _a.theme, variant = _a.variant;
-    return theme.colors[variant === tabVariants.DARK ? "pastelBlue" : "gray900"];
-});
-var TabBarItem = function (_a) {
-    var _b = _a.isActive, isActive = _b === void 0 ? false : _b, variant = _a.variant, setWidth = _a.setWidth, itemIndex = _a.itemIndex, onAction = _a.onAction, customClass = _a.customClass, blockOffset = _a.blockOffset, props = __rest(_a, ["isActive", "variant", "setWidth", "itemIndex", "onAction", "customClass", "blockOffset"]);
-    var _c = useMatchBreakpoints(), isDesktop = _c.isDesktop, isMobile = _c.isMobile, isTablet = _c.isTablet;
-    var className = "tab-bar-item-" + itemIndex + customClass;
-    var element = document.getElementsByClassName(className);
-    useEffect(function () {
-        var _a, _b;
-        var itemWidth = (_b = (_a = element.item(0)) === null || _a === void 0 ? void 0 : _a.clientWidth) !== null && _b !== void 0 ? _b : 0;
-        if (setWidth && itemWidth) {
-            setWidth(function (prev) {
-                return prev.map(function (item, index) { return (index === itemIndex ? itemWidth : item); });
-            });
-        }
-    }, [element, isDesktop, isMobile, isTablet, blockOffset]);
-    var handleClick = function () {
-        if (onAction)
-            onAction(itemIndex !== null && itemIndex !== void 0 ? itemIndex : 0);
-    };
-    if (!isActive) {
-        return (React.createElement(InactiveButton$1, __assign({ onClick: handleClick, className: className, variant: variant }, props)));
-    }
-    return (React.createElement(TabItem, __assign({ onClick: handleClick, className: className, variant: variant }, props)));
-};
-var templateObject_1$I;
-
-var StyledTabBar = styled.div(templateObject_1$H || (templateObject_1$H = __makeTemplateObject(["\n  position: relative;\n  display: ", ";\n  width: ", ";\n\n  & > button,\n  & > a {\n    flex: ", ";\n  }\n\n  & > button,\n  & a {\n    box-shadow: none;\n  }\n  ", "\n"], ["\n  position: relative;\n  display: ", ";\n  width: ", ";\n\n  & > button,\n  & > a {\n    flex: ", ";\n  }\n\n  & > button,\n  & a {\n    box-shadow: none;\n  }\n  ", "\n"])), function (_a) {
-    var fullWidth = _a.fullWidth;
-    return (fullWidth ? "flex" : "inline-flex");
-}, function (_a) {
-    var fullWidth = _a.fullWidth;
-    return (fullWidth ? "100%" : "auto");
-}, function (_a) {
-    var fullWidth = _a.fullWidth;
-    return (fullWidth ? 1 : "auto");
-}, space);
-var Selection$1 = styled.div(templateObject_2$s || (templateObject_2$s = __makeTemplateObject(["\n  width: ", ";\n  height: 2px;\n  position: absolute;\n  bottom: 0;\n  left: ", ";\n  transition: left 0.3s ease;\n  padding: 0 8px;\n  z-index: 1;\n\n  ", "\n"], ["\n  width: ", ";\n  height: 2px;\n  position: absolute;\n  bottom: 0;\n  left: ", ";\n  transition: left 0.3s ease;\n  padding: 0 8px;\n  z-index: 1;\n\n  ", "\n"])), function (_a) {
-    var width = _a.width;
-    return "".concat(width, "px");
-}, function (_a) {
-    var offset = _a.offset;
-    return "".concat(offset, "px");
-}, variant$1({
-    prop: "scale",
-    variants: sliderScaleVariant,
-}));
-var ColorSection = styled.div(templateObject_3$k || (templateObject_3$k = __makeTemplateObject(["\n  width: 100%;\n  height: 100%;\n  background: ", ";\n"], ["\n  width: 100%;\n  height: 100%;\n  background: ", ";\n"])), function (_a) {
-    var theme = _a.theme, isLight = _a.isLight;
-    return theme.colors[isLight ? "primary" : "warning"];
-});
-var TabMenu = function (_a) {
-    var _b = _a.customClass, customClass = _b === void 0 ? "" : _b, _c = _a.activeIndex, activeIndex = _c === void 0 ? 0 : _c, _d = _a.scale, scale = _d === void 0 ? tabsScales.SM : _d, _e = _a.variant, variant = _e === void 0 ? tabVariants.DARK : _e, onItemClick = _a.onItemClick, disabled = _a.disabled, _f = _a.fullWidth, fullWidth = _f === void 0 ? false : _f, _g = _a.menuTitles, menuTitles = _g === void 0 ? [""] : _g, _h = _a.menuIcons, menuIcons = _h === void 0 ? [] : _h, props = __rest(_a, ["customClass", "activeIndex", "scale", "variant", "onItemClick", "disabled", "fullWidth", "menuTitles", "menuIcons"]);
-    var _j = useState(__spreadArray([], Array(menuTitles === null || menuTitles === void 0 ? void 0 : menuTitles.length), true).map(function (e, i) { return i - i; })), widthsArr = _j[0], setWidthsArr = _j[1];
-    var _k = useState(0), blockOffset = _k[0], setBlockOffset = _k[1];
-    useEffect(function () {
-        setBlockOffset(widthsArr.slice(0, activeIndex).reduce(function (sum, elem) { return sum + elem; }, 0));
-    }, [widthsArr, activeIndex]);
-    var isLight = variant === tabVariants.LIGHT;
-    var getTabMenuIcons = function (index, size) {
-        var sizes = menuIconScaleVariants[size];
-        return (React.createElement(IconComponent, { width: sizes.width, iconName: menuIcons[index], color: "currentColor", mr: sizes.marginRight }));
-    };
-    return (React.createElement(StyledTabBar, __assign({ disabled: disabled, isLight: isLight, fullWidth: fullWidth }, props),
-        !disabled && (React.createElement(Selection$1, { scale: scale, width: widthsArr[activeIndex], offset: blockOffset, isLight: isLight },
-            React.createElement(ColorSection, { isLight: isLight }))),
-        menuTitles.map(function (title, index) { return (React.createElement(TabBarItem, { key: index.toString(), disabled: disabled, customClass: customClass, isActive: !disabled && activeIndex === index, onAction: onItemClick, itemIndex: index, setWidth: setWidthsArr, variant: variant, scale: scale, blockOffset: blockOffset },
-            React.createElement(Flex, { alignItems: "center" },
-                getTabMenuIcons(index, scale),
-                title))); })));
-};
-var templateObject_1$H, templateObject_2$s, templateObject_3$k;
-
-var variants = {
-    PRIMARY: "primary",
-    SECONDARY: "secondary",
-    SUCCESS: "success",
-    TEXTDISABLED: "textDisabled",
-    TEXTSUBTLE: "textSubtle",
-    BINANCE: "binance",
-    FAILURE: "failure",
-    WARNING: "warning",
-};
-var scales$1 = {
-    MD: "md",
-    SM: "sm",
-};
-
-var _a$3, _b$1;
-var scaleVariants = (_a$3 = {},
-    _a$3[scales$1.MD] = {
-        height: "28px",
-        padding: "0 8px",
-        fontSize: "14px",
-    },
-    _a$3[scales$1.SM] = {
-        height: "24px",
-        padding: "0 4px",
-        fontSize: "12px",
-    },
-    _a$3);
-var styleVariants = (_b$1 = {},
-    _b$1[variants.PRIMARY] = {
-        backgroundColor: "primary",
-    },
-    _b$1[variants.SECONDARY] = {
-        backgroundColor: "secondary",
-    },
-    _b$1[variants.SUCCESS] = {
-        backgroundColor: "success",
-    },
-    _b$1[variants.TEXTDISABLED] = {
-        backgroundColor: "textDisabled",
-    },
-    _b$1[variants.TEXTSUBTLE] = {
-        backgroundColor: "textSubtle",
-    },
-    _b$1[variants.BINANCE] = {
-        backgroundColor: "binance",
-    },
-    _b$1[variants.FAILURE] = {
-        backgroundColor: "failure",
-    },
-    _b$1[variants.WARNING] = {
-        backgroundColor: "warning",
-    },
-    _b$1);
-
-var getOutlineStyles = function (_a) {
-    var outline = _a.outline, theme = _a.theme, _b = _a.variant, variantKey = _b === void 0 ? variants.PRIMARY : _b;
-    if (outline) {
-        var themeColorKey = styleVariants[variantKey]
-            .backgroundColor;
-        var color = theme.colors[themeColorKey];
-        return "\n      color: ".concat(color, ";\n      background: ").concat(theme.colors.background, ";\n      border: 2px solid ").concat(color, ";\n    ");
-    }
-    return "";
-};
-var StyledTag = styled.div(templateObject_1$G || (templateObject_1$G = __makeTemplateObject(["\n  align-items: center;\n  border-radius: 16px;\n  color: #ffffff;\n  display: inline-flex;\n  font-weight: 400;\n  white-space: nowrap;\n\n  & > svg {\n    fill: currentColor;\n  }\n\n  ", "\n\n  ", "\n  ", "\n  ", "\n  ", "\n\n  ", "\n"], ["\n  align-items: center;\n  border-radius: 16px;\n  color: #ffffff;\n  display: inline-flex;\n  font-weight: 400;\n  white-space: nowrap;\n\n  & > svg {\n    fill: currentColor;\n  }\n\n  ", "\n\n  ", "\n  ", "\n  ", "\n  ", "\n\n  ", "\n"])), function (_a) {
-    var textTransform = _a.textTransform;
-    return textTransform && "text-transform: ".concat(textTransform, ";");
-}, variant$1({
-    prop: "scale",
-    variants: scaleVariants,
-}), variant$1({
-    variants: styleVariants,
-}), space, typography, getOutlineStyles);
-var templateObject_1$G;
-
-var Tag = function (_a) {
-    var startIcon = _a.startIcon, endIcon = _a.endIcon, children = _a.children, props = __rest(_a, ["startIcon", "endIcon", "children"]);
-    return (React.createElement(StyledTag, __assign({}, props),
-        React.isValidElement(startIcon) &&
-            React.cloneElement(startIcon, {
-                mr: "0.5em",
-            }),
-        children,
-        React.isValidElement(endIcon) &&
-            React.cloneElement(endIcon, {
-                ml: "0.5em",
-            })));
-};
-Tag.defaultProps = {
-    variant: "primary",
-    scale: scales$1.MD,
-    outline: false,
-};
-
 var InfoTooltip = function (_a) {
     var text = _a.text, _b = _a.iconColor, iconColor = _b === void 0 ? "pastelBlue" : _b, props = __rest(_a, ["text", "iconColor"]);
     var _c = useTooltip(text, {}), targetRef = _c.targetRef, tooltip = _c.tooltip, tooltipVisible = _c.tooltipVisible;
@@ -6095,14 +6000,14 @@ var Input = styled.input(templateObject_4$f || (templateObject_4$f = __makeTempl
     var disabled = _a.disabled;
     return (disabled ? "not-allowed" : "pointer");
 }, Handle, getScale("checkedLeft"));
-var StyledToggle = styled.div(templateObject_5$b || (templateObject_5$b = __makeTemplateObject(["\n  background-color: ", ";\n  align-items: center;\n  border-radius: 26px;\n  display: inline-flex;\n  height: ", ";\n  position: relative;\n  transition: background-color 0.2s ease-in-out;\n  width: ", ";\n  cursor: ", ";\n"], ["\n  background-color: ", ";\n  align-items: center;\n  border-radius: 26px;\n  display: inline-flex;\n  height: ", ";\n  position: relative;\n  transition: background-color 0.2s ease-in-out;\n  width: ", ";\n  cursor: ", ";\n"])), function (_a) {
+var StyledToggle = styled.div(templateObject_5$c || (templateObject_5$c = __makeTemplateObject(["\n  background-color: ", ";\n  align-items: center;\n  border-radius: 26px;\n  display: inline-flex;\n  height: ", ";\n  position: relative;\n  transition: background-color 0.2s ease-in-out;\n  width: ", ";\n  cursor: ", ";\n"], ["\n  background-color: ", ";\n  align-items: center;\n  border-radius: 26px;\n  display: inline-flex;\n  height: ", ";\n  position: relative;\n  transition: background-color 0.2s ease-in-out;\n  width: ", ";\n  cursor: ", ";\n"])), function (_a) {
     var theme = _a.theme, $checked = _a.$checked, $checkedColor = _a.$checkedColor, $defaultColor = _a.$defaultColor;
     return theme.colors[$checked ? $checkedColor : $defaultColor];
 }, getScale("toggleHeight"), getScale("toggleWidth"), function (_a) {
     var disabled = _a.disabled;
     return (disabled ? "not-allowed" : "pointer");
 });
-var templateObject_1$E, templateObject_2$q, templateObject_3$j, templateObject_4$f, templateObject_5$b;
+var templateObject_1$E, templateObject_2$q, templateObject_3$j, templateObject_4$f, templateObject_5$c;
 
 var Toggle = function (_a) {
     var checked = _a.checked, _b = _a.defaultColor, defaultColor = _b === void 0 ? "toggleBg" : _b, _c = _a.checkedColor, checkedColor = _c === void 0 ? "success" : _c, _d = _a.scale, scale = _d === void 0 ? scales.MD : _d, disabled = _a.disabled, label = _a.label, labelOrientation = _a.labelOrientation, gridArea = _a.gridArea, variant = _a.variant, spaceBetween = _a.spaceBetween, props = __rest(_a, ["checked", "defaultColor", "checkedColor", "scale", "disabled", "label", "labelOrientation", "gridArea", "variant", "spaceBetween"]);
@@ -6385,65 +6290,92 @@ var circle = "data:image/svg+xml,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%2
 var getBaseThumbStyles = function () { return "\n  -webkit-appearance: none;\n  background-image: url(".concat(circle, ");\n  background-color: transparent;\n  box-shadow: none;\n  border: 0;\n  width: 20px;\n  height: 20px;\n  transition: 200ms transform;\n  transform: translateY(2px);\n\n  &:hover {\n    transform: scale(1.1) translateY(2px);\n  }\n"); };
 var StyledInput = styled.input(templateObject_1$z || (templateObject_1$z = __makeTemplateObject(["\n  position: relative;\n  z-index: 1;\n  margin: 0;\n  padding: 0;\n  width: 100%;\n  border: none;\n  background-color: transparent;\n\n  ::-webkit-slider-thumb {\n    ", "\n  }\n\n  ::-moz-range-thumb {\n    ", "\n  }\n\n  ::-ms-thumb {\n    ", "\n  }\n"], ["\n  position: relative;\n  z-index: 1;\n  margin: 0;\n  padding: 0;\n  width: 100%;\n  border: none;\n  background-color: transparent;\n\n  ::-webkit-slider-thumb {\n    ", "\n  }\n\n  ::-moz-range-thumb {\n    ", "\n  }\n\n  ::-ms-thumb {\n    ", "\n  }\n"])), getBaseThumbStyles, getBaseThumbStyles, getBaseThumbStyles);
 var BarBackground = styled.div(templateObject_2$o || (templateObject_2$o = __makeTemplateObject(["\n  background-color: ", ";\n  height: 4px;\n  position: absolute;\n  top: 10px;\n  width: calc(100% - 8px);\n  border-radius: 20px;\n"], ["\n  background-color: ", ";\n  height: 4px;\n  position: absolute;\n  top: 10px;\n  width: calc(100% - 8px);\n  border-radius: 20px;\n"])), function (_a) {
-    var theme = _a.theme, disabled = _a.disabled;
-    return theme.colors[disabled ? "textDisabled" : "gray300"];
+    var theme = _a.theme, disabled = _a.disabled, darkMode = _a.darkMode;
+    return theme.colors[disabled ? "textDisabled" : darkMode ? "dark400" : "gray300"];
 });
 var BarProgress = styled.div(templateObject_3$h || (templateObject_3$h = __makeTemplateObject(["\n  background-color: ", ";\n  height: 4px;\n  margin-left: 2px;\n  position: absolute;\n  top: 10px;\n"], ["\n  background-color: ", ";\n  height: 4px;\n  margin-left: 2px;\n  position: absolute;\n  top: 10px;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.primary;
 });
 var PointsContainer = styled(Flex)(templateObject_4$e || (templateObject_4$e = __makeTemplateObject(["\n  position: relative;\n  top: -16px;\n"], ["\n  position: relative;\n  top: -16px;\n"])));
-var templateObject_1$z, templateObject_2$o, templateObject_3$h, templateObject_4$e;
+var PercentSliderLabel = styled(Flex)(templateObject_5$b || (templateObject_5$b = __makeTemplateObject(["\n  align-items: center;\n  position: absolute;\n  ", ";\n  left: ", ";\n  transform: translateX(-50%) translateY(calc(", "));\n  border-radius: 8px;\n  padding: 8px 12px;\n  background-color: ", ";\n  z-index: ", ";\n\n  &:after {\n    content: '';\n    display: block;\n    position: absolute;\n    left: 50%;\n    ", ";\n    width: 0;\n    height: 0;\n    border-left: 6px solid transparent;\n    border-right: 6px solid transparent;\n    z-index: ", ";\n    transform: translate(-50%, ", ");\n    ", ";\n"], ["\n  align-items: center;\n  position: absolute;\n  ", ";\n  left: ", ";\n  transform: translateX(-50%) translateY(calc(", "));\n  border-radius: 8px;\n  padding: 8px 12px;\n  background-color: ", ";\n  z-index: ", ";\n\n  &:after {\n    content: '';\n    display: block;\n    position: absolute;\n    left: 50%;\n    ", ";\n    width: 0;\n    height: 0;\n    border-left: 6px solid transparent;\n    border-right: 6px solid transparent;\n    z-index: ", ";\n    transform: translate(-50%, ", ");\n    ", ";\n"])), function (_a) {
+    var bannerPosition = _a.bannerPosition;
+    return bannerPosition === "top" ? "top: 0" : "bottom: 0";
+}, function (_a) {
+    var left = _a.left;
+    return "".concat(left, "%");
+}, function (_a) {
+    var bannerPosition = _a.bannerPosition;
+    return bannerPosition === "top" ? "-100% - 10px" : "100%";
+}, function (_a) {
+    var theme = _a.theme;
+    return theme.colors.tooltip;
+}, function (_a) {
+    var theme = _a.theme;
+    return theme.zIndices.dropdown;
+}, function (_a) {
+    var bannerPosition = _a.bannerPosition;
+    return bannerPosition === "top" ? "bottom: 0" : "top: 0";
+}, function (_a) {
+    var theme = _a.theme;
+    return theme.zIndices.dropdown;
+}, function (_a) {
+    var bannerPosition = _a.bannerPosition;
+    return bannerPosition === "top" ? "100%" : "-100%";
+}, function (_a) {
+    var bannerPosition = _a.bannerPosition, theme = _a.theme;
+    return "border-".concat(bannerPosition === "top" ? "top" : "bottom", ": 6px solid ").concat(theme.colors.tooltip);
+});
+var templateObject_1$z, templateObject_2$o, templateObject_3$h, templateObject_4$e, templateObject_5$b;
 
+var getColor = function (_a) {
+    var color = _a.color, theme = _a.theme;
+    return getThemeValue("colors.".concat(color), color)(theme);
+};
 var CircleIcon = function (props) {
-    return (React.createElement(Svg, __assign({ viewBox: "0 0 20 20" }, props),
-        React.createElement("g", { clipPath: "url(#clip0_4728_34338)" },
-            React.createElement("path", { d: "M0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10C20 15.5228 15.5228 20 10 20C4.47715 20 0 15.5228 0 10Z" }),
-            React.createElement("g", { filter: "url(#filter0_d_4728_34338)" },
-                React.createElement("rect", { x: "4", y: "4", width: "12", height: "12", rx: "6", fill: "white" }))),
-        React.createElement("defs", null,
-            React.createElement("filter", { id: "filter0_d_4728_34338", x: "0", y: "2", width: "20", height: "20", filterUnits: "userSpaceOnUse", colorInterpolationFilters: "sRGB" },
-                React.createElement("feFlood", { floodOpacity: "0", result: "BackgroundImageFix" }),
-                React.createElement("feColorMatrix", { in: "SourceAlpha", type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0", result: "hardAlpha" }),
-                React.createElement("feOffset", { dy: "2" }),
-                React.createElement("feGaussianBlur", { stdDeviation: "2" }),
-                React.createElement("feComposite", { in2: "hardAlpha", operator: "out" }),
-                React.createElement("feColorMatrix", { type: "matrix", values: "0 0 0 0 0.027451 0 0 0 0 0.0862745 0 0 0 0 0.176471 0 0 0 0.32 0" }),
-                React.createElement("feBlend", { mode: "normal", in2: "BackgroundImageFix", result: "effect1_dropShadow_4728_34338" }),
-                React.createElement("feBlend", { mode: "normal", in: "SourceGraphic", in2: "effect1_dropShadow_4728_34338", result: "shape" })),
-            React.createElement("clipPath", { id: "clip0_4728_34338" },
-                React.createElement("rect", { width: "20", height: "20", fill: "white" })))));
+    var theme = useTheme();
+    return (React.createElement(Svg, __assign({ viewBox: "0 0 10 10" }, props),
+        React.createElement("rect", { x: "1.5", y: "1.5", width: "7", height: "7", rx: "3.5", fill: props.darkMode ? theme.colors.dark700 : "white", stroke: getColor({ color: props.color, theme: theme }), strokeWidth: "3" })));
 };
 
 var PercentSlider = function (_a) {
-    var _b = _a.name, name = _b === void 0 ? "slider" : _b, _c = _a.min, min = _c === void 0 ? 0 : _c, _d = _a.max, max = _d === void 0 ? 100 : _d, value = _a.value, onValueChanged = _a.onValueChanged, _e = _a.disabled, disabled = _e === void 0 ? false : _e, enableShortcuts = _a.enableShortcuts, _f = _a.shortcutCheckpoints, shortcutCheckpoints = _f === void 0 ? [0, 25, 50, 75, 100] : _f, props = __rest(_a, ["name", "min", "max", "value", "onValueChanged", "disabled", "enableShortcuts", "shortcutCheckpoints"]);
-    var _g = useState(value.toString()), displayPercent = _g[0], setDisplayPercent = _g[1];
+    var _b = _a.name, name = _b === void 0 ? "slider" : _b, _c = _a.min, min = _c === void 0 ? 0 : _c, _d = _a.max, max = _d === void 0 ? 100 : _d, value = _a.value, onValueChanged = _a.onValueChanged, _e = _a.disabled, disabled = _e === void 0 ? false : _e, enableShortcuts = _a.enableShortcuts, _f = _a.shortcutCheckpoints, shortcutCheckpoints = _f === void 0 ? [0, 25, 50, 75, 100] : _f, withTooltip = _a.withTooltip, _g = _a.bannerPosition, bannerPosition = _g === void 0 ? "bottom" : _g, _h = _a.darkMode, darkMode = _h === void 0 ? false : _h, props = __rest(_a, ["name", "min", "max", "value", "onValueChanged", "disabled", "enableShortcuts", "shortcutCheckpoints", "withTooltip", "bannerPosition", "darkMode"]);
+    var _j = useState(value.toString()), displayPercent = _j[0], setDisplayPercent = _j[1];
     useEffect(function () {
         if (value !== parseInt(displayPercent)) {
-            onValueChanged(parseInt(displayPercent));
+            setDisplayPercent(value.toString());
         }
-    }, [displayPercent]);
-    useEffect(function () {
-        setDisplayPercent(value.toString());
     }, [value]);
     var handleChange = useCallback(function (_a) {
         var target = _a.target;
         setDisplayPercent(target.value);
+        onValueChanged(parseInt(target.value));
     }, []);
     var setMax = useCallback(function () {
         setDisplayPercent(max.toString());
+        onValueChanged(max);
     }, [max]);
+    var _k = useState(false), infoVisible = _k[0], setInfoVisible = _k[1];
+    var getCirclesColor = function (pointPercent) {
+        return value >= pointPercent
+            ? "primary"
+            : disabled
+                ? "textDisabled"
+                : darkMode
+                    ? "dark400"
+                    : "gray300";
+    };
     return (React.createElement(Flex, __assign({ position: "relative", flexDirection: "column" }, props),
         React.createElement("div", null,
             React.createElement(Flex, { justifyContent: "center" },
-                React.createElement(BarBackground, { disabled: disabled })),
+                React.createElement(BarBackground, { darkMode: darkMode, disabled: disabled })),
             React.createElement(BarProgress, { style: { width: "calc(".concat(displayPercent, "% - 5px)") } }),
-            React.createElement(StyledInput, { name: name, type: "range", min: min, max: max, value: displayPercent, step: "any", onChange: handleChange, disabled: disabled }),
-            shortcutCheckpoints && (React.createElement(PointsContainer, { justifyContent: "space-between" }, shortcutCheckpoints.map(function (pointPercent, index) { return (React.createElement(CircleIcon, { key: index.toString(), width: "10px", color: value >= pointPercent
-                    ? "primary"
-                    : disabled
-                        ? "textDisabled"
-                        : "gray300" })); })))),
+            React.createElement(StyledInput, { name: name, onMouseDown: function () { return setInfoVisible(true); }, onMouseUp: function () { return setInfoVisible(false); }, onTouchStart: function () { return setInfoVisible(true); }, onTouchEnd: function () { return setInfoVisible(false); }, type: "range", min: min, max: max, value: displayPercent, step: "any", onChange: handleChange, disabled: disabled }),
+            withTooltip && infoVisible && (React.createElement(PercentSliderLabel, { className: "percent-info-banner", bannerPosition: bannerPosition, left: Number(displayPercent) },
+                React.createElement(Text, { color: "white" },
+                    value,
+                    "%"))),
+            shortcutCheckpoints && (React.createElement(PointsContainer, { justifyContent: "space-between" }, shortcutCheckpoints.map(function (pointPercent, index) { return (React.createElement(CircleIcon, { darkMode: darkMode, key: index.toString(), width: "10px", color: getCirclesColor(pointPercent) })); })))),
         enableShortcuts && shortcutCheckpoints && (React.createElement(Flex, { justifyContent: "space-between", py: "16px" },
             shortcutCheckpoints.map(function (percent, index) { return (React.createElement(Button, { key: index.toString(), scale: "sm", variant: "primary", onClick: function () {
                     setDisplayPercent(percent.toString());
@@ -6790,6 +6722,139 @@ var useTable = function (columns, data, options) {
     };
 };
 
+var defaultParticleOptions = {
+    size: 30,
+    distance: 500,
+};
+var createParticle = function (x, y, imgSrc, options) {
+    if (options === void 0) { options = {}; }
+    var _a = __assign(__assign({}, defaultParticleOptions), options), size = _a.size, distance = _a.distance;
+    var particle = document.createElement("particle");
+    document.body.appendChild(particle);
+    var width = Math.floor(Math.random() * size + 8);
+    var height = width;
+    var destinationX = (Math.random() - 0.5) * distance;
+    var destinationY = (Math.random() - 0.5) * distance;
+    var rotation = Math.random() * 520;
+    var delay = Math.random() * 200;
+    particle.style.backgroundRepeat = "no-repeat";
+    particle.style.backgroundSize = "contain";
+    particle.style.backgroundImage = "url(".concat(imgSrc, ")");
+    particle.style.left = "0";
+    particle.style.top = "0";
+    particle.style.opacity = "0";
+    particle.style.pointerEvents = "none";
+    particle.style.position = "fixed";
+    particle.style.width = "".concat(width, "px");
+    particle.style.height = "".concat(height, "px");
+    var animation = particle.animate([
+        {
+            transform: "translate(-50%, -50%) translate(".concat(x, "px, ").concat(y, "px) rotate(0deg)"),
+            opacity: 1,
+        },
+        {
+            transform: "translate(-50%, -50%) translate(".concat(x + destinationX, "px, ").concat(y + destinationY, "px) rotate(").concat(rotation, "deg)"),
+            opacity: 0,
+        },
+    ], {
+        duration: Math.random() * 1000 + 5000,
+        easing: "cubic-bezier(0, .9, .57, 1)",
+        delay: delay,
+    });
+    animation.onfinish = function () {
+        particle.remove();
+    };
+};
+var defaultOptions = {
+    numberOfParticles: 30,
+    debounceDuration: 200,
+    particleOptions: {},
+};
+/**
+ * @see https://css-tricks.com/playing-with-particles-using-the-web-animations-api/
+ */
+var useParticleBurst = function (options) {
+    var _a = __assign(__assign({}, defaultOptions), options), selector = _a.selector, numberOfParticles = _a.numberOfParticles, debounceDuration = _a.debounceDuration, imgSrc = _a.imgSrc, disableWhen = _a.disableWhen, particleOptions = _a.particleOptions;
+    var makeListener = useCallback(function () {
+        return debounce(function (event) {
+            var isDisabled = disableWhen && disableWhen();
+            if (!isDisabled) {
+                var node = event.currentTarget;
+                if (event.clientX === 0 && event.clientY === 0) {
+                    var _a = node.getBoundingClientRect(), left = _a.left, width = _a.width, top_1 = _a.top, height = _a.height;
+                    var x = left + width / 2;
+                    var y = top_1 + height / 2;
+                    for (var i = 0; i < numberOfParticles; i += 1) {
+                        createParticle(x, y, imgSrc, particleOptions);
+                    }
+                }
+                else {
+                    for (var i = 0; i < numberOfParticles; i += 1) {
+                        createParticle(event.clientX, event.clientY + window.scrollY, imgSrc, particleOptions);
+                    }
+                }
+            }
+        }, debounceDuration, { leading: true });
+    }, [debounceDuration, numberOfParticles, imgSrc, disableWhen, particleOptions]);
+    var listener = makeListener();
+    var initialize = useCallback(function () {
+        if (selector) {
+            document.querySelectorAll(selector).forEach(function (element) {
+                element.addEventListener("click", listener);
+            });
+        }
+        else {
+            document.addEventListener("click", listener);
+        }
+    }, [selector, listener]);
+    var teardown = useCallback(function () {
+        if (selector) {
+            document.querySelectorAll(selector).forEach(function (element) {
+                element.removeEventListener("click", listener);
+            });
+        }
+        else {
+            document.removeEventListener("click", listener);
+        }
+    }, [selector, listener]);
+    useEffect(function () {
+        initialize();
+        return function () { return teardown(); };
+    }, [initialize, teardown]);
+    return { initialize: initialize, teardown: teardown };
+};
+
+var useKonamiCheatCode = function (matchedCodeHandler) {
+    useEffect(function () {
+        var pattern = [
+            "ArrowUp",
+            "ArrowUp",
+            "ArrowDown",
+            "ArrowDown",
+            "ArrowLeft",
+            "ArrowRight",
+            "ArrowLeft",
+            "ArrowRight",
+        ];
+        var currentIndex = 0;
+        var onKeyUpHandler = function (event) {
+            var key = event.key;
+            // is key in correct order otherwise reset
+            if (key !== pattern[currentIndex]) {
+                currentIndex = 0;
+                return;
+            }
+            currentIndex += 1;
+            if (pattern.length === currentIndex) {
+                currentIndex = 0;
+                matchedCodeHandler();
+            }
+        };
+        document.addEventListener("keyup", onKeyUpHandler);
+        return function () { return document.removeEventListener("keyup", onKeyUpHandler); };
+    }, [matchedCodeHandler]);
+};
+
 // eslint-disable-next-line import/prefer-default-export
 var formatSpacingAmount = function (x) {
     if (x) {
@@ -6843,7 +6908,7 @@ var templateObject_1$y, templateObject_2$n, templateObject_3$g, templateObject_4
 
 var Modal = function (_a) {
     var _b;
-    var title = _a.title, onDismiss = _a.onDismiss, onBack = _a.onBack, children = _a.children, _c = _a.hideCloseButton, hideCloseButton = _c === void 0 ? false : _c, bodyPadding = _a.bodyPadding, _d = _a.minWidth, minWidth = _d === void 0 ? "320px" : _d, _e = _a.modalBackground, modalBackground = _e === void 0 ? "white" : _e, closeBtnColor = _a.closeBtnColor, _f = _a.maxWidth, maxWidth = _f === void 0 ? "420px" : _f, walletModal = _a.walletModal, modalBodyProps = _a.modalBodyProps, props = __rest(_a, ["title", "onDismiss", "onBack", "children", "hideCloseButton", "bodyPadding", "minWidth", "modalBackground", "closeBtnColor", "maxWidth", "walletModal", "modalBodyProps"]);
+    var title = _a.title, onDismiss = _a.onDismiss, onBack = _a.onBack, children = _a.children, _c = _a.hideCloseButton, hideCloseButton = _c === void 0 ? false : _c, bodyPadding = _a.bodyPadding, _d = _a.minWidth, minWidth = _d === void 0 ? "320px" : _d, _e = _a.modalBackground, modalBackground = _e === void 0 ? "white" : _e, closeBtnColor = _a.closeBtnColor, _f = _a.maxWidth, maxWidth = _f === void 0 ? "420px" : _f, _g = _a.titleSize, titleSize = _g === void 0 ? "lg" : _g, walletModal = _a.walletModal, modalBodyProps = _a.modalBodyProps, props = __rest(_a, ["title", "onDismiss", "onBack", "children", "hideCloseButton", "bodyPadding", "minWidth", "modalBackground", "closeBtnColor", "maxWidth", "titleSize", "walletModal", "modalBodyProps"]);
     var theme = useTheme();
     var isMobile = useMatchBreakpoints().isMobile;
     var defaultBodyPadding = isMobile ? "0 16px 24px" : "0 32px 32px";
@@ -6851,7 +6916,7 @@ var Modal = function (_a) {
         React.createElement(ModalHeader, null,
             React.createElement(ModalTitle, null,
                 onBack && (React.createElement(ModalBackButton, { onBack: onBack, closeBtnColor: closeBtnColor })),
-                title && React.createElement(Heading, { color: "backgroundDark" }, title)),
+                title && (React.createElement(Heading, { scale: titleSize, color: "backgroundDark" }, title))),
             !hideCloseButton && (React.createElement(ModalCloseButton, { closeBtnColor: closeBtnColor, onDismiss: onDismiss }))),
         React.createElement(ModalBody$1, __assign({ p: bodyPadding !== null && bodyPadding !== void 0 ? bodyPadding : defaultBodyPadding }, modalBodyProps), children)));
 };
@@ -7919,9 +7984,7 @@ var DropdownMenuItemContainer = function (_a) {
         type === DropdownMenuItemType.CONTAINER && (React.createElement(React.Fragment, null,
             React.createElement(DropdownMenuItem, __assign({ "$isActive": isActive, "$hasIcon": true, as: "div" }, itemProps), getMenuItemContent("")),
             hasInnerLinks && (React.createElement(InnerLinksBlock, { links: linksItems, leftIcon: leftIcon, setIsOpen: setIsOpen, linkComponent: linkComponent })))),
-        type === DropdownMenuItemType.INTERNAL_LINK && (React.createElement(DropdownInternalMenuItem, __assign({ label: itemProps.label, "$isActive": isActive, "$hasIcon": !!leftIcon, 
-            // as={linkComponent}
-            to: href, onClick: function () {
+        type === DropdownMenuItemType.INTERNAL_LINK && (React.createElement(DropdownInternalMenuItem, __assign({ label: itemProps.label, "$isActive": isActive, "$hasIcon": !!leftIcon, as: linkComponent, to: href, onClick: function () {
                 setIsOpen(false);
             } }, itemProps), getMenuItemContent("ArrowRight"))),
         type === DropdownMenuItemType.EXTERNAL_LINK && (React.createElement(DropdownMenuItem, __assign({ label: itemProps.label, "$isActive": isActive, "$hasIcon": !!leftIcon, as: "a", href: href, target: isMobile ? mobileTarget || "_self" : target || "_blank", onClick: function () {
@@ -8302,13 +8365,13 @@ var CommonLinkStyles = function (_a) {
 var StyledInnerButton = styled(Button)(templateObject_3$4 || (templateObject_3$4 = __makeTemplateObject(["\n  ", ";\n  height: auto;\n  padding: 0;\n  border: none;\n  background-color: transparent;\n"], ["\n  ", ";\n  height: auto;\n  padding: 0;\n  border: none;\n  background-color: transparent;\n"])), CommonLinkStyles);
 var Logo = function (_a) {
     var href = _a.href;
-    useContext(MenuContext).linkComponent;
-    var push = useHistory().push;
+    var linkComponent = useContext(MenuContext).linkComponent;
+    // const { push } = useHistory();
     var isAbsoluteUrl = href.startsWith("http");
     var innerLogo = (React.createElement(React.Fragment, null,
         React.createElement(Icon$3I, { className: "mobile-icon" }),
         React.createElement(Icon$3H, { className: "desktop-icon" })));
-    return (React.createElement(Flex, null, isAbsoluteUrl ? (React.createElement(StyledInnerButton, { variant: "light", onClick: function () { return window.open(href, "_self"); }, "aria-label": "Biswap home page" }, innerLogo)) : (React.createElement(StyledInnerButton, { variant: "light", onClick: function () { return push(href); }, "aria-label": "Biswap home page" }, innerLogo))));
+    return (React.createElement(Flex, null, isAbsoluteUrl ? (React.createElement(StyledInnerButton, { variant: "light", onClick: function () { return window.open(href, "_self"); }, "aria-label": "Biswap home page" }, innerLogo)) : (React.createElement(StyledInnerButton, { variant: "light", as: linkComponent, href: href, "aria-label": "Biswap home page" }, innerLogo))));
 };
 var templateObject_1$c, templateObject_2$8, templateObject_3$4;
 
@@ -8739,8 +8802,8 @@ var AccountModal = function (_a) {
     return (React.createElement(Modal, { title: "Your wallet", onDismiss: onDismiss },
         React.createElement(ConnectedWrapper, null,
             React.createElement(Text, { fontSize: "14px", fontWeight: "400", lineHeight: "21px", color: "#1DC872" }, "Connected"),
-            React.createElement(Button, { onClick: changeWalletHandler, scale: "lg", variant: "primary" }, "Change")),
-        React.createElement(Text, { fontSize: "14px", fontWeight: "600", color: "#07162D", style: {
+            React.createElement(Button, { onClick: changeWalletHandler, scale: "md", variant: "primary" }, "Change")),
+        React.createElement(Text, { fontSize: "14px", fontWeight: "600", color: "backgroundDark", style: {
                 whiteSpace: "nowrap",
                 overflow: "hidden",
                 textOverflow: "ellipsis",
@@ -8792,8 +8855,9 @@ var UserBlock = function (_a) {
                 onPresentAccountModal();
             } }, pendingTransactions ? (React.createElement(React.Fragment, null,
             pendingTransactions,
-            " pending ",
-            React.createElement(Icon$1G, { color: "white" }))) : (React.createElement(React.Fragment, null,
+            " pending",
+            " ",
+            React.createElement(Icon$1J, { color: "white", ml: "4px" }))) : (React.createElement(React.Fragment, null,
             !isSm && !isXs && (React.createElement(Icon$34, __assign({}, iconProps, { mr: "8px" }))),
             accountEllipsis))))) : (React.createElement(Button, { scale: isSm || isXs ? "md" : "lg", onClick: function () {
             onPresentConnectModal();
@@ -9023,22 +9087,44 @@ var UserMenuItem = styled.button(templateObject_2$2 || (templateObject_2$2 = __m
 });
 var templateObject_1$4, templateObject_2$2;
 
-var giftImg = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAANWSURBVHgB7ZTdaxRXGMafc+ZjZ8zudrJht2uT6MYYU5WSgFAKvbFQWqS9EWpbclEQCqWXgfaid70oQqFg/4FC6VXBgk1LrwpFaKsxKiZ+RQ3qBj+iJuvOZndn5+N8eGbUIMSYXe8U32GYM2cO5zfP+z7vAV7GCxuV+fkdtVptvN31dL0Fd8rlvcuue7jRaIw+mluYnS1FrvseQvau53l9aCPIegtuX7lymOr6iOU43cHlq3tR6mvIVusXWnH/JIvVPfzytTKs1Bt6JG/lvhx7+9lBl+a+4Ro9IAlx7VeyDhcCuLsEuViBSSjYwl0QDhi7dqL100S6+MPXzSfto68FuPHtwY/opo3f8/9PbjHfHAUt5h1CCMTvf4P9OwXJBUJKoKe7YKazEKPbkWJNA+0quvHJFyMyxI9CiN2MR7APfAXZ0w31DjF9AQvfHYRUV8QZqFLUOzyMdC4PbexDN/fWru61QKsUNbf2fr7439RuziK0wgh9fgu09sAzWi6LmteAEqb+UF1q4N+rwrYz0Berjty3TyOHDvEngVa5zurf+IcwKCLBIKXE8szZB2qEhOh2QDMbEHKeKArVzzSWa4B6V2mGWxhZ04GrQHZu6zEt3zPtRUoRC1E9fhJhGCIIfHgtD2RoAI0oQD3y0VKp1a0UaMqEDCIwKkptgwofv9Po3fP+WLYnB9swEJ2YgViqwFBj0zThbH8dGcNE1rSRNhREmUIwla26SumOwYG2QXGUPvt0dkOxcEcnGixdhzdzDpTS5La2bUnqoxGS1Cr0Q0ilXrp1aJbV3xEoDs00f42f8abR3LWk8HHom/sTYOJXqUAsAFeplUsusG1zT8egrnx+Qp0IyX7B+Ysr89yyYBVfTcwRR8QYWBBAVmrQhku3OgalhjadNpx0XVlPed6DP3/94RcJa+fww5EEE1yBfIiqC0nlzY5BA/v3u2Ymc0omiwia52dXvhmlvsT6CUxZP/KVItVzQXV5qmNQoqrLnogrHqePla+vzFtDgwkoZqmTD6FSxO/V/yoMDs49Ewii9bM09SNMo5P1M+fKXDVm3LykWFBFtFXfqJoRiabqKb9e/e1pW617ej8ek5OTQ1TQ1zjhpGhZ00fGx+EAjhlS+cHRf+bxMp7ruA9B8HiZzFdvegAAAABJRU5ErkJggg==";
+var socialLinks = {
+    twitter: function (_a) {
+        var _b = _a.message, message = _b === void 0 ? "" : _b, _c = _a.link, link = _c === void 0 ? "" : _c;
+        return "https://twitter.com/intent/tweet/?text=".concat(encodeURIComponent(message), "&url=").concat(encodeURIComponent(link));
+    },
+    telegram: function (_a) {
+        var _b = _a.message, message = _b === void 0 ? "" : _b, _c = _a.link, link = _c === void 0 ? "" : _c;
+        return "https://telegram.me/share/url?text=".concat(encodeURIComponent(message), "&url=").concat(encodeURIComponent(link));
+    },
+};
+var socialStyles = function (_a) {
+    var _b = _a === void 0 ? {} : _a, _c = _b.size, size = _c === void 0 ? "20px" : _c, _d = _b.color, color = _d === void 0 ? "white" : _d;
+    return ({
+        twitter: {
+            icon: React.createElement(Icon$G, { width: size, color: color }),
+            backgroundColor: "#16CDFD",
+        },
+        telegram: {
+            icon: React.createElement(Icon$I, { width: size, color: color }),
+            backgroundColor: "#26A6E5",
+        },
+    });
+};
+
+var SocialShareButton = function (_a) {
+    var social = _a.social, link = _a.link, name = _a.name, message = _a.message, _b = _a.scale, scale = _b === void 0 ? "lg" : _b, _c = _a.target, target = _c === void 0 ? "_blank" : _c, _d = _a.width, width = _d === void 0 ? "100%" : _d, props = __rest(_a, ["social", "link", "name", "message", "scale", "target", "width"]);
+    var defaultName = social.charAt(0).toUpperCase() + social.slice(1);
+    var _e = socialStyles()[social], icon = _e.icon, backgroundColor = _e.backgroundColor;
+    return (React.createElement(Button, __assign({ as: "a", href: socialLinks[social]({ link: link, message: message }), scale: scale, startIcon: icon, style: { backgroundColor: backgroundColor }, target: target, width: width }, props), name || defaultName));
+};
 
 var ActionsContainer = styled.div(templateObject_1$3 || (templateObject_1$3 = __makeTemplateObject(["\n  display: flex;\n  justify-content: flex-start;\n"], ["\n  display: flex;\n  justify-content: flex-start;\n"])));
-var StyledIcon = styled.img(templateObject_2$1 || (templateObject_2$1 = __makeTemplateObject(["\n  margin-left: 8px;\n  width: 26px;\n  filter: drop-shadow(2px 4px 8px rgba(0, 109, 163, 0.4));\n"], ["\n  margin-left: 8px;\n  width: 26px;\n  filter: drop-shadow(2px 4px 8px rgba(0, 109, 163, 0.4));\n"])));
+styled.img(templateObject_2$1 || (templateObject_2$1 = __makeTemplateObject(["\n  margin-left: 8px;\n  width: 26px;\n  filter: drop-shadow(2px 4px 8px rgba(0, 109, 163, 0.4));\n"], ["\n  margin-left: 8px;\n  width: 26px;\n  filter: drop-shadow(2px 4px 8px rgba(0, 109, 163, 0.4));\n"])));
 var ToastAction = function (_a) {
     _a.title; var telegramDescription = _a.telegramDescription, tweeterDescription = _a.tweeterDescription, url = _a.url; _a.thx;
     return (React.createElement(ActionsContainer, null,
-        React.createElement(TwitterShareButton, { style: { width: "40%", height: "32px" }, title: tweeterDescription, url: "".concat(url) },
-            React.createElement(Button, { mr: "8px", scale: "sm", width: "100%", height: "100%", style: { backgroundColor: "#16CDFD", alignItems: "center" } },
-                React.createElement(StyledIcon, { src: giftImg, alt: "gift-icon" }),
-                React.createElement(Text, { mr: "6px", my: "8px", color: "#fff", fontSize: "12px" }, "Twitter"),
-                React.createElement(Icon$G, { mr: "8px", color: "#fff", width: "20px" }))),
-        React.createElement(TelegramShareButton, { style: { width: "40%", height: "32px", marginLeft: "6px" }, title: telegramDescription, url: "".concat(url) },
-            React.createElement(Button, { mx: "8px", scale: "sm", width: "100%", height: "100%", style: { backgroundColor: "#26A6E5", alignItems: "center" } },
-                React.createElement(Text, { color: "#fff", fontSize: "12px" }, "Telegram"),
-                React.createElement(Icon$I, { ml: "8px", color: "#fff", width: "20px" })))));
+        React.createElement(SocialShareButton, { social: "twitter", message: tweeterDescription, link: url, mr: "8px" }),
+        React.createElement(SocialShareButton, { social: "telegram", message: telegramDescription, link: url })));
 };
 var templateObject_1$3, templateObject_2$1;
 
@@ -9203,7 +9289,7 @@ var ToastContainer = function (_a) {
 };
 var templateObject_1$1;
 
-var ResetCSS = createGlobalStyle(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  @font-face {\n    font-family: 'CodecPro';\n    font-weight: 600;\n    src: url('assets/fonts/CodecProBold/font.woff2') format('woff2'), url('assets/fonts/CodecProBold/font.woff') format('woff');\n  }\n  @font-face {\n    font-weight: 300;\n    font-family: 'CodecPro';\n    src: url('assets/fonts/CodecProNews/font.woff2') format('woff2'), url('assets/fonts/CodecProNews/font.woff') format('woff');\n  }\n  @font-face {\n    font-family: 'CodecPro';\n    font-weight: 400;\n    src: url('assets/fonts/CodecProRegular/font.woff2') format('woff2'), url('assets/fonts/CodecProRegular/font.woff') format('woff');\n  }\n  @font-face {\n    font-family: 'CodecPro';\n    font-weight: 900;\n    src: url('assets/fonts/CodecProExtraBold/font.woff2') format('woff2'), url('assets/fonts/CodecProExtraBold/font.woff') format('woff');\n  }\n\n  * {\n    font-family: 'CodecPro', sans-serif;\n  }\n  \n  /* prettier-ignore */\n  html, body, div, span, applet, object, iframe,\n  h1, h2, h3, h4, h5, h6, p, blockquote, pre,\n  a, abbr, acronym, address, big, cite, code,\n  del, dfn, em, img, ins, kbd, q, s, samp,\n  small, strike, strong, sub, sup, tt, var,\n  b, u, i, center,\n  dl, dt, dd, ol, ul, li,\n  fieldset, form, label, legend,\n  table, caption, tbody, tfoot, thead, tr, th, td,\n  article, aside, canvas, details, embed, \n  figure, figcaption, footer, header, hgroup, \n  menu, nav, output, ruby, section, summary,\n  time, mark, audio, video {\n    margin: 0;\n    padding: 0;\n    border: 0;\n    font-size: 100%;\n    vertical-align: baseline;\n  }\n  /* HTML5 display-role reset for older browsers */\n  /* prettier-ignore */\n  article, aside, details, figcaption, figure, \n  footer, header, hgroup, menu, nav, section {\n    display: block;\n  }\n  body {\n    line-height: 1;\n    font-size: 16px;\n  }\n  ol,\n  ul {\n    list-style: disc;\n    list-style-position: inside;\n  }\n  blockquote,\n  q {\n    quotes: none;\n  }\n  blockquote:before,\n  blockquote:after,\n  q:before,\n  q:after {\n    content: \"\";\n    content: none;\n  }\n  table {\n    border-collapse: collapse;\n    border-spacing: 0;\n  }\n  a {\n    color: inherit;\n    text-decoration: none;\n  }\n  [role=\"button\"] {\n    cursor: pointer;\n  }\n  *,\n  *::before,\n  *::after {\n    box-sizing: border-box;\n  }\n  * {\n    font-family: 'CodecPro', sans-serif;\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n  }\n\n  /* Number */\n  input::-webkit-outer-spin-button,\n  input::-webkit-inner-spin-button {\n    -webkit-appearance: none;\n    margin: 0;\n  }\n  input[type=number] {\n    -moz-appearance: textfield;\n  }\n\n  /* Scrollbar */\n  ::-webkit-scrollbar {\n    width: 8px;\n  }\n  ::-webkit-scrollbar-thumb {\n    background: ", "; \n    border-radius: 8px;\n  }\n  ::-webkit-scrollbar-track {\n    box-shadow: inset 0 0 5px ", "; \n    border-radius: 10px;\n  }\n\n  /* Slider */ \n  input[type=range] {\n    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */\n    width: 100%; /* Specific width is required for Firefox. */\n    background: transparent; /* Otherwise white in Chrome */\n  }\n  input[type=range]::-webkit-slider-thumb {\n    -webkit-appearance: none;\n  }\n  input[type=range]:focus {\n    outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */\n  }\n  input[type=range]::-ms-track {\n    width: 100%;\n    cursor: pointer;\n    /* Hides the slider so custom styles can be added */\n    background: transparent; \n    border-color: transparent;\n    color: transparent;\n  }  \n"], ["\n  @font-face {\n    font-family: 'CodecPro';\n    font-weight: 600;\n    src: url('assets/fonts/CodecProBold/font.woff2') format('woff2'), url('assets/fonts/CodecProBold/font.woff') format('woff');\n  }\n  @font-face {\n    font-weight: 300;\n    font-family: 'CodecPro';\n    src: url('assets/fonts/CodecProNews/font.woff2') format('woff2'), url('assets/fonts/CodecProNews/font.woff') format('woff');\n  }\n  @font-face {\n    font-family: 'CodecPro';\n    font-weight: 400;\n    src: url('assets/fonts/CodecProRegular/font.woff2') format('woff2'), url('assets/fonts/CodecProRegular/font.woff') format('woff');\n  }\n  @font-face {\n    font-family: 'CodecPro';\n    font-weight: 900;\n    src: url('assets/fonts/CodecProExtraBold/font.woff2') format('woff2'), url('assets/fonts/CodecProExtraBold/font.woff') format('woff');\n  }\n\n  * {\n    font-family: 'CodecPro', sans-serif;\n  }\n  \n  /* prettier-ignore */\n  html, body, div, span, applet, object, iframe,\n  h1, h2, h3, h4, h5, h6, p, blockquote, pre,\n  a, abbr, acronym, address, big, cite, code,\n  del, dfn, em, img, ins, kbd, q, s, samp,\n  small, strike, strong, sub, sup, tt, var,\n  b, u, i, center,\n  dl, dt, dd, ol, ul, li,\n  fieldset, form, label, legend,\n  table, caption, tbody, tfoot, thead, tr, th, td,\n  article, aside, canvas, details, embed, \n  figure, figcaption, footer, header, hgroup, \n  menu, nav, output, ruby, section, summary,\n  time, mark, audio, video {\n    margin: 0;\n    padding: 0;\n    border: 0;\n    font-size: 100%;\n    vertical-align: baseline;\n  }\n  /* HTML5 display-role reset for older browsers */\n  /* prettier-ignore */\n  article, aside, details, figcaption, figure, \n  footer, header, hgroup, menu, nav, section {\n    display: block;\n  }\n  body {\n    line-height: 1;\n    font-size: 16px;\n  }\n  ol,\n  ul {\n    list-style: disc;\n    list-style-position: inside;\n  }\n  blockquote,\n  q {\n    quotes: none;\n  }\n  blockquote:before,\n  blockquote:after,\n  q:before,\n  q:after {\n    content: \"\";\n    content: none;\n  }\n  table {\n    border-collapse: collapse;\n    border-spacing: 0;\n  }\n  a {\n    color: inherit;\n    text-decoration: none;\n  }\n  [role=\"button\"] {\n    cursor: pointer;\n  }\n  *,\n  *::before,\n  *::after {\n    box-sizing: border-box;\n  }\n  * {\n    font-family: 'CodecPro', sans-serif;\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n  }\n\n  /* Number */\n  input::-webkit-outer-spin-button,\n  input::-webkit-inner-spin-button {\n    -webkit-appearance: none;\n    margin: 0;\n  }\n  input[type=number] {\n    -moz-appearance: textfield;\n  }\n\n  /* Scrollbar */\n  ::-webkit-scrollbar {\n    width: 8px;\n  }\n  ::-webkit-scrollbar-thumb {\n    background: ", "; \n    border-radius: 8px;\n  }\n  ::-webkit-scrollbar-track {\n    box-shadow: inset 0 0 5px ", "; \n    border-radius: 10px;\n  }\n\n  /* Slider */ \n  input[type=range] {\n    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */\n    width: 100%; /* Specific width is required for Firefox. */\n    background: transparent; /* Otherwise white in Chrome */\n  }\n  input[type=range]::-webkit-slider-thumb {\n    -webkit-appearance: none;\n  }\n  input[type=range]:focus {\n    outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */\n  }\n  input[type=range]::-ms-track {\n    width: 100%;\n    cursor: pointer;\n    /* Hides the slider so custom styles can be added */\n    background: transparent; \n    border-color: transparent;\n    color: transparent;\n  }  \n"])), function (_a) {
+var ResetCSS = createGlobalStyle(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  //@font-face {\n  //  font-family: 'CodecPro';\n  //  font-weight: 600;\n  //  src: url('assets/fonts/CodecProBold/font.woff2') format('woff2'), url('assets/fonts/CodecProBold/font.woff') format('woff');\n  //}\n  //@font-face {\n  //  font-weight: 300;\n  //  font-family: 'CodecPro';\n  //  src: url('assets/fonts/CodecProNews/font.woff2') format('woff2'), url('assets/fonts/CodecProNews/font.woff') format('woff');\n  //}\n  //@font-face {\n  //  font-family: 'CodecPro';\n  //  font-weight: 400;\n  //  src: url('assets/fonts/CodecProRegular/font.woff2') format('woff2'), url('assets/fonts/CodecProRegular/font.woff') format('woff');\n  //}\n  //@font-face {\n  //  font-family: 'CodecPro';\n  //  font-weight: 900;\n  //  src: url('assets/fonts/CodecProExtraBold/font.woff2') format('woff2'), url('assets/fonts/CodecProExtraBold/font.woff') format('woff');\n  //}\n  \n  /* prettier-ignore */\n  html, body, div, span, applet, object, iframe,\n  h1, h2, h3, h4, h5, h6, p, blockquote, pre,\n  a, abbr, acronym, address, big, cite, code,\n  del, dfn, em, img, ins, kbd, q, s, samp,\n  small, strike, strong, sub, sup, tt, var,\n  b, u, i, center,\n  dl, dt, dd, ol, ul, li,\n  fieldset, form, label, legend,\n  table, caption, tbody, tfoot, thead, tr, th, td,\n  article, aside, canvas, details, embed, \n  figure, figcaption, footer, header, hgroup, \n  menu, nav, output, ruby, section, summary,\n  time, mark, audio, video {\n    margin: 0;\n    padding: 0;\n    border: 0;\n    font-size: 100%;\n    vertical-align: baseline;\n  }\n  /* HTML5 display-role reset for older browsers */\n  /* prettier-ignore */\n  article, aside, details, figcaption, figure, \n  footer, header, hgroup, menu, nav, section {\n    display: block;\n  }\n  body {\n    line-height: 1;\n    font-size: 16px;\n  }\n  ol,\n  ul {\n    list-style: disc;\n    list-style-position: inside;\n  }\n  blockquote,\n  q {\n    quotes: none;\n  }\n  blockquote:before,\n  blockquote:after,\n  q:before,\n  q:after {\n    content: \"\";\n    content: none;\n  }\n  table {\n    border-collapse: collapse;\n    border-spacing: 0;\n  }\n  a {\n    color: inherit;\n    text-decoration: none;\n  }\n  [role=\"button\"] {\n    cursor: pointer;\n  }\n  *,\n  *::before,\n  *::after {\n    box-sizing: border-box;\n  }\n  * {\n    font-family: 'CodecPro', sans-serif;\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n  }\n\n  /* Number */\n  input::-webkit-outer-spin-button,\n  input::-webkit-inner-spin-button {\n    -webkit-appearance: none;\n    margin: 0;\n  }\n  input[type=number] {\n    -moz-appearance: textfield;\n  }\n\n  /* Scrollbar */\n  ::-webkit-scrollbar {\n    width: 8px;\n  }\n  ::-webkit-scrollbar-thumb {\n    background: ", "; \n    border-radius: 8px;\n  }\n  ::-webkit-scrollbar-track {\n    box-shadow: inset 0 0 5px ", "; \n    border-radius: 10px;\n  }\n\n  /* Slider */ \n  input[type=range] {\n    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */\n    width: 100%; /* Specific width is required for Firefox. */\n    background: transparent; /* Otherwise white in Chrome */\n  }\n  input[type=range]::-webkit-slider-thumb {\n    -webkit-appearance: none;\n  }\n  input[type=range]:focus {\n    outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */\n  }\n  input[type=range]::-ms-track {\n    width: 100%;\n    cursor: pointer;\n    /* Hides the slider so custom styles can be added */\n    background: transparent; \n    border-color: transparent;\n    color: transparent;\n  }  \n"], ["\n  //@font-face {\n  //  font-family: 'CodecPro';\n  //  font-weight: 600;\n  //  src: url('assets/fonts/CodecProBold/font.woff2') format('woff2'), url('assets/fonts/CodecProBold/font.woff') format('woff');\n  //}\n  //@font-face {\n  //  font-weight: 300;\n  //  font-family: 'CodecPro';\n  //  src: url('assets/fonts/CodecProNews/font.woff2') format('woff2'), url('assets/fonts/CodecProNews/font.woff') format('woff');\n  //}\n  //@font-face {\n  //  font-family: 'CodecPro';\n  //  font-weight: 400;\n  //  src: url('assets/fonts/CodecProRegular/font.woff2') format('woff2'), url('assets/fonts/CodecProRegular/font.woff') format('woff');\n  //}\n  //@font-face {\n  //  font-family: 'CodecPro';\n  //  font-weight: 900;\n  //  src: url('assets/fonts/CodecProExtraBold/font.woff2') format('woff2'), url('assets/fonts/CodecProExtraBold/font.woff') format('woff');\n  //}\n  \n  /* prettier-ignore */\n  html, body, div, span, applet, object, iframe,\n  h1, h2, h3, h4, h5, h6, p, blockquote, pre,\n  a, abbr, acronym, address, big, cite, code,\n  del, dfn, em, img, ins, kbd, q, s, samp,\n  small, strike, strong, sub, sup, tt, var,\n  b, u, i, center,\n  dl, dt, dd, ol, ul, li,\n  fieldset, form, label, legend,\n  table, caption, tbody, tfoot, thead, tr, th, td,\n  article, aside, canvas, details, embed, \n  figure, figcaption, footer, header, hgroup, \n  menu, nav, output, ruby, section, summary,\n  time, mark, audio, video {\n    margin: 0;\n    padding: 0;\n    border: 0;\n    font-size: 100%;\n    vertical-align: baseline;\n  }\n  /* HTML5 display-role reset for older browsers */\n  /* prettier-ignore */\n  article, aside, details, figcaption, figure, \n  footer, header, hgroup, menu, nav, section {\n    display: block;\n  }\n  body {\n    line-height: 1;\n    font-size: 16px;\n  }\n  ol,\n  ul {\n    list-style: disc;\n    list-style-position: inside;\n  }\n  blockquote,\n  q {\n    quotes: none;\n  }\n  blockquote:before,\n  blockquote:after,\n  q:before,\n  q:after {\n    content: \"\";\n    content: none;\n  }\n  table {\n    border-collapse: collapse;\n    border-spacing: 0;\n  }\n  a {\n    color: inherit;\n    text-decoration: none;\n  }\n  [role=\"button\"] {\n    cursor: pointer;\n  }\n  *,\n  *::before,\n  *::after {\n    box-sizing: border-box;\n  }\n  * {\n    font-family: 'CodecPro', sans-serif;\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n  }\n\n  /* Number */\n  input::-webkit-outer-spin-button,\n  input::-webkit-inner-spin-button {\n    -webkit-appearance: none;\n    margin: 0;\n  }\n  input[type=number] {\n    -moz-appearance: textfield;\n  }\n\n  /* Scrollbar */\n  ::-webkit-scrollbar {\n    width: 8px;\n  }\n  ::-webkit-scrollbar-thumb {\n    background: ", "; \n    border-radius: 8px;\n  }\n  ::-webkit-scrollbar-track {\n    box-shadow: inset 0 0 5px ", "; \n    border-radius: 10px;\n  }\n\n  /* Slider */ \n  input[type=range] {\n    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */\n    width: 100%; /* Specific width is required for Firefox. */\n    background: transparent; /* Otherwise white in Chrome */\n  }\n  input[type=range]::-webkit-slider-thumb {\n    -webkit-appearance: none;\n  }\n  input[type=range]:focus {\n    outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */\n  }\n  input[type=range]::-ms-track {\n    width: 100%;\n    cursor: pointer;\n    /* Hides the slider so custom styles can be added */\n    background: transparent; \n    border-color: transparent;\n    color: transparent;\n  }  \n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.pastelBlue;
 }, function (_a) {
@@ -9212,4 +9298,4 @@ var ResetCSS = createGlobalStyle(templateObject_1 || (templateObject_1 = __makeT
 });
 var templateObject_1;
 
-export { Icon$10 as AboutBSWOpacityIcon, Icon$11 as AboutBSWSolidIcon, Alert, Icon$16 as AnalyticsOpacityIcon, Icon$17 as AnalyticsSolidIcon, Icon$3n as ArrowDownIcon, Icon$x as ArrowFiguredIcon, Icon$3o as ArrowLeftIcon, Icon$3q as ArrowRightIcon, Icon$3k as ArrowSkipLeftIcon, Icon$3l as ArrowSkipRightIcon, Icon$3m as ArrowUpForwardIcon, Icon$3p as ArrowUpIcon, Icon$2e as AuctionIcon, Icon$2c as AuctionOpacityIcon, Icon$2d as AuctionSolidIcon, Icon$P as AuditProtectionOpacityIcon, Icon$O as AuditProtectionSolidIcon, Icon$M as AuditSearchOpacityIcon, Icon$N as AuditSearchSolidIcon, Icon$1J as AutoRenewAnimateIcon, Icon$1M as AutoRenewIcon, Icon$1K as AutoRenewOpacityAnimateIcon, Icon$1N as AutoRenewOpacityIcon, Icon$1L as AutoRenewSolidAnimateIcon, Icon$1O as AutoRenewSolidIcon, Icon$y as AvalancheIcon, Icon$j as BDIcon, Icon$A as BSCIcon, BackgroundImage, Badge, BalanceInput, GridLayout$1 as BaseLayout, BaseMenu, Icon$2D as BellOpacityIcon, Icon$2E as BellSolidIcon, Icon$22 as BlockIcon, Icon$21 as BlockOpacityIcon, Icon$20 as BlockSolidIcon, Icon$2k as BookIcon, Icon$2i as BookOpacityIcon, Icon$2j as BookSolidIcon, BottomDrawer, Box, Breadcrumbs, Icon$3D as BscBlackRoundIcon, Icon$1z as BurgerCloseIcon, Icon$1A as BurgerIcon, Button, ButtonMenu, ButtonMenuItem, Icon$f as CNIcon, Icon$31 as CalculateIcon, Icon$33 as CalculateOpacityIcon, Icon$32 as CalculateSolidIcon, Card, CardBody, CardFooter, CardHeader, CardRibbon, Icon$2M as CardViewIcon, GridLayout as CardsLayout, Icon$o as CerticAuditedIcon, Icon$12 as CharityOpacityIcon, Icon$13 as CharitySolidIcon, Icon$2J as CheckIcon, Icon$2H as CheckOpacityIcon, Icon$2I as CheckSolidIcon, Checkbox, Icon$3B as ChevronDownCircleOpacityIcon, Icon$3C as ChevronDownCircleSolidIcon, Icon$3A as ChevronDownIcon, Icon$3v as ChevronLeftCircleOpacityIcon, Icon$3w as ChevronLeftCircleSolidIcon, Icon$3u as ChevronLeftIcon, Icon$3y as ChevronRightCircleOpacityIcon, Icon$3z as ChevronRightCircleSolidIcon, Icon$3x as ChevronRightIcon, Icon$3r as ChevronUpCircleOpacityIcon, Icon$3s as ChevronUpCircleSolidIcon, Icon$3j as ChevronUpDoubleIcon, Icon$3t as ChevronUpIcon, Icon$3i as ChevronUpTripleIcon, ClickableElementContainer, Icon$37 as CloseCircleOpacityIcon, Icon$36 as CloseCircleSolidIcon, Icon$38 as CloseIcon, ConnectorNames, ConnectorsTitleTypes, Icon$2t as CopyIcon, Icon$2r as CopyOpacityIcon, Icon$2s as CopySolidIcon, Icon$g as DEIcon, Icon$Q as DocsOpacityIcon, Icon$R as DocsSolidIcon, Icon$3G as DownloadIcon, Dropdown, DropdownMenuItemType, Icon$d as ESIcon, Icon$1U as EditIcon, Icon$1T as EditOpacityIcon, Icon$1S as EditSolidIcon, Icon$1s as ExchangeOpacityIcon, Icon$1t as ExchangeSolidIcon, ExpandableButton, ExpandableLabel, Icon$1q as ExpertModeOpacityIcon, Icon$1r as ExpertModeSolidIcon, Icon$2K as EyeCloseIcon, Icon$2L as EyeOpenIcon, Icon$i as FRIcon, Icon$E as FacebookIcon, Icon$1m as FarmsOpacityIcon, Icon$1n as FarmsSolidIcon, Icon$2P as FavoriteEmptyIcon, Icon$2O as FavoriteSolidIcon, Icon$2h as FileIcon, Icon$2f as FileOpacityIcon, Icon$2g as FileSolidIcon, Icon$2n as FilterIcon, Icon$2l as FilterOpacityIcon, Icon$2m as FilterSolidIcon, Icon$2Z as FireIcon, Icon$2X as FireOpacityIcon, Icon$2Y as FireSolidIcon, Icon$18 as FixedStakingOpacityIcon, Icon$19 as FixedStakingSolidIcon, Icon$25 as FlagIcon, Icon$24 as FlagOpacityIcon, Icon$23 as FlagSolidIcon, Flex, Icon$w as GameFiIcon, Icon$1Q as GasIcon, Icon$v as GiftIcon, Icon$1g as GobletOpacityIcon, Icon$1h as GobletSolidIcon, Grid, Heading, Icon$2_ as HelpIcon, Icon$30 as HelpOpacityIcon, Icon$2$ as HelpSolidIcon, Icon$1D as HistoryIcon, Icon$3E as HourglassIcon, Icon$m as IDIcon, Icon$c as INIcon, IconButton, Icon$1i as IdoOpacityIcon, Icon$1j as IdoSolidIcon, Image, Icon$2W as InfoIcon, Icon$2U as InfoOpacityIcon, Icon$2V as InfoSolidIcon, InlineMenu, InlineMenuContainer, Input$1 as Input, InputGroup, Icon$L as InstagramIcon, InstanceCheckRules, ItemTypes, Icon$1c as LaunchpadOpacityIcon, Icon$1d as LaunchpadSolidIcon, Link, LinkExternal, Icon$1u as LiquidityOpacityIcon, Icon$1v as LiquiditySolidIcon, Icon$1F as ListOpacityIcon, Icon$1E as ListSolidIcon, Icon$2N as ListViewIcon, Icon$3I as LogoIcon, Icon$3H as LogoWithTextIcon, Icon$1e as LotteryOpacityIcon, Icon$1f as LotterySolidIcon, Icon$u as MarketIcon, Icon$1R as MedalIcon, Icon$K as MediumIcon, Menu, Icon$t as MetamaskIcon, Icon$3c as MinusCircleOpacityIcon, Icon$3d as MinusCircleSolidIcon, Icon$3e as MinusIcon, Modal, ModalBackButton, ModalBody$1 as ModalBody, ModalCloseButton, ModalContainer, ModalHeader, ModalProvider, ModalTitle, ModalWithBackground, Icon$1V as More2Icon, Icon$1Y as MoreHorizontalIcon, Icon$1W as MoreHorizontalOpacityIcon, Icon$1X as MoreHorizontalSolidIcon, Icon$1$ as MoreVerticalIcon, Icon$1Z as MoreVerticalOpacityIcon, Icon$1_ as MoreVerticalSolidIcon, Icon$3F as MouseIcon, Icon$V as MultiPoolOpacityIcon, Icon$U as MultiPoolSolidIcon, Icon$1a as NFTEarnOpacityIcon, Icon$1b as NFTEarnSolidIcon, Icon$S as NewsOpacityIcon, Icon$T as NewsSolidIcon, NotificationDot, Icon$2w as OptionsOpacityIcon, Icon$2x as OptionsSolidIcon, Overlay, Icon$h as PTIcon, PercentSlider, Icon$1P as PlayIcon, Icon$3f as PlusCircleOpacityIcon, Icon$3g as PlusCircleSolidIcon, Icon$3h as PlusIcon, Icon$z as PolygonIcon, Icon$1o as PoolsOpacityIcon, Icon$1p as PoolsSolidIcon, Icon$1B as ProductsOpacityIcon, Icon$1C as ProductsSolidIcon, ProfileAvatar, Icon$Y as Program10mOpacityIcon, Icon$Z as Program10mSolidIcon, Progress, Bar as ProgressBar, Icon$s as RBIcon, Icon$l as RUIcon, Radio, Icon$D as Rank1Icon, Icon$C as Rank2Icon, Icon$B as Rank3Icon, Icon$J as RedditIcon, Icon$1k as ReferralOpacityIcon, Icon$1l as ReferralSolidIcon, Icon$1I as RefreshIcon, Icon$1H as RefreshOpacityIcon, Icon$1G as RefreshSolidIcon, ResetCSS, Icon$r as SEIcon, Icon$2B as SearchOpacityIcon, Icon$2C as SearchSolidIcon, Icon$2q as ShareIcon, Icon$2o as ShareOpacityIcon, Icon$2p as ShareSolidIcon, Skeleton, SlideButtonMenu, SlideButtonMenuItem, Slider, Icon$W as SpaceAgentOpacityIcon, Icon$X as SpaceAgentSolidIcon, Icon$2A as StarIcon, Icon$2z as StarOpacityIcon, Icon$2y as StarSolidIcon, SubMenu, SubMenuContainer, SubMenuItem, SubMenuItems, Svg, Icon$2T as SwapHorizontalOpacityIcon, Icon$2S as SwapHorizontalSolidIcon, Icon$2R as SwapVerticalOpacityIcon, Icon$2Q as SwapVerticalSolidIcon, Icon$e as TRIcon, TabMenu, Tag, Icon$_ as TeamOpacityIcon, Icon$$ as TeamSolidIcon, Icon$I as TelegramIcon, Icon$28 as TestIcon, Icon$27 as TestOpacityIcon, Icon$26 as TestSolidIcon, Text, Textfield as TextField, Icon$q as Ticket2Icon, Timeline, Icon$2b as TimerIcon, Icon$29 as TimerOpacityIcon, Icon$2a as TimerSolidIcon, ToastContainer, Toggle, TokenImage, TokenPairImage, TooltipText, Icon$H as TwitchIcon, Icon$G as TwitterIcon, Icon$n as USAIcon, Icon$1w as UsdLineIcon, Icon$1y as UsdOpacityIcon, Icon$1x as UsdSolidIcon, UserMenuDivider, UserMenuItem, Icon$2F as UserOpacityIcon, Icon$2G as UserSolidIcon, Icon$k as VNIcon, Icon$2u as VerifiedOpacityIcon, Icon$2v as VerifiedSolidIcon, Icon$p as VisaIcon, Icon$14 as VotingOpacityIcon, Icon$15 as VotingSolidIcon, Icon$34 as WalletOpacityIcon, Icon$35 as WalletSolidIcon, Icon$39 as WarningIcon, Icon$3b as WarningOpacityIcon, Icon$3a as WarningSolidIcon, Icon$F as YoutubeIcon, variants$8 as alertVariants, byTextAscending, byTextDescending, connectorLocalStorageKey, darkTheme as dark, darkColors, formatSpacingAmount, getExternalLinkProps, getPortalRoot, getRgba, getThemeValue, isTouchDevice, lightTheme as light, lightColors, makeRender, links as menuConfig, status as menuStatus, types as toastTypes, useDelayedUnmount, useKonamiCheatCode, useMatchBreakpoints, useModal, useOnClickOutside, useParticleBurst, useTable, useTooltip, useWalletModal, walletLocalStorageKey };
+export { Icon$10 as AboutBSWOpacityIcon, Icon$11 as AboutBSWSolidIcon, Alert, Icon$16 as AnalyticsOpacityIcon, Icon$17 as AnalyticsSolidIcon, Icon$3n as ArrowDownIcon, Icon$x as ArrowFiguredIcon, Icon$3o as ArrowLeftIcon, Icon$3q as ArrowRightIcon, Icon$3k as ArrowSkipLeftIcon, Icon$3l as ArrowSkipRightIcon, Icon$3m as ArrowUpForwardIcon, Icon$3p as ArrowUpIcon, Icon$2e as AuctionIcon, Icon$2c as AuctionOpacityIcon, Icon$2d as AuctionSolidIcon, Icon$P as AuditProtectionOpacityIcon, Icon$O as AuditProtectionSolidIcon, Icon$M as AuditSearchOpacityIcon, Icon$N as AuditSearchSolidIcon, Icon$1J as AutoRenewAnimateIcon, Icon$1M as AutoRenewIcon, Icon$1K as AutoRenewOpacityAnimateIcon, Icon$1N as AutoRenewOpacityIcon, Icon$1L as AutoRenewSolidAnimateIcon, Icon$1O as AutoRenewSolidIcon, Icon$y as AvalancheIcon, Icon$j as BDIcon, Icon$A as BSCIcon, BackgroundImage, Badge, BalanceInput, GridLayout$1 as BaseLayout, BaseMenu, Icon$2D as BellOpacityIcon, Icon$2E as BellSolidIcon, Icon$22 as BlockIcon, Icon$21 as BlockOpacityIcon, Icon$20 as BlockSolidIcon, Icon$2k as BookIcon, Icon$2i as BookOpacityIcon, Icon$2j as BookSolidIcon, BottomDrawer, Box, Breadcrumbs, Icon$3D as BscBlackRoundIcon, Icon$1z as BurgerCloseIcon, Icon$1A as BurgerIcon, Button, ButtonMenu, ButtonMenuItem, Icon$f as CNIcon, Icon$31 as CalculateIcon, Icon$33 as CalculateOpacityIcon, Icon$32 as CalculateSolidIcon, Card, CardBody, CardFooter, CardHeader, CardRibbon, Icon$2M as CardViewIcon, GridLayout as CardsLayout, Icon$o as CerticAuditedIcon, Icon$12 as CharityOpacityIcon, Icon$13 as CharitySolidIcon, Icon$2J as CheckIcon, Icon$2H as CheckOpacityIcon, Icon$2I as CheckSolidIcon, Checkbox, Icon$3B as ChevronDownCircleOpacityIcon, Icon$3C as ChevronDownCircleSolidIcon, Icon$3A as ChevronDownIcon, Icon$3v as ChevronLeftCircleOpacityIcon, Icon$3w as ChevronLeftCircleSolidIcon, Icon$3u as ChevronLeftIcon, Icon$3y as ChevronRightCircleOpacityIcon, Icon$3z as ChevronRightCircleSolidIcon, Icon$3x as ChevronRightIcon, Icon$3r as ChevronUpCircleOpacityIcon, Icon$3s as ChevronUpCircleSolidIcon, Icon$3j as ChevronUpDoubleIcon, Icon$3t as ChevronUpIcon, Icon$3i as ChevronUpTripleIcon, ClickableElementContainer, Icon$37 as CloseCircleOpacityIcon, Icon$36 as CloseCircleSolidIcon, Icon$38 as CloseIcon, ConnectorNames, ConnectorsTitleTypes, Icon$2t as CopyIcon, Icon$2r as CopyOpacityIcon, Icon$2s as CopySolidIcon, Icon$g as DEIcon, Icon$Q as DocsOpacityIcon, Icon$R as DocsSolidIcon, Icon$3G as DownloadIcon, Dropdown, DropdownMenuItemType, Icon$d as ESIcon, Icon$1U as EditIcon, Icon$1T as EditOpacityIcon, Icon$1S as EditSolidIcon, Icon$1s as ExchangeOpacityIcon, Icon$1t as ExchangeSolidIcon, ExpandableButton, ExpandableLabel, Icon$1q as ExpertModeOpacityIcon, Icon$1r as ExpertModeSolidIcon, Icon$2K as EyeCloseIcon, Icon$2L as EyeOpenIcon, Icon$i as FRIcon, Icon$E as FacebookIcon, Icon$1m as FarmsOpacityIcon, Icon$1n as FarmsSolidIcon, Icon$2P as FavoriteEmptyIcon, Icon$2O as FavoriteSolidIcon, Icon$2h as FileIcon, Icon$2f as FileOpacityIcon, Icon$2g as FileSolidIcon, Icon$2n as FilterIcon, Icon$2l as FilterOpacityIcon, Icon$2m as FilterSolidIcon, Icon$2Z as FireIcon, Icon$2X as FireOpacityIcon, Icon$2Y as FireSolidIcon, Icon$18 as FixedStakingOpacityIcon, Icon$19 as FixedStakingSolidIcon, Icon$25 as FlagIcon, Icon$24 as FlagOpacityIcon, Icon$23 as FlagSolidIcon, Flex, Icon$w as GameFiIcon, Icon$1Q as GasIcon, Icon$v as GiftIcon, Icon$1g as GobletOpacityIcon, Icon$1h as GobletSolidIcon, Grid, Heading, Icon$2_ as HelpIcon, Icon$30 as HelpOpacityIcon, Icon$2$ as HelpSolidIcon, Icon$1D as HistoryIcon, Icon$3E as HourglassIcon, Icon$m as IDIcon, Icon$c as INIcon, IconButton, Icon$1i as IdoOpacityIcon, Icon$1j as IdoSolidIcon, Image, Icon$2W as InfoIcon, Icon$2U as InfoOpacityIcon, Icon$2V as InfoSolidIcon, InlineMenu, InlineMenuContainer, Input$1 as Input, InputGroup, Icon$L as InstagramIcon, InstanceCheckRules, ItemTypes, Icon$1c as LaunchpadOpacityIcon, Icon$1d as LaunchpadSolidIcon, Link, LinkExternal, Icon$1u as LiquidityOpacityIcon, Icon$1v as LiquiditySolidIcon, Icon$1F as ListOpacityIcon, Icon$1E as ListSolidIcon, Icon$2N as ListViewIcon, Icon$3I as LogoIcon, Icon$3H as LogoWithTextIcon, Icon$1e as LotteryOpacityIcon, Icon$1f as LotterySolidIcon, Icon$u as MarketIcon, MatchBreakpointsProvider, Icon$1R as MedalIcon, Icon$K as MediumIcon, Menu, Icon$t as MetamaskIcon, Icon$3c as MinusCircleOpacityIcon, Icon$3d as MinusCircleSolidIcon, Icon$3e as MinusIcon, Modal, ModalBackButton, ModalBody$1 as ModalBody, ModalCloseButton, ModalContainer, ModalHeader, ModalProvider, ModalTitle, ModalWithBackground, Icon$1V as More2Icon, Icon$1Y as MoreHorizontalIcon, Icon$1W as MoreHorizontalOpacityIcon, Icon$1X as MoreHorizontalSolidIcon, Icon$1$ as MoreVerticalIcon, Icon$1Z as MoreVerticalOpacityIcon, Icon$1_ as MoreVerticalSolidIcon, Icon$3F as MouseIcon, Icon$V as MultiPoolOpacityIcon, Icon$U as MultiPoolSolidIcon, Icon$1a as NFTEarnOpacityIcon, Icon$1b as NFTEarnSolidIcon, Icon$S as NewsOpacityIcon, Icon$T as NewsSolidIcon, NotificationDot, Icon$2w as OptionsOpacityIcon, Icon$2x as OptionsSolidIcon, Overlay, Icon$h as PTIcon, PercentSlider, Icon$1P as PlayIcon, Icon$3f as PlusCircleOpacityIcon, Icon$3g as PlusCircleSolidIcon, Icon$3h as PlusIcon, Icon$z as PolygonIcon, Icon$1o as PoolsOpacityIcon, Icon$1p as PoolsSolidIcon, Icon$1B as ProductsOpacityIcon, Icon$1C as ProductsSolidIcon, ProfileAvatar, Icon$Y as Program10mOpacityIcon, Icon$Z as Program10mSolidIcon, Progress, Bar as ProgressBar, Icon$s as RBIcon, Icon$l as RUIcon, Radio, Icon$D as Rank1Icon, Icon$C as Rank2Icon, Icon$B as Rank3Icon, Icon$J as RedditIcon, Icon$1k as ReferralOpacityIcon, Icon$1l as ReferralSolidIcon, Icon$1I as RefreshIcon, Icon$1H as RefreshOpacityIcon, Icon$1G as RefreshSolidIcon, ResetCSS, Icon$r as SEIcon, Icon$2B as SearchOpacityIcon, Icon$2C as SearchSolidIcon, Icon$2q as ShareIcon, Icon$2o as ShareOpacityIcon, Icon$2p as ShareSolidIcon, Skeleton, SlideButtonMenu, SlideButtonMenuItem, Slider, Icon$W as SpaceAgentOpacityIcon, Icon$X as SpaceAgentSolidIcon, Icon$2A as StarIcon, Icon$2z as StarOpacityIcon, Icon$2y as StarSolidIcon, SubMenu, SubMenuContainer, SubMenuItem, SubMenuItems, Svg, Icon$2T as SwapHorizontalOpacityIcon, Icon$2S as SwapHorizontalSolidIcon, Icon$2R as SwapVerticalOpacityIcon, Icon$2Q as SwapVerticalSolidIcon, Icon$e as TRIcon, TabMenu, Tag, Icon$_ as TeamOpacityIcon, Icon$$ as TeamSolidIcon, Icon$I as TelegramIcon, Icon$28 as TestIcon, Icon$27 as TestOpacityIcon, Icon$26 as TestSolidIcon, Text, Textfield as TextField, Icon$q as Ticket2Icon, Timeline, Icon$2b as TimerIcon, Icon$29 as TimerOpacityIcon, Icon$2a as TimerSolidIcon, ToastContainer, Toggle, TokenImage, TokenPairImage, TooltipText, Icon$H as TwitchIcon, Icon$G as TwitterIcon, Icon$n as USAIcon, Icon$1w as UsdLineIcon, Icon$1y as UsdOpacityIcon, Icon$1x as UsdSolidIcon, UserMenuDivider, UserMenuItem, Icon$2F as UserOpacityIcon, Icon$2G as UserSolidIcon, Icon$k as VNIcon, Icon$2u as VerifiedOpacityIcon, Icon$2v as VerifiedSolidIcon, Icon$p as VisaIcon, Icon$14 as VotingOpacityIcon, Icon$15 as VotingSolidIcon, Icon$34 as WalletOpacityIcon, Icon$35 as WalletSolidIcon, Icon$39 as WarningIcon, Icon$3b as WarningOpacityIcon, Icon$3a as WarningSolidIcon, Icon$F as YoutubeIcon, variants$8 as alertVariants, byTextAscending, byTextDescending, connectorLocalStorageKey, darkTheme as dark, darkColors, formatSpacingAmount, getExternalLinkProps, getPortalRoot, getRgba, getThemeValue, isTouchDevice, lightTheme as light, lightColors, makeRender, links as menuConfig, status as menuStatus, types as toastTypes, useDelayedUnmount, useKonamiCheatCode, useMatchBreakpoints, useModal, useOnClickOutside, useParticleBurst, useTable, useTooltip, useWalletModal, walletLocalStorageKey };

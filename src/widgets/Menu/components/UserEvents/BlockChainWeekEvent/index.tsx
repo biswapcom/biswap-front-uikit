@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import styled from "styled-components";
-import { useMatchBreakpoints } from "../../../../../hooks";
+import { useMatchBreakpoints } from "../../../../../contexts";
 import { Flex } from "../../../../../components/Box";
 import { Link } from "react-router-dom";
 
