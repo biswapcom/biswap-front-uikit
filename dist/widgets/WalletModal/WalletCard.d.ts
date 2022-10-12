@@ -5,5 +5,5 @@ interface Props {
     login: Login;
     onDismiss: () => void;
 }
-declare const WalletCard: React.FC<Props>;
-export default WalletCard;
+declare const _default: React.NamedExoticComponent<Props>;
+export default _default;

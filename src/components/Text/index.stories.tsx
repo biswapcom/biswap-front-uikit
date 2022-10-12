@@ -56,13 +56,13 @@ export const Default: React.FC = () => {
         with text transform
       </Text>
       <Text textAlign="center">center</Text>
-      <Text display="inline" color="textSubtle" textTransform="uppercase">
+      <Text display="inline" color="pastelBlue" textTransform="uppercase">
         Example of{" "}
       </Text>
       <Text display="inline" bold textTransform="uppercase">
         inline{" "}
       </Text>
-      <Text display="inline" color="textSubtle" textTransform="uppercase">
+      <Text display="inline" color="pastelBlue" textTransform="uppercase">
         Text
       </Text>
       <Text ellipsis width="250px">

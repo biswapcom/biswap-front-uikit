@@ -1,4 +1,4 @@
-import React, {ElementType, ReactNode} from "react";
+import React, { ElementType, ReactNode } from "react";
 import { Colors } from "../../theme";
 import { BoxProps } from "../Box";
 import { MenuItemsType } from "../MenuItems/types";

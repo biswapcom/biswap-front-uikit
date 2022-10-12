@@ -48,7 +48,7 @@ const Waves = styled(Root)`
   position: relative;
   overflow: hidden;
   transform: translate3d(0, 0, 0);
-  
+
   &:before {
     content: "";
     position: absolute;
@@ -58,7 +58,7 @@ const Waves = styled(Root)`
       rgba(116, 155, 216, 0.16),
       transparent
     );
-    
+
     top: 0;
     left: -150px;
     height: 100%;
@@ -67,7 +67,7 @@ const Waves = styled(Root)`
   }
 `;
 
-const Skeleton:FC<SkeletonProps> = ({
+const Skeleton: FC<SkeletonProps> = ({
   variant = VARIANT.RECT,
   animation = ANIMATION.PULSE,
   ...props

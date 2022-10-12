@@ -1,6 +1,6 @@
 import React, { FC, useState, useEffect } from "react";
 import Skeleton from "./Skeleton";
-import {Box} from "../Box";
+import { Box } from "../Box";
 
 export default {
   title: "Components/Skeleton",

@@ -627,7 +627,7 @@ it("renders ConnectModal correctly", () => {
               >
                 <svg
                   class="c19"
-                  color="textSubtle"
+                  color="pastelBlue"
                   viewBox="0 0 24 24"
                   width="40px"
                   xmlns="http://www.w3.org/2000/svg"
@@ -651,7 +651,7 @@ it("renders ConnectModal correctly", () => {
           >
             <p
               class="c21"
-              color="textSubtle"
+              color="pastelBlue"
             >
               Haven’t got a crypto wallet yet?
             </p>
