@@ -112,7 +112,7 @@ const AccountModal: React.FC<Props> = ({
       </Flex>
       {isSwap && (
         <TransactionWrapper>
-          <Flex justifyContent="space-between" alignItems="center">
+          <Flex justifyContent="space-between" alignItems="center" mb="8px">
             <Text
               fontSize="14px"
               fontWeight="600"
