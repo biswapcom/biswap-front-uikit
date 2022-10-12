@@ -8,7 +8,7 @@ import { usePopper } from 'react-popper';
 import noop from 'lodash/noop';
 import debounce from 'lodash/debounce';
 import throttle from 'lodash/throttle';
-import { Link as Link$1, useNavigate } from 'react-router-dom';
+import { Link as Link$1 } from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 /******************************************************************************
@@ -8365,16 +8365,13 @@ var CommonLinkStyles = function (_a) {
 var StyledInnerButton = styled(Button)(templateObject_3$4 || (templateObject_3$4 = __makeTemplateObject(["\n  ", ";\n  height: auto;\n  padding: 0;\n  border: none;\n  background-color: transparent;\n"], ["\n  ", ";\n  height: auto;\n  padding: 0;\n  border: none;\n  background-color: transparent;\n"])), CommonLinkStyles);
 var Logo = function (_a) {
     var href = _a.href;
-    useContext(MenuContext).linkComponent;
-    var navigate = useNavigate();
+    var linkComponent = useContext(MenuContext).linkComponent;
+    // const { push } = useHistory();
     var isAbsoluteUrl = href.startsWith("http");
     var innerLogo = (React.createElement(React.Fragment, null,
         React.createElement(Icon$3I, { className: "mobile-icon" }),
         React.createElement(Icon$3H, { className: "desktop-icon" })));
-    return (React.createElement(Flex, null, isAbsoluteUrl ? (React.createElement(StyledInnerButton, { variant: "light", onClick: function () { return window.open(href, "_self"); }, "aria-label": "Biswap home page" }, innerLogo)) : (React.createElement(StyledInnerButton, { variant: "light", 
-        // as={linkComponent}
-        // href={href}
-        onClick: function () { return navigate(href); }, "aria-label": "Biswap home page" }, innerLogo))));
+    return (React.createElement(Flex, null, isAbsoluteUrl ? (React.createElement(StyledInnerButton, { variant: "light", onClick: function () { return window.open(href, "_self"); }, "aria-label": "Biswap home page" }, innerLogo)) : (React.createElement(StyledInnerButton, { variant: "light", as: linkComponent, href: href, "aria-label": "Biswap home page" }, innerLogo))));
 };
 var templateObject_1$c, templateObject_2$8, templateObject_3$4;
 
