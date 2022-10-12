@@ -6527,11 +6527,11 @@ var style$1 = (_a$4 = {},
         lineHeight: '12px',
     },
     _a$4);
-var HeadText$1 = styled__default["default"](Text).attrs({ bold: true })(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  font-size: ", ";\n  font-weight: 600;\n"], ["\n  font-size: ", ";\n  font-weight: 600;\n"])), function (_a) {
+var HeadText = styled__default["default"](Text).attrs({ bold: true })(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  font-size: ", ";\n  font-weight: 600;\n"], ["\n  font-size: ", ";\n  font-weight: 600;\n"])), function (_a) {
     var scale = _a.scale;
     return style$1[scale || scales$1.SIZE32].fontSize;
 });
-HeadText$1.defaultProps = {
+HeadText.defaultProps = {
     as: tags$1.H2,
 };
 var templateObject_1$B;
@@ -6567,11 +6567,11 @@ var style = (_a$3 = {},
         lineHeight: '16px',
     },
     _a$3);
-var HeadText = styled__default["default"](Text).attrs({ bold: true })(templateObject_1$A || (templateObject_1$A = __makeTemplateObject(["\n  font-size: ", ";\n  font-weight: 600;\n"], ["\n  font-size: ", ";\n  font-weight: 600;\n"])), function (_a) {
+var BodyText = styled__default["default"](Text).attrs({ bold: true })(templateObject_1$A || (templateObject_1$A = __makeTemplateObject(["\n  font-size: ", ";\n  font-weight: 400;\n"], ["\n  font-size: ", ";\n  font-weight: 400;\n"])), function (_a) {
     var scale = _a.scale;
     return style[scale || scales.SIZE16].fontSize;
 });
-HeadText.defaultProps = {
+BodyText.defaultProps = {
     as: tags.P,
 };
 var templateObject_1$A;
@@ -9438,7 +9438,7 @@ exports.BellSolidIcon = Icon$2E;
 exports.BlockIcon = Icon$22;
 exports.BlockOpacityIcon = Icon$21;
 exports.BlockSolidIcon = Icon$20;
-exports.BodyText = HeadText;
+exports.BodyText = BodyText;
 exports.BookIcon = Icon$2k;
 exports.BookOpacityIcon = Icon$2i;
 exports.BookSolidIcon = Icon$2j;
@@ -9534,7 +9534,7 @@ exports.GiftIcon = Icon$v;
 exports.GobletOpacityIcon = Icon$1g;
 exports.GobletSolidIcon = Icon$1h;
 exports.Grid = Grid;
-exports.HeadText = HeadText$1;
+exports.HeadText = HeadText;
 exports.Heading = Heading;
 exports.HelpIcon = Icon$2_;
 exports.HelpOpacityIcon = Icon$30;

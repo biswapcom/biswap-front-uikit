@@ -21,13 +21,13 @@ const style = {
   },
 };
 
-const HeadText = styled(Text).attrs({ bold: true })<BodyTextProps>`
+const BodyText = styled(Text).attrs({ bold: true })<BodyTextProps>`
   font-size: ${({ scale }) => style[scale || scales.SIZE16].fontSize};
-  font-weight: 600;
+  font-weight: 400;
 `;
 
-HeadText.defaultProps = {
+BodyText.defaultProps = {
   as: tags.P,
 };
 
-export default HeadText;
+export default BodyText;
