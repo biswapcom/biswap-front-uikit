@@ -1,11 +1,15 @@
-import React, { useState, useEffect } from "react";
-import styled, { DefaultTheme } from "styled-components";
-import { space, variant } from "styled-system";
+import React, {
+  useState,
+  useEffect,
+  Children,
+  ReactElement,
+  cloneElement,
+} from "react";
+import styled, { css, DefaultTheme } from "styled-components";
+import { space, SpaceProps, variant } from "styled-system";
 import { TabBarProps, tabsScales, tabVariants } from "./types";
-import TabBarItem from "./TabBarItem";
-import { menuIconScaleVariants, sliderScaleVariant } from "./theme";
-import { Flex } from "../Box";
-import IconComponent from "../Svg/IconComponent";
+import { sectionScaleVariants } from "./theme";
+import { useMatchBreakpoints } from "../../hooks";
 
 interface StyledTabBarProps extends TabBarProps {
   theme: DefaultTheme;
@@ -15,96 +19,121 @@ interface BarProps extends TabBarProps {
   onItemClick: (index: number) => void;
 }
 
+interface IWrapper extends SpaceProps {
+  variant: string;
+  fullWidth: boolean;
+  scrollX: boolean;
+}
+
+const Wrapper = styled.div<IWrapper>`
+  background-color: transparent;
+  position: relative;
+  display: ${({ fullWidth }) => (fullWidth ? "flex" : "inline-flex")};
+  width: ${({ fullWidth }) => (fullWidth ? "100%" : "auto")};
+  overflow: hidden;
+
+  ${({ scrollX }) =>
+    scrollX &&
+    css`
+      overflow-x: scroll;
+    `};
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  ${space}
+`;
+
 const StyledTabBar = styled.div<StyledTabBarProps>`
   position: relative;
   display: ${({ fullWidth }) => (fullWidth ? "flex" : "inline-flex")};
   width: ${({ fullWidth }) => (fullWidth ? "100%" : "auto")};
 
   & > button,
+  & > div,
   & > a {
-    flex: ${({ fullWidth }) => (fullWidth ? 1 : "auto")};
+    flex-grow: 1;
+
+    ${({ equalElementWidth }) =>
+      equalElementWidth &&
+      css`
+        flex: 1;
+      `}
   }
 
   & > button,
+  & > div,
   & a {
     box-shadow: none;
   }
-  ${space}
+
+  ${({ disabled }) =>
+    disabled &&
+    css`
+      opacity: 0.5;
+    `}
 `;
 
 const Selection = styled.div<{
   offset: number;
   width: number;
   scale: string;
-  isLight: boolean;
+  variant: string;
 }>`
   width: ${({ width }) => `${width}px`};
   height: 2px;
   position: absolute;
   bottom: 0;
   left: ${({ offset }) => `${offset}px`};
-  transition: left 0.3s ease;
-  padding: 0 8px;
+  transition: left 0.3s ease, width 0.3s ease;
   z-index: 1;
 
   ${variant({
     prop: "scale",
-    variants: sliderScaleVariant,
+    variants: sectionScaleVariants,
   })}
 `;
 
-const ColorSection = styled.div<{ isLight: boolean }>`
+const ColorSection = styled.div<{ variant: string }>`
   width: 100%;
   height: 100%;
-  background: ${({ theme, isLight }) =>
-    theme.colors[isLight ? "primary" : "warning"]};
+  background: ${({ theme, variant }) =>
+    theme.colors[variant === tabVariants.DARK ? "warning" : "primary"]};
 `;
 
 const TabMenu: React.FC<BarProps> = ({
-  customClass = "",
   activeIndex = 0,
   scale = tabsScales.SM,
   variant = tabVariants.DARK,
   onItemClick,
-  disabled,
+  disabled = false,
   fullWidth = false,
-  menuTitles = [""],
   menuIcons = [],
+  scrollX = false,
+  children,
+  equalElementWidth,
   ...props
 }) => {
-  const [widthsArr, setWidthsArr] = useState(
-    [...Array(menuTitles?.length)].map((e, i) => i - i)
-  );
+  const [widthsArr, setWidthsArr] = useState([]);
+
   const [blockOffset, setBlockOffset] = useState(0);
 
+  const { isDesktop, isMobile, isTablet } = useMatchBreakpoints();
+
   useEffect(() => {
-    setBlockOffset(
-      widthsArr.slice(0, activeIndex).reduce((sum, elem) => sum + elem, 0)
-    );
-  }, [widthsArr, activeIndex]);
-
-  const isLight = variant === tabVariants.LIGHT;
-
-  const getTabMenuIcons = (
-    index: number,
-    size: typeof tabsScales[keyof typeof tabsScales]
-  ) => {
-    const sizes = menuIconScaleVariants[size];
-    return (
-      <IconComponent
-        width={sizes.width}
-        iconName={menuIcons[index]}
-        color="currentColor"
-        mr={sizes.marginRight}
-      />
-    );
-  };
+    if (widthsArr) {
+      setBlockOffset(
+        widthsArr.slice(0, activeIndex).reduce((sum, elem) => sum + elem, 0)
+      );
+    }
+  }, [widthsArr, activeIndex, isDesktop, isMobile, isTablet]);
 
   return (
-    <StyledTabBar
-      disabled={disabled}
-      isLight={isLight}
+    <Wrapper
       fullWidth={fullWidth}
+      variant={variant}
+      scrollX={scrollX}
       {...props}
     >
       {!disabled && (
@@ -112,31 +141,32 @@ const TabMenu: React.FC<BarProps> = ({
           scale={scale}
           width={widthsArr[activeIndex]}
           offset={blockOffset}
-          isLight={isLight}
+          variant={variant}
         >
-          <ColorSection isLight={isLight} />
+          <ColorSection variant={variant} />
         </Selection>
       )}
-      {menuTitles.map((title, index) => (
-        <TabBarItem
-          key={index.toString()}
-          disabled={disabled}
-          customClass={customClass}
-          isActive={!disabled && activeIndex === index}
-          onAction={onItemClick}
-          itemIndex={index}
-          setWidth={setWidthsArr}
-          variant={variant}
-          scale={scale}
-          blockOffset={blockOffset}
-        >
-          <Flex alignItems="center">
-            {getTabMenuIcons(index, scale)}
-            {title}
-          </Flex>
-        </TabBarItem>
-      ))}
-    </StyledTabBar>
+      <StyledTabBar
+        disabled={disabled}
+        variant={variant}
+        fullWidth={fullWidth}
+        equalElementWidth={equalElementWidth}
+        {...props}
+      >
+        {Children.map(children, (child: ReactElement, index) => {
+          return cloneElement(child, {
+            isActive: activeIndex === index,
+            onItemClick: onItemClick ? () => onItemClick(index) : undefined,
+            setWidth: setWidthsArr,
+            itemIndex: index,
+            blockOffset,
+            scale,
+            variant,
+            disabled,
+          });
+        })}
+      </StyledTabBar>
+    </Wrapper>
   );
 };
 

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 /* eslint-disable import/no-unresolved */
 import { Meta } from "@storybook/react/types-6-0";
-import { TabMenu } from "./index";
+import { TabMenu, TabMenuItem } from "./index";
 import { tabVariants } from "./types";
 
 const Row = styled.div<{ isLight?: boolean }>`
@@ -25,71 +25,71 @@ export const Default: React.FC = () => {
   return (
     <>
       <Row>
+        <TabMenu scale="lg" onItemClick={setIndex} activeIndex={index}>
+          <TabMenuItem iconName="VerifiedOpacity" iconColor="success">
+            Button 1
+          </TabMenuItem>
+          <TabMenuItem>But</TabMenuItem>
+          <TabMenuItem>Button 3</TabMenuItem>
+        </TabMenu>
+      </Row>
+      <Row isLight>
         <TabMenu
-          disabled
+          variant="light"
+          scale="lg"
           onItemClick={setIndex}
           activeIndex={index}
-          menuTitles={["Select 1", "Select 22", "Select 333", "Select 4444"]}
-        />
+        >
+          <TabMenuItem iconColor="success">Button 1</TabMenuItem>
+          <TabMenuItem>But</TabMenuItem>
+          <TabMenuItem>Button 3</TabMenuItem>
+        </TabMenu>
       </Row>
       <Row>
-        <TabMenu
-          scale="lg"
-          customClass="dark-lg"
-          onItemClick={setIndex2}
-          activeIndex={index2}
-          menuTitles={["Select 1", "Select 2", "Select 3", "Select 4"]}
-          menuIcons={["ListOpacity", "VerifiedOpacity", "", "CommunityOpacity"]}
-        />
+        <TabMenu scale="md" onItemClick={setIndex} activeIndex={index}>
+          <TabMenuItem iconName="VerifiedOpacity" iconColor="success">
+            Button 1
+          </TabMenuItem>
+          <TabMenuItem>But</TabMenuItem>
+          <TabMenuItem>Button 3</TabMenuItem>
+        </TabMenu>
       </Row>
-      <Row>
+      <Row isLight>
         <TabMenu
+          variant="light"
           scale="md"
-          customClass="dark-md"
-          onItemClick={setIndex2}
-          activeIndex={index2}
-          menuTitles={["Select 1", "Select 22", "Select 333", "Select 4444"]}
-        />
+          onItemClick={setIndex}
+          activeIndex={index}
+        >
+          <TabMenuItem iconName="VerifiedOpacity" iconColor="success">
+            Button 1
+          </TabMenuItem>
+          <TabMenuItem>But</TabMenuItem>
+          <TabMenuItem>Button 3</TabMenuItem>
+        </TabMenu>
       </Row>
       <Row>
+        <TabMenu scale="sm" onItemClick={setIndex} activeIndex={index}>
+          <TabMenuItem iconName="VerifiedOpacity" iconColor="success">
+            Button 1
+          </TabMenuItem>
+          <TabMenuItem>But</TabMenuItem>
+          <TabMenuItem>Button 3</TabMenuItem>
+        </TabMenu>
+      </Row>
+      <Row isLight>
         <TabMenu
+          variant="light"
           scale="sm"
-          customClass="dark-sm"
-          onItemClick={setIndex2}
-          activeIndex={index2}
-          menuTitles={["Select 1", "Select 2", "Select 3", "Select 4"]}
-        />
-      </Row>
-      <Row isLight>
-        <TabMenu
-          scale="lg"
-          customClass="light-lg"
-          onItemClick={setIndex2}
-          variant={tabVariants.LIGHT}
-          activeIndex={index2}
-          menuTitles={["Select 1", "Select 2", "Select 3", "Select 4"]}
-        />
-      </Row>
-      <Row isLight>
-        <TabMenu
-          scale="md"
-          customClass="light-md"
-          variant={tabVariants.LIGHT}
-          onItemClick={setIndex2}
-          activeIndex={index2}
-          menuTitles={["Select 1", "Select 2", "Select 3", "Select 4"]}
-        />
-      </Row>
-      <Row isLight>
-        <TabMenu
-          scale="sm"
-          customClass="light-sm"
-          variant={tabVariants.LIGHT}
-          onItemClick={setIndex2}
-          activeIndex={index2}
-          menuTitles={["Select 1", "Select 2", "Select 3"]}
-          menuIcons={["ListOpacity", "VerifiedOpacity", "CommunityOpacity"]}
-        />
+          onItemClick={setIndex}
+          activeIndex={index}
+        >
+          <TabMenuItem iconName="VerifiedOpacity" iconColor="success">
+            Button 1
+          </TabMenuItem>
+          <TabMenuItem>But</TabMenuItem>
+          <TabMenuItem>Button 3</TabMenuItem>
+        </TabMenu>
       </Row>
     </>
   );

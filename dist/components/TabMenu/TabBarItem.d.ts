@@ -1,4 +1,4 @@
-import { FC } from "react";
 import { TabBarItemProps } from "./types";
-declare const TabBarItem: FC<TabBarItemProps>;
+import { PolymorphicComponent } from "../../util";
+declare const TabBarItem: PolymorphicComponent<TabBarItemProps, "button">;
 export default TabBarItem;

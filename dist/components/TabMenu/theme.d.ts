@@ -1,4 +1,4 @@
-export declare const menuScaleVariants: {
+export declare const barItemScaleVariant: {
     lg: {
         height: string;
         padding: string;
@@ -18,18 +18,7 @@ export declare const menuScaleVariants: {
         lineHeight: string;
     };
 };
-export declare const sliderScaleVariant: {
-    lg: {
-        padding: string;
-    };
-    md: {
-        padding: string;
-    };
-    sm: {
-        padding: string;
-    };
-};
-export declare const menuStyleVariants: {
+export declare const barVariants: {
     dark: {
         color: string;
         ":hover:not(:disabled)": {
@@ -55,5 +44,16 @@ export declare const menuIconScaleVariants: {
     sm: {
         width: string;
         marginRight: string;
+    };
+};
+export declare const sectionScaleVariants: {
+    lg: {
+        padding: string;
+    };
+    md: {
+        padding: string;
+    };
+    sm: {
+        padding: string;
     };
 };

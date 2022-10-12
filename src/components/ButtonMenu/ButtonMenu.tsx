@@ -183,11 +183,11 @@ const ButtonMenu: React.FC<ButtonMenuProps> = ({
   withoutAnimation = false,
   ...props
 }) => {
-  const { isDesktop, isMobile, isTablet } = useMatchBreakpoints();
-
   const [widthsArr, setWidthsArr] = useState([]);
 
   const [blockOffset, setBlockOffset] = useState(0);
+
+  const { isDesktop, isMobile, isTablet } = useMatchBreakpoints();
 
   useEffect(() => {
     if (widthsArr) {
