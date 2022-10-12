@@ -1,7 +1,6 @@
-import { Login } from "./types";
+import { Login, WalletConfig } from "./types";
 interface ReturnType {
     onPresentConnectModal: () => void;
-    onPresentAccountModal: () => void;
 }
-declare const useWalletModal: (login: Login, logout: () => void, account?: string, recentTransaction?: any, chainId?: any, clearTransaction?: any, isSwap?: any, transactionsForUIKit?: any) => ReturnType;
+declare function useWalletModal<T>(login: Login<T>, wallets: WalletConfig<T>[]): ReturnType;
 export default useWalletModal;

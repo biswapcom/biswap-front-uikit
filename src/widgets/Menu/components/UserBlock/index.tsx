@@ -11,7 +11,7 @@ import { useMatchBreakpoints } from "../../../../contexts";
 
 interface Props {
   account?: string;
-  login: Login;
+  //login: Login;
   logout: () => void;
   pendingTransactions?: number;
   recentTransaction: any;
@@ -33,7 +33,7 @@ const WalletWrap = styled.div`
 
 const UserBlock: React.FC<Props> = ({
   account,
-  login,
+  //login,
   logout,
   pendingTransactions,
   recentTransaction,
@@ -42,16 +42,16 @@ const UserBlock: React.FC<Props> = ({
   isSwap,
   transactionsForUIKit,
 }) => {
-  const { onPresentConnectModal, onPresentAccountModal } = useWalletModal(
-    login,
-    logout,
-    account,
-    recentTransaction,
-    chainId,
-    clearTransaction,
-    isSwap,
-    transactionsForUIKit
-  );
+  // const { onPresentConnectModal, onPresentAccountModal } = useWalletModal(
+  //   login,
+  //   logout,
+  //   account,
+  //   recentTransaction,
+  //   chainId,
+  //   clearTransaction,
+  //   isSwap,
+  //   transactionsForUIKit
+  // );
   const accountEllipsis = account
     ? `${account.substring(0, 4)}...${account.substring(account.length - 4)}`
     : null;
@@ -63,46 +63,46 @@ const UserBlock: React.FC<Props> = ({
   const { isSm, isXs } = useMatchBreakpoints();
   return (
     <div>
-      {account ? (
-        <WalletWrap>
-          {/* <CurrencyValue> */}
-          {/*  <Text fontSize="14px" color="text"> */}
-          {/*    12.34 BNB */}
-          {/*  </Text> */}
-          {/* </CurrencyValue> */}
-          <Button
-            variant={pendingTransactions ? "success" : "primary"}
-            scale={isSm || isXs ? "md" : "lg"}
-            onClick={() => {
-              onPresentAccountModal();
-            }}
-          >
-            {pendingTransactions ? (
-              <>
-                {pendingTransactions} pending{" "}
-                <AutoRenewAnimateIcon color="white" ml="4px" />
-              </>
-            ) : (
-              <>
-                {!isSm && !isXs && (
-                  <WalletOpacityIcon {...iconProps} mr="8px" />
-                )}
-                {accountEllipsis}
-              </>
-            )}
-          </Button>
-        </WalletWrap>
-      ) : (
-        <Button
-          scale={isSm || isXs ? "md" : "lg"}
-          onClick={() => {
-            onPresentConnectModal();
-          }}
-        >
-          {!isSm && !isXs && <WalletOpacityIcon {...iconProps} mr="8px" />}
-          Connect wallet
-        </Button>
-      )}
+      {/*{account ? (*/}
+      {/*  <WalletWrap>*/}
+      {/*    /!* <CurrencyValue> *!/*/}
+      {/*    /!*  <Text fontSize="14px" color="text"> *!/*/}
+      {/*    /!*    12.34 BNB *!/*/}
+      {/*    /!*  </Text> *!/*/}
+      {/*    /!* </CurrencyValue> *!/*/}
+      {/*    <Button*/}
+      {/*      variant={pendingTransactions ? "success" : "primary"}*/}
+      {/*      scale={isSm || isXs ? "md" : "lg"}*/}
+      {/*      onClick={() => {*/}
+      {/*        onPresentAccountModal();*/}
+      {/*      }}*/}
+      {/*    >*/}
+      {/*      {pendingTransactions ? (*/}
+      {/*        <>*/}
+      {/*          {pendingTransactions} pending{" "}*/}
+      {/*          <AutoRenewAnimateIcon color="white" ml="4px" />*/}
+      {/*        </>*/}
+      {/*      ) : (*/}
+      {/*        <>*/}
+      {/*          {!isSm && !isXs && (*/}
+      {/*            <WalletOpacityIcon {...iconProps} mr="8px" />*/}
+      {/*          )}*/}
+      {/*          {accountEllipsis}*/}
+      {/*        </>*/}
+      {/*      )}*/}
+      {/*    </Button>*/}
+      {/*  </WalletWrap>*/}
+      {/*) : (*/}
+      {/*  <Button*/}
+      {/*    scale={isSm || isXs ? "md" : "lg"}*/}
+      {/*    onClick={() => {*/}
+      {/*      onPresentConnectModal();*/}
+      {/*    }}*/}
+      {/*  >*/}
+      {/*    {!isSm && !isXs && <WalletOpacityIcon {...iconProps} mr="8px" />}*/}
+      {/*    Connect wallet*/}
+      {/*  </Button>*/}
+      {/*)}*/}
     </div>
   );
 };

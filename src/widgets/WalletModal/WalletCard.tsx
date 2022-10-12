@@ -1,16 +1,26 @@
 import React from "react";
 import styled from "styled-components";
+
+// components
 import Button from "../../components/Button/Button";
 import Text from "../../components/Text/Text";
-import { connectorLocalStorageKey, walletLocalStorageKey } from "./config";
-import { Login, Config } from "./types";
+import { Link } from "../../components/Link";
 
-interface Props {
-  walletConfig: Config;
-  login: Login;
+// utils
+import { connectorLocalStorageKey, walletLocalStorageKey } from "./config";
+import {Login, WalletConfig} from "./types";
+
+// hooks
+import {useMatchBreakpoints} from "../../contexts";
+
+// props
+interface Props<T> {
+  walletConfig: WalletConfig<T>;
+  login: Login<T>;
   onDismiss: () => void;
 }
 
+// ui
 const StyledButton = styled(Button)`
   display: flex;
   flex-direction: column;
@@ -25,21 +35,50 @@ const StyledText = styled(Text)`
   color: ${({ theme }) => theme.colors.primary};
 `;
 
-const WalletCard: React.FC<Props> = ({ login, walletConfig, onDismiss }) => {
-  const { title, icon: Icon } = walletConfig;
+const WalletCard: React.FC<React.PropsWithChildren<Props<any>>> = ({ login, walletConfig, onDismiss }) => {
+
+  const { title, icon: Icon, installed, downloadLink } = walletConfig;
+
+    const { isMobile, isDesktop } = useMatchBreakpoints();
+
+    let linkAction: any = {
+        onClick: () => {
+            login(walletConfig.connectorId);
+            localStorage?.setItem(walletLocalStorageKey, walletConfig.title);
+            localStorage?.setItem(connectorLocalStorageKey, walletConfig.connectorId);
+            onDismiss();
+        },
+    };
+
+    if (installed === false && isDesktop && downloadLink?.desktop) {
+        linkAction = {
+            as: Link,
+            href: downloadLink.desktop,
+            style: {
+                textDecoration: "none",
+            },
+            target: "_blank",
+            rel: "noopener noreferrer",
+        };
+    }
+    // @ts-ignore
+    if (typeof window !== "undefined" && !window.ethereum && walletConfig.href && isMobile) {
+        linkAction = {
+            style: {
+                textDecoration: "none",
+            },
+            as: Link,
+            href: walletConfig.href,
+            target: "_blank",
+            rel: "noopener noreferrer",
+        };
+    }
+
   return (
     <StyledButton
       variant="tertiary"
-      onClick={() => {
-        login(walletConfig.connectorId);
-        localStorage.setItem(walletLocalStorageKey, walletConfig.title);
-        window.localStorage.setItem(
-          connectorLocalStorageKey,
-          walletConfig.connectorId
-        );
-        onDismiss();
-      }}
       id={`wallet-connect-${title.toLocaleLowerCase()}`}
+      {...linkAction}
     >
       <Icon width="32px" />
       <StyledText>{title}</StyledText>

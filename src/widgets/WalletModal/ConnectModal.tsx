@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React from "react";
 
 // ui
 import styled from "styled-components";
@@ -12,11 +12,9 @@ import { Text } from "../../components/Text";
 import { Flex } from "../../components/Box";
 
 // utils
-import config, { walletLocalStorageKey } from "./config";
+import { walletLocalStorageKey } from "./config";
 import {Login, WalletConfig} from "./types";
-
-// hooks
-import { useMatchBreakpoints } from "../../contexts";
+import {HOW_TO_CONNECT_DOCS} from "../../config";
 
 // props
 interface Props<T> {
@@ -77,8 +75,6 @@ function getPreferredConfig<T>(walletConfig: WalletConfig<T>[]) {
 
 function ConnectModal<T> ({ login, onDismiss = () => null, wallets: connectors }: Props<T>) {
 
-  const { isMobile } = useMatchBreakpoints();
-
   const sortedConfig = getPreferredConfig(connectors);
 
   // Filter out WalletConnect if user is inside TrustWallet built-in browser
@@ -94,7 +90,7 @@ function ConnectModal<T> ({ login, onDismiss = () => null, wallets: connectors }
     <Modal title="Connect to a wallet" onDismiss={onDismiss}>
       <Flex flexDirection="column">
         <WalletCardsWrapper>
-          {sortedConfig.map((entry) => (
+          {walletsToShow.map((entry) => (
             <WalletCard
               key={entry.title}
               login={login}
@@ -104,7 +100,7 @@ function ConnectModal<T> ({ login, onDismiss = () => null, wallets: connectors }
           ))}
         </WalletCardsWrapper>
         <HelpLink
-          href="https://docs.biswap.org/faq/biswap-platform#how-do-i-connect-my-wallet-to-biswap"
+          href={HOW_TO_CONNECT_DOCS}
           external
         >
           <HelpIcon color="primary" mr="6px" />

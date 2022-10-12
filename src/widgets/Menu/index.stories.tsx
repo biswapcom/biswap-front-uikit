@@ -7,7 +7,7 @@ import Button from "../../components/Button/Button";
 import IconButton from "../../components/Button/IconButton";
 import DropdownMenu from "../../components/DropdownMenu/DropdownMenu";
 import Heading from "../../components/Heading/Heading";
-import Input from "../../components/Input/Input";
+// import Input from "../../components/Input/Input";
 import { OptionsSolidIcon, DownloadIcon } from "../../components/Svg";
 import Text from "../../components/Text/Text";
 import { Modal, ModalProps, useModal } from "../Modal";
@@ -24,7 +24,7 @@ import {
   userMenulinks,
 } from "./config";
 import Menu from "./Menu";
-import { Language, NavProps } from "./types";
+import { NavProps } from "./types";
 import BottomDrawer from "../../components/BottomDrawer/BottomDrawer";
 
 export default {
@@ -38,11 +38,11 @@ export default {
   },
 };
 
-const langs: Language[] = [...Array(20)].map((_, i) => ({
-  code: `en${i}`,
-  language: `English${i}`,
-  locale: `Locale${i}`,
-}));
+// const langs: Language[] = [...Array(20)].map((_, i) => ({
+//   code: `en${i}`,
+//   language: `English${i}`,
+//   locale: `Locale${i}`,
+// }));
 
 const UserMenuComponent: React.FC<{
   variant?: Variant;
@@ -102,31 +102,32 @@ const defaultProps = {
   linkComponent: ({ href, ...props }) => {
     return <Link to={href} {...props} />;
   },
-  account: "0xbdda50183d817c3289f895a4472eb475967dc980",
-  login: noop,
-  logout: noop,
-  isDark: false,
-  toggleTheme: noop,
+ // account: "0xbdda50183d817c3289f895a4472eb475967dc980",
+  //login: noop,
+ // logout: noop,
+ // isDark: false,
+ // toggleTheme: noop,
   // langs,
-  setLang: noop,
-  currentLang: "EN",
-  cakePriceUsd: 0.023158668932877668,
+ // setLang: noop,
+ // currentLang: "EN",
+  bswPriceUsd: 0.023158668932877668,
   links,
   // subLinks: links[0].items,
-  profile: null,
-  userMenu: (
-    <UserMenuComponent account="0xbdda50183d817c3289f895a4472eb475967dc980" />
-  ),
-  globalMenu: <GlobalMenuComponent />,
+ // profile: null,
+
+ //  userMenu: (
+ //    <UserMenuComponent account="0xbdda50183d817c3289f895a4472eb475967dc980" />
+ //  ),
+  //globalMenu: <GlobalMenuComponent />,
   activeItem: "/swap",
-  activeSubItem: "https://exchange.pancakeswap.finance",
-  buyCakeLabel: "Buy CAKE",
+  activeSubItem: "https://exchange.biswap.org",
+  buyCakeLabel: "Buy BSW",
   withEvent: true,
   eventCallback: noop,
 };
 
 const ConnectedTemplate: React.FC<NavProps> = (args) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
     <BrowserRouter>
@@ -135,7 +136,7 @@ const ConnectedTemplate: React.FC<NavProps> = (args) => {
         BSWPriceLabel={BSWPriceLabel}
         BSWPriceValue={BSWPriceValue}
         footerStatistic={footerStatistic}
-        onClick={noop}
+        registerToken={noop}
         aboutLinks={aboutLinks}
         productLinks={productLinks}
         serviceLinks={serviceLinks}
@@ -259,11 +260,11 @@ export const NotConnected: React.FC = () => {
   return (
     <BrowserRouter>
       <Menu
-        isDark={false}
-        toggleTheme={noop}
-        langs={langs}
-        setLang={noop}
-        currentLang="EN"
+        // isDark={false}
+     //   toggleTheme={noop}
+        // langs={langs}
+        //setLang={noop}
+       // currentLang="EN"
         links={links}
         //subLinks={subLinks}
       >
@@ -293,11 +294,11 @@ export const WithoutConnectButton: React.FC = () => {
   return (
     <BrowserRouter>
       <Menu
-        isDark={false}
-        toggleTheme={noop}
-        langs={langs}
-        setLang={noop}
-        currentLang="EN"
+        // isDark={false}
+        //toggleTheme={noop}
+        // langs={langs}
+       // setLang={noop}
+       // currentLang="EN"
         links={links}
         // subLinks={subLinks}
       >
@@ -314,12 +315,12 @@ export const WithSubmenuSelected: React.FC = () => {
   return (
     <MemoryRouter initialEntries={["/teams"]}>
       <Menu
-        isDark={false}
-        toggleTheme={noop}
-        langs={langs}
-        setLang={noop}
-        currentLang="EN"
-        cakePriceUsd={0.23158668932877668}
+       // isDark={false}
+        // toggleTheme={noop}
+        //langs={langs}
+        //setLang={noop}
+        // currentLang="EN"
+        bswPriceUsd={0.23158668932877668}
         links={links}
         //subLinks={subLinks}
       >
@@ -333,48 +334,48 @@ export const WithSubmenuSelected: React.FC = () => {
   );
 };
 
-export const UserMenuWithVariants: React.FC = () => {
-  const [variant, setVariant] = useState<Variant>(variants.DEFAULT);
-  const [text, setText] = useState(undefined);
-
-  const handleChange = (evt) => {
-    const { value } = evt.target;
-    setText(value);
-  };
-
-  return (
-    <BrowserRouter>
-      <Box p="40px">
-        <Flex justifyContent="space-between">
-          <Box>
-            <Heading size="sm" mb="16px">
-              Variants
-            </Heading>
-            <Flex mb="16px">
-              {Object.keys(variants).map((variantKey) => (
-                <Button
-                  scale="sm"
-                  variant={
-                    variant === variants[variantKey] ? "primary" : "text"
-                  }
-                  ml="8px"
-                  onClick={() => setVariant(variants[variantKey])}
-                >
-                  {variants[variantKey].toUpperCase()}
-                </Button>
-              ))}
-            </Flex>
-            <Box py="8px">
-              <Input
-                value={text}
-                onChange={handleChange}
-                placeholder="Custom Text..."
-              />
-            </Box>
-          </Box>
-          <UserMenuComponent variant={variant} text={text} />
-        </Flex>
-      </Box>
-    </BrowserRouter>
-  );
-};
+// export const UserMenuWithVariants:  React.FC<React.PropsWithChildren> = () => {
+//   const [variant, setVariant] = useState<Variant>(variants.DEFAULT);
+//   const [text, setText] = useState(undefined);
+//
+//   const handleChange = (evt) => {
+//     const { value } = evt.target;
+//     setText(value);
+//   };
+//
+//   return (
+//     <BrowserRouter>
+//       <Box p="40px">
+//         <Flex justifyContent="space-between">
+//           <Box>
+//             <Heading size="sm" mb="16px">
+//               Variants
+//             </Heading>
+//             <Flex mb="16px">
+//               {Object.keys(variants).map((variantKey) => (
+//                 <Button
+//                   scale="sm"
+//                   variant={
+//                     variant === variants[variantKey] ? "primary" : "text"
+//                   }
+//                   ml="8px"
+//                   onClick={() => setVariant(variants[variantKey])}
+//                 >
+//                   {variants[variantKey].toUpperCase()}
+//                 </Button>
+//               ))}
+//             </Flex>
+//             <Box py="8px">
+//               <Input
+//                 value={text}
+//                 onChange={handleChange}
+//                 placeholder="Custom Text..."
+//               />
+//             </Box>
+//           </Box>
+//           <UserMenuComponent variant={variant} text={text} />
+//         </Flex>
+//       </Box>
+//     </BrowserRouter>
+//   );
+// };

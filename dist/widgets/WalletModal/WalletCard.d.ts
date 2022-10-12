@@ -1,9 +1,9 @@
 import React from "react";
-import { Login, Config } from "./types";
-interface Props {
-    walletConfig: Config;
-    login: Login;
+import { Login, WalletConfig } from "./types";
+interface Props<T> {
+    walletConfig: WalletConfig<T>;
+    login: Login<T>;
     onDismiss: () => void;
 }
-declare const WalletCard: React.FC<Props>;
+declare const WalletCard: React.FC<React.PropsWithChildren<Props<any>>>;
 export default WalletCard;

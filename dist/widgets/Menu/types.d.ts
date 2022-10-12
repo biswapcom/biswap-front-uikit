@@ -1,56 +1,24 @@
 import { ElementType, ReactElement, ReactNode } from "react";
 import { MenuItemsType } from "../../components/MenuItems/types";
-import { SubMenuItemsType } from "../../components/SubMenuItems/types";
-import { Colors } from "../../theme/types";
-import { Login } from "../WalletModal/types";
-export interface Language {
-    code: string;
-    language: string;
-    locale: string;
-}
-export interface Profile {
-    username?: string;
-    image?: string;
-    profileLink: string;
-    noProfileLink: string;
-    showPip?: boolean;
-}
+import { SubMenuItemsType } from "../../components/SubMenuItems";
+import { Colors } from "../../theme";
 export interface LinkStatus {
     text: string;
     color: keyof Colors;
 }
 export interface NavProps extends BSWPriceProps, FooterAboutLinks, FooterProductLinks, FooterServiceLinks, ConnectMetaProps, FooterStatisticProps {
     buyBswLink: string;
-    networkChangeToBSC?: any;
-    networkChangeToAvalanche?: any;
-    currentNetwork?: any;
-    account?: string;
-    login: Login;
-    profile?: Profile;
-    logout: () => void;
     linkComponent?: ElementType;
-    userMenu?: ReactElement;
     banner?: ReactElement;
-    globalMenu?: ReactElement;
     links: Array<MenuItemsType>;
     subLinks: Array<SubMenuItemsType>;
     activeItem: string;
     activeSubItem: string;
-    isDark: boolean;
-    toggleTheme: (isDark: boolean) => void;
-    cakePriceUsd?: number;
-    currentLang: string;
-    buyCakeLabel: string;
-    setLang: (lang: Language) => void;
-    pendingTransactions?: number;
-    recentTransaction?: any;
-    chainId?: any;
-    clearTransaction?: any;
-    isSwap?: boolean;
-    transactionsForUIKit?: any;
+    rightSide: ReactNode;
+    bswPriceUsd?: number;
+    buyBSWLabel: string;
     withEvent?: boolean;
     eventCallback?: () => void;
-    children: ReactNode;
 }
 export interface FooterStatisticProps {
     footerStatistic: Array<FooterStatisticItem>;
@@ -60,7 +28,7 @@ export interface FooterStatisticItem {
     value: number | string;
 }
 export interface ConnectMetaProps {
-    onClick: () => void;
+    registerToken: () => void;
 }
 export interface BSWPriceProps {
     BSWPriceLabel: string;

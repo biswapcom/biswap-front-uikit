@@ -7,7 +7,7 @@ import { GobletSolidIcon } from "../../../../../components/Svg";
 
 interface Props {
   account?: string;
-  login: Login;
+  //login: Login;
   logout: () => void;
   callback?: () => void;
   isSwap?: boolean;
@@ -82,7 +82,7 @@ const StyledBtn = styled(Button)<ButtonProps>`
 `;
 
 const BDayEvent: FC<Props> = ({
-  login,
+  //login,
   logout,
   account,
   callback,
@@ -90,14 +90,14 @@ const BDayEvent: FC<Props> = ({
   href = "/",
 }) => {
   const { isMobile } = useMatchBreakpoints();
-  const { onPresentConnectModal } = useWalletModal(login, logout);
+ // const { onPresentConnectModal } = useWalletModal(login, logout);
   const buttonText = "B-Day Presents";
   const isAbsoluteUrl = href.startsWith("http");
   const pathWithEventParam = isAbsoluteUrl ? `${href}?event=bDay` : href;
 
   const onClickHandler = () => {
     if (account && callback) callback();
-    if (!account) onPresentConnectModal();
+   // if (!account) onPresentConnectModal();
   };
 
   return (

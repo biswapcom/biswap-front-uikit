@@ -1,14 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import { BSWPriceProps, FooterStatisticProps } from "../../types";
-import { formatSpacingAmount } from "../../../../util/formatSpacingAmount";
+import { formatSpacingAmount } from "../../../../util";
 
 import BSWPrice from "./BSWPrice";
 import ConnectMetamask from "./ConnectMetamask";
 import BuyBSW from "./BuyBSW";
 
 interface Props extends BSWPriceProps, FooterStatisticProps {
-  onClick: () => void;
+  registerToken: () => void;
   buyBswLink: string;
 }
 
@@ -90,7 +90,7 @@ const InfoListValue = styled.span`
 const FooterInfo: React.FC<Props> = ({
   BSWPriceLabel,
   BSWPriceValue,
-  onClick,
+                                       registerToken,
   footerStatistic,
   buyBswLink,
 }) => {
@@ -99,7 +99,7 @@ const FooterInfo: React.FC<Props> = ({
       <LeftInfo>
         <BSWPrice BSWPriceLabel={BSWPriceLabel} BSWPriceValue={BSWPriceValue} />
         <FlexWrap>
-          <ConnectMetamask onClick={onClick} />
+          <ConnectMetamask onClick={registerToken} />
           <BuyBSW buyBswLink={buyBswLink} />
         </FlexWrap>
       </LeftInfo>
