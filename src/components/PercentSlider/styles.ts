@@ -81,7 +81,8 @@ export const PercentSliderLabel = styled(Flex)<{
   border-radius: 8px;
   padding: 8px 12px;
   background-color: ${({ theme }) => theme.colors.tooltip};
-  
+  z-index: ${({ theme }) => theme.zIndices.dropdown};
+
   &:after {
     content: '';
     display: block;
@@ -93,6 +94,7 @@ export const PercentSliderLabel = styled(Flex)<{
     height: 0;
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
+    z-index: ${({ theme }) => theme.zIndices.dropdown};
     transform: translate(-50%, ${({ bannerPosition }) =>
       bannerPosition === "top" ? "100%" : "-100%"});
     ${({ bannerPosition, theme }) =>
