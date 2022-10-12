@@ -1,4 +1,3 @@
-import { ReactElement } from "react";
 import { SpaceProps } from "styled-system";
 
 export const scales = {
@@ -33,6 +32,7 @@ export interface InputGroupProps extends SpaceProps, InputProps {
   startIcon?: IconProps;
   endIcon?: IconProps;
   children: JSX.Element;
+  description?: string;
 }
 
 interface IconProps {
