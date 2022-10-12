@@ -8829,7 +8829,7 @@ var AccountModal = function (_a) {
                 "View on BscScan",
                 React__default["default"].createElement(Icon$3m, { color: "primary", width: "14px", ml: "4px" }))),
         isSwap && (React__default["default"].createElement(TransactionWrapper, null,
-            React__default["default"].createElement(Flex, { justifyContent: "space-between", alignItems: "center" },
+            React__default["default"].createElement(Flex, { justifyContent: "space-between", alignItems: "center", mb: "8px" },
                 React__default["default"].createElement(Text, { fontSize: "14px", fontWeight: "600", lineHeight: "21px", color: "#07162D" }, "Recent transactions"),
                 React__default["default"].createElement(Button, { m: 0, p: 0, scale: "sm", variant: "text", onClick: ClearAndDismiss }, "Clear All")),
             React__default["default"].createElement(React__default["default"].Fragment, null, transactionsForUIKit()))),
