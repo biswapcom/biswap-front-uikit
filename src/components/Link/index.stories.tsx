@@ -1,5 +1,4 @@
 import React from "react";
-import { PancakesIcon } from "../Svg";
 import { Link, LinkExternal } from "./index";
 import ArrowIcon from "../Svg/Icons/Arrows/ChevronLeftCircleSolid";
 import styled from "styled-components";
