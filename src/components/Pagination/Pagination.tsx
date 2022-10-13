@@ -4,16 +4,16 @@ import styled from "styled-components";
 
 //Plugins
 import ReactPaginate from "react-paginate";
-import classNames from 'classnames'
+import classNames from "classnames";
 
 //types
-import {PaginationProps, VariantProps} from "./types";
+import { PaginationProps, VariantProps } from "./types";
 
 //theme
 import { Variants, VariantsArrows } from "./theme";
 
 //icons
-import {ChevronLeftIcon, ChevronRightIcon} from "../Svg";
+import { ChevronLeftIcon, ChevronRightIcon } from "../Svg";
 
 const PaginationWrap = styled.div<VariantProps>`
   display: flex;
@@ -42,7 +42,7 @@ const PaginationWrap = styled.div<VariantProps>`
       ${variant({
         variants: Variants,
       })}
-      
+
       &:hover {
         &:not(:first-child, :last-child, .active) {
           background-color: ${({ theme }) => theme.colors.primary};
@@ -70,7 +70,7 @@ const PaginationWrap = styled.div<VariantProps>`
       &.previous,
       &.next {
         background-color: transparent;
-        transition: all .4s ease-in-out;
+        transition: all 0.4s ease-in-out;
 
         ${variant({
           variants: VariantsArrows,
@@ -104,26 +104,30 @@ const PaginationWrap = styled.div<VariantProps>`
       }
     }
   }
-`
+`;
 
-const Pagination:FC<PaginationProps> = (
-  {
-    variant,
-    isLight,
-    pageCount,
-    handlePageClick,
-    marginPagesDisplayed = 1,
-    pageRangeDisplayed = 3,
-  }
-  ) => {
-
-  const paginationClass = classNames('paginate-wrapper', { paginate__light: isLight, paginate__dark: !isLight })
+const Pagination: FC<PaginationProps> = ({
+  variant,
+  isLight,
+  pageCount,
+  handlePageClick,
+  marginPagesDisplayed = 1,
+  pageRangeDisplayed = 3,
+}) => {
+  const paginationClass = classNames("paginate-wrapper", {
+    paginate__light: isLight,
+    paginate__dark: !isLight,
+  });
 
   return (
     <PaginationWrap className={paginationClass} variant={variant}>
       <ReactPaginate
-        previousLabel={<ChevronLeftIcon color={variant === 'light' ? 'primary' : 'white'} />}
-        nextLabel={<ChevronRightIcon color={variant === 'light' ? 'primary' : 'white'} />}
+        previousLabel={
+          <ChevronLeftIcon color={variant === "light" ? "primary" : "white"} />
+        }
+        nextLabel={
+          <ChevronRightIcon color={variant === "light" ? "primary" : "white"} />
+        }
         breakLabel="..."
         breakClassName="break-me"
         pageCount={pageCount}
@@ -134,7 +138,7 @@ const Pagination:FC<PaginationProps> = (
         activeClassName="active"
       />
     </PaginationWrap>
-  )
-}
+  );
+};
 
 export default Pagination;

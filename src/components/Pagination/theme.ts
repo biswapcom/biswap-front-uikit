@@ -10,8 +10,8 @@ export const Variants = {
   },
   [variants.DARK]: {
     color: "white",
-  }
-}
+  },
+};
 
 export const VariantsArrows = {
   [variants.LIGHT]: {
@@ -31,5 +31,5 @@ export const VariantsArrows = {
       backgroundColor: "rgba(255, 255, 255, 0.24)",
       borderColor: "transparent",
     },
-  }
-}
+  },
+};

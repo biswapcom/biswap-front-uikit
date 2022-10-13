@@ -1,8 +1,8 @@
 export const tags = {
   P: "p",
-  SPAN: 'span',
-  DIV: 'div',
-}
+  SPAN: "span",
+  DIV: "div",
+};
 export const scales = {
   SIZE20: "size20",
   SIZE16: "size16",

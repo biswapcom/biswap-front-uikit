@@ -1,62 +1,116 @@
-import React, { FC, useEffect } from "react";
-import styled from "styled-components";
-import { PolymorphicComponent } from "../../util/polymorphic";
-import { TabBarItemProps, tabVariants } from "./types";
-import TabItem from "./TabItem";
+import React, { useEffect, useRef } from "react";
+import styled, { css } from "styled-components";
+import { TabBarItemProps, tabsScales, tabVariants } from "./types";
 import { useMatchBreakpoints } from "../../hooks";
+import {
+  barItemScaleVariant,
+  barVariants,
+  menuIconScaleVariants,
+} from "./theme";
+import { variant } from "styled-system";
+import IconComponent from "../Svg/IconComponent";
+import { Flex } from "../Box";
+import { PolymorphicComponent } from "../../util";
 
-const InactiveButton: PolymorphicComponent<TabBarItemProps, "button"> = styled(
-  TabItem
-)<TabBarItemProps>`
-  color: ${({ theme, variant }) =>
-    theme.colors[variant === tabVariants.DARK ? "pastelBlue" : "gray900"]};
+const TabItem: PolymorphicComponent<
+  TabBarItemProps,
+  "button"
+> = styled.button<TabBarItemProps>`
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-family: inherit;
+  font-weight: 600;
+  line-height: 1;
+  outline: 0;
+  transition: background-color 0.3s, opacity 0.3s, color 0.3s;
+  background-color: transparent;
+  white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+
+  ${variant({
+    variants: barVariants,
+  })}
+  ${variant({
+    prop: "scale",
+    variants: barItemScaleVariant,
+  })}
+  
+  ${({ isActive, variant, theme }) =>
+    isActive &&
+    css`
+      color: ${theme.colors[
+        variant === tabVariants.DARK ? "white" : "dark800"
+      ]};
+    `}
 `;
 
-const TabBarItem: FC<TabBarItemProps> = ({
+const TabBarItem: PolymorphicComponent<TabBarItemProps, "button"> = ({
   isActive = false,
   variant,
   setWidth,
-  itemIndex,
-  onAction,
-  customClass,
+  itemIndex = 0,
   blockOffset,
+  iconName = "",
+  iconColor = "",
+  scale = tabsScales.MD,
+  as,
+  onItemClick = () => {},
+  onClick = () => {},
+  children,
   ...props
 }: TabBarItemProps): JSX.Element => {
-  const { isDesktop, isMobile, isTablet } = useMatchBreakpoints();
-  const className = "tab-bar-item-" + itemIndex + customClass;
-  const element = document.getElementsByClassName(className);
+  const { isXs, isSm, isMs, isLg, isXl, isXll, isXxl } = useMatchBreakpoints();
+
+  const ref = useRef<HTMLButtonElement>(null);
+
+  const itemWidth = ref.current?.clientWidth;
 
   useEffect(() => {
-    const itemWidth = element.item(0)?.clientWidth ?? 0;
-    if (setWidth && itemWidth) {
-      setWidth((prev: Array<number>) =>
-        prev.map((item, index) => (index === itemIndex ? itemWidth : item))
-      );
+    if (itemWidth && setWidth) {
+      setWidth((prev: Array<number>) => {
+        return prev.length > itemIndex
+          ? prev.map((i, index) => (index === itemIndex ? itemWidth : i))
+          : [...prev, itemWidth];
+      });
     }
-  }, [element, isDesktop, isMobile, isTablet, blockOffset]);
+  }, [blockOffset, itemWidth, isXs, isSm, isMs, isLg, isXl, isXll, isXxl]);
 
-  const handleClick = () => {
-    if (onAction) onAction(itemIndex ?? 0);
+  const omItemClickHandler = () => {
+    onItemClick(itemIndex);
+    onClick();
   };
 
-  if (!isActive) {
+  const iconSizes = menuIconScaleVariants[scale];
+
+  const getTabMenuIcons = () => {
     return (
-      <InactiveButton
-        onClick={handleClick}
-        className={className}
-        variant={variant}
-        {...props}
+      <IconComponent
+        width={iconSizes.width}
+        iconName={iconName}
+        color={iconColor ?? "currentColor"}
+        mr={iconSizes.marginRight}
       />
     );
-  }
+  };
 
   return (
     <TabItem
-      onClick={handleClick}
-      className={className}
+      onClick={omItemClickHandler}
+      isActive={isActive}
+      ref={ref}
+      as={as}
       variant={variant}
+      scale={scale}
       {...props}
-    />
+    >
+      <Flex height={iconSizes.width} alignItems="center">
+        {getTabMenuIcons()}
+        {children}
+      </Flex>
+    </TabItem>
   );
 };
 
