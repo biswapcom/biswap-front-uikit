@@ -27,4 +27,5 @@ export type Scales = typeof scales[keyof typeof scales];
 export interface HeadTextProps {
   as?: Tags;
   scale?: Scales;
+  nowrap?: boolean;
 }

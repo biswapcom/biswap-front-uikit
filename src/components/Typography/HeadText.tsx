@@ -40,6 +40,7 @@ const style = {
 const HeadText = styled(Text).attrs({ bold: true })<HeadTextProps>`
   font-size: ${({ scale }) => style[scale || scales.SIZE32].fontSize};
   font-weight: 600;
+  white-space: ${({ nowrap }) => nowrap ? "nowrap" : "normal"};
 `;
 
 HeadText.defaultProps = {
