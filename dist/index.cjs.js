@@ -14,6 +14,7 @@ var debounce = require('lodash/debounce');
 var throttle = require('lodash/throttle');
 var reactRouterDom = require('react-router-dom');
 var reactTransitionGroup = require('react-transition-group');
+var reactDeviceDetect = require('react-device-detect');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
@@ -8776,7 +8777,6 @@ var StyledText = styled__default["default"](Text)(templateObject_2$1 || (templat
 var WalletCard = function (_a) {
     var login = _a.login, walletConfig = _a.walletConfig, onDismiss = _a.onDismiss;
     var title = walletConfig.title, Icon = walletConfig.icon, installed = walletConfig.installed, downloadLink = walletConfig.downloadLink;
-    var _b = useMatchBreakpoints(), isMobile = _b.isMobile, isDesktop = _b.isDesktop;
     var linkAction = {
         onClick: function () {
             login(walletConfig.connectorId);
@@ -8785,7 +8785,7 @@ var WalletCard = function (_a) {
             onDismiss();
         },
     };
-    if (installed === false && isDesktop && (downloadLink === null || downloadLink === void 0 ? void 0 : downloadLink.desktop)) {
+    if (installed === false && reactDeviceDetect.isDesktop && (downloadLink === null || downloadLink === void 0 ? void 0 : downloadLink.desktop)) {
         linkAction = {
             as: Link,
             href: downloadLink.desktop,
@@ -8797,7 +8797,7 @@ var WalletCard = function (_a) {
         };
     }
     // @ts-ignore
-    if (typeof window !== "undefined" && !window.ethereum && walletConfig.href && isMobile) {
+    if (typeof window !== "undefined" && !window.ethereum && walletConfig.href && reactDeviceDetect.isMobile) {
         linkAction = {
             style: {
                 textDecoration: "none",
@@ -8808,7 +8808,7 @@ var WalletCard = function (_a) {
             rel: "noopener noreferrer",
         };
     }
-    return (React__default["default"].createElement(StyledButton, __assign({ variant: "tertiary", id: "wallet-connect-".concat(title.toLocaleLowerCase()) }, linkAction),
+    return (React__default["default"].createElement(StyledButton, __assign({ variant: "tertiary", id: "wallet-connect-".concat(title.toLowerCase()) }, linkAction),
         React__default["default"].createElement(Icon, { width: "32px" }),
         React__default["default"].createElement(StyledText, null, title)));
 };

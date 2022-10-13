@@ -10,6 +10,7 @@ import debounce from 'lodash/debounce';
 import throttle from 'lodash/throttle';
 import { Link as Link$1 } from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { isDesktop, isMobile } from 'react-device-detect';
 
 /******************************************************************************
 Copyright (c) Microsoft Corporation.
@@ -8763,7 +8764,6 @@ var StyledText = styled(Text)(templateObject_2$1 || (templateObject_2$1 = __make
 var WalletCard = function (_a) {
     var login = _a.login, walletConfig = _a.walletConfig, onDismiss = _a.onDismiss;
     var title = walletConfig.title, Icon = walletConfig.icon, installed = walletConfig.installed, downloadLink = walletConfig.downloadLink;
-    var _b = useMatchBreakpoints(), isMobile = _b.isMobile, isDesktop = _b.isDesktop;
     var linkAction = {
         onClick: function () {
             login(walletConfig.connectorId);
@@ -8795,7 +8795,7 @@ var WalletCard = function (_a) {
             rel: "noopener noreferrer",
         };
     }
-    return (React.createElement(StyledButton, __assign({ variant: "tertiary", id: "wallet-connect-".concat(title.toLocaleLowerCase()) }, linkAction),
+    return (React.createElement(StyledButton, __assign({ variant: "tertiary", id: "wallet-connect-".concat(title.toLowerCase()) }, linkAction),
         React.createElement(Icon, { width: "32px" }),
         React.createElement(StyledText, null, title)));
 };

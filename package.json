@@ -63,6 +63,7 @@
     "autoprefixer": "^10.4.8",
     "lodash": "4.17.21",
     "postcss-flexbugs-fixes": "^5.0.2",
+    "react-device-detect": "^2.2.2",
     "react-popper": "2.3.0",
     "react-transition-group": "4.4.5",
     "storybook-addon-styled-component-theme": "^2.0.0",

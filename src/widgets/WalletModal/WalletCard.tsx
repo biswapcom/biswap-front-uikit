@@ -1,4 +1,5 @@
 import React from "react";
+import { isDesktop, isMobile } from "react-device-detect";
 import styled from "styled-components";
 
 // components
@@ -9,9 +10,6 @@ import { Link } from "../../components/Link";
 // utils
 import { connectorLocalStorageKey, walletLocalStorageKey } from "./config";
 import {Login, WalletConfig} from "./types";
-
-// hooks
-import {useMatchBreakpoints} from "../../contexts";
 
 // props
 interface Props<T> {
@@ -38,8 +36,6 @@ const StyledText = styled(Text)`
 const WalletCard: React.FC<React.PropsWithChildren<Props<any>>> = ({ login, walletConfig, onDismiss }) => {
 
   const { title, icon: Icon, installed, downloadLink } = walletConfig;
-
-    const { isMobile, isDesktop } = useMatchBreakpoints();
 
     let linkAction: any = {
         onClick: () => {
@@ -77,7 +73,7 @@ const WalletCard: React.FC<React.PropsWithChildren<Props<any>>> = ({ login, wall
   return (
     <StyledButton
       variant="tertiary"
-      id={`wallet-connect-${title.toLocaleLowerCase()}`}
+      id={`wallet-connect-${title.toLowerCase()}`}
       {...linkAction}
     >
       <Icon width="32px" />
