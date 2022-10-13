@@ -1,55 +1,40 @@
-import React, { ElementType } from "react";
-import styled from "styled-components";
+import React, { useEffect, useRef } from "react";
+import styled, { css } from "styled-components";
 import { variant } from "styled-system";
 import { styleVariants, scaleVariants } from "./theme";
-import Button from "../Button/Button";
-import { BaseButtonMenuItemProps, ButtonMenuItemProps } from "./types";
+import {
+  BaseButtonMenuItemProps,
+  ButtonMenuItemProps,
+  ColorKey,
+  HoverKey,
+} from "./types";
 import { variants } from "./types";
-import { PolymorphicComponent } from "../../util/polymorphic";
+import { PolymorphicComponent } from "../../util";
+import { useMatchBreakpoints } from "../../hooks";
+import { getColorKey, getHoverKey } from "./helpers";
 
-interface InactiveButtonProps extends BaseButtonMenuItemProps {
-  forwardedAs: BaseButtonMenuItemProps["as"];
-  colorKey: "pastelBlue" | "text";
+interface ItemButtonProps extends BaseButtonMenuItemProps {
+  colorKey: ColorKey;
+  hoverKey: HoverKey;
 }
 
-const InactiveButton: PolymorphicComponent<
-  InactiveButtonProps,
-  "button"
-> = styled(Button)<InactiveButtonProps>`
-  align-items: center;
-  border: 0;
-  cursor: pointer;
-  display: inline-flex;
-  font-family: inherit;
-  //font-size: 16px;
-  font-weight: 600;
-  justify-content: center;
-  line-height: 1;
-  outline: 0;
-  transition: background-color 0.2s, opacity 0.2s;
-
-  background-color: transparent;
-  color: ${({ theme, colorKey }) => theme.colors[colorKey]};
-  &:hover:not(:disabled):not(:active) {
-    background-color: transparent;
-  }
-`;
-
 const MenuItemButton: PolymorphicComponent<
-  BaseButtonMenuItemProps,
+  ItemButtonProps,
   "button"
-> = styled.button<BaseButtonMenuItemProps>`
+> = styled.button<ItemButtonProps>`
   align-items: center;
   border: 0;
   cursor: pointer;
-  display: inline-flex;
+  display: flex;
   font-family: inherit;
-  //font-size: 16px;
   font-weight: 600;
   justify-content: center;
   line-height: 1;
   outline: 0;
-  transition: background-color 0.2s, opacity 0.2s;
+  transition: background-color 0.2s, opacity 0.3s, color 0.3s;
+  background-color: transparent;
+  white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
 
   ${variant({
     variants: styleVariants,
@@ -58,26 +43,66 @@ const MenuItemButton: PolymorphicComponent<
     prop: "scale",
     variants: scaleVariants,
   })}
+
+  ${({ isActive, colorKey, hoverKey }) =>
+    !isActive &&
+    css`
+      color: ${({ theme }) => theme.colors[colorKey]};
+
+      &:hover {
+        color: ${({ theme }) => theme.colors[hoverKey]};
+      }
+
+      &:hover:not(:disabled):not(:active) {
+        background-color: transparent;
+      }
+    `}
 `;
 
 const ButtonMenuItem: PolymorphicComponent<ButtonMenuItemProps, "button"> = ({
   isActive = false,
-  variant = variants.SELECT,
+  variant = variants.DARK,
   as,
+  setWidth,
+  itemIndex = 0,
+  blockOffset,
+  onItemClick = () => {},
+  onClick = () => {},
   ...props
 }: ButtonMenuItemProps) => {
-  if (!isActive) {
-    return (
-      <InactiveButton
-        forwardedAs={as}
-        variant={variant}
-        colorKey={variant === variants.SELECT ? "pastelBlue" : "text"}
-        {...props}
-      />
-    );
-  }
+  const { isXs, isSm, isMs, isLg, isXl, isXll, isXxl } = useMatchBreakpoints();
 
-  return <MenuItemButton as={as} variant={variant} {...props} />;
+  const ref = useRef<HTMLButtonElement>(null);
+
+  const itemWidth = ref.current?.clientWidth;
+
+  useEffect(() => {
+    if (itemWidth && setWidth) {
+      setWidth((prev: Array<number>) => {
+        return prev.length > itemIndex
+          ? prev.map((i, index) => (index === itemIndex ? itemWidth : i))
+          : [...prev, itemWidth];
+      });
+    }
+  }, [blockOffset, itemWidth, isXs, isSm, isMs, isLg, isXl, isXll, isXxl]);
+
+  const omItemClickHandler = () => {
+    onItemClick(itemIndex);
+    onClick();
+  };
+
+  return (
+    <MenuItemButton
+      onClick={omItemClickHandler}
+      isActive={isActive}
+      ref={ref}
+      as={as}
+      variant={variant}
+      hoverKey={getHoverKey(variant)}
+      colorKey={getColorKey(variant)}
+      {...props}
+    />
+  );
 };
 
 export default ButtonMenuItem;
