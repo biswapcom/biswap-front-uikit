@@ -6,8 +6,8 @@ export const tags = {
   H5: "h5",
   H6: "h6",
   P: "p",
-  SPAN: 'span',
-  DIV: 'div',
+  SPAN: "span",
+  DIV: "div",
 };
 
 export const scales = {

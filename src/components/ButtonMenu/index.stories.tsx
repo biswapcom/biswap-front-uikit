@@ -26,11 +26,7 @@ export const Default: React.FC = () => {
   return (
     <>
       <Row>
-        <ButtonMenu
-          disabled
-          activeIndex={index}
-          onItemClick={handleClick}
-        >
+        <ButtonMenu disabled activeIndex={index} onItemClick={handleClick}>
           <ButtonMenuItem>Dark sm 1</ButtonMenuItem>
           <ButtonMenuItem>Dark sm 2</ButtonMenuItem>
           <ButtonMenuItem>Dark sm 3</ButtonMenuItem>
@@ -40,7 +36,7 @@ export const Default: React.FC = () => {
       <Row isLight>
         <ButtonMenu
           disabled
-          variant='light'
+          variant="light"
           activeIndex={index}
           onItemClick={handleClick}
         >
@@ -83,7 +79,7 @@ export const Default: React.FC = () => {
           activeIndex={index}
           onItemClick={handleClick}
           variant="light"
-          scale='lg'
+          scale="lg"
         >
           <ButtonMenuItem>Light lg 1</ButtonMenuItem>
           <ButtonMenuItem>Light lg 2</ButtonMenuItem>
@@ -135,9 +131,9 @@ export const Default: React.FC = () => {
 
       <Row isLight>
         <ButtonMenu
-            activeIndex={index}
-            onItemClick={handleClick}
-            variant="warningLight"
+          activeIndex={index}
+          onItemClick={handleClick}
+          variant="warningLight"
         >
           <ButtonMenuItem>Warning Light 1</ButtonMenuItem>
           <ButtonMenuItem>Warning Light 2</ButtonMenuItem>
@@ -148,9 +144,9 @@ export const Default: React.FC = () => {
 
       <Row>
         <ButtonMenu
-            activeIndex={index}
-            onItemClick={handleClick}
-            variant="warningDark"
+          activeIndex={index}
+          onItemClick={handleClick}
+          variant="warningDark"
         >
           <ButtonMenuItem>Warning Light 1</ButtonMenuItem>
           <ButtonMenuItem>Warning Light 2</ButtonMenuItem>
@@ -180,7 +176,7 @@ export const AsLinks: React.FC = () => {
         </ButtonMenu>
       </Row>
       <Row isLight>
-        <ButtonMenu variant='light' activeIndex={index} onItemClick={setIndex}>
+        <ButtonMenu variant="light" activeIndex={index} onItemClick={setIndex}>
           <ButtonMenuItem as="a" href="https://biswap.org/">
             Biswap 1
           </ButtonMenuItem>
@@ -203,11 +199,7 @@ export const FlatBottom: React.FC = () => {
   return (
     <>
       <Row>
-        <ButtonMenu
-          flatBottom
-          activeIndex={index}
-          onItemClick={handleClick}
-        >
+        <ButtonMenu flatBottom activeIndex={index} onItemClick={handleClick}>
           <ButtonMenuItem>Flat Bottom</ButtonMenuItem>
           <ButtonMenuItem>Example</ButtonMenuItem>
           <ButtonMenuItem>Menu</ButtonMenuItem>
@@ -216,7 +208,7 @@ export const FlatBottom: React.FC = () => {
       <Row isLight>
         <ButtonMenu
           flatBottom
-          variant='light'
+          variant="light"
           activeIndex={index}
           onItemClick={handleClick}
         >
@@ -236,11 +228,7 @@ export const FlatTop: React.FC = () => {
   return (
     <>
       <Row>
-        <ButtonMenu
-            flatTop
-            activeIndex={index}
-            onItemClick={handleClick}
-        >
+        <ButtonMenu flatTop activeIndex={index} onItemClick={handleClick}>
           <ButtonMenuItem>Flat Top</ButtonMenuItem>
           <ButtonMenuItem>Example</ButtonMenuItem>
           <ButtonMenuItem>Menu</ButtonMenuItem>
@@ -248,10 +236,10 @@ export const FlatTop: React.FC = () => {
       </Row>
       <Row isLight>
         <ButtonMenu
-            flatTop
-            variant='light'
-            activeIndex={index}
-            onItemClick={handleClick}
+          flatTop
+          variant="light"
+          activeIndex={index}
+          onItemClick={handleClick}
         >
           <ButtonMenuItem>Flat Top</ButtonMenuItem>
           <ButtonMenuItem>Example</ButtonMenuItem>
@@ -269,14 +257,23 @@ export const WithoutBackground: React.FC = () => {
   return (
     <>
       <Row>
-        <ButtonMenu withoutBackground activeIndex={index} onItemClick={handleClick}>
+        <ButtonMenu
+          withoutBackground
+          activeIndex={index}
+          onItemClick={handleClick}
+        >
           <ButtonMenuItem>Without</ButtonMenuItem>
           <ButtonMenuItem>Background</ButtonMenuItem>
           <ButtonMenuItem>Example</ButtonMenuItem>
         </ButtonMenu>
       </Row>
       <Row>
-        <ButtonMenu withoutBackground variant='light' activeIndex={index} onItemClick={handleClick}>
+        <ButtonMenu
+          withoutBackground
+          variant="light"
+          activeIndex={index}
+          onItemClick={handleClick}
+        >
           <ButtonMenuItem>Without</ButtonMenuItem>
           <ButtonMenuItem>Background</ButtonMenuItem>
           <ButtonMenuItem>Example</ButtonMenuItem>
@@ -300,7 +297,12 @@ export const DisabledMenu: React.FC = () => {
         </ButtonMenu>
       </Row>
       <Row isLight>
-        <ButtonMenu disabled variant='light' activeIndex={index} onItemClick={handleClick}>
+        <ButtonMenu
+          disabled
+          variant="light"
+          activeIndex={index}
+          onItemClick={handleClick}
+        >
           <ButtonMenuItem>Disabled</ButtonMenuItem>
           <ButtonMenuItem>Light</ButtonMenuItem>
           <ButtonMenuItem>Full</ButtonMenuItem>
@@ -308,7 +310,12 @@ export const DisabledMenu: React.FC = () => {
         </ButtonMenu>
       </Row>
       <Row>
-        <ButtonMenu disabled fullWidth activeIndex={index} onItemClick={handleClick}>
+        <ButtonMenu
+          disabled
+          fullWidth
+          activeIndex={index}
+          onItemClick={handleClick}
+        >
           <ButtonMenuItem>Disabled</ButtonMenuItem>
           <ButtonMenuItem>Light</ButtonMenuItem>
           <ButtonMenuItem>Full</ButtonMenuItem>
@@ -316,7 +323,13 @@ export const DisabledMenu: React.FC = () => {
         </ButtonMenu>
       </Row>
       <Row isLight>
-        <ButtonMenu disabled fullWidth variant='light' activeIndex={index} onItemClick={handleClick}>
+        <ButtonMenu
+          disabled
+          fullWidth
+          variant="light"
+          activeIndex={index}
+          onItemClick={handleClick}
+        >
           <ButtonMenuItem>Disabled</ButtonMenuItem>
           <ButtonMenuItem>Light</ButtonMenuItem>
           <ButtonMenuItem>Full</ButtonMenuItem>
@@ -336,13 +349,13 @@ export const FullWidthMenu: React.FC = () => {
     <>
       <Row>
         <ButtonMenu
-            scrollX
-            fullWidth
-            activeIndex={index}
-            equalElementWidth
-            onItemClick={handleClick}
-            variant="warningDark"
-            scale="lg"
+          scrollX
+          fullWidth
+          activeIndex={index}
+          equalElementWidth
+          onItemClick={handleClick}
+          variant="warningDark"
+          scale="lg"
         >
           <ButtonMenuItem as="a">Warning Dark</ButtonMenuItem>
           <ButtonMenuItem>Full width</ButtonMenuItem>
@@ -363,10 +376,10 @@ export const FullWidthMenu: React.FC = () => {
       </Row>
       <Row>
         <ButtonMenu
-            fullWidth
-            flatTop
-            activeIndex={index}
-            onItemClick={handleClick}
+          fullWidth
+          flatTop
+          activeIndex={index}
+          onItemClick={handleClick}
         >
           <ButtonMenuItem>Full Width</ButtonMenuItem>
           <ButtonMenuItem>Flat Top</ButtonMenuItem>
@@ -375,10 +388,10 @@ export const FullWidthMenu: React.FC = () => {
       </Row>
       <Row>
         <ButtonMenu
-            fullWidth
-            flatBottom
-            activeIndex={index}
-            onItemClick={handleClick}
+          fullWidth
+          flatBottom
+          activeIndex={index}
+          onItemClick={handleClick}
         >
           <ButtonMenuItem>Full Width</ButtonMenuItem>
           <ButtonMenuItem>Flat Bottom</ButtonMenuItem>
@@ -386,7 +399,12 @@ export const FullWidthMenu: React.FC = () => {
         </ButtonMenu>
       </Row>
       <Row>
-        <ButtonMenu disabled fullWidth activeIndex={index} onItemClick={handleClick}>
+        <ButtonMenu
+          disabled
+          fullWidth
+          activeIndex={index}
+          onItemClick={handleClick}
+        >
           <ButtonMenuItem>Disabled</ButtonMenuItem>
           <ButtonMenuItem>Dark</ButtonMenuItem>
           <ButtonMenuItem>Buttons</ButtonMenuItem>
@@ -394,10 +412,10 @@ export const FullWidthMenu: React.FC = () => {
       </Row>
       <Row>
         <ButtonMenu
-            fullWidth
-            withoutBackground
-            activeIndex={index}
-            onItemClick={handleClick}
+          fullWidth
+          withoutBackground
+          activeIndex={index}
+          onItemClick={handleClick}
         >
           <ButtonMenuItem>Without</ButtonMenuItem>
           <ButtonMenuItem>Background</ButtonMenuItem>
