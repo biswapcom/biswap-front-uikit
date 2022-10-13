@@ -15,7 +15,7 @@ export interface ButtonMenuItemProps extends BaseButtonMenuItemProps {
   blockOffset?: number;
   elementRef?: RefObject<HTMLButtonElement>;
   onItemClick?: (index: number) => void;
-  onClick?: any;
+  onClick?: () => void;
 }
 // export type ButtonMenuItemProps<P extends ElementType = "button"> =
 //   PolymorphicComponentProps<P, BaseButtonMenuItemProps>;

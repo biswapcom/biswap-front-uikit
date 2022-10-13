@@ -7,7 +7,7 @@ export interface ButtonMenuItemProps extends BaseButtonMenuItemProps {
     blockOffset?: number;
     elementRef?: RefObject<HTMLButtonElement>;
     onItemClick?: (index: number) => void;
-    onClick?: any;
+    onClick?: () => void;
 }
 export interface BaseButtonMenuItemProps extends LayoutProps, SpaceProps {
     as?: "a" | "button" | ElementType;

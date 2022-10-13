@@ -21,7 +21,7 @@ export interface TabBarItemProps {
     itemIndex?: number;
     blockOffset?: number;
     onItemClick?: (index: number) => void;
-    onClick?: any;
+    onClick?: () => void;
     as?: "a" | "button" | ElementType;
     scale?: typeof tabsScales[keyof typeof tabsScales];
     children?: ReactNode;

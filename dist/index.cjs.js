@@ -5965,7 +5965,6 @@ var TabBarItem = function (_a) {
         onClick();
     };
     var iconSizes = menuIconScaleVariants[scale];
-    console.log("scale", scale, barItemScaleVariant);
     var getTabMenuIcons = function () {
         return (React__default["default"].createElement(IconComponent, { width: iconSizes.width, iconName: iconName, color: iconColor !== null && iconColor !== void 0 ? iconColor : "currentColor", mr: iconSizes.marginRight }));
     };

@@ -85,8 +85,6 @@ const TabBarItem: PolymorphicComponent<TabBarItemProps, "button"> = ({
 
   const iconSizes = menuIconScaleVariants[scale];
 
-  console.log("scale", scale, barItemScaleVariant);
-
   const getTabMenuIcons = () => {
     return (
       <IconComponent
