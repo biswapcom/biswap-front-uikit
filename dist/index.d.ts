@@ -30,6 +30,8 @@ export * from "./components/Toggle";
 export * from "./components/Badge";
 export * from "./components/SlideButtonMenu";
 export * from "./components/PercentSlider";
+export * from "./components/Typography";
+export * from "./components/Pagination";
 export * from "./components/Table";
 export * from "./hooks";
 export * from "./util";

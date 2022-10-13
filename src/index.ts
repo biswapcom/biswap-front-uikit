@@ -31,6 +31,8 @@ export * from "./components/Toggle";
 export * from "./components/Badge";
 export * from "./components/SlideButtonMenu";
 export * from "./components/PercentSlider";
+export * from "./components/Typography";
+export * from "./components/Pagination"
 //TODO must be delete
 export * from "./components/Table";
 
