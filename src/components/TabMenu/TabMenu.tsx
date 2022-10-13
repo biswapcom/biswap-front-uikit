@@ -104,7 +104,7 @@ const ColorSection = styled.div<{ variant: string }>`
 
 const TabMenu: React.FC<BarProps> = ({
   activeIndex = 0,
-  scale = tabsScales.SM,
+  scale = tabsScales.MD,
   variant = tabVariants.DARK,
   onItemClick,
   disabled = false,

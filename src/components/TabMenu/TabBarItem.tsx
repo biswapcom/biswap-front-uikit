@@ -55,7 +55,7 @@ const TabBarItem: PolymorphicComponent<TabBarItemProps, "button"> = ({
   blockOffset,
   iconName = "",
   iconColor = "",
-  scale = tabsScales.SM,
+  scale = tabsScales.MD,
   as,
   onItemClick = () => {},
   onClick = () => {},
