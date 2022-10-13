@@ -16,4 +16,5 @@ export type Scales = typeof scales[keyof typeof scales];
 export interface BodyTextProps {
   as?: Tags;
   scale?: Scales;
+  nowrap?: boolean;
 }
