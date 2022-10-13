@@ -4261,9 +4261,7 @@ var ButtonMenu = function (_a) {
     var _m = useState(0), blockOffset = _m[0], setBlockOffset = _m[1];
     var _o = useMatchBreakpoints(), isDesktop = _o.isDesktop, isMobile = _o.isMobile, isTablet = _o.isTablet;
     useEffect(function () {
-        if (widthsArr) {
-            setBlockOffset(widthsArr.slice(0, activeIndex).reduce(function (sum, elem) { return sum + elem; }, 0));
-        }
+        setBlockOffset(widthsArr.slice(0, activeIndex).reduce(function (sum, elem) { return sum + elem; }, 0));
     }, [widthsArr, activeIndex, isDesktop, isMobile, isTablet]);
     return (React.createElement(Wrapper$f, __assign({ flatBottom: flatBottom, flatTop: flatTop, fullWidth: fullWidth, withoutBackground: withoutBackground, variant: variant, scrollX: scrollX }, props),
         !disabled && (React.createElement(Selection$2, { flatTop: flatTop, flatBottom: flatBottom, scale: scale, width: widthsArr[activeIndex], offset: getOffset(blockOffset, flatTop || flatBottom), variant: variant, withoutAnimation: withoutAnimation })),
@@ -5901,9 +5899,7 @@ var TabMenu = function (_a) {
     var _k = useState(0), blockOffset = _k[0], setBlockOffset = _k[1];
     var _l = useMatchBreakpoints(), isDesktop = _l.isDesktop, isMobile = _l.isMobile, isTablet = _l.isTablet;
     useEffect(function () {
-        if (widthsArr) {
-            setBlockOffset(widthsArr.slice(0, activeIndex).reduce(function (sum, elem) { return sum + elem; }, 0));
-        }
+        setBlockOffset(widthsArr.slice(0, activeIndex).reduce(function (sum, elem) { return sum + elem; }, 0));
     }, [widthsArr, activeIndex, isDesktop, isMobile, isTablet]);
     return (React.createElement(Wrapper$a, __assign({ fullWidth: fullWidth, variant: variant, scrollX: scrollX }, props),
         !disabled && (React.createElement(Selection$1, { scale: scale, width: widthsArr[activeIndex], offset: blockOffset, variant: variant },

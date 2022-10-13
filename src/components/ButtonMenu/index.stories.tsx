@@ -20,11 +20,9 @@ export default {
 } as Meta;
 
 export const Default: React.FC = () => {
-  const [index, setIndex] = useState(0);
-  const [index1, setIndex1] = useState(1);
+  const [index, setIndex] = useState<number>(0);
 
   const handleClick = (newIndex: number) => setIndex(newIndex);
-  const handleClick1 = (newIndex: number) => setIndex1(newIndex);
 
   return (
     <>
@@ -121,9 +119,7 @@ export const Default: React.FC = () => {
           scale="lg"
         >
           <ButtonMenuItem as="a">Button 1</ButtonMenuItem>
-          <ButtonMenuItem onClick={() => console.log("CLICK")}>
-            Button 2
-          </ButtonMenuItem>
+          <ButtonMenuItem>Button 2</ButtonMenuItem>
           <ButtonMenuItem>Button 3</ButtonMenuItem>
           <ButtonMenuItem>Button 4</ButtonMenuItem>
         </ButtonMenu>
@@ -148,32 +144,32 @@ export const Default: React.FC = () => {
 };
 
 export const AsLinks: React.FC = () => {
-  const [index, setIndex] = useState(0);
-  const [index1, setIndex1] = useState(0);
+  const [index, setIndex] = useState<number>(0);
+  const [index1, setIndex1] = useState<number>(0);
   return (
     <>
       <Row>
         <ButtonMenu activeIndex={0}>
-          <ButtonMenuItem as="a" href="https://pancakeswap.finance">
+          <ButtonMenuItem as="a" href="https://biswap.org/">
             Link 1
           </ButtonMenuItem>
-          <ButtonMenuItem as="a" href="https://pancakeswap.finance">
+          <ButtonMenuItem as="a" href="https://biswap.org/">
             Link 2
           </ButtonMenuItem>
-          <ButtonMenuItem as="a" href="https://pancakeswap.finance">
+          <ButtonMenuItem as="a" href="https://biswap.org/">
             Link 3
           </ButtonMenuItem>
         </ButtonMenu>
       </Row>
       <Row>
         <ButtonMenu fullWidth activeIndex={index} onItemClick={setIndex}>
-          <ButtonMenuItem as="a" href="https://pancakeswap.finance">
+          <ButtonMenuItem as="a" href="https://biswap.org/">
             Link 1
           </ButtonMenuItem>
-          <ButtonMenuItem as="a" href="https://pancakeswap.finance">
+          <ButtonMenuItem as="a" href="https://biswap.org/">
             Link 2
           </ButtonMenuItem>
-          <ButtonMenuItem as="a" href="https://pancakeswap.finance">
+          <ButtonMenuItem as="a" href="https://biswap.org/">
             Link 3
           </ButtonMenuItem>
         </ButtonMenu>
@@ -190,8 +186,8 @@ export const AsLinks: React.FC = () => {
 };
 
 export const FlatBottom: React.FC = () => {
-  const [index, setIndex] = useState(0);
-  const [index1, setIndex1] = useState(1);
+  const [index, setIndex] = useState<number>(0);
+  const [index1, setIndex1] = useState<number>(1);
 
   const handleClick = (newIndex: number) => setIndex(newIndex);
   const handleClick1 = (newIndex: number) => setIndex1(newIndex);
@@ -231,8 +227,8 @@ export const FlatBottom: React.FC = () => {
 };
 
 export const FlatTop: React.FC = () => {
-  const [index, setIndex] = useState(0);
-  const [index1, setIndex1] = useState(1);
+  const [index, setIndex] = useState<number>(0);
+  const [index1, setIndex1] = useState<number>(1);
 
   const handleClick = (newIndex: number) => setIndex(newIndex);
   const handleClick1 = (newIndex: number) => setIndex1(newIndex);
@@ -272,8 +268,8 @@ export const FlatTop: React.FC = () => {
 };
 
 export const WithoutBackground: React.FC = () => {
-  const [index, setIndex] = useState(0);
-  const [index1, setIndex1] = useState(1);
+  const [index, setIndex] = useState<number>(0);
+  const [index1, setIndex1] = useState<number>(1);
 
   const handleClick = (newIndex: number) => setIndex(newIndex);
   const handleClick1 = (newIndex: number) => setIndex1(newIndex);
@@ -331,8 +327,8 @@ export const WithoutBackground: React.FC = () => {
 };
 
 export const DisabledMenu: React.FC = () => {
-  const [index, setIndex] = useState(0);
-  const [index1, setIndex1] = useState(1);
+  const [index, setIndex] = useState<number>(0);
+  const [index1, setIndex1] = useState<number>(1);
 
   const handleClick = (newIndex: number) => setIndex(newIndex);
   const handleClick1 = (newIndex: number) => setIndex1(newIndex);
@@ -386,7 +382,7 @@ export const DisabledMenu: React.FC = () => {
 };
 
 export const FullWidthMenu: React.FC = () => {
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState<number>(0);
 
   const handleClick = (newIndex: number) => setIndex(newIndex);
 
@@ -404,13 +400,13 @@ export const FullWidthMenu: React.FC = () => {
         <ButtonMenuItem>Button 4</ButtonMenuItem>
       </ButtonMenu>
       <ButtonMenu activeIndex={index} fullWidth scale="sm">
-        <ButtonMenuItem as="a" href="https://pancakeswap.finance">
+        <ButtonMenuItem as="a" href="https://biswap.org/">
           Link 1
         </ButtonMenuItem>
-        <ButtonMenuItem as="a" href="https://pancakeswap.finance">
+        <ButtonMenuItem as="a" href="https://biswap.org/">
           Link 2
         </ButtonMenuItem>
-        <ButtonMenuItem as="a" href="https://pancakeswap.finance">
+        <ButtonMenuItem as="a" href="https://biswap.org/">
           Link 3
         </ButtonMenuItem>
       </ButtonMenu>

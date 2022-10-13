@@ -122,11 +122,9 @@ const TabMenu: React.FC<BarProps> = ({
   const { isDesktop, isMobile, isTablet } = useMatchBreakpoints();
 
   useEffect(() => {
-    if (widthsArr) {
-      setBlockOffset(
-        widthsArr.slice(0, activeIndex).reduce((sum, elem) => sum + elem, 0)
-      );
-    }
+    setBlockOffset(
+      widthsArr.slice(0, activeIndex).reduce((sum, elem) => sum + elem, 0)
+    );
   }, [widthsArr, activeIndex, isDesktop, isMobile, isTablet]);
 
   return (

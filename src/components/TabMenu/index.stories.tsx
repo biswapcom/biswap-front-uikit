@@ -3,7 +3,6 @@ import styled from "styled-components";
 /* eslint-disable import/no-unresolved */
 import { Meta } from "@storybook/react/types-6-0";
 import { TabMenu, TabMenuItem } from "./index";
-import { tabVariants } from "./types";
 
 const Row = styled.div<{ isLight?: boolean }>`
   margin-bottom: 32px;
@@ -19,8 +18,7 @@ export default {
 } as Meta;
 
 export const Default: React.FC = () => {
-  const [index, setIndex] = useState(0);
-  const [index2, setIndex2] = useState(0);
+  const [index, setIndex] = useState<number>(0);
 
   return (
     <>
