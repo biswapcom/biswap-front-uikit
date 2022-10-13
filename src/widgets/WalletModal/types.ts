@@ -1,14 +1,5 @@
-import { FC } from "react";
+import React, { FC } from "react";
 import { SvgProps } from "../../components/Svg";
-
-// export enum ConnectorNames {
-//   MetaMask = 'metaMask',
-//   Injected = 'injected',
-//   WalletConnect = 'walletConnect',
-//   BSC = 'bsc',
-//   Blocto = 'blocto',
-//   WalletLink = 'coinbaseWallet',
-// }
 
 export type Login<T> = (connectorId: T) => void;
 
