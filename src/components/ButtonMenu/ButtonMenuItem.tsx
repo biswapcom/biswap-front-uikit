@@ -24,6 +24,7 @@ const MenuItemButton: PolymorphicComponent<
 > = styled.button<ItemButtonProps>`
   align-items: center;
   border: 0;
+  margin: 0;
   cursor: pointer;
   display: flex;
   font-family: inherit;
