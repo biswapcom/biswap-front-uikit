@@ -1,4 +1,10 @@
-import React, {useEffect, useRef, useState, FC, PropsWithChildren} from "react";
+import React, {
+  useEffect,
+  useRef,
+  useState,
+  FC,
+  PropsWithChildren,
+} from "react";
 import throttle from "lodash/throttle";
 import styled, { DefaultTheme } from "styled-components";
 
@@ -135,7 +141,7 @@ const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
   max-width: 100%;
 `;
 
-const Menu:FC<PropsWithChildren<NavProps>> = ({
+const Menu: FC<PropsWithChildren<NavProps>> = ({
   linkComponent = "a",
   // userMenu,
   banner,
@@ -361,16 +367,15 @@ const Menu:FC<PropsWithChildren<NavProps>> = ({
             <>
               {children}
               <Footer
-                  BSWPriceLabel={BSWPriceLabel}
-                  BSWPriceValue={BSWPriceValue}
-                  footerStatistic={footerStatistic}
-                  registerToken={registerToken}
-                  buyBswLink={buyBswLink}
-                  aboutLinks={aboutLinks}
-                  productLinks={productLinks}
-                  serviceLinks={serviceLinks}
+                BSWPriceLabel={BSWPriceLabel}
+                BSWPriceValue={BSWPriceValue}
+                footerStatistic={footerStatistic}
+                registerToken={registerToken}
+                buyBswLink={buyBswLink}
+                aboutLinks={aboutLinks}
+                productLinks={productLinks}
+                serviceLinks={serviceLinks}
               />
-
             </>
           </Inner>
         </BodyWrapper>

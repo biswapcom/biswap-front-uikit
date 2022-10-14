@@ -90,7 +90,7 @@ const InfoListValue = styled.span`
 const FooterInfo: React.FC<Props> = ({
   BSWPriceLabel,
   BSWPriceValue,
-                                       registerToken,
+  registerToken,
   footerStatistic,
   buyBswLink,
 }) => {

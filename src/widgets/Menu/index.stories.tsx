@@ -102,22 +102,22 @@ const defaultProps = {
   linkComponent: ({ href, ...props }) => {
     return <Link to={href} {...props} />;
   },
- // account: "0xbdda50183d817c3289f895a4472eb475967dc980",
+  // account: "0xbdda50183d817c3289f895a4472eb475967dc980",
   //login: noop,
- // logout: noop,
- // isDark: false,
- // toggleTheme: noop,
+  // logout: noop,
+  // isDark: false,
+  // toggleTheme: noop,
   // langs,
- // setLang: noop,
- // currentLang: "EN",
+  // setLang: noop,
+  // currentLang: "EN",
   bswPriceUsd: 0.023158668932877668,
   links,
   // subLinks: links[0].items,
- // profile: null,
+  // profile: null,
 
- //  userMenu: (
- //    <UserMenuComponent account="0xbdda50183d817c3289f895a4472eb475967dc980" />
- //  ),
+  //  userMenu: (
+  //    <UserMenuComponent account="0xbdda50183d817c3289f895a4472eb475967dc980" />
+  //  ),
   //globalMenu: <GlobalMenuComponent />,
   activeItem: "/swap",
   activeSubItem: "https://exchange.biswap.org",
@@ -261,10 +261,10 @@ export const NotConnected: React.FC = () => {
     <BrowserRouter>
       <Menu
         // isDark={false}
-     //   toggleTheme={noop}
+        //   toggleTheme={noop}
         // langs={langs}
         //setLang={noop}
-       // currentLang="EN"
+        // currentLang="EN"
         links={links}
         //subLinks={subLinks}
       >
@@ -297,8 +297,8 @@ export const WithoutConnectButton: React.FC = () => {
         // isDark={false}
         //toggleTheme={noop}
         // langs={langs}
-       // setLang={noop}
-       // currentLang="EN"
+        // setLang={noop}
+        // currentLang="EN"
         links={links}
         // subLinks={subLinks}
       >
@@ -315,7 +315,7 @@ export const WithSubmenuSelected: React.FC = () => {
   return (
     <MemoryRouter initialEntries={["/teams"]}>
       <Menu
-       // isDark={false}
+        // isDark={false}
         // toggleTheme={noop}
         //langs={langs}
         //setLang={noop}

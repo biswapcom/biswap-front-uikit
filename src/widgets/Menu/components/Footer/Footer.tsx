@@ -90,7 +90,7 @@ const InnerRow = styled.div`
 const Footer: React.FC<Props> = ({
   BSWPriceLabel,
   BSWPriceValue,
-                                   registerToken,
+  registerToken,
   footerStatistic,
   aboutLinks,
   productLinks,

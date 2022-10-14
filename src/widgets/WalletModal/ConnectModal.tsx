@@ -4,16 +4,13 @@ import React from "react";
 import styled from "styled-components";
 
 // components
-import { HelpOpacityIcon } from "../../components/Svg";
-
-// components
-import { Link } from "../../components/Link";
-import { HelpIcon } from "../../components/Svg";
-import { Modal } from "../../widgets/Modal";
 import WalletCard from "./WalletCard";
+import { Link } from "../../components/Link";
+import { Modal } from "../../widgets/Modal";
 import { Box } from "../../components/Box";
 import { Text } from "../../components/Text";
 import { Button } from "../../components/Button";
+import { HelpOpacityIcon } from "../../components/Svg";
 
 // hooks
 import { useMatchBreakpoints } from "../../contexts";
@@ -21,21 +18,13 @@ import { useMatchBreakpoints } from "../../contexts";
 // utils
 import { getRgba } from "../../util";
 
-// config
-import config, {
-  HOW_TO_CONNECT_WALLET_LINK,
-  walletLocalStorageKey,
-} from "./config";
-
 // types
-import { Config, ConnectorNames, Login } from "./types";
-import { Text } from "../../components/Text";
-import { Flex } from "../../components/Box";
+import { Login } from "./types";
 
 // utils
 import { walletLocalStorageKey } from "./config";
-import {Login, WalletConfig} from "./types";
-import {HOW_TO_CONNECT_DOCS} from "../../config";
+import { WalletConfig } from "./types";
+import { HOW_TO_CONNECT_DOCS } from "../../config";
 
 // props
 interface Props<T> {
@@ -45,16 +34,16 @@ interface Props<T> {
 }
 
 // styles
-const HelpLink = styled(Link)`
-  display: flex;
-  align-self: center;
-  align-items: center;
-  margin-top: 40px;
-
-  ${({ theme }) => theme.mediaQueries.sm} {
-    margin-top: 24px;
-  }
-`;
+// const HelpLink = styled(Link)`
+//   display: flex;
+//   align-self: center;
+//   align-items: center;
+//   margin-top: 40px;
+//
+//   ${({ theme }) => theme.mediaQueries.sm} {
+//     margin-top: 24px;
+//   }
+// `;
 
 const WalletCardsWrapper = styled.div`
   display: grid;
@@ -70,39 +59,6 @@ const WalletCardsWrapper = styled.div`
     margin-left: 32px;
   }
 `;
-
-const getPriority = (priority: WalletConfig["priority"]) => (typeof priority === "function" ? priority() : priority);
-
-/**
- * Checks local storage if we have saved the last wallet the user connected with
- * If we find something we put it at the top of the list
- *
- * @returns sorted config
- */
-function getPreferredConfig<T>(walletConfig: WalletConfig<T>[]) {
-  const sortedConfig = walletConfig.sort(
-      (a: WalletConfig<T>, b: WalletConfig<T>) => getPriority(a.priority) - getPriority(b.priority)
-  );
-
-  const preferredWalletName = localStorage?.getItem(walletLocalStorageKey);
-
-  if (!preferredWalletName) {
-    return sortedConfig;
-  }
-
-  const preferredWallet = sortedConfig.find((sortedWalletConfig) => sortedWalletConfig.title === preferredWalletName);
-
-  if (!preferredWallet) {
-    return sortedConfig;
-  }
-
-  return [
-    preferredWallet,
-    ...sortedConfig.filter((sortedWalletConfig) => sortedWalletConfig.title !== preferredWalletName),
-  ];
-}
-
-function ConnectModal<T> ({ login, onDismiss = () => null, wallets: connectors }: Props<T>) {
 
 const ScrollWrapper = styled(Box)`
   overflow-x: hidden;
@@ -129,37 +85,65 @@ const StyledText = styled(Text)`
   align-self: flex-start;
 `;
 
-const DefaultTextButton = styled(Button)`
-  font-size: 14px;
-  font-weight: 400;
-`;
+// const DefaultTextButton = styled(Button)`
+//   font-size: 14px;
+//   font-weight: 400;
+// `;
 
-const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => {
+const getPriority = (priority: WalletConfig["priority"]) =>
+  typeof priority === "function" ? priority() : priority;
+
+/**
+ * Checks local storage if we have saved the last wallet the user connected with
+ * If we find something we put it at the top of the list
+ *
+ * @returns sorted config
+ */
+function getPreferredConfig<T>(walletConfig: WalletConfig<T>[]) {
+  const sortedConfig = walletConfig.sort(
+    (a: WalletConfig<T>, b: WalletConfig<T>) =>
+      getPriority(a.priority) - getPriority(b.priority)
+  );
+
+  const preferredWalletName = localStorage?.getItem(walletLocalStorageKey);
+
+  if (!preferredWalletName) {
+    return sortedConfig;
+  }
+
+  const preferredWallet = sortedConfig.find(
+    (sortedWalletConfig) => sortedWalletConfig.title === preferredWalletName
+  );
+
+  if (!preferredWallet) {
+    return sortedConfig;
+  }
+
+  return [
+    preferredWallet,
+    ...sortedConfig.filter(
+      (sortedWalletConfig) => sortedWalletConfig.title !== preferredWalletName
+    ),
+  ];
+}
+
+function ConnectModal<T>({
+  login,
+  onDismiss = () => null,
+  wallets: connectors,
+}: Props<T>) {
   const { isMobile } = useMatchBreakpoints();
 
-  const sortedConfig = useMemo(
-    () =>
-      getPreferredConfig(
-        isMobile
-          ? config.map((item) =>
-              item.title === "TrustWallet"
-                ? { ...item, connectorId: ConnectorNames.Injected }
-                : item
-            )
-          : config
-      ),
-    [isMobile]
-  );
   const sortedConfig = getPreferredConfig(connectors);
 
   // Filter out WalletConnect if user is inside TrustWallet built-in browser
   const walletsToShow =
-      // @ts-ignore
-      window.ethereum?.isTrust &&
-      // @ts-ignore
-      !window?.ethereum?.isSafePal
-          ? sortedConfig.filter((wallet) => wallet.title !== "WalletConnect")
-          : sortedConfig;
+    // @ts-ignore
+    window.ethereum?.isTrust &&
+    // @ts-ignore
+    !window?.ethereum?.isSafePal
+      ? sortedConfig.filter((wallet) => wallet.title !== "WalletConnect")
+      : sortedConfig;
 
   return (
     <Modal
@@ -209,7 +193,7 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => {
         as="a"
         color="primary"
         m={isMobile ? "16px 16px 32px" : "16px 32px 32px"}
-        href={HOW_TO_CONNECT_WALLET_LINK}
+        href={HOW_TO_CONNECT_DOCS}
         target={isMobile ? "_self" : "_blank"}
       >
         <Text as="span" color="contrast" bold>
@@ -218,6 +202,6 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => {
       </Button>
     </Modal>
   );
-};
+}
 
 export default ConnectModal;

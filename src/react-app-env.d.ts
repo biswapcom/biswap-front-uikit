@@ -9,6 +9,9 @@ interface Window {
     isMathWallet?: true;
   };
   BinanceChain?: {
-    bnbSign?: (address: string, message: string) => Promise<{ publicKey: string; signature: string }>;
+    bnbSign?: (
+      address: string,
+      message: string
+    ) => Promise<{ publicKey: string; signature: string }>;
   };
 }

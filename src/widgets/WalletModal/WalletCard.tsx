@@ -9,7 +9,7 @@ import { Link } from "../../components/Link";
 
 // utils
 import { connectorLocalStorageKey, walletLocalStorageKey } from "./config";
-import {Login, WalletConfig} from "./types";
+import { Login, WalletConfig } from "./types";
 
 // props
 interface Props<T> {
@@ -36,42 +36,50 @@ const StyledButton = styled(Button)`
   }
 `;
 
-const WalletCard: React.FC<React.PropsWithChildren<Props<any>>> = ({ login, walletConfig, onDismiss }) => {
-
+const WalletCard: React.FC<React.PropsWithChildren<Props<any>>> = ({
+  login,
+  walletConfig,
+  onDismiss,
+}) => {
   const { title, icon: Icon, installed, downloadLink } = walletConfig;
 
-    let linkAction: any = {
-        onClick: () => {
-            login(walletConfig.connectorId);
-            localStorage?.setItem(walletLocalStorageKey, walletConfig.title);
-            localStorage?.setItem(connectorLocalStorageKey, walletConfig.connectorId);
-            onDismiss();
-        },
-    };
+  let linkAction: any = {
+    onClick: () => {
+      login(walletConfig.connectorId);
+      localStorage?.setItem(walletLocalStorageKey, walletConfig.title);
+      localStorage?.setItem(connectorLocalStorageKey, walletConfig.connectorId);
+      onDismiss();
+    },
+  };
 
-    if (installed === false && isDesktop && downloadLink?.desktop) {
-        linkAction = {
-            as: Link,
-            href: downloadLink.desktop,
-            style: {
-                textDecoration: "none",
-            },
-            target: "_blank",
-            rel: "noopener noreferrer",
-        };
-    }
-    // @ts-ignore
-    if (typeof window !== "undefined" && !window.ethereum && walletConfig.href && isMobile) {
-        linkAction = {
-            style: {
-                textDecoration: "none",
-            },
-            as: Link,
-            href: walletConfig.href,
-            target: "_blank",
-            rel: "noopener noreferrer",
-        };
-    }
+  if (installed === false && isDesktop && downloadLink?.desktop) {
+    linkAction = {
+      as: Link,
+      href: downloadLink.desktop,
+      style: {
+        textDecoration: "none",
+      },
+      target: "_blank",
+      rel: "noopener noreferrer",
+    };
+  }
+  // @ts-ignore
+  if (
+    typeof window !== "undefined" &&
+    !window.ethereum &&
+    walletConfig.href &&
+    isMobile
+  ) {
+    linkAction = {
+      style: {
+        textDecoration: "none",
+      },
+      as: Link,
+      href: walletConfig.href,
+      target: "_blank",
+      rel: "noopener noreferrer",
+    };
+  }
 
   return (
     <StyledButton
