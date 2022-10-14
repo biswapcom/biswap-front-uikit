@@ -5663,10 +5663,16 @@ var TabMenu = function (_a) {
     var _b = _a.activeIndex, activeIndex = _b === void 0 ? 0 : _b, _c = _a.scale, scale = _c === void 0 ? tabsScales.MD : _c, _d = _a.variant, variant = _d === void 0 ? tabVariants.DARK : _d, onItemClick = _a.onItemClick, _e = _a.disabled, disabled = _e === void 0 ? false : _e, _f = _a.fullWidth, fullWidth = _f === void 0 ? false : _f; _a.menuIcons; var _h = _a.scrollX, scrollX = _h === void 0 ? false : _h, children = _a.children, equalElementWidth = _a.equalElementWidth, props = __rest(_a, ["activeIndex", "scale", "variant", "onItemClick", "disabled", "fullWidth", "menuIcons", "scrollX", "children", "equalElementWidth"]);
     var _j = React.useState([]), widthsArr = _j[0], setWidthsArr = _j[1];
     var _k = React.useState(0), blockOffset = _k[0], setBlockOffset = _k[1];
-    var _l = useMatchBreakpoints(), isDesktop = _l.isDesktop, isMobile = _l.isMobile, isTablet = _l.isTablet;
+    var _l = React.useState(null), activeButtonIndex = _l[0], setActiveButtonIndex = _l[1];
+    var _m = useMatchBreakpoints(), isDesktop = _m.isDesktop, isMobile = _m.isMobile, isTablet = _m.isTablet;
     React.useEffect(function () {
-        setBlockOffset(widthsArr.slice(0, activeIndex).reduce(function (sum, elem) { return sum + elem; }, 0));
-    }, [widthsArr, activeIndex, isDesktop, isMobile, isTablet]);
+        setActiveButtonIndex(activeIndex);
+    }, [activeIndex]);
+    React.useEffect(function () {
+        if (activeButtonIndex !== null) {
+            setBlockOffset(widthsArr.slice(0, activeButtonIndex).reduce(function (sum, elem) { return sum + elem; }, 0));
+        }
+    }, [widthsArr, activeButtonIndex, isDesktop, isMobile, isTablet]);
     return (React__default["default"].createElement(Wrapper$a, __assign({ fullWidth: fullWidth, variant: variant, scrollX: scrollX }, props),
         !disabled && (React__default["default"].createElement(Selection$1, { scale: scale, width: widthsArr[activeIndex], offset: blockOffset, variant: variant },
             React__default["default"].createElement(ColorSection, { variant: variant }))),
@@ -5676,6 +5682,7 @@ var TabMenu = function (_a) {
                 onItemClick: onItemClick ? function () { return onItemClick(index); } : undefined,
                 setWidth: setWidthsArr,
                 itemIndex: index,
+                activeButtonIndex: activeButtonIndex,
                 blockOffset: blockOffset,
                 scale: scale,
                 variant: variant,
@@ -5696,7 +5703,7 @@ var TabItem = styled__default["default"].button(templateObject_2$t || (templateO
 });
 var TabBarItem = function (_a) {
     var _b;
-    var _c = _a.isActive, isActive = _c === void 0 ? false : _c, variant = _a.variant, setWidth = _a.setWidth, _d = _a.itemIndex, itemIndex = _d === void 0 ? 0 : _d, blockOffset = _a.blockOffset, _e = _a.iconName, iconName = _e === void 0 ? "" : _e, _f = _a.iconColor, iconColor = _f === void 0 ? "" : _f, _g = _a.scale, scale = _g === void 0 ? tabsScales.MD : _g, as = _a.as, _h = _a.onItemClick, onItemClick = _h === void 0 ? function () { } : _h, _j = _a.onClick, onClick = _j === void 0 ? function () { } : _j, children = _a.children, props = __rest(_a, ["isActive", "variant", "setWidth", "itemIndex", "blockOffset", "iconName", "iconColor", "scale", "as", "onItemClick", "onClick", "children"]);
+    var _c = _a.isActive, isActive = _c === void 0 ? false : _c, variant = _a.variant, setWidth = _a.setWidth, _d = _a.itemIndex, itemIndex = _d === void 0 ? 0 : _d, activeButtonIndex = _a.activeButtonIndex, blockOffset = _a.blockOffset, _e = _a.iconName, iconName = _e === void 0 ? "" : _e, _f = _a.iconColor, iconColor = _f === void 0 ? "" : _f, _g = _a.scale, scale = _g === void 0 ? tabsScales.MD : _g, as = _a.as, _h = _a.onItemClick, onItemClick = _h === void 0 ? function () { } : _h, _j = _a.onClick, onClick = _j === void 0 ? function () { } : _j, children = _a.children, props = __rest(_a, ["isActive", "variant", "setWidth", "itemIndex", "activeButtonIndex", "blockOffset", "iconName", "iconColor", "scale", "as", "onItemClick", "onClick", "children"]);
     var _k = useMatchBreakpoints(), isXs = _k.isXs, isSm = _k.isSm, isMs = _k.isMs, isLg = _k.isLg, isXl = _k.isXl, isXll = _k.isXll, isXxl = _k.isXxl;
     var ref = React.useRef(null);
     var itemWidth = (_b = ref.current) === null || _b === void 0 ? void 0 : _b.clientWidth;
@@ -5708,7 +5715,7 @@ var TabBarItem = function (_a) {
                     : __spreadArray(__spreadArray([], prev, true), [itemWidth], false);
             });
         }
-    }, [blockOffset, itemWidth, isXs, isSm, isMs, isLg, isXl, isXll, isXxl]);
+    }, [blockOffset, itemWidth, activeButtonIndex, isXs, isSm, isMs, isLg, isXl, isXll, isXxl]);
     var omItemClickHandler = function () {
         onItemClick(itemIndex);
         onClick();
