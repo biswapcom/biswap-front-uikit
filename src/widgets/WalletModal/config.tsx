@@ -10,6 +10,7 @@ import CoinbaseIcon from "./icons/Coinbase";
 import iToken from "./icons/iToken";
 import BitKeepWallet from "./icons/BitKeepWallet";
 import BraveWallet from "./icons/BraveWallet";
+import GnosisSafe from "./icons/GnosisSafe";
 
 import {
   Config,
@@ -115,6 +116,14 @@ const connectors: Config[] = [
     helpHref:
       "https://biswap.zendesk.com/hc/en-us/articles/9255441933073-Brave-Wallet-Guide-Settings-Connection-to-Biswap-",
     instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.BraveWallet],
+  },
+  {
+    title: ConnectorsTitleTypes.Gnosis,
+    icon: GnosisSafe,
+    connectorId: ConnectorNames.WalletConnect,
+    priority: 999,
+    helpHref: "",
+    instanceCheckRule: InstanceCheckRules[ConnectorsTitleTypes.Gnosis],
   },
 ];
 
