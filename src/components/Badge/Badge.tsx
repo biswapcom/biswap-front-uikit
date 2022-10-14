@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import styled, { DefaultTheme } from "styled-components";
 import { BadgeProps } from "./types";
 import getRgba from "../../util/getRgba";
+import { space } from "styled-system";
 
 interface StyledBadgeProps extends BadgeProps {
   theme: DefaultTheme;
@@ -100,6 +101,8 @@ const Wrapper = styled.div<BadgeProps>`
   height: ${({ isLarge }) => (isLarge ? "38px" : "20px")};
   font-size: ${({ fontSize }) => fontSize || "10px"};
   font-weight: 600;
+
+  ${space}
 `;
 
 const Badge: FC<BadgeProps> = ({
@@ -109,6 +112,7 @@ const Badge: FC<BadgeProps> = ({
   fontWeight,
   isIcon,
   isLarge,
+  ...props
 }) => {
   return (
     <Wrapper
@@ -117,6 +121,7 @@ const Badge: FC<BadgeProps> = ({
       isLarge={isLarge}
       fontSize={fontSize}
       fontWeight={fontWeight}
+      {...props}
     >
       {children}
     </Wrapper>

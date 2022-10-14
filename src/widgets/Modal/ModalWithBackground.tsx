@@ -8,14 +8,16 @@ interface Props extends InjectedProps {
   hideCloseButton?: boolean;
   backBtnColor?: string;
   background?: string;
+  backgroundTransparent?: boolean;
   p?: string;
   children: ReactNode;
 }
 
-const StyledModal = styled.div`
+const StyledModal = styled.div<{ backgroundTransparent?: boolean }>`
   display: flex;
   flex-direction: column;
-  background-color: ${({ theme }) => theme.colors.contrast};
+  background-color: ${({ theme, backgroundTransparent }) =>
+    backgroundTransparent ? "transparent" : theme.colors.contrast};
   border-radius: 16px 16px 0 0;
   width: 100%;
   z-index: ${({ theme }) => theme.zIndices.modal};
@@ -62,9 +64,10 @@ const ModalWithBackground: React.FC<Props> = ({
   hideCloseButton = false,
   backBtnColor,
   background,
+  backgroundTransparent,
   p,
 }) => (
-  <StyledModal>
+  <StyledModal backgroundTransparent={backgroundTransparent}>
     {!hideCloseButton && (
       <StyledIconButton
         variant="text"

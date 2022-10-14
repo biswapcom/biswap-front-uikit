@@ -13,6 +13,7 @@ import { DropdownMenuItemContainer } from "../components";
 import IconComponent from "../../Svg/IconComponent";
 import Accordion from "../../Accordion/Accordion";
 import Community from "../../../widgets/Menu/components/Footer/Community";
+import Marker from "../../MenuItem/Marker";
 
 const MainContententWrapper = styled.div`
   flex: 1;
@@ -28,7 +29,7 @@ const MobileCommunityWrapper = styled.div`
 const StyledMobileMenu = styled.div<{
   $isOpen: boolean;
 }>`
-  padding: 32px 24px 0 24px;
+  padding: 32px 24px 0;
   background-color: ${({ theme }) => theme.card.background};
   width: 100vw;
   height: calc(100vh - 60px);
@@ -127,6 +128,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
                   { label, items: innerItems = [], showItemsOnMobile, hidden },
                   index
                 ) => {
+                  const isMarker = items[index].showNavBadge;
                   if (!innerItems.length) return null;
                   const visualize =
                     !showItemsOnMobile ||
@@ -142,18 +144,22 @@ const MobileMenu: FC<MobileMenuProps> = ({
                             !showItemsOnMobile &&
                             !hidden && (
                               <>
-                                <Text
-                                  bold
-                                  m={"16px 0"}
-                                  fontSize={isTablet ? "20px" : "14px"}
-                                  color={
-                                    isMobile && opened
-                                      ? "primary"
-                                      : "backgroundDark"
-                                  }
-                                >
-                                  {label}
-                                </Text>
+                                <Box m="16px 0" position="relative">
+                                  {isMarker && <Marker />}
+                                  <Text
+                                    bold
+                                    fontSize={isTablet ? "20px" : "14px"}
+                                    lineHeight={isTablet ? "26px" : "20px"}
+                                    color={
+                                      isMobile && opened
+                                        ? "primary"
+                                        : "backgroundDark"
+                                    }
+                                  >
+                                    {label}
+                                  </Text>
+                                </Box>
+
                                 {!isTablet && (
                                   <IconComponent
                                     iconName={
@@ -205,6 +211,8 @@ const MobileMenu: FC<MobileMenuProps> = ({
                                   rightIcon={icon}
                                   description={description}
                                   status={status}
+                                  badgeTitle={badgeTitle}
+                                  badgeType={badgeType}
                                 />
                               );
 

@@ -168,6 +168,7 @@ const Menu:FC<PropsWithChildren<NavProps>> = ({
   //transactionsForUIKit,
   withEvent,
   eventCallback,
+  eventButtonLogo,
 }) => {
   const { isMobile } = useMatchBreakpoints();
   const [showMenu, setShowMenu] = useState<boolean>(true);

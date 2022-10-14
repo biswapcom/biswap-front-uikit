@@ -15,4 +15,5 @@ export declare const ModalContainer: import("styled-components").StyledComponent
     minWidth: string;
     maxWidth?: string | undefined;
     background?: string | undefined;
+    walletModal?: boolean | undefined;
 }, never>;

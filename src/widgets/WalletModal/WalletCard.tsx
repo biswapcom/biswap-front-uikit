@@ -21,16 +21,19 @@ interface Props<T> {
 // ui
 const StyledButton = styled(Button)`
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  padding: 8px 0 0;
+  justify-content: flex-start;
   white-space: nowrap;
-  min-height: 91px;
-`;
+  width: 100%;
 
-const StyledText = styled(Text)`
-  font-weight: bold;
-  color: ${({ theme }) => theme.colors.primary};
+  background: ${({ theme }) => theme.colors.gray200};
+
+  ${({ theme }) => theme.mediaQueries.sm} {
+    width: 172px;
+  }
+
+  &:hover > div {
+    color: ${({ theme }) => theme.colors.primaryHover};
+  }
 `;
 
 const WalletCard: React.FC<React.PropsWithChildren<Props<any>>> = ({ login, walletConfig, onDismiss }) => {
@@ -72,12 +75,15 @@ const WalletCard: React.FC<React.PropsWithChildren<Props<any>>> = ({ login, wall
 
   return (
     <StyledButton
+      scale="xl"
       variant="tertiary"
       id={`wallet-connect-${title.toLowerCase()}`}
       {...linkAction}
+      startIcon={<Icon width="24px" />}
     >
-      <Icon width="32px" />
-      <StyledText>{title}</StyledText>
+      <Text bold color="primary" fontSize="12px">
+        {title}
+      </Text>
     </StyledButton>
   );
 };

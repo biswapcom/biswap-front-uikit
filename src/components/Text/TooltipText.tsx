@@ -3,7 +3,7 @@ import Text from "./Text";
 
 const TooltipText = styled(Text)`
   text-decoration: ${({ theme }) =>
-    `underline dotted ${theme.colors.textSubtle}`};
+    `underline dotted ${theme.colors.pastelBlue}`};
   text-underline-offset: 0.1em;
 `;
 

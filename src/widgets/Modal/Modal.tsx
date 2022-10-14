@@ -25,6 +25,8 @@ const Modal: React.FC<ModalProps> = ({
   closeBtnColor,
   maxWidth = "420px",
   titleSize = "lg",
+  walletModal,
+  modalBodyProps,
   ...props
 }) => {
   const theme = useTheme();
@@ -40,6 +42,9 @@ const Modal: React.FC<ModalProps> = ({
         modalBackground
       )(theme)}
       maxWidth={maxWidth}
+      walletModal={walletModal}
+      width={props.width}
+      borderRadius={props.borderRadius ?? "16px"}
     >
       <ModalHeader>
         <ModalTitle>
@@ -52,9 +57,16 @@ const Modal: React.FC<ModalProps> = ({
             </Heading>
           )}
         </ModalTitle>
-        {!hideCloseButton && <ModalCloseButton onDismiss={onDismiss} />}
+        {!hideCloseButton && (
+          <ModalCloseButton
+            closeBtnColor={closeBtnColor}
+            onDismiss={onDismiss}
+          />
+        )}
       </ModalHeader>
-      <ModalBody p={bodyPadding ?? defaultBodyPadding}>{children}</ModalBody>
+      <ModalBody p={bodyPadding ?? defaultBodyPadding} {...modalBodyProps}>
+        {children}
+      </ModalBody>
     </ModalContainer>
   );
 };

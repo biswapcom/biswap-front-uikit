@@ -1,4 +1,4 @@
-import React from "react";
+import { FC } from "react";
 import { SkeletonProps } from "./types";
-declare const Skeleton: React.FC<SkeletonProps>;
+declare const Skeleton: FC<SkeletonProps>;
 export default Skeleton;

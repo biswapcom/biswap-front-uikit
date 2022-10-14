@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
+import { SpaceProps } from "styled-system";
 
-export interface BadgeProps {
+export interface BadgeProps extends SpaceProps {
   badgeType:
     | "success"
     | "error"

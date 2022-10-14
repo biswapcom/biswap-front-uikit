@@ -3,8 +3,9 @@ import styled from "styled-components";
 import { variant } from "styled-system";
 import Box from "../Box/Box";
 import Input from "./Input";
+import Text from "../Text/Text";
 import { InputGroupProps, scales, Scales, Variants } from "./types";
-import { styleVariants, scaleVariants } from "./theme";
+import { styleVariants, scaleVariants, styleTextVariants } from "./theme";
 
 import IconComponent from "../Svg/IconComponent";
 
@@ -44,11 +45,7 @@ const getIconPosition = (scale: Scales) => {
   }
 };
 
-const StyledInputGroup = styled(Box)<{
-  scale: Scales;
-  variant?: Variants;
-  hasStartIcon: boolean;
-  hasEndIcon: boolean;
+const StyledInputWrapper = styled(Box)<{
   disabled?: boolean;
 }>`
   display: block;
@@ -57,7 +54,14 @@ const StyledInputGroup = styled(Box)<{
   position: relative;
   opacity: ${({ disabled }) => (disabled ? ".56" : "1")};
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "initial")};
+`;
 
+const StyledInputGroup = styled(Box)<{
+  scale: Scales;
+  variant?: Variants;
+  hasStartIcon: boolean;
+  hasEndIcon: boolean;
+}>`
   ${variant({
     prop: "scale",
     variants: scaleVariants,
@@ -95,6 +99,13 @@ const RightIconComponent = styled(StyledIconComponent)<{ scale: Scales }>`
   right: ${({ scale }) => getIconPosition(scale)};
 `;
 
+const TextDescription = styled(Text)<{ variant?: Variants }>`
+  ${variant({
+    prop: "variant",
+    variants: styleTextVariants,
+  })}
+`;
+
 const InputGroup: FC<InputGroupProps> = ({
   scale = scales.MD,
   startIcon,
@@ -104,49 +115,60 @@ const InputGroup: FC<InputGroupProps> = ({
   isError,
   isWarning,
   disabled,
+  description,
   ...props
 }) => {
   return (
-    <StyledInputGroup
-      scale={scale}
-      variant={variant}
+    <StyledInputWrapper
       width="100%"
       position="relative"
-      hasStartIcon={!!startIcon}
-      hasEndIcon={!!endIcon}
       disabled={disabled}
       {...props}
     >
-      {startIcon && (
-        <LeftIconComponent
-          color={startIcon.color}
-          iconName={startIcon.iconName}
-          scale={scale}
-        />
+      <StyledInputGroup
+        scale={scale}
+        variant={variant}
+        width="100%"
+        position="relative"
+        hasStartIcon={!!startIcon}
+        hasEndIcon={!!endIcon}
+      >
+        {startIcon && (
+          <LeftIconComponent
+            color={startIcon.color}
+            iconName={startIcon.iconName}
+            scale={scale}
+          />
+        )}
+        {cloneElement(children, { variant, disabled })}
+        {!isError && !isWarning && endIcon && (
+          <RightIconComponent
+            color={endIcon.color}
+            iconName={endIcon.iconName}
+            scale={scale}
+          />
+        )}
+        {isError && (
+          <RightIconComponent
+            iconName="CloseCircleSolid"
+            color="secondary"
+            scale={scale}
+          />
+        )}
+        {isWarning && (
+          <RightIconComponent
+            iconName="WarningSolid"
+            color="warning"
+            scale={scale}
+          />
+        )}
+      </StyledInputGroup>
+      {description && (
+        <TextDescription mt="4px" fontSize="12px" variant={variant}>
+          {description}
+        </TextDescription>
       )}
-      {cloneElement(children, { variant, disabled })}
-      {!isError && !isWarning && endIcon && (
-        <RightIconComponent
-          color={endIcon.color}
-          iconName={endIcon.iconName}
-          scale={scale}
-        />
-      )}
-      {isError && (
-        <RightIconComponent
-          iconName="CloseCircleSolid"
-          color="secondary"
-          scale={scale}
-        />
-      )}
-      {isWarning && (
-        <RightIconComponent
-          iconName="WarningSolid"
-          color="warning"
-          scale={scale}
-        />
-      )}
-    </StyledInputGroup>
+    </StyledInputWrapper>
   );
 };
 

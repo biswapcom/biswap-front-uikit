@@ -310,6 +310,7 @@ const Slider: React.FC<SliderProps> = ({
   // const labelOffset = progressPercentage - progressPercentage / MOVING_SLIDER_LABEL_OFFSET_FACTOR;
 
   const [infoVisible, setInfoVisible] = useState<boolean>(false);
+
   return (
     <Wrapper>
       <SliderContainer {...props}>

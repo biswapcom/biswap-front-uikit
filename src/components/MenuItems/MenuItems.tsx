@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Flex } from "../Box";
+import { Box, Flex } from "../Box";
 import { Text } from "../Text";
 import isTouchDevice from "../../util/isTouchDevice";
 import DropdownMenu from "../DropdownMenu/DropdownMenu";
@@ -9,6 +9,7 @@ import { ItemTypes, MenuItemsProps } from "./types";
 import { useMatchBreakpoints } from "../../contexts";
 import MobileDropdownMenu from "../DropdownMenu/MobileMenu/MobileDropdownMenu";
 import MenuItemDivider from "../MenuItem/Divider";
+import Marker from "../MenuItem/Marker";
 
 const MenuItems: React.FC<MenuItemsProps> = ({
   items = [],
@@ -16,6 +17,7 @@ const MenuItems: React.FC<MenuItemsProps> = ({
   activeSubItem,
   isMobileMenuOpened = false,
   mobileMenuCallback,
+  children,
   ...props
 }) => {
   const { isDesktop, isTablet } = useMatchBreakpoints();
@@ -30,16 +32,21 @@ const MenuItems: React.FC<MenuItemsProps> = ({
         />
       )}
       {items.map(
-        ({
-          label,
-          items: menuItems = [],
-          href,
-          icon = "",
-          isExtended,
-          showItemsOnMobile,
-          type,
-          hidden,
-        }) => {
+        (
+          {
+            label,
+            items: menuItems = [],
+            href,
+            icon = "",
+            isExtended,
+            showItemsOnMobile,
+            type,
+            hidden,
+            showNavBadge,
+          },
+          index
+        ) => {
+          const isMarker = items[index]?.showNavBadge;
           const statusColor = menuItems?.find(
             (menuItem) => menuItem.status !== undefined
           )?.status?.color;
@@ -68,14 +75,17 @@ const MenuItems: React.FC<MenuItemsProps> = ({
                     {type === ItemTypes.DIVIDER && <MenuItemDivider />}
                     {icon && <IconComponent iconName={icon} color="white" />}
                     {label && (
-                      <Text
-                        ml={"8px"}
-                        color="white"
-                        fontSize="14px"
-                        fontWeight="600"
-                      >
-                        {label}
-                      </Text>
+                      <Box ml="8px" position="relative">
+                        {isMarker && <Marker />}
+                        <Text
+                          color="white"
+                          fontSize="14px"
+                          lineHeight="20px"
+                          fontWeight="600"
+                        >
+                          {label}
+                        </Text>
+                      </Box>
                     )}
                   </MenuItem>
                 </DropdownMenu>

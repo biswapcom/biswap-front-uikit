@@ -33,6 +33,7 @@ export const links: MenuItemsType[] = [
   {
     label: "Trade",
     href: "/swap",
+    showNavBadge: true,
     items: [
       {
         label: "Swap",
@@ -126,6 +127,7 @@ export const links: MenuItemsType[] = [
   {
     label: "NFT",
     href: "/",
+    showNavBadge: true,
     items: [
       {
         label: "NFT Launchpad",
@@ -305,6 +307,11 @@ export const socials = [
           label: "Espanol",
           href: "https://t.me/biswap_espanol",
         },
+        {
+          icon: "INIcon",
+          label: "India",
+          href: "https://t.me/biswap_india",
+        },
       ],
     },
   },
@@ -327,6 +334,11 @@ export const socials = [
     label: "Instagram",
     icon: "InstagramIcon",
     href: "https://www.instagram.com/biswap_org/",
+  },
+  {
+    label: "Facebook",
+    icon: "FacebookIcon",
+    href: "https://www.facebook.com/profile.php?id=100082146264626",
   },
 ];
 

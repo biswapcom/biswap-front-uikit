@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import { BoxProps } from "../Box";
 import { DropdownMenuItems } from "../DropdownMenu/types";
 
@@ -22,6 +23,7 @@ export type MenuItemsType = {
   isMobileMenuOpened?: boolean;
   mobileMenuCallback?: (s: boolean) => void;
   hidden?: boolean;
+  showNavBadge?: boolean;
 };
 
 export interface MenuItemsProps extends BoxProps {
