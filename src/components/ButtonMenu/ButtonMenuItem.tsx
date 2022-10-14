@@ -60,7 +60,7 @@ const MenuItemButton: PolymorphicComponent<
 `;
 
 const ButtonMenuItem: PolymorphicComponent<ButtonMenuItemProps, "button"> = ({
-  isActive = false,
+  activeIndex,
   variant = variants.DARK,
   as,
   setWidth,
@@ -76,20 +76,26 @@ const ButtonMenuItem: PolymorphicComponent<ButtonMenuItemProps, "button"> = ({
 
   const itemWidth = ref.current?.clientWidth;
 
+  console.log('itemWidth', itemWidth)
+  console.log('itemIndex', itemIndex)
+
   useEffect(() => {
     if (itemWidth && setWidth) {
       setWidth((prev: Array<number>) => {
+        console.log('prevSetWidth', prev)
         return prev.length > itemIndex
           ? prev.map((i, index) => (index === itemIndex ? itemWidth : i))
           : [...prev, itemWidth];
       });
     }
-  }, [blockOffset, itemWidth, isXs, isSm, isMs, isLg, isXl, isXll, isXxl]);
+  }, [blockOffset, activeIndex, itemWidth, isXs, isSm, isMs, isLg, isXl, isXll, isXxl]);
 
   const omItemClickHandler = () => {
     onItemClick(itemIndex);
     onClick();
   };
+
+  const isActive = itemIndex === activeIndex
 
   return (
     <MenuItemButton

@@ -9,7 +9,7 @@ import {
 import { LayoutProps, SpaceProps } from "styled-system";
 
 export interface ButtonMenuItemProps extends BaseButtonMenuItemProps {
-  isActive?: boolean;
+  activeIndex?: number
   setWidth?: Dispatch<SetStateAction<any>>;
   itemIndex?: number;
   blockOffset?: number;
