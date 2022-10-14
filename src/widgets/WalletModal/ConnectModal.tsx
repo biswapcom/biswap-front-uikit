@@ -5,7 +5,6 @@ import styled from "styled-components";
 
 // components
 import WalletCard from "./WalletCard";
-import { Link } from "../../components/Link";
 import { Modal } from "../../widgets/Modal";
 import { Box } from "../../components/Box";
 import { Text } from "../../components/Text";
@@ -32,18 +31,6 @@ interface Props<T> {
   onDismiss?: () => void;
   wallets: WalletConfig<T>[];
 }
-
-// styles
-// const HelpLink = styled(Link)`
-//   display: flex;
-//   align-self: center;
-//   align-items: center;
-//   margin-top: 40px;
-//
-//   ${({ theme }) => theme.mediaQueries.sm} {
-//     margin-top: 24px;
-//   }
-// `;
 
 const WalletCardsWrapper = styled.div`
   display: grid;
@@ -84,11 +71,6 @@ const ScrollWrapper = styled(Box)`
 const StyledText = styled(Text)`
   align-self: flex-start;
 `;
-
-// const DefaultTextButton = styled(Button)`
-//   font-size: 14px;
-//   font-weight: 400;
-// `;
 
 const getPriority = (priority: WalletConfig["priority"]) =>
   typeof priority === "function" ? priority() : priority;

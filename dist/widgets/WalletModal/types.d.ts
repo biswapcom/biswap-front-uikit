@@ -3,23 +3,10 @@ import { SvgProps } from "../../components/Svg";
 export declare type Login<T> = (connectorId: T) => void;
 export declare enum ConnectorsTitleTypes {
     Metamask = "Metamask",
-    TrustWallet = "TrustWallet",
-    MathWallet = "MathWallet",
-    TokenPocket = "TokenPocket",
-    Coin98 = "Coin98",
-    WalletConnect = "WalletConnect",
-    BinanceChain = "Binance Chain",
-    SafePal = "SafePal Wallet",
-    Coinbase = "Coinbase Wallet",
-    iToken = "iToken",
-    BitKeep = "BitKeep Wallet",
-    BraveWallet = "Brave Wallet"
+    WalletConnect = "WalletConnect"
 }
 export declare enum ConnectorNames {
-    Injected = "injected",
-    WalletConnect = "walletconnect",
-    BSC = "bsc",
-    WalletLink = "walletlink"
+    WalletConnect = "walletconnect"
 }
 export interface WalletConfig<T = {}> {
     title: string;

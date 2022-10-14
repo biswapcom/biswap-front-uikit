@@ -8781,87 +8781,6 @@ var ToastContainer = function (_a) {
 };
 var templateObject_1$3;
 
-// import Metamask from "./icons/Metamask";
-// import MathWallet from "./icons/MathWallet";
-// import TokenPocket from "./icons/TokenPocket";
-// import TrustWallet from "./icons/TrustWallet";
-// import WalletConnect from "./icons/WalletConnect";
-// import BinanceChain from "./icons/BinanceChain";
-// import SafePalWallet from "./icons/SafePalWallet";
-// import Coin98 from "./icons/Coin98";
-// import CoinbaseIcon from "./icons/Coinbase";
-// import iToken from "./icons/iToken";
-// import BitKeepWallet from "./icons/BitKeepWallet";
-//import { Config, ConnectorNames } from "./types";
-// const connectors: Config[] = [
-//   {
-//     title: "Metamask",
-//     icon: Metamask,
-//     connectorId: ConnectorNames.Injected,
-//     priority: 1,
-//   },
-//   {
-//     title: "TrustWallet",
-//     icon: TrustWallet,
-//     connectorId: ConnectorNames.WalletConnect,
-//     priority: 2,
-//   },
-//   {
-//     title: "MathWallet",
-//     icon: MathWallet,
-//     connectorId: ConnectorNames.Injected,
-//     priority: 999,
-//   },
-//   {
-//     title: "TokenPocket",
-//     icon: TokenPocket,
-//     connectorId: ConnectorNames.Injected,
-//     priority: 4,
-//   },
-//   {
-//     title: "Coin98",
-//     icon: Coin98,
-//     connectorId: ConnectorNames.Injected,
-//     priority: 999,
-//   },
-//   {
-//     title: "WalletConnect",
-//     icon: WalletConnect,
-//     connectorId: ConnectorNames.WalletConnect,
-//     priority: 3,
-//   },
-//   {
-//     title: "Binance Chain",
-//     icon: BinanceChain,
-//     connectorId: ConnectorNames.BSC,
-//     priority: 999,
-//   },
-//   {
-//     title: "SafePal Wallet",
-//     icon: SafePalWallet,
-//     connectorId: ConnectorNames.Injected,
-//     priority: 999,
-//   },
-//   {
-//     title: "Coinbase Wallet",
-//     icon: CoinbaseIcon,
-//     connectorId: ConnectorNames.Injected,
-//     priority: 999,
-//   },
-//   {
-//     title: "iToken",
-//     icon: iToken,
-//     connectorId: ConnectorNames.Injected,
-//     priority: 999,
-//   },
-//   {
-//     title: "BitKeep Wallet",
-//     icon: BitKeepWallet,
-//     connectorId: ConnectorNames.Injected,
-//     priority: 999,
-//   },
-// ];
-//export default connectors;
 var connectorLocalStorageKey = "connectorIdv2";
 var walletLocalStorageKey = "wallet";
 
@@ -8920,17 +8839,6 @@ var templateObject_1$2;
 
 var HOW_TO_CONNECT_DOCS = "https://docs.biswap.org/faq/biswap-platform#how-do-i-connect-my-wallet-to-biswap";
 
-// styles
-// const HelpLink = styled(Link)`
-//   display: flex;
-//   align-self: center;
-//   align-items: center;
-//   margin-top: 40px;
-//
-//   ${({ theme }) => theme.mediaQueries.sm} {
-//     margin-top: 24px;
-//   }
-// `;
 var WalletCardsWrapper = styled.div(templateObject_1$1 || (templateObject_1$1 = __makeTemplateObject(["\n  display: grid;\n  grid-gap: 8px;\n  grid-template-columns: repeat(2, 1fr);\n  max-height: 50vh;\n  margin-left: 16px;\n  padding-right: 6px;\n\n  ", " {\n    padding-right: 0;\n    width: 352px;\n    margin-left: 32px;\n  }\n"], ["\n  display: grid;\n  grid-gap: 8px;\n  grid-template-columns: repeat(2, 1fr);\n  max-height: 50vh;\n  margin-left: 16px;\n  padding-right: 6px;\n\n  ", " {\n    padding-right: 0;\n    width: 352px;\n    margin-left: 32px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
@@ -8946,10 +8854,6 @@ var ScrollWrapper = styled(Box)(templateObject_2 || (templateObject_2 = __makeTe
     return getRgba(theme.colors.pastelBlue, theme, 0.24);
 });
 var StyledText = styled(Text)(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  align-self: flex-start;\n"], ["\n  align-self: flex-start;\n"])));
-// const DefaultTextButton = styled(Button)`
-//   font-size: 14px;
-//   font-weight: 400;
-// `;
 var getPriority = function (priority) {
     return typeof priority === "function" ? priority() : priority;
 };
@@ -9012,24 +8916,24 @@ function useWalletModal(login, wallets) {
 var ConnectorsTitleTypes;
 (function (ConnectorsTitleTypes) {
     ConnectorsTitleTypes["Metamask"] = "Metamask";
-    ConnectorsTitleTypes["TrustWallet"] = "TrustWallet";
-    ConnectorsTitleTypes["MathWallet"] = "MathWallet";
-    ConnectorsTitleTypes["TokenPocket"] = "TokenPocket";
-    ConnectorsTitleTypes["Coin98"] = "Coin98";
+    // TrustWallet = "TrustWallet",
+    // MathWallet = "MathWallet",
+    // TokenPocket = "TokenPocket",
+    // Coin98 = "Coin98",
     ConnectorsTitleTypes["WalletConnect"] = "WalletConnect";
-    ConnectorsTitleTypes["BinanceChain"] = "Binance Chain";
-    ConnectorsTitleTypes["SafePal"] = "SafePal Wallet";
-    ConnectorsTitleTypes["Coinbase"] = "Coinbase Wallet";
-    ConnectorsTitleTypes["iToken"] = "iToken";
-    ConnectorsTitleTypes["BitKeep"] = "BitKeep Wallet";
-    ConnectorsTitleTypes["BraveWallet"] = "Brave Wallet";
+    // BinanceChain = "Binance Chain",
+    // SafePal = "SafePal Wallet",
+    // Coinbase = "Coinbase Wallet",
+    // iToken = "iToken",
+    // BitKeep = "BitKeep Wallet",
+    // BraveWallet = "Brave Wallet",
 })(ConnectorsTitleTypes || (ConnectorsTitleTypes = {}));
 var ConnectorNames;
 (function (ConnectorNames) {
-    ConnectorNames["Injected"] = "injected";
+    // Injected = "injected",
     ConnectorNames["WalletConnect"] = "walletconnect";
-    ConnectorNames["BSC"] = "bsc";
-    ConnectorNames["WalletLink"] = "walletlink";
+    // BSC = "bsc",
+    //  WalletLink = "walletlink",
 })(ConnectorNames || (ConnectorNames = {}));
 // export const InstanceCheckRules = {
 //   [ConnectorsTitleTypes.Metamask]: "isMetaMask",

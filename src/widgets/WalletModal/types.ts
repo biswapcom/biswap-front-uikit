@@ -5,24 +5,24 @@ export type Login<T> = (connectorId: T) => void;
 
 export enum ConnectorsTitleTypes {
   Metamask = "Metamask",
-  TrustWallet = "TrustWallet",
-  MathWallet = "MathWallet",
-  TokenPocket = "TokenPocket",
-  Coin98 = "Coin98",
+  // TrustWallet = "TrustWallet",
+  // MathWallet = "MathWallet",
+  // TokenPocket = "TokenPocket",
+  // Coin98 = "Coin98",
   WalletConnect = "WalletConnect",
-  BinanceChain = "Binance Chain",
-  SafePal = "SafePal Wallet",
-  Coinbase = "Coinbase Wallet",
-  iToken = "iToken",
-  BitKeep = "BitKeep Wallet",
-  BraveWallet = "Brave Wallet",
+  // BinanceChain = "Binance Chain",
+  // SafePal = "SafePal Wallet",
+  // Coinbase = "Coinbase Wallet",
+  // iToken = "iToken",
+  // BitKeep = "BitKeep Wallet",
+  // BraveWallet = "Brave Wallet",
 }
 
 export enum ConnectorNames {
-  Injected = "injected",
+  // Injected = "injected",
   WalletConnect = "walletconnect",
-  BSC = "bsc",
-  WalletLink = "walletlink",
+  // BSC = "bsc",
+  //  WalletLink = "walletlink",
 }
 
 export interface WalletConfig<T = {}> {

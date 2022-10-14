@@ -66,7 +66,7 @@ const WalletCard: React.FC<React.PropsWithChildren<Props<any>>> = ({
 
   if (
     typeof window !== "undefined" &&
-      // @ts-ignore
+    // @ts-ignore
     !window.ethereum &&
     walletConfig.href &&
     isMobile

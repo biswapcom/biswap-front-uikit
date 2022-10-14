@@ -1,17 +1,21 @@
 import React from "react";
+
+// hooks
+import useWalletModal from "./useWalletModal";
+
+// components
 import Button from "../../components/Button/Button";
 import Flex from "../../components/Box/Flex";
-import useWalletModal from "./useWalletModal";
 import { MetamaskIcon } from "../../components/Svg";
-import BinanceChain from "./icons/BinanceChain";
-import Coinbase from "./icons/Coinbase";
+import BinanceWallet from "../../components/Svg/Icons/Wallet/BinanceWallet";
+import Coinbase from "../../components/Svg/Icons/Wallet/Coinbase";
 
 enum ConnectorNames {
   MetaMask = "metaMask",
-  Injected = "injected",
-  WalletConnect = "walletConnect",
+  // Injected = "injected",
+  // WalletConnect = "walletConnect",
   BSC = "bsc",
-  Blocto = "blocto",
+  //Blocto = "blocto",
   WalletLink = "coinbaseWallet",
 }
 
@@ -36,7 +40,7 @@ export const Wallet: React.FC = () => {
       },
       {
         title: "Binance Wallet",
-        icon: BinanceChain,
+        icon: BinanceWallet,
         connectorId: ConnectorNames.BSC,
         priority: 2,
       },
