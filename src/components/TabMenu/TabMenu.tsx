@@ -9,7 +9,7 @@ import styled, { css, DefaultTheme } from "styled-components";
 import { space, SpaceProps, variant } from "styled-system";
 import { TabBarProps, tabsScales, tabVariants } from "./types";
 import { sectionScaleVariants } from "./theme";
-import { useMatchBreakpoints } from "../../hooks";
+import { useMatchBreakpoints } from "../../contexts";
 
 interface StyledTabBarProps extends TabBarProps {
   theme: DefaultTheme;

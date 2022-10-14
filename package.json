@@ -63,6 +63,7 @@
     "@storybook/addon-postcss": "^2.0.0",
     "@types/styled-system": "5.1.15",
     "autoprefixer": "^10.4.8",
+    "classnames": "2.3.2",
     "lodash": "4.17.21",
     "postcss-flexbugs-fixes": "^5.0.2",
     "react-popper": "2.3.0",

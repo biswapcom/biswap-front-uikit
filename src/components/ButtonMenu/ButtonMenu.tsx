@@ -10,7 +10,7 @@ import { space, SpaceProps } from "styled-system";
 import { scales, variants } from "./types";
 import { ButtonMenuProps } from "./types";
 import getRgba from "../../util/getRgba";
-import { useMatchBreakpoints } from "../../hooks";
+import { useMatchBreakpoints } from "../../contexts";
 import { getOffset } from "./helpers";
 
 interface StyledButtonMenuProps extends ButtonMenuProps {

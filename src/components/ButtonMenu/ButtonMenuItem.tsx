@@ -10,7 +10,7 @@ import {
 } from "./types";
 import { variants } from "./types";
 import { PolymorphicComponent } from "../../util";
-import { useMatchBreakpoints } from "../../hooks";
+import { useMatchBreakpoints } from "../../contexts";
 import { getColorKey, getHoverKey } from "./helpers";
 
 interface ItemButtonProps extends BaseButtonMenuItemProps {
