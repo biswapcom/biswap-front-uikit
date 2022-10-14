@@ -370,5 +370,19 @@ export { default as TRIcon } from "./Icons/Flags/TR";
 export { default as ESIcon } from "./Icons/Flags/ES";
 export { default as INIcon } from "./Icons/Flags/IN";
 
+// Wallets
+export { default as BinanceWalletIcon } from "./Icons/Wallet/BinanceWallet";
+export { default as BraveWalletIcon } from "./Icons/Wallet/BraveWallet";
+export { default as ConnectWalletIcon } from "./Icons/Wallet/WalletConnect";
+export { default as MetamaskWalletIcon } from "./Icons/Wallet/Metamask";
+export { default as CoinbaseWalletIcon } from "./Icons/Wallet/Coinbase";
+export { default as MathWalletIcon } from "./Icons/Wallet/MathWallet";
+export { default as BitKeepWalletIcon } from "./Icons/Wallet/BitKeepWallet";
+export { default as Coin98WalletIcon } from "./Icons/Wallet/Coin98";
+export { default as ITokenWalletIcon } from "./Icons/Wallet/iToken";
+export { default as TrustWalletIcon } from "./Icons/Wallet/TrustWallet";
+export { default as TokenPocketWalletIcon } from "./Icons/Wallet/TokenPocket";
+export { default as SafePalWalletIcon } from "./Icons/Wallet/SafePalWallet";
+
 export { default as Svg } from "./Svg";
 export type { SvgProps } from "./types";
