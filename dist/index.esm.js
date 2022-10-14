@@ -3889,7 +3889,7 @@ var ButtonMenuItem = function (_a) {
     var ref = useRef(null);
     var itemWidth = (_c = (_b = ref === null || ref === void 0 ? void 0 : ref.current) === null || _b === void 0 ? void 0 : _b.clientWidth) !== null && _c !== void 0 ? _c : 0;
     useEffect(function () {
-        if (setWidth) {
+        if (itemWidth && setWidth) {
             setWidth(function (prev) {
                 return prev.length > itemIndex
                     ? prev.map(function (i, index) { return (index === itemIndex ? itemWidth : i); })
@@ -5687,11 +5687,11 @@ var TabItem = styled.button(templateObject_2$t || (templateObject_2$t = __makeTe
     return isActive && css(templateObject_1$L || (templateObject_1$L = __makeTemplateObject(["\n      color: ", ";\n    "], ["\n      color: ", ";\n    "])), theme.colors[variant === tabVariants.DARK ? "white" : "dark800"]);
 });
 var TabBarItem = function (_a) {
-    var _b;
-    var _c = _a.isActive, isActive = _c === void 0 ? false : _c, variant = _a.variant, setWidth = _a.setWidth, _d = _a.itemIndex, itemIndex = _d === void 0 ? 0 : _d, activeButtonIndex = _a.activeButtonIndex, blockOffset = _a.blockOffset, _e = _a.iconName, iconName = _e === void 0 ? "" : _e, _f = _a.iconColor, iconColor = _f === void 0 ? "" : _f, _g = _a.scale, scale = _g === void 0 ? tabsScales.MD : _g, as = _a.as, _h = _a.onItemClick, onItemClick = _h === void 0 ? function () { } : _h, _j = _a.onClick, onClick = _j === void 0 ? function () { } : _j, children = _a.children, props = __rest(_a, ["isActive", "variant", "setWidth", "itemIndex", "activeButtonIndex", "blockOffset", "iconName", "iconColor", "scale", "as", "onItemClick", "onClick", "children"]);
-    var _k = useMatchBreakpoints(), isXs = _k.isXs, isSm = _k.isSm, isMs = _k.isMs, isLg = _k.isLg, isXl = _k.isXl, isXll = _k.isXll, isXxl = _k.isXxl;
+    var _b, _c;
+    var _d = _a.isActive, isActive = _d === void 0 ? false : _d, variant = _a.variant, setWidth = _a.setWidth, _e = _a.itemIndex, itemIndex = _e === void 0 ? 0 : _e, activeButtonIndex = _a.activeButtonIndex, blockOffset = _a.blockOffset, _f = _a.iconName, iconName = _f === void 0 ? "" : _f, _g = _a.iconColor, iconColor = _g === void 0 ? "" : _g, _h = _a.scale, scale = _h === void 0 ? tabsScales.MD : _h, as = _a.as, _j = _a.onItemClick, onItemClick = _j === void 0 ? function () { } : _j, _k = _a.onClick, onClick = _k === void 0 ? function () { } : _k, children = _a.children, props = __rest(_a, ["isActive", "variant", "setWidth", "itemIndex", "activeButtonIndex", "blockOffset", "iconName", "iconColor", "scale", "as", "onItemClick", "onClick", "children"]);
+    var _l = useMatchBreakpoints(), isXs = _l.isXs, isSm = _l.isSm, isMs = _l.isMs, isLg = _l.isLg, isXl = _l.isXl, isXll = _l.isXll, isXxl = _l.isXxl;
     var ref = useRef(null);
-    var itemWidth = (_b = ref.current) === null || _b === void 0 ? void 0 : _b.clientWidth;
+    var itemWidth = (_c = (_b = ref === null || ref === void 0 ? void 0 : ref.current) === null || _b === void 0 ? void 0 : _b.clientWidth) !== null && _c !== void 0 ? _c : 0;
     useEffect(function () {
         if (itemWidth && setWidth) {
             setWidth(function (prev) {

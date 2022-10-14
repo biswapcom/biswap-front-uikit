@@ -67,7 +67,7 @@ const TabBarItem: PolymorphicComponent<TabBarItemProps, "button"> = ({
 
   const ref = useRef<HTMLButtonElement>(null);
 
-  const itemWidth = ref.current?.clientWidth;
+  const itemWidth = ref?.current?.clientWidth ?? 0;
 
   useEffect(() => {
     if (itemWidth && setWidth) {

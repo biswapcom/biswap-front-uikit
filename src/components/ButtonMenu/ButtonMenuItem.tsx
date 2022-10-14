@@ -78,7 +78,7 @@ const ButtonMenuItem: PolymorphicComponent<ButtonMenuItemProps, "button"> = ({
   const itemWidth = ref?.current?.clientWidth ?? 0;
 
   useEffect(() => {
-    if (setWidth) {
+    if (itemWidth && setWidth) {
       setWidth((prev: Array<number>) => {
         return prev.length > itemIndex
           ? prev.map((i, index) => (index === itemIndex ? itemWidth : i))
