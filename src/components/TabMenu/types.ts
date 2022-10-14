@@ -1,26 +1,38 @@
 import { SpaceProps } from "styled-system";
-import { Dispatch, ElementType, SetStateAction, ReactNode } from "react";
-import { PolymorphicComponentProps } from "../../util/polymorphic";
+import {
+  Dispatch,
+  ElementType,
+  SetStateAction,
+  ReactElement,
+  ReactNode,
+} from "react";
+import { PolymorphicComponentProps } from "../../util";
 
 export interface TabBarProps extends SpaceProps {
+  children: ReactElement[];
   variant?: typeof tabVariants.DARK | typeof tabVariants.LIGHT;
   activeIndex?: number;
   scale?: typeof tabsScales[keyof typeof tabsScales];
   disabled?: boolean;
   fullWidth?: boolean;
-  menuTitles?: Array<string>;
   menuIcons?: Array<string>;
-  customClass?: string;
-  isLight?: boolean;
+  scrollX?: boolean;
+  equalElementWidth?: boolean;
 }
 
-export interface TabBarItemProps extends TabBarProps {
+export interface TabBarItemProps {
+  variant?: string;
+  iconName?: string;
+  iconColor?: string;
   isActive?: boolean;
   setWidth?: Dispatch<SetStateAction<any>>;
   itemIndex?: number;
-  children?: ReactNode;
-  onAction?: (index: number) => void;
   blockOffset?: number;
+  onItemClick?: (index: number) => void;
+  onClick?: () => void;
+  as?: "a" | "button" | ElementType;
+  scale?: typeof tabsScales[keyof typeof tabsScales];
+  children?: ReactNode;
 }
 
 export type TabProps<P extends ElementType = "button"> =
