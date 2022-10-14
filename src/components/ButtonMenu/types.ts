@@ -12,6 +12,7 @@ export interface ButtonMenuItemProps extends BaseButtonMenuItemProps {
   isActive?: boolean
   setWidth?: Dispatch<SetStateAction<any>>;
   itemIndex?: number;
+  activeButtonIndex?: number;
   blockOffset?: number;
   elementRef?: RefObject<HTMLButtonElement>;
   onItemClick?: (index: number) => void;

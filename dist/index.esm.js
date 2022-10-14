@@ -3759,18 +3759,25 @@ var ButtonMenu = function (_a) {
     var _b = _a.activeIndex, activeIndex = _b === void 0 ? 0 : _b, _c = _a.scale, scale = _c === void 0 ? scales$a.MD : _c, _d = _a.variant, variant = _d === void 0 ? variants$6.DARK : _d, onItemClick = _a.onItemClick, disabled = _a.disabled, children = _a.children, _e = _a.fullWidth, fullWidth = _e === void 0 ? false : _e, _f = _a.flatBottom, flatBottom = _f === void 0 ? false : _f, _g = _a.flatTop, flatTop = _g === void 0 ? false : _g, _h = _a.withoutBackground, withoutBackground = _h === void 0 ? false : _h, _j = _a.scrollX, scrollX = _j === void 0 ? false : _j, equalElementWidth = _a.equalElementWidth, _k = _a.withoutAnimation, withoutAnimation = _k === void 0 ? false : _k, props = __rest(_a, ["activeIndex", "scale", "variant", "onItemClick", "disabled", "children", "fullWidth", "flatBottom", "flatTop", "withoutBackground", "scrollX", "equalElementWidth", "withoutAnimation"]);
     var _l = useState([]), widthsArr = _l[0], setWidthsArr = _l[1];
     var _m = useState(0), blockOffset = _m[0], setBlockOffset = _m[1];
-    var _o = useMatchBreakpoints(), isDesktop = _o.isDesktop, isMobile = _o.isMobile, isTablet = _o.isTablet;
+    var _o = useState(null), activeButtonIndex = _o[0], setActiveButtonIndex = _o[1];
+    var _p = useMatchBreakpoints(), isDesktop = _p.isDesktop, isMobile = _p.isMobile, isTablet = _p.isTablet;
     useEffect(function () {
-        setBlockOffset(widthsArr.slice(0, activeIndex).reduce(function (sum, elem) { return sum + elem; }, 0));
-    }, [widthsArr, activeIndex, isDesktop, isMobile, isTablet]);
+        setActiveButtonIndex(activeIndex);
+    }, [activeIndex]);
+    useEffect(function () {
+        if (activeButtonIndex) {
+            setBlockOffset(widthsArr.slice(0, activeButtonIndex).reduce(function (sum, elem) { return sum + elem; }, 0));
+        }
+    }, [widthsArr, activeButtonIndex, isDesktop, isMobile, isTablet]);
     return (React.createElement(Wrapper$f, __assign({ flatBottom: flatBottom, flatTop: flatTop, fullWidth: fullWidth, withoutBackground: withoutBackground, variant: variant, scrollX: scrollX }, props),
         !disabled && (React.createElement(Selection$2, { flatTop: flatTop, flatBottom: flatBottom, scale: scale, width: widthsArr[activeIndex], offset: getOffset(blockOffset, flatTop || flatBottom), variant: variant, withoutAnimation: withoutAnimation })),
         React.createElement(StyledButtonMenu, __assign({ disabled: disabled, variant: variant, fullWidth: fullWidth, withoutBackground: withoutBackground, equalElementWidth: equalElementWidth }, props), Children.map(children, function (child, index) {
             return cloneElement(child, {
+                isActive: activeIndex === index,
                 onItemClick: onItemClick ? function () { return onItemClick(index); } : undefined,
                 setWidth: setWidthsArr,
                 itemIndex: index,
-                activeIndex: activeIndex,
+                activeButtonIndex: activeButtonIndex,
                 blockOffset: blockOffset,
                 scale: scale,
                 variant: variant,
@@ -3874,23 +3881,24 @@ var MenuItemButton = styled.button(templateObject_2$J || (templateObject_2$J = _
     });
 });
 var ButtonMenuItem = function (_a) {
-    var _b;
-    var _c = _a.isActive, isActive = _c === void 0 ? false : _c, _d = _a.variant, variant = _d === void 0 ? variants$6.DARK : _d, as = _a.as, setWidth = _a.setWidth, _e = _a.itemIndex, itemIndex = _e === void 0 ? 0 : _e, blockOffset = _a.blockOffset, _f = _a.onItemClick, onItemClick = _f === void 0 ? function () { } : _f, _g = _a.onClick, onClick = _g === void 0 ? function () { } : _g, props = __rest(_a, ["isActive", "variant", "as", "setWidth", "itemIndex", "blockOffset", "onItemClick", "onClick"]);
-    var _h = useMatchBreakpoints(), isXs = _h.isXs, isSm = _h.isSm, isMs = _h.isMs, isLg = _h.isLg, isXl = _h.isXl, isXll = _h.isXll, isXxl = _h.isXxl;
+    var _b, _c;
+    var _d = _a.isActive, isActive = _d === void 0 ? false : _d, _e = _a.variant, variant = _e === void 0 ? variants$6.DARK : _e, as = _a.as, setWidth = _a.setWidth, _f = _a.itemIndex, itemIndex = _f === void 0 ? 0 : _f, activeButtonIndex = _a.activeButtonIndex, blockOffset = _a.blockOffset, _g = _a.onItemClick, onItemClick = _g === void 0 ? function () { } : _g, _h = _a.onClick, onClick = _h === void 0 ? function () { } : _h, props = __rest(_a, ["isActive", "variant", "as", "setWidth", "itemIndex", "activeButtonIndex", "blockOffset", "onItemClick", "onClick"]);
+    var _j = useMatchBreakpoints(), isXs = _j.isXs, isSm = _j.isSm, isMs = _j.isMs, isLg = _j.isLg, isXl = _j.isXl, isXll = _j.isXll, isXxl = _j.isXxl;
     var ref = useRef(null);
-    var itemWidth = (_b = ref === null || ref === void 0 ? void 0 : ref.current) === null || _b === void 0 ? void 0 : _b.clientWidth;
-    console.log('itemWidth', itemWidth);
-    console.log('itemIndex', itemIndex);
+    console.log('refrefref', ref);
+    var itemWidth = (_c = (_b = ref === null || ref === void 0 ? void 0 : ref.current) === null || _b === void 0 ? void 0 : _b.clientWidth) !== null && _c !== void 0 ? _c : 0;
+    console.log('buttonItemWidth', itemWidth);
+    console.log('buttonItemIndex', itemIndex);
     useEffect(function () {
-        if (itemWidth && setWidth) {
+        if (setWidth) {
             setWidth(function (prev) {
-                console.log('prevSetWidth', prev);
+                console.log('buttonPrevSetWidth', prev);
                 return prev.length > itemIndex
                     ? prev.map(function (i, index) { return (index === itemIndex ? itemWidth : i); })
                     : __spreadArray(__spreadArray([], prev, true), [itemWidth], false);
             });
         }
-    }, [blockOffset, ref === null || ref === void 0 ? void 0 : ref.current, itemWidth, isXs, isSm, isMs, isLg, isXl, isXll, isXxl]);
+    }, [blockOffset, activeButtonIndex, itemWidth, isXs, isSm, isMs, isLg, isXl, isXll, isXxl]);
     var omItemClickHandler = function () {
         onItemClick(itemIndex);
         onClick();

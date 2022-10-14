@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, {useEffect, useRef} from "react";
 import styled, { css } from "styled-components";
 import { variant } from "styled-system";
 import { styleVariants, scaleVariants } from "./theme";
@@ -65,6 +65,7 @@ const ButtonMenuItem: PolymorphicComponent<ButtonMenuItemProps, "button"> = ({
   as,
   setWidth,
   itemIndex = 0,
+  activeButtonIndex,
   blockOffset,
   onItemClick = () => {},
   onClick = () => {},
@@ -74,21 +75,23 @@ const ButtonMenuItem: PolymorphicComponent<ButtonMenuItemProps, "button"> = ({
 
   const ref = useRef<HTMLButtonElement>(null);
 
-  const itemWidth = ref?.current?.clientWidth;
+  console.log('refrefref', ref)
 
-  console.log('itemWidth', itemWidth)
-  console.log('itemIndex', itemIndex)
+  const itemWidth = ref?.current?.clientWidth ?? 0;
+
+  console.log('buttonItemWidth', itemWidth)
+  console.log('buttonItemIndex', itemIndex)
 
   useEffect(() => {
-    if (itemWidth && setWidth) {
+    if (setWidth) {
       setWidth((prev: Array<number>) => {
-        console.log('prevSetWidth', prev)
+        console.log('buttonPrevSetWidth', prev)
         return prev.length > itemIndex
           ? prev.map((i, index) => (index === itemIndex ? itemWidth : i))
           : [...prev, itemWidth];
       });
     }
-  }, [blockOffset, ref?.current, itemWidth, isXs, isSm, isMs, isLg, isXl, isXll, isXxl]);
+  }, [blockOffset, activeButtonIndex, itemWidth, isXs, isSm, isMs, isLg, isXl, isXll, isXxl]);
 
   const omItemClickHandler = () => {
     onItemClick(itemIndex);
