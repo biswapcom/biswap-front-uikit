@@ -19,6 +19,7 @@ export interface TabBarItemProps {
     isActive?: boolean;
     setWidth?: Dispatch<SetStateAction<any>>;
     itemIndex?: number;
+    activeButtonIndex?: number;
     blockOffset?: number;
     onItemClick?: (index: number) => void;
     onClick?: () => void;
