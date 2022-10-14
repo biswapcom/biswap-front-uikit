@@ -6,7 +6,7 @@ import IconButton from "./IconButton";
 interface Props {
   onClick?: () => void;
   expanded?: boolean;
-  children: ReactNode;
+  children?: ReactNode;
 }
 
 export const ExpandableButton: React.FC<Props> = ({

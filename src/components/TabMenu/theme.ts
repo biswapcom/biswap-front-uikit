@@ -1,6 +1,6 @@
 import { tabsScales, tabVariants } from "./types";
 
-export const menuScaleVariants = {
+export const barItemScaleVariant = {
   [tabsScales.LG]: {
     height: "40px",
     padding: "0 16px",
@@ -21,31 +21,19 @@ export const menuScaleVariants = {
   },
 };
 
-export const sliderScaleVariant = {
-  [tabsScales.LG]: {
-    padding: "0 16px",
-  },
-  [tabsScales.MD]: {
-    padding: "0 12px",
-  },
-  [tabsScales.SM]: {
-    padding: "0 8px",
-  },
-};
-
-export const menuStyleVariants = {
+export const barVariants = {
   [tabVariants.DARK]: {
-    color: "white",
+    color: "pastelBlue",
 
     ":hover:not(:disabled)": {
       color: "white",
     },
   },
   [tabVariants.LIGHT]: {
-    color: "backgroundDark",
+    color: "gray900",
 
     ":hover:not(:disabled)": {
-      color: "backgroundDark",
+      color: "dark800",
     },
   },
 };
@@ -62,5 +50,17 @@ export const menuIconScaleVariants = {
   [tabsScales.SM]: {
     width: "16px",
     marginRight: "6px",
+  },
+};
+
+export const sectionScaleVariants = {
+  [tabsScales.LG]: {
+    padding: "0 16px",
+  },
+  [tabsScales.MD]: {
+    padding: "0 12px",
+  },
+  [tabsScales.SM]: {
+    padding: "0 8px",
   },
 };

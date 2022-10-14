@@ -8,7 +8,7 @@ type StyledButtonMenuProps = {
 };
 
 const getBackgroundColor = ({ theme, variant }: StyledButtonMenuProps) => {
-  return variant === variants.SELECT
+  return variant === variants.DARK
     ? theme.colors.tooltip
     : getRgba(theme.colors.pastelBlue, theme, 0.08);
 };
@@ -18,10 +18,6 @@ const StyledButtonMenu = styled.div<{ variant: Variant }>`
   border-radius: 8px;
   display: inline-flex;
   padding: 4px;
-  & > button + button,
-  & > a + a {
-    margin-left: 2px; // To avoid focus shadow overlap
-  }
 `;
 
 export default StyledButtonMenu;

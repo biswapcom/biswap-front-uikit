@@ -1,9 +1,21 @@
-import { ElementType, ReactElement, ReactNode } from "react";
+import {
+  Dispatch,
+  ElementType,
+  ReactElement,
+  ReactNode,
+  RefObject,
+  SetStateAction,
+} from "react";
 import { LayoutProps, SpaceProps } from "styled-system";
-import { PolymorphicComponentProps } from "../../util/polymorphic";
 
 export interface ButtonMenuItemProps extends BaseButtonMenuItemProps {
   isActive?: boolean;
+  setWidth?: Dispatch<SetStateAction<any>>;
+  itemIndex?: number;
+  blockOffset?: number;
+  elementRef?: RefObject<HTMLButtonElement>;
+  onItemClick?: (index: number) => void;
+  onClick?: () => void;
 }
 // export type ButtonMenuItemProps<P extends ElementType = "button"> =
 //   PolymorphicComponentProps<P, BaseButtonMenuItemProps>;
@@ -48,6 +60,9 @@ export interface ButtonMenuProps extends SpaceProps {
   flatBottom?: boolean;
   flatTop?: boolean;
   withoutBackground?: boolean;
+  scrollX?: boolean;
+  equalElementWidth?: boolean;
+  withoutAnimation?: boolean;
 }
 
 //--------------
@@ -61,11 +76,14 @@ export const scales = {
 } as const;
 
 export const variants = {
-  PRIMARY: "primary",
-  WARNING: "warning",
-  SELECT: "select",
-  SELECT_LIGHT: "selectLight",
+  DARK: "dark",
+  LIGHT: "light",
+  WARNING_LIGHT: "warningLight",
+  WARNING_DARK: "warningDark",
 } as const;
 
 export type Scale = typeof scales[keyof typeof scales];
 export type Variant = typeof variants[keyof typeof variants];
+
+export type ColorKey = "pastelBlue" | "gray900";
+export type HoverKey = "white" | "dark800";
