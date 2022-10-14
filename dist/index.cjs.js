@@ -3780,8 +3780,10 @@ var ButtonMenu = function (_a) {
         setActiveButtonIndex(activeIndex);
     }, [activeIndex]);
     React.useEffect(function () {
-        if (activeButtonIndex) {
-            setBlockOffset(widthsArr.slice(0, activeButtonIndex).reduce(function (sum, elem) { return sum + elem; }, 0));
+        if (activeButtonIndex !== null) {
+            setBlockOffset(widthsArr
+                .slice(0, activeButtonIndex)
+                .reduce(function (sum, elem) { return sum + elem; }, 0));
         }
     }, [widthsArr, activeButtonIndex, isDesktop, isMobile, isTablet]);
     return (React__default["default"].createElement(Wrapper$f, __assign({ flatBottom: flatBottom, flatTop: flatTop, fullWidth: fullWidth, withoutBackground: withoutBackground, variant: variant, scrollX: scrollX }, props),
@@ -3900,20 +3902,27 @@ var ButtonMenuItem = function (_a) {
     var _d = _a.isActive, isActive = _d === void 0 ? false : _d, _e = _a.variant, variant = _e === void 0 ? variants$6.DARK : _e, as = _a.as, setWidth = _a.setWidth, _f = _a.itemIndex, itemIndex = _f === void 0 ? 0 : _f, activeButtonIndex = _a.activeButtonIndex, blockOffset = _a.blockOffset, _g = _a.onItemClick, onItemClick = _g === void 0 ? function () { } : _g, _h = _a.onClick, onClick = _h === void 0 ? function () { } : _h, props = __rest(_a, ["isActive", "variant", "as", "setWidth", "itemIndex", "activeButtonIndex", "blockOffset", "onItemClick", "onClick"]);
     var _j = useMatchBreakpoints(), isXs = _j.isXs, isSm = _j.isSm, isMs = _j.isMs, isLg = _j.isLg, isXl = _j.isXl, isXll = _j.isXll, isXxl = _j.isXxl;
     var ref = React.useRef(null);
-    console.log('refrefref', ref);
     var itemWidth = (_c = (_b = ref === null || ref === void 0 ? void 0 : ref.current) === null || _b === void 0 ? void 0 : _b.clientWidth) !== null && _c !== void 0 ? _c : 0;
-    console.log('buttonItemWidth', itemWidth);
-    console.log('buttonItemIndex', itemIndex);
     React.useEffect(function () {
         if (setWidth) {
             setWidth(function (prev) {
-                console.log('buttonPrevSetWidth', prev);
                 return prev.length > itemIndex
                     ? prev.map(function (i, index) { return (index === itemIndex ? itemWidth : i); })
                     : __spreadArray(__spreadArray([], prev, true), [itemWidth], false);
             });
         }
-    }, [blockOffset, activeButtonIndex, itemWidth, isXs, isSm, isMs, isLg, isXl, isXll, isXxl]);
+    }, [
+        blockOffset,
+        activeButtonIndex,
+        itemWidth,
+        isXs,
+        isSm,
+        isMs,
+        isLg,
+        isXl,
+        isXll,
+        isXxl,
+    ]);
     var omItemClickHandler = function () {
         onItemClick(itemIndex);
         onClick();
