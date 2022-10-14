@@ -186,14 +186,24 @@ const ButtonMenu: React.FC<ButtonMenuProps> = ({
   const [widthsArr, setWidthsArr] = useState([]);
 
   const [blockOffset, setBlockOffset] = useState(0);
+  const [activeButtonIndex, setActiveButtonIndex] =
+    useState<number | null>(null);
 
   const { isDesktop, isMobile, isTablet } = useMatchBreakpoints();
 
   useEffect(() => {
-    setBlockOffset(
-      widthsArr.slice(0, activeIndex).reduce((sum, elem) => sum + elem, 0)
-    );
-  }, [widthsArr, activeIndex, isDesktop, isMobile, isTablet]);
+    setActiveButtonIndex(activeIndex);
+  }, [activeIndex]);
+
+  useEffect(() => {
+    if (activeButtonIndex !== null) {
+      setBlockOffset(
+        widthsArr
+          .slice(0, activeButtonIndex)
+          .reduce((sum, elem) => sum + elem, 0)
+      );
+    }
+  }, [widthsArr, activeButtonIndex, isDesktop, isMobile, isTablet]);
 
   return (
     <Wrapper
@@ -230,6 +240,7 @@ const ButtonMenu: React.FC<ButtonMenuProps> = ({
             onItemClick: onItemClick ? () => onItemClick(index) : undefined,
             setWidth: setWidthsArr,
             itemIndex: index,
+            activeButtonIndex,
             blockOffset,
             scale,
             variant,

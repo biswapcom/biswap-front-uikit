@@ -52,6 +52,7 @@ const TabBarItem: PolymorphicComponent<TabBarItemProps, "button"> = ({
   variant,
   setWidth,
   itemIndex = 0,
+  activeButtonIndex,
   blockOffset,
   iconName = "",
   iconColor = "",
@@ -66,7 +67,7 @@ const TabBarItem: PolymorphicComponent<TabBarItemProps, "button"> = ({
 
   const ref = useRef<HTMLButtonElement>(null);
 
-  const itemWidth = ref.current?.clientWidth;
+  const itemWidth = ref?.current?.clientWidth ?? 0;
 
   useEffect(() => {
     if (itemWidth && setWidth) {
@@ -76,7 +77,7 @@ const TabBarItem: PolymorphicComponent<TabBarItemProps, "button"> = ({
           : [...prev, itemWidth];
       });
     }
-  }, [blockOffset, itemWidth, isXs, isSm, isMs, isLg, isXl, isXll, isXxl]);
+  }, [blockOffset, itemWidth, activeButtonIndex, isXs, isSm, isMs, isLg, isXl, isXll, isXxl]);
 
   const omItemClickHandler = () => {
     onItemClick(itemIndex);
