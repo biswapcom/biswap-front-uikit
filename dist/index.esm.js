@@ -8972,6 +8972,10 @@ var WalletCard = function (_a) {
             href: downloadLink.desktop,
             style: {
                 textDecoration: "none",
+                display: 'flex',
+                alignItems: 'center',
+                padding: '0 24px',
+                borderRadius: '8px'
             },
             target: "_blank",
             rel: "noopener noreferrer",
@@ -8992,8 +8996,9 @@ var WalletCard = function (_a) {
             rel: "noopener noreferrer",
         };
     }
-    return (React.createElement(StyledButton, __assign({ scale: "xl", variant: "tertiary", id: "wallet-connect-".concat(title.toLowerCase()) }, linkAction, { startIcon: React.createElement(Icon, { width: "24px" }) }),
-        React.createElement(Text, { bold: true, color: "primary", fontSize: "12px" }, title)));
+    return (React.createElement(StyledButton, __assign({ scale: "xl", variant: "tertiary", id: "wallet-connect-".concat(title.toLowerCase()) }, linkAction),
+        React.createElement(Icon, { width: "24px" }),
+        React.createElement(Text, { ml: '8px', bold: true, color: "primary", fontSize: "12px" }, title)));
 };
 var templateObject_1$2;
 
@@ -9095,34 +9100,6 @@ var ConnectorNames;
     // BSC = "bsc",
     //  WalletLink = "walletlink",
 })(ConnectorNames || (ConnectorNames = {}));
-// export const InstanceCheckRules = {
-//   [ConnectorsTitleTypes.Metamask]: "isMetaMask",
-//   [ConnectorsTitleTypes.TrustWallet]: "isTrust",
-//   [ConnectorsTitleTypes.MathWallet]: "isMathWallet",
-//   [ConnectorsTitleTypes.TokenPocket]: "isTokenPocket",
-//   [ConnectorsTitleTypes.Coin98]: "isCoin98",
-//   [ConnectorsTitleTypes.WalletConnect]: "isWalletConnect",
-//   [ConnectorsTitleTypes.BinanceChain]: "BinanceChain",
-//   [ConnectorsTitleTypes.SafePal]: "isSafePal",
-//   [ConnectorsTitleTypes.Coinbase]: "isCoinbaseWallet",
-//   [ConnectorsTitleTypes.iToken]: "isHbWallet",
-//   [ConnectorsTitleTypes.BitKeep]: "isBitKeep",
-//   [ConnectorsTitleTypes.BraveWallet]: "isBraveWallet",
-// };
-// export type Login = (
-//   connectorID: ConnectorNames,
-//   instanceCheckRule?: InstanceCheckRuleType
-// ) => void;
-// export type InstanceCheckRuleType =
-//   typeof InstanceCheckRules[ConnectorsTitleTypes];
-// export interface Config {
-//   priority: number;
-//   title: ConnectorsTitleTypes;
-//   icon: FC<SvgProps>;
-//   connectorId: ConnectorNames;
-//   helpHref: string;
-//   instanceCheckRule: InstanceCheckRuleType;
-// }
 
 var ResetCSS = createGlobalStyle(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  //@font-face {\n  //  font-family: 'CodecPro';\n  //  font-weight: 600;\n  //  src: url('assets/fonts/CodecProBold/font.woff2') format('woff2'), url('assets/fonts/CodecProBold/font.woff') format('woff');\n  //}\n  //@font-face {\n  //  font-weight: 300;\n  //  font-family: 'CodecPro';\n  //  src: url('assets/fonts/CodecProNews/font.woff2') format('woff2'), url('assets/fonts/CodecProNews/font.woff') format('woff');\n  //}\n  //@font-face {\n  //  font-family: 'CodecPro';\n  //  font-weight: 400;\n  //  src: url('assets/fonts/CodecProRegular/font.woff2') format('woff2'), url('assets/fonts/CodecProRegular/font.woff') format('woff');\n  //}\n  //@font-face {\n  //  font-family: 'CodecPro';\n  //  font-weight: 900;\n  //  src: url('assets/fonts/CodecProExtraBold/font.woff2') format('woff2'), url('assets/fonts/CodecProExtraBold/font.woff') format('woff');\n  //}\n  \n  /* prettier-ignore */\n  html, body, div, span, applet, object, iframe,\n  h1, h2, h3, h4, h5, h6, p, blockquote, pre,\n  a, abbr, acronym, address, big, cite, code,\n  del, dfn, em, img, ins, kbd, q, s, samp,\n  small, strike, strong, sub, sup, tt, var,\n  b, u, i, center,\n  dl, dt, dd, ol, ul, li,\n  fieldset, form, label, legend,\n  table, caption, tbody, tfoot, thead, tr, th, td,\n  article, aside, canvas, details, embed, \n  figure, figcaption, footer, header, hgroup, \n  menu, nav, output, ruby, section, summary,\n  time, mark, audio, video {\n    margin: 0;\n    padding: 0;\n    border: 0;\n    font-size: 100%;\n    vertical-align: baseline;\n  }\n  /* HTML5 display-role reset for older browsers */\n  /* prettier-ignore */\n  article, aside, details, figcaption, figure, \n  footer, header, hgroup, menu, nav, section {\n    display: block;\n  }\n  body {\n    line-height: 1;\n    font-size: 16px;\n  }\n  ol,\n  ul {\n    list-style: disc;\n    list-style-position: inside;\n  }\n  blockquote,\n  q {\n    quotes: none;\n  }\n  blockquote:before,\n  blockquote:after,\n  q:before,\n  q:after {\n    content: \"\";\n    content: none;\n  }\n  table {\n    border-collapse: collapse;\n    border-spacing: 0;\n  }\n  a {\n    color: inherit;\n    text-decoration: none;\n  }\n  [role=\"button\"] {\n    cursor: pointer;\n  }\n  *,\n  *::before,\n  *::after {\n    box-sizing: border-box;\n  }\n  * {\n    font-family: 'CodecPro', sans-serif;\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n  }\n\n  /* Number */\n  input::-webkit-outer-spin-button,\n  input::-webkit-inner-spin-button {\n    -webkit-appearance: none;\n    margin: 0;\n  }\n  input[type=number] {\n    -moz-appearance: textfield;\n  }\n\n  /* Scrollbar */\n  ::-webkit-scrollbar {\n    width: 8px;\n  }\n  ::-webkit-scrollbar-thumb {\n    background: ", "; \n    border-radius: 8px;\n  }\n  ::-webkit-scrollbar-track {\n    box-shadow: inset 0 0 5px ", "; \n    border-radius: 10px;\n  }\n\n  /* Slider */ \n  input[type=range] {\n    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */\n    width: 100%; /* Specific width is required for Firefox. */\n    background: transparent; /* Otherwise white in Chrome */\n  }\n  input[type=range]::-webkit-slider-thumb {\n    -webkit-appearance: none;\n  }\n  input[type=range]:focus {\n    outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */\n  }\n  input[type=range]::-ms-track {\n    width: 100%;\n    cursor: pointer;\n    /* Hides the slider so custom styles can be added */\n    background: transparent; \n    border-color: transparent;\n    color: transparent;\n  }  \n"], ["\n  //@font-face {\n  //  font-family: 'CodecPro';\n  //  font-weight: 600;\n  //  src: url('assets/fonts/CodecProBold/font.woff2') format('woff2'), url('assets/fonts/CodecProBold/font.woff') format('woff');\n  //}\n  //@font-face {\n  //  font-weight: 300;\n  //  font-family: 'CodecPro';\n  //  src: url('assets/fonts/CodecProNews/font.woff2') format('woff2'), url('assets/fonts/CodecProNews/font.woff') format('woff');\n  //}\n  //@font-face {\n  //  font-family: 'CodecPro';\n  //  font-weight: 400;\n  //  src: url('assets/fonts/CodecProRegular/font.woff2') format('woff2'), url('assets/fonts/CodecProRegular/font.woff') format('woff');\n  //}\n  //@font-face {\n  //  font-family: 'CodecPro';\n  //  font-weight: 900;\n  //  src: url('assets/fonts/CodecProExtraBold/font.woff2') format('woff2'), url('assets/fonts/CodecProExtraBold/font.woff') format('woff');\n  //}\n  \n  /* prettier-ignore */\n  html, body, div, span, applet, object, iframe,\n  h1, h2, h3, h4, h5, h6, p, blockquote, pre,\n  a, abbr, acronym, address, big, cite, code,\n  del, dfn, em, img, ins, kbd, q, s, samp,\n  small, strike, strong, sub, sup, tt, var,\n  b, u, i, center,\n  dl, dt, dd, ol, ul, li,\n  fieldset, form, label, legend,\n  table, caption, tbody, tfoot, thead, tr, th, td,\n  article, aside, canvas, details, embed, \n  figure, figcaption, footer, header, hgroup, \n  menu, nav, output, ruby, section, summary,\n  time, mark, audio, video {\n    margin: 0;\n    padding: 0;\n    border: 0;\n    font-size: 100%;\n    vertical-align: baseline;\n  }\n  /* HTML5 display-role reset for older browsers */\n  /* prettier-ignore */\n  article, aside, details, figcaption, figure, \n  footer, header, hgroup, menu, nav, section {\n    display: block;\n  }\n  body {\n    line-height: 1;\n    font-size: 16px;\n  }\n  ol,\n  ul {\n    list-style: disc;\n    list-style-position: inside;\n  }\n  blockquote,\n  q {\n    quotes: none;\n  }\n  blockquote:before,\n  blockquote:after,\n  q:before,\n  q:after {\n    content: \"\";\n    content: none;\n  }\n  table {\n    border-collapse: collapse;\n    border-spacing: 0;\n  }\n  a {\n    color: inherit;\n    text-decoration: none;\n  }\n  [role=\"button\"] {\n    cursor: pointer;\n  }\n  *,\n  *::before,\n  *::after {\n    box-sizing: border-box;\n  }\n  * {\n    font-family: 'CodecPro', sans-serif;\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n  }\n\n  /* Number */\n  input::-webkit-outer-spin-button,\n  input::-webkit-inner-spin-button {\n    -webkit-appearance: none;\n    margin: 0;\n  }\n  input[type=number] {\n    -moz-appearance: textfield;\n  }\n\n  /* Scrollbar */\n  ::-webkit-scrollbar {\n    width: 8px;\n  }\n  ::-webkit-scrollbar-thumb {\n    background: ", "; \n    border-radius: 8px;\n  }\n  ::-webkit-scrollbar-track {\n    box-shadow: inset 0 0 5px ", "; \n    border-radius: 10px;\n  }\n\n  /* Slider */ \n  input[type=range] {\n    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */\n    width: 100%; /* Specific width is required for Firefox. */\n    background: transparent; /* Otherwise white in Chrome */\n  }\n  input[type=range]::-webkit-slider-thumb {\n    -webkit-appearance: none;\n  }\n  input[type=range]:focus {\n    outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */\n  }\n  input[type=range]::-ms-track {\n    width: 100%;\n    cursor: pointer;\n    /* Hides the slider so custom styles can be added */\n    background: transparent; \n    border-color: transparent;\n    color: transparent;\n  }  \n"])), function (_a) {
     var theme = _a.theme;

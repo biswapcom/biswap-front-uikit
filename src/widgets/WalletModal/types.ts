@@ -37,34 +37,3 @@ export interface WalletConfig<T = {}> {
     mobile?: string;
   };
 }
-
-// export const InstanceCheckRules = {
-//   [ConnectorsTitleTypes.Metamask]: "isMetaMask",
-//   [ConnectorsTitleTypes.TrustWallet]: "isTrust",
-//   [ConnectorsTitleTypes.MathWallet]: "isMathWallet",
-//   [ConnectorsTitleTypes.TokenPocket]: "isTokenPocket",
-//   [ConnectorsTitleTypes.Coin98]: "isCoin98",
-//   [ConnectorsTitleTypes.WalletConnect]: "isWalletConnect",
-//   [ConnectorsTitleTypes.BinanceChain]: "BinanceChain",
-//   [ConnectorsTitleTypes.SafePal]: "isSafePal",
-//   [ConnectorsTitleTypes.Coinbase]: "isCoinbaseWallet",
-//   [ConnectorsTitleTypes.iToken]: "isHbWallet",
-//   [ConnectorsTitleTypes.BitKeep]: "isBitKeep",
-//   [ConnectorsTitleTypes.BraveWallet]: "isBraveWallet",
-// };
-
-// export type Login = (
-//   connectorID: ConnectorNames,
-//   instanceCheckRule?: InstanceCheckRuleType
-// ) => void;
-
-// export type InstanceCheckRuleType =
-//   typeof InstanceCheckRules[ConnectorsTitleTypes];
-// export interface Config {
-//   priority: number;
-//   title: ConnectorsTitleTypes;
-//   icon: FC<SvgProps>;
-//   connectorId: ConnectorNames;
-//   helpHref: string;
-//   instanceCheckRule: InstanceCheckRuleType;
-// }
