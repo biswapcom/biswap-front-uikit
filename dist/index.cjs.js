@@ -8139,7 +8139,7 @@ var Audit = function () { return (React__default["default"].createElement(Audite
             } })))); };
 var templateObject_1$n, templateObject_2$f;
 
-var Wrapper$2 = styled__default["default"].footer(templateObject_1$m || (templateObject_1$m = __makeTemplateObject(["\n  color: #fff;\n  background: ", ";\n  padding: 32px 16px;\n  transition: padding-left 0.2s;\n  z-index: 10;\n"], ["\n  color: #fff;\n  background: ", ";\n  padding: 32px 16px;\n  transition: padding-left 0.2s;\n  z-index: 10;\n"])), function (_a) {
+var Wrapper$2 = styled__default["default"].footer(templateObject_1$m || (templateObject_1$m = __makeTemplateObject(["\n  color: #fff;\n  background: ", ";\n  padding: 56px 16px 32px;\n  transition: padding-left 0.2s;\n  z-index: 10;\n"], ["\n  color: #fff;\n  background: ", ";\n  padding: 56px 16px 32px;\n  transition: padding-left 0.2s;\n  z-index: 10;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.dark700;
 });
