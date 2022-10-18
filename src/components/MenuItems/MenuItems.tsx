@@ -71,14 +71,15 @@ const MenuItems: React.FC<MenuItemsProps> = ({
                     {...linkProps}
                     isActive={isActive}
                     statusColor={statusColor}
+                    showNavBadge={showNavBadge}
                   >
                     {type === ItemTypes.DIVIDER && <MenuItemDivider />}
                     {icon && <IconComponent iconName={icon} color="white" />}
                     {label && (
                       <Box ml="8px" position="relative">
-                        {isMarker && <Marker />}
+                        {/*{isMarker && <Marker />}*/}
                         <Text
-                          color="white"
+                          color={isMarker ? "warningPress" : "white"}
                           fontSize="14px"
                           lineHeight="20px"
                           fontWeight="600"

@@ -24,16 +24,17 @@ const MobileCommunityWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 24px;
+  padding: 0 24px;
 `;
 
 const StyledMobileMenu = styled.div<{
   $isOpen: boolean;
 }>`
-  padding: 32px 24px 0;
+  overflow-x: hidden;
   background-color: ${({ theme }) => theme.card.background};
   width: 100vw;
   height: calc(100vh - 60px);
-  overflow: auto;
+  overflow-y: auto;
   visibility: visible;
   opacity: 1;
   transition: opacity 250ms linear, visibility 350ms linear;
@@ -125,7 +126,13 @@ const MobileMenu: FC<MobileMenuProps> = ({
               .filter((item) => item.label && !item.type)
               .map(
                 (
-                  { label, items: innerItems = [], showItemsOnMobile, hidden },
+                  {
+                    label,
+                    items: innerItems = [],
+                    showItemsOnMobile,
+                    hidden,
+                    showNavBadge,
+                  },
                   index
                 ) => {
                   const isMarker = items[index].showNavBadge;
@@ -134,7 +141,16 @@ const MobileMenu: FC<MobileMenuProps> = ({
                     !showItemsOnMobile ||
                     (showItemsOnMobile && isMobile && !hidden);
                   return (
-                    <Box key={`${label}#${index}`}>
+                    <Box key={`${label}#${index}`} position="relative">
+                      {isMarker && isMobile && (
+                        <Box
+                          position="absolute"
+                          left={0}
+                          width={4}
+                          background="#FFCD1C"
+                          height="100%"
+                        />
+                      )}
                       <Accordion
                         index={index}
                         label={label}
@@ -145,7 +161,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
                             !hidden && (
                               <>
                                 <Box m="16px 0" position="relative">
-                                  {isMarker && <Marker />}
+                                  {/*{isMarker && <Marker />}*/}
                                   <Text
                                     bold
                                     fontSize={isTablet ? "20px" : "14px"}
@@ -153,6 +169,8 @@ const MobileMenu: FC<MobileMenuProps> = ({
                                     color={
                                       isMobile && opened
                                         ? "primary"
+                                        : isMarker && isTablet
+                                        ? "warningPress"
                                         : "backgroundDark"
                                     }
                                   >

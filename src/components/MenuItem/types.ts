@@ -7,10 +7,12 @@ export interface MenuItemProps {
   href?: string;
   variant?: MenuItemVariant;
   statusColor?: keyof Colors;
+  showNavBadge?: boolean;
 }
 
 export type StyledMenuItemProps = {
   $isActive?: boolean;
   $variant?: MenuItemVariant;
   $statusColor?: keyof Colors;
+  showNavBadge?: boolean;
 };

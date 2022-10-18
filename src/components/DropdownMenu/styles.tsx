@@ -152,7 +152,7 @@ export const DropdownMenuDivider = styled.hr`
   border-color: ${({ theme }) => theme.colors.gray200};
   border-style: solid;
   border-width: 1px 0 0;
-  margin: 4px 0;
+  margin: 0;
   ${({ color }) => `
     color: ${color};
     background-color: ${color};

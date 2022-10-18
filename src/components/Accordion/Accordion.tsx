@@ -43,6 +43,7 @@ const AccordionTitle = styled(Flex)`
 
 const AccordionComponent = styled.div`
   width: 100%;
+  padding: 0 24px;
 `;
 
 const Accordion: FC<IProps> = ({
