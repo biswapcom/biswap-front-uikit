@@ -9,6 +9,7 @@ import {
 } from "./types";
 import { useMatchBreakpoints } from "../../hooks";
 import Grid from "../Box/Grid";
+import { Box } from "../Box";
 
 const getTextColor = ({
   $isActive,
@@ -208,4 +209,13 @@ export const LinkStatus = styled(Text)<{ color: keyof Colors }>`
 
 export const BannerPlacementItem = styled.div`
   margin: 0 -16px -16px;
+`;
+
+export const BorderMobileMenuItem = styled(Box)<{ isMarker?: boolean }>`
+  padding: 0 24px;
+  border-left: ${({ theme, isMarker }) =>
+    `4px solid ${isMarker ? theme.colors.warningPress : theme.colors.white}`};
+  ${({ theme }) => theme.mediaQueries.sm} {
+    border-left: none;
+  }
 `;

@@ -8,12 +8,11 @@ import styled from "styled-components";
 import { DropdownMenuItemType, MobileMenuProps } from "../types";
 import MenuItemContent from "../components/MenuItemContent";
 
-import { DropdownMenuDivider } from "../styles";
+import { BorderMobileMenuItem, DropdownMenuDivider } from "../styles";
 import { DropdownMenuItemContainer } from "../components";
 import IconComponent from "../../Svg/IconComponent";
 import Accordion from "../../Accordion/Accordion";
 import Community from "../../../widgets/Menu/components/Footer/Community";
-import Marker from "../../MenuItem/Marker";
 
 const MainContententWrapper = styled.div`
   flex: 1;
@@ -141,16 +140,10 @@ const MobileMenu: FC<MobileMenuProps> = ({
                     !showItemsOnMobile ||
                     (showItemsOnMobile && isMobile && !hidden);
                   return (
-                    <Box key={`${label}#${index}`} position="relative">
-                      {isMarker && isMobile && (
-                        <Box
-                          position="absolute"
-                          left={0}
-                          width={4}
-                          background="#FFCD1C"
-                          height="100%"
-                        />
-                      )}
+                    <BorderMobileMenuItem
+                      key={`${label}#${index}`}
+                      isMarker={isMarker}
+                    >
                       <Accordion
                         index={index}
                         label={label}
@@ -263,7 +256,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
                       {isTablet && !showItemsOnMobile && (
                         <DropdownMenuDivider />
                       )}
-                    </Box>
+                    </BorderMobileMenuItem>
                   );
                 }
               )}

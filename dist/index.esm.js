@@ -5450,7 +5450,7 @@ var InfoBlock = styled.div(templateObject_9$3 || (templateObject_9$3 = __makeTem
 var TitleText = styled(Text)(templateObject_10$2 || (templateObject_10$2 = __makeTemplateObject(["\n  font-size: 14px;\n  line-height: 20px;\n  color: black;\n  font-weight: 600;\n"], ["\n  font-size: 14px;\n  line-height: 20px;\n  color: black;\n  font-weight: 600;\n"])));
 var PercentageAmount = styled(Text)(templateObject_11$1 || (templateObject_11$1 = __makeTemplateObject(["\n  font-size: 16px;\n  margin: 0 4px;\n  font-weight: 600;\n"], ["\n  font-size: 16px;\n  margin: 0 4px;\n  font-weight: 600;\n"])));
 var InfoNode = styled.div(templateObject_12$1 || (templateObject_12$1 = __makeTemplateObject(["\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n"], ["\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n"])));
-var RBPrice = styled(Text)(templateObject_13 || (templateObject_13 = __makeTemplateObject(["\n  text-align: right;\n  font-size: 12px;\n  line-height: 16px;\n  color: ", ";\n"], ["\n  text-align: right;\n  font-size: 12px;\n  line-height: 16px;\n  color: ", ";\n"])), function (_a) {
+var RBPrice = styled(Text)(templateObject_13$1 || (templateObject_13$1 = __makeTemplateObject(["\n  text-align: right;\n  font-size: 12px;\n  line-height: 16px;\n  color: ", ";\n"], ["\n  text-align: right;\n  font-size: 12px;\n  line-height: 16px;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.text;
 });
@@ -5582,7 +5582,7 @@ var Slider = function (_a) {
             percent.RB,
             " volume")));
 };
-var templateObject_1$P, templateObject_2$x, templateObject_3$o, templateObject_4$k, templateObject_5$f, templateObject_6$a, templateObject_7$9, templateObject_8$4, templateObject_9$3, templateObject_10$2, templateObject_11$1, templateObject_12$1, templateObject_13, templateObject_14, templateObject_15, templateObject_16, templateObject_17;
+var templateObject_1$P, templateObject_2$x, templateObject_3$o, templateObject_4$k, templateObject_5$f, templateObject_6$a, templateObject_7$9, templateObject_8$4, templateObject_9$3, templateObject_10$2, templateObject_11$1, templateObject_12$1, templateObject_13$1, templateObject_14, templateObject_15, templateObject_16, templateObject_17;
 
 var animation = {
     WAVES: "waves",
@@ -8119,7 +8119,14 @@ styled(Text)(templateObject_11 || (templateObject_11 = __makeTemplateObject(["\n
     return theme.colors[color];
 });
 var BannerPlacementItem = styled.div(templateObject_12 || (templateObject_12 = __makeTemplateObject(["\n  margin: 0 -16px -16px;\n"], ["\n  margin: 0 -16px -16px;\n"])));
-var templateObject_1$k, templateObject_2$d, templateObject_3$9, templateObject_4$6, templateObject_5$5, templateObject_6$3, templateObject_7$2, templateObject_8$2, templateObject_9$1, templateObject_10, templateObject_11, templateObject_12;
+var BorderMobileMenuItem = styled(Box)(templateObject_13 || (templateObject_13 = __makeTemplateObject(["\n  padding: 0 24px;\n  border-left: ", ";\n  ", " {\n    border-left: none;\n  }\n"], ["\n  padding: 0 24px;\n  border-left: ", ";\n  ", " {\n    border-left: none;\n  }\n"])), function (_a) {
+    var theme = _a.theme, isMarker = _a.isMarker;
+    return "4px solid ".concat(isMarker ? theme.colors.warningPress : theme.colors.white);
+}, function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.sm;
+});
+var templateObject_1$k, templateObject_2$d, templateObject_3$9, templateObject_4$6, templateObject_5$5, templateObject_6$3, templateObject_7$2, templateObject_8$2, templateObject_9$1, templateObject_10, templateObject_11, templateObject_12, templateObject_13;
 
 var LabelText = styled(Text)(templateObject_1$j || (templateObject_1$j = __makeTemplateObject(["\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  width: 95px;\n"], ["\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  width: 95px;\n"])));
 var InnerLinksBlock = function (_a) {
@@ -8305,7 +8312,7 @@ var AccordionBody = styled.div(templateObject_3$8 || (templateObject_3$8 = __mak
 });
 var AccordionTitle = styled(Flex)(templateObject_4$5 || (templateObject_4$5 = __makeTemplateObject(["\n  cursor: pointer;\n"], ["\n  cursor: pointer;\n"])));
 // const AccordionBodyItem = styled.div``;
-var AccordionComponent = styled.div(templateObject_5$4 || (templateObject_5$4 = __makeTemplateObject(["\n  width: 100%;\n  padding: 0 24px;\n"], ["\n  width: 100%;\n  padding: 0 24px;\n"])));
+var AccordionComponent = styled.div(templateObject_5$4 || (templateObject_5$4 = __makeTemplateObject(["\n  width: 100%;\n"], ["\n  width: 100%;\n"])));
 var Accordion = function (_a) {
     var label = _a.label, _b = _a.clickable, clickable = _b === void 0 ? true : _b, heading = _a.heading, children = _a.children, index = _a.index;
     var _c = useState(false), isOpened = _c[0], setIsOpened = _c[1];
@@ -8330,7 +8337,7 @@ var templateObject_1$h, templateObject_2$c, templateObject_3$8, templateObject_4
 
 var MainContententWrapper = styled.div(templateObject_1$g || (templateObject_1$g = __makeTemplateObject(["\n  flex: 1;\n"], ["\n  flex: 1;\n"])));
 var MobileCommunityWrapper = styled.div(templateObject_2$b || (templateObject_2$b = __makeTemplateObject(["\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  margin-top: 24px;\n  padding: 0 24px;\n"], ["\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  margin-top: 24px;\n  padding: 0 24px;\n"])));
-var StyledMobileMenu = styled.div(templateObject_3$7 || (templateObject_3$7 = __makeTemplateObject(["\n  overflow-x: hidden;\n  background-color: ", ";\n  width: 100vw;\n  height: calc(100vh - 60px);\n  overflow-y: auto;\n  visibility: visible;\n  opacity: 1;\n  transition: opacity 250ms linear, visibility 350ms linear;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  align-content: stretch;\n\n  ", "\n\n  scrollbar-width: none;\n  -ms-overflow-style: none;\n\n  &::-webkit-scrollbar-track {\n    -webkit-box-shadow: none;\n    background-color: transparent;\n  }\n\n  &::-webkit-scrollbar {\n    display: none;\n  }\n\n  &::-webkit-slider-thumb {\n    display: none;\n  }\n"], ["\n  overflow-x: hidden;\n  background-color: ", ";\n  width: 100vw;\n  height: calc(100vh - 60px);\n  overflow-y: auto;\n  visibility: visible;\n  opacity: 1;\n  transition: opacity 250ms linear, visibility 350ms linear;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  align-content: stretch;\n\n  ", "\n\n  scrollbar-width: none;\n  -ms-overflow-style: none;\n\n  &::-webkit-scrollbar-track {\n    -webkit-box-shadow: none;\n    background-color: transparent;\n  }\n\n  &::-webkit-scrollbar {\n    display: none;\n  }\n\n  &::-webkit-slider-thumb {\n    display: none;\n  }\n"])), function (_a) {
+var StyledMobileMenu = styled.div(templateObject_3$7 || (templateObject_3$7 = __makeTemplateObject(["\n  //padding: 0 24px 0;\n  overflow-x: hidden;\n  background-color: ", ";\n  width: 100vw;\n  height: calc(100vh - 60px);\n  overflow-y: auto;\n  visibility: visible;\n  opacity: 1;\n  transition: opacity 250ms linear, visibility 350ms linear;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  align-content: stretch;\n\n  ", "\n\n  scrollbar-width: none;\n  -ms-overflow-style: none;\n\n  &::-webkit-scrollbar-track {\n    -webkit-box-shadow: none;\n    background-color: transparent;\n  }\n\n  &::-webkit-scrollbar {\n    display: none;\n  }\n\n  &::-webkit-slider-thumb {\n    display: none;\n  }\n"], ["\n  //padding: 0 24px 0;\n  overflow-x: hidden;\n  background-color: ", ";\n  width: 100vw;\n  height: calc(100vh - 60px);\n  overflow-y: auto;\n  visibility: visible;\n  opacity: 1;\n  transition: opacity 250ms linear, visibility 350ms linear;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  align-content: stretch;\n\n  ", "\n\n  scrollbar-width: none;\n  -ms-overflow-style: none;\n\n  &::-webkit-scrollbar-track {\n    -webkit-box-shadow: none;\n    background-color: transparent;\n  }\n\n  &::-webkit-scrollbar {\n    display: none;\n  }\n\n  &::-webkit-slider-thumb {\n    display: none;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.card.background;
 }, function (_a) {
@@ -8394,8 +8401,7 @@ var MobileMenu = function (_a) {
                         return null;
                     var visualize = !showItemsOnMobile ||
                         (showItemsOnMobile && isMobile && !hidden);
-                    return (React.createElement(Box, { key: "".concat(label, "#").concat(index), position: "relative" },
-                        isMarker && isMobile && (React.createElement(Box, { position: "absolute", left: 0, width: 4, background: "#FFCD1C", height: "100%" })),
+                    return (React.createElement(BorderMobileMenuItem, { key: "".concat(label, "#").concat(index), isMarker: isMarker },
                         React.createElement(Accordion, { index: index, label: label, clickable: !isTablet, heading: function (opened) {
                                 return (!showItemsOnMobile &&
                                     !hidden && (React.createElement(React.Fragment, null,
