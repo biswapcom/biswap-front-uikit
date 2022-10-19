@@ -8,7 +8,7 @@ import {
   StyledDropdownMenuItemProps,
 } from "./types";
 import { useMatchBreakpoints } from "../../hooks";
-import Grid from "../Box/Grid";
+import { Box, Grid } from "../Box";
 
 const getTextColor = ({
   $isActive,
@@ -152,7 +152,7 @@ export const DropdownMenuDivider = styled.hr`
   border-color: ${({ theme }) => theme.colors.gray200};
   border-style: solid;
   border-width: 1px 0 0;
-  margin: 4px 0;
+  margin: 0;
   ${({ color }) => `
     color: ${color};
     background-color: ${color};
@@ -208,4 +208,13 @@ export const LinkStatus = styled(Text)<{ color: keyof Colors }>`
 
 export const BannerPlacementItem = styled.div`
   margin: 0 -16px -16px;
+`;
+
+export const BorderMobileMenuItem = styled(Box)<{ isMarker?: boolean }>`
+  padding: 0 16px;
+  border-left: ${({ theme, isMarker }) =>
+    `4px solid ${isMarker ? theme.colors.warningPress : "transparent"}`};
+  ${({ theme }) => theme.mediaQueries.sm} {
+    border-left: none;
+  }
 `;

@@ -8,12 +8,11 @@ import styled from "styled-components";
 import { DropdownMenuItemType, MobileMenuProps } from "../types";
 import MenuItemContent from "../components/MenuItemContent";
 
-import { DropdownMenuDivider } from "../styles";
+import { BorderMobileMenuItem, DropdownMenuDivider } from "../styles";
 import { DropdownMenuItemContainer } from "../components";
 import IconComponent from "../../Svg/IconComponent";
 import Accordion from "../../Accordion/Accordion";
 import Community from "../../../widgets/Menu/components/Footer/Community";
-import Marker from "../../MenuItem/Marker";
 
 const MainContententWrapper = styled.div`
   flex: 1;
@@ -24,12 +23,12 @@ const MobileCommunityWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 24px;
+  padding: 0 24px;
 `;
 
 const StyledMobileMenu = styled.div<{
   $isOpen: boolean;
 }>`
-  padding: 32px 24px 0;
   background-color: ${({ theme }) => theme.card.background};
   width: 100vw;
   height: calc(100vh - 60px);
@@ -125,7 +124,13 @@ const MobileMenu: FC<MobileMenuProps> = ({
               .filter((item) => item.label && !item.type)
               .map(
                 (
-                  { label, items: innerItems = [], showItemsOnMobile, hidden },
+                  {
+                    label,
+                    items: innerItems = [],
+                    showItemsOnMobile,
+                    hidden,
+                    showNavBadge,
+                  },
                   index
                 ) => {
                   const isMarker = items[index].showNavBadge;
@@ -134,7 +139,10 @@ const MobileMenu: FC<MobileMenuProps> = ({
                     !showItemsOnMobile ||
                     (showItemsOnMobile && isMobile && !hidden);
                   return (
-                    <Box key={`${label}#${index}`}>
+                    <BorderMobileMenuItem
+                      key={`${label}#${index}`}
+                      isMarker={isMarker}
+                    >
                       <Accordion
                         index={index}
                         label={label}
@@ -145,7 +153,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
                             !hidden && (
                               <>
                                 <Box m="16px 0" position="relative">
-                                  {isMarker && <Marker />}
+                                  {/*{isMarker && <Marker />}*/}
                                   <Text
                                     bold
                                     fontSize={isTablet ? "20px" : "14px"}
@@ -153,6 +161,8 @@ const MobileMenu: FC<MobileMenuProps> = ({
                                     color={
                                       isMobile && opened
                                         ? "primary"
+                                        : isMarker && isTablet
+                                        ? "warningPress"
                                         : "backgroundDark"
                                     }
                                   >
@@ -245,14 +255,12 @@ const MobileMenu: FC<MobileMenuProps> = ({
                       {isTablet && !showItemsOnMobile && (
                         <DropdownMenuDivider />
                       )}
-                    </Box>
+                    </BorderMobileMenuItem>
                   );
                 }
               )}
             {!isTablet && isMobile && (
-              <Box m={"0 -24px 0"}>
-                <DropdownMenuDivider color="rgba(18, 99, 241, 0.16)" />
-              </Box>
+              <DropdownMenuDivider color="rgba(18, 99, 241, 0.16)" />
             )}
           </MainContententWrapper>
           {isMobile && (

@@ -62,6 +62,7 @@ export const links: MenuItemsType[] = [
   {
     label: "Earn",
     href: "/earn",
+    showNavBadge: true,
     items: [
       {
         label: "Farms",
