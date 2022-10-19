@@ -1,27 +1,6 @@
-import React, { FC } from "react";
-import { SvgProps } from "../../components/Svg";
+/// <reference types="react" />
 import { ModalProps } from "../Modal";
-declare type LinkOfTextAndLink = string | {
-    text: string;
-    url: string;
-};
-declare type DeviceLink = {
-    desktop?: LinkOfTextAndLink;
-    mobile?: LinkOfTextAndLink;
-};
-declare type LinkOfDevice = string | DeviceLink;
-export declare type WalletConfigV2<T = unknown> = {
-    id: string;
-    title: string;
-    icon: string | FC<React.PropsWithChildren<SvgProps>>;
-    connectorId: T;
-    deepLink?: string;
-    installed?: boolean;
-    guide?: LinkOfDevice;
-    downloadLink?: LinkOfDevice;
-    mobileOnly?: boolean;
-    qrCode?: () => Promise<string>;
-};
+import { WalletConfigV2 } from "./types";
 interface WalletModalV2Props<T = unknown> extends ModalProps {
     wallets: WalletConfigV2<T>[];
     login: (connectorId: T) => Promise<any>;

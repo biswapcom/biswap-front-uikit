@@ -1,9 +1,8 @@
 import React from "react";
 import { useModal } from "../Modal";
-import { ConnectModalV2, WalletConfigV2 } from "./ConnectModalV2";
+import { ConnectModalV2 } from "./ConnectModalV2";
+import { WalletConfigV2 } from "./types";
 
-// login: (connectorId: T) => Promise<any>
-//
 // interface ReturnType {
 //     onPresentConnectModal: () => void;
 // }

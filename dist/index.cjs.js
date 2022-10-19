@@ -9265,10 +9265,10 @@ function MobileModal(_a) {
                 React__default["default"].createElement(Text, { textAlign: "center", color: "textSubtle", as: "p", mb: "24px" }, "Haven\u2019t got a crypto wallet yet?")))));
 }
 function WalletSelect(_a) {
-    var wallets = _a.wallets, onClick = _a.onClick, _b = _a.displayCount, displayCount = _b === void 0 ? 5 : _b;
+    var wallets = _a.wallets, onClick = _a.onClick; _a.displayCount;
     //  const { t } = useTranslation()
-    var _c = React.useState(false), showMore = _c[0]; _c[1];
-    var walletsToShow = showMore ? wallets : wallets.slice(0, displayCount);
+    var _c = React.useState(false); _c[0]; _c[1];
+    var walletsToShow = wallets;
     useSelectedWallet()[0];
     return (React__default["default"].createElement(ScrollWrapper, null,
         React__default["default"].createElement(WalletCardsWrapper, null, walletsToShow.map(function (wallet) {
@@ -9327,7 +9327,7 @@ function DesktopModal(_a) {
     var selected = useSelectedWallet()[0];
     var error = jotai.useAtom(errorAtom)[0];
     var _b = React.useState(undefined), qrCode = _b[0], setQrCode = _b[1];
-    //const { t } = useTranslation()
+    console.log("desktop wallets", wallets);
     var connectToWallet = function (wallet) {
         connectWallet(wallet);
     };
@@ -9354,7 +9354,7 @@ function DesktopModal(_a) {
                 selected && selected.installed === false && (React__default["default"].createElement(NotInstalled, { qrCode: qrCode, wallet: selected }))))));
 }
 function ConnectModalV2(props) {
-    var _wallets = props.wallets, login = props.login, rest = __rest(props, ["wallets", "login"]);
+    var _wallets = props.wallets, login = props.login; __rest(props, ["wallets", "login"]);
     console.log("wa", _wallets);
     var lastUsedWalletName = jotai.useAtom(lastUsedWalletNameAtom)[0];
     var wallets = React.useMemo(function () { return sortWallets(_wallets, lastUsedWalletName); }, [_wallets, lastUsedWalletName]);
@@ -9392,11 +9392,11 @@ function ConnectModalV2(props) {
             });
         }
     };
-    return (React__default["default"].createElement(Modal, __assign({}, rest, { onDismiss: props.onDismiss, walletModal: true, title: "Connect to a wallet", 
+    return (React__default["default"].createElement(Modal, { onDismiss: props.onDismiss, walletModal: true, title: "Connect to a wallet", 
         //onDismiss={onDismiss}
         width: reactDeviceDetect.isMobile ? "100%" : "auto", maxWidth: !reactDeviceDetect.isMobile ? "416px" : "none", bodyPadding: "0", position: reactDeviceDetect.isMobile ? "absolute" : "relative", bottom: "0", borderRadius: reactDeviceDetect.isMobile ? "16px 16px 0 0" : "16px", modalBodyProps: {
             alignItems: "center",
-        } }),
+        } },
         React__default["default"].createElement(StyledText, { fontSize: "12px", ml: reactDeviceDetect.isMobile ? "16px" : "32px", mb: "24px" },
             "By connecting a wallet, you agree to Biswap's",
             " ",
@@ -9470,8 +9470,6 @@ var getDesktopText = function (linkDevice, fallback) {
             : (_b = (_a = linkDevice.desktop) === null || _a === void 0 ? void 0 : _a.text) !== null && _b !== void 0 ? _b : fallback;
 };
 
-// login: (connectorId: T) => Promise<any>
-//
 // interface ReturnType {
 //     onPresentConnectModal: () => void;
 // }

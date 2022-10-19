@@ -7,25 +7,6 @@ import React, {
   useState,
 } from "react";
 
-// import { usePreloadImages } from '@pancakeswap/hooks'
-// import { useTranslation } from '@pancakeswap/localization'
-// import { AtomBox } from '@pancakeswap/ui/components/AtomBox'
-// import {
-//     Button,
-//     Heading,
-//     Image,
-//     LinkExternal,
-//     ModalV2,
-//     ModalV2Props,
-//     ModalWrapper,
-//     MoreHorizontalIcon,
-//     SvgProps,
-//     Tab,
-//     TabMenu,
-//     Text,
-//     WarningIcon,
-// } from '@pancakeswap/uikit'
-
 import { atom, useAtom } from "jotai";
 
 import { isMobile } from "react-device-detect";
@@ -44,6 +25,7 @@ import Heading from "../../components/Heading/Heading";
 import Button from "../../components/Button/Button";
 import Box from "../../components/Box/Box";
 import { usePreloadImages } from "../../hooks/usePreloadImage";
+import { LinkOfDevice, WalletConfigV2 } from "./types";
 
 // import {
 //     desktopWalletSelectionClass,
@@ -55,27 +37,27 @@ import { usePreloadImages } from "../../hooks/usePreloadImage";
 
 const Qrcode = lazy(() => import("../../components/QRCode/QRCode"));
 
-type LinkOfTextAndLink = string | { text: string; url: string };
-
-type DeviceLink = {
-  desktop?: LinkOfTextAndLink;
-  mobile?: LinkOfTextAndLink;
-};
-
-type LinkOfDevice = string | DeviceLink;
-
-export type WalletConfigV2<T = unknown> = {
-  id: string;
-  title: string;
-  icon: string | FC<React.PropsWithChildren<SvgProps>>;
-  connectorId: T;
-  deepLink?: string;
-  installed?: boolean;
-  guide?: LinkOfDevice;
-  downloadLink?: LinkOfDevice;
-  mobileOnly?: boolean;
-  qrCode?: () => Promise<string>;
-};
+// type LinkOfTextAndLink = string | { text: string; url: string };
+//
+// type DeviceLink = {
+//   desktop?: LinkOfTextAndLink;
+//   mobile?: LinkOfTextAndLink;
+// };
+//
+// type LinkOfDevice = string | DeviceLink;
+//
+// export type WalletConfigV2<T = unknown> = {
+//   id: string;
+//   title: string;
+//   icon: string | FC<React.PropsWithChildren<SvgProps>>;
+//   connectorId: T;
+//   deepLink?: string;
+//   installed?: boolean;
+//   guide?: LinkOfDevice;
+//   downloadLink?: LinkOfDevice;
+//   mobileOnly?: boolean;
+//   qrCode?: () => Promise<string>;
+// };
 
 interface WalletModalV2Props<T = unknown> extends ModalProps {
   wallets: WalletConfigV2<T>[];
@@ -202,7 +184,7 @@ function WalletSelect<T>({
 }) {
   //  const { t } = useTranslation()
   const [showMore, setShowMore] = useState(false);
-  const walletsToShow = showMore ? wallets : wallets.slice(0, displayCount);
+  const walletsToShow = wallets;
   const [selected] = useSelectedWallet();
   return (
     <ScrollWrapper>
@@ -315,33 +297,14 @@ function DesktopModal<T>({
   const [selected] = useSelectedWallet<T>();
   const [error] = useAtom(errorAtom);
   const [qrCode, setQrCode] = useState<string | undefined>(undefined);
-  //const { t } = useTranslation()
 
+  console.log("desktop wallets", wallets);
   const connectToWallet = (wallet: WalletConfigV2<T>) => {
     connectWallet(wallet);
   };
 
   return (
     <>
-      {/*<AtomBox*/}
-      {/*    display="flex"*/}
-      {/*    flexDirection="column"*/}
-      {/*    bg="backgroundAlt"*/}
-      {/*    py="32px"*/}
-      {/*    zIndex="modal"*/}
-      {/*    borderRadius="card"*/}
-      {/*    className={desktopWalletSelectionClass}*/}
-      {/*>*/}
-      {/*<AtomBox px="48px">*/}
-      {/*    <Heading color="color" as="h4">*/}
-      {/*        {'Connect Wallet'}*/}
-      {/*    </Heading>*/}
-      {/*    <Text color="textSubtle" small pt="24px" pb="32px">*/}
-      {/*        {t(*/}
-      {/*            'Start by connecting with one of the wallets below. Be sure to store your private keys or seed phrase securely. Never share them with anyone.',*/}
-      {/*        )}*/}
-      {/*    </Text>*/}
-      {/*</AtomBox>*/}
       <WalletSelect
         wallets={wallets}
         onClick={(w) => {
@@ -354,18 +317,7 @@ function DesktopModal<T>({
           }
         }}
       />
-      {/*</AtomBox>*/}
-      <div
-      // flex={1}
-      // mx="24px"
-      // display={{
-      //     xs: 'none',
-      //     sm: 'flex',
-      // }}
-      // justifyContent="center"
-      // flexDirection="column"
-      // alignItems="center"
-      >
+      <div>
         <div>
           {/*{!selected && <Intro />}*/}
           {selected && selected.installed !== false && (
@@ -391,7 +343,6 @@ function DesktopModal<T>({
           )}
         </div>
       </div>
-      {/*</AtomBox>*/}
     </>
   );
 }
@@ -444,7 +395,6 @@ export function ConnectModalV2<T = unknown>(props: WalletModalV2Props<T>) {
 
   return (
     <Modal
-      {...rest}
       onDismiss={props.onDismiss}
       walletModal
       title="Connect to a wallet"
