@@ -136,7 +136,7 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => {
         By connecting a wallet, you agree to Biswap's{" "}
         <Text fontSize="12px" as="span" color="primary">
           <a
-            href={`${process.env.REACT_APP_FRONT_1}/terms`}
+            href={`${process.env.NEXT_PUBLIC_FRONT_1}/terms`}
             target={isMobile ? "_self" : "_blank"}
           >
             Terms of Use
