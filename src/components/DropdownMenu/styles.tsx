@@ -8,8 +8,7 @@ import {
   StyledDropdownMenuItemProps,
 } from "./types";
 import { useMatchBreakpoints } from "../../hooks";
-import Grid from "../Box/Grid";
-import { Box } from "../Box";
+import { Box, Grid } from "../Box";
 
 const getTextColor = ({
   $isActive,
@@ -214,7 +213,7 @@ export const BannerPlacementItem = styled.div`
 export const BorderMobileMenuItem = styled(Box)<{ isMarker?: boolean }>`
   padding: 0 24px;
   border-left: ${({ theme, isMarker }) =>
-    `4px solid ${isMarker ? theme.colors.warningPress : theme.colors.white}`};
+    `4px solid ${isMarker ? theme.colors.warningPress : "transparent"}`};
   ${({ theme }) => theme.mediaQueries.sm} {
     border-left: none;
   }
