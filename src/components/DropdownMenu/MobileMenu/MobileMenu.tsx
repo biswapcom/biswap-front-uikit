@@ -29,11 +29,10 @@ const MobileCommunityWrapper = styled.div`
 const StyledMobileMenu = styled.div<{
   $isOpen: boolean;
 }>`
-  overflow-x: hidden;
   background-color: ${({ theme }) => theme.card.background};
   width: 100vw;
   height: calc(100vh - 60px);
-  overflow-y: auto;
+  overflow: auto;
   visibility: visible;
   opacity: 1;
   transition: opacity 250ms linear, visibility 350ms linear;
@@ -261,9 +260,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
                 }
               )}
             {!isTablet && isMobile && (
-              <Box m={"0 -24px 0"}>
-                <DropdownMenuDivider color="rgba(18, 99, 241, 0.16)" />
-              </Box>
+              <DropdownMenuDivider color="rgba(18, 99, 241, 0.16)" />
             )}
           </MainContententWrapper>
           {isMobile && (
