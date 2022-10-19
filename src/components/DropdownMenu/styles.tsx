@@ -211,7 +211,7 @@ export const BannerPlacementItem = styled.div`
 `;
 
 export const BorderMobileMenuItem = styled(Box)<{ isMarker?: boolean }>`
-  padding: 0 24px;
+  padding: 0 16px;
   border-left: ${({ theme, isMarker }) =>
     `4px solid ${isMarker ? theme.colors.warningPress : "transparent"}`};
   ${({ theme }) => theme.mediaQueries.sm} {

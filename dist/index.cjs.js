@@ -8134,7 +8134,7 @@ styled__default["default"](Text)(templateObject_11 || (templateObject_11 = __mak
     return theme.colors[color];
 });
 var BannerPlacementItem = styled__default["default"].div(templateObject_12 || (templateObject_12 = __makeTemplateObject(["\n  margin: 0 -16px -16px;\n"], ["\n  margin: 0 -16px -16px;\n"])));
-var BorderMobileMenuItem = styled__default["default"](Box)(templateObject_13 || (templateObject_13 = __makeTemplateObject(["\n  padding: 0 24px;\n  border-left: ", ";\n  ", " {\n    border-left: none;\n  }\n"], ["\n  padding: 0 24px;\n  border-left: ", ";\n  ", " {\n    border-left: none;\n  }\n"])), function (_a) {
+var BorderMobileMenuItem = styled__default["default"](Box)(templateObject_13 || (templateObject_13 = __makeTemplateObject(["\n  padding: 0 16px;\n  border-left: ", ";\n  ", " {\n    border-left: none;\n  }\n"], ["\n  padding: 0 16px;\n  border-left: ", ";\n  ", " {\n    border-left: none;\n  }\n"])), function (_a) {
     var theme = _a.theme, isMarker = _a.isMarker;
     return "4px solid ".concat(isMarker ? theme.colors.warningPress : "transparent");
 }, function (_a) {
