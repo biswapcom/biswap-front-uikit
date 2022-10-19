@@ -21,3 +21,7 @@ export type DeviceLink = {
 };
 
 export type LinkOfDevice = string | DeviceLink;
+
+export class WalletConnectorNotFoundError extends Error {}
+
+export class WalletSwitchChainError extends Error {}

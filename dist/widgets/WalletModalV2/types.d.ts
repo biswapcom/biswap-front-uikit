@@ -21,3 +21,7 @@ export declare type DeviceLink = {
     mobile?: LinkOfTextAndLink;
 };
 export declare type LinkOfDevice = string | DeviceLink;
+export declare class WalletConnectorNotFoundError extends Error {
+}
+export declare class WalletSwitchChainError extends Error {
+}

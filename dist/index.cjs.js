@@ -9178,14 +9178,6 @@ styled__default["default"](Button)(templateObject_4 || (templateObject_4 = __mak
 });
 var templateObject_1$1, templateObject_2, templateObject_3, templateObject_4;
 
-// import {
-//     desktopWalletSelectionClass,
-//     modalWrapperClass,
-//     walletIconClass,
-//     promotedGradientClass,
-//     walletSelectWrapperClass,
-// } from './WalletModal.css'
-var Qrcode = React.lazy(function () { return Promise.resolve().then(function () { return QRCode$1; }); });
 var WalletConnectorNotFoundError = /** @class */ (function (_super) {
     __extends(WalletConnectorNotFoundError, _super);
     function WalletConnectorNotFoundError() {
@@ -9200,43 +9192,17 @@ var WalletSwitchChainError = /** @class */ (function (_super) {
     }
     return WalletSwitchChainError;
 }(Error));
+
+var walletLocalStorageKey = "wallet";
+
+var Qrcode = React.lazy(function () { return Promise.resolve().then(function () { return QRCode$1; }); });
 var errorAtom = jotai.atom("");
 var selectedWalletAtom = jotai.atom(null);
 function useSelectedWallet() {
     // @ts-ignore
     return jotai.useAtom(selectedWalletAtom);
 }
-// const TabContainer = ({ children }: PropsWithChildren) => {
-//     const [index, setIndex] = useState(0)
-//     const { t } = useTranslation()
-//
-//     return (
-//         <AtomBox position="relative" zIndex="modal" className={modalWrapperClass}>
-//             <AtomBox position="absolute" style={{ top: '-50px' }}>
-//                 <TabMenu activeIndex={index} onItemClick={setIndex} gap="16px" isColorInverse>
-//                     <Tab>{t('Connect Wallet')}</Tab>
-//                     <Tab>{t('What’s a Web3 Wallet?')}</Tab>
-//                 </TabMenu>
-//             </AtomBox>
-//             <AtomBox
-//                 display="flex"
-//                 position="relative"
-//                 background="gradientCardHeader"
-//                 borderRadius="card"
-//                 borderBottomRadius={{
-//                     xs: '0',
-//                     md: 'card',
-//                 }}
-//                 zIndex="modal"
-//                 width="full"
-//             >
-//                 {index === 0 && children}
-//                 {index === 1 && <StepIntro />}
-//             </AtomBox>
-//         </AtomBox>
-//     )
-// }
-var MOBILE_DEFAULT_DISPLAY_COUNT = 6;
+//const MOBILE_DEFAULT_DISPLAY_COUNT = 6;
 function MobileModal(_a) {
     var wallets = _a.wallets, connectWallet = _a.connectWallet;
     var selected = useSelectedWallet()[0];
@@ -9254,7 +9220,7 @@ function MobileModal(_a) {
             React__default["default"].createElement("div", { style: { maxWidth: "246px" } },
                 React__default["default"].createElement(ErrorMessage, { message: error })))) : (React__default["default"].createElement(Text, { color: "textSubtle", small: true, p: "24px" }, "Start by connecting with one of the wallets below. Be sure to store your private keys or seed phrase securely. Never share them with anyone.")),
         React__default["default"].createElement("div", null,
-            React__default["default"].createElement(WalletSelect, { displayCount: MOBILE_DEFAULT_DISPLAY_COUNT, wallets: walletsToShow, onClick: function (wallet) {
+            React__default["default"].createElement(WalletSelect, { wallets: walletsToShow, onClick: function (wallet) {
                     connectWallet(wallet);
                     if (wallet.deepLink && wallet.installed === false) {
                         window.open(wallet.deepLink);
@@ -9265,40 +9231,17 @@ function MobileModal(_a) {
                 React__default["default"].createElement(Text, { textAlign: "center", color: "textSubtle", as: "p", mb: "24px" }, "Haven\u2019t got a crypto wallet yet?")))));
 }
 function WalletSelect(_a) {
-    var wallets = _a.wallets, onClick = _a.onClick; _a.displayCount;
-    //  const { t } = useTranslation()
-    var _c = React.useState(false); _c[0]; _c[1];
-    var walletsToShow = wallets;
-    useSelectedWallet()[0];
+    // const [selected] = useSelectedWallet();
+    var wallets = _a.wallets, onClick = _a.onClick;
     return (React__default["default"].createElement(ScrollWrapper, null,
-        React__default["default"].createElement(WalletCardsWrapper, null, walletsToShow.map(function (wallet) {
+        React__default["default"].createElement(WalletCardsWrapper, null, wallets.map(function (wallet) {
             var isImage = typeof wallet.icon === "string";
             var Icon = wallet.icon;
-            return (
-            // <Button
-            //     key={wallet.id}
-            //     variant="text"
-            //     height="auto"
-            //     as={AtomBox}
-            //     display="flex"
-            //     alignItems="center"
-            //     style={{ justifyContent: 'flex-start', letterSpacing: 'normal', padding: '0' }}
-            //     flexDirection="column"
-            //     onClick={() => onClick(wallet)}
-            // >
-            //     <AtomBox className={wallet.installed && promotedGradientClass} p="1px" borderRadius="12px" mb="4px">
-            React__default["default"].createElement(StyledButton$1, { key: wallet.id, scale: "xl", variant: "tertiary", id: "wallet-connect-".concat(wallet.title.toLowerCase()), onClick: function () { return onClick(wallet); } },
+            return (React__default["default"].createElement(StyledButton$1, { key: wallet.id, scale: "xl", variant: "tertiary", id: "wallet-connect-".concat(wallet.title.toLowerCase()), onClick: function () { return onClick(wallet); } },
                 isImage ? (React__default["default"].createElement(Image, { src: Icon, width: 50, height: 50 })) : (React__default["default"].createElement(Icon, { width: 24, height: 24, color: "textSubtle" })),
-                React__default["default"].createElement(Text, { ml: "8px", bold: true, color: "primary", fontSize: "12px" }, wallet.title))
-            // </AtomBox>
-            // <Text fontSize="12px" textAlign="center">
-            //     {wallet.title}
-            // </Text>
-            // </Button>
-            );
+                React__default["default"].createElement(Text, { ml: "8px", bold: true, color: "primary", fontSize: "12px" }, wallet.title)));
         }))));
 }
-var walletLocalStorageKey = "wallet";
 var lastUsedWalletNameAtom = jotai.atom("");
 lastUsedWalletNameAtom.onMount = function (set) {
     var preferred = localStorage === null || localStorage === void 0 ? void 0 : localStorage.getItem(walletLocalStorageKey);
@@ -9354,8 +9297,7 @@ function DesktopModal(_a) {
                 selected && selected.installed === false && (React__default["default"].createElement(NotInstalled, { qrCode: qrCode, wallet: selected }))))));
 }
 function ConnectModalV2(props) {
-    var _wallets = props.wallets, login = props.login; __rest(props, ["wallets", "login"]);
-    console.log("wa", _wallets);
+    var _wallets = props.wallets, login = props.login, onDismiss = props.onDismiss, rest = __rest(props, ["wallets", "login", "onDismiss"]);
     var lastUsedWalletName = jotai.useAtom(lastUsedWalletNameAtom)[0];
     var wallets = React.useMemo(function () { return sortWallets(_wallets, lastUsedWalletName); }, [_wallets, lastUsedWalletName]);
     var _a = useSelectedWallet(), setSelected = _a[1];
@@ -9377,6 +9319,7 @@ function ConnectModalV2(props) {
                 .then(function (v) {
                 if (v) {
                     localStorage.setItem(walletLocalStorageKey, wallet.title);
+                    onDismiss === null || onDismiss === void 0 ? void 0 : onDismiss();
                 }
             })
                 .catch(function (err) {
@@ -9392,35 +9335,16 @@ function ConnectModalV2(props) {
             });
         }
     };
-    return (React__default["default"].createElement(Modal, { onDismiss: props.onDismiss, walletModal: true, title: "Connect to a wallet", 
-        //onDismiss={onDismiss}
-        width: reactDeviceDetect.isMobile ? "100%" : "auto", maxWidth: !reactDeviceDetect.isMobile ? "416px" : "none", bodyPadding: "0", position: reactDeviceDetect.isMobile ? "absolute" : "relative", bottom: "0", borderRadius: reactDeviceDetect.isMobile ? "16px 16px 0 0" : "16px", modalBodyProps: {
+    return (React__default["default"].createElement(Modal, __assign({ onDismiss: props.onDismiss, walletModal: true, title: "Connect to a wallet", width: reactDeviceDetect.isMobile ? "100%" : "auto", maxWidth: !reactDeviceDetect.isMobile ? "416px" : "none", bodyPadding: "0", position: reactDeviceDetect.isMobile ? "absolute" : "relative", bottom: "0", borderRadius: reactDeviceDetect.isMobile ? "16px 16px 0 0" : "16px", modalBodyProps: {
             alignItems: "center",
-        } },
+        } }, rest),
         React__default["default"].createElement(StyledText, { fontSize: "12px", ml: reactDeviceDetect.isMobile ? "16px" : "32px", mb: "24px" },
             "By connecting a wallet, you agree to Biswap's",
             " ",
             React__default["default"].createElement(Text, { fontSize: "12px", as: "span", color: "primary" },
-                React__default["default"].createElement("a", { href: "".concat(process.env.REACT_APP_FRONT_1, "/terms"), target: reactDeviceDetect.isMobile ? "_self" : "_blank" }, "Terms of Use"))),
+                React__default["default"].createElement("a", { href: "".concat(process.env.NEXT_PUBLIC_FRONT_1, "/terms"), target: reactDeviceDetect.isMobile ? "_self" : "_blank" }, "Terms of Use"))),
         React__default["default"].createElement("div", null, reactDeviceDetect.isMobile ? (React__default["default"].createElement(MobileModal, { connectWallet: connectWallet, wallets: wallets })) : (React__default["default"].createElement(DesktopModal, { connectWallet: connectWallet, wallets: wallets })))));
 }
-//const Intro = () => {
-//   const {
-//     t,
-//     currentLanguage: { code },
-//   } = useTranslation()
-//   return (
-//     <>
-//       <Heading as="h1" fontSize="20px" color="secondary">
-//         {t('Haven’t got a wallet yet?')}
-//       </Heading>
-//       <Image src="https://cdn.pancakeswap.com/wallets/wallet_intro.png" width={198} height={178} />
-//       <Button as={LinkExternal} color="backgroundAlt" variant="subtle" href={getDocLink(code)}>
-//         {t('Learn How to Connect')}
-//       </Button>
-//     </>
-//   )
-// }
 var NotInstalled = function (_a) {
     var wallet = _a.wallet, qrCode = _a.qrCode;
     return (React__default["default"].createElement(React__default["default"].Fragment, null,
