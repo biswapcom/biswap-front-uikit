@@ -1,4 +1,4 @@
-import React, {ElementType} from "react";
+import React, { ElementType } from "react";
 import { isDesktop, isMobile } from "react-device-detect";
 import styled from "styled-components";
 
@@ -56,13 +56,12 @@ const WalletCard: React.FC<React.PropsWithChildren<Props<any>>> = ({
     linkAction = {
       as: Link,
       href: downloadLink.desktop,
-     style:
-          {
+      style: {
         textDecoration: "none",
-        display: 'flex',
-        alignItems: 'center',
-        padding:'0 24px',
-        borderRadius: '8px'
+        display: "flex",
+        alignItems: "center",
+        padding: "0 24px",
+        borderRadius: "8px",
       },
       target: "_blank",
       rel: "noopener noreferrer",
@@ -94,8 +93,8 @@ const WalletCard: React.FC<React.PropsWithChildren<Props<any>>> = ({
       id={`wallet-connect-${title.toLowerCase()}`}
       {...linkAction}
     >
-      <Icon width="24px"  />
-      <Text ml='8px' bold color="primary" fontSize="12px">
+      <Icon width="24px" />
+      <Text ml="8px" bold color="primary" fontSize="12px">
         {title}
       </Text>
     </StyledButton>

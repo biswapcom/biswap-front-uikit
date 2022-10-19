@@ -31,6 +31,8 @@ export * from "./components/Toggle";
 export * from "./components/Badge";
 export * from "./components/SlideButtonMenu";
 export * from "./components/PercentSlider";
+export * from "./components/QRCode";
+
 //TODO must be delete
 export * from "./components/Table";
 
@@ -48,6 +50,7 @@ export * from "./widgets/Modal";
 export * from "./widgets/Menu";
 export * from "./widgets/Toast";
 export * from "./widgets/WalletModal";
+export * from "./widgets/WalletModalV2";
 
 // Theme
 export { default as ResetCSS } from "./ResetCSS";
