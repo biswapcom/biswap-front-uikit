@@ -8326,7 +8326,7 @@ var Accordion = function (_a) {
         clickable && setIsOpened(function (prev) { return !prev; });
     };
     return (React.createElement(AccordionComponent, { key: "acc-key-".concat(label) },
-        isMobile && index && (React.createElement(Box, { m: "0 -24px 0" },
+        isMobile && index && (React.createElement(Box, { m: "0 -16px 0" },
             React.createElement(DropdownMenuDivider, { color: "rgba(18, 99, 241, 0.16)" }))),
         React.createElement(AccordionTitle, { alignItems: "center", justifyContent: "space-between", onClick: onTitleClick }, heading(isOpened)),
         React.createElement(AccordionBody, { opened: isOpened }, children),

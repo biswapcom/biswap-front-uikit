@@ -8341,7 +8341,7 @@ var Accordion = function (_a) {
         clickable && setIsOpened(function (prev) { return !prev; });
     };
     return (React__default["default"].createElement(AccordionComponent, { key: "acc-key-".concat(label) },
-        isMobile && index && (React__default["default"].createElement(Box, { m: "0 -24px 0" },
+        isMobile && index && (React__default["default"].createElement(Box, { m: "0 -16px 0" },
             React__default["default"].createElement(DropdownMenuDivider, { color: "rgba(18, 99, 241, 0.16)" }))),
         React__default["default"].createElement(AccordionTitle, { alignItems: "center", justifyContent: "space-between", onClick: onTitleClick }, heading(isOpened)),
         React__default["default"].createElement(AccordionBody, { opened: isOpened }, children),
