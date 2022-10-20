@@ -27,7 +27,7 @@ interface Props
     FooterProductLinks,
     FooterServiceLinks {
   onClick: () => void;
-  buyBswLink: string;
+  buyBswHandler: () => void;
 }
 
 const Wrapper = styled.footer`
@@ -95,7 +95,7 @@ const Footer: React.FC<Props> = ({
   aboutLinks,
   productLinks,
   serviceLinks,
-  buyBswLink,
+  buyBswHandler,
 }) => {
   return (
     <Wrapper>
@@ -105,7 +105,7 @@ const Footer: React.FC<Props> = ({
           BSWPriceValue={BSWPriceValue}
           onClick={onClick}
           footerStatistic={footerStatistic}
-          buyBswLink={buyBswLink}
+          buyBswHandler={buyBswHandler}
         />
         <About aboutLinks={aboutLinks} />
         <Product productLinks={productLinks} />

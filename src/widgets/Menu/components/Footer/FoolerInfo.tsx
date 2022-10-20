@@ -9,7 +9,7 @@ import BuyBSW from "./BuyBSW";
 
 interface Props extends BSWPriceProps, FooterStatisticProps {
   onClick: () => void;
-  buyBswLink: string;
+  buyBswHandler: () => void;
 }
 
 const Wrapper = styled.div`
@@ -92,7 +92,7 @@ const FooterInfo: React.FC<Props> = ({
   BSWPriceValue,
   onClick,
   footerStatistic,
-  buyBswLink,
+  buyBswHandler,
 }) => {
   return (
     <Wrapper>
@@ -100,7 +100,7 @@ const FooterInfo: React.FC<Props> = ({
         <BSWPrice BSWPriceLabel={BSWPriceLabel} BSWPriceValue={BSWPriceValue} />
         <FlexWrap>
           <ConnectMetamask onClick={onClick} />
-          <BuyBSW buyBswLink={buyBswLink} />
+          <BuyBSW buyBswHandler={buyBswHandler} />
         </FlexWrap>
       </LeftInfo>
       <InfoList>
