@@ -6580,7 +6580,7 @@ var HeadText = styled__default["default"](Text).attrs({ bold: true })(templateOb
     return style$1[scale || scales$1.SIZE32].fontSize;
 }, function (_a) {
     var scale = _a.scale;
-    return style$1[scale || scales$1.SIZE16].lineHeight;
+    return style$1[scale || scales$1.SIZE32].lineHeight;
 }, function (_a) {
     var nowrap = _a.nowrap;
     return (nowrap ? "nowrap" : "normal");
