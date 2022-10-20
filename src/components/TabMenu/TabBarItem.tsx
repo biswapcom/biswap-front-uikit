@@ -17,6 +17,7 @@ const TabItem: PolymorphicComponent<
   "button"
 > = styled.button<TabBarItemProps>`
   border: 0;
+  margin: 0;
   cursor: pointer;
   display: flex;
   justify-content: center;
