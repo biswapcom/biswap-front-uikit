@@ -9,6 +9,7 @@ const MenuItem: React.FC<MenuItemProps> = ({
   isActive = false,
   variant = "default",
   statusColor,
+  showNavBadge,
   ...props
 }) => {
   const { linkComponent } = useContext(MenuContext);
@@ -28,6 +29,7 @@ const MenuItem: React.FC<MenuItemProps> = ({
         $isActive={isActive}
         $variant={variant}
         $statusColor={statusColor}
+        showNavBadge={showNavBadge}
         {...props}
       >
         {children}
