@@ -21,8 +21,9 @@ const style = {
   },
 };
 
-const BodyText = styled(Text).attrs({ bold: true })<BodyTextProps>`
+const BodyText = styled(Text)<BodyTextProps>`
   font-size: ${({ scale }) => style[scale || scales.SIZE16].fontSize};
+  line-height: ${({ scale }) => style[scale || scales.SIZE16].lineHeight};
   font-weight: 400;
   white-space: ${({ nowrap }) => (nowrap ? "nowrap" : "normal")};
 `;
