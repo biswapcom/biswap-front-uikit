@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useMemo, useState } from "react";
+import React, { lazy, Suspense, useEffect, useMemo, useState } from "react";
 
 import { atom, useAtom } from "jotai";
 
@@ -22,7 +22,7 @@ import {
   WalletConnectorNotFoundError,
   WalletSwitchChainError,
 } from "./types";
-import { walletLocalStorageKey } from "./config";
+import { WALLET_SCREEN, walletLocalStorageKey } from "./config";
 
 const Qrcode = lazy(() => import("../../components/QRCode/QRCode"));
 
@@ -41,13 +41,13 @@ export function useSelectedWallet<T>() {
   return useAtom<WalletConfigV2<T> | null>(selectedWalletAtom);
 }
 
-//const MOBILE_DEFAULT_DISPLAY_COUNT = 6;
-
 function MobileModal<T>({
   wallets,
   connectWallet,
+  isWelcomeScreen,
 }: Pick<WalletModalV2Props<T>, "wallets"> & {
   connectWallet: (wallet: WalletConfigV2<T>) => void;
+  isWelcomeScreen?: boolean;
 }) {
   const [selected] = useSelectedWallet();
   const [error] = useAtom(errorAtom);
@@ -112,8 +112,6 @@ function WalletSelect<T>({
   wallets: WalletConfigV2<T>[];
   onClick: (wallet: WalletConfigV2<T>) => void;
 }) {
-  // const [selected] = useSelectedWallet();
-
   return (
     <ScrollWrapper>
       <WalletCardsWrapper>
@@ -182,35 +180,36 @@ function sortWallets<T>(
 function DesktopModal<T>({
   wallets,
   connectWallet,
+  isWelcomeScreen,
 }: Pick<WalletModalV2Props<T>, "wallets"> & {
   connectWallet: (wallet: WalletConfigV2<T>) => void;
+  isWelcomeScreen?: boolean;
 }) {
   const [selected] = useSelectedWallet<T>();
   const [error] = useAtom(errorAtom);
   const [qrCode, setQrCode] = useState<string | undefined>(undefined);
 
-  console.log("desktop wallets", wallets);
   const connectToWallet = (wallet: WalletConfigV2<T>) => {
     connectWallet(wallet);
   };
 
   return (
     <>
-      <WalletSelect
-        wallets={wallets}
-        onClick={(w) => {
-          connectToWallet(w);
-          setQrCode(undefined);
-          if (w.qrCode) {
-            w.qrCode().then((uri) => {
-              setQrCode(uri);
-            });
-          }
-        }}
-      />
-      <div>
+      {isWelcomeScreen ? (
+        <WalletSelect
+          wallets={wallets}
+          onClick={(w) => {
+            connectToWallet(w);
+            setQrCode(undefined);
+            if (w.qrCode) {
+              w.qrCode().then((uri) => {
+                setQrCode(uri);
+              });
+            }
+          }}
+        />
+      ) : (
         <div>
-          {/*{!selected && <Intro />}*/}
           {selected && selected.installed !== false && (
             <>
               {typeof selected.icon === "string" && (
@@ -233,13 +232,19 @@ function DesktopModal<T>({
             <NotInstalled qrCode={qrCode} wallet={selected} />
           )}
         </div>
-      </div>
+      )}
     </>
   );
 }
 
 export function ConnectModalV2<T = unknown>(props: WalletModalV2Props<T>) {
-  const { wallets: _wallets, login, onDismiss, ...rest} = props;
+  const { wallets: _wallets, login, onDismiss, ...rest } = props;
+
+  const [connectScreen, setConnectScreen] = useState(
+    WALLET_SCREEN.WELCOME_SCREEN
+  );
+
+  const isWelcomeScreen = connectScreen === WALLET_SCREEN.WELCOME_SCREEN;
 
   const [lastUsedWalletName] = useAtom(lastUsedWalletNameAtom);
 
@@ -249,6 +254,13 @@ export function ConnectModalV2<T = unknown>(props: WalletModalV2Props<T>) {
   );
   const [, setSelected] = useSelectedWallet<T>();
   const [, setError] = useAtom(errorAtom);
+
+  useEffect(() => {
+    return () => {
+      setSelected(null);
+      setError("");
+    };
+  }, []);
 
   // const imageSources = useMemo(
   //     () =>
@@ -263,6 +275,7 @@ export function ConnectModalV2<T = unknown>(props: WalletModalV2Props<T>) {
   const connectWallet = (wallet: WalletConfigV2<T>) => {
     setSelected(wallet);
     setError("");
+    setConnectScreen(WALLET_SCREEN.CONNECTING_SCREEN);
     if (wallet.installed !== false) {
       login(wallet.connectorId)
         .then((v) => {
@@ -287,6 +300,8 @@ export function ConnectModalV2<T = unknown>(props: WalletModalV2Props<T>) {
     <Modal
       onDismiss={props.onDismiss}
       walletModal
+      onBack={() => setConnectScreen(WALLET_SCREEN.WELCOME_SCREEN)}
+      hideOnBack={isWelcomeScreen}
       title="Connect to a wallet"
       width={isMobile ? "100%" : "auto"}
       maxWidth={!isMobile ? "416px" : "none"}
@@ -299,24 +314,40 @@ export function ConnectModalV2<T = unknown>(props: WalletModalV2Props<T>) {
       }}
       {...rest}
     >
-      <StyledText fontSize="12px" ml={isMobile ? "16px" : "32px"} mb="24px">
-        By connecting a wallet, you agree to Biswap's{" "}
-        <Text fontSize="12px" as="span" color="primary">
-          <a
-            href={`${process.env.NEXT_PUBLIC_FRONT_1}/terms`}
-            target={isMobile ? "_self" : "_blank"}
-          >
-            Terms of Use
-          </a>
-        </Text>
-      </StyledText>
-      <div>
-        {isMobile ? (
-          <MobileModal connectWallet={connectWallet} wallets={wallets} />
-        ) : (
-          <DesktopModal connectWallet={connectWallet} wallets={wallets} />
+      <>
+        {isWelcomeScreen && (
+          <>
+            <StyledText
+              fontSize="12px"
+              ml={isMobile ? "16px" : "32px"}
+              mb="24px"
+            >
+              By connecting a wallet, you agree to Biswap's{" "}
+              <Text fontSize="12px" as="span" color="primary">
+                <a
+                  href={`${process.env.NEXT_PUBLIC_FRONT_1}/terms`}
+                  target={isMobile ? "_self" : "_blank"}
+                >
+                  Terms of Use
+                </a>
+              </Text>
+            </StyledText>
+          </>
         )}
-      </div>
+        {isMobile ? (
+          <MobileModal
+            isWelcomeScreen={isWelcomeScreen}
+            connectWallet={connectWallet}
+            wallets={wallets}
+          />
+        ) : (
+          <DesktopModal
+            isWelcomeScreen={isWelcomeScreen}
+            connectWallet={connectWallet}
+            wallets={wallets}
+          />
+        )}
+      </>
     </Modal>
   );
 }
