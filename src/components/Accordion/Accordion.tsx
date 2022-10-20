@@ -68,7 +68,7 @@ const Accordion: FC<IProps> = ({
   return (
     <AccordionComponent key={`acc-key-${label}`}>
       {isMobile && index && (
-        <Box m={"0 -24px 0"}>
+        <Box m={"0 -16px 0"}>
           <DropdownMenuDivider color="rgba(18, 99, 241, 0.16)" />
         </Box>
       )}
