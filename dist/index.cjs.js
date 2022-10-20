@@ -6603,9 +6603,12 @@ var style$1 = (_a$4 = {},
         lineHeight: "12px",
     },
     _a$4);
-var HeadText = styled__default["default"](Text).attrs({ bold: true })(templateObject_1$A || (templateObject_1$A = __makeTemplateObject(["\n  font-size: ", ";\n  font-weight: 600;\n  white-space: ", ";\n"], ["\n  font-size: ", ";\n  font-weight: 600;\n  white-space: ", ";\n"])), function (_a) {
+var HeadText = styled__default["default"](Text).attrs({ bold: true })(templateObject_1$A || (templateObject_1$A = __makeTemplateObject(["\n  font-size: ", ";\n  line-height: ", ";\n  font-weight: 600;\n  white-space: ", ";\n"], ["\n  font-size: ", ";\n  line-height: ", ";\n  font-weight: 600;\n  white-space: ", ";\n"])), function (_a) {
     var scale = _a.scale;
     return style$1[scale || scales$1.SIZE32].fontSize;
+}, function (_a) {
+    var scale = _a.scale;
+    return style$1[scale || scales$1.SIZE32].lineHeight;
 }, function (_a) {
     var nowrap = _a.nowrap;
     return (nowrap ? "nowrap" : "normal");
@@ -6646,9 +6649,12 @@ var style = (_a$3 = {},
         lineHeight: "16px",
     },
     _a$3);
-var BodyText = styled__default["default"](Text).attrs({ bold: true })(templateObject_1$z || (templateObject_1$z = __makeTemplateObject(["\n  font-size: ", ";\n  font-weight: 400;\n  white-space: ", ";\n"], ["\n  font-size: ", ";\n  font-weight: 400;\n  white-space: ", ";\n"])), function (_a) {
+var BodyText = styled__default["default"](Text)(templateObject_1$z || (templateObject_1$z = __makeTemplateObject(["\n  font-size: ", ";\n  line-height: ", ";\n  font-weight: 400;\n  white-space: ", ";\n"], ["\n  font-size: ", ";\n  line-height: ", ";\n  font-weight: 400;\n  white-space: ", ";\n"])), function (_a) {
     var scale = _a.scale;
     return style[scale || scales.SIZE16].fontSize;
+}, function (_a) {
+    var scale = _a.scale;
+    return style[scale || scales.SIZE16].lineHeight;
 }, function (_a) {
     var nowrap = _a.nowrap;
     return (nowrap ? "nowrap" : "normal");
