@@ -20,7 +20,7 @@ export interface LinkStatus {
     color: keyof Colors;
 }
 export interface NavProps extends BSWPriceProps, FooterAboutLinks, FooterProductLinks, FooterServiceLinks, ConnectMetaProps, FooterStatisticProps {
-    buyBswLink: string;
+    buyBswHandler: () => void;
     networkChangeToBSC?: any;
     networkChangeToAvalanche?: any;
     currentNetwork?: any;

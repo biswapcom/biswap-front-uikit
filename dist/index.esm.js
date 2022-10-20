@@ -7389,8 +7389,8 @@ var ConnectMetamask = function (props) {
 var templateObject_1$u, templateObject_2$l;
 
 var BuyBSW = function (_a) {
-    var buyBswLink = _a.buyBswLink;
-    return (React.createElement(Button, { as: "a", href: buyBswLink, variant: "danger", scale: "md" }, "Buy BSW"));
+    var buyBswHandler = _a.buyBswHandler;
+    return (React.createElement(Button, { onClick: buyBswHandler, variant: "danger", scale: "md" }, "Buy BSW"));
 };
 
 var Wrapper$7 = styled.div(templateObject_1$t || (templateObject_1$t = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  border-radius: 16px;\n  padding: 24px;\n  background: ", ";\n  margin-bottom: 24px;\n  grid-area: footer-info;\n\n  ", " {\n    margin-bottom: 0;\n  }\n\n  ", " {\n    flex-direction: row;\n    justify-content: initial;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  border-radius: 16px;\n  padding: 24px;\n  background: ", ";\n  margin-bottom: 24px;\n  grid-area: footer-info;\n\n  ", " {\n    margin-bottom: 0;\n  }\n\n  ", " {\n    flex-direction: row;\n    justify-content: initial;\n  }\n"])), function (_a) {
@@ -7425,13 +7425,13 @@ var InfoListValue = styled.span(templateObject_7$7 || (templateObject_7$7 = __ma
     return theme.colors.white;
 });
 var FooterInfo = function (_a) {
-    var BSWPriceLabel = _a.BSWPriceLabel, BSWPriceValue = _a.BSWPriceValue, onClick = _a.onClick, footerStatistic = _a.footerStatistic, buyBswLink = _a.buyBswLink;
+    var BSWPriceLabel = _a.BSWPriceLabel, BSWPriceValue = _a.BSWPriceValue, onClick = _a.onClick, footerStatistic = _a.footerStatistic, buyBswHandler = _a.buyBswHandler;
     return (React.createElement(Wrapper$7, null,
         React.createElement(LeftInfo, null,
             React.createElement(BSWPrice, { BSWPriceLabel: BSWPriceLabel, BSWPriceValue: BSWPriceValue }),
             React.createElement(FlexWrap, null,
                 React.createElement(ConnectMetamask, { onClick: onClick }),
-                React.createElement(BuyBSW, { buyBswLink: buyBswLink }))),
+                React.createElement(BuyBSW, { buyBswHandler: buyBswHandler }))),
         React.createElement(InfoList, null, footerStatistic.map(function (item, index) { return (React.createElement(InfoListItem, { key: index.toString() },
             React.createElement(InfoListLabel, null, item.label),
             React.createElement(InfoListValue, null, formatSpacingAmount(item.value)))); }))));
@@ -8145,10 +8145,10 @@ var InnerRow = styled.div(templateObject_2$e || (templateObject_2$e = __makeTemp
     return theme.mediaQueries.xll;
 });
 var Footer = function (_a) {
-    var BSWPriceLabel = _a.BSWPriceLabel, BSWPriceValue = _a.BSWPriceValue, onClick = _a.onClick, footerStatistic = _a.footerStatistic, aboutLinks = _a.aboutLinks, productLinks = _a.productLinks, serviceLinks = _a.serviceLinks, buyBswLink = _a.buyBswLink;
+    var BSWPriceLabel = _a.BSWPriceLabel, BSWPriceValue = _a.BSWPriceValue, onClick = _a.onClick, footerStatistic = _a.footerStatistic, aboutLinks = _a.aboutLinks, productLinks = _a.productLinks, serviceLinks = _a.serviceLinks, buyBswHandler = _a.buyBswHandler;
     return (React.createElement(Wrapper$2, null,
         React.createElement(InnerRow, null,
-            React.createElement(FooterInfo, { BSWPriceLabel: BSWPriceLabel, BSWPriceValue: BSWPriceValue, onClick: onClick, footerStatistic: footerStatistic, buyBswLink: buyBswLink }),
+            React.createElement(FooterInfo, { BSWPriceLabel: BSWPriceLabel, BSWPriceValue: BSWPriceValue, onClick: onClick, footerStatistic: footerStatistic, buyBswHandler: buyBswHandler }),
             React.createElement(About, { aboutLinks: aboutLinks }),
             React.createElement(Product, { productLinks: productLinks }),
             React.createElement(Service, { serviceLinks: serviceLinks }),
@@ -9285,7 +9285,7 @@ var Menu = function (_a) {
     // userMenu,
     banner = _a.banner, 
     // isDark,
-    links = _a.links; _a.subLinks; var activeItem = _a.activeItem, activeSubItem = _a.activeSubItem, children = _a.children, BSWPriceLabel = _a.BSWPriceLabel, BSWPriceValue = _a.BSWPriceValue, footerStatistic = _a.footerStatistic, onClick = _a.onClick, buyBswLink = _a.buyBswLink, aboutLinks = _a.aboutLinks, productLinks = _a.productLinks, serviceLinks = _a.serviceLinks, 
+    links = _a.links; _a.subLinks; var activeItem = _a.activeItem, activeSubItem = _a.activeSubItem, children = _a.children, BSWPriceLabel = _a.BSWPriceLabel, BSWPriceValue = _a.BSWPriceValue, footerStatistic = _a.footerStatistic, onClick = _a.onClick, buyBswHandler = _a.buyBswHandler, aboutLinks = _a.aboutLinks, productLinks = _a.productLinks, serviceLinks = _a.serviceLinks, 
     // currentNetwork,
     // networkChangeToBSC,
     // networkChangeToAvalanche,
@@ -9384,7 +9384,7 @@ var Menu = function (_a) {
             React.createElement(BodyWrapper, null,
                 React.createElement(Inner, { isPushed: false, showMenu: showMenu },
                     children,
-                    React.createElement(Footer, { BSWPriceLabel: BSWPriceLabel, BSWPriceValue: BSWPriceValue, footerStatistic: footerStatistic, onClick: onClick, buyBswLink: buyBswLink, aboutLinks: aboutLinks, productLinks: productLinks, serviceLinks: serviceLinks }))))));
+                    React.createElement(Footer, { BSWPriceLabel: BSWPriceLabel, BSWPriceValue: BSWPriceValue, footerStatistic: footerStatistic, onClick: onClick, buyBswHandler: buyBswHandler, aboutLinks: aboutLinks, productLinks: productLinks, serviceLinks: serviceLinks }))))));
 };
 var templateObject_1$5, templateObject_2$3, templateObject_3$1, templateObject_4$1, templateObject_5$1, templateObject_6$1, templateObject_7, templateObject_8, templateObject_9;
 

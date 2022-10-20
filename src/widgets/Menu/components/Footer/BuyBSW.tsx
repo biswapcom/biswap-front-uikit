@@ -2,12 +2,12 @@ import React from "react";
 import Button from "../../../../components/Button/Button";
 
 export interface Props {
-  buyBswLink: string;
+  buyBswHandler: () => void;
 }
 
-const BuyBSW: React.FC<Props> = ({ buyBswLink }) => {
+const BuyBSW: React.FC<Props> = ({ buyBswHandler }) => {
   return (
-    <Button as="a" href={buyBswLink} variant="danger" scale="md">
+    <Button onClick={buyBswHandler} variant="danger" scale="md">
       Buy BSW
     </Button>
   );
