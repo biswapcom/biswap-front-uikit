@@ -30,7 +30,7 @@ export interface NavProps
     FooterServiceLinks,
     ConnectMetaProps,
     FooterStatisticProps {
-  buyBswLink: string;
+  buyBswHandler: () => void;
   networkChangeToBSC?: any;
   networkChangeToAvalanche?: any;
   currentNetwork?: any;

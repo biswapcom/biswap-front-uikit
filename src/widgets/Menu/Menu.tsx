@@ -149,7 +149,7 @@ const Menu: React.FC<NavProps> = ({
   BSWPriceValue,
   footerStatistic,
   onClick,
-  buyBswLink,
+  buyBswHandler,
   aboutLinks,
   productLinks,
   serviceLinks,
@@ -354,7 +354,7 @@ const Menu: React.FC<NavProps> = ({
               BSWPriceValue={BSWPriceValue}
               footerStatistic={footerStatistic}
               onClick={onClick}
-              buyBswLink={buyBswLink}
+              buyBswHandler={buyBswHandler}
               aboutLinks={aboutLinks}
               productLinks={productLinks}
               serviceLinks={serviceLinks}
