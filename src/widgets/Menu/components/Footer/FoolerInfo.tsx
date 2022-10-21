@@ -92,7 +92,7 @@ const FooterInfo: React.FC<Props> = ({
   BSWPriceValue,
   registerToken,
   footerStatistic,
-  buyBswLink,
+  buyBswHandler,
 }) => {
   return (
     <Wrapper>
@@ -100,7 +100,7 @@ const FooterInfo: React.FC<Props> = ({
         <BSWPrice BSWPriceLabel={BSWPriceLabel} BSWPriceValue={BSWPriceValue} />
         <FlexWrap>
           <ConnectMetamask onClick={registerToken} />
-          <BuyBSW buyBswLink={buyBswLink} />
+          <BuyBSW buyBswHandler={buyBswHandler} />
         </FlexWrap>
       </LeftInfo>
       <InfoList>

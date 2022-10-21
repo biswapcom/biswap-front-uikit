@@ -16,6 +16,13 @@ export enum ConnectorsTitleTypes {
   // iToken = "iToken",
   // BitKeep = "BitKeep Wallet",
   // BraveWallet = "Brave Wallet",
+  BinanceChain = "Binance Chain",
+  SafePal = "SafePal Wallet",
+  Coinbase = "Coinbase Wallet",
+  iToken = "iToken",
+  BitKeep = "BitKeep Wallet",
+  BraveWallet = "Brave Wallet",
+  Gnosis = "Gnosis Safe",
 }
 
 export enum ConnectorNames {

@@ -1,22 +1,48 @@
-import React, { FC } from "react";
-import { SvgProps } from "../../components/Svg";
-export declare type Login<T> = (connectorId: T) => void;
+import { FC } from "react";
+import { SvgProps } from "../../components/Svg/types";
 export declare enum ConnectorsTitleTypes {
     Metamask = "Metamask",
-    WalletConnect = "WalletConnect"
+    TrustWallet = "TrustWallet",
+    MathWallet = "MathWallet",
+    TokenPocket = "TokenPocket",
+    Coin98 = "Coin98",
+    WalletConnect = "WalletConnect",
+    BinanceChain = "Binance Chain",
+    SafePal = "SafePal Wallet",
+    Coinbase = "Coinbase Wallet",
+    iToken = "iToken",
+    BitKeep = "BitKeep Wallet",
+    BraveWallet = "Brave Wallet",
+    Gnosis = "Gnosis Safe"
 }
 export declare enum ConnectorNames {
-    WalletConnect = "walletconnect"
+    Injected = "injected",
+    WalletConnect = "walletconnect",
+    BSC = "bsc",
+    WalletLink = "walletlink"
 }
-export interface WalletConfig<T = {}> {
-    title: string;
-    icon: FC<React.PropsWithChildren<SvgProps>>;
-    connectorId: T;
-    priority: number | (() => number);
-    href?: string;
-    installed?: boolean;
-    downloadLink?: {
-        desktop?: string;
-        mobile?: string;
-    };
+export declare const InstanceCheckRules: {
+    Metamask: string;
+    TrustWallet: string;
+    MathWallet: string;
+    TokenPocket: string;
+    Coin98: string;
+    WalletConnect: string;
+    "Binance Chain": string;
+    "SafePal Wallet": string;
+    "Coinbase Wallet": string;
+    iToken: string;
+    "BitKeep Wallet": string;
+    "Brave Wallet": string;
+    "Gnosis Safe": string;
+};
+export declare type Login = (connectorID: ConnectorNames, instanceCheckRule?: InstanceCheckRuleType) => void;
+export declare type InstanceCheckRuleType = typeof InstanceCheckRules[ConnectorsTitleTypes];
+export interface Config {
+    priority: number;
+    title: ConnectorsTitleTypes;
+    icon: FC<SvgProps>;
+    connectorId: ConnectorNames;
+    helpHref: string;
+    instanceCheckRule: InstanceCheckRuleType;
 }

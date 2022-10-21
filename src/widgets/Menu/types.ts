@@ -15,7 +15,7 @@ export interface NavProps
     FooterServiceLinks,
     ConnectMetaProps,
     FooterStatisticProps {
-  buyBswLink: string;
+  buyBswHandler: () => void;
   linkComponent?: ElementType;
   banner?: ReactElement;
   links: Array<MenuItemsType>;

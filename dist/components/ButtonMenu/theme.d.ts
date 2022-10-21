@@ -3,6 +3,7 @@ export declare const scaleVariants: {
         height: string;
         padding: string;
         borderRadius: string;
+        fontSize: string;
     };
     lg: {
         height: string;
@@ -30,46 +31,44 @@ export declare const scaleVariants: {
     };
 };
 export declare const styleVariants: {
-    primary: {
-        backgroundColor: string;
+    dark: {
         color: string;
-        ":hover:not(:disabled)": {
-            backgroundColor: string;
-        };
+        backgroundColor: string;
         ":active:not(:disabled)": {
             backgroundColor: string;
         };
     };
-    warning: {
+    light: {
         backgroundColor: string;
         color: string;
-        ":hover:not(:disabled)": {
-            backgroundColor: string;
-        };
-        ":active:not(:disabled)": {
-            backgroundColor: string;
-        };
-    };
-    select: {
-        backgroundColor: string;
-        color: string;
-        ":hover:not(:disabled)": {
-            backgroundColor: string;
+        ":hover(:disabled)": {
             color: string;
         };
         ":active:not(:disabled)": {
-            backgroundColor: string;
+            color: string;
         };
     };
-    selectLight: {
+    warningDark: {
         backgroundColor: string;
         color: string;
-        ":hover:not(:disabled)": {
-            backgroundColor: string;
+        ":hover(:disabled)": {
             color: string;
         };
         ":active:not(:disabled)": {
+            color: string;
+        };
+        ":active": {
             backgroundColor: string;
+        };
+    };
+    warningLight: {
+        backgroundColor: string;
+        color: string;
+        ":hover(:disabled)": {
+            color: string;
+        };
+        ":active:not(:disabled)": {
+            color: string;
         };
     };
 };

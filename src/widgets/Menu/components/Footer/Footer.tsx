@@ -27,13 +27,13 @@ interface Props
     FooterProductLinks,
     FooterServiceLinks {
   registerToken: () => void;
-  buyBswLink: string;
+  buyBswHandler: () => void;
 }
 
 const Wrapper = styled.footer`
   color: #fff;
   background: ${({ theme }) => theme.colors.dark700};
-  padding: 32px 16px;
+  padding: 56px 16px 32px;
   transition: padding-left 0.2s;
   z-index: 10;
 `;
@@ -95,7 +95,7 @@ const Footer: React.FC<Props> = ({
   aboutLinks,
   productLinks,
   serviceLinks,
-  buyBswLink,
+  buyBswHandler,
 }) => {
   return (
     <Wrapper>
@@ -105,7 +105,7 @@ const Footer: React.FC<Props> = ({
           BSWPriceValue={BSWPriceValue}
           registerToken={registerToken}
           footerStatistic={footerStatistic}
-          buyBswLink={buyBswLink}
+          buyBswHandler={buyBswHandler}
         />
         <About aboutLinks={aboutLinks} />
         <Product productLinks={productLinks} />

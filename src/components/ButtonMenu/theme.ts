@@ -5,6 +5,7 @@ export const scaleVariants = {
     height: "48px",
     padding: "0 24px",
     borderRadius: "10px",
+    fontSize: "16px",
   },
   [scales.LG]: {
     height: "40px",
@@ -33,54 +34,48 @@ export const scaleVariants = {
 };
 
 export const styleVariants = {
-  [variants.PRIMARY]: {
-    backgroundColor: "primary",
+  [variants.DARK]: {
     color: "white",
+    backgroundColor: "transparent",
 
-    ":hover:not(:disabled)": {
-      backgroundColor: "primaryHover",
-    },
     ":active:not(:disabled)": {
-      backgroundColor: "primaryPress",
+      backgroundColor: "transparent",
     },
-    // ":disabled": {
-    //   backgroundColor: "primaryPress",
-    //   color: "white"
-    // },
   },
-  [variants.WARNING]: {
-    backgroundColor: "warning",
+  [variants.LIGHT]: {
+    backgroundColor: "transparent",
     color: "dark800",
 
-    ":hover:not(:disabled)": {
-      backgroundColor: "warningHover",
+    ":hover(:disabled)": {
+      color: "dark800",
     },
     ":active:not(:disabled)": {
-      backgroundColor: "warningPress",
+      color: "text",
     },
   },
-  [variants.SELECT]: {
-    backgroundColor: "dark500",
-    color: "white",
+  [variants.WARNING_DARK]: {
+    backgroundColor: "transparent",
+    color: "dark800",
 
-    ":hover:not(:disabled)": {
-      backgroundColor: "dark500",
-      color: "white",
+    ":hover(:disabled)": {
+      color: "dark800",
     },
     ":active:not(:disabled)": {
+      color: "dark800",
+    },
+    ":active": {
       backgroundColor: "transparent",
     },
   },
-  [variants.SELECT_LIGHT]: {
-    backgroundColor: "white",
-    color: "background",
+  [variants.WARNING_LIGHT]: {
+    backgroundColor: "transparent",
+    color: "dark800",
 
-    ":hover:not(:disabled)": {
-      backgroundColor: "transparent",
-      color: "background",
+    ":hover(:disabled)": {
+      color: "dark800",
     },
     ":active:not(:disabled)": {
-      backgroundColor: "transparent",
+      color: "dark800",
     },
   },
 };
