@@ -9,7 +9,7 @@ import BuyBSW from "./BuyBSW";
 
 interface Props extends BSWPriceProps, FooterStatisticProps {
   registerToken: () => void;
-  buyBswLink: string;
+  buyBswHandler: () => void;
 }
 
 const Wrapper = styled.div`
