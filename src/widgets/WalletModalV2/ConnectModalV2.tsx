@@ -5,7 +5,7 @@ import { atom, useAtom } from "jotai";
 import { isMobile } from "react-device-detect";
 
 import Modal from "../Modal/Modal";
-import { WarningIcon } from "../../components/Svg";
+import { HelpOpacityIcon, WarningIcon } from "../../components/Svg";
 import { ModalProps } from "../Modal";
 
 // components
@@ -23,6 +23,9 @@ import {
   WalletSwitchChainError,
 } from "./types";
 import { WALLET_SCREEN, walletLocalStorageKey } from "./config";
+import BodyText from "../../components/Typography/BodyText";
+import Flex from "../../components/Box/Flex";
+import { HOW_TO_CONNECT_DOCS } from "../../config";
 
 const Qrcode = lazy(() => import("../../components/QRCode/QRCode"));
 
@@ -209,29 +212,36 @@ function DesktopModal<T>({
           }}
         />
       ) : (
-        <div>
+        <Flex
+          py="120px"
+          flexDirection="column"
+          alignItems="center"
+          justifyContent="center"
+        >
           {selected && selected.installed !== false && (
             <>
               {typeof selected.icon === "string" && (
-                <Image src={selected.icon} width={108} height={108} />
+                <Image src={selected.icon} width={160} height={160} />
               )}
-              <Heading as="h1" fontSize="20px" color="secondary">
+              <Heading mt="24px" as="h1" scale="md" color="tooltip">
                 Opening {selected.title}
               </Heading>
-              {error ? (
+              {!error ? (
                 <ErrorContent
                   message={error}
                   onRetry={() => connectToWallet(selected)}
                 />
               ) : (
-                <Text>Please confirm in {selected.title}</Text>
+                <BodyText mt="16px" as="p" scale="size16" color="gray900">
+                  Please confirm in {selected.title}
+                </BodyText>
               )}
             </>
           )}
           {selected && selected.installed === false && (
             <NotInstalled qrCode={qrCode} wallet={selected} />
           )}
-        </div>
+        </Flex>
       )}
     </>
   );
@@ -301,8 +311,9 @@ export function ConnectModalV2<T = unknown>(props: WalletModalV2Props<T>) {
       onDismiss={props.onDismiss}
       walletModal
       onBack={() => setConnectScreen(WALLET_SCREEN.WELCOME_SCREEN)}
+      closeBtnColor="dark900"
       hideOnBack={isWelcomeScreen}
-      title="Connect to a wallet"
+      title={isWelcomeScreen ? "Connect to a wallet" : "Back to wallets"}
       width={isMobile ? "100%" : "auto"}
       maxWidth={!isMobile ? "416px" : "none"}
       bodyPadding="0"
@@ -347,6 +358,27 @@ export function ConnectModalV2<T = unknown>(props: WalletModalV2Props<T>) {
             wallets={wallets}
           />
         )}
+        {isWelcomeScreen && (
+          <>
+            <BodyText as="span" mt="24px" textAlign="center" scale="size12">
+              Haven’t got a crypto wallet yet?
+            </BodyText>
+            <Button
+              startIcon={<HelpOpacityIcon color="white" width="24px" />}
+              height="48px"
+              width={isMobile ? "306px" : "352px"}
+              as="a"
+              color="primary"
+              m={isMobile ? "16px 16px 32px" : "16px 32px 32px"}
+              href={HOW_TO_CONNECT_DOCS}
+              target={isMobile ? "_self" : "_blank"}
+            >
+              <Text as="span" color="contrast" bold>
+                Learn How to Connect
+              </Text>
+            </Button>
+          </>
+        )}
       </>
     </Modal>
   );
@@ -360,8 +392,16 @@ const NotInstalled = ({
   qrCode?: string;
 }) => {
   return (
-    <>
-      <Heading as="h1" fontSize="20px" color="secondary">
+    <Flex
+      flexDirection="column"
+      alignItems="center"
+      justifyContent="center"
+      py="116px"
+    >
+      {typeof wallet.icon === "string" && (
+        <Image src={wallet.icon} width={160} height={160} />
+      )}
+      <Heading as="h2" scale="md" color="tooltip">
         {wallet.title} is not installed
       </Heading>
       {qrCode && (
@@ -379,14 +419,22 @@ const NotInstalled = ({
         </Suspense>
       )}
       {!qrCode && (
-        <Text maxWidth="246px" m="auto">
+        <BodyText
+          mt="16px"
+          textAlign="center"
+          color="gray900"
+          scale="size16"
+          maxWidth="352px"
+        >
           Please install the {wallet.title} browser extension to connect the{" "}
           {wallet.title} wallet.
-        </Text>
+        </BodyText>
       )}
       {wallet.guide && (
         <Button
-          variant="text"
+          mt="16px"
+          variant="primary"
+          scale="lg"
           as="a"
           href={getDesktopLink(wallet.guide)}
           external
@@ -396,7 +444,9 @@ const NotInstalled = ({
       )}
       {wallet.downloadLink && (
         <Button
-          variant="text"
+          mt="16px"
+          variant="primary"
+          scale="lg"
           as="a"
           href={getDesktopLink(wallet.downloadLink)}
           external
@@ -404,7 +454,7 @@ const NotInstalled = ({
           {getDesktopText(wallet.downloadLink, "Install")}
         </Button>
       )}
-    </>
+    </Flex>
   );
 };
 
@@ -429,7 +479,7 @@ const ErrorContent = ({
   return (
     <>
       <ErrorMessage message={message} />
-      <Button variant="text" onClick={onRetry}>
+      <Button variant="primary" scale="lg" onClick={onRetry}>
         Retry
       </Button>
     </>

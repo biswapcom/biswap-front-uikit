@@ -156,7 +156,7 @@ const Menu: FC<PropsWithChildren<NavProps>> = ({
   BSWPriceValue,
   footerStatistic,
   registerToken,
-                                    buyBswHandler,
+  buyBswHandler,
   aboutLinks,
   productLinks,
   serviceLinks,

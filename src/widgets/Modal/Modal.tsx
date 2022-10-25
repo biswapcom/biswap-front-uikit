@@ -48,10 +48,10 @@ const Modal: React.FC<ModalProps> = ({
       borderRadius={props.borderRadius ?? "16px"}
     >
       <ModalHeader>
+        {!hideOnBack && onBack && (
+          <ModalBackButton onBack={onBack} closeBtnColor={closeBtnColor} />
+        )}
         <ModalTitle>
-          {!hideOnBack && onBack && (
-            <ModalBackButton onBack={onBack} closeBtnColor={closeBtnColor} />
-          )}
           {title && (
             <Heading scale={titleSize} color="backgroundDark">
               {title}

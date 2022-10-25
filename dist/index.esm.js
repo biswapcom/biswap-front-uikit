@@ -7366,11 +7366,11 @@ var formatSpacingAmount = function (x) {
     return null;
 };
 
-var ModalHeader = styled.div(templateObject_1$u || (templateObject_1$u = __makeTemplateObject(["\n  display: flex;\n  align-items: flex-start;\n  padding: 24px 16px;\n\n  ", " {\n    padding: 32px 32px 24px;\n  }\n"], ["\n  display: flex;\n  align-items: flex-start;\n  padding: 24px 16px;\n\n  ", " {\n    padding: 32px 32px 24px;\n  }\n"])), function (_a) {
+var ModalHeader = styled.div(templateObject_1$u || (templateObject_1$u = __makeTemplateObject(["\n  display: flex;\n  //align-items: flex-start;\n  justify-content: space-between;\n  align-items: center;\n  padding: 24px 16px;\n\n  ", " {\n    padding: 32px 32px 24px;\n  }\n"], ["\n  display: flex;\n  //align-items: flex-start;\n  justify-content: space-between;\n  align-items: center;\n  padding: 24px 16px;\n\n  ", " {\n    padding: 32px 32px 24px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var ModalTitle = styled(Flex)(templateObject_2$l || (templateObject_2$l = __makeTemplateObject(["\n  align-items: center;\n  flex: 1;\n"], ["\n  align-items: center;\n  flex: 1;\n"])));
+var ModalTitle = styled(Flex)(templateObject_2$l || (templateObject_2$l = __makeTemplateObject([""], [""])));
 var ModalBody$1 = styled(Flex)(templateObject_3$g || (templateObject_3$g = __makeTemplateObject(["\n  flex-direction: column;\n  overflow-y: auto;\n"], ["\n  flex-direction: column;\n  overflow-y: auto;\n"])));
 var ModalCloseButton = function (_a) {
     var onDismiss = _a.onDismiss, closeBtnColor = _a.closeBtnColor;
@@ -7378,9 +7378,9 @@ var ModalCloseButton = function (_a) {
         React.createElement(Icon$38, { color: closeBtnColor || "dark600", width: "24px" })));
 };
 var ModalBackButton = function (_a) {
-    var onBack = _a.onBack; _a.closeBtnColor;
+    var onBack = _a.onBack, closeBtnColor = _a.closeBtnColor;
     return (React.createElement(IconButton, { variant: "text", onClick: onBack, "area-label": "go back", mr: "8px" },
-        React.createElement(Icon$3o, { color: "primary" })));
+        React.createElement(Icon$3o, { color: closeBtnColor || "primary" })));
 };
 var ModalContainer = styled(Box)(templateObject_4$d || (templateObject_4$d = __makeTemplateObject(["\n  overflow: hidden;\n  background: ", ";\n  width: ", ";\n  z-index: ", ";\n  ", "\n\n  ", " {\n    width: ", ";\n    min-width: ", ";\n    max-width: 100%;\n  }\n"], ["\n  overflow: hidden;\n  background: ", ";\n  width: ", ";\n  z-index: ", ";\n  ", "\n\n  ", " {\n    width: ", ";\n    min-width: ", ";\n    max-width: 100%;\n  }\n"])), function (_a) {
     var background = _a.background;
@@ -7415,9 +7415,8 @@ var Modal = function (_a) {
     var defaultBodyPadding = isMobile ? "0 16px 24px" : "0 32px 32px";
     return (React.createElement(ModalContainer, __assign({ minWidth: minWidth }, props, { background: getThemeValue("colors.".concat(modalBackground), modalBackground)(theme), maxWidth: maxWidth, walletModal: walletModal, width: props.width, borderRadius: (_b = props.borderRadius) !== null && _b !== void 0 ? _b : "16px" }),
         React.createElement(ModalHeader, null,
-            React.createElement(ModalTitle, null,
-                !hideOnBack && onBack && (React.createElement(ModalBackButton, { onBack: onBack, closeBtnColor: closeBtnColor })),
-                title && (React.createElement(Heading, { scale: titleSize, color: "backgroundDark" }, title))),
+            !hideOnBack && onBack && (React.createElement(ModalBackButton, { onBack: onBack, closeBtnColor: closeBtnColor })),
+            React.createElement(ModalTitle, null, title && (React.createElement(Heading, { scale: titleSize, color: "backgroundDark" }, title))),
             !hideCloseButton && (React.createElement(ModalCloseButton, { closeBtnColor: closeBtnColor, onDismiss: onDismiss }))),
         React.createElement(ModalBody$1, __assign({ p: bodyPadding !== null && bodyPadding !== void 0 ? bodyPadding : defaultBodyPadding }, modalBodyProps), children)));
 };
@@ -9582,13 +9581,13 @@ function DesktopModal(_a) {
                     setQrCode(uri);
                 });
             }
-        } })) : (React.createElement("div", null,
+        } })) : (React.createElement(Flex, { py: "120px", flexDirection: "column", alignItems: "center", justifyContent: "center" },
         selected && selected.installed !== false && (React.createElement(React.Fragment, null,
-            typeof selected.icon === "string" && (React.createElement(Image, { src: selected.icon, width: 108, height: 108 })),
-            React.createElement(Heading, { as: "h1", fontSize: "20px", color: "secondary" },
+            typeof selected.icon === "string" && (React.createElement(Image, { src: selected.icon, width: 160, height: 160 })),
+            React.createElement(Heading, { mt: "24px", as: "h1", scale: "md", color: "tooltip" },
                 "Opening ",
                 selected.title),
-            error ? (React.createElement(ErrorContent, { message: error, onRetry: function () { return connectToWallet(selected); } })) : (React.createElement(Text, null,
+            !error ? (React.createElement(ErrorContent, { message: error, onRetry: function () { return connectToWallet(selected); } })) : (React.createElement(BodyText, { mt: "16px", as: "p", scale: "size16", color: "gray900" },
                 "Please confirm in ",
                 selected.title)))),
         selected && selected.installed === false && (React.createElement(NotInstalled, { qrCode: qrCode, wallet: selected }))))));
@@ -9641,7 +9640,7 @@ function ConnectModalV2(props) {
             });
         }
     };
-    return (React.createElement(Modal, __assign({ onDismiss: props.onDismiss, walletModal: true, onBack: function () { return setConnectScreen(WALLET_SCREEN.WELCOME_SCREEN); }, hideOnBack: isWelcomeScreen, title: "Connect to a wallet", width: isMobile ? "100%" : "auto", maxWidth: !isMobile ? "416px" : "none", bodyPadding: "0", position: isMobile ? "absolute" : "relative", bottom: "0", borderRadius: isMobile ? "16px 16px 0 0" : "16px", modalBodyProps: {
+    return (React.createElement(Modal, __assign({ onDismiss: props.onDismiss, walletModal: true, onBack: function () { return setConnectScreen(WALLET_SCREEN.WELCOME_SCREEN); }, closeBtnColor: "dark900", hideOnBack: isWelcomeScreen, title: isWelcomeScreen ? "Connect to a wallet" : "Back to wallets", width: isMobile ? "100%" : "auto", maxWidth: !isMobile ? "416px" : "none", bodyPadding: "0", position: isMobile ? "absolute" : "relative", bottom: "0", borderRadius: isMobile ? "16px 16px 0 0" : "16px", modalBodyProps: {
             alignItems: "center",
         } }, rest),
         React.createElement(React.Fragment, null,
@@ -9651,26 +9650,31 @@ function ConnectModalV2(props) {
                     " ",
                     React.createElement(Text, { fontSize: "12px", as: "span", color: "primary" },
                         React.createElement("a", { href: "".concat(process.env.NEXT_PUBLIC_FRONT_1, "/terms"), target: isMobile ? "_self" : "_blank" }, "Terms of Use"))))),
-            isMobile ? (React.createElement(MobileModal, { isWelcomeScreen: isWelcomeScreen, connectWallet: connectWallet, wallets: wallets })) : (React.createElement(DesktopModal, { isWelcomeScreen: isWelcomeScreen, connectWallet: connectWallet, wallets: wallets })))));
+            isMobile ? (React.createElement(MobileModal, { isWelcomeScreen: isWelcomeScreen, connectWallet: connectWallet, wallets: wallets })) : (React.createElement(DesktopModal, { isWelcomeScreen: isWelcomeScreen, connectWallet: connectWallet, wallets: wallets })),
+            isWelcomeScreen && (React.createElement(React.Fragment, null,
+                React.createElement(BodyText, { as: "span", mt: "24px", textAlign: "center", scale: "size12" }, "Haven\u2019t got a crypto wallet yet?"),
+                React.createElement(Button, { startIcon: React.createElement(Icon$30, { color: "white", width: "24px" }), height: "48px", width: isMobile ? "306px" : "352px", as: "a", color: "primary", m: isMobile ? "16px 16px 32px" : "16px 32px 32px", href: HOW_TO_CONNECT_DOCS, target: isMobile ? "_self" : "_blank" },
+                    React.createElement(Text, { as: "span", color: "contrast", bold: true }, "Learn How to Connect")))))));
 }
 var NotInstalled = function (_a) {
     var wallet = _a.wallet, qrCode = _a.qrCode;
-    return (React.createElement(React.Fragment, null,
-        React.createElement(Heading, { as: "h1", fontSize: "20px", color: "secondary" },
+    return (React.createElement(Flex, { flexDirection: "column", alignItems: "center", justifyContent: "center", py: "116px" },
+        typeof wallet.icon === "string" && (React.createElement(Image, { src: wallet.icon, width: 160, height: 160 })),
+        React.createElement(Heading, { as: "h2", scale: "md", color: "tooltip" },
             wallet.title,
             " is not installed"),
         qrCode && (React.createElement(Suspense, null,
             React.createElement(Box, { overflow: "hidden", borderRadius: "card", style: { width: "288px", height: "288px" } },
                 React.createElement(Qrcode, { url: qrCode, image: typeof wallet.icon === "string" ? wallet.icon : undefined })))),
-        !qrCode && (React.createElement(Text, { maxWidth: "246px", m: "auto" },
+        !qrCode && (React.createElement(BodyText, { mt: "16px", textAlign: "center", color: "gray900", scale: "size16", maxWidth: "352px" },
             "Please install the ",
             wallet.title,
             " browser extension to connect the",
             " ",
             wallet.title,
             " wallet.")),
-        wallet.guide && (React.createElement(Button, { variant: "text", as: "a", href: getDesktopLink(wallet.guide), external: true }, getDesktopText(wallet.guide, "Setup Guide"))),
-        wallet.downloadLink && (React.createElement(Button, { variant: "text", as: "a", href: getDesktopLink(wallet.downloadLink), external: true }, getDesktopText(wallet.downloadLink, "Install")))));
+        wallet.guide && (React.createElement(Button, { mt: "16px", variant: "primary", scale: "lg", as: "a", href: getDesktopLink(wallet.guide), external: true }, getDesktopText(wallet.guide, "Setup Guide"))),
+        wallet.downloadLink && (React.createElement(Button, { mt: "16px", variant: "primary", scale: "lg", as: "a", href: getDesktopLink(wallet.downloadLink), external: true }, getDesktopText(wallet.downloadLink, "Install")))));
 };
 var ErrorMessage = function (_a) {
     var message = _a.message;
@@ -9683,7 +9687,7 @@ var ErrorContent = function (_a) {
     var onRetry = _a.onRetry, message = _a.message;
     return (React.createElement(React.Fragment, null,
         React.createElement(ErrorMessage, { message: message }),
-        React.createElement(Button, { variant: "text", onClick: onRetry }, "Retry")));
+        React.createElement(Button, { variant: "primary", scale: "lg", onClick: onRetry }, "Retry")));
 };
 var getDesktopLink = function (linkDevice) {
     var _a;
