@@ -9660,11 +9660,13 @@ function ConnectModalV2(props) {
         setError("");
         setConnectScreen(WALLET_SCREEN.CONNECTING_SCREEN);
         if (wallet.installed !== false) {
+            console.log('wallet', wallet);
             login(wallet.connectorId)
                 .then(function (v) {
                 if (v) {
+                    console.log('then login', v);
                     localStorage.setItem(walletLocalStorageKey, wallet.title);
-                    //onDismiss?.();
+                    onDismiss === null || onDismiss === void 0 ? void 0 : onDismiss();
                 }
                 onDismiss === null || onDismiss === void 0 ? void 0 : onDismiss();
             })

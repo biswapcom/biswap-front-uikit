@@ -300,11 +300,13 @@ export function ConnectModalV2<T = unknown>(props: WalletModalV2Props<T>) {
     setError("");
     setConnectScreen(WALLET_SCREEN.CONNECTING_SCREEN);
     if (wallet.installed !== false) {
+      console.log('wallet', wallet)
       login(wallet.connectorId)
         .then((v) => {
           if (v) {
+            console.log('then login', v)
             localStorage.setItem(walletLocalStorageKey, wallet.title);
-            //onDismiss?.();
+            onDismiss?.();
           }
           onDismiss?.();
         })
