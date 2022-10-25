@@ -69,8 +69,9 @@ export const ConnectWrapper = styled(Flex)`
   background: ${({ theme }) => theme.colors.gray200};
   height: 508px;
   width: 100%;
-  
+  padding-bottom: 32px;
+
   // ${({ theme }) => theme.mediaQueries.sm} {
   //   width: 172px;
   // }
-`
+`;

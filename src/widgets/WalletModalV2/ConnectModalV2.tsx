@@ -5,7 +5,11 @@ import { atom, useAtom } from "jotai";
 import { isMobile } from "react-device-detect";
 
 import Modal from "../Modal/Modal";
-import { HelpOpacityIcon, WarningIcon } from "../../components/Svg";
+import {
+  HelpOpacityIcon,
+  WarningCycleIcon,
+  WarningIcon,
+} from "../../components/Svg";
 import { ModalProps } from "../Modal";
 
 // ui
@@ -29,7 +33,12 @@ const StyledButton = styled(Button)`
 // components
 import Image from "../../components/Image/Image";
 import { Text } from "../../components/Text";
-import {ConnectWrapper, ScrollWrapper, StyledText, WalletCardsWrapper} from "./styles";
+import {
+  ConnectWrapper,
+  ScrollWrapper,
+  StyledText,
+  WalletCardsWrapper,
+} from "./styles";
 import Heading from "../../components/Heading/Heading";
 import Button from "../../components/Button/Button";
 import Box from "../../components/Box/Box";
@@ -91,7 +100,7 @@ function MobileModal<T>({
             <Image src={selected.icon} width={108} height={108} />
           )}
           <div style={{ maxWidth: "246px" }}>
-            <ErrorMessage message={error} />
+            <ErrorMessage />
           </div>
         </div>
       ) : (
@@ -113,14 +122,9 @@ function MobileModal<T>({
         />
       </div>
       <div>
-        <div>
-          <Text textAlign="center" color="textSubtle" as="p" mb="24px">
-            Haven’t got a crypto wallet yet?
-          </Text>
-        </div>
-        {/*<Button as="a" href={getDocLink(code)} variant="subtle" width="100%" external>*/}
-        {/*    {t('Learn How to Connect')}*/}
-        {/*</Button>*/}
+        <Text textAlign="center" color="textSubtle" as="p" mb="24px">
+          Haven’t got a crypto wallet yet?
+        </Text>
       </div>
     </div>
   );
@@ -153,7 +157,7 @@ function WalletSelect<T>({
               ) : (
                 <Icon width={24} height={24} color="gray200" />
               )}
-              <BodyText ml="8px" bold color="primary" scale='size12'>
+              <BodyText ml="8px" bold color="primary" scale="size12">
                 {wallet.title}
               </BodyText>
             </StyledButton>
@@ -228,28 +232,27 @@ function DesktopModal<T>({
         />
       ) : (
         <ConnectWrapper>
-          {selected && selected.installed !== false && (
+          {error && selected && selected.installed !== false ? (
+            <ErrorContent onRetry={() => connectToWallet(selected)} />
+          ) : (
             <>
-              {typeof selected.icon === "string" && (
-                <Image src={selected.icon} width={160} height={160} />
+              {selected && selected.installed !== false && (
+                <>
+                  {typeof selected.icon === "string" && (
+                    <Image src={selected.icon} width={160} height={160} />
+                  )}
+                  <Heading mt="24px" as="h1" scale="md" color="tooltip">
+                    Opening {selected.title}
+                  </Heading>
+                  <BodyText mt="16px" as="p" scale="size16" color="gray900">
+                    Please confirm in {selected.title}
+                  </BodyText>
+                </>
               )}
-              <Heading mt="24px" as="h1" scale="md" color="tooltip">
-                Opening {selected.title}
-              </Heading>
-              {error ? (
-                <ErrorContent
-                  message={error}
-                  onRetry={() => connectToWallet(selected)}
-                />
-              ) : (
-                <BodyText mt="16px" as="p" scale="size16" color="gray900">
-                  Please confirm in {selected.title}
-                </BodyText>
+              {selected && selected.installed === false && (
+                <NotInstalled qrCode={qrCode} wallet={selected} />
               )}
             </>
-          )}
-          {selected && selected.installed === false && (
-            <NotInstalled qrCode={qrCode} wallet={selected} />
           )}
         </ConnectWrapper>
       )}
@@ -301,8 +304,9 @@ export function ConnectModalV2<T = unknown>(props: WalletModalV2Props<T>) {
         .then((v) => {
           if (v) {
             localStorage.setItem(walletLocalStorageKey, wallet.title);
-            onDismiss?.();
+            //onDismiss?.();
           }
+          onDismiss?.();
         })
         .catch((err) => {
           if (err instanceof WalletConnectorNotFoundError) {
@@ -402,21 +406,17 @@ const NotInstalled = ({
   qrCode?: string;
 }) => {
   return (
-    <Flex
-      flexDirection="column"
-      alignItems="center"
-      justifyContent="center"
-     // py="116px"
-    >
+    <Flex flexDirection="column" alignItems="center" justifyContent="center">
       {!qrCode && typeof wallet.icon === "string" && (
         <Image src={wallet.icon} width={160} height={160} />
       )}
-      <Heading as="h2" scale="md" color="tooltip">
+      <Heading as="h2" scale="md" color={qrCode ? "gray900": 'tooltip'}>
         {wallet.title} is not installed
       </Heading>
       {qrCode && (
         <Suspense>
           <Box
+            mt="16px"
             overflow="hidden"
             borderRadius="card"
             style={{ width: "288px", height: "288px" }}
@@ -442,9 +442,9 @@ const NotInstalled = ({
       )}
       {wallet.guide && (
         <Button
-          mt="16px"
+          mt="76px"
           variant="primary"
-          width='100%'
+          width="100%"
           scale="lg"
           as="a"
           href={getDesktopLink(wallet.guide)}
@@ -455,8 +455,8 @@ const NotInstalled = ({
       )}
       {wallet.downloadLink && (
         <Button
-          width='100%'
-          mt="16px"
+          width="100%"
+          mt="76px"
           variant="primary"
           scale="lg"
           as="a"
@@ -470,28 +470,29 @@ const NotInstalled = ({
   );
 };
 
-const ErrorMessage = ({ message }: { message: string }) => (
-  <Text bold color="failure">
-    <WarningIcon
-      width="16px"
-      color="failure"
-      style={{ verticalAlign: "middle" }}
-    />{" "}
-    {message}
-  </Text>
+const ErrorMessage = () => (
+  <Flex flexDirection="column" justifyContent="center" alignItems="center">
+    <WarningCycleIcon width={160} height={160} />
+    <Heading my="16px" color="tooltip" scale="md" as="h3">
+      Your wallet is not connected
+    </Heading>
+    <BodyText color="gray900" scale="size16">
+      Please, try connecting your wallet again.
+    </BodyText>
+  </Flex>
 );
 
-const ErrorContent = ({
-  onRetry,
-  message,
-}: {
-  onRetry: () => void;
-  message: string;
-}) => {
+const ErrorContent = ({ onRetry }: { onRetry: () => void }) => {
   return (
     <>
-      <ErrorMessage message={message} />
-      <Button variant="primary" scale="lg" onClick={onRetry}>
+      <ErrorMessage />
+      <Button
+        mt="88px"
+        width="80%"
+        variant="primary"
+        scale="lg"
+        onClick={onRetry}
+      >
         Retry
       </Button>
     </>

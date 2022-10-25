@@ -43,6 +43,7 @@ export { default as MinusCircleOpacityIcon } from "./Icons/Minus/MinusOpacity";
 export { default as WarningOpacityIcon } from "./Icons/Warning/WarningOpacity";
 export { default as WarningSolidIcon } from "./Icons/Warning/WarningSolid";
 export { default as WarningIcon } from "./Icons/Warning/Warning";
+export { default as WarningCycleIcon } from "./Icons/Warning/WarningCycle";
 
 //CLOSE
 export { default as CloseIcon } from "./Icons/Close/Close";

@@ -146,7 +146,7 @@ Svg.defaultProps = {
 };
 var templateObject_1$1t, templateObject_2$Q, templateObject_3$z;
 
-var Icon$3I = function (props) {
+var Icon$3J = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 40 40", fill: "none" }, props),
         React.createElement("path", { d: "M20 40c11.046 0 20-8.954 20-20S31.046 0 20 0 0 8.954 0 20s8.954 20 20 20z", fill: "#fff" }),
         React.createElement("path", { d: "M35.492 7.524c-1.387.274-2.71.662-3.798.903-2.484.557-4.807 2.46-5.315 5.944-.452 3.113.597 4.452.137 8.073-.806 6.322-6.87 8.5-9.701 9.822-1.638.758-5.613 2.5-8.678 3.83A19.9 19.9 0 0020 40c11.049 0 20-8.952 20-20 0-4.71-1.629-9.04-4.355-12.452a6.31 6.31 0 00-.153-.024z", fill: "url(#logo-color-1)" }),
@@ -160,7 +160,7 @@ var Icon$3I = function (props) {
                 React.createElement("stop", { offset: "1", stopColor: "#119BED" })))));
 };
 
-var Icon$3H = function (props) {
+var Icon$3I = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 146 32", fill: "none" }, props),
         React.createElement("g", { clipPath: "url(#clip0_183_4959)" },
             React.createElement("path", { d: "M125.334 12.9747C125.026 12.2445 124.512 11.5144 123.895 11.0971C123.176 10.5755 122.354 10.1583 121.224 9.84536C119.786 9.42811 117.732 9.3238 115.369 9.42811C114.752 9.42811 114.136 9.53242 113.519 9.53242C112.903 9.63674 112.287 9.63674 111.67 9.74105C111.157 9.84536 110.643 9.84536 110.232 9.94967V13.9135C110.643 13.8092 111.157 13.7049 111.568 13.6006C112.184 13.4963 112.8 13.392 113.417 13.2877C114.033 13.1834 114.65 13.1834 115.266 13.079C117.012 12.9747 118.451 12.9747 119.273 13.1834C119.889 13.2877 120.403 13.4963 120.711 13.7049C121.019 13.9135 121.224 14.2265 121.327 14.6437C121.43 14.9567 121.533 15.2696 121.533 15.6869V15.9998L121.224 15.8955C119.889 15.4782 118.245 15.3739 116.396 15.3739C114.855 15.3739 113.622 15.4782 112.595 15.6869C111.568 15.8955 110.746 16.2084 110.129 16.6257C109.513 17.0429 109.102 17.4602 108.896 17.9817C108.691 18.5033 108.588 19.0249 108.588 19.6507V19.9637C108.588 20.5895 108.691 21.2154 108.999 21.737C109.205 22.2585 109.616 22.7801 110.232 23.3017C110.848 23.7189 111.67 24.1362 112.698 24.3448C113.725 24.6577 115.06 24.762 116.601 24.762C117.937 24.762 119.17 24.6577 120.197 24.3448C121.224 24.1362 121.43 24.0318 122.354 23.6146C122.663 23.406 123.485 23.3017 123.998 23.5103L124.923 24.0318H125.847V15.2696C125.847 14.748 125.642 13.8092 125.334 12.9747ZM121.533 21.1111H121.327C119.992 21.5284 118.553 21.737 116.91 21.737C115.985 21.737 115.163 21.737 114.65 21.6327C114.136 21.5284 113.725 21.5284 113.417 21.3197C113.109 21.2154 112.903 21.0068 112.8 20.7982C112.698 20.5895 112.698 20.3809 112.698 20.1723C112.698 19.9637 112.698 19.8594 112.8 19.6507C112.903 19.4421 113.109 19.2335 113.314 19.1292C113.519 19.0249 113.93 18.8162 114.444 18.8162C114.958 18.7119 115.677 18.7119 116.499 18.7119C117.423 18.7119 118.245 18.7119 119.067 18.8162C119.786 18.9205 120.505 19.0249 121.224 19.2335H121.43V21.1111H121.533Z", fill: "white" }),
@@ -184,24 +184,24 @@ var Icon$3H = function (props) {
                 React.createElement("rect", { width: "145.778", height: "32", fill: "white" })))));
 };
 
-var Icon$3G = function (props) {
+var Icon$3H = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 24 24" }, props),
         React.createElement("path", { d: "M16.59 9H15V4C15 3.45 14.55 3 14 3H10C9.45 3 9 3.45 9 4V9H7.41C6.52 9 6.07 10.08 6.7 10.71L11.29 15.3C11.68 15.69 12.31 15.69 12.7 15.3L17.29 10.71C17.92 10.08 17.48 9 16.59 9ZM5 19C5 19.55 5.45 20 6 20H18C18.55 20 19 19.55 19 19C19 18.45 18.55 18 18 18H6C5.45 18 5 18.45 5 19Z" })));
 };
 
-var Icon$3F = function (props) {
+var Icon$3G = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 24 24" }, props),
         React.createElement("path", { d: "M9.38031 13.532L4.01253 11.58C3.71703 11.4726 3.46156 11.2772 3.28053 11.0201C3.09949 10.763 3.00159 10.4566 3.00002 10.1422C2.99844 9.82779 3.09327 9.52044 3.27172 9.26156C3.45016 9.00268 3.70367 8.80471 3.99807 8.69431L18.9218 3.09796C19.1983 2.99424 19.4988 2.97234 19.7875 3.03486C20.0761 3.09738 20.3407 3.24168 20.5495 3.45052C20.7584 3.65936 20.9027 3.92392 20.9652 4.21257C21.0277 4.50122 21.0057 4.80176 20.902 5.07829V5.07824L15.3056 20.0019C15.1974 20.2961 15.0011 20.5498 14.7435 20.7284C14.4858 20.907 14.1794 21.0019 13.8659 21H13.8578C13.5429 21.0003 13.2356 20.9032 12.9782 20.7219C12.7207 20.5406 12.5257 20.2841 12.4199 19.9875L10.468 14.6197L4.40017 20.6874C4.25593 20.8317 4.0603 20.9127 3.85631 20.9127C3.65233 20.9127 3.4567 20.8317 3.31246 20.6874C3.16822 20.5432 3.08718 20.3476 3.08718 20.1436C3.08718 19.9396 3.16822 19.744 3.31246 19.5997L9.38031 13.532Z" })));
 };
 
-var Icon$3E = function (props) {
+var Icon$3F = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 18 18" }, props),
         React.createElement("path", { d: "M11.4545 4.90909C11.4545 4.90909 10.6364 8.18182 9 8.18182C7.36364 8.18182 6.54545 4.90909 6.54545 4.90909L11.4545 4.90909Z" }),
         React.createElement("path", { d: "M9 9.81818C10.6364 9.81818 11.4545 13.0909 11.4545 13.0909H6.54545C6.54545 13.0909 7.36364 9.81818 9 9.81818Z" }),
         React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M18 0V0.818182C18 1.72193 17.2674 2.45455 16.3636 2.45455H15.4292C15.1634 4.44627 14.4814 6.05746 13.7994 7.23802C13.3629 7.9933 12.9252 8.57483 12.5928 8.97116L12.5685 9L12.5928 9.02889C12.9252 9.42522 13.3629 10.0067 13.7994 10.7621C14.4814 11.9426 15.1634 13.5538 15.4292 15.5455L16.3636 15.5455C17.2674 15.5455 18 16.2781 18 17.1818V18H0L0 17.1818C0 16.2781 0.732613 15.5455 1.63636 15.5455H2.5708C2.83662 13.5538 3.51857 11.9426 4.20065 10.7621C4.63705 10.0068 5.07481 9.42525 5.4072 9.02891L5.43149 9.00005L5.40722 8.97119C5.07481 8.57488 4.63705 7.99335 4.20065 7.23807C3.51857 6.05751 2.8366 4.44629 2.5708 2.45455H1.63636C0.732613 2.45455 0 1.72193 0 0.818182L0 0L18 0ZM13.7762 2.45455L4.22384 2.45455C4.47523 4.0977 5.04644 5.43099 5.61753 6.41941C5.99931 7.08019 6.37974 7.58431 6.66096 7.91964C6.80144 8.08711 6.91664 8.21188 6.99417 8.29238L7.02486 8.32397C7.04865 8.34826 7.06738 8.36681 7.08044 8.37957L7.09932 8.39777L7.10089 8.39927L7.10209 8.4004C7.26883 8.55518 7.36364 8.77243 7.36364 9.00002C7.36364 9.22764 7.26883 9.44492 7.10209 9.5997L7.10136 9.60038L7.09932 9.6023L7.08046 9.6205L7.06396 9.63676L7.0483 9.65241C7.03317 9.66759 7.01507 9.68605 6.9942 9.70769C6.97824 9.72427 6.96069 9.74273 6.94164 9.76303C6.92533 9.7804 6.90795 9.79913 6.88955 9.81923C6.85452 9.85746 6.81579 9.9006 6.77385 9.94859C6.73844 9.98909 6.70071 10.0331 6.66099 10.0805C6.37974 10.4158 5.99931 10.9199 5.61753 11.5807C5.04644 12.5691 4.47526 13.9024 4.22387 15.5455H13.7761C13.5247 13.9024 12.9536 12.5691 12.3825 11.5807C12.0007 10.9199 11.6203 10.4157 11.339 10.0804C11.1986 9.91294 11.0833 9.78817 11.0058 9.70764C10.9893 9.69057 10.9746 9.67548 10.9617 9.66243L10.9347 9.63541L10.9195 9.62048L10.9007 9.60225L10.8991 9.60075L10.8979 9.59968C10.7312 9.4449 10.6364 9.22759 10.6364 9C10.6364 8.77238 10.7312 8.55508 10.898 8.4003L10.8987 8.39957L10.9007 8.39772L10.9196 8.37952C10.9378 8.36169 10.9671 8.33258 11.0058 8.29233C11.0834 8.21183 11.1986 8.08706 11.339 7.91959C11.6203 7.58429 12.0007 7.08014 12.3825 6.41936C12.9536 5.43094 13.5248 4.09768 13.7762 2.45455Z" })));
 };
 
-var Icon$3D = function (props) {
+var Icon$3E = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 96 96" }, props),
         React.createElement("circle", { cx: "48", cy: "48", r: "48", fill: "url(#paint0_linear_425_18017)" }),
         React.createElement("path", { d: "M37.1865 28.2572L30.6206 24.4412L48.4798 14L66.3917 24.4412L59.8257 28.2572L48.4798 21.6851L37.1865 28.2572ZM71.0666 34.8293V42.5145L77.6325 38.6984V31.0133L71.0666 27.1442L64.5007 30.9603L71.0666 34.8293ZM41.9139 31.0133L48.4798 34.8293L55.0457 31.0133L48.4798 27.1442L41.9139 31.0133ZM66.3917 37.5854L59.8257 33.7693L48.4798 40.3414L37.1865 33.7693L30.6206 37.5854V45.2705L41.9139 51.8426V64.9868L48.4798 68.8029L55.0457 64.9868V51.8426L66.3917 45.2705V37.5854ZM71.0666 61.1708L59.7732 67.7429V75.428L77.685 64.9868V44.1575L71.0666 48.0266V61.1708ZM59.7732 62.2838L66.3391 58.4677V50.7296L59.7732 54.5457V62.2838ZM41.9139 70.4989V78.1841L48.4798 82.0001L55.0457 78.1841V70.4989L48.4798 74.315L41.9139 70.4989ZM19.2747 38.6984L25.8406 42.5145V34.8293L32.4065 31.0133L25.8931 27.1442L19.3272 30.9603V38.6984H19.2747ZM25.8931 48.0266L19.3272 44.2105V65.0398L37.239 75.481V67.7959L25.8931 61.1708V48.0266ZM37.1865 54.5987L30.6206 50.7826V58.4677L37.1865 62.2838V54.5987Z", fill: "#14151A" }),
@@ -211,167 +211,174 @@ var Icon$3D = function (props) {
                 React.createElement("stop", { offset: "1", stopColor: "#FFD349" })))));
 };
 
-var Icon$3C = function (props) {
+var Icon$3D = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0ZM8.29289 11.7071C7.90237 11.3166 7.90237 10.6834 8.29289 10.2929C8.68342 9.90237 9.31658 9.90237 9.70711 10.2929L12 12.5858L14.2929 10.2929C14.6834 9.90237 15.3166 9.90237 15.7071 10.2929C16.0976 10.6834 16.0976 11.3166 15.7071 11.7071L12.7071 14.7071C12.3166 15.0976 11.6834 15.0976 11.2929 14.7071L8.29289 11.7071Z" })));
 };
 
-var Icon$3B = function (props) {
+var Icon$3C = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React.createElement("rect", { opacity: "0.48", width: "24", height: "24", rx: "12" }),
         React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M8.29289 10.2929C7.90237 10.6834 7.90237 11.3166 8.29289 11.7071L11.2929 14.7071C11.6834 15.0976 12.3166 15.0976 12.7071 14.7071L15.7071 11.7071C16.0976 11.3166 16.0976 10.6834 15.7071 10.2929C15.3166 9.90237 14.6834 9.90237 14.2929 10.2929L12 12.5858L9.70711 10.2929C9.31658 9.90237 8.68342 9.90237 8.29289 10.2929Z" })));
 };
 
-var Icon$3A = function (props) {
+var Icon$3B = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M7.29289 9.79289C6.90237 10.1834 6.90237 10.8166 7.29289 11.2071L11.2929 15.2071C11.6834 15.5976 12.3166 15.5976 12.7071 15.2071L16.7071 11.2071C17.0976 10.8166 17.0976 10.1834 16.7071 9.79289C16.3166 9.40237 15.6834 9.40237 15.2929 9.79289L12 13.0858L8.70711 9.79289C8.31658 9.40237 7.68342 9.40237 7.29289 9.79289Z" })));
 };
 
-var Icon$3z = function (props) {
+var Icon$3A = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0ZM11.7071 8.29289C11.3166 7.90237 10.6834 7.90237 10.2929 8.29289C9.90237 8.68342 9.90237 9.31658 10.2929 9.70711L12.5858 12L10.2929 14.2929C9.90237 14.6834 9.90237 15.3166 10.2929 15.7071C10.6834 16.0976 11.3166 16.0976 11.7071 15.7071L14.7071 12.7071C15.0976 12.3166 15.0976 11.6834 14.7071 11.2929L11.7071 8.29289Z" })));
 };
 
-var Icon$3y = function (props) {
+var Icon$3z = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React.createElement("rect", { opacity: "0.48", width: "24", height: "24", rx: "12" }),
         React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M10.2929 8.29289C10.6834 7.90237 11.3166 7.90237 11.7071 8.29289L14.7071 11.2929C15.0976 11.6834 15.0976 12.3166 14.7071 12.7071L11.7071 15.7071C11.3166 16.0976 10.6834 16.0976 10.2929 15.7071C9.90237 15.3166 9.90237 14.6834 10.2929 14.2929L12.5858 12L10.2929 9.70711C9.90237 9.31658 9.90237 8.68342 10.2929 8.29289Z" })));
 };
 
-var Icon$3x = function (props) {
+var Icon$3y = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M9.79289 7.29289C10.1834 6.90237 10.8166 6.90237 11.2071 7.29289L15.2071 11.2929C15.5976 11.6834 15.5976 12.3166 15.2071 12.7071L11.2071 16.7071C10.8166 17.0976 10.1834 17.0976 9.79289 16.7071C9.40237 16.3166 9.40237 15.6834 9.79289 15.2929L13.0858 12L9.79289 8.70711C9.40237 8.31658 9.40237 7.68342 9.79289 7.29289Z" })));
 };
 
-var Icon$3w = function (props) {
+var Icon$3x = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0ZM12.2929 8.29289C12.6834 7.90237 13.3166 7.90237 13.7071 8.29289C14.0976 8.68342 14.0976 9.31658 13.7071 9.70711L11.4142 12L13.7071 14.2929C14.0976 14.6834 14.0976 15.3166 13.7071 15.7071C13.3166 16.0976 12.6834 16.0976 12.2929 15.7071L9.29289 12.7071C8.90237 12.3166 8.90237 11.6834 9.29289 11.2929L12.2929 8.29289Z" })));
 };
 
-var Icon$3v = function (props) {
+var Icon$3w = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React.createElement("rect", { opacity: "0.48", width: "24", height: "24", rx: "12" }),
         React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M13.7071 8.29289C13.3166 7.90237 12.6834 7.90237 12.2929 8.29289L9.29289 11.2929C8.90237 11.6834 8.90237 12.3166 9.29289 12.7071L12.2929 15.7071C12.6834 16.0976 13.3166 16.0976 13.7071 15.7071C14.0976 15.3166 14.0976 14.6834 13.7071 14.2929L11.4142 12L13.7071 9.70711C14.0976 9.31658 14.0976 8.68342 13.7071 8.29289Z" })));
 };
 
-var Icon$3u = function (props) {
+var Icon$3v = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M14.2071 7.29289C13.8166 6.90237 13.1834 6.90237 12.7929 7.29289L8.79289 11.2929C8.40237 11.6834 8.40237 12.3166 8.79289 12.7071L12.7929 16.7071C13.1834 17.0976 13.8166 17.0976 14.2071 16.7071C14.5976 16.3166 14.5976 15.6834 14.2071 15.2929L10.9142 12L14.2071 8.70711C14.5976 8.31658 14.5976 7.68342 14.2071 7.29289Z" })));
 };
 
-var Icon$3t = function (props) {
+var Icon$3u = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M7.29289 14.2071C6.90237 13.8166 6.90237 13.1834 7.29289 12.7929L11.2929 8.79289C11.6834 8.40237 12.3166 8.40237 12.7071 8.79289L16.7071 12.7929C17.0976 13.1834 17.0976 13.8166 16.7071 14.2071C16.3166 14.5976 15.6834 14.5976 15.2929 14.2071L12 10.9142L8.70711 14.2071C8.31658 14.5976 7.68342 14.5976 7.29289 14.2071Z" })));
 };
 
-var Icon$3s = function (props) {
+var Icon$3t = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0ZM8.29289 12.2929C7.90237 12.6834 7.90237 13.3166 8.29289 13.7071C8.68342 14.0976 9.31658 14.0976 9.70711 13.7071L12 11.4142L14.2929 13.7071C14.6834 14.0976 15.3166 14.0976 15.7071 13.7071C16.0976 13.3166 16.0976 12.6834 15.7071 12.2929L12.7071 9.29289C12.3166 8.90237 11.6834 8.90237 11.2929 9.29289L8.29289 12.2929Z" })));
 };
 
-var Icon$3r = function (props) {
+var Icon$3s = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React.createElement("rect", { opacity: "0.48", width: "24", height: "24", rx: "12", transform: "matrix(-1 0 0 1 24 0)" }),
         React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M8.29289 13.7071C7.90237 13.3166 7.90237 12.6834 8.29289 12.2929L11.2929 9.29289C11.6834 8.90237 12.3166 8.90237 12.7071 9.29289L15.7071 12.2929C16.0976 12.6834 16.0976 13.3166 15.7071 13.7071C15.3166 14.0976 14.6834 14.0976 14.2929 13.7071L12 11.4142L9.70711 13.7071C9.31658 14.0976 8.68342 14.0976 8.29289 13.7071Z" })));
 };
 
-var Icon$3q = function (props) {
+var Icon$3r = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React.createElement("path", { d: "M13.7929 6.79289C14.1834 6.40237 14.8166 6.40237 15.2071 6.79289L19.7071 11.2929C20.0976 11.6834 20.0976 12.3166 19.7071 12.7071L15.2071 17.2071C14.8166 17.5976 14.1834 17.5976 13.7929 17.2071C13.4024 16.8166 13.4024 16.1834 13.7929 15.7929L16.5858 13H4.9375C4.41973 13 4 12.5523 4 12C4 11.4477 4.41973 11 4.9375 11H16.5858L13.7929 8.20711C13.4024 7.81658 13.4024 7.18342 13.7929 6.79289Z" })));
 };
 
-var Icon$3p = function (props) {
+var Icon$3q = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React.createElement("path", { d: "M6.79289 10.2071C6.40237 9.81658 6.40237 9.18342 6.79289 8.79289L11.2929 4.29289C11.6834 3.90237 12.3166 3.90237 12.7071 4.29289L17.2071 8.79289C17.5976 9.18342 17.5976 9.81658 17.2071 10.2071C16.8166 10.5976 16.1834 10.5976 15.7929 10.2071L13 7.41421L13 19.0625C13 19.5803 12.5523 20 12 20C11.4477 20 11 19.5803 11 19.0625L11 7.41421L8.20711 10.2071C7.81658 10.5976 7.18342 10.5976 6.79289 10.2071Z" })));
 };
 
-var Icon$3o = function (props) {
+var Icon$3p = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React.createElement("path", { d: "M10.2071 17.2071C9.81658 17.5976 9.18342 17.5976 8.79289 17.2071L4.29289 12.7071C3.90237 12.3166 3.90237 11.6834 4.29289 11.2929L8.79289 6.79289C9.18342 6.40237 9.81658 6.40237 10.2071 6.79289C10.5976 7.18342 10.5976 7.81658 10.2071 8.20711L7.41421 11H19.0625C19.5803 11 20 11.4477 20 12C20 12.5523 19.5803 13 19.0625 13H7.41421L10.2071 15.7929C10.5976 16.1834 10.5976 16.8166 10.2071 17.2071Z" })));
 };
 
-var Icon$3n = function (props) {
+var Icon$3o = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React.createElement("path", { d: "M6.79289 13.7929C6.40237 14.1834 6.40237 14.8166 6.79289 15.2071L11.2929 19.7071C11.6834 20.0976 12.3166 20.0976 12.7071 19.7071L17.2071 15.2071C17.5976 14.8166 17.5976 14.1834 17.2071 13.7929C16.8166 13.4024 16.1834 13.4024 15.7929 13.7929L13 16.5858L13 4.9375C13 4.41973 12.5523 4 12 4C11.4477 4 11 4.41973 11 4.9375L11 16.5858L8.20711 13.7929C7.81658 13.4024 7.18342 13.4024 6.79289 13.7929Z" })));
 };
 
-var Icon$3m = function (props) {
+var Icon$3n = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React.createElement("path", { d: "M9.58578 7.05025C9.58578 6.49796 10.0335 6.05025 10.5858 6.05025L16.9497 6.05025C17.502 6.05025 17.9497 6.49796 17.9497 7.05025V13.4142C17.9497 13.9665 17.502 14.4142 16.9497 14.4142C16.3975 14.4142 15.9497 13.9665 15.9497 13.4142V9.46446L7.71316 17.701C7.34705 18.0672 6.73367 18.0474 6.34314 17.6568C5.95262 17.2663 5.93283 16.6529 6.29895 16.2868L14.5355 8.05025L10.5858 8.05025C10.0335 8.05025 9.58578 7.60253 9.58578 7.05025Z" })));
 };
 
-var Icon$3l = function (props) {
+var Icon$3m = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React.createElement("path", { d: "M17.0024 7C17.0024 6.44772 16.5547 6 16.0024 6C15.4502 6 15.0024 6.44772 15.0024 7L15.0024 17C15.0024 17.5523 15.4502 18 16.0024 18C16.5547 18 17.0024 17.5523 17.0024 17L17.0024 7Z" }),
         React.createElement("path", { d: "M11.1725 12L7.2925 15.88C6.9025 16.27 6.9125 16.91 7.2925 17.3C7.6825 17.69 8.3125 17.69 8.7025 17.3L13.2925 12.71C13.6825 12.32 13.6825 11.69 13.2925 11.3L8.7025 6.70998C8.3125 6.31998 7.6825 6.31998 7.2925 6.70998C6.9025 7.09998 6.9025 7.72998 7.2925 8.11998L11.1725 12Z" })));
 };
 
-var Icon$3k = function (props) {
+var Icon$3l = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React.createElement("path", { d: "M7 7C7 6.44772 7.44772 6 8 6C8.55228 6 9 6.44772 9 7L9 17C9 17.5523 8.55229 18 8 18C7.44772 18 7 17.5523 7 17L7 7Z" }),
         React.createElement("path", { d: "M12.8299 12L16.7099 15.88C17.0999 16.27 17.0899 16.91 16.7099 17.3C16.3199 17.69 15.6899 17.69 15.2999 17.3L10.7099 12.71C10.3199 12.32 10.3199 11.69 10.7099 11.3L15.2999 6.70998C15.6899 6.31998 16.3199 6.31998 16.7099 6.70998C17.0999 7.09998 17.0999 7.72998 16.7099 8.11998L12.8299 12Z" })));
 };
 
-var Icon$3j = function (props) {
+var Icon$3k = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M7.29289 11.7071C6.90237 11.3166 6.90237 10.6834 7.29289 10.2929L11.2929 6.29289C11.6834 5.90237 12.3166 5.90237 12.7071 6.29289L16.7071 10.2929C17.0976 10.6834 17.0976 11.3166 16.7071 11.7071C16.3166 12.0976 15.6834 12.0976 15.2929 11.7071L12 8.41421L8.70711 11.7071C8.31658 12.0976 7.68342 12.0976 7.29289 11.7071Z" }),
         React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M7.29289 17.7071C6.90237 17.3166 6.90237 16.6834 7.29289 16.2929L11.2929 12.2929C11.6834 11.9024 12.3166 11.9024 12.7071 12.2929L16.7071 16.2929C17.0976 16.6834 17.0976 17.3166 16.7071 17.7071C16.3166 18.0976 15.6834 18.0976 15.2929 17.7071L12 14.4142L8.70711 17.7071C8.31658 18.0976 7.68342 18.0976 7.29289 17.7071Z" })));
 };
 
-var Icon$3i = function (props) {
+var Icon$3j = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M12 1L18.5621 6.01512C19.0652 6.39965 19.1468 7.10101 18.7443 7.58167C18.3418 8.06232 17.6076 8.14025 17.1045 7.75573L12 3.8546L6.89551 7.75573C6.39237 8.14025 5.6582 8.06232 5.25569 7.58167C4.85319 7.10101 4.93476 6.39965 5.4379 6.01512L12 1Z" }),
         React.createElement("path", { opacity: "0.56", fillRule: "evenodd", clipRule: "evenodd", d: "M12 8L18.5621 13.7316C19.0652 14.171 19.1468 14.9726 18.7443 15.5219C18.3418 16.0712 17.6076 16.1603 17.1045 15.7208L12 11.2624L6.89551 15.7208C6.39237 16.1603 5.6582 16.0712 5.25569 15.5219C4.85319 14.9726 4.93476 14.171 5.4379 13.7316L12 8Z" }),
         React.createElement("path", { opacity: "0.32", fillRule: "evenodd", clipRule: "evenodd", d: "M12 16L18.5621 21.0151C19.0652 21.3996 19.1468 22.101 18.7443 22.5817C18.3418 23.0623 17.6076 23.1403 17.1045 22.7557L12 18.8546L6.89551 22.7557C6.39237 23.1403 5.6582 23.0623 5.25569 22.5817C4.85319 22.101 4.93476 21.3996 5.4379 21.0151L12 16Z" })));
 };
 
-var Icon$3h = function (props) {
+var Icon$3i = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M13 7.5C13 6.94772 12.5523 6.5 12 6.5C11.4477 6.5 11 6.94772 11 7.5V11H7.5C6.94772 11 6.5 11.4477 6.5 12C6.5 12.5523 6.94772 13 7.5 13H11V16.5C11 17.0523 11.4477 17.5 12 17.5C12.5523 17.5 13 17.0523 13 16.5V13H16.5C17.0523 13 17.5 12.5523 17.5 12C17.5 11.4477 17.0523 11 16.5 11H13V7.5Z" })));
 };
 
-var Icon$3g = function (props) {
+var Icon$3h = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24ZM12 6.5C12.5523 6.5 13 6.94772 13 7.5V11H16.5C17.0523 11 17.5 11.4477 17.5 12C17.5 12.5523 17.0523 13 16.5 13H13V16.5C13 17.0523 12.5523 17.5 12 17.5C11.4477 17.5 11 17.0523 11 16.5V13H7.5C6.94772 13 6.5 12.5523 6.5 12C6.5 11.4477 6.94772 11 7.5 11H11V7.5C11 6.94772 11.4477 6.5 12 6.5Z" })));
 };
 
-var Icon$3f = function (props) {
+var Icon$3g = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React.createElement("circle", { opacity: "0.48", cx: "12", cy: "12", r: "12" }),
         React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M13 7.5C13 6.94772 12.5523 6.5 12 6.5C11.4477 6.5 11 6.94772 11 7.5V11H7.5C6.94772 11 6.5 11.4477 6.5 12C6.5 12.5523 6.94772 13 7.5 13H11V16.5C11 17.0523 11.4477 17.5 12 17.5C12.5523 17.5 13 17.0523 13 16.5V13H16.5C17.0523 13 17.5 12.5523 17.5 12C17.5 11.4477 17.0523 11 16.5 11H13V7.5Z" })));
 };
 
-var Icon$3e = function (props) {
+var Icon$3f = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M7.5 11C6.94772 11 6.5 11.4477 6.5 12C6.5 12.5523 6.94772 13 7.5 13C12.6261 13 10.7826 13 16.5 13C17.0523 13 17.5 12.5523 17.5 12C17.5 11.4477 17.0523 11 16.5 11C11.3593 11 13.2503 11 7.5 11Z" })));
 };
 
-var Icon$3d = function (props) {
+var Icon$3e = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24ZM6.5 12C6.5 11.4477 6.94772 11 7.5 11H16.5C17.0523 11 17.5 11.4477 17.5 12C17.5 12.5523 17.0523 13 16.5 13H7.5C6.94772 13 6.5 12.5523 6.5 12Z" })));
 };
 
-var Icon$3c = function (props) {
+var Icon$3d = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M7.5 11C6.94772 11 6.5 11.4477 6.5 12C6.5 12.5523 6.94772 13 7.5 13C12.6407 13 10.7497 13 16.5 13C17.0523 13 17.5 12.5523 17.5 12C17.5 11.4477 17.0523 11 16.5 11C10.7497 11 12.6407 11 7.5 11Z" }),
         React.createElement("circle", { opacity: "0.48", cx: "12", cy: "12", r: "12" })));
 };
 
-var Icon$3b = function (props) {
+var Icon$3c = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React.createElement("path", { opacity: "0.48", d: "M23.5013 16.8342L15.0233 1.67412C13.6612 -0.556558 10.3407 -0.559522 8.9767 1.67412L0.499073 16.8342C-0.893396 19.1136 0.792464 22 3.52167 22H20.478C23.205 22 24.8938 19.1159 23.5013 16.8342Z" }),
         React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M12 5.99753C12.6618 5.99753 13.2005 6.53623 13.2005 7.19802V13.2005C13.2005 13.8623 12.6618 14.401 12 14.401C11.3382 14.401 10.7995 13.8623 10.7995 13.2005V7.19802C10.7995 6.53623 11.3382 5.99753 12 5.99753ZM10.7995 16.802C10.7995 16.1402 11.3382 15.6015 12 15.6015C12.6618 15.6015 13.2005 16.1402 13.2005 16.802C13.2005 17.4637 12.6618 18.0024 12 18.0024C11.3382 18.0024 10.7995 17.4637 10.7995 16.802Z" })));
 };
 
-var Icon$3a = function (props) {
+var Icon$3b = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M15.0233 1.67412L23.5013 16.8342C24.8938 19.1159 23.205 22 20.478 22H3.52167C0.792464 22 -0.893396 19.1136 0.499073 16.8342L8.9767 1.67412C10.3407 -0.559522 13.6612 -0.556558 15.0233 1.67412ZM13.2005 7.19802C13.2005 6.53623 12.6618 5.99753 12 5.99753C11.3382 5.99753 10.7995 6.53623 10.7995 7.19802V13.2005C10.7995 13.8623 11.3382 14.401 12 14.401C12.6618 14.401 13.2005 13.8623 13.2005 13.2005V7.19802ZM12 15.6015C11.3382 15.6015 10.7995 16.1402 10.7995 16.802C10.7995 17.4637 11.3382 18.0024 12 18.0024C12.6618 18.0024 13.2005 17.4637 13.2005 16.802C13.2005 16.1402 12.6618 15.6015 12 15.6015Z" })));
 };
 
-var Icon$39 = function (props) {
+var Icon$3a = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M21.7743 17.8436L13.3003 2.69073C12.7121 1.76987 11.2881 1.76965 10.6997 2.69072L2.22588 17.844L2.2058 17.8768C1.67816 18.7406 2.256 20 3.52167 20H20.478C21.7431 20 22.322 18.741 21.7941 17.8761L21.7743 17.8436ZM8.9767 1.67412C10.3407 -0.559522 13.6612 -0.556558 15.0233 1.67412L23.5013 16.8342C24.8938 19.1159 23.205 22 20.478 22H3.52167C0.792464 22 -0.893396 19.1136 0.499073 16.8342L8.9767 1.67412Z" }),
         React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M12 5.99753C12.6618 5.99753 13.2005 6.53623 13.2005 7.19802V13.2005C13.2005 13.8623 12.6618 14.401 12 14.401C11.3382 14.401 10.7995 13.8623 10.7995 13.2005V7.19802C10.7995 6.53623 11.3382 5.99753 12 5.99753ZM10.7995 16.802C10.7995 16.1402 11.3382 15.6015 12 15.6015C12.6618 15.6015 13.2005 16.1402 13.2005 16.802C13.2005 17.4637 12.6618 18.0024 12 18.0024C11.3382 18.0024 10.7995 17.4637 10.7995 16.802Z" })));
+};
+
+var Icon$39 = function (props) {
+    return (React.createElement(Svg, __assign({ viewBox: "0 0 160 160", fill: "none" }, props),
+        React.createElement("rect", { width: "160", height: "160", rx: "80", fill: "white" }),
+        React.createElement("path", { "fill-rule": "evenodd", "clip-rule": "evenodd", d: "M120.726 104.348L85.418 41.2114C82.967 37.3744 77.0336 37.3735 74.582 41.2113L39.2745 104.35L39.1908 104.487C36.9923 108.086 39.4 113.333 44.6736 113.333H115.325C120.596 113.333 123.008 108.087 120.809 104.484L120.726 104.348ZM67.4029 36.9755C73.0861 27.6687 86.9215 27.681 92.5971 36.9755L127.922 100.143C133.724 109.65 126.687 121.667 115.325 121.667H44.6736C33.3019 121.667 26.2775 109.64 32.0795 100.143L67.4029 36.9755Z", fill: "#FFCD1C" }),
+        React.createElement("path", { "fill-rule": "evenodd", "clip-rule": "evenodd", d: "M79.9991 54.9898C82.7566 54.9898 85.0012 57.2344 85.0012 59.9918V85.0021C85.0012 87.7595 82.7566 90.0041 79.9991 90.0041C77.2417 90.0041 74.9971 87.7595 74.9971 85.0021V59.9918C74.9971 57.2344 77.2417 54.9898 79.9991 54.9898ZM74.9971 100.008C74.9971 97.2507 77.2417 95.0062 79.9991 95.0062C82.7566 95.0062 85.0012 97.2507 85.0012 100.008C85.0012 102.766 82.7566 105.01 79.9991 105.01C77.2417 105.01 74.9971 102.766 74.9971 100.008Z", fill: "#FFCD1C" })));
 };
 
 var Icon$38 = function (props) {
@@ -2741,42 +2748,43 @@ var Icon = function (props) {
 
 var IconModule = /*#__PURE__*/Object.freeze({
     __proto__: null,
-    LogoIcon: Icon$3I,
-    LogoWithTextIcon: Icon$3H,
-    DownloadIcon: Icon$3G,
-    MouseIcon: Icon$3F,
-    HourglassIcon: Icon$3E,
-    BscBlackRoundIcon: Icon$3D,
-    ChevronDownCircleSolidIcon: Icon$3C,
-    ChevronDownCircleOpacityIcon: Icon$3B,
-    ChevronDownIcon: Icon$3A,
-    ChevronRightCircleSolidIcon: Icon$3z,
-    ChevronRightCircleOpacityIcon: Icon$3y,
-    ChevronRightIcon: Icon$3x,
-    ChevronLeftCircleSolidIcon: Icon$3w,
-    ChevronLeftCircleOpacityIcon: Icon$3v,
-    ChevronLeftIcon: Icon$3u,
-    ChevronUpIcon: Icon$3t,
-    ChevronUpCircleSolidIcon: Icon$3s,
-    ChevronUpCircleOpacityIcon: Icon$3r,
-    ArrowRightIcon: Icon$3q,
-    ArrowUpIcon: Icon$3p,
-    ArrowLeftIcon: Icon$3o,
-    ArrowDownIcon: Icon$3n,
-    ArrowUpForwardIcon: Icon$3m,
-    ArrowSkipRightIcon: Icon$3l,
-    ArrowSkipLeftIcon: Icon$3k,
-    ChevronUpDoubleIcon: Icon$3j,
-    ChevronUpTripleIcon: Icon$3i,
-    PlusIcon: Icon$3h,
-    PlusCircleSolidIcon: Icon$3g,
-    PlusCircleOpacityIcon: Icon$3f,
-    MinusIcon: Icon$3e,
-    MinusCircleSolidIcon: Icon$3d,
-    MinusCircleOpacityIcon: Icon$3c,
-    WarningOpacityIcon: Icon$3b,
-    WarningSolidIcon: Icon$3a,
-    WarningIcon: Icon$39,
+    LogoIcon: Icon$3J,
+    LogoWithTextIcon: Icon$3I,
+    DownloadIcon: Icon$3H,
+    MouseIcon: Icon$3G,
+    HourglassIcon: Icon$3F,
+    BscBlackRoundIcon: Icon$3E,
+    ChevronDownCircleSolidIcon: Icon$3D,
+    ChevronDownCircleOpacityIcon: Icon$3C,
+    ChevronDownIcon: Icon$3B,
+    ChevronRightCircleSolidIcon: Icon$3A,
+    ChevronRightCircleOpacityIcon: Icon$3z,
+    ChevronRightIcon: Icon$3y,
+    ChevronLeftCircleSolidIcon: Icon$3x,
+    ChevronLeftCircleOpacityIcon: Icon$3w,
+    ChevronLeftIcon: Icon$3v,
+    ChevronUpIcon: Icon$3u,
+    ChevronUpCircleSolidIcon: Icon$3t,
+    ChevronUpCircleOpacityIcon: Icon$3s,
+    ArrowRightIcon: Icon$3r,
+    ArrowUpIcon: Icon$3q,
+    ArrowLeftIcon: Icon$3p,
+    ArrowDownIcon: Icon$3o,
+    ArrowUpForwardIcon: Icon$3n,
+    ArrowSkipRightIcon: Icon$3m,
+    ArrowSkipLeftIcon: Icon$3l,
+    ChevronUpDoubleIcon: Icon$3k,
+    ChevronUpTripleIcon: Icon$3j,
+    PlusIcon: Icon$3i,
+    PlusCircleSolidIcon: Icon$3h,
+    PlusCircleOpacityIcon: Icon$3g,
+    MinusIcon: Icon$3f,
+    MinusCircleSolidIcon: Icon$3e,
+    MinusCircleOpacityIcon: Icon$3d,
+    WarningOpacityIcon: Icon$3c,
+    WarningSolidIcon: Icon$3b,
+    WarningIcon: Icon$3a,
+    WarningCycleIcon: Icon$39,
     CloseIcon: Icon$38,
     CloseCircleOpacityIcon: Icon$37,
     CloseCircleSolidIcon: Icon$36,
@@ -3074,7 +3082,7 @@ var getIcon = function (variant) {
         case variants$9.DANGER:
             return Icon$36;
         case variants$9.WARNING:
-            return Icon$3a;
+            return Icon$3b;
         case variants$9.SUCCESS:
             return Icon$2I;
         case variants$9.INFO:
@@ -3633,7 +3641,7 @@ var insertSeparators = function (items, separator) {
         ], false);
     }, []);
 };
-var DefaultSeparator = React.createElement(Icon$3x, { color: "currentColor", width: "24px" });
+var DefaultSeparator = React.createElement(Icon$3y, { color: "currentColor", width: "24px" });
 var Breadcrumbs = function (_a) {
     var _b = _a.separator, separator = _b === void 0 ? DefaultSeparator : _b, children = _a.children;
     var validItems = Children.toArray(children).filter(function (child) {
@@ -3648,14 +3656,14 @@ var ExpandableButton = function (_a) {
     var onClick = _a.onClick, expanded = _a.expanded, children = _a.children;
     return (React.createElement(IconButton, { "aria-label": "Hide or show expandable content", onClick: onClick },
         children,
-        expanded ? (React.createElement(Icon$3t, { color: "invertedContrast" })) : (React.createElement(Icon$3A, { color: "invertedContrast" }))));
+        expanded ? (React.createElement(Icon$3u, { color: "invertedContrast" })) : (React.createElement(Icon$3B, { color: "invertedContrast" }))));
 };
 ExpandableButton.defaultProps = {
     expanded: false,
 };
 var ExpandableLabel = function (_a) {
     var onClick = _a.onClick, expanded = _a.expanded, children = _a.children;
-    return (React.createElement(Button, { variant: "text", "aria-label": "Hide or show expandable content", onClick: onClick, endIcon: expanded ? (React.createElement(Icon$3t, { color: "primary" })) : (React.createElement(Icon$3A, { color: "primary" })) }, children));
+    return (React.createElement(Button, { variant: "text", "aria-label": "Hide or show expandable content", onClick: onClick, endIcon: expanded ? (React.createElement(Icon$3u, { color: "primary" })) : (React.createElement(Icon$3B, { color: "primary" })) }, children));
 };
 ExpandableLabel.defaultProps = {
     expanded: false,
@@ -4552,7 +4560,7 @@ var DropdownTop = styled.div(templateObject_4$m || (templateObject_4$m = __makeT
     });
 });
 var Label$1 = styled.span(templateObject_5$j || (templateObject_5$j = __makeTemplateObject(["\n  flex-grow: 1;\n"], ["\n  flex-grow: 1;\n"])));
-var StyledArrow = styled(Icon$3A)(templateObject_6$c || (templateObject_6$c = __makeTemplateObject(["\n  transition: transform 0.4s ease-in-out;\n  transform: ", ";\n"], ["\n  transition: transform 0.4s ease-in-out;\n  transform: ", ";\n"])), function (_a) {
+var StyledArrow = styled(Icon$3B)(templateObject_6$c || (templateObject_6$c = __makeTemplateObject(["\n  transition: transform 0.4s ease-in-out;\n  transform: ", ";\n"], ["\n  transition: transform 0.4s ease-in-out;\n  transform: ", ";\n"])), function (_a) {
     var isOpen = _a.isOpen;
     return (isOpen ? "scale(1,-1)" : "scale(1,1)");
 });
@@ -5020,7 +5028,7 @@ var LinkExternal = function (_a) {
     var children = _a.children, props = __rest(_a, ["children"]);
     return (React.createElement(Link, __assign({ external: true }, props),
         children,
-        React.createElement(Icon$3m, { color: props.color ? props.color : "primary", width: "16px", ml: "4px" })));
+        React.createElement(Icon$3n, { color: props.color ? props.color : "primary", width: "16px", ml: "4px" })));
 };
 
 var NotificationDotRoot = styled.span(templateObject_1$S || (templateObject_1$S = __makeTemplateObject(["\n  display: inline-flex;\n  position: relative;\n"], ["\n  display: inline-flex;\n  position: relative;\n"])));
@@ -6863,7 +6871,7 @@ var Pagination = function (_a) {
         paginate__dark: !isLight,
     });
     return (React.createElement(PaginationWrap, { className: paginationClass, variant: variant },
-        React.createElement(ReactPaginate, { previousLabel: React.createElement(Icon$3u, { color: variant === "light" ? "primary" : "white" }), nextLabel: React.createElement(Icon$3x, { color: variant === "light" ? "primary" : "white" }), breakLabel: "...", breakClassName: "break-me", pageCount: pageCount, marginPagesDisplayed: marginPagesDisplayed, pageRangeDisplayed: pageRangeDisplayed, onPageChange: handlePageClick, containerClassName: "pagination", activeClassName: "active" })));
+        React.createElement(ReactPaginate, { previousLabel: React.createElement(Icon$3v, { color: variant === "light" ? "primary" : "white" }), nextLabel: React.createElement(Icon$3y, { color: variant === "light" ? "primary" : "white" }), breakLabel: "...", breakClassName: "break-me", pageCount: pageCount, marginPagesDisplayed: marginPagesDisplayed, pageRangeDisplayed: pageRangeDisplayed, onPageChange: handlePageClick, containerClassName: "pagination", activeClassName: "active" })));
 };
 var templateObject_1$w;
 
@@ -7380,7 +7388,7 @@ var ModalCloseButton = function (_a) {
 var ModalBackButton = function (_a) {
     var onBack = _a.onBack, closeBtnColor = _a.closeBtnColor;
     return (React.createElement(IconButton, { variant: "text", onClick: onBack, "area-label": "go back", mr: "8px" },
-        React.createElement(Icon$3o, { color: closeBtnColor || "primary" })));
+        React.createElement(Icon$3p, { color: closeBtnColor || "primary" })));
 };
 var ModalContainer = styled(Box)(templateObject_4$d || (templateObject_4$d = __makeTemplateObject(["\n  overflow: hidden;\n  background: ", ";\n  width: ", ";\n  z-index: ", ";\n  ", "\n\n  ", " {\n    width: ", ";\n    min-width: ", ";\n    max-width: 100%;\n  }\n"], ["\n  overflow: hidden;\n  background: ", ";\n  width: ", ";\n  z-index: ", ";\n  ", "\n\n  ", " {\n    width: ", ";\n    min-width: ", ";\n    max-width: 100%;\n  }\n"])), function (_a) {
     var background = _a.background;
@@ -8868,8 +8876,8 @@ var Logo = function (_a) {
     // const { push } = useHistory();
     var isAbsoluteUrl = href.startsWith("http");
     var innerLogo = (React.createElement(React.Fragment, null,
-        React.createElement(Icon$3I, { className: "mobile-icon" }),
-        React.createElement(Icon$3H, { className: "desktop-icon" })));
+        React.createElement(Icon$3J, { className: "mobile-icon" }),
+        React.createElement(Icon$3I, { className: "desktop-icon" })));
     return (React.createElement(Flex, null, isAbsoluteUrl ? (React.createElement(StyledInnerButton, { variant: "light", onClick: function () { return window.open(href, "_self"); }, "aria-label": "Biswap home page" }, innerLogo)) : (React.createElement(StyledInnerButton, { variant: "light", as: linkComponent, href: href, "aria-label": "Biswap home page" }, innerLogo))));
 };
 var templateObject_1$a, templateObject_2$6, templateObject_3$4;
@@ -9166,7 +9174,7 @@ var Toast = function (_a) {
                 React.createElement("div", null,
                     hash && (React.createElement(LinkWrapper, null,
                         React.createElement(LinkStyles, { target: "_blank", href: "https://bscscan.com/tx/".concat(hash) }, "View on bscscan"),
-                        React.createElement(Icon$3m, { ml: "6px", width: "18px", height: "18px", color: "primary" }))),
+                        React.createElement(Icon$3n, { ml: "6px", width: "18px", height: "18px", color: "primary" }))),
                     description ? (React.createElement(Text, { color: "#6B7D98", fontSize: "12px", as: "p", mb: "8px", dangerouslySetInnerHTML: { __html: description } })) : (React.createElement(React.Fragment, null)),
                     telegramDescription && tweeterDescription && (React.createElement(ActionContainer, null,
                         React.createElement(ToastAction, { telegramDescription: telegramDescription, tweeterDescription: tweeterDescription, title: title, url: url, thx: "https://bscscan.com/tx/".concat(hash) }),
@@ -9473,7 +9481,7 @@ styled(Button)(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n
     var theme = _a.theme;
     return theme.colors.primaryHover;
 });
-var ConnectWrapper = styled(Flex)(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  background: ", ";\n  height: 508px;\n  width: 100%;\n  \n  // ", " {\n  //   width: 172px;\n  // }\n"], ["\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  background: ", ";\n  height: 508px;\n  width: 100%;\n  \n  // ", " {\n  //   width: 172px;\n  // }\n"])), function (_a) {
+var ConnectWrapper = styled(Flex)(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  background: ", ";\n  height: 508px;\n  width: 100%;\n  padding-bottom: 32px;\n\n  // ", " {\n  //   width: 172px;\n  // }\n"], ["\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  background: ", ";\n  height: 508px;\n  width: 100%;\n  padding-bottom: 32px;\n\n  // ", " {\n  //   width: 172px;\n  // }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.gray200;
 }, function (_a) {
@@ -9537,7 +9545,7 @@ function MobileModal(_a) {
         error ? (React.createElement("div", null,
             selected && typeof selected.icon === "string" && (React.createElement(Image, { src: selected.icon, width: 108, height: 108 })),
             React.createElement("div", { style: { maxWidth: "246px" } },
-                React.createElement(ErrorMessage, { message: error })))) : (React.createElement(Text, { color: "textSubtle", small: true, p: "24px" }, "Start by connecting with one of the wallets below. Be sure to store your private keys or seed phrase securely. Never share them with anyone.")),
+                React.createElement(ErrorMessage, null)))) : (React.createElement(Text, { color: "textSubtle", small: true, p: "24px" }, "Start by connecting with one of the wallets below. Be sure to store your private keys or seed phrase securely. Never share them with anyone.")),
         React.createElement("div", null,
             React.createElement(WalletSelect, { wallets: walletsToShow, onClick: function (wallet) {
                     connectWallet(wallet);
@@ -9546,8 +9554,7 @@ function MobileModal(_a) {
                     }
                 } })),
         React.createElement("div", null,
-            React.createElement("div", null,
-                React.createElement(Text, { textAlign: "center", color: "textSubtle", as: "p", mb: "24px" }, "Haven\u2019t got a crypto wallet yet?")))));
+            React.createElement(Text, { textAlign: "center", color: "textSubtle", as: "p", mb: "24px" }, "Haven\u2019t got a crypto wallet yet?"))));
 }
 function WalletSelect(_a) {
     var wallets = _a.wallets, onClick = _a.onClick;
@@ -9557,7 +9564,7 @@ function WalletSelect(_a) {
             var Icon = wallet.icon;
             return (React.createElement(StyledButton, { key: wallet.id, scale: "xl", variant: "tertiary", id: "wallet-connect-".concat(wallet.title.toLowerCase()), onClick: function () { return onClick(wallet); } },
                 isImage ? (React.createElement(Image, { src: Icon, width: 24, height: 24 })) : (React.createElement(Icon, { width: 24, height: 24, color: "gray200" })),
-                React.createElement(BodyText, { ml: "8px", bold: true, color: "primary", scale: 'size12' }, wallet.title)));
+                React.createElement(BodyText, { ml: "8px", bold: true, color: "primary", scale: "size12" }, wallet.title)));
         }))));
 }
 var lastUsedWalletNameAtom = atom("");
@@ -9599,16 +9606,16 @@ function DesktopModal(_a) {
                     setQrCode(uri);
                 });
             }
-        } })) : (React.createElement(ConnectWrapper, null,
+        } })) : (React.createElement(ConnectWrapper, null, error && selected && selected.installed !== false ? (React.createElement(ErrorContent, { onRetry: function () { return connectToWallet(selected); } })) : (React.createElement(React.Fragment, null,
         selected && selected.installed !== false && (React.createElement(React.Fragment, null,
             typeof selected.icon === "string" && (React.createElement(Image, { src: selected.icon, width: 160, height: 160 })),
             React.createElement(Heading, { mt: "24px", as: "h1", scale: "md", color: "tooltip" },
                 "Opening ",
                 selected.title),
-            error ? (React.createElement(ErrorContent, { message: error, onRetry: function () { return connectToWallet(selected); } })) : (React.createElement(BodyText, { mt: "16px", as: "p", scale: "size16", color: "gray900" },
+            React.createElement(BodyText, { mt: "16px", as: "p", scale: "size16", color: "gray900" },
                 "Please confirm in ",
-                selected.title)))),
-        selected && selected.installed === false && (React.createElement(NotInstalled, { qrCode: qrCode, wallet: selected }))))));
+                selected.title))),
+        selected && selected.installed === false && (React.createElement(NotInstalled, { qrCode: qrCode, wallet: selected }))))))));
 }
 function ConnectModalV2(props) {
     var _wallets = props.wallets, login = props.login, onDismiss = props.onDismiss, rest = __rest(props, ["wallets", "login", "onDismiss"]);
@@ -9642,8 +9649,9 @@ function ConnectModalV2(props) {
                 .then(function (v) {
                 if (v) {
                     localStorage.setItem(walletLocalStorageKey, wallet.title);
-                    onDismiss === null || onDismiss === void 0 ? void 0 : onDismiss();
+                    //onDismiss?.();
                 }
+                onDismiss === null || onDismiss === void 0 ? void 0 : onDismiss();
             })
                 .catch(function (err) {
                 if (err instanceof WalletConnectorNotFoundError) {
@@ -9678,11 +9686,11 @@ var NotInstalled = function (_a) {
     var wallet = _a.wallet, qrCode = _a.qrCode;
     return (React.createElement(Flex, { flexDirection: "column", alignItems: "center", justifyContent: "center" },
         !qrCode && typeof wallet.icon === "string" && (React.createElement(Image, { src: wallet.icon, width: 160, height: 160 })),
-        React.createElement(Heading, { as: "h2", scale: "md", color: "tooltip" },
+        React.createElement(Heading, { as: "h2", scale: "md", color: qrCode ? "gray900" : 'tooltip' },
             wallet.title,
             " is not installed"),
         qrCode && (React.createElement(Suspense, null,
-            React.createElement(Box, { overflow: "hidden", borderRadius: "card", style: { width: "288px", height: "288px" } },
+            React.createElement(Box, { mt: "16px", overflow: "hidden", borderRadius: "card", style: { width: "288px", height: "288px" } },
                 React.createElement(Qrcode, { url: qrCode, image: typeof wallet.icon === "string" ? wallet.icon : undefined })))),
         !qrCode && (React.createElement(BodyText, { mt: "16px", textAlign: "center", color: "gray900", scale: "size16", maxWidth: "352px" },
             "Please install the ",
@@ -9691,21 +9699,18 @@ var NotInstalled = function (_a) {
             " ",
             wallet.title,
             " wallet.")),
-        wallet.guide && (React.createElement(Button, { mt: "16px", variant: "primary", width: '100%', scale: "lg", as: "a", href: getDesktopLink(wallet.guide), external: true }, getDesktopText(wallet.guide, "Setup Guide"))),
-        wallet.downloadLink && (React.createElement(Button, { width: '100%', mt: "16px", variant: "primary", scale: "lg", as: "a", href: getDesktopLink(wallet.downloadLink), external: true }, getDesktopText(wallet.downloadLink, "Install")))));
+        wallet.guide && (React.createElement(Button, { mt: "76px", variant: "primary", width: "100%", scale: "lg", as: "a", href: getDesktopLink(wallet.guide), external: true }, getDesktopText(wallet.guide, "Setup Guide"))),
+        wallet.downloadLink && (React.createElement(Button, { width: "100%", mt: "76px", variant: "primary", scale: "lg", as: "a", href: getDesktopLink(wallet.downloadLink), external: true }, getDesktopText(wallet.downloadLink, "Install")))));
 };
-var ErrorMessage = function (_a) {
-    var message = _a.message;
-    return (React.createElement(Text, { bold: true, color: "failure" },
-        React.createElement(Icon$39, { width: "16px", color: "failure", style: { verticalAlign: "middle" } }),
-        " ",
-        message));
-};
+var ErrorMessage = function () { return (React.createElement(Flex, { flexDirection: "column", justifyContent: "center", alignItems: "center" },
+    React.createElement(Icon$39, { width: 160, height: 160 }),
+    React.createElement(Heading, { my: "16px", color: "tooltip", scale: "md", as: "h3" }, "Your wallet is not connected"),
+    React.createElement(BodyText, { color: "gray900", scale: "size16" }, "Please, try connecting your wallet again."))); };
 var ErrorContent = function (_a) {
-    var onRetry = _a.onRetry, message = _a.message;
+    var onRetry = _a.onRetry;
     return (React.createElement(React.Fragment, null,
-        React.createElement(ErrorMessage, { message: message }),
-        React.createElement(Button, { variant: "primary", scale: "lg", onClick: onRetry }, "Retry")));
+        React.createElement(ErrorMessage, null),
+        React.createElement(Button, { mt: "88px", width: "80%", variant: "primary", scale: "lg", onClick: onRetry }, "Retry")));
 };
 var getDesktopLink = function (linkDevice) {
     var _a;
@@ -9742,4 +9747,4 @@ var ResetCSS = createGlobalStyle(templateObject_1 || (templateObject_1 = __makeT
 });
 var templateObject_1;
 
-export { Icon$10 as AboutBSWOpacityIcon, Icon$11 as AboutBSWSolidIcon, Alert, Icon$16 as AnalyticsOpacityIcon, Icon$17 as AnalyticsSolidIcon, Icon$3n as ArrowDownIcon, Icon$x as ArrowFiguredIcon, Icon$3o as ArrowLeftIcon, Icon$3q as ArrowRightIcon, Icon$3k as ArrowSkipLeftIcon, Icon$3l as ArrowSkipRightIcon, Icon$3m as ArrowUpForwardIcon, Icon$3p as ArrowUpIcon, Icon$2e as AuctionIcon, Icon$2c as AuctionOpacityIcon, Icon$2d as AuctionSolidIcon, Icon$P as AuditProtectionOpacityIcon, Icon$O as AuditProtectionSolidIcon, Icon$M as AuditSearchOpacityIcon, Icon$N as AuditSearchSolidIcon, Icon$1J as AutoRenewAnimateIcon, Icon$1M as AutoRenewIcon, Icon$1K as AutoRenewOpacityAnimateIcon, Icon$1N as AutoRenewOpacityIcon, Icon$1L as AutoRenewSolidAnimateIcon, Icon$1O as AutoRenewSolidIcon, Icon$y as AvalancheIcon, Icon$j as BDIcon, Icon$A as BSCIcon, BackgroundImage, Badge, BalanceInput, GridLayout$1 as BaseLayout, BaseMenu, Icon$2D as BellOpacityIcon, Icon$2E as BellSolidIcon, Icon$b as BinanceWalletIcon, Icon$5 as BitKeepWalletIcon, Icon$22 as BlockIcon, Icon$21 as BlockOpacityIcon, Icon$20 as BlockSolidIcon, BodyText, Icon$2k as BookIcon, Icon$2i as BookOpacityIcon, Icon$2j as BookSolidIcon, BottomDrawer, Box, Icon$a as BraveWalletIcon, Breadcrumbs, Icon$3D as BscBlackRoundIcon, Icon$1z as BurgerCloseIcon, Icon$1A as BurgerIcon, Button, ButtonMenu, ButtonMenuItem, Icon$f as CNIcon, Icon$31 as CalculateIcon, Icon$33 as CalculateOpacityIcon, Icon$32 as CalculateSolidIcon, Card, CardBody, CardFooter, CardHeader, CardRibbon, Icon$2M as CardViewIcon, GridLayout as CardsLayout, Icon$o as CerticAuditedIcon, Icon$12 as CharityOpacityIcon, Icon$13 as CharitySolidIcon, Icon$2J as CheckIcon, Icon$2H as CheckOpacityIcon, Icon$2I as CheckSolidIcon, Checkbox, Icon$3B as ChevronDownCircleOpacityIcon, Icon$3C as ChevronDownCircleSolidIcon, Icon$3A as ChevronDownIcon, Icon$3v as ChevronLeftCircleOpacityIcon, Icon$3w as ChevronLeftCircleSolidIcon, Icon$3u as ChevronLeftIcon, Icon$3y as ChevronRightCircleOpacityIcon, Icon$3z as ChevronRightCircleSolidIcon, Icon$3x as ChevronRightIcon, Icon$3r as ChevronUpCircleOpacityIcon, Icon$3s as ChevronUpCircleSolidIcon, Icon$3j as ChevronUpDoubleIcon, Icon$3t as ChevronUpIcon, Icon$3i as ChevronUpTripleIcon, ClickableElementContainer, Icon$37 as CloseCircleOpacityIcon, Icon$36 as CloseCircleSolidIcon, Icon$38 as CloseIcon, Icon$4 as Coin98WalletIcon, Icon$7 as CoinbaseWalletIcon, Icon$9 as ConnectWalletIcon, ConnectorNames, ConnectorsTitleTypes, Icon$2t as CopyIcon, Icon$2r as CopyOpacityIcon, Icon$2s as CopySolidIcon, Icon$g as DEIcon, Icon$Q as DocsOpacityIcon, Icon$R as DocsSolidIcon, Icon$3G as DownloadIcon, Dropdown, DropdownMenuItemType, Icon$d as ESIcon, Icon$1U as EditIcon, Icon$1T as EditOpacityIcon, Icon$1S as EditSolidIcon, Icon$1s as ExchangeOpacityIcon, Icon$1t as ExchangeSolidIcon, ExpandableButton, ExpandableLabel, Icon$1q as ExpertModeOpacityIcon, Icon$1r as ExpertModeSolidIcon, Icon$2K as EyeCloseIcon, Icon$2L as EyeOpenIcon, Icon$i as FRIcon, Icon$E as FacebookIcon, Icon$1m as FarmsOpacityIcon, Icon$1n as FarmsSolidIcon, Icon$2P as FavoriteEmptyIcon, Icon$2O as FavoriteSolidIcon, Icon$2h as FileIcon, Icon$2f as FileOpacityIcon, Icon$2g as FileSolidIcon, Icon$2n as FilterIcon, Icon$2l as FilterOpacityIcon, Icon$2m as FilterSolidIcon, Icon$2Z as FireIcon, Icon$2X as FireOpacityIcon, Icon$2Y as FireSolidIcon, Icon$18 as FixedStakingOpacityIcon, Icon$19 as FixedStakingSolidIcon, Icon$25 as FlagIcon, Icon$24 as FlagOpacityIcon, Icon$23 as FlagSolidIcon, Flex, Icon$w as GameFiIcon, Icon$1Q as GasIcon, Icon$v as GiftIcon, Icon$1g as GobletOpacityIcon, Icon$1h as GobletSolidIcon, Grid, HeadText, Heading, Icon$2_ as HelpIcon, Icon$30 as HelpOpacityIcon, Icon$2$ as HelpSolidIcon, Icon$1D as HistoryIcon, Icon$3E as HourglassIcon, Icon$m as IDIcon, Icon$c as INIcon, Icon$3 as ITokenWalletIcon, IconButton, Icon$1i as IdoOpacityIcon, Icon$1j as IdoSolidIcon, Image, Icon$2W as InfoIcon, Icon$2U as InfoOpacityIcon, Icon$2V as InfoSolidIcon, InlineMenu, InlineMenuContainer, Input$1 as Input, InputGroup, Icon$L as InstagramIcon, ItemTypes, Icon$1c as LaunchpadOpacityIcon, Icon$1d as LaunchpadSolidIcon, Link, LinkExternal, Icon$1u as LiquidityOpacityIcon, Icon$1v as LiquiditySolidIcon, Icon$1F as ListOpacityIcon, Icon$1E as ListSolidIcon, Icon$2N as ListViewIcon, Icon$3I as LogoIcon, Icon$3H as LogoWithTextIcon, Icon$1e as LotteryOpacityIcon, Icon$1f as LotterySolidIcon, Icon$u as MarketIcon, MatchBreakpointsProvider, Icon$6 as MathWalletIcon, Icon$1R as MedalIcon, Icon$K as MediumIcon, Menu, Icon$t as MetamaskIcon, Icon$8 as MetamaskWalletIcon, Icon$3c as MinusCircleOpacityIcon, Icon$3d as MinusCircleSolidIcon, Icon$3e as MinusIcon, Modal, ModalBackButton, ModalBody$1 as ModalBody, ModalCloseButton, ModalContainer, ModalHeader, ModalProvider, ModalTitle, ModalWithBackground, Icon$1V as More2Icon, Icon$1Y as MoreHorizontalIcon, Icon$1W as MoreHorizontalOpacityIcon, Icon$1X as MoreHorizontalSolidIcon, Icon$1$ as MoreVerticalIcon, Icon$1Z as MoreVerticalOpacityIcon, Icon$1_ as MoreVerticalSolidIcon, Icon$3F as MouseIcon, Icon$V as MultiPoolOpacityIcon, Icon$U as MultiPoolSolidIcon, Icon$1a as NFTEarnOpacityIcon, Icon$1b as NFTEarnSolidIcon, Icon$S as NewsOpacityIcon, Icon$T as NewsSolidIcon, NotificationDot, Icon$2w as OptionsOpacityIcon, Icon$2x as OptionsSolidIcon, Overlay, Icon$h as PTIcon, Pagination, PercentSlider, Icon$1P as PlayIcon, Icon$3f as PlusCircleOpacityIcon, Icon$3g as PlusCircleSolidIcon, Icon$3h as PlusIcon, Icon$z as PolygonIcon, Icon$1o as PoolsOpacityIcon, Icon$1p as PoolsSolidIcon, Icon$1B as ProductsOpacityIcon, Icon$1C as ProductsSolidIcon, ProfileAvatar, Icon$Y as Program10mOpacityIcon, Icon$Z as Program10mSolidIcon, Progress, Bar as ProgressBar, QRCode, Icon$s as RBIcon, Icon$l as RUIcon, Radio, Icon$D as Rank1Icon, Icon$C as Rank2Icon, Icon$B as Rank3Icon, Icon$J as RedditIcon, Icon$1k as ReferralOpacityIcon, Icon$1l as ReferralSolidIcon, Icon$1I as RefreshIcon, Icon$1H as RefreshOpacityIcon, Icon$1G as RefreshSolidIcon, ResetCSS, Icon$r as SEIcon, Icon as SafePalWalletIcon, Icon$2B as SearchOpacityIcon, Icon$2C as SearchSolidIcon, Icon$2q as ShareIcon, Icon$2o as ShareOpacityIcon, Icon$2p as ShareSolidIcon, Skeleton, SlideButtonMenu, SlideButtonMenuItem, Slider, Icon$W as SpaceAgentOpacityIcon, Icon$X as SpaceAgentSolidIcon, Icon$2A as StarIcon, Icon$2z as StarOpacityIcon, Icon$2y as StarSolidIcon, SubMenu, SubMenuContainer, SubMenuItem, SubMenuItems, Svg, Icon$2T as SwapHorizontalOpacityIcon, Icon$2S as SwapHorizontalSolidIcon, Icon$2R as SwapVerticalOpacityIcon, Icon$2Q as SwapVerticalSolidIcon, Icon$e as TRIcon, TabMenu, TabBarItem as TabMenuItem, Tag, Icon$_ as TeamOpacityIcon, Icon$$ as TeamSolidIcon, Icon$I as TelegramIcon, Icon$28 as TestIcon, Icon$27 as TestOpacityIcon, Icon$26 as TestSolidIcon, Text, Textfield as TextField, Icon$q as Ticket2Icon, Timeline, Icon$2b as TimerIcon, Icon$29 as TimerOpacityIcon, Icon$2a as TimerSolidIcon, ToastContainer, Toggle, TokenImage, TokenPairImage, Icon$1 as TokenPocketWalletIcon, TooltipText, Icon$2 as TrustWalletIcon, Icon$H as TwitchIcon, Icon$G as TwitterIcon, Icon$n as USAIcon, Icon$1w as UsdLineIcon, Icon$1y as UsdOpacityIcon, Icon$1x as UsdSolidIcon, UserMenuDivider, UserMenuItem, Icon$2F as UserOpacityIcon, Icon$2G as UserSolidIcon, Icon$k as VNIcon, Icon$2u as VerifiedOpacityIcon, Icon$2v as VerifiedSolidIcon, Icon$p as VisaIcon, Icon$14 as VotingOpacityIcon, Icon$15 as VotingSolidIcon, Icon$34 as WalletOpacityIcon, Icon$35 as WalletSolidIcon, Icon$39 as WarningIcon, Icon$3b as WarningOpacityIcon, Icon$3a as WarningSolidIcon, Icon$F as YoutubeIcon, variants$9 as alertVariants, byTextAscending, byTextDescending, connectorLocalStorageKey, darkTheme as dark, darkColors, formatSpacingAmount, getExternalLinkProps, getPortalRoot, getRgba, getThemeValue, isTouchDevice, lightTheme as light, lightColors, makeRender, links as menuConfig, status as menuStatus, types as toastTypes, useDelayedUnmount, useKonamiCheatCode, useMatchBreakpoints, useModal, useOnClickOutside, useParticleBurst, useTable, useTooltip, useWalletModal$1 as useWalletModal, useWalletModal as useWalletModalV2, walletLocalStorageKey$1 as walletLocalStorageKey };
+export { Icon$10 as AboutBSWOpacityIcon, Icon$11 as AboutBSWSolidIcon, Alert, Icon$16 as AnalyticsOpacityIcon, Icon$17 as AnalyticsSolidIcon, Icon$3o as ArrowDownIcon, Icon$x as ArrowFiguredIcon, Icon$3p as ArrowLeftIcon, Icon$3r as ArrowRightIcon, Icon$3l as ArrowSkipLeftIcon, Icon$3m as ArrowSkipRightIcon, Icon$3n as ArrowUpForwardIcon, Icon$3q as ArrowUpIcon, Icon$2e as AuctionIcon, Icon$2c as AuctionOpacityIcon, Icon$2d as AuctionSolidIcon, Icon$P as AuditProtectionOpacityIcon, Icon$O as AuditProtectionSolidIcon, Icon$M as AuditSearchOpacityIcon, Icon$N as AuditSearchSolidIcon, Icon$1J as AutoRenewAnimateIcon, Icon$1M as AutoRenewIcon, Icon$1K as AutoRenewOpacityAnimateIcon, Icon$1N as AutoRenewOpacityIcon, Icon$1L as AutoRenewSolidAnimateIcon, Icon$1O as AutoRenewSolidIcon, Icon$y as AvalancheIcon, Icon$j as BDIcon, Icon$A as BSCIcon, BackgroundImage, Badge, BalanceInput, GridLayout$1 as BaseLayout, BaseMenu, Icon$2D as BellOpacityIcon, Icon$2E as BellSolidIcon, Icon$b as BinanceWalletIcon, Icon$5 as BitKeepWalletIcon, Icon$22 as BlockIcon, Icon$21 as BlockOpacityIcon, Icon$20 as BlockSolidIcon, BodyText, Icon$2k as BookIcon, Icon$2i as BookOpacityIcon, Icon$2j as BookSolidIcon, BottomDrawer, Box, Icon$a as BraveWalletIcon, Breadcrumbs, Icon$3E as BscBlackRoundIcon, Icon$1z as BurgerCloseIcon, Icon$1A as BurgerIcon, Button, ButtonMenu, ButtonMenuItem, Icon$f as CNIcon, Icon$31 as CalculateIcon, Icon$33 as CalculateOpacityIcon, Icon$32 as CalculateSolidIcon, Card, CardBody, CardFooter, CardHeader, CardRibbon, Icon$2M as CardViewIcon, GridLayout as CardsLayout, Icon$o as CerticAuditedIcon, Icon$12 as CharityOpacityIcon, Icon$13 as CharitySolidIcon, Icon$2J as CheckIcon, Icon$2H as CheckOpacityIcon, Icon$2I as CheckSolidIcon, Checkbox, Icon$3C as ChevronDownCircleOpacityIcon, Icon$3D as ChevronDownCircleSolidIcon, Icon$3B as ChevronDownIcon, Icon$3w as ChevronLeftCircleOpacityIcon, Icon$3x as ChevronLeftCircleSolidIcon, Icon$3v as ChevronLeftIcon, Icon$3z as ChevronRightCircleOpacityIcon, Icon$3A as ChevronRightCircleSolidIcon, Icon$3y as ChevronRightIcon, Icon$3s as ChevronUpCircleOpacityIcon, Icon$3t as ChevronUpCircleSolidIcon, Icon$3k as ChevronUpDoubleIcon, Icon$3u as ChevronUpIcon, Icon$3j as ChevronUpTripleIcon, ClickableElementContainer, Icon$37 as CloseCircleOpacityIcon, Icon$36 as CloseCircleSolidIcon, Icon$38 as CloseIcon, Icon$4 as Coin98WalletIcon, Icon$7 as CoinbaseWalletIcon, Icon$9 as ConnectWalletIcon, ConnectorNames, ConnectorsTitleTypes, Icon$2t as CopyIcon, Icon$2r as CopyOpacityIcon, Icon$2s as CopySolidIcon, Icon$g as DEIcon, Icon$Q as DocsOpacityIcon, Icon$R as DocsSolidIcon, Icon$3H as DownloadIcon, Dropdown, DropdownMenuItemType, Icon$d as ESIcon, Icon$1U as EditIcon, Icon$1T as EditOpacityIcon, Icon$1S as EditSolidIcon, Icon$1s as ExchangeOpacityIcon, Icon$1t as ExchangeSolidIcon, ExpandableButton, ExpandableLabel, Icon$1q as ExpertModeOpacityIcon, Icon$1r as ExpertModeSolidIcon, Icon$2K as EyeCloseIcon, Icon$2L as EyeOpenIcon, Icon$i as FRIcon, Icon$E as FacebookIcon, Icon$1m as FarmsOpacityIcon, Icon$1n as FarmsSolidIcon, Icon$2P as FavoriteEmptyIcon, Icon$2O as FavoriteSolidIcon, Icon$2h as FileIcon, Icon$2f as FileOpacityIcon, Icon$2g as FileSolidIcon, Icon$2n as FilterIcon, Icon$2l as FilterOpacityIcon, Icon$2m as FilterSolidIcon, Icon$2Z as FireIcon, Icon$2X as FireOpacityIcon, Icon$2Y as FireSolidIcon, Icon$18 as FixedStakingOpacityIcon, Icon$19 as FixedStakingSolidIcon, Icon$25 as FlagIcon, Icon$24 as FlagOpacityIcon, Icon$23 as FlagSolidIcon, Flex, Icon$w as GameFiIcon, Icon$1Q as GasIcon, Icon$v as GiftIcon, Icon$1g as GobletOpacityIcon, Icon$1h as GobletSolidIcon, Grid, HeadText, Heading, Icon$2_ as HelpIcon, Icon$30 as HelpOpacityIcon, Icon$2$ as HelpSolidIcon, Icon$1D as HistoryIcon, Icon$3F as HourglassIcon, Icon$m as IDIcon, Icon$c as INIcon, Icon$3 as ITokenWalletIcon, IconButton, Icon$1i as IdoOpacityIcon, Icon$1j as IdoSolidIcon, Image, Icon$2W as InfoIcon, Icon$2U as InfoOpacityIcon, Icon$2V as InfoSolidIcon, InlineMenu, InlineMenuContainer, Input$1 as Input, InputGroup, Icon$L as InstagramIcon, ItemTypes, Icon$1c as LaunchpadOpacityIcon, Icon$1d as LaunchpadSolidIcon, Link, LinkExternal, Icon$1u as LiquidityOpacityIcon, Icon$1v as LiquiditySolidIcon, Icon$1F as ListOpacityIcon, Icon$1E as ListSolidIcon, Icon$2N as ListViewIcon, Icon$3J as LogoIcon, Icon$3I as LogoWithTextIcon, Icon$1e as LotteryOpacityIcon, Icon$1f as LotterySolidIcon, Icon$u as MarketIcon, MatchBreakpointsProvider, Icon$6 as MathWalletIcon, Icon$1R as MedalIcon, Icon$K as MediumIcon, Menu, Icon$t as MetamaskIcon, Icon$8 as MetamaskWalletIcon, Icon$3d as MinusCircleOpacityIcon, Icon$3e as MinusCircleSolidIcon, Icon$3f as MinusIcon, Modal, ModalBackButton, ModalBody$1 as ModalBody, ModalCloseButton, ModalContainer, ModalHeader, ModalProvider, ModalTitle, ModalWithBackground, Icon$1V as More2Icon, Icon$1Y as MoreHorizontalIcon, Icon$1W as MoreHorizontalOpacityIcon, Icon$1X as MoreHorizontalSolidIcon, Icon$1$ as MoreVerticalIcon, Icon$1Z as MoreVerticalOpacityIcon, Icon$1_ as MoreVerticalSolidIcon, Icon$3G as MouseIcon, Icon$V as MultiPoolOpacityIcon, Icon$U as MultiPoolSolidIcon, Icon$1a as NFTEarnOpacityIcon, Icon$1b as NFTEarnSolidIcon, Icon$S as NewsOpacityIcon, Icon$T as NewsSolidIcon, NotificationDot, Icon$2w as OptionsOpacityIcon, Icon$2x as OptionsSolidIcon, Overlay, Icon$h as PTIcon, Pagination, PercentSlider, Icon$1P as PlayIcon, Icon$3g as PlusCircleOpacityIcon, Icon$3h as PlusCircleSolidIcon, Icon$3i as PlusIcon, Icon$z as PolygonIcon, Icon$1o as PoolsOpacityIcon, Icon$1p as PoolsSolidIcon, Icon$1B as ProductsOpacityIcon, Icon$1C as ProductsSolidIcon, ProfileAvatar, Icon$Y as Program10mOpacityIcon, Icon$Z as Program10mSolidIcon, Progress, Bar as ProgressBar, QRCode, Icon$s as RBIcon, Icon$l as RUIcon, Radio, Icon$D as Rank1Icon, Icon$C as Rank2Icon, Icon$B as Rank3Icon, Icon$J as RedditIcon, Icon$1k as ReferralOpacityIcon, Icon$1l as ReferralSolidIcon, Icon$1I as RefreshIcon, Icon$1H as RefreshOpacityIcon, Icon$1G as RefreshSolidIcon, ResetCSS, Icon$r as SEIcon, Icon as SafePalWalletIcon, Icon$2B as SearchOpacityIcon, Icon$2C as SearchSolidIcon, Icon$2q as ShareIcon, Icon$2o as ShareOpacityIcon, Icon$2p as ShareSolidIcon, Skeleton, SlideButtonMenu, SlideButtonMenuItem, Slider, Icon$W as SpaceAgentOpacityIcon, Icon$X as SpaceAgentSolidIcon, Icon$2A as StarIcon, Icon$2z as StarOpacityIcon, Icon$2y as StarSolidIcon, SubMenu, SubMenuContainer, SubMenuItem, SubMenuItems, Svg, Icon$2T as SwapHorizontalOpacityIcon, Icon$2S as SwapHorizontalSolidIcon, Icon$2R as SwapVerticalOpacityIcon, Icon$2Q as SwapVerticalSolidIcon, Icon$e as TRIcon, TabMenu, TabBarItem as TabMenuItem, Tag, Icon$_ as TeamOpacityIcon, Icon$$ as TeamSolidIcon, Icon$I as TelegramIcon, Icon$28 as TestIcon, Icon$27 as TestOpacityIcon, Icon$26 as TestSolidIcon, Text, Textfield as TextField, Icon$q as Ticket2Icon, Timeline, Icon$2b as TimerIcon, Icon$29 as TimerOpacityIcon, Icon$2a as TimerSolidIcon, ToastContainer, Toggle, TokenImage, TokenPairImage, Icon$1 as TokenPocketWalletIcon, TooltipText, Icon$2 as TrustWalletIcon, Icon$H as TwitchIcon, Icon$G as TwitterIcon, Icon$n as USAIcon, Icon$1w as UsdLineIcon, Icon$1y as UsdOpacityIcon, Icon$1x as UsdSolidIcon, UserMenuDivider, UserMenuItem, Icon$2F as UserOpacityIcon, Icon$2G as UserSolidIcon, Icon$k as VNIcon, Icon$2u as VerifiedOpacityIcon, Icon$2v as VerifiedSolidIcon, Icon$p as VisaIcon, Icon$14 as VotingOpacityIcon, Icon$15 as VotingSolidIcon, Icon$34 as WalletOpacityIcon, Icon$35 as WalletSolidIcon, Icon$39 as WarningCycleIcon, Icon$3a as WarningIcon, Icon$3c as WarningOpacityIcon, Icon$3b as WarningSolidIcon, Icon$F as YoutubeIcon, variants$9 as alertVariants, byTextAscending, byTextDescending, connectorLocalStorageKey, darkTheme as dark, darkColors, formatSpacingAmount, getExternalLinkProps, getPortalRoot, getRgba, getThemeValue, isTouchDevice, lightTheme as light, lightColors, makeRender, links as menuConfig, status as menuStatus, types as toastTypes, useDelayedUnmount, useKonamiCheatCode, useMatchBreakpoints, useModal, useOnClickOutside, useParticleBurst, useTable, useTooltip, useWalletModal$1 as useWalletModal, useWalletModal as useWalletModalV2, walletLocalStorageKey$1 as walletLocalStorageKey };
