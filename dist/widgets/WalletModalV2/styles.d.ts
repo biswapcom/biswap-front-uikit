@@ -12,3 +12,4 @@ export declare const StyledButton: import("styled-components").StyledComponent<{
         disabled: boolean;
     };
 }, import("styled-components").DefaultTheme, {}, never>;
+export declare const ConnectWrapper: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, import("../../components/Box").BoxProps & import("../../components/Box").FlexProps, never>;

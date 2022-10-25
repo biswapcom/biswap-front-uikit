@@ -3,6 +3,7 @@ import { Text } from "../../components/Text";
 import { Box } from "../../components/Box";
 import { getRgba } from "../../util";
 import Button from "../../components/Button/Button";
+import Flex from "../../components/Box/Flex";
 
 export const StyledText = styled(Text)`
   align-self: flex-start;
@@ -60,3 +61,16 @@ export const StyledButton = styled(Button)`
     color: ${({ theme }) => theme.colors.primaryHover};
   }
 `;
+
+export const ConnectWrapper = styled(Flex)`
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: ${({ theme }) => theme.colors.gray200};
+  height: 508px;
+  width: 100%;
+  
+  // ${({ theme }) => theme.mediaQueries.sm} {
+  //   width: 172px;
+  // }
+`

@@ -8,11 +8,28 @@ import Modal from "../Modal/Modal";
 import { HelpOpacityIcon, WarningIcon } from "../../components/Svg";
 import { ModalProps } from "../Modal";
 
+// ui
+const StyledButton = styled(Button)`
+  display: flex;
+  justify-content: flex-start;
+  white-space: nowrap;
+  width: 100%;
+
+  background: ${({ theme }) => theme.colors.gray200};
+
+  ${({ theme }) => theme.mediaQueries.sm} {
+    width: 172px;
+  }
+
+  &:hover > div {
+    color: ${({ theme }) => theme.colors.primaryHover};
+  }
+`;
+
 // components
 import Image from "../../components/Image/Image";
 import { Text } from "../../components/Text";
-import { ScrollWrapper, StyledText, WalletCardsWrapper } from "./styles";
-import StyledButton from "../../components/Button/StyledButton";
+import {ConnectWrapper, ScrollWrapper, StyledText, WalletCardsWrapper} from "./styles";
 import Heading from "../../components/Heading/Heading";
 import Button from "../../components/Button/Button";
 import Box from "../../components/Box/Box";
@@ -26,6 +43,7 @@ import { WALLET_SCREEN, walletLocalStorageKey } from "./config";
 import BodyText from "../../components/Typography/BodyText";
 import Flex from "../../components/Box/Flex";
 import { HOW_TO_CONNECT_DOCS } from "../../config";
+import styled from "styled-components";
 
 const Qrcode = lazy(() => import("../../components/QRCode/QRCode"));
 
@@ -131,16 +149,13 @@ function WalletSelect<T>({
               onClick={() => onClick(wallet)}
             >
               {isImage ? (
-                <Image src={Icon as string} width={50} height={50} />
+                <Image src={Icon as string} width={24} height={24} />
               ) : (
-                <Icon width={24} height={24} color="textSubtle" />
+                <Icon width={24} height={24} color="gray200" />
               )}
-              <Text ml="8px" bold color="primary" fontSize="12px">
+              <BodyText ml="8px" bold color="primary" scale='size12'>
                 {wallet.title}
-              </Text>
-              {/*{wallet.id === selected?.id && (*/}
-              {/*    <AtomBox position="absolute" inset="0" bgc="secondary" opacity="0.5" borderRadius="12px" />*/}
-              {/*)}*/}
+              </BodyText>
             </StyledButton>
           );
         })}
@@ -212,12 +227,7 @@ function DesktopModal<T>({
           }}
         />
       ) : (
-        <Flex
-          //py="120px"
-          flexDirection="column"
-          alignItems="center"
-          justifyContent="center"
-        >
+        <ConnectWrapper>
           {selected && selected.installed !== false && (
             <>
               {typeof selected.icon === "string" && (
@@ -241,7 +251,7 @@ function DesktopModal<T>({
           {selected && selected.installed === false && (
             <NotInstalled qrCode={qrCode} wallet={selected} />
           )}
-        </Flex>
+        </ConnectWrapper>
       )}
     </>
   );
@@ -434,6 +444,7 @@ const NotInstalled = ({
         <Button
           mt="16px"
           variant="primary"
+          width='100%'
           scale="lg"
           as="a"
           href={getDesktopLink(wallet.guide)}
@@ -444,6 +455,7 @@ const NotInstalled = ({
       )}
       {wallet.downloadLink && (
         <Button
+          width='100%'
           mt="16px"
           variant="primary"
           scale="lg"
