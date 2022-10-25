@@ -30,5 +30,5 @@ export class WalletSwitchChainError extends Error {}
 export interface WalletModalV2Props<T = unknown> extends ModalProps {
   wallets: WalletConfigV2<T>[];
   login: (connectorId: T) => Promise<any>;
-  onDismiss: () => void;
+  onDismiss?: () => void;
 }

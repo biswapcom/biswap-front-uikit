@@ -9652,9 +9652,9 @@ function ConnectModalV2(props) {
                 if (v) {
                     console.log('then login', v);
                     localStorage.setItem(walletLocalStorageKey, wallet.title);
-                    onDismiss();
+                    onDismiss === null || onDismiss === void 0 ? void 0 : onDismiss();
                 }
-                onDismiss();
+                onDismiss === null || onDismiss === void 0 ? void 0 : onDismiss();
             })
                 .catch(function (err) {
                 if (err instanceof WalletConnectorNotFoundError) {
@@ -9671,6 +9671,8 @@ function ConnectModalV2(props) {
                 }
             });
         }
+        if (wallet.id === 'trust')
+            return onDismiss === null || onDismiss === void 0 ? void 0 : onDismiss();
     };
     return (React.createElement(Modal, __assign({ onDismiss: onDismiss, walletModal: true, onBack: function () { return setConnectScreen(WALLET_SCREEN.WELCOME_SCREEN); }, closeBtnColor: "dark900", hideOnBack: isWelcomeScreen, title: isWelcomeScreen ? "Connect to a wallet" : "Back to wallets", width: isMobile ? "100%" : "auto", maxWidth: !isMobile ? "416px" : "none", bodyPadding: "0", position: isMobile ? "absolute" : "relative", bottom: "0", borderRadius: isMobile ? "16px 16px 0 0" : "16px", modalBodyProps: {
             alignItems: "center",
@@ -9736,12 +9738,8 @@ var getDesktopText = function (linkDevice, fallback) {
 };
 var templateObject_1$1;
 
-// interface ReturnType {
-//     onPresentConnectModal: () => void;
-// }
-var Handler = function () { return null; };
 function useWalletModal(login, wallets) {
-    var onPresentConnectModalV2 = useModal(React.createElement(ConnectModalV2, { login: login, wallets: wallets, onDismiss: Handler }))[0];
+    var onPresentConnectModalV2 = useModal(React.createElement(ConnectModalV2, { login: login, wallets: wallets }), true, true, 'connect-modal-v2')[0];
     return { onPresentConnectModalV2: onPresentConnectModalV2 };
 }
 
