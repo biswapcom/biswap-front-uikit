@@ -45,7 +45,7 @@ import Box from "../../components/Box/Box";
 import {
   LinkOfDevice,
   WalletConfigV2,
-  WalletConnectorNotFoundError,
+  WalletConnectorNotFoundError, WalletModalV2Props,
   WalletSwitchChainError,
 } from "./types";
 import { WALLET_SCREEN, walletLocalStorageKey } from "./config";
@@ -56,11 +56,6 @@ import styled from "styled-components";
 
 const Qrcode = lazy(() => import("../../components/QRCode/QRCode"));
 
-interface WalletModalV2Props<T = unknown> extends ModalProps {
-  wallets: WalletConfigV2<T>[];
-  login: (connectorId: T) => Promise<any>;
-  onDismiss?: () => void;
-}
 
 const errorAtom = atom<string>("");
 
@@ -296,6 +291,7 @@ export function ConnectModalV2<T = unknown>(props: WalletModalV2Props<T>) {
   // usePreloadImages(imageSources.slice(0, MOBILE_DEFAULT_DISPLAY_COUNT))
 
   const connectWallet = (wallet: WalletConfigV2<T>) => {
+    console.log('wallet', wallet)
     setSelected(wallet);
     setError("");
     setConnectScreen(WALLET_SCREEN.CONNECTING_SCREEN);
@@ -313,10 +309,13 @@ export function ConnectModalV2<T = unknown>(props: WalletModalV2Props<T>) {
         .catch((err) => {
           if (err instanceof WalletConnectorNotFoundError) {
             setError("no provider found");
+            console.error('no provider found')
           } else if (err instanceof WalletSwitchChainError) {
             setError(err.message);
+            console.error(err.message)
           } else {
             setError("Error connecting, please authorize wallet to access.");
+            console.error('Error connecting, please authorize wallet to access.')
           }
         });
     }
@@ -324,7 +323,7 @@ export function ConnectModalV2<T = unknown>(props: WalletModalV2Props<T>) {
 
   return (
     <Modal
-      onDismiss={props.onDismiss}
+      onDismiss={onDismiss}
       walletModal
       onBack={() => setConnectScreen(WALLET_SCREEN.WELCOME_SCREEN)}
       closeBtnColor="dark900"

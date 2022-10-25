@@ -9641,6 +9641,7 @@ function ConnectModalV2(props) {
     //
     // usePreloadImages(imageSources.slice(0, MOBILE_DEFAULT_DISPLAY_COUNT))
     var connectWallet = function (wallet) {
+        console.log('wallet', wallet);
         setSelected(wallet);
         setError("");
         setConnectScreen(WALLET_SCREEN.CONNECTING_SCREEN);
@@ -9658,17 +9659,20 @@ function ConnectModalV2(props) {
                 .catch(function (err) {
                 if (err instanceof WalletConnectorNotFoundError) {
                     setError("no provider found");
+                    console.error('no provider found');
                 }
                 else if (err instanceof WalletSwitchChainError) {
                     setError(err.message);
+                    console.error(err.message);
                 }
                 else {
                     setError("Error connecting, please authorize wallet to access.");
+                    console.error('Error connecting, please authorize wallet to access.');
                 }
             });
         }
     };
-    return (React.createElement(Modal, __assign({ onDismiss: props.onDismiss, walletModal: true, onBack: function () { return setConnectScreen(WALLET_SCREEN.WELCOME_SCREEN); }, closeBtnColor: "dark900", hideOnBack: isWelcomeScreen, title: isWelcomeScreen ? "Connect to a wallet" : "Back to wallets", width: isMobile ? "100%" : "auto", maxWidth: !isMobile ? "416px" : "none", bodyPadding: "0", position: isMobile ? "absolute" : "relative", bottom: "0", borderRadius: isMobile ? "16px 16px 0 0" : "16px", modalBodyProps: {
+    return (React.createElement(Modal, __assign({ onDismiss: onDismiss, walletModal: true, onBack: function () { return setConnectScreen(WALLET_SCREEN.WELCOME_SCREEN); }, closeBtnColor: "dark900", hideOnBack: isWelcomeScreen, title: isWelcomeScreen ? "Connect to a wallet" : "Back to wallets", width: isMobile ? "100%" : "auto", maxWidth: !isMobile ? "416px" : "none", bodyPadding: "0", position: isMobile ? "absolute" : "relative", bottom: "0", borderRadius: isMobile ? "16px 16px 0 0" : "16px", modalBodyProps: {
             alignItems: "center",
         } }, rest),
         React.createElement(React.Fragment, null,
