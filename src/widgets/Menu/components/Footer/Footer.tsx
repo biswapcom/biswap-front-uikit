@@ -31,9 +31,9 @@ interface Props
 }
 
 const Wrapper = styled.footer`
-  color: #fff;
+  color: ${({ theme }) => theme.colors.white};
   background: ${({ theme }) => theme.colors.dark700};
-  padding: 56px 16px 32px;
+  padding: 32px 16px;
   transition: padding-left 0.2s;
   z-index: 10;
 `;
