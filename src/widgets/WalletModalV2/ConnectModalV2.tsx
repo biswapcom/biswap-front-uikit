@@ -213,7 +213,7 @@ function DesktopModal<T>({
         />
       ) : (
         <Flex
-          py="120px"
+          //py="120px"
           flexDirection="column"
           alignItems="center"
           justifyContent="center"
@@ -226,7 +226,7 @@ function DesktopModal<T>({
               <Heading mt="24px" as="h1" scale="md" color="tooltip">
                 Opening {selected.title}
               </Heading>
-              {!error ? (
+              {error ? (
                 <ErrorContent
                   message={error}
                   onRetry={() => connectToWallet(selected)}
@@ -396,9 +396,9 @@ const NotInstalled = ({
       flexDirection="column"
       alignItems="center"
       justifyContent="center"
-      py="116px"
+     // py="116px"
     >
-      {typeof wallet.icon === "string" && (
+      {!qrCode && typeof wallet.icon === "string" && (
         <Image src={wallet.icon} width={160} height={160} />
       )}
       <Heading as="h2" scale="md" color="tooltip">

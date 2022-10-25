@@ -9596,13 +9596,17 @@ function DesktopModal(_a) {
                     setQrCode(uri);
                 });
             }
-        } })) : (React__default["default"].createElement(Flex, { py: "120px", flexDirection: "column", alignItems: "center", justifyContent: "center" },
+        } })) : (React__default["default"].createElement(Flex
+    //py="120px"
+    , { 
+        //py="120px"
+        flexDirection: "column", alignItems: "center", justifyContent: "center" },
         selected && selected.installed !== false && (React__default["default"].createElement(React__default["default"].Fragment, null,
             typeof selected.icon === "string" && (React__default["default"].createElement(Image, { src: selected.icon, width: 160, height: 160 })),
             React__default["default"].createElement(Heading, { mt: "24px", as: "h1", scale: "md", color: "tooltip" },
                 "Opening ",
                 selected.title),
-            !error ? (React__default["default"].createElement(ErrorContent, { message: error, onRetry: function () { return connectToWallet(selected); } })) : (React__default["default"].createElement(BodyText, { mt: "16px", as: "p", scale: "size16", color: "gray900" },
+            error ? (React__default["default"].createElement(ErrorContent, { message: error, onRetry: function () { return connectToWallet(selected); } })) : (React__default["default"].createElement(BodyText, { mt: "16px", as: "p", scale: "size16", color: "gray900" },
                 "Please confirm in ",
                 selected.title)))),
         selected && selected.installed === false && (React__default["default"].createElement(NotInstalled, { qrCode: qrCode, wallet: selected }))))));
@@ -9673,8 +9677,8 @@ function ConnectModalV2(props) {
 }
 var NotInstalled = function (_a) {
     var wallet = _a.wallet, qrCode = _a.qrCode;
-    return (React__default["default"].createElement(Flex, { flexDirection: "column", alignItems: "center", justifyContent: "center", py: "116px" },
-        typeof wallet.icon === "string" && (React__default["default"].createElement(Image, { src: wallet.icon, width: 160, height: 160 })),
+    return (React__default["default"].createElement(Flex, { flexDirection: "column", alignItems: "center", justifyContent: "center" },
+        !qrCode && typeof wallet.icon === "string" && (React__default["default"].createElement(Image, { src: wallet.icon, width: 160, height: 160 })),
         React__default["default"].createElement(Heading, { as: "h2", scale: "md", color: "tooltip" },
             wallet.title,
             " is not installed"),
