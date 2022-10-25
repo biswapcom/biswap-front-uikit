@@ -9639,7 +9639,7 @@ function ConnectModalV2(props) {
     var lastUsedWalletName = jotai.useAtom(lastUsedWalletNameAtom)[0];
     var wallets = React.useMemo(function () { return sortWallets(_wallets, lastUsedWalletName); }, [_wallets, lastUsedWalletName]);
     var _b = useSelectedWallet(), setSelected = _b[1];
-    var _c = jotai.useAtom(errorAtom), setError = _c[1];
+    var _c = jotai.useAtom(errorAtom), error = _c[0], setError = _c[1];
     React.useEffect(function () {
         return function () {
             setSelected(null);
@@ -9656,12 +9656,12 @@ function ConnectModalV2(props) {
     //
     // usePreloadImages(imageSources.slice(0, MOBILE_DEFAULT_DISPLAY_COUNT))
     var connectWallet = function (wallet) {
-        console.log('wallet', wallet);
+        console.log('wallet 1', wallet);
         setSelected(wallet);
         setError("");
         setConnectScreen(WALLET_SCREEN.CONNECTING_SCREEN);
         if (wallet.installed !== false) {
-            console.log('wallet', wallet);
+            console.log('wallet 2', wallet);
             login(wallet.connectorId)
                 .then(function (v) {
                 if (v) {
@@ -9686,7 +9686,7 @@ function ConnectModalV2(props) {
                 }
             });
         }
-        if (wallet.id === 'trust')
+        if (wallet.id === 'trust' && localStorage.getItem(walletLocalStorageKey) === 'Trust Wallet' && !error)
             return onDismiss === null || onDismiss === void 0 ? void 0 : onDismiss();
     };
     return (React__default["default"].createElement(Modal, __assign({ onDismiss: onDismiss, walletModal: true, onBack: function () { return setConnectScreen(WALLET_SCREEN.WELCOME_SCREEN); }, closeBtnColor: "dark900", hideOnBack: isWelcomeScreen, title: isWelcomeScreen ? "Connect to a wallet" : "Back to wallets", width: reactDeviceDetect.isMobile ? "100%" : "auto", maxWidth: !reactDeviceDetect.isMobile ? "416px" : "none", bodyPadding: "0", position: reactDeviceDetect.isMobile ? "absolute" : "relative", bottom: "0", borderRadius: reactDeviceDetect.isMobile ? "16px 16px 0 0" : "16px", modalBodyProps: {

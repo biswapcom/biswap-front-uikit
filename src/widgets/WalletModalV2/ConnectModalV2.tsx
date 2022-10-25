@@ -271,7 +271,7 @@ export function ConnectModalV2<T = unknown>(props: WalletModalV2Props<T>) {
     [_wallets, lastUsedWalletName]
   );
   const [, setSelected] = useSelectedWallet<T>();
-  const [, setError] = useAtom(errorAtom);
+  const [error, setError] = useAtom(errorAtom);
 
   useEffect(() => {
     return () => {
@@ -291,12 +291,12 @@ export function ConnectModalV2<T = unknown>(props: WalletModalV2Props<T>) {
   // usePreloadImages(imageSources.slice(0, MOBILE_DEFAULT_DISPLAY_COUNT))
 
   const connectWallet = (wallet: WalletConfigV2<T>) => {
-    console.log('wallet', wallet)
+    console.log('wallet 1', wallet)
     setSelected(wallet);
     setError("");
     setConnectScreen(WALLET_SCREEN.CONNECTING_SCREEN);
     if (wallet.installed !== false) {
-      console.log('wallet', wallet)
+      console.log('wallet 2', wallet)
       login(wallet.connectorId)
         .then((v) => {
           if (v) {
@@ -319,7 +319,7 @@ export function ConnectModalV2<T = unknown>(props: WalletModalV2Props<T>) {
           }
         });
     }
-    if (wallet.id === 'trust') return onDismiss?.()
+    if (wallet.id === 'trust' && localStorage.getItem(walletLocalStorageKey) === 'Trust Wallet' && !error ) return onDismiss?.()
   };
 
   return (
