@@ -1,4 +1,4 @@
-import {ReactNode} from "react";
+import { ReactNode } from "react";
 import { Colors } from "../../theme";
 
 export type MenuItemVariant = "default" | "subMenu";
@@ -9,7 +9,7 @@ export interface MenuItemProps {
   variant?: MenuItemVariant;
   statusColor?: keyof Colors;
   showNavBadge?: boolean;
-  children: ReactNode
+  children: ReactNode;
 }
 
 export type StyledMenuItemProps = {
