@@ -9667,9 +9667,9 @@ function ConnectModalV2(props) {
                 if (v) {
                     console.log('then login', v);
                     localStorage.setItem(walletLocalStorageKey, wallet.title);
-                    onDismiss === null || onDismiss === void 0 ? void 0 : onDismiss();
+                    onDismiss();
                 }
-                onDismiss === null || onDismiss === void 0 ? void 0 : onDismiss();
+                onDismiss();
             })
                 .catch(function (err) {
                 if (err instanceof WalletConnectorNotFoundError) {
@@ -9754,8 +9754,9 @@ var templateObject_1$1;
 // interface ReturnType {
 //     onPresentConnectModal: () => void;
 // }
+var Handler = function () { return null; };
 function useWalletModal(login, wallets) {
-    var onPresentConnectModalV2 = useModal(React__default["default"].createElement(ConnectModalV2, { login: login, wallets: wallets }))[0];
+    var onPresentConnectModalV2 = useModal(React__default["default"].createElement(ConnectModalV2, { login: login, wallets: wallets, onDismiss: Handler }))[0];
     return { onPresentConnectModalV2: onPresentConnectModalV2 };
 }
 

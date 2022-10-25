@@ -7,12 +7,15 @@ import { WalletConfigV2 } from "./types";
 //     onPresentConnectModal: () => void;
 // }
 
+const Handler = () => null;
+
+
 function useWalletModal<T>(
   login: (connectorId: T) => Promise<any>,
   wallets: WalletConfigV2<T>[]
 ) {
   const [onPresentConnectModalV2] = useModal(
-    <ConnectModalV2 login={login} wallets={wallets} />
+    <ConnectModalV2 login={login} wallets={wallets} onDismiss={Handler}/>
   );
   return { onPresentConnectModalV2 };
 }

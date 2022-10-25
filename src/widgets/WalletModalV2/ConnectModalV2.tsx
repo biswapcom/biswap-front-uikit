@@ -302,9 +302,9 @@ export function ConnectModalV2<T = unknown>(props: WalletModalV2Props<T>) {
           if (v) {
             console.log('then login', v)
             localStorage.setItem(walletLocalStorageKey, wallet.title);
-            onDismiss?.();
+            onDismiss();
           }
-          onDismiss?.();
+          onDismiss();
         })
         .catch((err) => {
           if (err instanceof WalletConnectorNotFoundError) {
