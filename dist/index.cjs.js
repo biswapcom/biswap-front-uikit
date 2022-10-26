@@ -6668,8 +6668,8 @@ var PercentSlider = function (_a) {
     }, [value]);
     var handleChange = React.useCallback(function (_a) {
         var target = _a.target;
-        setDisplayPercent(target.value);
-        onValueChanged(parseInt(target.value));
+        setDisplayPercent(parseInt(target.value).toFixed(2));
+        onValueChanged(Number(parseInt(target.value).toFixed(2)));
     }, []);
     var setMax = React.useCallback(function () {
         setDisplayPercent(max.toString());
