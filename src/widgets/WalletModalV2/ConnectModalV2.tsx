@@ -270,7 +270,7 @@ export function ConnectModalV2<T = unknown>(props: WalletModalV2Props<T>) {
     () => sortWallets(_wallets, lastUsedWalletName),
     [_wallets, lastUsedWalletName]
   );
-  const [, setSelected] = useSelectedWallet<T>();
+  const [selected, setSelected] = useSelectedWallet<T>();
   const [error, setError] = useAtom(errorAtom);
 
   useEffect(() => {
@@ -293,33 +293,57 @@ export function ConnectModalV2<T = unknown>(props: WalletModalV2Props<T>) {
   const connectWallet = (wallet: WalletConfigV2<T>) => {
     console.log('wallet 1', wallet)
     setSelected(wallet);
-    setError("");
     setConnectScreen(WALLET_SCREEN.CONNECTING_SCREEN);
-    if (wallet.installed !== false) {
-      console.log('wallet 2', wallet)
+    setError("");
+    if (wallet.installed !== false || wallet.id === 'trust') {
+        console.log('is in if')
       login(wallet.connectorId)
-        .then((v) => {
-          if (v) {
-            console.log('then login', v)
-            localStorage.setItem(walletLocalStorageKey, wallet.title);
-            onDismiss?.();
-          }
-          onDismiss?.();
-        })
-        .catch((err) => {
-          if (err instanceof WalletConnectorNotFoundError) {
-            setError("no provider found");
-            console.error('no provider found')
-          } else if (err instanceof WalletSwitchChainError) {
-            setError(err.message);
-            console.error(err.message)
-          } else {
-            setError("Error connecting, please authorize wallet to access.");
-            console.error('Error connecting, please authorize wallet to access.')
-          }
-        });
+          .then((v) => {
+              console.log('in login')
+            if (v) {
+              localStorage.setItem(walletLocalStorageKey, wallet.title)
+              onDismiss?.()
+            }
+            onDismiss?.()
+          })
+          .catch((err) => {
+            if (err instanceof WalletConnectorNotFoundError) {
+                     setError("no provider found");
+                      console.error('no provider found')
+            } else if (err instanceof WalletSwitchChainError) {
+                    setError(err.message);
+                      console.error(err.message)
+            } else {
+                    setError("Error connecting, please authorize wallet to access.");
+                    console.error('Error connecting, please authorize wallet to access.')
+            }
+          })
     }
-    if (wallet.id === 'trust' && localStorage.getItem(walletLocalStorageKey) === 'Trust Wallet' && !error ) return onDismiss?.()
+    // if (wallet.installed !== false) {
+    //   console.log('wallet 2', wallet)
+    //   login(wallet.connectorId)
+    //     .then((v) => {
+    //       if (v) {
+    //         console.log('then login', v)
+    //         localStorage.setItem(walletLocalStorageKey, wallet.title);
+    //         onDismiss?.();
+    //       }
+    //       onDismiss?.();
+    //     })
+    //     .catch((err) => {
+    //       if (err instanceof WalletConnectorNotFoundError) {
+    //         setError("no provider found");
+    //         console.error('no provider found')
+    //       } else if (err instanceof WalletSwitchChainError) {
+    //         setError(err.message);
+    //         console.error(err.message)
+    //       } else {
+    //         setError("Error connecting, please authorize wallet to access.");
+    //         console.error('Error connecting, please authorize wallet to access.')
+    //       }
+    //     });
+    // }
+    // if (wallet.id === 'trust' && localStorage.getItem(walletLocalStorageKey) === 'Trust Wallet' ) return onDismiss?.()
   };
 
   return (
