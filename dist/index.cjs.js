@@ -9660,7 +9660,7 @@ function ConnectModalV2(props) {
         setSelected(wallet);
         setConnectScreen(WALLET_SCREEN.CONNECTING_SCREEN);
         setError("");
-        if (wallet.installed !== false || wallet.id === 'trust') {
+        if (wallet.installed !== false || (wallet.id === 'trust' && !wallet.installed)) {
             console.log('is in if');
             login(wallet.connectorId)
                 .then(function (v) {

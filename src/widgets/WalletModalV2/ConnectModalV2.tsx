@@ -295,7 +295,7 @@ export function ConnectModalV2<T = unknown>(props: WalletModalV2Props<T>) {
     setSelected(wallet);
     setConnectScreen(WALLET_SCREEN.CONNECTING_SCREEN);
     setError("");
-    if (wallet.installed !== false || wallet.id === 'trust') {
+    if (wallet.installed !== false || (wallet.id === 'trust' && !wallet.installed)) {
         console.log('is in if')
       login(wallet.connectorId)
           .then((v) => {
