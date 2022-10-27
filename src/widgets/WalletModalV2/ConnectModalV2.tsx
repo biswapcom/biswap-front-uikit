@@ -1,34 +1,11 @@
-import React, { lazy, Suspense, useEffect, useMemo, useState } from "react";
+import React, {FC, lazy, Suspense, useEffect, useMemo, useState} from "react";
 
 import { atom, useAtom } from "jotai";
 
 import { isMobile } from "react-device-detect";
 
 import Modal from "../Modal/Modal";
-import {
-  HelpOpacityIcon,
-  WarningCycleIcon,
-  WarningIcon,
-} from "../../components/Svg";
-import { ModalProps } from "../Modal";
-
-// ui
-const StyledButton = styled(Button)`
-  display: flex;
-  justify-content: flex-start;
-  white-space: nowrap;
-  width: 100%;
-
-  background: ${({ theme }) => theme.colors.gray200};
-
-  ${({ theme }) => theme.mediaQueries.sm} {
-    width: 172px;
-  }
-
-  &:hover > div {
-    color: ${({ theme }) => theme.colors.primaryHover};
-  }
-`;
+import { HelpOpacityIcon, WarningCycleIcon } from "../../components/Svg";
 
 // components
 import Image from "../../components/Image/Image";
@@ -45,17 +22,17 @@ import Box from "../../components/Box/Box";
 import {
   LinkOfDevice,
   WalletConfigV2,
-  WalletConnectorNotFoundError, WalletModalV2Props,
+  WalletConnectorNotFoundError,
+  WalletModalV2Props,
   WalletSwitchChainError,
 } from "./types";
 import { WALLET_SCREEN, walletLocalStorageKey } from "./config";
 import BodyText from "../../components/Typography/BodyText";
 import Flex from "../../components/Box/Flex";
 import { HOW_TO_CONNECT_DOCS } from "../../config";
-import styled from "styled-components";
+import {StyledButton} from "./styles";
 
 const Qrcode = lazy(() => import("../../components/QRCode/QRCode"));
-
 
 const errorAtom = atom<string>("");
 
@@ -69,12 +46,12 @@ export function useSelectedWallet<T>() {
 function MobileModal<T>({
   wallets,
   connectWallet,
-  isWelcomeScreen,
+ // isWelcomeScreen,
 }: Pick<WalletModalV2Props<T>, "wallets"> & {
   connectWallet: (wallet: WalletConfigV2<T>) => void;
   isWelcomeScreen?: boolean;
 }) {
-  const [selected] = useSelectedWallet();
+  // const [selected] = useSelectedWallet();
   const [error] = useAtom(errorAtom);
 
   const installedWallets: WalletConfigV2<T>[] = wallets.filter(
@@ -88,40 +65,23 @@ function MobileModal<T>({
   });
 
   return (
-    <div>
+    <>
       {error ? (
-        <div>
-          {selected && typeof selected.icon === "string" && (
-            <Image src={selected.icon} width={108} height={108} />
-          )}
-          <div style={{ maxWidth: "246px" }}>
-            <ErrorMessage />
-          </div>
-        </div>
+        <ErrorContent onRetry={() => console.info("retry")} />
       ) : (
-        <Text color="textSubtle" small p="24px">
-          Start by connecting with one of the wallets below. Be sure to store
-          your private keys or seed phrase securely. Never share them with
-          anyone.
-        </Text>
+        <div>
+          <WalletSelect
+            wallets={walletsToShow}
+            onClick={(wallet) => {
+              connectWallet(wallet);
+              if (wallet.deepLink && wallet.installed === false) {
+                window.open(wallet.deepLink);
+              }
+            }}
+          />
+        </div>
       )}
-      <div>
-        <WalletSelect
-          wallets={walletsToShow}
-          onClick={(wallet) => {
-            connectWallet(wallet);
-            if (wallet.deepLink && wallet.installed === false) {
-              window.open(wallet.deepLink);
-            }
-          }}
-        />
-      </div>
-      <div>
-        <Text textAlign="center" color="textSubtle" as="p" mb="24px">
-          Haven’t got a crypto wallet yet?
-        </Text>
-      </div>
-    </div>
+    </>
   );
 }
 
@@ -270,8 +230,8 @@ export function ConnectModalV2<T = unknown>(props: WalletModalV2Props<T>) {
     () => sortWallets(_wallets, lastUsedWalletName),
     [_wallets, lastUsedWalletName]
   );
-  const [selected, setSelected] = useSelectedWallet<T>();
-  const [error, setError] = useAtom(errorAtom);
+  const [, setSelected] = useSelectedWallet<T>();
+  const [, setError] = useAtom(errorAtom);
 
   useEffect(() => {
     return () => {
@@ -280,75 +240,36 @@ export function ConnectModalV2<T = unknown>(props: WalletModalV2Props<T>) {
     };
   }, []);
 
-  // const imageSources = useMemo(
-  //     () =>
-  //         wallets
-  //             .map((w) => w.icon)
-  //             .filter((icon) => typeof icon === 'string'),
-  //     [wallets],
-  // )
-  //
-  // usePreloadImages(imageSources.slice(0, MOBILE_DEFAULT_DISPLAY_COUNT))
-
   const connectWallet = (wallet: WalletConfigV2<T>) => {
-    console.log('wallet 1', wallet)
     setSelected(wallet);
     setConnectScreen(WALLET_SCREEN.CONNECTING_SCREEN);
     setError("");
-    if (wallet.installed !== false || (wallet.id === 'trust' && !wallet.installed)) {
-        console.log('is in if')
+    if (
+      wallet.installed !== false ||
+      (wallet.id === "trust" && !wallet.installed)
+    ) {
       login(wallet.connectorId)
-          .then((v) => {
-              console.log('in login')
-            if (v) {
-              localStorage.setItem(walletLocalStorageKey, wallet.title)
-              onDismiss?.()
-            }
-            onDismiss?.()
-          })
-          .catch((err) => {
-            if (err instanceof WalletConnectorNotFoundError) {
-                     setError("no provider found");
-                      console.error('no provider found')
-            } else if (err instanceof WalletSwitchChainError) {
-                    setError(err.message);
-                      console.error(err.message)
-            } else {
-                    setError("Error connecting, please authorize wallet to access.");
-                    console.error('Error connecting, please authorize wallet to access.')
-            }
-          })
+        .then((v) => {
+          if (v) {
+            localStorage.setItem(walletLocalStorageKey, wallet.title);
+            onDismiss?.();
+          }
+          onDismiss?.();
+        })
+        .catch((err) => {
+          if (err instanceof WalletConnectorNotFoundError) {
+            setError("no provider found");
+          } else if (err instanceof WalletSwitchChainError) {
+            setError(err.message);
+          } else {
+            setError("Error connecting, please authorize wallet to access.");
+          }
+        });
     }
-    // if (wallet.installed !== false) {
-    //   console.log('wallet 2', wallet)
-    //   login(wallet.connectorId)
-    //     .then((v) => {
-    //       if (v) {
-    //         console.log('then login', v)
-    //         localStorage.setItem(walletLocalStorageKey, wallet.title);
-    //         onDismiss?.();
-    //       }
-    //       onDismiss?.();
-    //     })
-    //     .catch((err) => {
-    //       if (err instanceof WalletConnectorNotFoundError) {
-    //         setError("no provider found");
-    //         console.error('no provider found')
-    //       } else if (err instanceof WalletSwitchChainError) {
-    //         setError(err.message);
-    //         console.error(err.message)
-    //       } else {
-    //         setError("Error connecting, please authorize wallet to access.");
-    //         console.error('Error connecting, please authorize wallet to access.')
-    //       }
-    //     });
-    // }
-    // if (wallet.id === 'trust' && localStorage.getItem(walletLocalStorageKey) === 'Trust Wallet' ) return onDismiss?.()
   };
 
   return (
     <Modal
-
       onDismiss={onDismiss}
       walletModal
       onBack={() => setConnectScreen(WALLET_SCREEN.WELCOME_SCREEN)}
@@ -431,13 +352,13 @@ const NotInstalled = ({
 }: {
   wallet: WalletConfigV2;
   qrCode?: string;
-}) => {
+}):JSX.Element => {
   return (
     <Flex flexDirection="column" alignItems="center" justifyContent="center">
       {!qrCode && typeof wallet.icon === "string" && (
-        <Image src={wallet.icon} width={160} height={160} />
+        <Image mb='16px' src={wallet.icon} width={160} height={160} />
       )}
-      <Heading as="h2" scale="md" color={qrCode ? "gray900": 'tooltip'}>
+      <Heading as="h2" scale="md" color={qrCode ? "gray900" : "tooltip"}>
         {wallet.title} is not installed
       </Heading>
       {qrCode && (
@@ -467,19 +388,6 @@ const NotInstalled = ({
           {wallet.title} wallet.
         </BodyText>
       )}
-      {wallet.guide && (
-        <Button
-          mt="76px"
-          variant="primary"
-          width="100%"
-          scale="lg"
-          as="a"
-          href={getDesktopLink(wallet.guide)}
-          external
-        >
-          {getDesktopText(wallet.guide, "Setup Guide")}
-        </Button>
-      )}
       {wallet.downloadLink && (
         <Button
           width="100%"
@@ -497,7 +405,7 @@ const NotInstalled = ({
   );
 };
 
-const ErrorMessage = () => (
+const ErrorMessage:FC = ():JSX.Element => (
   <Flex flexDirection="column" justifyContent="center" alignItems="center">
     <WarningCycleIcon width={160} height={160} />
     <Heading my="16px" color="tooltip" scale="md" as="h3">
@@ -509,7 +417,7 @@ const ErrorMessage = () => (
   </Flex>
 );
 
-const ErrorContent = ({ onRetry }: { onRetry: () => void }) => {
+const ErrorContent = ({ onRetry }: { onRetry: () => void }):JSX.Element => {
   return (
     <>
       <ErrorMessage />

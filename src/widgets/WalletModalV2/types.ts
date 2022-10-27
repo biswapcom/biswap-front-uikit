@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { SvgProps } from "../../components/Svg";
-import {ModalProps} from "../Modal";
+import { ModalProps } from "../Modal";
 
 export type WalletConfigV2<T = unknown> = {
   id: string;

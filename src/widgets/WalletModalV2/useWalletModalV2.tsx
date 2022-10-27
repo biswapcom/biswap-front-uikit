@@ -8,7 +8,10 @@ function useWalletModal<T>(
   wallets: WalletConfigV2<T>[]
 ) {
   const [onPresentConnectModalV2] = useModal(
-    <ConnectModalV2 login={login} wallets={wallets} />, true, true, 'connect-modal-v2'
+    <ConnectModalV2 login={login} wallets={wallets} />,
+    true,
+    true,
+    "connect-modal-v2"
   );
   return { onPresentConnectModalV2 };
 }

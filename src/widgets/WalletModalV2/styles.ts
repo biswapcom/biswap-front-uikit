@@ -6,7 +6,9 @@ import Button from "../../components/Button/Button";
 import Flex from "../../components/Box/Flex";
 
 export const StyledText = styled(Text)`
-  align-self: flex-start;
+  ${({ theme }) => theme.mediaQueries.md} {
+   align-self: flex-start;
+  }
 `;
 
 export const WalletCardsWrapper = styled.div`
@@ -70,8 +72,4 @@ export const ConnectWrapper = styled(Flex)`
   height: 508px;
   width: 100%;
   padding-bottom: 32px;
-
-  // ${({ theme }) => theme.mediaQueries.sm} {
-  //   width: 172px;
-  // }
 `;
