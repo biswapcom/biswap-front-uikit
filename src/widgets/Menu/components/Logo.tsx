@@ -1,72 +1,65 @@
-import React, { useContext } from "react";
-// import { useHistory } from "react-router-dom";
-import styled, { css, DefaultTheme, keyframes } from "styled-components";
+import React, { FC, useContext } from "react";
+import styled from "styled-components";
 
 // components
 import Flex from "../../../components/Box/Flex";
-import { LogoIcon, LogoWithTextIcon } from "../../../components/Svg";
-import { MenuContext } from "../context";
+import {
+  LogoIcon,
+  LogoWithTextIcon,
+  ProjectNameIcon,
+} from "../../../components/Svg";
 import { Button } from "../../../components/Button/";
+import { BodyText } from "../../../components/Typography";
+import { Box } from "../../../components/Box";
 
+// hooks
+import { useMatchBreakpoints } from "../../../contexts";
+
+// context
+import { MenuContext } from "../context";
+
+// types
 interface Props {
   href: string;
+  logoSubtitle?: string;
 }
 
-const blink = keyframes`
-  0%,  100% { transform: scaleY(1); }
-  50% { transform:  scaleY(0.1); }
-`;
-
-const CommonLinkStyles = ({ theme }: { theme: DefaultTheme }) => css`
+// styled
+const StyledInnerButton = styled(Button)`
   display: flex;
   align-items: center;
-
-  .mobile-icon {
-    width: 32px;
-    ${({ theme }) => theme.mediaQueries.nav} {
-      display: none;
-    }
-  }
-
-  .desktop-icon {
-    width: 145px;
-    display: none;
-    ${({ theme }) => theme.mediaQueries.nav} {
-      display: block;
-    }
-  }
-  .eye {
-    animation-delay: 20ms;
-  }
-  &:hover {
-    .eye {
-      transform-origin: center 60%;
-      animation-name: ${blink};
-      animation-duration: 350ms;
-      animation-iteration-count: 1;
-    }
-  }
-`;
-
-const StyledInnerButton = styled(Button)`
-  ${CommonLinkStyles};
   height: auto;
   padding: 0;
   border: none;
   background-color: transparent;
 `;
 
-const Logo: React.FC<Props> = ({ href }) => {
+const LogoSwitcher: FC<{ logoSubtitle?: string }> = ({ logoSubtitle }) => {
+  const { isMobile } = useMatchBreakpoints();
+
+  if (isMobile) {
+    return <LogoIcon width="32px" />;
+  } else if (logoSubtitle) {
+    return (
+      <Flex>
+        <LogoIcon width="32px" />
+        <Box ml="8px">
+          <ProjectNameIcon />
+          <BodyText mt="-6px" textAlign="left" scale="size12">
+            {logoSubtitle}
+          </BodyText>
+        </Box>
+      </Flex>
+    );
+  }
+
+  return <LogoWithTextIcon width="145px" />;
+};
+
+const Logo: React.FC<Props> = ({ href, logoSubtitle }) => {
   const { linkComponent } = useContext(MenuContext);
-  // const { push } = useHistory();
 
   const isAbsoluteUrl = href.startsWith("http");
-  const innerLogo = (
-    <>
-      <LogoIcon className="mobile-icon" />
-      <LogoWithTextIcon className="desktop-icon" />
-    </>
-  );
 
   return (
     <Flex>
@@ -76,7 +69,7 @@ const Logo: React.FC<Props> = ({ href }) => {
           onClick={() => window.open(href, "_self")}
           aria-label="Biswap home page"
         >
-          {innerLogo}
+          <LogoSwitcher logoSubtitle={logoSubtitle} />
         </StyledInnerButton>
       ) : (
         <StyledInnerButton
@@ -86,7 +79,7 @@ const Logo: React.FC<Props> = ({ href }) => {
           // onClick={() => push(href)}
           aria-label="Biswap home page"
         >
-          {innerLogo}
+          <LogoSwitcher logoSubtitle={logoSubtitle} />
         </StyledInnerButton>
       )}
     </Flex>

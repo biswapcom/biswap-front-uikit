@@ -175,6 +175,7 @@ const Menu: FC<PropsWithChildren<NavProps>> = ({
   withEvent,
   eventCallback,
   //eventButtonLogo,
+                                                 customLogoSubtitle
 }) => {
   const { isMobile } = useMatchBreakpoints();
   const [showMenu, setShowMenu] = useState<boolean>(true);
@@ -296,7 +297,10 @@ const Menu: FC<PropsWithChildren<NavProps>> = ({
           )}
           <StyledNav menuBg={menuBg} isMobileMenuOpened={isMobileMenuOpened}>
             <Flex>
-              <Logo href={homeLink?.href ?? "/"} />
+              <Logo
+                logoSubtitle={customLogoSubtitle}
+                href={homeLink?.href ?? "/"}
+              />
               <MenuItems
                 items={links}
                 activeItem={activeItem}

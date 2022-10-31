@@ -1,4 +1,5 @@
 export { default as LogoIcon } from "./Icons/Logo";
+export { default as ProjectNameIcon } from "./Icons/ProjectName";
 export { default as LogoWithTextIcon } from "./Icons/LogoWithText";
 export { default as DownloadIcon } from "./Icons/Download";
 export { default as MouseIcon } from "./Icons/Mouse";

@@ -27,6 +27,9 @@ export interface NavProps
   buyBSWLabel: string;
   withEvent?: boolean;
   eventCallback?: () => void;
+  children?: ReactNode;
+  eventButtonLogo?: () => JSX.Element;
+  customLogoSubtitle?: string;
 }
 
 export interface FooterStatisticProps {
