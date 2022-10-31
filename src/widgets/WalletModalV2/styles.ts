@@ -6,9 +6,7 @@ import Button from "../../components/Button/Button";
 import Flex from "../../components/Box/Flex";
 
 export const StyledText = styled(Text)`
-  ${({ theme }) => theme.mediaQueries.md} {
-   align-self: flex-start;
-  }
+  align-self: flex-start;
 `;
 
 export const WalletCardsWrapper = styled.div`

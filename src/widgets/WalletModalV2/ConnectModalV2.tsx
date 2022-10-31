@@ -1,14 +1,12 @@
-import React, {FC, lazy, Suspense, useEffect, useMemo, useState} from "react";
+import React, { lazy, Suspense, useEffect, useMemo, useState } from "react";
 
 import { atom, useAtom } from "jotai";
-
 import { isMobile } from "react-device-detect";
-
-import Modal from "../Modal/Modal";
-import { HelpOpacityIcon, WarningCycleIcon } from "../../components/Svg";
 
 // components
 import Image from "../../components/Image/Image";
+import Modal from "../Modal/Modal";
+import { HelpOpacityIcon, WarningCycleIcon } from "../../components/Svg";
 import { Text } from "../../components/Text";
 import {
   ConnectWrapper,
@@ -19,6 +17,17 @@ import {
 import Heading from "../../components/Heading/Heading";
 import Button from "../../components/Button/Button";
 import Box from "../../components/Box/Box";
+import BodyText from "../../components/Typography/BodyText";
+import Flex from "../../components/Box/Flex";
+
+// config
+import { HOW_TO_CONNECT_DOCS } from "../../config";
+import { WALLET_SCREEN, walletLocalStorageKey } from "./config";
+
+// styles
+import { StyledButton } from "./styles";
+
+// types
 import {
   LinkOfDevice,
   WalletConfigV2,
@@ -26,11 +35,6 @@ import {
   WalletModalV2Props,
   WalletSwitchChainError,
 } from "./types";
-import { WALLET_SCREEN, walletLocalStorageKey } from "./config";
-import BodyText from "../../components/Typography/BodyText";
-import Flex from "../../components/Box/Flex";
-import { HOW_TO_CONNECT_DOCS } from "../../config";
-import {StyledButton} from "./styles";
 
 const Qrcode = lazy(() => import("../../components/QRCode/QRCode"));
 
@@ -46,12 +50,10 @@ export function useSelectedWallet<T>() {
 function MobileModal<T>({
   wallets,
   connectWallet,
- // isWelcomeScreen,
 }: Pick<WalletModalV2Props<T>, "wallets"> & {
   connectWallet: (wallet: WalletConfigV2<T>) => void;
   isWelcomeScreen?: boolean;
 }) {
-  // const [selected] = useSelectedWallet();
   const [error] = useAtom(errorAtom);
 
   const installedWallets: WalletConfigV2<T>[] = wallets.filter(
@@ -69,17 +71,15 @@ function MobileModal<T>({
       {error ? (
         <ErrorContent onRetry={() => console.info("retry")} />
       ) : (
-        <div>
-          <WalletSelect
-            wallets={walletsToShow}
-            onClick={(wallet) => {
-              connectWallet(wallet);
-              if (wallet.deepLink && wallet.installed === false) {
-                window.open(wallet.deepLink);
-              }
-            }}
-          />
-        </div>
+        <WalletSelect
+          wallets={walletsToShow}
+          onClick={(wallet) => {
+            connectWallet(wallet);
+            if (wallet.deepLink && wallet.installed === false) {
+              window.open(wallet.deepLink);
+            }
+          }}
+        />
       )}
     </>
   );
@@ -196,7 +196,7 @@ function DesktopModal<T>({
                   {typeof selected.icon === "string" && (
                     <Image src={selected.icon} width={160} height={160} />
                   )}
-                  <Heading mt="24px" as="h1" scale="md" color="tooltip">
+                  <Heading mt="24px" as="h2" scale="md" color="tooltip">
                     Opening {selected.title}
                   </Heading>
                   <BodyText mt="16px" as="p" scale="size16" color="gray900">
@@ -352,11 +352,11 @@ const NotInstalled = ({
 }: {
   wallet: WalletConfigV2;
   qrCode?: string;
-}):JSX.Element => {
+}): JSX.Element => {
   return (
     <Flex flexDirection="column" alignItems="center" justifyContent="center">
       {!qrCode && typeof wallet.icon === "string" && (
-        <Image mb='16px' src={wallet.icon} width={160} height={160} />
+        <Image mb="16px" src={wallet.icon} width={160} height={160} />
       )}
       <Heading as="h2" scale="md" color={qrCode ? "gray900" : "tooltip"}>
         {wallet.title} is not installed
@@ -405,7 +405,7 @@ const NotInstalled = ({
   );
 };
 
-const ErrorMessage:FC = ():JSX.Element => (
+const ErrorMessage = (): JSX.Element => (
   <Flex flexDirection="column" justifyContent="center" alignItems="center">
     <WarningCycleIcon width={160} height={160} />
     <Heading my="16px" color="tooltip" scale="md" as="h3">
@@ -417,7 +417,7 @@ const ErrorMessage:FC = ():JSX.Element => (
   </Flex>
 );
 
-const ErrorContent = ({ onRetry }: { onRetry: () => void }):JSX.Element => {
+const ErrorContent = ({ onRetry }: { onRetry: () => void }): JSX.Element => {
   return (
     <>
       <ErrorMessage />
