@@ -9456,10 +9456,7 @@ var ConnectorNames;
     //  WalletLink = "walletlink",
 })(ConnectorNames || (ConnectorNames = {}));
 
-var StyledText = styled(Text)(templateObject_1$1 || (templateObject_1$1 = __makeTemplateObject(["\n  ", " {\n   align-self: flex-start;\n  }\n"], ["\n  ", " {\n   align-self: flex-start;\n  }\n"])), function (_a) {
-    var theme = _a.theme;
-    return theme.mediaQueries.md;
-});
+var StyledText = styled(Text)(templateObject_1$1 || (templateObject_1$1 = __makeTemplateObject(["\n  align-self: flex-start;\n"], ["\n  align-self: flex-start;\n"])));
 var WalletCardsWrapper = styled.div(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  display: grid;\n  grid-gap: 8px;\n  grid-template-columns: repeat(2, 1fr);\n  max-height: 50vh;\n  margin-left: 16px;\n  padding-right: 6px;\n\n  ", " {\n    padding-right: 0;\n    width: 352px;\n    margin-left: 32px;\n  }\n"], ["\n  display: grid;\n  grid-gap: 8px;\n  grid-template-columns: repeat(2, 1fr);\n  max-height: 50vh;\n  margin-left: 16px;\n  padding-right: 6px;\n\n  ", " {\n    padding-right: 0;\n    width: 352px;\n    margin-left: 32px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
@@ -9490,6 +9487,14 @@ var ConnectWrapper = styled(Flex)(templateObject_5 || (templateObject_5 = __make
 });
 var templateObject_1$1, templateObject_2, templateObject_3, templateObject_4, templateObject_5;
 
+var connectorLocalStorageKey = "connectorIdv2";
+var walletLocalStorageKey = "wallet";
+var WALLET_SCREEN;
+(function (WALLET_SCREEN) {
+    WALLET_SCREEN[WALLET_SCREEN["WELCOME_SCREEN"] = 0] = "WELCOME_SCREEN";
+    WALLET_SCREEN[WALLET_SCREEN["CONNECTING_SCREEN"] = 1] = "CONNECTING_SCREEN";
+})(WALLET_SCREEN || (WALLET_SCREEN = {}));
+
 var WalletConnectorNotFoundError = /** @class */ (function (_super) {
     __extends(WalletConnectorNotFoundError, _super);
     function WalletConnectorNotFoundError() {
@@ -9505,14 +9510,6 @@ var WalletSwitchChainError = /** @class */ (function (_super) {
     return WalletSwitchChainError;
 }(Error));
 
-var connectorLocalStorageKey = "connectorIdv2";
-var walletLocalStorageKey = "wallet";
-var WALLET_SCREEN;
-(function (WALLET_SCREEN) {
-    WALLET_SCREEN[WALLET_SCREEN["WELCOME_SCREEN"] = 0] = "WELCOME_SCREEN";
-    WALLET_SCREEN[WALLET_SCREEN["CONNECTING_SCREEN"] = 1] = "CONNECTING_SCREEN";
-})(WALLET_SCREEN || (WALLET_SCREEN = {}));
-
 var Qrcode = lazy(function () { return Promise.resolve().then(function () { return QRCode$1; }); });
 var errorAtom = atom("");
 var selectedWalletAtom = atom(null);
@@ -9522,7 +9519,6 @@ function useSelectedWallet() {
 }
 function MobileModal(_a) {
     var wallets = _a.wallets, connectWallet = _a.connectWallet;
-    // const [selected] = useSelectedWallet();
     var error = useAtom(errorAtom)[0];
     var installedWallets = wallets.filter(function (w) { return w.installed; });
     var walletsToShow = wallets.filter(function (w) {
@@ -9531,13 +9527,12 @@ function MobileModal(_a) {
         }
         return w.installed !== false || w.deepLink;
     });
-    return (React.createElement(React.Fragment, null, error ? (React.createElement(ErrorContent, { onRetry: function () { return console.info("retry"); } })) : (React.createElement("div", null,
-        React.createElement(WalletSelect, { wallets: walletsToShow, onClick: function (wallet) {
-                connectWallet(wallet);
-                if (wallet.deepLink && wallet.installed === false) {
-                    window.open(wallet.deepLink);
-                }
-            } })))));
+    return (React.createElement(React.Fragment, null, error ? (React.createElement(ErrorContent, { onRetry: function () { return console.info("retry"); } })) : (React.createElement(WalletSelect, { wallets: walletsToShow, onClick: function (wallet) {
+            connectWallet(wallet);
+            if (wallet.deepLink && wallet.installed === false) {
+                window.open(wallet.deepLink);
+            }
+        } }))));
 }
 function WalletSelect(_a) {
     var wallets = _a.wallets, onClick = _a.onClick;
@@ -9592,7 +9587,7 @@ function DesktopModal(_a) {
         } })) : (React.createElement(ConnectWrapper, null, error && selected && selected.installed !== false ? (React.createElement(ErrorContent, { onRetry: function () { return connectToWallet(selected); } })) : (React.createElement(React.Fragment, null,
         selected && selected.installed !== false && (React.createElement(React.Fragment, null,
             typeof selected.icon === "string" && (React.createElement(Image, { src: selected.icon, width: 160, height: 160 })),
-            React.createElement(Heading, { mt: "24px", as: "h1", scale: "md", color: "tooltip" },
+            React.createElement(Heading, { mt: "24px", as: "h2", scale: "md", color: "tooltip" },
                 "Opening ",
                 selected.title),
             React.createElement(BodyText, { mt: "16px", as: "p", scale: "size16", color: "gray900" },
@@ -9660,7 +9655,7 @@ function ConnectModalV2(props) {
 var NotInstalled = function (_a) {
     var wallet = _a.wallet, qrCode = _a.qrCode;
     return (React.createElement(Flex, { flexDirection: "column", alignItems: "center", justifyContent: "center" },
-        !qrCode && typeof wallet.icon === "string" && (React.createElement(Image, { mb: '16px', src: wallet.icon, width: 160, height: 160 })),
+        !qrCode && typeof wallet.icon === "string" && (React.createElement(Image, { mb: "16px", src: wallet.icon, width: 160, height: 160 })),
         React.createElement(Heading, { as: "h2", scale: "md", color: qrCode ? "gray900" : "tooltip" },
             wallet.title,
             " is not installed"),
