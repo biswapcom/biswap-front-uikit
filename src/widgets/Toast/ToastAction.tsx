@@ -6,7 +6,7 @@ import styled from "styled-components";
 import { Button } from "../../components/Button";
 import { TelegramIcon, TwitterIcon } from "../../components/Svg";
 import { Text } from "../../components/Text";
-import {SocialShareButton} from "../../components/SocialShareButton";
+import { SocialShareButton } from "../../components/SocialShareButton";
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore

@@ -1,8 +1,14 @@
-import { BaseButtonProps } from "../Button";
 import { AnchorHTMLAttributes, ReactNode } from "react";
+import { DefaultTheme } from "styled-components";
 import { Scale } from "../Button/types";
+import { BaseButtonProps } from "../Button";
+export declare const socials: {
+    readonly TWITTER: "twitter";
+    readonly TELEGRAM: "telegram";
+};
+export declare type Social = typeof socials[keyof typeof socials];
 export interface SocialShareButtonTypes extends BaseButtonProps, AnchorHTMLAttributes<HTMLAnchorElement> {
-    social: "telegram" | "twitter";
+    social: Social;
     link?: string;
     message?: string;
     scale?: Scale;
@@ -22,8 +28,10 @@ export interface SocialLinksProps {
     [key: string]: (props: LinkFunctionProps) => string;
 }
 export interface SocialStylesProps {
+    theme: DefaultTheme;
     size?: string;
     color?: string;
+    disabled?: boolean;
 }
 export interface SocialStylesReturn {
     [key: string]: {
