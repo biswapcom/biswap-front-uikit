@@ -6715,6 +6715,37 @@ var Pagination = function (_a) {
 };
 var templateObject_1$y;
 
+var socialLinks = {
+    twitter: function (_a) {
+        var _b = _a.message, message = _b === void 0 ? "" : _b, _c = _a.link, link = _c === void 0 ? "" : _c;
+        return "https://twitter.com/intent/tweet/?text=".concat(encodeURIComponent(message), "&url=").concat(encodeURIComponent(link));
+    },
+    telegram: function (_a) {
+        var _b = _a.message, message = _b === void 0 ? "" : _b, _c = _a.link, link = _c === void 0 ? "" : _c;
+        return "https://telegram.me/share/url?text=".concat(encodeURIComponent(message), "&url=").concat(encodeURIComponent(link));
+    },
+};
+var socialStyles = function (_a) {
+    var _b = _a === void 0 ? {} : _a, _c = _b.size, size = _c === void 0 ? "20px" : _c, _d = _b.color, color = _d === void 0 ? "white" : _d;
+    return ({
+        twitter: {
+            icon: React__default["default"].createElement(Icon$H, { width: size, color: color }),
+            backgroundColor: "#16CDFD",
+        },
+        telegram: {
+            icon: React__default["default"].createElement(Icon$J, { width: size, color: color }),
+            backgroundColor: "#26A6E5",
+        },
+    });
+};
+
+var SocialShareButton = function (_a) {
+    var social = _a.social, link = _a.link, name = _a.name, message = _a.message, _b = _a.scale, scale = _b === void 0 ? "lg" : _b, _c = _a.target, target = _c === void 0 ? "_blank" : _c, _d = _a.width, width = _d === void 0 ? "100%" : _d, props = __rest(_a, ["social", "link", "name", "message", "scale", "target", "width"]);
+    var defaultName = social.charAt(0).toUpperCase() + social.slice(1);
+    var _e = socialStyles()[social], icon = _e.icon, backgroundColor = _e.backgroundColor;
+    return (React__default["default"].createElement(Button, __assign({ as: "a", href: socialLinks[social]({ link: link, message: message }), scale: scale, startIcon: icon, style: { backgroundColor: backgroundColor }, target: target, width: width }, props), name || defaultName));
+};
+
 var byTextAscending = function (getTextProperty) {
     return function (objectA, objectB) {
         var upperA = getTextProperty(objectA).toUpperCase();
@@ -9441,37 +9472,6 @@ var UserMenuItem = styled__default["default"].button(templateObject_2$2 || (temp
 });
 var templateObject_1$4, templateObject_2$2;
 
-var socialLinks = {
-    twitter: function (_a) {
-        var _b = _a.message, message = _b === void 0 ? "" : _b, _c = _a.link, link = _c === void 0 ? "" : _c;
-        return "https://twitter.com/intent/tweet/?text=".concat(encodeURIComponent(message), "&url=").concat(encodeURIComponent(link));
-    },
-    telegram: function (_a) {
-        var _b = _a.message, message = _b === void 0 ? "" : _b, _c = _a.link, link = _c === void 0 ? "" : _c;
-        return "https://telegram.me/share/url?text=".concat(encodeURIComponent(message), "&url=").concat(encodeURIComponent(link));
-    },
-};
-var socialStyles = function (_a) {
-    var _b = _a === void 0 ? {} : _a, _c = _b.size, size = _c === void 0 ? "20px" : _c, _d = _b.color, color = _d === void 0 ? "white" : _d;
-    return ({
-        twitter: {
-            icon: React__default["default"].createElement(Icon$H, { width: size, color: color }),
-            backgroundColor: "#16CDFD",
-        },
-        telegram: {
-            icon: React__default["default"].createElement(Icon$J, { width: size, color: color }),
-            backgroundColor: "#26A6E5",
-        },
-    });
-};
-
-var SocialShareButton = function (_a) {
-    var social = _a.social, link = _a.link, name = _a.name, message = _a.message, _b = _a.scale, scale = _b === void 0 ? "lg" : _b, _c = _a.target, target = _c === void 0 ? "_blank" : _c, _d = _a.width, width = _d === void 0 ? "100%" : _d, props = __rest(_a, ["social", "link", "name", "message", "scale", "target", "width"]);
-    var defaultName = social.charAt(0).toUpperCase() + social.slice(1);
-    var _e = socialStyles()[social], icon = _e.icon, backgroundColor = _e.backgroundColor;
-    return (React__default["default"].createElement(Button, __assign({ as: "a", href: socialLinks[social]({ link: link, message: message }), scale: scale, startIcon: icon, style: { backgroundColor: backgroundColor }, target: target, width: width }, props), name || defaultName));
-};
-
 var ActionsContainer = styled__default["default"].div(templateObject_1$3 || (templateObject_1$3 = __makeTemplateObject(["\n  display: flex;\n  justify-content: flex-start;\n"], ["\n  display: flex;\n  justify-content: flex-start;\n"])));
 styled__default["default"].img(templateObject_2$1 || (templateObject_2$1 = __makeTemplateObject(["\n  margin-left: 8px;\n  width: 26px;\n  filter: drop-shadow(2px 4px 8px rgba(0, 109, 163, 0.4));\n"], ["\n  margin-left: 8px;\n  width: 26px;\n  filter: drop-shadow(2px 4px 8px rgba(0, 109, 163, 0.4));\n"])));
 var ToastAction = function (_a) {
@@ -9900,6 +9900,7 @@ exports.Skeleton = Skeleton;
 exports.SlideButtonMenu = SlideButtonMenu;
 exports.SlideButtonMenuItem = SlideButtonMenuItem;
 exports.Slider = Slider;
+exports.SocialShareButton = SocialShareButton;
 exports.SpaceAgentOpacityIcon = Icon$X;
 exports.SpaceAgentSolidIcon = Icon$Y;
 exports.StarIcon = Icon$2B;

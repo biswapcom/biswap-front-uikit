@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 
 // components
-import { TelegramIcon, TwitterIcon } from "../../../components/Svg";
+import { TelegramIcon, TwitterIcon } from "../Svg";
 
 // types
 import {

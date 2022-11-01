@@ -1,7 +1,7 @@
 import React from "react";
 
 // components
-import { Button } from "../../../components/Button";
+import { Button } from "../Button";
 
 // types
 import { SocialShareButtonTypes } from "./types";
@@ -10,15 +10,15 @@ import { SocialShareButtonTypes } from "./types";
 import { socialLinks, socialStyles } from "./config";
 
 const SocialShareButton = ({
-  social,
-  link,
-  name,
-  message,
-  scale = "lg",
-  target = "_blank",
-  width = "100%",
-  ...props
-}: SocialShareButtonTypes) => {
+   social,
+   link,
+   name,
+   message,
+   scale = "lg",
+   target = "_blank",
+   width = "100%",
+   ...props
+ }: SocialShareButtonTypes) => {
   const defaultName = social.charAt(0).toUpperCase() + social.slice(1);
   const { icon, backgroundColor } = socialStyles()[social];
 

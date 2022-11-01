@@ -1,6 +1,6 @@
-import { BaseButtonProps } from "../../../components/Button";
+import { BaseButtonProps } from "../Button";
 import { AnchorHTMLAttributes, ReactNode } from "react";
-import { Scale } from "../../../components/Button/types";
+import { Scale } from "../Button/types";
 
 export interface SocialShareButtonTypes
   extends BaseButtonProps,
