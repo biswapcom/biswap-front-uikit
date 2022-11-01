@@ -1,13 +1,13 @@
 import { AnchorHTMLAttributes, ReactNode } from "react";
 import { DefaultTheme } from "styled-components";
 
-import {Scale} from "../Button/types";
+import { Scale } from "../Button/types";
 import { BaseButtonProps } from "../Button";
-import {BoxProps} from "../Box";
+import { BoxProps } from "../Box";
 
 export const socials = {
   TWITTER: "twitter",
-  TELEGRAM: "telegram"
+  TELEGRAM: "telegram",
 } as const;
 
 export type Social = typeof socials[keyof typeof socials];

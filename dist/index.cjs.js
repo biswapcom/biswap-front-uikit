@@ -6717,7 +6717,7 @@ var templateObject_1$z;
 
 var socials$1 = {
     TWITTER: "twitter",
-    TELEGRAM: "telegram"
+    TELEGRAM: "telegram",
 };
 var SocialsList;
 (function (SocialsList) {
@@ -6749,20 +6749,23 @@ var socialStyles = function (_a) {
     });
 };
 
-var Wrapper$9 = styled__default["default"].div(templateObject_1$y || (templateObject_1$y = __makeTemplateObject(["\n  cursor: ", ";\n  transition: opacity .3s ease-in-out;\n\n  opacity: ", ";\n  \n  &:hover:not(:disabled) {\n    opacity: .64;\n  },\n"], ["\n  cursor: ", ";\n  transition: opacity .3s ease-in-out;\n\n  opacity: ", ";\n  \n  &:hover:not(:disabled) {\n    opacity: .64;\n  },\n"])), function (_a) {
+var Wrapper$9 = styled__default["default"](Box)(templateObject_1$y || (templateObject_1$y = __makeTemplateObject(["\n  width: ", ";\n  cursor: ", ";\n  transition: opacity .3s ease-in-out;\n\n  opacity: ", ";\n  \n  &:hover:not(:disabled) {\n    opacity: .84;\n  },\n"], ["\n  width: ", ";\n  cursor: ", ";\n  transition: opacity .3s ease-in-out;\n\n  opacity: ", ";\n  \n  &:hover:not(:disabled) {\n    opacity: .84;\n  },\n"])), function (_a) {
+    var width = _a.width;
+    return width !== null && width !== void 0 ? width : "auto";
+}, function (_a) {
     var disabled = _a.disabled;
     return (disabled ? "not-allowed" : "pointer");
 }, function (_a) {
     var disabled = _a.disabled;
-    return (disabled ? .64 : 1);
+    return (disabled ? 0.84 : 1);
 });
 var SocialShareButton = function (_a) {
-    var _b = _a.social, social = _b === void 0 ? socials$1.TELEGRAM : _b, link = _a.link, name = _a.name, message = _a.message, _c = _a.scale, scale = _c === void 0 ? "lg" : _c, _d = _a.target, target = _d === void 0 ? "_blank" : _d, _e = _a.width, width = _e === void 0 ? "100%" : _e, disabled = _a.disabled, props = __rest(_a, ["social", "link", "name", "message", "scale", "target", "width", "disabled"]);
+    var _b = _a.social, social = _b === void 0 ? socials$1.TELEGRAM : _b, link = _a.link, name = _a.name, message = _a.message, _c = _a.scale, scale = _c === void 0 ? "lg" : _c, _d = _a.target, target = _d === void 0 ? "_blank" : _d, _e = _a.width, width = _e === void 0 ? "auto" : _e, disabled = _a.disabled, props = __rest(_a, ["social", "link", "name", "message", "scale", "target", "width", "disabled"]);
     var theme = styled.useTheme();
     var defaultName = social.charAt(0).toUpperCase() + social.slice(1);
     var _f = socialStyles({ theme: theme, disabled: disabled })[social], icon = _f.icon, backgroundColor = _f.backgroundColor;
-    return (React__default["default"].createElement(Wrapper$9, { disabled: disabled },
-        React__default["default"].createElement(Button, __assign({ as: "a", href: socialLinks[social]({ link: link, message: message }), scale: scale, startIcon: icon, style: { backgroundColor: backgroundColor, pointerEvents: disabled ? "none" : "auto" }, target: target, width: width }, props), name || defaultName)));
+    return (React__default["default"].createElement(Wrapper$9, __assign({ disabled: disabled, width: width }, props),
+        React__default["default"].createElement(Button, __assign({ as: "a", href: socialLinks[social]({ link: link, message: message }), scale: scale, endIcon: icon, style: { backgroundColor: backgroundColor, pointerEvents: disabled ? "none" : "auto" }, target: target, width: "100%", external: true }, props), name || defaultName)));
 };
 var templateObject_1$y;
 

@@ -2,22 +2,24 @@ import React from "react";
 import styled, { useTheme } from "styled-components";
 
 // components
-import {BaseButtonProps, Button} from "../Button";
+import { BaseButtonProps, Button } from "../Button";
+import { Box, BoxProps } from "../Box";
 
 // types
-import {socials, SocialShareButtonTypes} from "./types";
+import { socials, SocialShareButtonTypes } from "./types";
 
 // config
 import { socialLinks, socialStyles } from "./config";
 
-const Wrapper = styled.div<{ disabled?: boolean }>`
+const Wrapper = styled(Box)<{ disabled?: boolean; width: string }>`
+  width: ${({ width }) => width ?? "auto"};
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
   transition: opacity .3s ease-in-out;
 
-  opacity: ${({ disabled }) => (disabled ? .64 : 1)};
+  opacity: ${({ disabled }) => (disabled ? 0.84 : 1)};
   
   &:hover:not(:disabled) {
-    opacity: .64;
+    opacity: .84;
   },
 `;
 
@@ -28,7 +30,7 @@ const SocialShareButton = ({
   message,
   scale = "lg",
   target = "_blank",
-  width = "100%",
+  width = "auto",
   disabled,
   ...props
 }: SocialShareButtonTypes) => {
@@ -37,15 +39,16 @@ const SocialShareButton = ({
   const { icon, backgroundColor } = socialStyles({ theme, disabled })[social];
 
   return (
-    <Wrapper disabled={disabled}>
+    <Wrapper disabled={disabled} width={width} {...props}>
       <Button
         as="a"
         href={socialLinks[social]({ link, message })}
         scale={scale}
-        startIcon={icon}
+        endIcon={icon}
         style={{ backgroundColor, pointerEvents: disabled ? "none" : "auto" }}
         target={target}
-        width={width}
+        width="100%"
+        external
         {...props}
       >
         {name || defaultName}
