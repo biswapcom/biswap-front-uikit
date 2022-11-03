@@ -8246,7 +8246,7 @@ var InnerLinksBlockContainer = styled.div(templateObject_1$k || (templateObject_
     return padded && "62px";
 });
 var CommonDropdownMenuInnerLinkItem = function () { return css(templateObject_2$c || (templateObject_2$c = __makeTemplateObject(["\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n  cursor: pointer;\n\n  &:hover {\n    .inner-chevron {\n      margin-right: 4px;\n      transition: margin-right 150ms linear;\n    }\n  }\n"], ["\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n  cursor: pointer;\n\n  &:hover {\n    .inner-chevron {\n      margin-right: 4px;\n      transition: margin-right 150ms linear;\n    }\n  }\n"]))); };
-var DropdownMenuInnerLinkItem = styled(Link$1)(templateObject_3$8 || (templateObject_3$8 = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), CommonDropdownMenuInnerLinkItem);
+var DropdownMenuInnerLinkItem = styled.div(templateObject_3$8 || (templateObject_3$8 = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), CommonDropdownMenuInnerLinkItem);
 var DropdownMenuInnerOuterLinkItem = styled.a(templateObject_4$6 || (templateObject_4$6 = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), CommonDropdownMenuInnerLinkItem);
 var CommonLinkStyle = function (_a) {
     var disabled = _a.disabled, $isActive = _a.$isActive, $hasIcon = _a.$hasIcon, label = _a.label;
@@ -8320,7 +8320,7 @@ var InnerLinksBlock = function (_a) {
                 icon && (React.createElement(IconComponent, { className: "inner-chevron", width: 10, iconName: icon, color: fill })),
                 React.createElement(LabelText, { bold: true, fontSize: "12px", color: fill }, label))); };
             return (React.createElement(Fragment, { key: "".concat(index, "#").concat(label) },
-                linkType === DropdownMenuItemType.INTERNAL_LINK && (React.createElement(LinkWrap, null,
+                linkType === DropdownMenuItemType.INTERNAL_LINK && (React.createElement(LinkWrap, { to: href },
                     React.createElement(DropdownMenuInnerLinkItem, { key: index + label, to: href, onClick: function () {
                             setIsOpen(false);
                         } }, getLinkContent()))),

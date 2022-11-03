@@ -69,7 +69,7 @@ const InnerLinksBlock: FC<InnerLinksBlockProps> = ({
         return (
           <Fragment key={`${index}#${label}`}>
             {linkType === DropdownMenuItemType.INTERNAL_LINK && (
-              <LinkWrap>
+              <LinkWrap to={href}>
                 <DropdownMenuInnerLinkItem
                   key={index + label}
                   to={href}
