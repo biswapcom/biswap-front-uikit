@@ -72,7 +72,6 @@ const InnerLinksBlock: FC<InnerLinksBlockProps> = ({
               <LinkWrap to={href}>
                 <DropdownMenuInnerLinkItem
                   key={index + label}
-                  to={href}
                   onClick={() => {
                     setIsOpen(false);
                   }}

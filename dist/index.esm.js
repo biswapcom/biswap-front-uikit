@@ -8321,7 +8321,7 @@ var InnerLinksBlock = function (_a) {
                 React.createElement(LabelText, { bold: true, fontSize: "12px", color: fill }, label))); };
             return (React.createElement(Fragment, { key: "".concat(index, "#").concat(label) },
                 linkType === DropdownMenuItemType.INTERNAL_LINK && (React.createElement(LinkWrap, { to: href },
-                    React.createElement(DropdownMenuInnerLinkItem, { key: index + label, to: href, onClick: function () {
+                    React.createElement(DropdownMenuInnerLinkItem, { key: index + label, onClick: function () {
                             setIsOpen(false);
                         } }, getLinkContent()))),
                 linkType === DropdownMenuItemType.EXTERNAL_LINK && (React.createElement(DropdownMenuInnerOuterLinkItem, { key: index + label, href: href, target: isMobile ? mobileTarget || "_self" : target || "_blank", onClick: function () {
