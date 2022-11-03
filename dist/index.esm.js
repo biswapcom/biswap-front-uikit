@@ -8312,7 +8312,6 @@ var LabelText = styled(Text)(templateObject_1$j || (templateObject_1$j = __makeT
 var InnerLinksBlock = function (_a) {
     var links = _a.links, leftIcon = _a.leftIcon, setIsOpen = _a.setIsOpen, linkComponent = _a.linkComponent;
     var _b = useMatchBreakpoints(), isMobile = _b.isMobile, isTablet = _b.isTablet;
-    var LinkWrap = linkComponent !== null && linkComponent !== void 0 ? linkComponent : React.Fragment;
     var renderLinks = function () {
         return links.map(function (_a, index) {
             var _b = _a.label, label = _b === void 0 ? "" : _b, _c = _a.href, href = _c === void 0 ? "/" : _c, _d = _a.icon, icon = _d === void 0 ? "ChevronRight" : _d, _e = _a.linkType, linkType = _e === void 0 ? DropdownMenuItemType.INTERNAL_LINK : _e, mobileTarget = _a.mobileTarget, target = _a.target, _f = _a.fill, fill = _f === void 0 ? "primary" : _f;
@@ -8320,10 +8319,9 @@ var InnerLinksBlock = function (_a) {
                 icon && (React.createElement(IconComponent, { className: "inner-chevron", width: 10, iconName: icon, color: fill })),
                 React.createElement(LabelText, { bold: true, fontSize: "12px", color: fill }, label))); };
             return (React.createElement(Fragment, { key: "".concat(index, "#").concat(label) },
-                linkType === DropdownMenuItemType.INTERNAL_LINK && (React.createElement(LinkWrap, { to: href },
-                    React.createElement(DropdownMenuInnerLinkItem, { key: index + label, onClick: function () {
-                            setIsOpen(false);
-                        } }, getLinkContent()))),
+                linkType === DropdownMenuItemType.INTERNAL_LINK && (React.createElement(DropdownMenuInnerLinkItem, { key: index + label, as: linkComponent, to: href, onClick: function () {
+                        setIsOpen(false);
+                    } }, getLinkContent())),
                 linkType === DropdownMenuItemType.EXTERNAL_LINK && (React.createElement(DropdownMenuInnerOuterLinkItem, { key: index + label, href: href, target: isMobile ? mobileTarget || "_self" : target || "_blank", onClick: function () {
                         setIsOpen(false);
                     } }, getLinkContent()))));
