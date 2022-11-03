@@ -35,6 +35,8 @@ const InnerLinksBlock: FC<InnerLinksBlockProps> = ({
 }) => {
   const { isMobile, isTablet } = useMatchBreakpoints();
 
+  const LinkWrap = linkComponent ?? React.Fragment;
+
   const renderLinks = () =>
     links.map(
       (
@@ -67,15 +69,17 @@ const InnerLinksBlock: FC<InnerLinksBlockProps> = ({
         return (
           <Fragment key={`${index}#${label}`}>
             {linkType === DropdownMenuItemType.INTERNAL_LINK && (
-              <DropdownMenuInnerLinkItem
-                key={index + label}
-                to={href}
-                onClick={() => {
-                  setIsOpen(false);
-                }}
-              >
-                {getLinkContent()}
-              </DropdownMenuInnerLinkItem>
+              <LinkWrap>
+                <DropdownMenuInnerLinkItem
+                  key={index + label}
+                  to={href}
+                  onClick={() => {
+                    setIsOpen(false);
+                  }}
+                >
+                  {getLinkContent()}
+                </DropdownMenuInnerLinkItem>
+              </LinkWrap>
             )}
             {linkType === DropdownMenuItemType.EXTERNAL_LINK && (
               <DropdownMenuInnerOuterLinkItem
