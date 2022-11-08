@@ -50,7 +50,7 @@ const getBackground = ({
   menuBg: boolean;
   isMobileMenuOpened: boolean;
 }) => {
-  if (isMobileMenuOpened) return theme.card.background;
+ if (isMobileMenuOpened) return theme.colors.background;
   if (menuBg && !isMobileMenuOpened) return theme.nav.background;
   return "transparent";
 };
