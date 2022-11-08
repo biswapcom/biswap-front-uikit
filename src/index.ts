@@ -25,6 +25,7 @@ export * from "./components/Badge";
 export * from "./components/PercentSlider";
 export * from "./components/Typography";
 export * from "./components/Pagination";
+export * from "./components/SocialShareButton";
 
 // Hooks
 export * from "./hooks";

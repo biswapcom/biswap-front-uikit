@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 
 // components
-import { TelegramIcon, TwitterIcon } from "../../../components/Svg";
+import { TelegramIcon, TwitterIcon } from "../Svg";
 
 // types
 import {
@@ -29,15 +29,17 @@ export const socialLinks: SocialLinksProps = {
 };
 
 export const socialStyles = ({
+  theme,
   size = "20px",
   color = "white",
-}: SocialStylesProps = {}): SocialStylesReturn => ({
+  disabled = false,
+}: SocialStylesProps): SocialStylesReturn => ({
   twitter: {
     icon: <TwitterIcon width={size} color={color} />,
-    backgroundColor: "#16CDFD",
+    backgroundColor: disabled ? theme.colors.dark500 : theme.colors.twitter,
   },
   telegram: {
     icon: <TelegramIcon width={size} color={color} />,
-    backgroundColor: "#26A6E5",
+    backgroundColor: disabled ? theme.colors.dark500 : theme.colors.telegram,
   },
 });
