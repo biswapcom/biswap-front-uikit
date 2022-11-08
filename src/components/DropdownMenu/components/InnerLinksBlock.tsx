@@ -69,6 +69,7 @@ const InnerLinksBlock: FC<InnerLinksBlockProps> = ({
             {linkType === DropdownMenuItemType.INTERNAL_LINK && (
               <DropdownMenuInnerLinkItem
                 key={index + label}
+                as={linkComponent}
                 to={href}
                 onClick={() => {
                   setIsOpen(false);

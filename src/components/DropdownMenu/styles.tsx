@@ -43,9 +43,7 @@ const CommonDropdownMenuInnerLinkItem = () => css`
   }
 `;
 
-export const DropdownMenuInnerLinkItem = styled(Link)<
-  StyledDropdownMenuInnerLinkItemProps & LinkProps
->`
+export const DropdownMenuInnerLinkItem = styled.div<StyledDropdownMenuInnerLinkItemProps>`
   ${CommonDropdownMenuInnerLinkItem}
 `;
 

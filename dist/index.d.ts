@@ -32,6 +32,7 @@ export * from "./components/SlideButtonMenu";
 export * from "./components/PercentSlider";
 export * from "./components/Typography";
 export * from "./components/Pagination";
+export * from "./components/SocialShareButton";
 export * from "./components/Table";
 export * from "./hooks";
 export * from "./contexts";
