@@ -5,14 +5,13 @@ import Box from "../../components/Box/Box";
 import Flex from "../../components/Box/Flex";
 import Button from "../../components/Button/Button";
 import IconButton from "../../components/Button/IconButton";
-import DropdownMenu from "../../components/DropdownMenu/DropdownMenu";
+//import DropdownMenu from "../../components/DropdownMenu/DropdownMenu";
 import Heading from "../../components/Heading/Heading";
 // import Input from "../../components/Input/Input";
 import { OptionsSolidIcon, DownloadIcon } from "../../components/Svg";
 import Text from "../../components/Text/Text";
 import { Modal, ModalProps, useModal } from "../Modal";
-import UserMenu from "./components/UserMenu";
-import { Variant, variants } from "./components/UserMenu/types";
+
 import {
   BSWPriceValue,
   BSWPriceLabel,
@@ -25,7 +24,6 @@ import {
 } from "./config";
 import Menu from "./Menu";
 import { NavProps } from "./types";
-import BottomDrawer from "../../components/BottomDrawer/BottomDrawer";
 
 export default {
   title: "Widgets/Menu",
@@ -44,28 +42,28 @@ export default {
 //   locale: `Locale${i}`,
 // }));
 
-const UserMenuComponent: React.FC<{
-  variant?: Variant;
-  text?: string;
-  account?: string;
-}> = ({
-  variant = variants.DEFAULT,
-  text,
-  account = "0x8b017905DC96B38f817473dc885F84D4C76bC113",
-}) => {
-  const accountEllipsis = account
-    ? `${account.substring(0, 2)}...${account.substring(account.length - 4)}`
-    : undefined;
-  return (
-    <DropdownMenu items={userMenulinks} py="12px">
-      <UserMenu
-        account={text || accountEllipsis}
-        avatarSrc=""
-        variant={variant}
-      />
-    </DropdownMenu>
-  );
-};
+// const UserMenuComponent: React.FC<{
+//   variant?: Variant;
+//   text?: string;
+//   account?: string;
+// }> = ({
+//   variant = variants.DEFAULT,
+//   text,
+//   account = "0x8b017905DC96B38f817473dc885F84D4C76bC113",
+// }) => {
+//   const accountEllipsis = account
+//     ? `${account.substring(0, 2)}...${account.substring(account.length - 4)}`
+//     : undefined;
+//   return (
+//     <DropdownMenu items={userMenulinks} py="12px">
+//       <UserMenu
+//         account={text || accountEllipsis}
+//         avatarSrc=""
+//         variant={variant}
+//       />
+//     </DropdownMenu>
+//   );
+// };
 
 const GlobalMenuModal: React.FC<ModalProps> = ({
   title,
@@ -148,11 +146,11 @@ const ConnectedTemplate: React.FC<NavProps> = (args) => {
           <Button scale="sm" onClick={() => setIsOpen(true)}>
             Show mobile drawer
           </Button>
-          <BottomDrawer
-            content={<Box p="16px">Example</Box>}
-            isOpen={isOpen}
-            setIsOpen={setIsOpen}
-          />
+          {/*<BottomDrawer*/}
+          {/*  content={<Box p="16px">Example</Box>}*/}
+          {/*  isOpen={isOpen}*/}
+          {/*  setIsOpen={setIsOpen}*/}
+          {/*/>*/}
           <Text as="p">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim

@@ -14,7 +14,6 @@ import Flex from "../../components/Box/Flex";
 import Footer from "./components/Footer/Footer";
 import MenuItems from "../../components/MenuItems/MenuItems";
 import Logo from "./components/Logo";
-// import UserBlock from "./components/UserBlock";
 // import BDayEvent from "./components/UserEvents/BDayEvent";
 // import { WarningSolidIcon } from "../../components/Svg";
 
@@ -259,15 +258,6 @@ const Menu: FC<PropsWithChildren<NavProps>> = ({
     };
   }, [totalTopMenuHeight]);
 
-  // const handleNetworkChange = (option: OptionProps): void => {
-  //   if (option.value !== currentNetwork) {
-  //     networkChangeToBSC()
-  //   }
-  //   if (option.value !== currentNetwork) {
-  //     networkChangeToAvalanche()
-  //   }
-  // }
-
   // Find the home link if provided
   const homeLink = links.find((link) => link.label === "Home");
 
@@ -365,7 +355,6 @@ const Menu: FC<PropsWithChildren<NavProps>> = ({
           {/*  />*/}
           {/*)}*/}
         </FixedContainer>
-        {/*<BodyWrapper mt={!subLinks ? `${totalTopMenuHeight + 1}px` : "0"}>*/}
         <BodyWrapper>
           <Inner isPushed={false} showMenu={showMenu}>
             <>
