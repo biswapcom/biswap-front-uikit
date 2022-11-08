@@ -142,9 +142,7 @@ const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
 
 const Menu: FC<PropsWithChildren<NavProps>> = ({
   linkComponent = "a",
-  // userMenu,
   banner,
-  // isDark,
   links,
   rightSide,
   subLinks,
@@ -159,22 +157,10 @@ const Menu: FC<PropsWithChildren<NavProps>> = ({
   aboutLinks,
   productLinks,
   serviceLinks,
-  // currentNetwork,
-  // networkChangeToBSC,
-  // networkChangeToAvalanche,
-  //account,
-  //login,
-  //logout,
-  //pendingTransactions,
-  //recentTransaction,
-  //chainId,
-  //clearTransaction,
-  //isSwap,
-  //transactionsForUIKit,
   withEvent,
   eventCallback,
   //eventButtonLogo,
-                                                 customLogoSubtitle
+  customLogoSubtitle,
 }) => {
   const { isMobile } = useMatchBreakpoints();
   const [showMenu, setShowMenu] = useState<boolean>(true);
@@ -262,7 +248,7 @@ const Menu: FC<PropsWithChildren<NavProps>> = ({
   const homeLink = links.find((link) => link.label === "Home");
 
   // exclude Home link from displayed in menu
-  const filteredLinks = links.filter((link) => link.label !== "Home");
+ // const filteredLinks = links.filter((link) => link.label !== "Home");
 
   return (
     <MenuContext.Provider value={{ linkComponent }}>
@@ -301,46 +287,6 @@ const Menu: FC<PropsWithChildren<NavProps>> = ({
               />
             </Flex>
             <Flex alignItems="center" height="100%">
-              {/*<NetworkSwitcher*/}
-              {/*  options={[*/}
-              {/*    {*/}
-              {/*      label: 'BSC',*/}
-              {/*      icon: <BSCIcon className="icon"/>,*/}
-              {/*      value: 56,*/}
-              {/*      bg: '#F0B90B',*/}
-              {/*    },*/}
-              {/*    {*/}
-              {/*      label: 'Avalanche',*/}
-              {/*      icon: <AvalancheIcon className="icon"/>,*/}
-              {/*      value: 43114,*/}
-              {/*      bg: '#E84142',*/}
-              {/*    },*/}
-              {/*  ]}*/}
-              {/*  onChange={handleNetworkChange}*/}
-              {/*  currentNetwork={currentNetwork}*/}
-              {/*/>*/}
-              {/*{userMenu}*/}
-              {/*{withEvent && !isMobile && (*/}
-              {/*  <BDayEvent*/}
-              {/*    account={account}*/}
-              {/*    login={login}*/}
-              {/*    logout={logout}*/}
-              {/*    callback={eventCallback}*/}
-              {/*    isSwap={isSwap}*/}
-              {/*    href={homeLink?.href ?? "/"}*/}
-              {/*  />*/}
-              {/*)}*/}
-              {/*<UserBlock*/}
-              {/* // clearTransaction={clearTransaction}*/}
-              {/*  account={account}*/}
-              {/*  //login={login}*/}
-              {/*  logout={logout}*/}
-              {/*  recentTransaction={recentTransaction}*/}
-              {/*  chainId={chainId}*/}
-              {/*  pendingTransactions={pendingTransactions}*/}
-              {/*  isSwap={isSwap}*/}
-              {/*  //transactionsForUIKit={transactionsForUIKit}*/}
-              {/*/>*/}
               {rightSide}
             </Flex>
           </StyledNav>

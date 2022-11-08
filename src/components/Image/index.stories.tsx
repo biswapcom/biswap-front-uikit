@@ -19,6 +19,3 @@ export const Image: React.FC = () => {
     </div>
   );
 };
-
-
-

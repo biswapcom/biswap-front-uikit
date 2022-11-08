@@ -4,7 +4,6 @@ import styled, { useTheme } from "styled-components";
 import { Meta } from "@storybook/react/types-6-0";
 import Box from "../Box/Box";
 import Heading from "../Heading/Heading";
-import CardRibbon from "./CardRibbon";
 import UIKitCardHeader from "./CardHeader";
 import CardBody from "./CardBody";
 import CardFooter from "./CardFooter";
@@ -128,70 +127,6 @@ export const CardHeader: React.FC = () => {
           </UIKitCardHeader>
           <CardBody>Body</CardBody>
           <CardFooter>Footer</CardFooter>
-        </Card>
-      </Row>
-    </div>
-  );
-};
-
-export const CustomBackground: React.FC = () => {
-  return (
-    <div style={{ padding: "32px", width: "500px" }}>
-      <Card background="#f0c243" borderBackground="#b88700">
-        <CardBody style={{ height: "150px" }}>Custom background</CardBody>
-      </Card>
-    </div>
-  );
-};
-
-export const Ribbon: React.FC = () => {
-  return (
-    <div style={{ padding: "32px", width: "500px" }}>
-      <Row>
-        <Card ribbon={<CardRibbon text="Ribbon" />}>
-          <div style={{ height: "112px", backgroundColor: "#191326" }} />
-          <CardBody style={{ height: "150px" }}>Body</CardBody>
-        </Card>
-      </Row>
-      <Row>
-        <Card
-          ribbon={
-            <CardRibbon
-              variantColor="textDisabled"
-              text="Ribbon with Long Text"
-            />
-          }
-        >
-          <CardBody style={{ height: "150px" }}>
-            Ribbons will truncate when text is too long
-          </CardBody>
-        </Card>
-      </Row>
-      <Row>
-        <Card ribbon={<CardRibbon variantColor="success" text="Success" />}>
-          <CardBody style={{ height: "150px" }}>Card</CardBody>
-        </Card>
-      </Row>
-      <Row>
-        <Card ribbon={<CardRibbon variantColor="failure" text="Failure" />}>
-          <CardBody style={{ height: "150px" }}>
-            Any Color in the theme
-          </CardBody>
-        </Card>
-      </Row>
-      <Row>
-        <Card
-          ribbon={
-            <CardRibbon
-              variantColor="failure"
-              text="Failure"
-              ribbonPosition="left"
-            />
-          }
-        >
-          <CardBody style={{ height: "150px" }}>
-            Any Color in the theme
-          </CardBody>
         </Card>
       </Row>
     </div>

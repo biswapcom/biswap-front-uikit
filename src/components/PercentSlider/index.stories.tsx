@@ -4,7 +4,6 @@ import Flex from "../Box/Flex";
 import Box from "../Box/Box";
 import Text from "../Text/Text";
 import PercentSlider from "./PercentSlider";
-import { Button } from "../Button";
 
 export default {
   title: "Components/PercentSlider",
@@ -19,7 +18,7 @@ const Col = styled(Flex)`
 
 const SliderVariant = ({ initialValue }: { initialValue: number }) => {
   const [value, setValue] = useState(40);
-  console.log(value, "value");
+  //console.log(value, "value");
   return (
     <Box paddingTop="40px">
       {/*<Button onClick={() => setValue(0)}>test</Button>*/}

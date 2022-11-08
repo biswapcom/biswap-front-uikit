@@ -6,7 +6,6 @@ import {
 import { ItemTypes, MenuItemsType } from "../../components/MenuItems/types";
 import { LinkStatus } from "./types";
 
-
 export const status = {
   LIVE: <LinkStatus>{
     text: "LIVE",
