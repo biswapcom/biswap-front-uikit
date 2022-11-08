@@ -248,7 +248,7 @@ const Menu: FC<PropsWithChildren<NavProps>> = ({
   const homeLink = links.find((link) => link.label === "Home");
 
   // exclude Home link from displayed in menu
- // const filteredLinks = links.filter((link) => link.label !== "Home");
+  // const filteredLinks = links.filter((link) => link.label !== "Home");
 
   return (
     <MenuContext.Provider value={{ linkComponent }}>
