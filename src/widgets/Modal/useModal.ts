@@ -16,11 +16,14 @@ const useModal = (
     setModalNode,
     onPresent,
     onDismiss,
+    setNodeId,
     setCloseOnOverlayClick,
   } = useContext(Context);
   const onPresentCallback = useCallback(() => {
     onPresent(modal, modalId);
   }, [modal, modalId, onPresent]);
+
+  console.log('setCloseOnOverlayClick IN MODAL', nodeId, 'divide', modalId)
 
   // Updates the "modal" component if props are changed
   // Use carefully since it might result in unnecessary rerenders
@@ -55,8 +58,9 @@ const useModal = (
   ]);
 
   useEffect(() => {
+    setNodeId(modalId);
     setCloseOnOverlayClick(closeOnOverlayClick);
-  }, [closeOnOverlayClick, setCloseOnOverlayClick]);
+  }, [closeOnOverlayClick, setCloseOnOverlayClick, modalId, setNodeId]);
 
   return [onPresentCallback, onDismiss];
 };
