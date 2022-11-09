@@ -7336,8 +7336,6 @@ var Context = createContext({
     setModalNode: function () { return null; },
     onPresent: function () { return null; },
     onDismiss: function () { return null; },
-    setNodeId: function () { return ""; },
-    setCloseOnOverlayClick: function () { return true; },
 });
 var ModalProvider = function (_a) {
     var children = _a.children;
@@ -7346,15 +7344,17 @@ var ModalProvider = function (_a) {
     var _d = useState(""), nodeId = _d[0], setNodeId = _d[1];
     var _e = useState(true), closeOnOverlayClick = _e[0], setCloseOnOverlayClick = _e[1];
     // console.log('closeOnOverlayClick', closeOnOverlayClick, nodeId)
-    var handlePresent = function (node, newNodeId) {
+    var handlePresent = function (node, newNodeId, closeOverlayClick) {
         setModalNode(node);
         setIsOpen(true);
         setNodeId(newNodeId);
+        setCloseOnOverlayClick(closeOverlayClick);
     };
     var handleDismiss = function () {
         setModalNode(undefined);
         setIsOpen(false);
         setNodeId("");
+        setCloseOnOverlayClick(true);
     };
     var handleOverlayDismiss = function () {
         if (closeOnOverlayClick) {
@@ -7368,8 +7368,6 @@ var ModalProvider = function (_a) {
             setModalNode: setModalNode,
             onPresent: handlePresent,
             onDismiss: handleDismiss,
-            setNodeId: setNodeId,
-            setCloseOnOverlayClick: setCloseOnOverlayClick,
         } },
         isOpen && (React.createElement(ModalWrapper, null,
             React.createElement(Overlay, { onClick: handleOverlayDismiss }),
@@ -7385,14 +7383,13 @@ var useModal = function (modal, closeOnOverlayClick, updateOnPropsChange, modalI
     if (closeOnOverlayClick === void 0) { closeOnOverlayClick = true; }
     if (updateOnPropsChange === void 0) { updateOnPropsChange = false; }
     if (modalId === void 0) { modalId = "defaultNodeId"; }
-    var _a = useContext(Context), isOpen = _a.isOpen, nodeId = _a.nodeId, modalNode = _a.modalNode, setModalNode = _a.setModalNode, onPresent = _a.onPresent, onDismiss = _a.onDismiss, setNodeId = _a.setNodeId, setCloseOnOverlayClick = _a.setCloseOnOverlayClick;
+    var _a = useContext(Context), isOpen = _a.isOpen, nodeId = _a.nodeId, modalNode = _a.modalNode, setModalNode = _a.setModalNode, onPresent = _a.onPresent, onDismiss = _a.onDismiss;
     var onPresentCallback = useCallback(function () {
-        onPresent(modal, modalId);
-    }, [modal, modalId, onPresent]);
-    console.log('setCloseOnOverlayClick IN MODAL', nodeId, 'divide', modalId);
+        onPresent(modal, modalId, closeOnOverlayClick);
+    }, [modal, modalId, onPresent, closeOnOverlayClick]);
     // Updates the "modal" component if props are changed
     // Use carefully since it might result in unnecessary rerenders
-    // Typically if modal is staic there is no need for updates, use when you expect props to change
+    // Typically if modal is static there is no need for updates, use when you expect props to change
     useEffect(function () {
         // NodeId is needed in case there are 2 useModal hooks on the same page and one has updateOnPropsChange
         if (updateOnPropsChange && isOpen && nodeId === modalId) {
@@ -7419,10 +7416,6 @@ var useModal = function (modal, closeOnOverlayClick, updateOnPropsChange, modalI
         modalNode,
         setModalNode,
     ]);
-    useEffect(function () {
-        setNodeId(modalId);
-        setCloseOnOverlayClick(closeOnOverlayClick);
-    }, [closeOnOverlayClick, setCloseOnOverlayClick, modalId, setNodeId]);
     return [onPresentCallback, onDismiss];
 };
 

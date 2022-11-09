@@ -4,7 +4,7 @@ import { Modal, useModal } from ".";
 import { ModalProps } from "./types";
 import Button from "../../components/Button/Button";
 import Heading from "../../components/Heading/Heading";
-import {Text} from "../../components/Text";
+import { Text } from "../../components/Text";
 
 export default {
   title: "Widgets/Modal",
@@ -23,10 +23,21 @@ const CustomModal: React.FC<ModalProps> = ({ title, onDismiss, ...props }) => (
 export const Default: React.FC = () => {
   const theme = useTheme();
   const [onPresent1] = useModal(
-    <CustomModal p="8px" bodyPadding="0" title="Modal 1" />, false
+    <CustomModal p="8px" bodyPadding="0" title="Modal 1" />,
+    false
   );
-  const [onPresent2] = useModal(<CustomModal title="Modal 2" />, false, false, 'second');
-  const [onPresent3] = useModal(<CustomModal title="Modal 3" />, false, false, 'third');
+  const [onPresent2] = useModal(
+    <CustomModal title="Modal 2" />,
+    false,
+    false,
+    "second"
+  );
+  const [onPresent3] = useModal(
+    <CustomModal title="Modal 3" />,
+    false,
+    false,
+    "third"
+  );
   return (
     <div>
       <Button onClick={onPresent1}>Open modal 1</Button>
