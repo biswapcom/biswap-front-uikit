@@ -1,4 +1,4 @@
-import { darkColors, lightColors } from "../../theme/colors";
+import { darkColors, lightColors } from "../../theme";
 import { shadows } from "../../theme/base";
 import { CardTheme } from "./types";
 

@@ -8,7 +8,9 @@ import { ModalProps } from "./types";
 
 export const ModalHeader = styled.div`
   display: flex;
-  align-items: flex-start;
+  //align-items: flex-start;
+  justify-content: space-between;
+  align-items: center;
   padding: 24px 16px;
 
   ${({ theme }) => theme.mediaQueries.sm} {
@@ -16,10 +18,7 @@ export const ModalHeader = styled.div`
   }
 `;
 
-export const ModalTitle = styled(Flex)`
-  align-items: center;
-  flex: 1;
-`;
+export const ModalTitle = styled(Flex)``;
 
 export const ModalBody = styled(Flex)`
   flex-direction: column;
@@ -48,7 +47,7 @@ export const ModalBackButton: React.FC<{
 }> = ({ onBack, closeBtnColor }) => {
   return (
     <IconButton variant="text" onClick={onBack} area-label="go back" mr="8px">
-      <ArrowLeftIcon color="primary" />
+      <ArrowLeftIcon color={closeBtnColor || "primary"} />
     </IconButton>
   );
 };
