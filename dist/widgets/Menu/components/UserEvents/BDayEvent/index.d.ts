@@ -1,8 +1,6 @@
 import { FC } from "react";
-import { Login } from "../../../../WalletModal";
 interface Props {
     account?: string;
-    login: Login;
     logout: () => void;
     callback?: () => void;
     isSwap?: boolean;

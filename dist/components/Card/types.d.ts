@@ -1,6 +1,6 @@
 import { HTMLAttributes } from "react";
 import { SpaceProps } from "styled-system";
-import { Colors } from "../../theme/types";
+import { Colors } from "../../theme";
 export interface CardRibbonProps extends SpaceProps, HTMLAttributes<HTMLDivElement> {
     variantColor?: keyof Colors;
     text: string;
