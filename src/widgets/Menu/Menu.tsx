@@ -1,4 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, {
+  useEffect,
+  useRef,
+  useState,
+  FC,
+  PropsWithChildren,
+} from "react";
 import throttle from "lodash/throttle";
 import styled, { DefaultTheme } from "styled-components";
 
@@ -8,9 +14,8 @@ import Flex from "../../components/Box/Flex";
 import Footer from "./components/Footer/Footer";
 import MenuItems from "../../components/MenuItems/MenuItems";
 import Logo from "./components/Logo";
-import UserBlock from "./components/UserBlock";
-import BlockChainWeekEvent from "./components/UserEvents/BlockChainWeekEvent";
-import { WarningSolidIcon } from "../../components/Svg";
+// import BDayEvent from "./components/UserEvents/BDayEvent";
+// import { WarningSolidIcon } from "../../components/Svg";
 
 // context
 import { MenuContext } from "./context";
@@ -24,8 +29,8 @@ import {
   MOBILE_EVENT_BUTTON_HEIGHT,
   TOP_BANNER_HEIGHT,
   TOP_BANNER_HEIGHT_MOBILE,
-  FISHING_BANNER_HEIGHT,
-  FISHING_MOBILE_BANNER_HEIGHT,
+  // FISHING_BANNER_HEIGHT,
+  // FISHING_MOBILE_BANNER_HEIGHT,
 } from "./config";
 
 // types
@@ -50,42 +55,42 @@ const getBackground = ({
   return "transparent";
 };
 
-const FishingWarn = styled.div<{ showFishingWarn: boolean }>`
-  display: flex;
-  align-items: center;
-  background: ${({ theme }) => theme.colors.warning};
-  height: ${({ showFishingWarn }) =>
-    !showFishingWarn ? "0px" : `${FISHING_MOBILE_BANNER_HEIGHT}px`};
-  padding: 10px 20px 10px 70px;
-  transition: height 0.3s ease;
-  position: relative;
-  overflow: hidden;
-
-  ${({ theme }) => theme.mediaQueries.sm} {
-    padding: 10px 40px 10px 100px;
-    height: ${({ showFishingWarn }) =>
-      !showFishingWarn ? "0px" : `${FISHING_BANNER_HEIGHT}px`};
-  }
-`;
-const Label = styled.span`
-  font-size: 14px;
-  color: ${({ theme }) => theme.colors.background};
-  flex-grow: 1;
-  font-weight: 600;
-`;
-const StyledImgWarnIcon = styled(WarningSolidIcon)`
-  width: 44px;
-  height: auto;
-  position: absolute;
-  top: 50%;
-  left: 14px;
-  transform: translateY(-50%);
-
-  ${({ theme }) => theme.mediaQueries.sm} {
-    left: 28px;
-    width: 64px;
-  }
-`;
+// const FishingWarn = styled.div<{ showFishingWarn: boolean }>`
+//   display: flex;
+//   align-items: center;
+//   background: ${({ theme }) => theme.colors.warning};
+//   height: ${({ showFishingWarn }) =>
+//     !showFishingWarn ? "0px" : `${FISHING_MOBILE_BANNER_HEIGHT}px`};
+//   padding: 10px 20px 10px 70px;
+//   transition: height 0.3s ease;
+//   position: relative;
+//   overflow: hidden;
+//
+//   ${({ theme }) => theme.mediaQueries.sm} {
+//     padding: 10px 40px 10px 100px;
+//     height: ${({ showFishingWarn }) =>
+//       !showFishingWarn ? "0px" : `${FISHING_BANNER_HEIGHT}px`};
+//   }
+// `;
+// const Label = styled.span`
+//   font-size: 14px;
+//   color: ${({ theme }) => theme.colors.background};
+//   flex-grow: 1;
+//   font-weight: 600;
+// `;
+// const StyledImgWarnIcon = styled(WarningSolidIcon)`
+//   width: 44px;
+//   height: auto;
+//   position: absolute;
+//   top: 50%;
+//   left: 14px;
+//   transform: translateY(-50%);
+//
+//   ${({ theme }) => theme.mediaQueries.sm} {
+//     left: 28px;
+//     width: 64px;
+//   }
+// `;
 
 const StyledNav = styled.nav<{ menuBg: boolean; isMobileMenuOpened: boolean }>`
   display: flex;
@@ -135,12 +140,11 @@ const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
   max-width: 100%;
 `;
 
-const Menu: React.FC<NavProps> = ({
+const Menu: FC<PropsWithChildren<NavProps>> = ({
   linkComponent = "a",
-  // userMenu,
   banner,
-  // isDark,
   links,
+  rightSide,
   subLinks,
   activeItem,
   activeSubItem,
@@ -148,32 +152,20 @@ const Menu: React.FC<NavProps> = ({
   BSWPriceLabel,
   BSWPriceValue,
   footerStatistic,
-  onClick,
+  registerToken,
   buyBswHandler,
   aboutLinks,
   productLinks,
   serviceLinks,
-  // currentNetwork,
-  // networkChangeToBSC,
-  // networkChangeToAvalanche,
-  account,
-  login,
-  logout,
-  pendingTransactions,
-  recentTransaction,
-  chainId,
-  clearTransaction,
-  isSwap,
-  transactionsForUIKit,
   withEvent,
   eventCallback,
-  eventButtonLogo,
+  //eventButtonLogo,
   customLogoSubtitle,
 }) => {
   const { isMobile } = useMatchBreakpoints();
   const [showMenu, setShowMenu] = useState<boolean>(true);
   const [menuBg, setMenuBg] = useState<boolean>(false);
-  const [isMobileMenuOpened, setIsMobileMenuOpened] = useState(false);
+  const [isMobileMenuOpened, setIsMobileMenuOpened] = useState<boolean>(false);
   // const [showFishingWarn, setShowFishingWarn] = useState(true);
 
   const refPrevOffset = useRef(
@@ -252,20 +244,11 @@ const Menu: React.FC<NavProps> = ({
     };
   }, [totalTopMenuHeight]);
 
-  // const handleNetworkChange = (option: OptionProps): void => {
-  //   if (option.value !== currentNetwork) {
-  //     networkChangeToBSC()
-  //   }
-  //   if (option.value !== currentNetwork) {
-  //     networkChangeToAvalanche()
-  //   }
-  // }
-
   // Find the home link if provided
   const homeLink = links.find((link) => link.label === "Home");
 
   // exclude Home link from displayed in menu
-  const filteredLinks = links.filter((link) => link.label !== "Home");
+  // const filteredLinks = links.filter((link) => link.label !== "Home");
 
   return (
     <MenuContext.Provider value={{ linkComponent }}>
@@ -304,65 +287,35 @@ const Menu: React.FC<NavProps> = ({
               />
             </Flex>
             <Flex alignItems="center" height="100%">
-              {/*<NetworkSwitcher*/}
-              {/*  options={[*/}
-              {/*    {*/}
-              {/*      label: 'BSC',*/}
-              {/*      icon: <BSCIcon className="icon"/>,*/}
-              {/*      value: 56,*/}
-              {/*      bg: '#F0B90B',*/}
-              {/*    },*/}
-              {/*    {*/}
-              {/*      label: 'Avalanche',*/}
-              {/*      icon: <AvalancheIcon className="icon"/>,*/}
-              {/*      value: 43114,*/}
-              {/*      bg: '#E84142',*/}
-              {/*    },*/}
-              {/*  ]}*/}
-              {/*  onChange={handleNetworkChange}*/}
-              {/*  currentNetwork={currentNetwork}*/}
-              {/*/>*/}
-              {/*{userMenu}*/}
-              {withEvent && !isMobile && (
-                <BlockChainWeekEvent
-                  eventButtonLogo={eventButtonLogo}
-                  href={homeLink?.href ?? "/"}
-                />
-              )}
-              <UserBlock
-                clearTransaction={clearTransaction}
-                account={account}
-                login={login}
-                logout={logout}
-                recentTransaction={recentTransaction}
-                chainId={chainId}
-                pendingTransactions={pendingTransactions}
-                isSwap={isSwap}
-                transactionsForUIKit={transactionsForUIKit}
-              />
+              {rightSide}
             </Flex>
           </StyledNav>
-          {withEvent && isMobile && !isMobileMenuOpened && (
-            <BlockChainWeekEvent
-              eventButtonLogo={eventButtonLogo}
-              href={homeLink?.href ?? "/"}
-            />
-          )}
+          {/*{withEvent && isMobile && (*/}
+          {/*  <BDayEvent*/}
+          {/*    account={account}*/}
+          {/*    login={login}*/}
+          {/*    logout={logout}*/}
+          {/*    callback={eventCallback}*/}
+          {/*    href={homeLink?.href ?? "/"}*/}
+          {/*    isSwap={isSwap}*/}
+          {/*  />*/}
+          {/*)}*/}
         </FixedContainer>
-        {/*<BodyWrapper mt={!subLinks ? `${totalTopMenuHeight + 1}px` : "0"}>*/}
         <BodyWrapper>
           <Inner isPushed={false} showMenu={showMenu}>
-            {children}
-            <Footer
-              BSWPriceLabel={BSWPriceLabel}
-              BSWPriceValue={BSWPriceValue}
-              footerStatistic={footerStatistic}
-              onClick={onClick}
-              buyBswHandler={buyBswHandler}
-              aboutLinks={aboutLinks}
-              productLinks={productLinks}
-              serviceLinks={serviceLinks}
-            />
+            <>
+              {children}
+              <Footer
+                BSWPriceLabel={BSWPriceLabel}
+                BSWPriceValue={BSWPriceValue}
+                footerStatistic={footerStatistic}
+                registerToken={registerToken}
+                buyBswHandler={buyBswHandler}
+                aboutLinks={aboutLinks}
+                productLinks={productLinks}
+                serviceLinks={serviceLinks}
+              />
+            </>
           </Inner>
         </BodyWrapper>
       </Wrapper>

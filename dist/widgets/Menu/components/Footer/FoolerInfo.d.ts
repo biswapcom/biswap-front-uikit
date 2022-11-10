@@ -1,7 +1,7 @@
 import React from "react";
 import { BSWPriceProps, FooterStatisticProps } from "../../types";
 interface Props extends BSWPriceProps, FooterStatisticProps {
-    onClick: () => void;
+    registerToken: () => void;
     buyBswHandler: () => void;
 }
 declare const FooterInfo: React.FC<Props>;
