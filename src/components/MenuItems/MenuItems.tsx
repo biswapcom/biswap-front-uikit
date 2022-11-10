@@ -9,7 +9,6 @@ import { ItemTypes, MenuItemsProps } from "./types";
 import { useMatchBreakpoints } from "../../contexts";
 import MobileDropdownMenu from "../DropdownMenu/MobileMenu/MobileDropdownMenu";
 import MenuItemDivider from "../MenuItem/Divider";
-import Marker from "../MenuItem/Marker";
 
 const MenuItems: React.FC<MenuItemsProps> = ({
   items = [],

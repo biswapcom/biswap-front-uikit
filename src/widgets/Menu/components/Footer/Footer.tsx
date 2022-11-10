@@ -26,7 +26,7 @@ interface Props
     FooterAboutLinks,
     FooterProductLinks,
     FooterServiceLinks {
-  onClick: () => void;
+  registerToken: () => void;
   buyBswHandler: () => void;
 }
 
@@ -90,7 +90,7 @@ const InnerRow = styled.div`
 const Footer: React.FC<Props> = ({
   BSWPriceLabel,
   BSWPriceValue,
-  onClick,
+  registerToken,
   footerStatistic,
   aboutLinks,
   productLinks,
@@ -103,7 +103,7 @@ const Footer: React.FC<Props> = ({
         <FooterInfo
           BSWPriceLabel={BSWPriceLabel}
           BSWPriceValue={BSWPriceValue}
-          onClick={onClick}
+          registerToken={registerToken}
           footerStatistic={footerStatistic}
           buyBswHandler={buyBswHandler}
         />
