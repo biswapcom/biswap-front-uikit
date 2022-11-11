@@ -289,7 +289,7 @@ const Menu: React.FC<NavProps> = ({
           )}
           <StyledNav menuBg={menuBg} isMobileMenuOpened={isMobileMenuOpened}>
             <Flex>
-              <Logo href={homeLink?.href ?? "/"} />
+              <Logo href='https://biswap.org/' />
               <MenuItems
                 items={links}
                 activeItem={activeItem}
