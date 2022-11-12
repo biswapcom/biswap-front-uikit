@@ -105,9 +105,7 @@ const GlobalMenuComponent: React.FC = () => {
 };
 
 const defaultProps = {
-  linkComponent: ({ href, ...props }) => {
-    return <Link to={href} {...props} />;
-  },
+  linkComponent: Link,
   account: "0xbdda50183d817c3289f895a4472eb475967dc980",
   login: noop,
   logout: noop,
