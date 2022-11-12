@@ -8685,8 +8685,9 @@ var Logo = function (_a) {
     var href = _a.href;
     var linkComponent = useContext(MenuContext).linkComponent;
     // const { push } = useHistory();
-    console.log('LINK', linkComponent);
     var isAbsoluteUrl = href.startsWith("http");
+    console.log('LINK', linkComponent);
+    console.log('isAbsoluteUrl', isAbsoluteUrl);
     var innerLogo = (React.createElement(React.Fragment, null,
         React.createElement(Icon$3L, { className: "mobile-icon" }),
         React.createElement(Icon$3K, { className: "desktop-icon" })));

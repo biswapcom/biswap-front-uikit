@@ -60,9 +60,11 @@ const Logo: React.FC<Props> = ({ href }) => {
   const { linkComponent } = useContext(MenuContext);
   // const { push } = useHistory();
 
-  console.log('LINK', linkComponent)
 
   const isAbsoluteUrl = href.startsWith("http");
+  console.log('LINK', linkComponent)
+  console.log('isAbsoluteUrl', isAbsoluteUrl)
+
   const innerLogo = (
     <>
       <LogoIcon className="mobile-icon" />
