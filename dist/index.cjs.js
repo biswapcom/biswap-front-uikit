@@ -8704,7 +8704,7 @@ var Logo = function (_a) {
     var innerLogo = (React__default["default"].createElement(React__default["default"].Fragment, null,
         React__default["default"].createElement(Icon$3L, { className: "mobile-icon" }),
         React__default["default"].createElement(Icon$3K, { className: "desktop-icon" })));
-    return (React__default["default"].createElement(Flex, null, isAbsoluteUrl ? (React__default["default"].createElement(StyledInnerButton, { variant: "light", onClick: function () { return window.open(href, "_self"); }, "aria-label": "Biswap home page" }, innerLogo)) : (React__default["default"].createElement(StyledInnerButton, { variant: "light", as: linkComponent, href: href, "aria-label": "Biswap home page" }, innerLogo))));
+    return (React__default["default"].createElement(Flex, null, isAbsoluteUrl ? (React__default["default"].createElement(StyledInnerButton, { variant: "light", onClick: function () { return window.open(href, "_self"); }, "aria-label": "Biswap home page" }, innerLogo)) : (React__default["default"].createElement(StyledInnerButton, { variant: "light", as: linkComponent, to: href, "aria-label": "Biswap home page" }, innerLogo))));
 };
 var templateObject_1$c, templateObject_2$8, templateObject_3$4;
 

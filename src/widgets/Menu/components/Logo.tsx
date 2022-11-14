@@ -61,6 +61,7 @@ const Logo: React.FC<Props> = ({ href }) => {
   // const { push } = useHistory();
 
   const isAbsoluteUrl = href.startsWith("http");
+
   const innerLogo = (
     <>
       <LogoIcon className="mobile-icon" />
@@ -82,7 +83,7 @@ const Logo: React.FC<Props> = ({ href }) => {
         <StyledInnerButton
           variant="light"
           as={linkComponent}
-          href={href}
+          to={href}
           // onClick={() => push(href)}
           aria-label="Biswap home page"
         >
