@@ -9301,8 +9301,8 @@ var TopBannerContainer = styled.div(templateObject_7 || (templateObject_7 = __ma
 var BodyWrapper = styled(Box)(templateObject_8 || (templateObject_8 = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n"], ["\n  position: relative;\n  display: flex;\n"])));
 var Inner = styled.div(templateObject_9 || (templateObject_9 = __makeTemplateObject(["\n  flex-grow: 1;\n  transition: margin-top 0.2s, margin-left 0.2s cubic-bezier(0.4, 0, 0.2, 1);\n  transform: translate3d(0, 0, 0);\n  max-width: 100%;\n"], ["\n  flex-grow: 1;\n  transition: margin-top 0.2s, margin-left 0.2s cubic-bezier(0.4, 0, 0.2, 1);\n  transform: translate3d(0, 0, 0);\n  max-width: 100%;\n"])));
 var Menu = function (_a) {
-    var _b, _c;
-    var _d = _a.linkComponent, linkComponent = _d === void 0 ? "a" : _d, 
+    var _b, _c, _d;
+    var _e = _a.linkComponent, linkComponent = _e === void 0 ? "a" : _e, 
     // userMenu,
     banner = _a.banner, 
     // isDark,
@@ -9312,9 +9312,9 @@ var Menu = function (_a) {
     // networkChangeToAvalanche,
     account = _a.account, login = _a.login, logout = _a.logout, pendingTransactions = _a.pendingTransactions, recentTransaction = _a.recentTransaction, chainId = _a.chainId, clearTransaction = _a.clearTransaction, isSwap = _a.isSwap, transactionsForUIKit = _a.transactionsForUIKit, withEvent = _a.withEvent; _a.eventCallback; var eventButtonLogo = _a.eventButtonLogo;
     var isMobile = useMatchBreakpoints().isMobile;
-    var _e = useState(true), showMenu = _e[0], setShowMenu = _e[1];
-    var _f = useState(false), menuBg = _f[0], setMenuBg = _f[1];
-    var _g = useState(false), isMobileMenuOpened = _g[0], setIsMobileMenuOpened = _g[1];
+    var _f = useState(true), showMenu = _f[0], setShowMenu = _f[1];
+    var _g = useState(false), menuBg = _g[0], setMenuBg = _g[1];
+    var _h = useState(false), isMobileMenuOpened = _h[0], setIsMobileMenuOpened = _h[1];
     // const [showFishingWarn, setShowFishingWarn] = useState(true);
     var refPrevOffset = useRef(typeof window === "undefined" ? 0 : window.pageYOffset);
     // const fishingBannerHeight = isMobile
@@ -9396,12 +9396,12 @@ var Menu = function (_a) {
                 banner && (React.createElement(TopBannerContainer, { height: topBannerHeight }, banner)),
                 React.createElement(StyledNav, { menuBg: menuBg, isMobileMenuOpened: isMobileMenuOpened },
                     React.createElement(Flex, null,
-                        React.createElement(Logo, { href: 'https://biswap.org/' }),
+                        React.createElement(Logo, { href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
                         React.createElement(MenuItems, { items: links, activeItem: activeItem, activeSubItem: activeSubItem, isMobileMenuOpened: isMobileMenuOpened, mobileMenuCallback: setIsMobileMenuOpened, ml: "24px" })),
                     React.createElement(Flex, { alignItems: "center", height: "100%" },
-                        withEvent && !isMobile && (React.createElement(BlockChainWeekEvent, { eventButtonLogo: eventButtonLogo, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" })),
+                        withEvent && !isMobile && (React.createElement(BlockChainWeekEvent, { eventButtonLogo: eventButtonLogo, href: (_c = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _c !== void 0 ? _c : "/" })),
                         React.createElement(UserBlock, { clearTransaction: clearTransaction, account: account, login: login, logout: logout, recentTransaction: recentTransaction, chainId: chainId, pendingTransactions: pendingTransactions, isSwap: isSwap, transactionsForUIKit: transactionsForUIKit }))),
-                withEvent && isMobile && !isMobileMenuOpened && (React.createElement(BlockChainWeekEvent, { eventButtonLogo: eventButtonLogo, href: (_c = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _c !== void 0 ? _c : "/" }))),
+                withEvent && isMobile && !isMobileMenuOpened && (React.createElement(BlockChainWeekEvent, { eventButtonLogo: eventButtonLogo, href: (_d = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _d !== void 0 ? _d : "/" }))),
             React.createElement(BodyWrapper, null,
                 React.createElement(Inner, { isPushed: false, showMenu: showMenu },
                     children,
