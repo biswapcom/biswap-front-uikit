@@ -4204,7 +4204,7 @@ var scales$6 = {
 };
 
 var _a$7;
-var style$2 = (_a$7 = {},
+var style = (_a$7 = {},
     _a$7[scales$6.MD] = {
         fontSize: "20px",
         fontSizeLg: "20px",
@@ -4224,13 +4224,13 @@ var style$2 = (_a$7 = {},
     _a$7);
 var Heading = styled__default["default"](Text).attrs({ bold: true })(templateObject_1$U || (templateObject_1$U = __makeTemplateObject(["\n  font-size: ", ";\n  font-weight: 600;\n  line-height: 1.1;\n\n  ", " {\n    font-size: ", ";\n  }\n"], ["\n  font-size: ", ";\n  font-weight: 600;\n  line-height: 1.1;\n\n  ", " {\n    font-size: ", ";\n  }\n"])), function (_a) {
     var scale = _a.scale;
-    return style$2[scale || scales$6.MD].fontSize;
+    return style[scale || scales$6.MD].fontSize;
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.lg;
 }, function (_a) {
     var scale = _a.scale;
-    return style$2[scale || scales$6.LG].fontSize;
+    return style[scale || scales$6.LG].fontSize;
 });
 Heading.defaultProps = {
     as: tags$2.H2,
@@ -5581,7 +5581,7 @@ var scales$1 = {
 };
 
 var _a$3;
-var style$1 = (_a$3 = {},
+var headTextScaleMap = (_a$3 = {},
     _a$3[scales$1.SIZE40] = {
         fontSize: "40px",
         lineHeight: "48px",
@@ -5617,10 +5617,10 @@ var style$1 = (_a$3 = {},
     _a$3);
 var HeadText = styled__default["default"](Text).attrs({ bold: true })(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  font-size: ", ";\n  line-height: ", ";\n  font-weight: 600;\n  white-space: ", ";\n"], ["\n  font-size: ", ";\n  line-height: ", ";\n  font-weight: 600;\n  white-space: ", ";\n"])), function (_a) {
     var scale = _a.scale;
-    return style$1[scale || scales$1.SIZE32].fontSize;
+    return headTextScaleMap[scale || scales$1.SIZE32].fontSize;
 }, function (_a) {
     var scale = _a.scale;
-    return style$1[scale || scales$1.SIZE32].lineHeight;
+    return headTextScaleMap[scale || scales$1.SIZE32].lineHeight;
 }, function (_a) {
     var nowrap = _a.nowrap;
     return (nowrap ? "nowrap" : "normal");
@@ -5643,7 +5643,7 @@ var scales = {
 };
 
 var _a$2;
-var style = (_a$2 = {},
+var bodyTextScaleMap = (_a$2 = {},
     _a$2[scales.SIZE20] = {
         fontSize: "20px",
         lineHeight: "28px",
@@ -5663,10 +5663,10 @@ var style = (_a$2 = {},
     _a$2);
 var BodyText = styled__default["default"](Text)(templateObject_1$A || (templateObject_1$A = __makeTemplateObject(["\n  font-size: ", ";\n  line-height: ", ";\n  font-weight: 400;\n  white-space: ", ";\n"], ["\n  font-size: ", ";\n  line-height: ", ";\n  font-weight: 400;\n  white-space: ", ";\n"])), function (_a) {
     var scale = _a.scale;
-    return style[scale || scales.SIZE16].fontSize;
+    return bodyTextScaleMap[scale || scales.SIZE16].fontSize;
 }, function (_a) {
     var scale = _a.scale;
-    return style[scale || scales.SIZE16].lineHeight;
+    return bodyTextScaleMap[scale || scales.SIZE16].lineHeight;
 }, function (_a) {
     var nowrap = _a.nowrap;
     return (nowrap ? "nowrap" : "normal");
@@ -8461,6 +8461,7 @@ exports.WarningOpacityIcon = Icon$3c;
 exports.WarningSolidIcon = Icon$3b;
 exports.YoutubeIcon = Icon$F;
 exports.alertVariants = variants$6;
+exports.bodyTextScaleMap = bodyTextScaleMap;
 exports.dark = darkTheme;
 exports.darkColors = darkColors;
 exports.formatSpacingAmount = formatSpacingAmount;
@@ -8468,6 +8469,7 @@ exports.getExternalLinkProps = getExternalLinkProps;
 exports.getPortalRoot = getPortalRoot;
 exports.getRgba = getRgba;
 exports.getThemeValue = getThemeValue;
+exports.headTextScaleMap = headTextScaleMap;
 exports.isTouchDevice = isTouchDevice;
 exports.light = lightTheme;
 exports.lightColors = lightColors;

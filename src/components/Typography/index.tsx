@@ -1,5 +1,5 @@
-export { default as HeadText } from "./HeadText";
-export { default as BodyText } from "./BodyText";
+export * from "./HeadText";
+export * from "./BodyText";
 
 export type {
   HeadTextProps,
