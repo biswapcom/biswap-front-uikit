@@ -3163,7 +3163,7 @@ var insertSeparators = function (items, separator) {
         ], false);
     }, []);
 };
-var DefaultSeparator = React__default["default"].createElement(Icon$3y, { color: "currentColor", width: "24px" });
+var DefaultSeparator = React__default["default"].createElement(Icon$3y, { color: "dark500", width: "20px" });
 var Breadcrumbs = function (_a) {
     var _b = _a.separator, separator = _b === void 0 ? DefaultSeparator : _b, children = _a.children;
     var validItems = React.Children.toArray(children).filter(function (child) {
