@@ -24,7 +24,7 @@ const Button = <E extends ElementType = "button">(
   const classNames = className ? [className] : [];
   const loadingText = loadingTitle ?? "Loading...";
   const endIconElement = isLoading ? (
-    <AutoRenewAnimateIcon color="contrast" />
+    <AutoRenewAnimateIcon color="white" />
   ) : (
     endIcon
   );

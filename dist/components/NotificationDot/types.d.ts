@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import { Colors } from "../../theme/types";
+import { Colors } from "../../theme";
 export interface NotificationDotProps {
     show?: boolean;
     color?: keyof Colors;

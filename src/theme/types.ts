@@ -20,61 +20,62 @@ export type Radii = {
   circle: string;
 };
 
-export type Shadows = {
-  level1: string;
-  active: string;
-  success: string;
-  warning: string;
-  focus: string;
-  inset: string;
-  tooltip: string;
-};
+// export type Shadows = {
+//   level1: string;
+//   active: string;
+//   success: string;
+//   warning: string;
+//   focus: string;
+//   inset: string;
+//   tooltip: string;
+// };
 
 export type Gradients = {
-  bubblegum: string;
-  cardHeader: string;
-  cardBlue: string;
+  // bubblegum: string;
+  // cardHeader: string;
+  // cardBlue: string;
 };
 
 export type Colors = {
   //
-  primaryBright: string;
-  primaryDark: string;
-  tertiary: string;
-  failure: string;
-  cardBorder: string;
-  contrast: string;
-  dropdown: string;
-  dropdownDeep: string;
-  invertedContrast: string;
-  input: string;
-  inputSecondary: string;
-  background: string;
-  backgroundDisabled: string;
-  backgroundAlt: string;
-  backgroundAlt2: string;
-  text: string;
-  textDisabled: string;
-  textSubtle: string;
-  disabled: string;
-  header: string;
-  inputBorder: string;
-  borderColor: string;
-  card: string;
-  dropDown: string;
-  footer: string;
+  // primaryBright: string;
+  // primaryDark: string;
+  // tertiary: string;
+  // failure: string;
+  // cardBorder: string;
+  // contrast: string;
+  // dropdown: string;
+  // dropdownDeep: string;
+  // invertedContrast: string;
+  // input: string;
+  // inputSecondary: string;
+  // background: string;
+  // backgroundDisabled: string;
+  // backgroundAlt: string;
+  // backgroundAlt2: string;
+  // text: string;
+  // textDisabled: string;
+  // textSubtle: string;
+  // disabled: string;
+  // header: string;
+  // inputBorder: string;
+  // borderColor: string;
+  // card: string;
+  // dropDown: string;
+  // footer: string;
 
-  // Gradients
-  gradients: Gradients;
+  // // Gradients
+  // gradients: Gradients;
 
   // Additional colors
-  binance: string;
-  overlay: string;
-  gold: string;
-  silver: string;
-  bronze: string;
+
+  // overlay: string;
+  // gold: string;
+  // silver: string;
+  // bronze: string;
 
   //Brand color
+  binance: string;
   polygon: string;
   telegram: string;
   twitter: string;

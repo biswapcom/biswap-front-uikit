@@ -22,7 +22,7 @@ interface ClearButtonProps {
 const ClearAllButton = styled(Button)<ClearButtonProps>`
   position: absolute;
   right: 0;
-  background-color: ${({ theme }) => theme.colors.contrast};
+  background-color: ${({ theme }) => theme.colors.white};
   border: ${({ theme }) => `1px solid ${theme.colors.dark800}`};
   border-radius: 16px;
   top: ${({ top }) => `${-top}px`};

@@ -50,7 +50,7 @@ export const styleVariants = {
       color: "dark800",
     },
     ":active:not(:disabled)": {
-      color: "text",
+      color: "gray900",
     },
   },
   [variants.WARNING_DARK]: {

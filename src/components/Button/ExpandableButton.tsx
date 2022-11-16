@@ -18,9 +18,9 @@ export const ExpandableButton: React.FC<Props> = ({
     <IconButton aria-label="Hide or show expandable content" onClick={onClick}>
       {children}
       {expanded ? (
-        <ChevronUpIcon color="invertedContrast" />
+        <ChevronUpIcon color="dark900" />
       ) : (
-        <ChevronDownIcon color="invertedContrast" />
+        <ChevronDownIcon color="dark900" />
       )}
     </IconButton>
   );

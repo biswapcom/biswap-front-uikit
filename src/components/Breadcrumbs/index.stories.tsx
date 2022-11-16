@@ -21,8 +21,8 @@ export const Default: React.FC = () => {
           <a href="/">Link</a>
           <a href="/">Link</a>
           <RouterLink to="/">React Router Link</RouterLink>
-          <Text color="textDisabled">Crumb 1</Text>
-          <Text color="textDisabled">Crumb 2</Text>
+          <Text color="gray900">Crumb 1</Text>
+          <Text color="gray900">Crumb 2</Text>
         </BreadCrumbs>
         <BreadCrumbs>
           <Text>PancakeSwap</Text>
@@ -41,8 +41,8 @@ export const CustomSeparator: React.FC = () => {
           <a href="/" color="secondary" style={{ fontWeight: 400 }}>
             Link
           </a>
-          <Text color="textDisabled">Crumb 1</Text>
-          <Text color="textDisabled">Crumb 2</Text>
+          <Text color="gray900">Crumb 1</Text>
+          <Text color="gray900">Crumb 2</Text>
         </BreadCrumbs>
       </Text>
       <Text mb="16px">
@@ -53,7 +53,7 @@ export const CustomSeparator: React.FC = () => {
           <Link href="/" color="primary" style={{ fontWeight: 400 }}>
             Link 2
           </Link>
-          <Text color="textDisabled">Crumb 2</Text>
+          <Text color="gray900">Crumb 2</Text>
         </BreadCrumbs>
       </Text>
     </Text>

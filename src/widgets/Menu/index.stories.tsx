@@ -81,10 +81,10 @@ const GlobalMenuComponent: React.FC = () => {
   return (
     <Flex>
       <IconButton onClick={onPresent1} variant="text" scale="sm" mr="4px">
-        <DownloadIcon height={22} width={22} color="textSubtle" />
+        <DownloadIcon height={22} width={22} color="pastelBlue" />
       </IconButton>
       <IconButton onClick={onPresent2} variant="text" scale="sm" mr="8px">
-        <OptionsSolidIcon height={22} width={22} color="textSubtle" />
+        <OptionsSolidIcon height={22} width={22} color="pastelBlue" />
       </IconButton>
     </Flex>
   );
@@ -240,7 +240,7 @@ ConnectedWithBanner.args = {
       justifyContent="center"
       background="#7645D9"
     >
-      <Text color="invertedContrast" mr="8px">
+      <Text color="dark900" mr="8px">
         Banner example
       </Text>
       <Button scale="sm">I am button</Button>

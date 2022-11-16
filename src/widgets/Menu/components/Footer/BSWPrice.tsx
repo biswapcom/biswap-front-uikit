@@ -75,7 +75,7 @@ const BSWPrice: React.FC<BSWPriceProps> = ({
       <Text color="gray900" fontSize="12px" lineHeight="18px">
         {BSWPriceLabel}
       </Text>
-      <Text color="contrast" fontSize="16px" lineHeight="19px" bold>
+      <Text color="white" fontSize="16px" lineHeight="19px" bold>
         {/*${formatSpacingAmount(BSWPriceValue)}*/}
         {BSWPriceValue}
       </Text>

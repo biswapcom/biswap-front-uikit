@@ -110,7 +110,7 @@ const StyledButtonMenu = styled.div<StyledButtonMenuProps>`
           color: ${
             variant === variants.DARK
               ? theme.colors.pastelBlue
-              : theme.colors.text
+              : theme.colors.gray900
           };
         }
     `;
@@ -123,7 +123,7 @@ const Selection = styled.div<ISelection>`
   background-color: ${({ theme, variant }) =>
     theme.colors[
       variant === variants.DARK
-        ? "dropDown"
+        ? "dark500"
         : variant === variants.LIGHT
         ? "white"
         : "warning"

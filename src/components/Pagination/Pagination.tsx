@@ -50,7 +50,7 @@ const PaginationWrap = styled.div<VariantProps>`
       }
 
       &.active {
-        color: ${({ theme }) => theme.colors.contrast};
+        color: ${({ theme }) => theme.colors.white};
         background: ${({ theme }) => theme.colors.primary};
 
         &:hover {

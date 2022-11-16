@@ -53,7 +53,7 @@ const PercentSlider: React.FC<PercentSliderProps> = ({
     return value >= pointPercent
       ? "primary"
       : disabled
-      ? "textDisabled"
+      ? "gray900"
       : darkMode
       ? "dark400"
       : "gray300";

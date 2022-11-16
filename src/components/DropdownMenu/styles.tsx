@@ -18,7 +18,7 @@ const getTextColor = ({
   theme: DefaultTheme;
   $isActive: boolean;
 }) => {
-  if (disabled) return theme.colors.textDisabled;
+  if (disabled) return theme.colors.gray900;
   if ($isActive) return theme.colors.primary;
 
   return theme.colors.backgroundDark;
@@ -164,8 +164,8 @@ export const StyledDropdownMenu = styled(Grid)<{
 }>`
   grid-template-columns: 1fr;
 
-  background-color: ${({ theme }) => theme.card.background};
-  border: 1px solid ${({ theme }) => theme.colors.cardBorder};
+  background-color: ${({ theme }) => theme.colors.white};
+  border: 1px solid ${({ theme }) => theme.colors.white};
   border-radius: 16px;
 
   padding: 24px 24px 0;
@@ -196,7 +196,7 @@ export const StyledDropdownMenu = styled(Grid)<{
 `;
 
 export const LinkStatus = styled(Text)<{ color: keyof Colors }>`
-  border-radius: ${({ theme }) => theme.radii.default};
+  border-radius: 16px;
   padding: 0 8px;
   border: 2px solid ${({ theme, color }) => theme.colors[color]};
   box-shadow: none;

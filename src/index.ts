@@ -15,7 +15,7 @@ export * from "./components/Overlay";
 export * from "./components/Radio";
 export * from "./components/Slider";
 export * from "./components/Skeleton";
-export * from "./components/BaseMenu";
+// export * from "./components/BaseMenu";
 export * from "./components/SubMenuItems";
 export * from "./components/Svg";
 export * from "./components/TabMenu";
@@ -26,7 +26,7 @@ export * from "./components/PercentSlider";
 export * from "./components/Typography";
 export * from "./components/Pagination";
 export * from "./components/SocialShareButton";
-export * from "./components/Card";
+// export * from "./components/Card";
 export * from "./components/Image";
 // Hooks
 export * from "./hooks";

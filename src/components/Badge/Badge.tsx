@@ -42,10 +42,10 @@ const getBadgeBg = ({ badgeType = "light", theme }: StyledBadgeProps) => {
   }
 
   if (badgeType === "light") {
-    return theme.colors.disabled;
+    return theme.colors.gray200;
   }
 
-  return theme.colors.inputSecondary;
+  return theme.colors.primary;
 };
 
 const getBadgeColor = ({ badgeType = "light", theme }: StyledBadgeProps) => {
@@ -66,7 +66,7 @@ const getBadgeColor = ({ badgeType = "light", theme }: StyledBadgeProps) => {
   }
 
   if (badgeType === "light") {
-    return theme.colors.background;
+    return theme.colors.backgroundDark;
   }
 
   if (
