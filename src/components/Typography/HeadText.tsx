@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Text from "../Text/Text";
 import { tags, scales, HeadTextProps } from "./typesHeadText";
 
-const style = {
+export const headTextScaleMap = {
   [scales.SIZE40]: {
     fontSize: "40px",
     lineHeight: "48px",
@@ -37,9 +37,11 @@ const style = {
   },
 };
 
-const HeadText = styled(Text).attrs({ bold: true })<HeadTextProps>`
-  font-size: ${({ scale }) => style[scale || scales.SIZE32].fontSize};
-  line-height: ${({ scale }) => style[scale || scales.SIZE32].lineHeight};
+export const HeadText = styled(Text).attrs({ bold: true })<HeadTextProps>`
+  font-size: ${({ scale }) =>
+    headTextScaleMap[scale || scales.SIZE32].fontSize};
+  line-height: ${({ scale }) =>
+    headTextScaleMap[scale || scales.SIZE32].lineHeight};
   font-weight: 600;
   white-space: ${({ nowrap }) => (nowrap ? "nowrap" : "normal")};
 `;
@@ -47,5 +49,3 @@ const HeadText = styled(Text).attrs({ bold: true })<HeadTextProps>`
 HeadText.defaultProps = {
   as: tags.H2,
 };
-
-export default HeadText;

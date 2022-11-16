@@ -59,7 +59,7 @@ const insertSeparators = (
     ];
   }, []);
 
-const DefaultSeparator = <ChevronRightIcon color="currentColor" width="24px" />;
+const DefaultSeparator = <ChevronRightIcon color="dark500" width="20px" />;
 
 const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
   separator = DefaultSeparator,

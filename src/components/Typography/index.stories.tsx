@@ -1,6 +1,5 @@
 import React from "react";
-import HeadText from "./HeadText";
-import BodyText from "./BodyText";
+import { HeadText, BodyText } from "./";
 import Box from "../Box/Box";
 import Flex from "../Box/Flex";
 
