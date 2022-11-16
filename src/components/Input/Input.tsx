@@ -5,7 +5,7 @@ import { InputProps, scales } from "./types";
 
 const Input = styled.input<InputProps>`
   display: block;
-  color: ${({ theme }) => theme.colors.text};
+  color: ${({ theme }) => theme.colors.gray900};
   font-size: 16px;
   outline: 0;
   width: 100%;
