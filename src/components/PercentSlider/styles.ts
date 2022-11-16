@@ -46,7 +46,7 @@ export const BarBackground = styled.div<{
   disabled: boolean;
 }>`
   background-color: ${({ theme, disabled, darkMode }) =>
-    theme.colors[disabled ? "textDisabled" : darkMode ? "dark400" : "gray300"]};
+    theme.colors[disabled ? "gray900" : darkMode ? "dark400" : "gray300"]};
   height: 4px;
   position: absolute;
   top: 10px;

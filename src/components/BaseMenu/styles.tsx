@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Box, Flex } from "../Box";
 
 export const InlineMenuContainer = styled(Box)`
-  background-color: ${({ theme }) => theme.colors.backgroundAlt};
+  background-color: ${({ theme }) => theme.colors.white};
   border-radius: ${({ theme }) => theme.radii.card};
   box-shadow: ${({ theme }) => theme.shadows.tooltip};
 `;
@@ -11,9 +11,9 @@ export const SubMenuContainer = styled(Flex)`
   flex-direction: column;
   overflow: hidden;
   min-width: 136px;
-  background: ${({ theme }) => theme.colors.input};
+  background: ${({ theme }) => theme.colors.dark900};
   border-radius: ${({ theme }) => theme.radii.default};
-  border: ${({ theme }) => `1px solid ${theme.colors.inputSecondary}`};
+  border: ${({ theme }) => `1px solid ${theme.colors.dark600}`};
 `;
 
 export const ClickableElementContainer = styled.div`
@@ -27,13 +27,13 @@ export const SubMenuItem = styled.button`
   cursor: pointer;
   background: transparent;
   padding: 8px 16px;
-  color: ${({ theme }) => theme.colors.text};
+  color: ${({ theme }) => theme.colors.gray900};
   width: 100%;
   font-size: 16px;
   text-align: left;
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.inputSecondary};
+    background-color: ${({ theme }) => theme.colors.dark600};
     text-decoration: none;
   }
 `;

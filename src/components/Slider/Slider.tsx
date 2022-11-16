@@ -138,7 +138,7 @@ const RBPrice = styled(Text)`
   text-align: right;
   font-size: 12px;
   line-height: 16px;
-  color: ${({ theme }) => theme.colors.text};
+  color: ${({ theme }) => theme.colors.gray900};
 `;
 
 const PercentWrap = styled.div`

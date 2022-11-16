@@ -65,7 +65,7 @@ function __generator(thisArg, body) {
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
+        while (g && (g = 0, op[0] && (_ = 0)), _) try {
             if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
             if (y = 0, t) op = [op[0] & 2, t.value];
             switch (op[0]) {
@@ -3124,7 +3124,7 @@ var templateObject_1$10, templateObject_2$z, templateObject_3$r, templateObject_
 
 var Separator = styled.div(templateObject_1$$ || (templateObject_1$$ = __makeTemplateObject(["\n  align-items: center;\n  color: ", ";\n  display: flex;\n  justify-content: center;\n  padding-left: 4px;\n  padding-right: 4px;\n\n  ", " {\n    padding-left: 8px;\n    padding-right: 8px;\n  }\n\n  ", " {\n    padding-left: 16px;\n    padding-right: 16px;\n  }\n"], ["\n  align-items: center;\n  color: ", ";\n  display: flex;\n  justify-content: center;\n  padding-left: 4px;\n  padding-right: 4px;\n\n  ", " {\n    padding-left: 8px;\n    padding-right: 8px;\n  }\n\n  ", " {\n    padding-left: 16px;\n    padding-right: 16px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
-    return theme.colors.textDisabled;
+    return theme.colors.gray900;
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
@@ -3137,7 +3137,7 @@ var StyledBreadcrumbs = styled.ul(templateObject_2$y || (templateObject_2$y = __
     return theme.colors.primary;
 }, function (_a) {
     var theme = _a.theme;
-    return theme.colors.primaryBright;
+    return theme.colors.telegram;
 }, space);
 var insertSeparators = function (items, separator) {
     return items.reduce(function (accum, item, index) {
@@ -3663,14 +3663,14 @@ var StyledButtonMenu = styled.div(templateObject_6$d || (templateObject_6$d = __
     if (disabled) {
         return "\n        opacity: 0.5;\n\n        & > button:disabled {\n          background-color: transparent;\n          color: ".concat(variant === variants$4.DARK
             ? theme.colors.pastelBlue
-            : theme.colors.text, ";\n        }\n    ");
+            : theme.colors.gray900, ";\n        }\n    ");
     }
     return "";
 });
 var Selection$1 = styled.div(templateObject_10$3 || (templateObject_10$3 = __makeTemplateObject(["\n  background-color: ", ";\n  width: ", ";\n  height: calc(100% - 8px);\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  left: ", ";\n  border-radius: ", ";\n\n  ", "\n\n  ", "\n\n  ", "\n\n  ", ";\n"], ["\n  background-color: ", ";\n  width: ", ";\n  height: calc(100% - 8px);\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  left: ", ";\n  border-radius: ", ";\n\n  ", "\n\n  ", "\n\n  ", "\n\n  ", ";\n"])), function (_a) {
     var theme = _a.theme, variant = _a.variant;
     return theme.colors[variant === variants$4.DARK
-        ? "dropDown"
+        ? "white"
         : variant === variants$4.LIGHT
             ? "white"
             : "warning"];
@@ -4380,7 +4380,7 @@ var styleTextVariants = (_c$1 = {},
 
 var Input$1 = styled.input(templateObject_1$T || (templateObject_1$T = __makeTemplateObject(["\n  display: block;\n  color: ", ";\n  font-size: 16px;\n  outline: 0;\n  width: 100%;\n  max-width: ", ";\n  min-width: ", ";\n  border-width: 1px;\n  border-style: solid;\n  border-color: transparent;\n  opacity: ", ";\n  cursor: ", ";\n  transition: border-color 0.4s ease, background-color 0.4s ease,\n    color 0.4s ease;\n\n  ", "\n  ", "\n"], ["\n  display: block;\n  color: ", ";\n  font-size: 16px;\n  outline: 0;\n  width: 100%;\n  max-width: ", ";\n  min-width: ", ";\n  border-width: 1px;\n  border-style: solid;\n  border-color: transparent;\n  opacity: ", ";\n  cursor: ", ";\n  transition: border-color 0.4s ease, background-color 0.4s ease,\n    color 0.4s ease;\n\n  ", "\n  ", "\n"])), function (_a) {
     var theme = _a.theme;
-    return theme.colors.text;
+    return theme.colors.gray900;
 }, function (_a) {
     var maxWidth = _a.maxWidth;
     return maxWidth || "none";
@@ -4603,13 +4603,13 @@ var Dot = styled.span(templateObject_2$s || (templateObject_2$s = __makeTemplate
     return (show ? "inline-flex" : "none");
 }, function (_a) {
     var theme = _a.theme;
-    return theme.colors.invertedContrast;
+    return theme.colors.dark900;
 }, function (_a) {
     var theme = _a.theme, color = _a.color;
     return theme.colors[color];
 });
 var NotificationDot = function (_a) {
-    var _b = _a.show, show = _b === void 0 ? false : _b, _c = _a.color, color = _c === void 0 ? "failure" : _c, children = _a.children, props = __rest(_a, ["show", "color", "children"]);
+    var _b = _a.show, show = _b === void 0 ? false : _b, _c = _a.color, color = _c === void 0 ? "secondary" : _c, children = _a.children, props = __rest(_a, ["show", "color", "children"]);
     return (React.createElement(NotificationDotRoot, null,
         Children.map(children, function (child) {
             return cloneElement(child, props);
@@ -4724,7 +4724,7 @@ var PercentageAmount = styled(Text)(templateObject_11$1 || (templateObject_11$1 
 var InfoNode = styled.div(templateObject_12$1 || (templateObject_12$1 = __makeTemplateObject(["\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n"], ["\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n"])));
 var RBPrice = styled(Text)(templateObject_13$1 || (templateObject_13$1 = __makeTemplateObject(["\n  text-align: right;\n  font-size: 12px;\n  line-height: 16px;\n  color: ", ";\n"], ["\n  text-align: right;\n  font-size: 12px;\n  line-height: 16px;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
-    return theme.colors.text;
+    return theme.colors.gray900;
 });
 var PercentWrap = styled.div(templateObject_14 || (templateObject_14 = __makeTemplateObject(["\n  width: calc(100% - 20px);\n  margin: 0 10px;\n  position: relative;\n  background: transparent;\n"], ["\n  width: calc(100% - 20px);\n  margin: 0 10px;\n  position: relative;\n  background: transparent;\n"])));
 var PercentBanner = styled(Flex)(templateObject_15 || (templateObject_15 = __makeTemplateObject(["\n  align-items: center;\n  position: absolute;\n  ", ";\n  left: ", ";\n  transform: translateX(-50%) translateY(calc(", "));\n  border-radius: 8px;\n  padding: 8px 4px;\n  background-color: ", ";\n  \n  &:after {\n    content: '';\n    display: block;\n    position: absolute;\n    left: 50%;\n    ", ";\n    width: 0;\n    height: 0;\n    border-left: 6px solid transparent;\n    border-right: 6px solid transparent;\n    transform: translate(-50%, ", ");\n    ", ";\n"], ["\n  align-items: center;\n  position: absolute;\n  ", ";\n  left: ", ";\n  transform: translateX(-50%) translateY(calc(", "));\n  border-radius: 8px;\n  padding: 8px 4px;\n  background-color: ", ";\n  \n  &:after {\n    content: '';\n    display: block;\n    position: absolute;\n    left: 50%;\n    ", ";\n    width: 0;\n    height: 0;\n    border-left: 6px solid transparent;\n    border-right: 6px solid transparent;\n    transform: translate(-50%, ", ");\n    ", ";\n"])), function (_a) {
@@ -4876,7 +4876,7 @@ var waves = keyframes(templateObject_1$K || (templateObject_1$K = __makeTemplate
 var pulse = keyframes(templateObject_2$p || (templateObject_2$p = __makeTemplateObject(["\n  0% {\n    opacity: 1;\n  }\n  50% {\n    opacity: 0.4;\n  }\n  100% {\n    opacity: 1;\n  }\n"], ["\n  0% {\n    opacity: 1;\n  }\n  50% {\n    opacity: 0.4;\n  }\n  100% {\n    opacity: 1;\n  }\n"])));
 var Root = styled.div(templateObject_3$k || (templateObject_3$k = __makeTemplateObject(["\n  min-height: 20px;\n  display: block;\n  background-color: ", ";\n  border-radius: ", ";\n\n  ", "\n  ", "\n"], ["\n  min-height: 20px;\n  display: block;\n  background-color: ", ";\n  border-radius: ", ";\n\n  ", "\n  ", "\n"])), function (_a) {
     var theme = _a.theme;
-    return theme.colors.backgroundDisabled;
+    return theme.colors.gray500;
 }, function (_a) {
     var variant$1 = _a.variant, theme = _a.theme;
     return variant$1 === variant.CIRCLE ? theme.radii.circle : theme.radii.small;
@@ -4894,7 +4894,7 @@ var templateObject_1$K, templateObject_2$p, templateObject_3$k, templateObject_4
 
 var InlineMenuContainer = styled(Box)(templateObject_1$J || (templateObject_1$J = __makeTemplateObject(["\n  background-color: ", ";\n  border-radius: ", ";\n  box-shadow: ", ";\n"], ["\n  background-color: ", ";\n  border-radius: ", ";\n  box-shadow: ", ";\n"])), function (_a) {
     var theme = _a.theme;
-    return theme.colors.backgroundAlt;
+    return theme.colors.white;
 }, function (_a) {
     var theme = _a.theme;
     return theme.radii.card;
@@ -4904,21 +4904,21 @@ var InlineMenuContainer = styled(Box)(templateObject_1$J || (templateObject_1$J 
 });
 var SubMenuContainer = styled(Flex)(templateObject_2$o || (templateObject_2$o = __makeTemplateObject(["\n  flex-direction: column;\n  overflow: hidden;\n  min-width: 136px;\n  background: ", ";\n  border-radius: ", ";\n  border: ", ";\n"], ["\n  flex-direction: column;\n  overflow: hidden;\n  min-width: 136px;\n  background: ", ";\n  border-radius: ", ";\n  border: ", ";\n"])), function (_a) {
     var theme = _a.theme;
-    return theme.colors.input;
+    return theme.colors.dark900;
 }, function (_a) {
     var theme = _a.theme;
     return theme.radii.default;
 }, function (_a) {
     var theme = _a.theme;
-    return "1px solid ".concat(theme.colors.inputSecondary);
+    return "1px solid ".concat(theme.colors.dark600);
 });
 var ClickableElementContainer = styled.div(templateObject_3$j || (templateObject_3$j = __makeTemplateObject(["\n  cursor: pointer;\n  display: inline-flex;\n"], ["\n  cursor: pointer;\n  display: inline-flex;\n"])));
 var SubMenuItem = styled.button(templateObject_4$i || (templateObject_4$i = __makeTemplateObject(["\n  border: 0;\n  outline: 0;\n  cursor: pointer;\n  background: transparent;\n  padding: 8px 16px;\n  color: ", ";\n  width: 100%;\n  font-size: 16px;\n  text-align: left;\n\n  &:hover {\n    background-color: ", ";\n    text-decoration: none;\n  }\n"], ["\n  border: 0;\n  outline: 0;\n  cursor: pointer;\n  background: transparent;\n  padding: 8px 16px;\n  color: ", ";\n  width: 100%;\n  font-size: 16px;\n  text-align: left;\n\n  &:hover {\n    background-color: ", ";\n    text-decoration: none;\n  }\n"])), function (_a) {
     var theme = _a.theme;
-    return theme.colors.text;
+    return theme.colors.gray900;
 }, function (_a) {
     var theme = _a.theme;
-    return theme.colors.inputSecondary;
+    return theme.colors.dark600;
 });
 var templateObject_1$J, templateObject_2$o, templateObject_3$j, templateObject_4$i;
 
@@ -5061,7 +5061,7 @@ var StyledSubMenuItems = styled(Flex)(templateObject_1$H || (templateObject_1$H 
     return ($isMobileOnly ? "display:none" : "");
 }, function (_a) {
     var theme = _a.theme;
-    return "".concat(theme.colors.backgroundAlt2);
+    return "".concat(theme.colors.white);
 });
 var templateObject_1$H;
 
@@ -5393,9 +5393,9 @@ var getBadgeBg = function (_a) {
         return getRgba(theme.colors.primary, theme, 0.16);
     }
     if (badgeType === "light") {
-        return theme.colors.disabled;
+        return theme.colors.gray200;
     }
-    return theme.colors.inputSecondary;
+    return theme.colors.primary;
 };
 var getBadgeColor = function (_a) {
     var _b = _a.badgeType, badgeType = _b === void 0 ? "light" : _b, theme = _a.theme;
@@ -5412,7 +5412,7 @@ var getBadgeColor = function (_a) {
         return theme.colors.primary;
     }
     if (badgeType === "light") {
-        return theme.colors.background;
+        return theme.colors.dark800;
     }
     if (badgeType === "new" ||
         badgeType === "primary" ||
@@ -5451,7 +5451,7 @@ var getBaseThumbStyles = function () { return "\n  -webkit-appearance: none;\n  
 var StyledInput = styled.input(templateObject_1$C || (templateObject_1$C = __makeTemplateObject(["\n  position: relative;\n  z-index: 1;\n  margin: 0;\n  padding: 0;\n  width: 100%;\n  border: none;\n  background-color: transparent;\n\n  ::-webkit-slider-thumb {\n    ", "\n  }\n\n  ::-moz-range-thumb {\n    ", "\n  }\n\n  ::-ms-thumb {\n    ", "\n  }\n"], ["\n  position: relative;\n  z-index: 1;\n  margin: 0;\n  padding: 0;\n  width: 100%;\n  border: none;\n  background-color: transparent;\n\n  ::-webkit-slider-thumb {\n    ", "\n  }\n\n  ::-moz-range-thumb {\n    ", "\n  }\n\n  ::-ms-thumb {\n    ", "\n  }\n"])), getBaseThumbStyles, getBaseThumbStyles, getBaseThumbStyles);
 var BarBackground = styled.div(templateObject_2$j || (templateObject_2$j = __makeTemplateObject(["\n  background-color: ", ";\n  height: 4px;\n  position: absolute;\n  top: 10px;\n  width: calc(100% - 8px);\n  border-radius: 20px;\n"], ["\n  background-color: ", ";\n  height: 4px;\n  position: absolute;\n  top: 10px;\n  width: calc(100% - 8px);\n  border-radius: 20px;\n"])), function (_a) {
     var theme = _a.theme, disabled = _a.disabled, darkMode = _a.darkMode;
-    return theme.colors[disabled ? "textDisabled" : darkMode ? "dark400" : "gray300"];
+    return theme.colors[disabled ? "gray900" : darkMode ? "dark400" : "gray300"];
 });
 var BarProgress = styled.div(templateObject_3$f || (templateObject_3$f = __makeTemplateObject(["\n  background-color: ", ";\n  height: 4px;\n  margin-left: 2px;\n  position: absolute;\n  top: 10px;\n"], ["\n  background-color: ", ";\n  height: 4px;\n  margin-left: 2px;\n  position: absolute;\n  top: 10px;\n"])), function (_a) {
     var theme = _a.theme;
@@ -5706,7 +5706,7 @@ var PaginationWrap = styled.div(templateObject_1$z || (templateObject_1$z = __ma
     return theme.colors.primary;
 }, function (_a) {
     var theme = _a.theme;
-    return theme.colors.contrast;
+    return theme.colors.white;
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.primary;
@@ -5800,16 +5800,16 @@ var getBorderColor = function (_a) {
         return theme.colors.success;
     }
     if (isActive) {
-        return "linear-gradient(180deg, ".concat(theme.colors.primaryBright, ", ").concat(theme.colors.secondary, ")");
+        return "linear-gradient(180deg, ".concat(theme.colors.telegram, ", ").concat(theme.colors.secondary, ")");
     }
-    return theme.colors.cardBorder;
+    return theme.colors.white;
 };
 var StyledCard = styled.div(templateObject_3$e || (templateObject_3$e = __makeTemplateObject(["\n  background: ", ";\n  border-radius: ", ";\n  color: ", ";\n  overflow: hidden;\n  position: relative;\n\n  ", "\n\n  padding: 1px 1px 3px 1px;\n\n  ", "\n"], ["\n  background: ", ";\n  border-radius: ", ";\n  color: ", ";\n  overflow: hidden;\n  position: relative;\n\n  ", "\n\n  padding: 1px 1px 3px 1px;\n\n  ", "\n"])), getBorderColor, function (_a) {
     var theme = _a.theme;
     return theme.radii.card;
 }, function (_a) {
     var theme = _a.theme, isDisabled = _a.isDisabled;
-    return theme.colors[isDisabled ? "textDisabled" : "text"];
+    return theme.colors[isDisabled ? "gray900" : "gray900"];
 }, function (_a) {
     var isActive = _a.isActive;
     return isActive && css(templateObject_2$i || (templateObject_2$i = __makeTemplateObject(["\n      animation: ", " 3s ease infinite;\n      background-size: 400% 400%;\n    "], ["\n      animation: ", " 3s ease infinite;\n      background-size: 400% 400%;\n    "])), PromotedGradient);
@@ -5860,7 +5860,7 @@ var templateObject_1$v;
 
 var CardFooter = styled.div(templateObject_1$u || (templateObject_1$u = __makeTemplateObject(["\n  border-top: 1px solid ", ";\n  ", "\n"], ["\n  border-top: 1px solid ", ";\n  ", "\n"])), function (_a) {
     var theme = _a.theme;
-    return theme.colors.cardBorder;
+    return theme.colors.white;
 }, space);
 CardFooter.defaultProps = {
     p: "24px",
@@ -5922,10 +5922,10 @@ var Image = function (_a) {
 var templateObject_1$r;
 
 var baseColors = {
-    failure: "#F93B5D",
-    primaryBright: "#53DEE9",
-    primaryDark: "#0098A1",
-    dark: "#102648",
+    // failure: "#F93B5D",
+    // primaryBright: "#53DEE9",
+    // primaryDark: "#0098A1",
+    // dark: "#102648",
     //BS
     primary: "#1263F1",
     secondary: "#F93B5D",
@@ -5945,10 +5945,10 @@ var brandColors = {
     twitter: "#1DA1F2",
 };
 var additionalColors = {
-    overlay: "#452a7a",
-    gold: "#FFC700",
-    silver: "#B2B2B2",
-    bronze: "#E7974D",
+    // overlay: "#452a7a",
+    // gold: "#FFC700",
+    // silver: "#B2B2B2",
+    // bronze: "#E7974D",
     //BS
     primaryHover: "#2E7AFF",
     primaryPress: "#004ACC",
@@ -5990,65 +5990,57 @@ var additionalColors = {
     gray200: "#F2F6FC",
     gray100: "#F9FAFD",
 };
-var lightColors = __assign(__assign(__assign(__assign({}, baseColors), additionalColors), brandColors), { header: "#071C3C", background: "#07162D", backgroundDisabled: "#C8D4E6", contrast: "#FFFFFF", invertedContrast: "#191326", input: "#021127", inputBorder: "#1C3254", inputSecondary: "#0E3382", primaryDark: "#0098A1", tertiary: "#E4EFFF", text: "#708DB7", disabled: "#F2F6FC", textDisabled: "#708DB7", textSubtle: "#749BD8", borderColor: "#524B63", card: "#102648", dropDown: "#1C3254", footer: "#0C1F3C", cardBorder: "#ffffff", dropdown: "#ffffff", dropdownDeep: "#ffffff", backgroundAlt: "#ffffff", backgroundAlt2: "#ffffff", gradients: {
-        bubblegum: "linear-gradient(139.73deg, #313D5C 0%, #3D2A54 100%)",
-        cardHeader: "linear-gradient(180deg, #071C3C 0%, #002B6F 100%)",
-        cardBlue: "linear-gradient(235deg, #336FF5 4.05%, rgba(17, 81, 225, 0.32) 103.52%)",
-    } });
-var darkColors = __assign(__assign(__assign(__assign({}, baseColors), additionalColors), brandColors), { header: "#071C3C", background: "#07162D", backgroundDisabled: "#C8D4E6", contrast: "#FFFFFF", invertedContrast: "#191326", input: "#021127", inputBorder: "#1C3254", inputSecondary: "#0E3382", primaryDark: "#0098A1", tertiary: "#E4EFFF", text: "#708DB7", disabled: "#F2F6FC", textDisabled: "#708DB7", textSubtle: "#749BD8", borderColor: "#524B63", card: "#102648", dropDown: "#1C3254", footer: "#0C1F3C", cardBorder: "#ffffff", dropdown: "#ffffff", dropdownDeep: "#ffffff", backgroundAlt: "#ffffff", backgroundAlt2: "#ffffff", gradients: {
-        bubblegum: "linear-gradient(139.73deg, #313D5C 0%, #3D2A54 100%)",
-        cardHeader: "linear-gradient(180deg, #071C3C 0%, #002B6F 100%)",
-        cardBlue: "linear-gradient(235deg, #336FF5 4.05%, rgba(17, 81, 225, 0.32) 103.52%)",
-    } });
+var lightColors = __assign(__assign(__assign({}, baseColors), additionalColors), brandColors);
+var darkColors = __assign(__assign(__assign({}, baseColors), additionalColors), brandColors);
 
 var light$6 = {
-    background: lightColors.backgroundAlt,
+    background: lightColors.white,
 };
 var dark$6 = {
-    background: darkColors.backgroundAlt,
+    background: darkColors.white,
 };
 
 var light$5 = {
-    background: lightColors.backgroundAlt,
+    background: lightColors.white,
     boxShadow: shadows.level1,
     boxShadowActive: shadows.active,
     boxShadowSuccess: shadows.success,
     boxShadowWarning: shadows.warning,
     cardHeaderBackground: {
-        default: lightColors.gradients.cardHeader,
-        blue: lightColors.gradients.cardHeader,
-        bubblegum: lightColors.gradients.bubblegum,
-        violet: lightColors.gradients.cardHeader,
+        default: 'linear-gradient(180deg, #071C3C 0%, #002B6F 100%)',
+        blue: 'linear-gradient(180deg, #071C3C 0%, #002B6F 100%)',
+        bubblegum: 'linear-gradient(139.73deg, #313D5C 0%, #3D2A54 100%)',
+        violet: 'linear-gradient(180deg, #071C3C 0%, #002B6F 100%)',
     },
     dropShadow: "drop-shadow(0px 1px 4px rgba(25, 19, 38, 0.15))",
 };
 var dark$5 = {
-    background: darkColors.backgroundAlt,
+    background: darkColors.white,
     boxShadow: shadows.level1,
     boxShadowActive: shadows.active,
     boxShadowSuccess: shadows.success,
     boxShadowWarning: shadows.warning,
     cardHeaderBackground: {
-        default: darkColors.gradients.cardHeader,
-        blue: darkColors.gradients.cardHeader,
-        bubblegum: lightColors.gradients.bubblegum,
-        violet: darkColors.gradients.cardHeader,
+        default: 'linear-gradient(180deg, #071C3C 0%, #002B6F 100%)',
+        blue: 'linear-gradient(180deg, #071C3C 0%, #002B6F 100%)',
+        bubblegum: 'linear-gradient(139.73deg, #313D5C 0%, #3D2A54 100%)',
+        violet: 'linear-gradient(180deg, #071C3C 0%, #002B6F 100%)',
     },
     dropShadow: "drop-shadow(0px 1px 4px rgba(25, 19, 38, 0.15))",
 };
 
 var light$4 = {
-    handleBackground: lightColors.backgroundAlt,
+    handleBackground: lightColors.white,
 };
 var dark$4 = {
-    handleBackground: darkColors.backgroundAlt,
+    handleBackground: darkColors.white,
 };
 
 var light$3 = {
-    handleBackground: lightColors.backgroundAlt,
+    handleBackground: lightColors.white,
 };
 var dark$3 = {
-    handleBackground: darkColors.backgroundAlt,
+    handleBackground: darkColors.white,
 };
 
 var light$2 = {
@@ -6059,20 +6051,20 @@ var dark$2 = {
 };
 
 var light$1 = {
-    background: lightColors.backgroundAlt,
+    background: lightColors.white,
 };
 var dark$1 = {
-    background: darkColors.backgroundAlt,
+    background: darkColors.white,
 };
 
 var light = {
-    background: darkColors.backgroundAlt,
-    text: darkColors.text,
+    background: darkColors.white,
+    text: darkColors.gray900,
     boxShadow: shadows.tooltip,
 };
 var dark = {
-    background: lightColors.backgroundAlt,
-    text: lightColors.text,
+    background: lightColors.white,
+    text: lightColors.gray900,
     boxShadow: shadows.tooltip,
 };
 
@@ -6347,7 +6339,7 @@ var Modal = function (_a) {
 
 var StyledModal = styled.div(templateObject_1$o || (templateObject_1$o = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  background-color: ", ";\n  border-radius: 16px 16px 0 0;\n  width: 100%;\n  z-index: ", ";\n  overflow-y: auto;\n  position: relative;\n  top: 0;\n  left: 0;\n  ", " {\n    width: auto;\n    min-width: 416px;\n    max-width: 100%;\n    border-radius: 16px;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  background-color: ", ";\n  border-radius: 16px 16px 0 0;\n  width: 100%;\n  z-index: ", ";\n  overflow-y: auto;\n  position: relative;\n  top: 0;\n  left: 0;\n  ", " {\n    width: auto;\n    min-width: 416px;\n    max-width: 100%;\n    border-radius: 16px;\n  }\n"])), function (_a) {
     var theme = _a.theme, backgroundTransparent = _a.backgroundTransparent;
-    return backgroundTransparent ? "transparent" : theme.colors.contrast;
+    return backgroundTransparent ? "transparent" : theme.colors.white;
 }, function (_a) {
     var theme = _a.theme;
     return theme.zIndices.modal;
@@ -6756,7 +6748,7 @@ var ItemTypes = {
 var status = {
     LIVE: {
         text: "LIVE",
-        color: "failure",
+        color: "secondary",
     },
     SOON: {
         text: "SOON",
@@ -7286,7 +7278,7 @@ var templateObject_1$e, templateObject_2$8;
 var getTextColor = function (_a) {
     var $isActive = _a.$isActive, disabled = _a.disabled, theme = _a.theme;
     if (disabled)
-        return theme.colors.textDisabled;
+        return theme.colors.gray900;
     if ($isActive)
         return theme.colors.primary;
     return theme.colors.backgroundDark;
@@ -7328,7 +7320,7 @@ var StyledDropdownMenu = styled(Grid)(templateObject_10 || (templateObject_10 = 
     return theme.card.background;
 }, function (_a) {
     var theme = _a.theme;
-    return theme.colors.cardBorder;
+    return theme.colors.white;
 }, function (_a) {
     var $isOpen = _a.$isOpen;
     return !$isOpen &&
@@ -7990,7 +7982,7 @@ var alertTypeMap = (_a = {},
     _a);
 var ClearAllButton = styled(Button)(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  position: absolute;\n  right: 0;\n  background-color: ", ";\n  border: ", ";\n  border-radius: 16px;\n  top: ", ";\n  transform: translateY(50%);\n  padding: 0;\n  margin: 0;\n"], ["\n  position: absolute;\n  right: 0;\n  background-color: ", ";\n  border: ", ";\n  border-radius: 16px;\n  top: ", ";\n  transform: translateY(50%);\n  padding: 0;\n  margin: 0;\n"])), function (_a) {
     var theme = _a.theme;
-    return theme.colors.contrast;
+    return theme.colors.white;
 }, function (_a) {
     var theme = _a.theme;
     return "1px solid ".concat(theme.colors.dark800);
@@ -8140,7 +8132,7 @@ var ResetCSS = createGlobalStyle(templateObject_1 || (templateObject_1 = __makeT
     return theme.colors.pastelBlue;
 }, function (_a) {
     var theme = _a.theme;
-    return theme.colors.input;
+    return theme.colors.dark900;
 });
 var templateObject_1;
 

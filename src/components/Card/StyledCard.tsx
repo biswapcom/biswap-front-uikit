@@ -41,17 +41,17 @@ const getBorderColor = ({
   }
 
   if (isActive) {
-    return `linear-gradient(180deg, ${theme.colors.primaryBright}, ${theme.colors.secondary})`;
+    return `linear-gradient(180deg, ${theme.colors.telegram}, ${theme.colors.secondary})`;
   }
 
-  return theme.colors.cardBorder;
+  return theme.colors.white;
 };
 
 export const StyledCard = styled.div<StyledCardProps>`
   background: ${getBorderColor};
   border-radius: ${({ theme }) => theme.radii.card};
   color: ${({ theme, isDisabled }) =>
-    theme.colors[isDisabled ? "textDisabled" : "text"]};
+    theme.colors[isDisabled ? "gray900" : "gray900"]};
   overflow: hidden;
   position: relative;
 

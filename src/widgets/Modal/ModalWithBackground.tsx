@@ -17,7 +17,7 @@ const StyledModal = styled.div<{ backgroundTransparent?: boolean }>`
   display: flex;
   flex-direction: column;
   background-color: ${({ theme, backgroundTransparent }) =>
-    backgroundTransparent ? "transparent" : theme.colors.contrast};
+    backgroundTransparent ? "transparent" : theme.colors.white};
   border-radius: 16px 16px 0 0;
   width: 100%;
   z-index: ${({ theme }) => theme.zIndices.modal};
