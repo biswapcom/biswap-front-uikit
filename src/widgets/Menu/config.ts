@@ -9,7 +9,7 @@ import { LinkStatus } from "./types";
 export const status = {
   LIVE: <LinkStatus>{
     text: "LIVE",
-    color: "failure",
+    color: "secondary",
   },
   SOON: <LinkStatus>{
     text: "SOON",

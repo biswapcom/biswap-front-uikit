@@ -1,9 +1,5 @@
 import { Colors } from "./types";
 export declare const baseColors: {
-    failure: string;
-    primaryBright: string;
-    primaryDark: string;
-    dark: string;
     primary: string;
     secondary: string;
     success: string;
@@ -22,10 +18,6 @@ export declare const brandColors: {
     twitter: string;
 };
 export declare const additionalColors: {
-    overlay: string;
-    gold: string;
-    silver: string;
-    bronze: string;
     primaryHover: string;
     primaryPress: string;
     secondaryHover: string;
