@@ -3016,7 +3016,7 @@ var Text = styled__default["default"].div(templateObject_1$16 || (templateObject
     return noWrap && "white-space: nowrap;";
 }, styledSystem.space, styledSystem.typography, styledSystem.layout);
 Text.defaultProps = {
-    color: "text",
+    color: "pastelBlue",
     small: false,
     ellipsis: false,
 };
