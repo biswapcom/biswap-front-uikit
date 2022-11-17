@@ -34,7 +34,7 @@ const StyledBreadcrumbs = styled.ul`
     color: ${({ theme }) => theme.colors.primary};
 
     &:hover {
-      color: ${({ theme }) => theme.colors.telegram};
+      color: ${({ theme }) => theme.colors.primaryHover};
     }
   }
 
