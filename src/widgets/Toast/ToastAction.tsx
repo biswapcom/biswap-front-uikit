@@ -8,10 +8,6 @@ import { TelegramIcon, TwitterIcon } from "../../components/Svg";
 import { Text } from "../../components/Text";
 import { SocialShareButton } from "../../components/SocialShareButton";
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-import giftImg from "./shared/gift.png";
-
 interface ToastActionProps {
   title?: string;
   url?: string;
@@ -68,11 +64,14 @@ const ToastAction: React.FC<ToastActionProps> = ({
         message={tweeterDescription}
         link={url}
         mr="8px"
+        height="32px"
+        withGift
       />
       <SocialShareButton
         social="telegram"
         message={telegramDescription}
         link={url}
+        height="32px"
       />
     </ActionsContainer>
   );
