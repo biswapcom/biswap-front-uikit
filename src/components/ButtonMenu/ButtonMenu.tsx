@@ -123,7 +123,7 @@ const Selection = styled.div<ISelection>`
   background-color: ${({ theme, variant }) =>
     theme.colors[
       variant === variants.DARK
-        ? "white"
+        ? "dark500"
         : variant === variants.LIGHT
         ? "white"
         : "warning"

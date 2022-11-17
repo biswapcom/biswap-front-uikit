@@ -3150,7 +3150,7 @@ var StyledBreadcrumbs = styled__default["default"].ul(templateObject_2$y || (tem
     return theme.colors.primary;
 }, function (_a) {
     var theme = _a.theme;
-    return theme.colors.telegram;
+    return theme.colors.primaryHover;
 }, styledSystem.space);
 var insertSeparators = function (items, separator) {
     return items.reduce(function (accum, item, index) {
@@ -3683,7 +3683,7 @@ var StyledButtonMenu = styled__default["default"].div(templateObject_6$d || (tem
 var Selection$1 = styled__default["default"].div(templateObject_10$3 || (templateObject_10$3 = __makeTemplateObject(["\n  background-color: ", ";\n  width: ", ";\n  height: calc(100% - 8px);\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  left: ", ";\n  border-radius: ", ";\n\n  ", "\n\n  ", "\n\n  ", "\n\n  ", ";\n"], ["\n  background-color: ", ";\n  width: ", ";\n  height: calc(100% - 8px);\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  left: ", ";\n  border-radius: ", ";\n\n  ", "\n\n  ", "\n\n  ", "\n\n  ", ";\n"])), function (_a) {
     var theme = _a.theme, variant = _a.variant;
     return theme.colors[variant === variants$4.DARK
-        ? "white"
+        ? "dark500"
         : variant === variants$4.LIGHT
             ? "white"
             : "warning"];
