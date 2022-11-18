@@ -357,6 +357,7 @@ export { default as SEIcon } from "./Icons/Other/SE";
 export { default as Ticket2Icon } from "./Icons/Other/Ticket2";
 export { default as VisaIcon } from "./Icons/Other/Visa";
 export { default as CerticAuditedIcon } from "./Icons/Other/Certic";
+export { default as CollectiblesIcon } from "./Icons/Other/Collectibles";
 
 //Flags
 export { default as USAIcon } from "./Icons/Flags/USA";
@@ -385,6 +386,11 @@ export { default as ITokenWalletIcon } from "./Icons/Wallet/iToken";
 export { default as TrustWalletIcon } from "./Icons/Wallet/TrustWallet";
 export { default as TokenPocketWalletIcon } from "./Icons/Wallet/TokenPocket";
 export { default as SafePalWalletIcon } from "./Icons/Wallet/SafePalWallet";
+
+// Locks
+export { default as LockIcon } from "./Icons/Lock/Lock";
+export { default as UnlockIcon } from "./Icons/Lock/Unlock";
+
 
 export { default as Svg } from "./Svg";
 export type { SvgProps } from "./types";

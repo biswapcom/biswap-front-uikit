@@ -1,6 +1,5 @@
-/// <reference types="react" />
 import { DefaultTheme } from "styled-components";
-import { LinkProps } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Colors } from "../../theme";
 import { StyledDropdownMenuInnerLinkItemProps, StyledDropdownMenuItemProps } from "./types";
 export declare const InnerLinksBlockContainer: import("styled-components").StyledComponent<"div", DefaultTheme, {
@@ -17,7 +16,7 @@ export declare const DropdownMenuItem: import("styled-components").StyledCompone
     $isActive: boolean;
     $hasIcon?: boolean | undefined;
 }, never>;
-export declare const DropdownInternalMenuItem: import("styled-components").StyledComponent<import("react").ForwardRefExoticComponent<LinkProps & import("react").RefAttributes<HTMLAnchorElement>>, DefaultTheme, StyledDropdownMenuItemProps & {
+export declare const DropdownInternalMenuItem: import("styled-components").StyledComponent<typeof Link, DefaultTheme, StyledDropdownMenuItemProps & {
     $isActive: boolean;
     $hasIcon?: boolean | undefined;
     label?: string | React.ReactNode;
