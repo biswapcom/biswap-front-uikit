@@ -22,6 +22,7 @@ export interface SocialShareButtonTypes
   name?: string;
   target?: string;
   width?: string;
+  withGift?: boolean;
 }
 
 export enum SocialsList {
