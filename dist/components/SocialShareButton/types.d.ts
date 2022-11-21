@@ -15,6 +15,7 @@ export interface SocialShareButtonTypes extends BaseButtonProps, AnchorHTMLAttri
     name?: string;
     target?: string;
     width?: string;
+    withGift?: boolean;
 }
 export declare enum SocialsList {
     "twitter" = 0,
