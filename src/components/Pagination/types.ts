@@ -11,7 +11,7 @@ export type VariantProps = {
 export interface PaginationProps extends VariantProps {
   isLight?: boolean;
   pageCount: number;
-  handlePageClick?: () => void;
+  handlePageClick?: (selectedItem: { selected: number }) => void;
   marginPagesDisplayed?: number;
   pageRangeDisplayed?: number;
 }
