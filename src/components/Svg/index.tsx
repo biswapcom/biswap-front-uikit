@@ -391,6 +391,5 @@ export { default as SafePalWalletIcon } from "./Icons/Wallet/SafePalWallet";
 export { default as LockIcon } from "./Icons/Lock/Lock";
 export { default as UnlockIcon } from "./Icons/Lock/Unlock";
 
-
 export { default as Svg } from "./Svg";
 export type { SvgProps } from "./types";
