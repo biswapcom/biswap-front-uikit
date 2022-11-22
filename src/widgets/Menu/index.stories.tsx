@@ -104,10 +104,12 @@ const defaultProps = {
   // currentLang: "EN",
   bswPriceUsd: 0.023158668932877668,
   links,
-  subLinks: [{
+  subLinks: [
+    {
       label: "Home",
       href: "/",
-    }],
+    },
+  ],
   // profile: null,
 
   //  userMenu: (
@@ -318,15 +320,18 @@ export const WithSubmenuSelected: React.FC = () => {
         productLinks={productLinks}
         serviceLinks={serviceLinks}
         links={links}
-        subLinks={[{
-          label: "Home",
-          href: "/",
-        }, {
-          label: "Home",
-          href: "/",
-        }]}
+        subLinks={[
+          {
+            label: "Home",
+            href: "/",
+          },
+          {
+            label: "Home",
+            href: "/",
+          },
+        ]}
       >
-        <div style={{ paddingTop: "72px"}}>
+        <div style={{ paddingTop: "72px" }}>
           <Heading as="h1" mb="8px">
             Submenu leaderboard selected
           </Heading>
