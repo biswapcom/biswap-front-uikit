@@ -210,10 +210,10 @@ export const BannerPlacementItem = styled.div`
   margin: 0 -16px -16px;
 `;
 
-export const BorderMobileMenuItem = styled(Box)<{ isMarker?: boolean }>`
+export const BorderMobileMenuItem = styled(Box)<{ isHighlighted?: boolean }>`
   padding: 0 16px;
-  border-left: ${({ theme, isMarker }) =>
-    `4px solid ${isMarker ? theme.colors.warningPress : "transparent"}`};
+  border-left: ${({ theme, isHighlighted }) =>
+    `4px solid ${isHighlighted ? theme.colors.warningPress : "transparent"}`};
   ${({ theme }) => theme.mediaQueries.sm} {
     border-left: none;
   }
