@@ -63,7 +63,8 @@ const CommonLinkStyles = ({
 
   &:hover {
     div {
-      color: ${({ theme }) => highlightTitle ? theme.colors.warningHover : theme.colors.pastelBlue};
+      color: ${({ theme }) =>
+        highlightTitle ? theme.colors.warningHover : theme.colors.pastelBlue};
     }
     svg {
       fill: ${({ theme }) => theme.colors.pastelBlue};
