@@ -23,7 +23,7 @@ const CommonLinkStyles = ({
   $isActive,
   $statusColor,
   $variant,
-  showNavBadge,
+  highlightTitle,
 }: StyledMenuItemProps) => css`
   position: relative;
   display: flex;
@@ -64,7 +64,7 @@ const CommonLinkStyles = ({
   &:hover {
     div {
       color: ${({ theme }) =>
-        showNavBadge ? theme.colors.warningHover : theme.colors.pastelBlue};
+        highlightTitle ? theme.colors.warningHover : theme.colors.pastelBlue};
     }
     svg {
       fill: ${({ theme }) => theme.colors.pastelBlue};

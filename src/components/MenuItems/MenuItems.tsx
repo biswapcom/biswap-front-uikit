@@ -43,10 +43,13 @@ const MenuItems: React.FC<MenuItemsProps> = ({
             type,
             hidden,
             showNavBadge,
+            highlightTitle,
           },
           index
         ) => {
           const isMarker = items[index]?.showNavBadge;
+          const isHighlighted = items[index].highlightTitle;
+
           const statusColor = menuItems?.find(
             (menuItem) => menuItem.status !== undefined
           )?.status?.color;
@@ -71,15 +74,15 @@ const MenuItems: React.FC<MenuItemsProps> = ({
                     {...linkProps}
                     isActive={isActive}
                     statusColor={statusColor}
-                    showNavBadge={showNavBadge}
+                    highlightTitle={highlightTitle}
                   >
                     {type === ItemTypes.DIVIDER && <MenuItemDivider />}
                     {icon && <IconComponent iconName={icon} color="white" />}
                     {label && (
                       <Box ml="8px" position="relative">
-                        {/*{isMarker && <Marker />}*/}
+                        {isMarker && <Marker />}
                         <Text
-                          color={isMarker ? "warningPress" : "white"}
+                          color={isHighlighted ? "warningPress" : "white"}
                           fontSize="14px"
                           lineHeight="20px"
                           fontWeight="600"
