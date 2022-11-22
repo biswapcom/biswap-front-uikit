@@ -6,12 +6,12 @@ export interface MenuItemProps {
     href?: string;
     variant?: MenuItemVariant;
     statusColor?: keyof Colors;
-    showNavBadge?: boolean;
+    highlightTitle?: boolean;
     children: ReactNode;
 }
 export declare type StyledMenuItemProps = {
     $isActive?: boolean;
     $variant?: MenuItemVariant;
     $statusColor?: keyof Colors;
-    showNavBadge?: boolean;
+    highlightTitle?: boolean;
 };
