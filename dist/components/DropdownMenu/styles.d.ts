@@ -32,5 +32,5 @@ export declare const LinkStatus: import("styled-components").StyledComponent<"di
 }, never>;
 export declare const BannerPlacementItem: import("styled-components").StyledComponent<"div", DefaultTheme, {}, never>;
 export declare const BorderMobileMenuItem: import("styled-components").StyledComponent<"div", DefaultTheme, import("../Box").BoxProps & {
-    isMarker?: boolean | undefined;
+    isHighlighted?: boolean | undefined;
 }, never>;

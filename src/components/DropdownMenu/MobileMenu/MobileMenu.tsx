@@ -13,6 +13,7 @@ import { DropdownMenuItemContainer } from "../components";
 import IconComponent from "../../Svg/IconComponent";
 import Accordion from "../../Accordion/Accordion";
 import Community from "../../../widgets/Menu/components/Footer/Community";
+import Marker from "../../MenuItem/Marker";
 
 const MainContententWrapper = styled.div`
   flex: 1;
@@ -131,18 +132,21 @@ const MobileMenu: FC<MobileMenuProps> = ({
                     hidden,
                     showNavBadge,
                     href,
+                    highlightTitle,
                   },
                   index
                 ) => {
                   const isMarker = items[index].showNavBadge;
                   if (hidden) return null;
+                  const isHighlighted = items[index].highlightTitle;
+                  if (!innerItems.length) return null;
                   const visualize =
                     !showItemsOnMobile ||
                     (showItemsOnMobile && isMobile && !hidden);
                   return (
                     <BorderMobileMenuItem
                       key={`${label}#${index}`}
-                      isMarker={isMarker}
+                      isHighlighted={isHighlighted}
                     >
                       <Accordion
                         index={index}
@@ -157,7 +161,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
                               (href && !isTablet)) && (
                               <>
                                 <Box m="16px 0" position="relative">
-                                  {/*{isMarker && <Marker />}*/}
+                                  {isMarker && <Marker />}
                                   <Text
                                     bold
                                     fontSize={isTablet ? "20px" : "14px"}
@@ -165,7 +169,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
                                     color={
                                       isMobile && opened && !href
                                         ? "primary"
-                                        : isMarker && isTablet
+                                        : isHighlighted && isTablet
                                         ? "warningPress"
                                         : "backgroundDark"
                                     }

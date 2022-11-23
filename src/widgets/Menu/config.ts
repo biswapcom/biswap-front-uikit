@@ -102,6 +102,7 @@ export const links: MenuItemsType[] = [
   },
   {
     label: "Win",
+    highlightTitle: true,
     items: [
       {
         label: "Lottery",
