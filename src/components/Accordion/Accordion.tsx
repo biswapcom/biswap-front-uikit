@@ -10,6 +10,9 @@ interface IProps {
   label?: string;
   clickable?: boolean;
   index: number;
+  href?: string;
+  linkComponent?: React.ElementType;
+  setIsOpenMenu: (arg: boolean) => void;
 }
 
 const openBodyAnimation = keyframes`
@@ -39,8 +42,6 @@ const AccordionTitle = styled(Flex)`
   cursor: pointer;
 `;
 
-// const AccordionBodyItem = styled.div``;
-
 const AccordionComponent = styled.div`
   width: 100%;
 `;
@@ -51,6 +52,9 @@ const Accordion: FC<IProps> = ({
   heading,
   children,
   index,
+  href,
+  linkComponent,
+  setIsOpenMenu,
 }) => {
   const [isOpened, setIsOpened] = useState(false);
   const { isMobile } = useMatchBreakpoints();
@@ -62,7 +66,7 @@ const Accordion: FC<IProps> = ({
   }, [label, clickable, setIsOpened]);
 
   const onTitleClick = () => {
-    clickable && setIsOpened((prev) => !prev);
+    !href && clickable ? setIsOpened((prev) => !prev) : setIsOpenMenu(false);
   };
 
   return (
@@ -72,13 +76,25 @@ const Accordion: FC<IProps> = ({
           <DropdownMenuDivider color="rgba(18, 99, 241, 0.16)" />
         </Box>
       )}
-      <AccordionTitle
-        alignItems="center"
-        justifyContent="space-between"
-        onClick={onTitleClick}
-      >
-        {heading(isOpened)}
-      </AccordionTitle>
+      {href ? (
+        <AccordionTitle
+          as={linkComponent}
+          alignItems="center"
+          href={href}
+          onClick={onTitleClick}
+          justifyContent="space-between"
+        >
+          {heading(isOpened)}
+        </AccordionTitle>
+      ) : (
+        <AccordionTitle
+          alignItems="center"
+          justifyContent="space-between"
+          onClick={onTitleClick}
+        >
+          {heading(isOpened)}
+        </AccordionTitle>
+      )}
       <AccordionBody opened={isOpened}>{children}</AccordionBody>
       {isMobile && !index && (
         <Box m={"0 -24px 0"}>

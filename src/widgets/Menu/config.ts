@@ -29,7 +29,6 @@ export const links: MenuItemsType[] = [
   },
   {
     label: "Trade",
-    href: "/swap",
     showNavBadge: true,
     items: [
       {
@@ -58,7 +57,6 @@ export const links: MenuItemsType[] = [
   },
   {
     label: "Earn",
-    href: "/earn",
     showNavBadge: true,
     items: [
       {
@@ -104,7 +102,6 @@ export const links: MenuItemsType[] = [
   },
   {
     label: "Win",
-    href: "/",
     items: [
       {
         label: "Lottery",
@@ -124,7 +121,6 @@ export const links: MenuItemsType[] = [
   },
   {
     label: "NFT",
-    href: "/",
     showNavBadge: true,
     items: [
       {
@@ -213,10 +209,20 @@ export const links: MenuItemsType[] = [
   {
     type: ItemTypes.DIVIDER,
     showItemsOnMobile: true,
+    href: "",
+  },
+  {
+    label: "Buy crypto", // if changed label, also should be changed in Accordion component condition
+    href: "/",
+    isMobileNav: true,
+    showItemsOnMobile: true,
+  },
+  {
+    type: ItemTypes.DIVIDER,
+    showItemsOnMobile: true,
   },
   {
     label: "Biswap Products", // if changed label, also should be changed in Accordion component condition
-    href: "/",
     icon: "ProductsOpacity",
     isMobileNav: true,
     showItemsOnMobile: true,
