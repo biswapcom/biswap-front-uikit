@@ -7687,8 +7687,6 @@ var MobileMenu = function (_a) {
                     if (hidden)
                         return null;
                     var isHighlighted = items[index].highlightTitle;
-                    if (!innerItems.length)
-                        return null;
                     var visualize = !showItemsOnMobile ||
                         (showItemsOnMobile && isMobile && !hidden);
                     return (React__default["default"].createElement(BorderMobileMenuItem, { key: "".concat(label, "#").concat(index), isHighlighted: isHighlighted },

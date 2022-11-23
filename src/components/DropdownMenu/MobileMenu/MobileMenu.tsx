@@ -139,7 +139,6 @@ const MobileMenu: FC<MobileMenuProps> = ({
                   const isMarker = items[index].showNavBadge;
                   if (hidden) return null;
                   const isHighlighted = items[index].highlightTitle;
-                  if (!innerItems.length) return null;
                   const visualize =
                     !showItemsOnMobile ||
                     (showItemsOnMobile && isMobile && !hidden);
