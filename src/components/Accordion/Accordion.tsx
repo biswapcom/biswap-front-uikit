@@ -10,9 +10,6 @@ interface IProps {
   label?: string;
   clickable?: boolean;
   index: number;
-  href?: string;
-  linkComponent?: React.ElementType;
-  setIsOpenMenu: (arg: boolean) => void;
 }
 
 const openBodyAnimation = keyframes`
@@ -39,10 +36,10 @@ const AccordionBody = styled.div<{ opened: boolean }>`
 `;
 
 const AccordionTitle = styled(Flex)`
-  align-items: center;
-  justify-content: space-between;
   cursor: pointer;
 `;
+
+// const AccordionBodyItem = styled.div``;
 
 const AccordionComponent = styled.div`
   width: 100%;
@@ -54,9 +51,6 @@ const Accordion: FC<IProps> = ({
   heading,
   children,
   index,
-  href,
-  linkComponent,
-  setIsOpenMenu,
 }) => {
   const [isOpened, setIsOpened] = useState(false);
   const { isMobile } = useMatchBreakpoints();
@@ -68,7 +62,7 @@ const Accordion: FC<IProps> = ({
   }, [label, clickable, setIsOpened]);
 
   const onTitleClick = () => {
-    !href && clickable ? setIsOpened((prev) => !prev) : setIsOpenMenu(false);
+    clickable && setIsOpened((prev) => !prev);
   };
 
   return (
@@ -79,8 +73,8 @@ const Accordion: FC<IProps> = ({
         </Box>
       )}
       <AccordionTitle
-        as={href ? linkComponent : "div"}
-        href={href}
+        alignItems="center"
+        justifyContent="space-between"
         onClick={onTitleClick}
       >
         {heading(isOpened)}

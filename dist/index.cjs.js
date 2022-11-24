@@ -5055,7 +5055,7 @@ var StyledMenuItemContainer = styled__default["default"].div(templateObject_1$J 
         "\n      &:after{\n        content: \"\";\n        position: absolute;\n        bottom: 0;\n        height: 4px;\n        width: 100%;\n        border-radius: 2px 2px 0 0;\n      }\n    ";
 });
 var CommonLinkStyles = function (_a) {
-    var $isActive = _a.$isActive, $statusColor = _a.$statusColor, $variant = _a.$variant, $highlightTitle = _a.$highlightTitle;
+    var $isActive = _a.$isActive, $statusColor = _a.$statusColor, $variant = _a.$variant, highlightTitle = _a.highlightTitle;
     return styled.css(templateObject_4$h || (templateObject_4$h = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  align-items: center;\n  cursor: pointer;\n\n  color: ", ";\n  font-size: 14px;\n  font-weight: 600;\n  transition: color 0.4s ease;\n\n  ", "\n\n  ", "\n\n  &:hover {\n    div {\n      color: ", ";\n    }\n    svg {\n      fill: ", ";\n    }\n    ", ";\n  }\n"], ["\n  position: relative;\n  display: flex;\n  align-items: center;\n  cursor: pointer;\n\n  color: ", ";\n  font-size: 14px;\n  font-weight: 600;\n  transition: color 0.4s ease;\n\n  ", "\n\n  ", "\n\n  &:hover {\n    div {\n      color: ", ";\n    }\n    svg {\n      fill: ", ";\n    }\n    ", ";\n  }\n"])), $isActive
         ? function (_a) {
             var theme = _a.theme;
@@ -5071,7 +5071,7 @@ var CommonLinkStyles = function (_a) {
             return theme.mediaQueries.lg;
         }) : styled.css(templateObject_3$i || (templateObject_3$i = __makeTemplateObject(["\n        padding: 4px 4px 0px 4px;\n        height: 42px;\n      "], ["\n        padding: 4px 4px 0px 4px;\n        height: 42px;\n      "]))), function (_a) {
         var theme = _a.theme;
-        return $highlightTitle ? theme.colors.warningHover : theme.colors.pastelBlue;
+        return highlightTitle ? theme.colors.warningHover : theme.colors.pastelBlue;
     }, function (_a) {
         var theme = _a.theme;
         return theme.colors.pastelBlue;
@@ -5094,7 +5094,7 @@ var MenuItem = function (_a) {
     return (React__default["default"].createElement(StyledMenuItemContainer, { "$isActive": isActive, "$variant": variant },
         React__default["default"].createElement(StyledMenuItem
         // @ts-ignore
-        , __assign({}, itemLinkProps, { "$isActive": isActive, "$variant": variant, "$statusColor": statusColor, "$highlightTitle": highlightTitle }, props), children)));
+        , __assign({}, itemLinkProps, { "$isActive": isActive, "$variant": variant, "$statusColor": statusColor, highlightTitle: highlightTitle }, props), children)));
 };
 
 var StyledSubMenuItems = styled__default["default"](Flex)(templateObject_1$I || (templateObject_1$I = __makeTemplateObject(["\n  ", " {\n    ", ";\n  }\n  flex-grow: 1;\n  background-color: ", ";\n  box-shadow: inset 0px -2px 0px -8px rgba(133, 133, 133, 0.1);\n  overflow-x: scroll;\n  scrollbar-width: none;\n  -ms-overflow-style: none;\n  &::-webkit-scrollbar {\n    display: none;\n  }\n"], ["\n  ", " {\n    ", ";\n  }\n  flex-grow: 1;\n  background-color: ", ";\n  box-shadow: inset 0px -2px 0px -8px rgba(133, 133, 133, 0.1);\n  overflow-x: scroll;\n  scrollbar-width: none;\n  -ms-overflow-style: none;\n  &::-webkit-scrollbar {\n    display: none;\n  }\n"])), function (_a) {
@@ -6819,6 +6819,7 @@ var links = [
     },
     {
         label: "Trade",
+        href: "/swap",
         showNavBadge: true,
         items: [
             {
@@ -6847,6 +6848,7 @@ var links = [
     },
     {
         label: "Earn",
+        href: "/earn",
         showNavBadge: true,
         items: [
             {
@@ -6892,6 +6894,7 @@ var links = [
     },
     {
         label: "Win",
+        href: "/",
         highlightTitle: true,
         items: [
             {
@@ -6912,6 +6915,7 @@ var links = [
     },
     {
         label: "NFT",
+        href: "/",
         showNavBadge: true,
         items: [
             {
@@ -7000,20 +7004,10 @@ var links = [
     {
         type: ItemTypes.DIVIDER,
         showItemsOnMobile: true,
-        href: "",
-    },
-    {
-        label: "Buy crypto",
-        href: "/",
-        isMobileNav: true,
-        showItemsOnMobile: true,
-    },
-    {
-        type: ItemTypes.DIVIDER,
-        showItemsOnMobile: true,
     },
     {
         label: "Biswap Products",
+        href: "/",
         icon: "ProductsOpacity",
         isMobileNav: true,
         showItemsOnMobile: true,
@@ -7589,10 +7583,11 @@ var AccordionBody = styled__default["default"].div(templateObject_3$5 || (templa
     var opened = _a.opened;
     return opened && styled.css(templateObject_2$6 || (templateObject_2$6 = __makeTemplateObject(["\n      animation: ", " 0.6s ease;\n    "], ["\n      animation: ", " 0.6s ease;\n    "])), openBodyAnimation);
 });
-var AccordionTitle = styled__default["default"](Flex)(templateObject_4$4 || (templateObject_4$4 = __makeTemplateObject(["\n  align-items: center;\n  justify-content: space-between;\n  cursor: pointer;\n"], ["\n  align-items: center;\n  justify-content: space-between;\n  cursor: pointer;\n"])));
+var AccordionTitle = styled__default["default"](Flex)(templateObject_4$4 || (templateObject_4$4 = __makeTemplateObject(["\n  cursor: pointer;\n"], ["\n  cursor: pointer;\n"])));
+// const AccordionBodyItem = styled.div``;
 var AccordionComponent = styled__default["default"].div(templateObject_5$4 || (templateObject_5$4 = __makeTemplateObject(["\n  width: 100%;\n"], ["\n  width: 100%;\n"])));
 var Accordion = function (_a) {
-    var label = _a.label, _b = _a.clickable, clickable = _b === void 0 ? true : _b, heading = _a.heading, children = _a.children, index = _a.index, href = _a.href, linkComponent = _a.linkComponent, setIsOpenMenu = _a.setIsOpenMenu;
+    var label = _a.label, _b = _a.clickable, clickable = _b === void 0 ? true : _b, heading = _a.heading, children = _a.children, index = _a.index;
     var _c = React.useState(false), isOpened = _c[0], setIsOpened = _c[1];
     var isMobile = useMatchBreakpoints().isMobile;
     React.useEffect(function () {
@@ -7601,12 +7596,12 @@ var Accordion = function (_a) {
         }
     }, [label, clickable, setIsOpened]);
     var onTitleClick = function () {
-        !href && clickable ? setIsOpened(function (prev) { return !prev; }) : setIsOpenMenu(false);
+        clickable && setIsOpened(function (prev) { return !prev; });
     };
     return (React__default["default"].createElement(AccordionComponent, { key: "acc-key-".concat(label) },
         isMobile && index && (React__default["default"].createElement(Box, { m: "0 -16px 0" },
             React__default["default"].createElement(DropdownMenuDivider, { color: "rgba(18, 99, 241, 0.16)" }))),
-        React__default["default"].createElement(AccordionTitle, { as: href ? linkComponent : "div", href: href, onClick: onTitleClick }, heading(isOpened)),
+        React__default["default"].createElement(AccordionTitle, { alignItems: "center", justifyContent: "space-between", onClick: onTitleClick }, heading(isOpened)),
         React__default["default"].createElement(AccordionBody, { opened: isOpened }, children),
         isMobile && !index && (React__default["default"].createElement(Box, { m: "0 -24px 0" },
             React__default["default"].createElement(DropdownMenuDivider, { color: "rgba(18, 99, 241, 0.16)" })))));
@@ -7682,40 +7677,35 @@ var MobileMenu = function (_a) {
                 items
                     .filter(function (item) { return item.label && !item.type; })
                     .map(function (_a, index) {
-                    var label = _a.label, _b = _a.items, innerItems = _b === void 0 ? [] : _b, showItemsOnMobile = _a.showItemsOnMobile, hidden = _a.hidden; _a.showNavBadge; var href = _a.href; _a.highlightTitle;
+                    var label = _a.label, _b = _a.items, innerItems = _b === void 0 ? [] : _b, showItemsOnMobile = _a.showItemsOnMobile, hidden = _a.hidden; _a.showNavBadge; _a.highlightTitle;
                     var isMarker = items[index].showNavBadge;
-                    if (hidden)
-                        return null;
                     var isHighlighted = items[index].highlightTitle;
+                    if (!innerItems.length)
+                        return null;
                     var visualize = !showItemsOnMobile ||
                         (showItemsOnMobile && isMobile && !hidden);
                     return (React__default["default"].createElement(BorderMobileMenuItem, { key: "".concat(label, "#").concat(index), isHighlighted: isHighlighted },
-                        React__default["default"].createElement(Accordion, { index: index, label: label, href: href, linkComponent: linkComponent, setIsOpenMenu: setIsOpen, clickable: !isTablet && innerItems.length > 0, heading: function (opened) {
-                                return (((!showItemsOnMobile && !hidden) ||
-                                    (href && !isTablet)) && (React__default["default"].createElement(React__default["default"].Fragment, null,
+                        React__default["default"].createElement(Accordion, { index: index, label: label, clickable: !isTablet, heading: function (opened) {
+                                return (!showItemsOnMobile &&
+                                    !hidden && (React__default["default"].createElement(React__default["default"].Fragment, null,
                                     React__default["default"].createElement(Box, { m: "16px 0", position: "relative" },
                                         isMarker && React__default["default"].createElement(Marker, null),
-                                        React__default["default"].createElement(Text, { bold: true, fontSize: isTablet ? "20px" : "14px", lineHeight: isTablet ? "26px" : "20px", color: isMobile && opened && !href
+                                        React__default["default"].createElement(Text, { bold: true, fontSize: isTablet ? "20px" : "14px", lineHeight: isTablet ? "26px" : "20px", color: isMobile && opened
                                                 ? "primary"
                                                 : isHighlighted && isTablet
                                                     ? "warningPress"
                                                     : "backgroundDark" }, label)),
-                                    !isTablet && (React__default["default"].createElement(IconComponent, { iconName: href
-                                            ? "ArrowRight"
-                                            : opened
-                                                ? "ChevronUp"
-                                                : "ChevronDown", color: opened || !(href === null || href === void 0 ? void 0 : href.length)
-                                            ? "primary"
-                                            : "rgb(8, 22, 46)" })))));
-                            } }, innerItems.length > 0 && (React__default["default"].createElement(Grid, { gridTemplateColumns: isMobile ? "1fr" : "repeat(2, 1fr)", gridColumnGap: 16, mt: 16 }, innerItems.map(function (_a, itemItem) {
-                            var _b = _a.type, type = _b === void 0 ? exports.DropdownMenuItemType.INTERNAL_LINK : _b, label = _a.label, rightIconFill = _a.rightIconFill, description = _a.description, _c = _a.href, href = _c === void 0 ? "/" : _c, status = _a.status, _d = _a.leftIcon, leftIcon = _d === void 0 ? "" : _d, _e = _a.rightIcon, rightIcon = _e === void 0 ? "" : _e, _f = _a.links, links = _f === void 0 ? [] : _f, badgeTitle = _a.badgeTitle, badgeType = _a.badgeType, bannerRenderer = _a.bannerRenderer, itemProps = __rest(_a, ["type", "label", "rightIconFill", "description", "href", "status", "leftIcon", "rightIcon", "links", "badgeTitle", "badgeType", "bannerRenderer"]);
-                            var getMenuItemContent = function (icon) {
-                                if (icon === void 0) { icon = rightIcon; }
-                                return (React__default["default"].createElement(MenuItemContent, { label: label, fill: rightIconFill, leftIcon: leftIcon, rightIcon: icon, description: description, status: status, badgeTitle: badgeTitle, badgeType: badgeType }));
-                            };
-                            var isActive = href === activeItem;
-                            return (visualize && (React__default["default"].createElement(DropdownMenuItemContainer, __assign({ label: label, key: itemItem, isActive: isActive, leftIcon: leftIcon, getMenuItemContent: getMenuItemContent, links: links, setIsOpen: setIsOpen, linkComponent: linkComponent, href: href, bannerRenderer: bannerRenderer, type: type, badgeTitle: badgeTitle, badgeType: badgeType }, itemProps))));
-                        })))),
+                                    !isTablet && (React__default["default"].createElement(IconComponent, { iconName: opened ? "ChevronUp" : "ChevronDown", color: opened ? "primary" : "rgb(8, 22, 46)" })))));
+                            } },
+                            React__default["default"].createElement(Grid, { gridTemplateColumns: isMobile ? "1fr" : "repeat(2, 1fr)", gridColumnGap: 16, mt: 16 }, innerItems.map(function (_a, itemItem) {
+                                var _b = _a.type, type = _b === void 0 ? exports.DropdownMenuItemType.INTERNAL_LINK : _b, label = _a.label, rightIconFill = _a.rightIconFill, description = _a.description, _c = _a.href, href = _c === void 0 ? "/" : _c, status = _a.status, _d = _a.leftIcon, leftIcon = _d === void 0 ? "" : _d, _e = _a.rightIcon, rightIcon = _e === void 0 ? "" : _e, _f = _a.links, links = _f === void 0 ? [] : _f, badgeTitle = _a.badgeTitle, badgeType = _a.badgeType, bannerRenderer = _a.bannerRenderer, itemProps = __rest(_a, ["type", "label", "rightIconFill", "description", "href", "status", "leftIcon", "rightIcon", "links", "badgeTitle", "badgeType", "bannerRenderer"]);
+                                var getMenuItemContent = function (icon) {
+                                    if (icon === void 0) { icon = rightIcon; }
+                                    return (React__default["default"].createElement(MenuItemContent, { label: label, fill: rightIconFill, leftIcon: leftIcon, rightIcon: icon, description: description, status: status, badgeTitle: badgeTitle, badgeType: badgeType }));
+                                };
+                                var isActive = href === activeItem;
+                                return (visualize && (React__default["default"].createElement(DropdownMenuItemContainer, __assign({ label: label, key: itemItem, isActive: isActive, leftIcon: leftIcon, getMenuItemContent: getMenuItemContent, links: links, setIsOpen: setIsOpen, linkComponent: linkComponent, href: href, bannerRenderer: bannerRenderer, type: type, badgeTitle: badgeTitle, badgeType: badgeType }, itemProps))));
+                            }))),
                         isTablet && !showItemsOnMobile && (React__default["default"].createElement(DropdownMenuDivider, null))));
                 }),
                 !isTablet && isMobile && (React__default["default"].createElement(DropdownMenuDivider, { color: "rgba(18, 99, 241, 0.16)" }))),
@@ -7832,8 +7822,8 @@ var MenuItems = function (_a) {
                 React__default["default"].createElement(DropdownMenu, { key: "".concat(label, "#").concat(href, "#").concat(icon), items: menuItems, py: 1, activeItem: activeSubItem, isExtended: isExtended },
                     React__default["default"].createElement(MenuItem, __assign({}, linkProps, { isActive: isActive, statusColor: statusColor, highlightTitle: highlightTitle }),
                         type === ItemTypes.DIVIDER && React__default["default"].createElement(MenuItemDivider, null),
-                        icon && (React__default["default"].createElement(IconComponent, { mr: "8px", iconName: icon, color: "white" })),
-                        label && (React__default["default"].createElement(Box, { ml: !href ? "8px" : 0, position: "relative" },
+                        icon && React__default["default"].createElement(IconComponent, { iconName: icon, color: "white" }),
+                        label && (React__default["default"].createElement(Box, { ml: "8px", position: "relative" },
                             isMarker && React__default["default"].createElement(Marker, null),
                             React__default["default"].createElement(Text, { color: isHighlighted ? "warningPress" : "white", fontSize: "14px", lineHeight: "20px", fontWeight: "600" }, label))))))));
         })));

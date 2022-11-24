@@ -29,7 +29,7 @@ const MenuItem: React.FC<MenuItemProps> = ({
         $isActive={isActive}
         $variant={variant}
         $statusColor={statusColor}
-        $highlightTitle={highlightTitle}
+        highlightTitle={highlightTitle}
         {...props}
       >
         {children}

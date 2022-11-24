@@ -76,11 +76,9 @@ const MenuItems: React.FC<MenuItemsProps> = ({
                     highlightTitle={highlightTitle}
                   >
                     {type === ItemTypes.DIVIDER && <MenuItemDivider />}
-                    {icon && (
-                      <IconComponent mr="8px" iconName={icon} color="white" />
-                    )}
+                    {icon && <IconComponent iconName={icon} color="white" />}
                     {label && (
-                      <Box ml={!href ? "8px" : 0} position="relative">
+                      <Box ml="8px" position="relative">
                         {isMarker && <Marker />}
                         <Text
                           color={isHighlighted ? "warningPress" : "white"}
