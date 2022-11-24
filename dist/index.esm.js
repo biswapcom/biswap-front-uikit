@@ -5491,10 +5491,6 @@ var SubMenu = function (_a) {
         React.createElement(SubMenuContainer, __assign({}, props), children)));
 };
 
-var MenuContext = createContext({
-    linkComponent: "a",
-});
-
 var StyledMenuItemContainer = styled.div(templateObject_1$N || (templateObject_1$N = __makeTemplateObject(["\n  position: relative;\n  ", ";\n"], ["\n  position: relative;\n  ", ";\n"])), function (_a) {
     var $isActive = _a.$isActive, $variant = _a.$variant; _a.theme;
     return $isActive &&
@@ -5529,10 +5525,10 @@ var templateObject_1$N, templateObject_2$v, templateObject_3$l, templateObject_4
 
 var MenuItem = function (_a) {
     var children = _a.children, href = _a.href, _b = _a.isActive, isActive = _b === void 0 ? false : _b, _c = _a.variant, variant = _c === void 0 ? "default" : _c, statusColor = _a.statusColor, highlightTitle = _a.highlightTitle, props = __rest(_a, ["children", "href", "isActive", "variant", "statusColor", "highlightTitle"]);
-    var linkComponent = useContext(MenuContext).linkComponent;
+    // const { linkComponent } = useContext(MenuContext);
     var itemLinkProps = href
         ? {
-            as: linkComponent,
+            as: "a",
             href: href,
         }
         : {
@@ -7870,7 +7866,7 @@ var links = [
     },
     {
         label: "Buy crypto",
-        href: "/",
+        href: "https://pancakeswap.finance",
         isMobileNav: true,
         showItemsOnMobile: true,
     },
@@ -8195,6 +8191,10 @@ var Footer = function (_a) {
             React.createElement(Audit, null))));
 };
 var templateObject_1$m, templateObject_2$e;
+
+var MenuContext = createContext({
+    linkComponent: "a",
+});
 
 var getTextColor = function (_a) {
     var $isActive = _a.$isActive, disabled = _a.disabled, theme = _a.theme;
