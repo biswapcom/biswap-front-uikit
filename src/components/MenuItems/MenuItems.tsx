@@ -80,7 +80,7 @@ const MenuItems: React.FC<MenuItemsProps> = ({
                       <IconComponent mr="8px" iconName={icon} color="white" />
                     )}
                     {label && (
-                      <Box ml="8px" position="relative">
+                      <Box ml={!href ? "8px" : 0} position="relative">
                         {isMarker && <Marker />}
                         <Text
                           color={isHighlighted ? "warningPress" : "white"}

@@ -213,7 +213,7 @@ export const links: MenuItemsType[] = [
     href: "",
   },
   {
-    label: "Buy crypto", // if changed label, also should be changed in Accordion component condition
+    label: "Buy crypto",
     href: "/",
     isMobileNav: true,
     showItemsOnMobile: true,
