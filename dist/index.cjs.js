@@ -5545,6 +5545,7 @@ var MenuItem = function (_a) {
         ? {
             as: "a",
             href: href,
+            target: "_blank",
         }
         : {
             as: "div",
