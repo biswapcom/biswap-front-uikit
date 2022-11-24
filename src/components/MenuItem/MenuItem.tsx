@@ -12,10 +12,10 @@ const MenuItem: React.FC<MenuItemProps> = ({
   highlightTitle,
   ...props
 }) => {
-  const { linkComponent } = useContext(MenuContext);
+  // const { linkComponent } = useContext(MenuContext);
   const itemLinkProps: unknown = href
     ? {
-        as: linkComponent,
+        as: "a",
         href,
       }
     : {

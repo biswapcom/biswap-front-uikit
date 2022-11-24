@@ -214,7 +214,7 @@ export const links: MenuItemsType[] = [
   },
   {
     label: "Buy crypto",
-    href: "/",
+    href: "https://pancakeswap.finance",
     isMobileNav: true,
     showItemsOnMobile: true,
   },
