@@ -5055,7 +5055,7 @@ var StyledMenuItemContainer = styled__default["default"].div(templateObject_1$J 
         "\n      &:after{\n        content: \"\";\n        position: absolute;\n        bottom: 0;\n        height: 4px;\n        width: 100%;\n        border-radius: 2px 2px 0 0;\n      }\n    ";
 });
 var CommonLinkStyles = function (_a) {
-    var $isActive = _a.$isActive, $statusColor = _a.$statusColor, $variant = _a.$variant, highlightTitle = _a.highlightTitle;
+    var $isActive = _a.$isActive, $statusColor = _a.$statusColor, $variant = _a.$variant, $highlightTitle = _a.$highlightTitle;
     return styled.css(templateObject_4$h || (templateObject_4$h = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  align-items: center;\n  cursor: pointer;\n\n  color: ", ";\n  font-size: 14px;\n  font-weight: 600;\n  transition: color 0.4s ease;\n\n  ", "\n\n  ", "\n\n  &:hover {\n    div {\n      color: ", ";\n    }\n    svg {\n      fill: ", ";\n    }\n    ", ";\n  }\n"], ["\n  position: relative;\n  display: flex;\n  align-items: center;\n  cursor: pointer;\n\n  color: ", ";\n  font-size: 14px;\n  font-weight: 600;\n  transition: color 0.4s ease;\n\n  ", "\n\n  ", "\n\n  &:hover {\n    div {\n      color: ", ";\n    }\n    svg {\n      fill: ", ";\n    }\n    ", ";\n  }\n"])), $isActive
         ? function (_a) {
             var theme = _a.theme;
@@ -5071,7 +5071,7 @@ var CommonLinkStyles = function (_a) {
             return theme.mediaQueries.lg;
         }) : styled.css(templateObject_3$i || (templateObject_3$i = __makeTemplateObject(["\n        padding: 4px 4px 0px 4px;\n        height: 42px;\n      "], ["\n        padding: 4px 4px 0px 4px;\n        height: 42px;\n      "]))), function (_a) {
         var theme = _a.theme;
-        return highlightTitle ? theme.colors.warningHover : theme.colors.pastelBlue;
+        return $highlightTitle ? theme.colors.warningHover : theme.colors.pastelBlue;
     }, function (_a) {
         var theme = _a.theme;
         return theme.colors.pastelBlue;
@@ -5094,7 +5094,7 @@ var MenuItem = function (_a) {
     return (React__default["default"].createElement(StyledMenuItemContainer, { "$isActive": isActive, "$variant": variant },
         React__default["default"].createElement(StyledMenuItem
         // @ts-ignore
-        , __assign({}, itemLinkProps, { "$isActive": isActive, "$variant": variant, "$statusColor": statusColor, highlightTitle: highlightTitle }, props), children)));
+        , __assign({}, itemLinkProps, { "$isActive": isActive, "$variant": variant, "$statusColor": statusColor, "$highlightTitle": highlightTitle }, props), children)));
 };
 
 var StyledSubMenuItems = styled__default["default"](Flex)(templateObject_1$I || (templateObject_1$I = __makeTemplateObject(["\n  ", " {\n    ", ";\n  }\n  flex-grow: 1;\n  background-color: ", ";\n  box-shadow: inset 0px -2px 0px -8px rgba(133, 133, 133, 0.1);\n  overflow-x: scroll;\n  scrollbar-width: none;\n  -ms-overflow-style: none;\n  &::-webkit-scrollbar {\n    display: none;\n  }\n"], ["\n  ", " {\n    ", ";\n  }\n  flex-grow: 1;\n  background-color: ", ";\n  box-shadow: inset 0px -2px 0px -8px rgba(133, 133, 133, 0.1);\n  overflow-x: scroll;\n  scrollbar-width: none;\n  -ms-overflow-style: none;\n  &::-webkit-scrollbar {\n    display: none;\n  }\n"])), function (_a) {
@@ -7589,7 +7589,7 @@ var AccordionBody = styled__default["default"].div(templateObject_3$5 || (templa
     var opened = _a.opened;
     return opened && styled.css(templateObject_2$6 || (templateObject_2$6 = __makeTemplateObject(["\n      animation: ", " 0.6s ease;\n    "], ["\n      animation: ", " 0.6s ease;\n    "])), openBodyAnimation);
 });
-var AccordionTitle = styled__default["default"](Flex)(templateObject_4$4 || (templateObject_4$4 = __makeTemplateObject(["\n  cursor: pointer;\n"], ["\n  cursor: pointer;\n"])));
+var AccordionTitle = styled__default["default"](Flex)(templateObject_4$4 || (templateObject_4$4 = __makeTemplateObject(["\n  align-items: center;\n  justify-content: space-between;\n  cursor: pointer;\n"], ["\n  align-items: center;\n  justify-content: space-between;\n  cursor: pointer;\n"])));
 var AccordionComponent = styled__default["default"].div(templateObject_5$4 || (templateObject_5$4 = __makeTemplateObject(["\n  width: 100%;\n"], ["\n  width: 100%;\n"])));
 var Accordion = function (_a) {
     var label = _a.label, _b = _a.clickable, clickable = _b === void 0 ? true : _b, heading = _a.heading, children = _a.children, index = _a.index, href = _a.href, linkComponent = _a.linkComponent, setIsOpenMenu = _a.setIsOpenMenu;
@@ -7606,7 +7606,7 @@ var Accordion = function (_a) {
     return (React__default["default"].createElement(AccordionComponent, { key: "acc-key-".concat(label) },
         isMobile && index && (React__default["default"].createElement(Box, { m: "0 -16px 0" },
             React__default["default"].createElement(DropdownMenuDivider, { color: "rgba(18, 99, 241, 0.16)" }))),
-        href ? (React__default["default"].createElement(AccordionTitle, { as: linkComponent, alignItems: "center", href: href, onClick: onTitleClick, justifyContent: "space-between" }, heading(isOpened))) : (React__default["default"].createElement(AccordionTitle, { alignItems: "center", justifyContent: "space-between", onClick: onTitleClick }, heading(isOpened))),
+        React__default["default"].createElement(AccordionTitle, { as: href ? linkComponent : "div", href: href, onClick: onTitleClick }, heading(isOpened)),
         React__default["default"].createElement(AccordionBody, { opened: isOpened }, children),
         isMobile && !index && (React__default["default"].createElement(Box, { m: "0 -24px 0" },
             React__default["default"].createElement(DropdownMenuDivider, { color: "rgba(18, 99, 241, 0.16)" })))));
