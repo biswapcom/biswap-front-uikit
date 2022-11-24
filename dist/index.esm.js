@@ -8454,7 +8454,7 @@ var AccordionBody = styled.div(templateObject_3$8 || (templateObject_3$8 = __mak
 var AccordionTitle = styled(Flex)(templateObject_4$5 || (templateObject_4$5 = __makeTemplateObject(["\n  align-items: center;\n  justify-content: space-between;\n  cursor: pointer;\n"], ["\n  align-items: center;\n  justify-content: space-between;\n  cursor: pointer;\n"])));
 var AccordionComponent = styled.div(templateObject_5$4 || (templateObject_5$4 = __makeTemplateObject(["\n  width: 100%;\n"], ["\n  width: 100%;\n"])));
 var Accordion = function (_a) {
-    var label = _a.label, _b = _a.clickable, clickable = _b === void 0 ? true : _b, heading = _a.heading, children = _a.children, index = _a.index, href = _a.href, linkComponent = _a.linkComponent, setIsOpenMenu = _a.setIsOpenMenu;
+    var label = _a.label, _b = _a.clickable, clickable = _b === void 0 ? true : _b, heading = _a.heading, children = _a.children, index = _a.index, href = _a.href; _a.linkComponent; var setIsOpenMenu = _a.setIsOpenMenu;
     var _c = useState(false), isOpened = _c[0], setIsOpened = _c[1];
     var isMobile = useMatchBreakpoints().isMobile;
     useEffect(function () {
@@ -8468,7 +8468,7 @@ var Accordion = function (_a) {
     return (React.createElement(AccordionComponent, { key: "acc-key-".concat(label) },
         isMobile && index && (React.createElement(Box, { m: "0 -16px 0" },
             React.createElement(DropdownMenuDivider, { color: "rgba(18, 99, 241, 0.16)" }))),
-        React.createElement(AccordionTitle, { as: href ? linkComponent : "div", href: href, onClick: onTitleClick }, heading(isOpened)),
+        React.createElement(AccordionTitle, { as: href ? "a" : "div", href: href, onClick: onTitleClick }, heading(isOpened)),
         React.createElement(AccordionBody, { opened: isOpened }, children),
         isMobile && !index && (React.createElement(Box, { m: "0 -24px 0" },
             React.createElement(DropdownMenuDivider, { color: "rgba(18, 99, 241, 0.16)" })))));

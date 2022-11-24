@@ -78,7 +78,7 @@ const Accordion: FC<IProps> = ({
         </Box>
       )}
       <AccordionTitle
-        as={href ? linkComponent : "div"}
+        as={href ? "a" : "div"}
         href={href}
         onClick={onTitleClick}
       >
