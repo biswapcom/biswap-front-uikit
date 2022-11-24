@@ -16,5 +16,5 @@ export type StyledMenuItemProps = {
   $isActive?: boolean;
   $variant?: MenuItemVariant;
   $statusColor?: keyof Colors;
-  highlightTitle?: boolean;
+  $highlightTitle?: boolean;
 };
