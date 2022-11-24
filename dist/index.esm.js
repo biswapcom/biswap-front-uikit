@@ -9106,7 +9106,7 @@ var ConnectModal = function (_a) {
             "By connecting a wallet, you agree to Biswap's",
             " ",
             React.createElement(Text, { fontSize: "12px", as: "span", color: "primary" },
-                React.createElement("a", { href: "".concat(process.env.NEXT_PUBLIC_FRONT_1, "/terms"), target: isMobile ? "_self" : "_blank" }, "Terms of Use"))),
+                React.createElement("a", { href: "https://biswap.org/terms", target: isMobile ? "_self" : "_blank" }, "Terms of Use"))),
         React.createElement(ScrollWrapper, null,
             React.createElement(WalletCardsWrapper, null, sortedConfig.map(function (entry) { return (React.createElement(WalletCard$1, { key: entry.title, login: login, walletConfig: entry, onDismiss: onDismiss })); }))),
         React.createElement(Text, { as: "span", mt: "24px", textAlign: "center", fontSize: "12px" }, "Haven\u2019t got a crypto wallet yet?"),
