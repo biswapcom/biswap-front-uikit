@@ -3,7 +3,6 @@ import { StyledMenuItemProps } from "./types";
 
 export const StyledMenuItemContainer = styled.div<StyledMenuItemProps>`
   position: relative;
-
   ${({ $isActive, $variant, theme }) =>
     $isActive &&
     $variant === "subMenu" &&
@@ -23,20 +22,18 @@ const CommonLinkStyles = ({
   $isActive,
   $statusColor,
   $variant,
-  highlightTitle,
+  $highlightTitle,
 }: StyledMenuItemProps) => css`
   position: relative;
   display: flex;
   align-items: center;
   cursor: pointer;
-
   color: ${$isActive
     ? ({ theme }) => theme.colors.secondary
     : ({ theme }) => theme.colors.white};
   font-size: 14px;
   font-weight: 600;
   transition: color 0.4s ease;
-
   ${$statusColor &&
   `
     &:after {
@@ -47,7 +44,6 @@ const CommonLinkStyles = ({
       margin-left: 12px;
     }
     `}
-
   ${$variant === "default"
     ? css`
         padding: 0 8px;
@@ -60,11 +56,10 @@ const CommonLinkStyles = ({
         padding: 4px 4px 0px 4px;
         height: 42px;
       `}
-
   &:hover {
     div {
       color: ${({ theme }) =>
-        highlightTitle ? theme.colors.warningHover : theme.colors.pastelBlue};
+        $highlightTitle ? theme.colors.warningHover : theme.colors.pastelBlue};
     }
     svg {
       fill: ${({ theme }) => theme.colors.pastelBlue};
