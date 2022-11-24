@@ -78,7 +78,6 @@ const Accordion: FC<IProps> = ({
           <DropdownMenuDivider color="rgba(18, 99, 241, 0.16)" />
         </Box>
       )}
-      {/*{href ? (*/}
       <AccordionTitle
         as={href ? linkComponent : "div"}
         href={href}
@@ -86,11 +85,6 @@ const Accordion: FC<IProps> = ({
       >
         {heading(isOpened)}
       </AccordionTitle>
-      {/*) : (*/}
-      {/*  <AccordionTitle onClick={onTitleClick}>*/}
-      {/*    {heading(isOpened)}*/}
-      {/*  </AccordionTitle>*/}
-      {/*)}*/}
       <AccordionBody opened={isOpened}>{children}</AccordionBody>
       {isMobile && !index && (
         <Box m={"0 -24px 0"}>
