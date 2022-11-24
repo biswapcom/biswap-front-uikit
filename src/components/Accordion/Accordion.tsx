@@ -39,6 +39,8 @@ const AccordionBody = styled.div<{ opened: boolean }>`
 `;
 
 const AccordionTitle = styled(Flex)`
+  align-items: center;
+  justify-content: space-between;
   cursor: pointer;
 `;
 
@@ -76,25 +78,19 @@ const Accordion: FC<IProps> = ({
           <DropdownMenuDivider color="rgba(18, 99, 241, 0.16)" />
         </Box>
       )}
-      {href ? (
-        <AccordionTitle
-          as={linkComponent}
-          alignItems="center"
-          href={href}
-          onClick={onTitleClick}
-          justifyContent="space-between"
-        >
-          {heading(isOpened)}
-        </AccordionTitle>
-      ) : (
-        <AccordionTitle
-          alignItems="center"
-          justifyContent="space-between"
-          onClick={onTitleClick}
-        >
-          {heading(isOpened)}
-        </AccordionTitle>
-      )}
+      {/*{href ? (*/}
+      <AccordionTitle
+        as={href ? linkComponent : "div"}
+        href={href}
+        onClick={onTitleClick}
+      >
+        {heading(isOpened)}
+      </AccordionTitle>
+      {/*) : (*/}
+      {/*  <AccordionTitle onClick={onTitleClick}>*/}
+      {/*    {heading(isOpened)}*/}
+      {/*  </AccordionTitle>*/}
+      {/*)}*/}
       <AccordionBody opened={isOpened}>{children}</AccordionBody>
       {isMobile && !index && (
         <Box m={"0 -24px 0"}>
