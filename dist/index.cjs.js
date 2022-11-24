@@ -7882,7 +7882,7 @@ var links = [
     },
     {
         label: "Buy crypto",
-        href: "https://pancakeswap.finance",
+        href: "https://exchange.biswap.org/",
         isMobileNav: true,
         showItemsOnMobile: true,
     },
