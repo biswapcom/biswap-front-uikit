@@ -7820,7 +7820,7 @@ var MenuItems = function (_a) {
                     React.createElement(MenuItem, __assign({}, linkProps, { isActive: isActive, statusColor: statusColor, highlightTitle: highlightTitle }),
                         type === ItemTypes.DIVIDER && React.createElement(MenuItemDivider, null),
                         icon && (React.createElement(IconComponent, { mr: "8px", iconName: icon, color: "white" })),
-                        label && (React.createElement(Box, { ml: "8px", position: "relative" },
+                        label && (React.createElement(Box, { ml: !href ? "8px" : 0, position: "relative" },
                             isMarker && React.createElement(Marker, null),
                             React.createElement(Text, { color: isHighlighted ? "warningPress" : "white", fontSize: "14px", lineHeight: "20px", fontWeight: "600" }, label))))))));
         })));
