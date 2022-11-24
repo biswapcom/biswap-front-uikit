@@ -6,9 +6,6 @@ import {
 import { ItemTypes, MenuItemsType } from "../../components/MenuItems/types";
 import { LinkStatus } from "./types";
 
-// test component
-import { getBanner } from "./components/TestComponents";
-
 export const status = {
   LIVE: <LinkStatus>{
     text: "LIVE",
@@ -32,7 +29,6 @@ export const links: MenuItemsType[] = [
   },
   {
     label: "Trade",
-    href: "/swap",
     showNavBadge: true,
     items: [
       {
@@ -61,7 +57,6 @@ export const links: MenuItemsType[] = [
   },
   {
     label: "Earn",
-    href: "/earn",
     showNavBadge: true,
     items: [
       {
@@ -107,7 +102,6 @@ export const links: MenuItemsType[] = [
   },
   {
     label: "Win",
-    href: "/",
     highlightTitle: true,
     items: [
       {
@@ -128,7 +122,6 @@ export const links: MenuItemsType[] = [
   },
   {
     label: "NFT",
-    href: "/",
     showNavBadge: true,
     items: [
       {
@@ -149,11 +142,11 @@ export const links: MenuItemsType[] = [
         target: "_self",
         mobileTarget: "_self",
       },
-      {
-        type: DropdownMenuItemType.BANNER,
-        bannerRenderer: getBanner,
-        href: "https://google.com",
-      },
+      // {
+      //   type: DropdownMenuItemType.BANNER,
+      //   bannerRenderer: getBanner,
+      //   href: "https://google.com",
+      // },
     ],
   },
   {
@@ -217,10 +210,20 @@ export const links: MenuItemsType[] = [
   {
     type: ItemTypes.DIVIDER,
     showItemsOnMobile: true,
+    href: "",
+  },
+  {
+    label: "Buy crypto",
+    href: "https://exchange.biswap.org/",
+    isMobileNav: true,
+    showItemsOnMobile: true,
+  },
+  {
+    type: ItemTypes.DIVIDER,
+    showItemsOnMobile: true,
   },
   {
     label: "Biswap Products", // if changed label, also should be changed in Accordion component condition
-    href: "/",
     icon: "ProductsOpacity",
     isMobileNav: true,
     showItemsOnMobile: true,
