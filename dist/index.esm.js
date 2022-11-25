@@ -8567,7 +8567,7 @@ var MobileMenu = function (_a) {
                                             ? "ArrowRight"
                                             : opened
                                                 ? "ChevronUp"
-                                                : "ChevronDown", color: opened ? "primary" : "rgb(8, 22, 46)" })))));
+                                                : "ChevronDown", color: opened ? "primary" : "dark800" })))));
                             } }, innerItems.length > 0 && (React.createElement(Grid, { gridTemplateColumns: isMobile ? "1fr" : "repeat(2, 1fr)", gridColumnGap: 16, mt: 16 }, innerItems.map(function (_a, itemItem) {
                             var _b = _a.type, type = _b === void 0 ? DropdownMenuItemType.INTERNAL_LINK : _b, label = _a.label, rightIconFill = _a.rightIconFill, description = _a.description, _c = _a.href, href = _c === void 0 ? "/" : _c, status = _a.status, _d = _a.leftIcon, leftIcon = _d === void 0 ? "" : _d, _e = _a.rightIcon, rightIcon = _e === void 0 ? "" : _e, _f = _a.links, links = _f === void 0 ? [] : _f, badgeTitle = _a.badgeTitle, badgeType = _a.badgeType, bannerRenderer = _a.bannerRenderer, itemProps = __rest(_a, ["type", "label", "rightIconFill", "description", "href", "status", "leftIcon", "rightIcon", "links", "badgeTitle", "badgeType", "bannerRenderer"]);
                             var getMenuItemContent = function (icon) {
