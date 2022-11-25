@@ -187,9 +187,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
                                         : "ChevronDown"
                                     }
                                     color={
-                                      opened || !href?.length
-                                        ? "primary"
-                                        : "rgb(8, 22, 46)"
+                                      opened ? "primary" : "rgb(8, 22, 46)"
                                     }
                                   />
                                 )}
