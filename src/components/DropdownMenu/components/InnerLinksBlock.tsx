@@ -100,7 +100,7 @@ const InnerLinksBlock: FC<InnerLinksBlockProps> = ({
       <Grid gridTemplateColumns={"1fr 1fr"} gridGap={16} paddingBottom={16}>
         {renderLinks()}
       </Grid>
-      <DropdownMenuDivider />
+      {isMobile && <DropdownMenuDivider />}
     </InnerLinksBlockContainer>
   );
 };

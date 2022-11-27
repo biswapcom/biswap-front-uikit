@@ -7430,7 +7430,7 @@ var InnerLinksBlock = function (_a) {
     };
     return (React__default["default"].createElement(InnerLinksBlockContainer, { padded: !!leftIcon && !isTablet },
         React__default["default"].createElement(Grid, { gridTemplateColumns: "1fr 1fr", gridGap: 16, paddingBottom: 16 }, renderLinks()),
-        React__default["default"].createElement(DropdownMenuDivider, null)));
+        isMobile && React__default["default"].createElement(DropdownMenuDivider, null)));
 };
 var templateObject_1$d;
 

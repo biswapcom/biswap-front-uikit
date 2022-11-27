@@ -7417,7 +7417,7 @@ var InnerLinksBlock = function (_a) {
     };
     return (React.createElement(InnerLinksBlockContainer, { padded: !!leftIcon && !isTablet },
         React.createElement(Grid, { gridTemplateColumns: "1fr 1fr", gridGap: 16, paddingBottom: 16 }, renderLinks()),
-        React.createElement(DropdownMenuDivider, null)));
+        isMobile && React.createElement(DropdownMenuDivider, null)));
 };
 var templateObject_1$d;
 
