@@ -7,6 +7,7 @@ interface IProps {
     index: number;
     href?: string;
     linkComponent?: React.ElementType;
+    isOpenItem?: boolean;
     setIsOpenMenu: (arg: boolean) => void;
 }
 declare const Accordion: FC<IProps>;
