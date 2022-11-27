@@ -110,4 +110,5 @@ export interface DropdownMenuItemContainerProps extends DropdownMenuItems {
   getMenuItemContent: (i: string) => React.ReactNode;
   linkComponent: React.ElementType;
   setIsOpen: (s: boolean) => void;
+  isOpenItem?: boolean;
 }

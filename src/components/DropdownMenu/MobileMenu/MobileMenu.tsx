@@ -14,6 +14,7 @@ import IconComponent from "../../Svg/IconComponent";
 import Accordion from "../../Accordion/Accordion";
 import Community from "../../../widgets/Menu/components/Footer/Community";
 import Marker from "../../MenuItem/Marker";
+import { HeadText } from "../../Typography";
 
 const MainContententWrapper = styled.div`
   flex: 1;
@@ -23,8 +24,8 @@ const MobileCommunityWrapper = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  margin-top: 24px;
-  padding: 0 24px;
+  margin-top: 32px;
+  padding: 0 54px;
 `;
 
 const StyledMobileMenu = styled.div<{
@@ -137,6 +138,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
                   index
                 ) => {
                   const isMarker = items[index].showNavBadge;
+                  const isOpenAccordion = label === "Biswap Products";
                   if (hidden) return null;
                   const isHighlighted = items[index].highlightTitle;
                   const visualize =
@@ -154,6 +156,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
                         linkComponent={linkComponent}
                         setIsOpenMenu={setIsOpen}
                         clickable={!isTablet && innerItems.length > 0}
+                        isOpenItem={isOpenAccordion}
                         heading={(opened) => {
                           return (
                             ((!showItemsOnMobile && !hidden) ||
@@ -161,10 +164,8 @@ const MobileMenu: FC<MobileMenuProps> = ({
                               <>
                                 <Box m="16px 0" position="relative">
                                   {isMarker && <Marker />}
-                                  <Text
-                                    bold
-                                    fontSize={isTablet ? "20px" : "14px"}
-                                    lineHeight={isTablet ? "26px" : "20px"}
+                                  <HeadText
+                                    scale={isTablet ? "size20" : "size16"}
                                     color={
                                       isMobile && opened && !href
                                         ? "primary"
@@ -174,11 +175,12 @@ const MobileMenu: FC<MobileMenuProps> = ({
                                     }
                                   >
                                     {label}
-                                  </Text>
+                                  </HeadText>
                                 </Box>
 
                                 {!isTablet && (
                                   <IconComponent
+                                    width={!href ? "24px" : "20px"}
                                     iconName={
                                       href
                                         ? "ArrowRight"
@@ -200,7 +202,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
                               isMobile ? "1fr" : "repeat(2, 1fr)"
                             }
                             gridColumnGap={16}
-                            mt={16}
+                            mt={isOpenAccordion ? 16 : 0}
                           >
                             {innerItems.map(
                               (
@@ -254,6 +256,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
                                       type={type}
                                       badgeTitle={badgeTitle}
                                       badgeType={badgeType}
+                                      isOpenItem={isOpenAccordion}
                                       {...itemProps}
                                     />
                                   )
@@ -272,7 +275,9 @@ const MobileMenu: FC<MobileMenuProps> = ({
                 }
               )}
             {!isTablet && isMobile && (
-              <DropdownMenuDivider color="rgba(18, 99, 241, 0.16)" />
+              <Box m="0 16px">
+                <DropdownMenuDivider color="btnTertiary" />
+              </Box>
             )}
           </MainContententWrapper>
           {isMobile && (
