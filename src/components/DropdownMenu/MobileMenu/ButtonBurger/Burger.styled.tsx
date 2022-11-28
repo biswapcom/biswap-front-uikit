@@ -10,8 +10,8 @@ type StyledBurgerProps = {
 export const StyledBurger = styled.button<StyledBurgerProps>`
   display: flex;
   flex-direction: column;
-  width: 20px;
-  height: 12px;
+  width: 22px;
+  height: 16px;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -19,7 +19,7 @@ export const StyledBurger = styled.button<StyledBurgerProps>`
   margin: 0;
   z-index: 10;
   transition: all 0.2s linear;
-  gap: 3px;
+  gap: 4px;
   ${({ open, isLoaded }) => {
     if (open) {
       return css`
@@ -36,7 +36,7 @@ export const StyledBurger = styled.button<StyledBurgerProps>`
   }}
 
   span {
-    width: 20px;
+    width: 22px;
     height: 2px;
     background: ${({ open, isTablet, theme }) => {
       if (open) {

@@ -320,6 +320,17 @@ export const socials = [
       ],
     },
   },
+
+  {
+    label: "Instagram",
+    icon: "InstagramIcon",
+    href: "https://www.instagram.com/biswap_org/",
+  },
+  {
+    label: "Facebook",
+    icon: "FacebookIcon",
+    href: "https://www.facebook.com/profile.php?id=100082146264626",
+  },
   {
     label: "Twitter",
     icon: "TwitterIcon",
@@ -334,16 +345,6 @@ export const socials = [
     label: "Youtube",
     icon: "YoutubeIcon",
     href: "https://www.youtube.com/channel/UCHartwkRUURf2Q7MlKOV84w",
-  },
-  {
-    label: "Instagram",
-    icon: "InstagramIcon",
-    href: "https://www.instagram.com/biswap_org/",
-  },
-  {
-    label: "Facebook",
-    icon: "FacebookIcon",
-    href: "https://www.facebook.com/profile.php?id=100082146264626",
   },
 ];
 

@@ -12,6 +12,7 @@ interface IProps {
   index: number;
   href?: string;
   linkComponent?: React.ElementType;
+  isOpenItem?: boolean;
   setIsOpenMenu: (arg: boolean) => void;
 }
 
@@ -56,12 +57,13 @@ const Accordion: FC<IProps> = ({
   href,
   linkComponent,
   setIsOpenMenu,
+  isOpenItem,
 }) => {
   const [isOpened, setIsOpened] = useState(false);
   const { isMobile } = useMatchBreakpoints();
 
   useEffect(() => {
-    if (!clickable || label === "Biswap Products") {
+    if (!clickable || isOpenItem) {
       setIsOpened(true);
     }
   }, [label, clickable, setIsOpened]);
@@ -72,11 +74,7 @@ const Accordion: FC<IProps> = ({
 
   return (
     <AccordionComponent key={`acc-key-${label}`}>
-      {isMobile && index && (
-        <Box m={"0 -16px 0"}>
-          <DropdownMenuDivider color="rgba(18, 99, 241, 0.16)" />
-        </Box>
-      )}
+      {isMobile && index !== 1 && <DropdownMenuDivider color="btnTertiary" />}
       <AccordionTitle
         as={href ? "a" : "div"}
         href={href}
