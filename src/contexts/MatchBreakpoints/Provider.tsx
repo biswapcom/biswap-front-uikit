@@ -75,7 +75,6 @@ export const getBreakpointChecks = (state: State): BreakpointChecks => {
   };
 };
 
-
 export const MatchBreakpointsProvider: FC<PropsWithChildren> = ({
   children,
 }) => {
