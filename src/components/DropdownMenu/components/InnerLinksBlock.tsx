@@ -24,7 +24,7 @@ const LabelText = styled(Text)`
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  width: 95px;
+  width: 80px;
 `;
 
 const InnerLinksBlock: FC<InnerLinksBlockProps> = ({
@@ -54,7 +54,7 @@ const InnerLinksBlock: FC<InnerLinksBlockProps> = ({
             {icon && (
               <IconComponent
                 className="inner-chevron"
-                width={10}
+                width={20}
                 iconName={icon}
                 color={fill}
               />

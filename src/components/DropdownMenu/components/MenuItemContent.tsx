@@ -53,7 +53,7 @@ const MenuItemContent: FC<MenuItemContentProps> = ({
       )}
       <Flex
         alignSelf={isMobile ? "stretch" : ""}
-        flexDirection={"column"}
+        flexDirection="column"
         flex={1}
         paddingLeft={leftIcon && "16px"}
       >
