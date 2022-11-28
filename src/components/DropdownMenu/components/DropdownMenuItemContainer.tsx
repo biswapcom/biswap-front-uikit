@@ -26,6 +26,7 @@ const DropdownMenuItemContainer: FC<DropdownMenuItemContainerProps> = ({
   mobileTarget,
   badgeTitle,
   badgeType,
+  isOpenItem,
   ...itemProps
 }) => {
   const [linksItems, setLinkItems] = useState<any>([]);
@@ -46,7 +47,7 @@ const DropdownMenuItemContainer: FC<DropdownMenuItemContainerProps> = ({
 
   // @ts-ignore
   return (
-    <StyledDropdownMenuItemContainer>
+    <StyledDropdownMenuItemContainer isOpenMenuItem={isOpenItem}>
       {type === DropdownMenuItemType.BUTTON && (
         <DropdownMenuItem
           $isActive={isActive}

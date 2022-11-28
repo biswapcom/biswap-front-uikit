@@ -283,7 +283,7 @@ const Menu: FC<PropsWithChildren<NavProps>> = ({
                 activeSubItem={activeSubItem}
                 isMobileMenuOpened={isMobileMenuOpened}
                 mobileMenuCallback={setIsMobileMenuOpened}
-                ml="24px"
+                ml={isMobile ? "12px" : "26px"}
               />
             </Flex>
             <Flex alignItems="center" height="100%">

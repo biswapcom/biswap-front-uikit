@@ -1,3 +1,4 @@
+import React from "react";
 import { DefaultTheme } from "styled-components";
 import { Link } from "react-router-dom";
 import { Colors } from "../../theme";
@@ -21,7 +22,9 @@ export declare const DropdownInternalMenuItem: import("styled-components").Style
     $hasIcon?: boolean | undefined;
     label?: string | React.ReactNode;
 }, never>;
-export declare const StyledDropdownMenuItemContainer: import("styled-components").StyledComponent<"div", DefaultTheme, {}, never>;
+export declare const StyledDropdownMenuItemContainer: import("styled-components").StyledComponent<"div", DefaultTheme, {
+    isOpenMenuItem?: boolean | undefined;
+}, never>;
 export declare const DropdownMenuDivider: import("styled-components").StyledComponent<"hr", DefaultTheme, {}, never>;
 export declare const StyledDropdownMenu: import("styled-components").StyledComponent<"div", DefaultTheme, import("../Box").BoxProps & import("../Box").GridProps & {
     $isOpen: boolean;

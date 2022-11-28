@@ -1,5 +1,6 @@
+import React from "react";
 import styled, { css, DefaultTheme } from "styled-components";
-import { Link, LinkProps } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { Colors } from "../../theme";
 import { Text } from "../Text";
@@ -127,9 +128,16 @@ export const DropdownInternalMenuItem = styled(Link)<
   ${CommonLinkStyle}
 `;
 
-export const StyledDropdownMenuItemContainer = styled.div`
-  margin-bottom: 16px;
+export const StyledDropdownMenuItemContainer = styled.div<{
+  isOpenMenuItem?: boolean;
+}>`
   position: relative;
+  margin-bottom: 24px;
+
+  &:last-child {
+    margin-bottom: ${({ isOpenMenuItem }) =>
+      isOpenMenuItem ? "24px" : "32px"};
+  }
 
   &:first-child > ${DropdownMenuItem} {
     border-top-left-radius: 8px;
@@ -139,10 +147,6 @@ export const StyledDropdownMenuItemContainer = styled.div`
   &:last-child > ${DropdownMenuItem} {
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
-  }
-
-  ${({ theme }) => theme.mediaQueries.lg} {
-    margin-bottom: 24px;
   }
 `;
 
@@ -209,7 +213,7 @@ export const BannerPlacementItem = styled.div`
 `;
 
 export const BorderMobileMenuItem = styled(Box)<{ isHighlighted?: boolean }>`
-  padding: 0 16px;
+  padding: 0 12px;
   border-left: ${({ theme, isHighlighted }) =>
     `4px solid ${isHighlighted ? theme.colors.warningPress : "transparent"}`};
   ${({ theme }) => theme.mediaQueries.sm} {
