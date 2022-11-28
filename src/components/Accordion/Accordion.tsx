@@ -10,6 +10,10 @@ interface IProps {
   label?: string;
   clickable?: boolean;
   index: number;
+  href?: string;
+  linkComponent?: React.ElementType;
+  isOpenItem?: boolean;
+  setIsOpenMenu: (arg: boolean) => void;
 }
 
 const openBodyAnimation = keyframes`
@@ -36,10 +40,10 @@ const AccordionBody = styled.div<{ opened: boolean }>`
 `;
 
 const AccordionTitle = styled(Flex)`
+  align-items: center;
+  justify-content: space-between;
   cursor: pointer;
 `;
-
-// const AccordionBodyItem = styled.div``;
 
 const AccordionComponent = styled.div`
   width: 100%;
@@ -51,30 +55,30 @@ const Accordion: FC<IProps> = ({
   heading,
   children,
   index,
+  href,
+  linkComponent,
+  setIsOpenMenu,
+  isOpenItem,
 }) => {
   const [isOpened, setIsOpened] = useState(false);
   const { isMobile } = useMatchBreakpoints();
 
   useEffect(() => {
-    if (!clickable || label === "Biswap Products") {
+    if (!clickable || isOpenItem) {
       setIsOpened(true);
     }
   }, [label, clickable, setIsOpened]);
 
   const onTitleClick = () => {
-    clickable && setIsOpened((prev) => !prev);
+    !href && clickable ? setIsOpened((prev) => !prev) : setIsOpenMenu(false);
   };
 
   return (
     <AccordionComponent key={`acc-key-${label}`}>
-      {isMobile && index && (
-        <Box m={"0 -16px 0"}>
-          <DropdownMenuDivider color="rgba(18, 99, 241, 0.16)" />
-        </Box>
-      )}
+      {isMobile && index !== 1 && <DropdownMenuDivider color="btnTertiary" />}
       <AccordionTitle
-        alignItems="center"
-        justifyContent="space-between"
+        as={href ? linkComponent : "div"}
+        href={href}
         onClick={onTitleClick}
       >
         {heading(isOpened)}

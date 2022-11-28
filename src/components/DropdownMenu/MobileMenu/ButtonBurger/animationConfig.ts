@@ -1,6 +1,6 @@
 import { keyframes } from "styled-components";
 
-const translateY = "5px";
+const translateY = "6px";
 
 export const menuAnimationConfig = {
   boxAnimationBackwards: keyframes`
