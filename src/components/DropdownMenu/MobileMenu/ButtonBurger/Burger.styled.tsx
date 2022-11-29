@@ -11,7 +11,6 @@ export const StyledBurger = styled.button<StyledBurgerProps>`
   display: flex;
   flex-direction: column;
   width: 22px;
-  height: 16px;
   background: transparent;
   border: none;
   cursor: pointer;
