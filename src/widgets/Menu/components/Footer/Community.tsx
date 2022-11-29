@@ -35,7 +35,7 @@ const Title = styled.h4`
 `;
 const SocialWrap = styled.div<SocialWrapProps>`
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   gap: 18px;
   ${({ menuVariant }) => {
     if (menuVariant) {
