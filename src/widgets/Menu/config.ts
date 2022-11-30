@@ -29,7 +29,6 @@ export const links: MenuItemsType[] = [
   },
   {
     label: "Trade",
-    href: "/swap",
     showNavBadge: true,
     items: [
       {
@@ -58,7 +57,6 @@ export const links: MenuItemsType[] = [
   },
   {
     label: "Earn",
-    href: "/earn",
     showNavBadge: true,
     items: [
       {
@@ -104,7 +102,7 @@ export const links: MenuItemsType[] = [
   },
   {
     label: "Win",
-    href: "/",
+    highlightTitle: true,
     items: [
       {
         label: "Lottery",
@@ -124,7 +122,6 @@ export const links: MenuItemsType[] = [
   },
   {
     label: "NFT",
-    href: "/",
     showNavBadge: true,
     items: [
       {
@@ -213,10 +210,20 @@ export const links: MenuItemsType[] = [
   {
     type: ItemTypes.DIVIDER,
     showItemsOnMobile: true,
+    href: "",
+  },
+  {
+    label: "Buy crypto",
+    href: "/",
+    isMobileNav: true,
+    showItemsOnMobile: true,
+  },
+  {
+    type: ItemTypes.DIVIDER,
+    showItemsOnMobile: true,
   },
   {
     label: "Biswap Products", // if changed label, also should be changed in Accordion component condition
-    href: "/",
     icon: "ProductsOpacity",
     isMobileNav: true,
     showItemsOnMobile: true,
@@ -313,6 +320,17 @@ export const socials = [
       ],
     },
   },
+
+  {
+    label: "Instagram",
+    icon: "InstagramIcon",
+    href: "https://www.instagram.com/biswap_org/",
+  },
+  {
+    label: "Facebook",
+    icon: "FacebookIcon",
+    href: "https://www.facebook.com/profile.php?id=100082146264626",
+  },
   {
     label: "Twitter",
     icon: "TwitterIcon",
@@ -327,16 +345,6 @@ export const socials = [
     label: "Youtube",
     icon: "YoutubeIcon",
     href: "https://www.youtube.com/channel/UCHartwkRUURf2Q7MlKOV84w",
-  },
-  {
-    label: "Instagram",
-    icon: "InstagramIcon",
-    href: "https://www.instagram.com/biswap_org/",
-  },
-  {
-    label: "Facebook",
-    icon: "FacebookIcon",
-    href: "https://www.facebook.com/profile.php?id=100082146264626",
   },
 ];
 

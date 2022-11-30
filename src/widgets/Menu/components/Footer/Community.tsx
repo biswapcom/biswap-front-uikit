@@ -40,16 +40,13 @@ const SocialWrap = styled.div<SocialWrapProps>`
   ${({ menuVariant }) => {
     if (menuVariant) {
       return `
-        justify-content: flex-start;
-        align-items: flex-end;
+        justify-content: space-between;
         gap: 5%;
       `;
     }
   }};
 `;
 const SocialItem = styled.div`
-  width: 18px;
-  height: 18px;
   transition: opacity 0.3s ease;
   &:hover {
     opacity: 0.65;
@@ -147,7 +144,7 @@ const Community: React.FC<CommunityProps> = ({
           const Icon = Icons[social.icon];
           const iconProps = {
             width: iconSize,
-            color: "pastelBlue",
+            color: "gray600",
             style: { cursor: "pointer" },
           };
           if (social.items) {
