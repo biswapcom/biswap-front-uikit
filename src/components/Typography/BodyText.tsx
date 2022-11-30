@@ -54,7 +54,6 @@ const TextWrapper = styled(Text)<{
 }>`
   font-weight: ${({ bold }) => (bold ? 600 : 400)};
   white-space: ${({ nowrap }) => (nowrap ? "nowrap" : "normal")};
-  ${({ textAlign }) => textAlign && `text-align: ${textAlign}`};
 `;
 
 export const BodyText: FC<BodyTextProps> = ({ scale, children, ...props }) => {

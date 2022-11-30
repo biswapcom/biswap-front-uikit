@@ -30,12 +30,11 @@ export interface ScalesObj {
   xxl?: Scales;
 }
 
-export interface BodyTextProps extends SpaceProps {
+export interface BodyTextProps extends TextProps {
   as?: Tags;
   scale?: Scales | ScalesObj;
   nowrap?: boolean;
   children: string | React.ReactNode | JSX.Element;
   color?: string;
   bold?: boolean;
-  textAlign?: string;
 }

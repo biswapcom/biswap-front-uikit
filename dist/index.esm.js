@@ -5700,15 +5700,12 @@ var bodyTextScaleMap = (_a$2 = {},
         lineHeight: "12px",
     },
     _a$2);
-var TextWrapper = styled(Text)(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  font-weight: ", ";\n  white-space: ", ";\n  ", ";\n"], ["\n  font-weight: ", ";\n  white-space: ", ";\n  ", ";\n"])), function (_a) {
+var TextWrapper = styled(Text)(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  font-weight: ", ";\n  white-space: ", ";\n"], ["\n  font-weight: ", ";\n  white-space: ", ";\n"])), function (_a) {
     var bold = _a.bold;
     return (bold ? 600 : 400);
 }, function (_a) {
     var nowrap = _a.nowrap;
     return (nowrap ? "nowrap" : "normal");
-}, function (_a) {
-    var textAlign = _a.textAlign;
-    return textAlign && "text-align: ".concat(textAlign);
 });
 var BodyText = function (_a) {
     var _b;
