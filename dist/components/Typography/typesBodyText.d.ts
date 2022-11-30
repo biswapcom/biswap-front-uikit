@@ -1,5 +1,5 @@
 import React from "react";
-import { SpaceProps } from "styled-system";
+import { TextProps } from "../Text";
 export declare const tags: {
     P: string;
     SPAN: string;
@@ -26,12 +26,11 @@ export interface ScalesObj {
     xll?: Scales;
     xxl?: Scales;
 }
-export interface BodyTextProps extends SpaceProps {
+export interface BodyTextProps extends TextProps {
     as?: Tags;
     scale?: Scales | ScalesObj;
     nowrap?: boolean;
     children: string | React.ReactNode | JSX.Element;
     color?: string;
     bold?: boolean;
-    textAlign?: string;
 }
