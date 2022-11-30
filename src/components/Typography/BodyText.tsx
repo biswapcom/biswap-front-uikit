@@ -50,11 +50,9 @@ const TextWrapper = styled(Text)<{
   nowrap?: boolean;
   as?: Tags;
   bold?: boolean;
-  textAlign?: "left" | "right" | "center" | "justify" | "initial" | "inherit";
 }>`
   font-weight: ${({ bold }) => (bold ? 600 : 400)};
   white-space: ${({ nowrap }) => (nowrap ? "nowrap" : "normal")};
-  ${({ textAlign }) => textAlign && `text-align: ${textAlign}`};
 `;
 
 export const BodyText: FC<BodyTextProps> = ({ scale, children, ...props }) => {
