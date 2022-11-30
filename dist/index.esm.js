@@ -3494,6 +3494,7 @@ var breakpointMap = {
     xxl: 1400,
 };
 var breakpoints = Object.values(breakpointMap).map(function (breakpoint) { return "".concat(breakpoint, "px"); });
+var breakpointsKeys = Object.keys(breakpointMap);
 var mediaQueries$1 = {
     xs: "@media screen and (min-width: ".concat(breakpointMap.xs, "px)"),
     sm: "@media screen and (min-width: ".concat(breakpointMap.sm, "px)"),
@@ -5654,14 +5655,30 @@ var tags = {
     DIV: "div",
 };
 var scales = {
+    SIZE40: "size40",
+    SIZE32: "size32",
+    SIZE24: "size24",
     SIZE20: "size20",
     SIZE16: "size16",
     SIZE14: "size14",
     SIZE12: "size12",
+    SIZE10: "size10",
 };
 
 var _a$2;
 var bodyTextScaleMap = (_a$2 = {},
+    _a$2[scales.SIZE40] = {
+        fontSize: "40px",
+        lineHeight: "48px",
+    },
+    _a$2[scales.SIZE32] = {
+        fontSize: "32px",
+        lineHeight: "40px",
+    },
+    _a$2[scales.SIZE24] = {
+        fontSize: "24px",
+        lineHeight: "32px",
+    },
     _a$2[scales.SIZE20] = {
         fontSize: "20px",
         lineHeight: "28px",
@@ -5678,19 +5695,54 @@ var bodyTextScaleMap = (_a$2 = {},
         fontSize: "12px",
         lineHeight: "16px",
     },
+    _a$2[scales.SIZE10] = {
+        fontSize: "10px",
+        lineHeight: "12px",
+    },
     _a$2);
-var BodyText = styled(Text)(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  font-size: ", ";\n  line-height: ", ";\n  font-weight: 400;\n  white-space: ", ";\n"], ["\n  font-size: ", ";\n  line-height: ", ";\n  font-weight: 400;\n  white-space: ", ";\n"])), function (_a) {
-    var scale = _a.scale;
-    return bodyTextScaleMap[scale || scales.SIZE16].fontSize;
-}, function (_a) {
-    var scale = _a.scale;
-    return bodyTextScaleMap[scale || scales.SIZE16].lineHeight;
+var TextWrapper = styled(Text)(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  font-weight: ", ";\n  white-space: ", ";\n  ", ";\n"], ["\n  font-weight: ", ";\n  white-space: ", ";\n  ", ";\n"])), function (_a) {
+    var bold = _a.bold;
+    return (bold ? 600 : 400);
 }, function (_a) {
     var nowrap = _a.nowrap;
     return (nowrap ? "nowrap" : "normal");
+}, function (_a) {
+    var textAlign = _a.textAlign;
+    return textAlign && "text-align: ".concat(textAlign);
 });
+var BodyText = function (_a) {
+    var _b;
+    var scale = _a.scale, children = _a.children, props = __rest(_a, ["scale", "children"]);
+    if (typeof scale === "string") {
+        return (
+        //@ts-ignore
+        React.createElement(TextWrapper, __assign({}, bodyTextScaleMap[scale], props), children));
+    }
+    var tempScales = JSON.parse(JSON.stringify(scale));
+    if (!tempScales.xs)
+        tempScales.xs = (_b = BodyText.defaultProps) === null || _b === void 0 ? void 0 : _b.scale;
+    var textStyles = scale
+        ? {
+            fontSize: breakpointsKeys.map(function (breakPoint) {
+                return tempScales[breakPoint]
+                    ? bodyTextScaleMap[tempScales[breakPoint]].fontSize
+                    : null;
+            }),
+            lineHeight: breakpointsKeys.map(function (breakPoint) {
+                return tempScales[breakPoint]
+                    ? bodyTextScaleMap[tempScales[breakPoint]].lineHeight
+                    : null;
+            }),
+        }
+        : {};
+    return (
+    //@ts-ignore
+    React.createElement(TextWrapper, __assign({}, textStyles, props), children));
+};
 BodyText.defaultProps = {
     as: tags.P,
+    scale: "size16",
+    bold: false,
 };
 var templateObject_1$B;
 
