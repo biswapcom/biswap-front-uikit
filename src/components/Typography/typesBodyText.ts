@@ -33,8 +33,6 @@ export interface ScalesObj {
 export interface BodyTextProps extends TextProps {
   as?: Tags;
   scale?: Scales | ScalesObj;
-  nowrap?: boolean;
   children: string | React.ReactNode | JSX.Element;
   color?: string;
-  bold?: boolean;
 }
