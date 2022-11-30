@@ -14,6 +14,8 @@ const breakpoints: Breakpoints = Object.values(breakpointMap).map(
   (breakpoint) => `${breakpoint}px`
 );
 
+export const breakpointsKeys: Breakpoints = Object.keys(breakpointMap);
+
 const mediaQueries: MediaQueries = {
   xs: `@media screen and (min-width: ${breakpointMap.xs}px)`,
   sm: `@media screen and (min-width: ${breakpointMap.sm}px)`,

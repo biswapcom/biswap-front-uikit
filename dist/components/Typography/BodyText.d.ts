@@ -1,20 +1,11 @@
 import { BodyTextProps } from "./typesBodyText";
-export declare const bodyTextScaleMap: {
-    size20: {
+import { FC } from "react";
+interface scalesMap {
+    [x: string]: {
         fontSize: string;
         lineHeight: string;
     };
-    size16: {
-        fontSize: string;
-        lineHeight: string;
-    };
-    size14: {
-        fontSize: string;
-        lineHeight: string;
-    };
-    size12: {
-        fontSize: string;
-        lineHeight: string;
-    };
-};
-export declare const BodyText: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, import("../Text").TextProps & BodyTextProps, never>;
+}
+export declare const bodyTextScaleMap: scalesMap;
+export declare const BodyText: FC<BodyTextProps>;
+export {};
