@@ -46,7 +46,7 @@ export const bodyTextScaleMap: scalesMap = {
   },
 };
 
-const TextWrapper = styled(Text)<{
+const TextWrapper = styled(Text).attrs({ bold: false })<{
   nowrap?: boolean;
   as?: Tags;
   bold?: boolean;
