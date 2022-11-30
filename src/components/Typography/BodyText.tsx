@@ -1,7 +1,7 @@
+import React, { FC } from "react";
 import styled from "styled-components";
 import Text from "../Text/Text";
 import { tags, scales, BodyTextProps, Tags } from "./typesBodyText";
-import React, { FC } from "react";
 import { breakpointsKeys } from "../../theme/base";
 
 interface scalesMap {
@@ -50,7 +50,7 @@ const TextWrapper = styled(Text)<{
   nowrap?: boolean;
   as?: Tags;
   bold?: boolean;
-  textAlign?: string;
+  textAlign?: "left" | "right" | "center" | "justify" | "initial" | "inherit";
 }>`
   font-weight: ${({ bold }) => (bold ? 600 : 400)};
   white-space: ${({ nowrap }) => (nowrap ? "nowrap" : "normal")};

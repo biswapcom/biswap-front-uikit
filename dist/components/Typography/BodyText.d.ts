@@ -1,5 +1,5 @@
-import { BodyTextProps } from "./typesBodyText";
 import { FC } from "react";
+import { BodyTextProps } from "./typesBodyText";
 interface scalesMap {
     [x: string]: {
         fontSize: string;
