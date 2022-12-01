@@ -1,6 +1,5 @@
 import React from "react";
 import { DefaultTheme } from "styled-components";
-import { Link } from "react-router-dom";
 import { Colors } from "../../theme";
 import { StyledDropdownMenuInnerLinkItemProps, StyledDropdownMenuItemProps } from "./types";
 export declare const InnerLinksBlockContainer: import("styled-components").StyledComponent<"div", DefaultTheme, {
@@ -17,7 +16,7 @@ export declare const DropdownMenuItem: import("styled-components").StyledCompone
     $isActive: boolean;
     $hasIcon?: boolean | undefined;
 }, never>;
-export declare const DropdownInternalMenuItem: import("styled-components").StyledComponent<typeof Link, DefaultTheme, StyledDropdownMenuItemProps & {
+export declare const DropdownInternalMenuItem: import("styled-components").StyledComponent<React.ForwardRefExoticComponent<import("react-router-dom").LinkProps & React.RefAttributes<HTMLAnchorElement>>, DefaultTheme, StyledDropdownMenuItemProps & {
     $isActive: boolean;
     $hasIcon?: boolean | undefined;
     label?: string | React.ReactNode;

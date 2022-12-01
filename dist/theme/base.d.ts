@@ -2,6 +2,7 @@ import { MediaQueries, Breakpoints, Spacing } from "./types";
 export declare const breakpointMap: {
     [key: string]: number;
 };
+export declare const breakpointsKeys: Breakpoints;
 export declare const shadows: {
     level1: string;
     active: string;
