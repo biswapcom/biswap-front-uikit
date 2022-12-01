@@ -4220,7 +4220,7 @@ Dropdown.defaultProps = {
 };
 var templateObject_1$W, templateObject_2$v, templateObject_3$o, templateObject_4$m, templateObject_5$i, templateObject_6$c, templateObject_7$9, templateObject_8$4;
 
-var tags$2 = {
+var tags$1 = {
     H1: "h1",
     H2: "h2",
     H3: "h3",
@@ -4265,7 +4265,7 @@ var Heading = styled__default["default"](Text).attrs({ bold: true })(templateObj
     return style[scale || scales$6.LG].fontSize;
 });
 Heading.defaultProps = {
-    as: tags$2.H2,
+    as: tags$1.H2,
 };
 var templateObject_1$V;
 
@@ -5590,7 +5590,7 @@ var PercentSlider = function (_a) {
             React__default["default"].createElement(Button, { scale: "sm", variant: "primary", onClick: setMax }, "Max")))));
 };
 
-var tags$1 = {
+var tags = {
     H1: "h1",
     H2: "h2",
     H3: "h3",
@@ -5658,15 +5658,10 @@ var HeadText = styled__default["default"](Text).attrs({ bold: true })(templateOb
     return (nowrap ? "nowrap" : "normal");
 });
 HeadText.defaultProps = {
-    as: tags$1.H2,
+    as: tags.H2,
 };
 var templateObject_1$C;
 
-var tags = {
-    P: "p",
-    SPAN: "span",
-    DIV: "div",
-};
 var scales = {
     SIZE40: "size40",
     SIZE32: "size32",
@@ -5713,25 +5708,15 @@ var bodyTextScaleMap = (_a$2 = {},
         lineHeight: "12px",
     },
     _a$2);
-var TextWrapper = styled__default["default"](Text).attrs({ bold: false })(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  font-weight: ", ";\n  white-space: ", ";\n"], ["\n  font-weight: ", ";\n  white-space: ", ";\n"])), function (_a) {
-    var bold = _a.bold;
-    return (bold ? 600 : 400);
-}, function (_a) {
-    var nowrap = _a.nowrap;
-    return (nowrap ? "nowrap" : "normal");
-});
-var BodyText = function (_a) {
+var getScalesAttributes = function (_a) {
     var _b;
-    var scale = _a.scale, children = _a.children, props = __rest(_a, ["scale", "children"]);
-    if (typeof scale === "string") {
-        return (
-        //@ts-ignore
-        React__default["default"].createElement(TextWrapper, __assign({}, bodyTextScaleMap[scale], props), children));
-    }
+    var scale = _a.scale;
+    if (typeof scale === "string")
+        return bodyTextScaleMap[scale];
     var tempScales = JSON.parse(JSON.stringify(scale));
     if (!tempScales.xs)
         tempScales.xs = (_b = BodyText.defaultProps) === null || _b === void 0 ? void 0 : _b.scale;
-    var textStyles = scale
+    return scale
         ? {
             fontSize: breakpointsKeys.map(function (breakPoint) {
                 return tempScales[breakPoint]
@@ -5744,15 +5729,18 @@ var BodyText = function (_a) {
                     : null;
             }),
         }
-        : {};
-    return (
-    //@ts-ignore
-    React__default["default"].createElement(TextWrapper, __assign({}, textStyles, props), children));
+        : { fontSize: [], lineHeight: [] };
 };
+var BodyText = styled__default["default"](Text).attrs(getScalesAttributes)(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  font-weight: ", ";\n  white-space: ", ";\n"], ["\n  font-weight: ", ";\n  white-space: ", ";\n"])), function (_a) {
+    var bold = _a.bold;
+    return (bold ? 600 : 400);
+}, function (_a) {
+    var nowrap = _a.nowrap;
+    return (nowrap ? "nowrap" : "normal");
+});
 BodyText.defaultProps = {
-    as: tags.P,
     scale: "size16",
-    bold: false,
+    as: "p",
 };
 var templateObject_1$B;
 

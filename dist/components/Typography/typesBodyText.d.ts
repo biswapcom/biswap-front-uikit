@@ -1,9 +1,10 @@
 import React from "react";
-import { TextProps } from "../Text";
+import { LayoutProps, SpaceProps, TypographyProps } from "styled-system";
 export declare const tags: {
     P: string;
     SPAN: string;
     DIV: string;
+    A: string;
 };
 export declare const scales: {
     readonly SIZE40: "size40";
@@ -26,9 +27,10 @@ export interface ScalesObj {
     xll?: Scales;
     xxl?: Scales;
 }
-export interface BodyTextProps extends TextProps {
-    as?: Tags;
-    scale?: Scales | ScalesObj;
-    children: string | React.ReactNode | JSX.Element;
+export interface BodyTextProps extends SpaceProps, TypographyProps, LayoutProps {
     color?: string;
+    nowrap?: boolean;
+    scale?: Scales | ScalesObj | undefined;
+    children?: string | React.ReactNode | JSX.Element;
+    as?: string | React.ReactNode | JSX.Element | React.ComponentType;
 }
