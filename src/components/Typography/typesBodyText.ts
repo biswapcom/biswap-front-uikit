@@ -1,11 +1,11 @@
-import React, { PropsWithChildren, ReactChildren, ReactChild } from "react";
-import { TextProps } from "../Text";
-import { SpaceProps, TypographyProps } from "styled-system";
+import React from "react";
+import { LayoutProps, SpaceProps, TypographyProps } from "styled-system";
 
 export const tags = {
   P: "p",
   SPAN: "span",
   DIV: "div",
+  A: "a",
 };
 export const scales = {
   SIZE40: "size40",
@@ -30,9 +30,21 @@ export interface ScalesObj {
   xxl?: Scales;
 }
 
-export interface BodyTextProps extends TextProps {
-  as?: Tags;
-  scale?: Scales | ScalesObj;
-  children: string | React.ReactNode | JSX.Element;
+// export interface BodyTextProps extends TextProps {
+//   as?: Tags;
+//   scale?: Scales | ScalesObj;
+//   children: string | React.ReactNode | JSX.Element;
+//   color?: string;
+//   href?: string;
+// }
+
+export interface BodyTextProps
+  extends SpaceProps,
+    TypographyProps,
+    LayoutProps {
   color?: string;
+  nowrap?: boolean;
+  scale?: Scales | ScalesObj | undefined;
+  children?: string | React.ReactNode | JSX.Element;
+  as?: string | React.ReactNode | JSX.Element | React.ComponentType;
 }

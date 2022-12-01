@@ -1,7 +1,6 @@
-import React, { FC } from "react";
 import styled from "styled-components";
 import Text from "../Text/Text";
-import { tags, scales, BodyTextProps, Tags } from "./typesBodyText";
+import { scales, BodyTextProps } from "./typesBodyText";
 import { breakpointsKeys } from "../../theme/base";
 
 interface scalesMap {
@@ -46,30 +45,14 @@ export const bodyTextScaleMap: scalesMap = {
   },
 };
 
-const TextWrapper = styled(Text).attrs({ bold: false })<{
-  nowrap?: boolean;
-  as?: Tags;
-  bold?: boolean;
-}>`
-  font-weight: ${({ bold }) => (bold ? 600 : 400)};
-  white-space: ${({ nowrap }) => (nowrap ? "nowrap" : "normal")};
-`;
-
-export const BodyText: FC<BodyTextProps> = ({ scale, children, ...props }) => {
-  if (typeof scale === "string") {
-    return (
-      //@ts-ignore
-      <TextWrapper {...bodyTextScaleMap[scale]} {...props}>
-        {children}
-      </TextWrapper>
-    );
-  }
+const getScalesAttributes = ({ scale }: BodyTextProps) => {
+  if (typeof scale === "string") return bodyTextScaleMap[scale];
 
   const tempScales = JSON.parse(JSON.stringify(scale));
 
   if (!tempScales.xs) tempScales.xs = BodyText.defaultProps?.scale;
 
-  const textStyles = scale
+  return scale
     ? {
         fontSize: breakpointsKeys.map((breakPoint) =>
           tempScales[breakPoint]
@@ -82,17 +65,15 @@ export const BodyText: FC<BodyTextProps> = ({ scale, children, ...props }) => {
             : null
         ),
       }
-    : {};
-  return (
-    //@ts-ignore
-    <TextWrapper {...textStyles} {...props}>
-      {children}
-    </TextWrapper>
-  );
+    : { fontSize: [], lineHeight: [] };
 };
 
+export const BodyText = styled(Text).attrs(getScalesAttributes)<BodyTextProps>`
+  font-weight: ${({ bold }) => (bold ? 600 : 400)};
+  white-space: ${({ nowrap }) => (nowrap ? "nowrap" : "normal")};
+`;
+
 BodyText.defaultProps = {
-  as: tags.P,
   scale: "size16",
-  bold: false,
+  as: "p",
 };
