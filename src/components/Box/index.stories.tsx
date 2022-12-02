@@ -4,6 +4,7 @@ import FlexComponent from "./Flex";
 import GridComponent from "./Grid";
 import Text from "../Text/Text";
 import { Link } from "../Link";
+import getResponsiveAttrs from "../../util/getResponsiveAttrs";
 
 export default {
   title: "Components/Primitives",
@@ -34,7 +35,7 @@ export const Flex: React.FC = () => {
       <Link href="https://styled-system.com/api#flexbox" target="_blank">
         List of applicable props
       </Link>
-      <FlexComponent justifyContent="space-between" mt="40px">
+      <FlexComponent justifyContent={getResponsiveAttrs({xs: 'flex-start', sm: 'space-between', md: 'flex-start', lg:'space-between'})} mt="40px">
         <span>Left</span>
         <span>right</span>
       </FlexComponent>
