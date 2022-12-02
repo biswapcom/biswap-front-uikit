@@ -7470,7 +7470,7 @@ var InnerLinksBlock = function (_a) {
         });
     };
     return (React.createElement(InnerLinksBlockContainer, { padded: !!leftIcon && !isTablet },
-        React.createElement(Grid, { gridTemplateColumns: "1fr 1fr", gridGap: 16, paddingBottom: isDesktop ? 16 : 0 }, renderLinks()),
+        React.createElement(Grid, { gridTemplateColumns: "1fr 1fr", gridGap: 16, paddingBottom: isDesktop && !lastItem ? 16 : 0 }, renderLinks()),
         isDesktop && !lastItem && React.createElement(DropdownMenuDivider, null)));
 };
 var templateObject_1$d;

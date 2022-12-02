@@ -101,7 +101,7 @@ const InnerLinksBlock: FC<InnerLinksBlockProps> = ({
       <Grid
         gridTemplateColumns={"1fr 1fr"}
         gridGap={16}
-        paddingBottom={isDesktop ? 16 : 0}
+        paddingBottom={isDesktop && !lastItem ? 16 : 0}
       >
         {renderLinks()}
       </Grid>

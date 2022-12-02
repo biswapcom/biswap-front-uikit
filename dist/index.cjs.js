@@ -7483,7 +7483,7 @@ var InnerLinksBlock = function (_a) {
         });
     };
     return (React__default["default"].createElement(InnerLinksBlockContainer, { padded: !!leftIcon && !isTablet },
-        React__default["default"].createElement(Grid, { gridTemplateColumns: "1fr 1fr", gridGap: 16, paddingBottom: isDesktop ? 16 : 0 }, renderLinks()),
+        React__default["default"].createElement(Grid, { gridTemplateColumns: "1fr 1fr", gridGap: 16, paddingBottom: isDesktop && !lastItem ? 16 : 0 }, renderLinks()),
         isDesktop && !lastItem && React__default["default"].createElement(DropdownMenuDivider, null)));
 };
 var templateObject_1$d;
