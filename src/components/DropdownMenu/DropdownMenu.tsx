@@ -132,6 +132,8 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
               );
               const isActive = href === activeItem;
 
+              const lastItem = itemItem === items?.length - 1;
+
               return (
                 <DropdownMenuItemContainer
                   key={itemItem}
@@ -146,6 +148,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
                   type={type}
                   target={target}
                   mobileTarget={mobileTarget}
+                  lastItem={lastItem}
                   {...itemProps}
                 />
               );

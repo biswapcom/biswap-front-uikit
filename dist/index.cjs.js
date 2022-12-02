@@ -6953,27 +6953,41 @@ var links = [
         items: [
             {
                 label: "NFT Launchpad",
-                href: "/pool",
+                href: "/launchpad",
                 leftIcon: "LaunchpadOpacity",
-                description: "Item description",
-                type: exports.DropdownMenuItemType.EXTERNAL_LINK,
-                target: "_blank",
-                mobileTarget: "_self",
+                description: "Buy new unique NFTs",
             },
             {
                 label: "NFT Earn",
-                href: "/pool",
                 leftIcon: "NFTEarnOpacity",
-                description: "Item description",
-                type: exports.DropdownMenuItemType.EXTERNAL_LINK,
-                target: "_self",
-                mobileTarget: "_self",
+                description: "Stake NFT & Get multiple tokens",
+                type: exports.DropdownMenuItemType.CONTAINER,
+                links: [
+                    {
+                        label: "NFT Staking",
+                        href: "/nft",
+                    },
+                    {
+                        label: "NFT Boost",
+                        href: "/nft/boost",
+                    },
+                    {
+                        label: "Upgrade Level",
+                        href: "/nft/upgrade",
+                    },
+                    {
+                        label: "NFT Launchpad",
+                        href: "/pool",
+                        target: "_blank",
+                        mobileTarget: "_self",
+                    },
+                ],
             },
-            // {
-            //   type: DropdownMenuItemType.BANNER,
-            //   bannerRenderer: getBanner,
-            //   href: "https://google.com",
-            // },
+            {
+                type: exports.DropdownMenuItemType.BANNER,
+                href: "/",
+                target: "_black",
+            },
         ],
     },
     {
@@ -7400,9 +7414,12 @@ var CommonLinkStyle = function (_a) {
 };
 var DropdownMenuItem = styled__default["default"].button(templateObject_6$3 || (templateObject_6$3 = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), CommonLinkStyle);
 var DropdownInternalMenuItem = styled__default["default"](reactRouterDom.Link)(templateObject_7$1 || (templateObject_7$1 = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), CommonLinkStyle);
-var StyledDropdownMenuItemContainer = styled__default["default"].div(templateObject_8$1 || (templateObject_8$1 = __makeTemplateObject(["\n  position: relative;\n  margin-bottom: 24px;\n\n  &:last-child {\n    margin-bottom: ", ";\n  }\n\n  &:first-child > ", " {\n    border-top-left-radius: 8px;\n    border-top-right-radius: 8px;\n  }\n\n  &:last-child > ", " {\n    border-bottom-left-radius: 8px;\n    border-bottom-right-radius: 8px;\n  }\n"], ["\n  position: relative;\n  margin-bottom: 24px;\n\n  &:last-child {\n    margin-bottom: ", ";\n  }\n\n  &:first-child > ", " {\n    border-top-left-radius: 8px;\n    border-top-right-radius: 8px;\n  }\n\n  &:last-child > ", " {\n    border-bottom-left-radius: 8px;\n    border-bottom-right-radius: 8px;\n  }\n"])), function (_a) {
+var StyledDropdownMenuItemContainer = styled__default["default"].div(templateObject_8$1 || (templateObject_8$1 = __makeTemplateObject(["\n  position: relative;\n  margin-bottom: 24px;\n\n  &:last-child {\n    margin-bottom: ", ";\n    ", " {\n      margin-bottom: 24px;\n    }\n  }\n\n  &:first-child > ", " {\n    border-top-left-radius: 8px;\n    border-top-right-radius: 8px;\n  }\n\n  &:last-child > ", " {\n    border-bottom-left-radius: 8px;\n    border-bottom-right-radius: 8px;\n  }\n"], ["\n  position: relative;\n  margin-bottom: 24px;\n\n  &:last-child {\n    margin-bottom: ", ";\n    ", " {\n      margin-bottom: 24px;\n    }\n  }\n\n  &:first-child > ", " {\n    border-top-left-radius: 8px;\n    border-top-right-radius: 8px;\n  }\n\n  &:last-child > ", " {\n    border-bottom-left-radius: 8px;\n    border-bottom-right-radius: 8px;\n  }\n"])), function (_a) {
     var isOpenMenuItem = _a.isOpenMenuItem;
     return isOpenMenuItem ? "24px" : "32px";
+}, function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.sm;
 }, DropdownMenuItem, DropdownMenuItem);
 var DropdownMenuDivider = styled__default["default"].hr(templateObject_9 || (templateObject_9 = __makeTemplateObject(["\n  border-color: ", ";\n  border-style: solid;\n  border-width: 1px 0 0;\n  margin: 0;\n  ", "\n"], ["\n  border-color: ", ";\n  border-style: solid;\n  border-width: 1px 0 0;\n  margin: 0;\n  ", "\n"])), function (_a) {
     var theme = _a.theme;
@@ -7448,13 +7465,13 @@ var templateObject_1$e, templateObject_2$7, templateObject_3$6, templateObject_4
 
 var LabelText = styled__default["default"](Text)(templateObject_1$d || (templateObject_1$d = __makeTemplateObject(["\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  width: 80px;\n"], ["\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  width: 80px;\n"])));
 var InnerLinksBlock = function (_a) {
-    var links = _a.links, leftIcon = _a.leftIcon, setIsOpen = _a.setIsOpen, linkComponent = _a.linkComponent;
-    var _b = useMatchBreakpoints(), isMobile = _b.isMobile, isTablet = _b.isTablet;
+    var links = _a.links, leftIcon = _a.leftIcon, setIsOpen = _a.setIsOpen, linkComponent = _a.linkComponent, lastItem = _a.lastItem;
+    var _b = useMatchBreakpoints(), isMobile = _b.isMobile, isTablet = _b.isTablet, isDesktop = _b.isDesktop;
     var renderLinks = function () {
         return links.map(function (_a, index) {
             var _b = _a.label, label = _b === void 0 ? "" : _b, _c = _a.href, href = _c === void 0 ? "/" : _c, _d = _a.icon, icon = _d === void 0 ? "ChevronRight" : _d, _e = _a.linkType, linkType = _e === void 0 ? exports.DropdownMenuItemType.INTERNAL_LINK : _e, mobileTarget = _a.mobileTarget, target = _a.target, _f = _a.fill, fill = _f === void 0 ? "primary" : _f;
             var getLinkContent = function () { return (React__default["default"].createElement(React__default["default"].Fragment, null,
-                icon && (React__default["default"].createElement(IconComponent, { className: "inner-chevron", width: 20, iconName: icon, color: fill })),
+                icon && (React__default["default"].createElement(IconComponent, { className: "inner-chevron", width: 16, iconName: icon, color: fill })),
                 React__default["default"].createElement(LabelText, { bold: true, fontSize: "12px", color: fill }, label))); };
             return (React__default["default"].createElement(React.Fragment, { key: "".concat(index, "#").concat(label) },
                 linkType === exports.DropdownMenuItemType.INTERNAL_LINK && (React__default["default"].createElement(DropdownMenuInnerLinkItem, { key: index + label, as: linkComponent, to: href, onClick: function () {
@@ -7466,13 +7483,13 @@ var InnerLinksBlock = function (_a) {
         });
     };
     return (React__default["default"].createElement(InnerLinksBlockContainer, { padded: !!leftIcon && !isTablet },
-        React__default["default"].createElement(Grid, { gridTemplateColumns: "1fr 1fr", gridGap: 16, paddingBottom: 16 }, renderLinks()),
-        isMobile && React__default["default"].createElement(DropdownMenuDivider, null)));
+        React__default["default"].createElement(Grid, { gridTemplateColumns: "1fr 1fr", gridGap: 16, paddingBottom: isDesktop ? 16 : 0 }, renderLinks()),
+        isDesktop && !lastItem && React__default["default"].createElement(DropdownMenuDivider, null)));
 };
 var templateObject_1$d;
 
 var DropdownMenuItemContainer = function (_a) {
-    var _b = _a.isActive, isActive = _b === void 0 ? false : _b, leftIcon = _a.leftIcon, getMenuItemContent = _a.getMenuItemContent, _c = _a.links, links = _c === void 0 ? [] : _c, setIsOpen = _a.setIsOpen, linkComponent = _a.linkComponent, _d = _a.href, href = _d === void 0 ? "/" : _d, bannerRenderer = _a.bannerRenderer, type = _a.type, target = _a.target, mobileTarget = _a.mobileTarget; _a.badgeTitle; _a.badgeType; var isOpenItem = _a.isOpenItem, itemProps = __rest(_a, ["isActive", "leftIcon", "getMenuItemContent", "links", "setIsOpen", "linkComponent", "href", "bannerRenderer", "type", "target", "mobileTarget", "badgeTitle", "badgeType", "isOpenItem"]);
+    var _b = _a.isActive, isActive = _b === void 0 ? false : _b, leftIcon = _a.leftIcon, getMenuItemContent = _a.getMenuItemContent, _c = _a.links, links = _c === void 0 ? [] : _c, setIsOpen = _a.setIsOpen, linkComponent = _a.linkComponent, _d = _a.href, href = _d === void 0 ? "/" : _d, bannerRenderer = _a.bannerRenderer, type = _a.type, target = _a.target, mobileTarget = _a.mobileTarget; _a.badgeTitle; _a.badgeType; var isOpenItem = _a.isOpenItem, lastItem = _a.lastItem, itemProps = __rest(_a, ["isActive", "leftIcon", "getMenuItemContent", "links", "setIsOpen", "linkComponent", "href", "bannerRenderer", "type", "target", "mobileTarget", "badgeTitle", "badgeType", "isOpenItem", "lastItem"]);
     var _e = React.useState([]), linksItems = _e[0], setLinkItems = _e[1];
     var _f = useMatchBreakpoints(), isMobile = _f.isMobile, isDesktop = _f.isDesktop;
     React.useEffect(function () {
@@ -7501,7 +7518,7 @@ var DropdownMenuItemContainer = function (_a) {
         type === exports.DropdownMenuItemType.BUTTON && (React__default["default"].createElement(DropdownMenuItem, __assign({ "$isActive": isActive, "$hasIcon": !!leftIcon, type: "button" }, itemProps), getMenuItemContent(""))),
         type === exports.DropdownMenuItemType.CONTAINER && (React__default["default"].createElement(React__default["default"].Fragment, null,
             React__default["default"].createElement(DropdownMenuItem, __assign({ "$isActive": isActive, "$hasIcon": true, as: "div" }, itemProps), getMenuItemContent("")),
-            hasInnerLinks && (React__default["default"].createElement(InnerLinksBlock, { links: linksItems, leftIcon: leftIcon, setIsOpen: setIsOpen, linkComponent: linkComponent })))),
+            hasInnerLinks && (React__default["default"].createElement(InnerLinksBlock, { links: linksItems, leftIcon: leftIcon, setIsOpen: setIsOpen, linkComponent: linkComponent, lastItem: lastItem })))),
         type === exports.DropdownMenuItemType.INTERNAL_LINK && (React__default["default"].createElement(DropdownInternalMenuItem, __assign({ label: itemProps.label, "$isActive": isActive, "$hasIcon": !!leftIcon, as: linkComponent, to: href, onClick: function () {
                 setIsOpen(false);
             } }, itemProps), getMenuItemContent("ArrowRight"))),
@@ -7614,7 +7631,8 @@ var DropdownMenu = function (_a) {
                 return (React__default["default"].createElement(MenuItemContent, { label: label, fill: rightIconFill, leftIcon: leftIcon, rightIcon: icon, description: description, status: status, badgeType: badgeType, badgeTitle: badgeTitle }));
             };
             var isActive = href === activeItem;
-            return (React__default["default"].createElement(DropdownMenuItemContainer, __assign({ key: itemItem, isActive: isActive, leftIcon: leftIcon, getMenuItemContent: getMenuItemContent, links: links, setIsOpen: setIsOpen, linkComponent: linkComponent, href: href, bannerRenderer: bannerRenderer, type: type, target: target, mobileTarget: mobileTarget }, itemProps)));
+            var lastItem = itemItem === (items === null || items === void 0 ? void 0 : items.length) - 1;
+            return (React__default["default"].createElement(DropdownMenuItemContainer, __assign({ key: itemItem, isActive: isActive, leftIcon: leftIcon, getMenuItemContent: getMenuItemContent, links: links, setIsOpen: setIsOpen, linkComponent: linkComponent, href: href, bannerRenderer: bannerRenderer, type: type, target: target, mobileTarget: mobileTarget, lastItem: lastItem }, itemProps)));
         })))));
 };
 

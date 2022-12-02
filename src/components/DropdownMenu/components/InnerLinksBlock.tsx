@@ -32,8 +32,9 @@ const InnerLinksBlock: FC<InnerLinksBlockProps> = ({
   leftIcon,
   setIsOpen,
   linkComponent,
+  lastItem,
 }) => {
-  const { isMobile, isTablet } = useMatchBreakpoints();
+  const { isMobile, isTablet, isDesktop } = useMatchBreakpoints();
 
   const renderLinks = () =>
     links.map(
@@ -54,7 +55,7 @@ const InnerLinksBlock: FC<InnerLinksBlockProps> = ({
             {icon && (
               <IconComponent
                 className="inner-chevron"
-                width={20}
+                width={16}
                 iconName={icon}
                 color={fill}
               />
@@ -97,10 +98,14 @@ const InnerLinksBlock: FC<InnerLinksBlockProps> = ({
 
   return (
     <InnerLinksBlockContainer padded={!!leftIcon && !isTablet}>
-      <Grid gridTemplateColumns={"1fr 1fr"} gridGap={16} paddingBottom={16}>
+      <Grid
+        gridTemplateColumns={"1fr 1fr"}
+        gridGap={16}
+        paddingBottom={isDesktop ? 16 : 0}
+      >
         {renderLinks()}
       </Grid>
-      {isMobile && <DropdownMenuDivider />}
+      {isDesktop && !lastItem && <DropdownMenuDivider />}
     </InnerLinksBlockContainer>
   );
 };
