@@ -6380,7 +6380,9 @@ var defaultObject = {
     xll: null,
     xxl: null,
 };
-var getResponsiveAttrs = function (obj) { return Object.values(__assign(__assign({}, defaultObject), obj)); };
+var getResponsiveAttrs = function (obj) {
+    return Object.values(__assign(__assign({}, defaultObject), obj));
+};
 
 var ModalHeader = styled__default["default"].div(templateObject_1$q || (templateObject_1$q = __makeTemplateObject(["\n  display: flex;\n  //align-items: flex-start;\n  justify-content: space-between;\n  align-items: center;\n  padding: 24px 16px;\n\n  ", " {\n    padding: 32px 32px 24px;\n  }\n"], ["\n  display: flex;\n  //align-items: flex-start;\n  justify-content: space-between;\n  align-items: center;\n  padding: 24px 16px;\n\n  ", " {\n    padding: 32px 32px 24px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
