@@ -204,65 +204,70 @@ const MobileMenu: FC<MobileMenuProps> = ({
                             gridColumnGap={16}
                             mt={isOpenAccordion ? 16 : 0}
                           >
-                            {innerItems.map(
-                              (
-                                {
-                                  type = DropdownMenuItemType.INTERNAL_LINK,
-                                  label,
-                                  rightIconFill,
-                                  description,
-                                  href = "/",
-                                  status,
-                                  leftIcon = "",
-                                  rightIcon = "",
-                                  links = [],
-                                  badgeTitle,
-                                  badgeType,
-                                  bannerRenderer,
-                                  ...itemProps
-                                },
-                                itemItem
-                              ) => {
-                                const getMenuItemContent = (
-                                  icon: string = rightIcon
-                                ) => (
-                                  <MenuItemContent
-                                    label={label}
-                                    fill={rightIconFill}
-                                    leftIcon={leftIcon}
-                                    rightIcon={icon}
-                                    description={description}
-                                    status={status}
-                                    badgeTitle={badgeTitle}
-                                    badgeType={badgeType}
-                                  />
-                                );
-
-                                const isActive = href === activeItem;
-
-                                return (
-                                  visualize && (
-                                    <DropdownMenuItemContainer
+                            {innerItems
+                              .filter(
+                                (element) =>
+                                  element.type !== DropdownMenuItemType.BANNER
+                              )
+                              .map(
+                                (
+                                  {
+                                    type = DropdownMenuItemType.INTERNAL_LINK,
+                                    label,
+                                    rightIconFill,
+                                    description,
+                                    href = "/",
+                                    status,
+                                    leftIcon = "",
+                                    rightIcon = "",
+                                    links = [],
+                                    badgeTitle,
+                                    badgeType,
+                                    bannerRenderer,
+                                    ...itemProps
+                                  },
+                                  itemItem
+                                ) => {
+                                  const getMenuItemContent = (
+                                    icon: string = rightIcon
+                                  ) => (
+                                    <MenuItemContent
                                       label={label}
-                                      key={itemItem}
-                                      isActive={isActive}
+                                      fill={rightIconFill}
                                       leftIcon={leftIcon}
-                                      getMenuItemContent={getMenuItemContent}
-                                      links={links}
-                                      setIsOpen={setIsOpen}
-                                      linkComponent={linkComponent}
-                                      href={href}
-                                      bannerRenderer={bannerRenderer}
-                                      type={type}
+                                      rightIcon={icon}
+                                      description={description}
+                                      status={status}
                                       badgeTitle={badgeTitle}
                                       badgeType={badgeType}
-                                      isOpenItem={isOpenAccordion}
-                                      {...itemProps}
                                     />
-                                  )
-                                );
-                              }
-                            )}
+                                  );
+
+                                  const isActive = href === activeItem;
+
+                                  return (
+                                    visualize && (
+                                      <DropdownMenuItemContainer
+                                        label={label}
+                                        key={itemItem}
+                                        isActive={isActive}
+                                        leftIcon={leftIcon}
+                                        getMenuItemContent={getMenuItemContent}
+                                        links={links}
+                                        setIsOpen={setIsOpen}
+                                        linkComponent={linkComponent}
+                                        href={href}
+                                        bannerRenderer={bannerRenderer}
+                                        type={type}
+                                        badgeTitle={badgeTitle}
+                                        badgeType={badgeType}
+                                        isOpenItem={isOpenAccordion}
+                                        {...itemProps}
+                                      />
+                                    )
+                                  );
+                                }
+                              )}
                           </Grid>
                         )}
                       </Accordion>

@@ -167,6 +167,12 @@ export const links: MenuItemsType[] = [
           },
         ],
       },
+      {
+        href: "/pool",
+        target: "_blank",
+        mobileTarget: "_self",
+        type: DropdownMenuItemType.BANNER,
+      },
     ],
   },
   {
