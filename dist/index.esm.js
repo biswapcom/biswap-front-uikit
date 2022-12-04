@@ -6931,6 +6931,17 @@ var links = [
                 href: "/pool",
                 leftIcon: "GobletOpacity",
                 description: "Item description",
+                type: DropdownMenuItemType.CONTAINER,
+                links: [
+                    {
+                        label: "NFT Staking",
+                        href: "/nft",
+                    },
+                    {
+                        label: "NFT Boost",
+                        href: "/nft/boost",
+                    },
+                ],
             },
         ],
     },
@@ -6969,11 +6980,6 @@ var links = [
                         mobileTarget: "_self",
                     },
                 ],
-            },
-            {
-                type: DropdownMenuItemType.BANNER,
-                href: "/",
-                target: "_black",
             },
         ],
     },
@@ -7403,7 +7409,7 @@ var DropdownMenuItem = styled.button(templateObject_6$3 || (templateObject_6$3 =
 var DropdownInternalMenuItem = styled(Link$1)(templateObject_7$1 || (templateObject_7$1 = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), CommonLinkStyle);
 var StyledDropdownMenuItemContainer = styled.div(templateObject_8$1 || (templateObject_8$1 = __makeTemplateObject(["\n  position: relative;\n  margin-bottom: 24px;\n\n  &:last-child {\n    margin-bottom: ", ";\n    ", " {\n      margin-bottom: 24px;\n    }\n  }\n\n  &:first-child > ", " {\n    border-top-left-radius: 8px;\n    border-top-right-radius: 8px;\n  }\n\n  &:last-child > ", " {\n    border-bottom-left-radius: 8px;\n    border-bottom-right-radius: 8px;\n  }\n"], ["\n  position: relative;\n  margin-bottom: 24px;\n\n  &:last-child {\n    margin-bottom: ", ";\n    ", " {\n      margin-bottom: 24px;\n    }\n  }\n\n  &:first-child > ", " {\n    border-top-left-radius: 8px;\n    border-top-right-radius: 8px;\n  }\n\n  &:last-child > ", " {\n    border-bottom-left-radius: 8px;\n    border-bottom-right-radius: 8px;\n  }\n"])), function (_a) {
     var isOpenMenuItem = _a.isOpenMenuItem;
-    return isOpenMenuItem ? "24px" : "32px";
+    return isOpenMenuItem ? "16px" : "32px";
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;

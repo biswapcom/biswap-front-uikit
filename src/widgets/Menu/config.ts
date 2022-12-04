@@ -117,6 +117,17 @@ export const links: MenuItemsType[] = [
         href: "/pool",
         leftIcon: "GobletOpacity",
         description: "Item description",
+        type: DropdownMenuItemType.CONTAINER,
+        links: [
+          {
+            label: "NFT Staking",
+            href: `/nft`,
+          },
+          {
+            label: "NFT Boost",
+            href: `/nft/boost`,
+          },
+        ],
       },
     ],
   },
@@ -155,11 +166,6 @@ export const links: MenuItemsType[] = [
             mobileTarget: "_self",
           },
         ],
-      },
-      {
-        type: DropdownMenuItemType.BANNER,
-        href: "/",
-        target: "_black",
       },
     ],
   },

@@ -136,7 +136,7 @@ export const StyledDropdownMenuItemContainer = styled.div<{
 
   &:last-child {
     margin-bottom: ${({ isOpenMenuItem }) =>
-      isOpenMenuItem ? "24px" : "32px"};
+      isOpenMenuItem ? "16px" : "32px"};
     ${({ theme }) => theme.mediaQueries.sm} {
       margin-bottom: 24px;
     }
