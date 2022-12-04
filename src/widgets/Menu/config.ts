@@ -168,7 +168,7 @@ export const links: MenuItemsType[] = [
         ],
       },
       {
-        href: "/pool",
+        href: "/",
         target: "_blank",
         mobileTarget: "_self",
         type: DropdownMenuItemType.BANNER,

@@ -140,6 +140,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
                   const isMarker = items[index].showNavBadge;
                   const isOpenAccordion = label === "Biswap Products";
                   if (hidden) return null;
+
                   const isHighlighted = items[index].highlightTitle;
                   const visualize =
                     !showItemsOnMobile ||
