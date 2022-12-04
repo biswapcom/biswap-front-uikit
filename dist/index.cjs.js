@@ -6995,7 +6995,7 @@ var links = [
                 ],
             },
             {
-                href: "/pool",
+                href: "/",
                 target: "_blank",
                 mobileTarget: "_self",
                 type: exports.DropdownMenuItemType.BANNER,

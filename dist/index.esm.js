@@ -6982,7 +6982,7 @@ var links = [
                 ],
             },
             {
-                href: "/pool",
+                href: "/",
                 target: "_blank",
                 mobileTarget: "_self",
                 type: DropdownMenuItemType.BANNER,
