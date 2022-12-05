@@ -32,7 +32,8 @@ const StyledMobileMenu = styled.div<{
 }>`
   background-color: ${({ theme }) => theme.card.background};
   width: 100vw;
-  height: calc(100vh - 60px);
+  height: calc(100vh - 72px);
+  z-index: 500;
   overflow: auto;
   visibility: visible;
   opacity: 1;
@@ -79,7 +80,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
 
   const [targetRef, setTargetRef] = useState<HTMLDivElement | null>(null);
   const [tooltipRef, setTooltipRef] = useState<HTMLDivElement | null>(null);
-  const { isMobile, isTablet, isDesktop } = useMatchBreakpoints();
+  const { isMobile, isTablet } = useMatchBreakpoints();
 
   const hasItems = items.length > 0;
   const { styles, attributes, update } = usePopper(targetRef, tooltipRef, {
