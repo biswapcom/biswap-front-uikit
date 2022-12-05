@@ -3,7 +3,6 @@ import { MenuContext } from "../../../widgets/Menu/context";
 import { usePopper } from "react-popper";
 import { useMatchBreakpoints } from "../../../contexts";
 import { Box, Grid } from "../../Box";
-import { Text } from "../../Text";
 import styled from "styled-components";
 import { DropdownMenuItemType, MobileMenuProps } from "../types";
 import MenuItemContent from "../components/MenuItemContent";
@@ -227,7 +226,8 @@ const MobileMenu: FC<MobileMenuProps> = ({
                                     bannerRenderer,
                                     ...itemProps
                                   },
-                                  itemItem
+                                  itemIndex,
+                                  arr
                                 ) => {
                                   const getMenuItemContent = (
                                     icon: string = rightIcon
@@ -246,11 +246,13 @@ const MobileMenu: FC<MobileMenuProps> = ({
 
                                   const isActive = href === activeItem;
 
+                                  const lastItem =
+                                    itemIndex === arr?.length - 1;
                                   return (
                                     visualize && (
                                       <DropdownMenuItemContainer
                                         label={label}
-                                        key={itemItem}
+                                        key={itemIndex}
                                         isActive={isActive}
                                         leftIcon={leftIcon}
                                         getMenuItemContent={getMenuItemContent}
@@ -263,6 +265,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
                                         badgeTitle={badgeTitle}
                                         badgeType={badgeType}
                                         isOpenItem={isOpenAccordion}
+                                        lastItem={lastItem}
                                         {...itemProps}
                                       />
                                     )

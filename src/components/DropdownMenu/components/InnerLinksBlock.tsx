@@ -101,11 +101,11 @@ const InnerLinksBlock: FC<InnerLinksBlockProps> = ({
       <Grid
         gridTemplateColumns={"1fr 1fr"}
         gridGap={16}
-        paddingBottom={isDesktop && !lastItem ? 16 : 0}
+        paddingBottom={!lastItem ? 16 : 0}
       >
         {renderLinks()}
       </Grid>
-      {isDesktop && !lastItem && <DropdownMenuDivider />}
+      {!lastItem && <DropdownMenuDivider />}
     </InnerLinksBlockContainer>
   );
 };

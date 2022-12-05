@@ -129,6 +129,12 @@ export const links: MenuItemsType[] = [
           },
         ],
       },
+      {
+        label: "NFT Launchpad",
+        href: `/launchpad`,
+        leftIcon: "LaunchpadOpacity",
+        description: "Buy new unique NFTs",
+      },
     ],
   },
   {

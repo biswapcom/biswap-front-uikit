@@ -116,7 +116,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
                 badgeTitle,
                 ...itemProps
               },
-              itemItem
+              itemIndex
             ) => {
               const getMenuItemContent = (icon: string = rightIcon) => (
                 <MenuItemContent
@@ -132,11 +132,13 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
               );
               const isActive = href === activeItem;
 
-              const lastItem = itemItem === items?.length - 1;
+              const lastItem =
+                itemIndex === items?.length - 1 ||
+                items[itemIndex + 1].type === DropdownMenuItemType.BANNER;
 
               return (
                 <DropdownMenuItemContainer
-                  key={itemItem}
+                  key={itemIndex}
                   isActive={isActive}
                   leftIcon={leftIcon}
                   getMenuItemContent={getMenuItemContent}
