@@ -6371,6 +6371,19 @@ var formatSpacingAmount = function (x) {
     return null;
 };
 
+var defaultObject = {
+    xs: null,
+    sm: null,
+    md: null,
+    lg: null,
+    xl: null,
+    xll: null,
+    xxl: null,
+};
+var getResponsiveAttrs = function (obj) {
+    return Object.values(__assign(__assign({}, defaultObject), obj));
+};
+
 var ModalHeader = styled__default["default"].div(templateObject_1$q || (templateObject_1$q = __makeTemplateObject(["\n  display: flex;\n  //align-items: flex-start;\n  justify-content: space-between;\n  align-items: center;\n  padding: 24px 16px;\n\n  ", " {\n    padding: 32px 32px 24px;\n  }\n"], ["\n  display: flex;\n  //align-items: flex-start;\n  justify-content: space-between;\n  align-items: center;\n  padding: 24px 16px;\n\n  ", " {\n    padding: 32px 32px 24px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
@@ -8561,6 +8574,7 @@ exports.darkColors = darkColors;
 exports.formatSpacingAmount = formatSpacingAmount;
 exports.getExternalLinkProps = getExternalLinkProps;
 exports.getPortalRoot = getPortalRoot;
+exports.getResponsiveAttrs = getResponsiveAttrs;
 exports.getRgba = getRgba;
 exports.getThemeValue = getThemeValue;
 exports.headTextScaleMap = headTextScaleMap;

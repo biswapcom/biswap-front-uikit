@@ -30,14 +30,6 @@ export interface ScalesObj {
   xxl?: Scales;
 }
 
-// export interface BodyTextProps extends TextProps {
-//   as?: Tags;
-//   scale?: Scales | ScalesObj;
-//   children: string | React.ReactNode | JSX.Element;
-//   color?: string;
-//   href?: string;
-// }
-
 export interface BodyTextProps
   extends SpaceProps,
     TypographyProps,
