@@ -6943,6 +6943,12 @@ var links = [
                     },
                 ],
             },
+            {
+                label: "NFT Launchpad",
+                href: "/launchpad",
+                leftIcon: "LaunchpadOpacity",
+                description: "Buy new unique NFTs",
+            },
         ],
     },
     {
@@ -7465,7 +7471,7 @@ var templateObject_1$e, templateObject_2$7, templateObject_3$6, templateObject_4
 var LabelText = styled(Text)(templateObject_1$d || (templateObject_1$d = __makeTemplateObject(["\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  width: 80px;\n"], ["\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  width: 80px;\n"])));
 var InnerLinksBlock = function (_a) {
     var links = _a.links, leftIcon = _a.leftIcon, setIsOpen = _a.setIsOpen, linkComponent = _a.linkComponent, lastItem = _a.lastItem;
-    var _b = useMatchBreakpoints(), isMobile = _b.isMobile, isTablet = _b.isTablet, isDesktop = _b.isDesktop;
+    var _b = useMatchBreakpoints(), isMobile = _b.isMobile, isTablet = _b.isTablet; _b.isDesktop;
     var renderLinks = function () {
         return links.map(function (_a, index) {
             var _b = _a.label, label = _b === void 0 ? "" : _b, _c = _a.href, href = _c === void 0 ? "/" : _c, _d = _a.icon, icon = _d === void 0 ? "ChevronRight" : _d, _e = _a.linkType, linkType = _e === void 0 ? DropdownMenuItemType.INTERNAL_LINK : _e, mobileTarget = _a.mobileTarget, target = _a.target, _f = _a.fill, fill = _f === void 0 ? "primary" : _f;
@@ -7482,8 +7488,8 @@ var InnerLinksBlock = function (_a) {
         });
     };
     return (React.createElement(InnerLinksBlockContainer, { padded: !!leftIcon && !isTablet },
-        React.createElement(Grid, { gridTemplateColumns: "1fr 1fr", gridGap: 16, paddingBottom: isDesktop && !lastItem ? 16 : 0 }, renderLinks()),
-        isDesktop && !lastItem && React.createElement(DropdownMenuDivider, null)));
+        React.createElement(Grid, { gridTemplateColumns: "1fr 1fr", gridGap: 16, paddingBottom: !lastItem ? 16 : 0 }, renderLinks()),
+        !lastItem && React.createElement(DropdownMenuDivider, null)));
 };
 var templateObject_1$d;
 
@@ -7623,15 +7629,16 @@ var DropdownMenu = function (_a) {
         //   update && update();
         // }}
         , null, children),
-        hasItems && (React.createElement(StyledDropdownMenu, __assign({ style: styles.popper, ref: setTooltipRef }, attributes.popper, { "$isOpen": isOpen, "$isExtended": isExtended && hasMoreThanItems }), items.map(function (_a, itemItem) {
+        hasItems && (React.createElement(StyledDropdownMenu, __assign({ style: styles.popper, ref: setTooltipRef }, attributes.popper, { "$isOpen": isOpen, "$isExtended": isExtended && hasMoreThanItems }), items.map(function (_a, itemIndex) {
             var _b = _a.type, type = _b === void 0 ? DropdownMenuItemType.INTERNAL_LINK : _b, label = _a.label, rightIconFill = _a.rightIconFill, description = _a.description, _c = _a.href, href = _c === void 0 ? "/" : _c, status = _a.status, _d = _a.leftIcon, leftIcon = _d === void 0 ? "" : _d, _e = _a.rightIcon, rightIcon = _e === void 0 ? "" : _e, _f = _a.links, links = _f === void 0 ? [] : _f, bannerRenderer = _a.bannerRenderer, target = _a.target, mobileTarget = _a.mobileTarget, badgeType = _a.badgeType, badgeTitle = _a.badgeTitle, itemProps = __rest(_a, ["type", "label", "rightIconFill", "description", "href", "status", "leftIcon", "rightIcon", "links", "bannerRenderer", "target", "mobileTarget", "badgeType", "badgeTitle"]);
             var getMenuItemContent = function (icon) {
                 if (icon === void 0) { icon = rightIcon; }
                 return (React.createElement(MenuItemContent, { label: label, fill: rightIconFill, leftIcon: leftIcon, rightIcon: icon, description: description, status: status, badgeType: badgeType, badgeTitle: badgeTitle }));
             };
             var isActive = href === activeItem;
-            var lastItem = itemItem === (items === null || items === void 0 ? void 0 : items.length) - 1;
-            return (React.createElement(DropdownMenuItemContainer, __assign({ key: itemItem, isActive: isActive, leftIcon: leftIcon, getMenuItemContent: getMenuItemContent, links: links, setIsOpen: setIsOpen, linkComponent: linkComponent, href: href, bannerRenderer: bannerRenderer, type: type, target: target, mobileTarget: mobileTarget, lastItem: lastItem }, itemProps)));
+            var lastItem = itemIndex === (items === null || items === void 0 ? void 0 : items.length) - 1 ||
+                items[itemIndex + 1].type === DropdownMenuItemType.BANNER;
+            return (React.createElement(DropdownMenuItemContainer, __assign({ key: itemIndex, isActive: isActive, leftIcon: leftIcon, getMenuItemContent: getMenuItemContent, links: links, setIsOpen: setIsOpen, linkComponent: linkComponent, href: href, bannerRenderer: bannerRenderer, type: type, target: target, mobileTarget: mobileTarget, lastItem: lastItem }, itemProps)));
         })))));
 };
 
@@ -7763,14 +7770,15 @@ var MobileMenu = function (_a) {
                             .filter(function (element) {
                             return element.type !== DropdownMenuItemType.BANNER;
                         })
-                            .map(function (_a, itemItem) {
+                            .map(function (_a, itemIndex, arr) {
                             var _b = _a.type, type = _b === void 0 ? DropdownMenuItemType.INTERNAL_LINK : _b, label = _a.label, rightIconFill = _a.rightIconFill, description = _a.description, _c = _a.href, href = _c === void 0 ? "/" : _c, status = _a.status, _d = _a.leftIcon, leftIcon = _d === void 0 ? "" : _d, _e = _a.rightIcon, rightIcon = _e === void 0 ? "" : _e, _f = _a.links, links = _f === void 0 ? [] : _f, badgeTitle = _a.badgeTitle, badgeType = _a.badgeType, bannerRenderer = _a.bannerRenderer, itemProps = __rest(_a, ["type", "label", "rightIconFill", "description", "href", "status", "leftIcon", "rightIcon", "links", "badgeTitle", "badgeType", "bannerRenderer"]);
                             var getMenuItemContent = function (icon) {
                                 if (icon === void 0) { icon = rightIcon; }
                                 return (React.createElement(MenuItemContent, { label: label, fill: rightIconFill, leftIcon: leftIcon, rightIcon: icon, description: description, status: status, badgeTitle: badgeTitle, badgeType: badgeType }));
                             };
                             var isActive = href === activeItem;
-                            return (visualize && (React.createElement(DropdownMenuItemContainer, __assign({ label: label, key: itemItem, isActive: isActive, leftIcon: leftIcon, getMenuItemContent: getMenuItemContent, links: links, setIsOpen: setIsOpen, linkComponent: linkComponent, href: href, bannerRenderer: bannerRenderer, type: type, badgeTitle: badgeTitle, badgeType: badgeType, isOpenItem: isOpenAccordion }, itemProps))));
+                            var lastItem = itemIndex === (arr === null || arr === void 0 ? void 0 : arr.length) - 1;
+                            return (visualize && (React.createElement(DropdownMenuItemContainer, __assign({ label: label, key: itemIndex, isActive: isActive, leftIcon: leftIcon, getMenuItemContent: getMenuItemContent, links: links, setIsOpen: setIsOpen, linkComponent: linkComponent, href: href, bannerRenderer: bannerRenderer, type: type, badgeTitle: badgeTitle, badgeType: badgeType, isOpenItem: isOpenAccordion, lastItem: lastItem }, itemProps))));
                         })))),
                         isTablet && !showItemsOnMobile && (React.createElement(DropdownMenuDivider, null))));
                 }),
