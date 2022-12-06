@@ -134,7 +134,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
 
               const lastItem =
                 itemIndex === items?.length - 1 ||
-                items[itemIndex + 1].type === DropdownMenuItemType.BANNER;
+                items[itemIndex + 1]?.type === DropdownMenuItemType.BANNER;
 
               return (
                 <DropdownMenuItemContainer
