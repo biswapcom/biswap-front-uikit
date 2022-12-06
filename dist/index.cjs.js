@@ -5067,7 +5067,7 @@ var CommonLinkStyles = function (_a) {
             return theme.colors.white;
         }, $statusColor &&
         "\n    &:after {\n      content: \"\";\n      border-radius: 100%;\n      height: 8px;\n      width: 8px;\n      margin-left: 12px;\n    }\n    ", $variant === "default"
-        ? styled.css(templateObject_2$o || (templateObject_2$o = __makeTemplateObject(["\n        padding: 0 8px;\n        height: 48px;\n        ", " {\n          padding: 0 12px;\n        }\n      "], ["\n        padding: 0 8px;\n        height: 48px;\n        ", " {\n          padding: 0 12px;\n        }\n      "])), function (_a) {
+        ? styled.css(templateObject_2$o || (templateObject_2$o = __makeTemplateObject(["\n        padding: 0 8px;\n        height: 72px;\n        ", " {\n          padding: 0 12px;\n        }\n      "], ["\n        padding: 0 8px;\n        height: 72px;\n        ", " {\n          padding: 0 12px;\n        }\n      "])), function (_a) {
             var theme = _a.theme;
             return theme.mediaQueries.lg;
         }) : styled.css(templateObject_3$i || (templateObject_3$i = __makeTemplateObject(["\n        padding: 4px 4px 0px 4px;\n        height: 42px;\n      "], ["\n        padding: 4px 4px 0px 4px;\n        height: 42px;\n      "]))), function (_a) {
@@ -7446,7 +7446,7 @@ var DropdownMenuDivider = styled__default["default"].hr(templateObject_9 || (tem
     var color = _a.color;
     return "\n    color: ".concat(color, ";\n    background-color: ").concat(color, ";\n    border-color: ").concat(color, ";\n");
 });
-var StyledDropdownMenu = styled__default["default"](Grid)(templateObject_10 || (templateObject_10 = __makeTemplateObject(["\n  grid-template-columns: 1fr;\n\n  background-color: ", ";\n  border: 1px solid ", ";\n  border-radius: 16px;\n\n  padding: 24px 24px 0;\n  pointer-events: auto;\n  width: 352px;\n  visibility: visible;\n  opacity: 1;\n  transition: opacity 250ms linear, visibility 350ms linear;\n  z-index: 1001;\n  box-shadow: 0 20px 36px -8px rgba(0, 26, 67, 0.24),\n    0px 1px 1px rgba(0, 0, 0, 0.05);\n\n  ", "\n\n  ", "\n"], ["\n  grid-template-columns: 1fr;\n\n  background-color: ", ";\n  border: 1px solid ", ";\n  border-radius: 16px;\n\n  padding: 24px 24px 0;\n  pointer-events: auto;\n  width: 352px;\n  visibility: visible;\n  opacity: 1;\n  transition: opacity 250ms linear, visibility 350ms linear;\n  z-index: 1001;\n  box-shadow: 0 20px 36px -8px rgba(0, 26, 67, 0.24),\n    0px 1px 1px rgba(0, 0, 0, 0.05);\n\n  ", "\n\n  ", "\n"])), function (_a) {
+var StyledDropdownMenu = styled__default["default"](Grid)(templateObject_10 || (templateObject_10 = __makeTemplateObject(["\n  grid-template-columns: 1fr;\n\n  background-color: ", ";\n  border: 1px solid ", ";\n  border-radius: 16px;\n\n  margin-top: -14px;\n  padding: 24px 24px 0;\n  pointer-events: auto;\n  width: 352px;\n  visibility: visible;\n  opacity: 1;\n  transition: opacity 250ms linear, visibility 350ms linear;\n  z-index: 1001;\n  box-shadow: 0 20px 36px -8px rgba(0, 26, 67, 0.24),\n    0px 1px 1px rgba(0, 0, 0, 0.05);\n\n  ", "\n\n  ", "\n"], ["\n  grid-template-columns: 1fr;\n\n  background-color: ", ";\n  border: 1px solid ", ";\n  border-radius: 16px;\n\n  margin-top: -14px;\n  padding: 24px 24px 0;\n  pointer-events: auto;\n  width: 352px;\n  visibility: visible;\n  opacity: 1;\n  transition: opacity 250ms linear, visibility 350ms linear;\n  z-index: 1001;\n  box-shadow: 0 20px 36px -8px rgba(0, 26, 67, 0.24),\n    0px 1px 1px rgba(0, 0, 0, 0.05);\n\n  ", "\n\n  ", "\n"])), function (_a) {
     var theme = _a.theme;
     return theme.card.background;
 }, function (_a) {
@@ -7697,7 +7697,7 @@ var templateObject_1$a;
 
 var MainContententWrapper = styled__default["default"].div(templateObject_1$9 || (templateObject_1$9 = __makeTemplateObject(["\n  flex: 1;\n"], ["\n  flex: 1;\n"])));
 var MobileCommunityWrapper = styled__default["default"].div(templateObject_2$5 || (templateObject_2$5 = __makeTemplateObject(["\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  margin-top: 32px;\n  padding: 0 54px;\n"], ["\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  margin-top: 32px;\n  padding: 0 54px;\n"])));
-var StyledMobileMenu = styled__default["default"].div(templateObject_3$4 || (templateObject_3$4 = __makeTemplateObject(["\n  background-color: ", ";\n  width: 100vw;\n  height: calc(100vh - 72px);\n  z-index: 500;\n  overflow: auto;\n  visibility: visible;\n  opacity: 1;\n  transition: opacity 250ms linear, visibility 350ms linear;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  align-content: stretch;\n\n  ", "\n\n  scrollbar-width: none;\n  -ms-overflow-style: none;\n\n  &::-webkit-scrollbar-track {\n    -webkit-box-shadow: none;\n    background-color: transparent;\n  }\n\n  &::-webkit-scrollbar {\n    display: none;\n  }\n\n  &::-webkit-slider-thumb {\n    display: none;\n  }\n"], ["\n  background-color: ", ";\n  width: 100vw;\n  height: calc(100vh - 72px);\n  z-index: 500;\n  overflow: auto;\n  visibility: visible;\n  opacity: 1;\n  transition: opacity 250ms linear, visibility 350ms linear;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  align-content: stretch;\n\n  ", "\n\n  scrollbar-width: none;\n  -ms-overflow-style: none;\n\n  &::-webkit-scrollbar-track {\n    -webkit-box-shadow: none;\n    background-color: transparent;\n  }\n\n  &::-webkit-scrollbar {\n    display: none;\n  }\n\n  &::-webkit-slider-thumb {\n    display: none;\n  }\n"])), function (_a) {
+var StyledMobileMenu = styled__default["default"].div(templateObject_3$4 || (templateObject_3$4 = __makeTemplateObject(["\n  background-color: ", ";\n  width: 100vw;\n  height: calc(100vh - 72px);\n  z-index: 500;\n  overflow: auto;\n  visibility: visible;\n  opacity: 1;\n  transition: opacity 250ms linear, visibility 350ms linear;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  align-content: stretch;\n  transform: translate3d(0px, 72px, 0px) !important;\n\n  ", "\n\n  scrollbar-width: none;\n  -ms-overflow-style: none;\n\n  &::-webkit-scrollbar-track {\n    -webkit-box-shadow: none;\n    background-color: transparent;\n  }\n\n  &::-webkit-scrollbar {\n    display: none;\n  }\n\n  &::-webkit-slider-thumb {\n    display: none;\n  }\n"], ["\n  background-color: ", ";\n  width: 100vw;\n  height: calc(100vh - 72px);\n  z-index: 500;\n  overflow: auto;\n  visibility: visible;\n  opacity: 1;\n  transition: opacity 250ms linear, visibility 350ms linear;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  align-content: stretch;\n  transform: translate3d(0px, 72px, 0px) !important;\n\n  ", "\n\n  scrollbar-width: none;\n  -ms-overflow-style: none;\n\n  &::-webkit-scrollbar-track {\n    -webkit-box-shadow: none;\n    background-color: transparent;\n  }\n\n  &::-webkit-scrollbar {\n    display: none;\n  }\n\n  &::-webkit-slider-thumb {\n    display: none;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.card.background;
 }, function (_a) {
@@ -7758,6 +7758,7 @@ var MobileMenu = function (_a) {
                     var label = _a.label, _b = _a.items, innerItems = _b === void 0 ? [] : _b, showItemsOnMobile = _a.showItemsOnMobile, hidden = _a.hidden; _a.showNavBadge; var href = _a.href; _a.highlightTitle;
                     var isMarker = items[index].showNavBadge;
                     var isOpenAccordion = label === "Biswap Products";
+                    var firstAccordionItemMobile = index === 1 && isMobile;
                     if (hidden)
                         return null;
                     var isHighlighted = items[index].highlightTitle;
@@ -7767,7 +7768,9 @@ var MobileMenu = function (_a) {
                         React__default["default"].createElement(Accordion, { index: index, label: label, href: href, linkComponent: linkComponent, setIsOpenMenu: setIsOpen, clickable: !isTablet && innerItems.length > 0, isOpenItem: isOpenAccordion, heading: function (opened) {
                                 return (((!showItemsOnMobile && !hidden) ||
                                     (href && !isTablet)) && (React__default["default"].createElement(React__default["default"].Fragment, null,
-                                    React__default["default"].createElement(Box, { m: "16px 0", position: "relative" },
+                                    React__default["default"].createElement(Box, { m: firstAccordionItemMobile
+                                            ? "4px 0 16px"
+                                            : "16px 0", position: "relative" },
                                         isMarker && React__default["default"].createElement(Marker, null),
                                         React__default["default"].createElement(HeadText, { scale: isTablet ? "size20" : "size16", color: isMobile && opened && !href
                                                 ? "primary"
