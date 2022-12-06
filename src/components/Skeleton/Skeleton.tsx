@@ -1,6 +1,8 @@
 import React, { FC } from "react";
 import styled, { keyframes } from "styled-components";
 import { space, layout } from "styled-system";
+import {getRgba} from "../../util";
+
 import {
   SkeletonProps,
   animation as ANIMATION,
@@ -31,7 +33,7 @@ const pulse = keyframes`
 const Root = styled.div<SkeletonProps>`
   min-height: 20px;
   display: block;
-  background-color: rgba(116, 155, 216, 0.16);;
+  background-color: ${({ theme }) => getRgba(theme.colors.pastelBlue, theme, 0.16)};
   border-radius: ${({ variant, theme }) =>
     variant === VARIANT.CIRCLE ? theme.radii.circle : theme.radii.small};
   

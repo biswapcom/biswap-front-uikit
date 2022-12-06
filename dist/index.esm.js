@@ -4895,6 +4895,41 @@ var Slider = function (_a) {
 };
 var templateObject_1$M, templateObject_2$r, templateObject_3$l, templateObject_4$k, templateObject_5$g, templateObject_6$a, templateObject_7$8, templateObject_8$3, templateObject_9$2, templateObject_10$2, templateObject_11$1, templateObject_12$1, templateObject_13$1, templateObject_14, templateObject_15, templateObject_16, templateObject_17;
 
+// eslint-disable-next-line import/prefer-default-export
+var formatSpacingAmount = function (x) {
+    if (x) {
+        var parts = x.toString().split(".");
+        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+        return parts.join(".");
+    }
+    return null;
+};
+
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+var getPortalRoot = function () {
+    var _a;
+    return typeof window !== "undefined" &&
+        ((_a = document.getElementById("portal-root")) !== null && _a !== void 0 ? _a : document.body);
+};
+
+var isTouchDevice = function () {
+    return (typeof window !== "undefined" &&
+        ("ontouchstart" in window || navigator.maxTouchPoints > 0));
+};
+
+var defaultObject = {
+    xs: null,
+    sm: null,
+    md: null,
+    lg: null,
+    xl: null,
+    xll: null,
+    xxl: null,
+};
+var getResponsiveAttrs = function (obj) {
+    return Object.values(__assign(__assign({}, defaultObject), obj));
+};
+
 var animation = {
     WAVES: "waves",
     PULSE: "pulse",
@@ -4906,7 +4941,10 @@ var variant = {
 
 var waves = keyframes(templateObject_1$L || (templateObject_1$L = __makeTemplateObject(["\n   from {\n        left: -150px;\n    }\n    to   {\n        left: 100%;\n    }\n"], ["\n   from {\n        left: -150px;\n    }\n    to   {\n        left: 100%;\n    }\n"])));
 var pulse = keyframes(templateObject_2$q || (templateObject_2$q = __makeTemplateObject(["\n  0% {\n    opacity: 0.1;\n  }\n  50% {\n    opacity: 0.3;\n  }\n  100% {\n    opacity: 0.1;\n  }\n"], ["\n  0% {\n    opacity: 0.1;\n  }\n  50% {\n    opacity: 0.3;\n  }\n  100% {\n    opacity: 0.1;\n  }\n"])));
-var Root = styled.div(templateObject_3$k || (templateObject_3$k = __makeTemplateObject(["\n  min-height: 20px;\n  display: block;\n  background-color: rgba(116, 155, 216, 0.16);;\n  border-radius: ", ";\n  \n  ", "\n  ", "\n"], ["\n  min-height: 20px;\n  display: block;\n  background-color: rgba(116, 155, 216, 0.16);;\n  border-radius: ", ";\n  \n  ", "\n  ", "\n"])), function (_a) {
+var Root = styled.div(templateObject_3$k || (templateObject_3$k = __makeTemplateObject(["\n  min-height: 20px;\n  display: block;\n  background-color: ", ";\n  border-radius: ", ";\n  \n  ", "\n  ", "\n"], ["\n  min-height: 20px;\n  display: block;\n  background-color: ", ";\n  border-radius: ", ";\n  \n  ", "\n  ", "\n"])), function (_a) {
+    var theme = _a.theme;
+    return getRgba(theme.colors.pastelBlue, theme, 0.16);
+}, function (_a) {
     var variant$1 = _a.variant, theme = _a.theme;
     return variant$1 === variant.CIRCLE ? theme.radii.circle : theme.radii.small;
 }, layout, space);
@@ -4953,13 +4991,6 @@ var SubMenuItem = styled.button(templateObject_4$i || (templateObject_4$i = __ma
     return theme.colors.dark600;
 });
 var templateObject_1$K, templateObject_2$p, templateObject_3$j, templateObject_4$i;
-
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-var getPortalRoot = function () {
-    var _a;
-    return typeof window !== "undefined" &&
-        ((_a = document.getElementById("portal-root")) !== null && _a !== void 0 ? _a : document.body);
-};
 
 var BaseMenu = function (_a) {
     var _b, _c, _d;
@@ -6148,11 +6179,6 @@ var darkTheme = __assign(__assign({}, base), { isDark: true, alert: dark$6, colo
 
 var lightTheme = __assign(__assign({}, base), { isDark: false, alert: light$6, colors: lightColors, card: light$5, toggle: light$3, nav: light$2, modal: light$1, radio: light$4, tooltip: light });
 
-var isTouchDevice = function () {
-    return (typeof window !== "undefined" &&
-        ("ontouchstart" in window || navigator.maxTouchPoints > 0));
-};
-
 var Arrow = styled.div(templateObject_1$r || (templateObject_1$r = __makeTemplateObject(["\n  &,\n  &::before {\n    position: absolute;\n    width: 10px;\n    height: 10px;\n    z-index: -1;\n  }\n\n  &::before {\n    content: \"\";\n    transform: rotate(45deg);\n    background: ", ";\n  }\n"], ["\n  &,\n  &::before {\n    position: absolute;\n    width: 10px;\n    height: 10px;\n    z-index: -1;\n  }\n\n  &::before {\n    content: \"\";\n    transform: rotate(45deg);\n    background: ", ";\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.tooltip;
@@ -6346,29 +6372,6 @@ var useOnClickOutside = function (ref, handler) {
     // ... but to optimize you can wrap handler in useCallback before ...
     // ... passing it into this hook.
     [ref, handler]);
-};
-
-// eslint-disable-next-line import/prefer-default-export
-var formatSpacingAmount = function (x) {
-    if (x) {
-        var parts = x.toString().split(".");
-        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-        return parts.join(".");
-    }
-    return null;
-};
-
-var defaultObject = {
-    xs: null,
-    sm: null,
-    md: null,
-    lg: null,
-    xl: null,
-    xll: null,
-    xxl: null,
-};
-var getResponsiveAttrs = function (obj) {
-    return Object.values(__assign(__assign({}, defaultObject), obj));
 };
 
 var ModalHeader = styled.div(templateObject_1$q || (templateObject_1$q = __makeTemplateObject(["\n  display: flex;\n  //align-items: flex-start;\n  justify-content: space-between;\n  align-items: center;\n  padding: 24px 16px;\n\n  ", " {\n    padding: 32px 32px 24px;\n  }\n"], ["\n  display: flex;\n  //align-items: flex-start;\n  justify-content: space-between;\n  align-items: center;\n  padding: 24px 16px;\n\n  ", " {\n    padding: 32px 32px 24px;\n  }\n"])), function (_a) {
