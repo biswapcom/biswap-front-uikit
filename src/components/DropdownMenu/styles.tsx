@@ -175,6 +175,7 @@ export const StyledDropdownMenu = styled(Grid)<{
   border: 1px solid ${({ theme }) => theme.colors.white};
   border-radius: 16px;
 
+  margin-top: -14px;
   padding: 24px 24px 0;
   pointer-events: auto;
   width: 352px;

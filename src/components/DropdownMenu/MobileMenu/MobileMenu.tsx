@@ -42,6 +42,7 @@ const StyledMobileMenu = styled.div<{
   flex-direction: column;
   justify-content: space-between;
   align-content: stretch;
+  transform: translate3d(0px, 72px, 0px) !important;
 
   ${({ $isOpen }) =>
     !$isOpen &&
@@ -139,6 +140,8 @@ const MobileMenu: FC<MobileMenuProps> = ({
                 ) => {
                   const isMarker = items[index].showNavBadge;
                   const isOpenAccordion = label === "Biswap Products";
+                  const firstAccordionItemMobile = index === 1 && isMobile;
+
                   if (hidden) return null;
 
                   const isHighlighted = items[index].highlightTitle;
@@ -163,7 +166,14 @@ const MobileMenu: FC<MobileMenuProps> = ({
                             ((!showItemsOnMobile && !hidden) ||
                               (href && !isTablet)) && (
                               <>
-                                <Box m="16px 0" position="relative">
+                                <Box
+                                  m={
+                                    firstAccordionItemMobile
+                                      ? "4px 0 16px"
+                                      : "16px 0"
+                                  }
+                                  position="relative"
+                                >
                                   {isMarker && <Marker />}
                                   <HeadText
                                     scale={isTablet ? "size20" : "size16"}
