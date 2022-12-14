@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import { SpaceProps } from "styled-system";
 export declare const scales: {
     readonly SM: "sm";
