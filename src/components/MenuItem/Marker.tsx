@@ -31,8 +31,8 @@ const Marker = styled(Box)<{ color?: keyof Colors }>`
     0% {
       transform: scale(0.95);
       box-shadow: 0 0 0 0 ${({ theme, color }) =>
-        // @ts-ignore
         getRgba(
+            // @ts-ignore
           !color ? theme.colors.success : theme.colors[color],
           theme,
           0.7

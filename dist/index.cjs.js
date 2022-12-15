@@ -7704,6 +7704,7 @@ var links = [
     {
         label: "Trade",
         showNavBadge: true,
+        colorNavBadge: "warning",
         items: [
             {
                 label: "Swap",
@@ -8497,11 +8498,13 @@ var Accordion = function (_a) {
 var templateObject_1$i, templateObject_2$c, templateObject_3$8, templateObject_4$5, templateObject_5$4;
 
 var Marker = styled__default["default"](Box)(templateObject_1$h || (templateObject_1$h = __makeTemplateObject(["\n  position: absolute;\n  top: 0;\n  right: -4px;\n  width: 6px;\n  height: 6px;\n  transform: translateX(100%);\n  border-radius: 50%;\n  background-color: ", ";\n\n  &:before {\n    display: block;\n    content: \"\";\n    position: absolute;\n    width: 10px;\n    height: 10px;\n    border-radius: 50%;\n    top: -2px;\n    left: -2px;\n    z-index: 1;\n    animation: pulse-white 2s infinite;\n  }\n\n  @keyframes pulse-white {\n    0% {\n      transform: scale(0.95);\n      box-shadow: 0 0 0 0 ", ";\n    }\n\n    70% {\n      transform: scale(1);\n      box-shadow: 0 0 0 4px rgba(51, 217, 178, 0);\n    }\n\n    100% {\n      transform: scale(0.95);\n      box-shadow: 0 0 0 0 rgba(51, 217, 178, 0);\n    }\n"], ["\n  position: absolute;\n  top: 0;\n  right: -4px;\n  width: 6px;\n  height: 6px;\n  transform: translateX(100%);\n  border-radius: 50%;\n  background-color: ", ";\n\n  &:before {\n    display: block;\n    content: \"\";\n    position: absolute;\n    width: 10px;\n    height: 10px;\n    border-radius: 50%;\n    top: -2px;\n    left: -2px;\n    z-index: 1;\n    animation: pulse-white 2s infinite;\n  }\n\n  @keyframes pulse-white {\n    0% {\n      transform: scale(0.95);\n      box-shadow: 0 0 0 0 ", ";\n    }\n\n    70% {\n      transform: scale(1);\n      box-shadow: 0 0 0 4px rgba(51, 217, 178, 0);\n    }\n\n    100% {\n      transform: scale(0.95);\n      box-shadow: 0 0 0 0 rgba(51, 217, 178, 0);\n    }\n"])), function (_a) {
-    var theme = _a.theme;
-    return theme.colors.success;
+    var theme = _a.theme, color = _a.color;
+    return color ? theme.colors[color] : theme.colors.success;
 }, function (_a) {
-    var theme = _a.theme;
-    return getRgba(theme.colors.success, theme, 0.7);
+    var theme = _a.theme, color = _a.color;
+    return getRgba(
+    // @ts-ignore
+    !color ? theme.colors.success : theme.colors[color], theme, 0.7);
 });
 var templateObject_1$h;
 
@@ -8567,6 +8570,7 @@ var MobileMenu = function (_a) {
                     .map(function (_a, index) {
                     var label = _a.label, _b = _a.items, innerItems = _b === void 0 ? [] : _b, showItemsOnMobile = _a.showItemsOnMobile, hidden = _a.hidden; _a.showNavBadge; var href = _a.href; _a.highlightTitle;
                     var isMarker = items[index].showNavBadge;
+                    var isMarkerColor = items[index].colorNavBadge;
                     var isOpenAccordion = label === "Biswap Products";
                     if (hidden)
                         return null;
@@ -8578,7 +8582,7 @@ var MobileMenu = function (_a) {
                                 return (((!showItemsOnMobile && !hidden) ||
                                     (href && !isTablet)) && (React__default["default"].createElement(React__default["default"].Fragment, null,
                                     React__default["default"].createElement(Box, { m: "16px 0", position: "relative" },
-                                        isMarker && React__default["default"].createElement(Marker, null),
+                                        isMarker && React__default["default"].createElement(Marker, { color: isMarkerColor }),
                                         React__default["default"].createElement(HeadText, { scale: isTablet ? "size20" : "size16", color: isMobile && opened && !href
                                                 ? "primary"
                                                 : isHighlighted && isTablet
@@ -8701,11 +8705,12 @@ var MenuItems = function (_a) {
     return (React__default["default"].createElement(Flex, __assign({}, props, { alignItems: "center" }),
         !isDesktop && (React__default["default"].createElement(MobileDropdownMenu, { items: items, activeItem: activeItem, isMobileMenuOpened: isMobileMenuOpened, mobileMenuCallback: mobileMenuCallback })),
         items.map(function (_a, index) {
-            var _b, _c, _d;
-            var label = _a.label, _e = _a.items, menuItems = _e === void 0 ? [] : _e, href = _a.href, _f = _a.icon, icon = _f === void 0 ? "" : _f, isExtended = _a.isExtended, showItemsOnMobile = _a.showItemsOnMobile, type = _a.type, hidden = _a.hidden; _a.showNavBadge; var highlightTitle = _a.highlightTitle;
+            var _b, _c, _d, _e;
+            var label = _a.label, _f = _a.items, menuItems = _f === void 0 ? [] : _f, href = _a.href, _g = _a.icon, icon = _g === void 0 ? "" : _g, isExtended = _a.isExtended, showItemsOnMobile = _a.showItemsOnMobile, type = _a.type, hidden = _a.hidden; _a.showNavBadge; var highlightTitle = _a.highlightTitle;
             var isMarker = (_b = items[index]) === null || _b === void 0 ? void 0 : _b.showNavBadge;
+            var isMarkerColor = (_c = items[index]) === null || _c === void 0 ? void 0 : _c.colorNavBadge;
             var isHighlighted = items[index].highlightTitle;
-            var statusColor = (_d = (_c = menuItems === null || menuItems === void 0 ? void 0 : menuItems.find(function (menuItem) { return menuItem.status !== undefined; })) === null || _c === void 0 ? void 0 : _c.status) === null || _d === void 0 ? void 0 : _d.color;
+            var statusColor = (_e = (_d = menuItems === null || menuItems === void 0 ? void 0 : menuItems.find(function (menuItem) { return menuItem.status !== undefined; })) === null || _d === void 0 ? void 0 : _d.status) === null || _e === void 0 ? void 0 : _e.color;
             var isActive = activeItem === href;
             var linkProps = isTouchDevice() && menuItems && menuItems.length > 0
                 ? {}
@@ -8717,7 +8722,7 @@ var MenuItems = function (_a) {
                         type === ItemTypes.DIVIDER && React__default["default"].createElement(MenuItemDivider, null),
                         icon && (React__default["default"].createElement(IconComponent, { mr: "8px", iconName: icon, color: "white" })),
                         label && (React__default["default"].createElement(Box, { ml: !href ? "8px" : 0, position: "relative" },
-                            isMarker && React__default["default"].createElement(Marker, null),
+                            isMarker && React__default["default"].createElement(Marker, { color: isMarkerColor }),
                             React__default["default"].createElement(Text, { color: isHighlighted ? "warningPress" : "white", fontSize: "14px", lineHeight: "20px", fontWeight: "600" }, label))))))));
         })));
 };
