@@ -15,6 +15,7 @@ export const Default: React.FC = (args) => {
   return (
     <Box width="500px" mt="24px" ml="24px">
       <Skeleton {...args} />
+      <Skeleton animation="waves" width="400px" height="32px" mt="16px"/>
     </Box>
   );
 };
@@ -33,16 +34,16 @@ Animation.args = {
   animation: "waves",
 };
 
-export const ParentSize: FC = (args) => {
-  return (
-    <div style={{ width: 200, height: 90 }}>
-      {" "}
-      <Skeleton {...args} />{" "}
-    </div>
-  );
-};
+// export const ParentSize: FC = (args) => {
+//   return (
+//     <div style={{ width: 200, height: 90 }}>
+//       {" "}
+//       <Skeleton {...args} />{" "}
+//     </div>
+//   );
+// };
 
-export const Text: React.FC = (args) => {
+export const Text: React.FC = (args, args2) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -53,6 +54,8 @@ export const Text: React.FC = (args) => {
   }, []);
 
   return (
-    <h1 style={{ width: 200 }}>{loading ? <Skeleton {...args} /> : "H1"}</h1>
+    <>
+      {/*<h1 style={{ width: 200 }}>{loading ? <Skeleton {...args} /> : "H1"}</h1>*/}
+    </>
   );
 };

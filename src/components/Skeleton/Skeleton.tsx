@@ -1,6 +1,8 @@
 import React, { FC } from "react";
 import styled, { keyframes } from "styled-components";
 import { space, layout } from "styled-system";
+import {getRgba} from "../../util";
+
 import {
   SkeletonProps,
   animation as ANIMATION,
@@ -18,23 +20,23 @@ const waves = keyframes`
 
 const pulse = keyframes`
   0% {
-    opacity: 1;
+    opacity: 0.1;
   }
   50% {
-    opacity: 0.4;
+    opacity: 0.3;
   }
   100% {
-    opacity: 1;
+    opacity: 0.1;
   }
 `;
 
 const Root = styled.div<SkeletonProps>`
   min-height: 20px;
   display: block;
-  background-color: ${({ theme }) => theme.colors.gray500};
+  background-color: ${({ theme }) => getRgba(theme.colors.pastelBlue, theme, 0.16)};
   border-radius: ${({ variant, theme }) =>
     variant === VARIANT.CIRCLE ? theme.radii.circle : theme.radii.small};
-
+  
   ${layout}
   ${space}
 `;
@@ -42,6 +44,7 @@ const Root = styled.div<SkeletonProps>`
 const Pulse = styled(Root)`
   animation: ${pulse} 2s infinite ease-out;
   transform: translate3d(0, 0, 0);
+  background-color: ${({ theme }) => theme.colors.pastelBlue};
 `;
 
 const Waves = styled(Root)`
@@ -52,12 +55,7 @@ const Waves = styled(Root)`
   &:before {
     content: "";
     position: absolute;
-    background-image: linear-gradient(
-      90deg,
-      transparent,
-      rgba(116, 155, 216, 0.16),
-      transparent
-    );
+    background: linear-gradient(90deg, rgba(116, 155, 216, 0) 0%, rgba(116, 155, 216, 0.16) 50%, rgba(116, 155, 216, 0) 100%);
 
     top: 0;
     left: -150px;

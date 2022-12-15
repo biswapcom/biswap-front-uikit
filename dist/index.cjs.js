@@ -1053,16 +1053,16 @@ var Icon$1v = function (props) {
 
 var Icon$1u = function (props) {
     return (React__default["default"].createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
-        React__default["default"].createElement("rect", { x: "1", y: "1", width: "22", height: "4", rx: "1" }),
-        React__default["default"].createElement("rect", { x: "1", y: "7", width: "14", height: "16", rx: "1" }),
-        React__default["default"].createElement("rect", { x: "17", y: "7", width: "6", height: "16", rx: "1" })));
+        React__default["default"].createElement("rect", { opacity: "0.48", x: "1", y: "1", width: "22", height: "4", rx: "1" }),
+        React__default["default"].createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M2 7C1.44772 7 1 7.44772 1 8V22C1 22.5523 1.44772 23 2 23H14C14.5523 23 15 22.5523 15 22V8C15 7.44772 14.5523 7 14 7H2ZM12.9971 10.0767C13.0394 9.52609 12.6274 9.04535 12.0767 9.00299C11.526 8.96064 11.0453 9.37269 11.0029 9.92335C10.9248 10.9391 10.6432 12.3259 10.114 13.2758C9.85133 13.7472 9.58117 14.0142 9.34053 14.1329C9.14478 14.2294 8.86385 14.2823 8.39392 14.081C7.46385 13.6824 6.56562 13.6836 5.77491 14.0735C5.0291 14.4413 4.5055 15.093 4.13895 15.7509C3.40989 17.0593 3.09148 18.7724 3.00295 19.9234C2.96059 20.4741 3.37265 20.9548 3.92331 20.9972C4.47396 21.0395 4.9547 20.6275 4.99706 20.0768C5.07519 19.0611 5.35678 17.6742 5.88605 16.7243C6.14867 16.253 6.41883 15.986 6.65947 15.8673C6.85522 15.7708 7.13616 15.7178 7.60608 15.9192C8.53616 16.3178 9.43439 16.3166 10.2251 15.9267C10.9709 15.5589 11.4945 14.9072 11.8611 14.2493C12.5901 12.9409 12.9085 11.2277 12.9971 10.0767Z", fill: "#fff" }),
+        React__default["default"].createElement("rect", { opacity: "0.48", x: "17", y: "7", width: "6", height: "16", rx: "1" })));
 };
 
 var Icon$1t = function (props) {
     return (React__default["default"].createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
-        React__default["default"].createElement("rect", { opacity: "0.48", x: "1", y: "1", width: "22", height: "4", rx: "1" }),
-        React__default["default"].createElement("rect", { x: "1", y: "7", width: "14", height: "16", rx: "1" }),
-        React__default["default"].createElement("rect", { opacity: "0.48", x: "17", y: "7", width: "6", height: "16", rx: "1" })));
+        React__default["default"].createElement("rect", { opacity: "0.24", x: "1", y: "1", width: "22", height: "4", rx: "1" }),
+        React__default["default"].createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M2 7C1.44772 7 1 7.44772 1 8V22C1 22.5523 1.44772 23 2 23H14C14.5523 23 15 22.5523 15 22V8C15 7.44772 14.5523 7 14 7H2ZM12.9971 10.0767C13.0394 9.52609 12.6274 9.04535 12.0767 9.00299C11.526 8.96064 11.0453 9.37269 11.0029 9.92335C10.9248 10.9391 10.6432 12.3259 10.114 13.2758C9.85133 13.7472 9.58117 14.0142 9.34053 14.1329C9.14478 14.2294 8.86385 14.2823 8.39392 14.081C7.46385 13.6824 6.56562 13.6836 5.77491 14.0735C5.0291 14.4413 4.5055 15.093 4.13895 15.7509C3.40989 17.0593 3.09148 18.7724 3.00295 19.9234C2.96059 20.4741 3.37265 20.9548 3.92331 20.9972C4.47396 21.0395 4.9547 20.6275 4.99706 20.0768C5.07519 19.0611 5.35678 17.6742 5.88605 16.7243C6.14867 16.253 6.41883 15.986 6.65947 15.8673C6.85522 15.7708 7.13616 15.7178 7.60608 15.9192C8.53616 16.3178 9.43439 16.3166 10.2251 15.9267C10.9709 15.5589 11.4945 14.9072 11.8611 14.2493C12.5901 12.9409 12.9085 11.2277 12.9971 10.0767Z", fill: "#fff" }),
+        React__default["default"].createElement("rect", { opacity: "0.24", x: "17", y: "7", width: "6", height: "16", rx: "1" })));
 };
 
 var Icon$1s = function (props) {
@@ -4908,6 +4908,41 @@ var Slider = function (_a) {
 };
 var templateObject_1$M, templateObject_2$r, templateObject_3$l, templateObject_4$k, templateObject_5$g, templateObject_6$a, templateObject_7$8, templateObject_8$3, templateObject_9$2, templateObject_10$2, templateObject_11$1, templateObject_12$1, templateObject_13$1, templateObject_14, templateObject_15, templateObject_16, templateObject_17;
 
+// eslint-disable-next-line import/prefer-default-export
+var formatSpacingAmount = function (x) {
+    if (x) {
+        var parts = x.toString().split(".");
+        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+        return parts.join(".");
+    }
+    return null;
+};
+
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+var getPortalRoot = function () {
+    var _a;
+    return typeof window !== "undefined" &&
+        ((_a = document.getElementById("portal-root")) !== null && _a !== void 0 ? _a : document.body);
+};
+
+var isTouchDevice = function () {
+    return (typeof window !== "undefined" &&
+        ("ontouchstart" in window || navigator.maxTouchPoints > 0));
+};
+
+var defaultObject = {
+    xs: null,
+    sm: null,
+    md: null,
+    lg: null,
+    xl: null,
+    xll: null,
+    xxl: null,
+};
+var getResponsiveAttrs = function (obj) {
+    return Object.values(__assign(__assign({}, defaultObject), obj));
+};
+
 var animation = {
     WAVES: "waves",
     PULSE: "pulse",
@@ -4918,16 +4953,19 @@ var variant = {
 };
 
 var waves = styled.keyframes(templateObject_1$L || (templateObject_1$L = __makeTemplateObject(["\n   from {\n        left: -150px;\n    }\n    to   {\n        left: 100%;\n    }\n"], ["\n   from {\n        left: -150px;\n    }\n    to   {\n        left: 100%;\n    }\n"])));
-var pulse = styled.keyframes(templateObject_2$q || (templateObject_2$q = __makeTemplateObject(["\n  0% {\n    opacity: 1;\n  }\n  50% {\n    opacity: 0.4;\n  }\n  100% {\n    opacity: 1;\n  }\n"], ["\n  0% {\n    opacity: 1;\n  }\n  50% {\n    opacity: 0.4;\n  }\n  100% {\n    opacity: 1;\n  }\n"])));
-var Root = styled__default["default"].div(templateObject_3$k || (templateObject_3$k = __makeTemplateObject(["\n  min-height: 20px;\n  display: block;\n  background-color: ", ";\n  border-radius: ", ";\n\n  ", "\n  ", "\n"], ["\n  min-height: 20px;\n  display: block;\n  background-color: ", ";\n  border-radius: ", ";\n\n  ", "\n  ", "\n"])), function (_a) {
+var pulse = styled.keyframes(templateObject_2$q || (templateObject_2$q = __makeTemplateObject(["\n  0% {\n    opacity: 0.1;\n  }\n  50% {\n    opacity: 0.3;\n  }\n  100% {\n    opacity: 0.1;\n  }\n"], ["\n  0% {\n    opacity: 0.1;\n  }\n  50% {\n    opacity: 0.3;\n  }\n  100% {\n    opacity: 0.1;\n  }\n"])));
+var Root = styled__default["default"].div(templateObject_3$k || (templateObject_3$k = __makeTemplateObject(["\n  min-height: 20px;\n  display: block;\n  background-color: ", ";\n  border-radius: ", ";\n  \n  ", "\n  ", "\n"], ["\n  min-height: 20px;\n  display: block;\n  background-color: ", ";\n  border-radius: ", ";\n  \n  ", "\n  ", "\n"])), function (_a) {
     var theme = _a.theme;
-    return theme.colors.gray500;
+    return getRgba(theme.colors.pastelBlue, theme, 0.16);
 }, function (_a) {
     var variant$1 = _a.variant, theme = _a.theme;
     return variant$1 === variant.CIRCLE ? theme.radii.circle : theme.radii.small;
 }, styledSystem.layout, styledSystem.space);
-var Pulse = styled__default["default"](Root)(templateObject_4$j || (templateObject_4$j = __makeTemplateObject(["\n  animation: ", " 2s infinite ease-out;\n  transform: translate3d(0, 0, 0);\n"], ["\n  animation: ", " 2s infinite ease-out;\n  transform: translate3d(0, 0, 0);\n"])), pulse);
-var Waves = styled__default["default"](Root)(templateObject_5$f || (templateObject_5$f = __makeTemplateObject(["\n  position: relative;\n  overflow: hidden;\n  transform: translate3d(0, 0, 0);\n\n  &:before {\n    content: \"\";\n    position: absolute;\n    background-image: linear-gradient(\n      90deg,\n      transparent,\n      rgba(116, 155, 216, 0.16),\n      transparent\n    );\n\n    top: 0;\n    left: -150px;\n    height: 100%;\n    width: 150px;\n    animation: ", " 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;\n  }\n"], ["\n  position: relative;\n  overflow: hidden;\n  transform: translate3d(0, 0, 0);\n\n  &:before {\n    content: \"\";\n    position: absolute;\n    background-image: linear-gradient(\n      90deg,\n      transparent,\n      rgba(116, 155, 216, 0.16),\n      transparent\n    );\n\n    top: 0;\n    left: -150px;\n    height: 100%;\n    width: 150px;\n    animation: ", " 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;\n  }\n"])), waves);
+var Pulse = styled__default["default"](Root)(templateObject_4$j || (templateObject_4$j = __makeTemplateObject(["\n  animation: ", " 2s infinite ease-out;\n  transform: translate3d(0, 0, 0);\n  background-color: ", ";\n"], ["\n  animation: ", " 2s infinite ease-out;\n  transform: translate3d(0, 0, 0);\n  background-color: ", ";\n"])), pulse, function (_a) {
+    var theme = _a.theme;
+    return theme.colors.pastelBlue;
+});
+var Waves = styled__default["default"](Root)(templateObject_5$f || (templateObject_5$f = __makeTemplateObject(["\n  position: relative;\n  overflow: hidden;\n  transform: translate3d(0, 0, 0);\n\n  &:before {\n    content: \"\";\n    position: absolute;\n    background: linear-gradient(90deg, rgba(116, 155, 216, 0) 0%, rgba(116, 155, 216, 0.16) 50%, rgba(116, 155, 216, 0) 100%);\n\n    top: 0;\n    left: -150px;\n    height: 100%;\n    width: 150px;\n    animation: ", " 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;\n  }\n"], ["\n  position: relative;\n  overflow: hidden;\n  transform: translate3d(0, 0, 0);\n\n  &:before {\n    content: \"\";\n    position: absolute;\n    background: linear-gradient(90deg, rgba(116, 155, 216, 0) 0%, rgba(116, 155, 216, 0.16) 50%, rgba(116, 155, 216, 0) 100%);\n\n    top: 0;\n    left: -150px;\n    height: 100%;\n    width: 150px;\n    animation: ", " 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;\n  }\n"])), waves);
 var Skeleton = function (_a) {
     var _b = _a.variant, variant$1 = _b === void 0 ? variant.RECT : _b, _c = _a.animation, animation$1 = _c === void 0 ? animation.PULSE : _c, props = __rest(_a, ["variant", "animation"]);
     if (animation$1 === animation.WAVES) {
@@ -4966,13 +5004,6 @@ var SubMenuItem = styled__default["default"].button(templateObject_4$i || (templ
     return theme.colors.dark600;
 });
 var templateObject_1$K, templateObject_2$p, templateObject_3$j, templateObject_4$i;
-
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-var getPortalRoot = function () {
-    var _a;
-    return typeof window !== "undefined" &&
-        ((_a = document.getElementById("portal-root")) !== null && _a !== void 0 ? _a : document.body);
-};
 
 var BaseMenu = function (_a) {
     var _b, _c, _d;
@@ -6161,11 +6192,6 @@ var darkTheme = __assign(__assign({}, base), { isDark: true, alert: dark$6, colo
 
 var lightTheme = __assign(__assign({}, base), { isDark: false, alert: light$6, colors: lightColors, card: light$5, toggle: light$3, nav: light$2, modal: light$1, radio: light$4, tooltip: light });
 
-var isTouchDevice = function () {
-    return (typeof window !== "undefined" &&
-        ("ontouchstart" in window || navigator.maxTouchPoints > 0));
-};
-
 var Arrow = styled__default["default"].div(templateObject_1$r || (templateObject_1$r = __makeTemplateObject(["\n  &,\n  &::before {\n    position: absolute;\n    width: 10px;\n    height: 10px;\n    z-index: -1;\n  }\n\n  &::before {\n    content: \"\";\n    transform: rotate(45deg);\n    background: ", ";\n  }\n"], ["\n  &,\n  &::before {\n    position: absolute;\n    width: 10px;\n    height: 10px;\n    z-index: -1;\n  }\n\n  &::before {\n    content: \"\";\n    transform: rotate(45deg);\n    background: ", ";\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.tooltip;
@@ -6359,29 +6385,6 @@ var useOnClickOutside = function (ref, handler) {
     // ... but to optimize you can wrap handler in useCallback before ...
     // ... passing it into this hook.
     [ref, handler]);
-};
-
-// eslint-disable-next-line import/prefer-default-export
-var formatSpacingAmount = function (x) {
-    if (x) {
-        var parts = x.toString().split(".");
-        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-        return parts.join(".");
-    }
-    return null;
-};
-
-var defaultObject = {
-    xs: null,
-    sm: null,
-    md: null,
-    lg: null,
-    xl: null,
-    xll: null,
-    xxl: null,
-};
-var getResponsiveAttrs = function (obj) {
-    return Object.values(__assign(__assign({}, defaultObject), obj));
 };
 
 var ModalHeader = styled__default["default"].div(templateObject_1$q || (templateObject_1$q = __makeTemplateObject(["\n  display: flex;\n  //align-items: flex-start;\n  justify-content: space-between;\n  align-items: center;\n  padding: 24px 16px;\n\n  ", " {\n    padding: 32px 32px 24px;\n  }\n"], ["\n  display: flex;\n  //align-items: flex-start;\n  justify-content: space-between;\n  align-items: center;\n  padding: 24px 16px;\n\n  ", " {\n    padding: 32px 32px 24px;\n  }\n"])), function (_a) {
