@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import styled, { keyframes } from "styled-components";
 import { space, layout } from "styled-system";
-import {getRgba} from "../../util";
+import { getRgba } from "../../util";
 
 import {
   SkeletonProps,
@@ -33,10 +33,11 @@ const pulse = keyframes`
 const Root = styled.div<SkeletonProps>`
   min-height: 20px;
   display: block;
-  background-color: ${({ theme }) => getRgba(theme.colors.pastelBlue, theme, 0.16)};
+  background-color: ${({ theme }) =>
+    getRgba(theme.colors.pastelBlue, theme, 0.16)};
   border-radius: ${({ variant, theme }) =>
     variant === VARIANT.CIRCLE ? theme.radii.circle : theme.radii.small};
-  
+
   ${layout}
   ${space}
 `;
@@ -55,7 +56,12 @@ const Waves = styled(Root)`
   &:before {
     content: "";
     position: absolute;
-    background: linear-gradient(90deg, rgba(116, 155, 216, 0) 0%, rgba(116, 155, 216, 0.16) 50%, rgba(116, 155, 216, 0) 100%);
+    background: linear-gradient(
+      90deg,
+      rgba(116, 155, 216, 0) 0%,
+      rgba(116, 155, 216, 0.16) 50%,
+      rgba(116, 155, 216, 0) 100%
+    );
 
     top: 0;
     left: -150px;

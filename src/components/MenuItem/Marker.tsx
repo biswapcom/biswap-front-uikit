@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { Box } from "../Box";
 import getRgba from "../../util/getRgba";
-import {Colors} from "../../theme";
+import { Colors } from "../../theme";
 
-const Marker = styled(Box)<{color?: keyof Colors}>`
+const Marker = styled(Box)<{ color?: keyof Colors }>`
   position: absolute;
   top: 0;
   right: -4px;
@@ -11,7 +11,8 @@ const Marker = styled(Box)<{color?: keyof Colors}>`
   height: 6px;
   transform: translateX(100%);
   border-radius: 50%;
-  background-color: ${({ theme,color }) => !color ? theme.colors.success : theme.colors[color]};
+  background-color: ${({ theme, color }) =>
+    !color ? theme.colors.success : theme.colors[color]};
 
   &:before {
     display: block;
@@ -29,8 +30,12 @@ const Marker = styled(Box)<{color?: keyof Colors}>`
   @keyframes pulse-white {
     0% {
       transform: scale(0.95);
-      box-shadow: 0 0 0 0 ${({ theme, color}) =>
-        getRgba(!color ? theme.colors.success : theme.colors[color], theme, 0.7)};
+      box-shadow: 0 0 0 0 ${({ theme, color }) =>
+        getRgba(
+          !color ? theme.colors.success : theme.colors[color],
+          theme,
+          0.7
+        )};
     }
 
     70% {

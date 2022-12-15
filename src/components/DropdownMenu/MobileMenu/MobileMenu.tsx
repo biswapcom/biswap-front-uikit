@@ -164,7 +164,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
                               (href && !isTablet)) && (
                               <>
                                 <Box m="16px 0" position="relative">
-                                  {isMarker && <Marker color={isMarkerColor}  />}
+                                  {isMarker && <Marker color={isMarkerColor} />}
                                   <HeadText
                                     scale={isTablet ? "size20" : "size16"}
                                     color={

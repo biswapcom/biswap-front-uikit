@@ -30,7 +30,7 @@ export const links: MenuItemsType[] = [
   {
     label: "Trade",
     showNavBadge: true,
-    colorNavBadge: 'warning',
+    colorNavBadge: "warning",
     items: [
       {
         label: "Swap",

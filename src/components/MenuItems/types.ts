@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { BoxProps } from "../Box";
 import { DropdownMenuItems } from "../DropdownMenu/types";
-import {Colors} from "../../theme";
+import { Colors } from "../../theme";
 
 export const ItemTypes = {
   DIVIDER: "DIVIDER",
