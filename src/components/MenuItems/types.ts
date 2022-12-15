@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import { BoxProps } from "../Box";
 import { DropdownMenuItems } from "../DropdownMenu/types";
+import {Colors} from "../../theme";
 
 export const ItemTypes = {
   DIVIDER: "DIVIDER",
@@ -24,6 +25,7 @@ export type MenuItemsType = {
   mobileMenuCallback?: (s: boolean) => void;
   hidden?: boolean;
   showNavBadge?: boolean;
+  colorNavBadge?: keyof Colors;
   highlightTitle?: boolean;
 };
 
