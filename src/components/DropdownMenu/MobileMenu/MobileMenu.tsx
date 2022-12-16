@@ -138,6 +138,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
                   index
                 ) => {
                   const isMarker = items[index].showNavBadge;
+                  const isMarkerColor = items[index].colorNavBadge;
                   const isOpenAccordion = label === "Biswap Products";
                   if (hidden) return null;
                   const isHighlighted = items[index].highlightTitle;
@@ -163,7 +164,8 @@ const MobileMenu: FC<MobileMenuProps> = ({
                               (href && !isTablet)) && (
                               <>
                                 <Box m="16px 0" position="relative">
-                                  {isMarker && <Marker />}
+                                  {/*@ts-ignore*/}
+                                  {isMarker && <Marker color={isMarkerColor} />}
                                   <HeadText
                                     scale={isTablet ? "size20" : "size16"}
                                     color={
