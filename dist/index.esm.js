@@ -9499,7 +9499,7 @@ styled.img(templateObject_2$1 || (templateObject_2$1 = __makeTemplateObject(["\n
 var ToastAction = function (_a) {
     _a.title; _a.telegramDescription; var tweeterDescription = _a.tweeterDescription, url = _a.url; _a.thx;
     return (React.createElement(ActionsContainer, null,
-        React.createElement(SocialShareButton, { social: "twitter", message: tweeterDescription, link: url, mr: "8px" })));
+        React.createElement(SocialShareButton, { social: "twitter", message: tweeterDescription, link: url, mr: "8px", width: "116px" })));
 };
 var templateObject_1$3, templateObject_2$1;
 

@@ -68,6 +68,7 @@ const ToastAction: React.FC<ToastActionProps> = ({
         message={tweeterDescription}
         link={url}
         mr="8px"
+        width="116px"
       />
       {/*<SocialShareButton*/}
       {/*  social="telegram"*/}

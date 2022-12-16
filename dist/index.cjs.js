@@ -9514,7 +9514,7 @@ styled__default["default"].img(templateObject_2$1 || (templateObject_2$1 = __mak
 var ToastAction = function (_a) {
     _a.title; _a.telegramDescription; var tweeterDescription = _a.tweeterDescription, url = _a.url; _a.thx;
     return (React__default["default"].createElement(ActionsContainer, null,
-        React__default["default"].createElement(SocialShareButton, { social: "twitter", message: tweeterDescription, link: url, mr: "8px" })));
+        React__default["default"].createElement(SocialShareButton, { social: "twitter", message: tweeterDescription, link: url, mr: "8px", width: "116px" })));
 };
 var templateObject_1$3, templateObject_2$1;
 
