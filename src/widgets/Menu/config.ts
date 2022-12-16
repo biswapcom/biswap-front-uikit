@@ -59,6 +59,7 @@ export const links: MenuItemsType[] = [
   {
     label: "Earn",
     showNavBadge: true,
+    colorNavBadge: "primary",
     items: [
       {
         label: "Farms",
@@ -104,6 +105,8 @@ export const links: MenuItemsType[] = [
   {
     label: "Win",
     highlightTitle: true,
+    showNavBadge: true,
+    colorNavBadge: "secondary",
     items: [
       {
         label: "Lottery",
