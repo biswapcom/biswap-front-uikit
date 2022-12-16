@@ -30,6 +30,7 @@ export const links: MenuItemsType[] = [
   {
     label: "Trade",
     showNavBadge: true,
+    colorNavBadge: "warning",
     items: [
       {
         label: "Swap",
@@ -227,6 +228,8 @@ export const links: MenuItemsType[] = [
     icon: "ProductsOpacity",
     isMobileNav: true,
     showItemsOnMobile: true,
+    showNavBadge: true,
+    colorNavBadge: "secondary",
     items: [
       {
         label: "Marketplace",
