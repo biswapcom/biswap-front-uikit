@@ -1,5 +1,6 @@
 import { BoxProps } from "../Box";
 import { DropdownMenuItems } from "../DropdownMenu/types";
+import { Colors } from "../../theme";
 export declare const ItemTypes: {
     readonly DIVIDER: "DIVIDER";
 };
@@ -20,6 +21,7 @@ export declare type MenuItemsType = {
     mobileMenuCallback?: (s: boolean) => void;
     hidden?: boolean;
     showNavBadge?: boolean;
+    colorNavBadge?: keyof Colors;
     highlightTitle?: boolean;
 };
 export interface MenuItemsProps extends BoxProps {

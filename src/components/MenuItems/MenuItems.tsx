@@ -48,6 +48,7 @@ const MenuItems: React.FC<MenuItemsProps> = ({
           index
         ) => {
           const isMarker = items[index]?.showNavBadge;
+          const isMarkerColor = items[index]?.colorNavBadge;
           const isHighlighted = items[index].highlightTitle;
           const statusColor = menuItems?.find(
             (menuItem) => menuItem.status !== undefined
@@ -81,7 +82,8 @@ const MenuItems: React.FC<MenuItemsProps> = ({
                     )}
                     {label && (
                       <Box ml={!href ? "8px" : 0} position="relative">
-                        {isMarker && <Marker />}
+                        {/*@ts-ignore*/}
+                        {isMarker && <Marker color={isMarkerColor} />}
                         <Text
                           color={isHighlighted ? "warningPress" : "white"}
                           fontSize="14px"

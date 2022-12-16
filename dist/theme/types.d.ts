@@ -25,6 +25,12 @@ export declare type Shadows = {
     inset: string;
     tooltip: string;
 };
+export declare type MarkerType = {
+    primary: string;
+    secondary: string;
+    success: string;
+    warning: string;
+};
 export declare type Gradients = {
     bubblegum: string;
     cardHeader: string;
