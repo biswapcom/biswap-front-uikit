@@ -30,6 +30,12 @@ export declare type Gradients = {
     cardHeader: string;
     cardBlue: string;
 };
+export declare type MarkerType = {
+    primary: string;
+    secondary: string;
+    success: string;
+    warning: string;
+};
 export declare type Colors = {
     primaryBright: string;
     primaryDark: string;

@@ -36,6 +36,13 @@ export type Gradients = {
   cardBlue: string;
 };
 
+export type MarkerType = {
+  primary: string;
+  secondary: string;
+  success: string;
+  warning: string;
+};
+
 export type Colors = {
   //
   primaryBright: string;

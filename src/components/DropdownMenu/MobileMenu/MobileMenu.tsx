@@ -15,6 +15,7 @@ import Accordion from "../../Accordion/Accordion";
 import Community from "../../../widgets/Menu/components/Footer/Community";
 import Marker from "../../MenuItem/Marker";
 import { HeadText } from "../../Typography";
+import { MarkerType } from "../../../theme";
 
 const MainContententWrapper = styled.div`
   flex: 1;
@@ -159,6 +160,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
                               (href && !isTablet)) && (
                               <>
                                 <Box m="16px 0" position="relative">
+                                  {/*@ts-ignore*/}
                                   {isMarker && <Marker color={isMarkerColor} />}
                                   <HeadText
                                     scale={isTablet ? "size20" : "size16"}

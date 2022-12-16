@@ -82,6 +82,7 @@ const MenuItems: React.FC<MenuItemsProps> = ({
                     )}
                     {label && (
                       <Box ml={!href ? "8px" : 0} position="relative">
+                        {/*@ts-ignore*/}
                         {isMarker && <Marker color={isMarkerColor} />}
                         <Text
                           color={isHighlighted ? "warningPress" : "white"}
