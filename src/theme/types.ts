@@ -30,6 +30,13 @@ export type Shadows = {
   tooltip: string;
 };
 
+export type MarkerType = {
+  primary: string;
+  secondary: string;
+  success: string;
+  warning: string;
+};
+
 export type Gradients = {
   bubblegum: string;
   cardHeader: string;

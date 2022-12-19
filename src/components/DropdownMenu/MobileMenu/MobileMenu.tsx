@@ -138,6 +138,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
                   index
                 ) => {
                   const isMarker = items[index].showNavBadge;
+                  const isMarkerColor = items[index].colorNavBadge;
                   const isOpenAccordion = label === "Biswap Products";
                   const firstAccordionItemMobile = index === 1 && isMobile;
 
@@ -173,7 +174,8 @@ const MobileMenu: FC<MobileMenuProps> = ({
                                   }
                                   position="relative"
                                 >
-                                  {isMarker && <Marker />}
+                                  {/*@ts-ignore*/}
+                                  {isMarker && <Marker color={isMarkerColor} />}
                                   <HeadText
                                     scale={isTablet ? "size20" : "size16"}
                                     color={

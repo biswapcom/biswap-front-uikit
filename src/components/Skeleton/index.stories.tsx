@@ -15,7 +15,7 @@ export const Default: React.FC = (args) => {
   return (
     <Box width="500px" mt="24px" ml="24px">
       <Skeleton {...args} />
-      <Skeleton animation="waves" width="400px" height="32px" mt="16px"/>
+      <Skeleton animation="waves" width="400px" height="32px" mt="16px" />
     </Box>
   );
 };
