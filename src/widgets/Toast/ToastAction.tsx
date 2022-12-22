@@ -67,12 +67,12 @@ const ToastAction: React.FC<ToastActionProps> = ({
         height="32px"
         withGift
       />
-      <SocialShareButton
-        social="telegram"
-        message={telegramDescription}
-        link={url}
-        height="32px"
-      />
+      {/*<SocialShareButton*/}
+      {/*  social="telegram"*/}
+      {/*  message={telegramDescription}*/}
+      {/*  link={url}*/}
+      {/*  height="32px"*/}
+      {/*/>*/}
     </ActionsContainer>
   );
 };
