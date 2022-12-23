@@ -8136,10 +8136,9 @@ var templateObject_1$4, templateObject_2$2, templateObject_3$1, templateObject_4
 var ActionsContainer = styled.div(templateObject_1$3 || (templateObject_1$3 = __makeTemplateObject(["\n  display: flex;\n  justify-content: flex-start;\n"], ["\n  display: flex;\n  justify-content: flex-start;\n"])));
 styled.img(templateObject_2$1 || (templateObject_2$1 = __makeTemplateObject(["\n  margin-left: 8px;\n  width: 26px;\n  filter: drop-shadow(2px 4px 8px rgba(0, 109, 163, 0.4));\n"], ["\n  margin-left: 8px;\n  width: 26px;\n  filter: drop-shadow(2px 4px 8px rgba(0, 109, 163, 0.4));\n"])));
 var ToastAction = function (_a) {
-    _a.title; var telegramDescription = _a.telegramDescription, tweeterDescription = _a.tweeterDescription, url = _a.url; _a.thx;
+    _a.title; _a.telegramDescription; var tweeterDescription = _a.tweeterDescription, url = _a.url; _a.thx;
     return (React.createElement(ActionsContainer, null,
-        React.createElement(SocialShareButton, { social: "twitter", message: tweeterDescription, link: url, mr: "8px", height: "32px", withGift: true }),
-        React.createElement(SocialShareButton, { social: "telegram", message: telegramDescription, link: url, height: "32px" })));
+        React.createElement(SocialShareButton, { social: "twitter", message: tweeterDescription, link: url, mr: "8px", height: "32px", withGift: true })));
 };
 var templateObject_1$3, templateObject_2$1;
 
