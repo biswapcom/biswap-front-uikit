@@ -121,6 +121,23 @@ export const links: MenuItemsType[] = [
         href: "/pool",
         leftIcon: "GobletOpacity",
         description: "Item description",
+        type: DropdownMenuItemType.CONTAINER,
+        links: [
+          {
+            label: "NFT Staking",
+            href: `/nft`,
+          },
+          {
+            label: "NFT Boost",
+            href: `/nft/boost`,
+          },
+        ],
+      },
+      {
+        label: "NFT Launchpad",
+        href: `/launchpad`,
+        leftIcon: "LaunchpadOpacity",
+        description: "Buy new unique NFTs",
       },
     ],
   },
@@ -130,27 +147,42 @@ export const links: MenuItemsType[] = [
     items: [
       {
         label: "NFT Launchpad",
-        href: "/pool",
+        href: `/launchpad`,
         leftIcon: "LaunchpadOpacity",
-        description: "Item description",
-        type: DropdownMenuItemType.EXTERNAL_LINK,
-        target: "_blank",
-        mobileTarget: "_self",
+        description: "Buy new unique NFTs",
       },
       {
         label: "NFT Earn",
-        href: "/pool",
         leftIcon: "NFTEarnOpacity",
-        description: "Item description",
-        type: DropdownMenuItemType.EXTERNAL_LINK,
-        target: "_self",
-        mobileTarget: "_self",
+        description: "Stake NFT & Get multiple tokens",
+        type: DropdownMenuItemType.CONTAINER,
+        links: [
+          {
+            label: "NFT Staking",
+            href: `/nft`,
+          },
+          {
+            label: "NFT Boost",
+            href: `/nft/boost`,
+          },
+          {
+            label: "Upgrade Level",
+            href: `/nft/upgrade`,
+          },
+          {
+            label: "NFT Launchpad",
+            href: "/pool",
+            target: "_blank",
+            mobileTarget: "_self",
+          },
+        ],
       },
-      // {
-      //   type: DropdownMenuItemType.BANNER,
-      //   bannerRenderer: getBanner,
-      //   href: "https://google.com",
-      // },
+      {
+        href: "/",
+        target: "_blank",
+        mobileTarget: "_self",
+        type: DropdownMenuItemType.BANNER,
+      },
     ],
   },
   {

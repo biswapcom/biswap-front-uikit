@@ -51,7 +51,7 @@ const CommonLinkStyles = ({
   ${$variant === "default"
     ? css`
         padding: 0 8px;
-        height: 48px;
+        height: 72px;
         ${({ theme }) => theme.mediaQueries.lg} {
           padding: 0 12px;
         }
