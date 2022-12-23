@@ -3,7 +3,6 @@ import { MenuContext } from "../../../widgets/Menu/context";
 import { usePopper } from "react-popper";
 import { useMatchBreakpoints } from "../../../contexts";
 import { Box, Grid } from "../../Box";
-import { Text } from "../../Text";
 import styled from "styled-components";
 import { DropdownMenuItemType, MobileMenuProps } from "../types";
 import MenuItemContent from "../components/MenuItemContent";
@@ -33,7 +32,7 @@ const StyledMobileMenu = styled.div<{
 }>`
   background-color: ${({ theme }) => theme.card.background};
   width: 100vw;
-  height: calc(100vh - 60px);
+  height: calc(100vh - 72px);
   overflow: auto;
   visibility: visible;
   opacity: 1;
@@ -42,6 +41,7 @@ const StyledMobileMenu = styled.div<{
   flex-direction: column;
   justify-content: space-between;
   align-content: stretch;
+  transform: translate3d(0px, 72px, 0px) !important;
 
   ${({ $isOpen }) =>
     !$isOpen &&
@@ -80,7 +80,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
 
   const [targetRef, setTargetRef] = useState<HTMLDivElement | null>(null);
   const [tooltipRef, setTooltipRef] = useState<HTMLDivElement | null>(null);
-  const { isMobile, isTablet, isDesktop } = useMatchBreakpoints();
+  const { isMobile, isTablet } = useMatchBreakpoints();
 
   const hasItems = items.length > 0;
   const { styles, attributes, update } = usePopper(targetRef, tooltipRef, {
@@ -140,7 +140,10 @@ const MobileMenu: FC<MobileMenuProps> = ({
                   const isMarker = items[index].showNavBadge;
                   const isMarkerColor = items[index].colorNavBadge;
                   const isOpenAccordion = label === "Biswap Products";
+                  const firstAccordionItemMobile = index === 1 && isMobile;
+
                   if (hidden) return null;
+
                   const isHighlighted = items[index].highlightTitle;
                   const visualize =
                     !showItemsOnMobile ||
@@ -163,7 +166,14 @@ const MobileMenu: FC<MobileMenuProps> = ({
                             ((!showItemsOnMobile && !hidden) ||
                               (href && !isTablet)) && (
                               <>
-                                <Box m="16px 0" position="relative">
+                                <Box
+                                  m={
+                                    firstAccordionItemMobile
+                                      ? "4px 0 16px"
+                                      : "16px 0"
+                                  }
+                                  position="relative"
+                                >
                                   {/*@ts-ignore*/}
                                   {isMarker && <Marker color={isMarkerColor} />}
                                   <HeadText
@@ -206,65 +216,74 @@ const MobileMenu: FC<MobileMenuProps> = ({
                             gridColumnGap={16}
                             mt={isOpenAccordion ? 16 : 0}
                           >
-                            {innerItems.map(
-                              (
-                                {
-                                  type = DropdownMenuItemType.INTERNAL_LINK,
-                                  label,
-                                  rightIconFill,
-                                  description,
-                                  href = "/",
-                                  status,
-                                  leftIcon = "",
-                                  rightIcon = "",
-                                  links = [],
-                                  badgeTitle,
-                                  badgeType,
-                                  bannerRenderer,
-                                  ...itemProps
-                                },
-                                itemItem
-                              ) => {
-                                const getMenuItemContent = (
-                                  icon: string = rightIcon
-                                ) => (
-                                  <MenuItemContent
-                                    label={label}
-                                    fill={rightIconFill}
-                                    leftIcon={leftIcon}
-                                    rightIcon={icon}
-                                    description={description}
-                                    status={status}
-                                    badgeTitle={badgeTitle}
-                                    badgeType={badgeType}
-                                  />
-                                );
-
-                                const isActive = href === activeItem;
-
-                                return (
-                                  visualize && (
-                                    <DropdownMenuItemContainer
+                            {innerItems
+                              .filter(
+                                (element) =>
+                                  element.type !== DropdownMenuItemType.BANNER
+                              )
+                              .map(
+                                (
+                                  {
+                                    type = DropdownMenuItemType.INTERNAL_LINK,
+                                    label,
+                                    rightIconFill,
+                                    description,
+                                    href = "/",
+                                    status,
+                                    leftIcon = "",
+                                    rightIcon = "",
+                                    links = [],
+                                    badgeTitle,
+                                    badgeType,
+                                    bannerRenderer,
+                                    ...itemProps
+                                  },
+                                  itemIndex,
+                                  arr
+                                ) => {
+                                  const getMenuItemContent = (
+                                    icon: string = rightIcon
+                                  ) => (
+                                    <MenuItemContent
                                       label={label}
-                                      key={itemItem}
-                                      isActive={isActive}
+                                      fill={rightIconFill}
                                       leftIcon={leftIcon}
-                                      getMenuItemContent={getMenuItemContent}
-                                      links={links}
-                                      setIsOpen={setIsOpen}
-                                      linkComponent={linkComponent}
-                                      href={href}
-                                      bannerRenderer={bannerRenderer}
-                                      type={type}
+                                      rightIcon={icon}
+                                      description={description}
+                                      status={status}
                                       badgeTitle={badgeTitle}
                                       badgeType={badgeType}
-                                      isOpenItem={isOpenAccordion}
-                                      {...itemProps}
                                     />
-                                  )
-                                );
-                              }
-                            )}
+                                  );
+
+                                  const isActive = href === activeItem;
+
+                                  const lastItem =
+                                    itemIndex === arr?.length - 1;
+                                  return (
+                                    visualize && (
+                                      <DropdownMenuItemContainer
+                                        label={label}
+                                        key={itemIndex}
+                                        isActive={isActive}
+                                        leftIcon={leftIcon}
+                                        getMenuItemContent={getMenuItemContent}
+                                        links={links}
+                                        setIsOpen={setIsOpen}
+                                        linkComponent={linkComponent}
+                                        href={href}
+                                        bannerRenderer={bannerRenderer}
+                                        type={type}
+                                        badgeTitle={badgeTitle}
+                                        badgeType={badgeType}
+                                        isOpenItem={isOpenAccordion}
+                                        lastItem={lastItem}
+                                        {...itemProps}
+                                      />
+                                    )
+                                  );
+                                }
+                              )}
                           </Grid>
                         )}
                       </Accordion>

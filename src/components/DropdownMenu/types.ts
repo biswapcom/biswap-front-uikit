@@ -52,6 +52,7 @@ export interface InnerLinksBlockProps {
   leftIcon?: string;
   setIsOpen: (o: boolean) => void;
   linkComponent: ElementType;
+  lastItem?: boolean;
 }
 
 export interface MenuItemContentProps {
@@ -111,4 +112,5 @@ export interface DropdownMenuItemContainerProps extends DropdownMenuItems {
   linkComponent: React.ElementType;
   setIsOpen: (s: boolean) => void;
   isOpenItem?: boolean;
+  lastItem?: boolean;
 }
