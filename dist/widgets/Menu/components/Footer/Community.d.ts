@@ -3,6 +3,7 @@ export interface CommunityProps {
     iconSize?: string;
     menuVariant?: boolean;
     title?: string;
+    isFooter?: boolean;
 }
 export interface SocialWrapProps {
     menuVariant?: boolean;

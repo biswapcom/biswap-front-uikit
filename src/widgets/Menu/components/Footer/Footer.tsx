@@ -43,13 +43,14 @@ const InnerRow = styled.div`
   display: grid;
   max-width: 1120px;
   margin: 0 auto;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   grid-template-areas:
-    "footer-info footer-info"
-    "about about"
-    "product product"
-    "service service"
-    "community audit";
+    "footer-info"
+    "about"
+    "product"
+    "service"
+    "community"
+    "audit";
 
   ${({ theme }) => theme.mediaQueries.sm} {
     grid-template-columns: repeat(3, minmax(110px, 1fr));
@@ -81,13 +82,12 @@ const InnerRow = styled.div`
   }
 
   ${({ theme }) => theme.mediaQueries.xll} {
-    grid-template-columns: 424px minmax(0, 64px) repeat(3, minmax(110px, 1fr)) 132px;
+    grid-template-columns: 424px minmax(0, 64px) repeat(3, minmax(110px, 1fr)) 156px;
     grid-template-areas:
       "footer-info . about product service community"
       "footer-info . about product service audit";
   }
 `;
-
 const Footer: React.FC<Props> = ({
   BSWPriceLabel,
   BSWPriceValue,
@@ -111,7 +111,7 @@ const Footer: React.FC<Props> = ({
         <About footerLinks={aboutLinks} />
         <Product footerLinks={productLinks} />
         <Service footerLinks={serviceLinks} />
-        <Community />
+        <Community isFooter title="Community" />
         <Audit />
         {/* <Support/> */}
         {/* <BtnUp onClick={()=> scroll.scrollToTop()}><ArrowUp color='white'/></BtnUp> */}
