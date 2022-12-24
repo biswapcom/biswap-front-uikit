@@ -43,7 +43,7 @@ const MarketPlaceButton = styled(Button)`
 `;
 const IconWrapper = styled.div`
   background: linear-gradient(136.03deg, #1263f1 -7.36%, #f63d5e 131.43%);
-  border-radius: 6.4px;
+  border-radius: 6px;
   padding: 8px;
   margin-right: 8px;
 `;
