@@ -27,6 +27,7 @@ const DropdownMenuItemContainer: FC<DropdownMenuItemContainerProps> = ({
   badgeTitle,
   badgeType,
   isOpenItem,
+  lastItem,
   ...itemProps
 }) => {
   const [linksItems, setLinkItems] = useState<any>([]);
@@ -75,6 +76,7 @@ const DropdownMenuItemContainer: FC<DropdownMenuItemContainerProps> = ({
               leftIcon={leftIcon}
               setIsOpen={setIsOpen}
               linkComponent={linkComponent}
+              lastItem={lastItem}
             />
           )}
         </>

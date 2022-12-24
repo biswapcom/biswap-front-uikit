@@ -136,7 +136,10 @@ export const StyledDropdownMenuItemContainer = styled.div<{
 
   &:last-child {
     margin-bottom: ${({ isOpenMenuItem }) =>
-      isOpenMenuItem ? "24px" : "32px"};
+      isOpenMenuItem ? "16px" : "32px"};
+    ${({ theme }) => theme.mediaQueries.sm} {
+      margin-bottom: 24px;
+    }
   }
 
   &:first-child > ${DropdownMenuItem} {
@@ -172,6 +175,7 @@ export const StyledDropdownMenu = styled(Grid)<{
   border: 1px solid ${({ theme }) => theme.colors.white};
   border-radius: 16px;
 
+  margin-top: -14px;
   padding: 24px 24px 0;
   pointer-events: auto;
   width: 352px;
