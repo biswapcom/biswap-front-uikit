@@ -33,9 +33,17 @@ interface Props
 const Wrapper = styled.footer`
   color: ${({ theme }) => theme.colors.white};
   background: ${({ theme }) => theme.colors.dark700};
-  padding: 32px 16px;
+  padding: 56px 16px 24px;
   transition: padding-left 0.2s;
   z-index: 10;
+
+  ${({ theme }) => theme.mediaQueries.sm} {
+    padding: 56px 24px 24px;
+  }
+
+  ${({ theme }) => theme.mediaQueries.md} {
+    padding: 56px 24px;
+  }
 `;
 
 const InnerRow = styled.div`
@@ -59,22 +67,7 @@ const InnerRow = styled.div`
       "community . audit";
   }
   ${({ theme }) => theme.mediaQueries.md} {
-    grid-template-columns: 338px minmax(0, 64px) repeat(3, minmax(110px, 1fr));
-    grid-template-areas:
-      "footer-info . about product service "
-      "footer-info . community . audit";
-  }
-
-  ${({ theme }) => theme.mediaQueries.lg} {
-    grid-template-columns: repeat(3, minmax(110px, 1fr));
-    grid-template-areas:
-      "footer-info footer-info footer-info"
-      "about product service"
-      "community . audit";
-  }
-
-  ${({ theme }) => theme.mediaQueries.xl} {
-    grid-template-columns: 338px minmax(0, 64px) repeat(3, minmax(110px, 1fr));
+    grid-template-columns: 338px minmax(0, 64px) repeat(2, minmax(110px, 1fr)) 110px;
     grid-template-areas:
       "footer-info . about product service "
       "footer-info . community . audit";

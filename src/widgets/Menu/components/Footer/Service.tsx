@@ -79,8 +79,9 @@ const NavItem = styled.div`
   display: block;
   margin-bottom: 8px;
   font-size: 12px;
-  color: ${({ theme }) => theme.colors.gray900};
+  color: ${({ theme }) => theme.colors.pastelBlue};
   line-height: 18px;
+  font-weight: 600;
 `;
 
 const CustomLink = styled.a`

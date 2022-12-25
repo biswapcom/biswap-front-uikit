@@ -15,10 +15,6 @@ import Community from "../../../widgets/Menu/components/Footer/Community";
 import Marker from "../../MenuItem/Marker";
 import { HeadText } from "../../Typography";
 
-const MainContententWrapper = styled.div`
-  flex: 1;
-`;
-
 const MobileCommunityWrapper = styled.div`
   flex: 1;
   display: flex;
@@ -121,7 +117,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
           {...attributes.popper}
           $isOpen={isOpen}
         >
-          <MainContententWrapper>
+          <Box>
             {items
               .filter((item) => item.label && !item.type)
               .map(
@@ -300,7 +296,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
                 <DropdownMenuDivider color="btnTertiary" />
               </Box>
             )}
-          </MainContententWrapper>
+          </Box>
           {isMobile && (
             <MobileCommunityWrapper>
               <Community menuVariant iconSize="24px" />

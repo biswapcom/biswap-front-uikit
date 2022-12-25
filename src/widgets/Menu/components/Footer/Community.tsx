@@ -19,15 +19,8 @@ const Icons = IconModule as unknown as { [key: string]: React.FC<SvgProps> };
 const Wrapper = styled.div<{ menuVariant?: boolean }>`
   grid-area: community;
   ${({ menuVariant }) => !menuVariant && "max-width: 136px;"}
-  ${({ theme }) => theme.mediaQueries.sm} {
-    max-width: none;
-    margin-top: 24px;
-  }
-
-  ${({ theme }) => theme.mediaQueries.xll} {
-    margin-top: 0;
-  }
 `;
+
 const Title = styled.h4`
   font-size: 16px;
   color: ${({ theme }) => theme.colors.white};
