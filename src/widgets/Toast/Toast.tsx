@@ -150,12 +150,12 @@ const Toast: React.FC<ToastProps> = ({
             {telegramDescription && tweeterDescription && (
               <ActionContainer>
                 <ToastAction
+                  withGift={withGift}
                   telegramDescription={telegramDescription}
                   tweeterDescription={tweeterDescription}
                   title={title}
                   url={url}
                   thx={`https://bscscan.com/tx/${hash}`}
-                  withGift={withGift}
                 />
                 <Button
                   p="0"

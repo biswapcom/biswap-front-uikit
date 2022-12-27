@@ -26,7 +26,6 @@ export const Default: React.FC = () => {
       hash: "hash",
       type: alertVariants[sample(Object.keys(alertVariants))],
       url: `https://github.com`,
-      withGift: true,
     };
 
     setToasts((prevToasts) => [randomToast, ...prevToasts]);

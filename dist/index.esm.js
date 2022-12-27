@@ -8191,7 +8191,7 @@ var Toast = function (_a) {
                         React.createElement(Icon$3q, { ml: "6px", width: "18px", height: "18px", color: "primary" }))),
                     description ? (React.createElement(Text, { color: "#6B7D98", fontSize: "12px", as: "p", mb: "8px", dangerouslySetInnerHTML: { __html: description } })) : (React.createElement(React.Fragment, null)),
                     telegramDescription && tweeterDescription && (React.createElement(ActionContainer, null,
-                        React.createElement(ToastAction, { telegramDescription: telegramDescription, tweeterDescription: tweeterDescription, title: title, url: url, thx: "https://bscscan.com/tx/".concat(hash), withGift: withGift }),
+                        React.createElement(ToastAction, { withGift: withGift, telegramDescription: telegramDescription, tweeterDescription: tweeterDescription, title: title, url: url, thx: "https://bscscan.com/tx/".concat(hash) }),
                         React.createElement(Button, { p: "0", scale: "sm", variant: "text", as: "a", href: "https://bit.ly/3QtqWG8", target: "_blank" },
                             React.createElement(SharingText, null,
                                 React.createElement(Text, { fontSize: "10px", pl: "0", fontWeight: "400", lineHeight: "12px", color: "#6b7d98" }, "*Check"),
