@@ -22,7 +22,7 @@ const BodyLock = () => {
     return () => {
       document.body.style.cssText = `
         overflow: visible;
-        overflow: overlay;
+        overflow: auto;
       `;
     };
   }, []);
