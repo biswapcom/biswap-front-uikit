@@ -92,6 +92,7 @@ const Toast: React.FC<ToastProps> = ({
     tweeterDescription,
     hash,
     url,
+    withGift,
   } = toast;
 
   return (
@@ -154,6 +155,7 @@ const Toast: React.FC<ToastProps> = ({
                   title={title}
                   url={url}
                   thx={`https://bscscan.com/tx/${hash}`}
+                  withGift={withGift}
                 />
                 <Button
                   p="0"

@@ -18,6 +18,7 @@ export interface Toast {
   tweeterDescription?: string;
   hash?: string;
   url?: string;
+  withGift?: boolean;
 }
 
 export interface ToastContainerProps {
