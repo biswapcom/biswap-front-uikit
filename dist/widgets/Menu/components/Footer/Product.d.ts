@@ -1,4 +1,4 @@
 import React from "react";
-import { FooterProductLinks } from "../../types";
-declare const Product: React.FC<FooterProductLinks>;
+import { FooterLinks } from "../../types";
+declare const Product: React.FC<FooterLinks>;
 export default Product;

@@ -18,6 +18,7 @@ import Product from "./Product";
 import Service from "./Service";
 import Community from "./Community";
 import Audit from "./Audit";
+import { MenuContext } from "../../context";
 // import Support from './Support'
 
 interface Props
@@ -107,9 +108,9 @@ const Footer: React.FC<Props> = ({
           footerStatistic={footerStatistic}
           buyBswHandler={buyBswHandler}
         />
-        <About aboutLinks={aboutLinks} />
-        <Product productLinks={productLinks} />
-        <Service serviceLinks={serviceLinks} />
+        <About footerLinks={aboutLinks} />
+        <Product footerLinks={productLinks} />
+        <Service footerLinks={serviceLinks} />
         <Community />
         <Audit />
         {/* <Support/> */}
