@@ -4656,7 +4656,7 @@ var BodyLock = function () {
         document.body.style.cssText = "\n      overflow: hidden;\n    ";
         document.body.style.overflow = "hidden";
         return function () {
-            document.body.style.cssText = "\n        overflow: visible;\n        overflow: overlay;\n      ";
+            document.body.style.cssText = "\n        overflow: visible;\n        overflow: auto;\n      ";
         };
     }, []);
     return null;
