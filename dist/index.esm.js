@@ -6721,7 +6721,7 @@ var CommonFooterLinksComponent = function (_a) {
 var templateObject_1$l, templateObject_2$c, templateObject_3$9, templateObject_4$8, templateObject_5$8, templateObject_6$5;
 
 var Wrapper$5 = styled.div(templateObject_1$k || (templateObject_1$k = __makeTemplateObject(["\n  grid-area: about;\n"], ["\n  grid-area: about;\n"])));
-var About$1 = function (_a) {
+var About = function (_a) {
     var footerLinks = _a.footerLinks;
     return (React.createElement(Wrapper$5, null,
         React.createElement(CommonFooterLinksComponent, { footerLinks: footerLinks, title: "About" })));
@@ -6737,10 +6737,10 @@ var Product = function (_a) {
 var templateObject_1$j;
 
 var Wrapper$3 = styled.div(templateObject_1$i || (templateObject_1$i = __makeTemplateObject(["\n  grid-area: service;\n"], ["\n  grid-area: service;\n"])));
-var About = function (_a) {
+var Service = function (_a) {
     var footerLinks = _a.footerLinks;
     return (React.createElement(Wrapper$3, null,
-        React.createElement(CommonFooterLinksComponent, { footerLinks: footerLinks, title: "About" })));
+        React.createElement(CommonFooterLinksComponent, { footerLinks: footerLinks, title: "Service" })));
 };
 var templateObject_1$i;
 
@@ -7313,9 +7313,9 @@ var Footer = function (_a) {
     return (React.createElement(Wrapper$1, null,
         React.createElement(InnerRow, null,
             React.createElement(FooterInfo, { BSWPriceLabel: BSWPriceLabel, BSWPriceValue: BSWPriceValue, registerToken: registerToken, footerStatistic: footerStatistic, buyBswHandler: buyBswHandler }),
-            React.createElement(About$1, { footerLinks: aboutLinks }),
+            React.createElement(About, { footerLinks: aboutLinks }),
             React.createElement(Product, { footerLinks: productLinks }),
-            React.createElement(About, { footerLinks: serviceLinks }),
+            React.createElement(Service, { footerLinks: serviceLinks }),
             React.createElement(Community, null),
             React.createElement(Audit, null))));
 };
