@@ -12,6 +12,11 @@ const Wrapper = styled.div`
     "logo bsw-value";
   grid-column-gap: 8px;
   position: relative;
+  width: 140px;
+
+  ${({ theme }) => theme.mediaQueries.sm} {
+    width: 120px;
+  }
 
   ${({ theme }) => theme.mediaQueries.xll} {
     grid-column-gap: 16px;
@@ -72,7 +77,7 @@ const BSWPrice: React.FC<BSWPriceProps> = ({
           </linearGradient>
         </defs>
       </svg>
-      <Text color="gray900" fontSize="12px" lineHeight="18px">
+      <Text color="gray900" fontSize="12px" lineHeight="18px" bold>
         {BSWPriceLabel}
       </Text>
       <Text color="contrast" fontSize="16px" lineHeight="19px" bold>

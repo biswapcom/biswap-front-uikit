@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { FooterLinks } from "../../types";
 import CommonFooterLinksComponent from "./CommonFooterLinksComponent";
@@ -7,12 +7,12 @@ const Wrapper = styled.div`
   grid-area: service;
 `;
 
-const About: React.FC<FooterLinks> = ({ footerLinks }) => {
+const Service: React.FC<FooterLinks> = ({ footerLinks }) => {
   return (
     <Wrapper>
-      <CommonFooterLinksComponent footerLinks={footerLinks} title="About" />
+      <CommonFooterLinksComponent footerLinks={footerLinks} title="Service" />
     </Wrapper>
   );
 };
 
-export default About;
+export default Service;

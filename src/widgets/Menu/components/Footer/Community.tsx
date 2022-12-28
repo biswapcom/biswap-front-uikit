@@ -9,6 +9,7 @@ export interface CommunityProps {
   iconSize?: string;
   menuVariant?: boolean;
   title?: string;
+  isFooter?: boolean;
 }
 export interface SocialWrapProps {
   menuVariant?: boolean;
@@ -17,17 +18,9 @@ const Icons = IconModule as unknown as { [key: string]: React.FC<SvgProps> };
 
 const Wrapper = styled.div<{ menuVariant?: boolean }>`
   grid-area: community;
-  margin-top: 8px;
   ${({ menuVariant }) => !menuVariant && "max-width: 136px;"}
-  ${({ theme }) => theme.mediaQueries.sm} {
-    max-width: none;
-    margin-top: 24px;
-  }
-
-  ${({ theme }) => theme.mediaQueries.xll} {
-    margin-top: 0;
-  }
 `;
+
 const Title = styled.h4`
   font-size: 16px;
   color: ${({ theme }) => theme.colors.white};
@@ -134,9 +127,10 @@ const Community: React.FC<CommunityProps> = ({
   iconSize = "20px",
   title,
   menuVariant,
+  isFooter = false,
 }) => {
   return (
-    <Wrapper menuVariant={menuVariant}>
+    <Wrapper menuVariant={menuVariant || isFooter}>
       {title && <Title>{title}</Title>}
 
       <SocialWrap menuVariant={menuVariant}>
@@ -144,7 +138,7 @@ const Community: React.FC<CommunityProps> = ({
           const Icon = Icons[social.icon];
           const iconProps = {
             width: iconSize,
-            color: "gray600",
+            color: isFooter ? "pastelBlue" : "gray600",
             style: { cursor: "pointer" },
           };
           if (social.items) {
