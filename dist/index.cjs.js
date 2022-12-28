@@ -8060,9 +8060,9 @@ var templateObject_1$4, templateObject_2$2, templateObject_3$1, templateObject_4
 var ActionsContainer = styled__default["default"].div(templateObject_1$3 || (templateObject_1$3 = __makeTemplateObject(["\n  display: flex;\n  justify-content: flex-start;\n"], ["\n  display: flex;\n  justify-content: flex-start;\n"])));
 styled__default["default"].img(templateObject_2$1 || (templateObject_2$1 = __makeTemplateObject(["\n  margin-left: 8px;\n  width: 26px;\n  filter: drop-shadow(2px 4px 8px rgba(0, 109, 163, 0.4));\n"], ["\n  margin-left: 8px;\n  width: 26px;\n  filter: drop-shadow(2px 4px 8px rgba(0, 109, 163, 0.4));\n"])));
 var ToastAction = function (_a) {
-    _a.title; _a.telegramDescription; var tweeterDescription = _a.tweeterDescription, url = _a.url; _a.thx;
+    _a.title; _a.telegramDescription; var tweeterDescription = _a.tweeterDescription, url = _a.url; _a.thx; var withGift = _a.withGift;
     return (React__default["default"].createElement(ActionsContainer, null,
-        React__default["default"].createElement(SocialShareButton, { social: "twitter", message: tweeterDescription, link: url, mr: "8px", height: "32px", withGift: true })));
+        React__default["default"].createElement(SocialShareButton, { social: "twitter", message: tweeterDescription, link: url, mr: "8px", height: "32px", withGift: withGift })));
 };
 var templateObject_1$3, templateObject_2$1;
 
@@ -8103,7 +8103,7 @@ var SharingText = styled__default["default"].div(templateObject_5 || (templateOb
 var ActionContainer = styled__default["default"].div(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n  width: 100%;\n"], ["\n  width: 100%;\n"])));
 var Toast = function (_a) {
     var _b = _a.removeButtonPosition, removeButtonPosition = _b === void 0 ? 60 : _b, clearAll = _a.clearAll, toast = _a.toast, style = _a.style, handleMouseEnter = _a.handleMouseEnter, handleMouseLeave = _a.handleMouseLeave, handleRemove = _a.handleRemove, progress = _a.progress, props = __rest(_a, ["removeButtonPosition", "clearAll", "toast", "style", "handleMouseEnter", "handleMouseLeave", "handleRemove", "progress"]);
-    var description = toast.description, type = toast.type, title = toast.title, telegramDescription = toast.telegramDescription, tweeterDescription = toast.tweeterDescription, hash = toast.hash, url = toast.url;
+    var description = toast.description, type = toast.type, title = toast.title, telegramDescription = toast.telegramDescription, tweeterDescription = toast.tweeterDescription, hash = toast.hash, url = toast.url, withGift = toast.withGift;
     return (React__default["default"].createElement(reactTransitionGroup.CSSTransition, __assign({ timeout: 250, style: style }, props),
         React__default["default"].createElement(StyledToast, { onMouseEnter: handleMouseEnter, onMouseLeave: handleMouseLeave },
             clearAll && (React__default["default"].createElement(ClearAllButton, { scale: "sm", variant: "text", top: removeButtonPosition, onClick: function () { return clearAll(); } },
@@ -8115,7 +8115,7 @@ var Toast = function (_a) {
                         React__default["default"].createElement(Icon$3q, { ml: "6px", width: "18px", height: "18px", color: "primary" }))),
                     description ? (React__default["default"].createElement(Text, { color: "#6B7D98", fontSize: "12px", as: "p", mb: "8px", dangerouslySetInnerHTML: { __html: description } })) : (React__default["default"].createElement(React__default["default"].Fragment, null)),
                     telegramDescription && tweeterDescription && (React__default["default"].createElement(ActionContainer, null,
-                        React__default["default"].createElement(ToastAction, { telegramDescription: telegramDescription, tweeterDescription: tweeterDescription, title: title, url: url, thx: "https://bscscan.com/tx/".concat(hash) }),
+                        React__default["default"].createElement(ToastAction, { withGift: withGift, telegramDescription: telegramDescription, tweeterDescription: tweeterDescription, title: title, url: url, thx: "https://bscscan.com/tx/".concat(hash) }),
                         React__default["default"].createElement(Button, { p: "0", scale: "sm", variant: "text", as: "a", href: "https://bit.ly/3QtqWG8", target: "_blank" },
                             React__default["default"].createElement(SharingText, null,
                                 React__default["default"].createElement(Text, { fontSize: "10px", pl: "0", fontWeight: "400", lineHeight: "12px", color: "#6b7d98" }, "*Check"),
