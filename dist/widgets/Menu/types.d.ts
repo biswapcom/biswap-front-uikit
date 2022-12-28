@@ -2,6 +2,7 @@ import { ElementType, ReactElement, ReactNode } from "react";
 import { MenuItemsType } from "../../components/MenuItems/types";
 import { SubMenuItemsType } from "../../components/SubMenuItems";
 import { Colors } from "../../theme";
+import { DropdownMenuItemType } from "../../components/DropdownMenu/types";
 export interface LinkStatus {
     text: string;
     color: keyof Colors;
@@ -46,8 +47,12 @@ export interface FooterProductLinks {
 export interface FooterServiceLinks {
     serviceLinks: Array<FooterNavItem>;
 }
+export interface FooterLinks {
+    footerLinks: Array<FooterNavItem>;
+}
 export interface FooterNavItem {
     label: string;
     href: string;
     target?: string;
+    type?: DropdownMenuItemType;
 }

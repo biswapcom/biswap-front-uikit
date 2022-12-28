@@ -18,6 +18,7 @@ import Product from "./Product";
 import Service from "./Service";
 import Community from "./Community";
 import Audit from "./Audit";
+import { MenuContext } from "../../context";
 // import Support from './Support'
 
 interface Props
@@ -80,6 +81,7 @@ const InnerRow = styled.div`
       "footer-info . about product service audit";
   }
 `;
+
 const Footer: React.FC<Props> = ({
   BSWPriceLabel,
   BSWPriceValue,
@@ -100,9 +102,9 @@ const Footer: React.FC<Props> = ({
           footerStatistic={footerStatistic}
           buyBswHandler={buyBswHandler}
         />
-        <About aboutLinks={aboutLinks} />
-        <Product productLinks={productLinks} />
-        <Service serviceLinks={serviceLinks} />
+        <About footerLinks={aboutLinks} />
+        <Product footerLinks={productLinks} />
+        <Service footerLinks={serviceLinks} />
         <Community isFooter title="Community" />
         <Audit />
         {/* <Support/> */}

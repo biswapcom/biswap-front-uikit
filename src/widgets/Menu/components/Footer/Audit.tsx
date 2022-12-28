@@ -7,6 +7,7 @@ import { Button } from "../../../../components/Button";
 import { BodyText } from "../../../../components/Typography";
 
 const MARKETPLACE_URL = "https://marketplace.biswap.org";
+const CERTIC_URL = "https://www.certik.org/projects/biswap";
 
 const AuditedWrap = styled(Flex)`
   grid-area: audit;
@@ -71,7 +72,7 @@ const Audit: FC = () => (
         </BodyText>
       </Flex>
     </MarketPlaceButton>
-    <LinkWrap href="https://www.certik.org/projects/biswap" target="_blank">
+    <LinkWrap href={CERTIC_URL} target="_blank">
       <CerticAuditedIcon
         style={{
           padding: "8px 16px",
