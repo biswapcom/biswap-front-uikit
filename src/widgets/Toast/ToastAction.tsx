@@ -14,6 +14,7 @@ interface ToastActionProps {
   telegramDescription: string;
   tweeterDescription: string;
   thx?: string;
+  withGift?: boolean;
 }
 
 const ActionsContainer = styled.div`
@@ -32,6 +33,7 @@ const ToastAction: React.FC<ToastActionProps> = ({
   tweeterDescription,
   url,
   thx,
+  withGift,
 }) => {
   return (
     <ActionsContainer>
@@ -65,7 +67,7 @@ const ToastAction: React.FC<ToastActionProps> = ({
         link={url}
         mr="8px"
         height="32px"
-        withGift
+        withGift={withGift}
       />
       {/*<SocialShareButton*/}
       {/*  social="telegram"*/}
@@ -76,40 +78,5 @@ const ToastAction: React.FC<ToastActionProps> = ({
     </ActionsContainer>
   );
 };
-{
-  /*<TwitterShareButton*/
-}
-{
-  /*  style={{ width: "40%", height: "32px" }}*/
-}
-{
-  /*  title={tweeterDescription}*/
-}
-{
-  /*  url={`${url}`}*/
-}
-{
-  /*>*/
-}
-{
-  /*</TwitterShareButton>*/
-}
-{
-  /*<TelegramShareButton*/
-}
-{
-  /*  style={{ width: "40%", height: "32px", marginLeft: "6px" }}*/
-}
-{
-  /*  title={telegramDescription}*/
-}
-{
-  /*  url={`${url}`}*/
-}
-{
-  /*>*/
-}
-{
-  /*</TelegramShareButton>*/
-}
+
 export default ToastAction;

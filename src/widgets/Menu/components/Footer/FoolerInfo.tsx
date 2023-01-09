@@ -22,7 +22,7 @@ const Wrapper = styled.div`
   margin-bottom: 24px;
   grid-area: footer-info;
 
-  ${({ theme }) => theme.mediaQueries.xl} {
+  ${({ theme }) => theme.mediaQueries.md} {
     margin-bottom: 0;
   }
 
@@ -67,6 +67,10 @@ const InfoListItem = styled.div`
   &:not(:last-child) {
     margin-bottom: 8px;
   }
+
+  ${({ theme }) => theme.mediaQueries.md} {
+    justify-content: space-between;
+  }
 `;
 const InfoListLabel = styled.span`
   font-size: 12px;
@@ -85,6 +89,7 @@ const InfoListValue = styled.span`
   color: ${({ theme }) => theme.colors.white};
   padding-left: 4px;
   font-weight: bold;
+  width: 126px;
 `;
 
 const FooterInfo: React.FC<Props> = ({

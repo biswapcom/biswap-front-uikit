@@ -87,6 +87,8 @@ const NavItem = styled.div`
 
 const CustomLink = styled.div`
   transition: opacity 0.3s ease;
+  color: ${({ theme }) => theme.colors.pastelBlue};
+  font-weight: 600;
 
   &:hover {
     opacity: 0.65;

@@ -5,6 +5,7 @@ interface ToastActionProps {
     telegramDescription: string;
     tweeterDescription: string;
     thx?: string;
+    withGift?: boolean;
 }
 declare const ToastAction: React.FC<ToastActionProps>;
 export default ToastAction;

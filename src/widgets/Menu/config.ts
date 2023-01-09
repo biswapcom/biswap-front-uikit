@@ -254,32 +254,32 @@ export const links: MenuItemsType[] = [
     isMobileNav: true,
     showItemsOnMobile: true,
   },
-  {
-    type: ItemTypes.DIVIDER,
-    showItemsOnMobile: true,
-  },
-  {
-    label: "Biswap Products", // if changed label, also should be changed in Accordion component condition
-    icon: "ProductsOpacity",
-    isMobileNav: true,
-    showItemsOnMobile: true,
-    items: [
-      {
-        label: "Marketplace",
-        href: "/pool",
-        leftIcon: "Market",
-        description: "Item description",
-        type: DropdownMenuItemType.EXTERNAL_LINK,
-      },
-      {
-        label: "GameFi",
-        href: "/pool",
-        leftIcon: "GameFi",
-        description: "Item description",
-        type: DropdownMenuItemType.EXTERNAL_LINK,
-      },
-    ],
-  },
+  // {
+  //   type: ItemTypes.DIVIDER,
+  //   showItemsOnMobile: true,
+  // },
+  // {
+  //   label: "Biswap Products", // if changed label, also should be changed in Accordion component condition
+  //   icon: "ProductsOpacity",
+  //   isMobileNav: true,
+  //   showItemsOnMobile: true,
+  //   items: [
+  //     {
+  //       label: "Marketplace",
+  //       href: "/pool",
+  //       leftIcon: "Market",
+  //       description: "Item description",
+  //       type: DropdownMenuItemType.EXTERNAL_LINK,
+  //     },
+  //     {
+  //       label: "GameFi",
+  //       href: "/pool",
+  //       leftIcon: "GameFi",
+  //       description: "Item description",
+  //       type: DropdownMenuItemType.EXTERNAL_LINK,
+  //     },
+  //   ],
+  // },
 ];
 
 export const socials = [
@@ -436,38 +436,54 @@ export const aboutLinks = [
 export const productLinks = [
   {
     label: "Exchange",
-    href: "/",
+    href: "/swap",
   },
   {
     label: "Liquidity",
-    href: "/",
+    href: "/pool",
   },
   {
-    label: "Farming",
-    href: "/",
+    label: "Farms",
+    href: `/farms`,
   },
   {
     label: "Launchpools",
-    href: "/",
+    href: `/pools`,
   },
   {
-    label: "Bug Bounty?",
-    href: "/",
+    label: "Multi-Reward Pool",
+    href: `/multireward_pool`,
+  },
+  {
+    label: "Fixed Staking",
+    href: "/fixed_staking",
+  },
+  {
+    label: "Analytics",
+    href: "/analytics",
   },
 ];
 
 export const serviceLinks = [
   {
-    label: "Referral",
-    href: "/",
+    label: "Referral program",
+    href: "/referral",
   },
   {
-    label: "Apply to Lanch",
-    href: "/",
+    label: "BSW Token",
+    href: "/bsw_token",
   },
   {
-    label: "Competitions",
-    href: "/",
+    label: "Apply to Launch",
+    href: "https://forms.gle/V8sQfCi5aBesL2ya8",
+  },
+  {
+    label: "$10M Program",
+    href: "/incentive_program",
+  },
+  {
+    label: "Space Agents",
+    href: "/space_agents",
   },
 ];
 

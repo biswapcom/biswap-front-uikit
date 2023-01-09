@@ -92,6 +92,7 @@ const Toast: React.FC<ToastProps> = ({
     tweeterDescription,
     hash,
     url,
+    withGift,
   } = toast;
 
   return (
@@ -149,6 +150,7 @@ const Toast: React.FC<ToastProps> = ({
             {telegramDescription && tweeterDescription && (
               <ActionContainer>
                 <ToastAction
+                  withGift={withGift}
                   telegramDescription={telegramDescription}
                   tweeterDescription={tweeterDescription}
                   title={title}

@@ -1,13 +1,17 @@
 import React, { FC } from "react";
 import styled from "styled-components";
+import Flex from "../../../../components/Box/Flex";
+
 import { CerticAuditedIcon, MarketIcon } from "../../../../components/Svg";
 import { Button } from "../../../../components/Button";
-import Flex from "../../../../components/Box/Flex";
 import { BodyText } from "../../../../components/Typography";
+
+const MARKETPLACE_URL = "https://marketplace.biswap.org";
+const CERTIC_URL = "https://www.certik.org/projects/biswap";
 
 const AuditedWrap = styled(Flex)`
   grid-area: audit;
-  margin-top: 32px;
+  margin-top: 24px;
   flex-direction: row;
   justify-content: space-between;
 
@@ -15,13 +19,10 @@ const AuditedWrap = styled(Flex)`
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    margin-top: 24px;
+    margin-top: 0;
   }
   ${({ theme }) => theme.mediaQueries.md} {
-    margin-left: -30px;
-  }
-  ${({ theme }) => theme.mediaQueries.lg} {
-    margin-left: 0;
+    margin-left: -44px;
   }
 
   ${({ theme }) => theme.mediaQueries.xll} {
@@ -32,6 +33,10 @@ const AuditedWrap = styled(Flex)`
 
 const LinkWrap = styled.a`
   height: fit-content;
+  transition: opacity 0.3s ease;
+  &:hover {
+    opacity: 0.7;
+  }
 `;
 
 const MarketPlaceButton = styled(Button)`
@@ -39,7 +44,14 @@ const MarketPlaceButton = styled(Button)`
   width: 156px;
   background: ${({ theme }) => theme.colors.dark600};
   border-radius: 8px;
-  margin-bottom: 8px;
+  margin-bottom: 0;
+  transition: opacity 0.3s ease;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    margin-bottom: 8px;
+  }
+  &:hover {
+    opacity: 0.7;
+  }
 `;
 const IconWrapper = styled.div`
   background: linear-gradient(136.03deg, #1263f1 -7.36%, #f63d5e 131.43%);
@@ -50,11 +62,7 @@ const IconWrapper = styled.div`
 
 const Audit: FC = () => (
   <AuditedWrap>
-    <MarketPlaceButton
-      as="a"
-      href="https://marketplace.biswap.org"
-      target="_blank"
-    >
+    <MarketPlaceButton as="a" href={MARKETPLACE_URL} target="_blank">
       <Flex alignItems="center">
         <IconWrapper>
           <MarketIcon width="19px" />
@@ -64,7 +72,7 @@ const Audit: FC = () => (
         </BodyText>
       </Flex>
     </MarketPlaceButton>
-    <LinkWrap href="https://www.certik.org/projects/biswap" target="_blank">
+    <LinkWrap href={CERTIC_URL} target="_blank">
       <CerticAuditedIcon
         style={{
           padding: "8px 16px",
