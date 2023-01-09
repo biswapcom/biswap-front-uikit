@@ -7456,9 +7456,10 @@ var InnerLinksBlock = function (_a) {
 var templateObject_1$d;
 
 var DropdownMenuItemContainer = function (_a) {
-    var _b = _a.isActive, isActive = _b === void 0 ? false : _b, leftIcon = _a.leftIcon, getMenuItemContent = _a.getMenuItemContent, _c = _a.links, links = _c === void 0 ? [] : _c, setIsOpen = _a.setIsOpen, linkComponent = _a.linkComponent, _d = _a.href, href = _d === void 0 ? "/" : _d, bannerRenderer = _a.bannerRenderer, type = _a.type, target = _a.target, mobileTarget = _a.mobileTarget; _a.badgeTitle; _a.badgeType; var isOpenItem = _a.isOpenItem, lastItem = _a.lastItem, itemProps = __rest(_a, ["isActive", "leftIcon", "getMenuItemContent", "links", "setIsOpen", "linkComponent", "href", "bannerRenderer", "type", "target", "mobileTarget", "badgeTitle", "badgeType", "isOpenItem", "lastItem"]);
-    var _e = React.useState([]), linksItems = _e[0], setLinkItems = _e[1];
-    var _f = useMatchBreakpoints(), isMobile = _f.isMobile, isDesktop = _f.isDesktop;
+    var _b;
+    var _c = _a.isActive, isActive = _c === void 0 ? false : _c, leftIcon = _a.leftIcon, getMenuItemContent = _a.getMenuItemContent, _d = _a.links, links = _d === void 0 ? [] : _d, setIsOpen = _a.setIsOpen, linkComponent = _a.linkComponent, _e = _a.href, href = _e === void 0 ? "/" : _e, bannerRenderer = _a.bannerRenderer, type = _a.type, target = _a.target, mobileTarget = _a.mobileTarget; _a.badgeTitle; _a.badgeType; var isOpenItem = _a.isOpenItem, lastItem = _a.lastItem, itemProps = __rest(_a, ["isActive", "leftIcon", "getMenuItemContent", "links", "setIsOpen", "linkComponent", "href", "bannerRenderer", "type", "target", "mobileTarget", "badgeTitle", "badgeType", "isOpenItem", "lastItem"]);
+    var _f = React.useState([]), linksItems = _f[0], setLinkItems = _f[1];
+    var _g = useMatchBreakpoints(), isMobile = _g.isMobile, isDesktop = _g.isDesktop;
     React.useEffect(function () {
         (function () { return __awaiter(void 0, void 0, void 0, function () {
             var res;
@@ -7484,7 +7485,7 @@ var DropdownMenuItemContainer = function (_a) {
     return (React__default["default"].createElement(StyledDropdownMenuItemContainer, { isOpenMenuItem: isOpenItem },
         type === exports.DropdownMenuItemType.BUTTON && (React__default["default"].createElement(DropdownMenuItem, __assign({ "$isActive": isActive, "$hasIcon": !!leftIcon, type: "button" }, itemProps), getMenuItemContent(""))),
         type === exports.DropdownMenuItemType.CONTAINER && (React__default["default"].createElement(React__default["default"].Fragment, null,
-            React__default["default"].createElement(DropdownMenuItem, __assign({ "$isActive": isActive, "$hasIcon": true, as: "div" }, itemProps), getMenuItemContent("")),
+            hasInnerLinks ? (React__default["default"].createElement(DropdownMenuItem, __assign({ "$isActive": isActive, "$hasIcon": true, as: linkComponent, href: (_b = linksItems[0]) === null || _b === void 0 ? void 0 : _b.href }, itemProps), getMenuItemContent(""))) : (React__default["default"].createElement(DropdownMenuItem, __assign({ "$isActive": isActive, "$hasIcon": true, as: "div" }, itemProps), getMenuItemContent(""))),
             hasInnerLinks && (React__default["default"].createElement(InnerLinksBlock, { links: linksItems, leftIcon: leftIcon, setIsOpen: setIsOpen, linkComponent: linkComponent, lastItem: lastItem })))),
         type === exports.DropdownMenuItemType.INTERNAL_LINK && (React__default["default"].createElement(DropdownInternalMenuItem, __assign({ label: itemProps.label, "$isActive": isActive, "$hasIcon": !!leftIcon, as: linkComponent, to: href, onClick: function () {
                 setIsOpen(false);
