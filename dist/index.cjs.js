@@ -7485,7 +7485,9 @@ var DropdownMenuItemContainer = function (_a) {
     return (React__default["default"].createElement(StyledDropdownMenuItemContainer, { isOpenMenuItem: isOpenItem },
         type === exports.DropdownMenuItemType.BUTTON && (React__default["default"].createElement(DropdownMenuItem, __assign({ "$isActive": isActive, "$hasIcon": !!leftIcon, type: "button" }, itemProps), getMenuItemContent(""))),
         type === exports.DropdownMenuItemType.CONTAINER && (React__default["default"].createElement(React__default["default"].Fragment, null,
-            hasInnerLinks ? (React__default["default"].createElement(DropdownMenuItem, __assign({ "$isActive": isActive, "$hasIcon": true, as: linkComponent, href: (_b = linksItems[0]) === null || _b === void 0 ? void 0 : _b.href }, itemProps), getMenuItemContent(""))) : (React__default["default"].createElement(DropdownMenuItem, __assign({ "$isActive": isActive, "$hasIcon": true, as: "div" }, itemProps), getMenuItemContent(""))),
+            hasInnerLinks ? (React__default["default"].createElement(DropdownMenuItem, __assign({ "$isActive": isActive, "$hasIcon": true, as: linkComponent, href: (_b = linksItems[0]) === null || _b === void 0 ? void 0 : _b.href, onClick: function () {
+                    setIsOpen(false);
+                } }, itemProps), getMenuItemContent(""))) : (React__default["default"].createElement(DropdownMenuItem, __assign({ "$isActive": isActive, "$hasIcon": true, as: "div" }, itemProps), getMenuItemContent(""))),
             hasInnerLinks && (React__default["default"].createElement(InnerLinksBlock, { links: linksItems, leftIcon: leftIcon, setIsOpen: setIsOpen, linkComponent: linkComponent, lastItem: lastItem })))),
         type === exports.DropdownMenuItemType.INTERNAL_LINK && (React__default["default"].createElement(DropdownInternalMenuItem, __assign({ label: itemProps.label, "$isActive": isActive, "$hasIcon": !!leftIcon, as: linkComponent, to: href, onClick: function () {
                 setIsOpen(false);
