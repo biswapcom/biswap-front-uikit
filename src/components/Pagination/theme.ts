@@ -3,10 +3,6 @@ import { variants } from "./types";
 export const Variants = {
   [variants.LIGHT]: {
     color: "primary",
-
-    ":hover": {
-      color: "white",
-    },
   },
   [variants.DARK]: {
     color: "white",
