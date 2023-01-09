@@ -67,6 +67,9 @@ const DropdownMenuItemContainer: FC<DropdownMenuItemContainerProps> = ({
               $hasIcon={true} // to disable hover styling
               as={linkComponent}
               href={linksItems[0]?.href}
+              onClick={() => {
+                setIsOpen(false);
+              }}
               {...itemProps}
             >
               {getMenuItemContent("")}
