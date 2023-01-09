@@ -61,14 +61,29 @@ const DropdownMenuItemContainer: FC<DropdownMenuItemContainerProps> = ({
       )}
       {type === DropdownMenuItemType.CONTAINER && (
         <>
-          <DropdownMenuItem
-            $isActive={isActive}
-            $hasIcon={true} // to disable hover styling
-            as="div"
-            {...itemProps}
-          >
-            {getMenuItemContent("")}
-          </DropdownMenuItem>
+          {hasInnerLinks ? (
+            <DropdownMenuItem
+              $isActive={isActive}
+              $hasIcon={true} // to disable hover styling
+              as={linkComponent}
+              href={linksItems[0]?.href}
+              onClick={() => {
+                setIsOpen(false);
+              }}
+              {...itemProps}
+            >
+              {getMenuItemContent("")}
+            </DropdownMenuItem>
+          ) : (
+            <DropdownMenuItem
+              $isActive={isActive}
+              $hasIcon={true} // to disable hover styling
+              as="div"
+              {...itemProps}
+            >
+              {getMenuItemContent("")}
+            </DropdownMenuItem>
+          )}
 
           {hasInnerLinks && (
             <InnerLinksBlock
