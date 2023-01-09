@@ -37,7 +37,7 @@ const PaginationWrap = styled.div<VariantProps>`
       outline: 0;
       line-height: 20px;
       font-weight: 600;
-      transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+      transition: opacity 0.4s ease-in-out, color 0.4s ease-in-out;
 
       ${variant({
         variants: Variants,
@@ -45,7 +45,7 @@ const PaginationWrap = styled.div<VariantProps>`
 
       &:hover {
         &:not(:first-child, :last-child, .active) {
-          background-color: ${({ theme }) => theme.colors.primary};
+          opacity: 0.56;
         }
       }
 
