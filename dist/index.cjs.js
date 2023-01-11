@@ -8116,7 +8116,7 @@ var LinkStyles = styled__default["default"].a(templateObject_4 || (templateObjec
     var theme = _a.theme;
     return theme.colors.primary;
 });
-var SharingText = styled__default["default"].div(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: row;\n"], ["\n  display: flex;\n  flex-direction: row;\n"])));
+styled__default["default"].div(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: row;\n"], ["\n  display: flex;\n  flex-direction: row;\n"])));
 var ActionContainer = styled__default["default"].div(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n  width: 100%;\n"], ["\n  width: 100%;\n"])));
 var Toast = function (_a) {
     var _b = _a.removeButtonPosition, removeButtonPosition = _b === void 0 ? 60 : _b, clearAll = _a.clearAll, toast = _a.toast, style = _a.style, handleMouseEnter = _a.handleMouseEnter, handleMouseLeave = _a.handleMouseLeave, handleRemove = _a.handleRemove, progress = _a.progress, props = __rest(_a, ["removeButtonPosition", "clearAll", "toast", "style", "handleMouseEnter", "handleMouseLeave", "handleRemove", "progress"]);
@@ -8132,12 +8132,7 @@ var Toast = function (_a) {
                         React__default["default"].createElement(Icon$3q, { ml: "6px", width: "18px", height: "18px", color: "primary" }))),
                     description ? (React__default["default"].createElement(Text, { color: "#6B7D98", fontSize: "12px", as: "p", mb: "8px", dangerouslySetInnerHTML: { __html: description } })) : (React__default["default"].createElement(React__default["default"].Fragment, null)),
                     telegramDescription && tweeterDescription && (React__default["default"].createElement(ActionContainer, null,
-                        React__default["default"].createElement(ToastAction, { withGift: withGift, telegramDescription: telegramDescription, tweeterDescription: tweeterDescription, title: title, url: url, thx: "https://bscscan.com/tx/".concat(hash) }),
-                        React__default["default"].createElement(Button, { p: "0", scale: "sm", variant: "text", as: "a", href: "https://bit.ly/3QtqWG8", target: "_blank" },
-                            React__default["default"].createElement(SharingText, null,
-                                React__default["default"].createElement(Text, { fontSize: "10px", pl: "0", fontWeight: "400", lineHeight: "12px", color: "#6b7d98" }, "*Check"),
-                                React__default["default"].createElement(Text, { fontSize: "10px", pl: "0", fontWeight: "400", lineHeight: "12px", color: "#1263F1", ml: "2px" }, "Sharing Season"),
-                                React__default["default"].createElement(Text, { fontSize: "10px", pl: "0", fontWeight: "400", lineHeight: "12px", color: "#6b7d98", ml: "2px" }, "details"))))))))));
+                        React__default["default"].createElement(ToastAction, { withGift: withGift, telegramDescription: telegramDescription, tweeterDescription: tweeterDescription, title: title, url: url, thx: "https://bscscan.com/tx/".concat(hash) }))))))));
 };
 var templateObject_1$2, templateObject_2, templateObject_3, templateObject_4, templateObject_5, templateObject_6;
 
