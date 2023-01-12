@@ -157,46 +157,6 @@ const Toast: React.FC<ToastProps> = ({
                   url={url}
                   thx={`https://bscscan.com/tx/${hash}`}
                 />
-                <Button
-                  p="0"
-                  scale="sm"
-                  variant="text"
-                  as="a"
-                  href="https://bit.ly/3QtqWG8"
-                  target="_blank"
-                >
-                  <SharingText>
-                    <Text
-                      fontSize="10px"
-                      pl="0"
-                      fontWeight="400"
-                      lineHeight="12px"
-                      color="#6b7d98"
-                    >
-                      *Check
-                    </Text>
-                    <Text
-                      fontSize="10px"
-                      pl="0"
-                      fontWeight="400"
-                      lineHeight="12px"
-                      color="#1263F1"
-                      ml="2px"
-                    >
-                      Sharing Season
-                    </Text>
-                    <Text
-                      fontSize="10px"
-                      pl="0"
-                      fontWeight="400"
-                      lineHeight="12px"
-                      color="#6b7d98"
-                      ml="2px"
-                    >
-                      details
-                    </Text>
-                  </SharingText>
-                </Button>
               </ActionContainer>
             )}
           </div>
