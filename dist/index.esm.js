@@ -8046,7 +8046,7 @@ var Menu = function (_a) {
             React.createElement(FixedContainer, { showMenu: showMenu, height: isMobileMenuOpened ? 0 : totalTopMenuHeight },
                 banner && (React.createElement(TopBannerContainer, { height: topBannerHeight }, banner)),
                 React.createElement(StyledNav, { menuBg: menuBg, isMobileMenuOpened: isMobileMenuOpened },
-                    React.createElement(Flex, null,
+                    React.createElement(Flex, { alignItems: "center", justifyContent: "center" },
                         React.createElement(Logo, { logoSubtitle: customLogoSubtitle, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
                         React.createElement(MenuItems, { items: links, activeItem: activeItem, activeSubItem: activeSubItem, isMobileMenuOpened: isMobileMenuOpened, mobileMenuCallback: setIsMobileMenuOpened, ml: isMobile ? "12px" : "26px" })),
                     React.createElement(Flex, { alignItems: "center", height: "100%" }, rightSide))),
