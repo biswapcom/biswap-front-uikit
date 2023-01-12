@@ -1,6 +1,7 @@
 export declare const scaleVariants: {
     xl: {
         height: string;
+        fontSize: string;
         padding: string;
         borderRadius: string;
     };

@@ -3,6 +3,7 @@ import { scales, variants } from "./types";
 export const scaleVariants = {
   [scales.XL]: {
     height: "48px",
+    fontSize: "16px",
     padding: "0 24px",
     borderRadius: "10px",
   },

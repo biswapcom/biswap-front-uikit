@@ -3234,6 +3234,7 @@ var _a$a, _b$6;
 var scaleVariants$3 = (_a$a = {},
     _a$a[scales$a.XL] = {
         height: "48px",
+        fontSize: "16px",
         padding: "0 24px",
         borderRadius: "10px",
     },
