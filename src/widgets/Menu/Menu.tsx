@@ -272,7 +272,7 @@ const Menu: FC<PropsWithChildren<NavProps>> = ({
             </TopBannerContainer>
           )}
           <StyledNav menuBg={menuBg} isMobileMenuOpened={isMobileMenuOpened}>
-            <Flex>
+            <Flex alignItems="center" justifyContent="center">
               <Logo
                 logoSubtitle={customLogoSubtitle}
                 href={homeLink?.href ?? "/"}
