@@ -3384,20 +3384,11 @@ var styleVariants$3 = (_b$6 = {},
         backgroundColor: "transparent",
         color: "primaryHover",
         boxShadow: "none",
-        svg: {
-            fill: "primaryHover",
-        },
         ":hover:not(:disabled)": {
             color: "primary",
-            svg: {
-                fill: "primary",
-            },
         },
         ":active:not(:disabled)": {
             color: "primaryPress",
-            svg: {
-                fill: "primaryPress",
-            },
         },
     },
     _b$6);
