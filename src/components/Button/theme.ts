@@ -157,23 +157,11 @@ export const styleVariants = {
     color: "primary",
     boxShadow: "none",
 
-    svg: {
-      fill: "primary",
-    },
-
     ":hover:not(:disabled)": {
       color: "primaryHover",
-
-      svg: {
-        fill: "primaryHover",
-      },
     },
     ":active:not(:disabled)": {
       color: "primaryPress",
-
-      svg: {
-        fill: "primaryPress",
-      },
     },
   },
   [variants.TEXT_DARK]: {
