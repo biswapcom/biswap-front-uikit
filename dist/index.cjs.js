@@ -3228,6 +3228,7 @@ var variants$5 = {
     TERTIARY: "tertiary",
     TERTIARY_OUT: "tertiaryOut",
     TEXT: "text",
+    TEXT_DARK: "textDark",
 };
 
 var _a$a, _b$6;
@@ -3376,6 +3377,41 @@ var styleVariants$3 = (_b$6 = {},
         backgroundColor: "transparent",
         color: "primary",
         boxShadow: "none",
+        svg: {
+            fill: "primary",
+        },
+        ":hover:not(:disabled)": {
+            color: "primaryHover",
+            svg: {
+                fill: "primaryHover",
+            },
+        },
+        ":active:not(:disabled)": {
+            color: "primaryPress",
+            svg: {
+                fill: "primaryPress",
+            },
+        },
+    },
+    _b$6[variants$5.TEXT_DARK] = {
+        backgroundColor: "transparent",
+        color: "primaryHover",
+        boxShadow: "none",
+        svg: {
+            fill: "primaryHover",
+        },
+        ":hover:not(:disabled)": {
+            color: "primary",
+            svg: {
+                fill: "primary",
+            },
+        },
+        ":active:not(:disabled)": {
+            color: "primaryPress",
+            svg: {
+                fill: "primaryPress",
+            },
+        },
     },
     _b$6);
 

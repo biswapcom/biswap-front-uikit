@@ -139,5 +139,40 @@ export declare const styleVariants: {
         backgroundColor: string;
         color: string;
         boxShadow: string;
+        svg: {
+            fill: string;
+        };
+        ":hover:not(:disabled)": {
+            color: string;
+            svg: {
+                fill: string;
+            };
+        };
+        ":active:not(:disabled)": {
+            color: string;
+            svg: {
+                fill: string;
+            };
+        };
+    };
+    textDark: {
+        backgroundColor: string;
+        color: string;
+        boxShadow: string;
+        svg: {
+            fill: string;
+        };
+        ":hover:not(:disabled)": {
+            color: string;
+            svg: {
+                fill: string;
+            };
+        };
+        ":active:not(:disabled)": {
+            color: string;
+            svg: {
+                fill: string;
+            };
+        };
     };
 };

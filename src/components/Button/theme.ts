@@ -156,5 +156,48 @@ export const styleVariants = {
     backgroundColor: "transparent",
     color: "primary",
     boxShadow: "none",
+
+    svg: {
+      fill: "primary",
+    },
+
+    ":hover:not(:disabled)": {
+      color: "primaryHover",
+
+      svg: {
+        fill: "primaryHover",
+      },
+    },
+    ":active:not(:disabled)": {
+      color: "primaryPress",
+
+      svg: {
+        fill: "primaryPress",
+      },
+    },
+  },
+  [variants.TEXT_DARK]: {
+    backgroundColor: "transparent",
+    color: "primaryHover",
+    boxShadow: "none",
+
+    svg: {
+      fill: "primaryHover",
+    },
+
+    ":hover:not(:disabled)": {
+      color: "primary",
+
+      svg: {
+        fill: "primary",
+      },
+    },
+    ":active:not(:disabled)": {
+      color: "primaryPress",
+
+      svg: {
+        fill: "primaryPress",
+      },
+    },
   },
 };
