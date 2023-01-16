@@ -7121,7 +7121,7 @@ var socials = [
     {
         label: "Instagram",
         icon: "InstagramIcon",
-        href: "https://www.instagram.com/biswap_org/",
+        href: "https://www.instagram.com/_biswap_dex",
     },
     {
         label: "Facebook",
