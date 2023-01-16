@@ -6,7 +6,12 @@ import styled from "styled-components";
 import Box from "../Box/Box";
 import Flex from "../Box/Flex";
 import { Heading } from "../Heading";
-import { PlusIcon, AutoRenewIcon, LogoIcon, ChevronRightCircleSolidIcon } from "../Svg";
+import {
+  PlusIcon,
+  AutoRenewIcon,
+  LogoIcon,
+  ChevronRightCircleSolidIcon,
+} from "../Svg";
 import IconButton from "./IconButton";
 import Button from "./Button";
 import { ExpandableButton, ExpandableLabel } from "./ExpandableButton";
@@ -190,33 +195,19 @@ export const Default: React.FC = () => {
         </Box>
       </Flex>
       <Box>
-        <Heading mb="16px">
-          Text buttons dark
-        </Heading>
-        <Button
-          key="md"
-          variant="textDark"
-          scale="lg"
-          mr="8px"
-          mb="8px"
-        >
+        <Heading mb="16px">Text buttons dark</Heading>
+        <Button key="md" variant="textDark" scale="lg" mr="8px" mb="8px">
           text
-          <ChevronRightCircleSolidIcon width="24px" ml="8px"/>
+          <ChevronRightCircleSolidIcon width="24px" ml="8px" />
         </Button>
       </Box>
       <Box background="#F9FAFD">
         <Heading color="backgroundDark" mb="16px">
           Text buttons light
         </Heading>
-        <Button
-          key="md"
-          variant="text"
-          scale="lg"
-          mr="8px"
-          mb="8px"
-        >
+        <Button key="md" variant="text" scale="lg" mr="8px" mb="8px">
           text
-          <ChevronRightCircleSolidIcon width="24px" ml="8px"/>
+          <ChevronRightCircleSolidIcon width="24px" ml="8px" />
         </Button>
       </Box>
     </Wrapper>
