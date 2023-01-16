@@ -27,7 +27,7 @@ const getTextColor = ({
 
 export const InnerLinksBlockContainer = styled.div<{ padded: boolean }>`
   padding-top: 16px;
-  padding-left: ${({ padded }) => padded && "62px"};
+  padding-left: ${({ padded }) => padded && "52px"};
 `;
 
 const CommonDropdownMenuInnerLinkItem = () => css`
