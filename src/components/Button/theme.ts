@@ -156,5 +156,24 @@ export const styleVariants = {
     backgroundColor: "transparent",
     color: "primary",
     boxShadow: "none",
+
+    ":hover:not(:disabled)": {
+      color: "primaryHover",
+    },
+    ":active:not(:disabled)": {
+      color: "primaryPress",
+    },
+  },
+  [variants.TEXT_DARK]: {
+    backgroundColor: "transparent",
+    color: "primaryHover",
+    boxShadow: "none",
+
+    ":hover:not(:disabled)": {
+      color: "primary",
+    },
+    ":active:not(:disabled)": {
+      color: "primaryPress",
+    },
   },
 };
