@@ -21,6 +21,7 @@ export const variants = {
   TERTIARY: "tertiary",
   TERTIARY_OUT: "tertiaryOut",
   TEXT: "text",
+  TEXT_DARK: "textDark",
 } as const;
 
 export type Scale = typeof scales[keyof typeof scales];

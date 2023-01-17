@@ -3228,6 +3228,7 @@ var variants$5 = {
     TERTIARY: "tertiary",
     TERTIARY_OUT: "tertiaryOut",
     TEXT: "text",
+    TEXT_DARK: "textDark",
 };
 
 var _a$a, _b$6;
@@ -3376,6 +3377,23 @@ var styleVariants$3 = (_b$6 = {},
         backgroundColor: "transparent",
         color: "primary",
         boxShadow: "none",
+        ":hover:not(:disabled)": {
+            color: "primaryHover",
+        },
+        ":active:not(:disabled)": {
+            color: "primaryPress",
+        },
+    },
+    _b$6[variants$5.TEXT_DARK] = {
+        backgroundColor: "transparent",
+        color: "primaryHover",
+        boxShadow: "none",
+        ":hover:not(:disabled)": {
+            color: "primary",
+        },
+        ":active:not(:disabled)": {
+            color: "primaryPress",
+        },
     },
     _b$6);
 
@@ -3407,7 +3425,7 @@ var getFlat = function (_a) {
         return "\n      border-radius: 0;\n    ";
     }
 };
-var StyledButton = styled__default["default"].button(templateObject_1$10 || (templateObject_1$10 = __makeTemplateObject(["\n  align-items: center;\n  border: 0;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  justify-content: center;\n  line-height: 1;\n  opacity: ", ";\n  outline: 0;\n  transition: background-color 0.2s, opacity 0.2s;\n  white-space: nowrap;\n\n  &:active:not(:disabled):not(.button--disabled):not(.button--disabled) {\n  }\n\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"], ["\n  align-items: center;\n  border: 0;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  justify-content: center;\n  line-height: 1;\n  opacity: ", ";\n  outline: 0;\n  transition: background-color 0.2s, opacity 0.2s;\n  white-space: nowrap;\n\n  &:active:not(:disabled):not(.button--disabled):not(.button--disabled) {\n  }\n\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"])), getOpacity, getDisabledStyles, styledSystem.variant({
+var StyledButton = styled__default["default"].button(templateObject_1$10 || (templateObject_1$10 = __makeTemplateObject(["\n  align-items: center;\n  border: 0;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  justify-content: center;\n  line-height: 1;\n  opacity: ", ";\n  outline: 0;\n  transition: background-color 0.3s ease-in-out, opacity 0.3s ease-in-out, color 0.3s ease-in-out;\n  white-space: nowrap;\n\n  &:active:not(:disabled):not(.button--disabled):not(.button--disabled) {\n  }\n\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"], ["\n  align-items: center;\n  border: 0;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  justify-content: center;\n  line-height: 1;\n  opacity: ", ";\n  outline: 0;\n  transition: background-color 0.3s ease-in-out, opacity 0.3s ease-in-out, color 0.3s ease-in-out;\n  white-space: nowrap;\n\n  &:active:not(:disabled):not(.button--disabled):not(.button--disabled) {\n  }\n\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"])), getOpacity, getDisabledStyles, styledSystem.variant({
     prop: "scale",
     variants: scaleVariants$3,
 }), styledSystem.variant({
@@ -7116,7 +7134,7 @@ var socials = [
     {
         label: "Instagram",
         icon: "InstagramIcon",
-        href: "https://www.instagram.com/biswap_org/",
+        href: "https://www.instagram.com/_biswap_dex",
     },
     {
         label: "Facebook",
@@ -7357,7 +7375,7 @@ var getTextColor = function (_a) {
 };
 var InnerLinksBlockContainer = styled__default["default"].div(templateObject_1$e || (templateObject_1$e = __makeTemplateObject(["\n  padding-top: 16px;\n  padding-left: ", ";\n"], ["\n  padding-top: 16px;\n  padding-left: ", ";\n"])), function (_a) {
     var padded = _a.padded;
-    return padded && "62px";
+    return padded && "58px";
 });
 var CommonDropdownMenuInnerLinkItem = function () { return styled.css(templateObject_2$8 || (templateObject_2$8 = __makeTemplateObject(["\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n  cursor: pointer;\n\n  &:hover {\n    .inner-chevron {\n      margin-right: 4px;\n      transition: margin-right 150ms linear;\n    }\n  }\n"], ["\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n  cursor: pointer;\n\n  &:hover {\n    .inner-chevron {\n      margin-right: 4px;\n      transition: margin-right 150ms linear;\n    }\n  }\n"]))); };
 var DropdownMenuInnerLinkItem = styled__default["default"].div(templateObject_3$6 || (templateObject_3$6 = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), CommonDropdownMenuInnerLinkItem);

@@ -139,5 +139,22 @@ export declare const styleVariants: {
         backgroundColor: string;
         color: string;
         boxShadow: string;
+        ":hover:not(:disabled)": {
+            color: string;
+        };
+        ":active:not(:disabled)": {
+            color: string;
+        };
+    };
+    textDark: {
+        backgroundColor: string;
+        color: string;
+        boxShadow: string;
+        ":hover:not(:disabled)": {
+            color: string;
+        };
+        ":active:not(:disabled)": {
+            color: string;
+        };
     };
 };
