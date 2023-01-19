@@ -77,7 +77,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
   const [targetRef, setTargetRef] = useState<HTMLDivElement | null>(null);
   const [tooltipRef, setTooltipRef] = useState<HTMLDivElement | null>(null);
   const [currentOpen, setCurrentOpen] = useState<string | undefined>();
-  console.log("currentOpen", currentOpen);
+
   const { isMobile, isTablet } = useMatchBreakpoints();
 
   const hasItems = items.length > 0;

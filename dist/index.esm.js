@@ -7683,7 +7683,6 @@ var MobileMenu = function (_a) {
     var _c = useState(null), targetRef = _c[0], setTargetRef = _c[1];
     var _d = useState(null), tooltipRef = _d[0], setTooltipRef = _d[1];
     var _e = useState(), currentOpen = _e[0], setCurrentOpen = _e[1];
-    console.log("currentOpen", currentOpen);
     var _f = useMatchBreakpoints(), isMobile = _f.isMobile, isTablet = _f.isTablet;
     var hasItems = items.length > 0;
     var _g = usePopper(targetRef, tooltipRef, {
