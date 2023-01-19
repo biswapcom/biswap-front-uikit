@@ -3425,7 +3425,7 @@ var getFlat = function (_a) {
         return "\n      border-radius: 0;\n    ";
     }
 };
-var StyledButton = styled__default["default"].button(templateObject_1$10 || (templateObject_1$10 = __makeTemplateObject(["\n  align-items: center;\n  border: 0;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  justify-content: center;\n  line-height: 1;\n  opacity: ", ";\n  outline: 0;\n  transition: background-color 0.3s ease-in-out, opacity 0.3s ease-in-out, color 0.3s ease-in-out;\n  white-space: nowrap;\n\n  &:active:not(:disabled):not(.button--disabled):not(.button--disabled) {\n  }\n\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"], ["\n  align-items: center;\n  border: 0;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  justify-content: center;\n  line-height: 1;\n  opacity: ", ";\n  outline: 0;\n  transition: background-color 0.3s ease-in-out, opacity 0.3s ease-in-out, color 0.3s ease-in-out;\n  white-space: nowrap;\n\n  &:active:not(:disabled):not(.button--disabled):not(.button--disabled) {\n  }\n\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"])), getOpacity, getDisabledStyles, styledSystem.variant({
+var StyledButton = styled__default["default"].button(templateObject_1$10 || (templateObject_1$10 = __makeTemplateObject(["\n  align-items: center;\n  border: 0;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  justify-content: center;\n  line-height: 1;\n  opacity: ", ";\n  outline: 0;\n  transition: background-color 0.3s ease-in-out, opacity 0.3s ease-in-out,\n    color 0.3s ease-in-out;\n  white-space: nowrap;\n\n  &:active:not(:disabled):not(.button--disabled):not(.button--disabled) {\n  }\n\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"], ["\n  align-items: center;\n  border: 0;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  justify-content: center;\n  line-height: 1;\n  opacity: ", ";\n  outline: 0;\n  transition: background-color 0.3s ease-in-out, opacity 0.3s ease-in-out,\n    color 0.3s ease-in-out;\n  white-space: nowrap;\n\n  &:active:not(:disabled):not(.button--disabled):not(.button--disabled) {\n  }\n\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"])), getOpacity, getDisabledStyles, styledSystem.variant({
     prop: "scale",
     variants: scaleVariants$3,
 }), styledSystem.variant({
@@ -7632,16 +7632,25 @@ var AccordionBody = styled__default["default"].div(templateObject_3$5 || (templa
 var AccordionTitle = styled__default["default"](Flex)(templateObject_4$5 || (templateObject_4$5 = __makeTemplateObject(["\n  align-items: center;\n  justify-content: space-between;\n  cursor: pointer;\n"], ["\n  align-items: center;\n  justify-content: space-between;\n  cursor: pointer;\n"])));
 var AccordionComponent = styled__default["default"].div(templateObject_5$5 || (templateObject_5$5 = __makeTemplateObject(["\n  width: 100%;\n"], ["\n  width: 100%;\n"])));
 var Accordion = function (_a) {
-    var label = _a.label, _b = _a.clickable, clickable = _b === void 0 ? true : _b, heading = _a.heading, children = _a.children, index = _a.index, href = _a.href, linkComponent = _a.linkComponent, setIsOpenMenu = _a.setIsOpenMenu, isOpenItem = _a.isOpenItem;
+    var label = _a.label, _b = _a.clickable, clickable = _b === void 0 ? true : _b, heading = _a.heading, children = _a.children, index = _a.index, href = _a.href, linkComponent = _a.linkComponent, setIsOpenMenu = _a.setIsOpenMenu, isOpenItem = _a.isOpenItem, currentOpen = _a.currentOpen, setCurrentOpen = _a.setCurrentOpen;
     var _c = React.useState(false), isOpened = _c[0], setIsOpened = _c[1];
     var isMobile = useMatchBreakpoints().isMobile;
     React.useEffect(function () {
         if (!clickable || isOpenItem) {
-            setIsOpened(true);
+            setCurrentOpen(label);
         }
-    }, [label, clickable, setIsOpened]);
+    }, [label, clickable]);
+    React.useEffect(function () {
+        setIsOpened(currentOpen === label);
+    }, [currentOpen]);
     var onTitleClick = function () {
-        !href && clickable ? setIsOpened(function (prev) { return !prev; }) : setIsOpenMenu(false);
+        if (!href && clickable) {
+            !isOpened ? setCurrentOpen(label) : setCurrentOpen(undefined);
+        }
+        else {
+            setCurrentOpen(undefined);
+            setIsOpenMenu(false);
+        }
     };
     return (React__default["default"].createElement(AccordionComponent, { key: "acc-key-".concat(label) },
         isMobile && index !== 1 && React__default["default"].createElement(DropdownMenuDivider, { color: "btnTertiary" }),
@@ -7686,12 +7695,14 @@ var MobileMenu = function (_a) {
     var _b = React.useState(false), isOpen = _b[0], setIsOpen = _b[1];
     var _c = React.useState(null), targetRef = _c[0], setTargetRef = _c[1];
     var _d = React.useState(null), tooltipRef = _d[0], setTooltipRef = _d[1];
-    var _e = useMatchBreakpoints(), isMobile = _e.isMobile, isTablet = _e.isTablet;
+    var _e = React.useState(), currentOpen = _e[0], setCurrentOpen = _e[1];
+    console.log("currentOpen", currentOpen);
+    var _f = useMatchBreakpoints(), isMobile = _f.isMobile, isTablet = _f.isTablet;
     var hasItems = items.length > 0;
-    var _f = reactPopper.usePopper(targetRef, tooltipRef, {
+    var _g = reactPopper.usePopper(targetRef, tooltipRef, {
         strategy: "fixed",
         placement: "bottom",
-    }), styles = _f.styles, attributes = _f.attributes, update = _f.update;
+    }), styles = _g.styles, attributes = _g.attributes, update = _g.update;
     React.useEffect(function () {
         var hideDropdownMenu = function (evt) {
             var target = evt.target;
@@ -7728,7 +7739,7 @@ var MobileMenu = function (_a) {
         hasItems && (React__default["default"].createElement(StyledMobileMenu, __assign({ style: styles.popper, ref: setTooltipRef }, attributes.popper, { "$isOpen": isOpen }),
             React__default["default"].createElement(Box, null,
                 items
-                    .filter(function (item) { return item.label && !item.type; })
+                    .filter(function (item, categoryNum) { return item.label && !item.type; })
                     .map(function (_a, index) {
                     var label = _a.label, _b = _a.items, innerItems = _b === void 0 ? [] : _b, showItemsOnMobile = _a.showItemsOnMobile, hidden = _a.hidden; _a.showNavBadge; var href = _a.href; _a.highlightTitle;
                     var isMarker = items[index].showNavBadge;
@@ -7741,7 +7752,7 @@ var MobileMenu = function (_a) {
                     var visualize = !showItemsOnMobile ||
                         (showItemsOnMobile && isMobile && !hidden);
                     return (React__default["default"].createElement(BorderMobileMenuItem, { key: "".concat(label, "#").concat(index), isHighlighted: isHighlighted },
-                        React__default["default"].createElement(Accordion, { index: index, label: label, href: href, linkComponent: linkComponent, setIsOpenMenu: setIsOpen, clickable: !isTablet && innerItems.length > 0, isOpenItem: isOpenAccordion, heading: function (opened) {
+                        React__default["default"].createElement(Accordion, { index: index, label: label, href: href, linkComponent: linkComponent, setIsOpenMenu: setIsOpen, currentOpen: currentOpen, setCurrentOpen: setCurrentOpen, clickable: !isTablet && innerItems.length > 0, isOpenItem: isOpenAccordion, heading: function (opened) {
                                 return (((!showItemsOnMobile && !hidden) ||
                                     (href && !isTablet)) && (React__default["default"].createElement(React__default["default"].Fragment, null,
                                     React__default["default"].createElement(Box, { m: firstAccordionItemMobile
