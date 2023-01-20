@@ -86,7 +86,7 @@ const Accordion: FC<IProps> = ({
 
   const onTitleClick = () => {
     if (!href && clickable) {
-      !isOpened ? setCurrentOpen(label) : setCurrentOpen(undefined);
+      setCurrentOpen(!isOpened ? label : undefined);
     } else {
       setCurrentOpen(undefined);
       setIsOpenMenu(false);

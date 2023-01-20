@@ -7645,7 +7645,7 @@ var Accordion = function (_a) {
     }, [currentOpen, clickable]);
     var onTitleClick = function () {
         if (!href && clickable) {
-            !isOpened ? setCurrentOpen(label) : setCurrentOpen(undefined);
+            setCurrentOpen(!isOpened ? label : undefined);
         }
         else {
             setCurrentOpen(undefined);
