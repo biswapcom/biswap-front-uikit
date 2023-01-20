@@ -7628,8 +7628,8 @@ var Accordion = function (_a) {
         }
     }, [label, clickable]);
     useEffect(function () {
-        setIsOpened(currentOpen === label);
-    }, [currentOpen]);
+        setIsOpened(clickable ? currentOpen === label : true);
+    }, [currentOpen, clickable]);
     var onTitleClick = function () {
         if (!href && clickable) {
             !isOpened ? setCurrentOpen(label) : setCurrentOpen(undefined);

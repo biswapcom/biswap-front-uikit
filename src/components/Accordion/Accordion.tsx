@@ -81,8 +81,8 @@ const Accordion: FC<IProps> = ({
   }, [label, clickable]);
 
   useEffect(() => {
-    setIsOpened(currentOpen === label);
-  }, [currentOpen]);
+    setIsOpened(clickable ? currentOpen === label : true);
+  }, [currentOpen, clickable]);
 
   const onTitleClick = () => {
     if (!href && clickable) {
