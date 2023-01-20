@@ -7635,7 +7635,6 @@ var Accordion = function (_a) {
             setCurrentOpen(!isOpened ? label : undefined);
         }
         else {
-            setCurrentOpen(undefined);
             setIsOpenMenu(false);
         }
     };

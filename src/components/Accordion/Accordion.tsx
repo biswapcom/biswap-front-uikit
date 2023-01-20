@@ -88,7 +88,6 @@ const Accordion: FC<IProps> = ({
     if (!href && clickable) {
       setCurrentOpen(!isOpened ? label : undefined);
     } else {
-      setCurrentOpen(undefined);
       setIsOpenMenu(false);
     }
   };
