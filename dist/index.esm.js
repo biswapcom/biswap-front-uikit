@@ -5940,7 +5940,7 @@ var Wrapper$8 = styled(Box)(templateObject_1$x || (templateObject_1$x = __makeTe
     return (disabled ? "not-allowed" : "pointer");
 }, function (_a) {
     var disabled = _a.disabled;
-    return (disabled ? 0.84 : 1);
+    return (disabled ? 0.4 : 1);
 });
 var GiftWrap = styled(Flex)(templateObject_2$i || (templateObject_2$i = __makeTemplateObject(["\n  display: ", ";\n  position: absolute;\n  width: 37px;\n  height: 32px;\n  bottom: 0;\n  right: 0;\n"], ["\n  display: ", ";\n  position: absolute;\n  width: 37px;\n  height: 32px;\n  bottom: 0;\n  right: 0;\n"])), function (_a) {
     var withGift = _a.withGift;

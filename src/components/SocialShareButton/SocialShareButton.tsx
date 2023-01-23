@@ -21,7 +21,7 @@ const Wrapper = styled(Box)<{ disabled?: boolean; width: string }>`
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
   transition: opacity .3s ease-in-out;
 
-  opacity: ${({ disabled }) => (disabled ? 0.84 : 1)};
+  opacity: ${({ disabled }) => (disabled ? 0.4 : 1)};
   
   &:hover:not(:disabled) {
     opacity: .84;
