@@ -4033,10 +4033,10 @@ Checkbox.defaultProps = {
 };
 var templateObject_1$Y, templateObject_2$v, templateObject_3$o;
 
-var Icons$1 = IconModule;
-var IconComponent = function (_a) {
+var Icons$2 = IconModule;
+var IconComponent$1 = function (_a) {
     var iconName = _a.iconName, props = __rest(_a, ["iconName"]);
-    var IconElement = Icons$1["".concat(iconName, "Icon")];
+    var IconElement = Icons$2["".concat(iconName, "Icon")];
     return IconElement ? React__default["default"].createElement(IconElement, __assign({}, props)) : null;
 };
 
@@ -4285,11 +4285,11 @@ var Dropdown = function (_a) {
     }, [wrapperRef]);
     return (React__default["default"].createElement(Container, __assign({ maxWidth: maxWidth, minWidth: minWidth, ref: wrapperRef, scale: scale }, props),
         React__default["default"].createElement(DropdownTop, { scale: scale, variant: variant, onClick: toggling, disabled: disabled, className: isOpen ? "open" : disabled ? "disabled" : "" },
-            selectedOption.icon && (React__default["default"].createElement(IconComponent, { iconName: selectedOption.icon.name, color: selectedOption.icon.color, mr: scale === "lg" ? "12px" : "8px" })),
+            selectedOption.icon && (React__default["default"].createElement(IconComponent$1, { iconName: selectedOption.icon.name, color: selectedOption.icon.color, mr: scale === "lg" ? "12px" : "8px" })),
             React__default["default"].createElement(Label$1, null, selectedOption.label),
             React__default["default"].createElement(StyledArrow, { className: "arrow", isOpen: isOpen })),
         isOpen && (React__default["default"].createElement(DropdownContent, { position: position, scale: scale }, options.map(function (option) { return (React__default["default"].createElement(DropdownItem, { scale: scale, selected: option.label === selectedOption.label, onClick: onOptionClicked(option), key: option.label },
-            option.icon && (React__default["default"].createElement(IconComponent, { iconName: option.icon.name, color: option.icon.color })),
+            option.icon && (React__default["default"].createElement(IconComponent$1, { iconName: option.icon.name, color: option.icon.color })),
             React__default["default"].createElement("span", null, option.label))); })))));
 };
 Dropdown.defaultProps = {
@@ -4582,7 +4582,7 @@ var StyledInputGroup = styled__default["default"](Box)(templateObject_2$t || (te
     var hasEndIcon = _a.hasEndIcon, scale = _a.scale;
     return getPadding(scale, hasEndIcon);
 });
-var StyledIconComponent = styled__default["default"](IconComponent)(templateObject_3$m || (templateObject_3$m = __makeTemplateObject(["\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  z-index: 2;\n"], ["\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  z-index: 2;\n"])));
+var StyledIconComponent = styled__default["default"](IconComponent$1)(templateObject_3$m || (templateObject_3$m = __makeTemplateObject(["\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  z-index: 2;\n"], ["\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  z-index: 2;\n"])));
 var LeftIconComponent = styled__default["default"](StyledIconComponent)(templateObject_4$l || (templateObject_4$l = __makeTemplateObject(["\n  left: ", ";\n"], ["\n  left: ", ";\n"])), function (_a) {
     var scale = _a.scale;
     return getIconPosition(scale);
@@ -5224,7 +5224,7 @@ var SubMenuItems = function (_a) {
         var label = _a.label, href = _a.href, iconName = _a.iconName, itemProps = _a.itemProps;
         return label && (React__default["default"].createElement(Box, { key: label, mr: "20px" },
             React__default["default"].createElement(MenuItem, __assign({ href: href, isActive: href === activeItem, variant: "subMenu" }, itemProps),
-                iconName && (React__default["default"].createElement(IconComponent, { color: href === activeItem ? "secondary" : "pastelBlue", iconName: iconName, mr: "4px" })),
+                iconName && (React__default["default"].createElement(IconComponent$1, { color: href === activeItem ? "secondary" : "pastelBlue", iconName: iconName, mr: "4px" })),
                 label)));
     })));
 };
@@ -5413,7 +5413,7 @@ var TabBarItem = function (_a) {
     };
     var iconSizes = menuIconScaleVariants[scale];
     var getTabMenuIcons = function () {
-        return (React__default["default"].createElement(IconComponent, { width: iconSizes.width, iconName: iconName, color: iconColor !== null && iconColor !== void 0 ? iconColor : "currentColor", mr: iconSizes.marginRight }));
+        return (React__default["default"].createElement(IconComponent$1, { width: iconSizes.width, iconName: iconName, color: iconColor !== null && iconColor !== void 0 ? iconColor : "currentColor", mr: iconSizes.marginRight }));
     };
     return (React__default["default"].createElement(TabItem, __assign({ onClick: omItemClickHandler, isActive: isActive, ref: ref, as: as, variant: variant, scale: scale }, props),
         React__default["default"].createElement(Flex, { height: iconSizes.width, alignItems: "center" },
@@ -6111,6 +6111,13 @@ CardFooter.defaultProps = {
     p: "24px",
 };
 var templateObject_1$t;
+
+var Icons$1 = IconModule;
+var IconComponent = function (_a) {
+    var iconName = _a.iconName, props = __rest(_a, ["iconName"]);
+    var IconElement = Icons$1["".concat(iconName, "Icon")];
+    return IconElement ? React__default["default"].createElement(IconElement, __assign({}, props)) : null;
+};
 
 var baseColors = {
     // failure: "#F93B5D",
@@ -7509,7 +7516,7 @@ var InnerLinksBlock = function (_a) {
         return links.map(function (_a, index) {
             var _b = _a.label, label = _b === void 0 ? "" : _b, _c = _a.href, href = _c === void 0 ? "/" : _c, _d = _a.icon, icon = _d === void 0 ? "ChevronRight" : _d, _e = _a.linkType, linkType = _e === void 0 ? exports.DropdownMenuItemType.INTERNAL_LINK : _e, mobileTarget = _a.mobileTarget, target = _a.target, _f = _a.fill, fill = _f === void 0 ? "primary" : _f;
             var getLinkContent = function () { return (React__default["default"].createElement(React__default["default"].Fragment, null,
-                icon && (React__default["default"].createElement(IconComponent, { className: "inner-chevron", width: 16, iconName: icon, color: fill })),
+                icon && (React__default["default"].createElement(IconComponent$1, { className: "inner-chevron", width: 16, iconName: icon, color: fill })),
                 React__default["default"].createElement(LabelText, { bold: true, fontSize: "12px", color: fill }, label))); };
             return (React__default["default"].createElement(React.Fragment, { key: "".concat(index, "#").concat(label) },
                 linkType === exports.DropdownMenuItemType.INTERNAL_LINK && (React__default["default"].createElement(DropdownMenuInnerLinkItem, { key: index + label, as: linkComponent, to: href, onClick: function () {
@@ -7587,13 +7594,13 @@ var MenuItemContent = function (_a) {
     var isMobile = useMatchBreakpoints().isMobile;
     return (React__default["default"].createElement(React__default["default"].Fragment, null,
         leftIcon && (React__default["default"].createElement(IconComponentWrap, { leftIcon: leftIcon },
-            React__default["default"].createElement(IconComponent, { width: 24, iconName: leftIcon, color: "white" }))),
+            React__default["default"].createElement(IconComponent$1, { width: 24, iconName: leftIcon, color: "white" }))),
         React__default["default"].createElement(Flex, { alignSelf: isMobile ? "stretch" : "", flexDirection: "column", flex: 1, paddingLeft: leftIcon && "16px" },
             React__default["default"].createElement(Flex, { alignItems: "center" },
                 label,
                 badgeTitle && (React__default["default"].createElement(Badge, { ml: "4px", badgeType: badgeType !== null && badgeType !== void 0 ? badgeType : "success" }, badgeTitle))),
             description && (React__default["default"].createElement(Text, { fontSize: "12px", color: "gray900", lineHeight: "16px" }, description))),
-        rightIcon && (React__default["default"].createElement(IconComponent, { className: "arrow-icon", iconName: rightIcon, color: fill }))));
+        rightIcon && (React__default["default"].createElement(IconComponent$1, { className: "arrow-icon", iconName: rightIcon, color: fill }))));
 };
 var templateObject_1$c;
 
@@ -7820,7 +7827,7 @@ var MobileMenu = function (_a) {
                                                 : isHighlighted && isTablet
                                                     ? "warningPress"
                                                     : "backgroundDark" }, label)),
-                                    !isTablet && (React__default["default"].createElement(IconComponent, { width: !href ? "24px" : "20px", iconName: href
+                                    !isTablet && (React__default["default"].createElement(IconComponent$1, { width: !href ? "24px" : "20px", iconName: href
                                             ? "ArrowRight"
                                             : opened
                                                 ? "ChevronUp"
@@ -7957,7 +7964,7 @@ var MenuItems = function (_a) {
                 React__default["default"].createElement(DropdownMenu, { key: "".concat(label, "#").concat(href, "#").concat(icon), items: menuItems, py: 1, activeItem: activeSubItem, isExtended: isExtended },
                     React__default["default"].createElement(MenuItem, __assign({}, linkProps, { isActive: isActive, statusColor: statusColor, highlightTitle: highlightTitle }),
                         type === ItemTypes.DIVIDER && React__default["default"].createElement(MenuItemDivider, null),
-                        icon && (React__default["default"].createElement(IconComponent, { mr: "8px", iconName: icon, color: "white" })),
+                        icon && (React__default["default"].createElement(IconComponent$1, { mr: "8px", iconName: icon, color: "white" })),
                         label && (React__default["default"].createElement(Box, { ml: !href ? "8px" : 0, position: "relative" },
                             isMarker && React__default["default"].createElement(Marker, { color: isMarkerColor }),
                             React__default["default"].createElement(Text, { color: isHighlighted ? "warningPress" : "white", fontSize: "14px", lineHeight: "20px", fontWeight: "600" }, label))))))));
@@ -8480,6 +8487,7 @@ exports.IDIcon = Icon$p;
 exports.INIcon = Icon$f;
 exports.ITokenWalletIcon = Icon$6;
 exports.IconButton = IconButton;
+exports.IconComponent = IconComponent;
 exports.IdoOpacityIcon = Icon$1m;
 exports.IdoSolidIcon = Icon$1n;
 exports.Image = Image;
