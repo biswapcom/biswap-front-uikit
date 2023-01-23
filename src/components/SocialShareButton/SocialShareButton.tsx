@@ -23,7 +23,7 @@ const Wrapper = styled(Box)<{ disabled?: boolean; width: string }>`
 
   opacity: ${({ disabled }) => (disabled ? 0.3 : 1)};
   
-  &:hover:not(:disabled) {
+  &:hover {
     opacity: ${({ disabled }) => (disabled ? 0.3 : 0.84)};
   },
 `;
