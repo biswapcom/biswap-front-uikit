@@ -157,6 +157,7 @@ const Menu: FC<PropsWithChildren<NavProps>> = ({
   aboutLinks,
   productLinks,
   serviceLinks,
+  socialLinks,
   withEvent,
   eventCallback,
   //eventButtonLogo,
@@ -314,6 +315,7 @@ const Menu: FC<PropsWithChildren<NavProps>> = ({
                 aboutLinks={aboutLinks}
                 productLinks={productLinks}
                 serviceLinks={serviceLinks}
+                socialLinks={socialLinks}
               />
             </>
           </Inner>

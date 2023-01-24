@@ -35,18 +35,31 @@ export declare const footerStatistic: {
     label: string;
     value: number;
 }[];
+export declare const socialLinks: {
+    title: string;
+    links: never[];
+};
 export declare const aboutLinks: {
-    label: string;
-    href: string;
-}[];
+    title: string;
+    links: {
+        label: string;
+        href: string;
+    }[];
+};
 export declare const productLinks: {
-    label: string;
-    href: string;
-}[];
+    title: string;
+    links: {
+        label: string;
+        href: string;
+    }[];
+};
 export declare const serviceLinks: {
-    label: string;
-    href: string;
-}[];
+    title: string;
+    links: {
+        label: string;
+        href: string;
+    }[];
+};
 export declare const userMenulinks: DropdownMenuItems[];
 export declare const MENU_HEIGHT = 72;
 export declare const TOP_BANNER_HEIGHT = 70;

@@ -4,12 +4,14 @@ import { socials } from "../../config";
 import { SvgProps } from "../../../../components/Svg";
 import Link from "../../../../components/Link/Link";
 import * as IconModule from "../../../../components/Svg";
+import { FooterSocialLinks, SocialLinks } from "../../types";
 
 export interface CommunityProps {
   iconSize?: string;
   menuVariant?: boolean;
   title?: string;
   isFooter?: boolean;
+  socialLinks?: SocialLinks;
 }
 export interface SocialWrapProps {
   menuVariant?: boolean;
@@ -128,10 +130,11 @@ const Community: React.FC<CommunityProps> = ({
   title,
   menuVariant,
   isFooter = false,
+  socialLinks,
 }) => {
   return (
     <Wrapper menuVariant={menuVariant || isFooter}>
-      {title && <Title>{title}</Title>}
+      {socialLinks?.title && <Title>{socialLinks?.title}</Title>}
 
       <SocialWrap menuVariant={menuVariant}>
         {socials.map((social) => {
