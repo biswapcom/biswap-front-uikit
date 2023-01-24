@@ -3,6 +3,7 @@ import { MenuItemsType } from "../../components/MenuItems/types";
 import { SubMenuItemsType } from "../../components/SubMenuItems";
 import { Colors } from "../../theme";
 import { DropdownMenuItemType } from "../../components/DropdownMenu/types";
+import * as string_decoder from "string_decoder";
 
 export interface LinkStatus {
   text: string;
@@ -15,6 +16,7 @@ export interface NavProps
     FooterProductLinks,
     FooterServiceLinks,
     ConnectMetaProps,
+    FooterSocialLinks,
     FooterStatisticProps {
   buyBswHandler: () => void;
   linkComponent?: ElementType;
@@ -50,20 +52,34 @@ export interface BSWPriceProps {
   BSWPriceValue: number;
 }
 
+export interface FooterInfoLinks {
+  title?: string;
+  links?: Array<FooterNavItem>;
+}
+
 export interface FooterAboutLinks {
-  aboutLinks: Array<FooterNavItem>;
+  aboutLinks: FooterInfoLinks;
 }
 
 export interface FooterProductLinks {
-  productLinks: Array<FooterNavItem>;
+  productLinks: FooterInfoLinks;
+}
+
+export interface SocialLinks {
+  title?: string;
+  links?: any[];
+}
+
+export interface FooterSocialLinks {
+  socialLinks: SocialLinks;
 }
 
 export interface FooterServiceLinks {
-  serviceLinks: Array<FooterNavItem>;
+  serviceLinks: FooterInfoLinks;
 }
 
 export interface FooterLinks {
-  footerLinks: Array<FooterNavItem>;
+  footerLinks: FooterInfoLinks;
 }
 
 export interface FooterNavItem {

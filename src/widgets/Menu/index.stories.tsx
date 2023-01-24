@@ -19,6 +19,7 @@ import {
   aboutLinks,
   productLinks,
   serviceLinks,
+  socialLinks,
   links,
   userMenulinks,
 } from "./config";
@@ -136,6 +137,7 @@ const ConnectedTemplate: React.FC<NavProps> = (args) => {
         registerToken={noop}
         aboutLinks={aboutLinks}
         productLinks={productLinks}
+        socialLinks={socialLinks}
         serviceLinks={serviceLinks}
       >
         <Box pt="113px">
@@ -318,6 +320,7 @@ export const WithSubmenuSelected: React.FC = () => {
         registerToken={noop}
         aboutLinks={aboutLinks}
         productLinks={productLinks}
+        socialLinks={socialLinks}
         serviceLinks={serviceLinks}
         links={links}
         subLinks={[

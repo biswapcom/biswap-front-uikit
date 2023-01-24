@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { FooterLinks } from "../../types";
+import { FooterInfoLinks, FooterLinks } from "../../types";
 import CommonFooterLinksComponent from "./CommonFooterLinksComponent";
 
 const Wrapper = styled.div`
@@ -10,7 +10,7 @@ const Wrapper = styled.div`
 const About: React.FC<FooterLinks> = ({ footerLinks }) => {
   return (
     <Wrapper>
-      <CommonFooterLinksComponent footerLinks={footerLinks} title="About Us" />
+      <CommonFooterLinksComponent footerLinks={footerLinks} />
     </Wrapper>
   );
 };

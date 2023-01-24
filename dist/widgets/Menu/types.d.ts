@@ -7,7 +7,7 @@ export interface LinkStatus {
     text: string;
     color: keyof Colors;
 }
-export interface NavProps extends BSWPriceProps, FooterAboutLinks, FooterProductLinks, FooterServiceLinks, ConnectMetaProps, FooterStatisticProps {
+export interface NavProps extends BSWPriceProps, FooterAboutLinks, FooterProductLinks, FooterServiceLinks, ConnectMetaProps, FooterSocialLinks, FooterStatisticProps {
     buyBswHandler: () => void;
     linkComponent?: ElementType;
     banner?: ReactElement;
@@ -38,17 +38,28 @@ export interface BSWPriceProps {
     BSWPriceLabel: string;
     BSWPriceValue: number;
 }
+export interface FooterInfoLinks {
+    title?: string;
+    links?: Array<FooterNavItem>;
+}
 export interface FooterAboutLinks {
-    aboutLinks: Array<FooterNavItem>;
+    aboutLinks: FooterInfoLinks;
 }
 export interface FooterProductLinks {
-    productLinks: Array<FooterNavItem>;
+    productLinks: FooterInfoLinks;
+}
+export interface SocialLinks {
+    title?: string;
+    links?: any[];
+}
+export interface FooterSocialLinks {
+    socialLinks: SocialLinks;
 }
 export interface FooterServiceLinks {
-    serviceLinks: Array<FooterNavItem>;
+    serviceLinks: FooterInfoLinks;
 }
 export interface FooterLinks {
-    footerLinks: Array<FooterNavItem>;
+    footerLinks: FooterInfoLinks;
 }
 export interface FooterNavItem {
     label: string;
