@@ -1,4 +1,11 @@
-import React, { FC, ReactNode, useEffect, useState } from "react";
+import React, {
+  Dispatch,
+  FC,
+  ReactNode,
+  SetStateAction,
+  useEffect,
+  useState,
+} from "react";
 import styled, { css, keyframes } from "styled-components";
 import { useMatchBreakpoints } from "../../contexts";
 import { Box, Flex } from "../Box";
@@ -14,6 +21,8 @@ interface IProps {
   linkComponent?: React.ElementType;
   isOpenItem?: boolean;
   setIsOpenMenu: (arg: boolean) => void;
+  currentOpen: string | undefined;
+  setCurrentOpen: Dispatch<SetStateAction<string | undefined>>;
 }
 
 const openBodyAnimation = keyframes`
@@ -59,18 +68,28 @@ const Accordion: FC<IProps> = ({
   linkComponent,
   setIsOpenMenu,
   isOpenItem,
+  currentOpen,
+  setCurrentOpen,
 }) => {
   const [isOpened, setIsOpened] = useState(false);
   const { isMobile } = useMatchBreakpoints();
 
   useEffect(() => {
     if (!clickable || isOpenItem) {
-      setIsOpened(true);
+      setCurrentOpen(label);
     }
-  }, [label, clickable, setIsOpened]);
+  }, [label, clickable]);
+
+  useEffect(() => {
+    setIsOpened(clickable ? currentOpen === label : true);
+  }, [currentOpen, clickable]);
 
   const onTitleClick = () => {
-    !href && clickable ? setIsOpened((prev) => !prev) : setIsOpenMenu(false);
+    if (!href && clickable) {
+      setCurrentOpen(!isOpened ? label : undefined);
+    } else {
+      setIsOpenMenu(false);
+    }
   };
 
   return (
