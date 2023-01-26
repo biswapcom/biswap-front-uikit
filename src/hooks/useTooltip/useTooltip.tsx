@@ -25,7 +25,7 @@ const useTooltip = (
   const {
     placement = "auto",
     trigger = isMobile || isTablet ? "click" : "hover",
-    arrowPadding = 16,
+    // arrowPadding = 16,
     tooltipPadding = { left: 16, right: 16 },
     tooltipOffset = [0, 10],
   } = options;
@@ -182,7 +182,7 @@ const useTooltip = (
     modifiers: [
       {
         name: "arrow",
-        options: { element: arrowElement, padding: arrowPadding },
+        options: { element: arrowElement /* padding: arrowPadding*/ },
       },
       { name: "offset", options: { offset: tooltipOffset } },
       { name: "preventOverflow", options: { padding: tooltipPadding } },
