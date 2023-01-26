@@ -4,6 +4,7 @@ import { Box, Flex } from "../Box";
 import BellSolid from "../Svg/Icons/Bell/BellSolid";
 import { BodyText } from "../Typography";
 import CustomTooltip from "./config";
+import { Button } from "../Button";
 
 export default {
   title: "Components/TooltipHelper",
@@ -43,6 +44,9 @@ export const Default = () => {
           <BodyText scale="size14" color="success">
             Some text with tooltip
           </BodyText>
+        </TooltipHelper>
+        <TooltipHelper text={"Some text for example"} placement="top">
+          <Button scale="lg">Button</Button>
         </TooltipHelper>
       </Flex>
       <Flex mt="50px" ml="100px">

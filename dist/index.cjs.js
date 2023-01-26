@@ -6407,7 +6407,7 @@ var useOnClickOutside = function (ref, handler) {
     [ref, handler]);
 };
 
-var QuestionWrapper = styled__default["default"](Flex)(templateObject_1$s || (templateObject_1$s = __makeTemplateObject(["\n  align-items: center;\n\n  :hover,\n  :focus {\n    cursor: default;\n    opacity: 0.7;\n  }\n"], ["\n  align-items: center;\n\n  :hover,\n  :focus {\n    cursor: default;\n    opacity: 0.7;\n  }\n"])));
+var QuestionWrapper = styled__default["default"](Flex)(templateObject_1$s || (templateObject_1$s = __makeTemplateObject(["\n  align-items: center;\n  transition: opacity 0.3s ease-in-out;\n\n  :hover,\n  :focus {\n    cursor: default;\n    opacity: 0.7;\n  }\n"], ["\n  align-items: center;\n  transition: opacity 0.3s ease-in-out;\n\n  :hover,\n  :focus {\n    cursor: default;\n    opacity: 0.7;\n  }\n"])));
 var TooltipHelper = function (_a) {
     var text = _a.text, _b = _a.placement, placement = _b === void 0 ? "auto" : _b, _c = _a.size, size = _c === void 0 ? "16px" : _c, _d = _a.color, color = _d === void 0 ? "pastelBlue" : _d, trigger = _a.trigger, _e = _a.Icon, Icon = _e === void 0 ? Icon$31 : _e, _f = _a.ml, ml = _f === void 0 ? "4px" : _f, children = _a.children, props = __rest(_a, ["text", "placement", "size", "color", "trigger", "Icon", "ml", "children"]);
     var _g = useTooltip(text, {

@@ -21,6 +21,7 @@ interface Props extends BoxProps {
 
 const QuestionWrapper = styled(Flex)`
   align-items: center;
+  transition: opacity 0.3s ease-in-out;
 
   :hover,
   :focus {
