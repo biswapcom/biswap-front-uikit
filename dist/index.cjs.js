@@ -6420,6 +6420,20 @@ var TooltipHelper = function (_a) {
 };
 var templateObject_1$s;
 
+var ViewMode = {
+    TABLE: "TABLE",
+    CARD: "CARD",
+};
+
+var TableCardSkeleton = function (_a) {
+    var viewMode = _a.viewMode, number = _a.number, _b = _a.tableHeight, tableHeight = _b === void 0 ? "72px" : _b, _c = _a.cardHeight, cardHeight = _c === void 0 ? "352px" : _c;
+    if (viewMode === ViewMode.CARD) {
+        return (React__default["default"].createElement(React__default["default"].Fragment, null, Array.from({ length: number }, function (v, i) { return i; }).map(function (item) { return (React__default["default"].createElement(Box, { key: item.toString(), overflow: "hidden", borderRadius: "16px" },
+            React__default["default"].createElement(Skeleton, { animation: "waves", height: cardHeight, width: "100%" }))); })));
+    }
+    return (React__default["default"].createElement(Box, { overflow: "hidden", borderRadius: "16px" }, Array.from({ length: number }, function (v, i) { return i; }).map(function (item) { return (React__default["default"].createElement(Skeleton, { key: item.toString(), animation: "waves", height: tableHeight, width: "100%", my: "2px" })); })));
+};
+
 var ModalHeader = styled__default["default"].div(templateObject_1$r || (templateObject_1$r = __makeTemplateObject(["\n  display: flex;\n  //align-items: flex-start;\n  justify-content: space-between;\n  align-items: center;\n  padding: 24px 16px;\n\n  ", " {\n    padding: 32px 32px 24px;\n  }\n"], ["\n  display: flex;\n  //align-items: flex-start;\n  justify-content: space-between;\n  align-items: center;\n  padding: 24px 16px;\n\n  ", " {\n    padding: 32px 32px 24px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
@@ -8561,6 +8575,7 @@ exports.SwapVerticalSolidIcon = Icon$2T;
 exports.TRIcon = Icon$g;
 exports.TabMenu = TabMenu;
 exports.TabMenuItem = TabBarItem;
+exports.TableCardSkeleton = TableCardSkeleton;
 exports.TeamOpacityIcon = Icon$11;
 exports.TeamSolidIcon = Icon$12;
 exports.TelegramIcon = Icon$L;
@@ -8590,6 +8605,7 @@ exports.UserSolidIcon = Icon$2J;
 exports.VNIcon = Icon$m;
 exports.VerifiedOpacityIcon = Icon$2x;
 exports.VerifiedSolidIcon = Icon$2y;
+exports.ViewMode = ViewMode;
 exports.VisaIcon = Icon$s;
 exports.VotingOpacityIcon = Icon$17;
 exports.VotingSolidIcon = Icon$18;
