@@ -6216,11 +6216,7 @@ var invertTheme = function (currentTheme) {
 };
 var useTooltip = function (content, options) {
     var _a = useMatchBreakpoints(), isMobile = _a.isMobile, isTablet = _a.isTablet;
-    var _b = options.placement, placement = _b === void 0 ? "auto" : _b, _c = options.trigger, trigger = _c === void 0 ? isMobile || isTablet ? "click" : "hover" : _c, 
-    // arrowPadding = 16,
-    _d = options.tooltipPadding, 
-    // arrowPadding = 16,
-    tooltipPadding = _d === void 0 ? { left: 16, right: 16 } : _d, _e = options.tooltipOffset, tooltipOffset = _e === void 0 ? [0, 10] : _e;
+    var _b = options.placement, placement = _b === void 0 ? "auto" : _b, _c = options.trigger, trigger = _c === void 0 ? isMobile || isTablet ? "click" : "hover" : _c, _d = options.tooltipPadding, tooltipPadding = _d === void 0 ? { left: 16, right: 16 } : _d, _e = options.tooltipOffset, tooltipOffset = _e === void 0 ? [0, 10] : _e;
     var _f = useState(null), targetElement = _f[0], setTargetElement = _f[1];
     var _g = useState(null), tooltipElement = _g[0], setTooltipElement = _g[1];
     var _h = useState(null), arrowElement = _h[0], setArrowElement = _h[1];
@@ -6352,7 +6348,7 @@ var useTooltip = function (content, options) {
         modifiers: [
             {
                 name: "arrow",
-                options: { element: arrowElement /* padding: arrowPadding*/ },
+                options: { element: arrowElement },
             },
             { name: "offset", options: { offset: tooltipOffset } },
             { name: "preventOverflow", options: { padding: tooltipPadding } },
