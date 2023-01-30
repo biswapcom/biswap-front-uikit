@@ -4,15 +4,15 @@ import { Skeleton } from "../Skeleton";
 import { SkeletonMode, ViewMode } from "./types";
 
 interface IProps {
-  viewMode: SkeletonMode;
-  number: number;
+  viewMode?: SkeletonMode;
+  number?: number;
   tableHeight?: string;
   cardHeight?: string;
 }
 
 const TableCardSkeleton: FC<IProps> = ({
-  viewMode,
-  number,
+  viewMode = ViewMode.CARD,
+  number = 6,
   tableHeight = "72px",
   cardHeight = "352px",
 }): JSX.Element => {

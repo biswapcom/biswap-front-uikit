@@ -17,7 +17,7 @@ export default {
 export const Table: React.FC = () => {
   return (
     <Box maxWidth="1120px" p="48px">
-      <TableCardSkeleton viewMode={ViewMode.TABLE} number={3} />
+      <TableCardSkeleton viewMode="table" />
     </Box>
   );
 };
@@ -33,7 +33,7 @@ export const Card: React.FC = () => {
       gridGap="24px"
       gridTemplateColumns={isMobile ? "1fr" : "repeat(3, 1fr)"}
     >
-      <TableCardSkeleton viewMode={ViewMode.CARD} number={3} />
+      <TableCardSkeleton />
     </Grid>
   );
 };
