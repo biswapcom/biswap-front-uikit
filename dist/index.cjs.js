@@ -6123,12 +6123,12 @@ var IconComponent = function (_a) {
 };
 
 var ViewMode = {
-    TABLE: "TABLE",
-    CARD: "CARD",
+    TABLE: "table",
+    CARD: "card",
 };
 
 var TableCardSkeleton = function (_a) {
-    var viewMode = _a.viewMode, number = _a.number, _b = _a.tableHeight, tableHeight = _b === void 0 ? "72px" : _b, _c = _a.cardHeight, cardHeight = _c === void 0 ? "352px" : _c;
+    var _b = _a.viewMode, viewMode = _b === void 0 ? ViewMode.CARD : _b, _c = _a.number, number = _c === void 0 ? 6 : _c, _d = _a.tableHeight, tableHeight = _d === void 0 ? "72px" : _d, _e = _a.cardHeight, cardHeight = _e === void 0 ? "352px" : _e;
     if (viewMode === ViewMode.CARD) {
         return (React__default["default"].createElement(React__default["default"].Fragment, null, Array.from({ length: number }, function (v, i) { return i; }).map(function (item) { return (React__default["default"].createElement(Box, { key: item.toString(), overflow: "hidden", borderRadius: "16px" },
             React__default["default"].createElement(Skeleton, { animation: "waves", height: cardHeight, width: "100%" }))); })));
