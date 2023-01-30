@@ -6057,6 +6057,20 @@ CardFooter.defaultProps = {
 };
 var templateObject_1$t;
 
+var ViewMode = {
+    TABLE: "table",
+    CARD: "card",
+};
+
+var TableCardSkeleton = function (_a) {
+    var _b = _a.viewMode, viewMode = _b === void 0 ? ViewMode.CARD : _b, _c = _a.number, number = _c === void 0 ? 6 : _c, _d = _a.tableHeight, tableHeight = _d === void 0 ? "72px" : _d, _e = _a.cardHeight, cardHeight = _e === void 0 ? "352px" : _e;
+    if (viewMode === ViewMode.CARD) {
+        return (React__default["default"].createElement(React__default["default"].Fragment, null, Array.from({ length: number }, function (v, i) { return i; }).map(function (item) { return (React__default["default"].createElement(Box, { key: item.toString(), overflow: "hidden", borderRadius: "16px" },
+            React__default["default"].createElement(Skeleton, { animation: "waves", height: cardHeight, width: "100%" }))); })));
+    }
+    return (React__default["default"].createElement(Box, { overflow: "hidden", borderRadius: "16px" }, Array.from({ length: number }, function (v, i) { return i; }).map(function (item) { return (React__default["default"].createElement(Skeleton, { key: item.toString(), animation: "waves", height: tableHeight, width: "100%", my: "2px" })); })));
+};
+
 var baseColors = {
     // failure: "#F93B5D",
     // primaryBright: "#53DEE9",
@@ -8544,6 +8558,7 @@ exports.SwapVerticalSolidIcon = Icon$2T;
 exports.TRIcon = Icon$g;
 exports.TabMenu = TabMenu;
 exports.TabMenuItem = TabBarItem;
+exports.TableCardSkeleton = TableCardSkeleton;
 exports.TeamOpacityIcon = Icon$11;
 exports.TeamSolidIcon = Icon$12;
 exports.TelegramIcon = Icon$L;
@@ -8572,6 +8587,7 @@ exports.UserSolidIcon = Icon$2J;
 exports.VNIcon = Icon$m;
 exports.VerifiedOpacityIcon = Icon$2x;
 exports.VerifiedSolidIcon = Icon$2y;
+exports.ViewMode = ViewMode;
 exports.VisaIcon = Icon$s;
 exports.VotingOpacityIcon = Icon$17;
 exports.VotingSolidIcon = Icon$18;
