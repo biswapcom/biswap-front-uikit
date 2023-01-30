@@ -1,4 +1,11 @@
-import React, { FC, ReactNode, useEffect, useState } from "react";
+import React, {
+  Dispatch,
+  FC,
+  ReactNode,
+  SetStateAction,
+  useEffect,
+  useState,
+} from "react";
 import styled, { css, keyframes } from "styled-components";
 import { useMatchBreakpoints } from "../../contexts";
 import { Box, Flex } from "../Box";
@@ -14,28 +21,21 @@ interface IProps {
   linkComponent?: React.ElementType;
   isOpenItem?: boolean;
   setIsOpenMenu: (arg: boolean) => void;
+  currentOpen: string | undefined;
+  setCurrentOpen: Dispatch<SetStateAction<string | undefined>>;
 }
 
-const openBodyAnimation = keyframes`
-  0% {
-    opacity: 0;
-    height: 0;
-  }
-  100% {
-    opacity: 1;
-    height: auto;
-  }
-`;
-
 const AccordionBody = styled.div<{ opened: boolean }>`
-  display: ${({ opened }) => (opened ? "flex" : "none")};
+  display: flex;
   flex-direction: column;
   overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.45s;
 
   ${({ opened }) =>
     opened &&
     css`
-      animation: ${openBodyAnimation} 0.6s ease;
+      max-height: 100vh;
     `}
 `;
 
@@ -43,6 +43,7 @@ const AccordionTitle = styled(Flex)`
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 `;
 
 const AccordionComponent = styled.div`
@@ -59,18 +60,28 @@ const Accordion: FC<IProps> = ({
   linkComponent,
   setIsOpenMenu,
   isOpenItem,
+  currentOpen,
+  setCurrentOpen,
 }) => {
   const [isOpened, setIsOpened] = useState(false);
   const { isMobile } = useMatchBreakpoints();
 
   useEffect(() => {
     if (!clickable || isOpenItem) {
-      setIsOpened(true);
+      setCurrentOpen(label);
     }
-  }, [label, clickable, setIsOpened]);
+  }, [label, clickable]);
+
+  useEffect(() => {
+    setIsOpened(clickable ? currentOpen === label : true);
+  }, [currentOpen, clickable]);
 
   const onTitleClick = () => {
-    !href && clickable ? setIsOpened((prev) => !prev) : setIsOpenMenu(false);
+    if (!href && clickable) {
+      setCurrentOpen(!isOpened ? label : undefined);
+    } else {
+      setIsOpenMenu(false);
+    }
   };
 
   return (

@@ -3215,6 +3215,7 @@ var variants$5 = {
     TERTIARY: "tertiary",
     TERTIARY_OUT: "tertiaryOut",
     TEXT: "text",
+    TEXT_DARK: "textDark",
 };
 
 var _a$a, _b$6;
@@ -3363,6 +3364,23 @@ var styleVariants$3 = (_b$6 = {},
         backgroundColor: "transparent",
         color: "primary",
         boxShadow: "none",
+        ":hover:not(:disabled)": {
+            color: "primaryHover",
+        },
+        ":active:not(:disabled)": {
+            color: "primaryPress",
+        },
+    },
+    _b$6[variants$5.TEXT_DARK] = {
+        backgroundColor: "transparent",
+        color: "primaryHover",
+        boxShadow: "none",
+        ":hover:not(:disabled)": {
+            color: "primary",
+        },
+        ":active:not(:disabled)": {
+            color: "primaryPress",
+        },
     },
     _b$6);
 
@@ -3394,7 +3412,7 @@ var getFlat = function (_a) {
         return "\n      border-radius: 0;\n    ";
     }
 };
-var StyledButton = styled.button(templateObject_1$10 || (templateObject_1$10 = __makeTemplateObject(["\n  align-items: center;\n  border: 0;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  justify-content: center;\n  line-height: 1;\n  opacity: ", ";\n  outline: 0;\n  transition: background-color 0.2s, opacity 0.2s;\n  white-space: nowrap;\n\n  &:active:not(:disabled):not(.button--disabled):not(.button--disabled) {\n  }\n\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"], ["\n  align-items: center;\n  border: 0;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  justify-content: center;\n  line-height: 1;\n  opacity: ", ";\n  outline: 0;\n  transition: background-color 0.2s, opacity 0.2s;\n  white-space: nowrap;\n\n  &:active:not(:disabled):not(.button--disabled):not(.button--disabled) {\n  }\n\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"])), getOpacity, getDisabledStyles, variant$1({
+var StyledButton = styled.button(templateObject_1$10 || (templateObject_1$10 = __makeTemplateObject(["\n  align-items: center;\n  border: 0;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  justify-content: center;\n  line-height: 1;\n  opacity: ", ";\n  outline: 0;\n  transition: background-color 0.3s ease-in-out, opacity 0.3s ease-in-out,\n    color 0.3s ease-in-out;\n  white-space: nowrap;\n\n  &:active:not(:disabled):not(.button--disabled):not(.button--disabled) {\n  }\n\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"], ["\n  align-items: center;\n  border: 0;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  justify-content: center;\n  line-height: 1;\n  opacity: ", ";\n  outline: 0;\n  transition: background-color 0.3s ease-in-out, opacity 0.3s ease-in-out,\n    color 0.3s ease-in-out;\n  white-space: nowrap;\n\n  &:active:not(:disabled):not(.button--disabled):not(.button--disabled) {\n  }\n\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"])), getOpacity, getDisabledStyles, variant$1({
     prop: "scale",
     variants: scaleVariants$3,
 }), variant$1({
@@ -3690,7 +3708,7 @@ var StyledButtonMenu = styled.div(templateObject_6$b || (templateObject_6$b = __
     return (fullWidth ? "100%" : "auto");
 }, function (_a) {
     var equalElementWidth = _a.equalElementWidth;
-    return equalElementWidth && css(templateObject_5$i || (templateObject_5$i = __makeTemplateObject(["\n        flex: 1;\n      "], ["\n        flex: 1;\n      "])));
+    return equalElementWidth && css(templateObject_5$h || (templateObject_5$h = __makeTemplateObject(["\n        flex: 1;\n      "], ["\n        flex: 1;\n      "])));
 }, function (_a) {
     var disabled = _a.disabled, theme = _a.theme, variant = _a.variant;
     if (disabled) {
@@ -3764,7 +3782,7 @@ var ButtonMenu = function (_a) {
             });
         }))));
 };
-var templateObject_1$_, templateObject_2$x, templateObject_3$p, templateObject_4$n, templateObject_5$i, templateObject_6$b, templateObject_7$7, templateObject_8$5, templateObject_9$3, templateObject_10$3;
+var templateObject_1$_, templateObject_2$x, templateObject_3$p, templateObject_4$n, templateObject_5$h, templateObject_6$b, templateObject_7$7, templateObject_8$5, templateObject_9$3, templateObject_10$3;
 
 var _a$9, _b$5;
 var scaleVariants$2 = (_a$9 = {},
@@ -4133,7 +4151,7 @@ var DropdownTop = styled.div(templateObject_4$m || (templateObject_4$m = __makeT
         return theme.colors.pastelBlue;
     });
 });
-var Label$1 = styled.span(templateObject_5$h || (templateObject_5$h = __makeTemplateObject(["\n  flex-grow: 1;\n"], ["\n  flex-grow: 1;\n"])));
+var Label$1 = styled.span(templateObject_5$g || (templateObject_5$g = __makeTemplateObject(["\n  flex-grow: 1;\n"], ["\n  flex-grow: 1;\n"])));
 var StyledArrow = styled(Icon$3E)(templateObject_6$a || (templateObject_6$a = __makeTemplateObject(["\n  transition: transform 0.4s ease-in-out;\n  transform: ", ";\n"], ["\n  transition: transform 0.4s ease-in-out;\n  transform: ", ";\n"])), function (_a) {
     var isOpen = _a.isOpen;
     return (isOpen ? "scale(1,-1)" : "scale(1,1)");
@@ -4206,7 +4224,7 @@ var Dropdown = function (_a) {
 Dropdown.defaultProps = {
     position: "bottom",
 };
-var templateObject_1$X, templateObject_2$u, templateObject_3$n, templateObject_4$m, templateObject_5$h, templateObject_6$a, templateObject_7$6, templateObject_8$4;
+var templateObject_1$X, templateObject_2$u, templateObject_3$n, templateObject_4$m, templateObject_5$g, templateObject_6$a, templateObject_7$6, templateObject_8$4;
 
 var tags$1 = {
     H1: "h1",
@@ -4498,7 +4516,7 @@ var LeftIconComponent = styled(StyledIconComponent)(templateObject_4$l || (templ
     var scale = _a.scale;
     return getIconPosition(scale);
 });
-var RightIconComponent = styled(StyledIconComponent)(templateObject_5$g || (templateObject_5$g = __makeTemplateObject(["\n  right: ", ";\n"], ["\n  right: ", ";\n"])), function (_a) {
+var RightIconComponent = styled(StyledIconComponent)(templateObject_5$f || (templateObject_5$f = __makeTemplateObject(["\n  right: ", ";\n"], ["\n  right: ", ";\n"])), function (_a) {
     var scale = _a.scale;
     return getIconPosition(scale);
 });
@@ -4517,7 +4535,7 @@ var InputGroup = function (_a) {
             isWarning && (React.createElement(RightIconComponent, { iconName: "WarningSolid", color: "warning", scale: scale }))),
         description && (React.createElement(TextDescription, { mt: "4px", fontSize: "12px", variant: variant }, description))));
 };
-var templateObject_1$U, templateObject_2$t, templateObject_3$m, templateObject_4$l, templateObject_5$g, templateObject_6$9;
+var templateObject_1$U, templateObject_2$t, templateObject_3$m, templateObject_4$l, templateObject_5$f, templateObject_6$9;
 
 var GridLayout$1 = styled(Grid)(templateObject_1$T || (templateObject_1$T = __makeTemplateObject(["\n  grid-template-columns: repeat(6, 1fr);\n  grid-gap: 16px;\n  ", " {\n    grid-template-columns: repeat(8, 1fr);\n    grid-gap: 24px;\n  }\n  ", " {\n    grid-template-columns: repeat(12, 1fr);\n    grid-gap: 24px;\n  }\n  ", " {\n    grid-template-columns: repeat(12, 1fr);\n    grid-gap: 32px;\n  }\n"], ["\n  grid-template-columns: repeat(6, 1fr);\n  grid-gap: 16px;\n  ", " {\n    grid-template-columns: repeat(8, 1fr);\n    grid-gap: 24px;\n  }\n  ", " {\n    grid-template-columns: repeat(12, 1fr);\n    grid-gap: 24px;\n  }\n  ", " {\n    grid-template-columns: repeat(12, 1fr);\n    grid-gap: 32px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
@@ -4738,7 +4756,7 @@ var BarProgress$1 = styled.div(templateObject_4$k || (templateObject_4$k = __mak
     var theme = _a.theme;
     return theme.colors.primary;
 });
-var StyledInput$1 = styled.input(templateObject_5$f || (templateObject_5$f = __makeTemplateObject(["\n  height: 20px;\n  position: relative;\n  cursor: pointer;\n  transform: translateY(-18px);\n  margin: 2px 0;\n  -webkit-tap-highlight-color: transparent;\n  z-index: 2;\n\n  ::-webkit-slider-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    border-radius: 50%;\n    background-image: url(", ");\n    position: relative;\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n  ::-moz-range-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    // custom moz reset\n    background-color: transparent;\n    border: 0;\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n  ::-ms-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    border-radius: 50%;\n    background-image: url(", ");\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n"], ["\n  height: 20px;\n  position: relative;\n  cursor: pointer;\n  transform: translateY(-18px);\n  margin: 2px 0;\n  -webkit-tap-highlight-color: transparent;\n  z-index: 2;\n\n  ::-webkit-slider-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    border-radius: 50%;\n    background-image: url(", ");\n    position: relative;\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n  ::-moz-range-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    // custom moz reset\n    background-color: transparent;\n    border: 0;\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n  ::-ms-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    border-radius: 50%;\n    background-image: url(", ");\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n"])), SliderIcon, SliderIcon);
+var StyledInput$1 = styled.input(templateObject_5$e || (templateObject_5$e = __makeTemplateObject(["\n  height: 20px;\n  position: relative;\n  cursor: pointer;\n  transform: translateY(-18px);\n  margin: 2px 0;\n  -webkit-tap-highlight-color: transparent;\n  z-index: 2;\n\n  ::-webkit-slider-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    border-radius: 50%;\n    background-image: url(", ");\n    position: relative;\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n  ::-moz-range-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    // custom moz reset\n    background-color: transparent;\n    border: 0;\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n  ::-ms-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    border-radius: 50%;\n    background-image: url(", ");\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n"], ["\n  height: 20px;\n  position: relative;\n  cursor: pointer;\n  transform: translateY(-18px);\n  margin: 2px 0;\n  -webkit-tap-highlight-color: transparent;\n  z-index: 2;\n\n  ::-webkit-slider-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    border-radius: 50%;\n    background-image: url(", ");\n    position: relative;\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n  ::-moz-range-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    // custom moz reset\n    background-color: transparent;\n    border: 0;\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n  ::-ms-thumb {\n    -webkit-appearance: none;\n    width: 20px;\n    height: 20px;\n    cursor: pointer;\n    transition: 0.1s all;\n    border-radius: 50%;\n    background-image: url(", ");\n\n    :hover {\n      transform: scale(1.1);\n    }\n  }\n"])), SliderIcon, SliderIcon);
 var BunnySlider = styled.div(templateObject_6$8 || (templateObject_6$8 = __makeTemplateObject(["\n  position: absolute;\n  width: 100%;\n"], ["\n  position: absolute;\n  width: 100%;\n"])));
 var BreakPointsWrap = styled.div(templateObject_7$5 || (templateObject_7$5 = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  position: absolute;\n  width: 100%;\n  top: -3px;\n  left: 0;\n  z-index: 1;\n"], ["\n  display: flex;\n  justify-content: space-between;\n  position: absolute;\n  width: 100%;\n  top: -3px;\n  left: 0;\n  z-index: 1;\n"])));
 var Point = styled.span(templateObject_8$3 || (templateObject_8$3 = __makeTemplateObject(["\n  display: block;\n  width: 10px;\n  height: 10px;\n  border-radius: 50%;\n  background: ", ";\n  border: ", ";\n"], ["\n  display: block;\n  width: 10px;\n  height: 10px;\n  border-radius: 50%;\n  background: ", ";\n  border: ", ";\n"])), function (_a) {
@@ -4894,7 +4912,7 @@ var Slider = function (_a) {
             percent.RB,
             " volume")));
 };
-var templateObject_1$N, templateObject_2$q, templateObject_3$k, templateObject_4$k, templateObject_5$f, templateObject_6$8, templateObject_7$5, templateObject_8$3, templateObject_9$2, templateObject_10$2, templateObject_11$1, templateObject_12$1, templateObject_13$1, templateObject_14, templateObject_15, templateObject_16, templateObject_17;
+var templateObject_1$N, templateObject_2$q, templateObject_3$k, templateObject_4$k, templateObject_5$e, templateObject_6$8, templateObject_7$5, templateObject_8$3, templateObject_9$2, templateObject_10$2, templateObject_11$1, templateObject_12$1, templateObject_13$1, templateObject_14, templateObject_15, templateObject_16, templateObject_17;
 
 // eslint-disable-next-line import/prefer-default-export
 var formatSpacingAmount = function (x) {
@@ -4953,7 +4971,7 @@ var Pulse = styled(Root)(templateObject_4$j || (templateObject_4$j = __makeTempl
     var theme = _a.theme;
     return theme.colors.pastelBlue;
 });
-var Waves = styled(Root)(templateObject_5$e || (templateObject_5$e = __makeTemplateObject(["\n  position: relative;\n  overflow: hidden;\n  transform: translate3d(0, 0, 0);\n\n  &:before {\n    content: \"\";\n    position: absolute;\n    background: linear-gradient(\n      90deg,\n      rgba(116, 155, 216, 0) 0%,\n      rgba(116, 155, 216, 0.16) 50%,\n      rgba(116, 155, 216, 0) 100%\n    );\n\n    top: 0;\n    left: -150px;\n    height: 100%;\n    width: 150px;\n    animation: ", " 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;\n  }\n"], ["\n  position: relative;\n  overflow: hidden;\n  transform: translate3d(0, 0, 0);\n\n  &:before {\n    content: \"\";\n    position: absolute;\n    background: linear-gradient(\n      90deg,\n      rgba(116, 155, 216, 0) 0%,\n      rgba(116, 155, 216, 0.16) 50%,\n      rgba(116, 155, 216, 0) 100%\n    );\n\n    top: 0;\n    left: -150px;\n    height: 100%;\n    width: 150px;\n    animation: ", " 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;\n  }\n"])), waves);
+var Waves = styled(Root)(templateObject_5$d || (templateObject_5$d = __makeTemplateObject(["\n  position: relative;\n  overflow: hidden;\n  transform: translate3d(0, 0, 0);\n\n  &:before {\n    content: \"\";\n    position: absolute;\n    background: linear-gradient(\n      90deg,\n      rgba(116, 155, 216, 0) 0%,\n      rgba(116, 155, 216, 0.16) 50%,\n      rgba(116, 155, 216, 0) 100%\n    );\n\n    top: 0;\n    left: -150px;\n    height: 100%;\n    width: 150px;\n    animation: ", " 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;\n  }\n"], ["\n  position: relative;\n  overflow: hidden;\n  transform: translate3d(0, 0, 0);\n\n  &:before {\n    content: \"\";\n    position: absolute;\n    background: linear-gradient(\n      90deg,\n      rgba(116, 155, 216, 0) 0%,\n      rgba(116, 155, 216, 0.16) 50%,\n      rgba(116, 155, 216, 0) 100%\n    );\n\n    top: 0;\n    left: -150px;\n    height: 100%;\n    width: 150px;\n    animation: ", " 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;\n  }\n"])), waves);
 var Skeleton = function (_a) {
     var _b = _a.variant, variant$1 = _b === void 0 ? variant.RECT : _b, _c = _a.animation, animation$1 = _c === void 0 ? animation.PULSE : _c, props = __rest(_a, ["variant", "animation"]);
     if (animation$1 === animation.WAVES) {
@@ -4961,7 +4979,7 @@ var Skeleton = function (_a) {
     }
     return React.createElement(Pulse, __assign({ variant: variant$1 }, props));
 };
-var templateObject_1$M, templateObject_2$p, templateObject_3$j, templateObject_4$j, templateObject_5$e;
+var templateObject_1$M, templateObject_2$p, templateObject_3$j, templateObject_4$j, templateObject_5$d;
 
 var InlineMenuContainer = styled(Box)(templateObject_1$L || (templateObject_1$L = __makeTemplateObject(["\n  background-color: ", ";\n  border-radius: ", ";\n  box-shadow: ", ";\n"], ["\n  background-color: ", ";\n  border-radius: ", ";\n  box-shadow: ", ";\n"])), function (_a) {
     var theme = _a.theme;
@@ -5097,8 +5115,8 @@ var CommonLinkStyles = function (_a) {
         return theme.colors.pastelBlue;
     }, $variant === "default" && "border-radius: 16px;");
 };
-var StyledMenuItem = styled.a(templateObject_5$d || (templateObject_5$d = __makeTemplateObject(["\n  ", ";\n"], ["\n  ", ";\n"])), CommonLinkStyles);
-var templateObject_1$K, templateObject_2$n, templateObject_3$h, templateObject_4$h, templateObject_5$d;
+var StyledMenuItem = styled.a(templateObject_5$c || (templateObject_5$c = __makeTemplateObject(["\n  ", ";\n"], ["\n  ", ";\n"])), CommonLinkStyles);
+var templateObject_1$K, templateObject_2$n, templateObject_3$h, templateObject_4$h, templateObject_5$c;
 
 var MenuItem = function (_a) {
     var children = _a.children, href = _a.href, _b = _a.isActive, isActive = _b === void 0 ? false : _b, _c = _a.variant, variant = _c === void 0 ? "default" : _c, statusColor = _a.statusColor, highlightTitle = _a.highlightTitle, props = __rest(_a, ["children", "href", "isActive", "variant", "statusColor", "highlightTitle"]);
@@ -5221,7 +5239,7 @@ var Wrapper$b = styled.div(templateObject_2$m || (templateObject_2$m = __makeTem
     var scrollX = _a.scrollX;
     return scrollX && css(templateObject_1$I || (templateObject_1$I = __makeTemplateObject(["\n      overflow-x: scroll;\n    "], ["\n      overflow-x: scroll;\n    "])));
 }, space);
-var StyledTabBar = styled.div(templateObject_5$c || (templateObject_5$c = __makeTemplateObject(["\n  position: relative;\n  display: ", ";\n  width: ", ";\n\n  & > button,\n  & > div,\n  & > a {\n    flex-grow: 1;\n\n    ", "\n  }\n\n  & > button,\n  & > div,\n  & a {\n    box-shadow: none;\n  }\n\n  ", "\n"], ["\n  position: relative;\n  display: ", ";\n  width: ", ";\n\n  & > button,\n  & > div,\n  & > a {\n    flex-grow: 1;\n\n    ", "\n  }\n\n  & > button,\n  & > div,\n  & a {\n    box-shadow: none;\n  }\n\n  ", "\n"])), function (_a) {
+var StyledTabBar = styled.div(templateObject_5$b || (templateObject_5$b = __makeTemplateObject(["\n  position: relative;\n  display: ", ";\n  width: ", ";\n\n  & > button,\n  & > div,\n  & > a {\n    flex-grow: 1;\n\n    ", "\n  }\n\n  & > button,\n  & > div,\n  & a {\n    box-shadow: none;\n  }\n\n  ", "\n"], ["\n  position: relative;\n  display: ", ";\n  width: ", ";\n\n  & > button,\n  & > div,\n  & > a {\n    flex-grow: 1;\n\n    ", "\n  }\n\n  & > button,\n  & > div,\n  & a {\n    box-shadow: none;\n  }\n\n  ", "\n"])), function (_a) {
     var fullWidth = _a.fullWidth;
     return (fullWidth ? "flex" : "inline-flex");
 }, function (_a) {
@@ -5281,7 +5299,7 @@ var TabMenu = function (_a) {
             });
         }))));
 };
-var templateObject_1$I, templateObject_2$m, templateObject_3$g, templateObject_4$g, templateObject_5$c, templateObject_6$7, templateObject_7$4;
+var templateObject_1$I, templateObject_2$m, templateObject_3$g, templateObject_4$g, templateObject_5$b, templateObject_6$7, templateObject_7$4;
 
 var TabItem = styled.button(templateObject_2$l || (templateObject_2$l = __makeTemplateObject(["\n  border: 0;\n  margin: 0;\n  cursor: pointer;\n  display: flex;\n  justify-content: center;\n  align-items: flex-start;\n  font-family: inherit;\n  font-weight: 600;\n  line-height: 1;\n  outline: 0;\n  transition: background-color 0.3s, opacity 0.3s, color 0.3s;\n  background-color: transparent;\n  white-space: nowrap;\n  -webkit-tap-highlight-color: transparent;\n\n  ", "\n  ", "\n  \n  ", "\n"], ["\n  border: 0;\n  margin: 0;\n  cursor: pointer;\n  display: flex;\n  justify-content: center;\n  align-items: flex-start;\n  font-family: inherit;\n  font-weight: 600;\n  line-height: 1;\n  outline: 0;\n  transition: background-color 0.3s, opacity 0.3s, color 0.3s;\n  background-color: transparent;\n  white-space: nowrap;\n  -webkit-tap-highlight-color: transparent;\n\n  ", "\n  ", "\n  \n  ", "\n"])), variant$1({
     variants: barVariants,
@@ -5407,14 +5425,14 @@ var Input = styled.input(templateObject_4$f || (templateObject_4$f = __makeTempl
     var disabled = _a.disabled;
     return (disabled ? "not-allowed" : "pointer");
 }, Handle, getScale("checkedLeft"));
-var StyledToggle = styled.div(templateObject_5$b || (templateObject_5$b = __makeTemplateObject(["\n  background-color: ", ";\n  align-items: center;\n  border-radius: 26px;\n  display: inline-flex;\n  height: ", ";\n  position: relative;\n  transition: background-color 0.2s ease-in-out;\n  width: ", ";\n  cursor: ", ";\n"], ["\n  background-color: ", ";\n  align-items: center;\n  border-radius: 26px;\n  display: inline-flex;\n  height: ", ";\n  position: relative;\n  transition: background-color 0.2s ease-in-out;\n  width: ", ";\n  cursor: ", ";\n"])), function (_a) {
+var StyledToggle = styled.div(templateObject_5$a || (templateObject_5$a = __makeTemplateObject(["\n  background-color: ", ";\n  align-items: center;\n  border-radius: 26px;\n  display: inline-flex;\n  height: ", ";\n  position: relative;\n  transition: background-color 0.2s ease-in-out;\n  width: ", ";\n  cursor: ", ";\n"], ["\n  background-color: ", ";\n  align-items: center;\n  border-radius: 26px;\n  display: inline-flex;\n  height: ", ";\n  position: relative;\n  transition: background-color 0.2s ease-in-out;\n  width: ", ";\n  cursor: ", ";\n"])), function (_a) {
     var theme = _a.theme, $checked = _a.$checked, $checkedColor = _a.$checkedColor, $defaultColor = _a.$defaultColor;
     return theme.colors[$checked ? $checkedColor : $defaultColor];
 }, getScale("toggleHeight"), getScale("toggleWidth"), function (_a) {
     var disabled = _a.disabled;
     return (disabled ? "not-allowed" : "pointer");
 });
-var templateObject_1$G, templateObject_2$k, templateObject_3$f, templateObject_4$f, templateObject_5$b;
+var templateObject_1$G, templateObject_2$k, templateObject_3$f, templateObject_4$f, templateObject_5$a;
 
 var Toggle = function (_a) {
     var checked = _a.checked, _b = _a.defaultColor, defaultColor = _b === void 0 ? "toggleBg" : _b, _c = _a.checkedColor, checkedColor = _c === void 0 ? "success" : _c, _d = _a.scale, scale = _d === void 0 ? scales$2.MD : _d, disabled = _a.disabled, label = _a.label, labelOrientation = _a.labelOrientation, gridArea = _a.gridArea, variant = _a.variant, spaceBetween = _a.spaceBetween, props = __rest(_a, ["checked", "defaultColor", "checkedColor", "scale", "disabled", "label", "labelOrientation", "gridArea", "variant", "spaceBetween"]);
@@ -5522,7 +5540,7 @@ var BarProgress = styled.div(templateObject_3$e || (templateObject_3$e = __makeT
     return theme.colors.primary;
 });
 var PointsContainer = styled(Flex)(templateObject_4$e || (templateObject_4$e = __makeTemplateObject(["\n  position: relative;\n  top: -16px;\n"], ["\n  position: relative;\n  top: -16px;\n"])));
-var PercentSliderLabel = styled(Flex)(templateObject_5$a || (templateObject_5$a = __makeTemplateObject(["\n  align-items: center;\n  position: absolute;\n  ", ";\n  left: ", ";\n  transform: translateX(-50%) translateY(calc(", "));\n  border-radius: 8px;\n  padding: 8px 12px;\n  background-color: ", ";\n  z-index: ", ";\n\n  &:after {\n    content: '';\n    display: block;\n    position: absolute;\n    left: 50%;\n    ", ";\n    width: 0;\n    height: 0;\n    border-left: 6px solid transparent;\n    border-right: 6px solid transparent;\n    z-index: ", ";\n    transform: translate(-50%, ", ");\n    ", ";\n"], ["\n  align-items: center;\n  position: absolute;\n  ", ";\n  left: ", ";\n  transform: translateX(-50%) translateY(calc(", "));\n  border-radius: 8px;\n  padding: 8px 12px;\n  background-color: ", ";\n  z-index: ", ";\n\n  &:after {\n    content: '';\n    display: block;\n    position: absolute;\n    left: 50%;\n    ", ";\n    width: 0;\n    height: 0;\n    border-left: 6px solid transparent;\n    border-right: 6px solid transparent;\n    z-index: ", ";\n    transform: translate(-50%, ", ");\n    ", ";\n"])), function (_a) {
+var PercentSliderLabel = styled(Flex)(templateObject_5$9 || (templateObject_5$9 = __makeTemplateObject(["\n  align-items: center;\n  position: absolute;\n  ", ";\n  left: ", ";\n  transform: translateX(-50%) translateY(calc(", "));\n  border-radius: 8px;\n  padding: 8px 12px;\n  background-color: ", ";\n  z-index: ", ";\n\n  &:after {\n    content: '';\n    display: block;\n    position: absolute;\n    left: 50%;\n    ", ";\n    width: 0;\n    height: 0;\n    border-left: 6px solid transparent;\n    border-right: 6px solid transparent;\n    z-index: ", ";\n    transform: translate(-50%, ", ");\n    ", ";\n"], ["\n  align-items: center;\n  position: absolute;\n  ", ";\n  left: ", ";\n  transform: translateX(-50%) translateY(calc(", "));\n  border-radius: 8px;\n  padding: 8px 12px;\n  background-color: ", ";\n  z-index: ", ";\n\n  &:after {\n    content: '';\n    display: block;\n    position: absolute;\n    left: 50%;\n    ", ";\n    width: 0;\n    height: 0;\n    border-left: 6px solid transparent;\n    border-right: 6px solid transparent;\n    z-index: ", ";\n    transform: translate(-50%, ", ");\n    ", ";\n"])), function (_a) {
     var bannerPosition = _a.bannerPosition;
     return bannerPosition === "top" ? "top: 0" : "bottom: 0";
 }, function (_a) {
@@ -5550,7 +5568,7 @@ var PercentSliderLabel = styled(Flex)(templateObject_5$a || (templateObject_5$a 
     var bannerPosition = _a.bannerPosition, theme = _a.theme;
     return "border-".concat(bannerPosition === "top" ? "top" : "bottom", ": 6px solid ").concat(theme.colors.tooltip);
 });
-var templateObject_1$E, templateObject_2$j, templateObject_3$e, templateObject_4$e, templateObject_5$a;
+var templateObject_1$E, templateObject_2$j, templateObject_3$e, templateObject_4$e, templateObject_5$9;
 
 var getColor = function (_a) {
     var color = _a.color, theme = _a.theme;
@@ -5914,7 +5932,7 @@ var templateObject_1$y;
 
 var gift = "data:image/png;base64,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";
 
-var Wrapper$8 = styled(Box)(templateObject_1$x || (templateObject_1$x = __makeTemplateObject(["\n  position: relative;\n  width: ", ";\n  cursor: ", ";\n  transition: opacity .3s ease-in-out;\n\n  opacity: ", ";\n  \n  &:hover:not(:disabled) {\n    opacity: .84;\n  },\n"], ["\n  position: relative;\n  width: ", ";\n  cursor: ", ";\n  transition: opacity .3s ease-in-out;\n\n  opacity: ", ";\n  \n  &:hover:not(:disabled) {\n    opacity: .84;\n  },\n"])), function (_a) {
+var Wrapper$8 = styled(Box)(templateObject_1$x || (templateObject_1$x = __makeTemplateObject(["\n  position: relative;\n  width: ", ";\n  cursor: ", ";\n  transition: opacity .3s ease-in-out;\n\n  opacity: ", ";\n  \n  &:hover {\n    opacity: ", ";\n  },\n"], ["\n  position: relative;\n  width: ", ";\n  cursor: ", ";\n  transition: opacity .3s ease-in-out;\n\n  opacity: ", ";\n  \n  &:hover {\n    opacity: ", ";\n  },\n"])), function (_a) {
     var width = _a.width;
     return width !== null && width !== void 0 ? width : "auto";
 }, function (_a) {
@@ -5922,7 +5940,10 @@ var Wrapper$8 = styled(Box)(templateObject_1$x || (templateObject_1$x = __makeTe
     return (disabled ? "not-allowed" : "pointer");
 }, function (_a) {
     var disabled = _a.disabled;
-    return (disabled ? 0.84 : 1);
+    return (disabled ? 0.3 : 1);
+}, function (_a) {
+    var disabled = _a.disabled;
+    return (disabled ? 0.3 : 0.84);
 });
 var GiftWrap = styled(Flex)(templateObject_2$i || (templateObject_2$i = __makeTemplateObject(["\n  display: ", ";\n  position: absolute;\n  width: 37px;\n  height: 32px;\n  bottom: 0;\n  right: 0;\n"], ["\n  display: ", ";\n  position: absolute;\n  width: 37px;\n  height: 32px;\n  bottom: 0;\n  right: 0;\n"])), function (_a) {
     var withGift = _a.withGift;
@@ -6022,6 +6043,20 @@ CardFooter.defaultProps = {
     p: "24px",
 };
 var templateObject_1$t;
+
+var ViewMode = {
+    TABLE: "TABLE",
+    CARD: "CARD",
+};
+
+var TableCardSkeleton = function (_a) {
+    var viewMode = _a.viewMode, number = _a.number, _b = _a.tableHeight, tableHeight = _b === void 0 ? "72px" : _b, _c = _a.cardHeight, cardHeight = _c === void 0 ? "352px" : _c;
+    if (viewMode === ViewMode.CARD) {
+        return (React.createElement(React.Fragment, null, Array.from({ length: number }, function (v, i) { return i; }).map(function (item) { return (React.createElement(Box, { key: item.toString(), overflow: "hidden", borderRadius: "16px" },
+            React.createElement(Skeleton, { animation: "waves", height: cardHeight, width: "100%" }))); })));
+    }
+    return (React.createElement(Box, { overflow: "hidden", borderRadius: "16px" }, Array.from({ length: number }, function (v, i) { return i; }).map(function (item) { return (React.createElement(Skeleton, { key: item.toString(), animation: "waves", height: tableHeight, width: "100%", my: "2px" })); })));
+};
 
 var baseColors = {
     // failure: "#F93B5D",
@@ -6621,7 +6656,7 @@ var InfoList = styled.div(templateObject_4$a || (templateObject_4$a = __makeTemp
     var theme = _a.theme;
     return theme.mediaQueries.xll;
 });
-var InfoListItem = styled.div(templateObject_5$9 || (templateObject_5$9 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  line-height: 18px;\n\n  &:not(:last-child) {\n    margin-bottom: 8px;\n  }\n\n  ", " {\n    justify-content: space-between;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  line-height: 18px;\n\n  &:not(:last-child) {\n    margin-bottom: 8px;\n  }\n\n  ", " {\n    justify-content: space-between;\n  }\n"])), function (_a) {
+var InfoListItem = styled.div(templateObject_5$8 || (templateObject_5$8 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  line-height: 18px;\n\n  &:not(:last-child) {\n    margin-bottom: 8px;\n  }\n\n  ", " {\n    justify-content: space-between;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  line-height: 18px;\n\n  &:not(:last-child) {\n    margin-bottom: 8px;\n  }\n\n  ", " {\n    justify-content: space-between;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.md;
 });
@@ -6648,7 +6683,7 @@ var FooterInfo = function (_a) {
             React.createElement(InfoListLabel, null, item.label),
             React.createElement(InfoListValue, null, formatSpacingAmount(item.value)))); }))));
 };
-var templateObject_1$m, templateObject_2$d, templateObject_3$a, templateObject_4$a, templateObject_5$9, templateObject_6$6, templateObject_7$3;
+var templateObject_1$m, templateObject_2$d, templateObject_3$a, templateObject_4$a, templateObject_5$8, templateObject_6$6, templateObject_7$3;
 
 var DropdownMenuItemType;
 (function (DropdownMenuItemType) {
@@ -6698,7 +6733,7 @@ var NavList = styled.div(templateObject_4$9 || (templateObject_4$9 = __makeTempl
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var NavItem = styled.div(templateObject_5$8 || (templateObject_5$8 = __makeTemplateObject(["\n  display: block;\n  margin-bottom: 8px;\n  font-size: 12px;\n  color: ", ";\n  line-height: 18px;\n"], ["\n  display: block;\n  margin-bottom: 8px;\n  font-size: 12px;\n  color: ", ";\n  line-height: 18px;\n"])), function (_a) {
+var NavItem = styled.div(templateObject_5$7 || (templateObject_5$7 = __makeTemplateObject(["\n  display: block;\n  margin-bottom: 8px;\n  font-size: 12px;\n  color: ", ";\n  line-height: 18px;\n"], ["\n  display: block;\n  margin-bottom: 8px;\n  font-size: 12px;\n  color: ", ";\n  line-height: 18px;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.gray900;
 });
@@ -6722,7 +6757,7 @@ var CommonFooterLinksComponent = function (_a) {
                 type === DropdownMenuItemType.EXTERNAL_LINK && (React.createElement(CustomLink, { as: "a", href: href, target: target ? target : "_self" }, label))));
         }))));
 };
-var templateObject_1$l, templateObject_2$c, templateObject_3$9, templateObject_4$9, templateObject_5$8, templateObject_6$5;
+var templateObject_1$l, templateObject_2$c, templateObject_3$9, templateObject_4$9, templateObject_5$7, templateObject_6$5;
 
 var Wrapper$5 = styled.div(templateObject_1$k || (templateObject_1$k = __makeTemplateObject(["\n  grid-area: about;\n"], ["\n  grid-area: about;\n"])));
 var About = function (_a) {
@@ -7103,7 +7138,7 @@ var socials = [
     {
         label: "Instagram",
         icon: "InstagramIcon",
-        href: "https://www.instagram.com/biswap_org/",
+        href: "https://www.instagram.com/_biswap_dex",
     },
     {
         label: "Facebook",
@@ -7194,7 +7229,7 @@ var SocialWrap = styled.div(templateObject_3$8 || (templateObject_3$8 = __makeTe
     }
 });
 var SocialItem = styled.div(templateObject_4$8 || (templateObject_4$8 = __makeTemplateObject(["\n  transition: opacity 0.3s ease;\n  &:hover {\n    opacity: 0.65;\n  }\n"], ["\n  transition: opacity 0.3s ease;\n  &:hover {\n    opacity: 0.65;\n  }\n"])));
-var DropDownWrap = styled.div(templateObject_5$7 || (templateObject_5$7 = __makeTemplateObject(["\n  position: relative;\n\n  &:hover {\n    .drop-down-inner {\n      display: block;\n    }\n  }\n"], ["\n  position: relative;\n\n  &:hover {\n    .drop-down-inner {\n      display: block;\n    }\n  }\n"])));
+var DropDownWrap = styled.div(templateObject_5$6 || (templateObject_5$6 = __makeTemplateObject(["\n  position: relative;\n\n  &:hover {\n    .drop-down-inner {\n      display: block;\n    }\n  }\n"], ["\n  position: relative;\n\n  &:hover {\n    .drop-down-inner {\n      display: block;\n    }\n  }\n"])));
 var DropDownInnerWrap = styled.div(templateObject_6$4 || (templateObject_6$4 = __makeTemplateObject(["\n  display: none;\n  position: absolute;\n  padding-top: 0;\n  padding-bottom: 8px;\n  bottom: -5px;\n  left: -24px;\n  transform: translateX(-50%);\n  z-index: 50;\n  min-width: 96px;\n\n  &:hover {\n    display: block;\n  }\n"], ["\n  display: none;\n  position: absolute;\n  padding-top: 0;\n  padding-bottom: 8px;\n  bottom: -5px;\n  left: -24px;\n  transform: translateX(-50%);\n  z-index: 50;\n  min-width: 96px;\n\n  &:hover {\n    display: block;\n  }\n"])));
 var DropDown = styled.div(templateObject_7$2 || (templateObject_7$2 = __makeTemplateObject(["\n  position: relative;\n  border-radius: 8px;\n  padding: 8px;\n  background-color: ", ";\n  bottom: 32px;\n  left: 100%;\n  transform: translateX(-40%);\n\n  &:before {\n    display: block;\n    content: \"\";\n    width: 8px;\n    height: 8px;\n    position: absolute;\n    bottom: -4px;\n    left: 28px;\n    transform: translateX(-50%) rotate(45deg);\n    background-color: ", ";\n  }\n"], ["\n  position: relative;\n  border-radius: 8px;\n  padding: 8px;\n  background-color: ", ";\n  bottom: 32px;\n  left: 100%;\n  transform: translateX(-40%);\n\n  &:before {\n    display: block;\n    content: \"\";\n    width: 8px;\n    height: 8px;\n    position: absolute;\n    bottom: -4px;\n    left: 28px;\n    transform: translateX(-50%) rotate(45deg);\n    background-color: ", ";\n  }\n"])), function (_a) {
     var theme = _a.theme;
@@ -7260,7 +7295,7 @@ var Community = function (_a) {
                     React.createElement(Icon, __assign({}, iconProps)))));
         }))));
 };
-var templateObject_1$h, templateObject_2$b, templateObject_3$8, templateObject_4$8, templateObject_5$7, templateObject_6$4, templateObject_7$2, templateObject_8$2, templateObject_9$1, templateObject_10$1;
+var templateObject_1$h, templateObject_2$b, templateObject_3$8, templateObject_4$8, templateObject_5$6, templateObject_6$4, templateObject_7$2, templateObject_8$2, templateObject_9$1, templateObject_10$1;
 
 var MARKETPLACE_URL = "https://marketplace.biswap.org";
 var CERTIC_URL = "https://www.certik.org/projects/biswap";
@@ -7344,7 +7379,7 @@ var getTextColor = function (_a) {
 };
 var InnerLinksBlockContainer = styled.div(templateObject_1$e || (templateObject_1$e = __makeTemplateObject(["\n  padding-top: 16px;\n  padding-left: ", ";\n"], ["\n  padding-top: 16px;\n  padding-left: ", ";\n"])), function (_a) {
     var padded = _a.padded;
-    return padded && "62px";
+    return padded && "58px";
 });
 var CommonDropdownMenuInnerLinkItem = function () { return css(templateObject_2$8 || (templateObject_2$8 = __makeTemplateObject(["\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n  cursor: pointer;\n\n  &:hover {\n    .inner-chevron {\n      margin-right: 4px;\n      transition: margin-right 150ms linear;\n    }\n  }\n"], ["\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n  cursor: pointer;\n\n  &:hover {\n    .inner-chevron {\n      margin-right: 4px;\n      transition: margin-right 150ms linear;\n    }\n  }\n"]))); };
 var DropdownMenuInnerLinkItem = styled.div(templateObject_3$6 || (templateObject_3$6 = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), CommonDropdownMenuInnerLinkItem);
@@ -7352,7 +7387,7 @@ var DropdownMenuInnerOuterLinkItem = styled.a(templateObject_4$6 || (templateObj
 var CommonLinkStyle = function (_a) {
     var disabled = _a.disabled, $isActive = _a.$isActive, $hasIcon = _a.$hasIcon, label = _a.label;
     var isMobile = useMatchBreakpoints().isMobile;
-    return css(templateObject_5$6 || (templateObject_5$6 = __makeTemplateObject(["\n    align-items: center;\n    border: 0;\n    //background: transparent;\n    color: ", ";\n    cursor: ", ";\n    font-weight: 600;\n    line-height: 20px;\n    display: inline-flex;\n    font-size: 14px;\n    min-height: 40px;\n    justify-content: space-between;\n    outline: 0;\n    //padding-left: 16px;\n    width: 100%;\n\n    .arrow-icon {\n      ", "\n    }\n\n    &:hover:not(:disabled) {\n      color: ", ";\n\n      svg {\n        opacity: 0.85;\n      }\n\n      .arrow-icon {\n        visibility: visible;\n        transition: visibility 250ms linear, opacity 150ms linear;\n        opacity: 1;\n      }\n    }\n\n    &:active:not(:disabled) {\n      opacity: 0.85;\n      transform: translateY(1px);\n    }\n  "], ["\n    align-items: center;\n    border: 0;\n    //background: transparent;\n    color: ", ";\n    cursor: ", ";\n    font-weight: 600;\n    line-height: 20px;\n    display: inline-flex;\n    font-size: 14px;\n    min-height: 40px;\n    justify-content: space-between;\n    outline: 0;\n    //padding-left: 16px;\n    width: 100%;\n\n    .arrow-icon {\n      ", "\n    }\n\n    &:hover:not(:disabled) {\n      color: ", ";\n\n      svg {\n        opacity: 0.85;\n      }\n\n      .arrow-icon {\n        visibility: visible;\n        transition: visibility 250ms linear, opacity 150ms linear;\n        opacity: 1;\n      }\n    }\n\n    &:active:not(:disabled) {\n      opacity: 0.85;\n      transform: translateY(1px);\n    }\n  "])), function (_a) {
+    return css(templateObject_5$5 || (templateObject_5$5 = __makeTemplateObject(["\n    align-items: center;\n    border: 0;\n    //background: transparent;\n    color: ", ";\n    cursor: ", ";\n    font-weight: 600;\n    line-height: 20px;\n    display: inline-flex;\n    font-size: 14px;\n    min-height: 40px;\n    justify-content: space-between;\n    outline: 0;\n    //padding-left: 16px;\n    width: 100%;\n\n    .arrow-icon {\n      ", "\n    }\n\n    &:hover:not(:disabled) {\n      color: ", ";\n\n      svg {\n        opacity: 0.85;\n      }\n\n      .arrow-icon {\n        visibility: visible;\n        transition: visibility 250ms linear, opacity 150ms linear;\n        opacity: 1;\n      }\n    }\n\n    &:active:not(:disabled) {\n      opacity: 0.85;\n      transform: translateY(1px);\n    }\n  "], ["\n    align-items: center;\n    border: 0;\n    //background: transparent;\n    color: ", ";\n    cursor: ", ";\n    font-weight: 600;\n    line-height: 20px;\n    display: inline-flex;\n    font-size: 14px;\n    min-height: 40px;\n    justify-content: space-between;\n    outline: 0;\n    //padding-left: 16px;\n    width: 100%;\n\n    .arrow-icon {\n      ", "\n    }\n\n    &:hover:not(:disabled) {\n      color: ", ";\n\n      svg {\n        opacity: 0.85;\n      }\n\n      .arrow-icon {\n        visibility: visible;\n        transition: visibility 250ms linear, opacity 150ms linear;\n        opacity: 1;\n      }\n    }\n\n    &:active:not(:disabled) {\n      opacity: 0.85;\n      transform: translateY(1px);\n    }\n  "])), function (_a) {
         var theme = _a.theme;
         return getTextColor({ theme: theme, disabled: disabled, $isActive: $isActive });
     }, disabled ? "not-allowed" : "pointer", !(isMobile && (label === "Marketplace" || label === "GameFi")) &&
@@ -7410,7 +7445,7 @@ var BorderMobileMenuItem = styled(Box)(templateObject_13 || (templateObject_13 =
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var templateObject_1$e, templateObject_2$8, templateObject_3$6, templateObject_4$6, templateObject_5$6, templateObject_6$3, templateObject_7$1, templateObject_8$1, templateObject_9, templateObject_10, templateObject_11, templateObject_12, templateObject_13;
+var templateObject_1$e, templateObject_2$8, templateObject_3$6, templateObject_4$6, templateObject_5$5, templateObject_6$3, templateObject_7$1, templateObject_8$1, templateObject_9, templateObject_10, templateObject_11, templateObject_12, templateObject_13;
 
 var LabelText = styled(Text)(templateObject_1$d || (templateObject_1$d = __makeTemplateObject(["\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  width: 80px;\n"], ["\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  width: 80px;\n"])));
 var InnerLinksBlock = function (_a) {
@@ -7590,27 +7625,31 @@ var DropdownMenu = function (_a) {
         })))));
 };
 
-var openBodyAnimation = keyframes(templateObject_1$b || (templateObject_1$b = __makeTemplateObject(["\n  0% {\n    opacity: 0;\n    height: 0;\n  }\n  100% {\n    opacity: 1;\n    height: auto;\n  }\n"], ["\n  0% {\n    opacity: 0;\n    height: 0;\n  }\n  100% {\n    opacity: 1;\n    height: auto;\n  }\n"])));
-var AccordionBody = styled.div(templateObject_3$5 || (templateObject_3$5 = __makeTemplateObject(["\n  display: ", ";\n  flex-direction: column;\n  overflow: hidden;\n\n  ", "\n"], ["\n  display: ", ";\n  flex-direction: column;\n  overflow: hidden;\n\n  ", "\n"])), function (_a) {
+var AccordionBody = styled.div(templateObject_2$7 || (templateObject_2$7 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  overflow: hidden;\n  max-height: 0;\n  transition: max-height 0.45s;\n\n  ", "\n"], ["\n  display: flex;\n  flex-direction: column;\n  overflow: hidden;\n  max-height: 0;\n  transition: max-height 0.45s;\n\n  ", "\n"])), function (_a) {
     var opened = _a.opened;
-    return (opened ? "flex" : "none");
-}, function (_a) {
-    var opened = _a.opened;
-    return opened && css(templateObject_2$7 || (templateObject_2$7 = __makeTemplateObject(["\n      animation: ", " 0.6s ease;\n    "], ["\n      animation: ", " 0.6s ease;\n    "])), openBodyAnimation);
+    return opened && css(templateObject_1$b || (templateObject_1$b = __makeTemplateObject(["\n      max-height: 100vh;\n    "], ["\n      max-height: 100vh;\n    "])));
 });
-var AccordionTitle = styled(Flex)(templateObject_4$5 || (templateObject_4$5 = __makeTemplateObject(["\n  align-items: center;\n  justify-content: space-between;\n  cursor: pointer;\n"], ["\n  align-items: center;\n  justify-content: space-between;\n  cursor: pointer;\n"])));
-var AccordionComponent = styled.div(templateObject_5$5 || (templateObject_5$5 = __makeTemplateObject(["\n  width: 100%;\n"], ["\n  width: 100%;\n"])));
+var AccordionTitle = styled(Flex)(templateObject_3$5 || (templateObject_3$5 = __makeTemplateObject(["\n  align-items: center;\n  justify-content: space-between;\n  cursor: pointer;\n  -webkit-tap-highlight-color: transparent;\n"], ["\n  align-items: center;\n  justify-content: space-between;\n  cursor: pointer;\n  -webkit-tap-highlight-color: transparent;\n"])));
+var AccordionComponent = styled.div(templateObject_4$5 || (templateObject_4$5 = __makeTemplateObject(["\n  width: 100%;\n"], ["\n  width: 100%;\n"])));
 var Accordion = function (_a) {
-    var label = _a.label, _b = _a.clickable, clickable = _b === void 0 ? true : _b, heading = _a.heading, children = _a.children, index = _a.index, href = _a.href, linkComponent = _a.linkComponent, setIsOpenMenu = _a.setIsOpenMenu, isOpenItem = _a.isOpenItem;
+    var label = _a.label, _b = _a.clickable, clickable = _b === void 0 ? true : _b, heading = _a.heading, children = _a.children, index = _a.index, href = _a.href, linkComponent = _a.linkComponent, setIsOpenMenu = _a.setIsOpenMenu, isOpenItem = _a.isOpenItem, currentOpen = _a.currentOpen, setCurrentOpen = _a.setCurrentOpen;
     var _c = useState(false), isOpened = _c[0], setIsOpened = _c[1];
     var isMobile = useMatchBreakpoints().isMobile;
     useEffect(function () {
         if (!clickable || isOpenItem) {
-            setIsOpened(true);
+            setCurrentOpen(label);
         }
-    }, [label, clickable, setIsOpened]);
+    }, [label, clickable]);
+    useEffect(function () {
+        setIsOpened(clickable ? currentOpen === label : true);
+    }, [currentOpen, clickable]);
     var onTitleClick = function () {
-        !href && clickable ? setIsOpened(function (prev) { return !prev; }) : setIsOpenMenu(false);
+        if (!href && clickable) {
+            setCurrentOpen(!isOpened ? label : undefined);
+        }
+        else {
+            setIsOpenMenu(false);
+        }
     };
     return (React.createElement(AccordionComponent, { key: "acc-key-".concat(label) },
         isMobile && index !== 1 && React.createElement(DropdownMenuDivider, { color: "btnTertiary" }),
@@ -7619,7 +7658,7 @@ var Accordion = function (_a) {
         isMobile && !index && (React.createElement(Box, { m: "0 -24px 0" },
             React.createElement(DropdownMenuDivider, { color: "rgba(18, 99, 241, 0.16)" })))));
 };
-var templateObject_1$b, templateObject_2$7, templateObject_3$5, templateObject_4$5, templateObject_5$5;
+var templateObject_1$b, templateObject_2$7, templateObject_3$5, templateObject_4$5;
 
 var PULSE_SUCCESS = keyframes(templateObject_1$a || (templateObject_1$a = __makeTemplateObject(["\n  0% {\n    transform: scale(0.95);\n    box-shadow: 0 0 0 0 rgba(29, 200, 124, 0.7);\n  }\n\n  70% {\n    transform: scale(1);\n    box-shadow: 0 0 0 4px rgba(29, 200, 124, 0);\n  }\n\n  100% {\n    transform: scale(0.95);\n    box-shadow: 0 0 0 0 rgba(29, 200, 124, 0);\n  }\n"], ["\n  0% {\n    transform: scale(0.95);\n    box-shadow: 0 0 0 0 rgba(29, 200, 124, 0.7);\n  }\n\n  70% {\n    transform: scale(1);\n    box-shadow: 0 0 0 4px rgba(29, 200, 124, 0);\n  }\n\n  100% {\n    transform: scale(0.95);\n    box-shadow: 0 0 0 0 rgba(29, 200, 124, 0);\n  }\n"])));
 var PULSE_WARNING = keyframes(templateObject_2$6 || (templateObject_2$6 = __makeTemplateObject(["\n  0% {\n    transform: scale(0.95);\n    box-shadow: 0 0 0 0 rgba(255, 219, 28, 0.7);\n  }\n\n  70% {\n    transform: scale(1);\n    box-shadow: 0 0 0 4px rgba(255, 219, 28, 0);\n  }\n\n  100% {\n    transform: scale(0.95);\n    box-shadow: 0 0 0 0 rgba(255, 219, 28, 0);\n  }\n"], ["\n  0% {\n    transform: scale(0.95);\n    box-shadow: 0 0 0 0 rgba(255, 219, 28, 0.7);\n  }\n\n  70% {\n    transform: scale(1);\n    box-shadow: 0 0 0 4px rgba(255, 219, 28, 0);\n  }\n\n  100% {\n    transform: scale(0.95);\n    box-shadow: 0 0 0 0 rgba(255, 219, 28, 0);\n  }\n"])));
@@ -7655,12 +7694,13 @@ var MobileMenu = function (_a) {
     var _b = useState(false), isOpen = _b[0], setIsOpen = _b[1];
     var _c = useState(null), targetRef = _c[0], setTargetRef = _c[1];
     var _d = useState(null), tooltipRef = _d[0], setTooltipRef = _d[1];
-    var _e = useMatchBreakpoints(), isMobile = _e.isMobile, isTablet = _e.isTablet;
+    var _e = useState(), currentOpen = _e[0], setCurrentOpen = _e[1];
+    var _f = useMatchBreakpoints(), isMobile = _f.isMobile, isTablet = _f.isTablet;
     var hasItems = items.length > 0;
-    var _f = usePopper(targetRef, tooltipRef, {
+    var _g = usePopper(targetRef, tooltipRef, {
         strategy: "fixed",
         placement: "bottom",
-    }), styles = _f.styles, attributes = _f.attributes, update = _f.update;
+    }), styles = _g.styles, attributes = _g.attributes, update = _g.update;
     useEffect(function () {
         var hideDropdownMenu = function (evt) {
             var target = evt.target;
@@ -7697,7 +7737,7 @@ var MobileMenu = function (_a) {
         hasItems && (React.createElement(StyledMobileMenu, __assign({ style: styles.popper, ref: setTooltipRef }, attributes.popper, { "$isOpen": isOpen }),
             React.createElement(Box, null,
                 items
-                    .filter(function (item) { return item.label && !item.type; })
+                    .filter(function (item, categoryNum) { return item.label && !item.type; })
                     .map(function (_a, index) {
                     var label = _a.label, _b = _a.items, innerItems = _b === void 0 ? [] : _b, showItemsOnMobile = _a.showItemsOnMobile, hidden = _a.hidden; _a.showNavBadge; var href = _a.href; _a.highlightTitle;
                     var isMarker = items[index].showNavBadge;
@@ -7710,7 +7750,7 @@ var MobileMenu = function (_a) {
                     var visualize = !showItemsOnMobile ||
                         (showItemsOnMobile && isMobile && !hidden);
                     return (React.createElement(BorderMobileMenuItem, { key: "".concat(label, "#").concat(index), isHighlighted: isHighlighted },
-                        React.createElement(Accordion, { index: index, label: label, href: href, linkComponent: linkComponent, setIsOpenMenu: setIsOpen, clickable: !isTablet && innerItems.length > 0, isOpenItem: isOpenAccordion, heading: function (opened) {
+                        React.createElement(Accordion, { index: index, label: label, href: href, linkComponent: linkComponent, setIsOpenMenu: setIsOpen, currentOpen: currentOpen, setCurrentOpen: setCurrentOpen, clickable: !isTablet && innerItems.length > 0, isOpenItem: isOpenAccordion, heading: function (opened) {
                                 return (((!showItemsOnMobile && !hidden) ||
                                     (href && !isTablet)) && (React.createElement(React.Fragment, null,
                                     React.createElement(Box, { m: firstAccordionItemMobile
@@ -8233,4 +8273,4 @@ var ResetCSS = createGlobalStyle(templateObject_1 || (templateObject_1 = __makeT
 });
 var templateObject_1;
 
-export { Icon$13 as AboutBSWOpacityIcon, Icon$14 as AboutBSWSolidIcon, Alert, Icon$19 as AnalyticsOpacityIcon, Icon$1a as AnalyticsSolidIcon, Icon$3r as ArrowDownIcon, Icon$A as ArrowFiguredIcon, Icon$3s as ArrowLeftIcon, Icon$3u as ArrowRightIcon, Icon$3o as ArrowSkipLeftIcon, Icon$3p as ArrowSkipRightIcon, Icon$3q as ArrowUpForwardIcon, Icon$3t as ArrowUpIcon, Icon$2h as AuctionIcon, Icon$2f as AuctionOpacityIcon, Icon$2g as AuctionSolidIcon, Icon$S as AuditProtectionOpacityIcon, Icon$R as AuditProtectionSolidIcon, Icon$P as AuditSearchOpacityIcon, Icon$Q as AuditSearchSolidIcon, Icon$1M as AutoRenewAnimateIcon, Icon$1P as AutoRenewIcon, Icon$1N as AutoRenewOpacityAnimateIcon, Icon$1Q as AutoRenewOpacityIcon, Icon$1O as AutoRenewSolidAnimateIcon, Icon$1R as AutoRenewSolidIcon, Icon$B as AvalancheIcon, Icon$l as BDIcon, Icon$D as BSCIcon, Badge, GridLayout$1 as BaseLayout, BaseMenu, Icon$2G as BellOpacityIcon, Icon$2H as BellSolidIcon, Icon$d as BinanceWalletIcon, Icon$7 as BitKeepWalletIcon, Icon$25 as BlockIcon, Icon$24 as BlockOpacityIcon, Icon$23 as BlockSolidIcon, BodyText, Icon$2n as BookIcon, Icon$2l as BookOpacityIcon, Icon$2m as BookSolidIcon, Box, Icon$c as BraveWalletIcon, Breadcrumbs, Icon$3H as BscBlackRoundIcon, Icon$1C as BurgerCloseIcon, Icon$1D as BurgerIcon, Button, ButtonMenu, ButtonMenuItem, Icon$h as CNIcon, Icon$34 as CalculateIcon, Icon$36 as CalculateOpacityIcon, Icon$35 as CalculateSolidIcon, Card, CardBody, CardFooter, CardHeader, Icon$2P as CardViewIcon, GridLayout as CardsLayout, Icon$r as CerticAuditedIcon, Icon$15 as CharityOpacityIcon, Icon$16 as CharitySolidIcon, Icon$2M as CheckIcon, Icon$2K as CheckOpacityIcon, Icon$2L as CheckSolidIcon, Checkbox, Icon$3F as ChevronDownCircleOpacityIcon, Icon$3G as ChevronDownCircleSolidIcon, Icon$3E as ChevronDownIcon, Icon$3z as ChevronLeftCircleOpacityIcon, Icon$3A as ChevronLeftCircleSolidIcon, Icon$3y as ChevronLeftIcon, Icon$3C as ChevronRightCircleOpacityIcon, Icon$3D as ChevronRightCircleSolidIcon, Icon$3B as ChevronRightIcon, Icon$3v as ChevronUpCircleOpacityIcon, Icon$3w as ChevronUpCircleSolidIcon, Icon$3n as ChevronUpDoubleIcon, Icon$3x as ChevronUpIcon, Icon$3m as ChevronUpTripleIcon, ClickableElementContainer, Icon$3a as CloseCircleOpacityIcon, Icon$39 as CloseCircleSolidIcon, Icon$3b as CloseIcon, Icon$6 as Coin98WalletIcon, Icon$9 as CoinbaseWalletIcon, Icon$q as CollectiblesIcon, Icon$b as ConnectWalletIcon, Icon$2w as CopyIcon, Icon$2u as CopyOpacityIcon, Icon$2v as CopySolidIcon, Icon$i as DEIcon, Icon$T as DocsOpacityIcon, Icon$U as DocsSolidIcon, Icon$3K as DownloadIcon, Dropdown, DropdownMenuItemType, Icon$f as ESIcon, Icon$1X as EditIcon, Icon$1W as EditOpacityIcon, Icon$1V as EditSolidIcon, Icon$1v as ExchangeOpacityIcon, Icon$1w as ExchangeSolidIcon, ExpandableButton, ExpandableLabel, Icon$1t as ExpertModeOpacityIcon, Icon$1u as ExpertModeSolidIcon, Icon$2N as EyeCloseIcon, Icon$2O as EyeOpenIcon, Icon$k as FRIcon, Icon$H as FacebookIcon, Icon$1p as FarmsOpacityIcon, Icon$1q as FarmsSolidIcon, Icon$2S as FavoriteEmptyIcon, Icon$2R as FavoriteSolidIcon, Icon$2k as FileIcon, Icon$2i as FileOpacityIcon, Icon$2j as FileSolidIcon, Icon$2q as FilterIcon, Icon$2o as FilterOpacityIcon, Icon$2p as FilterSolidIcon, Icon$30 as FireIcon, Icon$2_ as FireOpacityIcon, Icon$2$ as FireSolidIcon, Icon$1b as FixedStakingOpacityIcon, Icon$1c as FixedStakingSolidIcon, Icon$28 as FlagIcon, Icon$27 as FlagOpacityIcon, Icon$26 as FlagSolidIcon, Flex, Icon$z as GameFiIcon, Icon$1T as GasIcon, Icon$y as GiftIcon, Icon$1j as GobletOpacityIcon, Icon$1k as GobletSolidIcon, Grid, HeadText, Heading, Icon$31 as HelpIcon, Icon$33 as HelpOpacityIcon, Icon$32 as HelpSolidIcon, Icon$1G as HistoryIcon, Icon$3I as HourglassIcon, Icon$o as IDIcon, Icon$e as INIcon, Icon$5 as ITokenWalletIcon, IconButton, Icon$1l as IdoOpacityIcon, Icon$1m as IdoSolidIcon, Image, Icon$2Z as InfoIcon, Icon$2X as InfoOpacityIcon, Icon$2Y as InfoSolidIcon, InlineMenu, InlineMenuContainer, Input$1 as Input, InputGroup, Icon$O as InstagramIcon, ItemTypes, Icon$1f as LaunchpadOpacityIcon, Icon$1g as LaunchpadSolidIcon, Link, LinkExternal, Icon$1x as LiquidityOpacityIcon, Icon$1y as LiquiditySolidIcon, Icon$1I as ListOpacityIcon, Icon$1H as ListSolidIcon, Icon$2Q as ListViewIcon, Icon$1 as LockIcon, Icon$3N as LogoIcon, Icon$3L as LogoWithTextIcon, Icon$1h as LotteryOpacityIcon, Icon$1i as LotterySolidIcon, Icon$x as MarketIcon, MatchBreakpointsProvider, Icon$8 as MathWalletIcon, Icon$1U as MedalIcon, Icon$N as MediumIcon, Menu, Icon$w as MetamaskIcon, Icon$a as MetamaskWalletIcon, Icon$3g as MinusCircleOpacityIcon, Icon$3h as MinusCircleSolidIcon, Icon$3i as MinusIcon, Modal, ModalBackButton, ModalBody$1 as ModalBody, ModalCloseButton, ModalContainer, ModalHeader, ModalProvider, ModalTitle, ModalWithBackground, Icon$1Y as More2Icon, Icon$1$ as MoreHorizontalIcon, Icon$1Z as MoreHorizontalOpacityIcon, Icon$1_ as MoreHorizontalSolidIcon, Icon$22 as MoreVerticalIcon, Icon$20 as MoreVerticalOpacityIcon, Icon$21 as MoreVerticalSolidIcon, Icon$3J as MouseIcon, Icon$Y as MultiPoolOpacityIcon, Icon$X as MultiPoolSolidIcon, Icon$1d as NFTEarnOpacityIcon, Icon$1e as NFTEarnSolidIcon, Icon$V as NewsOpacityIcon, Icon$W as NewsSolidIcon, NotificationDot, Icon$2z as OptionsOpacityIcon, Icon$2A as OptionsSolidIcon, Overlay, Icon$j as PTIcon, Pagination, PercentSlider, Icon$1S as PlayIcon, Icon$3j as PlusCircleOpacityIcon, Icon$3k as PlusCircleSolidIcon, Icon$3l as PlusIcon, Icon$C as PolygonIcon, Icon$1r as PoolsOpacityIcon, Icon$1s as PoolsSolidIcon, Icon$1E as ProductsOpacityIcon, Icon$1F as ProductsSolidIcon, Icon$$ as Program10mOpacityIcon, Icon$10 as Program10mSolidIcon, Icon$3M as ProjectNameIcon, Icon$v as RBIcon, Icon$n as RUIcon, Radio, Icon$G as Rank1Icon, Icon$F as Rank2Icon, Icon$E as Rank3Icon, Icon$M as RedditIcon, Icon$1n as ReferralOpacityIcon, Icon$1o as ReferralSolidIcon, Icon$1L as RefreshIcon, Icon$1K as RefreshOpacityIcon, Icon$1J as RefreshSolidIcon, ResetCSS, Icon$u as SEIcon, Icon$2 as SafePalWalletIcon, Icon$2E as SearchOpacityIcon, Icon$2F as SearchSolidIcon, Icon$2t as ShareIcon, Icon$2r as ShareOpacityIcon, Icon$2s as ShareSolidIcon, Skeleton, Slider, SocialShareButton, Icon$Z as SpaceAgentOpacityIcon, Icon$_ as SpaceAgentSolidIcon, Icon$2D as StarIcon, Icon$2C as StarOpacityIcon, Icon$2B as StarSolidIcon, SubMenu, SubMenuContainer, SubMenuItem, SubMenuItems, Svg, Icon$2W as SwapHorizontalOpacityIcon, Icon$2V as SwapHorizontalSolidIcon, Icon$2U as SwapVerticalOpacityIcon, Icon$2T as SwapVerticalSolidIcon, Icon$g as TRIcon, TabMenu, TabBarItem as TabMenuItem, Icon$11 as TeamOpacityIcon, Icon$12 as TeamSolidIcon, Icon$L as TelegramIcon, Icon$2b as TestIcon, Icon$2a as TestOpacityIcon, Icon$29 as TestSolidIcon, Text, Icon$t as Ticket2Icon, Icon$2e as TimerIcon, Icon$2c as TimerOpacityIcon, Icon$2d as TimerSolidIcon, ToastContainer, Toggle, Icon$3 as TokenPocketWalletIcon, TooltipText, Icon$4 as TrustWalletIcon, Icon$K as TwitchIcon, Icon$J as TwitterIcon, Icon$p as USAIcon, Icon as UnlockIcon, Icon$1z as UsdLineIcon, Icon$1B as UsdOpacityIcon, Icon$1A as UsdSolidIcon, Icon$2I as UserOpacityIcon, Icon$2J as UserSolidIcon, Icon$m as VNIcon, Icon$2x as VerifiedOpacityIcon, Icon$2y as VerifiedSolidIcon, Icon$s as VisaIcon, Icon$17 as VotingOpacityIcon, Icon$18 as VotingSolidIcon, Icon$37 as WalletOpacityIcon, Icon$38 as WalletSolidIcon, Icon$3c as WarningCycleIcon, Icon$3d as WarningIcon, Icon$3f as WarningOpacityIcon, Icon$3e as WarningSolidIcon, Icon$I as YoutubeIcon, variants$6 as alertVariants, bodyTextScaleMap, darkTheme as dark, darkColors, formatSpacingAmount, getExternalLinkProps, getPortalRoot, getResponsiveAttrs, getRgba, getThemeValue, headTextScaleMap, isTouchDevice, lightTheme as light, lightColors, links as menuConfig, status as menuStatus, types as toastTypes, useMatchBreakpoints, useModal, useOnClickOutside, useTooltip };
+export { Icon$13 as AboutBSWOpacityIcon, Icon$14 as AboutBSWSolidIcon, Alert, Icon$19 as AnalyticsOpacityIcon, Icon$1a as AnalyticsSolidIcon, Icon$3r as ArrowDownIcon, Icon$A as ArrowFiguredIcon, Icon$3s as ArrowLeftIcon, Icon$3u as ArrowRightIcon, Icon$3o as ArrowSkipLeftIcon, Icon$3p as ArrowSkipRightIcon, Icon$3q as ArrowUpForwardIcon, Icon$3t as ArrowUpIcon, Icon$2h as AuctionIcon, Icon$2f as AuctionOpacityIcon, Icon$2g as AuctionSolidIcon, Icon$S as AuditProtectionOpacityIcon, Icon$R as AuditProtectionSolidIcon, Icon$P as AuditSearchOpacityIcon, Icon$Q as AuditSearchSolidIcon, Icon$1M as AutoRenewAnimateIcon, Icon$1P as AutoRenewIcon, Icon$1N as AutoRenewOpacityAnimateIcon, Icon$1Q as AutoRenewOpacityIcon, Icon$1O as AutoRenewSolidAnimateIcon, Icon$1R as AutoRenewSolidIcon, Icon$B as AvalancheIcon, Icon$l as BDIcon, Icon$D as BSCIcon, Badge, GridLayout$1 as BaseLayout, BaseMenu, Icon$2G as BellOpacityIcon, Icon$2H as BellSolidIcon, Icon$d as BinanceWalletIcon, Icon$7 as BitKeepWalletIcon, Icon$25 as BlockIcon, Icon$24 as BlockOpacityIcon, Icon$23 as BlockSolidIcon, BodyText, Icon$2n as BookIcon, Icon$2l as BookOpacityIcon, Icon$2m as BookSolidIcon, Box, Icon$c as BraveWalletIcon, Breadcrumbs, Icon$3H as BscBlackRoundIcon, Icon$1C as BurgerCloseIcon, Icon$1D as BurgerIcon, Button, ButtonMenu, ButtonMenuItem, Icon$h as CNIcon, Icon$34 as CalculateIcon, Icon$36 as CalculateOpacityIcon, Icon$35 as CalculateSolidIcon, Card, CardBody, CardFooter, CardHeader, Icon$2P as CardViewIcon, GridLayout as CardsLayout, Icon$r as CerticAuditedIcon, Icon$15 as CharityOpacityIcon, Icon$16 as CharitySolidIcon, Icon$2M as CheckIcon, Icon$2K as CheckOpacityIcon, Icon$2L as CheckSolidIcon, Checkbox, Icon$3F as ChevronDownCircleOpacityIcon, Icon$3G as ChevronDownCircleSolidIcon, Icon$3E as ChevronDownIcon, Icon$3z as ChevronLeftCircleOpacityIcon, Icon$3A as ChevronLeftCircleSolidIcon, Icon$3y as ChevronLeftIcon, Icon$3C as ChevronRightCircleOpacityIcon, Icon$3D as ChevronRightCircleSolidIcon, Icon$3B as ChevronRightIcon, Icon$3v as ChevronUpCircleOpacityIcon, Icon$3w as ChevronUpCircleSolidIcon, Icon$3n as ChevronUpDoubleIcon, Icon$3x as ChevronUpIcon, Icon$3m as ChevronUpTripleIcon, ClickableElementContainer, Icon$3a as CloseCircleOpacityIcon, Icon$39 as CloseCircleSolidIcon, Icon$3b as CloseIcon, Icon$6 as Coin98WalletIcon, Icon$9 as CoinbaseWalletIcon, Icon$q as CollectiblesIcon, Icon$b as ConnectWalletIcon, Icon$2w as CopyIcon, Icon$2u as CopyOpacityIcon, Icon$2v as CopySolidIcon, Icon$i as DEIcon, Icon$T as DocsOpacityIcon, Icon$U as DocsSolidIcon, Icon$3K as DownloadIcon, Dropdown, DropdownMenuItemType, Icon$f as ESIcon, Icon$1X as EditIcon, Icon$1W as EditOpacityIcon, Icon$1V as EditSolidIcon, Icon$1v as ExchangeOpacityIcon, Icon$1w as ExchangeSolidIcon, ExpandableButton, ExpandableLabel, Icon$1t as ExpertModeOpacityIcon, Icon$1u as ExpertModeSolidIcon, Icon$2N as EyeCloseIcon, Icon$2O as EyeOpenIcon, Icon$k as FRIcon, Icon$H as FacebookIcon, Icon$1p as FarmsOpacityIcon, Icon$1q as FarmsSolidIcon, Icon$2S as FavoriteEmptyIcon, Icon$2R as FavoriteSolidIcon, Icon$2k as FileIcon, Icon$2i as FileOpacityIcon, Icon$2j as FileSolidIcon, Icon$2q as FilterIcon, Icon$2o as FilterOpacityIcon, Icon$2p as FilterSolidIcon, Icon$30 as FireIcon, Icon$2_ as FireOpacityIcon, Icon$2$ as FireSolidIcon, Icon$1b as FixedStakingOpacityIcon, Icon$1c as FixedStakingSolidIcon, Icon$28 as FlagIcon, Icon$27 as FlagOpacityIcon, Icon$26 as FlagSolidIcon, Flex, Icon$z as GameFiIcon, Icon$1T as GasIcon, Icon$y as GiftIcon, Icon$1j as GobletOpacityIcon, Icon$1k as GobletSolidIcon, Grid, HeadText, Heading, Icon$31 as HelpIcon, Icon$33 as HelpOpacityIcon, Icon$32 as HelpSolidIcon, Icon$1G as HistoryIcon, Icon$3I as HourglassIcon, Icon$o as IDIcon, Icon$e as INIcon, Icon$5 as ITokenWalletIcon, IconButton, Icon$1l as IdoOpacityIcon, Icon$1m as IdoSolidIcon, Image, Icon$2Z as InfoIcon, Icon$2X as InfoOpacityIcon, Icon$2Y as InfoSolidIcon, InlineMenu, InlineMenuContainer, Input$1 as Input, InputGroup, Icon$O as InstagramIcon, ItemTypes, Icon$1f as LaunchpadOpacityIcon, Icon$1g as LaunchpadSolidIcon, Link, LinkExternal, Icon$1x as LiquidityOpacityIcon, Icon$1y as LiquiditySolidIcon, Icon$1I as ListOpacityIcon, Icon$1H as ListSolidIcon, Icon$2Q as ListViewIcon, Icon$1 as LockIcon, Icon$3N as LogoIcon, Icon$3L as LogoWithTextIcon, Icon$1h as LotteryOpacityIcon, Icon$1i as LotterySolidIcon, Icon$x as MarketIcon, MatchBreakpointsProvider, Icon$8 as MathWalletIcon, Icon$1U as MedalIcon, Icon$N as MediumIcon, Menu, Icon$w as MetamaskIcon, Icon$a as MetamaskWalletIcon, Icon$3g as MinusCircleOpacityIcon, Icon$3h as MinusCircleSolidIcon, Icon$3i as MinusIcon, Modal, ModalBackButton, ModalBody$1 as ModalBody, ModalCloseButton, ModalContainer, ModalHeader, ModalProvider, ModalTitle, ModalWithBackground, Icon$1Y as More2Icon, Icon$1$ as MoreHorizontalIcon, Icon$1Z as MoreHorizontalOpacityIcon, Icon$1_ as MoreHorizontalSolidIcon, Icon$22 as MoreVerticalIcon, Icon$20 as MoreVerticalOpacityIcon, Icon$21 as MoreVerticalSolidIcon, Icon$3J as MouseIcon, Icon$Y as MultiPoolOpacityIcon, Icon$X as MultiPoolSolidIcon, Icon$1d as NFTEarnOpacityIcon, Icon$1e as NFTEarnSolidIcon, Icon$V as NewsOpacityIcon, Icon$W as NewsSolidIcon, NotificationDot, Icon$2z as OptionsOpacityIcon, Icon$2A as OptionsSolidIcon, Overlay, Icon$j as PTIcon, Pagination, PercentSlider, Icon$1S as PlayIcon, Icon$3j as PlusCircleOpacityIcon, Icon$3k as PlusCircleSolidIcon, Icon$3l as PlusIcon, Icon$C as PolygonIcon, Icon$1r as PoolsOpacityIcon, Icon$1s as PoolsSolidIcon, Icon$1E as ProductsOpacityIcon, Icon$1F as ProductsSolidIcon, Icon$$ as Program10mOpacityIcon, Icon$10 as Program10mSolidIcon, Icon$3M as ProjectNameIcon, Icon$v as RBIcon, Icon$n as RUIcon, Radio, Icon$G as Rank1Icon, Icon$F as Rank2Icon, Icon$E as Rank3Icon, Icon$M as RedditIcon, Icon$1n as ReferralOpacityIcon, Icon$1o as ReferralSolidIcon, Icon$1L as RefreshIcon, Icon$1K as RefreshOpacityIcon, Icon$1J as RefreshSolidIcon, ResetCSS, Icon$u as SEIcon, Icon$2 as SafePalWalletIcon, Icon$2E as SearchOpacityIcon, Icon$2F as SearchSolidIcon, Icon$2t as ShareIcon, Icon$2r as ShareOpacityIcon, Icon$2s as ShareSolidIcon, Skeleton, Slider, SocialShareButton, Icon$Z as SpaceAgentOpacityIcon, Icon$_ as SpaceAgentSolidIcon, Icon$2D as StarIcon, Icon$2C as StarOpacityIcon, Icon$2B as StarSolidIcon, SubMenu, SubMenuContainer, SubMenuItem, SubMenuItems, Svg, Icon$2W as SwapHorizontalOpacityIcon, Icon$2V as SwapHorizontalSolidIcon, Icon$2U as SwapVerticalOpacityIcon, Icon$2T as SwapVerticalSolidIcon, Icon$g as TRIcon, TabMenu, TabBarItem as TabMenuItem, TableCardSkeleton, Icon$11 as TeamOpacityIcon, Icon$12 as TeamSolidIcon, Icon$L as TelegramIcon, Icon$2b as TestIcon, Icon$2a as TestOpacityIcon, Icon$29 as TestSolidIcon, Text, Icon$t as Ticket2Icon, Icon$2e as TimerIcon, Icon$2c as TimerOpacityIcon, Icon$2d as TimerSolidIcon, ToastContainer, Toggle, Icon$3 as TokenPocketWalletIcon, TooltipText, Icon$4 as TrustWalletIcon, Icon$K as TwitchIcon, Icon$J as TwitterIcon, Icon$p as USAIcon, Icon as UnlockIcon, Icon$1z as UsdLineIcon, Icon$1B as UsdOpacityIcon, Icon$1A as UsdSolidIcon, Icon$2I as UserOpacityIcon, Icon$2J as UserSolidIcon, Icon$m as VNIcon, Icon$2x as VerifiedOpacityIcon, Icon$2y as VerifiedSolidIcon, ViewMode, Icon$s as VisaIcon, Icon$17 as VotingOpacityIcon, Icon$18 as VotingSolidIcon, Icon$37 as WalletOpacityIcon, Icon$38 as WalletSolidIcon, Icon$3c as WarningCycleIcon, Icon$3d as WarningIcon, Icon$3f as WarningOpacityIcon, Icon$3e as WarningSolidIcon, Icon$I as YoutubeIcon, variants$6 as alertVariants, bodyTextScaleMap, darkTheme as dark, darkColors, formatSpacingAmount, getExternalLinkProps, getPortalRoot, getResponsiveAttrs, getRgba, getThemeValue, headTextScaleMap, isTouchDevice, lightTheme as light, lightColors, links as menuConfig, status as menuStatus, types as toastTypes, useMatchBreakpoints, useModal, useOnClickOutside, useTooltip };

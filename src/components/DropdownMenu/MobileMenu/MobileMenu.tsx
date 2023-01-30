@@ -76,6 +76,8 @@ const MobileMenu: FC<MobileMenuProps> = ({
 
   const [targetRef, setTargetRef] = useState<HTMLDivElement | null>(null);
   const [tooltipRef, setTooltipRef] = useState<HTMLDivElement | null>(null);
+  const [currentOpen, setCurrentOpen] = useState<string | undefined>();
+
   const { isMobile, isTablet } = useMatchBreakpoints();
 
   const hasItems = items.length > 0;
@@ -119,7 +121,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
         >
           <Box>
             {items
-              .filter((item) => item.label && !item.type)
+              .filter((item, categoryNum) => item.label && !item.type)
               .map(
                 (
                   {
@@ -155,6 +157,8 @@ const MobileMenu: FC<MobileMenuProps> = ({
                         href={href}
                         linkComponent={linkComponent}
                         setIsOpenMenu={setIsOpen}
+                        currentOpen={currentOpen}
+                        setCurrentOpen={setCurrentOpen}
                         clickable={!isTablet && innerItems.length > 0}
                         isOpenItem={isOpenAccordion}
                         heading={(opened) => {
