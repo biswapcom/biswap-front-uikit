@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { TriggerType } from "../../hooks/useTooltip";
 import { Box, BoxProps, Flex } from "../Box";
 import { HelpIcon } from "../Svg";
@@ -17,17 +17,22 @@ interface Props extends BoxProps {
   size?: string;
   Icon?: FC<IconProps>;
   children?: React.ReactNode;
+  showTooltip?: boolean;
 }
 
-const QuestionWrapper = styled(Flex)`
+const QuestionWrapper = styled(Flex)<{ showTooltip: boolean }>`
   align-items: center;
   transition: opacity 0.3s ease-in-out;
 
-  :hover,
-  :focus {
-    cursor: default;
-    opacity: 0.7;
-  }
+  ${({ showTooltip }) =>
+    showTooltip &&
+    css`
+      :hover,
+      :focus {
+        opacity: 0.7;
+        cursor: default;
+      }
+    `}
 `;
 
 const TooltipHelper: React.FC<Props> = ({
@@ -39,6 +44,7 @@ const TooltipHelper: React.FC<Props> = ({
   Icon = HelpIcon,
   ml = "4px",
   children,
+  showTooltip = true,
   ...props
 }) => {
   const { targetRef, tooltip, tooltipVisible } = useTooltip(text, {
@@ -49,7 +55,7 @@ const TooltipHelper: React.FC<Props> = ({
   return (
     <Box ml={ml} {...props}>
       {tooltipVisible && tooltip}
-      <QuestionWrapper ref={targetRef}>
+      <QuestionWrapper ref={targetRef} showTooltip={showTooltip}>
         {children ?? <Icon color={color} width={size} />}
       </QuestionWrapper>
     </Box>
