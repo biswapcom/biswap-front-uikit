@@ -4,7 +4,6 @@ import styled from "styled-components";
 // components
 import TermsAccordion from "./TermsAccordion";
 import { Box, BoxProps, Flex } from "../Box";
-import { Text } from "../Text";
 import { BodyText } from "../Typography";
 
 interface IProps extends BoxProps {
@@ -22,9 +21,8 @@ export const StyledList = styled(Box)`
 export const StyledListItem = styled(Flex)`
   &::before {
     content: "\\2022";
+    padding: 2px 8px 0 0;
     color: ${({ theme }) => theme.colors.pastelBlue};
-    padding-top: 2px;
-    padding-right: 8px;
   }
 `;
 
@@ -38,10 +36,10 @@ const Terms: FC<IProps> = ({
 }) => {
   const renderTermsList = (): JSX.Element[] =>
     termsList.map((item, index) => (
-      <StyledListItem py="8px" key={index.toString()}>
-        <Text small lineHeight="20px" color="pastelBlue">
+      <StyledListItem key={index.toString()} py="8px">
+        <BodyText color="pastelBlue" scale="size16">
           {item}
-        </Text>
+        </BodyText>
       </StyledListItem>
     ));
   return (

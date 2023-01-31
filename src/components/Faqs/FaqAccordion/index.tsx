@@ -2,9 +2,11 @@ import React, { FC, ReactNode, useRef } from "react";
 import styled from "styled-components";
 
 // components
-import { ChevronDownIcon } from "../../Svg";
 import { HeadText } from "../../Typography";
 import { Box, Flex } from "../../Box";
+
+// icons
+import { ChevronDownIcon } from "../../Svg";
 
 // utils
 import { getRgba } from "../../../util";

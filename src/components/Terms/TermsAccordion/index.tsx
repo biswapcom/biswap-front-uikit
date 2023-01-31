@@ -1,10 +1,12 @@
-import React, {FC, ReactNode, useRef, useState} from "react";
+import React, { FC, ReactNode, useRef, useState } from "react";
 import styled from "styled-components";
 
 // components
-import { MinusIcon, PlusIcon } from "../../Svg";
 import { HeadText } from "../../Typography";
 import { Box, Flex } from "../../Box";
+
+// icons
+import { MinusIcon, PlusIcon } from "../../Svg";
 
 interface IProps {
   name: string;
