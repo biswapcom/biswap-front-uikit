@@ -24,7 +24,7 @@ const TermsHead = styled(Flex)`
 const TermsWrapper = styled(Box)<{ isOpen: boolean }>`
   height: ${({ isOpen }) => !isOpen && "0"};
   overflow: hidden;
-  transition: height ease 0.3s;
+  transition: height ease 0.5s;
 `;
 
 const TermsAccordion: FC<IProps> = ({ name = "", children }) => {
