@@ -6162,15 +6162,15 @@ var TermsAccordion = function (_a) {
 var templateObject_1$u, templateObject_2$i;
 
 var StyledList = styled__default["default"](Box)(templateObject_1$t || (templateObject_1$t = __makeTemplateObject(["\n  list-style-type: disc;\n"], ["\n  list-style-type: disc;\n"])));
-var StyledListItem = styled__default["default"](Flex)(templateObject_2$h || (templateObject_2$h = __makeTemplateObject(["\n  &::before {\n    content: \"\\2022\";\n    color: ", ";\n    padding-top: 2px;\n    padding-right: 8px;\n  }\n"], ["\n  &::before {\n    content: \"\\\\2022\";\n    color: ", ";\n    padding-top: 2px;\n    padding-right: 8px;\n  }\n"])), function (_a) {
+var StyledListItem = styled__default["default"](Flex)(templateObject_2$h || (templateObject_2$h = __makeTemplateObject(["\n  &::before {\n    content: \"\\2022\";\n    padding: 2px 8px 0 0;\n    color: ", ";\n  }\n"], ["\n  &::before {\n    content: \"\\\\2022\";\n    padding: 2px 8px 0 0;\n    color: ", ";\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.pastelBlue;
 });
 var Terms = function (_a) {
     var _b = _a.title, title = _b === void 0 ? "Terms of use" : _b, _c = _a.scrollClass, scrollClass = _c === void 0 ? "" : _c, termsList = _a.termsList, description = _a.description, revised = _a.revised, rest = __rest(_a, ["title", "scrollClass", "termsList", "description", "revised"]);
     var renderTermsList = function () {
-        return termsList.map(function (item, index) { return (React__default["default"].createElement(StyledListItem, { py: "8px", key: index.toString() },
-            React__default["default"].createElement(Text, { small: true, lineHeight: "20px", color: "pastelBlue" }, item))); });
+        return termsList.map(function (item, index) { return (React__default["default"].createElement(StyledListItem, { key: index.toString(), py: "8px" },
+            React__default["default"].createElement(BodyText, { color: "pastelBlue", scale: "size16" }, item))); });
     };
     return (React__default["default"].createElement(Box, __assign({ className: scrollClass }, rest),
         React__default["default"].createElement(TermsAccordion, { name: title },
