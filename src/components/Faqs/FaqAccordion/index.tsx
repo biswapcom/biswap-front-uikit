@@ -20,6 +20,7 @@ const Wrapper = styled(Box)<{ isOpen: boolean }>`
   margin-top: 8px;
   border: 1px solid ${({ theme, isOpen }) => (isOpen ? getRgba(theme.colors.primary, theme, 0.16) : "transparent")};
   border-radius: 8px;
+  cursor: pointer;
 
   &:hover {
     border-color: ${({ theme }) => getRgba(theme.colors.primary, theme, 0.16)};
@@ -32,7 +33,6 @@ const Question = styled(Flex)<{ isOpen: boolean }>`
   padding: 16px;
   border-radius: 8px;
   background: ${({ theme, isOpen }) => (isOpen ? "transparent" : theme.colors.dark600)};
-  cursor: pointer;
   transition: background 0.3s ease;
 
   &:hover {
@@ -59,8 +59,8 @@ const FaqAccordion: FC<IProps> = ({ name = "", isOpened, handleToggle, children 
   const contentEl = useRef<HTMLDivElement>(null);
 
   return (
-    <Wrapper isOpen={isOpened}>
-      <Question isOpen={isOpened} onClick={() => handleToggle(name)}>
+    <Wrapper isOpen={isOpened} onClick={() => handleToggle(name)}>
+      <Question isOpen={isOpened}>
         <HeadText color="white" scale="size14">
           {name}
         </HeadText>
