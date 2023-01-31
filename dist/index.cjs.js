@@ -6143,7 +6143,7 @@ var TermsHead = styled__default["default"](Flex)(templateObject_1$u || (template
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var TermsWrapper = styled__default["default"](Box)(templateObject_2$i || (templateObject_2$i = __makeTemplateObject(["\n  height: ", ";\n  overflow: hidden;\n  transition: height ease 0.3s;\n"], ["\n  height: ", ";\n  overflow: hidden;\n  transition: height ease 0.3s;\n"])), function (_a) {
+var TermsWrapper = styled__default["default"](Box)(templateObject_2$i || (templateObject_2$i = __makeTemplateObject(["\n  height: ", ";\n  overflow: hidden;\n  transition: height ease 0.5s;\n"], ["\n  height: ", ";\n  overflow: hidden;\n  transition: height ease 0.5s;\n"])), function (_a) {
     var isOpen = _a.isOpen;
     return !isOpen && "0";
 });
