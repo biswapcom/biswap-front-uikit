@@ -1,26 +1,35 @@
 import React, { FC } from "react";
 import styled from "styled-components";
+import { Flex } from "../Box";
+import IconComponent from "../Svg/IconComponent";
 
 interface ExpandableIconProps {
   isOpen: boolean;
-  Icon: any;
   color?: string;
   width?: string;
+  iconName: string;
 }
-type ExpandableStyleIconProps = Omit<ExpandableIconProps, "Icon">;
+
+const StyledChevronWrapper = styled(Flex)<{
+  isOpen: boolean;
+}>`
+  svg {
+    transition: transform 0.3s ease;
+    transform: scale(${({ isOpen }) => (isOpen ? -1 : 1)});
+  }
+`;
 
 const ExpandableIcon: FC<ExpandableIconProps> = ({
   isOpen,
-  Icon,
   color = "primary",
   width = "24px",
+  iconName,
 }) => {
-  const StyledChevron = styled(Icon)<ExpandableStyleIconProps>`
-    transition: transform 3s ease;
-    transform: scale(${({ isOpen }) => (isOpen ? -1 : 1)});
-  `;
-
-  return <StyledChevron isOpen={isOpen} color={color} width={width} />;
+  return (
+    <StyledChevronWrapper isOpen={isOpen}>
+      <IconComponent iconName={iconName} width={width} color={color} />
+    </StyledChevronWrapper>
+  );
 };
 
 export default ExpandableIcon;

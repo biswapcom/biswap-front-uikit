@@ -6068,13 +6068,14 @@ var TableCardSkeleton = function (_a) {
     return (React.createElement(Box, { overflow: "hidden", borderRadius: "16px" }, Array.from({ length: number }, function (v, i) { return i; }).map(function (item) { return (React.createElement(Skeleton, { key: item.toString(), animation: "waves", height: tableHeight, width: "100%", my: "2px" })); })));
 };
 
+var StyledChevronWrapper = styled(Flex)(templateObject_1$t || (templateObject_1$t = __makeTemplateObject(["\n  svg {\n    transition: transform 0.3s ease;\n    transform: scale(", ");\n  }\n"], ["\n  svg {\n    transition: transform 0.3s ease;\n    transform: scale(", ");\n  }\n"])), function (_a) {
+    var isOpen = _a.isOpen;
+    return (isOpen ? -1 : 1);
+});
 var ExpandableIcon = function (_a) {
-    var isOpen = _a.isOpen, Icon = _a.Icon, _b = _a.color, color = _b === void 0 ? "primary" : _b, _c = _a.width, width = _c === void 0 ? "24px" : _c;
-    var StyledChevron = styled(Icon)(templateObject_1$t || (templateObject_1$t = __makeTemplateObject(["\n    transition: transform 3s ease;\n    transform: scale(", ");\n  "], ["\n    transition: transform 3s ease;\n    transform: scale(", ");\n  "])), function (_a) {
-        var isOpen = _a.isOpen;
-        return (isOpen ? -1 : 1);
-    });
-    return React.createElement(StyledChevron, { isOpen: isOpen, color: color, width: width });
+    var isOpen = _a.isOpen, _b = _a.color, color = _b === void 0 ? "primary" : _b, _c = _a.width, width = _c === void 0 ? "24px" : _c, iconName = _a.iconName;
+    return (React.createElement(StyledChevronWrapper, { isOpen: isOpen },
+        React.createElement(IconComponent, { iconName: iconName, width: width, color: color })));
 };
 var templateObject_1$t;
 

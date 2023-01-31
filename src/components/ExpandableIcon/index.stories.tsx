@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Flex } from "../Box";
+import { Box, Flex } from "../Box";
 import Button from "../Button/Button";
 import ExpandableIcon from "./ExpandableIcon";
 import { ChevronDownCircleSolidIcon, ChevronDownIcon } from "../Svg";
@@ -12,46 +12,80 @@ export default {
 };
 
 export const Default = () => {
-  const [expanded, setExpanded] = useState(false);
+  const [open, setOpen] = useState(false);
+
   return (
-    <Flex>
-      <Button
-        variant="text"
-        aria-label="Hide or show expandable content"
-        onClick={() => setExpanded(!expanded)}
-      >
-        <ExpandableIcon
-          isOpen={expanded}
-          Icon={ChevronDownIcon}
-          width="24px"
-          color="primary"
-        />
-      </Button>
-      <Button
-        variant="text"
-        aria-label="Hide or show expandable content"
-        onClick={() => setExpanded(!expanded)}
-      >
-        <ExpandableIcon
-          isOpen={expanded}
-          Icon={ChevronDownCircleSolidIcon}
-          width="24px"
-        />
-      </Button>
-      <Button
-        variant="text"
-        aria-label="Hide or show expandable content"
-        onClick={() => setExpanded(!expanded)}
-        endIcon={
+    <Box>
+      <Flex>
+        <Button
+          variant="text"
+          aria-label="Hide or show expandable content"
+          onClick={() => setOpen(!open)}
+        >
+          <ExpandableIcon isOpen={open} iconName={"ChevronDown"} />
+        </Button>
+        <Button
+          variant="text"
+          aria-label="Hide or show expandable content"
+          onClick={() => setOpen(!open)}
+        >
           <ExpandableIcon
-            isOpen={expanded}
-            Icon={ChevronDownIcon}
-            width="24px"
+            isOpen={open}
+            width="14px"
+            iconName="ChevronDownCircleSolid"
           />
-        }
-      >
-        <BodyText mr={"6px"}>Details</BodyText>
-      </Button>
-    </Flex>
+        </Button>
+        <Button
+          variant="text"
+          aria-label="Hide or show expandable content"
+          onClick={() => setOpen(!open)}
+          endIcon={
+            <ExpandableIcon isOpen={open} iconName="ChevronDown" width="18px" />
+          }
+        >
+          <BodyText mr="6px" scale="size12">
+            Details
+          </BodyText>
+        </Button>
+      </Flex>
+      <Flex>
+        <Button
+          variant="text"
+          aria-label="Hide or show expandable content"
+          onClick={() => setOpen(!open)}
+        >
+          <ExpandableIcon
+            isOpen={open}
+            iconName={"ChevronDown"}
+            width="24px"
+            color="success"
+          />
+        </Button>
+        <Button
+          variant="text"
+          aria-label="Hide or show expandable content"
+          onClick={() => setOpen(!open)}
+        >
+          <ExpandableIcon
+            isOpen={open}
+            width="24px"
+            iconName="ChevronDownCircleSolid"
+            color="warning"
+          />
+        </Button>
+        <Button
+          variant="text"
+          aria-label="Hide or show expandable content"
+          onClick={() => setOpen(!open)}
+          endIcon={
+            <ExpandableIcon isOpen={open} iconName="ChevronDown" width="20px" />
+          }
+        >
+          <BodyText mr="4px" color="primary" bold>
+            Details
+          </BodyText>
+        </Button>
+      </Flex>
+    </Box>
   );
 };
