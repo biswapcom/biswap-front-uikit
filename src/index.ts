@@ -29,7 +29,8 @@ export * from "./components/SocialShareButton";
 export * from "./components/Card";
 export * from "./components/Image";
 export * from "./components/TableCardSkeleton";
-export * from "./components/Faqs/Faqs";
+export * from "./components/Faqs";
+export * from "./components/Terms";
 // Hooks
 export * from "./hooks";
 
