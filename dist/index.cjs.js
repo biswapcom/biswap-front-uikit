@@ -4124,7 +4124,7 @@ var getBottom = function (_a) {
     }
     return "-8px";
 };
-var Container = styled__default["default"].div(templateObject_1$X || (templateObject_1$X = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  max-width: ", ";\n  min-width: ", ";\n\n  ", "\n\n  ", "\n"], ["\n  position: relative;\n  width: 100%;\n  max-width: ", ";\n  min-width: ", ";\n\n  ", "\n\n  ", "\n"])), function (_a) {
+var Container$1 = styled__default["default"].div(templateObject_1$X || (templateObject_1$X = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  max-width: ", ";\n  min-width: ", ";\n\n  ", "\n\n  ", "\n"], ["\n  position: relative;\n  width: 100%;\n  max-width: ", ";\n  min-width: ", ";\n\n  ", "\n\n  ", "\n"])), function (_a) {
     var maxWidth = _a.maxWidth;
     return maxWidth || "none";
 }, function (_a) {
@@ -4225,7 +4225,7 @@ var Dropdown = function (_a) {
             document.removeEventListener("mousedown", handleClickOutside);
         };
     }, [wrapperRef]);
-    return (React__default["default"].createElement(Container, __assign({ maxWidth: maxWidth, minWidth: minWidth, ref: wrapperRef, scale: scale }, props),
+    return (React__default["default"].createElement(Container$1, __assign({ maxWidth: maxWidth, minWidth: minWidth, ref: wrapperRef, scale: scale }, props),
         React__default["default"].createElement(DropdownTop, { scale: scale, variant: variant, onClick: toggling, disabled: disabled, className: isOpen ? "open" : disabled ? "disabled" : "" },
             selectedOption.icon && (React__default["default"].createElement(IconComponent, { iconName: selectedOption.icon.name, color: selectedOption.icon.color, mr: scale === "lg" ? "12px" : "8px" })),
             React__default["default"].createElement(Label$1, null, selectedOption.label),
@@ -4567,6 +4567,51 @@ var GridLayout = styled__default["default"](GridLayout$1)(templateObject_1$S || 
     return theme.mediaQueries.sm;
 });
 var templateObject_1$S;
+
+var Container = function (_a) {
+    var children = _a.children, props = __rest(_a, ["children"]);
+    return (React__default["default"].createElement(Box, __assign({ width: "100%", px: ["16px", null, null, "24px", null, null, 0], mx: "auto", maxWidth: "1120px" }, props), children));
+};
+
+// eslint-disable-next-line import/prefer-default-export
+var formatSpacingAmount = function (x) {
+    if (x) {
+        var parts = x.toString().split(".");
+        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+        return parts.join(".");
+    }
+    return null;
+};
+
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+var getPortalRoot = function () {
+    var _a;
+    return typeof window !== "undefined" &&
+        ((_a = document.getElementById("portal-root")) !== null && _a !== void 0 ? _a : document.body);
+};
+
+var isTouchDevice = function () {
+    return (typeof window !== "undefined" &&
+        ("ontouchstart" in window || navigator.maxTouchPoints > 0));
+};
+
+var defaultObject = {
+    xs: null,
+    sm: null,
+    md: null,
+    lg: null,
+    xl: null,
+    xll: null,
+    xxl: null,
+};
+var getResponsiveAttrs = function (obj) {
+    return Object.values(__assign(__assign({}, defaultObject), obj));
+};
+
+var HeroWrapper = function (_a) {
+    var children = _a.children, props = __rest(_a, ["children"]);
+    return (React__default["default"].createElement(Box, __assign({ p: getResponsiveAttrs({ xs: "96px 0 0", md: "104px 0 0" }), width: "100%" }, props), children));
+};
 
 var scales$4 = {
     LG: "lg",
@@ -4926,41 +4971,6 @@ var Slider = function (_a) {
             " volume")));
 };
 var templateObject_1$N, templateObject_2$q, templateObject_3$k, templateObject_4$k, templateObject_5$f, templateObject_6$8, templateObject_7$5, templateObject_8$3, templateObject_9$2, templateObject_10$2, templateObject_11$1, templateObject_12$1, templateObject_13$1, templateObject_14, templateObject_15, templateObject_16, templateObject_17;
-
-// eslint-disable-next-line import/prefer-default-export
-var formatSpacingAmount = function (x) {
-    if (x) {
-        var parts = x.toString().split(".");
-        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-        return parts.join(".");
-    }
-    return null;
-};
-
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-var getPortalRoot = function () {
-    var _a;
-    return typeof window !== "undefined" &&
-        ((_a = document.getElementById("portal-root")) !== null && _a !== void 0 ? _a : document.body);
-};
-
-var isTouchDevice = function () {
-    return (typeof window !== "undefined" &&
-        ("ontouchstart" in window || navigator.maxTouchPoints > 0));
-};
-
-var defaultObject = {
-    xs: null,
-    sm: null,
-    md: null,
-    lg: null,
-    xl: null,
-    xll: null,
-    xxl: null,
-};
-var getResponsiveAttrs = function (obj) {
-    return Object.values(__assign(__assign({}, defaultObject), obj));
-};
 
 var animation = {
     WAVES: "waves",
@@ -8381,6 +8391,7 @@ exports.Coin98WalletIcon = Icon$6;
 exports.CoinbaseWalletIcon = Icon$9;
 exports.CollectiblesIcon = Icon$q;
 exports.ConnectWalletIcon = Icon$b;
+exports.Container = Container;
 exports.CopyIcon = Icon$2w;
 exports.CopyOpacityIcon = Icon$2u;
 exports.CopySolidIcon = Icon$2v;
@@ -8433,6 +8444,7 @@ exports.Heading = Heading;
 exports.HelpIcon = Icon$31;
 exports.HelpOpacityIcon = Icon$33;
 exports.HelpSolidIcon = Icon$32;
+exports.HeroWrapper = HeroWrapper;
 exports.HistoryIcon = Icon$1G;
 exports.HourglassIcon = Icon$3I;
 exports.IDIcon = Icon$o;
