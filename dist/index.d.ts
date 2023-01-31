@@ -28,6 +28,7 @@ export * from "./components/SocialShareButton";
 export * from "./components/Card";
 export * from "./components/Image";
 export * from "./components/TableCardSkeleton";
+export * from "./components/ExpandableIcon";
 export * from "./hooks";
 export * from "./contexts";
 export * from "./util";
