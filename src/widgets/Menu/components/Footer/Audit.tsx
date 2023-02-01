@@ -5,6 +5,7 @@ import Flex from "../../../../components/Box/Flex";
 import { CerticAuditedIcon, MarketIcon } from "../../../../components/Svg";
 import { Button } from "../../../../components/Button";
 import { BodyText } from "../../../../components/Typography";
+import { useMatchBreakpoints } from "../../../../contexts";
 
 const MARKETPLACE_URL = "https://marketplace.biswap.org";
 const CERTIC_URL = "https://www.certik.org/projects/biswap";
@@ -60,33 +61,36 @@ const IconWrapper = styled.div`
   margin-right: 8px;
 `;
 
-const Audit: FC<{ marketplaceLink?: string }> = ({ marketplaceLink }) => (
-  <AuditedWrap>
-    <MarketPlaceButton
-      as="a"
-      href={marketplaceLink ?? MARKETPLACE_URL}
-      target="_blank"
-    >
-      <Flex alignItems="center">
-        <IconWrapper>
-          <MarketIcon width="19px" />
-        </IconWrapper>
-        <BodyText scale="size14" color="white" bold>
-          Marketplace
-        </BodyText>
-      </Flex>
-    </MarketPlaceButton>
-    <LinkWrap href={CERTIC_URL} target="_blank">
-      <CerticAuditedIcon
-        style={{
-          padding: "8px 16px",
-          backgroundColor: "#102648",
-          borderRadius: "8px",
-          width: "156px",
-        }}
-      />
-    </LinkWrap>
-  </AuditedWrap>
-);
+const Audit: FC<{ marketplaceLink?: string }> = ({ marketplaceLink }) => {
+  const { isMobile } = useMatchBreakpoints();
+  return (
+    <AuditedWrap>
+      <MarketPlaceButton
+        as="a"
+        href={marketplaceLink ?? MARKETPLACE_URL}
+        target={isMobile ? "_self" : "_blank"}
+      >
+        <Flex alignItems="center">
+          <IconWrapper>
+            <MarketIcon width="19px" />
+          </IconWrapper>
+          <BodyText scale="size14" color="white" bold>
+            Marketplace
+          </BodyText>
+        </Flex>
+      </MarketPlaceButton>
+      <LinkWrap href={CERTIC_URL} target="_blank">
+        <CerticAuditedIcon
+          style={{
+            padding: "8px 16px",
+            backgroundColor: "#102648",
+            borderRadius: "8px",
+            width: "156px",
+          }}
+        />
+      </LinkWrap>
+    </AuditedWrap>
+  );
+};
 
 export default Audit;

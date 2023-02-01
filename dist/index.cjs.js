@@ -7414,8 +7414,9 @@ var MarketPlaceButton = styled__default["default"](Button)(templateObject_3$7 ||
 var IconWrapper = styled__default["default"].div(templateObject_4$7 || (templateObject_4$7 = __makeTemplateObject(["\n  background: linear-gradient(136.03deg, #1263f1 -7.36%, #f63d5e 131.43%);\n  border-radius: 6px;\n  padding: 8px;\n  margin-right: 8px;\n"], ["\n  background: linear-gradient(136.03deg, #1263f1 -7.36%, #f63d5e 131.43%);\n  border-radius: 6px;\n  padding: 8px;\n  margin-right: 8px;\n"])));
 var Audit = function (_a) {
     var marketplaceLink = _a.marketplaceLink;
+    var isMobile = useMatchBreakpoints().isMobile;
     return (React__default["default"].createElement(AuditedWrap, null,
-        React__default["default"].createElement(MarketPlaceButton, { as: "a", href: marketplaceLink !== null && marketplaceLink !== void 0 ? marketplaceLink : MARKETPLACE_URL, target: "_blank" },
+        React__default["default"].createElement(MarketPlaceButton, { as: "a", href: marketplaceLink !== null && marketplaceLink !== void 0 ? marketplaceLink : MARKETPLACE_URL, target: isMobile ? "_self" : "_blank" },
             React__default["default"].createElement(Flex, { alignItems: "center" },
                 React__default["default"].createElement(IconWrapper, null,
                     React__default["default"].createElement(Icon$y, { width: "19px" })),

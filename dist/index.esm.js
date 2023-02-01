@@ -7401,8 +7401,9 @@ var MarketPlaceButton = styled(Button)(templateObject_3$7 || (templateObject_3$7
 var IconWrapper = styled.div(templateObject_4$7 || (templateObject_4$7 = __makeTemplateObject(["\n  background: linear-gradient(136.03deg, #1263f1 -7.36%, #f63d5e 131.43%);\n  border-radius: 6px;\n  padding: 8px;\n  margin-right: 8px;\n"], ["\n  background: linear-gradient(136.03deg, #1263f1 -7.36%, #f63d5e 131.43%);\n  border-radius: 6px;\n  padding: 8px;\n  margin-right: 8px;\n"])));
 var Audit = function (_a) {
     var marketplaceLink = _a.marketplaceLink;
+    var isMobile = useMatchBreakpoints().isMobile;
     return (React.createElement(AuditedWrap, null,
-        React.createElement(MarketPlaceButton, { as: "a", href: marketplaceLink !== null && marketplaceLink !== void 0 ? marketplaceLink : MARKETPLACE_URL, target: "_blank" },
+        React.createElement(MarketPlaceButton, { as: "a", href: marketplaceLink !== null && marketplaceLink !== void 0 ? marketplaceLink : MARKETPLACE_URL, target: isMobile ? "_self" : "_blank" },
             React.createElement(Flex, { alignItems: "center" },
                 React.createElement(IconWrapper, null,
                     React.createElement(Icon$y, { width: "19px" })),
