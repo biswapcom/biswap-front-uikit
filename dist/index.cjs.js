@@ -7331,19 +7331,22 @@ var MarketPlaceButton = styled__default["default"](Button)(templateObject_3$7 ||
     return theme.mediaQueries.sm;
 });
 var IconWrapper = styled__default["default"].div(templateObject_4$7 || (templateObject_4$7 = __makeTemplateObject(["\n  background: linear-gradient(136.03deg, #1263f1 -7.36%, #f63d5e 131.43%);\n  border-radius: 6px;\n  padding: 8px;\n  margin-right: 8px;\n"], ["\n  background: linear-gradient(136.03deg, #1263f1 -7.36%, #f63d5e 131.43%);\n  border-radius: 6px;\n  padding: 8px;\n  margin-right: 8px;\n"])));
-var Audit = function () { return (React__default["default"].createElement(AuditedWrap, null,
-    React__default["default"].createElement(MarketPlaceButton, { as: "a", href: MARKETPLACE_URL, target: "_blank" },
-        React__default["default"].createElement(Flex, { alignItems: "center" },
-            React__default["default"].createElement(IconWrapper, null,
-                React__default["default"].createElement(Icon$x, { width: "19px" })),
-            React__default["default"].createElement(BodyText, { scale: "size14", color: "white", bold: true }, "Marketplace"))),
-    React__default["default"].createElement(LinkWrap, { href: CERTIC_URL, target: "_blank" },
-        React__default["default"].createElement(Icon$r, { style: {
-                padding: "8px 16px",
-                backgroundColor: "#102648",
-                borderRadius: "8px",
-                width: "156px",
-            } })))); };
+var Audit = function (_a) {
+    var marketplaceLink = _a.marketplaceLink;
+    return (React__default["default"].createElement(AuditedWrap, null,
+        React__default["default"].createElement(MarketPlaceButton, { as: "a", href: marketplaceLink !== null && marketplaceLink !== void 0 ? marketplaceLink : MARKETPLACE_URL, target: "_blank" },
+            React__default["default"].createElement(Flex, { alignItems: "center" },
+                React__default["default"].createElement(IconWrapper, null,
+                    React__default["default"].createElement(Icon$x, { width: "19px" })),
+                React__default["default"].createElement(BodyText, { scale: "size14", color: "white", bold: true }, "Marketplace"))),
+        React__default["default"].createElement(LinkWrap, { href: CERTIC_URL, target: "_blank" },
+            React__default["default"].createElement(Icon$r, { style: {
+                    padding: "8px 16px",
+                    backgroundColor: "#102648",
+                    borderRadius: "8px",
+                    width: "156px",
+                } }))));
+};
 var templateObject_1$g, templateObject_2$a, templateObject_3$7, templateObject_4$7;
 
 var Wrapper$1 = styled__default["default"].footer(templateObject_1$f || (templateObject_1$f = __makeTemplateObject(["\n  color: ", ";\n  background: ", ";\n  padding: 56px 16px 24px;\n  transition: padding-left 0.2s;\n  z-index: 10;\n\n  ", " {\n    padding: 56px 24px 24px;\n  }\n\n  ", " {\n    padding: 56px 24px;\n  }\n"], ["\n  color: ", ";\n  background: ", ";\n  padding: 56px 16px 24px;\n  transition: padding-left 0.2s;\n  z-index: 10;\n\n  ", " {\n    padding: 56px 24px 24px;\n  }\n\n  ", " {\n    padding: 56px 24px;\n  }\n"])), function (_a) {
@@ -7370,7 +7373,7 @@ var InnerRow = styled__default["default"].div(templateObject_2$9 || (templateObj
     return theme.mediaQueries.xll;
 });
 var Footer = function (_a) {
-    var BSWPriceLabel = _a.BSWPriceLabel, BSWPriceValue = _a.BSWPriceValue, registerToken = _a.registerToken, footerStatistic = _a.footerStatistic, aboutLinks = _a.aboutLinks, productLinks = _a.productLinks, serviceLinks = _a.serviceLinks, buyBswHandler = _a.buyBswHandler;
+    var BSWPriceLabel = _a.BSWPriceLabel, BSWPriceValue = _a.BSWPriceValue, registerToken = _a.registerToken, footerStatistic = _a.footerStatistic, aboutLinks = _a.aboutLinks, productLinks = _a.productLinks, serviceLinks = _a.serviceLinks, buyBswHandler = _a.buyBswHandler, marketplaceLink = _a.marketplaceLink;
     return (React__default["default"].createElement(Wrapper$1, null,
         React__default["default"].createElement(InnerRow, null,
             React__default["default"].createElement(FooterInfo, { BSWPriceLabel: BSWPriceLabel, BSWPriceValue: BSWPriceValue, registerToken: registerToken, footerStatistic: footerStatistic, buyBswHandler: buyBswHandler }),
@@ -7378,7 +7381,7 @@ var Footer = function (_a) {
             React__default["default"].createElement(Product, { footerLinks: productLinks }),
             React__default["default"].createElement(Service, { footerLinks: serviceLinks }),
             React__default["default"].createElement(Community, { isFooter: true, title: "Community" }),
-            React__default["default"].createElement(Audit, null))));
+            React__default["default"].createElement(Audit, { marketplaceLink: marketplaceLink }))));
 };
 var templateObject_1$f, templateObject_2$9;
 
@@ -8023,7 +8026,7 @@ var Menu = function (_a) {
     var _b;
     var _c = _a.linkComponent, linkComponent = _c === void 0 ? "a" : _c, banner = _a.banner, links = _a.links, rightSide = _a.rightSide; _a.subLinks; var activeItem = _a.activeItem, activeSubItem = _a.activeSubItem, children = _a.children, BSWPriceLabel = _a.BSWPriceLabel, BSWPriceValue = _a.BSWPriceValue, footerStatistic = _a.footerStatistic, registerToken = _a.registerToken, buyBswHandler = _a.buyBswHandler, aboutLinks = _a.aboutLinks, productLinks = _a.productLinks, serviceLinks = _a.serviceLinks, withEvent = _a.withEvent; _a.eventCallback; 
     var //eventButtonLogo,
-    customLogoSubtitle = _a.customLogoSubtitle;
+    customLogoSubtitle = _a.customLogoSubtitle, marketplaceLink = _a.marketplaceLink;
     var isMobile = useMatchBreakpoints().isMobile;
     var _d = React.useState(true), showMenu = _d[0], setShowMenu = _d[1];
     var _e = React.useState(false), menuBg = _e[0], setMenuBg = _e[1];
@@ -8108,7 +8111,7 @@ var Menu = function (_a) {
                 React__default["default"].createElement(Inner, { isPushed: false, showMenu: showMenu },
                     React__default["default"].createElement(React__default["default"].Fragment, null,
                         children,
-                        React__default["default"].createElement(Footer, { BSWPriceLabel: BSWPriceLabel, BSWPriceValue: BSWPriceValue, footerStatistic: footerStatistic, registerToken: registerToken, buyBswHandler: buyBswHandler, aboutLinks: aboutLinks, productLinks: productLinks, serviceLinks: serviceLinks })))))));
+                        React__default["default"].createElement(Footer, { BSWPriceLabel: BSWPriceLabel, BSWPriceValue: BSWPriceValue, footerStatistic: footerStatistic, registerToken: registerToken, buyBswHandler: buyBswHandler, aboutLinks: aboutLinks, productLinks: productLinks, serviceLinks: serviceLinks, marketplaceLink: marketplaceLink })))))));
 };
 var templateObject_1$4, templateObject_2$2, templateObject_3$1, templateObject_4$1, templateObject_5$1, templateObject_6$1;
 
