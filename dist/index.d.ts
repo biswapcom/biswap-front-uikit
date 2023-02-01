@@ -29,6 +29,7 @@ export * from "./components/Card";
 export * from "./components/Image";
 export * from "./components/TooltipHelper";
 export * from "./components/TableCardSkeleton";
+export * from "./components/IconComponent";
 export * from "./hooks";
 export * from "./contexts";
 export * from "./util";
