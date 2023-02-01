@@ -60,9 +60,13 @@ const IconWrapper = styled.div`
   margin-right: 8px;
 `;
 
-const Audit: FC = () => (
+const Audit: FC<{ marketplaceLink?: string }> = ({ marketplaceLink }) => (
   <AuditedWrap>
-    <MarketPlaceButton as="a" href={MARKETPLACE_URL} target="_blank">
+    <MarketPlaceButton
+      as="a"
+      href={marketplaceLink ?? MARKETPLACE_URL}
+      target="_blank"
+    >
       <Flex alignItems="center">
         <IconWrapper>
           <MarketIcon width="19px" />
