@@ -6092,10 +6092,7 @@ var StyledChevronIcon = styled__default["default"](function (_a) {
     var isOpen = _a.isOpen;
     return (isOpen ? "1, -1" : "1, 1");
 });
-var Answer = styled__default["default"](Box)(templateObject_4$d || (templateObject_4$d = __makeTemplateObject(["\n  height: ", ";\n  overflow: hidden;\n  transition: height ease 0.3s;\n"], ["\n  height: ", ";\n  overflow: hidden;\n  transition: height ease 0.3s;\n"])), function (_a) {
-    var isOpen = _a.isOpen;
-    return !isOpen && "0";
-});
+var Answer = styled__default["default"](Box)(templateObject_4$d || (templateObject_4$d = __makeTemplateObject(["\n  overflow: hidden;\n  transition: height ease 0.3s;\n"], ["\n  overflow: hidden;\n  transition: height ease 0.3s;\n"])));
 var FaqAccordion = function (_a) {
     var _b;
     var _c = _a.name, name = _c === void 0 ? "" : _c, isOpened = _a.isOpened, handleToggle = _a.handleToggle, children = _a.children;
@@ -6104,7 +6101,7 @@ var FaqAccordion = function (_a) {
         React__default["default"].createElement(Question, { isOpen: isOpened },
             React__default["default"].createElement(HeadText, { color: "white", scale: "size14" }, name),
             React__default["default"].createElement(StyledChevronIcon, { isOpen: isOpened, color: "primary", width: "24px" })),
-        React__default["default"].createElement(Answer, { ref: contentEl, isOpen: isOpened, height: (_b = contentEl === null || contentEl === void 0 ? void 0 : contentEl.current) === null || _b === void 0 ? void 0 : _b.scrollHeight }, children)));
+        React__default["default"].createElement(Answer, { ref: contentEl, height: isOpened ? (_b = contentEl === null || contentEl === void 0 ? void 0 : contentEl.current) === null || _b === void 0 ? void 0 : _b.scrollHeight : '0' }, children)));
 };
 var templateObject_1$w, templateObject_2$j, templateObject_3$d, templateObject_4$d;
 
@@ -6143,10 +6140,7 @@ var TermsHead = styled__default["default"](Flex)(templateObject_1$u || (template
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var TermsWrapper = styled__default["default"](Box)(templateObject_2$i || (templateObject_2$i = __makeTemplateObject(["\n  height: ", ";\n  overflow: hidden;\n  transition: height ease 0.5s;\n"], ["\n  height: ", ";\n  overflow: hidden;\n  transition: height ease 0.5s;\n"])), function (_a) {
-    var isOpen = _a.isOpen;
-    return !isOpen && "0";
-});
+var TermsWrapper = styled__default["default"](Box)(templateObject_2$i || (templateObject_2$i = __makeTemplateObject(["\n  overflow: hidden;\n  transition: height ease 0.5s;\n"], ["\n  overflow: hidden;\n  transition: height ease 0.5s;\n"])));
 var TermsAccordion = function (_a) {
     var _b;
     var _c = _a.name, name = _c === void 0 ? "" : _c, children = _a.children;
@@ -6157,7 +6151,7 @@ var TermsAccordion = function (_a) {
         React__default["default"].createElement(TermsHead, { onClick: function () { return setOpened(function (prev) { return !prev; }); } },
             React__default["default"].createElement(HeadText, { color: "white", scale: "size24" }, name),
             React__default["default"].createElement(TermsHeaderIcon, { color: "primary", width: "30px", ml: "8px" })),
-        React__default["default"].createElement(TermsWrapper, { ref: contentEl, isOpen: isOpened, height: (_b = contentEl === null || contentEl === void 0 ? void 0 : contentEl.current) === null || _b === void 0 ? void 0 : _b.scrollHeight }, children)));
+        React__default["default"].createElement(TermsWrapper, { ref: contentEl, height: isOpened ? (_b = contentEl === null || contentEl === void 0 ? void 0 : contentEl.current) === null || _b === void 0 ? void 0 : _b.scrollHeight : '0' }, children)));
 };
 var templateObject_1$u, templateObject_2$i;
 
