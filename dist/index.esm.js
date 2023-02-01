@@ -4555,11 +4555,6 @@ var GridLayout = styled(GridLayout$1)(templateObject_1$T || (templateObject_1$T 
 });
 var templateObject_1$T;
 
-var Container = function (_a) {
-    var children = _a.children, props = __rest(_a, ["children"]);
-    return (React.createElement(Box, __assign({ width: "100%", px: ["16px", null, null, "24px", null, null, 0], mx: "auto", maxWidth: "1120px" }, props), children));
-};
-
 // eslint-disable-next-line import/prefer-default-export
 var formatSpacingAmount = function (x) {
     if (x) {
@@ -4593,6 +4588,11 @@ var defaultObject = {
 };
 var getResponsiveAttrs = function (obj) {
     return Object.values(__assign(__assign({}, defaultObject), obj));
+};
+
+var Container = function (_a) {
+    var children = _a.children, props = __rest(_a, ["children"]);
+    return (React.createElement(Box, __assign({ width: "100%", px: getResponsiveAttrs({ xs: "16px", lg: "24px", xxl: 0 }), mx: "auto", maxWidth: "1120px" }, props), children));
 };
 
 var HeroWrapper = function (_a) {
@@ -6073,8 +6073,8 @@ var StyledChevronWrapper = styled(Flex)(templateObject_1$t || (templateObject_1$
     return (isOpen ? -1 : 1);
 });
 var ExpandableIcon = function (_a) {
-    var isOpen = _a.isOpen, _b = _a.color, color = _b === void 0 ? "primary" : _b, _c = _a.width, width = _c === void 0 ? "24px" : _c, iconName = _a.iconName;
-    return (React.createElement(StyledChevronWrapper, { isOpen: isOpen },
+    var isOpen = _a.isOpen, _b = _a.color, color = _b === void 0 ? "primary" : _b, _c = _a.width, width = _c === void 0 ? "24px" : _c, iconName = _a.iconName, props = __rest(_a, ["isOpen", "color", "width", "iconName"]);
+    return (React.createElement(StyledChevronWrapper, __assign({ isOpen: isOpen }, props),
         React.createElement(IconComponent, { iconName: iconName, width: width, color: color })));
 };
 var templateObject_1$t;

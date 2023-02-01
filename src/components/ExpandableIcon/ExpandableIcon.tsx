@@ -24,9 +24,10 @@ const ExpandableIcon: FC<ExpandableIconProps> = ({
   color = "primary",
   width = "24px",
   iconName,
+  ...props
 }) => {
   return (
-    <StyledChevronWrapper isOpen={isOpen}>
+    <StyledChevronWrapper isOpen={isOpen} {...props}>
       <IconComponent iconName={iconName} width={width} color={color} />
     </StyledChevronWrapper>
   );
