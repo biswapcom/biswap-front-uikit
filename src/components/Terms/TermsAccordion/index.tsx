@@ -23,8 +23,7 @@ const TermsHead = styled(Flex)`
   }
 `;
 
-const TermsWrapper = styled(Box)<{ isOpen: boolean }>`
-  height: ${({ isOpen }) => !isOpen && "0"};
+const TermsWrapper = styled(Box)`
   overflow: hidden;
   transition: height ease 0.5s;
 `;
@@ -44,7 +43,7 @@ const TermsAccordion: FC<IProps> = ({ name = "", children }) => {
         </HeadText>
         <TermsHeaderIcon color="primary" width="30px" ml="8px" />
       </TermsHead>
-      <TermsWrapper ref={contentEl} isOpen={isOpened} height={contentEl?.current?.scrollHeight}>
+      <TermsWrapper ref={contentEl} height={isOpened ? contentEl?.current?.scrollHeight : '0'}>
         {children}
       </TermsWrapper>
     </Box>

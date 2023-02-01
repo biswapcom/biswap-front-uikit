@@ -51,8 +51,7 @@ const StyledChevronIcon = styled(({ ...props }) => <ChevronDownIcon {...props} /
   transition: transform 0.3s ease;
 `;
 
-const Answer = styled(Box)<{ isOpen: boolean }>`
-  height: ${({ isOpen }) => !isOpen && "0"};
+const Answer = styled(Box)`
   overflow: hidden;
   transition: height ease 0.3s;
 `;
@@ -68,7 +67,7 @@ const FaqAccordion: FC<IProps> = ({ name = "", isOpened, handleToggle, children 
         </HeadText>
         <StyledChevronIcon isOpen={isOpened} color="primary" width="24px" />
       </Question>
-      <Answer ref={contentEl} isOpen={isOpened} height={contentEl?.current?.scrollHeight}>
+      <Answer ref={contentEl} height={isOpened ? contentEl?.current?.scrollHeight : '0'}>
         {children}
       </Answer>
     </Wrapper>
