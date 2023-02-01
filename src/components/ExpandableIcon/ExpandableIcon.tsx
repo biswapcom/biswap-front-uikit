@@ -1,9 +1,9 @@
 import React, { FC } from "react";
 import styled from "styled-components";
-import { Flex } from "../Box";
+import { BoxProps, Flex } from "../Box";
 import IconComponent from "../Svg/IconComponent";
 
-interface ExpandableIconProps {
+interface ExpandableIconProps extends BoxProps {
   isOpen: boolean;
   color?: string;
   width?: string;

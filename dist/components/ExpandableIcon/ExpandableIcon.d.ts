@@ -1,5 +1,6 @@
 import { FC } from "react";
-interface ExpandableIconProps {
+import { BoxProps } from "../Box";
+interface ExpandableIconProps extends BoxProps {
     isOpen: boolean;
     color?: string;
     width?: string;

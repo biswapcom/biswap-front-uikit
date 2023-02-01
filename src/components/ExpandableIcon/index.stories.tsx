@@ -71,6 +71,7 @@ export const Default = () => {
             width="24px"
             iconName="ChevronDownCircleSolid"
             color="warning"
+            ml="4px"
           />
         </Button>
         <Button
