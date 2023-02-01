@@ -1,5 +1,5 @@
 export declare const ViewMode: {
-    TABLE: string;
-    CARD: string;
+    readonly TABLE: "table";
+    readonly CARD: "card";
 };
 export declare type SkeletonMode = typeof ViewMode[keyof typeof ViewMode];

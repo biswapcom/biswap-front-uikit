@@ -25,26 +25,17 @@ interface IProps {
   setCurrentOpen: Dispatch<SetStateAction<string | undefined>>;
 }
 
-const openBodyAnimation = keyframes`
-  0% {
-    opacity: 0;
-    height: 0;
-  }
-  100% {
-    opacity: 1;
-    height: auto;
-  }
-`;
-
 const AccordionBody = styled.div<{ opened: boolean }>`
-  display: ${({ opened }) => (opened ? "flex" : "none")};
+  display: flex;
   flex-direction: column;
   overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.45s;
 
   ${({ opened }) =>
     opened &&
     css`
-      animation: ${openBodyAnimation} 0.6s ease;
+      max-height: 100vh;
     `}
 `;
 
@@ -52,6 +43,7 @@ const AccordionTitle = styled(Flex)`
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 `;
 
 const AccordionComponent = styled.div`
