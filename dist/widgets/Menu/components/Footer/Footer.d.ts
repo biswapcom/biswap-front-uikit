@@ -3,6 +3,7 @@ import { BSWPriceProps, FooterStatisticProps, FooterAboutLinks, FooterProductLin
 interface Props extends BSWPriceProps, FooterStatisticProps, FooterAboutLinks, FooterProductLinks, FooterServiceLinks {
     registerToken: () => void;
     buyBswHandler: () => void;
+    marketplaceLink?: string;
 }
 declare const Footer: React.FC<Props>;
 export default Footer;
