@@ -6579,10 +6579,10 @@ var PlusAnimatedIcon = styled__default["default"].div(templateObject_3$d || (tem
     return imageColor;
 }, function (_a) {
     var isOpen = _a.isOpen;
-    return "translate(-50%, -50%) ".concat(isOpen ? 'rotate(90deg)' : 'rotate(0deg)');
+    return "translate(-50%, -50%) ".concat(isOpen ? 'rotate(0deg)' : 'rotate(90deg)');
 }, function (_a) {
     var isOpen = _a.isOpen;
-    return "translate(-50%, -50%) ".concat(isOpen ? 'rotate(180deg)' : 'rotate(0deg)');
+    return "translate(-50%, -50%) ".concat(isOpen ? 'rotate(0deg)' : 'rotate(180deg)');
 });
 var TermsAccordion = function (_a) {
     var _b;
