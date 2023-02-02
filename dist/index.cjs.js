@@ -6634,7 +6634,10 @@ var ModalProvider = function (_a) {
         } },
         isOpen && (React__default["default"].createElement(ModalWrapper, null,
             React__default["default"].createElement(Overlay, { onClick: handleOverlayDismiss }),
-            React__default["default"].isValidElement(modalNode) && __assign(__assign({}, modalNode), { props: __assign(__assign({}, modalNode.props), { onDismiss: handleDismiss }) }))),
+            React__default["default"].isValidElement(modalNode) &&
+                React__default["default"].cloneElement(modalNode, {
+                    onDismiss: handleDismiss,
+                }))),
         children));
 };
 var templateObject_1$p;
