@@ -1,15 +1,18 @@
 import React, { FC, ReactNode, useRef, useState } from "react";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
+
+// utils
+import { getThemeValue } from "../../../util";
 
 // components
 import { HeadText } from "../../Typography";
 import { Box, Flex } from "../../Box";
 
-// icons
-import { MinusIcon, PlusIcon } from "../../Svg";
 
 interface IProps {
   name: string;
+  imageSize: string;
+  imageColor: string;
   children: ReactNode;
 }
 
@@ -28,12 +31,41 @@ const TermsWrapper = styled(Box)`
   transition: height ease 0.5s;
 `;
 
-const TermsAccordion: FC<IProps> = ({ name = "", children }) => {
+const PlusAnimatedIcon = styled.div<{imageSize: string, isOpen:boolean, imageColor: string}>`
+  position: relative;
+  width: ${({imageSize}) => imageSize};
+  height: ${({imageSize}) => imageSize};
+  margin-left: 8px;
+  
+  &:before, &:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 46%;
+    height: 2px;
+    border-radius: 16px;
+    background: ${({ imageColor }) => imageColor};
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s;
+  }
+  
+  &:before {
+    transform: ${({isOpen}) => `translate(-50%, -50%) ${isOpen ? 'rotate(90deg)' : 'rotate(0deg)'}`};
+  }
+  
+  &:after {
+    transform: ${({isOpen}) => `translate(-50%, -50%) ${isOpen ? 'rotate(180deg)' : 'rotate(0deg)'}`};
+  }
+`
+
+const TermsAccordion: FC<IProps> = ({ name = "", imageSize, imageColor, children }) => {
   const [isOpened, setOpened] = useState<boolean>(true)
 
   const contentEl = useRef<HTMLDivElement>(null);
 
-  const TermsHeaderIcon = isOpened ? MinusIcon : PlusIcon;
+  const theme = useTheme()
 
   return (
     <Box>
@@ -41,7 +73,11 @@ const TermsAccordion: FC<IProps> = ({ name = "", children }) => {
         <HeadText color="white" scale="size24">
           {name}
         </HeadText>
-        <TermsHeaderIcon color="primary" width="30px" ml="8px" />
+        <PlusAnimatedIcon
+          imageSize={imageSize}
+          isOpen={isOpened}
+          imageColor={getThemeValue(`colors.${imageColor}`, imageColor)(theme)}
+        />
       </TermsHead>
       <TermsWrapper ref={contentEl} height={isOpened ? contentEl?.current?.scrollHeight : '0'}>
         {children}
