@@ -8234,7 +8234,7 @@ var Toast = function (_a) {
                     hash && (React__default["default"].createElement(LinkWrapper, null,
                         React__default["default"].createElement(LinkStyles, { target: "_blank", href: "https://bscscan.com/tx/".concat(hash) }, "View on bscscan"),
                         React__default["default"].createElement(Icon$3r, { ml: "6px", width: "18px", height: "18px", color: "primary" }))),
-                    description ? (React__default["default"].createElement(Text, { color: "#6B7D98", fontSize: "12px", as: "p", mb: "8px", dangerouslySetInnerHTML: { __html: description } })) : (React__default["default"].createElement(React__default["default"].Fragment, null)),
+                    description ? (React__default["default"].createElement(Text, { color: "#6B7D98", fontSize: "12px", as: "p", mb: "8px" }, description)) : (React__default["default"].createElement(React__default["default"].Fragment, null)),
                     telegramDescription && tweeterDescription && (React__default["default"].createElement(ActionContainer, null,
                         React__default["default"].createElement(ToastAction, { withGift: withGift, telegramDescription: telegramDescription, tweeterDescription: tweeterDescription, title: title, url: url, thx: "https://bscscan.com/tx/".concat(hash) }))))))));
 };

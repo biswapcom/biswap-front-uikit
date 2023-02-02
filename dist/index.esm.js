@@ -8221,7 +8221,7 @@ var Toast = function (_a) {
                     hash && (React.createElement(LinkWrapper, null,
                         React.createElement(LinkStyles, { target: "_blank", href: "https://bscscan.com/tx/".concat(hash) }, "View on bscscan"),
                         React.createElement(Icon$3r, { ml: "6px", width: "18px", height: "18px", color: "primary" }))),
-                    description ? (React.createElement(Text, { color: "#6B7D98", fontSize: "12px", as: "p", mb: "8px", dangerouslySetInnerHTML: { __html: description } })) : (React.createElement(React.Fragment, null)),
+                    description ? (React.createElement(Text, { color: "#6B7D98", fontSize: "12px", as: "p", mb: "8px" }, description)) : (React.createElement(React.Fragment, null)),
                     telegramDescription && tweeterDescription && (React.createElement(ActionContainer, null,
                         React.createElement(ToastAction, { withGift: withGift, telegramDescription: telegramDescription, tweeterDescription: tweeterDescription, title: title, url: url, thx: "https://bscscan.com/tx/".concat(hash) }))))))));
 };
