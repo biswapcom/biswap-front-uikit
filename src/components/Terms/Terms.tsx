@@ -34,7 +34,7 @@ const Terms: FC<IProps> = ({
   termsList,
   description,
   revised,
-  imageSize= '30px',
+  imageSize= '32px',
   imageColor = 'primary',
   ...rest
 }) => {
