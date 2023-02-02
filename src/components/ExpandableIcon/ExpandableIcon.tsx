@@ -24,7 +24,6 @@ const StyledChevronWrapper = styled(Flex)<{
   isOpen: boolean;
   rotateType: Scale;
 }>`
-  margin: 0;
   svg {
     transition: transform 0.3s ease;
     transform: ${getScale};

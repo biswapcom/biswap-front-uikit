@@ -6096,7 +6096,7 @@ var getScale = function (_a) {
             return "scale(".concat(isOpen ? -1 : 1, ")");
     }
 };
-var StyledChevronWrapper = styled__default["default"](Flex)(templateObject_1$t || (templateObject_1$t = __makeTemplateObject(["\n  margin: 0;\n  svg {\n    transition: transform 0.3s ease;\n    transform: ", ";\n"], ["\n  margin: 0;\n  svg {\n    transition: transform 0.3s ease;\n    transform: ", ";\n"])), getScale);
+var StyledChevronWrapper = styled__default["default"](Flex)(templateObject_1$t || (templateObject_1$t = __makeTemplateObject(["\n  svg {\n    transition: transform 0.3s ease;\n    transform: ", ";\n"], ["\n  svg {\n    transition: transform 0.3s ease;\n    transform: ", ";\n"])), getScale);
 var ExpandableIcon = function (_a) {
     var isOpen = _a.isOpen, _b = _a.color, color = _b === void 0 ? "primary" : _b, _c = _a.width, width = _c === void 0 ? "24px" : _c, iconName = _a.iconName, _d = _a.rotateType, rotateType = _d === void 0 ? variantRotate.ROTATE_V2 : _d, props = __rest(_a, ["isOpen", "color", "width", "iconName", "rotateType"]);
     return (React__default["default"].createElement(StyledChevronWrapper, __assign({ isOpen: isOpen, rotateType: rotateType }, props),
