@@ -48,16 +48,15 @@ const PlusAnimatedIcon = styled.div<{imageSize: string, isOpen:boolean, imageCol
     border-radius: 16px;
     background: ${({ imageColor }) => imageColor};
     transform: translate(-50%, -50%);
+    transition: transform 0.3s;
   }
   
   &:before {
     transform: ${({isOpen}) => `translate(-50%, -50%) ${isOpen ? 'rotate(90deg)' : 'rotate(0deg)'}`};
-    transition: transform 0.3s;
   }
   
   &:after {
     transform: ${({isOpen}) => `translate(-50%, -50%) ${isOpen ? 'rotate(180deg)' : 'rotate(0deg)'}`};
-    transition: transform 0.3s;
   }
 `
 
