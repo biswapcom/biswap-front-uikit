@@ -6621,10 +6621,7 @@ var ModalProvider = function (_a) {
         } },
         isOpen && (React.createElement(ModalWrapper, null,
             React.createElement(Overlay, { onClick: handleOverlayDismiss }),
-            React.isValidElement(modalNode) &&
-                React.cloneElement(modalNode, {
-                    onDismiss: handleDismiss,
-                }))),
+            React.isValidElement(modalNode) && __assign(__assign({}, modalNode), { props: __assign(__assign({}, modalNode.props), { onDismiss: handleDismiss }) }))),
         children));
 };
 var templateObject_1$p;
@@ -6823,15 +6820,17 @@ var CustomLink = styled.div(templateObject_6$5 || (templateObject_6$5 = __makeTe
     return theme.colors.pastelBlue;
 });
 var CommonFooterLinksComponent = function (_a) {
-    var footerLinks = _a.footerLinks, title = _a.title;
-    var _b = useState(false), isOpen = _b[0], setIsOpen = _b[1];
+    var _b;
+    var footerLinks = _a.footerLinks;
+    var _c = useState(false), isOpen = _c[0], setIsOpen = _c[1];
     var linkComponent = useContext(MenuContext).linkComponent;
-    var arrLength = footerLinks.length;
+    var title = footerLinks.title, links = footerLinks.links;
+    var arrLength = (_b = links === null || links === void 0 ? void 0 : links.length) !== null && _b !== void 0 ? _b : 0;
     return (React.createElement(React.Fragment, null,
         React.createElement(TopAction, { onClick: function () { return setIsOpen(!isOpen); } },
             React.createElement(Title$1, null, title),
             React.createElement(ActionIcon, { isOpen: isOpen })),
-        React.createElement(NavList, { isOpen: isOpen, innerHeight: arrLength }, footerLinks.map(function (_a, index) {
+        React.createElement(NavList, { isOpen: isOpen, innerHeight: arrLength }, links === null || links === void 0 ? void 0 : links.map(function (_a, index) {
             var href = _a.href, _b = _a.target, target = _b === void 0 ? null : _b, label = _a.label, _c = _a.type, type = _c === void 0 ? DropdownMenuItemType.INTERNAL_LINK : _c;
             return (React.createElement(NavItem, { key: index.toString() },
                 type === DropdownMenuItemType.INTERNAL_LINK && (React.createElement(CustomLink, { as: linkComponent, to: href }, label)),
@@ -6844,7 +6843,7 @@ var Wrapper$5 = styled.div(templateObject_1$k || (templateObject_1$k = __makeTem
 var About = function (_a) {
     var footerLinks = _a.footerLinks;
     return (React.createElement(Wrapper$5, null,
-        React.createElement(CommonFooterLinksComponent, { footerLinks: footerLinks, title: "About Us" })));
+        React.createElement(CommonFooterLinksComponent, { footerLinks: footerLinks })));
 };
 var templateObject_1$k;
 
@@ -6852,7 +6851,7 @@ var Wrapper$4 = styled.div(templateObject_1$j || (templateObject_1$j = __makeTem
 var Product = function (_a) {
     var footerLinks = _a.footerLinks;
     return (React.createElement(Wrapper$4, null,
-        React.createElement(CommonFooterLinksComponent, { footerLinks: footerLinks, title: "Features" })));
+        React.createElement(CommonFooterLinksComponent, { footerLinks: footerLinks })));
 };
 var templateObject_1$j;
 
@@ -6860,7 +6859,7 @@ var Wrapper$3 = styled.div(templateObject_1$i || (templateObject_1$i = __makeTem
 var Service = function (_a) {
     var footerLinks = _a.footerLinks;
     return (React.createElement(Wrapper$3, null,
-        React.createElement(CommonFooterLinksComponent, { footerLinks: footerLinks, title: "Service" })));
+        React.createElement(CommonFooterLinksComponent, { footerLinks: footerLinks })));
 };
 var templateObject_1$i;
 
@@ -7332,9 +7331,9 @@ var DropDownLabel = styled.span(templateObject_9$1 || (templateObject_9$1 = __ma
 });
 var FlagWrap = styled.div(templateObject_10$1 || (templateObject_10$1 = __makeTemplateObject(["\n  border-radius: 50%;\n  margin-right: 8px;\n  overflow: hidden;\n  width: 14px;\n  height: 14px;\n"], ["\n  border-radius: 50%;\n  margin-right: 8px;\n  overflow: hidden;\n  width: 14px;\n  height: 14px;\n"])));
 var Community = function (_a) {
-    var _b = _a.iconSize, iconSize = _b === void 0 ? "20px" : _b, title = _a.title, menuVariant = _a.menuVariant, _c = _a.isFooter, isFooter = _c === void 0 ? false : _c;
+    var _b = _a.iconSize, iconSize = _b === void 0 ? "20px" : _b; _a.title; var menuVariant = _a.menuVariant, _c = _a.isFooter, isFooter = _c === void 0 ? false : _c, socialLinks = _a.socialLinks;
     return (React.createElement(Wrapper$2, { menuVariant: menuVariant || isFooter },
-        title && React.createElement(Title, null, title),
+        (socialLinks === null || socialLinks === void 0 ? void 0 : socialLinks.title) && React.createElement(Title, null, socialLinks === null || socialLinks === void 0 ? void 0 : socialLinks.title),
         React.createElement(SocialWrap, { menuVariant: menuVariant }, socials.map(function (social) {
             var Icon = Icons[social.icon];
             var iconProps = {
@@ -7442,14 +7441,14 @@ var InnerRow = styled.div(templateObject_2$9 || (templateObject_2$9 = __makeTemp
     return theme.mediaQueries.xll;
 });
 var Footer = function (_a) {
-    var BSWPriceLabel = _a.BSWPriceLabel, BSWPriceValue = _a.BSWPriceValue, registerToken = _a.registerToken, footerStatistic = _a.footerStatistic, aboutLinks = _a.aboutLinks, productLinks = _a.productLinks, serviceLinks = _a.serviceLinks, buyBswHandler = _a.buyBswHandler, marketplaceLink = _a.marketplaceLink;
+    var BSWPriceLabel = _a.BSWPriceLabel, BSWPriceValue = _a.BSWPriceValue, registerToken = _a.registerToken, footerStatistic = _a.footerStatistic, aboutLinks = _a.aboutLinks, productLinks = _a.productLinks, serviceLinks = _a.serviceLinks, buyBswHandler = _a.buyBswHandler, socialLinks = _a.socialLinks, marketplaceLink = _a.marketplaceLink;
     return (React.createElement(Wrapper$1, null,
         React.createElement(InnerRow, null,
             React.createElement(FooterInfo, { BSWPriceLabel: BSWPriceLabel, BSWPriceValue: BSWPriceValue, registerToken: registerToken, footerStatistic: footerStatistic, buyBswHandler: buyBswHandler }),
             React.createElement(About, { footerLinks: aboutLinks }),
             React.createElement(Product, { footerLinks: productLinks }),
             React.createElement(Service, { footerLinks: serviceLinks }),
-            React.createElement(Community, { isFooter: true, title: "Community" }),
+            React.createElement(Community, { isFooter: true, socialLinks: socialLinks }),
             React.createElement(Audit, { marketplaceLink: marketplaceLink }))));
 };
 var templateObject_1$f, templateObject_2$9;
@@ -7560,37 +7559,16 @@ var templateObject_1$d;
 var DropdownMenuItemContainer = function (_a) {
     var _b;
     var _c = _a.isActive, isActive = _c === void 0 ? false : _c, leftIcon = _a.leftIcon, getMenuItemContent = _a.getMenuItemContent, _d = _a.links, links = _d === void 0 ? [] : _d, setIsOpen = _a.setIsOpen, linkComponent = _a.linkComponent, _e = _a.href, href = _e === void 0 ? "/" : _e, bannerRenderer = _a.bannerRenderer, type = _a.type, target = _a.target, mobileTarget = _a.mobileTarget; _a.badgeTitle; _a.badgeType; var isOpenItem = _a.isOpenItem, lastItem = _a.lastItem, itemProps = __rest(_a, ["isActive", "leftIcon", "getMenuItemContent", "links", "setIsOpen", "linkComponent", "href", "bannerRenderer", "type", "target", "mobileTarget", "badgeTitle", "badgeType", "isOpenItem", "lastItem"]);
-    var _f = useState([]), linksItems = _f[0], setLinkItems = _f[1];
-    var _g = useMatchBreakpoints(), isMobile = _g.isMobile, isDesktop = _g.isDesktop;
-    useEffect(function () {
-        (function () { return __awaiter(void 0, void 0, void 0, function () {
-            var res;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        if (!(typeof links === "function")) return [3 /*break*/, 2];
-                        return [4 /*yield*/, links()];
-                    case 1:
-                        res = _a.sent();
-                        setLinkItems(res);
-                        return [3 /*break*/, 3];
-                    case 2:
-                        setLinkItems(links);
-                        _a.label = 3;
-                    case 3: return [2 /*return*/];
-                }
-            });
-        }); })();
-    }, []);
-    var hasInnerLinks = linksItems.length > 0;
+    var _f = useMatchBreakpoints(), isMobile = _f.isMobile, isDesktop = _f.isDesktop;
+    var hasInnerLinks = links.length > 0;
     // @ts-ignore
     return (React.createElement(StyledDropdownMenuItemContainer, { isOpenMenuItem: isOpenItem },
         type === DropdownMenuItemType.BUTTON && (React.createElement(DropdownMenuItem, __assign({ "$isActive": isActive, "$hasIcon": !!leftIcon, type: "button" }, itemProps), getMenuItemContent(""))),
         type === DropdownMenuItemType.CONTAINER && (React.createElement(React.Fragment, null,
-            hasInnerLinks ? (React.createElement(DropdownMenuItem, __assign({ "$isActive": isActive, "$hasIcon": true, as: linkComponent, href: (_b = linksItems[0]) === null || _b === void 0 ? void 0 : _b.href, onClick: function () {
+            hasInnerLinks ? (React.createElement(DropdownMenuItem, __assign({ "$isActive": isActive, "$hasIcon": true, as: linkComponent, href: (_b = links[0]) === null || _b === void 0 ? void 0 : _b.href, onClick: function () {
                     setIsOpen(false);
                 } }, itemProps), getMenuItemContent(""))) : (React.createElement(DropdownMenuItem, __assign({ "$isActive": isActive, "$hasIcon": true, as: "div" }, itemProps), getMenuItemContent(""))),
-            hasInnerLinks && (React.createElement(InnerLinksBlock, { links: linksItems, leftIcon: leftIcon, setIsOpen: setIsOpen, linkComponent: linkComponent, lastItem: lastItem })))),
+            hasInnerLinks && (React.createElement(InnerLinksBlock, { links: links, leftIcon: leftIcon, setIsOpen: setIsOpen, linkComponent: linkComponent, lastItem: lastItem })))),
         type === DropdownMenuItemType.INTERNAL_LINK && (React.createElement(DropdownInternalMenuItem, __assign({ label: itemProps.label, "$isActive": isActive, "$hasIcon": !!leftIcon, as: linkComponent, to: href, onClick: function () {
                 setIsOpen(false);
             } }, itemProps), getMenuItemContent("ArrowRight"))),
@@ -8093,7 +8071,7 @@ var BodyWrapper = styled(Box)(templateObject_5$1 || (templateObject_5$1 = __make
 var Inner = styled.div(templateObject_6$1 || (templateObject_6$1 = __makeTemplateObject(["\n  flex-grow: 1;\n  transition: margin-top 0.2s, margin-left 0.2s cubic-bezier(0.4, 0, 0.2, 1);\n  transform: translate3d(0, 0, 0);\n  max-width: 100%;\n"], ["\n  flex-grow: 1;\n  transition: margin-top 0.2s, margin-left 0.2s cubic-bezier(0.4, 0, 0.2, 1);\n  transform: translate3d(0, 0, 0);\n  max-width: 100%;\n"])));
 var Menu = function (_a) {
     var _b;
-    var _c = _a.linkComponent, linkComponent = _c === void 0 ? "a" : _c, banner = _a.banner, links = _a.links, rightSide = _a.rightSide; _a.subLinks; var activeItem = _a.activeItem, activeSubItem = _a.activeSubItem, children = _a.children, BSWPriceLabel = _a.BSWPriceLabel, BSWPriceValue = _a.BSWPriceValue, footerStatistic = _a.footerStatistic, registerToken = _a.registerToken, buyBswHandler = _a.buyBswHandler, aboutLinks = _a.aboutLinks, productLinks = _a.productLinks, serviceLinks = _a.serviceLinks, withEvent = _a.withEvent; _a.eventCallback; 
+    var _c = _a.linkComponent, linkComponent = _c === void 0 ? "a" : _c, banner = _a.banner, links = _a.links, rightSide = _a.rightSide; _a.subLinks; var activeItem = _a.activeItem, activeSubItem = _a.activeSubItem, children = _a.children, BSWPriceLabel = _a.BSWPriceLabel, BSWPriceValue = _a.BSWPriceValue, footerStatistic = _a.footerStatistic, registerToken = _a.registerToken, buyBswHandler = _a.buyBswHandler, aboutLinks = _a.aboutLinks, productLinks = _a.productLinks, serviceLinks = _a.serviceLinks, socialLinks = _a.socialLinks, withEvent = _a.withEvent; _a.eventCallback; 
     var //eventButtonLogo,
     customLogoSubtitle = _a.customLogoSubtitle, marketplaceLink = _a.marketplaceLink;
     var isMobile = useMatchBreakpoints().isMobile;
@@ -8180,7 +8158,7 @@ var Menu = function (_a) {
                 React.createElement(Inner, { isPushed: false, showMenu: showMenu },
                     React.createElement(React.Fragment, null,
                         children,
-                        React.createElement(Footer, { BSWPriceLabel: BSWPriceLabel, BSWPriceValue: BSWPriceValue, footerStatistic: footerStatistic, registerToken: registerToken, buyBswHandler: buyBswHandler, aboutLinks: aboutLinks, productLinks: productLinks, serviceLinks: serviceLinks, marketplaceLink: marketplaceLink })))))));
+                        React.createElement(Footer, { BSWPriceLabel: BSWPriceLabel, BSWPriceValue: BSWPriceValue, footerStatistic: footerStatistic, registerToken: registerToken, buyBswHandler: buyBswHandler, aboutLinks: aboutLinks, productLinks: productLinks, serviceLinks: serviceLinks, socialLinks: socialLinks, marketplaceLink: marketplaceLink })))))));
 };
 var templateObject_1$4, templateObject_2$2, templateObject_3$1, templateObject_4$1, templateObject_5$1, templateObject_6$1;
 
