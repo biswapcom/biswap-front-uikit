@@ -2,7 +2,7 @@ import React, { useState, useEffect, Children, isValidElement, cloneElement, use
 import styled, { keyframes, css, useTheme, ThemeProvider, createGlobalStyle } from 'styled-components';
 import { space, typography, layout, background, border, position, flexbox, grid, variant as variant$1 } from 'styled-system';
 import get from 'lodash/get';
-import { parseInt as parseInt$1, ceil, take, takeRight, noop, cloneDeep } from 'lodash';
+import { parseInt as parseInt$1, noop, cloneDeep } from 'lodash';
 import { createPortal } from 'react-dom';
 import { usePopper } from 'react-popper';
 import ReactPaginate from 'react-paginate';
@@ -6524,16 +6524,8 @@ var ContentWrapper = styled(Grid)(templateObject_1$u || (templateObject_1$u = __
     return theme.mediaQueries.md;
 });
 var Faqs = function (_a) {
-    var _b = _a.title, title = _b === void 0 ? "FAQs" : _b, _c = _a.questions, questions = _c === void 0 ? [] : _c, props = __rest(_a, ["title", "questions"]);
-    var _d = useState(""), activeQuestion = _d[0], setActiveQuestion = _d[1];
-    // count how many items in left side data
-    var leftLength = ceil(questions.length / 2);
-    // count how many items in right side data
-    var rightLength = questions.length - leftLength;
-    // slice left data
-    var leftData = take(questions, leftLength);
-    // slice right data
-    var rightData = takeRight(questions, rightLength);
+    var _b = _a.title, title = _b === void 0 ? "FAQs" : _b, leftData = _a.leftData, rightData = _a.rightData, props = __rest(_a, ["title", "leftData", "rightData"]);
+    var _c = useState(""), activeQuestion = _c[0], setActiveQuestion = _c[1];
     var handleToggle = function (name) {
         setActiveQuestion(activeQuestion !== name ? name : "");
     };

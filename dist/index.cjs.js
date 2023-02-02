@@ -6537,16 +6537,8 @@ var ContentWrapper = styled__default["default"](Grid)(templateObject_1$u || (tem
     return theme.mediaQueries.md;
 });
 var Faqs = function (_a) {
-    var _b = _a.title, title = _b === void 0 ? "FAQs" : _b, _c = _a.questions, questions = _c === void 0 ? [] : _c, props = __rest(_a, ["title", "questions"]);
-    var _d = React.useState(""), activeQuestion = _d[0], setActiveQuestion = _d[1];
-    // count how many items in left side data
-    var leftLength = lodash.ceil(questions.length / 2);
-    // count how many items in right side data
-    var rightLength = questions.length - leftLength;
-    // slice left data
-    var leftData = lodash.take(questions, leftLength);
-    // slice right data
-    var rightData = lodash.takeRight(questions, rightLength);
+    var _b = _a.title, title = _b === void 0 ? "FAQs" : _b, leftData = _a.leftData, rightData = _a.rightData, props = __rest(_a, ["title", "leftData", "rightData"]);
+    var _c = React.useState(""), activeQuestion = _c[0], setActiveQuestion = _c[1];
     var handleToggle = function (name) {
         setActiveQuestion(activeQuestion !== name ? name : "");
     };
