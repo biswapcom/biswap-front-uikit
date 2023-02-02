@@ -17,10 +17,12 @@ export default {
 } as Meta;
 
 export const Default: React.FC = () => {
+  const { title, leftData, rightData } = Config
+
   return (
     <Box p="20px">
       <Heading mb="20px">Faqs</Heading>
-      <Faqs title={Config.title} questions={Config.questions} />
+      <Faqs title={title} leftData={leftData} rightData={rightData} />
     </Box>
   );
 };

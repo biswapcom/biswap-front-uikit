@@ -1,7 +1,14 @@
 /// <reference types="react" />
 export declare const Config: {
     title: string;
-    questions: ({
+    leftData: ({
+        name: string;
+        description: string;
+    } | {
+        name: string;
+        description: JSX.Element;
+    })[];
+    rightData: ({
         name: string;
         description: string;
     } | {
