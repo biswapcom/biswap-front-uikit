@@ -33,6 +33,7 @@ export interface NavProps
   children?: ReactNode;
   eventButtonLogo?: () => JSX.Element;
   customLogoSubtitle?: string;
+  marketplaceLink?: string;
 }
 
 export interface FooterStatisticProps {

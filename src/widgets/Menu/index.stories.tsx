@@ -140,7 +140,7 @@ const ConnectedTemplate: React.FC<NavProps> = (args) => {
         socialLinks={socialLinks}
         serviceLinks={serviceLinks}
       >
-        <Box pt="113px">
+        <Box pt="113px" pb="32px" px="24px">
           <Text bold fontSize="24px" as="h1" mb="8px" color="white">
             Page body
           </Text>

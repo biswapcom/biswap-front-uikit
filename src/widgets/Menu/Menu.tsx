@@ -162,6 +162,7 @@ const Menu: FC<PropsWithChildren<NavProps>> = ({
   eventCallback,
   //eventButtonLogo,
   customLogoSubtitle,
+  marketplaceLink,
 }) => {
   const { isMobile } = useMatchBreakpoints();
   const [showMenu, setShowMenu] = useState<boolean>(true);
@@ -316,6 +317,7 @@ const Menu: FC<PropsWithChildren<NavProps>> = ({
                 productLinks={productLinks}
                 serviceLinks={serviceLinks}
                 socialLinks={socialLinks}
+                marketplaceLink={marketplaceLink}
               />
             </>
           </Inner>

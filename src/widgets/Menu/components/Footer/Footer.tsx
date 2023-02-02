@@ -31,6 +31,7 @@ interface Props
     FooterServiceLinks {
   registerToken: () => void;
   buyBswHandler: () => void;
+  marketplaceLink?: string;
 }
 
 const Wrapper = styled.footer`
@@ -94,6 +95,7 @@ const Footer: React.FC<Props> = ({
   serviceLinks,
   buyBswHandler,
   socialLinks,
+  marketplaceLink,
 }) => {
   return (
     <Wrapper>
@@ -109,7 +111,7 @@ const Footer: React.FC<Props> = ({
         <Product footerLinks={productLinks} />
         <Service footerLinks={serviceLinks} />
         <Community isFooter socialLinks={socialLinks} />
-        <Audit />
+        <Audit marketplaceLink={marketplaceLink} />
         {/* <Support/> */}
         {/* <BtnUp onClick={()=> scroll.scrollToTop()}><ArrowUp color='white'/></BtnUp> */}
       </InnerRow>

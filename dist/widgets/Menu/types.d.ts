@@ -23,6 +23,7 @@ export interface NavProps extends BSWPriceProps, FooterAboutLinks, FooterProduct
     children?: ReactNode;
     eventButtonLogo?: () => JSX.Element;
     customLogoSubtitle?: string;
+    marketplaceLink?: string;
 }
 export interface FooterStatisticProps {
     footerStatistic: Array<FooterStatisticItem>;
