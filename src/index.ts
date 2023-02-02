@@ -31,6 +31,8 @@ export * from "./components/Image";
 export * from "./components/TooltipHelper";
 export * from "./components/TableCardSkeleton";
 export * from "./components/IconComponent";
+export * from "./components/Faqs";
+export * from "./components/Terms";
 // Hooks
 export * from "./hooks";
 
