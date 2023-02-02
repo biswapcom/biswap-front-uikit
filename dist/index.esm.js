@@ -3914,7 +3914,7 @@ var scales$8 = {
     MD: "md",
 };
 
-var getScale$2 = function (_a) {
+var getScale$3 = function (_a) {
     var scale = _a.scale;
     switch (scale) {
         case scales$8.SM:
@@ -3928,7 +3928,7 @@ var Wrapper$e = styled.label(templateObject_1$Z || (templateObject_1$Z = __makeT
     var labelOrientation = _a.labelOrientation;
     return labelOrientation === "left" ? "row-reverse" : "row";
 });
-var CheckboxInput = styled.input.attrs({ type: "checkbox" })(templateObject_2$v || (templateObject_2$v = __makeTemplateObject(["\n  appearance: none;\n  overflow: hidden;\n  cursor: pointer;\n  position: relative;\n  display: inline-block;\n  height: ", ";\n  width: ", ";\n  border: 2px solid transparent;\n  border-radius: 4px;\n  background-color: ", ";\n  transition: background-color 0.4s ease-in-out, border-color 0.4s ease;\n\n  &:after {\n    content: \"\";\n    position: absolute;\n    border-bottom: 2px solid;\n    border-left: 2px solid;\n    border-color: transparent;\n    top: 25%;\n    left: 0;\n    right: 0;\n    width: 65%;\n    height: 37%;\n    margin: auto;\n    transform: rotate(-50deg);\n    transition: border-color 0.2s ease-in-out;\n  }\n\n  &:hover:not(:disabled):not(:checked) {\n    border-color: ", ";\n  }\n\n  &:focus {\n    outline: none;\n  }\n\n  &:checked {\n    background-color: ", ";\n    &:after {\n      border-color: white;\n    }\n  }\n\n  &:checked + span {\n    background: ", ";\n    color: ", ";\n  }\n\n  &:disabled {\n    cursor: default;\n    opacity: 0.6;\n  }\n"], ["\n  appearance: none;\n  overflow: hidden;\n  cursor: pointer;\n  position: relative;\n  display: inline-block;\n  height: ", ";\n  width: ", ";\n  border: 2px solid transparent;\n  border-radius: 4px;\n  background-color: ", ";\n  transition: background-color 0.4s ease-in-out, border-color 0.4s ease;\n\n  &:after {\n    content: \"\";\n    position: absolute;\n    border-bottom: 2px solid;\n    border-left: 2px solid;\n    border-color: transparent;\n    top: 25%;\n    left: 0;\n    right: 0;\n    width: 65%;\n    height: 37%;\n    margin: auto;\n    transform: rotate(-50deg);\n    transition: border-color 0.2s ease-in-out;\n  }\n\n  &:hover:not(:disabled):not(:checked) {\n    border-color: ", ";\n  }\n\n  &:focus {\n    outline: none;\n  }\n\n  &:checked {\n    background-color: ", ";\n    &:after {\n      border-color: white;\n    }\n  }\n\n  &:checked + span {\n    background: ", ";\n    color: ", ";\n  }\n\n  &:disabled {\n    cursor: default;\n    opacity: 0.6;\n  }\n"])), getScale$2, getScale$2, function (_a) {
+var CheckboxInput = styled.input.attrs({ type: "checkbox" })(templateObject_2$v || (templateObject_2$v = __makeTemplateObject(["\n  appearance: none;\n  overflow: hidden;\n  cursor: pointer;\n  position: relative;\n  display: inline-block;\n  height: ", ";\n  width: ", ";\n  border: 2px solid transparent;\n  border-radius: 4px;\n  background-color: ", ";\n  transition: background-color 0.4s ease-in-out, border-color 0.4s ease;\n\n  &:after {\n    content: \"\";\n    position: absolute;\n    border-bottom: 2px solid;\n    border-left: 2px solid;\n    border-color: transparent;\n    top: 25%;\n    left: 0;\n    right: 0;\n    width: 65%;\n    height: 37%;\n    margin: auto;\n    transform: rotate(-50deg);\n    transition: border-color 0.2s ease-in-out;\n  }\n\n  &:hover:not(:disabled):not(:checked) {\n    border-color: ", ";\n  }\n\n  &:focus {\n    outline: none;\n  }\n\n  &:checked {\n    background-color: ", ";\n    &:after {\n      border-color: white;\n    }\n  }\n\n  &:checked + span {\n    background: ", ";\n    color: ", ";\n  }\n\n  &:disabled {\n    cursor: default;\n    opacity: 0.6;\n  }\n"], ["\n  appearance: none;\n  overflow: hidden;\n  cursor: pointer;\n  position: relative;\n  display: inline-block;\n  height: ", ";\n  width: ", ";\n  border: 2px solid transparent;\n  border-radius: 4px;\n  background-color: ", ";\n  transition: background-color 0.4s ease-in-out, border-color 0.4s ease;\n\n  &:after {\n    content: \"\";\n    position: absolute;\n    border-bottom: 2px solid;\n    border-left: 2px solid;\n    border-color: transparent;\n    top: 25%;\n    left: 0;\n    right: 0;\n    width: 65%;\n    height: 37%;\n    margin: auto;\n    transform: rotate(-50deg);\n    transition: border-color 0.2s ease-in-out;\n  }\n\n  &:hover:not(:disabled):not(:checked) {\n    border-color: ", ";\n  }\n\n  &:focus {\n    outline: none;\n  }\n\n  &:checked {\n    background-color: ", ";\n    &:after {\n      border-color: white;\n    }\n  }\n\n  &:checked + span {\n    background: ", ";\n    color: ", ";\n  }\n\n  &:disabled {\n    cursor: default;\n    opacity: 0.6;\n  }\n"])), getScale$3, getScale$3, function (_a) {
     var theme = _a.theme;
     return getRgba(theme.colors.pastelBlue, theme, 0.16);
 }, function (_a) {
@@ -4737,7 +4737,7 @@ var scales$3 = {
     MD: "md",
 };
 
-var getScale$1 = function (_a) {
+var getScale$2 = function (_a) {
     var scale = _a.scale;
     switch (scale) {
         case scales$3.SM:
@@ -4751,7 +4751,7 @@ var Wrapper$d = styled.label(templateObject_1$P || (templateObject_1$P = __makeT
     var labelOrientation = _a.labelOrientation;
     return labelOrientation === "left" ? "row-reverse" : "row";
 });
-var InputRadio = styled.input.attrs({ type: "radio" })(templateObject_2$r || (templateObject_2$r = __makeTemplateObject(["\n  appearance: none;\n  overflow: hidden;\n  cursor: pointer;\n  position: relative;\n  display: inline-block;\n  height: ", ";\n  width: ", ";\n  transition: border-color 0.4s ease-in-out, border-width 0.3s ease-in-out;\n  border-radius: 50%;\n  border: 2px solid ", ";\n  margin: 0;\n\n  &:hover:not(:disabled):not(:checked) {\n    border-color: ", ";\n  }\n\n  &:focus {\n    outline: none;\n  }\n\n  &:checked {\n    border-color: ", ";\n    border-width: 4px;\n  }\n  &:checked + span {\n    background: ", ";\n    color: ", ";\n  }\n\n  &:disabled {\n    cursor: default;\n    opacity: 0.6;\n  }\n  ", "\n"], ["\n  appearance: none;\n  overflow: hidden;\n  cursor: pointer;\n  position: relative;\n  display: inline-block;\n  height: ", ";\n  width: ", ";\n  transition: border-color 0.4s ease-in-out, border-width 0.3s ease-in-out;\n  border-radius: 50%;\n  border: 2px solid ", ";\n  margin: 0;\n\n  &:hover:not(:disabled):not(:checked) {\n    border-color: ", ";\n  }\n\n  &:focus {\n    outline: none;\n  }\n\n  &:checked {\n    border-color: ", ";\n    border-width: 4px;\n  }\n  &:checked + span {\n    background: ", ";\n    color: ", ";\n  }\n\n  &:disabled {\n    cursor: default;\n    opacity: 0.6;\n  }\n  ", "\n"])), getScale$1, getScale$1, function (_a) {
+var InputRadio = styled.input.attrs({ type: "radio" })(templateObject_2$r || (templateObject_2$r = __makeTemplateObject(["\n  appearance: none;\n  overflow: hidden;\n  cursor: pointer;\n  position: relative;\n  display: inline-block;\n  height: ", ";\n  width: ", ";\n  transition: border-color 0.4s ease-in-out, border-width 0.3s ease-in-out;\n  border-radius: 50%;\n  border: 2px solid ", ";\n  margin: 0;\n\n  &:hover:not(:disabled):not(:checked) {\n    border-color: ", ";\n  }\n\n  &:focus {\n    outline: none;\n  }\n\n  &:checked {\n    border-color: ", ";\n    border-width: 4px;\n  }\n  &:checked + span {\n    background: ", ";\n    color: ", ";\n  }\n\n  &:disabled {\n    cursor: default;\n    opacity: 0.6;\n  }\n  ", "\n"], ["\n  appearance: none;\n  overflow: hidden;\n  cursor: pointer;\n  position: relative;\n  display: inline-block;\n  height: ", ";\n  width: ", ";\n  transition: border-color 0.4s ease-in-out, border-width 0.3s ease-in-out;\n  border-radius: 50%;\n  border: 2px solid ", ";\n  margin: 0;\n\n  &:hover:not(:disabled):not(:checked) {\n    border-color: ", ";\n  }\n\n  &:focus {\n    outline: none;\n  }\n\n  &:checked {\n    border-color: ", ";\n    border-width: 4px;\n  }\n  &:checked + span {\n    background: ", ";\n    color: ", ";\n  }\n\n  &:disabled {\n    cursor: default;\n    opacity: 0.6;\n  }\n  ", "\n"])), getScale$2, getScale$2, function (_a) {
     var theme = _a.theme;
     return theme.colors.pastelBlue;
 }, function (_a) {
@@ -5381,7 +5381,7 @@ var scaleKeyValues = {
     },
     // lg: {},
 };
-var getScale = function (property) {
+var getScale$1 = function (property) {
     return function (_a) {
         var _b = _a.scale, scale = _b === void 0 ? scales$2.MD : _b;
         return scaleKeyValues[scale][property];
@@ -5413,7 +5413,7 @@ var Handle = styled.div(templateObject_2$k || (templateObject_2$k = __makeTempla
 }, function (_a) {
     var disabled = _a.disabled;
     return (disabled ? "not-allowed" : "pointer");
-}, getScale("handleHeight"), getScale("handleLeft"), getScale("handleTop"), getScale("handleWidth"));
+}, getScale$1("handleHeight"), getScale$1("handleLeft"), getScale$1("handleTop"), getScale$1("handleWidth"));
 var Label = styled.span(templateObject_3$f || (templateObject_3$f = __makeTemplateObject(["\n  font-size: 12px;\n  font-weight: 400;\n  color: ", ";\n\n  color: ", ";\n\n  margin: ", ";\n  cursor: ", ";\n  transition: color 0.2s ease-in-out;\n"], ["\n  font-size: 12px;\n  font-weight: 400;\n  color: ", ";\n\n  color: ", ";\n\n  margin: ", ";\n  cursor: ", ";\n  transition: color 0.2s ease-in-out;\n"])), function (_a) {
     var theme = _a.theme, isChecked = _a.isChecked;
     return isChecked ? theme.colors.dark800 : theme.colors.gray900;
@@ -5434,11 +5434,11 @@ var Label = styled.span(templateObject_3$f || (templateObject_3$f = __makeTempla
 var Input = styled.input(templateObject_4$f || (templateObject_4$f = __makeTemplateObject(["\n  cursor: ", ";\n  opacity: 0;\n  height: 100%;\n  position: absolute;\n  width: 100%;\n  z-index: 3;\n  margin: 0;\n\n  &:checked + ", " {\n    left: ", ";\n  }\n"], ["\n  cursor: ", ";\n  opacity: 0;\n  height: 100%;\n  position: absolute;\n  width: 100%;\n  z-index: 3;\n  margin: 0;\n\n  &:checked + ", " {\n    left: ", ";\n  }\n"])), function (_a) {
     var disabled = _a.disabled;
     return (disabled ? "not-allowed" : "pointer");
-}, Handle, getScale("checkedLeft"));
+}, Handle, getScale$1("checkedLeft"));
 var StyledToggle = styled.div(templateObject_5$a || (templateObject_5$a = __makeTemplateObject(["\n  background-color: ", ";\n  align-items: center;\n  border-radius: 26px;\n  display: inline-flex;\n  height: ", ";\n  position: relative;\n  transition: background-color 0.2s ease-in-out;\n  width: ", ";\n  cursor: ", ";\n"], ["\n  background-color: ", ";\n  align-items: center;\n  border-radius: 26px;\n  display: inline-flex;\n  height: ", ";\n  position: relative;\n  transition: background-color 0.2s ease-in-out;\n  width: ", ";\n  cursor: ", ";\n"])), function (_a) {
     var theme = _a.theme, $checked = _a.$checked, $checkedColor = _a.$checkedColor, $defaultColor = _a.$defaultColor;
     return theme.colors[$checked ? $checkedColor : $defaultColor];
-}, getScale("toggleHeight"), getScale("toggleWidth"), function (_a) {
+}, getScale$1("toggleHeight"), getScale$1("toggleWidth"), function (_a) {
     var disabled = _a.disabled;
     return (disabled ? "not-allowed" : "pointer");
 });
@@ -6068,13 +6068,25 @@ var TableCardSkeleton = function (_a) {
     return (React.createElement(Box, { overflow: "hidden", borderRadius: "16px" }, Array.from({ length: number }, function (v, i) { return i; }).map(function (item) { return (React.createElement(Skeleton, { key: item.toString(), animation: "waves", height: tableHeight, width: "100%", my: "2px" })); })));
 };
 
-var StyledChevronWrapper = styled(Flex)(templateObject_1$t || (templateObject_1$t = __makeTemplateObject(["\n  svg {\n    transition: transform 0.3s ease;\n    transform: scale(", ");\n  }\n"], ["\n  svg {\n    transition: transform 0.3s ease;\n    transform: scale(", ");\n  }\n"])), function (_a) {
-    var isOpen = _a.isOpen;
-    return (isOpen ? -1 : 1);
-});
+var variantRotate = {
+    ROTATE_V1: "transformV1",
+    ROTATE_V2: "transformV2",
+};
+
+var getScale = function (_a) {
+    var rotateType = _a.rotateType, isOpen = _a.isOpen;
+    switch (rotateType) {
+        case variantRotate.ROTATE_V1:
+            return "scale(1, ".concat(isOpen ? -1 : 1, ")");
+        case variantRotate.ROTATE_V2:
+        default:
+            return "scale(".concat(isOpen ? -1 : 1, ")");
+    }
+};
+var StyledChevronWrapper = styled(Flex)(templateObject_1$t || (templateObject_1$t = __makeTemplateObject(["\n  margin: 0;\n  svg {\n    transition: transform 0.3s ease;\n    transform: ", ";\n"], ["\n  margin: 0;\n  svg {\n    transition: transform 0.3s ease;\n    transform: ", ";\n"])), getScale);
 var ExpandableIcon = function (_a) {
-    var isOpen = _a.isOpen, _b = _a.color, color = _b === void 0 ? "primary" : _b, _c = _a.width, width = _c === void 0 ? "24px" : _c, iconName = _a.iconName, props = __rest(_a, ["isOpen", "color", "width", "iconName"]);
-    return (React.createElement(StyledChevronWrapper, __assign({ isOpen: isOpen }, props),
+    var isOpen = _a.isOpen, _b = _a.color, color = _b === void 0 ? "primary" : _b, _c = _a.width, width = _c === void 0 ? "24px" : _c, iconName = _a.iconName, _d = _a.rotateType, rotateType = _d === void 0 ? variantRotate.ROTATE_V2 : _d, props = __rest(_a, ["isOpen", "color", "width", "iconName", "rotateType"]);
+    return (React.createElement(StyledChevronWrapper, __assign({ isOpen: isOpen, rotateType: rotateType }, props),
         React.createElement(IconComponent, { iconName: iconName, width: width, color: color })));
 };
 var templateObject_1$t;

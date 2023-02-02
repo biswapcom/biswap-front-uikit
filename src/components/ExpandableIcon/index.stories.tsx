@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { Box, Flex } from "../Box";
 import Button from "../Button/Button";
 import ExpandableIcon from "./ExpandableIcon";
-import { ChevronDownCircleSolidIcon, ChevronDownIcon } from "../Svg";
-import { HeadText, BodyText } from "../Typography";
+import { BodyText } from "../Typography";
 
 export default {
   title: "Components/Expandable",
@@ -22,7 +21,7 @@ export const Default = () => {
           aria-label="Hide or show expandable content"
           onClick={() => setOpen(!open)}
         >
-          <ExpandableIcon isOpen={open} iconName={"ChevronDown"} />
+          <ExpandableIcon isOpen={open} iconName="ChevronDown" />
         </Button>
         <Button
           variant="text"
@@ -40,12 +39,16 @@ export const Default = () => {
           aria-label="Hide or show expandable content"
           onClick={() => setOpen(!open)}
           endIcon={
-            <ExpandableIcon isOpen={open} iconName="ChevronDown" width="18px" />
+            <ExpandableIcon
+              isOpen={open}
+              iconName="ChevronDown"
+              width="18px"
+              ml="40px"
+              rotateType="transformV2"
+            />
           }
         >
-          <BodyText mr="6px" scale="size12">
-            Details
-          </BodyText>
+          <BodyText scale="size12">Details2</BodyText>
         </Button>
       </Flex>
       <Flex>
@@ -59,6 +62,7 @@ export const Default = () => {
             iconName={"ChevronDown"}
             width="24px"
             color="success"
+            rotateType="transformV1"
           />
         </Button>
         <Button
@@ -72,6 +76,7 @@ export const Default = () => {
             iconName="ChevronDownCircleSolid"
             color="warning"
             ml="4px"
+            rotateType="transformV1"
           />
         </Button>
         <Button
@@ -79,7 +84,12 @@ export const Default = () => {
           aria-label="Hide or show expandable content"
           onClick={() => setOpen(!open)}
           endIcon={
-            <ExpandableIcon isOpen={open} iconName="ChevronDown" width="20px" />
+            <ExpandableIcon
+              isOpen={open}
+              iconName="ChevronDown"
+              width="20px"
+              rotateType="transformV1"
+            />
           }
         >
           <BodyText mr="4px" color="primary" bold>
