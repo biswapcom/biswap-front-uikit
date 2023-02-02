@@ -6591,7 +6591,7 @@ var StyledListItem = styled(Flex)(templateObject_2$g || (templateObject_2$g = __
     return theme.colors.pastelBlue;
 });
 var Terms = function (_a) {
-    var _b = _a.title, title = _b === void 0 ? "Terms of use" : _b, _c = _a.scrollClass, scrollClass = _c === void 0 ? "" : _c, termsList = _a.termsList, description = _a.description, revised = _a.revised, _d = _a.imageSize, imageSize = _d === void 0 ? '30px' : _d, _e = _a.imageColor, imageColor = _e === void 0 ? 'primary' : _e, rest = __rest(_a, ["title", "scrollClass", "termsList", "description", "revised", "imageSize", "imageColor"]);
+    var _b = _a.title, title = _b === void 0 ? "Terms of use" : _b, _c = _a.scrollClass, scrollClass = _c === void 0 ? "" : _c, termsList = _a.termsList, description = _a.description, revised = _a.revised, _d = _a.imageSize, imageSize = _d === void 0 ? '32px' : _d, _e = _a.imageColor, imageColor = _e === void 0 ? 'primary' : _e, rest = __rest(_a, ["title", "scrollClass", "termsList", "description", "revised", "imageSize", "imageColor"]);
     var renderTermsList = function () {
         return termsList.map(function (item, index) { return (React.createElement(StyledListItem, { key: index.toString(), py: "8px" },
             React.createElement(BodyText, { color: "pastelBlue", scale: "size16" }, item))); });
