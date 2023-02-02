@@ -20,7 +20,7 @@ export const Default: React.FC = () => {
   const {revised, description, termsList} = Config
 
   return (
-    <Box p="20px">
+    <Box p="20px" background="#071C3C" minHeight="100vh">
       <Heading mb="20px">Terms</Heading>
       <Terms revised={revised} description={description} termsList={termsList} />
     </Box>

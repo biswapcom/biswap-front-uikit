@@ -12,6 +12,8 @@ interface IProps extends BoxProps {
   scrollClass?: string;
   description: string;
   termsList: Array<string | JSX.Element>;
+  imageSize?: string;
+  imageColor?: string;
 }
 
 export const StyledList = styled(Box)`
@@ -32,6 +34,8 @@ const Terms: FC<IProps> = ({
   termsList,
   description,
   revised,
+  imageSize= '30px',
+  imageColor = 'primary',
   ...rest
 }) => {
   const renderTermsList = (): JSX.Element[] =>
@@ -44,7 +48,7 @@ const Terms: FC<IProps> = ({
     ));
   return (
     <Box className={scrollClass} {...rest}>
-      <TermsAccordion name={title}>
+      <TermsAccordion name={title} imageSize={imageSize} imageColor={imageColor}>
         <Box>
           <BodyText mt="24px" color="warning" scale="size16" bold>
             {revised}
