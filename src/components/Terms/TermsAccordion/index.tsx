@@ -52,11 +52,11 @@ const PlusAnimatedIcon = styled.div<{imageSize: string, isOpen:boolean, imageCol
   }
   
   &:before {
-    transform: ${({isOpen}) => `translate(-50%, -50%) ${isOpen ? 'rotate(90deg)' : 'rotate(0deg)'}`};
+    transform: ${({isOpen}) => `translate(-50%, -50%) ${isOpen ? 'rotate(0deg)' : 'rotate(90deg)'}`};
   }
   
   &:after {
-    transform: ${({isOpen}) => `translate(-50%, -50%) ${isOpen ? 'rotate(180deg)' : 'rotate(0deg)'}`};
+    transform: ${({isOpen}) => `translate(-50%, -50%) ${isOpen ? 'rotate(0deg)' : 'rotate(180deg)'}`};
   }
 `
 
