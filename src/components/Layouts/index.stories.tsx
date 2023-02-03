@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { BaseLayout, CardsLayout } from ".";
+import { BaseLayout, CardsLayout, Container } from ".";
 
 export default {
   title: "Components/Layouts",
@@ -30,5 +30,13 @@ export const Cards: React.FC = () => {
         <Stub key={value} />
       ))}
     </CardsLayout>
+  );
+};
+
+export const ContainerLayout: React.FC = () => {
+  return (
+    <Container>
+        <Stub />
+    </Container>
   );
 };
