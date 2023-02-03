@@ -24,7 +24,13 @@ const data = [
 ];
 
 const Item: FC<{ text: string }> = ({ text }) => (
-  <Flex alignItems="center" minWidth="100%" width="100%" p="24px">
+  <Flex
+    p="24px"
+    width="100%"
+    minWidth="100%"
+    alignItems="center"
+    justifyContent="center"
+  >
     <BodyText textAlign="center" color="white">
       {text}
     </BodyText>
