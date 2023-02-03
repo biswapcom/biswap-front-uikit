@@ -5341,11 +5341,11 @@ var ColorSection = styled__default["default"].div(templateObject_8$3 || (templat
     return theme.colors[variant === tabVariants.DARK ? "warning" : "primary"];
 });
 var TabMenu = function (_a) {
-    var _b = _a.activeIndex, activeIndex = _b === void 0 ? 0 : _b, _c = _a.scale, scale = _c === void 0 ? tabsScales.MD : _c, _d = _a.variant, variant = _d === void 0 ? tabVariants.DARK : _d, onItemClick = _a.onItemClick, _e = _a.disabled, disabled = _e === void 0 ? false : _e, _f = _a.fullWidth, fullWidth = _f === void 0 ? false : _f; _a.menuIcons; var _h = _a.scrollX, scrollX = _h === void 0 ? false : _h, children = _a.children, equalElementWidth = _a.equalElementWidth, _j = _a.withoutAnimation, withoutAnimation = _j === void 0 ? false : _j, props = __rest(_a, ["activeIndex", "scale", "variant", "onItemClick", "disabled", "fullWidth", "menuIcons", "scrollX", "children", "equalElementWidth", "withoutAnimation"]);
-    var _k = React.useState([]), widthsArr = _k[0], setWidthsArr = _k[1];
-    var _l = React.useState(0), blockOffset = _l[0], setBlockOffset = _l[1];
-    var _m = React.useState(null), activeButtonIndex = _m[0], setActiveButtonIndex = _m[1];
-    var _o = useMatchBreakpoints(), isDesktop = _o.isDesktop, isMobile = _o.isMobile, isTablet = _o.isTablet;
+    var activeIndex = _a.activeIndex, _b = _a.scale, scale = _b === void 0 ? tabsScales.MD : _b, _c = _a.variant, variant = _c === void 0 ? tabVariants.DARK : _c, onItemClick = _a.onItemClick, _d = _a.disabled, disabled = _d === void 0 ? false : _d, _e = _a.fullWidth, fullWidth = _e === void 0 ? false : _e; _a.menuIcons; var _g = _a.scrollX, scrollX = _g === void 0 ? false : _g, children = _a.children, equalElementWidth = _a.equalElementWidth, _h = _a.withoutAnimation, withoutAnimation = _h === void 0 ? false : _h, props = __rest(_a, ["activeIndex", "scale", "variant", "onItemClick", "disabled", "fullWidth", "menuIcons", "scrollX", "children", "equalElementWidth", "withoutAnimation"]);
+    var _j = React.useState([]), widthsArr = _j[0], setWidthsArr = _j[1];
+    var _k = React.useState(0), blockOffset = _k[0], setBlockOffset = _k[1];
+    var _l = React.useState(null), activeButtonIndex = _l[0], setActiveButtonIndex = _l[1];
+    var _m = useMatchBreakpoints(), isDesktop = _m.isDesktop, isMobile = _m.isMobile, isTablet = _m.isTablet;
     React.useEffect(function () {
         setActiveButtonIndex(activeIndex);
     }, [activeIndex]);

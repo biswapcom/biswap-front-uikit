@@ -13,10 +13,12 @@ import { useMatchBreakpoints } from "../../contexts";
 
 interface StyledTabBarProps extends TabBarProps {
   theme: DefaultTheme;
+  activeIndex?: number;
 }
 
 interface BarProps extends TabBarProps {
   onItemClick: (index: number) => void;
+  activeIndex: number;
 }
 
 interface IWrapper extends SpaceProps {
@@ -109,7 +111,7 @@ const ColorSection = styled.div<{ variant: string }>`
 `;
 
 const TabMenu: React.FC<BarProps> = ({
-  activeIndex = 0,
+  activeIndex,
   scale = tabsScales.MD,
   variant = tabVariants.DARK,
   onItemClick,

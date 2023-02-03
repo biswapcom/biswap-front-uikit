@@ -4,7 +4,6 @@ import { PolymorphicComponentProps } from "../../util";
 export interface TabBarProps extends SpaceProps {
     children: ReactElement[];
     variant?: typeof tabVariants.DARK | typeof tabVariants.LIGHT;
-    activeIndex?: number;
     scale?: typeof tabsScales[keyof typeof tabsScales];
     disabled?: boolean;
     fullWidth?: boolean;
