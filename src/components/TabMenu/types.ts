@@ -18,6 +18,7 @@ export interface TabBarProps extends SpaceProps {
   menuIcons?: Array<string>;
   scrollX?: boolean;
   equalElementWidth?: boolean;
+  withoutAnimation?: boolean;
 }
 
 export interface TabBarItemProps {

@@ -80,14 +80,20 @@ const Selection = styled.div<{
   width: number;
   scale: string;
   variant: string;
+  withoutAnimation: boolean;
 }>`
   width: ${({ width }) => `${width}px`};
   height: 2px;
   position: absolute;
   bottom: 0;
   left: ${({ offset }) => `${offset}px`};
-  transition: left 0.3s ease, width 0.3s ease;
   z-index: 1;
+
+  ${({ withoutAnimation }) =>
+    !withoutAnimation &&
+    css`
+      transition: left 0.3s ease, width 0.3s ease;
+    `}
 
   ${variant({
     prop: "scale",
@@ -113,6 +119,7 @@ const TabMenu: React.FC<BarProps> = ({
   scrollX = false,
   children,
   equalElementWidth,
+  withoutAnimation = false,
   ...props
 }) => {
   const [widthsArr, setWidthsArr] = useState([]);
@@ -150,6 +157,7 @@ const TabMenu: React.FC<BarProps> = ({
           width={widthsArr[activeIndex]}
           offset={blockOffset}
           variant={variant}
+          withoutAnimation={withoutAnimation}
         >
           <ColorSection variant={variant} />
         </Selection>
