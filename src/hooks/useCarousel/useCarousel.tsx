@@ -19,7 +19,7 @@ import { Box, Flex } from "../../components/Box";
 import { useMatchBreakpoints } from "../../contexts";
 import { ChevronLeftIcon, ChevronRightIcon } from "../../components/Svg";
 
-interface Props<T, C, A> {
+interface IProps<T, C, A> {
   data: T[];
   Slide: FC<C>;
   title?: string;
@@ -42,6 +42,8 @@ interface Props<T, C, A> {
   speed?: number;
   delay?: number;
 }
+
+type ReturnDataType = [() => JSX.Element, () => void, () => void];
 
 const NavWrapper = styled(Flex)<{ navPadding?: number }>`
   position: absolute;
@@ -104,7 +106,7 @@ export const useCarousel = ({
   slideGap = 32,
   speed = 10,
   delay = 8000,
-}: Props<any, any, any>): [() => JSX.Element] => {
+}: IProps<any, any, any>): ReturnDataType => {
   const autoplay = isAutoplay ? [Autoplay({ delay: delay })] : [];
   const { isMobile } = useMatchBreakpoints();
   const [viewportRef, embla] = useEmblaCarousel(
@@ -262,5 +264,5 @@ export const useCarousel = ({
     </Box>
   );
 
-  return [carouselComponent];
+  return [carouselComponent, scrollNext, scrollPrev];
 };

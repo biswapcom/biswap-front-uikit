@@ -31,6 +31,10 @@ export * from "./components/Image";
 export * from "./components/TooltipHelper";
 export * from "./components/TableCardSkeleton";
 export * from "./components/IconComponent";
+
+// carousel
+export * from "./components/Carousel";
+
 // Hooks
 export * from "./hooks";
 

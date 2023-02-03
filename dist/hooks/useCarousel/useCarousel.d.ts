@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { CarouselButtonsTypes } from "./types";
-interface Props<T, C, A> {
+interface IProps<T, C, A> {
     data: T[];
     Slide: FC<C>;
     title?: string;
@@ -23,5 +23,6 @@ interface Props<T, C, A> {
     speed?: number;
     delay?: number;
 }
-export declare const useCarousel: ({ data, Slide, title, slidesToScroll, isDraggable, withDots, withNavButtons, navButtonsType, navPadding, withNavButtonsHeader, showNumberBlock, position, isAutoplay, alignItem, breakpoints, slideProps, loop, marginDots, slideGap, speed, delay, }: Props<any, any, any>) => [() => JSX.Element];
+declare type ReturnDataType = [() => JSX.Element, () => void, () => void];
+export declare const useCarousel: ({ data, Slide, title, slidesToScroll, isDraggable, withDots, withNavButtons, navButtonsType, navPadding, withNavButtonsHeader, showNumberBlock, position, isAutoplay, alignItem, breakpoints, slideProps, loop, marginDots, slideGap, speed, delay, }: IProps<any, any, any>) => ReturnDataType;
 export {};

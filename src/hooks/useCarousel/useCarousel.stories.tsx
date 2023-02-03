@@ -1,7 +1,7 @@
+import { FC } from "react";
 import { useCarousel } from "./useCarousel";
 import { Box, Flex } from "../../components/Box";
 import { BodyText } from "../../components/Typography";
-import { FC } from "react";
 import { useTheme } from "styled-components";
 
 export default {
