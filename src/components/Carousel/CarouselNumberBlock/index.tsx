@@ -1,6 +1,6 @@
 import React, { FC, Fragment } from "react";
 import styled, { css } from "styled-components";
-import { BodyText } from "../../../../components/Typography";
+import { BodyText } from "../../Typography";
 
 interface Props {
   dataLength: number;

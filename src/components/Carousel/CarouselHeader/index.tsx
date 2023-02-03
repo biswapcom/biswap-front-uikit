@@ -1,10 +1,10 @@
 import React, { FC } from "react";
 import styled from "styled-components";
-import { IconButton } from "../../../../components/Button";
-import { useMatchBreakpoints } from "../../../../contexts";
-import { Flex } from "../../../../components/Box";
-import { ChevronLeftIcon, ChevronRightIcon } from "../../../../components/Svg";
-import { BodyText } from "../../../../components/Typography";
+import { IconButton } from "../../Button";
+import { useMatchBreakpoints } from "../../../contexts";
+import { Flex } from "../../Box";
+import { ChevronLeftIcon, ChevronRightIcon } from "../../Svg";
+import { BodyText } from "../../Typography";
 
 interface Props {
   title: string;

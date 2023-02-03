@@ -14,7 +14,7 @@ import {
   PrevButton,
   ArrowSquarePrimary,
   ArrowSquareWhite,
-} from "./components";
+} from "../../components/Carousel";
 import { Box, Flex } from "../../components/Box";
 import { useMatchBreakpoints } from "../../contexts";
 import { ChevronLeftIcon, ChevronRightIcon } from "../../components/Svg";

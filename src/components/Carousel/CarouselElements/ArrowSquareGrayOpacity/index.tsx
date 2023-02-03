@@ -1,9 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {
-  ChevronLeftIcon,
-  ChevronRightIcon,
-} from "../../../../../components/Svg";
+import { ChevronLeftIcon, ChevronRightIcon } from "../../../Svg";
 
 const ArrowButton = styled.button`
   background: rgba(255, 255, 255, 0.2);
