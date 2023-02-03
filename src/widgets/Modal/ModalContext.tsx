@@ -22,11 +22,18 @@ const ModalWrapper = styled.div`
   justify-content: center;
   align-items: center;
   position: fixed;
-  top: 0;
-  right: 0;
+  //top: 0;
+  //right: 0;
   bottom: 0;
   left: 0;
   z-index: ${({ theme }) => theme.zIndices.modal - 1};
+
+  ${({ theme }) => theme.mediaQueries.sm} {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
 `;
 
 export const Context = createContext<ModalsContext>({
@@ -84,10 +91,10 @@ const ModalProvider: React.FC<{ children: any }> = ({ children }) => {
       {isOpen && (
         <ModalWrapper>
           <Overlay onClick={handleOverlayDismiss} />
-          {React.isValidElement(modalNode) &&
-            React.cloneElement(modalNode, {
-              onDismiss: handleDismiss,
-            })}
+          {React.isValidElement(modalNode) && {
+            ...modalNode,
+            props: { ...modalNode.props, onDismiss: handleDismiss },
+          }}
         </ModalWrapper>
       )}
       {children}

@@ -1,9 +1,10 @@
 import { BoxProps, FlexProps } from "../../components/Box";
 import { Scales } from "../../components/Heading/types";
+import { ReactNode } from "react";
 
-export interface ModalTheme {
-  background: string;
-}
+// export interface ModalTheme {
+//   background: string;
+// }
 
 export type Handler = () => void;
 
@@ -12,16 +13,20 @@ export interface InjectedProps {
 }
 
 export interface ModalProps extends InjectedProps, BoxProps {
-  title?: string;
   hideCloseButton?: boolean;
-  onBack?: () => void;
-  hideOnBack?: boolean;
-  bodyPadding?: string;
+  closeBtnColor?: string;
+  closeBtnSize?: string;
+  modalHead?: ReactNode | string;
+  withoutBodyPadding?: boolean;
+  children?: ReactNode;
   minWidth?: string;
   maxWidth?: string;
   modalBackground?: string;
-  closeBtnColor?: string;
-  titleSize?: Scales;
-  walletModal?: boolean;
-  modalBodyProps?: FlexProps;
+
+  onBack?: () => void;
+  hideOnBack?: boolean;
+
+  // titleSize?: Scales;
+  // walletModal?: boolean;
+  // modalBodyProps?: FlexProps;
 }
