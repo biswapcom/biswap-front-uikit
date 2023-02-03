@@ -78,7 +78,7 @@ function __generator(thisArg, body) {
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
-        while (g && (g = 0, op[0] && (_ = 0)), _) try {
+        while (_) try {
             if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
             if (y = 0, t) op = [op[0] & 2, t.value];
             switch (op[0]) {
@@ -4182,7 +4182,7 @@ var getBottom = function (_a) {
     }
     return "-8px";
 };
-var Container = styled__default["default"].div(templateObject_1$Y || (templateObject_1$Y = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  max-width: ", ";\n  min-width: ", ";\n\n  ", "\n\n  ", "\n"], ["\n  position: relative;\n  width: 100%;\n  max-width: ", ";\n  min-width: ", ";\n\n  ", "\n\n  ", "\n"])), function (_a) {
+var Container$1 = styled__default["default"].div(templateObject_1$Y || (templateObject_1$Y = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  max-width: ", ";\n  min-width: ", ";\n\n  ", "\n\n  ", "\n"], ["\n  position: relative;\n  width: 100%;\n  max-width: ", ";\n  min-width: ", ";\n\n  ", "\n\n  ", "\n"])), function (_a) {
     var maxWidth = _a.maxWidth;
     return maxWidth || "none";
 }, function (_a) {
@@ -4283,7 +4283,7 @@ var Dropdown = function (_a) {
             document.removeEventListener("mousedown", handleClickOutside);
         };
     }, [wrapperRef]);
-    return (React__default["default"].createElement(Container, __assign({ maxWidth: maxWidth, minWidth: minWidth, ref: wrapperRef, scale: scale }, props),
+    return (React__default["default"].createElement(Container$1, __assign({ maxWidth: maxWidth, minWidth: minWidth, ref: wrapperRef, scale: scale }, props),
         React__default["default"].createElement(DropdownTop, { scale: scale, variant: variant, onClick: toggling, disabled: disabled, className: isOpen ? "open" : disabled ? "disabled" : "" },
             selectedOption.icon && (React__default["default"].createElement(IconComponent$1, { iconName: selectedOption.icon.name, color: selectedOption.icon.color, mr: scale === "lg" ? "12px" : "8px" })),
             React__default["default"].createElement(Label$1, null, selectedOption.label),
@@ -4625,6 +4625,11 @@ var GridLayout = styled__default["default"](GridLayout$1)(templateObject_1$T || 
     return theme.mediaQueries.sm;
 });
 var templateObject_1$T;
+
+var Container = function (_a) {
+    var children = _a.children, props = __rest(_a, ["children"]);
+    return (React__default["default"].createElement(Box, __assign({ width: "100%", px: ["16px", null, null, "24px", null, null, 0], mx: "auto", maxWidth: "1120px" }, props), children));
+};
 
 var scales$4 = {
     LG: "lg",
@@ -8462,6 +8467,7 @@ exports.Coin98WalletIcon = Icon$7;
 exports.CoinbaseWalletIcon = Icon$a;
 exports.CollectiblesIcon = Icon$r;
 exports.ConnectWalletIcon = Icon$c;
+exports.Container = Container;
 exports.CopyIcon = Icon$2x;
 exports.CopyOpacityIcon = Icon$2v;
 exports.CopySolidIcon = Icon$2w;
