@@ -5356,8 +5356,9 @@ var TabMenu = function (_a) {
                 .reduce(function (sum, elem) { return sum + elem; }, 0));
         }
     }, [widthsArr, activeButtonIndex, isDesktop, isMobile, isTablet]);
+    var showSelection = !disabled && activeIndex !== null;
     return (React__default["default"].createElement(Wrapper$b, __assign({ fullWidth: fullWidth, variant: variant, scrollX: scrollX }, props),
-        !disabled && (React__default["default"].createElement(Selection, { scale: scale, width: widthsArr[activeIndex], offset: blockOffset, variant: variant, withoutAnimation: withoutAnimation },
+        showSelection && (React__default["default"].createElement(Selection, { scale: scale, width: widthsArr[activeIndex], offset: blockOffset, variant: variant, withoutAnimation: withoutAnimation },
             React__default["default"].createElement(ColorSection, { variant: variant }))),
         React__default["default"].createElement(StyledTabBar, __assign({ disabled: disabled, variant: variant, fullWidth: fullWidth, equalElementWidth: equalElementWidth }, props), React.Children.map(children, function (child, index) {
             return React.cloneElement(child, {

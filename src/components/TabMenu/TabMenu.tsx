@@ -144,6 +144,8 @@ const TabMenu: React.FC<BarProps> = ({
     }
   }, [widthsArr, activeButtonIndex, isDesktop, isMobile, isTablet]);
 
+  const showSelection = !disabled && activeIndex !== null;
+
   return (
     <Wrapper
       fullWidth={fullWidth}
@@ -151,7 +153,7 @@ const TabMenu: React.FC<BarProps> = ({
       scrollX={scrollX}
       {...props}
     >
-      {!disabled && (
+      {showSelection && (
         <Selection
           scale={scale}
           width={widthsArr[activeIndex]}
