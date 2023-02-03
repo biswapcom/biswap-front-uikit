@@ -126,7 +126,7 @@ const TabMenu: React.FC<BarProps> = ({
 }) => {
   const [widthsArr, setWidthsArr] = useState([]);
 
-  const [blockOffset, setBlockOffset] = useState(0);
+  const [blockOffset, setBlockOffset] = useState<number | null>(null);
   const [activeButtonIndex, setActiveButtonIndex] =
     useState<number | null>(null);
 
@@ -137,7 +137,7 @@ const TabMenu: React.FC<BarProps> = ({
   }, [activeIndex]);
 
   useEffect(() => {
-    if (activeButtonIndex !== null) {
+    if (activeButtonIndex !== null && widthsArr.length) {
       setBlockOffset(
         widthsArr
           .slice(0, activeButtonIndex)
@@ -146,7 +146,8 @@ const TabMenu: React.FC<BarProps> = ({
     }
   }, [widthsArr, activeButtonIndex, isDesktop, isMobile, isTablet]);
 
-  const showSelection = !disabled && activeIndex !== null;
+  const showSelection =
+    !disabled && activeIndex !== null && blockOffset !== null;
 
   return (
     <Wrapper
