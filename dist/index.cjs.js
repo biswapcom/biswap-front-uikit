@@ -4671,6 +4671,11 @@ var HeroWrapper = function (_a) {
     return (React__default["default"].createElement(Box, __assign({ p: getResponsiveAttrs({ xs: "96px 0 0", md: "104px 0 0" }), width: "100%" }, props), children));
 };
 
+var ContainerCarousel = function (_a) {
+    var children = _a.children, props = __rest(_a, ["children"]);
+    return (React__default["default"].createElement(Box, __assign({ px: getResponsiveAttrs({ xs: 0, sm: 0, md: "16px", lg: "24px", xxl: 0 }), mx: "auto", maxWidth: "1120px" }, props), children));
+};
+
 var scales$4 = {
     LG: "lg",
     MD: "md",
@@ -8616,6 +8621,7 @@ exports.CoinbaseWalletIcon = Icon$a;
 exports.CollectiblesIcon = Icon$r;
 exports.ConnectWalletIcon = Icon$c;
 exports.Container = Container;
+exports.ContainerCarousel = ContainerCarousel;
 exports.CopyIcon = Icon$2x;
 exports.CopyOpacityIcon = Icon$2v;
 exports.CopySolidIcon = Icon$2w;
