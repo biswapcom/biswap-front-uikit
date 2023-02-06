@@ -7,7 +7,7 @@ const ContainerCarousel: FC<BoxProps> = ({
   ...props
 }): JSX.Element => (
   <Box
-    px={getResponsiveAttrs({ xs: 0, sm: 0, md: "16px", lg: "24px", xxl: "0" })}
+    px={getResponsiveAttrs({ xs: 0, sm: 0, md: "16px", lg: "24px", xxl: 0 })}
     mx="auto"
     maxWidth="1120px"
     {...props}

@@ -4673,7 +4673,7 @@ var HeroWrapper = function (_a) {
 
 var ContainerCarousel = function (_a) {
     var children = _a.children, props = __rest(_a, ["children"]);
-    return (React__default["default"].createElement(Box, __assign({ px: getResponsiveAttrs({ xs: 0, sm: 0, md: "16px", lg: "24px", xxl: "0" }), mx: "auto", maxWidth: "1120px" }, props), children));
+    return (React__default["default"].createElement(Box, __assign({ px: getResponsiveAttrs({ xs: 0, sm: 0, md: "16px", lg: "24px", xxl: 0 }), mx: "auto", maxWidth: "1120px" }, props), children));
 };
 
 var scales$4 = {
