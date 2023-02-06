@@ -10,6 +10,7 @@ import Heading from "../../components/Heading/Heading";
 // import Input from "../../components/Input/Input";
 import { OptionsSolidIcon, DownloadIcon } from "../../components/Svg";
 import Text from "../../components/Text/Text";
+import {BodyText} from "../../components/Typography";
 import { Modal, ModalProps, useModal } from "../Modal";
 
 import {
@@ -79,6 +80,8 @@ const GlobalMenuComponent: React.FC = () => {
     <GlobalMenuModal title="Global Settings Modal" />
   );
 
+  const [frontOpen, setFrontOpen] = useState(false)
+
   return (
     <Flex>
       <IconButton onClick={onPresent1} variant="text" scale="sm" mr="4px">
@@ -90,6 +93,8 @@ const GlobalMenuComponent: React.FC = () => {
     </Flex>
   );
 };
+
+const UserMenuTest = ({isMobileMenuOpen = false}) => <BodyText color="white">{isMobileMenuOpen.toString()} test</BodyText>
 
 const defaultProps = {
   linkComponent: ({ href, ...props }) => {
@@ -122,13 +127,16 @@ const defaultProps = {
   buyCakeLabel: "Buy BSW",
   withEvent: true,
   eventCallback: noop,
+  rightSide:UserMenuTest
 };
 
-const BEstyle = ({isMobileMenuOpen = false}) => <Box>Be be beee</Box>
-
-const ConnectedTemplate: React.FC<NavProps> = (args) => {
+const ConnectedTemplate: React.FC<NavProps> = (args, setFrontOpen) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
+  const onOpenHandler = () => {
+    setFrontOpen(true)
+    setIsOpen(true)
+  }
   return (
     <BrowserRouter>
       <Menu
@@ -146,7 +154,7 @@ const ConnectedTemplate: React.FC<NavProps> = (args) => {
           <Text bold fontSize="24px" as="h1" mb="8px" color="white">
             Page body
           </Text>
-          <Button scale="sm" onClick={() => setIsOpen(true)}>
+          <Button scale="sm" onClick={onOpenHandler}>
             Show mobile drawer
           </Button>
           {/*<BottomDrawer*/}
@@ -267,9 +275,9 @@ export const NotConnected: React.FC = () => {
         //setLang={noop}
         // currentLang="EN"
         links={links}
-        rigthSide={() => <h1>Page body</h1>}
+        rightSide={UserMenuTest}
         //subLinks={subLinks}
-      >
+       >
         <div>
           <h1>Page body</h1>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
