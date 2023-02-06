@@ -7988,8 +7988,8 @@ var MenuItems = function (_a) {
 var StyledInnerButton = styled__default["default"](Button)(templateObject_1$5 || (templateObject_1$5 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  height: auto;\n  padding: 0;\n  border: none;\n  background-color: transparent;\n"], ["\n  display: flex;\n  align-items: center;\n  height: auto;\n  padding: 0;\n  border: none;\n  background-color: transparent;\n"])));
 var LogoSwitcher = function (_a) {
     var logoSubtitle = _a.logoSubtitle;
-    var isMobile = useMatchBreakpoints().isMobile;
-    if (isMobile) {
+    var _b = useMatchBreakpoints(), isMobile = _b.isMobile, isMd = _b.isMd;
+    if (isMobile || isMd) {
         return React__default["default"].createElement(Icon$3O, { width: "32px" });
     }
     else if (logoSubtitle) {
