@@ -8111,6 +8111,7 @@ var Menu = function (_a) {
     var totalTopMenuHeight = withEvent && isMobile
         ? TopMenuWithBannerHeight + MOBILE_EVENT_BUTTON_HEIGHT
         : TopMenuWithBannerHeight;
+    var RightSide = rightSide !== null && rightSide !== void 0 ? rightSide : React.Fragment;
     // const closeWarn = () => {
     //   localStorage.setItem("showFishingWarn", JSON.stringify(false));
     //   setShowFishingWarn(false);
@@ -8169,7 +8170,8 @@ var Menu = function (_a) {
                     React__default["default"].createElement(Flex, { alignItems: "center", justifyContent: "center" },
                         React__default["default"].createElement(Logo, { logoSubtitle: customLogoSubtitle, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
                         React__default["default"].createElement(MenuItems, { items: links, activeItem: activeItem, activeSubItem: activeSubItem, isMobileMenuOpened: isMobileMenuOpened, mobileMenuCallback: setIsMobileMenuOpened, ml: isMobile ? "12px" : "26px" })),
-                    React__default["default"].createElement(Flex, { alignItems: "center", height: "100%" }, rightSide))),
+                    React__default["default"].createElement(Flex, { alignItems: "center", height: "100%" },
+                        React__default["default"].createElement(RightSide, { isMobileMenuOpen: isMobileMenuOpened })))),
             React__default["default"].createElement(BodyWrapper, null,
                 React__default["default"].createElement(Inner, { isPushed: false, showMenu: showMenu },
                     React__default["default"].createElement(React__default["default"].Fragment, null,

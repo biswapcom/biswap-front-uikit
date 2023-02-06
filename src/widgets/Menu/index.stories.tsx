@@ -124,6 +124,8 @@ const defaultProps = {
   eventCallback: noop,
 };
 
+const BEstyle = ({isMobileMenuOpen = false}) => <Box>Be be beee</Box>
+
 const ConnectedTemplate: React.FC<NavProps> = (args) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
@@ -140,7 +142,7 @@ const ConnectedTemplate: React.FC<NavProps> = (args) => {
         socialLinks={socialLinks}
         serviceLinks={serviceLinks}
       >
-        <Box pt="113px" pb="32px" px="24px">
+        <Box pt="113px" pb="32px" px="24px" background="#071C3C">
           <Text bold fontSize="24px" as="h1" mb="8px" color="white">
             Page body
           </Text>
@@ -265,6 +267,7 @@ export const NotConnected: React.FC = () => {
         //setLang={noop}
         // currentLang="EN"
         links={links}
+        rigthSide={() => <h1>Page body</h1>}
         //subLinks={subLinks}
       >
         <div>

@@ -1,4 +1,4 @@
-import { ElementType, ReactElement, ReactNode } from "react";
+import { ElementType, FunctionComponent, ReactElement, ReactNode } from "react";
 import { MenuItemsType } from "../../components/MenuItems/types";
 import { SubMenuItemsType } from "../../components/SubMenuItems";
 import { Colors } from "../../theme";
@@ -15,7 +15,9 @@ export interface NavProps extends BSWPriceProps, FooterAboutLinks, FooterProduct
     subLinks: Array<SubMenuItemsType>;
     activeItem: string;
     activeSubItem: string;
-    rightSide: ReactNode;
+    rightSide: FunctionComponent<{
+        isMobileMenuOpen?: boolean;
+    }>;
     bswPriceUsd?: number;
     buyBSWLabel: string;
     withEvent?: boolean;
