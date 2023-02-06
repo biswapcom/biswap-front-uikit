@@ -130,13 +130,9 @@ const defaultProps = {
   rightSide:UserMenuTest
 };
 
-const ConnectedTemplate: React.FC<NavProps> = (args, setFrontOpen) => {
+const ConnectedTemplate: React.FC<NavProps> = (args) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
-  const onOpenHandler = () => {
-    setFrontOpen(true)
-    setIsOpen(true)
-  }
   return (
     <BrowserRouter>
       <Menu
@@ -154,7 +150,7 @@ const ConnectedTemplate: React.FC<NavProps> = (args, setFrontOpen) => {
           <Text bold fontSize="24px" as="h1" mb="8px" color="white">
             Page body
           </Text>
-          <Button scale="sm" onClick={onOpenHandler}>
+          <Button scale="sm" onClick={() => setIsOpen(!isOpen)}>
             Show mobile drawer
           </Button>
           {/*<BottomDrawer*/}

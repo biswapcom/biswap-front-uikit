@@ -7933,8 +7933,7 @@ var MobileDropdownMenu = function (_a) {
     }, [isMobile]);
     return (React.createElement(MobileMenu, { items: configItems, mobileMenuCallback: mobileMenuCallback, isMobileNav: true, activeItem: activeItem },
         React.createElement(MenuItem, null,
-            React.createElement(Burger, { open: isMobileMenuOpened }),
-            !isMobile && (React.createElement(Text, { ml: "8px", fontWeight: "600", color: "white" }, "Menu")))));
+            React.createElement(Burger, { open: isMobileMenuOpened }))));
 };
 
 var Divider = styled(Box)(templateObject_1$6 || (templateObject_1$6 = __makeTemplateObject(["\n  opacity: 0.16;\n  border: 1px solid ", ";\n"], ["\n  opacity: 0.16;\n  border: 1px solid ", ";\n"])), function (_a) {

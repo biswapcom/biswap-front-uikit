@@ -7946,8 +7946,7 @@ var MobileDropdownMenu = function (_a) {
     }, [isMobile]);
     return (React__default["default"].createElement(MobileMenu, { items: configItems, mobileMenuCallback: mobileMenuCallback, isMobileNav: true, activeItem: activeItem },
         React__default["default"].createElement(MenuItem, null,
-            React__default["default"].createElement(Burger, { open: isMobileMenuOpened }),
-            !isMobile && (React__default["default"].createElement(Text, { ml: "8px", fontWeight: "600", color: "white" }, "Menu")))));
+            React__default["default"].createElement(Burger, { open: isMobileMenuOpened }))));
 };
 
 var Divider = styled__default["default"](Box)(templateObject_1$6 || (templateObject_1$6 = __makeTemplateObject(["\n  opacity: 0.16;\n  border: 1px solid ", ";\n"], ["\n  opacity: 0.16;\n  border: 1px solid ", ";\n"])), function (_a) {
