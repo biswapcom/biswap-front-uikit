@@ -5,11 +5,10 @@ import Box from "../../components/Box/Box";
 import Flex from "../../components/Box/Flex";
 import Button from "../../components/Button/Button";
 import IconButton from "../../components/Button/IconButton";
-//import DropdownMenu from "../../components/DropdownMenu/DropdownMenu";
 import Heading from "../../components/Heading/Heading";
-// import Input from "../../components/Input/Input";
 import { OptionsSolidIcon, DownloadIcon } from "../../components/Svg";
 import Text from "../../components/Text/Text";
+import { BodyText } from "../../components/Typography";
 import { Modal, ModalProps, useModal } from "../Modal";
 
 import {
@@ -91,6 +90,10 @@ const GlobalMenuComponent: React.FC = () => {
   );
 };
 
+const UserMenuTest = ({ isMobileMenuOpen = false }) => (
+  <BodyText color="white">{isMobileMenuOpen.toString()} test</BodyText>
+);
+
 const defaultProps = {
   linkComponent: ({ href, ...props }) => {
     return <Link to={href} {...props} />;
@@ -122,6 +125,7 @@ const defaultProps = {
   buyCakeLabel: "Buy BSW",
   withEvent: true,
   eventCallback: noop,
+  rightSide: UserMenuTest,
 };
 
 const ConnectedTemplate: React.FC<NavProps> = (args) => {
@@ -140,11 +144,11 @@ const ConnectedTemplate: React.FC<NavProps> = (args) => {
         socialLinks={socialLinks}
         serviceLinks={serviceLinks}
       >
-        <Box pt="113px" pb="32px" px="24px">
+        <Box pt="113px" pb="32px" px="24px" background="#071C3C">
           <Text bold fontSize="24px" as="h1" mb="8px" color="white">
             Page body
           </Text>
-          <Button scale="sm" onClick={() => setIsOpen(true)}>
+          <Button scale="sm" onClick={() => setIsOpen(!isOpen)}>
             Show mobile drawer
           </Button>
           {/*<BottomDrawer*/}
@@ -265,6 +269,7 @@ export const NotConnected: React.FC = () => {
         //setLang={noop}
         // currentLang="EN"
         links={links}
+        rightSide={UserMenuTest}
         //subLinks={subLinks}
       >
         <div>

@@ -7946,8 +7946,7 @@ var MobileDropdownMenu = function (_a) {
     }, [isMobile]);
     return (React__default["default"].createElement(MobileMenu, { items: configItems, mobileMenuCallback: mobileMenuCallback, isMobileNav: true, activeItem: activeItem },
         React__default["default"].createElement(MenuItem, null,
-            React__default["default"].createElement(Burger, { open: isMobileMenuOpened }),
-            !isMobile && (React__default["default"].createElement(Text, { ml: "8px", fontWeight: "600", color: "white" }, "Menu")))));
+            React__default["default"].createElement(Burger, { open: isMobileMenuOpened }))));
 };
 
 var Divider = styled__default["default"](Box)(templateObject_1$6 || (templateObject_1$6 = __makeTemplateObject(["\n  opacity: 0.16;\n  border: 1px solid ", ";\n"], ["\n  opacity: 0.16;\n  border: 1px solid ", ";\n"])), function (_a) {
@@ -7989,8 +7988,8 @@ var MenuItems = function (_a) {
 var StyledInnerButton = styled__default["default"](Button)(templateObject_1$5 || (templateObject_1$5 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  height: auto;\n  padding: 0;\n  border: none;\n  background-color: transparent;\n"], ["\n  display: flex;\n  align-items: center;\n  height: auto;\n  padding: 0;\n  border: none;\n  background-color: transparent;\n"])));
 var LogoSwitcher = function (_a) {
     var logoSubtitle = _a.logoSubtitle;
-    var isMobile = useMatchBreakpoints().isMobile;
-    if (isMobile) {
+    var _b = useMatchBreakpoints(), isMobile = _b.isMobile, isMd = _b.isMd;
+    if (isMobile || isMd) {
         return React__default["default"].createElement(Icon$3O, { width: "32px" });
     }
     else if (logoSubtitle) {
@@ -8111,6 +8110,7 @@ var Menu = function (_a) {
     var totalTopMenuHeight = withEvent && isMobile
         ? TopMenuWithBannerHeight + MOBILE_EVENT_BUTTON_HEIGHT
         : TopMenuWithBannerHeight;
+    var RightSide = rightSide !== null && rightSide !== void 0 ? rightSide : React.Fragment;
     // const closeWarn = () => {
     //   localStorage.setItem("showFishingWarn", JSON.stringify(false));
     //   setShowFishingWarn(false);
@@ -8169,7 +8169,8 @@ var Menu = function (_a) {
                     React__default["default"].createElement(Flex, { alignItems: "center", justifyContent: "center" },
                         React__default["default"].createElement(Logo, { logoSubtitle: customLogoSubtitle, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
                         React__default["default"].createElement(MenuItems, { items: links, activeItem: activeItem, activeSubItem: activeSubItem, isMobileMenuOpened: isMobileMenuOpened, mobileMenuCallback: setIsMobileMenuOpened, ml: isMobile ? "12px" : "26px" })),
-                    React__default["default"].createElement(Flex, { alignItems: "center", height: "100%" }, rightSide))),
+                    React__default["default"].createElement(Flex, { alignItems: "center", height: "100%" },
+                        React__default["default"].createElement(RightSide, { isMobileMenuOpen: isMobileMenuOpened })))),
             React__default["default"].createElement(BodyWrapper, null,
                 React__default["default"].createElement(Inner, { isPushed: false, showMenu: showMenu },
                     React__default["default"].createElement(React__default["default"].Fragment, null,
