@@ -5,12 +5,10 @@ import Box from "../../components/Box/Box";
 import Flex from "../../components/Box/Flex";
 import Button from "../../components/Button/Button";
 import IconButton from "../../components/Button/IconButton";
-//import DropdownMenu from "../../components/DropdownMenu/DropdownMenu";
 import Heading from "../../components/Heading/Heading";
-// import Input from "../../components/Input/Input";
 import { OptionsSolidIcon, DownloadIcon } from "../../components/Svg";
 import Text from "../../components/Text/Text";
-import {BodyText} from "../../components/Typography";
+import { BodyText } from "../../components/Typography";
 import { Modal, ModalProps, useModal } from "../Modal";
 
 import {
@@ -80,8 +78,6 @@ const GlobalMenuComponent: React.FC = () => {
     <GlobalMenuModal title="Global Settings Modal" />
   );
 
-  const [frontOpen, setFrontOpen] = useState(false)
-
   return (
     <Flex>
       <IconButton onClick={onPresent1} variant="text" scale="sm" mr="4px">
@@ -94,7 +90,9 @@ const GlobalMenuComponent: React.FC = () => {
   );
 };
 
-const UserMenuTest = ({isMobileMenuOpen = false}) => <BodyText color="white">{isMobileMenuOpen.toString()} test</BodyText>
+const UserMenuTest = ({ isMobileMenuOpen = false }) => (
+  <BodyText color="white">{isMobileMenuOpen.toString()} test</BodyText>
+);
 
 const defaultProps = {
   linkComponent: ({ href, ...props }) => {
@@ -127,7 +125,7 @@ const defaultProps = {
   buyCakeLabel: "Buy BSW",
   withEvent: true,
   eventCallback: noop,
-  rightSide:UserMenuTest
+  rightSide: UserMenuTest,
 };
 
 const ConnectedTemplate: React.FC<NavProps> = (args) => {
@@ -273,7 +271,7 @@ export const NotConnected: React.FC = () => {
         links={links}
         rightSide={UserMenuTest}
         //subLinks={subLinks}
-       >
+      >
         <div>
           <h1>Page body</h1>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
