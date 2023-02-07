@@ -66,7 +66,7 @@ export const Default: React.FC<ModalProps> = ({ onDismiss, ...props }) => {
         </Flex>
       }
       onDismiss={onDismiss}
-      modalBackground="warning"
+      modalBackground="pastelBlue"
       {...props}
     >
       <BodyText pt="24px" color="primary">
@@ -128,6 +128,39 @@ export const Default: React.FC<ModalProps> = ({ onDismiss, ...props }) => {
       </Box>
     </ModalV2>
   );
+  const [onPresentV2WithInnerPages] = useModal(
+    <ModalV2
+      closeBtnColor="white"
+      onDismiss={onDismiss}
+      {...props}
+      withoutBodyPadding
+      modalBackground="transparent"
+    >
+      <img
+        src="https://static.biswap.org/bs/localization/localeModalInfoImg@2x.jpg"
+        style={{ display: "block" }}
+        width="100%"
+        height="auto"
+        alt=""
+      />
+      <Box p="32px" pt="0" background="white">
+        <BodyText pt="24px" color="gray700">
+          It is a long established fact that a reader will be distracted by the
+          readable content of a page when looking at its layout. The point of
+          using Lorem Ipsum
+        </BodyText>
+        <Button
+          variant="primary"
+          scale="xl"
+          mt="24px"
+          onClick={onDismiss}
+          width="100%"
+        >
+          Close
+        </Button>
+      </Box>
+    </ModalV2>
+  );
 
   return (
     <Wrapper background="#071C3C" minHeight="100vh" p="24px">
@@ -149,6 +182,9 @@ export const Default: React.FC<ModalProps> = ({ onDismiss, ...props }) => {
       </Button>
       <Button variant="warning" onClick={onPresentV2WithImage}>
         modal with image
+      </Button>
+      <Button variant="warning" onClick={onPresentV2WithInnerPages}>
+        modal with inner pages
       </Button>
     </Wrapper>
   );
