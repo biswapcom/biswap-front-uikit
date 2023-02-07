@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { BaseLayout, CardsLayout } from ".";
+import Container from "./Container";
+import HeroWrapper from "./HeroWrapper";
 
 export default {
   title: "Components/Layouts",
@@ -30,5 +32,21 @@ export const Cards: React.FC = () => {
         <Stub key={value} />
       ))}
     </CardsLayout>
+  );
+};
+
+export const ContainerLayout: React.FC = () => {
+  return (
+    <Container>
+      <Stub />
+    </Container>
+  );
+};
+
+export const HeroWrap: React.FC = () => {
+  return (
+    <HeroWrapper>
+      <Stub />
+    </HeroWrapper>
   );
 };

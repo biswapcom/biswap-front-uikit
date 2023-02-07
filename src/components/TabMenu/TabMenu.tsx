@@ -13,10 +13,12 @@ import { useMatchBreakpoints } from "../../contexts";
 
 interface StyledTabBarProps extends TabBarProps {
   theme: DefaultTheme;
+  activeIndex?: number;
 }
 
 interface BarProps extends TabBarProps {
   onItemClick: (index: number) => void;
+  activeIndex: number;
 }
 
 interface IWrapper extends SpaceProps {
@@ -80,14 +82,20 @@ const Selection = styled.div<{
   width: number;
   scale: string;
   variant: string;
+  withoutAnimation: boolean;
 }>`
   width: ${({ width }) => `${width}px`};
   height: 2px;
   position: absolute;
   bottom: 0;
   left: ${({ offset }) => `${offset}px`};
-  transition: left 0.3s ease, width 0.3s ease;
   z-index: 1;
+
+  ${({ withoutAnimation }) =>
+    !withoutAnimation &&
+    css`
+      transition: left 0.3s ease, width 0.3s ease;
+    `}
 
   ${variant({
     prop: "scale",
@@ -103,7 +111,7 @@ const ColorSection = styled.div<{ variant: string }>`
 `;
 
 const TabMenu: React.FC<BarProps> = ({
-  activeIndex = 0,
+  activeIndex,
   scale = tabsScales.MD,
   variant = tabVariants.DARK,
   onItemClick,
@@ -113,11 +121,12 @@ const TabMenu: React.FC<BarProps> = ({
   scrollX = false,
   children,
   equalElementWidth,
+  withoutAnimation = false,
   ...props
 }) => {
   const [widthsArr, setWidthsArr] = useState([]);
 
-  const [blockOffset, setBlockOffset] = useState(0);
+  const [blockOffset, setBlockOffset] = useState<number | null>(null);
   const [activeButtonIndex, setActiveButtonIndex] =
     useState<number | null>(null);
 
@@ -128,7 +137,7 @@ const TabMenu: React.FC<BarProps> = ({
   }, [activeIndex]);
 
   useEffect(() => {
-    if (activeButtonIndex !== null) {
+    if (activeButtonIndex !== null && widthsArr.length) {
       setBlockOffset(
         widthsArr
           .slice(0, activeButtonIndex)
@@ -137,6 +146,9 @@ const TabMenu: React.FC<BarProps> = ({
     }
   }, [widthsArr, activeButtonIndex, isDesktop, isMobile, isTablet]);
 
+  const showSelection =
+    !disabled && activeIndex !== null && blockOffset !== null;
+
   return (
     <Wrapper
       fullWidth={fullWidth}
@@ -144,12 +156,13 @@ const TabMenu: React.FC<BarProps> = ({
       scrollX={scrollX}
       {...props}
     >
-      {!disabled && (
+      {showSelection && (
         <Selection
           scale={scale}
           width={widthsArr[activeIndex]}
           offset={blockOffset}
           variant={variant}
+          withoutAnimation={withoutAnimation}
         >
           <ColorSection variant={variant} />
         </Selection>
