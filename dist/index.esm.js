@@ -2,7 +2,7 @@ import React, { useState, useEffect, Children, isValidElement, cloneElement, use
 import styled, { keyframes, css, useTheme, ThemeProvider, createGlobalStyle } from 'styled-components';
 import { space, typography, layout, background, border, position, flexbox, grid, variant as variant$1 } from 'styled-system';
 import get from 'lodash/get';
-import { parseInt as parseInt$1, noop, cloneDeep } from 'lodash';
+import { parseInt as parseInt$1, noop } from 'lodash';
 import { createPortal } from 'react-dom';
 import { usePopper } from 'react-popper';
 import ReactPaginate from 'react-paginate';
@@ -7958,8 +7958,8 @@ var MobileDropdownMenu = function (_a) {
     useEffect(function () {
         console.log("LOOP");
         if (isMobile) {
-            var configMobile = cloneDeep(items);
-            setConfigItems(configMobile.map(function (item) {
+            // const configMobile = cloneDeep(items);
+            setConfigItems(items.map(function (item) {
                 if (item.isExtended) {
                     item.items =
                         item.items &&

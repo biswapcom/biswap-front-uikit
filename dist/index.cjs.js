@@ -7971,8 +7971,8 @@ var MobileDropdownMenu = function (_a) {
     React.useEffect(function () {
         console.log("LOOP");
         if (isMobile) {
-            var configMobile = lodash.cloneDeep(items);
-            setConfigItems(configMobile.map(function (item) {
+            // const configMobile = cloneDeep(items);
+            setConfigItems(items.map(function (item) {
                 if (item.isExtended) {
                     item.items =
                         item.items &&

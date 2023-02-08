@@ -1,5 +1,5 @@
 import React, { FC, useEffect, useState } from "react";
-import { cloneDeep } from "lodash";
+// import { cloneDeep } from "lodash";
 
 import { Text } from "../../Text";
 import { useMatchBreakpoints } from "../../../contexts";
@@ -19,12 +19,12 @@ const MobileDropdownMenu: FC<MenuItemsProps> = ({
   const [configItems, setConfigItems] = useState(items);
 
   useEffect(() => {
-    console.log("LOOP")
+    console.log("LOOP");
     if (isMobile) {
-      const configMobile = cloneDeep(items);
+      // const configMobile = cloneDeep(items);
 
       setConfigItems(
-        configMobile.map((item) => {
+        items.map((item) => {
           if (item.isExtended) {
             item.items =
               item.items &&
