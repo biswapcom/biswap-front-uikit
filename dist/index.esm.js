@@ -7953,8 +7953,8 @@ var Burger = function (_a) {
 
 var MobileDropdownMenu = function (_a) {
     var items = _a.items, activeItem = _a.activeItem, _b = _a.isMobileMenuOpened, isMobileMenuOpened = _b === void 0 ? false : _b, mobileMenuCallback = _a.mobileMenuCallback;
-    var isMobile = useMatchBreakpoints().isMobile;
-    var _c = useState(items), configItems = _c[0], setConfigItems = _c[1];
+    var _c = useMatchBreakpoints(), isMobile = _c.isMobile, isDesktop = _c.isDesktop;
+    var _d = useState(items), configItems = _d[0], setConfigItems = _d[1];
     useEffect(function () {
         console.log("LOOP");
         if (isMobile) {
@@ -7973,7 +7973,7 @@ var MobileDropdownMenu = function (_a) {
         else {
             setConfigItems(items);
         }
-    }, [isMobile, items]);
+    }, [isMobile, isDesktop]);
     return (React.createElement(MobileMenu, { items: configItems, mobileMenuCallback: mobileMenuCallback, isMobileNav: true, activeItem: activeItem },
         React.createElement(MenuItem, null,
             React.createElement(Burger, { open: isMobileMenuOpened }))));

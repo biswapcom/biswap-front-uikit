@@ -14,7 +14,7 @@ const MobileDropdownMenu: FC<MenuItemsProps> = ({
   isMobileMenuOpened = false,
   mobileMenuCallback,
 }) => {
-  const { isMobile } = useMatchBreakpoints();
+  const { isMobile, isDesktop } = useMatchBreakpoints();
 
   const [configItems, setConfigItems] = useState(items);
 
@@ -41,7 +41,7 @@ const MobileDropdownMenu: FC<MenuItemsProps> = ({
     } else {
       setConfigItems(items);
     }
-  }, [isMobile, items]);
+  }, [isMobile, isDesktop]);
 
   return (
     <MobileMenu
