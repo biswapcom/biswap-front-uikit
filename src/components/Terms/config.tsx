@@ -1,6 +1,7 @@
 export const Config = {
   revised: "Revised: January 31, 2023",
-  description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.",
+  description:
+    "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.",
   termsList: [
     "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
     "Aliquam tincidunt mauris eu risus.",

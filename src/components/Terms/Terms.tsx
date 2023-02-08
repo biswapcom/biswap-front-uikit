@@ -34,8 +34,8 @@ const Terms: FC<IProps> = ({
   termsList,
   description,
   revised,
-  imageSize= '30px',
-  imageColor = 'primary',
+  imageSize = "30px",
+  imageColor = "primary",
   ...rest
 }) => {
   const renderTermsList = (): JSX.Element[] =>
@@ -48,7 +48,11 @@ const Terms: FC<IProps> = ({
     ));
   return (
     <Box className={scrollClass} {...rest}>
-      <TermsAccordion name={title} imageSize={imageSize} imageColor={imageColor}>
+      <TermsAccordion
+        name={title}
+        imageSize={imageSize}
+        imageColor={imageColor}
+      >
         <Box>
           <BodyText mt="24px" color="warning" scale="size16" bold>
             {revised}
@@ -56,7 +60,9 @@ const Terms: FC<IProps> = ({
           <BodyText mt="16px" color="white" scale="size16">
             {description}
           </BodyText>
-          <StyledList mt="8px" pl="8px">{renderTermsList()}</StyledList>
+          <StyledList mt="8px" pl="8px">
+            {renderTermsList()}
+          </StyledList>
         </Box>
       </TermsAccordion>
     </Box>

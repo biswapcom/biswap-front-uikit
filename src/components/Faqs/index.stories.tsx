@@ -9,7 +9,6 @@ import { Box } from "../Box";
 // config
 import { Config } from "./config";
 
-
 export default {
   title: "Components/Faqs",
   component: Faqs,
