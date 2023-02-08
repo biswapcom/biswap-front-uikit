@@ -7956,6 +7956,7 @@ var MobileDropdownMenu = function (_a) {
     var isMobile = useMatchBreakpoints().isMobile;
     var _c = useState(items), configItems = _c[0], setConfigItems = _c[1];
     useEffect(function () {
+        console.log("LOOP");
         if (isMobile) {
             var configMobile = cloneDeep(items);
             setConfigItems(configMobile.map(function (item) {
@@ -7972,7 +7973,7 @@ var MobileDropdownMenu = function (_a) {
         else {
             setConfigItems(items);
         }
-    }, [isMobile]);
+    }, [isMobile, items]);
     return (React.createElement(MobileMenu, { items: configItems, mobileMenuCallback: mobileMenuCallback, isMobileNav: true, activeItem: activeItem },
         React.createElement(MenuItem, null,
             React.createElement(Burger, { open: isMobileMenuOpened }))));

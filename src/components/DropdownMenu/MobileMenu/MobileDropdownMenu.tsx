@@ -19,6 +19,7 @@ const MobileDropdownMenu: FC<MenuItemsProps> = ({
   const [configItems, setConfigItems] = useState(items);
 
   useEffect(() => {
+    console.log("LOOP")
     if (isMobile) {
       const configMobile = cloneDeep(items);
 
@@ -40,7 +41,7 @@ const MobileDropdownMenu: FC<MenuItemsProps> = ({
     } else {
       setConfigItems(items);
     }
-  }, [isMobile]);
+  }, [isMobile, items]);
 
   return (
     <MobileMenu
