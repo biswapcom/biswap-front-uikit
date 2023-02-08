@@ -7969,9 +7969,7 @@ var MobileDropdownMenu = function (_a) {
     var isMobile = useMatchBreakpoints().isMobile;
     var _c = React.useState(items), configItems = _c[0], setConfigItems = _c[1];
     React.useEffect(function () {
-        console.log("LOOP", items);
         if (isMobile) {
-            // const configMobile = cloneDeep(items);
             setConfigItems(items.map(function (item) {
                 if (item.isExtended) {
                     item.items =
