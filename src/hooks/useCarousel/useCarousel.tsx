@@ -214,9 +214,11 @@ export const useCarousel = ({
     }
   };
 
+  const showHeader = title || withNavButtonsHeader;
+
   const carouselComponent = () => (
     <Box>
-      {title && (
+      {showHeader && (
         <CarouselHeader
           title={title}
           handleNav={handleDirectionClick}

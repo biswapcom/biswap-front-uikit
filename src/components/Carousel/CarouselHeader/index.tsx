@@ -5,9 +5,10 @@ import { useMatchBreakpoints } from "../../../contexts";
 import { Flex } from "../../Box";
 import { ChevronLeftIcon, ChevronRightIcon } from "../../Svg";
 import { BodyText } from "../../Typography";
+import { Container } from "../../Layouts";
 
 interface Props {
-  title: string;
+  title?: string;
   showNavButtons: boolean;
   handleNav: (arg: string) => void;
 }
@@ -24,38 +25,43 @@ const CarouselHeader: FC<Props> = ({
   const { isMobile } = useMatchBreakpoints();
 
   return (
-    <Flex
-      justifyContent="space-between"
-      mb={isMobile ? "24px" : "32px"}
-      alignItems={isMobile ? "flex-end" : "flex-start"}
-    >
-      <BodyText scale={isMobile ? "size24" : "size32"} color="white">
-        {title}
-      </BodyText>
-      {showNavButtons && (
-        <Flex>
-          <NavButton
-            scale="xs"
-            variant="primary"
-            onClick={() => {
-              handleNav("prev");
-            }}
-          >
-            <ChevronLeftIcon color="white" />
-          </NavButton>
-          <NavButton
-            scale="xs"
-            variant="primary"
-            ml="8px"
-            onClick={() => {
-              handleNav("next");
-            }}
-          >
-            <ChevronRightIcon color="white" />
-          </NavButton>
-        </Flex>
-      )}
-    </Flex>
+    <Container>
+      <Flex
+        position="relative"
+        justifyContent={title ? "space-between" : "flex-end"}
+        mb={isMobile ? "24px" : "32px"}
+        alignItems={isMobile ? "flex-end" : "flex-start"}
+      >
+        {title && (
+          <BodyText scale={isMobile ? "size24" : "size32"} color="white">
+            {title}
+          </BodyText>
+        )}
+        {showNavButtons && (
+          <Flex ml="8px">
+            <NavButton
+              scale="xs"
+              variant="primary"
+              onClick={() => {
+                handleNav("prev");
+              }}
+            >
+              <ChevronLeftIcon color="white" />
+            </NavButton>
+            <NavButton
+              scale="xs"
+              variant="primary"
+              ml="8px"
+              onClick={() => {
+                handleNav("next");
+              }}
+            >
+              <ChevronRightIcon color="white" />
+            </NavButton>
+          </Flex>
+        )}
+      </Flex>
+    </Container>
   );
 };
 

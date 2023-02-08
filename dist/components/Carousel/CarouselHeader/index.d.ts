@@ -1,6 +1,6 @@
 import { FC } from "react";
 interface Props {
-    title: string;
+    title?: string;
     showNavButtons: boolean;
     handleNav: (arg: string) => void;
 }

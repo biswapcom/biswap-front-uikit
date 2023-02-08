@@ -1,4 +1,4 @@
-import { FC } from "react";
+import React, { FC } from "react";
 import { useCarousel } from "./useCarousel";
 import { Box, Flex } from "../../components/Box";
 import { BodyText } from "../../components/Typography";
@@ -46,7 +46,7 @@ export const Default = () => {
     data: data,
     Slide: Item,
     showNumberBlock: false,
-    withNavButtonsHeader: false,
+    withNavButtonsHeader: true,
     isDraggable: true,
     withDots: false,
     position: "center",

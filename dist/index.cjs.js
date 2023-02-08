@@ -6471,17 +6471,18 @@ var NavButton = styled__default["default"](IconButton)(templateObject_1$A || (te
 var CarouselHeader = function (_a) {
     var handleNav = _a.handleNav, title = _a.title, showNavButtons = _a.showNavButtons;
     var isMobile = useMatchBreakpoints().isMobile;
-    return (React__default["default"].createElement(Flex, { justifyContent: "space-between", mb: isMobile ? "24px" : "32px", alignItems: isMobile ? "flex-end" : "flex-start" },
-        React__default["default"].createElement(BodyText, { scale: isMobile ? "size24" : "size32", color: "white" }, title),
-        showNavButtons && (React__default["default"].createElement(Flex, null,
-            React__default["default"].createElement(NavButton, { scale: "xs", variant: "primary", onClick: function () {
-                    handleNav("prev");
-                } },
-                React__default["default"].createElement(Icon$3z, { color: "white" })),
-            React__default["default"].createElement(NavButton, { scale: "xs", variant: "primary", ml: "8px", onClick: function () {
-                    handleNav("next");
-                } },
-                React__default["default"].createElement(Icon$3C, { color: "white" }))))));
+    return (React__default["default"].createElement(Container$1, null,
+        React__default["default"].createElement(Flex, { position: "relative", justifyContent: title ? "space-between" : "flex-end", mb: isMobile ? "24px" : "32px", alignItems: isMobile ? "flex-end" : "flex-start" },
+            title && (React__default["default"].createElement(BodyText, { scale: isMobile ? "size24" : "size32", color: "white" }, title)),
+            showNavButtons && (React__default["default"].createElement(Flex, { ml: "8px" },
+                React__default["default"].createElement(NavButton, { scale: "xs", variant: "primary", onClick: function () {
+                        handleNav("prev");
+                    } },
+                    React__default["default"].createElement(Icon$3z, { color: "white" })),
+                React__default["default"].createElement(NavButton, { scale: "xs", variant: "primary", ml: "8px", onClick: function () {
+                        handleNav("next");
+                    } },
+                    React__default["default"].createElement(Icon$3C, { color: "white" })))))));
 };
 var templateObject_1$A;
 
@@ -6666,8 +6667,9 @@ var useCarousel = function (_a) {
                     React__default["default"].createElement(NextButton, { onClick: scrollNext, enabled: nextBtnEnabled })));
         }
     };
+    var showHeader = title || withNavButtonsHeader;
     var carouselComponent = function () { return (React__default["default"].createElement(Box, null,
-        title && (React__default["default"].createElement(CarouselHeader, { title: title, handleNav: handleDirectionClick, showNavButtons: withNavButtonsHeader })),
+        showHeader && (React__default["default"].createElement(CarouselHeader, { title: title, handleNav: handleDirectionClick, showNavButtons: withNavButtonsHeader })),
         showNumberBlock && (React__default["default"].createElement(CarouselNumbersBlock, { dataLength: data === null || data === void 0 ? void 0 : data.length, selectedIndex: selectedIndex, scrollToHandle: scrollToHandle })),
         (data === null || data === void 0 ? void 0 : data.length) && (React__default["default"].createElement(Embla, null,
             React__default["default"].createElement(Viewport, { ref: viewportRef },

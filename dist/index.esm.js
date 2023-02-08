@@ -6456,17 +6456,18 @@ var NavButton = styled(IconButton)(templateObject_1$A || (templateObject_1$A = _
 var CarouselHeader = function (_a) {
     var handleNav = _a.handleNav, title = _a.title, showNavButtons = _a.showNavButtons;
     var isMobile = useMatchBreakpoints().isMobile;
-    return (React.createElement(Flex, { justifyContent: "space-between", mb: isMobile ? "24px" : "32px", alignItems: isMobile ? "flex-end" : "flex-start" },
-        React.createElement(BodyText, { scale: isMobile ? "size24" : "size32", color: "white" }, title),
-        showNavButtons && (React.createElement(Flex, null,
-            React.createElement(NavButton, { scale: "xs", variant: "primary", onClick: function () {
-                    handleNav("prev");
-                } },
-                React.createElement(Icon$3z, { color: "white" })),
-            React.createElement(NavButton, { scale: "xs", variant: "primary", ml: "8px", onClick: function () {
-                    handleNav("next");
-                } },
-                React.createElement(Icon$3C, { color: "white" }))))));
+    return (React.createElement(Container$1, null,
+        React.createElement(Flex, { position: "relative", justifyContent: title ? "space-between" : "flex-end", mb: isMobile ? "24px" : "32px", alignItems: isMobile ? "flex-end" : "flex-start" },
+            title && (React.createElement(BodyText, { scale: isMobile ? "size24" : "size32", color: "white" }, title)),
+            showNavButtons && (React.createElement(Flex, { ml: "8px" },
+                React.createElement(NavButton, { scale: "xs", variant: "primary", onClick: function () {
+                        handleNav("prev");
+                    } },
+                    React.createElement(Icon$3z, { color: "white" })),
+                React.createElement(NavButton, { scale: "xs", variant: "primary", ml: "8px", onClick: function () {
+                        handleNav("next");
+                    } },
+                    React.createElement(Icon$3C, { color: "white" })))))));
 };
 var templateObject_1$A;
 
@@ -6651,8 +6652,9 @@ var useCarousel = function (_a) {
                     React.createElement(NextButton, { onClick: scrollNext, enabled: nextBtnEnabled })));
         }
     };
+    var showHeader = title || withNavButtonsHeader;
     var carouselComponent = function () { return (React.createElement(Box, null,
-        title && (React.createElement(CarouselHeader, { title: title, handleNav: handleDirectionClick, showNavButtons: withNavButtonsHeader })),
+        showHeader && (React.createElement(CarouselHeader, { title: title, handleNav: handleDirectionClick, showNavButtons: withNavButtonsHeader })),
         showNumberBlock && (React.createElement(CarouselNumbersBlock, { dataLength: data === null || data === void 0 ? void 0 : data.length, selectedIndex: selectedIndex, scrollToHandle: scrollToHandle })),
         (data === null || data === void 0 ? void 0 : data.length) && (React.createElement(Embla, null,
             React.createElement(Viewport, { ref: viewportRef },
