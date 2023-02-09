@@ -6531,17 +6531,14 @@ var CarouselNumbersBlock = function (_a) {
 var templateObject_1$z, templateObject_2$j, templateObject_3$f, templateObject_4$e, templateObject_5$9, templateObject_6$7;
 
 var ArrowButton = styled__default["default"].button(templateObject_1$y || (templateObject_1$y = __makeTemplateObject(["\n  background: rgba(255, 255, 255, 0.2);\n  height: 32px;\n  border: 0;\n  box-shadow: none;\n  position: absolute;\n  top: 50%;\n  cursor: pointer;\n  border-radius: 8px;\n  padding: 0 6px;\n"], ["\n  background: rgba(255, 255, 255, 0.2);\n  height: 32px;\n  border: 0;\n  box-shadow: none;\n  position: absolute;\n  top: 50%;\n  cursor: pointer;\n  border-radius: 8px;\n  padding: 0 6px;\n"])));
-var PrevWrap = styled__default["default"](ArrowButton)(templateObject_2$i || (templateObject_2$i = __makeTemplateObject(["\n  left: 4px;\n  transform: translate(0, -50%);\n"], ["\n  left: 4px;\n  transform: translate(0, -50%);\n"])));
-var NextWrap = styled__default["default"](ArrowButton)(templateObject_3$e || (templateObject_3$e = __makeTemplateObject(["\n  right: 4px;\n  transform: translate(0, -50%);\n"], ["\n  right: 4px;\n  transform: translate(0, -50%);\n"])));
-var PrevButton = function (_a) {
-    var enabled = _a.enabled, onClick = _a.onClick;
-    return (React__default["default"].createElement(PrevWrap, { onClick: onClick, disabled: !enabled },
-        React__default["default"].createElement(Icon$3z, { color: "white", height: "32px" })));
-};
-var NextButton = function (_a) {
-    var enabled = _a.enabled, onClick = _a.onClick;
-    return (React__default["default"].createElement(NextWrap, { onClick: onClick, disabled: !enabled },
-        React__default["default"].createElement(Icon$3C, { color: "white", height: "32px" })));
+var Wrap = styled__default["default"](ArrowButton)(templateObject_3$e || (templateObject_3$e = __makeTemplateObject(["\n  left: 4px;\n  transform: translate(0, -50%);\n\n  ", "\n"], ["\n  left: 4px;\n  transform: translate(0, -50%);\n\n  ", "\n"])), function (_a) {
+    var isNextButton = _a.isNextButton;
+    return isNextButton && styled.css(templateObject_2$i || (templateObject_2$i = __makeTemplateObject(["\n      right: 4px;\n      left: unset;\n    "], ["\n      right: 4px;\n      left: unset;\n    "])));
+});
+var DirectionButton = function (_a) {
+    var enabled = _a.enabled, onClick = _a.onClick, iconName = _a.iconName, isNextButton = _a.isNextButton;
+    return (React__default["default"].createElement(Wrap, { onClick: onClick, disabled: !enabled, isNextButton: isNextButton },
+        React__default["default"].createElement(IconComponent$1, { iconName: iconName, color: "white", height: "32px" })));
 };
 var templateObject_1$y, templateObject_2$i, templateObject_3$e;
 
@@ -6663,8 +6660,8 @@ var useCarousel = function (_a) {
                         React__default["default"].createElement(Icon$3C, { width: "16px", color: "dark900" }))));
             default:
                 return (React__default["default"].createElement(React__default["default"].Fragment, null,
-                    React__default["default"].createElement(PrevButton, { onClick: scrollPrev, enabled: prevBtnEnabled }),
-                    React__default["default"].createElement(NextButton, { onClick: scrollNext, enabled: nextBtnEnabled })));
+                    React__default["default"].createElement(DirectionButton, { iconName: "ChevronLeft", onClick: scrollPrev, enabled: prevBtnEnabled }),
+                    React__default["default"].createElement(DirectionButton, { iconName: "ChevronRight", onClick: scrollNext, enabled: nextBtnEnabled, isNextButton: true })));
         }
     };
     var showHeader = title || withNavButtonsHeader;
@@ -8719,6 +8716,7 @@ exports.CopyIcon = Icon$2x;
 exports.CopyOpacityIcon = Icon$2v;
 exports.CopySolidIcon = Icon$2w;
 exports.DEIcon = Icon$j;
+exports.DirectionButton = DirectionButton;
 exports.DocsOpacityIcon = Icon$U;
 exports.DocsSolidIcon = Icon$V;
 exports.Dot = Dot;
@@ -8838,7 +8836,6 @@ exports.NFTEarnOpacityIcon = Icon$1e;
 exports.NFTEarnSolidIcon = Icon$1f;
 exports.NewsOpacityIcon = Icon$W;
 exports.NewsSolidIcon = Icon$X;
-exports.NextButton = NextButton;
 exports.NotificationDot = NotificationDot;
 exports.OptionsOpacityIcon = Icon$2A;
 exports.OptionsSolidIcon = Icon$2B;
@@ -8853,7 +8850,6 @@ exports.PlusIcon = Icon$3m;
 exports.PolygonIcon = Icon$D;
 exports.PoolsOpacityIcon = Icon$1s;
 exports.PoolsSolidIcon = Icon$1t;
-exports.PrevButton = PrevButton;
 exports.ProductsOpacityIcon = Icon$1F;
 exports.ProductsSolidIcon = Icon$1G;
 exports.Program10mOpacityIcon = Icon$10;

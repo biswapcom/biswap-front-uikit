@@ -10,10 +10,9 @@ import {
   CarouselHeader,
   CarouselNumbersBlock,
   Dot,
-  NextButton,
-  PrevButton,
   ArrowSquarePrimary,
   ArrowSquareWhite,
+  DirectionButton,
 } from "../../components/Carousel";
 import { Box, Flex } from "../../components/Box";
 import { useMatchBreakpoints } from "../../contexts";
@@ -207,8 +206,17 @@ export const useCarousel = ({
       default:
         return (
           <>
-            <PrevButton onClick={scrollPrev} enabled={prevBtnEnabled} />
-            <NextButton onClick={scrollNext} enabled={nextBtnEnabled} />
+            <DirectionButton
+              iconName="ChevronLeft"
+              onClick={scrollPrev}
+              enabled={prevBtnEnabled}
+            />
+            <DirectionButton
+              iconName="ChevronRight"
+              onClick={scrollNext}
+              enabled={nextBtnEnabled}
+              isNextButton
+            />
           </>
         );
     }
