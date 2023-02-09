@@ -24,7 +24,7 @@ export const Default: React.FC = () => {
   const theme = useTheme();
   const [onPresent1] = useModal(
     <CustomModal p="8px" bodyPadding="0" title="Modal 1" />,
-    false
+    true
   );
   const [onPresent2] = useModal(
     <CustomModal title="Modal 2" />,

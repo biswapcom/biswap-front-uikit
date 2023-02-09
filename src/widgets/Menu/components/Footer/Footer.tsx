@@ -6,6 +6,7 @@ import {
   FooterAboutLinks,
   FooterProductLinks,
   FooterServiceLinks,
+  FooterSocialLinks,
 } from "../../types";
 // import {animateScroll as scroll} from 'react-scroll'
 // import { SIDEBAR_WIDTH_FULL, SIDEBAR_WIDTH_REDUCED } from "../../config";
@@ -26,6 +27,7 @@ interface Props
     FooterStatisticProps,
     FooterAboutLinks,
     FooterProductLinks,
+    FooterSocialLinks,
     FooterServiceLinks {
   registerToken: () => void;
   buyBswHandler: () => void;
@@ -92,6 +94,7 @@ const Footer: React.FC<Props> = ({
   productLinks,
   serviceLinks,
   buyBswHandler,
+  socialLinks,
   marketplaceLink,
 }) => {
   return (
@@ -107,7 +110,7 @@ const Footer: React.FC<Props> = ({
         <About footerLinks={aboutLinks} />
         <Product footerLinks={productLinks} />
         <Service footerLinks={serviceLinks} />
-        <Community isFooter title="Community" />
+        <Community isFooter socialLinks={socialLinks} />
         <Audit marketplaceLink={marketplaceLink} />
         {/* <Support/> */}
         {/* <BtnUp onClick={()=> scroll.scrollToTop()}><ArrowUp color='white'/></BtnUp> */}

@@ -10,7 +10,7 @@ const Wrapper = styled.div`
 const Product: React.FC<FooterLinks> = ({ footerLinks }) => {
   return (
     <Wrapper>
-      <CommonFooterLinksComponent footerLinks={footerLinks} title="Features" />
+      <CommonFooterLinksComponent footerLinks={footerLinks} />
     </Wrapper>
   );
 };

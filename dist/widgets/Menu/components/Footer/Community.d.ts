@@ -1,9 +1,11 @@
 import React from "react";
+import { SocialLinks } from "../../types";
 export interface CommunityProps {
     iconSize?: string;
     menuVariant?: boolean;
     title?: string;
     isFooter?: boolean;
+    socialLinks?: SocialLinks;
 }
 export interface SocialWrapProps {
     menuVariant?: boolean;

@@ -30,6 +30,8 @@ export * from "./components/Card";
 export * from "./components/Image";
 export * from "./components/TooltipHelper";
 export * from "./components/TableCardSkeleton";
+export * from "./components/ExpandableIcon";
+
 export * from "./components/IconComponent";
 export * from "./components/Faqs";
 export * from "./components/Terms";
