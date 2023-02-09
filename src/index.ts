@@ -28,6 +28,11 @@ export * from "./components/Pagination";
 export * from "./components/SocialShareButton";
 export * from "./components/Card";
 export * from "./components/Image";
+export * from "./components/TooltipHelper";
+export * from "./components/TableCardSkeleton";
+export * from "./components/ExpandableIcon";
+
+export * from "./components/IconComponent";
 // Hooks
 export * from "./hooks";
 
