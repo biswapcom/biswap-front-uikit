@@ -1,11 +1,11 @@
 import React, { useContext, useState } from "react";
 import styled from "styled-components";
-import { FooterLinks } from "../../types";
+import { FooterInfoLinks, FooterLinks } from "../../types";
 import { DropdownMenuItemType } from "../../../../components/DropdownMenu/types";
 import { MenuContext } from "../../context";
 // import MenuLink from "../MenuLink";
 
-interface IProps extends FooterLinks {
+interface IProps extends FooterInfoLinks {
   title: string;
 }
 
@@ -95,14 +95,12 @@ const CustomLink = styled.div`
   }
 `;
 
-const CommonFooterLinksComponent: React.FC<IProps> = ({
-  footerLinks,
-  title,
-}) => {
+const CommonFooterLinksComponent: React.FC<FooterLinks> = ({ footerLinks }) => {
   const [isOpen, setIsOpen] = useState(false);
   const { linkComponent } = useContext(MenuContext);
+  const { title, links } = footerLinks;
 
-  const arrLength = footerLinks.length;
+  const arrLength = links?.length ?? 0;
 
   return (
     <>
@@ -111,7 +109,7 @@ const CommonFooterLinksComponent: React.FC<IProps> = ({
         <ActionIcon isOpen={isOpen} />
       </TopAction>
       <NavList isOpen={isOpen} innerHeight={arrLength}>
-        {footerLinks.map(
+        {links?.map(
           (
             {
               href,

@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC } from "react";
 import { DropdownMenuItemContainerProps, DropdownMenuItemType } from "../types";
 import {
   BannerPlacementItem,
@@ -9,8 +9,6 @@ import {
 } from "../styles";
 import InnerLinksBlock from "./InnerLinksBlock";
 import { useMatchBreakpoints } from "../../../contexts";
-import { Badge } from "../../Badge";
-import { Box } from "../../Box";
 
 const DropdownMenuItemContainer: FC<DropdownMenuItemContainerProps> = ({
   isActive = false,
@@ -30,21 +28,9 @@ const DropdownMenuItemContainer: FC<DropdownMenuItemContainerProps> = ({
   lastItem,
   ...itemProps
 }) => {
-  const [linksItems, setLinkItems] = useState<any>([]);
   const { isMobile, isDesktop } = useMatchBreakpoints();
 
-  useEffect(() => {
-    (async () => {
-      if (typeof links === "function") {
-        const res = await links();
-        setLinkItems(res);
-      } else {
-        setLinkItems(links);
-      }
-    })();
-  }, []);
-
-  const hasInnerLinks = linksItems.length > 0;
+  const hasInnerLinks = links.length > 0;
 
   // @ts-ignore
   return (
@@ -66,7 +52,7 @@ const DropdownMenuItemContainer: FC<DropdownMenuItemContainerProps> = ({
               $isActive={isActive}
               $hasIcon={true} // to disable hover styling
               as={linkComponent}
-              href={linksItems[0]?.href}
+              href={links[0]?.href}
               onClick={() => {
                 setIsOpen(false);
               }}
@@ -87,7 +73,7 @@ const DropdownMenuItemContainer: FC<DropdownMenuItemContainerProps> = ({
 
           {hasInnerLinks && (
             <InnerLinksBlock
-              links={linksItems}
+              links={links}
               leftIcon={leftIcon}
               setIsOpen={setIsOpen}
               linkComponent={linkComponent}

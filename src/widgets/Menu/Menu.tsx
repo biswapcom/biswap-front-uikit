@@ -4,6 +4,7 @@ import React, {
   useState,
   FC,
   PropsWithChildren,
+  Fragment,
 } from "react";
 import throttle from "lodash/throttle";
 import styled, { DefaultTheme } from "styled-components";
@@ -157,6 +158,7 @@ const Menu: FC<PropsWithChildren<NavProps>> = ({
   aboutLinks,
   productLinks,
   serviceLinks,
+  socialLinks,
   withEvent,
   eventCallback,
   //eventButtonLogo,
@@ -193,6 +195,8 @@ const Menu: FC<PropsWithChildren<NavProps>> = ({
     withEvent && isMobile
       ? TopMenuWithBannerHeight + MOBILE_EVENT_BUTTON_HEIGHT
       : TopMenuWithBannerHeight;
+
+  const RightSide = rightSide ?? Fragment;
 
   // const closeWarn = () => {
   //   localStorage.setItem("showFishingWarn", JSON.stringify(false));
@@ -288,7 +292,7 @@ const Menu: FC<PropsWithChildren<NavProps>> = ({
               />
             </Flex>
             <Flex alignItems="center" height="100%">
-              {rightSide}
+              <RightSide isMobileMenuOpen={isMobileMenuOpened} />
             </Flex>
           </StyledNav>
           {/*{withEvent && isMobile && (*/}
@@ -315,6 +319,7 @@ const Menu: FC<PropsWithChildren<NavProps>> = ({
                 aboutLinks={aboutLinks}
                 productLinks={productLinks}
                 serviceLinks={serviceLinks}
+                socialLinks={socialLinks}
                 marketplaceLink={marketplaceLink}
               />
             </>

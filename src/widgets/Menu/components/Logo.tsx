@@ -35,9 +35,9 @@ const StyledInnerButton = styled(Button)`
 `;
 
 const LogoSwitcher: FC<{ logoSubtitle?: string }> = ({ logoSubtitle }) => {
-  const { isMobile } = useMatchBreakpoints();
+  const { isMobile, isMd } = useMatchBreakpoints();
 
-  if (isMobile) {
+  if (isMobile || isMd) {
     return <LogoIcon width="32px" />;
   } else if (logoSubtitle) {
     return (
