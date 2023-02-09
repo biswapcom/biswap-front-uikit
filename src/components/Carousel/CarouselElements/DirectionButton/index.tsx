@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { ChevronLeftIcon, ChevronRightIcon } from "../../../Svg";
 import IconComponent from "../../../Svg/IconComponent";
+import {IDirectionButtonProps} from "../../types";
 
 const ArrowButton = styled.button`
   background: rgba(255, 255, 255, 0.2);
@@ -34,12 +34,7 @@ export const DirectionButton = ({
   onClick,
   iconName,
   isNextButton,
-}: {
-  enabled: boolean;
-  onClick: () => void;
-  iconName: string;
-  isNextButton?: boolean;
-}) => (
+}: IDirectionButtonProps) => (
   <Wrap onClick={onClick} disabled={!enabled} isNextButton={isNextButton}>
     <IconComponent iconName={iconName} color="white" height="32px" />
   </Wrap>

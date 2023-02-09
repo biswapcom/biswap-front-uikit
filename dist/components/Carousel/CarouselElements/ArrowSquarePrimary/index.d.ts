@@ -1,7 +1,3 @@
-import { FC, ReactNode } from "react";
-interface ButtonProps {
-    onClick: () => void;
-    children: ReactNode;
-}
-export declare const ArrowSquarePrimary: FC<ButtonProps>;
-export {};
+import { FC } from "react";
+import { ICarouselButtonProps } from "../../types";
+export declare const ArrowSquarePrimary: FC<ICarouselButtonProps>;

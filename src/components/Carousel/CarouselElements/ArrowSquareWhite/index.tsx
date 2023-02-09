@@ -1,10 +1,6 @@
-import React, { FC, ReactNode } from "react";
+import React, { FC } from "react";
 import styled from "styled-components";
-
-interface ButtonProps {
-  onClick: () => void;
-  children: ReactNode;
-}
+import {ICarouselButtonProps} from "../../types";
 
 const Button = styled.button`
   display: flex;
@@ -20,7 +16,7 @@ const Button = styled.button`
   transition: opacity 0.3s ease;
 `;
 
-export const ArrowSquareWhite: FC<ButtonProps> = ({
+export const ArrowSquareWhite: FC<ICarouselButtonProps> = ({
   onClick,
   children,
 }): JSX.Element => {
