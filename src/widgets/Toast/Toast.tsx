@@ -142,8 +142,10 @@ const Toast: React.FC<ToastProps> = ({
                 fontSize="12px"
                 as="p"
                 mb="8px"
-                dangerouslySetInnerHTML={{ __html: description }}
-              />
+                // dangerouslySetInnerHTML={{ __html: description }}
+              >
+                {description}
+              </Text>
             ) : (
               <></>
             )}

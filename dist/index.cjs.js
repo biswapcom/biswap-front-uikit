@@ -7102,15 +7102,17 @@ var CustomLink = styled__default["default"].div(templateObject_6$5 || (templateO
     return theme.colors.pastelBlue;
 });
 var CommonFooterLinksComponent = function (_a) {
-    var footerLinks = _a.footerLinks, title = _a.title;
-    var _b = React.useState(false), isOpen = _b[0], setIsOpen = _b[1];
+    var _b;
+    var footerLinks = _a.footerLinks;
+    var _c = React.useState(false), isOpen = _c[0], setIsOpen = _c[1];
     var linkComponent = React.useContext(MenuContext).linkComponent;
-    var arrLength = footerLinks.length;
+    var title = footerLinks.title, links = footerLinks.links;
+    var arrLength = (_b = links === null || links === void 0 ? void 0 : links.length) !== null && _b !== void 0 ? _b : 0;
     return (React__default["default"].createElement(React__default["default"].Fragment, null,
         React__default["default"].createElement(TopAction, { onClick: function () { return setIsOpen(!isOpen); } },
             React__default["default"].createElement(Title$1, null, title),
             React__default["default"].createElement(ActionIcon, { isOpen: isOpen })),
-        React__default["default"].createElement(NavList, { isOpen: isOpen, innerHeight: arrLength }, footerLinks.map(function (_a, index) {
+        React__default["default"].createElement(NavList, { isOpen: isOpen, innerHeight: arrLength }, links === null || links === void 0 ? void 0 : links.map(function (_a, index) {
             var href = _a.href, _b = _a.target, target = _b === void 0 ? null : _b, label = _a.label, _c = _a.type, type = _c === void 0 ? exports.DropdownMenuItemType.INTERNAL_LINK : _c;
             return (React__default["default"].createElement(NavItem, { key: index.toString() },
                 type === exports.DropdownMenuItemType.INTERNAL_LINK && (React__default["default"].createElement(CustomLink, { as: linkComponent, to: href }, label)),
@@ -7123,7 +7125,7 @@ var Wrapper$5 = styled__default["default"].div(templateObject_1$k || (templateOb
 var About = function (_a) {
     var footerLinks = _a.footerLinks;
     return (React__default["default"].createElement(Wrapper$5, null,
-        React__default["default"].createElement(CommonFooterLinksComponent, { footerLinks: footerLinks, title: "About Us" })));
+        React__default["default"].createElement(CommonFooterLinksComponent, { footerLinks: footerLinks })));
 };
 var templateObject_1$k;
 
@@ -7131,7 +7133,7 @@ var Wrapper$4 = styled__default["default"].div(templateObject_1$j || (templateOb
 var Product = function (_a) {
     var footerLinks = _a.footerLinks;
     return (React__default["default"].createElement(Wrapper$4, null,
-        React__default["default"].createElement(CommonFooterLinksComponent, { footerLinks: footerLinks, title: "Features" })));
+        React__default["default"].createElement(CommonFooterLinksComponent, { footerLinks: footerLinks })));
 };
 var templateObject_1$j;
 
@@ -7139,7 +7141,7 @@ var Wrapper$3 = styled__default["default"].div(templateObject_1$i || (templateOb
 var Service = function (_a) {
     var footerLinks = _a.footerLinks;
     return (React__default["default"].createElement(Wrapper$3, null,
-        React__default["default"].createElement(CommonFooterLinksComponent, { footerLinks: footerLinks, title: "Service" })));
+        React__default["default"].createElement(CommonFooterLinksComponent, { footerLinks: footerLinks })));
 };
 var templateObject_1$i;
 
@@ -7611,9 +7613,9 @@ var DropDownLabel = styled__default["default"].span(templateObject_9$1 || (templ
 });
 var FlagWrap = styled__default["default"].div(templateObject_10$1 || (templateObject_10$1 = __makeTemplateObject(["\n  border-radius: 50%;\n  margin-right: 8px;\n  overflow: hidden;\n  width: 14px;\n  height: 14px;\n"], ["\n  border-radius: 50%;\n  margin-right: 8px;\n  overflow: hidden;\n  width: 14px;\n  height: 14px;\n"])));
 var Community = function (_a) {
-    var _b = _a.iconSize, iconSize = _b === void 0 ? "20px" : _b, title = _a.title, menuVariant = _a.menuVariant, _c = _a.isFooter, isFooter = _c === void 0 ? false : _c;
+    var _b = _a.iconSize, iconSize = _b === void 0 ? "20px" : _b; _a.title; var menuVariant = _a.menuVariant, _c = _a.isFooter, isFooter = _c === void 0 ? false : _c, socialLinks = _a.socialLinks;
     return (React__default["default"].createElement(Wrapper$2, { menuVariant: menuVariant || isFooter },
-        title && React__default["default"].createElement(Title, null, title),
+        (socialLinks === null || socialLinks === void 0 ? void 0 : socialLinks.title) && React__default["default"].createElement(Title, null, socialLinks === null || socialLinks === void 0 ? void 0 : socialLinks.title),
         React__default["default"].createElement(SocialWrap, { menuVariant: menuVariant }, socials.map(function (social) {
             var Icon = Icons[social.icon];
             var iconProps = {
@@ -7721,14 +7723,14 @@ var InnerRow = styled__default["default"].div(templateObject_2$9 || (templateObj
     return theme.mediaQueries.xll;
 });
 var Footer = function (_a) {
-    var BSWPriceLabel = _a.BSWPriceLabel, BSWPriceValue = _a.BSWPriceValue, registerToken = _a.registerToken, footerStatistic = _a.footerStatistic, aboutLinks = _a.aboutLinks, productLinks = _a.productLinks, serviceLinks = _a.serviceLinks, buyBswHandler = _a.buyBswHandler, marketplaceLink = _a.marketplaceLink;
+    var BSWPriceLabel = _a.BSWPriceLabel, BSWPriceValue = _a.BSWPriceValue, registerToken = _a.registerToken, footerStatistic = _a.footerStatistic, aboutLinks = _a.aboutLinks, productLinks = _a.productLinks, serviceLinks = _a.serviceLinks, buyBswHandler = _a.buyBswHandler, socialLinks = _a.socialLinks, marketplaceLink = _a.marketplaceLink;
     return (React__default["default"].createElement(Wrapper$1, null,
         React__default["default"].createElement(InnerRow, null,
             React__default["default"].createElement(FooterInfo, { BSWPriceLabel: BSWPriceLabel, BSWPriceValue: BSWPriceValue, registerToken: registerToken, footerStatistic: footerStatistic, buyBswHandler: buyBswHandler }),
             React__default["default"].createElement(About, { footerLinks: aboutLinks }),
             React__default["default"].createElement(Product, { footerLinks: productLinks }),
             React__default["default"].createElement(Service, { footerLinks: serviceLinks }),
-            React__default["default"].createElement(Community, { isFooter: true, title: "Community" }),
+            React__default["default"].createElement(Community, { isFooter: true, socialLinks: socialLinks }),
             React__default["default"].createElement(Audit, { marketplaceLink: marketplaceLink }))));
 };
 var templateObject_1$f, templateObject_2$9;
@@ -7839,37 +7841,16 @@ var templateObject_1$d;
 var DropdownMenuItemContainer = function (_a) {
     var _b;
     var _c = _a.isActive, isActive = _c === void 0 ? false : _c, leftIcon = _a.leftIcon, getMenuItemContent = _a.getMenuItemContent, _d = _a.links, links = _d === void 0 ? [] : _d, setIsOpen = _a.setIsOpen, linkComponent = _a.linkComponent, _e = _a.href, href = _e === void 0 ? "/" : _e, bannerRenderer = _a.bannerRenderer, type = _a.type, target = _a.target, mobileTarget = _a.mobileTarget; _a.badgeTitle; _a.badgeType; var isOpenItem = _a.isOpenItem, lastItem = _a.lastItem, itemProps = __rest(_a, ["isActive", "leftIcon", "getMenuItemContent", "links", "setIsOpen", "linkComponent", "href", "bannerRenderer", "type", "target", "mobileTarget", "badgeTitle", "badgeType", "isOpenItem", "lastItem"]);
-    var _f = React.useState([]), linksItems = _f[0], setLinkItems = _f[1];
-    var _g = useMatchBreakpoints(), isMobile = _g.isMobile, isDesktop = _g.isDesktop;
-    React.useEffect(function () {
-        (function () { return __awaiter(void 0, void 0, void 0, function () {
-            var res;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        if (!(typeof links === "function")) return [3 /*break*/, 2];
-                        return [4 /*yield*/, links()];
-                    case 1:
-                        res = _a.sent();
-                        setLinkItems(res);
-                        return [3 /*break*/, 3];
-                    case 2:
-                        setLinkItems(links);
-                        _a.label = 3;
-                    case 3: return [2 /*return*/];
-                }
-            });
-        }); })();
-    }, []);
-    var hasInnerLinks = linksItems.length > 0;
+    var _f = useMatchBreakpoints(), isMobile = _f.isMobile, isDesktop = _f.isDesktop;
+    var hasInnerLinks = links.length > 0;
     // @ts-ignore
     return (React__default["default"].createElement(StyledDropdownMenuItemContainer, { isOpenMenuItem: isOpenItem },
         type === exports.DropdownMenuItemType.BUTTON && (React__default["default"].createElement(DropdownMenuItem, __assign({ "$isActive": isActive, "$hasIcon": !!leftIcon, type: "button" }, itemProps), getMenuItemContent(""))),
         type === exports.DropdownMenuItemType.CONTAINER && (React__default["default"].createElement(React__default["default"].Fragment, null,
-            hasInnerLinks ? (React__default["default"].createElement(DropdownMenuItem, __assign({ "$isActive": isActive, "$hasIcon": true, as: linkComponent, href: (_b = linksItems[0]) === null || _b === void 0 ? void 0 : _b.href, onClick: function () {
+            hasInnerLinks ? (React__default["default"].createElement(DropdownMenuItem, __assign({ "$isActive": isActive, "$hasIcon": true, as: linkComponent, href: (_b = links[0]) === null || _b === void 0 ? void 0 : _b.href, onClick: function () {
                     setIsOpen(false);
                 } }, itemProps), getMenuItemContent(""))) : (React__default["default"].createElement(DropdownMenuItem, __assign({ "$isActive": isActive, "$hasIcon": true, as: "div" }, itemProps), getMenuItemContent(""))),
-            hasInnerLinks && (React__default["default"].createElement(InnerLinksBlock, { links: linksItems, leftIcon: leftIcon, setIsOpen: setIsOpen, linkComponent: linkComponent, lastItem: lastItem })))),
+            hasInnerLinks && (React__default["default"].createElement(InnerLinksBlock, { links: links, leftIcon: leftIcon, setIsOpen: setIsOpen, linkComponent: linkComponent, lastItem: lastItem })))),
         type === exports.DropdownMenuItemType.INTERNAL_LINK && (React__default["default"].createElement(DropdownInternalMenuItem, __assign({ label: itemProps.label, "$isActive": isActive, "$hasIcon": !!leftIcon, as: linkComponent, to: href, onClick: function () {
                 setIsOpen(false);
             } }, itemProps), getMenuItemContent("ArrowRight"))),
@@ -8213,8 +8194,7 @@ var MobileDropdownMenu = function (_a) {
     var _c = React.useState(items), configItems = _c[0], setConfigItems = _c[1];
     React.useEffect(function () {
         if (isMobile) {
-            var configMobile = lodash.cloneDeep(items);
-            setConfigItems(configMobile.map(function (item) {
+            setConfigItems(items.map(function (item) {
                 if (item.isExtended) {
                     item.items =
                         item.items &&
@@ -8228,11 +8208,10 @@ var MobileDropdownMenu = function (_a) {
         else {
             setConfigItems(items);
         }
-    }, [isMobile]);
+    }, [isMobile, items]);
     return (React__default["default"].createElement(MobileMenu, { items: configItems, mobileMenuCallback: mobileMenuCallback, isMobileNav: true, activeItem: activeItem },
         React__default["default"].createElement(MenuItem, null,
-            React__default["default"].createElement(Burger, { open: isMobileMenuOpened }),
-            !isMobile && (React__default["default"].createElement(Text, { ml: "8px", fontWeight: "600", color: "white" }, "Menu")))));
+            React__default["default"].createElement(Burger, { open: isMobileMenuOpened }))));
 };
 
 var Divider = styled__default["default"](Box)(templateObject_1$6 || (templateObject_1$6 = __makeTemplateObject(["\n  opacity: 0.16;\n  border: 1px solid ", ";\n"], ["\n  opacity: 0.16;\n  border: 1px solid ", ";\n"])), function (_a) {
@@ -8274,8 +8253,8 @@ var MenuItems = function (_a) {
 var StyledInnerButton = styled__default["default"](Button$2)(templateObject_1$5 || (templateObject_1$5 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  height: auto;\n  padding: 0;\n  border: none;\n  background-color: transparent;\n"], ["\n  display: flex;\n  align-items: center;\n  height: auto;\n  padding: 0;\n  border: none;\n  background-color: transparent;\n"])));
 var LogoSwitcher = function (_a) {
     var logoSubtitle = _a.logoSubtitle;
-    var isMobile = useMatchBreakpoints().isMobile;
-    if (isMobile) {
+    var _b = useMatchBreakpoints(), isMobile = _b.isMobile, isMd = _b.isMd;
+    if (isMobile || isMd) {
         return React__default["default"].createElement(Icon$3O, { width: "32px" });
     }
     else if (logoSubtitle) {
@@ -8372,7 +8351,7 @@ var BodyWrapper = styled__default["default"](Box)(templateObject_5$1 || (templat
 var Inner = styled__default["default"].div(templateObject_6$1 || (templateObject_6$1 = __makeTemplateObject(["\n  flex-grow: 1;\n  transition: margin-top 0.2s, margin-left 0.2s cubic-bezier(0.4, 0, 0.2, 1);\n  transform: translate3d(0, 0, 0);\n  max-width: 100%;\n"], ["\n  flex-grow: 1;\n  transition: margin-top 0.2s, margin-left 0.2s cubic-bezier(0.4, 0, 0.2, 1);\n  transform: translate3d(0, 0, 0);\n  max-width: 100%;\n"])));
 var Menu = function (_a) {
     var _b;
-    var _c = _a.linkComponent, linkComponent = _c === void 0 ? "a" : _c, banner = _a.banner, links = _a.links, rightSide = _a.rightSide; _a.subLinks; var activeItem = _a.activeItem, activeSubItem = _a.activeSubItem, children = _a.children, BSWPriceLabel = _a.BSWPriceLabel, BSWPriceValue = _a.BSWPriceValue, footerStatistic = _a.footerStatistic, registerToken = _a.registerToken, buyBswHandler = _a.buyBswHandler, aboutLinks = _a.aboutLinks, productLinks = _a.productLinks, serviceLinks = _a.serviceLinks, withEvent = _a.withEvent; _a.eventCallback; 
+    var _c = _a.linkComponent, linkComponent = _c === void 0 ? "a" : _c, banner = _a.banner, links = _a.links, rightSide = _a.rightSide; _a.subLinks; var activeItem = _a.activeItem, activeSubItem = _a.activeSubItem, children = _a.children, BSWPriceLabel = _a.BSWPriceLabel, BSWPriceValue = _a.BSWPriceValue, footerStatistic = _a.footerStatistic, registerToken = _a.registerToken, buyBswHandler = _a.buyBswHandler, aboutLinks = _a.aboutLinks, productLinks = _a.productLinks, serviceLinks = _a.serviceLinks, socialLinks = _a.socialLinks, withEvent = _a.withEvent; _a.eventCallback; 
     var //eventButtonLogo,
     customLogoSubtitle = _a.customLogoSubtitle, marketplaceLink = _a.marketplaceLink;
     var isMobile = useMatchBreakpoints().isMobile;
@@ -8396,6 +8375,7 @@ var Menu = function (_a) {
     var totalTopMenuHeight = withEvent && isMobile
         ? TopMenuWithBannerHeight + MOBILE_EVENT_BUTTON_HEIGHT
         : TopMenuWithBannerHeight;
+    var RightSide = rightSide !== null && rightSide !== void 0 ? rightSide : React.Fragment;
     // const closeWarn = () => {
     //   localStorage.setItem("showFishingWarn", JSON.stringify(false));
     //   setShowFishingWarn(false);
@@ -8454,12 +8434,13 @@ var Menu = function (_a) {
                     React__default["default"].createElement(Flex, { alignItems: "center", justifyContent: "center" },
                         React__default["default"].createElement(Logo, { logoSubtitle: customLogoSubtitle, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
                         React__default["default"].createElement(MenuItems, { items: links, activeItem: activeItem, activeSubItem: activeSubItem, isMobileMenuOpened: isMobileMenuOpened, mobileMenuCallback: setIsMobileMenuOpened, ml: isMobile ? "12px" : "26px" })),
-                    React__default["default"].createElement(Flex, { alignItems: "center", height: "100%" }, rightSide))),
+                    React__default["default"].createElement(Flex, { alignItems: "center", height: "100%" },
+                        React__default["default"].createElement(RightSide, { isMobileMenuOpen: isMobileMenuOpened })))),
             React__default["default"].createElement(BodyWrapper, null,
                 React__default["default"].createElement(Inner, { isPushed: false, showMenu: showMenu },
                     React__default["default"].createElement(React__default["default"].Fragment, null,
                         children,
-                        React__default["default"].createElement(Footer, { BSWPriceLabel: BSWPriceLabel, BSWPriceValue: BSWPriceValue, footerStatistic: footerStatistic, registerToken: registerToken, buyBswHandler: buyBswHandler, aboutLinks: aboutLinks, productLinks: productLinks, serviceLinks: serviceLinks, marketplaceLink: marketplaceLink })))))));
+                        React__default["default"].createElement(Footer, { BSWPriceLabel: BSWPriceLabel, BSWPriceValue: BSWPriceValue, footerStatistic: footerStatistic, registerToken: registerToken, buyBswHandler: buyBswHandler, aboutLinks: aboutLinks, productLinks: productLinks, serviceLinks: serviceLinks, socialLinks: socialLinks, marketplaceLink: marketplaceLink })))))));
 };
 var templateObject_1$4, templateObject_2$2, templateObject_3$1, templateObject_4$1, templateObject_5$1, templateObject_6$1;
 
@@ -8519,7 +8500,7 @@ var Toast = function (_a) {
                     hash && (React__default["default"].createElement(LinkWrapper, null,
                         React__default["default"].createElement(LinkStyles, { target: "_blank", href: "https://bscscan.com/tx/".concat(hash) }, "View on bscscan"),
                         React__default["default"].createElement(Icon$3r, { ml: "6px", width: "18px", height: "18px", color: "primary" }))),
-                    description ? (React__default["default"].createElement(Text, { color: "#6B7D98", fontSize: "12px", as: "p", mb: "8px", dangerouslySetInnerHTML: { __html: description } })) : (React__default["default"].createElement(React__default["default"].Fragment, null)),
+                    description ? (React__default["default"].createElement(Text, { color: "#6B7D98", fontSize: "12px", as: "p", mb: "8px" }, description)) : (React__default["default"].createElement(React__default["default"].Fragment, null)),
                     telegramDescription && tweeterDescription && (React__default["default"].createElement(ActionContainer, null,
                         React__default["default"].createElement(ToastAction, { withGift: withGift, telegramDescription: telegramDescription, tweeterDescription: tweeterDescription, title: title, url: url, thx: "https://bscscan.com/tx/".concat(hash) }))))))));
 };
