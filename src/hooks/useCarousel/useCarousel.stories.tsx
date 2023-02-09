@@ -45,6 +45,24 @@ export const Default = () => {
   const [carouselComponent] = useCarousel({
     data: data,
     Slide: Item,
+    isAutoplay: true,
+    isDraggable: true
+  });
+
+  return (
+    <Box py="56px" background={dark900}>
+      {carouselComponent()}
+    </Box>
+  );
+};
+export const TopButtons = () => {
+  const {
+    // @ts-ignore
+    colors: { dark900 },
+  } = useTheme();
+  const [carouselComponent] = useCarousel({
+    data: data,
+    Slide: Item,
     showNumberBlock: false,
     withNavButtonsHeader: true,
     isDraggable: true,
