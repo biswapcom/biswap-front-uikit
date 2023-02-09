@@ -1,7 +1,5 @@
 import React, { FC, useEffect, useState } from "react";
-import { cloneDeep } from "lodash";
 
-import { Text } from "../../Text";
 import { useMatchBreakpoints } from "../../../contexts";
 import MobileMenu from "./MobileMenu";
 import { MenuItemsProps } from "../../MenuItems/types";
@@ -20,10 +18,8 @@ const MobileDropdownMenu: FC<MenuItemsProps> = ({
 
   useEffect(() => {
     if (isMobile) {
-      const configMobile = cloneDeep(items);
-
       setConfigItems(
-        configMobile.map((item) => {
+        items.map((item) => {
           if (item.isExtended) {
             item.items =
               item.items &&
@@ -40,7 +36,7 @@ const MobileDropdownMenu: FC<MenuItemsProps> = ({
     } else {
       setConfigItems(items);
     }
-  }, [isMobile]);
+  }, [isMobile, items]);
 
   return (
     <MobileMenu
@@ -51,11 +47,6 @@ const MobileDropdownMenu: FC<MenuItemsProps> = ({
     >
       <MenuItem>
         <Burger open={isMobileMenuOpened} />
-        {!isMobile && (
-          <Text ml="8px" fontWeight="600" color="white">
-            Menu
-          </Text>
-        )}
       </MenuItem>
     </MobileMenu>
   );
