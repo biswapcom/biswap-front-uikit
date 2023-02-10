@@ -65,7 +65,7 @@ function __generator(thisArg, body) {
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
+        while (g && (g = 0, op[0] && (_ = 0)), _) try {
             if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
             if (y = 0, t) op = [op[0] & 2, t.value];
             switch (op[0]) {
@@ -6527,23 +6527,23 @@ var IconComponent = function (_a) {
     return IconElement ? React.createElement(IconElement, __assign({}, props)) : null;
 };
 
-var Wrapper$8 = styled(Box)(templateObject_1$v || (templateObject_1$v = __makeTemplateObject(["\n  width: 100%;\n  margin-top: 8px;\n  border: 1px solid ", ";\n  border-radius: 8px;\n  cursor: pointer;\n\n  &:hover {\n    border-color: ", ";\n  }\n"], ["\n  width: 100%;\n  margin-top: 8px;\n  border: 1px solid ", ";\n  border-radius: 8px;\n  cursor: pointer;\n\n  &:hover {\n    border-color: ", ";\n  }\n"])), function (_a) {
+var Wrapper$8 = styled(Box)(templateObject_1$v || (templateObject_1$v = __makeTemplateObject(["\n  width: 100%;\n  margin-top: 8px;\n  border: 1px solid\n    ", ";\n  border-radius: 8px;\n  cursor: pointer;\n\n  &:hover {\n    border-color: ", ";\n  }\n"], ["\n  width: 100%;\n  margin-top: 8px;\n  border: 1px solid\n    ", ";\n  border-radius: 8px;\n  cursor: pointer;\n\n  &:hover {\n    border-color: ", ";\n  }\n"])), function (_a) {
     var theme = _a.theme, isOpen = _a.isOpen;
-    return (isOpen ? getRgba(theme.colors.primary, theme, 0.16) : "transparent");
+    return isOpen ? getRgba(theme.colors.primary, theme, 0.16) : "transparent";
 }, function (_a) {
     var theme = _a.theme;
     return getRgba(theme.colors.primary, theme, 0.16);
 });
 var Question = styled(Flex)(templateObject_2$i || (templateObject_2$i = __makeTemplateObject(["\n  align-items: center;\n  justify-content: space-between;\n  padding: 16px;\n  border-radius: 8px;\n  background: ", ";\n  transition: background 0.3s ease;\n\n  &:hover {\n    background: transparent;\n  }\n\n  ", " {\n    justify-content: space-between;\n  }\n"], ["\n  align-items: center;\n  justify-content: space-between;\n  padding: 16px;\n  border-radius: 8px;\n  background: ", ";\n  transition: background 0.3s ease;\n\n  &:hover {\n    background: transparent;\n  }\n\n  ", " {\n    justify-content: space-between;\n  }\n"])), function (_a) {
     var theme = _a.theme, isOpen = _a.isOpen;
-    return (isOpen ? "transparent" : theme.colors.dark600);
+    return isOpen ? "transparent" : theme.colors.dark600;
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
 var StyledChevronIcon = styled(function (_a) {
     var props = __rest(_a, []);
-    return React.createElement(Icon$3F, __assign({}, props));
+    return (React.createElement(Icon$3F, __assign({}, props)));
 })(templateObject_3$e || (templateObject_3$e = __makeTemplateObject(["\n  transform: scale(", ");\n  transition: transform 0.3s ease;\n"], ["\n  transform: scale(", ");\n  transition: transform 0.3s ease;\n"])), function (_a) {
     var isOpen = _a.isOpen;
     return (isOpen ? "1, -1" : "1, 1");
@@ -6557,7 +6557,7 @@ var FaqAccordion = function (_a) {
         React.createElement(Question, { isOpen: isOpened },
             React.createElement(HeadText, { color: "white", scale: "size14" }, name),
             React.createElement(StyledChevronIcon, { isOpen: isOpened, color: "primary", width: "24px" })),
-        React.createElement(Answer, { ref: contentEl, height: isOpened ? (_b = contentEl === null || contentEl === void 0 ? void 0 : contentEl.current) === null || _b === void 0 ? void 0 : _b.scrollHeight : '0' }, children)));
+        React.createElement(Answer, { ref: contentEl, height: isOpened ? (_b = contentEl === null || contentEl === void 0 ? void 0 : contentEl.current) === null || _b === void 0 ? void 0 : _b.scrollHeight : "0" }, children)));
 };
 var templateObject_1$v, templateObject_2$i, templateObject_3$e, templateObject_4$d;
 
@@ -6589,7 +6589,7 @@ var TermsHead = styled(Flex)(templateObject_1$t || (templateObject_1$t = __makeT
     return theme.mediaQueries.sm;
 });
 var TermsWrapper = styled(Box)(templateObject_2$h || (templateObject_2$h = __makeTemplateObject(["\n  overflow: hidden;\n  transition: height ease 0.5s;\n"], ["\n  overflow: hidden;\n  transition: height ease 0.5s;\n"])));
-var PlusAnimatedIcon = styled.div(templateObject_3$d || (templateObject_3$d = __makeTemplateObject(["\n  position: relative;\n  width: ", ";\n  height: ", ";\n  margin-left: 8px;\n  \n  &:before, &:after {\n    content: \"\";\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    display: block;\n    width: 46%;\n    height: 2px;\n    border-radius: 16px;\n    background: ", ";\n    transform: translate(-50%, -50%);\n    transition: transform 0.3s;\n  }\n  \n  &:before {\n    transform: ", ";\n  }\n  \n  &:after {\n    transform: ", ";\n  }\n"], ["\n  position: relative;\n  width: ", ";\n  height: ", ";\n  margin-left: 8px;\n  \n  &:before, &:after {\n    content: \"\";\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    display: block;\n    width: 46%;\n    height: 2px;\n    border-radius: 16px;\n    background: ", ";\n    transform: translate(-50%, -50%);\n    transition: transform 0.3s;\n  }\n  \n  &:before {\n    transform: ", ";\n  }\n  \n  &:after {\n    transform: ", ";\n  }\n"])), function (_a) {
+var PlusAnimatedIcon = styled.div(templateObject_3$d || (templateObject_3$d = __makeTemplateObject(["\n  position: relative;\n  width: ", ";\n  height: ", ";\n  margin-left: 8px;\n\n  &:before,\n  &:after {\n    content: \"\";\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    display: block;\n    width: 46%;\n    height: 2px;\n    border-radius: 16px;\n    background: ", ";\n    transform: translate(-50%, -50%);\n    transition: transform 0.3s;\n  }\n\n  &:before {\n    transform: ", ";\n  }\n\n  &:after {\n    transform: ", ";\n  }\n"], ["\n  position: relative;\n  width: ", ";\n  height: ", ";\n  margin-left: 8px;\n\n  &:before,\n  &:after {\n    content: \"\";\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    display: block;\n    width: 46%;\n    height: 2px;\n    border-radius: 16px;\n    background: ", ";\n    transform: translate(-50%, -50%);\n    transition: transform 0.3s;\n  }\n\n  &:before {\n    transform: ", ";\n  }\n\n  &:after {\n    transform: ", ";\n  }\n"])), function (_a) {
     var imageSize = _a.imageSize;
     return imageSize;
 }, function (_a) {
@@ -6600,10 +6600,10 @@ var PlusAnimatedIcon = styled.div(templateObject_3$d || (templateObject_3$d = __
     return imageColor;
 }, function (_a) {
     var isOpen = _a.isOpen;
-    return "translate(-50%, -50%) ".concat(isOpen ? 'rotate(0deg)' : 'rotate(90deg)');
+    return "translate(-50%, -50%) ".concat(isOpen ? "rotate(0deg)" : "rotate(90deg)");
 }, function (_a) {
     var isOpen = _a.isOpen;
-    return "translate(-50%, -50%) ".concat(isOpen ? 'rotate(0deg)' : 'rotate(180deg)');
+    return "translate(-50%, -50%) ".concat(isOpen ? "rotate(0deg)" : "rotate(180deg)");
 });
 var TermsAccordion = function (_a) {
     var _b;
@@ -6615,7 +6615,7 @@ var TermsAccordion = function (_a) {
         React.createElement(TermsHead, { onClick: function () { return setOpened(function (prev) { return !prev; }); } },
             React.createElement(HeadText, { color: "white", scale: "size24" }, name),
             React.createElement(PlusAnimatedIcon, { imageSize: imageSize, isOpen: isOpened, imageColor: getThemeValue("colors.".concat(imageColor), imageColor)(theme) })),
-        React.createElement(TermsWrapper, { ref: contentEl, height: isOpened ? (_b = contentEl === null || contentEl === void 0 ? void 0 : contentEl.current) === null || _b === void 0 ? void 0 : _b.scrollHeight : '0' }, children)));
+        React.createElement(TermsWrapper, { ref: contentEl, height: isOpened ? (_b = contentEl === null || contentEl === void 0 ? void 0 : contentEl.current) === null || _b === void 0 ? void 0 : _b.scrollHeight : "0" }, children)));
 };
 var templateObject_1$t, templateObject_2$h, templateObject_3$d;
 
