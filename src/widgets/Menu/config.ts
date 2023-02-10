@@ -410,82 +410,96 @@ export const footerStatistic = [
   },
 ];
 
-export const aboutLinks = [
-  {
-    label: "Info",
-    href: "/",
-  },
-  {
-    label: "Github",
-    href: "/",
-  },
-  {
-    label: "Docs",
-    href: "/",
-  },
-  {
-    label: "News",
-    href: "/",
-  },
-  {
-    label: "Contacts",
-    href: "/",
-  },
-];
+export const socialLinks = {
+  title: "Community",
+  links: [],
+};
 
-export const productLinks = [
-  {
-    label: "Exchange",
-    href: "/swap",
-  },
-  {
-    label: "Liquidity",
-    href: "/pool",
-  },
-  {
-    label: "Farms",
-    href: `/farms`,
-  },
-  {
-    label: "Launchpools",
-    href: `/pools`,
-  },
-  {
-    label: "Multi-Reward Pool",
-    href: `/multireward_pool`,
-  },
-  {
-    label: "Fixed Staking",
-    href: "/fixed_staking",
-  },
-  {
-    label: "Analytics",
-    href: "/analytics",
-  },
-];
+export const aboutLinks = {
+  title: "About Us",
+  links: [
+    {
+      label: "Info",
+      href: "/",
+    },
+    {
+      label: "Github",
+      href: "/",
+    },
+    {
+      label: "Docs",
+      href: "/",
+    },
+    {
+      label: "News",
+      href: "/",
+    },
+    {
+      label: "Contacts",
+      href: "/",
+    },
+  ],
+};
 
-export const serviceLinks = [
-  {
-    label: "Referral program",
-    href: "/referral",
-  },
-  {
-    label: "BSW Token",
-    href: "/bsw_token",
-  },
-  {
-    label: "Apply to Launch",
-    href: "https://forms.gle/V8sQfCi5aBesL2ya8",
-  },
-  {
-    label: "$10M Program",
-    href: "/incentive_program",
-  },
-  {
-    label: "Space Agents",
-    href: "/space_agents",
-  },
-];
+export const productLinks = {
+  title: "Features",
+  links: [
+    {
+      label: "Exchange",
+      href: "/swap",
+    },
+    {
+      label: "Liquidity",
+      href: "/pool",
+    },
+    {
+      label: "Farms",
+      href: `/farms`,
+    },
+    {
+      label: "Launchpools",
+      href: `/pools`,
+    },
+    {
+      label: "Multi-Reward Pool",
+      href: `/multireward_pool`,
+    },
+    {
+      label: "Fixed Staking",
+      href: "/fixed_staking",
+    },
+    {
+      label: "Analytics",
+      href: "/analytics",
+    },
+  ],
+};
+
+export const serviceLinks = {
+  title: "Service",
+  links: [
+    {
+      label: "Referral program",
+      href: "/referral",
+    },
+    {
+      label: "BSW Token",
+      href: "/bsw_token",
+    },
+    {
+      label: "Apply to Launch",
+      href: "https://forms.gle/V8sQfCi5aBesL2ya8",
+    },
+    {
+      label: "$10M Program",
+      href: "/incentive_program",
+    },
+    {
+      label: "Space Agents",
+      href: "/space_agents",
+    },
+  ],
+};
 
 export const userMenulinks: DropdownMenuItems[] = [
   {
