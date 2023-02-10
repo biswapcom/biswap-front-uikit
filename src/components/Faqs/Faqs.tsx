@@ -1,5 +1,4 @@
 import React, { FC, useState } from "react";
-import { ceil, take, takeRight } from "lodash";
 import styled from "styled-components";
 
 // components
@@ -12,7 +11,8 @@ import { QuestionProp } from "./types";
 
 interface IProps extends BoxProps {
   title?: string;
-  questions: QuestionProp[];
+  leftData: QuestionProp[];
+  rightData: QuestionProp[];
 }
 
 const ContentWrapper = styled(Grid)`
@@ -24,17 +24,8 @@ const ContentWrapper = styled(Grid)`
   }
 `;
 
-const Faqs: FC<IProps> = ({ title = "FAQs", questions = [], ...props }) => {
+const Faqs: FC<IProps> = ({ title = "FAQs", leftData, rightData, ...props }) => {
   const [activeQuestion, setActiveQuestion] = useState<string>("");
-
-  // count how many items in left side data
-  const leftLength = ceil(questions.length / 2);
-  // count how many items in right side data
-  const rightLength = questions.length - leftLength;
-  // slice left data
-  const leftData = take(questions, leftLength);
-  // slice right data
-  const rightData = takeRight(questions, rightLength);
 
   const handleToggle = (name: string) => {
     setActiveQuestion(activeQuestion !== name ? name : "");
