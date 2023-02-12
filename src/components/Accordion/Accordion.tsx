@@ -35,7 +35,7 @@ const AccordionBody = styled.div<{ opened: boolean }>`
   ${({ opened }) =>
     opened &&
     css`
-      max-height: 100vh;
+      max-height: 100%;
     `}
 `;
 
