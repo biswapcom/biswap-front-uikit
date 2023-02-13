@@ -7860,7 +7860,7 @@ var DropdownMenu = function (_a) {
 
 var AccordionBody = styled__default["default"].div(templateObject_2$7 || (templateObject_2$7 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  overflow: hidden;\n  max-height: 0;\n  transition: max-height 0.45s;\n\n  ", "\n"], ["\n  display: flex;\n  flex-direction: column;\n  overflow: hidden;\n  max-height: 0;\n  transition: max-height 0.45s;\n\n  ", "\n"])), function (_a) {
     var opened = _a.opened;
-    return opened && styled.css(templateObject_1$b || (templateObject_1$b = __makeTemplateObject(["\n      max-height: 100%;\n    "], ["\n      max-height: 100%;\n    "])));
+    return opened && styled.css(templateObject_1$b || (templateObject_1$b = __makeTemplateObject(["\n      max-height: 900px;\n    "], ["\n      max-height: 900px;\n    "])));
 });
 var AccordionTitle = styled__default["default"](Flex)(templateObject_3$5 || (templateObject_3$5 = __makeTemplateObject(["\n  align-items: center;\n  justify-content: space-between;\n  cursor: pointer;\n  -webkit-tap-highlight-color: transparent;\n"], ["\n  align-items: center;\n  justify-content: space-between;\n  cursor: pointer;\n  -webkit-tap-highlight-color: transparent;\n"])));
 var AccordionComponent = styled__default["default"].div(templateObject_4$5 || (templateObject_4$5 = __makeTemplateObject(["\n  width: 100%;\n"], ["\n  width: 100%;\n"])));
