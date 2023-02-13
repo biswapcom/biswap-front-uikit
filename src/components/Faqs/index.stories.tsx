@@ -16,7 +16,7 @@ export default {
 } as Meta;
 
 export const Default: React.FC = () => {
-  const { title, leftData, rightData } = Config
+  const { title, leftData, rightData } = Config;
 
   return (
     <Box p="20px">

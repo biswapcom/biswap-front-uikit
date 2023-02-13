@@ -6625,7 +6625,7 @@ var StyledListItem = styled(Flex)(templateObject_2$g || (templateObject_2$g = __
     return theme.colors.pastelBlue;
 });
 var Terms = function (_a) {
-    var _b = _a.title, title = _b === void 0 ? "Terms of use" : _b, _c = _a.scrollClass, scrollClass = _c === void 0 ? "" : _c, termsList = _a.termsList, description = _a.description, revised = _a.revised, _d = _a.imageSize, imageSize = _d === void 0 ? '32px' : _d, _e = _a.imageColor, imageColor = _e === void 0 ? 'primary' : _e, rest = __rest(_a, ["title", "scrollClass", "termsList", "description", "revised", "imageSize", "imageColor"]);
+    var _b = _a.title, title = _b === void 0 ? "Terms of use" : _b, _c = _a.scrollClass, scrollClass = _c === void 0 ? "" : _c, termsList = _a.termsList, description = _a.description, revised = _a.revised, _d = _a.imageSize, imageSize = _d === void 0 ? "32px" : _d, _e = _a.imageColor, imageColor = _e === void 0 ? "primary" : _e, rest = __rest(_a, ["title", "scrollClass", "termsList", "description", "revised", "imageSize", "imageColor"]);
     var renderTermsList = function () {
         return termsList.map(function (item, index) { return (React.createElement(StyledListItem, { key: index.toString(), py: "8px" },
             React.createElement(BodyText, { color: "pastelBlue", scale: "size16" }, item))); });
@@ -7653,7 +7653,7 @@ var DropdownMenuDivider = styled.hr(templateObject_9 || (templateObject_9 = __ma
     var color = _a.color;
     return "\n    color: ".concat(color, ";\n    background-color: ").concat(color, ";\n    border-color: ").concat(color, ";\n");
 });
-var StyledDropdownMenu = styled(Grid)(templateObject_10 || (templateObject_10 = __makeTemplateObject(["\n  grid-template-columns: 1fr;\n\n  background-color: ", ";\n  border: 1px solid ", ";\n  border-radius: 16px;\n\n  margin-top: -14px;\n  padding: 24px 24px 0;\n  pointer-events: auto;\n  width: 352px;\n  visibility: visible;\n  opacity: 1;\n  transition: opacity 250ms linear, visibility 350ms linear;\n  z-index: 1001;\n  box-shadow: 0 20px 36px -8px rgba(0, 26, 67, 0.24),\n    0px 1px 1px rgba(0, 0, 0, 0.05);\n\n  ", "\n\n  ", "\n"], ["\n  grid-template-columns: 1fr;\n\n  background-color: ", ";\n  border: 1px solid ", ";\n  border-radius: 16px;\n\n  margin-top: -14px;\n  padding: 24px 24px 0;\n  pointer-events: auto;\n  width: 352px;\n  visibility: visible;\n  opacity: 1;\n  transition: opacity 250ms linear, visibility 350ms linear;\n  z-index: 1001;\n  box-shadow: 0 20px 36px -8px rgba(0, 26, 67, 0.24),\n    0px 1px 1px rgba(0, 0, 0, 0.05);\n\n  ", "\n\n  ", "\n"])), function (_a) {
+var StyledDropdownMenu = styled(Grid)(templateObject_10 || (templateObject_10 = __makeTemplateObject(["\n  grid-template-columns: 1fr;\n\n  background-color: ", ";\n  border: 1px solid ", ";\n  border-radius: 16px;\n\n  padding: 24px 24px 0;\n  pointer-events: auto;\n  width: 352px;\n  visibility: visible;\n  opacity: 1;\n  transition: opacity 250ms linear, visibility 350ms linear;\n  z-index: 1001;\n  box-shadow: 0 20px 36px -8px rgba(0, 26, 67, 0.24),\n    0px 1px 1px rgba(0, 0, 0, 0.05);\n\n  ", "\n\n  ", "\n"], ["\n  grid-template-columns: 1fr;\n\n  background-color: ", ";\n  border: 1px solid ", ";\n  border-radius: 16px;\n\n  padding: 24px 24px 0;\n  pointer-events: auto;\n  width: 352px;\n  visibility: visible;\n  opacity: 1;\n  transition: opacity 250ms linear, visibility 350ms linear;\n  z-index: 1001;\n  box-shadow: 0 20px 36px -8px rgba(0, 26, 67, 0.24),\n    0px 1px 1px rgba(0, 0, 0, 0.05);\n\n  ", "\n\n  ", "\n"])), function (_a) {
     var theme = _a.theme;
     return theme.card.background;
 }, function (_a) {
@@ -7774,7 +7774,7 @@ var DropdownMenu = function (_a) {
     var _l = usePopper(targetRef, tooltipRef, {
         strategy: "fixed",
         placement: "bottom-start",
-        modifiers: [{ name: "offset", options: { offset: [0, 0] } }],
+        modifiers: [{ name: "offset", options: { offset: [0, -14] } }],
     }), styles = _l.styles, attributes = _l.attributes, update = _l.update;
     useEffect(function () {
         var showDropdownMenu = function () { return __awaiter(void 0, void 0, void 0, function () {
