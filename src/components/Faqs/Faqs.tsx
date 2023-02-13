@@ -24,7 +24,12 @@ const ContentWrapper = styled(Grid)`
   }
 `;
 
-const Faqs: FC<IProps> = ({ title = "FAQs", leftData, rightData, ...props }) => {
+const Faqs: FC<IProps> = ({
+  title = "FAQs",
+  leftData,
+  rightData,
+  ...props
+}) => {
   const [activeQuestion, setActiveQuestion] = useState<string>("");
 
   const handleToggle = (name: string) => {

@@ -6527,23 +6527,23 @@ var IconComponent = function (_a) {
     return IconElement ? React.createElement(IconElement, __assign({}, props)) : null;
 };
 
-var Wrapper$8 = styled(Box)(templateObject_1$v || (templateObject_1$v = __makeTemplateObject(["\n  width: 100%;\n  margin-top: 8px;\n  border: 1px solid ", ";\n  border-radius: 8px;\n  cursor: pointer;\n\n  &:hover {\n    border-color: ", ";\n  }\n"], ["\n  width: 100%;\n  margin-top: 8px;\n  border: 1px solid ", ";\n  border-radius: 8px;\n  cursor: pointer;\n\n  &:hover {\n    border-color: ", ";\n  }\n"])), function (_a) {
+var Wrapper$8 = styled(Box)(templateObject_1$v || (templateObject_1$v = __makeTemplateObject(["\n  width: 100%;\n  margin-top: 8px;\n  border: 1px solid\n    ", ";\n  border-radius: 8px;\n  cursor: pointer;\n\n  &:hover {\n    border-color: ", ";\n  }\n"], ["\n  width: 100%;\n  margin-top: 8px;\n  border: 1px solid\n    ", ";\n  border-radius: 8px;\n  cursor: pointer;\n\n  &:hover {\n    border-color: ", ";\n  }\n"])), function (_a) {
     var theme = _a.theme, isOpen = _a.isOpen;
-    return (isOpen ? getRgba(theme.colors.primary, theme, 0.16) : "transparent");
+    return isOpen ? getRgba(theme.colors.primary, theme, 0.16) : "transparent";
 }, function (_a) {
     var theme = _a.theme;
     return getRgba(theme.colors.primary, theme, 0.16);
 });
 var Question = styled(Flex)(templateObject_2$i || (templateObject_2$i = __makeTemplateObject(["\n  align-items: center;\n  justify-content: space-between;\n  padding: 16px;\n  border-radius: 8px;\n  background: ", ";\n  transition: background 0.3s ease;\n\n  &:hover {\n    background: transparent;\n  }\n\n  ", " {\n    justify-content: space-between;\n  }\n"], ["\n  align-items: center;\n  justify-content: space-between;\n  padding: 16px;\n  border-radius: 8px;\n  background: ", ";\n  transition: background 0.3s ease;\n\n  &:hover {\n    background: transparent;\n  }\n\n  ", " {\n    justify-content: space-between;\n  }\n"])), function (_a) {
     var theme = _a.theme, isOpen = _a.isOpen;
-    return (isOpen ? "transparent" : theme.colors.dark600);
+    return isOpen ? "transparent" : theme.colors.dark600;
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
 var StyledChevronIcon = styled(function (_a) {
     var props = __rest(_a, []);
-    return React.createElement(Icon$3F, __assign({}, props));
+    return (React.createElement(Icon$3F, __assign({}, props)));
 })(templateObject_3$e || (templateObject_3$e = __makeTemplateObject(["\n  transform: scale(", ");\n  transition: transform 0.3s ease;\n"], ["\n  transform: scale(", ");\n  transition: transform 0.3s ease;\n"])), function (_a) {
     var isOpen = _a.isOpen;
     return (isOpen ? "1, -1" : "1, 1");
@@ -6557,7 +6557,7 @@ var FaqAccordion = function (_a) {
         React.createElement(Question, { isOpen: isOpened },
             React.createElement(HeadText, { color: "white", scale: "size14" }, name),
             React.createElement(StyledChevronIcon, { isOpen: isOpened, color: "primary", width: "24px" })),
-        React.createElement(Answer, { ref: contentEl, height: isOpened ? (_b = contentEl === null || contentEl === void 0 ? void 0 : contentEl.current) === null || _b === void 0 ? void 0 : _b.scrollHeight : '0' }, children)));
+        React.createElement(Answer, { ref: contentEl, height: isOpened ? (_b = contentEl === null || contentEl === void 0 ? void 0 : contentEl.current) === null || _b === void 0 ? void 0 : _b.scrollHeight : "0" }, children)));
 };
 var templateObject_1$v, templateObject_2$i, templateObject_3$e, templateObject_4$d;
 
@@ -6589,7 +6589,7 @@ var TermsHead = styled(Flex)(templateObject_1$t || (templateObject_1$t = __makeT
     return theme.mediaQueries.sm;
 });
 var TermsWrapper = styled(Box)(templateObject_2$h || (templateObject_2$h = __makeTemplateObject(["\n  overflow: hidden;\n  transition: height ease 0.5s;\n"], ["\n  overflow: hidden;\n  transition: height ease 0.5s;\n"])));
-var PlusAnimatedIcon = styled.div(templateObject_3$d || (templateObject_3$d = __makeTemplateObject(["\n  position: relative;\n  width: ", ";\n  height: ", ";\n  margin-left: 8px;\n  \n  &:before, &:after {\n    content: \"\";\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    display: block;\n    width: 46%;\n    height: 2px;\n    border-radius: 16px;\n    background: ", ";\n    transform: translate(-50%, -50%);\n    transition: transform 0.3s;\n  }\n  \n  &:before {\n    transform: ", ";\n  }\n  \n  &:after {\n    transform: ", ";\n  }\n"], ["\n  position: relative;\n  width: ", ";\n  height: ", ";\n  margin-left: 8px;\n  \n  &:before, &:after {\n    content: \"\";\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    display: block;\n    width: 46%;\n    height: 2px;\n    border-radius: 16px;\n    background: ", ";\n    transform: translate(-50%, -50%);\n    transition: transform 0.3s;\n  }\n  \n  &:before {\n    transform: ", ";\n  }\n  \n  &:after {\n    transform: ", ";\n  }\n"])), function (_a) {
+var PlusAnimatedIcon = styled.div(templateObject_3$d || (templateObject_3$d = __makeTemplateObject(["\n  position: relative;\n  width: ", ";\n  height: ", ";\n  margin-left: 8px;\n\n  &:before,\n  &:after {\n    content: \"\";\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    display: block;\n    width: 46%;\n    height: 2px;\n    border-radius: 16px;\n    background: ", ";\n    transform: translate(-50%, -50%);\n    transition: transform 0.3s;\n  }\n\n  &:before {\n    transform: ", ";\n  }\n\n  &:after {\n    transform: ", ";\n  }\n"], ["\n  position: relative;\n  width: ", ";\n  height: ", ";\n  margin-left: 8px;\n\n  &:before,\n  &:after {\n    content: \"\";\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    display: block;\n    width: 46%;\n    height: 2px;\n    border-radius: 16px;\n    background: ", ";\n    transform: translate(-50%, -50%);\n    transition: transform 0.3s;\n  }\n\n  &:before {\n    transform: ", ";\n  }\n\n  &:after {\n    transform: ", ";\n  }\n"])), function (_a) {
     var imageSize = _a.imageSize;
     return imageSize;
 }, function (_a) {
@@ -6600,10 +6600,10 @@ var PlusAnimatedIcon = styled.div(templateObject_3$d || (templateObject_3$d = __
     return imageColor;
 }, function (_a) {
     var isOpen = _a.isOpen;
-    return "translate(-50%, -50%) ".concat(isOpen ? 'rotate(0deg)' : 'rotate(90deg)');
+    return "translate(-50%, -50%) ".concat(isOpen ? "rotate(0deg)" : "rotate(90deg)");
 }, function (_a) {
     var isOpen = _a.isOpen;
-    return "translate(-50%, -50%) ".concat(isOpen ? 'rotate(0deg)' : 'rotate(180deg)');
+    return "translate(-50%, -50%) ".concat(isOpen ? "rotate(0deg)" : "rotate(180deg)");
 });
 var TermsAccordion = function (_a) {
     var _b;
@@ -6615,7 +6615,7 @@ var TermsAccordion = function (_a) {
         React.createElement(TermsHead, { onClick: function () { return setOpened(function (prev) { return !prev; }); } },
             React.createElement(HeadText, { color: "white", scale: "size24" }, name),
             React.createElement(PlusAnimatedIcon, { imageSize: imageSize, isOpen: isOpened, imageColor: getThemeValue("colors.".concat(imageColor), imageColor)(theme) })),
-        React.createElement(TermsWrapper, { ref: contentEl, height: isOpened ? (_b = contentEl === null || contentEl === void 0 ? void 0 : contentEl.current) === null || _b === void 0 ? void 0 : _b.scrollHeight : '0' }, children)));
+        React.createElement(TermsWrapper, { ref: contentEl, height: isOpened ? (_b = contentEl === null || contentEl === void 0 ? void 0 : contentEl.current) === null || _b === void 0 ? void 0 : _b.scrollHeight : "0" }, children)));
 };
 var templateObject_1$t, templateObject_2$h, templateObject_3$d;
 
@@ -6625,7 +6625,7 @@ var StyledListItem = styled(Flex)(templateObject_2$g || (templateObject_2$g = __
     return theme.colors.pastelBlue;
 });
 var Terms = function (_a) {
-    var _b = _a.title, title = _b === void 0 ? "Terms of use" : _b, _c = _a.scrollClass, scrollClass = _c === void 0 ? "" : _c, termsList = _a.termsList, description = _a.description, revised = _a.revised, _d = _a.imageSize, imageSize = _d === void 0 ? '32px' : _d, _e = _a.imageColor, imageColor = _e === void 0 ? 'primary' : _e, rest = __rest(_a, ["title", "scrollClass", "termsList", "description", "revised", "imageSize", "imageColor"]);
+    var _b = _a.title, title = _b === void 0 ? "Terms of use" : _b, _c = _a.scrollClass, scrollClass = _c === void 0 ? "" : _c, termsList = _a.termsList, description = _a.description, revised = _a.revised, _d = _a.imageSize, imageSize = _d === void 0 ? "32px" : _d, _e = _a.imageColor, imageColor = _e === void 0 ? "primary" : _e, rest = __rest(_a, ["title", "scrollClass", "termsList", "description", "revised", "imageSize", "imageColor"]);
     var renderTermsList = function () {
         return termsList.map(function (item, index) { return (React.createElement(StyledListItem, { key: index.toString(), py: "8px" },
             React.createElement(BodyText, { color: "pastelBlue", scale: "size16" }, item))); });
@@ -7653,7 +7653,7 @@ var DropdownMenuDivider = styled.hr(templateObject_9 || (templateObject_9 = __ma
     var color = _a.color;
     return "\n    color: ".concat(color, ";\n    background-color: ").concat(color, ";\n    border-color: ").concat(color, ";\n");
 });
-var StyledDropdownMenu = styled(Grid)(templateObject_10 || (templateObject_10 = __makeTemplateObject(["\n  grid-template-columns: 1fr;\n\n  background-color: ", ";\n  border: 1px solid ", ";\n  border-radius: 16px;\n\n  margin-top: -14px;\n  padding: 24px 24px 0;\n  pointer-events: auto;\n  width: 352px;\n  visibility: visible;\n  opacity: 1;\n  transition: opacity 250ms linear, visibility 350ms linear;\n  z-index: 1001;\n  box-shadow: 0 20px 36px -8px rgba(0, 26, 67, 0.24),\n    0px 1px 1px rgba(0, 0, 0, 0.05);\n\n  ", "\n\n  ", "\n"], ["\n  grid-template-columns: 1fr;\n\n  background-color: ", ";\n  border: 1px solid ", ";\n  border-radius: 16px;\n\n  margin-top: -14px;\n  padding: 24px 24px 0;\n  pointer-events: auto;\n  width: 352px;\n  visibility: visible;\n  opacity: 1;\n  transition: opacity 250ms linear, visibility 350ms linear;\n  z-index: 1001;\n  box-shadow: 0 20px 36px -8px rgba(0, 26, 67, 0.24),\n    0px 1px 1px rgba(0, 0, 0, 0.05);\n\n  ", "\n\n  ", "\n"])), function (_a) {
+var StyledDropdownMenu = styled(Grid)(templateObject_10 || (templateObject_10 = __makeTemplateObject(["\n  grid-template-columns: 1fr;\n\n  background-color: ", ";\n  border: 1px solid ", ";\n  border-radius: 16px;\n\n  padding: 24px 24px 0;\n  pointer-events: auto;\n  width: 352px;\n  visibility: visible;\n  opacity: 1;\n  transition: opacity 250ms linear, visibility 350ms linear;\n  z-index: 1001;\n  box-shadow: 0 20px 36px -8px rgba(0, 26, 67, 0.24),\n    0px 1px 1px rgba(0, 0, 0, 0.05);\n\n  ", "\n\n  ", "\n"], ["\n  grid-template-columns: 1fr;\n\n  background-color: ", ";\n  border: 1px solid ", ";\n  border-radius: 16px;\n\n  padding: 24px 24px 0;\n  pointer-events: auto;\n  width: 352px;\n  visibility: visible;\n  opacity: 1;\n  transition: opacity 250ms linear, visibility 350ms linear;\n  z-index: 1001;\n  box-shadow: 0 20px 36px -8px rgba(0, 26, 67, 0.24),\n    0px 1px 1px rgba(0, 0, 0, 0.05);\n\n  ", "\n\n  ", "\n"])), function (_a) {
     var theme = _a.theme;
     return theme.card.background;
 }, function (_a) {
@@ -7774,7 +7774,7 @@ var DropdownMenu = function (_a) {
     var _l = usePopper(targetRef, tooltipRef, {
         strategy: "fixed",
         placement: "bottom-start",
-        modifiers: [{ name: "offset", options: { offset: [0, 0] } }],
+        modifiers: [{ name: "offset", options: { offset: [0, -14] } }],
     }), styles = _l.styles, attributes = _l.attributes, update = _l.update;
     useEffect(function () {
         var showDropdownMenu = function () { return __awaiter(void 0, void 0, void 0, function () {
