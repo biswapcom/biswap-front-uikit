@@ -35,6 +35,7 @@ export * from "./components/ExpandableIcon";
 export * from "./components/IconComponent";
 export * from "./components/Faqs";
 export * from "./components/Terms";
+export * from "./components/Carousel";
 // Hooks
 export * from "./hooks";
 

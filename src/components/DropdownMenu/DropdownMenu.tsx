@@ -34,7 +34,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
   const { styles, attributes, update } = usePopper(targetRef, tooltipRef, {
     strategy: "fixed",
     placement: "bottom-start",
-    modifiers: [{ name: "offset", options: { offset: [0, 0] } }],
+    modifiers: [{ name: "offset", options: { offset: [0, -14] } }],
   });
 
   useEffect(() => {
