@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import IconComponent from "../../../Svg/IconComponent";
-import {IDirectionButtonProps} from "../../types";
+import { IDirectionButtonProps } from "../../types";
 
 const ArrowButton = styled.button`
   background: rgba(255, 255, 255, 0.2);

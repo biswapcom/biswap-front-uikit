@@ -6,6 +6,7 @@ import Flex from "../../../components/Box/Flex";
 import { Button } from "../../../components/Button/";
 import { BodyText } from "../../../components/Typography";
 import { Box } from "../../../components/Box";
+import { Image } from "../../../components/Image";
 
 // hooks
 import { useMatchBreakpoints } from "../../../contexts";
@@ -29,19 +30,19 @@ const StyledInnerButton = styled(Button)`
   background-color: transparent;
 `;
 
-const BswIcon = styled.img.attrs({
+const BswIcon = styled(Image).attrs({
   src: "https://static.biswap.org/bs/coins/bsw.svg",
 })`
   width: 32px;
 `;
 
-const ProjectNameIcon = styled.img.attrs({
+const ProjectNameIcon = styled(Image).attrs({
   src: "https://static.biswap.org/bs/icons/ProjectName.svg",
 })`
   width: 104px;
 `;
 
-const LogoWithTextIcon = styled.img.attrs({
+const LogoWithTextIcon = styled(Image).attrs({
   src: "https://static.biswap.org/bs/icons/LogoWithText.svg",
 })`
   width: 145px;
@@ -51,13 +52,27 @@ const LogoSwitcher: FC<{ logoSubtitle?: string }> = ({ logoSubtitle }) => {
   const { isMobile, isMd } = useMatchBreakpoints();
 
   if (isMobile || isMd) {
-    return <BswIcon />;
+    return (
+      <Image
+        src="https://static.biswap.org/bs/coins/bsw.svg"
+        width={32}
+        height={32}
+      />
+    );
   } else if (logoSubtitle) {
     return (
       <Flex>
-        <BswIcon />
+        <Image
+          src="https://static.biswap.org/bs/coins/bsw.svg"
+          width={32}
+          height={32}
+        />
         <Box ml="8px">
-          <ProjectNameIcon />
+          <Image
+            src="https://static.biswap.org/bs/icons/ProjectName.svg"
+            width={104}
+            height={32}
+          />
           <BodyText mt="-6px" textAlign="left" scale="size12">
             {logoSubtitle}
           </BodyText>
@@ -66,7 +81,13 @@ const LogoSwitcher: FC<{ logoSubtitle?: string }> = ({ logoSubtitle }) => {
     );
   }
 
-  return <LogoWithTextIcon />;
+  return (
+    <Image
+      src="https://static.biswap.org/bs/icons/LogoWithText.svg"
+      width={144}
+      height={32}
+    />
+  );
 };
 
 const Logo: React.FC<Props> = ({ href, logoSubtitle }) => {

@@ -6914,29 +6914,29 @@ var MenuItems = function (_a) {
 
 // styled
 var StyledInnerButton = styled(Button$2)(templateObject_1$5 || (templateObject_1$5 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  height: auto;\n  padding: 0;\n  border: none;\n  background-color: transparent;\n"], ["\n  display: flex;\n  align-items: center;\n  height: auto;\n  padding: 0;\n  border: none;\n  background-color: transparent;\n"])));
-var BswIcon = styled.img.attrs({
+styled(Image).attrs({
     src: "https://static.biswap.org/bs/coins/bsw.svg",
 })(templateObject_2$3 || (templateObject_2$3 = __makeTemplateObject(["\n  width: 32px;\n"], ["\n  width: 32px;\n"])));
-var ProjectNameIcon = styled.img.attrs({
+styled(Image).attrs({
     src: "https://static.biswap.org/bs/icons/ProjectName.svg",
 })(templateObject_3$2 || (templateObject_3$2 = __makeTemplateObject(["\n  width: 104px;\n"], ["\n  width: 104px;\n"])));
-var LogoWithTextIcon = styled.img.attrs({
+styled(Image).attrs({
     src: "https://static.biswap.org/bs/icons/LogoWithText.svg",
 })(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  width: 145px;\n"], ["\n  width: 145px;\n"])));
 var LogoSwitcher = function (_a) {
     var logoSubtitle = _a.logoSubtitle;
     var _b = useMatchBreakpoints(), isMobile = _b.isMobile, isMd = _b.isMd;
     if (isMobile || isMd) {
-        return React.createElement(BswIcon, null);
+        return (React.createElement(Image, { src: "https://static.biswap.org/bs/coins/bsw.svg", width: 32, height: 32 }));
     }
     else if (logoSubtitle) {
         return (React.createElement(Flex, null,
-            React.createElement(BswIcon, null),
+            React.createElement(Image, { src: "https://static.biswap.org/bs/coins/bsw.svg", width: 32, height: 32 }),
             React.createElement(Box, { ml: "8px" },
-                React.createElement(ProjectNameIcon, null),
+                React.createElement(Image, { src: "https://static.biswap.org/bs/icons/ProjectName.svg", width: 104, height: 32 }),
                 React.createElement(BodyText, { mt: "-6px", textAlign: "left", scale: "size12" }, logoSubtitle))));
     }
-    return React.createElement(LogoWithTextIcon, null);
+    return (React.createElement(Image, { src: "https://static.biswap.org/bs/icons/LogoWithText.svg", width: 144, height: 32 }));
 };
 var Logo = function (_a) {
     var href = _a.href, logoSubtitle = _a.logoSubtitle;
