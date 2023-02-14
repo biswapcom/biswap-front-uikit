@@ -2,7 +2,6 @@ import React, { FC } from "react";
 import styled from "styled-components";
 import Flex from "../../../../components/Box/Flex";
 
-import { CerticAuditedIcon, MarketIcon } from "../../../../components/Svg";
 import { Button } from "../../../../components/Button";
 import { BodyText } from "../../../../components/Typography";
 import { useMatchBreakpoints } from "../../../../contexts";
@@ -61,6 +60,21 @@ const IconWrapper = styled.div`
   margin-right: 8px;
 `;
 
+const MarketIcon = styled.img.attrs({
+  src: "https://static.biswap.org/bs/icons/Market.svg",
+})`
+  width: 19px;
+`;
+
+const CertikAuditedIcon = styled.img.attrs({
+  src: "https://static.biswap.org/bs/icons/CerticAudited.svg",
+})`
+  width: 156px;
+  border-radius: 8px;
+  background-color: ${({ theme }) => theme.colors.dark600};
+  padding: 8px 16px;
+`;
+
 const Audit: FC<{ marketplaceLink?: string }> = ({ marketplaceLink }) => {
   const { isMobile } = useMatchBreakpoints();
   return (
@@ -72,7 +86,7 @@ const Audit: FC<{ marketplaceLink?: string }> = ({ marketplaceLink }) => {
       >
         <Flex alignItems="center">
           <IconWrapper>
-            <MarketIcon width="19px" />
+            <MarketIcon />
           </IconWrapper>
           <BodyText scale="size14" color="white" bold>
             Marketplace
@@ -80,14 +94,7 @@ const Audit: FC<{ marketplaceLink?: string }> = ({ marketplaceLink }) => {
         </Flex>
       </MarketPlaceButton>
       <LinkWrap href={CERTIC_URL} target="_blank">
-        <CerticAuditedIcon
-          style={{
-            padding: "8px 16px",
-            backgroundColor: "#102648",
-            borderRadius: "8px",
-            width: "156px",
-          }}
-        />
+        <CertikAuditedIcon />
       </LinkWrap>
     </AuditedWrap>
   );

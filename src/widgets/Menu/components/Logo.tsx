@@ -3,11 +3,6 @@ import styled from "styled-components";
 
 // components
 import Flex from "../../../components/Box/Flex";
-import {
-  LogoIcon,
-  LogoWithTextIcon,
-  ProjectNameIcon,
-} from "../../../components/Svg";
 import { Button } from "../../../components/Button/";
 import { BodyText } from "../../../components/Typography";
 import { Box } from "../../../components/Box";
@@ -34,15 +29,33 @@ const StyledInnerButton = styled(Button)`
   background-color: transparent;
 `;
 
+const BswIcon = styled.img.attrs({
+  src: "https://static.biswap.org/bs/coins/bsw.svg",
+})`
+  width: 32px;
+`;
+
+const ProjectNameIcon = styled.img.attrs({
+  src: "https://static.biswap.org/bs/icons/ProjectName.svg",
+})`
+  width: 104px;
+`;
+
+const LogoWithTextIcon = styled.img.attrs({
+  src: "https://static.biswap.org/bs/icons/LogoWithText.svg",
+})`
+  width: 145px;
+`;
+
 const LogoSwitcher: FC<{ logoSubtitle?: string }> = ({ logoSubtitle }) => {
   const { isMobile, isMd } = useMatchBreakpoints();
 
   if (isMobile || isMd) {
-    return <LogoIcon width="32px" />;
+    return <BswIcon />;
   } else if (logoSubtitle) {
     return (
       <Flex>
-        <LogoIcon width="32px" />
+        <BswIcon />
         <Box ml="8px">
           <ProjectNameIcon />
           <BodyText mt="-6px" textAlign="left" scale="size12">
@@ -53,7 +66,7 @@ const LogoSwitcher: FC<{ logoSubtitle?: string }> = ({ logoSubtitle }) => {
     );
   }
 
-  return <LogoWithTextIcon width="145px" />;
+  return <LogoWithTextIcon />;
 };
 
 const Logo: React.FC<Props> = ({ href, logoSubtitle }) => {

@@ -1,17 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { MetamaskIcon } from "../../../../components/Svg";
 
 interface Props {
   onClick: () => void;
 }
-
-// const Label = styled.span`
-//   font-size: 14px;
-//   color: ${({ theme }) => theme.colors.white};
-//   margin-right: 4px;
-//   font-weight: 400;
-// `;
 
 const AddToMetamaskBtn = styled.button`
   display: flex;
@@ -31,12 +23,18 @@ const AddToMetamaskBtn = styled.button`
   }
 `;
 
+const MetamaskIcon = styled.img.attrs({
+  src: "https://static.biswap.org/bs/icons/metamask-transparent.svg",
+})`
+  width: 22px;
+`;
+
 const ConnectMetamask: React.FC<Props> = (props) => {
   const { onClick } = props;
 
   return (
     <AddToMetamaskBtn type="button" onClick={() => onClick()} as="button">
-      <MetamaskIcon width="22px" />
+      <MetamaskIcon />
     </AddToMetamaskBtn>
   );
 };
