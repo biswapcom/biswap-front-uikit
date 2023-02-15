@@ -6,7 +6,7 @@ import Flex from "../../../components/Box/Flex";
 import { Button } from "../../../components/Button/";
 import { BodyText } from "../../../components/Typography";
 import { Box } from "../../../components/Box";
-import { Image } from "../../../components/Image";
+import Image from "next/image";
 
 // hooks
 import { useMatchBreakpoints } from "../../../contexts";
@@ -15,8 +15,9 @@ import { useMatchBreakpoints } from "../../../contexts";
 import { MenuContext } from "../context";
 
 // types
-interface Props {
+interface IProps {
   href: string;
+  baseAwsUrl: string;
   logoSubtitle?: string;
 }
 
@@ -30,48 +31,26 @@ const StyledInnerButton = styled(Button)`
   background-color: transparent;
 `;
 
-const BswIcon = styled(Image).attrs({
-  src: "https://static.biswap.org/bs/coins/bsw.svg",
-})`
-  width: 32px;
-`;
-
-const ProjectNameIcon = styled(Image).attrs({
-  src: "https://static.biswap.org/bs/icons/ProjectName.svg",
-})`
-  width: 104px;
-`;
-
-const LogoWithTextIcon = styled(Image).attrs({
-  src: "https://static.biswap.org/bs/icons/LogoWithText.svg",
-})`
-  width: 145px;
-`;
-
-const LogoSwitcher: FC<{ logoSubtitle?: string }> = ({ logoSubtitle }) => {
+const LogoSwitcher: FC<{ logoSubtitle?: string; baseAwsUrl: string }> = ({
+  logoSubtitle,
+  baseAwsUrl,
+}) => {
   const { isMobile, isMd } = useMatchBreakpoints();
 
+  const bswSrc = `${baseAwsUrl}/coins/bsw.svg`;
+
   if (isMobile || isMd) {
-    return (
-      <Image
-        src="https://static.biswap.org/bs/coins/bsw.svg"
-        width={32}
-        height={32}
-      />
-    );
+    return <Image src={bswSrc} width={32} height={32} alt="bsw" />;
   } else if (logoSubtitle) {
     return (
       <Flex>
-        <Image
-          src="https://static.biswap.org/bs/coins/bsw.svg"
-          width={32}
-          height={32}
-        />
+        <Image src={bswSrc} width={32} height={32} alt="bsw" />
         <Box ml="8px">
           <Image
-            src="https://static.biswap.org/bs/icons/ProjectName.svg"
+            src={`${baseAwsUrl}/icons/ProjectName.svg`}
             width={104}
             height={32}
+            alt="Biswap"
           />
           <BodyText mt="-6px" textAlign="left" scale="size12">
             {logoSubtitle}
@@ -83,14 +62,15 @@ const LogoSwitcher: FC<{ logoSubtitle?: string }> = ({ logoSubtitle }) => {
 
   return (
     <Image
-      src="https://static.biswap.org/bs/icons/LogoWithText.svg"
+      src={`${baseAwsUrl}/icons/LogoWithText.svg`}
       width={144}
       height={32}
+      alt="Biswap"
     />
   );
 };
 
-const Logo: React.FC<Props> = ({ href, logoSubtitle }) => {
+const Logo: React.FC<IProps> = ({ href, logoSubtitle, baseAwsUrl }) => {
   const { linkComponent } = useContext(MenuContext);
 
   const isAbsoluteUrl = href.startsWith("http");
@@ -103,7 +83,7 @@ const Logo: React.FC<Props> = ({ href, logoSubtitle }) => {
           onClick={() => window.open(href, "_self")}
           aria-label="Biswap home page"
         >
-          <LogoSwitcher logoSubtitle={logoSubtitle} />
+          <LogoSwitcher logoSubtitle={logoSubtitle} baseAwsUrl={baseAwsUrl} />
         </StyledInnerButton>
       ) : (
         <StyledInnerButton
@@ -113,7 +93,7 @@ const Logo: React.FC<Props> = ({ href, logoSubtitle }) => {
           // onClick={() => push(href)}
           aria-label="Biswap home page"
         >
-          <LogoSwitcher logoSubtitle={logoSubtitle} />
+          <LogoSwitcher logoSubtitle={logoSubtitle} baseAwsUrl={baseAwsUrl} />
         </StyledInnerButton>
       )}
     </Flex>

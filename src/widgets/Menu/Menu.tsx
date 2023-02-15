@@ -164,6 +164,7 @@ const Menu: FC<PropsWithChildren<NavProps>> = ({
   //eventButtonLogo,
   customLogoSubtitle,
   marketplaceLink,
+  baseAwsUrl = "https://static.biswap.org/bs",
 }) => {
   const { isMobile } = useMatchBreakpoints();
   const [showMenu, setShowMenu] = useState<boolean>(true);
@@ -281,6 +282,7 @@ const Menu: FC<PropsWithChildren<NavProps>> = ({
               <Logo
                 logoSubtitle={customLogoSubtitle}
                 href={homeLink?.href ?? "/"}
+                baseAwsUrl={baseAwsUrl}
               />
               <MenuItems
                 items={links}
