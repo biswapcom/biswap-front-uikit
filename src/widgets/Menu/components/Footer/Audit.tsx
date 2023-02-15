@@ -2,12 +2,16 @@ import React, { FC } from "react";
 import styled from "styled-components";
 import Flex from "../../../../components/Box/Flex";
 
+// components
+import Image from "next/image";
 import { Button } from "../../../../components/Button";
 import { BodyText } from "../../../../components/Typography";
+
+// hooks
 import { useMatchBreakpoints } from "../../../../contexts";
 
 const MARKETPLACE_URL = "https://marketplace.biswap.org";
-const CERTIC_URL = "https://www.certik.org/projects/biswap";
+const CERTIK_URL = "https://www.certik.org/projects/biswap";
 
 const AuditedWrap = styled(Flex)`
   grid-area: audit;
@@ -34,6 +38,10 @@ const AuditedWrap = styled(Flex)`
 const LinkWrap = styled.a`
   height: fit-content;
   transition: opacity 0.3s ease;
+  border-radius: 8px;
+  background-color: ${({ theme }) => theme.colors.dark600};
+  padding: 8px 16px;
+
   &:hover {
     opacity: 0.7;
   }
@@ -60,22 +68,10 @@ const IconWrapper = styled.div`
   margin-right: 8px;
 `;
 
-const MarketIcon = styled.img.attrs({
-  src: "https://static.biswap.org/bs/icons/Market.svg",
-})`
-  width: 19px;
-`;
-
-const CertikAuditedIcon = styled.img.attrs({
-  src: "https://static.biswap.org/bs/icons/CerticAudited.svg",
-})`
-  width: 156px;
-  border-radius: 8px;
-  background-color: ${({ theme }) => theme.colors.dark600};
-  padding: 8px 16px;
-`;
-
-const Audit: FC<{ marketplaceLink?: string }> = ({ marketplaceLink }) => {
+const Audit: FC<{ marketplaceLink?: string; baseAwsUrl: string }> = ({
+  marketplaceLink,
+  baseAwsUrl,
+}) => {
   const { isMobile } = useMatchBreakpoints();
   return (
     <AuditedWrap>
@@ -86,15 +82,25 @@ const Audit: FC<{ marketplaceLink?: string }> = ({ marketplaceLink }) => {
       >
         <Flex alignItems="center">
           <IconWrapper>
-            <MarketIcon />
+            <Image
+              width={19}
+              height={19}
+              src={`${baseAwsUrl}/icons/Market.svg`}
+              alt=""
+            />
           </IconWrapper>
           <BodyText scale="size14" color="white" bold>
             Marketplace
           </BodyText>
         </Flex>
       </MarketPlaceButton>
-      <LinkWrap href={CERTIC_URL} target="_blank">
-        <CertikAuditedIcon />
+      <LinkWrap href={CERTIK_URL} target="_blank">
+        <Image
+          width={124}
+          height={35}
+          src={`${baseAwsUrl}/icons/CertikAudited.svg`}
+          alt="Certik"
+        />
       </LinkWrap>
     </AuditedWrap>
   );

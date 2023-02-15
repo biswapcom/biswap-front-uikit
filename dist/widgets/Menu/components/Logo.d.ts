@@ -1,8 +1,7 @@
 import React from "react";
-interface IProps {
+interface Props {
     href: string;
-    baseAwsUrl: string;
     logoSubtitle?: string;
 }
-declare const Logo: React.FC<IProps>;
+declare const Logo: React.FC<Props>;
 export default Logo;

@@ -6,8 +6,10 @@ import Link from "../../../../components/Link/Link";
 import * as IconModule from "../../../../components/Svg";
 import { SocialLinks } from "../../types";
 import { Box } from "../../../../components/Box";
+import Image from "next/image";
 
 export interface CommunityProps {
+  baseAwsUrl: string;
   iconSize?: string;
   menuVariant?: boolean;
   title?: string;
@@ -132,6 +134,7 @@ const Community: React.FC<CommunityProps> = ({
   menuVariant,
   isFooter = false,
   socialLinks,
+  baseAwsUrl,
 }) => {
   return (
     <Wrapper menuVariant={menuVariant || isFooter}>
@@ -178,12 +181,12 @@ const Community: React.FC<CommunityProps> = ({
                         aria-label={social.label}
                       >
                         <FlagWrap>
-                          <Box width="14px" height="14px">
-                            <img
-                              src={`https://static.biswap.org/bs/icons/Flags/${item.icon}.svg`}
-                              alt=""
-                            />
-                          </Box>
+                          <Image
+                            src={`${baseAwsUrl}/icons/Flags/${item.icon}.svg`}
+                            width={14}
+                            height={14}
+                            alt=""
+                          />
                         </FlagWrap>
                         {item.label}
                       </DropDownLink>

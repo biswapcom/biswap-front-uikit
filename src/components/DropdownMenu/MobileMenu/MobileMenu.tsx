@@ -69,6 +69,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
   mobileMenuCallback,
   children,
   activeItem,
+  baseAwsUrl,
   ...props
 }) => {
   const { linkComponent } = useContext(MenuContext);
@@ -303,7 +304,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
           </Box>
           {isMobile && (
             <MobileCommunityWrapper>
-              <Community menuVariant iconSize="24px" />
+              <Community menuVariant iconSize="24px" baseAwsUrl={baseAwsUrl} />
             </MobileCommunityWrapper>
           )}
         </StyledMobileMenu>

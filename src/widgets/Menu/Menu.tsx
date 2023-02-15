@@ -282,7 +282,6 @@ const Menu: FC<PropsWithChildren<NavProps>> = ({
               <Logo
                 logoSubtitle={customLogoSubtitle}
                 href={homeLink?.href ?? "/"}
-                baseAwsUrl={baseAwsUrl}
               />
               <MenuItems
                 items={links}
@@ -290,6 +289,7 @@ const Menu: FC<PropsWithChildren<NavProps>> = ({
                 activeSubItem={activeSubItem}
                 isMobileMenuOpened={isMobileMenuOpened}
                 mobileMenuCallback={setIsMobileMenuOpened}
+                baseAwsUrl={baseAwsUrl}
                 ml={isMobile ? "12px" : "26px"}
               />
             </Flex>
@@ -323,6 +323,7 @@ const Menu: FC<PropsWithChildren<NavProps>> = ({
                 serviceLinks={serviceLinks}
                 socialLinks={socialLinks}
                 marketplaceLink={marketplaceLink}
+                baseAwsUrl={baseAwsUrl}
               />
             </>
           </Inner>

@@ -341,6 +341,9 @@ export { default as AvalancheIcon } from "./Icons/Chains/Avalanche";
 //Other
 export { default as ArrowFiguredIcon } from "./Icons/Other/ArrowFigured";
 export { default as Ticket2Icon } from "./Icons/Other/Ticket2";
+export { default as LogoWithTextIcon } from "./Icons/Other/LogoWithText";
+export { default as ProjectNameIcon } from "./Icons/Other/ProjectName";
+export { default as BswIcon } from "./Icons/Other/Bsw";
 
 // Locks
 export { default as LockIcon } from "./Icons/Lock/Lock";

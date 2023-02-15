@@ -3,10 +3,14 @@ import styled from "styled-components";
 
 // components
 import Flex from "../../../components/Box/Flex";
+import {
+  BswIcon,
+  LogoWithTextIcon,
+  ProjectNameIcon,
+} from "../../../components/Svg";
 import { Button } from "../../../components/Button/";
 import { BodyText } from "../../../components/Typography";
 import { Box } from "../../../components/Box";
-import Image from "next/image";
 
 // hooks
 import { useMatchBreakpoints } from "../../../contexts";
@@ -15,9 +19,8 @@ import { useMatchBreakpoints } from "../../../contexts";
 import { MenuContext } from "../context";
 
 // types
-interface IProps {
+interface Props {
   href: string;
-  baseAwsUrl: string;
   logoSubtitle?: string;
 }
 
@@ -31,28 +34,17 @@ const StyledInnerButton = styled(Button)`
   background-color: transparent;
 `;
 
-const LogoSwitcher: FC<{ logoSubtitle?: string; baseAwsUrl: string }> = ({
-  logoSubtitle,
-  baseAwsUrl,
-}) => {
+const LogoSwitcher: FC<{ logoSubtitle?: string }> = ({ logoSubtitle }) => {
   const { isMobile, isMd } = useMatchBreakpoints();
 
-  const bswSrc = `${baseAwsUrl}/coins/bsw.svg`;
-
   if (isMobile || isMd) {
-    return <Image src={bswSrc} width={32} height={32} alt="bsw" priority />;
+    return <BswIcon width="32px" />;
   } else if (logoSubtitle) {
     return (
       <Flex>
-        <Image src={bswSrc} width={32} height={32} alt="bsw" priority />
+        <BswIcon width="32px" />
         <Box ml="8px">
-          <Image
-            src={`${baseAwsUrl}/icons/ProjectName.svg`}
-            width={104}
-            height={32}
-            alt="Biswap"
-            priority
-          />
+          <ProjectNameIcon />
           <BodyText mt="-6px" textAlign="left" scale="size12">
             {logoSubtitle}
           </BodyText>
@@ -61,18 +53,10 @@ const LogoSwitcher: FC<{ logoSubtitle?: string; baseAwsUrl: string }> = ({
     );
   }
 
-  return (
-    <Image
-      src={`${baseAwsUrl}/icons/LogoWithText.svg`}
-      width={144}
-      height={32}
-      alt="Biswap"
-      priority
-    />
-  );
+  return <LogoWithTextIcon width="145px" />;
 };
 
-const Logo: React.FC<IProps> = ({ href, logoSubtitle, baseAwsUrl }) => {
+const Logo: React.FC<Props> = ({ href, logoSubtitle }) => {
   const { linkComponent } = useContext(MenuContext);
 
   const isAbsoluteUrl = href.startsWith("http");
@@ -85,7 +69,7 @@ const Logo: React.FC<IProps> = ({ href, logoSubtitle, baseAwsUrl }) => {
           onClick={() => window.open(href, "_self")}
           aria-label="Biswap home page"
         >
-          <LogoSwitcher logoSubtitle={logoSubtitle} baseAwsUrl={baseAwsUrl} />
+          <LogoSwitcher logoSubtitle={logoSubtitle} />
         </StyledInnerButton>
       ) : (
         <StyledInnerButton
@@ -95,7 +79,7 @@ const Logo: React.FC<IProps> = ({ href, logoSubtitle, baseAwsUrl }) => {
           // onClick={() => push(href)}
           aria-label="Biswap home page"
         >
-          <LogoSwitcher logoSubtitle={logoSubtitle} baseAwsUrl={baseAwsUrl} />
+          <LogoSwitcher logoSubtitle={logoSubtitle} />
         </StyledInnerButton>
       )}
     </Flex>
