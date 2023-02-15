@@ -6936,16 +6936,16 @@ var LogoSwitcher = function (_a) {
     var _b = useMatchBreakpoints(), isMobile = _b.isMobile, isMd = _b.isMd;
     var bswSrc = "".concat(baseAwsUrl, "/coins/bsw.svg");
     if (isMobile || isMd) {
-        return React__default["default"].createElement(Image__default["default"], { src: bswSrc, width: 32, height: 32, alt: "bsw" });
+        return React__default["default"].createElement(Image__default["default"], { src: bswSrc, width: 32, height: 32, alt: "bsw", priority: true });
     }
     else if (logoSubtitle) {
         return (React__default["default"].createElement(Flex, null,
-            React__default["default"].createElement(Image__default["default"], { src: bswSrc, width: 32, height: 32, alt: "bsw" }),
+            React__default["default"].createElement(Image__default["default"], { src: bswSrc, width: 32, height: 32, alt: "bsw", priority: true }),
             React__default["default"].createElement(Box, { ml: "8px" },
-                React__default["default"].createElement(Image__default["default"], { src: "".concat(baseAwsUrl, "/icons/ProjectName.svg"), width: 104, height: 32, alt: "Biswap" }),
+                React__default["default"].createElement(Image__default["default"], { src: "".concat(baseAwsUrl, "/icons/ProjectName.svg"), width: 104, height: 32, alt: "Biswap", priority: true }),
                 React__default["default"].createElement(BodyText, { mt: "-6px", textAlign: "left", scale: "size12" }, logoSubtitle))));
     }
-    return (React__default["default"].createElement(Image__default["default"], { src: "".concat(baseAwsUrl, "/icons/LogoWithText.svg"), width: 144, height: 32, alt: "Biswap" }));
+    return (React__default["default"].createElement(Image__default["default"], { src: "".concat(baseAwsUrl, "/icons/LogoWithText.svg"), width: 144, height: 32, alt: "Biswap", priority: true }));
 };
 var Logo = function (_a) {
     var href = _a.href, logoSubtitle = _a.logoSubtitle, baseAwsUrl = _a.baseAwsUrl;

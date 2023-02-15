@@ -40,17 +40,18 @@ const LogoSwitcher: FC<{ logoSubtitle?: string; baseAwsUrl: string }> = ({
   const bswSrc = `${baseAwsUrl}/coins/bsw.svg`;
 
   if (isMobile || isMd) {
-    return <Image src={bswSrc} width={32} height={32} alt="bsw" />;
+    return <Image src={bswSrc} width={32} height={32} alt="bsw" priority />;
   } else if (logoSubtitle) {
     return (
       <Flex>
-        <Image src={bswSrc} width={32} height={32} alt="bsw" />
+        <Image src={bswSrc} width={32} height={32} alt="bsw" priority />
         <Box ml="8px">
           <Image
             src={`${baseAwsUrl}/icons/ProjectName.svg`}
             width={104}
             height={32}
             alt="Biswap"
+            priority
           />
           <BodyText mt="-6px" textAlign="left" scale="size12">
             {logoSubtitle}
@@ -66,6 +67,7 @@ const LogoSwitcher: FC<{ logoSubtitle?: string; baseAwsUrl: string }> = ({
       width={144}
       height={32}
       alt="Biswap"
+      priority
     />
   );
 };

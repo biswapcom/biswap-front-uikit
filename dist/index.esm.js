@@ -6920,16 +6920,16 @@ var LogoSwitcher = function (_a) {
     var _b = useMatchBreakpoints(), isMobile = _b.isMobile, isMd = _b.isMd;
     var bswSrc = "".concat(baseAwsUrl, "/coins/bsw.svg");
     if (isMobile || isMd) {
-        return React.createElement(Image$1, { src: bswSrc, width: 32, height: 32, alt: "bsw" });
+        return React.createElement(Image$1, { src: bswSrc, width: 32, height: 32, alt: "bsw", priority: true });
     }
     else if (logoSubtitle) {
         return (React.createElement(Flex, null,
-            React.createElement(Image$1, { src: bswSrc, width: 32, height: 32, alt: "bsw" }),
+            React.createElement(Image$1, { src: bswSrc, width: 32, height: 32, alt: "bsw", priority: true }),
             React.createElement(Box, { ml: "8px" },
-                React.createElement(Image$1, { src: "".concat(baseAwsUrl, "/icons/ProjectName.svg"), width: 104, height: 32, alt: "Biswap" }),
+                React.createElement(Image$1, { src: "".concat(baseAwsUrl, "/icons/ProjectName.svg"), width: 104, height: 32, alt: "Biswap", priority: true }),
                 React.createElement(BodyText, { mt: "-6px", textAlign: "left", scale: "size12" }, logoSubtitle))));
     }
-    return (React.createElement(Image$1, { src: "".concat(baseAwsUrl, "/icons/LogoWithText.svg"), width: 144, height: 32, alt: "Biswap" }));
+    return (React.createElement(Image$1, { src: "".concat(baseAwsUrl, "/icons/LogoWithText.svg"), width: 144, height: 32, alt: "Biswap", priority: true }));
 };
 var Logo = function (_a) {
     var href = _a.href, logoSubtitle = _a.logoSubtitle, baseAwsUrl = _a.baseAwsUrl;
