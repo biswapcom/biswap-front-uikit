@@ -34,13 +34,11 @@ export interface InputGroupProps extends SpaceProps, InputProps {
     description?: string;
     baseAwsUrl?: string;
 }
-interface BaseImageIconProps {
+interface IconProps {
+    iconName: string;
     color?: string;
 }
-interface IconProps extends BaseImageIconProps {
-    iconName: string;
-}
-interface ImageProps extends BaseImageIconProps {
+interface ImageProps {
     imageSrc: string;
 }
 export {};
