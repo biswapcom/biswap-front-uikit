@@ -2,6 +2,7 @@ import React, { useState, useEffect, Children, isValidElement, cloneElement, use
 import styled, { keyframes, css, useTheme, ThemeProvider, createGlobalStyle } from 'styled-components';
 import { space, typography, layout, background, border, position, flexbox, grid, variant as variant$1 } from 'styled-system';
 import get from 'lodash/get';
+import Image$1 from 'next/image';
 import { parseInt as parseInt$1, noop } from 'lodash';
 import { createPortal } from 'react-dom';
 import { usePopper } from 'react-popper';
@@ -10,7 +11,6 @@ import classNames from 'classnames';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import throttle from 'lodash/throttle';
-import Image$1 from 'next/image';
 import { Link as Link$1 } from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
@@ -2428,10 +2428,10 @@ var Selection$1 = styled.div(templateObject_10$3 || (templateObject_10$3 = __mak
     return (scale === scales$9.SM ? "6px" : "8px");
 }, function (_a) {
     var withoutAnimation = _a.withoutAnimation;
-    return !withoutAnimation && css(templateObject_7$7 || (templateObject_7$7 = __makeTemplateObject(["\n      transition: left 0.3s ease, width 0.3s ease;\n    "], ["\n      transition: left 0.3s ease, width 0.3s ease;\n    "])));
+    return !withoutAnimation && css(templateObject_7$8 || (templateObject_7$8 = __makeTemplateObject(["\n      transition: left 0.3s ease, width 0.3s ease;\n    "], ["\n      transition: left 0.3s ease, width 0.3s ease;\n    "])));
 }, function (_a) {
     var flatTop = _a.flatTop, scale = _a.scale;
-    return flatTop && css(templateObject_8$6 || (templateObject_8$6 = __makeTemplateObject(["\n      border-radius: ", ";\n      height: calc(100% - 4px);\n      top: calc(50% - 2px);\n    "], ["\n      border-radius: ", ";\n      height: calc(100% - 4px);\n      top: calc(50% - 2px);\n    "])), scale === scales$9.SM ? "0 0 6px 6px" : "0 0 8px 8px");
+    return flatTop && css(templateObject_8$7 || (templateObject_8$7 = __makeTemplateObject(["\n      border-radius: ", ";\n      height: calc(100% - 4px);\n      top: calc(50% - 2px);\n    "], ["\n      border-radius: ", ";\n      height: calc(100% - 4px);\n      top: calc(50% - 2px);\n    "])), scale === scales$9.SM ? "0 0 6px 6px" : "0 0 8px 8px");
 }, function (_a) {
     var flatBottom = _a.flatBottom, scale = _a.scale;
     return flatBottom && css(templateObject_9$3 || (templateObject_9$3 = __makeTemplateObject(["\n      border-radius: ", ";\n      height: calc(100% - 4px);\n      top: calc(50% + 2px);\n    "], ["\n      border-radius: ", ";\n      height: calc(100% - 4px);\n      top: calc(50% + 2px);\n    "])), scale === scales$9.SM ? "6px 6px 0 0" : "8px 8px 0 0");
@@ -2474,7 +2474,7 @@ var ButtonMenu = function (_a) {
             });
         }))));
 };
-var templateObject_1$1b, templateObject_2$E, templateObject_3$u, templateObject_4$q, templateObject_5$i, templateObject_6$c, templateObject_7$7, templateObject_8$6, templateObject_9$3, templateObject_10$3;
+var templateObject_1$1b, templateObject_2$E, templateObject_3$u, templateObject_4$q, templateObject_5$i, templateObject_6$c, templateObject_7$8, templateObject_8$7, templateObject_9$3, templateObject_10$3;
 
 var _a$9, _b$5;
 var scaleVariants$2 = (_a$9 = {},
@@ -2848,7 +2848,7 @@ var StyledArrow = styled(Icon$38)(templateObject_6$b || (templateObject_6$b = __
     var isOpen = _a.isOpen;
     return (isOpen ? "scale(1,-1)" : "scale(1,1)");
 });
-var DropdownContent = styled.div(templateObject_7$6 || (templateObject_7$6 = __makeTemplateObject(["\n  width: 100%;\n  position: absolute;\n  left: 0;\n  bottom: ", ";\n  z-index: 101;\n  box-shadow: ", ";\n  background: ", ";\n  overflow: hidden;\n  transform: ", ";\n\n  ", "\n"], ["\n  width: 100%;\n  position: absolute;\n  left: 0;\n  bottom: ", ";\n  z-index: 101;\n  box-shadow: ", ";\n  background: ", ";\n  overflow: hidden;\n  transform: ", ";\n\n  ", "\n"])), getBottom, function (_a) {
+var DropdownContent = styled.div(templateObject_7$7 || (templateObject_7$7 = __makeTemplateObject(["\n  width: 100%;\n  position: absolute;\n  left: 0;\n  bottom: ", ";\n  z-index: 101;\n  box-shadow: ", ";\n  background: ", ";\n  overflow: hidden;\n  transform: ", ";\n\n  ", "\n"], ["\n  width: 100%;\n  position: absolute;\n  left: 0;\n  bottom: ", ";\n  z-index: 101;\n  box-shadow: ", ";\n  background: ", ";\n  overflow: hidden;\n  transform: ", ";\n\n  ", "\n"])), getBottom, function (_a) {
     var position = _a.position;
     return position === "bottom"
         ? "0px 16px 32px rgba(0, 26, 67, 0.24)"
@@ -2863,7 +2863,7 @@ var DropdownContent = styled.div(templateObject_7$6 || (templateObject_7$6 = __m
     prop: "scale",
     variants: scaleVariantsContent,
 }));
-var DropdownItem = styled.div(templateObject_8$5 || (templateObject_8$5 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  color: ", ";\n  cursor: pointer;\n  font-weight: 600;\n  transition: background-color 0.4s ease-out;\n\n  ", "\n\n  &:hover {\n    background: ", ";\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  color: ", ";\n  cursor: pointer;\n  font-weight: 600;\n  transition: background-color 0.4s ease-out;\n\n  ", "\n\n  &:hover {\n    background: ", ";\n  }\n"])), function (_a) {
+var DropdownItem = styled.div(templateObject_8$6 || (templateObject_8$6 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  color: ", ";\n  cursor: pointer;\n  font-weight: 600;\n  transition: background-color 0.4s ease-out;\n\n  ", "\n\n  &:hover {\n    background: ", ";\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  color: ", ";\n  cursor: pointer;\n  font-weight: 600;\n  transition: background-color 0.4s ease-out;\n\n  ", "\n\n  &:hover {\n    background: ", ";\n  }\n"])), function (_a) {
     var theme = _a.theme, selected = _a.selected;
     return selected ? theme.colors.primary : theme.colors.dark800;
 }, variant$1({
@@ -2916,7 +2916,7 @@ var Dropdown = function (_a) {
 Dropdown.defaultProps = {
     position: "bottom",
 };
-var templateObject_1$18, templateObject_2$B, templateObject_3$s, templateObject_4$p, templateObject_5$h, templateObject_6$b, templateObject_7$6, templateObject_8$5;
+var templateObject_1$18, templateObject_2$B, templateObject_3$s, templateObject_4$p, templateObject_5$h, templateObject_6$b, templateObject_7$7, templateObject_8$6;
 
 var tags$1 = {
     H1: "h1",
@@ -3183,6 +3183,17 @@ var getIconPosition = function (scale) {
             return "12px";
     }
 };
+var getImageSize = function (scale) {
+    switch (scale) {
+        case scales$5.LG:
+            return 24;
+        case scales$5.MD:
+            return 20;
+        case scales$5.SM:
+        default:
+            return 16;
+    }
+};
 var StyledInputWrapper = styled(Box)(templateObject_1$15 || (templateObject_1$15 = __makeTemplateObject(["\n  display: block;\n  outline: 0;\n  width: 100%;\n  position: relative;\n  opacity: ", ";\n  cursor: ", ";\n"], ["\n  display: block;\n  outline: 0;\n  width: 100%;\n  position: relative;\n  opacity: ", ";\n  cursor: ", ";\n"])), function (_a) {
     var disabled = _a.disabled;
     return (disabled ? ".56" : "1");
@@ -3203,31 +3214,38 @@ var StyledInputGroup = styled(Box)(templateObject_2$A || (templateObject_2$A = _
     var hasEndIcon = _a.hasEndIcon, scale = _a.scale;
     return getPadding(scale, hasEndIcon);
 });
-var StyledIconComponent = styled(IconComponent$1)(templateObject_3$r || (templateObject_3$r = __makeTemplateObject(["\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  z-index: 2;\n"], ["\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  z-index: 2;\n"])));
-var LeftIconComponent = styled(StyledIconComponent)(templateObject_4$o || (templateObject_4$o = __makeTemplateObject(["\n  left: ", ";\n"], ["\n  left: ", ";\n"])), function (_a) {
+var iconCss = css(templateObject_3$r || (templateObject_3$r = __makeTemplateObject(["\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  z-index: 2;\n"], ["\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  z-index: 2;\n"])));
+var StyledIconComponent = styled(IconComponent$1)(templateObject_4$o || (templateObject_4$o = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), function () { return iconCss; });
+var LeftIconComponent = styled(StyledIconComponent)(templateObject_5$g || (templateObject_5$g = __makeTemplateObject(["\n  left: ", ";\n"], ["\n  left: ", ";\n"])), function (_a) {
     var scale = _a.scale;
     return getIconPosition(scale);
 });
-var RightIconComponent = styled(StyledIconComponent)(templateObject_5$g || (templateObject_5$g = __makeTemplateObject(["\n  right: ", ";\n"], ["\n  right: ", ";\n"])), function (_a) {
+var LeftIconImage = styled(Box)(templateObject_6$a || (templateObject_6$a = __makeTemplateObject(["\n  ", "\n  left: ", ";\n"], ["\n  ", "\n  left: ", ";\n"])), function () { return iconCss; }, function (_a) {
+    var scale = _a.scale;
+    return "".concat(getIconPosition(scale), "px");
+});
+var RightIconComponent = styled(StyledIconComponent)(templateObject_7$6 || (templateObject_7$6 = __makeTemplateObject(["\n  right: ", ";\n"], ["\n  right: ", ";\n"])), function (_a) {
     var scale = _a.scale;
     return getIconPosition(scale);
 });
-var TextDescription = styled(Text)(templateObject_6$a || (templateObject_6$a = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), variant$1({
+var TextDescription = styled(Text)(templateObject_8$5 || (templateObject_8$5 = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), variant$1({
     prop: "variant",
     variants: styleTextVariants,
 }));
 var InputGroup = function (_a) {
-    var _b = _a.scale, scale = _b === void 0 ? scales$5.MD : _b, startIcon = _a.startIcon, endIcon = _a.endIcon, children = _a.children, variant = _a.variant, isError = _a.isError, isWarning = _a.isWarning, disabled = _a.disabled, description = _a.description, props = __rest(_a, ["scale", "startIcon", "endIcon", "children", "variant", "isError", "isWarning", "disabled", "description"]);
+    var _b = _a.scale, scale = _b === void 0 ? scales$5.MD : _b, startIcon = _a.startIcon, startImage = _a.startImage, endIcon = _a.endIcon, children = _a.children, variant = _a.variant, isError = _a.isError, isWarning = _a.isWarning, disabled = _a.disabled, description = _a.description, _c = _a.baseAwsUrl, baseAwsUrl = _c === void 0 ? "https://static.biswap.org/bs" : _c, props = __rest(_a, ["scale", "startIcon", "startImage", "endIcon", "children", "variant", "isError", "isWarning", "disabled", "description", "baseAwsUrl"]);
     return (React.createElement(StyledInputWrapper, __assign({ width: "100%", position: "relative", disabled: disabled }, props),
-        React.createElement(StyledInputGroup, { scale: scale, variant: variant, width: "100%", position: "relative", hasStartIcon: !!startIcon, hasEndIcon: !!endIcon },
+        React.createElement(StyledInputGroup, { scale: scale, variant: variant, width: "100%", position: "relative", hasStartIcon: !!startIcon || !!startImage, hasEndIcon: !!endIcon },
             startIcon && (React.createElement(LeftIconComponent, { color: startIcon.color, iconName: startIcon.iconName, scale: scale })),
+            startImage && (React.createElement(LeftIconImage, { scale: scale },
+                React.createElement(Image$1, { width: getImageSize(scale), height: getImageSize(scale), src: "".concat(baseAwsUrl).concat(startImage === null || startImage === void 0 ? void 0 : startImage.imageSrc), alt: "" }))),
             cloneElement(children, { variant: variant, disabled: disabled }),
             !isError && !isWarning && endIcon && (React.createElement(RightIconComponent, { color: endIcon.color, iconName: endIcon.iconName, scale: scale })),
             isError && (React.createElement(RightIconComponent, { iconName: "CloseCircleSolid", color: "secondary", scale: scale })),
             isWarning && (React.createElement(RightIconComponent, { iconName: "WarningSolid", color: "warning", scale: scale }))),
         description && (React.createElement(TextDescription, { mt: "4px", fontSize: "12px", variant: variant }, description))));
 };
-var templateObject_1$15, templateObject_2$A, templateObject_3$r, templateObject_4$o, templateObject_5$g, templateObject_6$a;
+var templateObject_1$15, templateObject_2$A, templateObject_3$r, templateObject_4$o, templateObject_5$g, templateObject_6$a, templateObject_7$6, templateObject_8$5;
 
 var GridLayout$1 = styled(Grid)(templateObject_1$14 || (templateObject_1$14 = __makeTemplateObject(["\n  grid-template-columns: repeat(6, 1fr);\n  grid-gap: 16px;\n  ", " {\n    grid-template-columns: repeat(8, 1fr);\n    grid-gap: 24px;\n  }\n  ", " {\n    grid-template-columns: repeat(12, 1fr);\n    grid-gap: 24px;\n  }\n  ", " {\n    grid-template-columns: repeat(12, 1fr);\n    grid-gap: 32px;\n  }\n"], ["\n  grid-template-columns: repeat(6, 1fr);\n  grid-gap: 16px;\n  ", " {\n    grid-template-columns: repeat(8, 1fr);\n    grid-gap: 24px;\n  }\n  ", " {\n    grid-template-columns: repeat(12, 1fr);\n    grid-gap: 24px;\n  }\n  ", " {\n    grid-template-columns: repeat(12, 1fr);\n    grid-gap: 32px;\n  }\n"])), function (_a) {
     var theme = _a.theme;

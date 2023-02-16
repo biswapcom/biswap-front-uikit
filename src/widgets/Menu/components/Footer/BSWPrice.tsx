@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import Text from "../../../../components/Text/Text";
 import { BSWPriceProps } from "../../types";
-import Image from "next/image";
 import { BswIcon } from "../../../../components/Svg";
 // import { formatSpacingAmount } from "../../../util/formatSpacingAmount";
 
