@@ -6991,7 +6991,7 @@ var LogoSwitcher = function (_a) {
         return (React__default["default"].createElement(Flex, null,
             React__default["default"].createElement(Icon$3, { width: "32px" }),
             React__default["default"].createElement(Box, { ml: "8px" },
-                React__default["default"].createElement(Icon$4, null),
+                React__default["default"].createElement(Icon$4, { width: "78px" }),
                 React__default["default"].createElement(BodyText, { mt: "-6px", textAlign: "left", scale: "size12" }, logoSubtitle))));
     }
     return React__default["default"].createElement(Icon$5, { width: "145px" });

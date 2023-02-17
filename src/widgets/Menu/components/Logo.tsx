@@ -44,7 +44,7 @@ const LogoSwitcher: FC<{ logoSubtitle?: string }> = ({ logoSubtitle }) => {
       <Flex>
         <BswIcon width="32px" />
         <Box ml="8px">
-          <ProjectNameIcon />
+          <ProjectNameIcon width="78px" />
           <BodyText mt="-6px" textAlign="left" scale="size12">
             {logoSubtitle}
           </BodyText>
