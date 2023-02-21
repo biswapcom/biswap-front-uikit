@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import styled from "styled-components";
-import {ICarouselButtonProps} from "../../types";
+import { ICarouselButtonProps } from "../../types";
 
 const Button = styled.button`
   display: flex;

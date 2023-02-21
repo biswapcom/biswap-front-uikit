@@ -1,17 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { MetamaskIcon } from "../../../../components/Svg";
+import Image from "next/image";
 
 interface Props {
   onClick: () => void;
+  baseAwsUrl: string;
 }
-
-// const Label = styled.span`
-//   font-size: 14px;
-//   color: ${({ theme }) => theme.colors.white};
-//   margin-right: 4px;
-//   font-weight: 400;
-// `;
 
 const AddToMetamaskBtn = styled.button`
   display: flex;
@@ -31,12 +25,15 @@ const AddToMetamaskBtn = styled.button`
   }
 `;
 
-const ConnectMetamask: React.FC<Props> = (props) => {
-  const { onClick } = props;
-
+const ConnectMetamask: React.FC<Props> = ({ onClick, baseAwsUrl }) => {
   return (
     <AddToMetamaskBtn type="button" onClick={() => onClick()} as="button">
-      <MetamaskIcon width="22px" />
+      <Image
+        width={22}
+        height={22}
+        src={`${baseAwsUrl}/icons/metamask-transparent.svg`}
+        alt=""
+      />
     </AddToMetamaskBtn>
   );
 };

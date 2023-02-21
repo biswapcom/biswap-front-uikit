@@ -6,12 +6,7 @@ import styled from "styled-components";
 import Box from "../Box/Box";
 import Flex from "../Box/Flex";
 import { Heading } from "../Heading";
-import {
-  PlusIcon,
-  AutoRenewIcon,
-  LogoIcon,
-  ChevronRightCircleSolidIcon,
-} from "../Svg";
+import { PlusIcon, AutoRenewIcon, ChevronRightCircleSolidIcon } from "../Svg";
 import IconButton from "./IconButton";
 import Button from "./Button";
 import { ExpandableButton, ExpandableLabel } from "./ExpandableButton";
@@ -34,6 +29,12 @@ const Row = styled(Flex)`
   & > a + a {
     margin-left: 16px;
   }
+`;
+
+const BswIcon = styled.img.attrs({
+  src: "https://static.biswap.org/bs/coins/bsw.svg",
+})`
+  width: 24px;
 `;
 
 export const Default: React.FC = () => {
@@ -289,15 +290,15 @@ export const Variants: React.FC = () => {
           </Button>
         </Row>
         <Row>
-          <Button startIcon={<LogoIcon />}>Start Icon</Button>
-          <Button endIcon={<LogoIcon />}>End Icon</Button>
-          <Button startIcon={<LogoIcon />} endIcon={<LogoIcon />}>
+          <Button startIcon={<BswIcon />}>Start Icon</Button>
+          <Button endIcon={<BswIcon />}>End Icon</Button>
+          <Button startIcon={<BswIcon />} endIcon={<BswIcon />}>
             Start & End Icon
           </Button>
         </Row>
         <Row>
           <IconButton>
-            <LogoIcon />
+            <BswIcon />
           </IconButton>
           <IconButton variant="primary">
             <PlusIcon />
@@ -305,7 +306,7 @@ export const Variants: React.FC = () => {
         </Row>
         <Row>
           <IconButton scale="sm" variant="danger">
-            <LogoIcon />
+            <BswIcon />
           </IconButton>
           <IconButton scale="sm" variant="success">
             <PlusIcon color="currentColor" />

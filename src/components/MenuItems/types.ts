@@ -35,4 +35,5 @@ export interface MenuItemsProps extends BoxProps {
   activeSubItem?: string;
   isMobileMenuOpened?: boolean;
   mobileMenuCallback?: (s: boolean) => void;
+  baseAwsUrl: string;
 }

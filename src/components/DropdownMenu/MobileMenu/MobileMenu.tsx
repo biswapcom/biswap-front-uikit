@@ -69,6 +69,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
   mobileMenuCallback,
   children,
   activeItem,
+  baseAwsUrl,
   ...props
 }) => {
   const { linkComponent } = useContext(MenuContext);
@@ -92,7 +93,9 @@ const MobileMenu: FC<MobileMenuProps> = ({
       target && !tooltipRef?.contains(target) && setIsOpen(false);
     };
 
-    targetRef?.addEventListener("mouseleave", hideDropdownMenu);
+    targetRef?.addEventListener("mouseleave", hideDropdownMenu, {
+      passive: true,
+    });
 
     return () => {
       targetRef?.removeEventListener("mouseleave", hideDropdownMenu);
@@ -303,7 +306,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
           </Box>
           {isMobile && (
             <MobileCommunityWrapper>
-              <Community menuVariant iconSize="24px" />
+              <Community menuVariant iconSize="24px" baseAwsUrl={baseAwsUrl} />
             </MobileCommunityWrapper>
           )}
         </StyledMobileMenu>

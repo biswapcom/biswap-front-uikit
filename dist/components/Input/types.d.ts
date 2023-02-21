@@ -27,12 +27,18 @@ export interface InputProps extends SpaceProps {
 export interface InputGroupProps extends SpaceProps, InputProps {
     disabled?: boolean;
     startIcon?: IconProps;
+    startImage?: ImageProps;
+    startSizePx?: number;
     endIcon?: IconProps;
     children: JSX.Element;
     description?: string;
+    baseAwsUrl?: string;
 }
 interface IconProps {
     iconName: string;
     color?: string;
+}
+interface ImageProps {
+    imageSrc: string;
 }
 export {};

@@ -39,6 +39,7 @@ export interface NavProps
   eventButtonLogo?: () => JSX.Element;
   customLogoSubtitle?: string;
   marketplaceLink?: string;
+  baseAwsUrl?: string;
 }
 
 export interface FooterStatisticProps {

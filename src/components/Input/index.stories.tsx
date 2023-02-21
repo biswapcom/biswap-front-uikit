@@ -285,8 +285,8 @@ export const Icons: React.FC = () => {
         <Heading mb="16px">Input group with left(start) icon</Heading>
         <Row>
           <InputGroup
-            startIcon={{
-              iconName: "Search",
+            startImage={{
+              imageSrc: "/coins/bsw.svg",
               color: "gray",
             }}
             mb="24px"
@@ -299,7 +299,7 @@ export const Icons: React.FC = () => {
           </InputGroup>
           <InputGroup
             startIcon={{
-              iconName: "Search",
+              iconName: "EditSolid",
               color: "gray",
             }}
             mb="24px"

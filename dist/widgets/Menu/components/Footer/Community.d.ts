@@ -1,6 +1,7 @@
 import React from "react";
 import { SocialLinks } from "../../types";
 export interface CommunityProps {
+    baseAwsUrl: string;
     iconSize?: string;
     menuVariant?: boolean;
     title?: string;

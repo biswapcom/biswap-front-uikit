@@ -164,6 +164,7 @@ const Menu: FC<PropsWithChildren<NavProps>> = ({
   //eventButtonLogo,
   customLogoSubtitle,
   marketplaceLink,
+  baseAwsUrl = "https://static.biswap.org/bs",
 }) => {
   const { isMobile } = useMatchBreakpoints();
   const [showMenu, setShowMenu] = useState<boolean>(true);
@@ -243,7 +244,7 @@ const Menu: FC<PropsWithChildren<NavProps>> = ({
     };
     const throttledHandleScroll = throttle(handleScroll, 200);
 
-    window.addEventListener("scroll", throttledHandleScroll);
+    window.addEventListener("scroll", throttledHandleScroll, { passive: true });
     return () => {
       window.removeEventListener("scroll", throttledHandleScroll);
     };
@@ -288,6 +289,7 @@ const Menu: FC<PropsWithChildren<NavProps>> = ({
                 activeSubItem={activeSubItem}
                 isMobileMenuOpened={isMobileMenuOpened}
                 mobileMenuCallback={setIsMobileMenuOpened}
+                baseAwsUrl={baseAwsUrl}
                 ml={isMobile ? "12px" : "26px"}
               />
             </Flex>
@@ -321,6 +323,7 @@ const Menu: FC<PropsWithChildren<NavProps>> = ({
                 serviceLinks={serviceLinks}
                 socialLinks={socialLinks}
                 marketplaceLink={marketplaceLink}
+                baseAwsUrl={baseAwsUrl}
               />
             </>
           </Inner>
