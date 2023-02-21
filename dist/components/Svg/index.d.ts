@@ -197,6 +197,8 @@ export { default as TwitchIcon } from "./Icons/Socials/Twitch";
 export { default as TwitterIcon } from "./Icons/Socials/Twitter";
 export { default as YoutubeIcon } from "./Icons/Socials/Youtube";
 export { default as FacebookIcon } from "./Icons/Socials/Facebook";
+export { default as TikTokIcon } from "./Icons/Socials/TikTok";
+export { default as CoinMarketCapIcon } from "./Icons/Socials/CoinMarketCap";
 export { default as Rank1Icon } from "./Icons/Rank/Rank1";
 export { default as Rank2Icon } from "./Icons/Rank/Rank2";
 export { default as Rank3Icon } from "./Icons/Rank/Rank3";
