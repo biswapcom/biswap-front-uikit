@@ -20,8 +20,6 @@ const MobileCommunityWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 32px;
-  //padding: 0 54px;
-  //background: green;
 `;
 
 const StyledMobileMenu = styled.div<{
