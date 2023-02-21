@@ -17,6 +17,7 @@ const MenuItems: React.FC<MenuItemsProps> = ({
   activeSubItem,
   isMobileMenuOpened = false,
   mobileMenuCallback,
+  baseAwsUrl,
   children,
   ...props
 }) => {
@@ -29,6 +30,7 @@ const MenuItems: React.FC<MenuItemsProps> = ({
           activeItem={activeItem}
           isMobileMenuOpened={isMobileMenuOpened}
           mobileMenuCallback={mobileMenuCallback}
+          baseAwsUrl={baseAwsUrl}
         />
       )}
       {items.map(

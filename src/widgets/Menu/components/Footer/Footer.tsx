@@ -32,6 +32,7 @@ interface Props
   registerToken: () => void;
   buyBswHandler: () => void;
   marketplaceLink?: string;
+  baseAwsUrl: string;
 }
 
 const Wrapper = styled.footer`
@@ -96,6 +97,7 @@ const Footer: React.FC<Props> = ({
   buyBswHandler,
   socialLinks,
   marketplaceLink,
+  baseAwsUrl,
 }) => {
   return (
     <Wrapper>
@@ -106,12 +108,13 @@ const Footer: React.FC<Props> = ({
           registerToken={registerToken}
           footerStatistic={footerStatistic}
           buyBswHandler={buyBswHandler}
+          baseAwsUrl={baseAwsUrl}
         />
         <About footerLinks={aboutLinks} />
         <Product footerLinks={productLinks} />
         <Service footerLinks={serviceLinks} />
-        <Community isFooter socialLinks={socialLinks} />
-        <Audit marketplaceLink={marketplaceLink} />
+        <Community isFooter socialLinks={socialLinks} baseAwsUrl={baseAwsUrl} />
+        <Audit marketplaceLink={marketplaceLink} baseAwsUrl={baseAwsUrl} />
         {/* <Support/> */}
         {/* <BtnUp onClick={()=> scroll.scrollToTop()}><ArrowUp color='white'/></BtnUp> */}
       </InnerRow>

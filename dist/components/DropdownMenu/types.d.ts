@@ -3,6 +3,7 @@ import { Colors } from "../../theme";
 import { BoxProps } from "../Box";
 import { MenuItemsType } from "../MenuItems/types";
 export interface MobileMenuProps {
+    baseAwsUrl: string;
     items: MenuItemsType[];
     mobileMenuCallback?: (s: boolean) => void;
     activeItem?: string;

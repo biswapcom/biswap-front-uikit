@@ -1,8 +1,9 @@
 import React, { FC, cloneElement } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { variant } from "styled-system";
 import Box from "../Box/Box";
 import Input from "./Input";
+import Image from "next/image";
 import Text from "../Text/Text";
 import { InputGroupProps, scales, Scales, Variants } from "./types";
 import { styleVariants, scaleVariants, styleTextVariants } from "./theme";
@@ -42,6 +43,18 @@ const getIconPosition = (scale: Scales) => {
     case scales.SM:
     default:
       return "12px";
+  }
+};
+
+const getImageSize = (scale: Scales) => {
+  switch (scale) {
+    case scales.LG:
+      return 24;
+    case scales.MD:
+      return 20;
+    case scales.SM:
+    default:
+      return 16;
   }
 };
 
@@ -86,15 +99,26 @@ const StyledInputGroup = styled(Box)<{
   }
 `;
 
-const StyledIconComponent = styled(IconComponent)`
+const iconCss = css`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   z-index: 2;
 `;
+
+const StyledIconComponent = styled(IconComponent)`
+  ${() => iconCss}
+`;
+
 const LeftIconComponent = styled(StyledIconComponent)<{ scale: Scales }>`
   left: ${({ scale }) => getIconPosition(scale)};
 `;
+
+const LeftIconImage = styled(Box)<{ scale: Scales }>`
+  ${() => iconCss}
+  left: ${({ scale }) => `${getIconPosition(scale)}px`};
+`;
+
 const RightIconComponent = styled(StyledIconComponent)<{ scale: Scales }>`
   right: ${({ scale }) => getIconPosition(scale)};
 `;
@@ -109,6 +133,7 @@ const TextDescription = styled(Text)<{ variant?: Variants }>`
 const InputGroup: FC<InputGroupProps> = ({
   scale = scales.MD,
   startIcon,
+  startImage,
   endIcon,
   children,
   variant,
@@ -116,6 +141,7 @@ const InputGroup: FC<InputGroupProps> = ({
   isWarning,
   disabled,
   description,
+  baseAwsUrl = "https://static.biswap.org/bs",
   ...props
 }) => {
   return (
@@ -130,7 +156,7 @@ const InputGroup: FC<InputGroupProps> = ({
         variant={variant}
         width="100%"
         position="relative"
-        hasStartIcon={!!startIcon}
+        hasStartIcon={!!startIcon || !!startImage}
         hasEndIcon={!!endIcon}
       >
         {startIcon && (
@@ -139,6 +165,16 @@ const InputGroup: FC<InputGroupProps> = ({
             iconName={startIcon.iconName}
             scale={scale}
           />
+        )}
+        {startImage && (
+          <LeftIconImage scale={scale}>
+            <Image
+              width={getImageSize(scale)}
+              height={getImageSize(scale)}
+              src={`${baseAwsUrl}${startImage?.imageSrc}`}
+              alt=""
+            />
+          </LeftIconImage>
         )}
         {cloneElement(children, { variant, disabled })}
         {!isError && !isWarning && endIcon && (
