@@ -32,11 +32,17 @@ const SocialWrap = styled.div<SocialWrapProps>`
   display: flex;
   flex-wrap: wrap;
   gap: 18px;
+  justify-content: flex-start;
+
   ${({ menuVariant }) => {
     if (menuVariant) {
       return `
-        justify-content: space-between;
-        gap: 5%;
+      width:274px;
+        row-gap: 25px;
+        column-gap: 26px;
+        justify-content: center;
+        margin: 0 auto;
+        
       `;
     }
   }};
