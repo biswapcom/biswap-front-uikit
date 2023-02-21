@@ -382,6 +382,16 @@ export const socials = [
     icon: "YoutubeIcon",
     href: "https://www.youtube.com/channel/UCHartwkRUURf2Q7MlKOV84w",
   },
+  {
+    label: "TikTok",
+    icon: "TikTokIcon",
+    href: "https://www.tiktok.com/@biswap_dex?_t=8ZvBURxahPR&_r=1",
+  },
+  {
+    label: "CoinMarketCap",
+    icon: "CoinMarketCapIcon",
+    href: "https://coinmarketcap.com/community/profile/Biswap_DEX/",
+  },
 ];
 
 export const BSWPriceLabel = "BSW";
