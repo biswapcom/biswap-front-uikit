@@ -194,6 +194,8 @@ export { default as TwitchIcon } from "./Icons/Socials/Twitch";
 export { default as TwitterIcon } from "./Icons/Socials/Twitter";
 export { default as YoutubeIcon } from "./Icons/Socials/Youtube";
 export { default as FacebookIcon } from "./Icons/Socials/Facebook";
+export { default as TikTokIcon } from "./Icons/Socials/TikTok";
+export { default as CoinMarketCapIcon } from "./Icons/Socials/CoinMarketCap";
 export { default as BSCIcon } from "./Icons/Chains/BSC";
 export { default as PolygonIcon } from "./Icons/Chains/Polygon";
 export { default as AvalancheIcon } from "./Icons/Chains/Avalanche";
