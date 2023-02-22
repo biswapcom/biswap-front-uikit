@@ -4,7 +4,7 @@ import styled from "styled-components";
 // components
 import Flex from "../../../components/Box/Flex";
 import {
-  LogoIcon,
+  BswIcon,
   LogoWithTextIcon,
   ProjectNameIcon,
 } from "../../../components/Svg";
@@ -38,13 +38,13 @@ const LogoSwitcher: FC<{ logoSubtitle?: string }> = ({ logoSubtitle }) => {
   const { isMobile, isMd } = useMatchBreakpoints();
 
   if (isMobile || isMd) {
-    return <LogoIcon width="32px" />;
+    return <BswIcon width="32px" />;
   } else if (logoSubtitle) {
     return (
       <Flex>
-        <LogoIcon width="32px" />
+        <BswIcon width="32px" />
         <Box ml="8px">
-          <ProjectNameIcon />
+          <ProjectNameIcon width="78px" />
           <BodyText mt="-6px" textAlign="left" scale="size12">
             {logoSubtitle}
           </BodyText>

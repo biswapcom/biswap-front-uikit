@@ -1,6 +1,3 @@
-export { default as LogoIcon } from "./Icons/Logo";
-export { default as ProjectNameIcon } from "./Icons/ProjectName";
-export { default as LogoWithTextIcon } from "./Icons/LogoWithText";
 export { default as DownloadIcon } from "./Icons/Download";
 export { default as MouseIcon } from "./Icons/Mouse";
 export { default as HourglassIcon } from "./Icons/Hourglass";
@@ -338,11 +335,6 @@ export { default as FacebookIcon } from "./Icons/Socials/Facebook";
 export { default as TikTokIcon } from "./Icons/Socials/TikTok";
 export { default as CoinMarketCapIcon } from "./Icons/Socials/CoinMarketCap";
 
-//Rank
-export { default as Rank1Icon } from "./Icons/Rank/Rank1";
-export { default as Rank2Icon } from "./Icons/Rank/Rank2";
-export { default as Rank3Icon } from "./Icons/Rank/Rank3";
-
 //chain
 export { default as BSCIcon } from "./Icons/Chains/BSC";
 export { default as PolygonIcon } from "./Icons/Chains/Polygon";
@@ -350,44 +342,10 @@ export { default as AvalancheIcon } from "./Icons/Chains/Avalanche";
 
 //Other
 export { default as ArrowFiguredIcon } from "./Icons/Other/ArrowFigured";
-export { default as GameFiIcon } from "./Icons/Menu/GameFi/GameFi";
-export { default as GiftIcon } from "./Icons/Other/Gift";
-export { default as MarketIcon } from "./Icons/Menu/Market/Market";
-export { default as MetamaskIcon } from "./Icons/Other/Metamask";
-export { default as RBIcon } from "./Icons/Other/RB";
-export { default as SEIcon } from "./Icons/Other/SE";
 export { default as Ticket2Icon } from "./Icons/Other/Ticket2";
-export { default as VisaIcon } from "./Icons/Other/Visa";
-export { default as CerticAuditedIcon } from "./Icons/Other/Certic";
-export { default as CollectiblesIcon } from "./Icons/Other/Collectibles";
-
-//Flags
-export { default as USAIcon } from "./Icons/Flags/USA";
-export { default as IDIcon } from "./Icons/Flags/ID";
-export { default as RUIcon } from "./Icons/Flags/RU";
-export { default as VNIcon } from "./Icons/Flags/VN";
-export { default as BDIcon } from "./Icons/Flags/BD";
-export { default as FRIcon } from "./Icons/Flags/FR";
-export { default as PTIcon } from "./Icons/Flags/PT";
-export { default as DEIcon } from "./Icons/Flags/DE";
-export { default as CNIcon } from "./Icons/Flags/CN";
-export { default as TRIcon } from "./Icons/Flags/TR";
-export { default as ESIcon } from "./Icons/Flags/ES";
-export { default as INIcon } from "./Icons/Flags/IN";
-
-// Wallets
-export { default as BinanceWalletIcon } from "./Icons/Wallet/BinanceWallet";
-export { default as BraveWalletIcon } from "./Icons/Wallet/BraveWallet";
-export { default as ConnectWalletIcon } from "./Icons/Wallet/WalletConnect";
-export { default as MetamaskWalletIcon } from "./Icons/Wallet/Metamask";
-export { default as CoinbaseWalletIcon } from "./Icons/Wallet/Coinbase";
-export { default as MathWalletIcon } from "./Icons/Wallet/MathWallet";
-export { default as BitKeepWalletIcon } from "./Icons/Wallet/BitKeepWallet";
-export { default as Coin98WalletIcon } from "./Icons/Wallet/Coin98";
-export { default as ITokenWalletIcon } from "./Icons/Wallet/iToken";
-export { default as TrustWalletIcon } from "./Icons/Wallet/TrustWallet";
-export { default as TokenPocketWalletIcon } from "./Icons/Wallet/TokenPocket";
-export { default as SafePalWalletIcon } from "./Icons/Wallet/SafePalWallet";
+export { default as LogoWithTextIcon } from "./Icons/Other/LogoWithText";
+export { default as ProjectNameIcon } from "./Icons/Other/ProjectName";
+export { default as BswIcon } from "./Icons/Other/Bsw";
 
 // Locks
 export { default as LockIcon } from "./Icons/Lock/Lock";

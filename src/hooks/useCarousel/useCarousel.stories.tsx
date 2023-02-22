@@ -46,7 +46,7 @@ export const Default = () => {
     data: data,
     Slide: Item,
     isAutoplay: true,
-    isDraggable: true
+    isDraggable: true,
   });
 
   return (

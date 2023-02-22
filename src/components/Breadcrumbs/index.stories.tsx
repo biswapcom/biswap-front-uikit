@@ -3,15 +3,21 @@ import React from "react";
 import { BrowserRouter, Link as RouterLink } from "react-router-dom";
 import Text from "../Text/Text";
 import Link from "../Link/Link";
-import LogoIcon from "../Svg/Icons/Logo";
 import GobletIcon from "../Svg/Svg";
 import BreadCrumbs from "./Breadcrumbs";
+import styled from "styled-components";
 
 export default {
   title: "Components/Breadcrumbs",
   component: BreadCrumbs,
   argTypes: {},
 };
+
+const BswIcon = styled.img.attrs({
+  src: "https://static.biswap.org/bs/coins/bsw.svg",
+})`
+  width: 12px;
+`;
 
 export const Default: React.FC = () => {
   return (
@@ -37,7 +43,7 @@ export const CustomSeparator: React.FC = () => {
   return (
     <Text p="32px">
       <Text mb="16px">
-        <BreadCrumbs separator={<LogoIcon width="12px" />}>
+        <BreadCrumbs separator={<BswIcon />}>
           <a href="/" color="secondary" style={{ fontWeight: 400 }}>
             Link
           </a>

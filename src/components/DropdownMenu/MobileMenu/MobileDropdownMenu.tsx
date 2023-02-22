@@ -11,6 +11,7 @@ const MobileDropdownMenu: FC<MenuItemsProps> = ({
   activeItem,
   isMobileMenuOpened = false,
   mobileMenuCallback,
+  baseAwsUrl,
 }) => {
   const { isMobile } = useMatchBreakpoints();
 
@@ -44,6 +45,7 @@ const MobileDropdownMenu: FC<MenuItemsProps> = ({
       mobileMenuCallback={mobileMenuCallback}
       isMobileNav
       activeItem={activeItem}
+      baseAwsUrl={baseAwsUrl}
     >
       <MenuItem>
         <Burger open={isMobileMenuOpened} />
