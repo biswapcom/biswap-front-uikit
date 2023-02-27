@@ -170,10 +170,7 @@ const Community: React.FC<CommunityProps> = ({
                     >
                       <FlagWrap>
                         <Box width="14px" height="14px">
-                          <img
-                            src="https://static.biswap.org/bs/coins/bsw.svg"
-                            alt=""
-                          />
+                          <img src={`${baseAwsUrl}/coins/bsw.svg`} alt="" />
                         </Box>
                       </FlagWrap>
                       {social.items.channel.label}

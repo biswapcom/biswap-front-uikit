@@ -6398,7 +6398,7 @@ var Community = function (_a) {
                             React.createElement(DropDownLink, { key: social.items.channel.label, href: social.items.channel.href, target: "_blank", "aria-label": social.label },
                                 React.createElement(FlagWrap, null,
                                     React.createElement(Box, { width: "14px", height: "14px" },
-                                        React.createElement("img", { src: "https://static.biswap.org/bs/coins/bsw.svg", alt: "" }))),
+                                        React.createElement("img", { src: "".concat(baseAwsUrl, "/coins/bsw.svg"), alt: "" }))),
                                 social.items.channel.label),
                             React.createElement(DropDownLabel, null, "Chats:"),
                             social.items.chats.map(function (item) { return (React.createElement(DropDownLink, { key: item.label, href: item.href, target: "_blank", "aria-label": social.label },
