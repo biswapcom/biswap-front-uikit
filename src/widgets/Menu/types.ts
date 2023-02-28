@@ -40,6 +40,7 @@ export interface NavProps
   customLogoSubtitle?: string;
   marketplaceLink?: string;
   baseAwsUrl?: string;
+  buyBswLabel?: string;
 }
 
 export interface FooterStatisticProps {

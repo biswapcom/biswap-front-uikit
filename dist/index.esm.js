@@ -5749,8 +5749,8 @@ var ConnectMetamask = function (_a) {
 var templateObject_1$n;
 
 var BuyBSW = function (_a) {
-    var buyBswHandler = _a.buyBswHandler;
-    return (React.createElement(Button$2, { onClick: buyBswHandler, variant: "danger", scale: "md" }, "Buy BSW"));
+    var buyBswHandler = _a.buyBswHandler, buyBswLabel = _a.buyBswLabel;
+    return (React.createElement(Button$2, { onClick: buyBswHandler, variant: "danger", scale: "md" }, buyBswLabel));
 };
 
 var Wrapper$6 = styled.div(templateObject_1$m || (templateObject_1$m = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  border-radius: 16px;\n  padding: 24px;\n  background: ", ";\n  margin-bottom: 24px;\n  grid-area: footer-info;\n\n  ", " {\n    margin-bottom: 0;\n  }\n\n  ", " {\n    flex-direction: row;\n    justify-content: initial;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  border-radius: 16px;\n  padding: 24px;\n  background: ", ";\n  margin-bottom: 24px;\n  grid-area: footer-info;\n\n  ", " {\n    margin-bottom: 0;\n  }\n\n  ", " {\n    flex-direction: row;\n    justify-content: initial;\n  }\n"])), function (_a) {
@@ -5788,13 +5788,13 @@ var InfoListValue = styled.span(templateObject_7$3 || (templateObject_7$3 = __ma
     return theme.colors.white;
 });
 var FooterInfo = function (_a) {
-    var BSWPriceLabel = _a.BSWPriceLabel, BSWPriceValue = _a.BSWPriceValue, registerToken = _a.registerToken, footerStatistic = _a.footerStatistic, buyBswHandler = _a.buyBswHandler, baseAwsUrl = _a.baseAwsUrl;
+    var BSWPriceLabel = _a.BSWPriceLabel, BSWPriceValue = _a.BSWPriceValue, registerToken = _a.registerToken, footerStatistic = _a.footerStatistic, buyBswHandler = _a.buyBswHandler, baseAwsUrl = _a.baseAwsUrl, buyBswLabel = _a.buyBswLabel;
     return (React.createElement(Wrapper$6, null,
         React.createElement(LeftInfo, null,
             React.createElement(BSWPrice, { BSWPriceLabel: BSWPriceLabel, BSWPriceValue: BSWPriceValue }),
             React.createElement(FlexWrap, null,
                 React.createElement(ConnectMetamask, { onClick: registerToken, baseAwsUrl: baseAwsUrl }),
-                React.createElement(BuyBSW, { buyBswHandler: buyBswHandler }))),
+                React.createElement(BuyBSW, { buyBswHandler: buyBswHandler, buyBswLabel: buyBswLabel }))),
         React.createElement(InfoList, null, footerStatistic.map(function (item, index) { return (React.createElement(InfoListItem, { key: index.toString() },
             React.createElement(InfoListLabel, null, item.label),
             React.createElement(InfoListValue, null, formatSpacingAmount(item.value)))); }))));
@@ -6475,10 +6475,10 @@ var InnerRow = styled.div(templateObject_2$9 || (templateObject_2$9 = __makeTemp
     return theme.mediaQueries.xll;
 });
 var Footer = function (_a) {
-    var BSWPriceLabel = _a.BSWPriceLabel, BSWPriceValue = _a.BSWPriceValue, registerToken = _a.registerToken, footerStatistic = _a.footerStatistic, aboutLinks = _a.aboutLinks, productLinks = _a.productLinks, serviceLinks = _a.serviceLinks, buyBswHandler = _a.buyBswHandler, socialLinks = _a.socialLinks, marketplaceLink = _a.marketplaceLink, baseAwsUrl = _a.baseAwsUrl;
+    var BSWPriceLabel = _a.BSWPriceLabel, BSWPriceValue = _a.BSWPriceValue, registerToken = _a.registerToken, footerStatistic = _a.footerStatistic, aboutLinks = _a.aboutLinks, productLinks = _a.productLinks, serviceLinks = _a.serviceLinks, buyBswHandler = _a.buyBswHandler, socialLinks = _a.socialLinks, marketplaceLink = _a.marketplaceLink, baseAwsUrl = _a.baseAwsUrl, buyBswLabel = _a.buyBswLabel;
     return (React.createElement(Wrapper$1, null,
         React.createElement(InnerRow, null,
-            React.createElement(FooterInfo, { BSWPriceLabel: BSWPriceLabel, BSWPriceValue: BSWPriceValue, registerToken: registerToken, footerStatistic: footerStatistic, buyBswHandler: buyBswHandler, baseAwsUrl: baseAwsUrl }),
+            React.createElement(FooterInfo, { BSWPriceLabel: BSWPriceLabel, BSWPriceValue: BSWPriceValue, registerToken: registerToken, footerStatistic: footerStatistic, buyBswHandler: buyBswHandler, baseAwsUrl: baseAwsUrl, buyBswLabel: buyBswLabel }),
             React.createElement(About, { footerLinks: aboutLinks }),
             React.createElement(Product, { footerLinks: productLinks }),
             React.createElement(Service, { footerLinks: serviceLinks }),
@@ -7111,11 +7111,11 @@ var Menu = function (_a) {
     var _b;
     var _c = _a.linkComponent, linkComponent = _c === void 0 ? "a" : _c, banner = _a.banner, links = _a.links, rightSide = _a.rightSide; _a.subLinks; var activeItem = _a.activeItem, activeSubItem = _a.activeSubItem, children = _a.children, BSWPriceLabel = _a.BSWPriceLabel, BSWPriceValue = _a.BSWPriceValue, footerStatistic = _a.footerStatistic, registerToken = _a.registerToken, buyBswHandler = _a.buyBswHandler, aboutLinks = _a.aboutLinks, productLinks = _a.productLinks, serviceLinks = _a.serviceLinks, socialLinks = _a.socialLinks, withEvent = _a.withEvent; _a.eventCallback; 
     var //eventButtonLogo,
-    customLogoSubtitle = _a.customLogoSubtitle, marketplaceLink = _a.marketplaceLink, _d = _a.baseAwsUrl, baseAwsUrl = _d === void 0 ? "https://static.biswap.org/bs" : _d;
+    customLogoSubtitle = _a.customLogoSubtitle, marketplaceLink = _a.marketplaceLink, _d = _a.baseAwsUrl, baseAwsUrl = _d === void 0 ? "https://static.biswap.org/bs" : _d, _e = _a.buyBswLabel, buyBswLabel = _e === void 0 ? "Buy BSW" : _e;
     var isMobile = useMatchBreakpoints().isMobile;
-    var _e = useState(true), showMenu = _e[0], setShowMenu = _e[1];
-    var _f = useState(false), menuBg = _f[0], setMenuBg = _f[1];
-    var _g = useState(false), isMobileMenuOpened = _g[0], setIsMobileMenuOpened = _g[1];
+    var _f = useState(true), showMenu = _f[0], setShowMenu = _f[1];
+    var _g = useState(false), menuBg = _g[0], setMenuBg = _g[1];
+    var _h = useState(false), isMobileMenuOpened = _h[0], setIsMobileMenuOpened = _h[1];
     // const [showFishingWarn, setShowFishingWarn] = useState(true);
     var refPrevOffset = useRef(typeof window === "undefined" ? 0 : window.pageYOffset);
     // const fishingBannerHeight = isMobile
@@ -7198,7 +7198,7 @@ var Menu = function (_a) {
                 React.createElement(Inner, { isPushed: false, showMenu: showMenu },
                     React.createElement(React.Fragment, null,
                         children,
-                        React.createElement(Footer, { BSWPriceLabel: BSWPriceLabel, BSWPriceValue: BSWPriceValue, footerStatistic: footerStatistic, registerToken: registerToken, buyBswHandler: buyBswHandler, aboutLinks: aboutLinks, productLinks: productLinks, serviceLinks: serviceLinks, socialLinks: socialLinks, marketplaceLink: marketplaceLink, baseAwsUrl: baseAwsUrl })))))));
+                        React.createElement(Footer, { BSWPriceLabel: BSWPriceLabel, BSWPriceValue: BSWPriceValue, footerStatistic: footerStatistic, registerToken: registerToken, buyBswHandler: buyBswHandler, aboutLinks: aboutLinks, productLinks: productLinks, serviceLinks: serviceLinks, socialLinks: socialLinks, marketplaceLink: marketplaceLink, baseAwsUrl: baseAwsUrl, buyBswLabel: buyBswLabel })))))));
 };
 var templateObject_1$4, templateObject_2$2, templateObject_3$1, templateObject_4$1, templateObject_5$1, templateObject_6$1;
 
@@ -7247,16 +7247,16 @@ var LinkStyles = styled.a(templateObject_4 || (templateObject_4 = __makeTemplate
 styled.div(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: row;\n"], ["\n  display: flex;\n  flex-direction: row;\n"])));
 var ActionContainer = styled.div(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n  width: 100%;\n"], ["\n  width: 100%;\n"])));
 var Toast = function (_a) {
-    var _b = _a.removeButtonPosition, removeButtonPosition = _b === void 0 ? 60 : _b, clearAll = _a.clearAll, toast = _a.toast, style = _a.style, handleMouseEnter = _a.handleMouseEnter, handleMouseLeave = _a.handleMouseLeave, handleRemove = _a.handleRemove, progress = _a.progress, props = __rest(_a, ["removeButtonPosition", "clearAll", "toast", "style", "handleMouseEnter", "handleMouseLeave", "handleRemove", "progress"]);
+    var _b = _a.removeButtonPosition, removeButtonPosition = _b === void 0 ? 60 : _b, clearAll = _a.clearAll, toast = _a.toast, style = _a.style, handleMouseEnter = _a.handleMouseEnter, handleMouseLeave = _a.handleMouseLeave, handleRemove = _a.handleRemove, progress = _a.progress, clearAllLabel = _a.clearAllLabel, viewBscScanLabel = _a.viewBscScanLabel, props = __rest(_a, ["removeButtonPosition", "clearAll", "toast", "style", "handleMouseEnter", "handleMouseLeave", "handleRemove", "progress", "clearAllLabel", "viewBscScanLabel"]);
     var description = toast.description, type = toast.type, title = toast.title, telegramDescription = toast.telegramDescription, tweeterDescription = toast.tweeterDescription, hash = toast.hash, url = toast.url, withGift = toast.withGift;
     return (React.createElement(CSSTransition, __assign({ timeout: 250, style: style }, props),
         React.createElement(StyledToast, { onMouseEnter: handleMouseEnter, onMouseLeave: handleMouseLeave },
             clearAll && (React.createElement(ClearAllButton, { scale: "sm", variant: "text", top: removeButtonPosition, onClick: function () { return clearAll(); } },
-                React.createElement(Text, { p: "0 8px", fontSize: "12px", color: "dark" }, "Clear All"))),
+                React.createElement(Text, { p: "0 8px", fontSize: "12px", color: "dark" }, clearAllLabel))),
             React.createElement(Alert, { progress: progress, title: title, variant: alertTypeMap[type], onClick: handleRemove },
                 React.createElement("div", null,
                     hash && (React.createElement(LinkWrapper, null,
-                        React.createElement(LinkStyles, { target: "_blank", href: "https://bscscan.com/tx/".concat(hash) }, "View on bscscan"),
+                        React.createElement(LinkStyles, { target: "_blank", href: "https://bscscan.com/tx/".concat(hash) }, viewBscScanLabel),
                         React.createElement(Icon$2Y, { ml: "6px", width: "18px", height: "18px", color: "primary" }))),
                     description ? (React.createElement(Text, { color: "#6B7D98", fontSize: "12px", as: "p", mb: "8px" }, description)) : (React.createElement(React.Fragment, null)),
                     telegramDescription && tweeterDescription && (React.createElement(ActionContainer, null,
@@ -7268,10 +7268,10 @@ var ZINDEX = 1000;
 var BOTTOM_POSITION = 120; // Initial position from the bottom
 var StyledToastContainer = styled.div(templateObject_1$1 || (templateObject_1$1 = __makeTemplateObject(["\n  .enter,\n  .appear {\n    opacity: 0.01;\n  }\n\n  .enter.enter-active,\n  .appear.appear-active {\n    opacity: 1;\n    transition: opacity 250ms ease-in;\n  }\n\n  .exit {\n    opacity: 1;\n  }\n\n  .exit.exit-active {\n    opacity: 0.01;\n    transition: opacity 250ms ease-out;\n  }\n"], ["\n  .enter,\n  .appear {\n    opacity: 0.01;\n  }\n\n  .enter.enter-active,\n  .appear.appear-active {\n    opacity: 1;\n    transition: opacity 250ms ease-in;\n  }\n\n  .exit {\n    opacity: 1;\n  }\n\n  .exit.exit-active {\n    opacity: 0.01;\n    transition: opacity 250ms ease-out;\n  }\n"])));
 var ToastContainer = function (_a) {
-    var clearAll = _a.clearAll, toasts = _a.toasts, onRemove = _a.onRemove, _b = _a.ttl, ttl = _b === void 0 ? 10000 : _b, _c = _a.stackSpacing, stackSpacing = _c === void 0 ? 8 : _c;
-    var _d = useState(100), progress = _d[0], setProgress = _d[1];
-    var _e = useState(true), progressRun = _e[0], setProgressRun = _e[1];
-    var _f = useState(ttl), currentTime = _f[0], setCurrentTime = _f[1];
+    var clearAll = _a.clearAll, toasts = _a.toasts, onRemove = _a.onRemove, _b = _a.ttl, ttl = _b === void 0 ? 10000 : _b, _c = _a.stackSpacing, stackSpacing = _c === void 0 ? 8 : _c, _d = _a.clearAllLabel, clearAllLabel = _d === void 0 ? "Clear all" : _d, _e = _a.viewBscScanLabel, viewBscScanLabel = _e === void 0 ? "View on bscscan" : _e;
+    var _f = useState(100), progress = _f[0], setProgress = _f[1];
+    var _g = useState(true), progressRun = _g[0], setProgressRun = _g[1];
+    var _h = useState(ttl), currentTime = _h[0], setCurrentTime = _h[1];
     // for update timer for new toast
     var updateTimerRef = useRef(1);
     var timer = useRef();
@@ -7361,8 +7361,8 @@ var ToastContainer = function (_a) {
             var bottom = BOTTOM_POSITION + index * stackSpacing;
             var removeButtonPosition = stackSpacing * toasts.length + 40;
             if (index === 0)
-                return (React.createElement(Toast, { handleRemove: handleRemove, handleMouseEnter: handleMouseEnter, handleMouseLeave: handleMouseLeave, progress: progress, key: toast.id, toast: toast, zIndex: zIndex, ttl: ttl, removeButtonPosition: removeButtonPosition, clearAll: toasts.length > 1 ? clearAllHandler : undefined, style: { bottom: "".concat(bottom, "px"), zIndex: zIndex } }));
-            return (React.createElement(Toast, { key: toast.id, toast: toast, style: { bottom: "".concat(bottom, "px"), zIndex: zIndex } }));
+                return (React.createElement(Toast, { handleRemove: handleRemove, handleMouseEnter: handleMouseEnter, handleMouseLeave: handleMouseLeave, progress: progress, key: toast.id, toast: toast, zIndex: zIndex, ttl: ttl, removeButtonPosition: removeButtonPosition, clearAll: toasts.length > 1 ? clearAllHandler : undefined, style: { bottom: "".concat(bottom, "px"), zIndex: zIndex }, clearAllLabel: clearAllLabel, viewBscScanLabel: viewBscScanLabel }));
+            return (React.createElement(Toast, { key: toast.id, toast: toast, style: { bottom: "".concat(bottom, "px"), zIndex: zIndex }, clearAllLabel: clearAllLabel, viewBscScanLabel: viewBscScanLabel }));
         }))));
 };
 var templateObject_1$1;
