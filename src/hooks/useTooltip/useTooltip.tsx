@@ -98,19 +98,11 @@ const useTooltip = (
     if (targetElement === null || trigger !== "hover") return undefined;
 
     if (isTouchDevice()) {
-      targetElement.addEventListener("touchstart", showTooltip, {
-        passive: true,
-      });
-      targetElement.addEventListener("touchend", hideTooltip, {
-        passive: true,
-      });
+      targetElement.addEventListener("touchstart", showTooltip);
+      targetElement.addEventListener("touchend", hideTooltip);
     } else {
-      targetElement.addEventListener("mouseenter", showTooltip, {
-        passive: true,
-      });
-      targetElement.addEventListener("mouseleave", hideTooltip, {
-        passive: true,
-      });
+      targetElement.addEventListener("mouseenter", showTooltip);
+      targetElement.addEventListener("mouseleave", hideTooltip);
     }
     return () => {
       targetElement.removeEventListener("touchstart", showTooltip);
@@ -124,12 +116,8 @@ const useTooltip = (
   useEffect(() => {
     if (tooltipElement === null || trigger !== "hover") return undefined;
 
-    tooltipElement.addEventListener("mouseenter", showTooltip, {
-      passive: true,
-    });
-    tooltipElement.addEventListener("mouseleave", hideTooltip, {
-      passive: true,
-    });
+    tooltipElement.addEventListener("mouseenter", showTooltip);
+    tooltipElement.addEventListener("mouseleave", hideTooltip);
     return () => {
       tooltipElement.removeEventListener("mouseenter", showTooltip);
       tooltipElement.removeEventListener("mouseleave", hideTooltip);
@@ -140,7 +128,7 @@ const useTooltip = (
   useEffect(() => {
     if (targetElement === null || trigger !== "click") return undefined;
 
-    targetElement.addEventListener("click", toggleTooltip, { passive: true });
+    targetElement.addEventListener("click", toggleTooltip);
 
     return () => targetElement.removeEventListener("click", toggleTooltip);
   }, [trigger, targetElement, visible, toggleTooltip]);
@@ -161,9 +149,7 @@ const useTooltip = (
         }
       }
     };
-    document.addEventListener("mousedown", handleClickOutside, {
-      passive: true,
-    });
+    document.addEventListener("mousedown", handleClickOutside);
 
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [trigger, targetElement, tooltipElement]);
@@ -172,8 +158,8 @@ const useTooltip = (
   useEffect(() => {
     if (targetElement === null || trigger !== "focus") return undefined;
 
-    targetElement.addEventListener("focus", showTooltip, { passive: true });
-    targetElement.addEventListener("blur", hideTooltip, { passive: true });
+    targetElement.addEventListener("focus", showTooltip);
+    targetElement.addEventListener("blur", hideTooltip);
     return () => {
       targetElement.removeEventListener("focus", showTooltip);
       targetElement.removeEventListener("blur", hideTooltip);
