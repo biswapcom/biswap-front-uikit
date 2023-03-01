@@ -143,6 +143,7 @@ const ConnectedTemplate: React.FC<NavProps> = (args) => {
         productLinks={productLinks}
         socialLinks={socialLinks}
         serviceLinks={serviceLinks}
+        buyBswLabel={"Buy bsdt"}
       >
         <Box pt="113px" pb="32px" px="24px" background="#071C3C">
           <Text bold fontSize="24px" as="h1" mb="8px" color="white">
@@ -338,6 +339,7 @@ export const WithSubmenuSelected: React.FC = () => {
             href: "/",
           },
         ]}
+        buyBswLabel={"Buy bsdt"}
       >
         <div style={{ paddingTop: "72px" }}>
           <Heading as="h1" mb="8px">

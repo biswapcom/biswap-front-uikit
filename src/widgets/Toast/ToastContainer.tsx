@@ -35,6 +35,8 @@ const ToastContainer: React.FC<ToastContainerProps> = ({
   onRemove,
   ttl = 10000,
   stackSpacing = 8,
+  clearAllLabel = "Clear all",
+  viewBscScanLabel = "View on bscscan",
 }) => {
   const [progress, setProgress] = useState<number>(100);
   const [progressRun, setProgressRun] = useState(true);
@@ -165,6 +167,8 @@ const ToastContainer: React.FC<ToastContainerProps> = ({
                 removeButtonPosition={removeButtonPosition}
                 clearAll={toasts.length > 1 ? clearAllHandler : undefined}
                 style={{ bottom: `${bottom}px`, zIndex }}
+                clearAllLabel={clearAllLabel}
+                viewBscScanLabel={viewBscScanLabel}
               />
             );
 
@@ -173,6 +177,8 @@ const ToastContainer: React.FC<ToastContainerProps> = ({
               key={toast.id}
               toast={toast}
               style={{ bottom: `${bottom}px`, zIndex }}
+              clearAllLabel={clearAllLabel}
+              viewBscScanLabel={viewBscScanLabel}
             />
           );
         })}
