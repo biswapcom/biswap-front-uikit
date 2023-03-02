@@ -34,22 +34,19 @@ const Wrapper = styled(Box)<{ isOpen: boolean; variant: Variant }>`
       isOpen ? getRgba(theme.colors.primary, theme, 0.16) : "transparent"};
   border-radius: 8px;
   cursor: pointer;
+  transition: background 0.3s ease;
 
   &:hover {
     border-color: ${({ theme }) => getRgba(theme.colors.primary, theme, 0.16)};
+    background: transparent;
   }
 `;
 
-const Question = styled(Flex)<{ isOpen: boolean; variant: Variant }>`
+const Question = styled(Flex)<{ isOpen: boolean }>`
   align-items: center;
   justify-content: space-between;
   padding: 16px;
   border-radius: 8px;
-  transition: background 0.3s ease;
-
-  &:hover {
-    background: transparent;
-  }
 
   ${({ theme }) => theme.mediaQueries.sm} {
     justify-content: space-between;
@@ -89,7 +86,7 @@ const FaqAccordion: FC<IProps> = ({
       onClick={() => handleToggle(name)}
       variant={variant}
     >
-      <Question isOpen={isOpened} variant={variant}>
+      <Question isOpen={isOpened}>
         <StyledText scale="size14" variant={variant}>
           {name}
         </StyledText>

@@ -52,6 +52,7 @@ const Faqs: FC<IProps> = ({
     setActiveQuestion(activeQuestion !== name ? name : "");
   };
 
+  const isDarkMobile = variant === "dark" ? "size24" : "size20";
   // markup for question
   const renderQuestionList = (list: QuestionProp[]) =>
     (list || []).map((item, index) => (
@@ -72,7 +73,7 @@ const Faqs: FC<IProps> = ({
     <Box {...props}>
       {title && (
         <Title
-          scale={{ xs: "size20", md: "size24" }}
+          scale={{ xs: isDarkMobile, md: "size24" }}
           mb="16px"
           bold
           variant={variant}

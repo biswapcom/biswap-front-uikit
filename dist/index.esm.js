@@ -5449,7 +5449,7 @@ var descriptionVariants = (_d = {},
     },
     _d);
 
-var Wrapper$8 = styled(Box)(templateObject_1$v || (templateObject_1$v = __makeTemplateObject(["\n  width: 100%;\n  margin-top: 8px;\n  ", "\n  background: ", ";\n  border: 1px solid\n    ", ";\n  border-radius: 8px;\n  cursor: pointer;\n\n  &:hover {\n    border-color: ", ";\n  }\n"], ["\n  width: 100%;\n  margin-top: 8px;\n  ", "\n  background: ", ";\n  border: 1px solid\n    ", ";\n  border-radius: 8px;\n  cursor: pointer;\n\n  &:hover {\n    border-color: ", ";\n  }\n"])), variant$1({
+var Wrapper$8 = styled(Box)(templateObject_1$v || (templateObject_1$v = __makeTemplateObject(["\n  width: 100%;\n  margin-top: 8px;\n  ", "\n  background: ", ";\n  border: 1px solid\n    ", ";\n  border-radius: 8px;\n  cursor: pointer;\n  transition: background 0.3s ease;\n\n  &:hover {\n    border-color: ", ";\n    background: transparent;\n  }\n"], ["\n  width: 100%;\n  margin-top: 8px;\n  ", "\n  background: ", ";\n  border: 1px solid\n    ", ";\n  border-radius: 8px;\n  cursor: pointer;\n  transition: background 0.3s ease;\n\n  &:hover {\n    border-color: ", ";\n    background: transparent;\n  }\n"])), variant$1({
     variants: wrapperVariants,
 }), function (_a) {
     var isOpen = _a.isOpen;
@@ -5461,7 +5461,7 @@ var Wrapper$8 = styled(Box)(templateObject_1$v || (templateObject_1$v = __makeTe
     var theme = _a.theme;
     return getRgba(theme.colors.primary, theme, 0.16);
 });
-var Question = styled(Flex)(templateObject_2$j || (templateObject_2$j = __makeTemplateObject(["\n  align-items: center;\n  justify-content: space-between;\n  padding: 16px;\n  border-radius: 8px;\n  transition: background 0.3s ease;\n\n  &:hover {\n    background: transparent;\n  }\n\n  ", " {\n    justify-content: space-between;\n  }\n"], ["\n  align-items: center;\n  justify-content: space-between;\n  padding: 16px;\n  border-radius: 8px;\n  transition: background 0.3s ease;\n\n  &:hover {\n    background: transparent;\n  }\n\n  ", " {\n    justify-content: space-between;\n  }\n"])), function (_a) {
+var Question = styled(Flex)(templateObject_2$j || (templateObject_2$j = __makeTemplateObject(["\n  align-items: center;\n  justify-content: space-between;\n  padding: 16px;\n  border-radius: 8px;\n\n  ", " {\n    justify-content: space-between;\n  }\n"], ["\n  align-items: center;\n  justify-content: space-between;\n  padding: 16px;\n  border-radius: 8px;\n\n  ", " {\n    justify-content: space-between;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
@@ -5481,7 +5481,7 @@ var FaqAccordion = function (_a) {
     var _c = _a.name, name = _c === void 0 ? "" : _c, isOpened = _a.isOpened, handleToggle = _a.handleToggle, _d = _a.variant, variant = _d === void 0 ? "dark" : _d, children = _a.children;
     var contentEl = useRef(null);
     return (React.createElement(Wrapper$8, { isOpen: isOpened, onClick: function () { return handleToggle(name); }, variant: variant },
-        React.createElement(Question, { isOpen: isOpened, variant: variant },
+        React.createElement(Question, { isOpen: isOpened },
             React.createElement(StyledText, { scale: "size14", variant: variant }, name),
             React.createElement(StyledChevronIcon, { isOpen: isOpened, color: "primary", width: "24px" })),
         React.createElement(Answer, { ref: contentEl, height: isOpened ? (_b = contentEl === null || contentEl === void 0 ? void 0 : contentEl.current) === null || _b === void 0 ? void 0 : _b.scrollHeight : "0" }, children)));
@@ -5504,13 +5504,14 @@ var Faqs = function (_a) {
     var handleToggle = function (name) {
         setActiveQuestion(activeQuestion !== name ? name : "");
     };
+    var isDarkMobile = variant === "dark" ? "size24" : "size20";
     // markup for question
     var renderQuestionList = function (list) {
         return (list || []).map(function (item, index) { return (React.createElement(FaqAccordion, { key: index.toString(), name: item.name, isOpened: activeQuestion === item.name, handleToggle: handleToggle, variant: variant },
             React.createElement(Description, { scale: "size14", p: "0 16px 16px", variant: variant }, item.description))); });
     };
     return (React.createElement(Box, __assign({}, props),
-        title && (React.createElement(Title$2, { scale: { xs: "size20", md: "size24" }, mb: "16px", bold: true, variant: variant }, title)),
+        title && (React.createElement(Title$2, { scale: { xs: isDarkMobile, md: "size24" }, mb: "16px", bold: true, variant: variant }, title)),
         React.createElement(ContentWrapper, null,
             React.createElement(Flex, { flexDirection: "column" }, renderQuestionList(leftData)),
             React.createElement(Flex, { flexDirection: "column" }, renderQuestionList(rightData)))));
