@@ -1,5 +1,6 @@
 import React, { FC, ReactNode, useRef } from "react";
 import styled from "styled-components";
+import { variant } from "styled-system";
 
 // components
 import { HeadText } from "../../Typography";
@@ -11,15 +12,23 @@ import { ChevronDownIcon } from "../../Svg";
 // utils
 import { getRgba } from "../../../util";
 
+import { Variant } from "../types";
+import { wrapperVariants, questionVariants } from "../theme";
+
 interface IProps {
   name: string;
   isOpened: boolean;
   handleToggle: (value: string) => void;
   children: ReactNode;
+  variant: Variant;
 }
-const Wrapper = styled(Box)<{ isOpen: boolean }>`
+const Wrapper = styled(Box)<{ isOpen: boolean; variant: Variant }>`
   width: 100%;
   margin-top: 8px;
+  ${variant({
+    variants: wrapperVariants,
+  })}
+  background: ${({ isOpen }) => isOpen && "transparent"};
   border: 1px solid
     ${({ theme, isOpen }) =>
       isOpen ? getRgba(theme.colors.primary, theme, 0.16) : "transparent"};
@@ -31,13 +40,11 @@ const Wrapper = styled(Box)<{ isOpen: boolean }>`
   }
 `;
 
-const Question = styled(Flex)<{ isOpen: boolean }>`
+const Question = styled(Flex)<{ isOpen: boolean; variant: Variant }>`
   align-items: center;
   justify-content: space-between;
   padding: 16px;
   border-radius: 8px;
-  background: ${({ theme, isOpen }) =>
-    isOpen ? "transparent" : theme.colors.dark600};
   transition: background 0.3s ease;
 
   &:hover {
@@ -47,6 +54,12 @@ const Question = styled(Flex)<{ isOpen: boolean }>`
   ${({ theme }) => theme.mediaQueries.sm} {
     justify-content: space-between;
   }
+`;
+
+const StyledText = styled(HeadText)<{ variant: Variant }>`
+  ${variant({
+    variants: questionVariants,
+  })}
 `;
 
 const StyledChevronIcon = styled(({ ...props }) => (
@@ -65,16 +78,21 @@ const FaqAccordion: FC<IProps> = ({
   name = "",
   isOpened,
   handleToggle,
+  variant = "dark",
   children,
 }) => {
   const contentEl = useRef<HTMLDivElement>(null);
 
   return (
-    <Wrapper isOpen={isOpened} onClick={() => handleToggle(name)}>
-      <Question isOpen={isOpened}>
-        <HeadText color="white" scale="size14">
+    <Wrapper
+      isOpen={isOpened}
+      onClick={() => handleToggle(name)}
+      variant={variant}
+    >
+      <Question isOpen={isOpened} variant={variant}>
+        <StyledText scale="size14" variant={variant}>
           {name}
-        </HeadText>
+        </StyledText>
         <StyledChevronIcon isOpen={isOpened} color="primary" width="24px" />
       </Question>
       <Answer

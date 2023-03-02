@@ -1,19 +1,28 @@
 import React, { FC, useState } from "react";
 import styled from "styled-components";
+import { variant } from "styled-system";
 
 // components
-import { BodyText, HeadText } from "../Typography";
+import { BodyText } from "../Typography";
 import { Box, BoxProps, Flex, Grid } from "../Box";
 import FaqAccordion from "./FaqAccordion";
 
 // types
-import { QuestionProp } from "./types";
+import { QuestionProp, Variant } from "./types";
+
+import { descriptionVariants, titleVariants } from "./theme";
 
 interface IProps extends BoxProps {
   title?: string;
   leftData: QuestionProp[];
   rightData: QuestionProp[];
+  variant?: Variant;
 }
+const Title = styled(BodyText)<{ variant: Variant }>`
+  ${variant({
+    variants: titleVariants,
+  })}
+`;
 
 const ContentWrapper = styled(Grid)`
   grid-template-columns: 1fr;
@@ -24,10 +33,17 @@ const ContentWrapper = styled(Grid)`
   }
 `;
 
+const Description = styled(BodyText)<{ variant: Variant }>`
+  ${variant({
+    variants: descriptionVariants,
+  })}
+`;
+
 const Faqs: FC<IProps> = ({
   title = "FAQs",
   leftData,
   rightData,
+  variant = "dark",
   ...props
 }) => {
   const [activeQuestion, setActiveQuestion] = useState<string>("");
@@ -44,19 +60,25 @@ const Faqs: FC<IProps> = ({
         name={item.name}
         isOpened={activeQuestion === item.name}
         handleToggle={handleToggle}
+        variant={variant}
       >
-        <BodyText scale="size14" color="gray700" p="0 16px 16px">
+        <Description scale="size14" p="0 16px 16px" variant={variant}>
           {item.description}
-        </BodyText>
+        </Description>
       </FaqAccordion>
     ));
 
   return (
     <Box {...props}>
       {title && (
-        <HeadText scale="size24" color="white" mb="16px">
+        <Title
+          scale={{ xs: "size20", md: "size24" }}
+          mb="16px"
+          bold
+          variant={variant}
+        >
           {title}
-        </HeadText>
+        </Title>
       )}
       <ContentWrapper>
         <Flex flexDirection="column">{renderQuestionList(leftData)}</Flex>

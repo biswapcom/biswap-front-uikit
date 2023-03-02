@@ -21,7 +21,18 @@ export const Default: React.FC = () => {
   return (
     <Box p="20px">
       <Heading mb="20px">Faqs</Heading>
-      <Faqs title={title} leftData={leftData} rightData={rightData} />
+      <Faqs
+        title={title}
+        leftData={leftData}
+        rightData={rightData}
+        variant="light"
+      />
+      <Faqs
+        title={title}
+        leftData={leftData}
+        rightData={rightData}
+        variant="dark"
+      />
     </Box>
   );
 };
