@@ -21,6 +21,7 @@ export * from "./components/TabMenu";
 export * from "./components/Text";
 export * from "./components/Toggle";
 export * from "./components/Badge";
+export * from "./components/BadgeButton";
 export * from "./components/PercentSlider";
 export * from "./components/Typography";
 export * from "./components/Pagination";
