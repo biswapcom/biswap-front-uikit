@@ -9,6 +9,7 @@ export interface BadgeButtonProps extends SpaceProps {
   isIcon?: string;
   children: ReactNode;
   badgeType: BadgeType;
+  onClick?: () => void;
 }
 
 export const badgeTypes = {
