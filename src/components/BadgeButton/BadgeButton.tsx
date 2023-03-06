@@ -37,6 +37,7 @@ const Badge: FC<BadgeButtonProps> = ({
   fontSize,
   fontWeight,
   isIcon,
+  isActive,
   ...props
 }) => {
   return (
@@ -45,6 +46,7 @@ const Badge: FC<BadgeButtonProps> = ({
       isIcon={isIcon}
       fontSize={fontSize}
       fontWeight={fontWeight}
+      className={isActive ? "active" : ""}
       {...props}
     >
       {children}

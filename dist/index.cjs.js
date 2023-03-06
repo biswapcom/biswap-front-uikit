@@ -4308,7 +4308,7 @@ var BadgeTypesContainer = (_a$4 = {},
         ":hover": {
             backgroundColor: "successHover",
         },
-        ":active": {
+        ":active, &.active": {
             backgroundColor: "successPress",
         },
     },
@@ -4319,7 +4319,7 @@ var BadgeTypesContainer = (_a$4 = {},
         ":hover": {
             backgroundColor: "secondaryHover",
         },
-        ":active": {
+        ":active, &.active": {
             backgroundColor: "secondaryPress",
         },
     },
@@ -4330,7 +4330,7 @@ var BadgeTypesContainer = (_a$4 = {},
         ":hover": {
             backgroundColor: "warningHover",
         },
-        ":active": {
+        ":active, &.active": {
             backgroundColor: "warningPress",
         },
     },
@@ -4341,7 +4341,7 @@ var BadgeTypesContainer = (_a$4 = {},
         ":hover": {
             backgroundColor: "primaryHover",
         },
-        ":active": {
+        ":active, &.active": {
             backgroundColor: "primaryPress",
         },
     },
@@ -4352,7 +4352,7 @@ var BadgeTypesContainer = (_a$4 = {},
         ":hover": {
             backgroundColor: "boostHover",
         },
-        ":active": {
+        ":active, &.active": {
             backgroundColor: "boostPress",
         },
     },
@@ -4364,7 +4364,7 @@ var BadgeTypesContainer = (_a$4 = {},
             backgroundColor: "transparent",
             borderColor: "successOpacity",
         },
-        ":active": {
+        ":active, &.active": {
             backgroundColor: "transparent",
             borderColor: "success",
         },
@@ -4377,7 +4377,7 @@ var BadgeTypesContainer = (_a$4 = {},
             backgroundColor: "transparent",
             borderColor: "secondaryOpacity",
         },
-        ":active": {
+        ":active, &.active": {
             backgroundColor: "transparent",
             borderColor: "secondary",
         },
@@ -4390,7 +4390,7 @@ var BadgeTypesContainer = (_a$4 = {},
             backgroundColor: "transparent",
             borderColor: "primaryOpacity",
         },
-        ":active": {
+        ":active, &.active": {
             backgroundColor: "transparent",
             borderColor: "primary",
         },
@@ -4403,7 +4403,7 @@ var BadgeTypesContainer = (_a$4 = {},
             backgroundColor: "transparent",
             borderColor: "warning",
         },
-        ":active": {
+        ":active, &.active": {
             backgroundColor: "transparent",
             borderColor: "warning",
         },
@@ -4415,7 +4415,7 @@ var BadgeTypesContainer = (_a$4 = {},
         ":hover": {
             backgroundColor: "white",
         },
-        ":active": {
+        ":active, &.active": {
             backgroundColor: "gray400",
         },
     },
@@ -4433,8 +4433,8 @@ var Wrapper$b = styled__default["default"].button(templateObject_1$S || (templat
     variants: BadgeTypesContainer,
 }));
 var Badge = function (_a) {
-    var children = _a.children, badgeType = _a.badgeType, fontSize = _a.fontSize, fontWeight = _a.fontWeight, isIcon = _a.isIcon, props = __rest(_a, ["children", "badgeType", "fontSize", "fontWeight", "isIcon"]);
-    return (React__default["default"].createElement(Wrapper$b, __assign({ badgeType: badgeType, isIcon: isIcon, fontSize: fontSize, fontWeight: fontWeight }, props), children));
+    var children = _a.children, badgeType = _a.badgeType, fontSize = _a.fontSize, fontWeight = _a.fontWeight, isIcon = _a.isIcon, isActive = _a.isActive, props = __rest(_a, ["children", "badgeType", "fontSize", "fontWeight", "isIcon", "isActive"]);
+    return (React__default["default"].createElement(Wrapper$b, __assign({ badgeType: badgeType, isIcon: isIcon, fontSize: fontSize, fontWeight: fontWeight, className: isActive ? "active" : "" }, props), children));
 };
 var templateObject_1$S;
 
