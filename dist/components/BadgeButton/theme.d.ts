@@ -7,7 +7,7 @@ export declare const BadgeTypesContainer: {
             backgroundColor: string;
             borderColor?: undefined;
         };
-        ":active": {
+        ":active, &.active": {
             backgroundColor: string;
             borderColor?: undefined;
         };
@@ -19,7 +19,7 @@ export declare const BadgeTypesContainer: {
             backgroundColor: string;
             borderColor: string;
         };
-        ":active": {
+        ":active, &.active": {
             backgroundColor: string;
             borderColor: string;
         };

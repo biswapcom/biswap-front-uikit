@@ -9,7 +9,7 @@ export const BadgeTypesContainer = {
     ":hover": {
       backgroundColor: "successHover",
     },
-    ":active": {
+    ":active, &.active": {
       backgroundColor: "successPress",
     },
   },
@@ -21,7 +21,7 @@ export const BadgeTypesContainer = {
     ":hover": {
       backgroundColor: "secondaryHover",
     },
-    ":active": {
+    ":active, &.active": {
       backgroundColor: "secondaryPress",
     },
   },
@@ -33,7 +33,7 @@ export const BadgeTypesContainer = {
     ":hover": {
       backgroundColor: "warningHover",
     },
-    ":active": {
+    ":active, &.active": {
       backgroundColor: "warningPress",
     },
   },
@@ -45,7 +45,7 @@ export const BadgeTypesContainer = {
     ":hover": {
       backgroundColor: "primaryHover",
     },
-    ":active": {
+    ":active, &.active": {
       backgroundColor: "primaryPress",
     },
   },
@@ -57,7 +57,7 @@ export const BadgeTypesContainer = {
     ":hover": {
       backgroundColor: "boostHover",
     },
-    ":active": {
+    ":active, &.active": {
       backgroundColor: "boostPress",
     },
   },
@@ -70,7 +70,7 @@ export const BadgeTypesContainer = {
       backgroundColor: "transparent",
       borderColor: "successOpacity",
     },
-    ":active": {
+    ":active, &.active": {
       backgroundColor: "transparent",
       borderColor: "success",
     },
@@ -84,7 +84,7 @@ export const BadgeTypesContainer = {
       backgroundColor: "transparent",
       borderColor: "secondaryOpacity",
     },
-    ":active": {
+    ":active, &.active": {
       backgroundColor: "transparent",
       borderColor: "secondary",
     },
@@ -98,7 +98,7 @@ export const BadgeTypesContainer = {
       backgroundColor: "transparent",
       borderColor: "primaryOpacity",
     },
-    ":active": {
+    ":active, &.active": {
       backgroundColor: "transparent",
       borderColor: "primary",
     },
@@ -112,7 +112,7 @@ export const BadgeTypesContainer = {
       backgroundColor: "transparent",
       borderColor: "warning",
     },
-    ":active": {
+    ":active, &.active": {
       backgroundColor: "transparent",
       borderColor: "warning",
     },
@@ -125,7 +125,7 @@ export const BadgeTypesContainer = {
     ":hover": {
       backgroundColor: "white",
     },
-    ":active": {
+    ":active, &.active": {
       backgroundColor: "gray400",
     },
   },
