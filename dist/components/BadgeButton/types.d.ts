@@ -7,6 +7,7 @@ export interface BadgeButtonProps extends SpaceProps {
     isIcon?: string;
     children: ReactNode;
     badgeType: BadgeType;
+    onClick?: () => void;
 }
 export declare const badgeTypes: {
     SUCCESS: string;
