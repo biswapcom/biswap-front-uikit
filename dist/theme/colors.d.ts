@@ -55,5 +55,11 @@ export declare const additionalColors: {
     gray200: string;
     gray100: string;
 };
+export declare const badgeSpecialColors: {
+    successOpacity: string;
+    secondaryOpacity: string;
+    primaryOpacity: string;
+    warningOpacity: string;
+};
 export declare const lightColors: Colors;
 export declare const darkColors: Colors;

@@ -3,6 +3,7 @@ import { Box, Flex } from "../Box";
 import { BodyText } from "../Typography";
 import { getRgba } from "../../util";
 import styled from "styled-components";
+
 const TableRow = styled(Flex)`
   padding: 6px 0;
   &:not(:last-child) {
