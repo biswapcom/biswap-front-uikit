@@ -5524,9 +5524,9 @@ var useOnClickOutside = function (ref, handler) {
     [ref, handler]);
 };
 
-var QuestionWrapper = styled__default["default"](Flex)(templateObject_2$k || (templateObject_2$k = __makeTemplateObject(["\n  align-items: center;\n  transition: opacity 0.3s ease-in-out;\n\n  ", "\n"], ["\n  align-items: center;\n  transition: opacity 0.3s ease-in-out;\n\n  ", "\n"])), function (_a) {
+var QuestionWrapper = styled__default["default"](Flex)(templateObject_2$k || (templateObject_2$k = __makeTemplateObject(["\n  align-items: center;\n  cursor: pointer;\n  transition: opacity 0.3s ease-in-out;\n\n  ", "\n"], ["\n  align-items: center;\n  cursor: pointer;\n  transition: opacity 0.3s ease-in-out;\n\n  ", "\n"])), function (_a) {
     var showTooltip = _a.showTooltip;
-    return showTooltip && styled.css(templateObject_1$x || (templateObject_1$x = __makeTemplateObject(["\n      :hover,\n      :focus {\n        opacity: 0.7;\n        cursor: default;\n      }\n    "], ["\n      :hover,\n      :focus {\n        opacity: 0.7;\n        cursor: default;\n      }\n    "])));
+    return showTooltip && styled.css(templateObject_1$x || (templateObject_1$x = __makeTemplateObject(["\n      :hover,\n      :focus {\n        opacity: 0.7;\n      }\n    "], ["\n      :hover,\n      :focus {\n        opacity: 0.7;\n      }\n    "])));
 });
 var TooltipHelper = function (_a) {
     var text = _a.text, _b = _a.placement, placement = _b === void 0 ? "auto" : _b, _c = _a.size, size = _c === void 0 ? "16px" : _c, _d = _a.color, color = _d === void 0 ? "pastelBlue" : _d, trigger = _a.trigger, _e = _a.Icon, Icon = _e === void 0 ? Icon$2z : _e, _f = _a.ml, ml = _f === void 0 ? "4px" : _f, children = _a.children, _g = _a.showTooltip, showTooltip = _g === void 0 ? true : _g, props = __rest(_a, ["text", "placement", "size", "color", "trigger", "Icon", "ml", "children", "showTooltip"]);
