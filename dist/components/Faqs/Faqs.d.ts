@@ -6,6 +6,7 @@ interface IProps extends BoxProps {
     leftData: QuestionProp[];
     rightData: QuestionProp[];
     variant?: Variant;
+    blogFAQ?: boolean;
 }
 declare const Faqs: FC<IProps>;
 export default Faqs;
