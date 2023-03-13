@@ -44,42 +44,6 @@ export type Gradients = {
 };
 
 export type Colors = {
-  //
-  // primaryBright: string;
-  // primaryDark: string;
-  // tertiary: string;
-  // failure: string;
-  // cardBorder: string;
-  // contrast: string;
-  // dropdown: string;
-  // dropdownDeep: string;
-  // invertedContrast: string;
-  // input: string;
-  // inputSecondary: string;
-  // background: string;
-  // backgroundDisabled: string;
-  // backgroundAlt: string;
-  // backgroundAlt2: string;
-  // text: string;
-  // textDisabled: string;
-  // textSubtle: string;
-  // disabled: string;
-  // header: string;
-  // inputBorder: string;
-  // borderColor: string;
-  // card: string;
-  // dropDown: string;
-  // footer: string;
-
-  // Gradients
-  // gradients: Gradients;
-
-  // Additional colors
-  // overlay: string;
-  // gold: string;
-  // silver: string;
-  // bronze: string;
-
   //Brand color
   binance: string;
   polygon: string;
@@ -146,6 +110,12 @@ export type Colors = {
   gray300: string;
   gray200: string;
   gray100: string;
+
+  //badgeSpecialColors
+  successOpacity: string;
+  secondaryOpacity: string;
+  primaryOpacity: string;
+  warningOpacity: string;
 };
 
 export type ZIndices = {
