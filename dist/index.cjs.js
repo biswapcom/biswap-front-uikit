@@ -5619,12 +5619,12 @@ var FaqAccordion = function (_a) {
 var templateObject_1$v, templateObject_2$i, templateObject_3$e, templateObject_4$d;
 
 var ContentWrapper = styled__default["default"](Grid)(templateObject_1$u || (templateObject_1$u = __makeTemplateObject(["\n  grid-template-columns: 1fr;\n\n  ", " {\n    grid-template-columns: repeat(2, 1fr);\n    grid-gap: 32px;\n  }\n"], ["\n  grid-template-columns: 1fr;\n\n  ", " {\n    grid-template-columns: repeat(2, 1fr);\n    grid-gap: 32px;\n  }\n"])), function (_a) {
-    var theme = _a.theme;
-    return theme.mediaQueries.md;
+    var theme = _a.theme, blogFAQ = _a.blogFAQ;
+    return blogFAQ ? theme.mediaQueries.xl : theme.mediaQueries.md;
 });
 var Faqs = function (_a) {
-    var _b = _a.title, title = _b === void 0 ? "FAQs" : _b, leftData = _a.leftData, rightData = _a.rightData, props = __rest(_a, ["title", "leftData", "rightData"]);
-    var _c = React.useState(""), activeQuestion = _c[0], setActiveQuestion = _c[1];
+    var _b = _a.title, title = _b === void 0 ? "FAQs" : _b, leftData = _a.leftData, rightData = _a.rightData, _c = _a.blogFAQ, blogFAQ = _c === void 0 ? false : _c, props = __rest(_a, ["title", "leftData", "rightData", "blogFAQ"]);
+    var _d = React.useState(""), activeQuestion = _d[0], setActiveQuestion = _d[1];
     var handleToggle = function (name) {
         setActiveQuestion(activeQuestion !== name ? name : "");
     };
@@ -5635,7 +5635,7 @@ var Faqs = function (_a) {
     };
     return (React__default["default"].createElement(Box, __assign({}, props),
         title && (React__default["default"].createElement(HeadText, { scale: "size24", color: "white", mb: "16px" }, title)),
-        React__default["default"].createElement(ContentWrapper, null,
+        React__default["default"].createElement(ContentWrapper, { blogFAQ: blogFAQ },
             React__default["default"].createElement(Flex, { flexDirection: "column" }, renderQuestionList(leftData)),
             React__default["default"].createElement(Flex, { flexDirection: "column" }, renderQuestionList(rightData)))));
 };

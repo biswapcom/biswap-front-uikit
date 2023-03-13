@@ -13,12 +13,14 @@ interface IProps extends BoxProps {
   title?: string;
   leftData: QuestionProp[];
   rightData: QuestionProp[];
+  blogFAQ?: boolean;
 }
 
-const ContentWrapper = styled(Grid)`
+const ContentWrapper = styled(Grid)<{ blogFAQ: boolean }>`
   grid-template-columns: 1fr;
 
-  ${({ theme }) => theme.mediaQueries.md} {
+  ${({ theme, blogFAQ }) =>
+    blogFAQ ? theme.mediaQueries.xl : theme.mediaQueries.md} {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 32px;
   }
@@ -28,6 +30,7 @@ const Faqs: FC<IProps> = ({
   title = "FAQs",
   leftData,
   rightData,
+  blogFAQ = false,
   ...props
 }) => {
   const [activeQuestion, setActiveQuestion] = useState<string>("");
@@ -58,7 +61,7 @@ const Faqs: FC<IProps> = ({
           {title}
         </HeadText>
       )}
-      <ContentWrapper>
+      <ContentWrapper blogFAQ={blogFAQ}>
         <Flex flexDirection="column">{renderQuestionList(leftData)}</Flex>
         <Flex flexDirection="column">{renderQuestionList(rightData)}</Flex>
       </ContentWrapper>
