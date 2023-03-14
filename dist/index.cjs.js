@@ -4872,6 +4872,19 @@ var SocialShareButton = function (_a) {
 };
 var templateObject_1$K, templateObject_2$p;
 
+var Icons$1 = IconModule;
+var IconComponent = function (_a) {
+    var iconName = _a.iconName, props = __rest(_a, ["iconName"]);
+    var IconElement = Icons$1["".concat(iconName, "Icon")];
+    return IconElement ? React__default["default"].createElement(IconElement, __assign({}, props)) : null;
+};
+
+var SocialShareButtonCircle = function (_a) {
+    var social = _a.social, label = _a.label, link = _a.link, message = _a.message, props = __rest(_a, ["social", "label", "link", "message"]);
+    return (React__default["default"].createElement(Flex, __assign({ as: "a", href: socialLinks[social]({ link: link, message: message }), target: "_blank", alignItems: "center", justifyContent: "center" }, props),
+        React__default["default"].createElement(IconComponent, { iconName: label, width: "22px", color: "white" })));
+};
+
 var PromotedGradient = styled.keyframes(templateObject_1$J || (templateObject_1$J = __makeTemplateObject(["\n  0% {\n    background-position: 50% 0%;\n  }\n  50% {\n    background-position: 50% 100%;\n  }\n  100% {\n    background-position: 50% 0%;\n  }\n"], ["\n  0% {\n    background-position: 50% 0%;\n  }\n  50% {\n    background-position: 50% 100%;\n  }\n  100% {\n    background-position: 50% 0%;\n  }\n"])));
 /**
  * Priority: Warning --> Success --> Active
@@ -5576,13 +5589,6 @@ var ExpandableIcon = function (_a) {
         React__default["default"].createElement(IconComponent$1, { iconName: iconName, width: width, color: color })));
 };
 var templateObject_1$w;
-
-var Icons$1 = IconModule;
-var IconComponent = function (_a) {
-    var iconName = _a.iconName, props = __rest(_a, ["iconName"]);
-    var IconElement = Icons$1["".concat(iconName, "Icon")];
-    return IconElement ? React__default["default"].createElement(IconElement, __assign({}, props)) : null;
-};
 
 var Wrapper$8 = styled__default["default"](Box)(templateObject_1$v || (templateObject_1$v = __makeTemplateObject(["\n  width: 100%;\n  margin-top: 8px;\n  border: 1px solid\n    ", ";\n  border-radius: 8px;\n  cursor: pointer;\n\n  &:hover {\n    border-color: ", ";\n  }\n"], ["\n  width: 100%;\n  margin-top: 8px;\n  border: 1px solid\n    ", ";\n  border-radius: 8px;\n  cursor: pointer;\n\n  &:hover {\n    border-color: ", ";\n  }\n"])), function (_a) {
     var theme = _a.theme, isOpen = _a.isOpen;
@@ -7772,6 +7778,7 @@ exports.ShareSolidIcon = Icon$1_;
 exports.Skeleton = Skeleton;
 exports.Slider = Slider;
 exports.SocialShareButton = SocialShareButton;
+exports.SocialShareButtonCircle = SocialShareButtonCircle;
 exports.SpaceAgentOpacityIcon = Icon$v;
 exports.SpaceAgentSolidIcon = Icon$w;
 exports.StarIcon = Icon$29;
