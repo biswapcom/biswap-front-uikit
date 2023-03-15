@@ -46,6 +46,7 @@ export const Default: React.FC = () => {
           label="Telegram"
           link={`https://github.com`}
           message="Share your earnings on Biswap and win a part of $2530 in BSW Prize Pool for 253 winners every week! #biswap_sharing"
+          color="gray900"
         />
         <SocialShareButtonCircle
           social="twitter"
