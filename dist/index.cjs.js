@@ -4236,6 +4236,9 @@ var getBadgeBg = function (_a) {
     if (badgeType === "light") {
         return theme.colors.gray200;
     }
+    if (badgeType === "warningOpacity") {
+        return theme.colors.warningOpacity;
+    }
     return theme.colors.primary;
 };
 var getBadgeColor = function (_a) {
@@ -4254,6 +4257,9 @@ var getBadgeColor = function (_a) {
     }
     if (badgeType === "light") {
         return theme.colors.dark800;
+    }
+    if (badgeType === "warningOpacity") {
+        return theme.colors.warning;
     }
     if (badgeType === "new" ||
         badgeType === "primary" ||

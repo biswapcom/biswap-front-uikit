@@ -44,6 +44,9 @@ const getBadgeBg = ({ badgeType = "light", theme }: StyledBadgeProps) => {
   if (badgeType === "light") {
     return theme.colors.gray200;
   }
+  if (badgeType === "warningOpacity") {
+    return theme.colors.warningOpacity;
+  }
 
   return theme.colors.primary;
 };
@@ -67,6 +70,10 @@ const getBadgeColor = ({ badgeType = "light", theme }: StyledBadgeProps) => {
 
   if (badgeType === "light") {
     return theme.colors.dark800;
+  }
+
+  if (badgeType === "warningOpacity") {
+    return theme.colors.warning;
   }
 
   if (
