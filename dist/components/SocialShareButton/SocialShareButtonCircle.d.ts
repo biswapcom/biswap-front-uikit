@@ -5,6 +5,7 @@ interface SocialShareButtonCircleProps extends FlexboxProps {
     label: string;
     link: string;
     message: string;
+    color?: string;
 }
 declare const SocialShareButtonCircle: FC<SocialShareButtonCircleProps>;
 export default SocialShareButtonCircle;
