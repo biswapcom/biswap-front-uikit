@@ -7538,14 +7538,17 @@ var ToastContainer = function (_a) {
 };
 var templateObject_1$3;
 
-var StyledToast = styled__default["default"].div(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  position: fixed;\n  transition: all 500ms ease-in;\n  right: auto;\n  left: 35px;\n  box-shadow: 0px -4px 11px rgba(0, 0, 0, 0.1),\n    0px 20px 36px -8px rgba(14, 14, 44, 0.32), 0px 1px 1px rgba(0, 0, 0, 0.16);\n  border-radius: 16px;\n  background: ", ";\n  padding: 16px 20px;\n"], ["\n  position: fixed;\n  transition: all 500ms ease-in;\n  right: auto;\n  left: 35px;\n  box-shadow: 0px -4px 11px rgba(0, 0, 0, 0.1),\n    0px 20px 36px -8px rgba(14, 14, 44, 0.32), 0px 1px 1px rgba(0, 0, 0, 0.16);\n  border-radius: 16px;\n  background: ", ";\n  padding: 16px 20px;\n"])), function (_a) {
+var StyledToast = styled__default["default"](Box)(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  position: fixed;\n  transition: all 500ms ease-in;\n  right: auto;\n  left: 16px;\n  box-shadow: 0px -4px 11px rgba(0, 0, 0, 0.1),\n    0px 20px 36px -8px rgba(14, 14, 44, 0.32), 0px 1px 1px rgba(0, 0, 0, 0.16);\n  border-radius: 16px;\n  background: ", ";\n  padding: 16px 20px;\n\n  ", " {\n    transform: translate(-50%, 0);\n    left: 50%;\n  }\n"], ["\n  position: fixed;\n  transition: all 500ms ease-in;\n  right: auto;\n  left: 16px;\n  box-shadow: 0px -4px 11px rgba(0, 0, 0, 0.1),\n    0px 20px 36px -8px rgba(14, 14, 44, 0.32), 0px 1px 1px rgba(0, 0, 0, 0.16);\n  border-radius: 16px;\n  background: ", ";\n  padding: 16px 20px;\n\n  ", " {\n    transform: translate(-50%, 0);\n    left: 50%;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.success;
+}, function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.sm;
 });
 var ColoredToastItem = function (_a) {
     var toast = _a.toast, style = _a.style, props = __rest(_a, ["toast", "style"]);
     return (React__default["default"].createElement(reactTransitionGroup.CSSTransition, __assign({ timeout: 250, style: style }, props),
-        React__default["default"].createElement(StyledToast, null,
+        React__default["default"].createElement(StyledToast, { left: "50%" },
             React__default["default"].createElement(Flex, { alignItems: "center" },
                 React__default["default"].createElement(IconComponent, { iconName: "Check", color: "white", width: "26px" }),
                 React__default["default"].createElement(BodyText, { bold: true, color: "white", ml: "12px" }, toast.title)))));
@@ -7554,7 +7557,7 @@ var templateObject_1$2;
 
 var StyledToastContainer = styled__default["default"].div(templateObject_1$1 || (templateObject_1$1 = __makeTemplateObject(["\n  .enter,\n  .appear {\n    opacity: 0.01;\n  }\n\n  .enter.enter-active,\n  .appear.appear-active {\n    opacity: 1;\n    transition: opacity 250ms ease-in;\n  }\n\n  .exit {\n    opacity: 1;\n  }\n\n  .exit.exit-active {\n    opacity: 0.01;\n    transition: opacity 250ms ease-out;\n  }\n"], ["\n  .enter,\n  .appear {\n    opacity: 0.01;\n  }\n\n  .enter.enter-active,\n  .appear.appear-active {\n    opacity: 1;\n    transition: opacity 250ms ease-in;\n  }\n\n  .exit {\n    opacity: 1;\n  }\n\n  .exit.exit-active {\n    opacity: 0.01;\n    transition: opacity 250ms ease-out;\n  }\n"])));
 var ColoredToasts = function (_a) {
-    var toasts = _a.toasts, onRemove = _a.onRemove, _b = _a.ttl, ttl = _b === void 0 ? 5000 : _b;
+    var toasts = _a.toasts, onRemove = _a.onRemove, _b = _a.ttl, ttl = _b === void 0 ? 50000 : _b;
     var handleRemove = React.useCallback(function () {
         var _a;
         onRemove((_a = toasts[0]) === null || _a === void 0 ? void 0 : _a.id);
@@ -7568,7 +7571,7 @@ var ColoredToasts = function (_a) {
         };
     }, [handleRemove]);
     return (React__default["default"].createElement(StyledToastContainer, null,
-        React__default["default"].createElement(reactTransitionGroup.TransitionGroup, null, toasts.map(function (toast) { return (React__default["default"].createElement(ColoredToastItem, { key: toast.id, toast: toast, ttl: ttl, style: { bottom: "40px" } })); }))));
+        React__default["default"].createElement(reactTransitionGroup.TransitionGroup, null, toasts.map(function (toast) { return (React__default["default"].createElement(ColoredToastItem, { key: toast.id, toast: toast, ttl: ttl, style: { bottom: "50px" } })); }))));
 };
 var templateObject_1$1;
 

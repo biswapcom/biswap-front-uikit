@@ -37,7 +37,7 @@ const StyledToastContainer = styled.div`
 const ColoredToasts: FC<ToastContainerProps> = ({
   toasts,
   onRemove,
-  ttl = 5000,
+  ttl = 50000,
 }) => {
   const handleRemove = useCallback(() => {
     onRemove(toasts[0]?.id);
@@ -61,7 +61,7 @@ const ColoredToasts: FC<ToastContainerProps> = ({
             key={toast.id}
             toast={toast}
             ttl={ttl}
-            style={{ bottom: "40px" }}
+            style={{ bottom: "50px" }}
           />
         ))}
       </TransitionGroup>
