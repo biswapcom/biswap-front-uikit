@@ -21,7 +21,7 @@ const StyledToastContainer = styled.div`
   .enter.enter-active,
   .appear.appear-active {
     opacity: 1;
-    transition: opacity 250ms ease-in;
+    transition: opacity 0.25s ease-in;
   }
 
   .exit {
@@ -30,7 +30,7 @@ const StyledToastContainer = styled.div`
 
   .exit.exit-active {
     opacity: 0.01;
-    transition: opacity 250ms ease-out;
+    transition: opacity 0.25s ease-out;
   }
 `;
 
