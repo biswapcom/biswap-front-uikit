@@ -3,6 +3,8 @@ import { sample } from "lodash";
 import { alertVariants } from "../../components/Alert";
 import Button from "../../components/Button/Button";
 import ToastContainer from "./ToastContainer";
+import { ColoredToasts } from "./ColoredToasts";
+import { ColoredToastProps } from "./types";
 
 export default {
   title: "Widgets/Toast",
@@ -111,6 +113,33 @@ export const WithAction: React.FC = () => {
         toasts={toasts}
         onRemove={handleRemove}
       />
+    </div>
+  );
+};
+
+export const ColoredToast: React.FC = () => {
+  const [toasts, setToasts] = useState<ColoredToastProps[]>([]);
+
+  const handleClick = () => {
+    const now = Date.now();
+    const randomToast = {
+      id: `id-${now}`,
+      title: "Link copied",
+    };
+    setToasts([randomToast]);
+  };
+  const handleRemove = () => setToasts([]);
+  return (
+    <div>
+      <Button
+        type="button"
+        variant="success"
+        ml="8px"
+        onClick={() => handleClick()}
+      >
+        Toast for blog
+      </Button>
+      <ColoredToasts toasts={toasts} onRemove={handleRemove} />
     </div>
   );
 };
