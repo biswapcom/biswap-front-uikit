@@ -87,6 +87,10 @@ export declare type Colors = {
     gray300: string;
     gray200: string;
     gray100: string;
+    successOpacity: string;
+    secondaryOpacity: string;
+    primaryOpacity: string;
+    warningOpacity: string;
 };
 export declare type ZIndices = {
     dropdown: number;

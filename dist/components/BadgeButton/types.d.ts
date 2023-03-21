@@ -1,12 +1,14 @@
 import { ReactNode } from "react";
 import { SpaceProps } from "styled-system";
-export interface BadgeProps extends SpaceProps {
-    badgeType: "success" | "error" | "active" | "notActive" | "primary" | "warning" | "core" | "light" | "warningOpacity" | string;
+export declare type BadgeType = typeof badgeTypes[keyof typeof badgeTypes];
+export interface BadgeButtonProps extends SpaceProps {
     fontSize?: string;
     fontWeight?: string;
     isIcon?: string;
-    isLarge?: boolean;
     children: ReactNode;
+    badgeType: BadgeType;
+    onClick?: () => void;
+    isActive?: boolean;
 }
 export declare const badgeTypes: {
     SUCCESS: string;
