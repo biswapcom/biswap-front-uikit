@@ -12,7 +12,6 @@ import { ColoredToastProps, ToastProps } from "../types";
 
 const StyledToast = styled(Box)`
   position: fixed;
-  transition: transform 0.5s ease-in;
   right: auto;
   left: 16px;
   box-shadow: 0px -4px 11px rgba(0, 0, 0, 0.1),

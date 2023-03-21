@@ -139,7 +139,7 @@ export const ColoredToast: React.FC = () => {
       >
         Toast for blog
       </Button>
-      <ColoredToasts toasts={toasts} onRemove={handleRemove} />
+      <ColoredToasts toasts={toasts} onRemove={handleRemove} ttl={1000} />
     </div>
   );
 };

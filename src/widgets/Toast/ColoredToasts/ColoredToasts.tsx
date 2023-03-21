@@ -37,7 +37,7 @@ const StyledToastContainer = styled.div`
 const ColoredToasts: FC<ToastContainerProps> = ({
   toasts,
   onRemove,
-  ttl = 50000,
+  ttl = 5000,
 }) => {
   const handleRemove = useCallback(() => {
     onRemove(toasts[0]?.id);
