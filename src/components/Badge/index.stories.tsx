@@ -43,6 +43,7 @@ export const Default: React.FC = () => {
         <Badge badgeType="primary">primary</Badge>
         <Badge badgeType="boost">boost</Badge>
         <Badge badgeType="core">core</Badge>
+        <Badge badgeType="warningOpacity">warningOpacity</Badge>
         <Badge badgeType="any">any</Badge>
         <Badge badgeType="core" isIcon="left">
           <GobletOpacityIcon width="14px" mr="4px" />
