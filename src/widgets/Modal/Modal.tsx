@@ -28,6 +28,8 @@ const Modal: React.FC<ModalProps> = ({
   titleSize = "lg",
   walletModal,
   modalBodyProps,
+  hideHeader,
+  titleColor = "backgroundDark",
   ...props
 }) => {
   const theme = useTheme();
@@ -47,24 +49,26 @@ const Modal: React.FC<ModalProps> = ({
       width={props.width}
       borderRadius={props.borderRadius ?? "16px"}
     >
-      <ModalHeader>
-        {!hideOnBack && onBack && (
-          <ModalBackButton onBack={onBack} closeBtnColor={closeBtnColor} />
-        )}
-        <ModalTitle>
-          {title && (
-            <Heading scale={titleSize} color="backgroundDark">
-              {title}
-            </Heading>
+      {!hideHeader && (
+        <ModalHeader>
+          {!hideOnBack && onBack && (
+            <ModalBackButton onBack={onBack} closeBtnColor={closeBtnColor} />
           )}
-        </ModalTitle>
-        {!hideCloseButton && (
-          <ModalCloseButton
-            closeBtnColor={closeBtnColor}
-            onDismiss={onDismiss}
-          />
-        )}
-      </ModalHeader>
+          <ModalTitle>
+            {title && (
+              <Heading scale={titleSize} color={titleColor}>
+                {title}
+              </Heading>
+            )}
+          </ModalTitle>
+          {!hideCloseButton && (
+            <ModalCloseButton
+              closeBtnColor={closeBtnColor}
+              onDismiss={onDismiss}
+            />
+          )}
+        </ModalHeader>
+      )}
       <ModalBody p={bodyPadding ?? defaultBodyPadding} {...modalBodyProps}>
         {children}
       </ModalBody>
