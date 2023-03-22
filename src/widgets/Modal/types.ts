@@ -24,4 +24,6 @@ export interface ModalProps extends InjectedProps, BoxProps {
   titleSize?: Scales;
   walletModal?: boolean;
   modalBodyProps?: FlexProps;
+  titleColor?: string;
+  hideHeader?: boolean;
 }
