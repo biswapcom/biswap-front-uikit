@@ -79,7 +79,7 @@ const InnerRow = styled.div`
   }
 
   ${({ theme }) => theme.mediaQueries.xll} {
-    grid-template-columns: 424px minmax(0, 64px) repeat(3, minmax(110px, 1fr)) 156px;
+    grid-template-columns: 424px minmax(0, 64px) repeat(3, minmax(110px, 1fr)) 174px;
     grid-template-areas:
       "footer-info . about product service community"
       "footer-info . about product service audit";
