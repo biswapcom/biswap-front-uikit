@@ -5808,15 +5808,15 @@ var templateObject_1$t, templateObject_2$f, templateObject_3$c, templateObject_4
 
 var Modal = function (_a) {
     var _b;
-    var title = _a.title, onDismiss = _a.onDismiss, onBack = _a.onBack, hideOnBack = _a.hideOnBack, children = _a.children, _c = _a.hideCloseButton, hideCloseButton = _c === void 0 ? false : _c, bodyPadding = _a.bodyPadding, _d = _a.minWidth, minWidth = _d === void 0 ? "320px" : _d, _e = _a.modalBackground, modalBackground = _e === void 0 ? "white" : _e, closeBtnColor = _a.closeBtnColor, _f = _a.maxWidth, maxWidth = _f === void 0 ? "420px" : _f, _g = _a.titleSize, titleSize = _g === void 0 ? "lg" : _g, walletModal = _a.walletModal, modalBodyProps = _a.modalBodyProps, props = __rest(_a, ["title", "onDismiss", "onBack", "hideOnBack", "children", "hideCloseButton", "bodyPadding", "minWidth", "modalBackground", "closeBtnColor", "maxWidth", "titleSize", "walletModal", "modalBodyProps"]);
+    var title = _a.title, onDismiss = _a.onDismiss, onBack = _a.onBack, hideOnBack = _a.hideOnBack, children = _a.children, _c = _a.hideCloseButton, hideCloseButton = _c === void 0 ? false : _c, bodyPadding = _a.bodyPadding, _d = _a.minWidth, minWidth = _d === void 0 ? "320px" : _d, _e = _a.modalBackground, modalBackground = _e === void 0 ? "white" : _e, closeBtnColor = _a.closeBtnColor, _f = _a.maxWidth, maxWidth = _f === void 0 ? "420px" : _f, _g = _a.titleSize, titleSize = _g === void 0 ? "lg" : _g, walletModal = _a.walletModal, modalBodyProps = _a.modalBodyProps, hideHeader = _a.hideHeader, _h = _a.titleColor, titleColor = _h === void 0 ? "backgroundDark" : _h, props = __rest(_a, ["title", "onDismiss", "onBack", "hideOnBack", "children", "hideCloseButton", "bodyPadding", "minWidth", "modalBackground", "closeBtnColor", "maxWidth", "titleSize", "walletModal", "modalBodyProps", "hideHeader", "titleColor"]);
     var theme = styled.useTheme();
     var isMobile = useMatchBreakpoints().isMobile;
     var defaultBodyPadding = isMobile ? "0 16px 24px" : "0 32px 32px";
     return (React__default["default"].createElement(ModalContainer, __assign({ minWidth: minWidth }, props, { background: getThemeValue("colors.".concat(modalBackground), modalBackground)(theme), maxWidth: maxWidth, walletModal: walletModal, width: props.width, borderRadius: (_b = props.borderRadius) !== null && _b !== void 0 ? _b : "16px" }),
-        React__default["default"].createElement(ModalHeader, null,
+        !hideHeader && (React__default["default"].createElement(ModalHeader, null,
             !hideOnBack && onBack && (React__default["default"].createElement(ModalBackButton, { onBack: onBack, closeBtnColor: closeBtnColor })),
-            React__default["default"].createElement(ModalTitle, null, title && (React__default["default"].createElement(Heading, { scale: titleSize, color: "backgroundDark" }, title))),
-            !hideCloseButton && (React__default["default"].createElement(ModalCloseButton, { closeBtnColor: closeBtnColor, onDismiss: onDismiss }))),
+            React__default["default"].createElement(ModalTitle, null, title && (React__default["default"].createElement(Heading, { scale: titleSize, color: titleColor }, title))),
+            !hideCloseButton && (React__default["default"].createElement(ModalCloseButton, { closeBtnColor: closeBtnColor, onDismiss: onDismiss })))),
         React__default["default"].createElement(ModalBody$1, __assign({ p: bodyPadding !== null && bodyPadding !== void 0 ? bodyPadding : defaultBodyPadding }, modalBodyProps), children)));
 };
 
