@@ -22,6 +22,8 @@ export interface ToastContainerProps {
     ttl?: number;
     onRemove: (id: string) => void;
     clearAll?: () => void | undefined;
+    clearAllLabel?: string;
+    viewBscScanLabel?: string;
 }
 export interface ToastProps {
     toast: Toast;
@@ -35,4 +37,6 @@ export interface ToastProps {
     clearAll?: () => void | undefined;
     zIndex?: string;
     removeButtonPosition?: number;
+    clearAllLabel: string;
+    viewBscScanLabel: string;
 }
