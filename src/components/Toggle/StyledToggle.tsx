@@ -9,6 +9,7 @@ import {
   StyleToggleProps,
 } from "./types";
 import {space, SpaceProps} from "styled-system";
+import {BodyText} from "../Typography";
 
 const scaleKeyValues = {
   // sm: {},
@@ -36,6 +37,7 @@ interface IToggleProps extends SpaceProps {
   disabled?: boolean;
   gridArea?: string;
   spaceBetween?: boolean;
+  labelSize?: string;
 }
 
 export const ToggleWrap = styled.label<IToggleProps>`
@@ -69,14 +71,12 @@ export const Handle = styled.div<HandleProps>`
   z-index: 1;
 `;
 
-export const Label = styled.span<{
+export const Label = styled(BodyText)<{
   labelOrientation?: string;
   isChecked: boolean;
   disabled?: boolean;
   variant?: string;
 }>`
-  font-size: 12px;
-  font-weight: 400;
   color: ${({ theme, isChecked }) =>
     isChecked ? theme.colors.dark800 : theme.colors.gray900};
 

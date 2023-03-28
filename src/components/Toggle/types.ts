@@ -1,6 +1,7 @@
 import { InputHTMLAttributes, ReactNode } from "react";
 import { Colors } from "../../theme";
 import {LayoutProps, SpaceProps} from "styled-system";
+import {Scales as BodyTextScales, ScalesObj} from "../Typography/typesBodyText";
 
 export const scales = {
   // SM: "sm",
@@ -18,6 +19,7 @@ export interface ToggleProps extends InputHTMLAttributes<HTMLInputElement>, Spac
   disabled?: boolean;
   label?: string;
   labelOrientation?: string;
+  labelSize?: BodyTextScales | ScalesObj | undefined;
   gridArea?: string;
   variant?: string;
   spaceBetween?: boolean;

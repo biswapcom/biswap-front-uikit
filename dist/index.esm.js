@@ -4106,6 +4106,160 @@ var scales$2 = {
     // LG: "lg",
 };
 
+var tags = {
+    H1: "h1",
+    H2: "h2",
+    H3: "h3",
+    H4: "h4",
+    H5: "h5",
+    H6: "h6",
+    P: "p",
+    SPAN: "span",
+    DIV: "div",
+};
+var scales$1 = {
+    SIZE40: "size40",
+    SIZE32: "size32",
+    SIZE24: "size24",
+    SIZE20: "size20",
+    SIZE16: "size16",
+    SIZE14: "size14",
+    SIZE12: "size12",
+    SIZE10: "size10",
+};
+
+var _a$5;
+var headTextScaleMap = (_a$5 = {},
+    _a$5[scales$1.SIZE40] = {
+        fontSize: "40px",
+        lineHeight: "48px",
+    },
+    _a$5[scales$1.SIZE32] = {
+        fontSize: "32px",
+        lineHeight: "40px",
+    },
+    _a$5[scales$1.SIZE24] = {
+        fontSize: "24px",
+        lineHeight: "32px",
+    },
+    _a$5[scales$1.SIZE20] = {
+        fontSize: "20px",
+        lineHeight: "28px",
+    },
+    _a$5[scales$1.SIZE16] = {
+        fontSize: "16px",
+        lineHeight: "24px",
+    },
+    _a$5[scales$1.SIZE14] = {
+        fontSize: "14px",
+        lineHeight: "20px",
+    },
+    _a$5[scales$1.SIZE12] = {
+        fontSize: "12px",
+        lineHeight: "16px",
+    },
+    _a$5[scales$1.SIZE10] = {
+        fontSize: "10px",
+        lineHeight: "12px",
+    },
+    _a$5);
+var HeadText = styled(Text).attrs({ bold: true })(templateObject_1$U || (templateObject_1$U = __makeTemplateObject(["\n  font-size: ", ";\n  line-height: ", ";\n  font-weight: 600;\n  white-space: ", ";\n"], ["\n  font-size: ", ";\n  line-height: ", ";\n  font-weight: 600;\n  white-space: ", ";\n"])), function (_a) {
+    var scale = _a.scale;
+    return headTextScaleMap[scale || scales$1.SIZE32].fontSize;
+}, function (_a) {
+    var scale = _a.scale;
+    return headTextScaleMap[scale || scales$1.SIZE32].lineHeight;
+}, function (_a) {
+    var nowrap = _a.nowrap;
+    return (nowrap ? "nowrap" : "normal");
+});
+HeadText.defaultProps = {
+    as: tags.H2,
+};
+var templateObject_1$U;
+
+var scales = {
+    SIZE40: "size40",
+    SIZE32: "size32",
+    SIZE24: "size24",
+    SIZE20: "size20",
+    SIZE16: "size16",
+    SIZE14: "size14",
+    SIZE12: "size12",
+    SIZE10: "size10",
+};
+
+var _a$4;
+var bodyTextScaleMap = (_a$4 = {},
+    _a$4[scales.SIZE40] = {
+        fontSize: "40px",
+        lineHeight: "48px",
+    },
+    _a$4[scales.SIZE32] = {
+        fontSize: "32px",
+        lineHeight: "40px",
+    },
+    _a$4[scales.SIZE24] = {
+        fontSize: "24px",
+        lineHeight: "32px",
+    },
+    _a$4[scales.SIZE20] = {
+        fontSize: "20px",
+        lineHeight: "28px",
+    },
+    _a$4[scales.SIZE16] = {
+        fontSize: "16px",
+        lineHeight: "24px",
+    },
+    _a$4[scales.SIZE14] = {
+        fontSize: "14px",
+        lineHeight: "20px",
+    },
+    _a$4[scales.SIZE12] = {
+        fontSize: "12px",
+        lineHeight: "16px",
+    },
+    _a$4[scales.SIZE10] = {
+        fontSize: "10px",
+        lineHeight: "12px",
+    },
+    _a$4);
+var getScalesAttributes = function (_a) {
+    var _b;
+    var scale = _a.scale;
+    if (typeof scale === "string")
+        return bodyTextScaleMap[scale];
+    var tempScales = JSON.parse(JSON.stringify(scale));
+    if (!tempScales.xs)
+        tempScales.xs = (_b = BodyText.defaultProps) === null || _b === void 0 ? void 0 : _b.scale;
+    return scale
+        ? {
+            fontSize: breakpointsKeys.map(function (breakPoint) {
+                return tempScales[breakPoint]
+                    ? bodyTextScaleMap[tempScales[breakPoint]].fontSize
+                    : null;
+            }),
+            lineHeight: breakpointsKeys.map(function (breakPoint) {
+                return tempScales[breakPoint]
+                    ? bodyTextScaleMap[tempScales[breakPoint]].lineHeight
+                    : null;
+            }),
+        }
+        : { fontSize: [], lineHeight: [] };
+};
+var BodyText = styled(Text).attrs(getScalesAttributes)(templateObject_1$T || (templateObject_1$T = __makeTemplateObject(["\n  font-weight: ", ";\n  white-space: ", ";\n"], ["\n  font-weight: ", ";\n  white-space: ", ";\n"])), function (_a) {
+    var bold = _a.bold;
+    return (bold ? 600 : 400);
+}, function (_a) {
+    var nowrap = _a.nowrap;
+    return (nowrap ? "nowrap" : "normal");
+});
+BodyText.defaultProps = {
+    scale: "size16",
+    as: "p",
+};
+var templateObject_1$T;
+
 var scaleKeyValues = {
     // sm: {},
     // TODO now used only MD scale
@@ -4126,7 +4280,7 @@ var getScale$1 = function (property) {
         return scaleKeyValues[scale][property];
     };
 };
-var ToggleWrap = styled.label(templateObject_1$U || (templateObject_1$U = __makeTemplateObject(["\n  display: inline-flex;\n  align-items: center;\n  width: ", ";\n  flex-direction: ", ";\n  justify-content: ", ";\n  opacity: ", ";\n  grid-area: ", ";\n"], ["\n  display: inline-flex;\n  align-items: center;\n  width: ", ";\n  flex-direction: ", ";\n  justify-content: ", ";\n  opacity: ", ";\n  grid-area: ", ";\n"])), function (_a) {
+var ToggleWrap = styled.label(templateObject_1$S || (templateObject_1$S = __makeTemplateObject(["\n  display: inline-flex;\n  align-items: center;\n  width: ", ";\n  flex-direction: ", ";\n  justify-content: ", ";\n  opacity: ", ";\n  grid-area: ", ";\n  \n  ", "\n"], ["\n  display: inline-flex;\n  align-items: center;\n  width: ", ";\n  flex-direction: ", ";\n  justify-content: ", ";\n  opacity: ", ";\n  grid-area: ", ";\n  \n  ", "\n"])), function (_a) {
     var spaceBetween = _a.spaceBetween;
     return (spaceBetween ? "100%" : "auto");
 }, function (_a) {
@@ -4145,7 +4299,7 @@ var ToggleWrap = styled.label(templateObject_1$U || (templateObject_1$U = __make
 }, function (_a) {
     var gridArea = _a.gridArea;
     return gridArea || "initial";
-});
+}, space);
 var Handle = styled.div(templateObject_2$s || (templateObject_2$s = __makeTemplateObject(["\n  background-color: ", ";\n  box-shadow: 0 2px 4px rgba(7, 22, 45, 0.16);\n  border-radius: 50%;\n  cursor: ", ";\n  height: ", ";\n  left: ", ";\n  position: absolute;\n  top: ", ";\n  transition: left 200ms ease-in;\n  width: ", ";\n  z-index: 1;\n"], ["\n  background-color: ", ";\n  box-shadow: 0 2px 4px rgba(7, 22, 45, 0.16);\n  border-radius: 50%;\n  cursor: ", ";\n  height: ", ";\n  left: ", ";\n  position: absolute;\n  top: ", ";\n  transition: left 200ms ease-in;\n  width: ", ";\n  z-index: 1;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.white;
@@ -4153,7 +4307,7 @@ var Handle = styled.div(templateObject_2$s || (templateObject_2$s = __makeTempla
     var disabled = _a.disabled;
     return (disabled ? "not-allowed" : "pointer");
 }, getScale$1("handleHeight"), getScale$1("handleLeft"), getScale$1("handleTop"), getScale$1("handleWidth"));
-var Label = styled.span(templateObject_3$l || (templateObject_3$l = __makeTemplateObject(["\n  font-size: 12px;\n  font-weight: 400;\n  color: ", ";\n\n  color: ", ";\n\n  margin: ", ";\n  cursor: ", ";\n  transition: color 0.2s ease-in-out;\n"], ["\n  font-size: 12px;\n  font-weight: 400;\n  color: ", ";\n\n  color: ", ";\n\n  margin: ", ";\n  cursor: ", ";\n  transition: color 0.2s ease-in-out;\n"])), function (_a) {
+var Label = styled(BodyText)(templateObject_3$l || (templateObject_3$l = __makeTemplateObject(["\n  color: ", ";\n\n  color: ", ";\n\n  margin: ", ";\n  cursor: ", ";\n  transition: color 0.2s ease-in-out;\n"], ["\n  color: ", ";\n\n  color: ", ";\n\n  margin: ", ";\n  cursor: ", ";\n  transition: color 0.2s ease-in-out;\n"])), function (_a) {
     var theme = _a.theme, isChecked = _a.isChecked;
     return isChecked ? theme.colors.dark800 : theme.colors.gray900;
 }, function (_a) {
@@ -4181,16 +4335,16 @@ var StyledToggle = styled.div(templateObject_5$c || (templateObject_5$c = __make
     var disabled = _a.disabled;
     return (disabled ? "not-allowed" : "pointer");
 });
-var templateObject_1$U, templateObject_2$s, templateObject_3$l, templateObject_4$i, templateObject_5$c;
+var templateObject_1$S, templateObject_2$s, templateObject_3$l, templateObject_4$i, templateObject_5$c;
 
 var Toggle = function (_a) {
-    var checked = _a.checked, _b = _a.defaultColor, defaultColor = _b === void 0 ? "toggleBg" : _b, _c = _a.checkedColor, checkedColor = _c === void 0 ? "success" : _c, _d = _a.scale, scale = _d === void 0 ? scales$2.MD : _d, disabled = _a.disabled, label = _a.label, labelOrientation = _a.labelOrientation, gridArea = _a.gridArea, variant = _a.variant, spaceBetween = _a.spaceBetween, props = __rest(_a, ["checked", "defaultColor", "checkedColor", "scale", "disabled", "label", "labelOrientation", "gridArea", "variant", "spaceBetween"]);
+    var checked = _a.checked, _b = _a.defaultColor, defaultColor = _b === void 0 ? "toggleBg" : _b, _c = _a.checkedColor, checkedColor = _c === void 0 ? "success" : _c, _d = _a.scale, scale = _d === void 0 ? scales$2.MD : _d, disabled = _a.disabled, label = _a.label, labelOrientation = _a.labelOrientation, gridArea = _a.gridArea, variant = _a.variant, spaceBetween = _a.spaceBetween, _e = _a.labelSize, labelSize = _e === void 0 ? "size12" : _e, props = __rest(_a, ["checked", "defaultColor", "checkedColor", "scale", "disabled", "label", "labelOrientation", "gridArea", "variant", "spaceBetween", "labelSize"]);
     var isChecked = !!checked;
-    return (React.createElement(ToggleWrap, { labelOrientation: labelOrientation, disabled: disabled, gridArea: gridArea, spaceBetween: spaceBetween },
+    return (React.createElement(ToggleWrap, __assign({ labelOrientation: labelOrientation, disabled: disabled, gridArea: gridArea, spaceBetween: spaceBetween }, props),
         React.createElement(StyledToggle, { "$checked": isChecked, "$checkedColor": checkedColor, "$defaultColor": defaultColor, scale: scale, disabled: disabled },
-            React.createElement(Input, __assign({ checked: checked, scale: scale }, props, { type: "checkbox", disabled: disabled })),
+            React.createElement(Input, { checked: checked, scale: scale, type: "checkbox", disabled: disabled }),
             React.createElement(Handle, { scale: scale, disabled: disabled })),
-        label && (React.createElement(Label, { labelOrientation: labelOrientation, isChecked: isChecked, disabled: disabled, variant: variant }, label))));
+        label && (React.createElement(Label, { labelOrientation: labelOrientation, isChecked: isChecked, disabled: disabled, variant: variant, scale: labelSize, as: "span" }, label))));
 };
 Toggle.defaultProps = {
     scale: "md",
@@ -4260,7 +4414,7 @@ var getBadgeColor = function (_a) {
     return theme.colors.white;
 };
 // interface BadgeProps{}
-var Wrapper$c = styled.div(templateObject_1$T || (templateObject_1$T = __makeTemplateObject(["\n  display: inline-flex;\n  justify-content: center;\n  align-items: center;\n  padding: ", ";\n  background: ", ";\n  color: ", ";\n  border-radius: 16px;\n  height: ", ";\n  font-size: ", ";\n  font-weight: 600;\n\n  ", "\n"], ["\n  display: inline-flex;\n  justify-content: center;\n  align-items: center;\n  padding: ", ";\n  background: ", ";\n  color: ", ";\n  border-radius: 16px;\n  height: ", ";\n  font-size: ", ";\n  font-weight: 600;\n\n  ", "\n"])), function (_a) {
+var Wrapper$c = styled.div(templateObject_1$R || (templateObject_1$R = __makeTemplateObject(["\n  display: inline-flex;\n  justify-content: center;\n  align-items: center;\n  padding: ", ";\n  background: ", ";\n  color: ", ";\n  border-radius: 16px;\n  height: ", ";\n  font-size: ", ";\n  font-weight: 600;\n\n  ", "\n"], ["\n  display: inline-flex;\n  justify-content: center;\n  align-items: center;\n  padding: ", ";\n  background: ", ";\n  color: ", ";\n  border-radius: 16px;\n  height: ", ";\n  font-size: ", ";\n  font-weight: 600;\n\n  ", "\n"])), function (_a) {
     var isIcon = _a.isIcon, isLarge = _a.isLarge;
     return !isLarge
         ? isIcon === "left"
@@ -4280,7 +4434,7 @@ var Badge$1 = function (_a) {
     var children = _a.children, badgeType = _a.badgeType, fontSize = _a.fontSize, fontWeight = _a.fontWeight, isIcon = _a.isIcon, isLarge = _a.isLarge, props = __rest(_a, ["children", "badgeType", "fontSize", "fontWeight", "isIcon", "isLarge"]);
     return (React.createElement(Wrapper$c, __assign({ badgeType: badgeType, isIcon: isIcon, isLarge: isLarge, fontSize: fontSize, fontWeight: fontWeight }, props), children));
 };
-var templateObject_1$T;
+var templateObject_1$R;
 
 var badgeTypes = {
     SUCCESS: "success",
@@ -4295,9 +4449,9 @@ var badgeTypes = {
     WARNING_OPACITY: "warningOpacity",
 };
 
-var _a$5;
-var BadgeTypesContainer = (_a$5 = {},
-    _a$5[badgeTypes.SUCCESS] = {
+var _a$3;
+var BadgeTypesContainer = (_a$3 = {},
+    _a$3[badgeTypes.SUCCESS] = {
         backgroundColor: "success",
         color: "white",
         border: "0",
@@ -4308,7 +4462,7 @@ var BadgeTypesContainer = (_a$5 = {},
             backgroundColor: "successPress",
         },
     },
-    _a$5[badgeTypes.ERROR] = {
+    _a$3[badgeTypes.ERROR] = {
         backgroundColor: "secondary",
         color: "white",
         border: "0",
@@ -4319,7 +4473,7 @@ var BadgeTypesContainer = (_a$5 = {},
             backgroundColor: "secondaryPress",
         },
     },
-    _a$5[badgeTypes.WARNING] = {
+    _a$3[badgeTypes.WARNING] = {
         backgroundColor: "warning",
         color: "dark800",
         border: "0",
@@ -4330,7 +4484,7 @@ var BadgeTypesContainer = (_a$5 = {},
             backgroundColor: "warningPress",
         },
     },
-    _a$5[badgeTypes.PRIMARY] = {
+    _a$3[badgeTypes.PRIMARY] = {
         backgroundColor: "primary",
         color: "white",
         border: "0",
@@ -4341,7 +4495,7 @@ var BadgeTypesContainer = (_a$5 = {},
             backgroundColor: "primaryPress",
         },
     },
-    _a$5[badgeTypes.BOOST] = {
+    _a$3[badgeTypes.BOOST] = {
         backgroundColor: "boost",
         color: "white",
         border: "0",
@@ -4352,7 +4506,7 @@ var BadgeTypesContainer = (_a$5 = {},
             backgroundColor: "boostPress",
         },
     },
-    _a$5[badgeTypes.ACTIVE] = {
+    _a$3[badgeTypes.ACTIVE] = {
         backgroundColor: "successOpacity",
         color: "success",
         border: "1px solid transparent",
@@ -4365,7 +4519,7 @@ var BadgeTypesContainer = (_a$5 = {},
             borderColor: "success",
         },
     },
-    _a$5[badgeTypes.NOT_ACTIVE] = {
+    _a$3[badgeTypes.NOT_ACTIVE] = {
         backgroundColor: "secondaryOpacity",
         color: "secondary",
         border: "1px solid transparent",
@@ -4378,7 +4532,7 @@ var BadgeTypesContainer = (_a$5 = {},
             borderColor: "secondary",
         },
     },
-    _a$5[badgeTypes.CORE] = {
+    _a$3[badgeTypes.CORE] = {
         backgroundColor: "primaryOpacity",
         color: "primary",
         border: "1px solid transparent",
@@ -4391,7 +4545,7 @@ var BadgeTypesContainer = (_a$5 = {},
             borderColor: "primary",
         },
     },
-    _a$5[badgeTypes.WARNING_OPACITY] = {
+    _a$3[badgeTypes.WARNING_OPACITY] = {
         backgroundColor: "warningOpacity",
         color: "warning",
         border: "1px solid transparent",
@@ -4404,7 +4558,7 @@ var BadgeTypesContainer = (_a$5 = {},
             borderColor: "warning",
         },
     },
-    _a$5[badgeTypes.LIGHT] = {
+    _a$3[badgeTypes.LIGHT] = {
         backgroundColor: "gray200",
         color: "dark800",
         border: "0",
@@ -4415,9 +4569,9 @@ var BadgeTypesContainer = (_a$5 = {},
             backgroundColor: "gray400",
         },
     },
-    _a$5);
+    _a$3);
 
-var Wrapper$b = styled.button(templateObject_1$S || (templateObject_1$S = __makeTemplateObject(["\n  display: inline-flex;\n  justify-content: center;\n  align-items: center;\n  padding: ", ";\n  border-radius: 16px;\n  height: 20px;\n  font-size: 10px;\n  font-weight: 600;\n  outline: none;\n  cursor: pointer;\n  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,\n    border-color 0.1s ease-in-out;\n\n  ", "\n\n  ", "\n"], ["\n  display: inline-flex;\n  justify-content: center;\n  align-items: center;\n  padding: ", ";\n  border-radius: 16px;\n  height: 20px;\n  font-size: 10px;\n  font-weight: 600;\n  outline: none;\n  cursor: pointer;\n  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,\n    border-color 0.1s ease-in-out;\n\n  ", "\n\n  ", "\n"])), function (_a) {
+var Wrapper$b = styled.button(templateObject_1$Q || (templateObject_1$Q = __makeTemplateObject(["\n  display: inline-flex;\n  justify-content: center;\n  align-items: center;\n  padding: ", ";\n  border-radius: 16px;\n  height: 20px;\n  font-size: 10px;\n  font-weight: 600;\n  outline: none;\n  cursor: pointer;\n  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,\n    border-color 0.1s ease-in-out;\n\n  ", "\n\n  ", "\n"], ["\n  display: inline-flex;\n  justify-content: center;\n  align-items: center;\n  padding: ", ";\n  border-radius: 16px;\n  height: 20px;\n  font-size: 10px;\n  font-weight: 600;\n  outline: none;\n  cursor: pointer;\n  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,\n    border-color 0.1s ease-in-out;\n\n  ", "\n\n  ", "\n"])), function (_a) {
     var isIcon = _a.isIcon;
     return isIcon === "left"
         ? "4px 8px 4px 4px"
@@ -4432,12 +4586,12 @@ var Badge = function (_a) {
     var children = _a.children, badgeType = _a.badgeType, fontSize = _a.fontSize, fontWeight = _a.fontWeight, isIcon = _a.isIcon, isActive = _a.isActive, props = __rest(_a, ["children", "badgeType", "fontSize", "fontWeight", "isIcon", "isActive"]);
     return (React.createElement(Wrapper$b, __assign({ badgeType: badgeType, isIcon: isIcon, fontSize: fontSize, fontWeight: fontWeight, className: isActive ? "active" : "" }, props), children));
 };
-var templateObject_1$S;
+var templateObject_1$Q;
 
 var circle = "data:image/svg+xml,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20clip-path%3D%22url%28%23clip0_4728_34338%29%22%3E%3Cpath%20d%3D%22M0%2010C0%204.47715%204.47715%200%2010%200C15.5228%200%2020%204.47715%2020%2010C20%2015.5228%2015.5228%2020%2010%2020C4.47715%2020%200%2015.5228%200%2010Z%22%20fill%3D%22%231263F1%22%2F%3E%3Cg%20filter%3D%22url%28%23filter0_d_4728_34338%29%22%3E%3Crect%20x%3D%224%22%20y%3D%224%22%20width%3D%2212%22%20height%3D%2212%22%20rx%3D%226%22%20fill%3D%22white%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3Cdefs%3E%3Cfilter%20id%3D%22filter0_d_4728_34338%22%20x%3D%220%22%20y%3D%222%22%20width%3D%2220%22%20height%3D%2220%22%20filterUnits%3D%22userSpaceOnUse%22%20color-interpolation-filters%3D%22sRGB%22%3E%3CfeFlood%20flood-opacity%3D%220%22%20result%3D%22BackgroundImageFix%22%2F%3E%3CfeColorMatrix%20in%3D%22SourceAlpha%22%20type%3D%22matrix%22%20values%3D%220%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%20127%200%22%20result%3D%22hardAlpha%22%2F%3E%3CfeOffset%20dy%3D%222%22%2F%3E%3CfeGaussianBlur%20stdDeviation%3D%222%22%2F%3E%3CfeComposite%20in2%3D%22hardAlpha%22%20operator%3D%22out%22%2F%3E%3CfeColorMatrix%20type%3D%22matrix%22%20values%3D%220%200%200%200%200.027451%200%200%200%200%200.0862745%200%200%200%200%200.176471%200%200%200%200.32%200%22%2F%3E%3CfeBlend%20mode%3D%22normal%22%20in2%3D%22BackgroundImageFix%22%20result%3D%22effect1_dropShadow_4728_34338%22%2F%3E%3CfeBlend%20mode%3D%22normal%22%20in%3D%22SourceGraphic%22%20in2%3D%22effect1_dropShadow_4728_34338%22%20result%3D%22shape%22%2F%3E%3C%2Ffilter%3E%3CclipPath%20id%3D%22clip0_4728_34338%22%3E%3Crect%20width%3D%2220%22%20height%3D%2220%22%20fill%3D%22white%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3C%2Fsvg%3E";
 
 var getBaseThumbStyles = function () { return "\n  -webkit-appearance: none;\n  background-image: url(".concat(circle, ");\n  background-color: transparent;\n  box-shadow: none;\n  border: 0;\n  width: 20px;\n  height: 20px;\n  transition: 200ms transform;\n  transform: translateY(2px);\n\n  &:hover {\n    transform: scale(1.1) translateY(2px);\n  }\n"); };
-var StyledInput = styled.input(templateObject_1$R || (templateObject_1$R = __makeTemplateObject(["\n  position: relative;\n  z-index: 1;\n  margin: 0;\n  padding: 0;\n  width: 100%;\n  border: none;\n  background-color: transparent;\n\n  ::-webkit-slider-thumb {\n    ", "\n  }\n\n  ::-moz-range-thumb {\n    ", "\n  }\n\n  ::-ms-thumb {\n    ", "\n  }\n"], ["\n  position: relative;\n  z-index: 1;\n  margin: 0;\n  padding: 0;\n  width: 100%;\n  border: none;\n  background-color: transparent;\n\n  ::-webkit-slider-thumb {\n    ", "\n  }\n\n  ::-moz-range-thumb {\n    ", "\n  }\n\n  ::-ms-thumb {\n    ", "\n  }\n"])), getBaseThumbStyles, getBaseThumbStyles, getBaseThumbStyles);
+var StyledInput = styled.input(templateObject_1$P || (templateObject_1$P = __makeTemplateObject(["\n  position: relative;\n  z-index: 1;\n  margin: 0;\n  padding: 0;\n  width: 100%;\n  border: none;\n  background-color: transparent;\n\n  ::-webkit-slider-thumb {\n    ", "\n  }\n\n  ::-moz-range-thumb {\n    ", "\n  }\n\n  ::-ms-thumb {\n    ", "\n  }\n"], ["\n  position: relative;\n  z-index: 1;\n  margin: 0;\n  padding: 0;\n  width: 100%;\n  border: none;\n  background-color: transparent;\n\n  ::-webkit-slider-thumb {\n    ", "\n  }\n\n  ::-moz-range-thumb {\n    ", "\n  }\n\n  ::-ms-thumb {\n    ", "\n  }\n"])), getBaseThumbStyles, getBaseThumbStyles, getBaseThumbStyles);
 var BarBackground = styled.div(templateObject_2$r || (templateObject_2$r = __makeTemplateObject(["\n  background-color: ", ";\n  height: 4px;\n  position: absolute;\n  top: 10px;\n  width: calc(100% - 8px);\n  border-radius: 20px;\n"], ["\n  background-color: ", ";\n  height: 4px;\n  position: absolute;\n  top: 10px;\n  width: calc(100% - 8px);\n  border-radius: 20px;\n"])), function (_a) {
     var theme = _a.theme, disabled = _a.disabled, darkMode = _a.darkMode;
     return theme.colors[disabled ? "gray900" : darkMode ? "dark400" : "gray300"];
@@ -4475,7 +4629,7 @@ var PercentSliderLabel = styled(Flex)(templateObject_5$b || (templateObject_5$b 
     var bannerPosition = _a.bannerPosition, theme = _a.theme;
     return "border-".concat(bannerPosition === "top" ? "top" : "bottom", ": 6px solid ").concat(theme.colors.tooltip);
 });
-var templateObject_1$R, templateObject_2$r, templateObject_3$k, templateObject_4$h, templateObject_5$b;
+var templateObject_1$P, templateObject_2$r, templateObject_3$k, templateObject_4$h, templateObject_5$b;
 
 var getColor = function (_a) {
     var color = _a.color, theme = _a.theme;
@@ -4533,160 +4687,6 @@ var PercentSlider = function (_a) {
                 "%")); }),
             React.createElement(Button$2, { scale: "sm", variant: "primary", onClick: setMax }, "Max")))));
 };
-
-var tags = {
-    H1: "h1",
-    H2: "h2",
-    H3: "h3",
-    H4: "h4",
-    H5: "h5",
-    H6: "h6",
-    P: "p",
-    SPAN: "span",
-    DIV: "div",
-};
-var scales$1 = {
-    SIZE40: "size40",
-    SIZE32: "size32",
-    SIZE24: "size24",
-    SIZE20: "size20",
-    SIZE16: "size16",
-    SIZE14: "size14",
-    SIZE12: "size12",
-    SIZE10: "size10",
-};
-
-var _a$4;
-var headTextScaleMap = (_a$4 = {},
-    _a$4[scales$1.SIZE40] = {
-        fontSize: "40px",
-        lineHeight: "48px",
-    },
-    _a$4[scales$1.SIZE32] = {
-        fontSize: "32px",
-        lineHeight: "40px",
-    },
-    _a$4[scales$1.SIZE24] = {
-        fontSize: "24px",
-        lineHeight: "32px",
-    },
-    _a$4[scales$1.SIZE20] = {
-        fontSize: "20px",
-        lineHeight: "28px",
-    },
-    _a$4[scales$1.SIZE16] = {
-        fontSize: "16px",
-        lineHeight: "24px",
-    },
-    _a$4[scales$1.SIZE14] = {
-        fontSize: "14px",
-        lineHeight: "20px",
-    },
-    _a$4[scales$1.SIZE12] = {
-        fontSize: "12px",
-        lineHeight: "16px",
-    },
-    _a$4[scales$1.SIZE10] = {
-        fontSize: "10px",
-        lineHeight: "12px",
-    },
-    _a$4);
-var HeadText = styled(Text).attrs({ bold: true })(templateObject_1$Q || (templateObject_1$Q = __makeTemplateObject(["\n  font-size: ", ";\n  line-height: ", ";\n  font-weight: 600;\n  white-space: ", ";\n"], ["\n  font-size: ", ";\n  line-height: ", ";\n  font-weight: 600;\n  white-space: ", ";\n"])), function (_a) {
-    var scale = _a.scale;
-    return headTextScaleMap[scale || scales$1.SIZE32].fontSize;
-}, function (_a) {
-    var scale = _a.scale;
-    return headTextScaleMap[scale || scales$1.SIZE32].lineHeight;
-}, function (_a) {
-    var nowrap = _a.nowrap;
-    return (nowrap ? "nowrap" : "normal");
-});
-HeadText.defaultProps = {
-    as: tags.H2,
-};
-var templateObject_1$Q;
-
-var scales = {
-    SIZE40: "size40",
-    SIZE32: "size32",
-    SIZE24: "size24",
-    SIZE20: "size20",
-    SIZE16: "size16",
-    SIZE14: "size14",
-    SIZE12: "size12",
-    SIZE10: "size10",
-};
-
-var _a$3;
-var bodyTextScaleMap = (_a$3 = {},
-    _a$3[scales.SIZE40] = {
-        fontSize: "40px",
-        lineHeight: "48px",
-    },
-    _a$3[scales.SIZE32] = {
-        fontSize: "32px",
-        lineHeight: "40px",
-    },
-    _a$3[scales.SIZE24] = {
-        fontSize: "24px",
-        lineHeight: "32px",
-    },
-    _a$3[scales.SIZE20] = {
-        fontSize: "20px",
-        lineHeight: "28px",
-    },
-    _a$3[scales.SIZE16] = {
-        fontSize: "16px",
-        lineHeight: "24px",
-    },
-    _a$3[scales.SIZE14] = {
-        fontSize: "14px",
-        lineHeight: "20px",
-    },
-    _a$3[scales.SIZE12] = {
-        fontSize: "12px",
-        lineHeight: "16px",
-    },
-    _a$3[scales.SIZE10] = {
-        fontSize: "10px",
-        lineHeight: "12px",
-    },
-    _a$3);
-var getScalesAttributes = function (_a) {
-    var _b;
-    var scale = _a.scale;
-    if (typeof scale === "string")
-        return bodyTextScaleMap[scale];
-    var tempScales = JSON.parse(JSON.stringify(scale));
-    if (!tempScales.xs)
-        tempScales.xs = (_b = BodyText.defaultProps) === null || _b === void 0 ? void 0 : _b.scale;
-    return scale
-        ? {
-            fontSize: breakpointsKeys.map(function (breakPoint) {
-                return tempScales[breakPoint]
-                    ? bodyTextScaleMap[tempScales[breakPoint]].fontSize
-                    : null;
-            }),
-            lineHeight: breakpointsKeys.map(function (breakPoint) {
-                return tempScales[breakPoint]
-                    ? bodyTextScaleMap[tempScales[breakPoint]].lineHeight
-                    : null;
-            }),
-        }
-        : { fontSize: [], lineHeight: [] };
-};
-var BodyText = styled(Text).attrs(getScalesAttributes)(templateObject_1$P || (templateObject_1$P = __makeTemplateObject(["\n  font-weight: ", ";\n  white-space: ", ";\n"], ["\n  font-weight: ", ";\n  white-space: ", ";\n"])), function (_a) {
-    var bold = _a.bold;
-    return (bold ? 600 : 400);
-}, function (_a) {
-    var nowrap = _a.nowrap;
-    return (nowrap ? "nowrap" : "normal");
-});
-BodyText.defaultProps = {
-    scale: "size16",
-    as: "p",
-};
-var templateObject_1$P;
 
 var variants$1 = {
     LIGHT: "light",
