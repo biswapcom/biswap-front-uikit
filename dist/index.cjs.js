@@ -1751,8 +1751,8 @@ var IconModule = /*#__PURE__*/Object.freeze({
     UnlockIcon: Icon$3,
     LanguageIcon: Icon$2,
     Svg: Svg,
-    PerpetualOpacity: Icon$1,
-    PerpetualSolid: Icon
+    PerpetualOpacityIcon: Icon$1,
+    PerpetualSolidIcon: Icon
 });
 
 var getColor$1 = function (_a) {
@@ -7830,8 +7830,8 @@ exports.OptionsSolidIcon = Icon$29;
 exports.Overlay = Overlay;
 exports.Pagination = Pagination;
 exports.PercentSlider = PercentSlider;
-exports.PerpetualOpacity = Icon$1;
-exports.PerpetualSolid = Icon;
+exports.PerpetualOpacityIcon = Icon$1;
+exports.PerpetualSolidIcon = Icon;
 exports.PlayIcon = Icon$1r;
 exports.PlusCircleOpacityIcon = Icon$2U;
 exports.PlusCircleSolidIcon = Icon$2V;
