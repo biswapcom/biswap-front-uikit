@@ -23,6 +23,7 @@ const Toggle: React.FC<ToggleProps> = ({
       disabled={disabled}
       gridArea={gridArea}
       spaceBetween={spaceBetween}
+      {...props}
     >
       <StyledToggle
         $checked={isChecked}
@@ -34,7 +35,6 @@ const Toggle: React.FC<ToggleProps> = ({
         <Input
           checked={checked}
           scale={scale}
-          {...props}
           type="checkbox"
           disabled={disabled}
         />

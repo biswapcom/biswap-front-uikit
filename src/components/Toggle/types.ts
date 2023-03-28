@@ -1,5 +1,6 @@
 import { InputHTMLAttributes, ReactNode } from "react";
 import { Colors } from "../../theme";
+import {LayoutProps, SpaceProps} from "styled-system";
 
 export const scales = {
   // SM: "sm",
@@ -9,7 +10,7 @@ export const scales = {
 
 export type Scales = typeof scales[keyof typeof scales];
 
-export interface ToggleProps extends InputHTMLAttributes<HTMLInputElement> {
+export interface ToggleProps extends InputHTMLAttributes<HTMLInputElement>, SpaceProps {
   scale?: Scales;
   checked?: boolean;
   checkedColor?: keyof Colors;
