@@ -13,7 +13,7 @@ export default {
 };
 
 const CustomModal: React.FC<ModalProps> = ({ title, onDismiss, ...props }) => (
-  <Modal titleColor="primary" title={title} onDismiss={onDismiss} {...props}>
+  <Modal title={title} onDismiss={onDismiss} {...props}>
     <Heading>{title}</Heading>
     <Text>closeOnOverlayClick</Text>
     <Button>This button Does nothing</Button>
