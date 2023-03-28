@@ -208,5 +208,6 @@ export { default as BswIcon } from "./Icons/Other/Bsw";
 export { default as LockIcon } from "./Icons/Lock/Lock";
 export { default as UnlockIcon } from "./Icons/Lock/Unlock";
 export { default as LanguageIcon } from "./Icons/Language/Language";
+export * from "./Icons/Perpetual";
 export { default as Svg } from "./Svg";
 export type { SvgProps } from "./types";
