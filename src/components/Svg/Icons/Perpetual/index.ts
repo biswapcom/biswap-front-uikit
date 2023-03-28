@@ -1,2 +1,2 @@
-export { default as PerpetualOpacity } from "./PerpetualOpacity";
-export { default as PerpetualSolid } from "./PerpetualSolid";
+export { default as PerpetualOpacityIcon } from "./PerpetualOpacity";
+export { default as PerpetualSolidIcon } from "./PerpetualSolid";
