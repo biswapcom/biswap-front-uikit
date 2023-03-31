@@ -287,7 +287,6 @@ export const Icons: React.FC = () => {
           <InputGroup
             startImage={{
               imageSrc: "/coins/bsw.svg",
-              color: "gray",
             }}
             mb="24px"
             mr="16px"
@@ -312,7 +311,7 @@ export const Icons: React.FC = () => {
           </InputGroup>
           <InputGroup
             startIcon={{
-              iconName: "Search",
+              iconName: "EyeOpen",
               color: "gray",
             }}
             mb="24px"
@@ -326,7 +325,7 @@ export const Icons: React.FC = () => {
           </InputGroup>
           <InputGroup
             startIcon={{
-              iconName: "Search",
+              iconName: "EditSolid",
               color: "gray",
             }}
             mb="24px"
@@ -340,7 +339,7 @@ export const Icons: React.FC = () => {
           </InputGroup>
           <InputGroup
             startIcon={{
-              iconName: "Search",
+              iconName: "EditSolid",
               color: "gray",
             }}
             mb="24px"
@@ -358,7 +357,7 @@ export const Icons: React.FC = () => {
         <Row>
           <InputGroup
             endIcon={{
-              iconName: "Search",
+              iconName: "EyeOpen",
               color: "gray",
             }}
             mb="24px"
@@ -371,7 +370,7 @@ export const Icons: React.FC = () => {
           </InputGroup>
           <InputGroup
             endIcon={{
-              iconName: "Search",
+              iconName: "EyeOpen",
               color: "gray",
             }}
             mb="24px"
@@ -384,7 +383,7 @@ export const Icons: React.FC = () => {
           </InputGroup>
           <InputGroup
             endIcon={{
-              iconName: "Search",
+              iconName: "EyeOpen",
               color: "gray",
             }}
             mb="24px"
@@ -398,7 +397,7 @@ export const Icons: React.FC = () => {
           </InputGroup>
           <InputGroup
             endIcon={{
-              iconName: "Search",
+              iconName: "EditSolid",
               color: "gray",
             }}
             mb="24px"
@@ -412,7 +411,7 @@ export const Icons: React.FC = () => {
           </InputGroup>
           <InputGroup
             endIcon={{
-              iconName: "Search",
+              iconName: "EditSolid",
               color: "gray",
             }}
             mb="24px"
@@ -430,11 +429,11 @@ export const Icons: React.FC = () => {
         <Row>
           <InputGroup
             startIcon={{
-              iconName: "Binance",
+              iconName: "EditSolid",
               color: "gray",
             }}
             endIcon={{
-              iconName: "Search",
+              iconName: "EyeOpen",
               color: "gray",
             }}
             mb="24px"
@@ -447,11 +446,11 @@ export const Icons: React.FC = () => {
           </InputGroup>
           <InputGroup
             startIcon={{
-              iconName: "Binance",
+              iconName: "EditSolid",
               color: "gray",
             }}
             endIcon={{
-              iconName: "Search",
+              iconName: "EyeOpen",
               color: "gray",
             }}
             mb="24px"
@@ -464,11 +463,11 @@ export const Icons: React.FC = () => {
           </InputGroup>
           <InputGroup
             startIcon={{
-              iconName: "Binance",
+              iconName: "EditSolid",
               color: "gray",
             }}
             endIcon={{
-              iconName: "Search",
+              iconName: "EyeOpen",
               color: "gray",
             }}
             mb="24px"
@@ -482,11 +481,11 @@ export const Icons: React.FC = () => {
           </InputGroup>
           <InputGroup
             startIcon={{
-              iconName: "Binance",
+              iconName: "EditSolid",
               color: "gray",
             }}
             endIcon={{
-              iconName: "Search",
+              iconName: "EyeOpen",
               color: "gray",
             }}
             mb="24px"
@@ -500,11 +499,11 @@ export const Icons: React.FC = () => {
           </InputGroup>
           <InputGroup
             startIcon={{
-              iconName: "Binance",
+              iconName: "EditSolid",
               color: "gray",
             }}
             endIcon={{
-              iconName: "Search",
+              iconName: "EyeOpen",
               color: "gray",
             }}
             mb="24px"
@@ -688,7 +687,7 @@ export const Icons: React.FC = () => {
         <Row>
           <InputGroup
             startIcon={{
-              iconName: "Search",
+              iconName: "EyeOpen",
               color: "gray",
             }}
             mb="24px"
@@ -701,7 +700,7 @@ export const Icons: React.FC = () => {
           </InputGroup>
           <InputGroup
             startIcon={{
-              iconName: "Search",
+              iconName: "EyeOpen",
               color: "gray",
             }}
             mb="24px"
@@ -714,7 +713,7 @@ export const Icons: React.FC = () => {
           </InputGroup>
           <InputGroup
             startIcon={{
-              iconName: "Search",
+              iconName: "EyeOpen",
               color: "gray",
             }}
             mb="24px"
@@ -728,7 +727,7 @@ export const Icons: React.FC = () => {
           </InputGroup>
           <InputGroup
             startIcon={{
-              iconName: "Search",
+              iconName: "EyeOpen",
               color: "gray",
             }}
             mb="24px"
@@ -742,7 +741,7 @@ export const Icons: React.FC = () => {
           </InputGroup>
           <InputGroup
             startIcon={{
-              iconName: "Search",
+              iconName: "EyeOpen",
               color: "gray",
             }}
             mb="24px"
@@ -762,7 +761,7 @@ export const Icons: React.FC = () => {
         <Row>
           <InputGroup
             endIcon={{
-              iconName: "Search",
+              iconName: "EyeOpen",
               color: "gray",
             }}
             mb="24px"
@@ -775,7 +774,7 @@ export const Icons: React.FC = () => {
           </InputGroup>
           <InputGroup
             endIcon={{
-              iconName: "Search",
+              iconName: "EyeOpen",
               color: "gray",
             }}
             mb="24px"
@@ -788,7 +787,7 @@ export const Icons: React.FC = () => {
           </InputGroup>
           <InputGroup
             endIcon={{
-              iconName: "Search",
+              iconName: "EyeOpen",
               color: "gray",
             }}
             mb="24px"
@@ -802,7 +801,7 @@ export const Icons: React.FC = () => {
           </InputGroup>
           <InputGroup
             endIcon={{
-              iconName: "Search",
+              iconName: "EyeOpen",
               color: "gray",
             }}
             mb="24px"
@@ -816,7 +815,7 @@ export const Icons: React.FC = () => {
           </InputGroup>
           <InputGroup
             endIcon={{
-              iconName: "Search",
+              iconName: "EyeOpen",
               color: "gray",
             }}
             mb="24px"
@@ -836,11 +835,11 @@ export const Icons: React.FC = () => {
         <Row>
           <InputGroup
             startIcon={{
-              iconName: "Binance",
+              iconName: "EditSolid",
               color: "gray",
             }}
             endIcon={{
-              iconName: "Search",
+              iconName: "EyeOpen",
               color: "gray",
             }}
             mb="24px"
@@ -853,11 +852,11 @@ export const Icons: React.FC = () => {
           </InputGroup>
           <InputGroup
             startIcon={{
-              iconName: "Binance",
+              iconName: "EditSolid",
               color: "gray",
             }}
             endIcon={{
-              iconName: "Search",
+              iconName: "EyeOpen",
               color: "gray",
             }}
             mb="24px"
@@ -870,11 +869,11 @@ export const Icons: React.FC = () => {
           </InputGroup>
           <InputGroup
             startIcon={{
-              iconName: "Binance",
+              iconName: "EditSolid",
               color: "gray",
             }}
             endIcon={{
-              iconName: "Search",
+              iconName: "EyeOpen",
               color: "gray",
             }}
             mb="24px"
@@ -888,11 +887,11 @@ export const Icons: React.FC = () => {
           </InputGroup>
           <InputGroup
             startIcon={{
-              iconName: "Binance",
+              iconName: "EditSolid",
               color: "gray",
             }}
             endIcon={{
-              iconName: "Search",
+              iconName: "EyeOpen",
               color: "gray",
             }}
             mb="24px"
@@ -906,11 +905,11 @@ export const Icons: React.FC = () => {
           </InputGroup>
           <InputGroup
             startIcon={{
-              iconName: "Binance",
+              iconName: "EditSolid",
               color: "gray",
             }}
             endIcon={{
-              iconName: "Search",
+              iconName: "EyeOpen",
               color: "gray",
             }}
             mb="24px"
@@ -1107,7 +1106,7 @@ export const Info: React.FC = () => {
         <Row>
           <InputGroup
             startIcon={{
-              iconName: "Search",
+              iconName: "EditSolid",
               color: "gray",
             }}
             mb="24px"
@@ -1121,7 +1120,7 @@ export const Info: React.FC = () => {
           </InputGroup>
           <InputGroup
             startIcon={{
-              iconName: "Search",
+              iconName: "EditSolid",
               color: "gray",
             }}
             mb="24px"
@@ -1135,7 +1134,7 @@ export const Info: React.FC = () => {
           </InputGroup>
           <InputGroup
             startIcon={{
-              iconName: "Search",
+              iconName: "EditSolid",
               color: "gray",
             }}
             mb="24px"
@@ -1150,7 +1149,7 @@ export const Info: React.FC = () => {
           </InputGroup>
           <InputGroup
             startIcon={{
-              iconName: "Search",
+              iconName: "EditSolid",
               color: "gray",
             }}
             mb="24px"
@@ -1165,7 +1164,7 @@ export const Info: React.FC = () => {
           </InputGroup>
           <InputGroup
             startIcon={{
-              iconName: "Search",
+              iconName: "EditSolid",
               color: "gray",
             }}
             mb="24px"
@@ -1184,7 +1183,7 @@ export const Info: React.FC = () => {
         <Row>
           <InputGroup
             endIcon={{
-              iconName: "Search",
+              iconName: "EditSolid",
               color: "gray",
             }}
             mb="24px"
@@ -1198,7 +1197,7 @@ export const Info: React.FC = () => {
           </InputGroup>
           <InputGroup
             endIcon={{
-              iconName: "Search",
+              iconName: "EditSolid",
               color: "gray",
             }}
             mb="24px"
@@ -1212,7 +1211,7 @@ export const Info: React.FC = () => {
           </InputGroup>
           <InputGroup
             endIcon={{
-              iconName: "Search",
+              iconName: "EditSolid",
               color: "gray",
             }}
             mb="24px"
@@ -1227,7 +1226,7 @@ export const Info: React.FC = () => {
           </InputGroup>
           <InputGroup
             endIcon={{
-              iconName: "Search",
+              iconName: "EditSolid",
               color: "gray",
             }}
             mb="24px"
@@ -1242,7 +1241,7 @@ export const Info: React.FC = () => {
           </InputGroup>
           <InputGroup
             endIcon={{
-              iconName: "Search",
+              iconName: "EditSolid",
               color: "gray",
             }}
             mb="24px"
@@ -1261,11 +1260,11 @@ export const Info: React.FC = () => {
         <Row>
           <InputGroup
             startIcon={{
-              iconName: "Binance",
+              iconName: "EyeOpen",
               color: "gray",
             }}
             endIcon={{
-              iconName: "Search",
+              iconName: "EditSolid",
               color: "gray",
             }}
             mb="24px"
@@ -1279,11 +1278,11 @@ export const Info: React.FC = () => {
           </InputGroup>
           <InputGroup
             startIcon={{
-              iconName: "Binance",
+              iconName: "EyeOpen",
               color: "gray",
             }}
             endIcon={{
-              iconName: "Search",
+              iconName: "EditSolid",
               color: "gray",
             }}
             mb="24px"
@@ -1297,11 +1296,11 @@ export const Info: React.FC = () => {
           </InputGroup>
           <InputGroup
             startIcon={{
-              iconName: "Binance",
+              iconName: "EyeOpen",
               color: "gray",
             }}
             endIcon={{
-              iconName: "Search",
+              iconName: "EditSolid",
               color: "gray",
             }}
             mb="24px"
@@ -1316,11 +1315,11 @@ export const Info: React.FC = () => {
           </InputGroup>
           <InputGroup
             startIcon={{
-              iconName: "Binance",
+              iconName: "EyeOpen",
               color: "gray",
             }}
             endIcon={{
-              iconName: "Search",
+              iconName: "EditSolid",
               color: "gray",
             }}
             mb="24px"
@@ -1335,11 +1334,11 @@ export const Info: React.FC = () => {
           </InputGroup>
           <InputGroup
             startIcon={{
-              iconName: "Binance",
+              iconName: "EyeOpen",
               color: "gray",
             }}
             endIcon={{
-              iconName: "Search",
+              iconName: "EditSolid",
               color: "gray",
             }}
             mb="24px"
@@ -1351,6 +1350,25 @@ export const Info: React.FC = () => {
             description="Helper text"
           >
             <Input type="text" value="isError" />
+          </InputGroup>
+        </Row>
+
+        <Heading mb="16px">Input group with labels</Heading>
+        <Row>
+          <InputGroup
+            startLabel="ADA per BSW"
+            endIcon={{
+              iconName: "EditSolid",
+              color: "gray",
+            }}
+            mb="24px"
+            mr="16px"
+            variant="light"
+            scale="lg"
+            maxWidth="300px"
+            description="Helper text"
+          >
+            <Input type="text" placeholder="placeholder" />
           </InputGroup>
         </Row>
       </LightBg>
@@ -1539,8 +1557,8 @@ export const Info: React.FC = () => {
         <Row>
           <InputGroup
             startIcon={{
-              iconName: "Search",
-              color: "gray",
+              iconName: "EditSolid",
+              color: "white",
             }}
             mb="24px"
             mr="16px"
@@ -1553,8 +1571,8 @@ export const Info: React.FC = () => {
           </InputGroup>
           <InputGroup
             startIcon={{
-              iconName: "Search",
-              color: "gray",
+              iconName: "EditSolid",
+              color: "white",
             }}
             mb="24px"
             mr="16px"
@@ -1567,8 +1585,8 @@ export const Info: React.FC = () => {
           </InputGroup>
           <InputGroup
             startIcon={{
-              iconName: "Search",
-              color: "gray",
+              iconName: "EditSolid",
+              color: "white",
             }}
             mb="24px"
             mr="16px"
@@ -1582,8 +1600,8 @@ export const Info: React.FC = () => {
           </InputGroup>
           <InputGroup
             startIcon={{
-              iconName: "Search",
-              color: "gray",
+              iconName: "EditSolid",
+              color: "white",
             }}
             mb="24px"
             mr="16px"
@@ -1597,8 +1615,8 @@ export const Info: React.FC = () => {
           </InputGroup>
           <InputGroup
             startIcon={{
-              iconName: "Search",
-              color: "gray",
+              iconName: "EditSolid",
+              color: "white",
             }}
             mb="24px"
             mr="16px"
@@ -1618,8 +1636,8 @@ export const Info: React.FC = () => {
         <Row>
           <InputGroup
             endIcon={{
-              iconName: "Search",
-              color: "gray",
+              iconName: "EditSolid",
+              color: "white",
             }}
             mb="24px"
             mr="16px"
@@ -1632,8 +1650,8 @@ export const Info: React.FC = () => {
           </InputGroup>
           <InputGroup
             endIcon={{
-              iconName: "Search",
-              color: "gray",
+              iconName: "EditSolid",
+              color: "white",
             }}
             mb="24px"
             mr="16px"
@@ -1646,8 +1664,8 @@ export const Info: React.FC = () => {
           </InputGroup>
           <InputGroup
             endIcon={{
-              iconName: "Search",
-              color: "gray",
+              iconName: "EditSolid",
+              color: "white",
             }}
             mb="24px"
             mr="16px"
@@ -1661,8 +1679,8 @@ export const Info: React.FC = () => {
           </InputGroup>
           <InputGroup
             endIcon={{
-              iconName: "Search",
-              color: "gray",
+              iconName: "EditSolid",
+              color: "white",
             }}
             mb="24px"
             mr="16px"
@@ -1676,8 +1694,8 @@ export const Info: React.FC = () => {
           </InputGroup>
           <InputGroup
             endIcon={{
-              iconName: "Search",
-              color: "gray",
+              iconName: "EditSolid",
+              color: "white",
             }}
             mb="24px"
             mr="16px"
@@ -1697,12 +1715,12 @@ export const Info: React.FC = () => {
         <Row>
           <InputGroup
             startIcon={{
-              iconName: "Binance",
-              color: "gray",
+              iconName: "EyeOpen",
+              color: "white",
             }}
             endIcon={{
-              iconName: "Search",
-              color: "gray",
+              iconName: "EditSolid",
+              color: "white",
             }}
             mb="24px"
             mr="16px"
@@ -1715,12 +1733,12 @@ export const Info: React.FC = () => {
           </InputGroup>
           <InputGroup
             startIcon={{
-              iconName: "Binance",
-              color: "gray",
+              iconName: "EyeOpen",
+              color: "white",
             }}
             endIcon={{
-              iconName: "Search",
-              color: "gray",
+              iconName: "EditSolid",
+              color: "white",
             }}
             mb="24px"
             mr="16px"
@@ -1733,12 +1751,12 @@ export const Info: React.FC = () => {
           </InputGroup>
           <InputGroup
             startIcon={{
-              iconName: "Binance",
-              color: "gray",
+              iconName: "EyeOpen",
+              color: "white",
             }}
             endIcon={{
-              iconName: "Search",
-              color: "gray",
+              iconName: "EditSolid",
+              color: "white",
             }}
             mb="24px"
             mr="16px"
@@ -1752,12 +1770,12 @@ export const Info: React.FC = () => {
           </InputGroup>
           <InputGroup
             startIcon={{
-              iconName: "WarningSolid",
-              color: "warning",
+              iconName: "EyeOpen",
+              color: "white",
             }}
             endIcon={{
-              iconName: "Search",
-              color: "gray",
+              iconName: "EditSolid",
+              color: "white",
             }}
             mb="24px"
             mr="16px"
@@ -1771,12 +1789,12 @@ export const Info: React.FC = () => {
           </InputGroup>
           <InputGroup
             startIcon={{
-              iconName: "CloseCircleSolid",
-              color: "secondary",
+              iconName: "EyeOpen",
+              color: "white",
             }}
             endIcon={{
-              iconName: "Search",
-              color: "gray",
+              iconName: "EditSolid",
+              color: "white",
             }}
             mb="24px"
             mr="16px"
