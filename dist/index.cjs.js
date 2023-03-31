@@ -3175,7 +3175,7 @@ var styleTextVariants = (_c$2 = {},
     },
     _c$2);
 
-var Input$1 = styled__default["default"].input(templateObject_1$17 || (templateObject_1$17 = __makeTemplateObject(["\n  display: block;\n  color: ", ";\n  font-size: 16px;\n  outline: 0;\n  width: 100%;\n  max-width: ", ";\n  min-width: ", ";\n  border-width: 1px;\n  border-style: solid;\n  border-color: transparent;\n  opacity: ", ";\n  cursor: ", ";\n  transition: border-color 0.4s ease, background-color 0.4s ease,\n    color 0.4s ease;\n\n  ", "\n  ", "\n"], ["\n  display: block;\n  color: ", ";\n  font-size: 16px;\n  outline: 0;\n  width: 100%;\n  max-width: ", ";\n  min-width: ", ";\n  border-width: 1px;\n  border-style: solid;\n  border-color: transparent;\n  opacity: ", ";\n  cursor: ", ";\n  transition: border-color 0.4s ease, background-color 0.4s ease,\n    color 0.4s ease;\n\n  ", "\n  ", "\n"])), function (_a) {
+var Input$1 = styled__default["default"].input(templateObject_1$17 || (templateObject_1$17 = __makeTemplateObject(["\n  display: block;\n  color: ", ";\n  outline: 0;\n  width: 100%;\n  max-width: ", ";\n  min-width: ", ";\n  border-width: 1px;\n  border-style: solid;\n  border-color: transparent;\n  opacity: ", ";\n  cursor: ", ";\n  transition: border-color 0.4s ease, background-color 0.4s ease,\n    color 0.4s ease;\n\n  ", "\n  ", "\n"], ["\n  display: block;\n  color: ", ";\n  outline: 0;\n  width: 100%;\n  max-width: ", ";\n  min-width: ", ";\n  border-width: 1px;\n  border-style: solid;\n  border-color: transparent;\n  opacity: ", ";\n  cursor: ", ";\n  transition: border-color 0.4s ease, background-color 0.4s ease,\n    color 0.4s ease;\n\n  ", "\n  ", "\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.gray900;
 }, function (_a) {
@@ -3292,8 +3292,8 @@ var InputGroup = function (_a) {
         React__default["default"].createElement(StyledInputGroup, { scale: scale, variant: variant, width: "100%", position: "relative", hasStartIcon: !!startIcon || !!startImage, hasEndIcon: !!endIcon },
             startIcon && (React__default["default"].createElement(LeftIconComponent, { color: startIcon.color, iconName: startIcon.iconName, scale: scale })),
             startImage && (React__default["default"].createElement(LeftIconImage, { scale: scale },
-                React__default["default"].createElement(Image__default["default"], { width: getImageSize(scale), height: getImageSize(scale), src: "".concat(baseAwsUrl).concat(startImage === null || startImage === void 0 ? void 0 : startImage.imageSrc), alt: "" }))),
-            React.cloneElement(children, { variant: variant, disabled: disabled }),
+                React__default["default"].createElement(Image__default["default"], { width: getImageSize(scale), height: getImageSize(scale), src: "".concat(baseAwsUrl).concat(startImage === null || startImage === void 0 ? void 0 : startImage.imageSrc), alt: "img" }))),
+            React.cloneElement(children, { variant: variant, scale: scale, disabled: disabled }),
             !isError && !isWarning && endIcon && (React__default["default"].createElement(RightIconComponent, { color: endIcon.color, iconName: endIcon.iconName, scale: scale })),
             isError && (React__default["default"].createElement(RightIconComponent, { iconName: "CloseCircleSolid", color: "secondary", scale: scale })),
             isWarning && (React__default["default"].createElement(RightIconComponent, { iconName: "WarningSolid", color: "warning", scale: scale }))),
