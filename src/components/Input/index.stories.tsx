@@ -1356,7 +1356,6 @@ export const Info: React.FC = () => {
         <Heading mb="16px">Input group with labels</Heading>
         <Row>
           <InputGroup
-            startLabel="ADA per BSW"
             endIcon={{
               iconName: "EditSolid",
               color: "gray",
