@@ -4908,6 +4908,19 @@ var SocialShareButton = function (_a) {
 };
 var templateObject_1$M, templateObject_2$q;
 
+var Icons$1 = IconModule;
+var IconComponent = function (_a) {
+    var iconName = _a.iconName, props = __rest(_a, ["iconName"]);
+    var IconElement = Icons$1["".concat(iconName, "Icon")];
+    return IconElement ? React__default["default"].createElement(IconElement, __assign({}, props)) : null;
+};
+
+var SocialShareButtonCircle = function (_a) {
+    var social = _a.social, label = _a.label, link = _a.link, message = _a.message, _b = _a.color, color = _b === void 0 ? "white" : _b, props = __rest(_a, ["social", "label", "link", "message", "color"]);
+    return (React__default["default"].createElement(Flex, __assign({ as: "a", href: socialLinks[social]({ link: link, message: message }), target: "_blank", alignItems: "center", justifyContent: "center" }, props),
+        React__default["default"].createElement(IconComponent, { iconName: label, width: "22px", color: color })));
+};
+
 var PromotedGradient = styled.keyframes(templateObject_1$L || (templateObject_1$L = __makeTemplateObject(["\n  0% {\n    background-position: 50% 0%;\n  }\n  50% {\n    background-position: 50% 100%;\n  }\n  100% {\n    background-position: 50% 0%;\n  }\n"], ["\n  0% {\n    background-position: 50% 0%;\n  }\n  50% {\n    background-position: 50% 100%;\n  }\n  100% {\n    background-position: 50% 0%;\n  }\n"])));
 /**
  * Priority: Warning --> Success --> Active
@@ -5612,13 +5625,6 @@ var ExpandableIcon = function (_a) {
         React__default["default"].createElement(IconComponent$1, { iconName: iconName, width: width, color: color })));
 };
 var templateObject_1$y;
-
-var Icons$1 = IconModule;
-var IconComponent = function (_a) {
-    var iconName = _a.iconName, props = __rest(_a, ["iconName"]);
-    var IconElement = Icons$1["".concat(iconName, "Icon")];
-    return IconElement ? React__default["default"].createElement(IconElement, __assign({}, props)) : null;
-};
 
 var variants = {
     LIGHT: "light",
@@ -7905,6 +7911,7 @@ exports.ShareSolidIcon = Icon$21;
 exports.Skeleton = Skeleton;
 exports.Slider = Slider;
 exports.SocialShareButton = SocialShareButton;
+exports.SocialShareButtonCircle = SocialShareButtonCircle;
 exports.SpaceAgentOpacityIcon = Icon$y;
 exports.SpaceAgentSolidIcon = Icon$z;
 exports.StarIcon = Icon$2c;
