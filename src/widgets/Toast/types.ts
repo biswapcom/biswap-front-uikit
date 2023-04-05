@@ -20,6 +20,7 @@ export interface Toast {
   url?: string;
   withGift?: boolean;
 }
+export type ColoredToastProps = Pick<Toast, "id" | "title">;
 
 export interface ToastContainerProps {
   toasts: Toast[];
@@ -30,6 +31,11 @@ export interface ToastContainerProps {
   clearAllLabel?: string;
   viewBscScanLabel?: string;
 }
+
+export type ColoredToastContainerProps = Pick<
+  ToastContainerProps,
+  "ttl" | "onRemove"
+>;
 
 export interface ToastProps {
   toast: Toast;

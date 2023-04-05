@@ -16,6 +16,7 @@ export interface Toast {
     url?: string;
     withGift?: boolean;
 }
+export declare type ColoredToastProps = Pick<Toast, "id" | "title">;
 export interface ToastContainerProps {
     toasts: Toast[];
     stackSpacing?: number;
@@ -25,6 +26,7 @@ export interface ToastContainerProps {
     clearAllLabel?: string;
     viewBscScanLabel?: string;
 }
+export declare type ColoredToastContainerProps = Pick<ToastContainerProps, "ttl" | "onRemove">;
 export interface ToastProps {
     toast: Toast;
     onRemove?: ToastContainerProps["onRemove"];
