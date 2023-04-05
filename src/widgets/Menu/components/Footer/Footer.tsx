@@ -33,6 +33,7 @@ interface Props
   buyBswHandler: () => void;
   marketplaceLink?: string;
   baseAwsUrl: string;
+  buyBswLabel: string;
 }
 
 const Wrapper = styled.footer`
@@ -98,6 +99,7 @@ const Footer: React.FC<Props> = ({
   socialLinks,
   marketplaceLink,
   baseAwsUrl,
+  buyBswLabel,
 }) => {
   return (
     <Wrapper>
@@ -109,6 +111,7 @@ const Footer: React.FC<Props> = ({
           footerStatistic={footerStatistic}
           buyBswHandler={buyBswHandler}
           baseAwsUrl={baseAwsUrl}
+          buyBswLabel={buyBswLabel}
         />
         <About footerLinks={aboutLinks} />
         <Product footerLinks={productLinks} />

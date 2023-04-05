@@ -62,6 +62,8 @@ export const Default: React.FC = () => {
         clearAll={ClearAllHandler}
         toasts={toasts}
         onRemove={handleRemove}
+        clearAllLabel="clear all"
+        viewBscScanLabel="View bscscan"
       />
     </div>
   );
@@ -109,6 +111,8 @@ export const WithAction: React.FC = () => {
         Random Toast with Action Button
       </Button>
       <ToastContainer
+        clearAllLabel="clear all"
+        viewBscScanLabel="View bscscn"
         clearAll={ClearAllHandler}
         toasts={toasts}
         onRemove={handleRemove}

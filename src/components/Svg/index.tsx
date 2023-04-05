@@ -355,5 +355,8 @@ export { default as UnlockIcon } from "./Icons/Lock/Unlock";
 //Language
 export { default as LanguageIcon } from "./Icons/Language/Language";
 
+// perpetual
+export * from "./Icons/Menu/Perpetual";
+
 export { default as Svg } from "./Svg";
 export type { SvgProps } from "./types";

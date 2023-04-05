@@ -23,6 +23,8 @@ export interface ToastContainerProps {
     ttl?: number;
     onRemove: (id: string) => void;
     clearAll?: () => void | undefined;
+    clearAllLabel?: string;
+    viewBscScanLabel?: string;
 }
 export declare type ColoredToastContainerProps = Pick<ToastContainerProps, "ttl" | "onRemove">;
 export interface ToastProps {
@@ -37,4 +39,6 @@ export interface ToastProps {
     clearAll?: () => void | undefined;
     zIndex?: string;
     removeButtonPosition?: number;
+    clearAllLabel: string;
+    viewBscScanLabel: string;
 }

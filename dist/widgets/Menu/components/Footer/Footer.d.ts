@@ -5,6 +5,7 @@ interface Props extends BSWPriceProps, FooterStatisticProps, FooterAboutLinks, F
     buyBswHandler: () => void;
     marketplaceLink?: string;
     baseAwsUrl: string;
+    buyBswLabel: string;
 }
 declare const Footer: React.FC<Props>;
 export default Footer;
