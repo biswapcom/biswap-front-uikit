@@ -11,6 +11,7 @@ interface SocialShareButtonCircleProps extends FlexboxProps {
   link: string;
   message: string;
   color?: string;
+  width?: string;
 }
 
 const SocialShareButtonCircle: FC<SocialShareButtonCircleProps> = ({
@@ -19,6 +20,7 @@ const SocialShareButtonCircle: FC<SocialShareButtonCircleProps> = ({
   link,
   message,
   color = "white",
+  width = "22px",
   ...props
 }) => {
   return (
@@ -30,7 +32,7 @@ const SocialShareButtonCircle: FC<SocialShareButtonCircleProps> = ({
       justifyContent="center"
       {...props}
     >
-      <IconComponent iconName={label} width="22px" color={color} />
+      <IconComponent iconName={label} width={width} color={color} />
     </Flex>
   );
 };
