@@ -4916,7 +4916,7 @@ var IconComponent = function (_a) {
 };
 
 var SocialShareButtonCircle = function (_a) {
-    var social = _a.social, label = _a.label, link = _a.link, message = _a.message, _b = _a.color, color = _b === void 0 ? "white" : _b, _c = _a.width, width = _c === void 0 ? "22px" : _c, props = __rest(_a, ["social", "label", "link", "message", "color", "width"]);
+    var social = _a.social, label = _a.label, link = _a.link, message = _a.message, _b = _a.color, color = _b === void 0 ? "white" : _b, _c = _a.width, width = _c === void 0 ? "24px" : _c, props = __rest(_a, ["social", "label", "link", "message", "color", "width"]);
     return (React__default["default"].createElement(Flex, __assign({ as: "a", href: socialLinks[social]({ link: link, message: message }), target: "_blank", alignItems: "center", justifyContent: "center" }, props),
         React__default["default"].createElement(IconComponent, { iconName: label, width: width, color: color })));
 };

@@ -20,7 +20,7 @@ const SocialShareButtonCircle: FC<SocialShareButtonCircleProps> = ({
   link,
   message,
   color = "white",
-  width = "22px",
+  width = "24px",
   ...props
 }) => {
   return (
