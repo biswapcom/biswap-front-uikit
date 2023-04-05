@@ -334,6 +334,7 @@ export { default as YoutubeIcon } from "./Icons/Socials/Youtube";
 export { default as FacebookIcon } from "./Icons/Socials/Facebook";
 export { default as TikTokIcon } from "./Icons/Socials/TikTok";
 export { default as CoinMarketCapIcon } from "./Icons/Socials/CoinMarketCap";
+export { default as QuoraIcon } from "./Icons/Socials/Quora";
 
 //chain
 export { default as BSCIcon } from "./Icons/Chains/BSC";
@@ -353,6 +354,9 @@ export { default as UnlockIcon } from "./Icons/Lock/Unlock";
 
 //Language
 export { default as LanguageIcon } from "./Icons/Language/Language";
+
+// perpetual
+export * from "./Icons/Menu/Perpetual";
 
 export { default as Svg } from "./Svg";
 export type { SvgProps } from "./types";

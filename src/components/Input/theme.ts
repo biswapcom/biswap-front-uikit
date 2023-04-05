@@ -32,6 +32,7 @@ export const scaleVariants = {
     },
   },
 };
+
 export const styleVariants = {
   [variants.LIGHT]: {
     backgroundColor: "gray300",
@@ -124,6 +125,7 @@ export const styleVariants = {
     },
   },
 };
+
 export const styleTextVariants = {
   [variants.LIGHT]: {
     color: "gray700",

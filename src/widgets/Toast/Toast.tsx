@@ -82,6 +82,8 @@ const Toast: React.FC<ToastProps> = ({
   handleMouseLeave,
   handleRemove,
   progress,
+  clearAllLabel,
+  viewBscScanLabel,
   ...props
 }) => {
   const {
@@ -109,7 +111,7 @@ const Toast: React.FC<ToastProps> = ({
             onClick={() => clearAll()}
           >
             <Text p="0 8px" fontSize="12px" color="dark">
-              Clear All
+              {clearAllLabel}
             </Text>
           </ClearAllButton>
         )}
@@ -126,7 +128,7 @@ const Toast: React.FC<ToastProps> = ({
                   target="_blank"
                   href={`https://bscscan.com/tx/${hash}`}
                 >
-                  View on bscscan
+                  {viewBscScanLabel}
                 </LinkStyles>
                 <ArrowUpForwardIcon
                   ml="6px"

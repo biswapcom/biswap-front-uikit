@@ -39,6 +39,7 @@ const StyledIconButton = styled(IconButton)`
   position: absolute;
   top: 24px;
   left: calc(100% - 40px);
+  z-index: 2;
 
   ${({ theme }) => theme.mediaQueries.sm} {
     top: 32px;

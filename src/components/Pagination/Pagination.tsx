@@ -78,16 +78,31 @@ const PaginationWrap = styled.div<VariantProps>`
       }
 
       &.previous {
-        margin-right: 24px;
+        margin-right: 12px;
+        
+        ${({ theme }) => theme.mediaQueries.sm} {
+          margin-right: 24px;
+        }
       }
       &.next {
-        margin-left: 24px;
+        margin-left: 12px;
+
+        ${({ theme }) => theme.mediaQueries.sm} {
+          margin-left: 24px;
+        }
       }
 
       &.disabled {
         cursor: not-allowed;
         pointer-events: none;
         opacity: 0.32;
+      }
+      &.break-me {
+        width: 20px;
+        
+        a {
+          width: 20px;
+        }
       }
     }
 
@@ -112,7 +127,7 @@ const Pagination: FC<PaginationProps> = ({
   pageCount,
   handlePageClick,
   marginPagesDisplayed = 1,
-  pageRangeDisplayed = 3,
+  pageRangeDisplayed = 2,
 }) => {
   const paginationClass = classNames("paginate-wrapper", {
     paginate__light: isLight,

@@ -33,6 +33,7 @@ interface Props
   buyBswHandler: () => void;
   marketplaceLink?: string;
   baseAwsUrl: string;
+  buyBswLabel: string;
 }
 
 const Wrapper = styled.footer`
@@ -79,7 +80,7 @@ const InnerRow = styled.div`
   }
 
   ${({ theme }) => theme.mediaQueries.xll} {
-    grid-template-columns: 424px minmax(0, 64px) repeat(3, minmax(110px, 1fr)) 156px;
+    grid-template-columns: 424px minmax(0, 64px) repeat(3, minmax(110px, 1fr)) 174px;
     grid-template-areas:
       "footer-info . about product service community"
       "footer-info . about product service audit";
@@ -98,6 +99,7 @@ const Footer: React.FC<Props> = ({
   socialLinks,
   marketplaceLink,
   baseAwsUrl,
+  buyBswLabel,
 }) => {
   return (
     <Wrapper>
@@ -109,6 +111,7 @@ const Footer: React.FC<Props> = ({
           footerStatistic={footerStatistic}
           buyBswHandler={buyBswHandler}
           baseAwsUrl={baseAwsUrl}
+          buyBswLabel={buyBswLabel}
         />
         <About footerLinks={aboutLinks} />
         <Product footerLinks={productLinks} />

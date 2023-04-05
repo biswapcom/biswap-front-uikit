@@ -172,11 +172,11 @@ const InputGroup: FC<InputGroupProps> = ({
               width={getImageSize(scale)}
               height={getImageSize(scale)}
               src={`${baseAwsUrl}${startImage?.imageSrc}`}
-              alt=""
+              alt="img"
             />
           </LeftIconImage>
         )}
-        {cloneElement(children, { variant, disabled })}
+        {cloneElement(children, { variant, scale, disabled })}
         {!isError && !isWarning && endIcon && (
           <RightIconComponent
             color={endIcon.color}

@@ -41,6 +41,8 @@ export const Default: React.FC = () => {
             scale="md"
             gridArea="test"
             variant="light"
+            mt="12px"
+            label='test'
           />
           <Toggle
             checked={isChecked}

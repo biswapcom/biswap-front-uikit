@@ -16,7 +16,7 @@ const StyledToastContainer = styled.div`
   .enter.enter-active,
   .appear.appear-active {
     opacity: 1;
-    transition: opacity 250ms ease-in;
+    transition: opacity 0.25s ease-in;
   }
 
   .exit {
@@ -25,7 +25,7 @@ const StyledToastContainer = styled.div`
 
   .exit.exit-active {
     opacity: 0.01;
-    transition: opacity 250ms ease-out;
+    transition: opacity 0.25s ease-out;
   }
 `;
 
@@ -35,6 +35,8 @@ const ToastContainer: React.FC<ToastContainerProps> = ({
   onRemove,
   ttl = 10000,
   stackSpacing = 8,
+  clearAllLabel = "Clear all",
+  viewBscScanLabel = "View on bscscan",
 }) => {
   const [progress, setProgress] = useState<number>(100);
   const [progressRun, setProgressRun] = useState(true);
@@ -165,6 +167,8 @@ const ToastContainer: React.FC<ToastContainerProps> = ({
                 removeButtonPosition={removeButtonPosition}
                 clearAll={toasts.length > 1 ? clearAllHandler : undefined}
                 style={{ bottom: `${bottom}px`, zIndex }}
+                clearAllLabel={clearAllLabel}
+                viewBscScanLabel={viewBscScanLabel}
               />
             );
 
@@ -173,6 +177,8 @@ const ToastContainer: React.FC<ToastContainerProps> = ({
               key={toast.id}
               toast={toast}
               style={{ bottom: `${bottom}px`, zIndex }}
+              clearAllLabel={clearAllLabel}
+              viewBscScanLabel={viewBscScanLabel}
             />
           );
         })}

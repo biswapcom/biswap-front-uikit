@@ -8,7 +8,8 @@ import {
   scales,
   StyleToggleProps,
 } from "./types";
-import { gridArea } from "styled-system";
+import {space, SpaceProps} from "styled-system";
+import {BodyText} from "../Typography";
 
 const scaleKeyValues = {
   // sm: {},
@@ -31,12 +32,15 @@ const getScale =
     return scaleKeyValues[scale][property];
   };
 
-export const ToggleWrap = styled.label<{
+interface IToggleProps extends SpaceProps {
   labelOrientation?: string;
   disabled?: boolean;
   gridArea?: string;
   spaceBetween?: boolean;
-}>`
+  labelSize?: string;
+}
+
+export const ToggleWrap = styled.label<IToggleProps>`
   display: inline-flex;
   align-items: center;
   width: ${({ spaceBetween }) => (spaceBetween ? "100%" : "auto")};
@@ -50,6 +54,8 @@ export const ToggleWrap = styled.label<{
     spaceBetween ? "space-between" : "start"};
   opacity: ${({ disabled }) => (disabled ? "0.32" : "1")};
   grid-area: ${({ gridArea }) => gridArea || "initial"};
+  
+  ${space}
 `;
 export const Handle = styled.div<HandleProps>`
   background-color: ${({ theme }) => theme.colors.white};
@@ -65,14 +71,12 @@ export const Handle = styled.div<HandleProps>`
   z-index: 1;
 `;
 
-export const Label = styled.span<{
+export const Label = styled(BodyText)<{
   labelOrientation?: string;
   isChecked: boolean;
   disabled?: boolean;
   variant?: string;
 }>`
-  font-size: 12px;
-  font-weight: 400;
   color: ${({ theme, isChecked }) =>
     isChecked ? theme.colors.dark800 : theme.colors.gray900};
 

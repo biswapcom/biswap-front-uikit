@@ -11,6 +11,7 @@ interface Props extends BSWPriceProps, FooterStatisticProps {
   registerToken: () => void;
   buyBswHandler: () => void;
   baseAwsUrl: string;
+  buyBswLabel: string;
 }
 
 const Wrapper = styled.div`
@@ -100,6 +101,7 @@ const FooterInfo: React.FC<Props> = ({
   footerStatistic,
   buyBswHandler,
   baseAwsUrl,
+  buyBswLabel,
 }) => {
   return (
     <Wrapper>
@@ -107,7 +109,7 @@ const FooterInfo: React.FC<Props> = ({
         <BSWPrice BSWPriceLabel={BSWPriceLabel} BSWPriceValue={BSWPriceValue} />
         <FlexWrap>
           <ConnectMetamask onClick={registerToken} baseAwsUrl={baseAwsUrl} />
-          <BuyBSW buyBswHandler={buyBswHandler} />
+          <BuyBSW buyBswHandler={buyBswHandler} buyBswLabel={buyBswLabel} />
         </FlexWrap>
       </LeftInfo>
       <InfoList>
