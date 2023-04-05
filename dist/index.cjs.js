@@ -4916,9 +4916,9 @@ var IconComponent = function (_a) {
 };
 
 var SocialShareButtonCircle = function (_a) {
-    var social = _a.social, label = _a.label, link = _a.link, message = _a.message, _b = _a.color, color = _b === void 0 ? "white" : _b, props = __rest(_a, ["social", "label", "link", "message", "color"]);
+    var social = _a.social, label = _a.label, link = _a.link, message = _a.message, _b = _a.color, color = _b === void 0 ? "white" : _b, _c = _a.width, width = _c === void 0 ? "24px" : _c, props = __rest(_a, ["social", "label", "link", "message", "color", "width"]);
     return (React__default["default"].createElement(Flex, __assign({ as: "a", href: socialLinks[social]({ link: link, message: message }), target: "_blank", alignItems: "center", justifyContent: "center" }, props),
-        React__default["default"].createElement(IconComponent, { iconName: label, width: "22px", color: color })));
+        React__default["default"].createElement(IconComponent, { iconName: label, width: width, color: color })));
 };
 
 var PromotedGradient = styled.keyframes(templateObject_1$L || (templateObject_1$L = __makeTemplateObject(["\n  0% {\n    background-position: 50% 0%;\n  }\n  50% {\n    background-position: 50% 100%;\n  }\n  100% {\n    background-position: 50% 0%;\n  }\n"], ["\n  0% {\n    background-position: 50% 0%;\n  }\n  50% {\n    background-position: 50% 100%;\n  }\n  100% {\n    background-position: 50% 0%;\n  }\n"])));
