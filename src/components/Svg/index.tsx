@@ -358,5 +358,8 @@ export { default as LanguageIcon } from "./Icons/Language/Language";
 // perpetual
 export * from "./Icons/Menu/Perpetual";
 
+//gift
+export * from "./Icons/Gift/Gift";
+
 export { default as Svg } from "./Svg";
 export type { SvgProps } from "./types";

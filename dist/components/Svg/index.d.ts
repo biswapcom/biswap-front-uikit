@@ -209,5 +209,6 @@ export { default as LockIcon } from "./Icons/Lock/Lock";
 export { default as UnlockIcon } from "./Icons/Lock/Unlock";
 export { default as LanguageIcon } from "./Icons/Language/Language";
 export * from "./Icons/Menu/Perpetual";
+export * from "./Icons/Gift/Gift";
 export { default as Svg } from "./Svg";
 export type { SvgProps } from "./types";
