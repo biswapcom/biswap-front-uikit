@@ -355,11 +355,11 @@ export { default as UnlockIcon } from "./Icons/Lock/Unlock";
 //Language
 export { default as LanguageIcon } from "./Icons/Language/Language";
 
+//gift
+export { default as GiftIcon } from "./Icons/Gift/Gift";
+
 // perpetual
 export * from "./Icons/Menu/Perpetual";
-
-//gift
-export * from "./Icons/Gift/Gift";
 
 export { default as Svg } from "./Svg";
 export type { SvgProps } from "./types";
