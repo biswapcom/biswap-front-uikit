@@ -19,7 +19,7 @@ export interface Toast {
 }
 export interface ColoredToastProps {
     id: string;
-    type: ColoredVariants;
+    type?: ColoredVariants;
     title: string;
 }
 export interface ToastContainerProps {

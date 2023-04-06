@@ -11,7 +11,7 @@ import { Box, Flex } from "../../../components/Box";
 import { ColoredToastProps, ToastProps } from "../types";
 import { coloredVariants, ColoredVariants } from "../../../components/Alert";
 
-const StyledToast = styled(Box)<{ type: ColoredVariants }>`
+const StyledToast = styled(Box)<{ type?: ColoredVariants }>`
   position: fixed;
   right: auto;
   left: 16px;
@@ -20,9 +20,9 @@ const StyledToast = styled(Box)<{ type: ColoredVariants }>`
   border-radius: 16px;
 
   background: ${({ theme, type }) =>
-    type === coloredVariants.SUCCESS
-      ? theme.colors.success
-      : theme.colors.secondary};
+    type === coloredVariants.DANGER
+      ? theme.colors.secondary
+      : theme.colors.success};
   padding: 16px 20px;
 
   ${({ theme }) => theme.mediaQueries.sm} {
@@ -47,7 +47,7 @@ const ColoredToastItem: FC<ColoredToastItemProps> = ({
         <Flex alignItems="center">
           <IconComponent
             iconName={
-              toast.type === coloredVariants.SUCCESS ? "Check" : "Warning"
+              toast.type === coloredVariants.DANGER ? "Warning" : "Check"
             }
             color="white"
             width="26px"
