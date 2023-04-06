@@ -186,6 +186,8 @@ export { default as AuditProtectionOpacityIcon } from "./Icons/Menu/Audit/AuditP
 export { default as AuditProtectionSolidIcon } from "./Icons/Menu/Audit/AuditProtectionSolid";
 export { default as AuditSearchSolidIcon } from "./Icons/Menu/Audit/AuditSearchSolid";
 export { default as AuditSearchOpacityIcon } from "./Icons/Menu/Audit/AuditSearchOpacity";
+export { default as BlogSolidIcon } from "./Icons/Menu/Blog/BlogSolid";
+export { default as BlogOpacityIcon } from "./Icons/Menu/Blog/BlogOpacity";
 export { default as InstagramIcon } from "./Icons/Socials/Instagram";
 export { default as MediumIcon } from "./Icons/Socials/Medium";
 export { default as RedditIcon } from "./Icons/Socials/Reddit";

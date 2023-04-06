@@ -1,4 +1,5 @@
 import React from "react";
+import { ColoredVariants } from "../../components/Alert";
 
 export const types = {
   SUCCESS: "success",
@@ -20,7 +21,12 @@ export interface Toast {
   url?: string;
   withGift?: boolean;
 }
-export type ColoredToastProps = Pick<Toast, "id" | "title">;
+
+export interface ColoredToastProps {
+  id: string;
+  type?: ColoredVariants;
+  title: string;
+}
 
 export interface ToastContainerProps {
   toasts: Toast[];
