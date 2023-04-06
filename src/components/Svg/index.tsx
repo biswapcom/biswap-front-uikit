@@ -323,6 +323,10 @@ export { default as AuditProtectionSolidIcon } from "./Icons/Menu/Audit/AuditPro
 export { default as AuditSearchSolidIcon } from "./Icons/Menu/Audit/AuditSearchSolid";
 export { default as AuditSearchOpacityIcon } from "./Icons/Menu/Audit/AuditSearchOpacity";
 
+//Blog
+export { default as BlogSolidIcon } from "./Icons/Menu/Blog/BlogSolid";
+export { default as BlogOpacityIcon } from "./Icons/Menu/Blog/BlogOpacity";
+
 //Socials
 export { default as InstagramIcon } from "./Icons/Socials/Instagram";
 export { default as MediumIcon } from "./Icons/Socials/Medium";
