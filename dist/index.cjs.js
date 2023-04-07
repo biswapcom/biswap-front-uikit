@@ -7656,7 +7656,7 @@ var ToastContainer = function (_a) {
 };
 var templateObject_1$3;
 
-var StyledToast = styled__default["default"](Box)(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  position: fixed;\n  right: auto;\n  left: 16px;\n  box-shadow: 0px -4px 11px rgba(0, 0, 0, 0.1),\n    0px 20px 36px -8px rgba(14, 14, 44, 0.32), 0px 1px 1px rgba(0, 0, 0, 0.16);\n  border-radius: 16px;\n\n  background: ", ";\n  padding: 16px 20px;\n\n  ", " {\n    transform: translate(-50%, 0);\n    left: 50%;\n  }\n"], ["\n  position: fixed;\n  right: auto;\n  left: 16px;\n  box-shadow: 0px -4px 11px rgba(0, 0, 0, 0.1),\n    0px 20px 36px -8px rgba(14, 14, 44, 0.32), 0px 1px 1px rgba(0, 0, 0, 0.16);\n  border-radius: 16px;\n\n  background: ", ";\n  padding: 16px 20px;\n\n  ", " {\n    transform: translate(-50%, 0);\n    left: 50%;\n  }\n"])), function (_a) {
+var StyledToast = styled__default["default"](Box)(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  position: fixed;\n  right: auto;\n  left: 16px;\n  box-shadow: 0px -4px 11px rgba(0, 0, 0, 0.1),\n    0px 20px 36px -8px rgba(14, 14, 44, 0.32), 0px 1px 1px rgba(0, 0, 0, 0.16);\n  border-radius: 16px;\n  z-index: 1000;\n\n  background: ", ";\n  padding: 16px 20px;\n\n  ", " {\n    transform: translate(-50%, 0);\n    left: 50%;\n  }\n"], ["\n  position: fixed;\n  right: auto;\n  left: 16px;\n  box-shadow: 0px -4px 11px rgba(0, 0, 0, 0.1),\n    0px 20px 36px -8px rgba(14, 14, 44, 0.32), 0px 1px 1px rgba(0, 0, 0, 0.16);\n  border-radius: 16px;\n  z-index: 1000;\n\n  background: ", ";\n  padding: 16px 20px;\n\n  ", " {\n    transform: translate(-50%, 0);\n    left: 50%;\n  }\n"])), function (_a) {
     var theme = _a.theme, type = _a.type;
     return type === coloredVariants.DANGER
         ? theme.colors.secondary
@@ -7675,7 +7675,7 @@ var ColoredToastItem = function (_a) {
 };
 var templateObject_1$2;
 
-var StyledToastContainer = styled__default["default"].div(templateObject_1$1 || (templateObject_1$1 = __makeTemplateObject(["\n  z-index: 1000;\n\n  .enter,\n  .appear {\n    opacity: 0.01;\n  }\n\n  .enter.enter-active,\n  .appear.appear-active {\n    opacity: 1;\n    transition: opacity 0.25s ease-in;\n  }\n\n  .exit {\n    opacity: 1;\n  }\n\n  .exit.exit-active {\n    opacity: 0.01;\n    transition: opacity 0.25s ease-out;\n  }\n"], ["\n  z-index: 1000;\n\n  .enter,\n  .appear {\n    opacity: 0.01;\n  }\n\n  .enter.enter-active,\n  .appear.appear-active {\n    opacity: 1;\n    transition: opacity 0.25s ease-in;\n  }\n\n  .exit {\n    opacity: 1;\n  }\n\n  .exit.exit-active {\n    opacity: 0.01;\n    transition: opacity 0.25s ease-out;\n  }\n"])));
+var StyledToastContainer = styled__default["default"].div(templateObject_1$1 || (templateObject_1$1 = __makeTemplateObject(["\n  .enter,\n  .appear {\n    opacity: 0.01;\n  }\n\n  .enter.enter-active,\n  .appear.appear-active {\n    opacity: 1;\n    transition: opacity 0.25s ease-in;\n  }\n\n  .exit {\n    opacity: 1;\n  }\n\n  .exit.exit-active {\n    opacity: 0.01;\n    transition: opacity 0.25s ease-out;\n  }\n"], ["\n  .enter,\n  .appear {\n    opacity: 0.01;\n  }\n\n  .enter.enter-active,\n  .appear.appear-active {\n    opacity: 1;\n    transition: opacity 0.25s ease-in;\n  }\n\n  .exit {\n    opacity: 1;\n  }\n\n  .exit.exit-active {\n    opacity: 0.01;\n    transition: opacity 0.25s ease-out;\n  }\n"])));
 var ColoredToasts = function (_a) {
     var toasts = _a.toasts, onRemove = _a.onRemove, _b = _a.ttl, ttl = _b === void 0 ? 5000 : _b;
     var handleRemove = React.useCallback(function () {
