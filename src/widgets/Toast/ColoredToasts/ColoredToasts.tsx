@@ -13,6 +13,8 @@ interface ToastContainerProps extends ColoredToastContainerProps {
 }
 
 const StyledToastContainer = styled.div`
+  z-index: 1000;
+
   .enter,
   .appear {
     opacity: 0.01;
