@@ -1806,7 +1806,7 @@ var templateObject_1$1m;
 var Flex = styled__default["default"](Box)(templateObject_1$1l || (templateObject_1$1l = __makeTemplateObject(["\n  display: flex;\n  ", "\n"], ["\n  display: flex;\n  ", "\n"])), styledSystem.flexbox);
 var templateObject_1$1l;
 
-var variants$7 = {
+var variants$8 = {
     INFO: "info",
     DANGER: "danger",
     SUCCESS: "success",
@@ -1839,43 +1839,43 @@ var ProgressCircle = function (_a) {
 var templateObject_1$1j, templateObject_2$I, templateObject_3$x;
 
 var getThemeColor = function (_a) {
-    var _b = _a.variant, variant = _b === void 0 ? variants$7.INFO : _b;
+    var _b = _a.variant, variant = _b === void 0 ? variants$8.INFO : _b;
     switch (variant) {
-        case variants$7.DANGER:
+        case variants$8.DANGER:
             return "rgba(249, 59, 93, 0.16)";
-        case variants$7.WARNING:
+        case variants$8.WARNING:
             return "rgba(255, 219, 28, 0.16)";
-        case variants$7.SUCCESS:
+        case variants$8.SUCCESS:
             return "rgba(29, 200, 114, 0.16)";
-        case variants$7.INFO:
+        case variants$8.INFO:
         default:
             return "rgba(18, 99, 241, 0.16)";
     }
 };
 var getIcon = function (variant) {
-    if (variant === void 0) { variant = variants$7.INFO; }
+    if (variant === void 0) { variant = variants$8.INFO; }
     switch (variant) {
-        case variants$7.DANGER:
+        case variants$8.DANGER:
             return Icon$2L;
-        case variants$7.WARNING:
+        case variants$8.WARNING:
             return Icon$2Q;
-        case variants$7.SUCCESS:
+        case variants$8.SUCCESS:
             return Icon$2l;
-        case variants$7.INFO:
+        case variants$8.INFO:
         default:
             return Icon$2y;
     }
 };
 var getIconColor = function (variant) {
-    if (variant === void 0) { variant = variants$7.INFO; }
+    if (variant === void 0) { variant = variants$8.INFO; }
     switch (variant) {
-        case variants$7.DANGER:
+        case variants$8.DANGER:
             return "secondary";
-        case variants$7.WARNING:
+        case variants$8.WARNING:
             return "warning";
-        case variants$7.SUCCESS:
+        case variants$8.SUCCESS:
             return "success";
-        case variants$7.INFO:
+        case variants$8.INFO:
         default:
             return "primary";
     }
@@ -1958,7 +1958,7 @@ var scales$a = {
     SM: "sm",
     XS: "xs",
 };
-var variants$6 = {
+var variants$7 = {
     PRIMARY: "primary",
     DANGER: "danger",
     SUCCESS: "success",
@@ -1972,41 +1972,41 @@ var variants$6 = {
     TEXT_DARK: "textDark",
 };
 
-var _a$c, _b$7;
-var scaleVariants$3 = (_a$c = {},
-    _a$c[scales$a.XL] = {
+var _a$d, _b$7;
+var scaleVariants$3 = (_a$d = {},
+    _a$d[scales$a.XL] = {
         height: "48px",
         fontSize: "16px",
         padding: "0 24px",
         borderRadius: "10px",
     },
-    _a$c[scales$a.LG] = {
+    _a$d[scales$a.LG] = {
         height: "40px",
         padding: "0 16px",
         fontSize: "14px",
         borderRadius: "8px",
     },
-    _a$c[scales$a.MD] = {
+    _a$d[scales$a.MD] = {
         height: "32px",
         padding: "0 12px",
         fontSize: "12px",
         borderRadius: "8px",
     },
-    _a$c[scales$a.SM] = {
+    _a$d[scales$a.SM] = {
         height: "24px",
         padding: "0 8px",
         fontSize: "12px",
         borderRadius: "6px",
     },
-    _a$c[scales$a.XS] = {
+    _a$d[scales$a.XS] = {
         height: "20px",
         padding: "0 8px",
         fontSize: "12px",
         borderRadius: "6px",
     },
-    _a$c);
+    _a$d);
 var styleVariants$3 = (_b$7 = {},
-    _b$7[variants$6.PRIMARY] = {
+    _b$7[variants$7.PRIMARY] = {
         backgroundColor: "primary",
         color: "white",
         ":hover:not(:disabled)": {
@@ -2020,7 +2020,7 @@ var styleVariants$3 = (_b$7 = {},
         //   color: "white"
         // },
     },
-    _b$7[variants$6.DANGER] = {
+    _b$7[variants$7.DANGER] = {
         backgroundColor: "secondary",
         color: "white",
         ":hover:not(:disabled)": {
@@ -2030,7 +2030,7 @@ var styleVariants$3 = (_b$7 = {},
             backgroundColor: "secondaryPress",
         },
     },
-    _b$7[variants$6.SUCCESS] = {
+    _b$7[variants$7.SUCCESS] = {
         backgroundColor: "success",
         color: "white",
         ":hover:not(:disabled)": {
@@ -2040,7 +2040,7 @@ var styleVariants$3 = (_b$7 = {},
             backgroundColor: "successPress",
         },
     },
-    _b$7[variants$6.WARNING] = {
+    _b$7[variants$7.WARNING] = {
         backgroundColor: "warning",
         color: "dark800",
         ":hover:not(:disabled)": {
@@ -2050,7 +2050,7 @@ var styleVariants$3 = (_b$7 = {},
             backgroundColor: "warningPress",
         },
     },
-    _b$7[variants$6.BOOST] = {
+    _b$7[variants$7.BOOST] = {
         backgroundColor: "boost",
         color: "white",
         ":hover:not(:disabled)": {
@@ -2060,7 +2060,7 @@ var styleVariants$3 = (_b$7 = {},
             backgroundColor: "boostPress",
         },
     },
-    _b$7[variants$6.TERTIARY] = {
+    _b$7[variants$7.TERTIARY] = {
         backgroundColor: "btnTertiary",
         color: "primary",
         border: "1px solid transparent",
@@ -2073,7 +2073,7 @@ var styleVariants$3 = (_b$7 = {},
             borderColor: "primary",
         },
     },
-    _b$7[variants$6.TERTIARY_OUT] = {
+    _b$7[variants$7.TERTIARY_OUT] = {
         color: "primary",
         backgroundColor: "transparent",
         border: "1px solid",
@@ -2087,7 +2087,7 @@ var styleVariants$3 = (_b$7 = {},
             borderColor: "transparent",
         },
     },
-    _b$7[variants$6.LIGHT_OUT] = {
+    _b$7[variants$7.LIGHT_OUT] = {
         color: "white",
         border: "1px solid",
         borderColor: "btnLightOutBorder",
@@ -2101,7 +2101,7 @@ var styleVariants$3 = (_b$7 = {},
             borderColor: "transparent",
         },
     },
-    _b$7[variants$6.LIGHT] = {
+    _b$7[variants$7.LIGHT] = {
         backgroundColor: "btnLight",
         color: "white",
         border: "1px solid transparent",
@@ -2114,7 +2114,7 @@ var styleVariants$3 = (_b$7 = {},
             borderColor: "white",
         },
     },
-    _b$7[variants$6.TEXT] = {
+    _b$7[variants$7.TEXT] = {
         backgroundColor: "transparent",
         color: "primary",
         boxShadow: "none",
@@ -2125,7 +2125,7 @@ var styleVariants$3 = (_b$7 = {},
             color: "primaryPress",
         },
     },
-    _b$7[variants$6.TEXT_DARK] = {
+    _b$7[variants$7.TEXT_DARK] = {
         backgroundColor: "transparent",
         color: "primaryHover",
         boxShadow: "none",
@@ -2203,7 +2203,7 @@ var Button$2 = function (props) {
 Button$2.defaultProps = {
     isLoading: false,
     external: false,
-    variant: variants$6.PRIMARY,
+    variant: variants$7.PRIMARY,
     scale: scales$a.MD,
     disabled: false,
 };
@@ -2236,7 +2236,7 @@ var scales$9 = {
     SM: "sm",
     XS: "xs",
 };
-var variants$5 = {
+var variants$6 = {
     DARK: "dark",
     LIGHT: "light",
     WARNING_LIGHT: "warningLight",
@@ -2405,25 +2405,25 @@ var useMatchBreakpoints = function () {
 
 var getColorKey = function (variant) {
     switch (variant) {
-        case variants$5.DARK:
+        case variants$6.DARK:
             return "pastelBlue";
-        case variants$5.LIGHT:
+        case variants$6.LIGHT:
             return "gray900";
-        case variants$5.WARNING_LIGHT:
+        case variants$6.WARNING_LIGHT:
             return "gray900";
-        case variants$5.WARNING_DARK:
+        case variants$6.WARNING_DARK:
             return "pastelBlue";
     }
 };
 var getHoverKey = function (variant) {
     switch (variant) {
-        case variants$5.DARK:
+        case variants$6.DARK:
             return "white";
-        case variants$5.LIGHT:
+        case variants$6.LIGHT:
             return "dark800";
-        case variants$5.WARNING_LIGHT:
+        case variants$6.WARNING_LIGHT:
             return "dark800";
-        case variants$5.WARNING_DARK:
+        case variants$6.WARNING_DARK:
             return "white";
     }
 };
@@ -2435,7 +2435,7 @@ var Wrapper$h = styled__default["default"].div(templateObject_4$q || (templateOb
     var theme = _a.theme, withoutBackground = _a.withoutBackground, variant = _a.variant;
     return withoutBackground
         ? "transparent"
-        : variant === variants$5.DARK
+        : variant === variants$6.DARK
             ? theme.colors.tooltip
             : getRgba(theme.colors.pastelBlue, theme, 0.08);
 }, function (_a) {
@@ -2466,7 +2466,7 @@ var StyledButtonMenu = styled__default["default"].div(templateObject_6$c || (tem
 }, function (_a) {
     var disabled = _a.disabled, theme = _a.theme, variant = _a.variant;
     if (disabled) {
-        return "\n        opacity: 0.5;\n\n        & > button:disabled {\n          background-color: transparent;\n          color: ".concat(variant === variants$5.DARK
+        return "\n        opacity: 0.5;\n\n        & > button:disabled {\n          background-color: transparent;\n          color: ".concat(variant === variants$6.DARK
             ? theme.colors.pastelBlue
             : theme.colors.gray900, ";\n        }\n    ");
     }
@@ -2474,9 +2474,9 @@ var StyledButtonMenu = styled__default["default"].div(templateObject_6$c || (tem
 });
 var Selection$1 = styled__default["default"].div(templateObject_10$3 || (templateObject_10$3 = __makeTemplateObject(["\n  background-color: ", ";\n  width: ", ";\n  height: calc(100% - 8px);\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  left: ", ";\n  border-radius: ", ";\n\n  ", "\n\n  ", "\n\n  ", "\n\n  ", ";\n"], ["\n  background-color: ", ";\n  width: ", ";\n  height: calc(100% - 8px);\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  left: ", ";\n  border-radius: ", ";\n\n  ", "\n\n  ", "\n\n  ", "\n\n  ", ";\n"])), function (_a) {
     var theme = _a.theme, variant = _a.variant;
-    return theme.colors[variant === variants$5.DARK
+    return theme.colors[variant === variants$6.DARK
         ? "dark500"
-        : variant === variants$5.LIGHT
+        : variant === variants$6.LIGHT
             ? "white"
             : "warning"];
 }, function (_a) {
@@ -2499,11 +2499,11 @@ var Selection$1 = styled__default["default"].div(templateObject_10$3 || (templat
     return flatBottom && styled.css(templateObject_9$3 || (templateObject_9$3 = __makeTemplateObject(["\n      border-radius: ", ";\n      height: calc(100% - 4px);\n      top: calc(50% + 2px);\n    "], ["\n      border-radius: ", ";\n      height: calc(100% - 4px);\n      top: calc(50% + 2px);\n    "])), scale === scales$9.SM ? "6px 6px 0 0" : "8px 8px 0 0");
 }, function (_a) {
     var theme = _a.theme, variant = _a.variant;
-    return variant === variants$5.DARK &&
+    return variant === variants$6.DARK &&
         "box-shadow: 0 2px 4px ".concat(getRgba(theme.colors.backgroundDark, theme, 0.08));
 });
 var ButtonMenu = function (_a) {
-    var _b = _a.activeIndex, activeIndex = _b === void 0 ? 0 : _b, _c = _a.scale, scale = _c === void 0 ? scales$9.MD : _c, _d = _a.variant, variant = _d === void 0 ? variants$5.DARK : _d, onItemClick = _a.onItemClick, disabled = _a.disabled, children = _a.children, _e = _a.fullWidth, fullWidth = _e === void 0 ? false : _e, _f = _a.flatBottom, flatBottom = _f === void 0 ? false : _f, _g = _a.flatTop, flatTop = _g === void 0 ? false : _g, _h = _a.withoutBackground, withoutBackground = _h === void 0 ? false : _h, _j = _a.scrollX, scrollX = _j === void 0 ? false : _j, equalElementWidth = _a.equalElementWidth, _k = _a.withoutAnimation, withoutAnimation = _k === void 0 ? false : _k, props = __rest(_a, ["activeIndex", "scale", "variant", "onItemClick", "disabled", "children", "fullWidth", "flatBottom", "flatTop", "withoutBackground", "scrollX", "equalElementWidth", "withoutAnimation"]);
+    var _b = _a.activeIndex, activeIndex = _b === void 0 ? 0 : _b, _c = _a.scale, scale = _c === void 0 ? scales$9.MD : _c, _d = _a.variant, variant = _d === void 0 ? variants$6.DARK : _d, onItemClick = _a.onItemClick, disabled = _a.disabled, children = _a.children, _e = _a.fullWidth, fullWidth = _e === void 0 ? false : _e, _f = _a.flatBottom, flatBottom = _f === void 0 ? false : _f, _g = _a.flatTop, flatTop = _g === void 0 ? false : _g, _h = _a.withoutBackground, withoutBackground = _h === void 0 ? false : _h, _j = _a.scrollX, scrollX = _j === void 0 ? false : _j, equalElementWidth = _a.equalElementWidth, _k = _a.withoutAnimation, withoutAnimation = _k === void 0 ? false : _k, props = __rest(_a, ["activeIndex", "scale", "variant", "onItemClick", "disabled", "children", "fullWidth", "flatBottom", "flatTop", "withoutBackground", "scrollX", "equalElementWidth", "withoutAnimation"]);
     var _l = React.useState([]), widthsArr = _l[0], setWidthsArr = _l[1];
     var _m = React.useState(0), blockOffset = _m[0], setBlockOffset = _m[1];
     var _o = React.useState(null), activeButtonIndex = _o[0], setActiveButtonIndex = _o[1];
@@ -2538,48 +2538,48 @@ var ButtonMenu = function (_a) {
 };
 var templateObject_1$1e, templateObject_2$F, templateObject_3$v, templateObject_4$q, templateObject_5$j, templateObject_6$c, templateObject_7$8, templateObject_8$7, templateObject_9$3, templateObject_10$3;
 
-var _a$b, _b$6;
-var scaleVariants$2 = (_a$b = {},
-    _a$b[scales$9.XL] = {
+var _a$c, _b$6;
+var scaleVariants$2 = (_a$c = {},
+    _a$c[scales$9.XL] = {
         height: "48px",
         padding: "0 24px",
         borderRadius: "10px",
         fontSize: "16px",
     },
-    _a$b[scales$9.LG] = {
+    _a$c[scales$9.LG] = {
         height: "40px",
         padding: "0 16px",
         fontSize: "14px",
         borderRadius: "8px",
     },
-    _a$b[scales$9.MD] = {
+    _a$c[scales$9.MD] = {
         height: "32px",
         padding: "0 12px",
         fontSize: "12px",
         borderRadius: "8px",
     },
-    _a$b[scales$9.SM] = {
+    _a$c[scales$9.SM] = {
         height: "24px",
         padding: "0 8px",
         fontSize: "12px",
         borderRadius: "6px",
     },
-    _a$b[scales$9.XS] = {
+    _a$c[scales$9.XS] = {
         height: "20px",
         padding: "0 8px",
         fontSize: "12px",
         borderRadius: "6px",
     },
-    _a$b);
+    _a$c);
 var styleVariants$2 = (_b$6 = {},
-    _b$6[variants$5.DARK] = {
+    _b$6[variants$6.DARK] = {
         color: "white",
         backgroundColor: "transparent",
         ":active:not(:disabled)": {
             backgroundColor: "transparent",
         },
     },
-    _b$6[variants$5.LIGHT] = {
+    _b$6[variants$6.LIGHT] = {
         backgroundColor: "transparent",
         color: "dark800",
         ":hover(:disabled)": {
@@ -2589,7 +2589,7 @@ var styleVariants$2 = (_b$6 = {},
             color: "text",
         },
     },
-    _b$6[variants$5.WARNING_DARK] = {
+    _b$6[variants$6.WARNING_DARK] = {
         backgroundColor: "transparent",
         color: "dark800",
         ":hover(:disabled)": {
@@ -2602,7 +2602,7 @@ var styleVariants$2 = (_b$6 = {},
             backgroundColor: "transparent",
         },
     },
-    _b$6[variants$5.WARNING_LIGHT] = {
+    _b$6[variants$6.WARNING_LIGHT] = {
         backgroundColor: "transparent",
         color: "dark800",
         ":hover(:disabled)": {
@@ -2631,7 +2631,7 @@ var MenuItemButton = styled__default["default"].button(templateObject_2$E || (te
 });
 var ButtonMenuItem = function (_a) {
     var _b, _c;
-    var _d = _a.isActive, isActive = _d === void 0 ? false : _d, _e = _a.variant, variant = _e === void 0 ? variants$5.DARK : _e, as = _a.as, setWidth = _a.setWidth, _f = _a.itemIndex, itemIndex = _f === void 0 ? 0 : _f, activeButtonIndex = _a.activeButtonIndex, blockOffset = _a.blockOffset, _g = _a.onItemClick, onItemClick = _g === void 0 ? function () { } : _g, _h = _a.onClick, onClick = _h === void 0 ? function () { } : _h, props = __rest(_a, ["isActive", "variant", "as", "setWidth", "itemIndex", "activeButtonIndex", "blockOffset", "onItemClick", "onClick"]);
+    var _d = _a.isActive, isActive = _d === void 0 ? false : _d, _e = _a.variant, variant = _e === void 0 ? variants$6.DARK : _e, as = _a.as, setWidth = _a.setWidth, _f = _a.itemIndex, itemIndex = _f === void 0 ? 0 : _f, activeButtonIndex = _a.activeButtonIndex, blockOffset = _a.blockOffset, _g = _a.onItemClick, onItemClick = _g === void 0 ? function () { } : _g, _h = _a.onClick, onClick = _h === void 0 ? function () { } : _h, props = __rest(_a, ["isActive", "variant", "as", "setWidth", "itemIndex", "activeButtonIndex", "blockOffset", "onItemClick", "onClick"]);
     var _j = useMatchBreakpoints(), isXs = _j.isXs, isSm = _j.isSm, isMs = _j.isMs, isLg = _j.isLg, isXl = _j.isXl, isXll = _j.isXll, isXxl = _j.isXxl;
     var ref = React.useRef(null);
     var itemWidth = (_c = (_b = ref === null || ref === void 0 ? void 0 : ref.current) === null || _b === void 0 ? void 0 : _b.clientWidth) !== null && _c !== void 0 ? _c : 0;
@@ -2728,23 +2728,23 @@ var scales$7 = {
     MD: "md",
     SM: "sm",
 };
-var variants$4 = {
+var variants$5 = {
     DARK: "dark",
     LIGHT: "light",
 };
 
-var _a$a, _b$5, _c$3, _d$2, _e;
-var scaleVariantsContainer = (_a$a = {},
-    _a$a[scales$7.LG] = {
+var _a$b, _b$5, _c$3, _d$2, _e;
+var scaleVariantsContainer = (_a$b = {},
+    _a$b[scales$7.LG] = {
         height: "48px",
     },
-    _a$a[scales$7.MD] = {
+    _a$b[scales$7.MD] = {
         height: "40px",
     },
-    _a$a[scales$7.SM] = {
+    _a$b[scales$7.SM] = {
         height: "32px",
     },
-    _a$a);
+    _a$b);
 var scaleVariantsTop = (_b$5 = {},
     _b$5[scales$7.LG] = {
         padding: "0 12px 0 24px",
@@ -2812,7 +2812,7 @@ var scaleVariantItem = (_d$2 = {},
     },
     _d$2);
 var styleVariantsTop = (_e = {},
-    _e[variants$4.LIGHT] = {
+    _e[variants$5.LIGHT] = {
         borderColor: "gray300",
         color: "gray900",
         ".arrow": {
@@ -2834,7 +2834,7 @@ var styleVariantsTop = (_e = {},
             },
         },
     },
-    _e[variants$4.DARK] = {
+    _e[variants$5.DARK] = {
         borderColor: "dark500",
         color: "pastelBlue",
         ".arrow": {
@@ -2997,25 +2997,25 @@ var scales$6 = {
     XXL: "xxl",
 };
 
-var _a$9;
-var style = (_a$9 = {},
-    _a$9[scales$6.MD] = {
+var _a$a;
+var style = (_a$a = {},
+    _a$a[scales$6.MD] = {
         fontSize: "20px",
         fontSizeLg: "20px",
     },
-    _a$9[scales$6.LG] = {
+    _a$a[scales$6.LG] = {
         fontSize: "24px",
         fontSizeLg: "24px",
     },
-    _a$9[scales$6.XL] = {
+    _a$a[scales$6.XL] = {
         fontSize: "32px",
         fontSizeLg: "40px",
     },
-    _a$9[scales$6.XXL] = {
+    _a$a[scales$6.XXL] = {
         fontSize: "48px",
         fontSizeLg: "64px",
     },
-    _a$9);
+    _a$a);
 var Heading = styled__default["default"](Text).attrs({ bold: true })(templateObject_1$1a || (templateObject_1$1a = __makeTemplateObject(["\n  font-size: ", ";\n  font-weight: 600;\n  line-height: 1.1;\n\n  ", " {\n    font-size: ", ";\n  }\n"], ["\n  font-size: ", ";\n  font-weight: 600;\n  line-height: 1.1;\n\n  ", " {\n    font-size: ", ";\n  }\n"])), function (_a) {
     var scale = _a.scale;
     return style[scale || scales$6.MD].fontSize;
@@ -3036,7 +3036,7 @@ var scales$5 = {
     MD: "md",
     LG: "lg",
 };
-var variants$3 = {
+var variants$4 = {
     LIGHT: "light",
     LIGHT_WARNING: "lightWarning",
     LIGHT_ERROR: "lightError",
@@ -3046,9 +3046,9 @@ var variants$3 = {
     TRANSPARENT: "transparent",
 };
 
-var _a$8, _b$4, _c$2;
-var scaleVariants$1 = (_a$8 = {},
-    _a$8[scales$5.LG] = {
+var _a$9, _b$4, _c$2;
+var scaleVariants$1 = (_a$9 = {},
+    _a$9[scales$5.LG] = {
         borderRadius: "10px",
         height: "48px",
         fontSize: "16px",
@@ -3057,7 +3057,7 @@ var scaleVariants$1 = (_a$8 = {},
             width: "24px",
         },
     },
-    _a$8[scales$5.MD] = {
+    _a$9[scales$5.MD] = {
         borderRadius: "8px",
         height: "40px",
         fontSize: "14px",
@@ -3066,7 +3066,7 @@ var scaleVariants$1 = (_a$8 = {},
             width: "20px",
         },
     },
-    _a$8[scales$5.SM] = {
+    _a$9[scales$5.SM] = {
         borderRadius: "8px",
         height: "32px",
         fontSize: "12px",
@@ -3075,9 +3075,9 @@ var scaleVariants$1 = (_a$8 = {},
             width: "16px",
         },
     },
-    _a$8);
+    _a$9);
 var styleVariants$1 = (_b$4 = {},
-    _b$4[variants$3.LIGHT] = {
+    _b$4[variants$4.LIGHT] = {
         backgroundColor: "gray300",
         color: "dark800",
         "::placeholder": {
@@ -3094,7 +3094,7 @@ var styleVariants$1 = (_b$4 = {},
             color: "dark800",
         },
     },
-    _b$4[variants$3.LIGHT_WARNING] = {
+    _b$4[variants$4.LIGHT_WARNING] = {
         borderColor: "warning",
         backgroundColor: "transparent",
         color: "dark800",
@@ -3102,7 +3102,7 @@ var styleVariants$1 = (_b$4 = {},
             color: "dark800",
         },
     },
-    _b$4[variants$3.LIGHT_ERROR] = {
+    _b$4[variants$4.LIGHT_ERROR] = {
         borderColor: "secondary",
         backgroundColor: "transparent",
         color: "dark800",
@@ -3110,7 +3110,7 @@ var styleVariants$1 = (_b$4 = {},
             color: "dark800",
         },
     },
-    _b$4[variants$3.DARK] = {
+    _b$4[variants$4.DARK] = {
         backgroundColor: "dark500",
         color: "white",
         "::placeholder": {
@@ -3127,7 +3127,7 @@ var styleVariants$1 = (_b$4 = {},
             color: "white",
         },
     },
-    _b$4[variants$3.DARK_WARNING] = {
+    _b$4[variants$4.DARK_WARNING] = {
         borderColor: "warning",
         backgroundColor: "transparent",
         color: "white",
@@ -3135,7 +3135,7 @@ var styleVariants$1 = (_b$4 = {},
             color: "white",
         },
     },
-    _b$4[variants$3.DARK_ERROR] = {
+    _b$4[variants$4.DARK_ERROR] = {
         borderColor: "secondary",
         backgroundColor: "transparent",
         color: "white",
@@ -3143,7 +3143,7 @@ var styleVariants$1 = (_b$4 = {},
             color: "white",
         },
     },
-    _b$4[variants$3.TRANSPARENT] = {
+    _b$4[variants$4.TRANSPARENT] = {
         backgroundColor: "transparent",
         color: "dark800",
         "::placeholder": {
@@ -3162,25 +3162,25 @@ var styleVariants$1 = (_b$4 = {},
     },
     _b$4);
 var styleTextVariants = (_c$2 = {},
-    _c$2[variants$3.LIGHT] = {
+    _c$2[variants$4.LIGHT] = {
         color: "gray700",
     },
-    _c$2[variants$3.LIGHT_WARNING] = {
+    _c$2[variants$4.LIGHT_WARNING] = {
         color: "warning",
     },
-    _c$2[variants$3.LIGHT_ERROR] = {
+    _c$2[variants$4.LIGHT_ERROR] = {
         color: "secondary",
     },
-    _c$2[variants$3.DARK] = {
+    _c$2[variants$4.DARK] = {
         color: "white",
     },
-    _c$2[variants$3.DARK_WARNING] = {
+    _c$2[variants$4.DARK_WARNING] = {
         color: "warning",
     },
-    _c$2[variants$3.DARK_ERROR] = {
+    _c$2[variants$4.DARK_ERROR] = {
         color: "secondary",
     },
-    _c$2[variants$3.TRANSPARENT] = {
+    _c$2[variants$4.TRANSPARENT] = {
         color: "dark800",
     },
     _c$2);
@@ -3384,34 +3384,34 @@ var scales$4 = {
     MD: "md",
     SM: "sm",
 };
-var variants$2 = {
+var variants$3 = {
     LIGHT: "light",
     DARK: "dark",
 };
 
-var _a$7, _b$3;
-var scaleVariants = (_a$7 = {},
-    _a$7[scales$4.LG] = {
+var _a$8, _b$3;
+var scaleVariants = (_a$8 = {},
+    _a$8[scales$4.LG] = {
         fontSize: "16px",
         svg: {
             width: "16px",
         },
     },
-    _a$7[scales$4.MD] = {
+    _a$8[scales$4.MD] = {
         fontSize: "14px",
         svg: {
             width: "14px",
         },
     },
-    _a$7[scales$4.SM] = {
+    _a$8[scales$4.SM] = {
         fontSize: "12px",
         svg: {
             width: "12px",
         },
     },
-    _a$7);
+    _a$8);
 var styleVariants = (_b$3 = {},
-    _b$3[variants$2.LIGHT] = {
+    _b$3[variants$3.LIGHT] = {
         color: "primary",
         svg: {
             fill: "primary",
@@ -3429,7 +3429,7 @@ var styleVariants = (_b$3 = {},
             },
         },
     },
-    _b$3[variants$2.DARK] = {
+    _b$3[variants$3.DARK] = {
         color: "primaryHover",
         svg: {
             fill: "primaryHover",
@@ -3742,31 +3742,52 @@ var animation = {
     WAVES: "waves",
     PULSE: "pulse",
 };
-var variant = {
+var variants$2 = {
     RECT: "rect",
     CIRCLE: "circle",
+    SM: "sm",
+    MD: "md",
+    LG: "lg",
 };
+
+var _a$7;
+var variantsSkeleton = (_a$7 = {},
+    _a$7[variants$2.CIRCLE] = {
+        borderRadius: "50%",
+    },
+    _a$7[variants$2.SM] = {
+        borderRadius: "4px",
+    },
+    _a$7[variants$2.MD] = {
+        borderRadius: "16px",
+    },
+    _a$7[variants$2.LG] = {
+        borderRadius: "24px",
+    },
+    _a$7);
 
 var waves = styled.keyframes(templateObject_1$10 || (templateObject_1$10 = __makeTemplateObject(["\n   from {\n        left: -150px;\n    }\n    to   {\n        left: 100%;\n    }\n"], ["\n   from {\n        left: -150px;\n    }\n    to   {\n        left: 100%;\n    }\n"])));
 var pulse = styled.keyframes(templateObject_2$x || (templateObject_2$x = __makeTemplateObject(["\n  0% {\n    opacity: 0.1;\n  }\n  50% {\n    opacity: 0.3;\n  }\n  100% {\n    opacity: 0.1;\n  }\n"], ["\n  0% {\n    opacity: 0.1;\n  }\n  50% {\n    opacity: 0.3;\n  }\n  100% {\n    opacity: 0.1;\n  }\n"])));
-var Root = styled__default["default"].div(templateObject_3$p || (templateObject_3$p = __makeTemplateObject(["\n  min-height: 20px;\n  display: block;\n  background-color: ", ";\n  border-radius: ", ";\n\n  ", "\n  ", "\n"], ["\n  min-height: 20px;\n  display: block;\n  background-color: ", ";\n  border-radius: ", ";\n\n  ", "\n  ", "\n"])), function (_a) {
+var Root = styled__default["default"].div(templateObject_3$p || (templateObject_3$p = __makeTemplateObject(["\n  min-height: 20px;\n  display: block;\n  background-color: ", ";\n  border-radius: ", ";\n\n  ", "\n  ", "\n  ", "\n"], ["\n  min-height: 20px;\n  display: block;\n  background-color: ", ";\n  border-radius: ", ";\n\n  ", "\n  ", "\n  ", "\n"])), function (_a) {
     var theme = _a.theme;
     return getRgba(theme.colors.pastelBlue, theme, 0.16);
 }, function (_a) {
-    var variant$1 = _a.variant, theme = _a.theme;
-    return variant$1 === variant.CIRCLE ? theme.radii.circle : theme.radii.small;
-}, styledSystem.layout, styledSystem.space);
+    var variant = _a.variant, theme = _a.theme;
+    return variant === variants$2.CIRCLE ? theme.radii.circle : theme.radii.small;
+}, styledSystem.layout, styledSystem.space, styledSystem.variant({
+    variants: variantsSkeleton,
+}));
 var Pulse = styled__default["default"](Root)(templateObject_4$m || (templateObject_4$m = __makeTemplateObject(["\n  animation: ", " 2s infinite ease-out;\n  transform: translate3d(0, 0, 0);\n  background-color: ", ";\n"], ["\n  animation: ", " 2s infinite ease-out;\n  transform: translate3d(0, 0, 0);\n  background-color: ", ";\n"])), pulse, function (_a) {
     var theme = _a.theme;
     return theme.colors.pastelBlue;
 });
 var Waves = styled__default["default"](Root)(templateObject_5$f || (templateObject_5$f = __makeTemplateObject(["\n  position: relative;\n  overflow: hidden;\n  transform: translate3d(0, 0, 0);\n\n  &:before {\n    content: \"\";\n    position: absolute;\n    background: linear-gradient(\n      90deg,\n      rgba(116, 155, 216, 0) 0%,\n      rgba(116, 155, 216, 0.16) 50%,\n      rgba(116, 155, 216, 0) 100%\n    );\n\n    top: 0;\n    left: -150px;\n    height: 100%;\n    width: 150px;\n    animation: ", " 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;\n  }\n"], ["\n  position: relative;\n  overflow: hidden;\n  transform: translate3d(0, 0, 0);\n\n  &:before {\n    content: \"\";\n    position: absolute;\n    background: linear-gradient(\n      90deg,\n      rgba(116, 155, 216, 0) 0%,\n      rgba(116, 155, 216, 0.16) 50%,\n      rgba(116, 155, 216, 0) 100%\n    );\n\n    top: 0;\n    left: -150px;\n    height: 100%;\n    width: 150px;\n    animation: ", " 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;\n  }\n"])), waves);
 var Skeleton = function (_a) {
-    var _b = _a.variant, variant$1 = _b === void 0 ? variant.RECT : _b, _c = _a.animation, animation$1 = _c === void 0 ? animation.PULSE : _c, props = __rest(_a, ["variant", "animation"]);
+    var _b = _a.variant, variant = _b === void 0 ? variants$2.RECT : _b, _c = _a.animation, animation$1 = _c === void 0 ? animation.PULSE : _c, props = __rest(_a, ["variant", "animation"]);
     if (animation$1 === animation.WAVES) {
-        return React__default["default"].createElement(Waves, __assign({ variant: variant$1 }, props));
+        return React__default["default"].createElement(Waves, __assign({ variant: variant }, props));
     }
-    return React__default["default"].createElement(Pulse, __assign({ variant: variant$1 }, props));
+    return React__default["default"].createElement(Pulse, __assign({ variant: variant }, props));
 };
 var templateObject_1$10, templateObject_2$x, templateObject_3$p, templateObject_4$m, templateObject_5$f;
 
@@ -7488,10 +7509,10 @@ var types = {
 
 var _a;
 var alertTypeMap = (_a = {},
-    _a[types.INFO] = variants$7.INFO,
-    _a[types.SUCCESS] = variants$7.SUCCESS,
-    _a[types.DANGER] = variants$7.DANGER,
-    _a[types.WARNING] = variants$7.WARNING,
+    _a[types.INFO] = variants$8.INFO,
+    _a[types.SUCCESS] = variants$8.SUCCESS,
+    _a[types.DANGER] = variants$8.DANGER,
+    _a[types.WARNING] = variants$8.WARNING,
     _a);
 var ClearAllButton = styled__default["default"](Button$2)(templateObject_1$4 || (templateObject_1$4 = __makeTemplateObject(["\n  position: absolute;\n  right: 0;\n  background-color: ", ";\n  border: ", ";\n  border-radius: 16px;\n  top: ", ";\n  transform: translateY(50%);\n  padding: 0;\n  margin: 0;\n"], ["\n  position: absolute;\n  right: 0;\n  background-color: ", ";\n  border: ", ";\n  border-radius: 16px;\n  top: ", ";\n  transform: translateY(50%);\n  padding: 0;\n  margin: 0;\n"])), function (_a) {
     var theme = _a.theme;
@@ -7977,7 +7998,7 @@ exports.WarningIcon = Icon$2P;
 exports.WarningOpacityIcon = Icon$2R;
 exports.WarningSolidIcon = Icon$2Q;
 exports.YoutubeIcon = Icon$i;
-exports.alertVariants = variants$7;
+exports.alertVariants = variants$8;
 exports.bodyTextScaleMap = bodyTextScaleMap;
 exports.dark = darkTheme;
 exports.darkColors = darkColors;
