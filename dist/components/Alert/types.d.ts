@@ -16,3 +16,8 @@ export interface AlertProps {
     onClick?: (evt: MouseEvent<HTMLButtonElement>) => void;
     progress: number | undefined;
 }
+export declare const coloredVariants: {
+    DANGER: string;
+    SUCCESS: string;
+};
+export declare type ColoredVariants = typeof coloredVariants[keyof typeof coloredVariants];

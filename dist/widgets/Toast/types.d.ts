@@ -1,3 +1,4 @@
+import { ColoredVariants } from "../../components/Alert";
 export declare const types: {
     SUCCESS: string;
     DANGER: string;
@@ -16,7 +17,11 @@ export interface Toast {
     url?: string;
     withGift?: boolean;
 }
-export declare type ColoredToastProps = Pick<Toast, "id" | "title">;
+export interface ColoredToastProps {
+    id: string;
+    type?: ColoredVariants;
+    title: string;
+}
 export interface ToastContainerProps {
     toasts: Toast[];
     stackSpacing?: number;

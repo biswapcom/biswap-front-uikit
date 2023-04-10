@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { sample } from "lodash";
-import { alertVariants } from "../../components/Alert";
+import { alertVariants, coloredVariants } from "../../components/Alert";
 import Button from "../../components/Button/Button";
 import ToastContainer from "./ToastContainer";
 import { ColoredToasts } from "./ColoredToasts";
@@ -129,9 +129,11 @@ export const ColoredToast: React.FC = () => {
     const randomToast = {
       id: `id-${now}`,
       title: "Link copied",
+      type: coloredVariants[sample(Object.keys(coloredVariants))],
     };
     setToasts([randomToast]);
   };
+
   const handleRemove = () => setToasts([]);
   return (
     <div>
