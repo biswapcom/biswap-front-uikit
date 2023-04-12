@@ -6334,7 +6334,7 @@ var links = [
                 type: exports.DropdownMenuItemType.CONTAINER,
                 links: [
                     {
-                        label: "NFT Staking",
+                        label: "Staking",
                         href: "/nft",
                         badgeTitle: "Ended",
                         badgeType: "error",
@@ -6850,7 +6850,7 @@ var BorderMobileMenuItem = styled__default["default"](Box)(templateObject_13 || 
 });
 var templateObject_1$g, templateObject_2$8, templateObject_3$6, templateObject_4$6, templateObject_5$5, templateObject_6$3, templateObject_7$1, templateObject_8$1, templateObject_9, templateObject_10, templateObject_11, templateObject_12, templateObject_13;
 
-var LabelText = styled__default["default"](Text)(templateObject_1$f || (templateObject_1$f = __makeTemplateObject(["\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  width: 80px;\n"], ["\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  width: 80px;\n"])));
+var LabelText = styled__default["default"](Text)(templateObject_1$f || (templateObject_1$f = __makeTemplateObject(["\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  width: 100%;\n"], ["\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  width: 100%;\n"])));
 var InnerLinksBlock = function (_a) {
     var links = _a.links, leftIcon = _a.leftIcon, setIsOpen = _a.setIsOpen, linkComponent = _a.linkComponent, lastItem = _a.lastItem;
     var _b = useMatchBreakpoints(), isMobile = _b.isMobile, isTablet = _b.isTablet; _b.isDesktop;

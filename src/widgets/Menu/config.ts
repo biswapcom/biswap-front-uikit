@@ -152,7 +152,7 @@ export const links: MenuItemsType[] = [
         type: DropdownMenuItemType.CONTAINER,
         links: [
           {
-            label: "NFT Staking",
+            label: "Staking",
             href: `/nft`,
             badgeTitle: "Ended",
             badgeType: "error",

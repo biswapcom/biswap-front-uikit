@@ -25,7 +25,7 @@ const LabelText = styled(Text)`
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  width: 80px;
+  width: 100%;
 `;
 
 const InnerLinksBlock: FC<InnerLinksBlockProps> = ({
