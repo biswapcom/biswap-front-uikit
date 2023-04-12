@@ -6824,7 +6824,7 @@ styled(Text)(templateObject_11 || (templateObject_11 = __makeTemplateObject(["\n
     var theme = _a.theme, color = _a.color;
     return theme.colors[color];
 });
-var BannerPlacementItem = styled.div(templateObject_12 || (templateObject_12 = __makeTemplateObject(["\n  margin: 0 -4px -16px -16px;\n"], ["\n  margin: 0 -4px -16px -16px;\n"])));
+var BannerPlacementItem = styled.div(templateObject_12 || (templateObject_12 = __makeTemplateObject(["\n  margin: 0 -14px -18px -14px;\n"], ["\n  margin: 0 -14px -18px -14px;\n"])));
 var BorderMobileMenuItem = styled(Box)(templateObject_13 || (templateObject_13 = __makeTemplateObject(["\n  padding: 0 12px;\n  border-left: ", ";\n  ", " {\n    border-left: none;\n  }\n"], ["\n  padding: 0 12px;\n  border-left: ", ";\n  ", " {\n    border-left: none;\n  }\n"])), function (_a) {
     var theme = _a.theme, isHighlighted = _a.isHighlighted;
     return "4px solid ".concat(isHighlighted ? theme.colors.warningPress : "transparent");
