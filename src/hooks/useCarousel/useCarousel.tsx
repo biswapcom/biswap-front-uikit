@@ -9,14 +9,11 @@ import { CarouselButtonsTypes } from "./types";
 import {
   CarouselHeader,
   CarouselNumbersBlock,
-  Dot,
-  ArrowSquarePrimary,
-  ArrowSquareWhite,
   DirectionButton,
+  Dot,
 } from "../../components/Carousel";
 import { Box, Flex } from "../../components/Box";
 import { useMatchBreakpoints } from "../../contexts";
-import { ChevronLeftIcon, ChevronRightIcon } from "../../components/Svg";
 
 interface IProps<T, C, A> {
   data: T[];
@@ -179,51 +176,29 @@ export const useCarousel = ({
     }
   };
 
-  const renderNav = (navType: string, navPadding?: number): JSX.Element => {
-    switch (navType) {
-      case PRIMARY:
-        return (
-          <>
-            <ArrowSquarePrimary onClick={scrollPrev}>
-              <ChevronLeftIcon width="16px" color="white" />
-            </ArrowSquarePrimary>
-            <ArrowSquarePrimary onClick={scrollNext}>
-              <ChevronRightIcon width="16px" color="white" />
-            </ArrowSquarePrimary>
-          </>
-        );
-      case WHITE:
-        return (
-          <>
-            <ArrowSquareWhite onClick={scrollPrev} navPadding={navPadding}>
-              <ChevronLeftIcon color="dark900" height="32px" />
-            </ArrowSquareWhite>
-            <ArrowSquareWhite
-              onClick={scrollNext}
-              navPadding={navPadding}
-              isNextButton
-            >
-              <ChevronRightIcon color="dark900" height="32px" />
-            </ArrowSquareWhite>
-          </>
-        );
-      default:
-        return (
-          <>
-            <DirectionButton
-              iconName="ChevronLeft"
-              onClick={scrollPrev}
-              enabled={prevBtnEnabled}
-            />
-            <DirectionButton
-              iconName="ChevronRight"
-              onClick={scrollNext}
-              enabled={nextBtnEnabled}
-              isNextButton
-            />
-          </>
-        );
-    }
+  const renderNav = (
+    navType: CarouselButtonsTypes,
+    navPadding?: number
+  ): JSX.Element => {
+    return (
+      <>
+        <DirectionButton
+          iconName="ChevronLeft"
+          onClick={scrollPrev}
+          enabled={prevBtnEnabled}
+          themeType={navType}
+          navPadding={navPadding}
+        />
+        <DirectionButton
+          isNextButton
+          iconName="ChevronRight"
+          onClick={scrollNext}
+          enabled={nextBtnEnabled}
+          themeType={navType}
+          navPadding={navPadding}
+        />
+      </>
+    );
   };
 
   const showHeader = title || withNavButtonsHeader;
