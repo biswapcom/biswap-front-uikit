@@ -179,7 +179,7 @@ export const useCarousel = ({
     }
   };
 
-  const renderNav = (navType: string): JSX.Element => {
+  const renderNav = (navType: string, navPadding?: number): JSX.Element => {
     switch (navType) {
       case PRIMARY:
         return (
@@ -195,10 +195,14 @@ export const useCarousel = ({
       case WHITE:
         return (
           <>
-            <ArrowSquareWhite onClick={scrollPrev}>
+            <ArrowSquareWhite onClick={scrollPrev} navPadding={navPadding}>
               <ChevronLeftIcon width="16px" color="dark900" />
             </ArrowSquareWhite>
-            <ArrowSquareWhite onClick={scrollNext}>
+            <ArrowSquareWhite
+              onClick={scrollNext}
+              navPadding={navPadding}
+              isNextButton
+            >
               <ChevronRightIcon width="16px" color="dark900" />
             </ArrowSquareWhite>
           </>
@@ -250,7 +254,7 @@ export const useCarousel = ({
           </Viewport>
           {withNavButtons && (
             <NavWrapper navPadding={navPadding}>
-              {renderNav(navButtonsType)}
+              {renderNav(navButtonsType, navPadding)}
             </NavWrapper>
           )}
         </Embla>
