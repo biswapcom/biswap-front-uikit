@@ -5549,9 +5549,9 @@ var useCarousel = function (_a) {
             case WHITE:
                 return (React.createElement(React.Fragment, null,
                     React.createElement(ArrowSquareWhite, { onClick: scrollPrev, navPadding: navPadding },
-                        React.createElement(Icon$3a, { width: "16px", color: "dark900" })),
+                        React.createElement(Icon$3a, { color: "dark900", height: "32px" })),
                     React.createElement(ArrowSquareWhite, { onClick: scrollNext, navPadding: navPadding, isNextButton: true },
-                        React.createElement(Icon$3d, { width: "16px", color: "dark900" }))));
+                        React.createElement(Icon$3d, { color: "dark900", height: "32px" }))));
             default:
                 return (React.createElement(React.Fragment, null,
                     React.createElement(DirectionButton, { iconName: "ChevronLeft", onClick: scrollPrev, enabled: prevBtnEnabled }),

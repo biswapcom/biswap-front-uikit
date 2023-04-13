@@ -196,14 +196,14 @@ export const useCarousel = ({
         return (
           <>
             <ArrowSquareWhite onClick={scrollPrev} navPadding={navPadding}>
-              <ChevronLeftIcon width="16px" color="dark900" />
+              <ChevronLeftIcon color="dark900" height="32px" />
             </ArrowSquareWhite>
             <ArrowSquareWhite
               onClick={scrollNext}
               navPadding={navPadding}
               isNextButton
             >
-              <ChevronRightIcon width="16px" color="dark900" />
+              <ChevronRightIcon color="dark900" height="32px" />
             </ArrowSquareWhite>
           </>
         );
