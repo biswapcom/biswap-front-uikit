@@ -7969,6 +7969,7 @@ exports.TeamOpacityIcon = Icon$F;
 exports.TeamSolidIcon = Icon$G;
 exports.TelegramIcon = Icon$l;
 exports.Terms = Terms;
+exports.TermsAccordeon = TermsAccordion;
 exports.TestIcon = Icon$1P;
 exports.TestOpacityIcon = Icon$1O;
 exports.TestSolidIcon = Icon$1N;
