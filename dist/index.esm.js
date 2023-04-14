@@ -4350,7 +4350,7 @@ var getScale$1 = function (property) {
         return scaleKeyValues[scale][property];
     };
 };
-var ToggleWrap = styled.label(templateObject_1$S || (templateObject_1$S = __makeTemplateObject(["\n  display: inline-flex;\n  align-items: center;\n  width: ", ";\n  flex-direction: ", ";\n  justify-content: ", ";\n  opacity: ", ";\n  grid-area: ", ";\n  \n  ", "\n"], ["\n  display: inline-flex;\n  align-items: center;\n  width: ", ";\n  flex-direction: ", ";\n  justify-content: ", ";\n  opacity: ", ";\n  grid-area: ", ";\n  \n  ", "\n"])), function (_a) {
+var ToggleWrap = styled.label(templateObject_1$S || (templateObject_1$S = __makeTemplateObject(["\n  display: inline-flex;\n  align-items: center;\n  width: ", ";\n  flex-direction: ", ";\n  justify-content: ", ";\n  opacity: ", ";\n  grid-area: ", ";\n\n  ", "\n"], ["\n  display: inline-flex;\n  align-items: center;\n  width: ", ";\n  flex-direction: ", ";\n  justify-content: ", ";\n  opacity: ", ";\n  grid-area: ", ";\n\n  ", "\n"])), function (_a) {
     var spaceBetween = _a.spaceBetween;
     return (spaceBetween ? "100%" : "auto");
 }, function (_a) {
@@ -4791,7 +4791,7 @@ var VariantsArrows = (_b$1 = {},
     },
     _b$1);
 
-var PaginationWrap = styled.div(templateObject_1$O || (templateObject_1$O = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n\n  .paginate-wrapper {\n    display: flex;\n    justify-content: center;\n  }\n\n  .pagination {\n    display: flex;\n\n    li {\n      border-radius: 8px;\n      font-size: 14px;\n      list-style-type: none;\n      width: 40px;\n      height: 40px;\n      border: 0;\n      outline: 0;\n      line-height: 20px;\n      font-weight: 600;\n      transition: opacity 0.4s ease-in-out, color 0.4s ease-in-out;\n\n      ", "\n\n      &:hover {\n        &:not(:first-child, :last-child, .active) {\n          opacity: 0.56;\n        }\n      }\n\n      &.active {\n        color: ", ";\n        background: ", ";\n\n        &:hover {\n          background: lighten(", ", 5%);\n        }\n      }\n\n      &:first-child,\n      :last-child {\n        background-color: ", ";\n\n        &:hover {\n          background-color: #46465f;\n        }\n      }\n\n      &.previous,\n      &.next {\n        background-color: transparent;\n        transition: all 0.4s ease-in-out;\n\n        ", "\n      }\n\n      &.previous {\n        margin-right: 12px;\n        \n        ", " {\n          margin-right: 24px;\n        }\n      }\n      &.next {\n        margin-left: 12px;\n\n        ", " {\n          margin-left: 24px;\n        }\n      }\n\n      &.disabled {\n        cursor: not-allowed;\n        pointer-events: none;\n        opacity: 0.32;\n      }\n      &.break-me {\n        width: 20px;\n        \n        a {\n          width: 20px;\n        }\n      }\n    }\n\n    a {\n      width: 40px;\n      height: 40px;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      font-weight: 600;\n\n      &:focus {\n        outline: none;\n      }\n    }\n  }\n"], ["\n  display: flex;\n  justify-content: center;\n\n  .paginate-wrapper {\n    display: flex;\n    justify-content: center;\n  }\n\n  .pagination {\n    display: flex;\n\n    li {\n      border-radius: 8px;\n      font-size: 14px;\n      list-style-type: none;\n      width: 40px;\n      height: 40px;\n      border: 0;\n      outline: 0;\n      line-height: 20px;\n      font-weight: 600;\n      transition: opacity 0.4s ease-in-out, color 0.4s ease-in-out;\n\n      ", "\n\n      &:hover {\n        &:not(:first-child, :last-child, .active) {\n          opacity: 0.56;\n        }\n      }\n\n      &.active {\n        color: ", ";\n        background: ", ";\n\n        &:hover {\n          background: lighten(", ", 5%);\n        }\n      }\n\n      &:first-child,\n      :last-child {\n        background-color: ", ";\n\n        &:hover {\n          background-color: #46465f;\n        }\n      }\n\n      &.previous,\n      &.next {\n        background-color: transparent;\n        transition: all 0.4s ease-in-out;\n\n        ", "\n      }\n\n      &.previous {\n        margin-right: 12px;\n        \n        ", " {\n          margin-right: 24px;\n        }\n      }\n      &.next {\n        margin-left: 12px;\n\n        ", " {\n          margin-left: 24px;\n        }\n      }\n\n      &.disabled {\n        cursor: not-allowed;\n        pointer-events: none;\n        opacity: 0.32;\n      }\n      &.break-me {\n        width: 20px;\n        \n        a {\n          width: 20px;\n        }\n      }\n    }\n\n    a {\n      width: 40px;\n      height: 40px;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      font-weight: 600;\n\n      &:focus {\n        outline: none;\n      }\n    }\n  }\n"])), variant({
+var PaginationWrap = styled.div(templateObject_1$O || (templateObject_1$O = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n\n  .paginate-wrapper {\n    display: flex;\n    justify-content: center;\n  }\n\n  .pagination {\n    display: flex;\n\n    li {\n      border-radius: 8px;\n      font-size: 14px;\n      list-style-type: none;\n      width: 40px;\n      height: 40px;\n      border: 0;\n      outline: 0;\n      line-height: 20px;\n      font-weight: 600;\n      transition: opacity 0.4s ease-in-out, color 0.4s ease-in-out;\n\n      ", "\n\n      &:hover {\n        &:not(:first-child, :last-child, .active) {\n          opacity: 0.56;\n        }\n      }\n\n      &.active {\n        color: ", ";\n        background: ", ";\n\n        &:hover {\n          background: lighten(", ", 5%);\n        }\n      }\n\n      &:first-child,\n      :last-child {\n        background-color: ", ";\n\n        &:hover {\n          background-color: #46465f;\n        }\n      }\n\n      &.previous,\n      &.next {\n        background-color: transparent;\n        transition: all 0.4s ease-in-out;\n\n        ", "\n      }\n\n      &.previous {\n        margin-right: 12px;\n\n        ", " {\n          margin-right: 24px;\n        }\n      }\n      &.next {\n        margin-left: 12px;\n\n        ", " {\n          margin-left: 24px;\n        }\n      }\n\n      &.disabled {\n        cursor: not-allowed;\n        pointer-events: none;\n        opacity: 0.32;\n      }\n      &.break-me {\n        width: 20px;\n\n        a {\n          width: 20px;\n        }\n      }\n    }\n\n    a {\n      width: 40px;\n      height: 40px;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      font-weight: 600;\n\n      &:focus {\n        outline: none;\n      }\n    }\n  }\n"], ["\n  display: flex;\n  justify-content: center;\n\n  .paginate-wrapper {\n    display: flex;\n    justify-content: center;\n  }\n\n  .pagination {\n    display: flex;\n\n    li {\n      border-radius: 8px;\n      font-size: 14px;\n      list-style-type: none;\n      width: 40px;\n      height: 40px;\n      border: 0;\n      outline: 0;\n      line-height: 20px;\n      font-weight: 600;\n      transition: opacity 0.4s ease-in-out, color 0.4s ease-in-out;\n\n      ", "\n\n      &:hover {\n        &:not(:first-child, :last-child, .active) {\n          opacity: 0.56;\n        }\n      }\n\n      &.active {\n        color: ", ";\n        background: ", ";\n\n        &:hover {\n          background: lighten(", ", 5%);\n        }\n      }\n\n      &:first-child,\n      :last-child {\n        background-color: ", ";\n\n        &:hover {\n          background-color: #46465f;\n        }\n      }\n\n      &.previous,\n      &.next {\n        background-color: transparent;\n        transition: all 0.4s ease-in-out;\n\n        ", "\n      }\n\n      &.previous {\n        margin-right: 12px;\n\n        ", " {\n          margin-right: 24px;\n        }\n      }\n      &.next {\n        margin-left: 12px;\n\n        ", " {\n          margin-left: 24px;\n        }\n      }\n\n      &.disabled {\n        cursor: not-allowed;\n        pointer-events: none;\n        opacity: 0.32;\n      }\n      &.break-me {\n        width: 20px;\n\n        a {\n          width: 20px;\n        }\n      }\n    }\n\n    a {\n      width: 40px;\n      height: 40px;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      font-weight: 600;\n\n      &:focus {\n        outline: none;\n      }\n    }\n  }\n"])), variant({
     variants: Variants,
 }), function (_a) {
     var theme = _a.theme;
@@ -6321,20 +6321,16 @@ var links = [
         showNavBadge: true,
         items: [
             {
-                label: "NFT Launchpad",
-                href: "/launchpad",
-                leftIcon: "LaunchpadOpacity",
-                description: "Buy new unique NFTs",
-            },
-            {
                 label: "NFT Earn",
                 leftIcon: "NFTEarnOpacity",
                 description: "Stake NFT & Get multiple tokens",
                 type: DropdownMenuItemType.CONTAINER,
                 links: [
                     {
-                        label: "NFT Staking",
+                        label: "Staking",
                         href: "/nft",
+                        badgeTitle: "Ended",
+                        badgeType: "error",
                     },
                     {
                         label: "NFT Boost",
@@ -6837,7 +6833,7 @@ styled(Text)(templateObject_11 || (templateObject_11 = __makeTemplateObject(["\n
     var theme = _a.theme, color = _a.color;
     return theme.colors[color];
 });
-var BannerPlacementItem = styled.div(templateObject_12 || (templateObject_12 = __makeTemplateObject(["\n  margin: 0 -16px -16px;\n"], ["\n  margin: 0 -16px -16px;\n"])));
+var BannerPlacementItem = styled.div(templateObject_12 || (templateObject_12 = __makeTemplateObject(["\n  margin: 0 -14px -18px -14px;\n"], ["\n  margin: 0 -14px -18px -14px;\n"])));
 var BorderMobileMenuItem = styled(Box)(templateObject_13 || (templateObject_13 = __makeTemplateObject(["\n  padding: 0 12px;\n  border-left: ", ";\n  ", " {\n    border-left: none;\n  }\n"], ["\n  padding: 0 12px;\n  border-left: ", ";\n  ", " {\n    border-left: none;\n  }\n"])), function (_a) {
     var theme = _a.theme, isHighlighted = _a.isHighlighted;
     return "4px solid ".concat(isHighlighted ? theme.colors.warningPress : "transparent");
@@ -6847,16 +6843,17 @@ var BorderMobileMenuItem = styled(Box)(templateObject_13 || (templateObject_13 =
 });
 var templateObject_1$g, templateObject_2$8, templateObject_3$6, templateObject_4$6, templateObject_5$5, templateObject_6$3, templateObject_7$1, templateObject_8$1, templateObject_9, templateObject_10, templateObject_11, templateObject_12, templateObject_13;
 
-var LabelText = styled(Text)(templateObject_1$f || (templateObject_1$f = __makeTemplateObject(["\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  width: 80px;\n"], ["\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  width: 80px;\n"])));
+var LabelText = styled(Text)(templateObject_1$f || (templateObject_1$f = __makeTemplateObject(["\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  width: 100%;\n"], ["\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  width: 100%;\n"])));
 var InnerLinksBlock = function (_a) {
     var links = _a.links, leftIcon = _a.leftIcon, setIsOpen = _a.setIsOpen, linkComponent = _a.linkComponent, lastItem = _a.lastItem;
     var _b = useMatchBreakpoints(), isMobile = _b.isMobile, isTablet = _b.isTablet; _b.isDesktop;
     var renderLinks = function () {
         return links.map(function (_a, index) {
-            var _b = _a.label, label = _b === void 0 ? "" : _b, _c = _a.href, href = _c === void 0 ? "/" : _c, _d = _a.icon, icon = _d === void 0 ? "ChevronRight" : _d, _e = _a.linkType, linkType = _e === void 0 ? DropdownMenuItemType.INTERNAL_LINK : _e, mobileTarget = _a.mobileTarget, target = _a.target, _f = _a.fill, fill = _f === void 0 ? "primary" : _f;
+            var _b = _a.label, label = _b === void 0 ? "" : _b, _c = _a.href, href = _c === void 0 ? "/" : _c, _d = _a.icon, icon = _d === void 0 ? "ChevronRight" : _d, _e = _a.linkType, linkType = _e === void 0 ? DropdownMenuItemType.INTERNAL_LINK : _e, mobileTarget = _a.mobileTarget, target = _a.target, _f = _a.fill, fill = _f === void 0 ? "primary" : _f, badgeTitle = _a.badgeTitle, badgeType = _a.badgeType;
             var getLinkContent = function () { return (React.createElement(React.Fragment, null,
                 icon && (React.createElement(IconComponent$1, { className: "inner-chevron", width: 16, iconName: icon, color: fill })),
-                React.createElement(LabelText, { bold: true, fontSize: "12px", color: fill }, label))); };
+                React.createElement(LabelText, { bold: true, fontSize: "12px", color: fill }, label),
+                badgeTitle && (React.createElement(Badge$1, { badgeType: badgeType !== null && badgeType !== void 0 ? badgeType : "success" }, badgeTitle)))); };
             return (React.createElement(Fragment, { key: "".concat(index, "#").concat(label) },
                 linkType === DropdownMenuItemType.INTERNAL_LINK && (React.createElement(DropdownMenuInnerLinkItem, { key: index + label, as: linkComponent, to: href, onClick: function () {
                         setIsOpen(false);

@@ -1,7 +1,7 @@
 import React from "react";
 import StyledToggle, { Input, Handle, Label, ToggleWrap } from "./StyledToggle";
 import { ToggleProps, scales } from "./types";
-import {SpaceProps} from "styled-system";
+import { SpaceProps } from "styled-system";
 
 const Toggle: React.FC<ToggleProps> = ({
   checked,
@@ -14,7 +14,7 @@ const Toggle: React.FC<ToggleProps> = ({
   gridArea,
   variant,
   spaceBetween,
-  labelSize= "size12",
+  labelSize = "size12",
   ...props
 }) => {
   const isChecked = !!checked;
@@ -25,7 +25,7 @@ const Toggle: React.FC<ToggleProps> = ({
       disabled={disabled}
       gridArea={gridArea}
       spaceBetween={spaceBetween}
-      {...props as SpaceProps}
+      {...(props as SpaceProps)}
     >
       <StyledToggle
         $checked={isChecked}
