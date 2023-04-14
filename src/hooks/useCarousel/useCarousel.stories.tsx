@@ -125,7 +125,7 @@ export const WithNavButtons = () => {
     position: "center",
     isAutoplay: true,
     withNavButtons: true,
-    navPadding: 0,
+    navPadding: 4,
     slideGap: 0,
     speed: 5,
     delay: 3000,
