@@ -14,4 +14,5 @@ export interface CheckboxProps {
   defaultChecked?: boolean;
   onChange?: () => void;
   value?: boolean;
+  disabled?: boolean;
 }
