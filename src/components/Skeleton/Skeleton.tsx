@@ -8,7 +8,7 @@ import {
   animation as ANIMATION,
   variants as VARIANT,
 } from "./types";
-import {variantsSkeleton} from "./theme";
+import { variantsSkeleton } from "./theme";
 
 const waves = keyframes`
    from {
