@@ -6859,7 +6859,7 @@ var BorderMobileMenuItem = styled__default["default"](Box)(templateObject_13 || 
 });
 var templateObject_1$g, templateObject_2$8, templateObject_3$6, templateObject_4$6, templateObject_5$5, templateObject_6$3, templateObject_7$1, templateObject_8$1, templateObject_9, templateObject_10, templateObject_11, templateObject_12, templateObject_13;
 
-var LabelText = styled__default["default"](Text)(templateObject_1$f || (templateObject_1$f = __makeTemplateObject(["\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  width: 100%;\n"], ["\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  width: 100%;\n"])));
+var LabelText = styled__default["default"](Text)(templateObject_1$f || (templateObject_1$f = __makeTemplateObject(["\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  max-width: 80px;\n"], ["\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  max-width: 80px;\n"])));
 var InnerLinksBlock = function (_a) {
     var links = _a.links, leftIcon = _a.leftIcon, setIsOpen = _a.setIsOpen, linkComponent = _a.linkComponent, lastItem = _a.lastItem;
     var _b = useMatchBreakpoints(), isMobile = _b.isMobile, isTablet = _b.isTablet; _b.isDesktop;
@@ -6869,7 +6869,7 @@ var InnerLinksBlock = function (_a) {
             var getLinkContent = function () { return (React__default["default"].createElement(React__default["default"].Fragment, null,
                 icon && (React__default["default"].createElement(IconComponent$1, { className: "inner-chevron", width: 16, iconName: icon, color: fill })),
                 React__default["default"].createElement(LabelText, { bold: true, fontSize: "12px", color: fill }, label),
-                badgeTitle && (React__default["default"].createElement(Badge$1, { badgeType: badgeType !== null && badgeType !== void 0 ? badgeType : "success" }, badgeTitle)))); };
+                badgeTitle && (React__default["default"].createElement(Badge$1, { ml: "4px", badgeType: badgeType !== null && badgeType !== void 0 ? badgeType : "success" }, badgeTitle)))); };
             return (React__default["default"].createElement(React.Fragment, { key: "".concat(index, "#").concat(label) },
                 linkType === exports.DropdownMenuItemType.INTERNAL_LINK && (React__default["default"].createElement(DropdownMenuInnerLinkItem, { key: index + label, as: linkComponent, to: href, onClick: function () {
                         setIsOpen(false);

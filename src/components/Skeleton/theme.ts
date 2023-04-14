@@ -1,4 +1,4 @@
-import { variants } from "./types"
+import { variants } from "./types";
 
 export const variantsSkeleton = {
   [variants.CIRCLE]: {
