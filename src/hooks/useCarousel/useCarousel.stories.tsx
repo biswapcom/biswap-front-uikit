@@ -3,6 +3,7 @@ import { useCarousel } from "./useCarousel";
 import { Box, Flex } from "../../components/Box";
 import { BodyText } from "../../components/Typography";
 import { useTheme } from "styled-components";
+import { CarouselButtonsTypes } from "./types";
 
 export default {
   title: "Hooks/useCarousel",
@@ -124,10 +125,11 @@ export const WithNavButtons = () => {
     position: "center",
     isAutoplay: true,
     withNavButtons: true,
-    navPadding: 56,
+    navPadding: 4,
     slideGap: 0,
     speed: 5,
     delay: 3000,
+    // navButtonsType: CarouselButtonsTypes.PRIMARY,
   });
 
   return (
