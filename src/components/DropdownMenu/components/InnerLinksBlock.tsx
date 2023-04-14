@@ -13,6 +13,7 @@ import {
 import IconComponent from "../../Svg/IconComponent";
 import { Text } from "../../Text";
 import Grid from "../../Box/Grid";
+import { Badge } from "../../Badge";
 
 // types
 import { DropdownMenuItemType, InnerLinksBlockProps } from "../types";
@@ -24,7 +25,7 @@ const LabelText = styled(Text)`
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  width: 80px;
+  width: 100%;
 `;
 
 const InnerLinksBlock: FC<InnerLinksBlockProps> = ({
@@ -47,6 +48,8 @@ const InnerLinksBlock: FC<InnerLinksBlockProps> = ({
           mobileTarget,
           target,
           fill = "primary",
+          badgeTitle,
+          badgeType,
         },
         index: number
       ) => {
@@ -63,6 +66,9 @@ const InnerLinksBlock: FC<InnerLinksBlockProps> = ({
             <LabelText bold fontSize={"12px"} color={fill}>
               {label}
             </LabelText>
+            {badgeTitle && (
+              <Badge badgeType={badgeType ?? "success"}>{badgeTitle}</Badge>
+            )}
           </>
         );
         return (
