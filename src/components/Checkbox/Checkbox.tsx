@@ -95,6 +95,7 @@ const Checkbox: FC<CheckboxProps> = ({
   defaultChecked,
   onChange,
   value,
+  disabled,
 }) => {
   return (
     <Wrapper labelOrientation={labelOrientation}>
@@ -105,6 +106,7 @@ const Checkbox: FC<CheckboxProps> = ({
         id={id}
         defaultChecked={defaultChecked}
         onChange={onChange}
+        disabled={disabled}
       />
       {label && labelOrientation && (
         <StyledText
