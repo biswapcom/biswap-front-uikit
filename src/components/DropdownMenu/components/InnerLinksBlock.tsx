@@ -25,7 +25,7 @@ const LabelText = styled(Text)`
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  width: 100%;
+  max-width: 80px;
 `;
 
 const InnerLinksBlock: FC<InnerLinksBlockProps> = ({
@@ -67,7 +67,7 @@ const InnerLinksBlock: FC<InnerLinksBlockProps> = ({
               {label}
             </LabelText>
             {badgeTitle && (
-              <Badge badgeType={badgeType ?? "success"}>{badgeTitle}</Badge>
+              <Badge ml="4px" badgeType={badgeType ?? "success"}>{badgeTitle}</Badge>
             )}
           </>
         );
