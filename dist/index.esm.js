@@ -5438,12 +5438,12 @@ var backgroundVariants = (_a$2 = {},
 var ArrowButton = styled.button(templateObject_1$C || (templateObject_1$C = __makeTemplateObject(["\n  height: 32px;\n  border: 0;\n  box-shadow: none;\n  position: absolute;\n  top: 50%;\n  cursor: pointer;\n  border-radius: 8px;\n  padding: 0 6px;\n"], ["\n  height: 32px;\n  border: 0;\n  box-shadow: none;\n  position: absolute;\n  top: 50%;\n  cursor: pointer;\n  border-radius: 8px;\n  padding: 0 6px;\n"])));
 var WrapperDirectionButton = styled(ArrowButton)(templateObject_3$h || (templateObject_3$h = __makeTemplateObject(["\n  left: ", ";\n  transform: translate(0, -50%);\n  ", "\n  ", "\n"], ["\n  left: ", ";\n  transform: translate(0, -50%);\n  ", "\n  ", "\n"])), function (_a) {
     var navPadding = _a.navPadding;
-    return "".concat(navPadding || 4, "px");
+    return "".concat(navPadding, "px");
 }, variant$1({
     variants: backgroundVariants,
 }), function (_a) {
     var isNextButton = _a.isNextButton, navPadding = _a.navPadding;
-    return isNextButton && css(templateObject_2$m || (templateObject_2$m = __makeTemplateObject(["\n      right: ", ";\n      left: unset;\n    "], ["\n      right: ", ";\n      left: unset;\n    "])), "".concat(navPadding || 4, "px"));
+    return isNextButton && css(templateObject_2$m || (templateObject_2$m = __makeTemplateObject(["\n      right: ", ";\n      left: unset;\n    "], ["\n      right: ", ";\n      left: unset;\n    "])), "".concat(navPadding, "px"));
 });
 var templateObject_1$C, templateObject_2$m, templateObject_3$h;
 
@@ -5480,7 +5480,7 @@ var Container = styled(Flex)(templateObject_4$e || (templateObject_4$e = __makeT
     return (gap === 0 ? "0" : gap > 0 ? "0 -".concat(gap / 2, "px") : "0");
 });
 var useCarousel = function (_a) {
-    var data = _a.data, Slide = _a.Slide, title = _a.title, _b = _a.slidesToScroll, slidesToScroll = _b === void 0 ? 1 : _b, _c = _a.isDraggable, isDraggable = _c === void 0 ? false : _c, _d = _a.withDots, withDots = _d === void 0 ? false : _d, _e = _a.withNavButtons, withNavButtons = _e === void 0 ? false : _e, _f = _a.navButtonsType, navButtonsType = _f === void 0 ? CarouselButtonsTypes.GRAY_OPACITY : _f, _g = _a.navPadding, navPadding = _g === void 0 ? 0 : _g, _h = _a.withNavButtonsHeader, withNavButtonsHeader = _h === void 0 ? false : _h, _j = _a.showNumberBlock, showNumberBlock = _j === void 0 ? false : _j, _k = _a.position, position = _k === void 0 ? "center" : _k, _l = _a.isAutoplay, isAutoplay = _l === void 0 ? false : _l, _m = _a.alignItem, alignItem = _m === void 0 ? "normal" : _m, _o = _a.breakpoints, breakpoints = _o === void 0 ? {} : _o, _p = _a.slideProps, slideProps = _p === void 0 ? {} : _p, _q = _a.loop, loop = _q === void 0 ? true : _q, _r = _a.marginDots, marginDots = _r === void 0 ? "24px" : _r, _s = _a.slideGap, slideGap = _s === void 0 ? 32 : _s, _t = _a.speed, speed = _t === void 0 ? 10 : _t, _u = _a.delay, delay = _u === void 0 ? 8000 : _u;
+    var data = _a.data, Slide = _a.Slide, title = _a.title, _b = _a.slidesToScroll, slidesToScroll = _b === void 0 ? 1 : _b, _c = _a.isDraggable, isDraggable = _c === void 0 ? false : _c, _d = _a.withDots, withDots = _d === void 0 ? false : _d, _e = _a.withNavButtons, withNavButtons = _e === void 0 ? false : _e, _f = _a.navButtonsType, navButtonsType = _f === void 0 ? CarouselButtonsTypes.GRAY_OPACITY : _f, _g = _a.navPadding, navPadding = _g === void 0 ? 4 : _g, _h = _a.withNavButtonsHeader, withNavButtonsHeader = _h === void 0 ? false : _h, _j = _a.showNumberBlock, showNumberBlock = _j === void 0 ? false : _j, _k = _a.position, position = _k === void 0 ? "center" : _k, _l = _a.isAutoplay, isAutoplay = _l === void 0 ? false : _l, _m = _a.alignItem, alignItem = _m === void 0 ? "normal" : _m, _o = _a.breakpoints, breakpoints = _o === void 0 ? {} : _o, _p = _a.slideProps, slideProps = _p === void 0 ? {} : _p, _q = _a.loop, loop = _q === void 0 ? true : _q, _r = _a.marginDots, marginDots = _r === void 0 ? "24px" : _r, _s = _a.slideGap, slideGap = _s === void 0 ? 32 : _s, _t = _a.speed, speed = _t === void 0 ? 10 : _t, _u = _a.delay, delay = _u === void 0 ? 8000 : _u;
     var autoplay = isAutoplay ? [Autoplay({ delay: delay })] : [];
     var isMobile = useMatchBreakpoints().isMobile;
     var _v = useEmblaCarousel({
@@ -5500,7 +5500,6 @@ var useCarousel = function (_a) {
     var scrollPrev = useCallback(function () { return embla && embla.scrollPrev(); }, [embla]);
     var scrollNext = useCallback(function () { return embla && embla.scrollNext(); }, [embla]);
     var scrollTo = useCallback(function (index) { return embla && embla.scrollTo(index); }, [embla]);
-    CarouselButtonsTypes.PRIMARY; CarouselButtonsTypes.WHITE;
     var onSelect = useCallback(function () {
         if (!embla)
             return;

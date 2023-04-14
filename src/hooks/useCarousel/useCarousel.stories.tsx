@@ -125,11 +125,11 @@ export const WithNavButtons = () => {
     position: "center",
     isAutoplay: true,
     withNavButtons: true,
-    navPadding: 56,
+    navPadding: 0,
     slideGap: 0,
     speed: 5,
     delay: 3000,
-    navButtonsType: CarouselButtonsTypes.WHITE,
+    // navButtonsType: CarouselButtonsTypes.PRIMARY,
   });
 
   return (

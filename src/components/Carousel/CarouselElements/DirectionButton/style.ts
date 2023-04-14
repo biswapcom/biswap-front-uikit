@@ -26,7 +26,7 @@ const ArrowButton = styled.button`
 `;
 
 export const WrapperDirectionButton = styled(ArrowButton)<IDirectButtonStyled>`
-  left: ${({ navPadding }) => `${navPadding || 4}px`};
+  left: ${({ navPadding }) => `${navPadding}px`};
   transform: translate(0, -50%);
   ${variant({
     variants: backgroundVariants,
@@ -34,7 +34,7 @@ export const WrapperDirectionButton = styled(ArrowButton)<IDirectButtonStyled>`
   ${({ isNextButton, navPadding }) =>
     isNextButton &&
     css`
-      right: ${`${navPadding || 4}px`};
+      right: ${`${navPadding}px`};
       left: unset;
     `}
 `;

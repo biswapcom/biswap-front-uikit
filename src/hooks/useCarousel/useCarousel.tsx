@@ -89,7 +89,7 @@ export const useCarousel = ({
   withDots = false,
   withNavButtons = false,
   navButtonsType = CarouselButtonsTypes.GRAY_OPACITY,
-  navPadding = 0,
+  navPadding = 4,
   withNavButtonsHeader = false,
   showNumberBlock = false,
   position = "center",
@@ -129,8 +129,6 @@ export const useCarousel = ({
     (index: number) => embla && embla.scrollTo(index),
     [embla]
   );
-
-  const { PRIMARY, WHITE } = CarouselButtonsTypes;
 
   const onSelect = useCallback(() => {
     if (!embla) return;
