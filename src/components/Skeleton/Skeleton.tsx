@@ -1,13 +1,14 @@
 import React, { FC } from "react";
 import styled, { keyframes } from "styled-components";
-import { space, layout } from "styled-system";
+import { space, layout, variant } from "styled-system";
 import { getRgba } from "../../util";
 
 import {
   SkeletonProps,
   animation as ANIMATION,
-  variant as VARIANT,
+  variants as VARIANT,
 } from "./types";
+import {variantsSkeleton} from "./theme";
 
 const waves = keyframes`
    from {
@@ -40,6 +41,9 @@ const Root = styled.div<SkeletonProps>`
 
   ${layout}
   ${space}
+  ${variant({
+    variants: variantsSkeleton,
+  })}
 `;
 
 const Pulse = styled(Root)`
