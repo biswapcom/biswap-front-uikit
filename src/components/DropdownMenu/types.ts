@@ -46,6 +46,8 @@ export interface InternalLink {
   linkType?: DropdownMenuItemType;
   target?: string;
   mobileTarget?: string;
+  badgeType?: string;
+  badgeTitle?: string;
 }
 
 export interface InnerLinksBlockProps {

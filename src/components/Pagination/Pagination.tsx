@@ -79,7 +79,7 @@ const PaginationWrap = styled.div<VariantProps>`
 
       &.previous {
         margin-right: 12px;
-        
+
         ${({ theme }) => theme.mediaQueries.sm} {
           margin-right: 24px;
         }
@@ -99,7 +99,7 @@ const PaginationWrap = styled.div<VariantProps>`
       }
       &.break-me {
         width: 20px;
-        
+
         a {
           width: 20px;
         }

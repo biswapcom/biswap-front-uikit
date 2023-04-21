@@ -160,6 +160,8 @@ export const links: MenuItemsType[] = [
           {
             label: "NFT Staking",
             href: `/nft`,
+            badgeTitle: "Ended",
+            badgeType: "error",
           },
           {
             label: "NFT Boost",

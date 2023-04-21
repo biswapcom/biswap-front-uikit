@@ -8,8 +8,8 @@ import {
   scales,
   StyleToggleProps,
 } from "./types";
-import {space, SpaceProps} from "styled-system";
-import {BodyText} from "../Typography";
+import { space, SpaceProps } from "styled-system";
+import { BodyText } from "../Typography";
 
 const scaleKeyValues = {
   // sm: {},
@@ -54,7 +54,7 @@ export const ToggleWrap = styled.label<IToggleProps>`
     spaceBetween ? "space-between" : "start"};
   opacity: ${({ disabled }) => (disabled ? "0.32" : "1")};
   grid-area: ${({ gridArea }) => gridArea || "initial"};
-  
+
   ${space}
 `;
 export const Handle = styled.div<HandleProps>`
