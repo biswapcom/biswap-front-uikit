@@ -6312,12 +6312,6 @@ var links = [
         showNavBadge: true,
         items: [
             {
-                label: "NFT Launchpad",
-                href: "/launchpad",
-                leftIcon: "LaunchpadOpacity",
-                description: "Buy new unique NFTs",
-            },
-            {
                 label: "NFT Earn",
                 leftIcon: "NFTEarnOpacity",
                 description: "Stake NFT & Get multiple tokens",
@@ -6830,7 +6824,7 @@ styled(Text)(templateObject_11 || (templateObject_11 = __makeTemplateObject(["\n
     var theme = _a.theme, color = _a.color;
     return theme.colors[color];
 });
-var BannerPlacementItem = styled.div(templateObject_12 || (templateObject_12 = __makeTemplateObject(["\n  margin: 0 -16px -16px;\n"], ["\n  margin: 0 -16px -16px;\n"])));
+var BannerPlacementItem = styled.div(templateObject_12 || (templateObject_12 = __makeTemplateObject(["\n  margin: 0 -4px -16px -16px;\n"], ["\n  margin: 0 -4px -16px -16px;\n"])));
 var BorderMobileMenuItem = styled(Box)(templateObject_13 || (templateObject_13 = __makeTemplateObject(["\n  padding: 0 12px;\n  border-left: ", ";\n  ", " {\n    border-left: none;\n  }\n"], ["\n  padding: 0 12px;\n  border-left: ", ";\n  ", " {\n    border-left: none;\n  }\n"])), function (_a) {
     var theme = _a.theme, isHighlighted = _a.isHighlighted;
     return "4px solid ".concat(isHighlighted ? theme.colors.warningPress : "transparent");
@@ -6850,7 +6844,7 @@ var InnerLinksBlock = function (_a) {
             var getLinkContent = function () { return (React.createElement(React.Fragment, null,
                 icon && (React.createElement(IconComponent$1, { className: "inner-chevron", width: 16, iconName: icon, color: fill })),
                 React.createElement(LabelText, { bold: true, fontSize: "12px", color: fill }, label),
-                badgeTitle && (React.createElement(Badge$1, { ml: "4px", badgeType: badgeType !== null && badgeType !== void 0 ? badgeType : "success" }, badgeTitle)))); };
+                badgeTitle && (React.createElement(Badge$1, { badgeType: badgeType !== null && badgeType !== void 0 ? badgeType : "success" }, badgeTitle)))); };
             return (React.createElement(Fragment, { key: "".concat(index, "#").concat(label) },
                 linkType === DropdownMenuItemType.INTERNAL_LINK && (React.createElement(DropdownMenuInnerLinkItem, { key: index + label, as: linkComponent, to: href, onClick: function () {
                         setIsOpen(false);

@@ -212,7 +212,7 @@ export const LinkStatus = styled(Text)<{ color: keyof Colors }>`
 `;
 
 export const BannerPlacementItem = styled.div`
-  margin: 0 -16px -16px;
+  margin: 0 -4px -16px -16px;
 `;
 
 export const BorderMobileMenuItem = styled(Box)<{ isHighlighted?: boolean }>`

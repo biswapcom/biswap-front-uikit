@@ -146,12 +146,6 @@ export const links: MenuItemsType[] = [
     showNavBadge: true,
     items: [
       {
-        label: "NFT Launchpad",
-        href: `/launchpad`,
-        leftIcon: "LaunchpadOpacity",
-        description: "Buy new unique NFTs",
-      },
-      {
         label: "NFT Earn",
         leftIcon: "NFTEarnOpacity",
         description: "Stake NFT & Get multiple tokens",
