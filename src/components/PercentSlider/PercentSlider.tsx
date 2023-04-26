@@ -24,9 +24,14 @@ const PercentSlider: React.FC<PercentSliderProps> = ({
   withTooltip,
   bannerPosition = "bottom",
   darkMode = false,
+  shortcutScale = "sm",
+  shortcutVariant = "primary",
+  numberOfPoints = 5,
   ...props
 }) => {
   const [displayPercent, setDisplayPercent] = useState(value.toString());
+  const [activeShortcutIndex, setActiveShortcutIndex] =
+    useState<number | null>(null);
 
   useEffect(() => {
     if (value !== parseInt(displayPercent)) {
@@ -38,14 +43,10 @@ const PercentSlider: React.FC<PercentSliderProps> = ({
     ({ target }: ChangeEvent<HTMLInputElement>): void => {
       setDisplayPercent(parseInt(target.value).toFixed(2));
       onValueChanged(Number(parseInt(target.value).toFixed(2)));
+      setActiveShortcutIndex(null);
     },
     []
   );
-
-  const setMax = useCallback(() => {
-    setDisplayPercent(max.toString());
-    onValueChanged(max);
-  }, [max]);
 
   const [infoVisible, setInfoVisible] = useState<boolean>(false);
 
@@ -89,16 +90,19 @@ const PercentSlider: React.FC<PercentSliderProps> = ({
             <Text color="white">{value}%</Text>
           </PercentSliderLabel>
         )}
-        {shortcutCheckpoints && (
+        {numberOfPoints && (
           <PointsContainer justifyContent="space-between">
-            {shortcutCheckpoints.map((pointPercent, index) => (
-              <CircleIcon
-                darkMode={darkMode}
-                key={index.toString()}
-                width="10px"
-                color={getCirclesColor(pointPercent)}
-              />
-            ))}
+            {Array.from(Array(numberOfPoints).keys()).map((point) => {
+              const pointPercent = (100 / (numberOfPoints - 1)) * point;
+              return (
+                <CircleIcon
+                  darkMode={darkMode}
+                  key={point.toString()}
+                  width="10px"
+                  color={getCirclesColor(pointPercent)}
+                />
+              );
+            })}
           </PointsContainer>
         )}
       </div>
@@ -107,18 +111,21 @@ const PercentSlider: React.FC<PercentSliderProps> = ({
           {shortcutCheckpoints.map((percent, index) => (
             <Button
               key={index.toString()}
-              scale="sm"
-              variant="primary"
+              scale={shortcutScale}
+              variant={
+                activeShortcutIndex === index || value === percent
+                  ? "primary"
+                  : shortcutVariant
+              }
               onClick={() => {
+                onValueChanged(percent);
                 setDisplayPercent(percent.toString());
+                setActiveShortcutIndex(index);
               }}
             >
               {percent}%
             </Button>
           ))}
-          <Button scale="sm" variant="primary" onClick={setMax}>
-            Max
-          </Button>
         </Flex>
       )}
     </Flex>
