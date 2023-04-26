@@ -4750,7 +4750,7 @@ var PercentSlider = function (_a) {
                 var pointPercent = (100 / (numberOfPoints - 1)) * point;
                 return (React.createElement(CircleIcon, { darkMode: darkMode, key: point.toString(), width: "10px", color: getCirclesColor(pointPercent) }));
             })))),
-        enableShortcuts && shortcutCheckpoints && (React.createElement(Flex, { justifyContent: "space-between", py: "16px" }, shortcutCheckpoints.map(function (percent, index) { return (React.createElement(Button, { key: index.toString(), scale: shortcutScale, variant: activeShortcutIndex === index || value === percent
+        enableShortcuts && shortcutCheckpoints && (React.createElement(Grid, { gridTemplateColumns: "repeat(".concat(shortcutCheckpoints.length, ", 1fr)"), gridColumnGap: "8px", py: "16px" }, shortcutCheckpoints.map(function (percent, index) { return (React.createElement(Button, { key: index.toString(), scale: shortcutScale, variant: activeShortcutIndex === index || value === percent
                 ? "primary"
                 : shortcutVariant, onClick: function () {
                 onValueChanged(percent);

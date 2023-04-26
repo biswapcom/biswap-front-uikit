@@ -8,6 +8,7 @@ import {
 } from "./styles";
 import Button from "../Button/Button";
 import Flex from "../Box/Flex";
+import Grid from "../Box/Grid"
 import CircleIcon from "./CircleIcon";
 import { PercentSliderProps } from "./types";
 import { Text } from "../Text";
@@ -107,7 +108,7 @@ const PercentSlider: React.FC<PercentSliderProps> = ({
         )}
       </div>
       {enableShortcuts && shortcutCheckpoints && (
-        <Flex justifyContent="space-between" py="16px">
+        <Grid gridTemplateColumns={`repeat(${shortcutCheckpoints.length}, 1fr)`} gridColumnGap="8px" py="16px">
           {shortcutCheckpoints.map((percent, index) => (
             <Button
               key={index.toString()}
@@ -126,7 +127,7 @@ const PercentSlider: React.FC<PercentSliderProps> = ({
               {percent}%
             </Button>
           ))}
-        </Flex>
+        </Grid>
       )}
     </Flex>
   );
