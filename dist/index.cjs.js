@@ -4728,8 +4728,9 @@ var CircleIcon = function (props) {
 };
 
 var PercentSlider = function (_a) {
-    var _b = _a.name, name = _b === void 0 ? "slider" : _b, _c = _a.min, min = _c === void 0 ? 0 : _c, _d = _a.max, max = _d === void 0 ? 100 : _d, value = _a.value, onValueChanged = _a.onValueChanged, _e = _a.disabled, disabled = _e === void 0 ? false : _e, enableShortcuts = _a.enableShortcuts, _f = _a.shortcutCheckpoints, shortcutCheckpoints = _f === void 0 ? [0, 25, 50, 75, 100] : _f, withTooltip = _a.withTooltip, _g = _a.bannerPosition, bannerPosition = _g === void 0 ? "bottom" : _g, _h = _a.darkMode, darkMode = _h === void 0 ? false : _h, props = __rest(_a, ["name", "min", "max", "value", "onValueChanged", "disabled", "enableShortcuts", "shortcutCheckpoints", "withTooltip", "bannerPosition", "darkMode"]);
-    var _j = React.useState(value.toString()), displayPercent = _j[0], setDisplayPercent = _j[1];
+    var _b = _a.name, name = _b === void 0 ? "slider" : _b, _c = _a.min, min = _c === void 0 ? 0 : _c, _d = _a.max, max = _d === void 0 ? 100 : _d, value = _a.value, onValueChanged = _a.onValueChanged, _e = _a.disabled, disabled = _e === void 0 ? false : _e, enableShortcuts = _a.enableShortcuts, _f = _a.shortcutCheckpoints, shortcutCheckpoints = _f === void 0 ? [0, 25, 50, 75, 100] : _f, withTooltip = _a.withTooltip, _g = _a.bannerPosition, bannerPosition = _g === void 0 ? "bottom" : _g, _h = _a.darkMode, darkMode = _h === void 0 ? false : _h, _j = _a.shortcutScale, shortcutScale = _j === void 0 ? "sm" : _j, _k = _a.shortcutVariant, shortcutVariant = _k === void 0 ? "primary" : _k, _l = _a.numberOfPoints, numberOfPoints = _l === void 0 ? 5 : _l, props = __rest(_a, ["name", "min", "max", "value", "onValueChanged", "disabled", "enableShortcuts", "shortcutCheckpoints", "withTooltip", "bannerPosition", "darkMode", "shortcutScale", "shortcutVariant", "numberOfPoints"]);
+    var _m = React.useState(value.toString()), displayPercent = _m[0], setDisplayPercent = _m[1];
+    var _o = React.useState(null), activeShortcutIndex = _o[0], setActiveShortcutIndex = _o[1];
     React.useEffect(function () {
         if (value !== parseInt(displayPercent)) {
             setDisplayPercent(value.toString());
@@ -4739,12 +4740,9 @@ var PercentSlider = function (_a) {
         var target = _a.target;
         setDisplayPercent(parseInt(target.value).toFixed(2));
         onValueChanged(Number(parseInt(target.value).toFixed(2)));
+        setActiveShortcutIndex(null);
     }, []);
-    var setMax = React.useCallback(function () {
-        setDisplayPercent(max.toString());
-        onValueChanged(max);
-    }, [max]);
-    var _k = React.useState(false), infoVisible = _k[0], setInfoVisible = _k[1];
+    var _p = React.useState(false), infoVisible = _p[0], setInfoVisible = _p[1];
     var getCirclesColor = function (pointPercent) {
         return value >= pointPercent
             ? "primary"
@@ -4764,14 +4762,19 @@ var PercentSlider = function (_a) {
                 React__default["default"].createElement(Text, { color: "white" },
                     value,
                     "%"))),
-            shortcutCheckpoints && (React__default["default"].createElement(PointsContainer, { justifyContent: "space-between" }, shortcutCheckpoints.map(function (pointPercent, index) { return (React__default["default"].createElement(CircleIcon, { darkMode: darkMode, key: index.toString(), width: "10px", color: getCirclesColor(pointPercent) })); })))),
-        enableShortcuts && shortcutCheckpoints && (React__default["default"].createElement(Flex, { justifyContent: "space-between", py: "16px" },
-            shortcutCheckpoints.map(function (percent, index) { return (React__default["default"].createElement(Button, { key: index.toString(), scale: "sm", variant: "primary", onClick: function () {
-                    setDisplayPercent(percent.toString());
-                } },
-                percent,
-                "%")); }),
-            React__default["default"].createElement(Button, { scale: "sm", variant: "primary", onClick: setMax }, "Max")))));
+            numberOfPoints && (React__default["default"].createElement(PointsContainer, { justifyContent: "space-between" }, Array.from(Array(numberOfPoints).keys()).map(function (point) {
+                var pointPercent = (100 / (numberOfPoints - 1)) * point;
+                return (React__default["default"].createElement(CircleIcon, { darkMode: darkMode, key: point.toString(), width: "10px", color: getCirclesColor(pointPercent) }));
+            })))),
+        enableShortcuts && shortcutCheckpoints && (React__default["default"].createElement(Flex, { justifyContent: "space-between", py: "16px" }, shortcutCheckpoints.map(function (percent, index) { return (React__default["default"].createElement(Button, { key: index.toString(), scale: shortcutScale, variant: activeShortcutIndex === index || value === percent
+                ? "primary"
+                : shortcutVariant, onClick: function () {
+                onValueChanged(percent);
+                setDisplayPercent(percent.toString());
+                setActiveShortcutIndex(index);
+            } },
+            percent,
+            "%")); })))));
 };
 
 var variants$1 = {
