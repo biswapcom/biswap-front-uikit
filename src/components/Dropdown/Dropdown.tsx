@@ -159,8 +159,12 @@ const Dropdown: React.FC<DropdownProps> = ({
         setIsOpen(false);
       }
     }
-    document.addEventListener("mousedown", handleClickOutside, false);
-    document.addEventListener("mousedown", handleClickOutside, false);
+    document.addEventListener("mousedown", handleClickOutside, {
+      passive: true,
+    });
+    document.addEventListener("mousedown", handleClickOutside, {
+      passive: true,
+    });
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };

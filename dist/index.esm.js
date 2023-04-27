@@ -2380,7 +2380,7 @@ var MatchBreakpointsProvider = function (_a) {
                 };
                 // Safari < 14 fix
                 if (mql.addEventListener) {
-                    mql.addEventListener("change", handler, false);
+                    mql.addEventListener("change", handler, { passive: true });
                 }
             }
             return function () {
@@ -2966,8 +2966,12 @@ var Dropdown = function (_a) {
                 setIsOpen(false);
             }
         }
-        document.addEventListener("mousedown", handleClickOutside, false);
-        document.addEventListener("mousedown", handleClickOutside, false);
+        document.addEventListener("mousedown", handleClickOutside, {
+            passive: true,
+        });
+        document.addEventListener("mousedown", handleClickOutside, {
+            passive: true,
+        });
         return function () {
             document.removeEventListener("mousedown", handleClickOutside);
         };
@@ -3860,7 +3864,7 @@ var BaseMenu = function (_a) {
             }
         };
         if (menuElement !== null) {
-            document.addEventListener("click", handleClickOutside, false);
+            document.addEventListener("click", handleClickOutside, { passive: true });
         }
         return function () {
             document.removeEventListener("click", handleClickOutside);
@@ -5581,8 +5585,8 @@ var useOnClickOutside = function (ref, handler) {
             }
             handler(event);
         };
-        document.addEventListener("mousedown", listener, false);
-        document.addEventListener("touchstart", listener, false);
+        document.addEventListener("mousedown", listener, { passive: true });
+        document.addEventListener("touchstart", listener, { passive: true });
         return function () {
             document.removeEventListener("mousedown", listener);
             document.removeEventListener("touchstart", listener);
@@ -6953,8 +6957,12 @@ var DropdownMenu = function (_a) {
             var target = evt.target;
             return target && !(tooltipRef === null || tooltipRef === void 0 ? void 0 : tooltipRef.contains(target)) && setIsOpen(false);
         };
-        targetRef === null || targetRef === void 0 ? void 0 : targetRef.addEventListener("mouseenter", showDropdownMenu, false);
-        targetRef === null || targetRef === void 0 ? void 0 : targetRef.addEventListener("mouseleave", hideDropdownMenu, false);
+        targetRef === null || targetRef === void 0 ? void 0 : targetRef.addEventListener("mouseenter", showDropdownMenu, {
+            passive: true,
+        });
+        targetRef === null || targetRef === void 0 ? void 0 : targetRef.addEventListener("mouseleave", hideDropdownMenu, {
+            passive: true,
+        });
         return function () {
             targetRef === null || targetRef === void 0 ? void 0 : targetRef.removeEventListener("mouseenter", showDropdownMenu);
             targetRef === null || targetRef === void 0 ? void 0 : targetRef.removeEventListener("mouseleave", hideDropdownMenu);
@@ -7081,7 +7089,9 @@ var MobileMenu = function (_a) {
             var target = evt.target;
             target && !(tooltipRef === null || tooltipRef === void 0 ? void 0 : tooltipRef.contains(target)) && setIsOpen(false);
         };
-        targetRef === null || targetRef === void 0 ? void 0 : targetRef.addEventListener("mouseleave", hideDropdownMenu, false);
+        targetRef === null || targetRef === void 0 ? void 0 : targetRef.addEventListener("mouseleave", hideDropdownMenu, {
+            passive: true,
+        });
         return function () {
             targetRef === null || targetRef === void 0 ? void 0 : targetRef.removeEventListener("mouseleave", hideDropdownMenu);
         };
@@ -7447,7 +7457,7 @@ var Menu = function (_a) {
             refPrevOffset.current = currentOffset;
         };
         var throttledHandleScroll = throttle(handleScroll, 200);
-        window.addEventListener("scroll", throttledHandleScroll, false);
+        window.addEventListener("scroll", throttledHandleScroll, { passive: true });
         return function () {
             window.removeEventListener("scroll", throttledHandleScroll);
         };
