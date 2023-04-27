@@ -104,7 +104,7 @@ export const MatchBreakpointsProvider: FC<PropsWithChildren> = ({
 
         // Safari < 14 fix
         if (mql.addEventListener) {
-          mql.addEventListener("change", handler, { passive: false });
+          mql.addEventListener("change", handler, false);
         }
       }
 

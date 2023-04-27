@@ -245,9 +245,7 @@ const Menu: FC<PropsWithChildren<NavProps>> = ({
     };
     const throttledHandleScroll = throttle(handleScroll, 200);
 
-    window.addEventListener("scroll", throttledHandleScroll, {
-      passive: false,
-    });
+    window.addEventListener("scroll", throttledHandleScroll, false);
     return () => {
       window.removeEventListener("scroll", throttledHandleScroll);
     };

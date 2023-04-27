@@ -50,9 +50,7 @@ const BaseMenu: React.FC<BaseMenuProps> = ({
       }
     };
     if (menuElement !== null) {
-      document.addEventListener("click", handleClickOutside, {
-        passive: false,
-      });
+      document.addEventListener("click", handleClickOutside, false);
     }
     return () => {
       document.removeEventListener("click", handleClickOutside);

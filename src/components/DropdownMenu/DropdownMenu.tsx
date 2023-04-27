@@ -48,12 +48,8 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
       return target && !tooltipRef?.contains(target) && setIsOpen(false);
     };
 
-    targetRef?.addEventListener("mouseenter", showDropdownMenu, {
-      passive: false,
-    });
-    targetRef?.addEventListener("mouseleave", hideDropdownMenu, {
-      passive: false,
-    });
+    targetRef?.addEventListener("mouseenter", showDropdownMenu, false);
+    targetRef?.addEventListener("mouseleave", hideDropdownMenu, false);
 
     return () => {
       targetRef?.removeEventListener("mouseenter", showDropdownMenu);
