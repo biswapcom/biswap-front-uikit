@@ -2985,9 +2985,6 @@ var Dropdown = function (_a) {
         document.addEventListener("mousedown", handleClickOutside, {
             passive: true,
         });
-        document.addEventListener("mousedown", handleClickOutside, {
-            passive: true,
-        });
         return function () {
             document.removeEventListener("mousedown", handleClickOutside);
         };
