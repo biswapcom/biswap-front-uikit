@@ -13,8 +13,8 @@ const useOnClickOutside = (
         }
         handler(event);
       };
-      document.addEventListener("mousedown", listener);
-      document.addEventListener("touchstart", listener);
+      document.addEventListener("mousedown", listener, { passive: false });
+      document.addEventListener("touchstart", listener, { passive: false });
       return () => {
         document.removeEventListener("mousedown", listener);
         document.removeEventListener("touchstart", listener);

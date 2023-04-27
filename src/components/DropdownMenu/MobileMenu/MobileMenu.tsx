@@ -92,7 +92,9 @@ const MobileMenu: FC<MobileMenuProps> = ({
       target && !tooltipRef?.contains(target) && setIsOpen(false);
     };
 
-    targetRef?.addEventListener("mouseleave", hideDropdownMenu);
+    targetRef?.addEventListener("mouseleave", hideDropdownMenu, {
+      passive: false,
+    });
 
     return () => {
       targetRef?.removeEventListener("mouseleave", hideDropdownMenu);
