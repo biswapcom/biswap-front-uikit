@@ -362,6 +362,9 @@ export { default as LanguageIcon } from "./Icons/Language/Language";
 //gift
 export { default as GiftIcon } from "./Icons/Gift/Gift";
 
+//Route
+export { default as RouteIcon } from "./Icons/Route/Route";
+
 // perpetual
 export * from "./Icons/Menu/Perpetual";
 

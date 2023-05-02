@@ -30,10 +30,13 @@ const SliderVariant = ({ initialValue }: { initialValue: number }) => {
         onValueChanged={setValue}
       />
       <PercentSlider
-        withTooltip
+        // withTooltip
         name="slider"
         value={value}
         onValueChanged={setValue}
+        enableShortcuts
+        shortcutVariant="tertiaryOut"
+        shortcutCheckpoints={[25, 50, 75, 100]}
       />
     </Box>
   );
