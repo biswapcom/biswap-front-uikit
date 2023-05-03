@@ -211,6 +211,7 @@ export { default as LockIcon } from "./Icons/Lock/Lock";
 export { default as UnlockIcon } from "./Icons/Lock/Unlock";
 export { default as LanguageIcon } from "./Icons/Language/Language";
 export { default as GiftIcon } from "./Icons/Gift/Gift";
+export { default as RouteIcon } from "./Icons/Route/Route";
 export * from "./Icons/Menu/Perpetual";
 export { default as Svg } from "./Svg";
 export type { SvgProps } from "./types";
