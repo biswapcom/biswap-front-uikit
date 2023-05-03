@@ -75,8 +75,8 @@
     "react-transition-group": "4.4.5",
     "storybook-addon-styled-component-theme": "^2.0.0",
     "styled-system": "5.1.5",
-    "embla-carousel-autoplay": "7.0.5",
-    "embla-carousel-react": "7.0.5"
+    "embla-carousel-autoplay": "7.1.0",
+    "embla-carousel-react": "7.1.0"
   },
   "publishConfig": {
     "access": "public"
