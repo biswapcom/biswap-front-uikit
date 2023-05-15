@@ -67,7 +67,7 @@ const Faqs: FC<IProps> = ({
         handleToggle={handleToggle}
         variant={variant}
       >
-        <Description scale="size14" p="0 16px 16px" variant={variant}>
+        <Description as="div" scale="size14" p="0 16px 16px" variant={variant}>
           {item.description}
         </Description>
       </FaqAccordion>
