@@ -67,7 +67,9 @@ const InnerLinksBlock: FC<InnerLinksBlockProps> = ({
               {label}
             </LabelText>
             {badgeTitle && (
-              <Badge ml="4px" badgeType={badgeType ?? "success"}>{badgeTitle}</Badge>
+              <Badge ml="4px" badgeType={badgeType ?? "success"}>
+                {badgeTitle}
+              </Badge>
             )}
           </>
         );
