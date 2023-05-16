@@ -2480,7 +2480,7 @@ var StyledButtonMenu = styled.div(templateObject_6$c || (templateObject_6$c = __
 }, function (_a) {
     var disabled = _a.disabled, theme = _a.theme, variant = _a.variant;
     if (disabled) {
-        return "\n        opacity: 0.5;\n\n        & > button:disabled {\n          background-color: transparent;\n          color: ".concat(variant === variants$6.DARK
+        return "\n        opacity: 0.32;\n\n        & > button:disabled {\n          background-color: transparent;\n          color: ".concat(variant === variants$6.DARK
             ? theme.colors.pastelBlue
             : theme.colors.gray900, ";\n        }\n    ");
     }
@@ -2533,7 +2533,7 @@ var ButtonMenu = function (_a) {
         }
     }, [widthsArr, activeButtonIndex, isDesktop, isMobile, isTablet]);
     return (React.createElement(Wrapper$h, __assign({ flatBottom: flatBottom, flatTop: flatTop, fullWidth: fullWidth, withoutBackground: withoutBackground, variant: variant, scrollX: scrollX }, props),
-        !disabled && (React.createElement(Selection$1, { flatTop: flatTop, flatBottom: flatBottom, scale: scale, width: widthsArr[activeIndex], offset: getOffset(blockOffset, flatTop || flatBottom), variant: variant, withoutAnimation: withoutAnimation })),
+        React.createElement(Selection$1, { flatTop: flatTop, flatBottom: flatBottom, scale: scale, width: widthsArr[activeIndex], offset: getOffset(blockOffset, flatTop || flatBottom), variant: variant, withoutAnimation: withoutAnimation }),
         React.createElement(StyledButtonMenu, __assign({ disabled: disabled, variant: variant, fullWidth: fullWidth, withoutBackground: withoutBackground, equalElementWidth: equalElementWidth }, props), Children.map(children, function (child, index) {
             return cloneElement(child, {
                 isActive: activeIndex === index,

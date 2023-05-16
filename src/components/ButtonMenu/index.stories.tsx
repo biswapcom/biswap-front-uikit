@@ -37,7 +37,7 @@ export const Default: React.FC = () => {
         <ButtonMenu
           disabled
           variant="light"
-          activeIndex={index}
+          activeIndex={3}
           onItemClick={handleClick}
         >
           <ButtonMenuItem>Dark sm 1</ButtonMenuItem>

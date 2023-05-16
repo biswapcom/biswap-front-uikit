@@ -103,7 +103,7 @@ const StyledButtonMenu = styled.div<StyledButtonMenuProps>`
   ${({ disabled, theme, variant }) => {
     if (disabled) {
       return `
-        opacity: 0.5;
+        opacity: 0.32;
 
         & > button:disabled {
           background-color: transparent;
@@ -215,17 +215,15 @@ const ButtonMenu: React.FC<ButtonMenuProps> = ({
       scrollX={scrollX}
       {...props}
     >
-      {!disabled && (
-        <Selection
-          flatTop={flatTop}
-          flatBottom={flatBottom}
-          scale={scale}
-          width={widthsArr[activeIndex]}
-          offset={getOffset(blockOffset, flatTop || flatBottom)}
-          variant={variant}
-          withoutAnimation={withoutAnimation}
-        />
-      )}
+      <Selection
+        flatTop={flatTop}
+        flatBottom={flatBottom}
+        scale={scale}
+        width={widthsArr[activeIndex]}
+        offset={getOffset(blockOffset, flatTop || flatBottom)}
+        variant={variant}
+        withoutAnimation={withoutAnimation}
+      />
       <StyledButtonMenu
         disabled={disabled}
         variant={variant}
