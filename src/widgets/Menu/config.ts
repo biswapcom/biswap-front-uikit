@@ -388,11 +388,6 @@ export const socials = [
     icon: "CoinMarketCapIcon",
     href: "https://coinmarketcap.com/community/profile/Biswap_DEX/",
   },
-  {
-    label: "Quora",
-    icon: "QuoraIcon",
-    href: "https://www.quora.com/profile/Biswap-2",
-  },
 ];
 
 export const BSWPriceLabel = "BSW";
