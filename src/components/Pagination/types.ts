@@ -14,4 +14,5 @@ export interface PaginationProps extends VariantProps {
   handlePageClick?: (selectedItem: { selected: number }) => void;
   marginPagesDisplayed?: number;
   pageRangeDisplayed?: number;
+  forcePage?: number;
 }

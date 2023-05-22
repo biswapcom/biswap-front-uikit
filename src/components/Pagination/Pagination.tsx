@@ -128,6 +128,7 @@ const Pagination: FC<PaginationProps> = ({
   handlePageClick,
   marginPagesDisplayed = 1,
   pageRangeDisplayed = 2,
+  forcePage = 0,
 }) => {
   const paginationClass = classNames("paginate-wrapper", {
     paginate__light: isLight,
@@ -143,6 +144,7 @@ const Pagination: FC<PaginationProps> = ({
         nextLabel={
           <ChevronRightIcon color={variant === "light" ? "primary" : "white"} />
         }
+        forcePage={forcePage}
         breakLabel="..."
         breakClassName="break-me"
         pageCount={pageCount}

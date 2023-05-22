@@ -327,6 +327,10 @@ export { default as AuditSearchOpacityIcon } from "./Icons/Menu/Audit/AuditSearc
 export { default as BlogSolidIcon } from "./Icons/Menu/Blog/BlogSolid";
 export { default as BlogOpacityIcon } from "./Icons/Menu/Blog/BlogOpacity";
 
+//limit order
+export { default as LimitOrderSolidIcon } from "./Icons/Menu/LimitOrder/LimitOrderSolid";
+export { default as LimitOrderOpacityIcon } from "./Icons/Menu/LimitOrder/LimitOrderOpacity";
+
 //Socials
 export { default as InstagramIcon } from "./Icons/Socials/Instagram";
 export { default as MediumIcon } from "./Icons/Socials/Medium";

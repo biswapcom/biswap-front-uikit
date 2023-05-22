@@ -14,4 +14,5 @@ export interface PaginationProps extends VariantProps {
     }) => void;
     marginPagesDisplayed?: number;
     pageRangeDisplayed?: number;
+    forcePage?: number;
 }
