@@ -2002,39 +2002,39 @@ var variants$7 = {
     TEXT_DARK: "textDark",
 };
 
-var _a$e, _b$7;
-var scaleVariants$3 = (_a$e = {},
-    _a$e[scales$a.XL] = {
+var _a$f, _b$7;
+var scaleVariants$3 = (_a$f = {},
+    _a$f[scales$a.XL] = {
         height: "48px",
         fontSize: "16px",
         padding: "0 24px",
         borderRadius: "10px",
     },
-    _a$e[scales$a.LG] = {
+    _a$f[scales$a.LG] = {
         height: "40px",
         padding: "0 16px",
         fontSize: "14px",
         borderRadius: "8px",
     },
-    _a$e[scales$a.MD] = {
+    _a$f[scales$a.MD] = {
         height: "32px",
         padding: "0 12px",
         fontSize: "12px",
         borderRadius: "8px",
     },
-    _a$e[scales$a.SM] = {
+    _a$f[scales$a.SM] = {
         height: "24px",
         padding: "0 8px",
         fontSize: "12px",
         borderRadius: "6px",
     },
-    _a$e[scales$a.XS] = {
+    _a$f[scales$a.XS] = {
         height: "20px",
         padding: "0 8px",
         fontSize: "12px",
         borderRadius: "6px",
     },
-    _a$e);
+    _a$f);
 var styleVariants$3 = (_b$7 = {},
     _b$7[variants$7.PRIMARY] = {
         backgroundColor: "primary",
@@ -2568,39 +2568,39 @@ var ButtonMenu = function (_a) {
 };
 var templateObject_1$1c, templateObject_2$F, templateObject_3$v, templateObject_4$q, templateObject_5$j, templateObject_6$c, templateObject_7$8, templateObject_8$7, templateObject_9$3, templateObject_10$3;
 
-var _a$d, _b$6;
-var scaleVariants$2 = (_a$d = {},
-    _a$d[scales$9.XL] = {
+var _a$e, _b$6;
+var scaleVariants$2 = (_a$e = {},
+    _a$e[scales$9.XL] = {
         height: "48px",
         padding: "0 24px",
         borderRadius: "10px",
         fontSize: "16px",
     },
-    _a$d[scales$9.LG] = {
+    _a$e[scales$9.LG] = {
         height: "40px",
         padding: "0 16px",
         fontSize: "14px",
         borderRadius: "8px",
     },
-    _a$d[scales$9.MD] = {
+    _a$e[scales$9.MD] = {
         height: "32px",
         padding: "0 12px",
         fontSize: "12px",
         borderRadius: "8px",
     },
-    _a$d[scales$9.SM] = {
+    _a$e[scales$9.SM] = {
         height: "24px",
         padding: "0 8px",
         fontSize: "12px",
         borderRadius: "6px",
     },
-    _a$d[scales$9.XS] = {
+    _a$e[scales$9.XS] = {
         height: "20px",
         padding: "0 8px",
         fontSize: "12px",
         borderRadius: "6px",
     },
-    _a$d);
+    _a$e);
 var styleVariants$2 = (_b$6 = {},
     _b$6[variants$6.DARK] = {
         color: "white",
@@ -2766,18 +2766,18 @@ var variants$5 = {
     LIGHT: "light",
 };
 
-var _a$c, _b$5, _c$3, _d$2, _e;
-var scaleVariantsContainer = (_a$c = {},
-    _a$c[scales$7.LG] = {
+var _a$d, _b$5, _c$3, _d$2, _e;
+var scaleVariantsContainer = (_a$d = {},
+    _a$d[scales$7.LG] = {
         height: "48px",
     },
-    _a$c[scales$7.MD] = {
+    _a$d[scales$7.MD] = {
         height: "40px",
     },
-    _a$c[scales$7.SM] = {
+    _a$d[scales$7.SM] = {
         height: "32px",
     },
-    _a$c);
+    _a$d);
 var scaleVariantsTop = (_b$5 = {},
     _b$5[scales$7.LG] = {
         padding: "0 12px 0 24px",
@@ -3030,25 +3030,25 @@ var scales$6 = {
     XXL: "xxl",
 };
 
-var _a$b;
-var style = (_a$b = {},
-    _a$b[scales$6.MD] = {
+var _a$c;
+var style = (_a$c = {},
+    _a$c[scales$6.MD] = {
         fontSize: "20px",
         fontSizeLg: "20px",
     },
-    _a$b[scales$6.LG] = {
+    _a$c[scales$6.LG] = {
         fontSize: "24px",
         fontSizeLg: "24px",
     },
-    _a$b[scales$6.XL] = {
+    _a$c[scales$6.XL] = {
         fontSize: "32px",
         fontSizeLg: "40px",
     },
-    _a$b[scales$6.XXL] = {
+    _a$c[scales$6.XXL] = {
         fontSize: "48px",
         fontSizeLg: "64px",
     },
-    _a$b);
+    _a$c);
 var Heading = styled__default["default"](Text).attrs({ bold: true })(templateObject_1$18 || (templateObject_1$18 = __makeTemplateObject(["\n  font-size: ", ";\n  font-weight: 600;\n  line-height: 1.1;\n\n  ", " {\n    font-size: ", ";\n  }\n"], ["\n  font-size: ", ";\n  font-weight: 600;\n  line-height: 1.1;\n\n  ", " {\n    font-size: ", ";\n  }\n"])), function (_a) {
     var scale = _a.scale;
     return style[scale || scales$6.MD].fontSize;
@@ -3079,9 +3079,9 @@ var variants$4 = {
     TRANSPARENT: "transparent",
 };
 
-var _a$a, _b$4, _c$2;
-var scaleVariants$1 = (_a$a = {},
-    _a$a[scales$5.LG] = {
+var _a$b, _b$4, _c$2;
+var scaleVariants$1 = (_a$b = {},
+    _a$b[scales$5.LG] = {
         borderRadius: "10px",
         height: "48px",
         fontSize: "16px",
@@ -3090,7 +3090,7 @@ var scaleVariants$1 = (_a$a = {},
             width: "24px",
         },
     },
-    _a$a[scales$5.MD] = {
+    _a$b[scales$5.MD] = {
         borderRadius: "8px",
         height: "40px",
         fontSize: "14px",
@@ -3099,7 +3099,7 @@ var scaleVariants$1 = (_a$a = {},
             width: "20px",
         },
     },
-    _a$a[scales$5.SM] = {
+    _a$b[scales$5.SM] = {
         borderRadius: "8px",
         height: "32px",
         fontSize: "12px",
@@ -3108,7 +3108,7 @@ var scaleVariants$1 = (_a$a = {},
             width: "16px",
         },
     },
-    _a$a);
+    _a$b);
 var styleVariants$1 = (_b$4 = {},
     _b$4[variants$4.LIGHT] = {
         backgroundColor: "gray300",
@@ -3422,27 +3422,27 @@ var variants$3 = {
     DARK: "dark",
 };
 
-var _a$9, _b$3;
-var scaleVariants = (_a$9 = {},
-    _a$9[scales$4.LG] = {
+var _a$a, _b$3;
+var scaleVariants = (_a$a = {},
+    _a$a[scales$4.LG] = {
         fontSize: "16px",
         svg: {
             width: "16px",
         },
     },
-    _a$9[scales$4.MD] = {
+    _a$a[scales$4.MD] = {
         fontSize: "14px",
         svg: {
             width: "14px",
         },
     },
-    _a$9[scales$4.SM] = {
+    _a$a[scales$4.SM] = {
         fontSize: "12px",
         svg: {
             width: "12px",
         },
     },
-    _a$9);
+    _a$a);
 var styleVariants = (_b$3 = {},
     _b$3[variants$3.LIGHT] = {
         color: "primary",
@@ -3783,21 +3783,21 @@ var variants$2 = {
     LG: "lg",
 };
 
-var _a$8;
-var variantsSkeleton = (_a$8 = {},
-    _a$8[variants$2.CIRCLE] = {
+var _a$9;
+var variantsSkeleton = (_a$9 = {},
+    _a$9[variants$2.CIRCLE] = {
         borderRadius: "50%",
     },
-    _a$8[variants$2.SM] = {
+    _a$9[variants$2.SM] = {
         borderRadius: "4px",
     },
-    _a$8[variants$2.MD] = {
+    _a$9[variants$2.MD] = {
         borderRadius: "16px",
     },
-    _a$8[variants$2.LG] = {
+    _a$9[variants$2.LG] = {
         borderRadius: "24px",
     },
-    _a$8);
+    _a$9);
 
 var waves = styled.keyframes(templateObject_1$_ || (templateObject_1$_ = __makeTemplateObject(["\n   from {\n        left: -150px;\n    }\n    to   {\n        left: 100%;\n    }\n"], ["\n   from {\n        left: -150px;\n    }\n    to   {\n        left: 100%;\n    }\n"])));
 var pulse = styled.keyframes(templateObject_2$x || (templateObject_2$x = __makeTemplateObject(["\n  0% {\n    opacity: 0.1;\n  }\n  50% {\n    opacity: 0.3;\n  }\n  100% {\n    opacity: 0.1;\n  }\n"], ["\n  0% {\n    opacity: 0.1;\n  }\n  50% {\n    opacity: 0.3;\n  }\n  100% {\n    opacity: 0.1;\n  }\n"])));
@@ -4011,27 +4011,27 @@ var tabVariants = {
     LIGHT: "light",
 };
 
-var _a$7, _b$2, _c$1, _d$1;
-var barItemScaleVariant = (_a$7 = {},
-    _a$7[tabsScales.LG] = {
+var _a$8, _b$2, _c$1, _d$1;
+var barItemScaleVariant = (_a$8 = {},
+    _a$8[tabsScales.LG] = {
         height: "40px",
         padding: "0 16px",
         fontSize: "16px",
         lineHeight: "24px",
     },
-    _a$7[tabsScales.MD] = {
+    _a$8[tabsScales.MD] = {
         height: "32px",
         padding: "0 12px",
         fontSize: "14px",
         lineHeight: "20px",
     },
-    _a$7[tabsScales.SM] = {
+    _a$8[tabsScales.SM] = {
         height: "24px",
         padding: "0 8px",
         fontSize: "12px",
         lineHeight: "16px",
     },
-    _a$7);
+    _a$8);
 var barVariants = (_b$2 = {},
     _b$2[tabVariants.DARK] = {
         color: "pastelBlue",
@@ -4226,41 +4226,41 @@ var scales$1 = {
     SIZE10: "size10",
 };
 
-var _a$6;
-var headTextScaleMap = (_a$6 = {},
-    _a$6[scales$1.SIZE40] = {
+var _a$7;
+var headTextScaleMap = (_a$7 = {},
+    _a$7[scales$1.SIZE40] = {
         fontSize: "40px",
         lineHeight: "48px",
     },
-    _a$6[scales$1.SIZE32] = {
+    _a$7[scales$1.SIZE32] = {
         fontSize: "32px",
         lineHeight: "40px",
     },
-    _a$6[scales$1.SIZE24] = {
+    _a$7[scales$1.SIZE24] = {
         fontSize: "24px",
         lineHeight: "32px",
     },
-    _a$6[scales$1.SIZE20] = {
+    _a$7[scales$1.SIZE20] = {
         fontSize: "20px",
         lineHeight: "28px",
     },
-    _a$6[scales$1.SIZE16] = {
+    _a$7[scales$1.SIZE16] = {
         fontSize: "16px",
         lineHeight: "24px",
     },
-    _a$6[scales$1.SIZE14] = {
+    _a$7[scales$1.SIZE14] = {
         fontSize: "14px",
         lineHeight: "20px",
     },
-    _a$6[scales$1.SIZE12] = {
+    _a$7[scales$1.SIZE12] = {
         fontSize: "12px",
         lineHeight: "16px",
     },
-    _a$6[scales$1.SIZE10] = {
+    _a$7[scales$1.SIZE10] = {
         fontSize: "10px",
         lineHeight: "12px",
     },
-    _a$6);
+    _a$7);
 var HeadText = styled__default["default"](Text).attrs({ bold: true })(templateObject_1$U || (templateObject_1$U = __makeTemplateObject(["\n  font-size: ", ";\n  line-height: ", ";\n  font-weight: 600;\n  white-space: ", ";\n"], ["\n  font-size: ", ";\n  line-height: ", ";\n  font-weight: 600;\n  white-space: ", ";\n"])), function (_a) {
     var scale = _a.scale;
     return headTextScaleMap[scale || scales$1.SIZE32].fontSize;
@@ -4287,41 +4287,41 @@ var scales = {
     SIZE10: "size10",
 };
 
-var _a$5;
-var bodyTextScaleMap = (_a$5 = {},
-    _a$5[scales.SIZE40] = {
+var _a$6;
+var bodyTextScaleMap = (_a$6 = {},
+    _a$6[scales.SIZE40] = {
         fontSize: "40px",
         lineHeight: "48px",
     },
-    _a$5[scales.SIZE32] = {
+    _a$6[scales.SIZE32] = {
         fontSize: "32px",
         lineHeight: "40px",
     },
-    _a$5[scales.SIZE24] = {
+    _a$6[scales.SIZE24] = {
         fontSize: "24px",
         lineHeight: "32px",
     },
-    _a$5[scales.SIZE20] = {
+    _a$6[scales.SIZE20] = {
         fontSize: "20px",
         lineHeight: "28px",
     },
-    _a$5[scales.SIZE16] = {
+    _a$6[scales.SIZE16] = {
         fontSize: "16px",
         lineHeight: "24px",
     },
-    _a$5[scales.SIZE14] = {
+    _a$6[scales.SIZE14] = {
         fontSize: "14px",
         lineHeight: "20px",
     },
-    _a$5[scales.SIZE12] = {
+    _a$6[scales.SIZE12] = {
         fontSize: "12px",
         lineHeight: "16px",
     },
-    _a$5[scales.SIZE10] = {
+    _a$6[scales.SIZE10] = {
         fontSize: "10px",
         lineHeight: "12px",
     },
-    _a$5);
+    _a$6);
 var getScalesAttributes = function (_a) {
     var _b;
     var scale = _a.scale;
@@ -4449,6 +4449,73 @@ Toggle.defaultProps = {
     variant: "light",
 };
 
+var badgeTypes$1 = {
+    SUCCESS: "success",
+    ERROR: "error",
+    ACTIVE: "active",
+    NOT_ACTIVE: "notActive",
+    PRIMARY: "primary",
+    WARNING: "warning",
+    CORE: "core",
+    LIGHT: "light",
+    BOOST: "boost",
+    WARNING_OPACITY: "warningOpacity",
+};
+
+var _a$5;
+var BadgeTypesContainer$1 = (_a$5 = {},
+    _a$5[badgeTypes$1.SUCCESS] = {
+        backgroundColor: "success",
+        color: "white",
+        border: "0",
+    },
+    _a$5[badgeTypes$1.ERROR] = {
+        backgroundColor: "secondary",
+        color: "white",
+        border: "0",
+    },
+    _a$5[badgeTypes$1.WARNING] = {
+        backgroundColor: "warning",
+        color: "dark800",
+        border: "0",
+    },
+    _a$5[badgeTypes$1.PRIMARY] = {
+        backgroundColor: "primary",
+        color: "white",
+        border: "0",
+    },
+    _a$5[badgeTypes$1.BOOST] = {
+        backgroundColor: "boost",
+        color: "white",
+        border: "0",
+    },
+    _a$5[badgeTypes$1.ACTIVE] = {
+        backgroundColor: "successOpacity",
+        color: "success",
+        border: "1px solid transparent",
+    },
+    _a$5[badgeTypes$1.NOT_ACTIVE] = {
+        backgroundColor: "secondaryOpacity",
+        color: "secondary",
+        border: "1px solid transparent",
+    },
+    _a$5[badgeTypes$1.CORE] = {
+        backgroundColor: "primaryOpacity",
+        color: "primary",
+        border: "1px solid transparent",
+    },
+    _a$5[badgeTypes$1.WARNING_OPACITY] = {
+        backgroundColor: "warningOpacity",
+        color: "warning",
+        border: "1px solid transparent",
+    },
+    _a$5[badgeTypes$1.LIGHT] = {
+        backgroundColor: "gray200",
+        color: "dark800",
+        border: "0",
+    },
+    _a$5);
+
 var getBadgeBg = function (_a) {
     var _b = _a.badgeType, badgeType = _b === void 0 ? "light" : _b, theme = _a.theme;
     if (badgeType === "active") {
@@ -4512,7 +4579,7 @@ var getBadgeColor = function (_a) {
     return theme.colors.white;
 };
 // interface BadgeProps{}
-var Wrapper$c = styled__default["default"].div(templateObject_1$R || (templateObject_1$R = __makeTemplateObject(["\n  display: inline-flex;\n  justify-content: center;\n  align-items: center;\n  padding: ", ";\n  background: ", ";\n  color: ", ";\n  border-radius: 16px;\n  height: ", ";\n  font-size: ", ";\n  font-weight: 600;\n\n  ", "\n"], ["\n  display: inline-flex;\n  justify-content: center;\n  align-items: center;\n  padding: ", ";\n  background: ", ";\n  color: ", ";\n  border-radius: 16px;\n  height: ", ";\n  font-size: ", ";\n  font-weight: 600;\n\n  ", "\n"])), function (_a) {
+var Wrapper$c = styled__default["default"].div(templateObject_1$R || (templateObject_1$R = __makeTemplateObject(["\n  display: inline-flex;\n  justify-content: center;\n  align-items: center;\n  padding: ", ";\n  // background: ", ";\n  // color: ", ";\n  border-radius: 16px;\n  height: ", ";\n  font-size: ", ";\n  font-weight: 600;\n\n  ", "\n\n  ", "\n"], ["\n  display: inline-flex;\n  justify-content: center;\n  align-items: center;\n  padding: ", ";\n  // background: ", ";\n  // color: ", ";\n  border-radius: 16px;\n  height: ", ";\n  font-size: ", ";\n  font-weight: 600;\n\n  ", "\n\n  ", "\n"])), function (_a) {
     var isIcon = _a.isIcon, isLarge = _a.isLarge;
     return !isLarge
         ? isIcon === "left"
@@ -4527,7 +4594,10 @@ var Wrapper$c = styled__default["default"].div(templateObject_1$R || (templateOb
 }, function (_a) {
     var fontSize = _a.fontSize;
     return fontSize || "10px";
-}, styledSystem.space);
+}, styledSystem.space, styledSystem.variant({
+    prop: "badgeType",
+    variants: BadgeTypesContainer$1,
+}));
 var Badge$1 = function (_a) {
     var children = _a.children, badgeType = _a.badgeType, fontSize = _a.fontSize, fontWeight = _a.fontWeight, isIcon = _a.isIcon, isLarge = _a.isLarge, props = __rest(_a, ["children", "badgeType", "fontSize", "fontWeight", "isIcon", "isLarge"]);
     return (React__default["default"].createElement(Wrapper$c, __assign({ badgeType: badgeType, isIcon: isIcon, isLarge: isLarge, fontSize: fontSize, fontWeight: fontWeight }, props), children));
