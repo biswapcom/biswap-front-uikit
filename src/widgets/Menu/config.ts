@@ -47,6 +47,9 @@ export const links: MenuItemsType[] = [
         rightIconFill: "primary",
         description: "Item description",
         href: "/liquidity",
+        disabled: true,
+        badgeType: "core",
+        badgeTitle: "Modification",
       },
       {
         label: "Liquidity",

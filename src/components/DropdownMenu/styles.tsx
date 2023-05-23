@@ -19,7 +19,7 @@ const getTextColor = ({
   theme: DefaultTheme;
   $isActive: boolean;
 }) => {
-  if (disabled) return theme.colors.gray900;
+  if (disabled) return theme.colors.gray700;
   if ($isActive) return theme.colors.primary;
 
   return theme.colors.backgroundDark;

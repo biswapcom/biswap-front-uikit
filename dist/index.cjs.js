@@ -6323,6 +6323,9 @@ var links = [
                 rightIconFill: "primary",
                 description: "Item description",
                 href: "/liquidity",
+                disabled: true,
+                badgeType: "core",
+                badgeTitle: "Modification",
             },
             {
                 label: "Liquidity",
@@ -6869,7 +6872,7 @@ var templateObject_1$h, templateObject_2$9;
 var getTextColor = function (_a) {
     var $isActive = _a.$isActive, disabled = _a.disabled, theme = _a.theme;
     if (disabled)
-        return theme.colors.gray900;
+        return theme.colors.gray700;
     if ($isActive)
         return theme.colors.primary;
     return theme.colors.backgroundDark;
@@ -7004,19 +7007,22 @@ var getBG = function (_a) {
             return theme.colors.primary;
     }
 };
-var IconComponentWrap = styled__default["default"].div(templateObject_1$e || (templateObject_1$e = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background: ", ";\n  width: 40px;\n  height: 40px;\n  border-radius: 8px;\n  align-self: flex-start;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background: ", ";\n  width: 40px;\n  height: 40px;\n  border-radius: 8px;\n  align-self: flex-start;\n"])), getBG);
+var IconComponentWrap = styled__default["default"].div(templateObject_1$e || (templateObject_1$e = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background: ", ";\n  width: 40px;\n  height: 40px;\n  border-radius: 8px;\n  align-self: flex-start;\n  opacity: ", ";\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background: ", ";\n  width: 40px;\n  height: 40px;\n  border-radius: 8px;\n  align-self: flex-start;\n  opacity: ", ";\n"])), getBG, function (_a) {
+    var disabled = _a.disabled;
+    return disabled ? 0.32 : 1;
+});
 var MenuItemContent = function (_a) {
-    var leftIcon = _a.leftIcon, label = _a.label, description = _a.description, rightIcon = _a.rightIcon, _b = _a.fill, fill = _b === void 0 ? "primary" : _b, badgeTitle = _a.badgeTitle, badgeType = _a.badgeType;
+    var leftIcon = _a.leftIcon, label = _a.label, description = _a.description, rightIcon = _a.rightIcon, _b = _a.fill, fill = _b === void 0 ? "primary" : _b, badgeTitle = _a.badgeTitle, badgeType = _a.badgeType, disabled = _a.disabled;
     var isMobile = useMatchBreakpoints().isMobile;
     return (React__default["default"].createElement(React__default["default"].Fragment, null,
-        leftIcon && (React__default["default"].createElement(IconComponentWrap, { leftIcon: leftIcon },
+        leftIcon && (React__default["default"].createElement(IconComponentWrap, { disabled: disabled },
             React__default["default"].createElement(IconComponent$1, { width: 24, iconName: leftIcon, color: "white" }))),
         React__default["default"].createElement(Flex, { alignSelf: isMobile ? "stretch" : "", flexDirection: "column", flex: 1, paddingLeft: leftIcon && "16px" },
             React__default["default"].createElement(Flex, { alignItems: "center" },
                 label,
                 badgeTitle && (React__default["default"].createElement(Badge$1, { ml: "4px", badgeType: badgeType !== null && badgeType !== void 0 ? badgeType : "success" }, badgeTitle))),
             description && (React__default["default"].createElement(Text, { fontSize: "12px", color: "gray900", lineHeight: "16px" }, description))),
-        rightIcon && (React__default["default"].createElement(IconComponent$1, { className: "arrow-icon", iconName: rightIcon, color: fill }))));
+        rightIcon && !disabled && (React__default["default"].createElement(IconComponent$1, { className: "arrow-icon", iconName: rightIcon, color: fill }))));
 };
 var templateObject_1$e;
 
@@ -7097,7 +7103,7 @@ var DropdownMenu = function (_a) {
             var _c = _a.type, type = _c === void 0 ? exports.DropdownMenuItemType.INTERNAL_LINK : _c, label = _a.label, rightIconFill = _a.rightIconFill, description = _a.description, _d = _a.href, href = _d === void 0 ? "/" : _d, status = _a.status, _e = _a.leftIcon, leftIcon = _e === void 0 ? "" : _e, _f = _a.rightIcon, rightIcon = _f === void 0 ? "" : _f, _g = _a.links, links = _g === void 0 ? [] : _g, bannerRenderer = _a.bannerRenderer, target = _a.target, mobileTarget = _a.mobileTarget, badgeType = _a.badgeType, badgeTitle = _a.badgeTitle, itemProps = __rest(_a, ["type", "label", "rightIconFill", "description", "href", "status", "leftIcon", "rightIcon", "links", "bannerRenderer", "target", "mobileTarget", "badgeType", "badgeTitle"]);
             var getMenuItemContent = function (icon) {
                 if (icon === void 0) { icon = rightIcon; }
-                return (React__default["default"].createElement(MenuItemContent, { label: label, fill: rightIconFill, leftIcon: leftIcon, rightIcon: icon, description: description, status: status, badgeType: badgeType, badgeTitle: badgeTitle }));
+                return (React__default["default"].createElement(MenuItemContent, __assign({ label: label, fill: rightIconFill, leftIcon: leftIcon, rightIcon: icon, description: description, status: status, badgeType: badgeType, badgeTitle: badgeTitle }, itemProps)));
             };
             var isActive = href === activeItem;
             var lastItem = itemIndex === (items === null || items === void 0 ? void 0 : items.length) - 1 ||
@@ -7258,7 +7264,7 @@ var MobileMenu = function (_a) {
                             var _b = _a.type, type = _b === void 0 ? exports.DropdownMenuItemType.INTERNAL_LINK : _b, label = _a.label, rightIconFill = _a.rightIconFill, description = _a.description, _c = _a.href, href = _c === void 0 ? "/" : _c, status = _a.status, _d = _a.leftIcon, leftIcon = _d === void 0 ? "" : _d, _e = _a.rightIcon, rightIcon = _e === void 0 ? "" : _e, _f = _a.links, links = _f === void 0 ? [] : _f, badgeTitle = _a.badgeTitle, badgeType = _a.badgeType, bannerRenderer = _a.bannerRenderer, itemProps = __rest(_a, ["type", "label", "rightIconFill", "description", "href", "status", "leftIcon", "rightIcon", "links", "badgeTitle", "badgeType", "bannerRenderer"]);
                             var getMenuItemContent = function (icon) {
                                 if (icon === void 0) { icon = rightIcon; }
-                                return (React__default["default"].createElement(MenuItemContent, { label: label, fill: rightIconFill, leftIcon: leftIcon, rightIcon: icon, description: description, status: status, badgeTitle: badgeTitle, badgeType: badgeType }));
+                                return (React__default["default"].createElement(MenuItemContent, __assign({ label: label, fill: rightIconFill, leftIcon: leftIcon, rightIcon: icon, description: description, status: status, badgeTitle: badgeTitle, badgeType: badgeType }, itemProps)));
                             };
                             var isActive = href === activeItem;
                             var lastItem = itemIndex === (arr === null || arr === void 0 ? void 0 : arr.length) - 1;
