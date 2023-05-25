@@ -11,4 +11,5 @@ export type {
   BodyTextProps,
   Scales as BodyTextScales,
   Tags as BodyTextTags,
+  ScalesObj,
 } from "./typesBodyText";
