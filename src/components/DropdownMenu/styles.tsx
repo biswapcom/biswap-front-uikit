@@ -10,6 +10,7 @@ import {
 } from "./types";
 import { useMatchBreakpoints } from "../../contexts";
 import { Box, Grid } from "../Box";
+import {initial} from "lodash";
 
 const getTextColor = ({
   $isActive,
@@ -130,9 +131,11 @@ export const DropdownInternalMenuItem = styled(Link)<
 
 export const StyledDropdownMenuItemContainer = styled.div<{
   isOpenMenuItem?: boolean;
+  disabled?: boolean;
 }>`
   position: relative;
   margin-bottom: 24px;
+  pointer-events: ${({ disabled }) => disabled ? "none" : "initial"};
 
   &:last-child {
     margin-bottom: ${({ isOpenMenuItem }) =>

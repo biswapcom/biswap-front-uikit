@@ -34,7 +34,7 @@ const DropdownMenuItemContainer: FC<DropdownMenuItemContainerProps> = ({
 
   // @ts-ignore
   return (
-    <StyledDropdownMenuItemContainer isOpenMenuItem={isOpenItem}>
+    <StyledDropdownMenuItemContainer isOpenMenuItem={isOpenItem} {...itemProps}>
       {type === DropdownMenuItemType.BUTTON && (
         <DropdownMenuItem
           $isActive={isActive}

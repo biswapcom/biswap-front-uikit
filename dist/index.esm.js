@@ -6882,7 +6882,10 @@ var CommonLinkStyle = function (_a) {
 };
 var DropdownMenuItem = styled.button(templateObject_6$3 || (templateObject_6$3 = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), CommonLinkStyle);
 var DropdownInternalMenuItem = styled(Link$1)(templateObject_7$1 || (templateObject_7$1 = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), CommonLinkStyle);
-var StyledDropdownMenuItemContainer = styled.div(templateObject_8$1 || (templateObject_8$1 = __makeTemplateObject(["\n  position: relative;\n  margin-bottom: 24px;\n\n  &:last-child {\n    margin-bottom: ", ";\n    ", " {\n      margin-bottom: 24px;\n    }\n  }\n\n  &:first-child > ", " {\n    border-top-left-radius: 8px;\n    border-top-right-radius: 8px;\n  }\n\n  &:last-child > ", " {\n    border-bottom-left-radius: 8px;\n    border-bottom-right-radius: 8px;\n  }\n"], ["\n  position: relative;\n  margin-bottom: 24px;\n\n  &:last-child {\n    margin-bottom: ", ";\n    ", " {\n      margin-bottom: 24px;\n    }\n  }\n\n  &:first-child > ", " {\n    border-top-left-radius: 8px;\n    border-top-right-radius: 8px;\n  }\n\n  &:last-child > ", " {\n    border-bottom-left-radius: 8px;\n    border-bottom-right-radius: 8px;\n  }\n"])), function (_a) {
+var StyledDropdownMenuItemContainer = styled.div(templateObject_8$1 || (templateObject_8$1 = __makeTemplateObject(["\n  position: relative;\n  margin-bottom: 24px;\n  pointer-events: ", ";\n\n  &:last-child {\n    margin-bottom: ", ";\n    ", " {\n      margin-bottom: 24px;\n    }\n  }\n\n  &:first-child > ", " {\n    border-top-left-radius: 8px;\n    border-top-right-radius: 8px;\n  }\n\n  &:last-child > ", " {\n    border-bottom-left-radius: 8px;\n    border-bottom-right-radius: 8px;\n  }\n"], ["\n  position: relative;\n  margin-bottom: 24px;\n  pointer-events: ", ";\n\n  &:last-child {\n    margin-bottom: ", ";\n    ", " {\n      margin-bottom: 24px;\n    }\n  }\n\n  &:first-child > ", " {\n    border-top-left-radius: 8px;\n    border-top-right-radius: 8px;\n  }\n\n  &:last-child > ", " {\n    border-bottom-left-radius: 8px;\n    border-bottom-right-radius: 8px;\n  }\n"])), function (_a) {
+    var disabled = _a.disabled;
+    return disabled ? "none" : "initial";
+}, function (_a) {
     var isOpenMenuItem = _a.isOpenMenuItem;
     return isOpenMenuItem ? "16px" : "32px";
 }, function (_a) {
@@ -6963,7 +6966,7 @@ var DropdownMenuItemContainer = function (_a) {
     var _f = useMatchBreakpoints(), isMobile = _f.isMobile, isDesktop = _f.isDesktop;
     var hasInnerLinks = links.length > 0;
     // @ts-ignore
-    return (React.createElement(StyledDropdownMenuItemContainer, { isOpenMenuItem: isOpenItem },
+    return (React.createElement(StyledDropdownMenuItemContainer, __assign({ isOpenMenuItem: isOpenItem }, itemProps),
         type === DropdownMenuItemType.BUTTON && (React.createElement(DropdownMenuItem, __assign({ "$isActive": isActive, "$hasIcon": !!leftIcon, type: "button" }, itemProps), getMenuItemContent(""))),
         type === DropdownMenuItemType.CONTAINER && (React.createElement(React.Fragment, null,
             hasInnerLinks ? (React.createElement(DropdownMenuItem, __assign({ "$isActive": isActive, "$hasIcon": true, as: linkComponent, href: (_b = links[0]) === null || _b === void 0 ? void 0 : _b.href, onClick: function () {
