@@ -5996,9 +5996,12 @@ var useModal = function (modal, closeOnOverlayClick, updateOnPropsChange, modalI
     // Updates the "modal" component if props are changed
     // Use carefully since it might result in unnecessary rerenders
     // Typically if modal is static there is no need for updates, use when you expect props to change
+    console.log('start');
     React.useEffect(function () {
+        console.log('in effect');
         // NodeId is needed in case there are 2 useModal hooks on the same page and one has updateOnPropsChange
         if (updateOnPropsChange && isOpen && nodeId === modalId) {
+            console.log('in if');
             var modalProps = get__default["default"](modal, "props");
             var oldModalProps = get__default["default"](modalNode, "props");
             // Note: I tried to use lodash isEqual to compare props but it is giving false-negatives too easily
@@ -6007,9 +6010,15 @@ var useModal = function (modal, closeOnOverlayClick, updateOnPropsChange, modalI
             // Do not try to replace JSON.stringify with isEqual, high risk of infinite rerenders
             // TODO: Find a good way to handle modal updates, this whole flow is just backwards-compatible workaround,
             // would be great to simplify the logic here
+            console.log('modalProps', modalProps);
+            console.log('oldModalProps', oldModalProps);
+            console.log(' JSON.stringify(modalProps)', JSON.stringify(modalProps));
+            console.log('JSON.stringify(oldModalProps)', JSON.stringify(oldModalProps));
+            console.log('condition', JSON.stringify(modalProps) !== JSON.stringify(oldModalProps));
             if (modalProps &&
                 oldModalProps &&
                 JSON.stringify(modalProps) !== JSON.stringify(oldModalProps)) {
+                console.log('is update');
                 setModalNode(modal);
             }
         }
