@@ -8,7 +8,7 @@ import {
 } from "./styles";
 import Button from "../Button/Button";
 import Flex from "../Box/Flex";
-import Grid from "../Box/Grid"
+import Grid from "../Box/Grid";
 import CircleIcon from "./CircleIcon";
 import { PercentSliderProps } from "./types";
 import { Text } from "../Text";
@@ -35,6 +35,7 @@ const PercentSlider: React.FC<PercentSliderProps> = ({
     useState<number | null>(null);
 
   useEffect(() => {
+    if (!value) setActiveShortcutIndex(null);
     if (value !== parseInt(displayPercent)) {
       setDisplayPercent(value.toString());
     }
@@ -108,7 +109,11 @@ const PercentSlider: React.FC<PercentSliderProps> = ({
         )}
       </div>
       {enableShortcuts && shortcutCheckpoints && (
-        <Grid gridTemplateColumns={`repeat(${shortcutCheckpoints.length}, 1fr)`} gridColumnGap="8px" py="16px">
+        <Grid
+          gridTemplateColumns={`repeat(${shortcutCheckpoints.length}, 1fr)`}
+          gridColumnGap="8px"
+          py="16px"
+        >
           {shortcutCheckpoints.map((percent, index) => (
             <Button
               key={index.toString()}

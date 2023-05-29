@@ -4814,6 +4814,8 @@ var PercentSlider = function (_a) {
     var _m = React.useState(value.toString()), displayPercent = _m[0], setDisplayPercent = _m[1];
     var _o = React.useState(null), activeShortcutIndex = _o[0], setActiveShortcutIndex = _o[1];
     React.useEffect(function () {
+        if (!value)
+            setActiveShortcutIndex(null);
         if (value !== parseInt(displayPercent)) {
             setDisplayPercent(value.toString());
         }
