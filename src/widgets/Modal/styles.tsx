@@ -11,7 +11,7 @@ export const ModalHeader = styled.div`
   //align-items: flex-start;
   justify-content: space-between;
   align-items: center;
-  padding: 24px 16px;
+  padding: 24px 16px 16px;
 
   ${({ theme }) => theme.mediaQueries.sm} {
     padding: 32px 32px 24px;
