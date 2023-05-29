@@ -2,7 +2,8 @@ import React, { FC } from "react";
 import styled, { DefaultTheme } from "styled-components";
 import { BadgeProps } from "./types";
 import getRgba from "../../util/getRgba";
-import { space } from "styled-system";
+import { space, variant } from "styled-system";
+import { BadgeTypesContainer } from "./theme";
 
 interface StyledBadgeProps extends BadgeProps {
   theme: DefaultTheme;
@@ -102,14 +103,19 @@ const Wrapper = styled.div<BadgeProps>`
         ? "4px 4px 4px 8px"
         : "4px 8px"
       : "8px 24px"};
-  background: ${getBadgeBg};
-  color: ${getBadgeColor};
+  // background: ${getBadgeBg};
+  // color: ${getBadgeColor};
   border-radius: 16px;
   height: ${({ isLarge }) => (isLarge ? "38px" : "20px")};
   font-size: ${({ fontSize }) => fontSize || "10px"};
   font-weight: 600;
 
   ${space}
+
+  ${variant({
+    prop: "badgeType",
+    variants: BadgeTypesContainer,
+  })}
 `;
 
 const Badge: FC<BadgeProps> = ({

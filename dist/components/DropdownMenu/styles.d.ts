@@ -23,6 +23,7 @@ export declare const DropdownInternalMenuItem: import("styled-components").Style
 }, never>;
 export declare const StyledDropdownMenuItemContainer: import("styled-components").StyledComponent<"div", DefaultTheme, {
     isOpenMenuItem?: boolean | undefined;
+    disabled?: boolean | undefined;
 }, never>;
 export declare const DropdownMenuDivider: import("styled-components").StyledComponent<"hr", DefaultTheme, {}, never>;
 export declare const StyledDropdownMenu: import("styled-components").StyledComponent<"div", DefaultTheme, import("../Box").BoxProps & import("../Box").GridProps & {

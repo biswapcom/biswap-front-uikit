@@ -25,7 +25,7 @@ const MenuItemButton: PolymorphicComponent<
   align-items: center;
   border: 0;
   margin: 0;
-  cursor: pointer;
+  cursor: ${({ disabled }) => disabled ? "not-allowed" : "pointer"};
   display: flex;
   font-family: inherit;
   font-weight: 600;
