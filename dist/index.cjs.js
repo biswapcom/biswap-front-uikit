@@ -4440,7 +4440,7 @@ var Toggle = function (_a) {
     var isChecked = !!checked;
     return (React__default["default"].createElement(ToggleWrap, __assign({ labelOrientation: labelOrientation, disabled: disabled, gridArea: gridArea, spaceBetween: spaceBetween }, props),
         React__default["default"].createElement(StyledToggle, { "$checked": isChecked, "$checkedColor": checkedColor, "$defaultColor": defaultColor, scale: scale, disabled: disabled },
-            React__default["default"].createElement(Input, { checked: checked, scale: scale, type: "checkbox", disabled: disabled }),
+            React__default["default"].createElement(Input, { readOnly: true, checked: checked, scale: scale, type: "checkbox", disabled: disabled }),
             React__default["default"].createElement(Handle, { scale: scale, disabled: disabled })),
         label && (React__default["default"].createElement(Label, { labelOrientation: labelOrientation, isChecked: isChecked, disabled: disabled, variant: variant, scale: labelSize, as: "span" }, label))));
 };
@@ -5851,7 +5851,7 @@ var Faqs = function (_a) {
     // markup for question
     var renderQuestionList = function (list) {
         return (list || []).map(function (item, index) { return (React__default["default"].createElement(FaqAccordion, { key: index.toString(), name: item.name, isOpened: activeQuestion === item.name, handleToggle: handleToggle, variant: variant },
-            React__default["default"].createElement(Description, { scale: "size14", p: "0 16px 16px", variant: variant }, item.description))); });
+            React__default["default"].createElement(Description, { as: "div", scale: "size14", p: "0 16px 16px", variant: variant }, item.description))); });
     };
     return (React__default["default"].createElement(Box, __assign({}, props),
         title && (React__default["default"].createElement(Title$2, { scale: { xs: isDarkMobile, md: "size24" }, mb: "16px", bold: true, variant: variant }, title)),
