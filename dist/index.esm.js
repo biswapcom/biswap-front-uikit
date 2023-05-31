@@ -5620,7 +5620,7 @@ var TooltipHelper = function (_a) {
         trigger: trigger,
     }), targetRef = _h.targetRef, tooltip = _h.tooltip, tooltipVisible = _h.tooltipVisible;
     return (React.createElement(Box, __assign({ ml: ml }, props),
-        tooltipVisible && tooltip,
+        showTooltip && tooltipVisible && tooltip,
         React.createElement(QuestionWrapper, { ref: targetRef, showTooltip: showTooltip }, children !== null && children !== void 0 ? children : React.createElement(Icon, { color: color, width: size }))));
 };
 var templateObject_1$z, templateObject_2$k;
