@@ -54,7 +54,7 @@ const TooltipHelper: React.FC<Props> = ({
 
   return (
     <Box ml={ml} {...props}>
-      {tooltipVisible && tooltip}
+      {showTooltip && tooltipVisible && tooltip}
       <QuestionWrapper ref={targetRef} showTooltip={showTooltip}>
         {children ?? <Icon color={color} width={size} />}
       </QuestionWrapper>
