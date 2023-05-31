@@ -4786,7 +4786,7 @@ var BarProgress = styled__default["default"].div(templateObject_3$k || (template
     var theme = _a.theme;
     return theme.colors.primary;
 });
-var PointsContainer = styled__default["default"](Flex)(templateObject_4$h || (templateObject_4$h = __makeTemplateObject(["\n  position: relative;\n  top: -16px;\n"], ["\n  position: relative;\n  top: -16px;\n"])));
+var PointsContainer = styled__default["default"](Flex)(templateObject_4$h || (templateObject_4$h = __makeTemplateObject(["\n  position: absolute;\n  top: 50%;\n  width: 100%;\n  transform: translateY(-50%);\n"], ["\n  position: absolute;\n  top: 50%;\n  width: 100%;\n  transform: translateY(-50%);\n"])));
 var PercentSliderLabel = styled__default["default"](Flex)(templateObject_5$b || (templateObject_5$b = __makeTemplateObject(["\n  align-items: center;\n  position: absolute;\n  ", ";\n  left: ", ";\n  transform: translateX(-50%) translateY(calc(", "));\n  border-radius: 8px;\n  padding: 8px 12px;\n  background-color: ", ";\n  z-index: ", ";\n\n  &:after {\n    content: '';\n    display: block;\n    position: absolute;\n    left: 50%;\n    ", ";\n    width: 0;\n    height: 0;\n    border-left: 6px solid transparent;\n    border-right: 6px solid transparent;\n    z-index: ", ";\n    transform: translate(-50%, ", ");\n    ", ";\n"], ["\n  align-items: center;\n  position: absolute;\n  ", ";\n  left: ", ";\n  transform: translateX(-50%) translateY(calc(", "));\n  border-radius: 8px;\n  padding: 8px 12px;\n  background-color: ", ";\n  z-index: ", ";\n\n  &:after {\n    content: '';\n    display: block;\n    position: absolute;\n    left: 50%;\n    ", ";\n    width: 0;\n    height: 0;\n    border-left: 6px solid transparent;\n    border-right: 6px solid transparent;\n    z-index: ", ";\n    transform: translate(-50%, ", ");\n    ", ";\n"])), function (_a) {
     var bannerPosition = _a.bannerPosition;
     return bannerPosition === "top" ? "top: 0" : "bottom: 0";
@@ -4854,8 +4854,8 @@ var PercentSlider = function (_a) {
                     ? "dark400"
                     : "gray300";
     };
-    return (React__default["default"].createElement(Flex, __assign({ position: "relative", flexDirection: "column" }, props),
-        React__default["default"].createElement("div", null,
+    return (React__default["default"].createElement(Flex, __assign({ flexDirection: "column" }, props),
+        React__default["default"].createElement(Box, { position: "relative" },
             React__default["default"].createElement(Flex, { justifyContent: "center" },
                 React__default["default"].createElement(BarBackground, { darkMode: darkMode, disabled: disabled })),
             React__default["default"].createElement(BarProgress, { style: { width: "calc(".concat(displayPercent, "% - 5px)") } }),

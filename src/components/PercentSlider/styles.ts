@@ -63,8 +63,10 @@ export const BarProgress = styled.div`
 `;
 
 export const PointsContainer = styled(Flex)`
-  position: relative;
-  top: -16px;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
 `;
 
 export const PercentSliderLabel = styled(Flex)<{
