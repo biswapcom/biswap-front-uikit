@@ -22,12 +22,12 @@ interface Props extends BoxProps {
 
 const QuestionWrapper = styled(Flex)<{ showTooltip: boolean }>`
   align-items: center;
-  cursor: pointer;
-  transition: opacity 0.3s ease-in-out;
 
   ${({ showTooltip }) =>
     showTooltip &&
     css`
+      cursor: pointer;
+      transition: opacity 0.3s ease-in-out;
       :hover,
       :focus {
         opacity: 0.7;
