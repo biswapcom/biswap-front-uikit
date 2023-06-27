@@ -57,6 +57,7 @@ export interface MenuItemContentProps {
     fill?: string;
     badgeType?: string;
     badgeTitle?: string;
+    disabled?: boolean;
 }
 export declare enum DropdownMenuItemType {
     INTERNAL_LINK = 0,

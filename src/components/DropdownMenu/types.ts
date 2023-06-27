@@ -67,6 +67,7 @@ export interface MenuItemContentProps {
   fill?: string;
   badgeType?: string;
   badgeTitle?: string;
+  disabled?: boolean;
 }
 
 export enum DropdownMenuItemType {

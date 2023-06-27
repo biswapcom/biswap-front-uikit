@@ -17,6 +17,7 @@ export const Default = () => {
     <Box>
       <Flex justifyContent="flex-start" mt="50px" ml="100px">
         <TooltipHelper
+          showTooltip={false}
           text={"Some text for example"}
           placement="left"
           size="50px"

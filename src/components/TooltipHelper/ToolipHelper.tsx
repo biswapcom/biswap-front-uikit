@@ -22,12 +22,12 @@ interface Props extends BoxProps {
 
 const QuestionWrapper = styled(Flex)<{ showTooltip: boolean }>`
   align-items: center;
-  cursor: pointer;
-  transition: opacity 0.3s ease-in-out;
 
   ${({ showTooltip }) =>
     showTooltip &&
     css`
+      cursor: pointer;
+      transition: opacity 0.3s ease-in-out;
       :hover,
       :focus {
         opacity: 0.7;
@@ -54,7 +54,7 @@ const TooltipHelper: React.FC<Props> = ({
 
   return (
     <Box ml={ml} {...props}>
-      {tooltipVisible && tooltip}
+      {showTooltip && tooltipVisible && tooltip}
       <QuestionWrapper ref={targetRef} showTooltip={showTooltip}>
         {children ?? <Icon color={color} width={size} />}
       </QuestionWrapper>

@@ -132,6 +132,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
                   status={status}
                   badgeType={badgeType}
                   badgeTitle={badgeTitle}
+                  {...itemProps}
                 />
               );
               const isActive = href === activeItem;

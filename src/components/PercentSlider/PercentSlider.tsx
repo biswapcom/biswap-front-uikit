@@ -6,12 +6,19 @@ import {
   PointsContainer,
   StyledInput,
 } from "./styles";
-import Button from "../Button/Button";
-import Flex from "../Box/Flex";
-import Grid from "../Box/Grid"
-import CircleIcon from "./CircleIcon";
-import { PercentSliderProps } from "./types";
+
+// components
+import { Button } from "../Button";
+
+// styles
 import { Text } from "../Text";
+import { Box, Grid, Flex } from "../Box";
+
+//types
+import { PercentSliderProps } from "./types";
+
+// icons
+import CircleIcon from "./CircleIcon";
 
 const PercentSlider: React.FC<PercentSliderProps> = ({
   name = "slider",
@@ -30,11 +37,14 @@ const PercentSlider: React.FC<PercentSliderProps> = ({
   numberOfPoints = 5,
   ...props
 }) => {
-  const [displayPercent, setDisplayPercent] = useState(value.toString());
+  const [displayPercent, setDisplayPercent] = useState<string>(
+    value.toString()
+  );
   const [activeShortcutIndex, setActiveShortcutIndex] =
     useState<number | null>(null);
 
   useEffect(() => {
+    if (!value) setActiveShortcutIndex(null);
     if (value !== parseInt(displayPercent)) {
       setDisplayPercent(value.toString());
     }
@@ -62,8 +72,8 @@ const PercentSlider: React.FC<PercentSliderProps> = ({
   };
 
   return (
-    <Flex position="relative" flexDirection="column" {...props}>
-      <div>
+    <Flex flexDirection="column" {...props}>
+      <Box position="relative">
         <Flex justifyContent="center">
           <BarBackground darkMode={darkMode} disabled={disabled} />
         </Flex>
@@ -106,9 +116,13 @@ const PercentSlider: React.FC<PercentSliderProps> = ({
             })}
           </PointsContainer>
         )}
-      </div>
+      </Box>
       {enableShortcuts && shortcutCheckpoints && (
-        <Grid gridTemplateColumns={`repeat(${shortcutCheckpoints.length}, 1fr)`} gridColumnGap="8px" py="16px">
+        <Grid
+          gridTemplateColumns={`repeat(${shortcutCheckpoints.length}, 1fr)`}
+          gridColumnGap="8px"
+          py="16px"
+        >
           {shortcutCheckpoints.map((percent, index) => (
             <Button
               key={index.toString()}

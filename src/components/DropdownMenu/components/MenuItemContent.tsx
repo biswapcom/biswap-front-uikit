@@ -12,7 +12,7 @@ const getBG = ({
   leftIcon,
 }: {
   theme: DefaultTheme;
-  leftIcon: string;
+  leftIcon?: string;
 }) => {
   switch (leftIcon) {
     case "Market":
@@ -24,7 +24,7 @@ const getBG = ({
   }
 };
 
-const IconComponentWrap = styled.div`
+const IconComponentWrap = styled.div<{ disabled?: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,6 +33,7 @@ const IconComponentWrap = styled.div`
   height: 40px;
   border-radius: 8px;
   align-self: flex-start;
+  opacity: ${({ disabled }) => disabled ? 0.32 : 1};
 `;
 const MenuItemContent: FC<MenuItemContentProps> = ({
   leftIcon,
@@ -42,12 +43,13 @@ const MenuItemContent: FC<MenuItemContentProps> = ({
   fill = "primary",
   badgeTitle,
   badgeType,
+  disabled,
 }) => {
   const { isMobile } = useMatchBreakpoints();
   return (
     <>
       {leftIcon && (
-        <IconComponentWrap leftIcon={leftIcon}>
+        <IconComponentWrap disabled={disabled}>
           <IconComponent width={24} iconName={leftIcon} color="white" />
         </IconComponentWrap>
       )}
@@ -72,7 +74,7 @@ const MenuItemContent: FC<MenuItemContentProps> = ({
           </Text>
         )}
       </Flex>
-      {rightIcon && (
+      {rightIcon && !disabled && (
         <IconComponent
           className="arrow-icon"
           iconName={rightIcon}
