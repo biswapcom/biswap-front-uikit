@@ -35,6 +35,7 @@ const Toggle: React.FC<ToggleProps> = ({
         disabled={disabled}
       >
         <Input
+          readOnly
           checked={checked}
           scale={scale}
           type="checkbox"
