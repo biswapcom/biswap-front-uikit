@@ -9,6 +9,7 @@ export interface ButtonMenuItemProps extends BaseButtonMenuItemProps {
     elementRef?: RefObject<HTMLButtonElement>;
     onItemClick?: (index: number) => void;
     onClick?: () => void;
+    markedIndexes?: number[];
 }
 export interface BaseButtonMenuItemProps extends LayoutProps, SpaceProps {
     as?: "a" | "button" | ElementType;
@@ -50,6 +51,7 @@ export interface ButtonMenuProps extends SpaceProps {
     scrollX?: boolean;
     equalElementWidth?: boolean;
     withoutAnimation?: boolean;
+    markedIndexes?: number[];
 }
 export declare const scales: {
     readonly XL: "xl";

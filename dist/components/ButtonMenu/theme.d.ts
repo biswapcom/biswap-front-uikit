@@ -72,3 +72,25 @@ export declare const styleVariants: {
         };
     };
 };
+export declare const markerScales: {
+    xl: {
+        top: string;
+        right: string;
+    };
+    lg: {
+        top: string;
+        right: string;
+    };
+    md: {
+        top: string;
+        right: string;
+    };
+    sm: {
+        top: string;
+        right: string;
+    };
+    xs: {
+        top: string;
+        right: string;
+    };
+};

@@ -66,7 +66,7 @@ const MenuItemButton: PolymorphicComponent<
 const ButtonMenuItem: PolymorphicComponent<ButtonMenuItemProps, "button"> = ({
   isActive = false,
   variant = variants.DARK,
-  markedIndexes = [1],
+  markedIndexes = [],
   scale = scales.MD,
   as,
   setWidth,
