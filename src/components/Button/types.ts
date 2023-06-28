@@ -40,6 +40,8 @@ export interface BaseButtonProps extends LayoutProps, SpaceProps {
   flatBottom?: boolean;
   flatTop?: boolean;
   flat?: boolean;
+  addBubble?: boolean;
+  bubbleColor?: string;
 }
 
 export type ButtonProps<P extends ElementType = "button"> =
