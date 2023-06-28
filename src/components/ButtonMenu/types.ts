@@ -17,6 +17,7 @@ export interface ButtonMenuItemProps extends BaseButtonMenuItemProps {
   elementRef?: RefObject<HTMLButtonElement>;
   onItemClick?: (index: number) => void;
   onClick?: () => void;
+  markedIndexes?: number[];
 }
 // export type ButtonMenuItemProps<P extends ElementType = "button"> =
 //   PolymorphicComponentProps<P, BaseButtonMenuItemProps>;
@@ -64,6 +65,7 @@ export interface ButtonMenuProps extends SpaceProps {
   scrollX?: boolean;
   equalElementWidth?: boolean;
   withoutAnimation?: boolean;
+  markedIndexes?: number[];
 }
 
 //--------------

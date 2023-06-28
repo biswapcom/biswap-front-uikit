@@ -1,17 +1,20 @@
 import React, { useEffect, useRef } from "react";
 import styled, { css } from "styled-components";
 import { variant } from "styled-system";
-import { styleVariants, scaleVariants } from "./theme";
+import { styleVariants, scaleVariants, markerScales } from "./theme";
 import {
   BaseButtonMenuItemProps,
   ButtonMenuItemProps,
   ColorKey,
   HoverKey,
+  scales,
 } from "./types";
 import { variants } from "./types";
 import { PolymorphicComponent } from "../../util";
 import { useMatchBreakpoints } from "../../contexts";
 import { getColorKey, getHoverKey } from "./helpers";
+import { Box } from "../Box";
+import Marker from "../MenuItem/Marker";
 
 interface ItemButtonProps extends BaseButtonMenuItemProps {
   colorKey: ColorKey;
@@ -25,7 +28,7 @@ const MenuItemButton: PolymorphicComponent<
   align-items: center;
   border: 0;
   margin: 0;
-  cursor: ${({ disabled }) => disabled ? "not-allowed" : "pointer"};
+  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
   display: flex;
   font-family: inherit;
   font-weight: 600;
@@ -63,6 +66,8 @@ const MenuItemButton: PolymorphicComponent<
 const ButtonMenuItem: PolymorphicComponent<ButtonMenuItemProps, "button"> = ({
   isActive = false,
   variant = variants.DARK,
+  markedIndexes = [1],
+  scale = scales.MD,
   as,
   setWidth,
   itemIndex = 0,
@@ -104,17 +109,23 @@ const ButtonMenuItem: PolymorphicComponent<ButtonMenuItemProps, "button"> = ({
     onClick();
   };
 
+  const withMarker = markedIndexes.includes(itemIndex);
+
   return (
-    <MenuItemButton
-      onClick={omItemClickHandler}
-      isActive={isActive}
-      ref={ref}
-      as={as}
-      variant={variant}
-      hoverKey={getHoverKey(variant)}
-      colorKey={getColorKey(variant)}
-      {...props}
-    />
+    <Box position="relative">
+      <MenuItemButton
+        onClick={omItemClickHandler}
+        isActive={isActive}
+        ref={ref}
+        as={as}
+        variant={variant}
+        hoverKey={getHoverKey(variant)}
+        colorKey={getColorKey(variant)}
+        scale={scale}
+        {...props}
+      />
+      {withMarker && <Marker color="success" {...markerScales[scale]} />}
+    </Box>
   );
 };
 

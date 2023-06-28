@@ -181,6 +181,7 @@ const ButtonMenu: React.FC<ButtonMenuProps> = ({
   scrollX = false,
   equalElementWidth,
   withoutAnimation = false,
+  markedIndexes = [],
   ...props
 }) => {
   const [widthsArr, setWidthsArr] = useState([]);
@@ -240,6 +241,7 @@ const ButtonMenu: React.FC<ButtonMenuProps> = ({
             itemIndex: index,
             activeButtonIndex,
             blockOffset,
+            markedIndexes,
             scale,
             variant,
             disabled,

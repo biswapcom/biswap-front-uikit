@@ -79,3 +79,26 @@ export const styleVariants = {
     },
   },
 };
+
+export const markerScales = {
+  [scales.XL]: {
+    top: "2px",
+    right: "8px",
+  },
+  [scales.LG]: {
+    top: "2px",
+    right: "8px",
+  },
+  [scales.MD]: {
+    top: "2px",
+    right: "8px",
+  },
+  [scales.SM]: {
+    top: "2px",
+    right: "8px",
+  },
+  [scales.XS]: {
+    top: "2px",
+    right: "8px",
+  },
+};
