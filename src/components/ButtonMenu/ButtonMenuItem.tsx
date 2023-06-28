@@ -28,6 +28,7 @@ const MenuItemButton: PolymorphicComponent<
   align-items: center;
   border: 0;
   margin: 0;
+  width: 100%;
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
   display: flex;
   font-family: inherit;
@@ -112,7 +113,7 @@ const ButtonMenuItem: PolymorphicComponent<ButtonMenuItemProps, "button"> = ({
   const withMarker = markedIndexes.includes(itemIndex);
 
   return (
-    <Box position="relative">
+    <Box position="relative" width="100%">
       <MenuItemButton
         onClick={omItemClickHandler}
         isActive={isActive}
