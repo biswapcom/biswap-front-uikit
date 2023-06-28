@@ -2718,7 +2718,7 @@ var Marker = styled(Box)(templateObject_5$i || (templateObject_5$i = __makeTempl
 });
 var templateObject_1$1b, templateObject_2$E, templateObject_3$u, templateObject_4$p, templateObject_5$i;
 
-var MenuItemButton = styled.button(templateObject_2$D || (templateObject_2$D = __makeTemplateObject(["\n  align-items: center;\n  border: 0;\n  margin: 0;\n  cursor: ", ";\n  display: flex;\n  font-family: inherit;\n  font-weight: 600;\n  justify-content: center;\n  line-height: 1;\n  outline: 0;\n  transition: background-color 0.2s, opacity 0.3s, color 0.3s;\n  background-color: transparent;\n  white-space: nowrap;\n  -webkit-tap-highlight-color: transparent;\n\n  ", "\n  ", "\n\n  ", "\n"], ["\n  align-items: center;\n  border: 0;\n  margin: 0;\n  cursor: ", ";\n  display: flex;\n  font-family: inherit;\n  font-weight: 600;\n  justify-content: center;\n  line-height: 1;\n  outline: 0;\n  transition: background-color 0.2s, opacity 0.3s, color 0.3s;\n  background-color: transparent;\n  white-space: nowrap;\n  -webkit-tap-highlight-color: transparent;\n\n  ", "\n  ", "\n\n  ", "\n"])), function (_a) {
+var MenuItemButton = styled.button(templateObject_2$D || (templateObject_2$D = __makeTemplateObject(["\n  align-items: center;\n  border: 0;\n  margin: 0;\n  width: 100%;\n  cursor: ", ";\n  display: flex;\n  font-family: inherit;\n  font-weight: 600;\n  justify-content: center;\n  line-height: 1;\n  outline: 0;\n  transition: background-color 0.2s, opacity 0.3s, color 0.3s;\n  background-color: transparent;\n  white-space: nowrap;\n  -webkit-tap-highlight-color: transparent;\n\n  ", "\n  ", "\n\n  ", "\n"], ["\n  align-items: center;\n  border: 0;\n  margin: 0;\n  width: 100%;\n  cursor: ", ";\n  display: flex;\n  font-family: inherit;\n  font-weight: 600;\n  justify-content: center;\n  line-height: 1;\n  outline: 0;\n  transition: background-color 0.2s, opacity 0.3s, color 0.3s;\n  background-color: transparent;\n  white-space: nowrap;\n  -webkit-tap-highlight-color: transparent;\n\n  ", "\n  ", "\n\n  ", "\n"])), function (_a) {
     var disabled = _a.disabled;
     return (disabled ? "not-allowed" : "pointer");
 }, variant({
@@ -2767,7 +2767,7 @@ var ButtonMenuItem = function (_a) {
         onClick();
     };
     var withMarker = markedIndexes.includes(itemIndex);
-    return (React.createElement(Box, { position: "relative" },
+    return (React.createElement(Box, { position: "relative", width: "100%" },
         React.createElement(MenuItemButton, __assign({ onClick: omItemClickHandler, isActive: isActive, ref: ref, as: as, variant: variant, hoverKey: getHoverKey(variant), colorKey: getColorKey(variant), scale: scale }, props)),
         withMarker && React.createElement(Marker, __assign({ color: "success" }, markerScales[scale]))));
 };
