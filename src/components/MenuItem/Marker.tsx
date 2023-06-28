@@ -74,10 +74,14 @@ const PULSES: any = {
   SUCCESS: PULSE_SUCCESS,
 } as const;
 
-const Marker = styled(Box)<{ color?: keyof MarkerType }>`
+const Marker = styled(Box)<{
+  color?: keyof MarkerType;
+  top?: string;
+  right?: string;
+}>`
   position: absolute;
-  top: 0;
-  right: -4px;
+  top: ${({ top }) => top ?? 0};
+  right: ${({ right }) => right ?? "-4px"};
   width: 6px;
   height: 6px;
   transform: translateX(100%);

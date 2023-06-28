@@ -1,4 +1,4 @@
-/// <reference types="react" />
+import React from "react";
 export declare const Config: {
     title: string;
     leftData: ({
@@ -6,13 +6,13 @@ export declare const Config: {
         description: string;
     } | {
         name: string;
-        description: JSX.Element;
+        description: React.JSX.Element;
     })[];
     rightData: ({
         name: string;
         description: string;
     } | {
         name: string;
-        description: JSX.Element;
+        description: React.JSX.Element;
     })[];
 };
