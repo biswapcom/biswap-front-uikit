@@ -36,5 +36,7 @@ export interface BaseButtonProps extends LayoutProps, SpaceProps {
     flatBottom?: boolean;
     flatTop?: boolean;
     flat?: boolean;
+    addBubble?: boolean;
+    bubbleColor?: string;
 }
 export declare type ButtonProps<P extends ElementType = "button"> = PolymorphicComponentProps<P, BaseButtonProps>;

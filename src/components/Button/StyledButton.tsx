@@ -79,6 +79,7 @@ const StyledButton = styled.button<BaseButtonProps>`
   transition: background-color 0.3s ease-in-out, opacity 0.3s ease-in-out,
     color 0.3s ease-in-out;
   white-space: nowrap;
+  position: relative;
 
   &:active:not(:disabled):not(.button--disabled):not(.button--disabled) {
   }

@@ -64,7 +64,7 @@ export const Default: React.FC = () => {
         </Heading>
         {Object.values(scales).map((scale) => {
           return (
-            <Button key="md" variant="primary" scale={scale} mr="8px" mb="8px">
+            <Button addBubble bubbleColor="primary" key="md" variant="primary" scale={scale} mr="8px" mb="8px">
               {`Primary ${scale}`}
             </Button>
           );
