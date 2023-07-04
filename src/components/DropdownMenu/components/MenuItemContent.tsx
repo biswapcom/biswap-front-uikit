@@ -33,7 +33,7 @@ const IconComponentWrap = styled.div<{ disabled?: boolean }>`
   height: 40px;
   border-radius: 8px;
   align-self: flex-start;
-  opacity: ${({ disabled }) => disabled ? 0.32 : 1};
+  opacity: ${({ disabled }) => (disabled ? 0.32 : 1)};
 `;
 const MenuItemContent: FC<MenuItemContentProps> = ({
   leftIcon,

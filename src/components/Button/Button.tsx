@@ -1,10 +1,10 @@
 import React, { cloneElement, ElementType, isValidElement } from "react";
-import styled, {keyframes} from "styled-components";
+import styled, { keyframes } from "styled-components";
 import getExternalLinkProps from "../../util/getExternalLinkProps";
 import StyledButton from "./StyledButton";
 import { ButtonProps, scales, variants } from "./types";
 import { AutoRenewAnimateIcon } from "../Svg";
-import {MarkerType} from "../../theme";
+import { MarkerType } from "../../theme";
 
 const PULSE_SUCCESS = keyframes`
   0% {
@@ -87,8 +87,8 @@ const Bubble = styled.span<{ bubbleColor?: keyof MarkerType }>`
   transform: translateX(100%);
   border-radius: 50%;
   background-color: ${({ theme, bubbleColor }) =>
-          !bubbleColor ? theme.colors.success : theme.colors[bubbleColor]};
-  
+    !bubbleColor ? theme.colors.success : theme.colors[bubbleColor]};
+
   &:before {
     display: block;
     content: "";
@@ -100,10 +100,10 @@ const Bubble = styled.span<{ bubbleColor?: keyof MarkerType }>`
     left: -2px;
     z-index: 1;
     animation: ${({ color }) =>
-            color ? PULSES[color.toUpperCase()] : PULSE_SUCCESS}
-    2s infinite;
+        color ? PULSES[color.toUpperCase()] : PULSE_SUCCESS}
+      2s infinite;
   }
-`
+`;
 
 const Button = <E extends ElementType = "button">(
   props: ButtonProps<E>
@@ -148,9 +148,7 @@ const Button = <E extends ElementType = "button">(
       {...rest}
     >
       <>
-        {addBubble &&
-          <Bubble/>
-        }
+        {addBubble && <Bubble />}
         {isValidElement(startIcon) &&
           cloneElement(startIcon, {
             mr: "0.5rem",
