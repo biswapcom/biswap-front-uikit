@@ -29,7 +29,7 @@ export function ModalV2({
   onDismiss,
   closeOnOverlayClick,
   children,
-  disableOutsidePointerEvents = true,
+  disableOutsidePointerEvents = false,
   ...props
 }: ModalV2Props) {
   const handleOverlayDismiss = (e: any) => {
@@ -47,9 +47,7 @@ export function ModalV2({
         {isOpen && (
           <ModalWrapper {...props}>
             <Overlay onClick={handleOverlayDismiss} />
-            <Modal {...props} onDismiss={() => handleOverlayDismiss}>
-              {children}
-            </Modal>
+            {children}
           </ModalWrapper>
         )}
       </ModalV2Context.Provider>,

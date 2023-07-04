@@ -24,7 +24,7 @@ export interface ModalProps extends InjectedProps, BoxProps {
     titleColor?: string;
     hideHeader?: boolean;
 }
-export interface ModalV2Props extends ModalProps {
+export interface ModalV2Props extends InjectedProps, BoxProps {
     isOpen?: boolean;
     closeOnOverlayClick?: boolean;
     children?: React.ReactNode;

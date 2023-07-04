@@ -6078,7 +6078,7 @@ function ModalV2(_a) {
     if (portal) {
         return reactDom.createPortal(React__default["default"].createElement(ModalV2Context.Provider, { value: { onDismiss: onDismiss } }, isOpen && (React__default["default"].createElement(ModalWrapper, __assign({}, props),
             React__default["default"].createElement(Overlay, { onClick: handleOverlayDismiss }),
-            React__default["default"].createElement(Modal, __assign({}, props, { onDismiss: function () { return handleOverlayDismiss; } }), children)))), portal);
+            children))), portal);
     }
     return null;
 }
@@ -6125,7 +6125,9 @@ var ModalBody = styled__default["default"].div(templateObject_3$a || (templateOb
 });
 var Background = styled__default["default"].img(templateObject_4$a || (templateObject_4$a = __makeTemplateObject(["\n  width: 100%;\n"], ["\n  width: 100%;\n"])));
 var ModalWithBackground = function (_a) {
-    var onDismiss = _a.onDismiss, children = _a.children, _b = _a.hideCloseButton, hideCloseButton = _b === void 0 ? false : _b, backBtnColor = _a.backBtnColor, background = _a.background, backgroundTransparent = _a.backgroundTransparent, p = _a.p;
+    var onDismiss_ = _a.onDismiss, children = _a.children, _b = _a.hideCloseButton, hideCloseButton = _b === void 0 ? false : _b, backBtnColor = _a.backBtnColor, background = _a.background, backgroundTransparent = _a.backgroundTransparent, p = _a.p;
+    var context = React.useContext(ModalV2Context);
+    var onDismiss = (context === null || context === void 0 ? void 0 : context.onDismiss) || onDismiss_;
     return (React__default["default"].createElement(StyledModal, { backgroundTransparent: backgroundTransparent },
         !hideCloseButton && (React__default["default"].createElement(StyledIconButton, { variant: "text", className: "closeModal", scale: "sm", onClick: onDismiss, "aria-label": "Close the dialog" },
             React__default["default"].createElement(Icon$2S, { width: "24px", color: backBtnColor !== null && backBtnColor !== void 0 ? backBtnColor : "card" }))),
