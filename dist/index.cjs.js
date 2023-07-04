@@ -6054,6 +6054,34 @@ var ModalContainer = styled__default["default"](Box)(templateObject_5$8 || (temp
 var templateObject_1$r, templateObject_2$e, templateObject_3$b, templateObject_4$b, templateObject_5$8;
 
 var ModalV2Context = React.createContext({});
+function useModalV2() {
+    var _a = React.useState(false), isOpen = _a[0], setIsOpen = _a[1];
+    var onDismiss = React.useCallback(function () { return setIsOpen(false); }, []);
+    var onOpen = React.useCallback(function () { return setIsOpen(true); }, []);
+    return {
+        onDismiss: onDismiss,
+        onOpen: onOpen,
+        isOpen: isOpen,
+        setIsOpen: setIsOpen,
+    };
+}
+function ModalV2(_a) {
+    var isOpen = _a.isOpen, onDismiss = _a.onDismiss, closeOnOverlayClick = _a.closeOnOverlayClick, children = _a.children; _a.disableOutsidePointerEvents; var props = __rest(_a, ["isOpen", "onDismiss", "closeOnOverlayClick", "children", "disableOutsidePointerEvents"]);
+    var handleOverlayDismiss = function (e) {
+        e.stopPropagation();
+        e.preventDefault();
+        if (closeOnOverlayClick) {
+            onDismiss === null || onDismiss === void 0 ? void 0 : onDismiss();
+        }
+    };
+    var portal = getPortalRoot();
+    if (portal) {
+        return reactDom.createPortal(React__default["default"].createElement(ModalV2Context.Provider, { value: { onDismiss: onDismiss } }, isOpen && (React__default["default"].createElement(ModalWrapper, __assign({}, props),
+            React__default["default"].createElement(Overlay, { onClick: handleOverlayDismiss }),
+            React__default["default"].createElement(Modal, __assign({}, props, { onDismiss: function () { return handleOverlayDismiss; } }), children)))), portal);
+    }
+    return null;
+}
 
 var Modal = function (_a) {
     var _b;
@@ -8068,6 +8096,8 @@ exports.ModalContainer = ModalContainer;
 exports.ModalHeader = ModalHeader;
 exports.ModalProvider = ModalProvider;
 exports.ModalTitle = ModalTitle;
+exports.ModalV2 = ModalV2;
+exports.ModalV2Context = ModalV2Context;
 exports.ModalWithBackground = ModalWithBackground;
 exports.ModalWrapper = ModalWrapper;
 exports.More2Icon = Icon$1D;
@@ -8198,5 +8228,6 @@ exports.toastTypes = types;
 exports.useCarousel = useCarousel;
 exports.useMatchBreakpoints = useMatchBreakpoints;
 exports.useModal = useModal;
+exports.useModalV2 = useModalV2;
 exports.useOnClickOutside = useOnClickOutside;
 exports.useTooltip = useTooltip;

@@ -1,23 +1,15 @@
-import React, { createContext, useCallback, useContext, useState } from "react";
+import React, { createContext, useCallback, useState } from "react";
 import { createPortal } from "react-dom";
 import { Overlay } from "../../components/Overlay";
 import getPortalRoot from "../../util/getPortalRoot";
 import { ModalWrapper } from "./styles";
 import Modal from "./Modal";
-import { ModalProps } from "./types";
-
-export interface ModalV2Props extends ModalProps {
-  isOpen?: boolean;
-  closeOnOverlayClick?: boolean;
-  children?: React.ReactNode;
-  disableOutsidePointerEvents?: boolean;
-}
+import { ModalV2Props } from "./types";
 
 export const ModalV2Context = createContext<{
   onDismiss?: () => void;
 }>({});
 
-export type UseModalV2Props = ReturnType<typeof useModalV2>;
 export function useModalV2() {
   const [isOpen, setIsOpen] = useState(false);
 

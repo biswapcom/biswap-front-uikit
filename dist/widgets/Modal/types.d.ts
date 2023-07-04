@@ -1,3 +1,4 @@
+import React from "react";
 import { BoxProps, FlexProps } from "../../components/Box";
 import { Scales } from "../../components/Heading/types";
 export interface ModalTheme {
@@ -22,4 +23,10 @@ export interface ModalProps extends InjectedProps, BoxProps {
     modalBodyProps?: FlexProps;
     titleColor?: string;
     hideHeader?: boolean;
+}
+export interface ModalV2Props extends ModalProps {
+    isOpen?: boolean;
+    closeOnOverlayClick?: boolean;
+    children?: React.ReactNode;
+    disableOutsidePointerEvents?: boolean;
 }
