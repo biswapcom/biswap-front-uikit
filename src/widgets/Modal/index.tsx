@@ -7,5 +7,6 @@ export * from "./styles";
 export type {
   ModalProps,
   ModalV2Props,
+  IUseModalV2,
   InjectedProps as InjectedModalProps,
 } from "./types";
