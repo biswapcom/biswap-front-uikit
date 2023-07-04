@@ -3,14 +3,13 @@ import { createPortal } from "react-dom";
 import { Overlay } from "../../components/Overlay";
 import getPortalRoot from "../../util/getPortalRoot";
 import { ModalWrapper } from "./styles";
-import Modal from "./Modal";
-import { ModalV2Props } from "./types";
+import { IUseModalV2, ModalV2Props } from "./types";
 
 export const ModalV2Context = createContext<{
   onDismiss?: () => void;
 }>({});
 
-export function useModalV2() {
+export function useModalV2(): IUseModalV2 {
   const [isOpen, setIsOpen] = useState(false);
 
   const onDismiss = useCallback(() => setIsOpen(false), []);
@@ -45,7 +44,7 @@ export function ModalV2({
     return createPortal(
       <ModalV2Context.Provider value={{ onDismiss }}>
         {isOpen && (
-          <ModalWrapper {...props}>
+          <ModalWrapper>
             <Overlay onClick={handleOverlayDismiss} />
             {children}
           </ModalWrapper>

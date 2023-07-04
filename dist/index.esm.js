@@ -6050,7 +6050,7 @@ function useModalV2() {
     };
 }
 function ModalV2(_a) {
-    var isOpen = _a.isOpen, onDismiss = _a.onDismiss, closeOnOverlayClick = _a.closeOnOverlayClick, children = _a.children; _a.disableOutsidePointerEvents; var props = __rest(_a, ["isOpen", "onDismiss", "closeOnOverlayClick", "children", "disableOutsidePointerEvents"]);
+    var isOpen = _a.isOpen, onDismiss = _a.onDismiss, closeOnOverlayClick = _a.closeOnOverlayClick, children = _a.children; _a.disableOutsidePointerEvents; __rest(_a, ["isOpen", "onDismiss", "closeOnOverlayClick", "children", "disableOutsidePointerEvents"]);
     var handleOverlayDismiss = function (e) {
         e.stopPropagation();
         e.preventDefault();
@@ -6060,7 +6060,7 @@ function ModalV2(_a) {
     };
     var portal = getPortalRoot();
     if (portal) {
-        return createPortal(React.createElement(ModalV2Context.Provider, { value: { onDismiss: onDismiss } }, isOpen && (React.createElement(ModalWrapper, __assign({}, props),
+        return createPortal(React.createElement(ModalV2Context.Provider, { value: { onDismiss: onDismiss } }, isOpen && (React.createElement(ModalWrapper, null,
             React.createElement(Overlay, { onClick: handleOverlayDismiss }),
             children))), portal);
     }

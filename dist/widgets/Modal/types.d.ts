@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import { BoxProps, FlexProps } from "../../components/Box";
 import { Scales } from "../../components/Heading/types";
 export interface ModalTheme {
@@ -29,4 +29,9 @@ export interface ModalV2Props extends InjectedProps, BoxProps {
     closeOnOverlayClick?: boolean;
     children?: React.ReactNode;
     disableOutsidePointerEvents?: boolean;
+}
+export interface IUseModalV2 extends InjectedProps {
+    onOpen: () => void;
+    isOpen: boolean;
+    setIsOpen: Dispatch<SetStateAction<boolean>>;
 }
