@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useTheme } from "styled-components";
 import Heading from "../../components/Heading/Heading";
 import getThemeValue from "../../util/getThemeValue";
@@ -11,11 +11,14 @@ import {
   ModalBackButton,
 } from "./styles";
 import { ModalProps } from "./types";
+
+// contexts
 import { useMatchBreakpoints } from "../../contexts";
+import { ModalV2Context } from "./ModalV2";
 
 const Modal: React.FC<ModalProps> = ({
   title,
-  onDismiss,
+  onDismiss: onDismiss_,
   onBack,
   hideOnBack,
   children,
@@ -36,6 +39,8 @@ const Modal: React.FC<ModalProps> = ({
   const { isMobile } = useMatchBreakpoints();
   const defaultBodyPadding = isMobile ? "0 16px 24px" : "0 32px 32px";
 
+  const context = useContext(ModalV2Context);
+  const onDismiss = context?.onDismiss || onDismiss_;
   return (
     <ModalContainer
       minWidth={minWidth}

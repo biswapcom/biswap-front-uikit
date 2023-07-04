@@ -1,4 +1,4 @@
-import React, { FC } from "react"
+import React, { FC } from "react";
 import styled from "styled-components";
 
 export default {
@@ -14,20 +14,20 @@ const Wrapper = styled.div`
 
   //max-width: 1200px;
   margin: 0 auto 24px;
-`
+`;
 const Column = styled.div`
   background: indianred;
   padding: 12px;
-`
+`;
 const ColumnCustom = styled.div`
   grid-column: span 4;
   background: cadetblue;
   padding: 12px;
-  
+
   ${({ theme }) => theme.mediaQueries.xxl} {
     grid-column: span 3;
   }
-`
+`;
 
 const Wrapper2 = styled.div`
   display: grid;
@@ -36,14 +36,14 @@ const Wrapper2 = styled.div`
 
   max-width: 1604px;
   margin: 0 auto 24px;
-`
+`;
 
 const Column2 = styled.div`
   background: cadetblue;
   padding: 12px;
-`
+`;
 
-export const Default:FC = ():JSX.Element => {
+export const Default: FC = (): JSX.Element => {
   return (
     <>
       <Wrapper>
@@ -68,8 +68,6 @@ export const Default:FC = ():JSX.Element => {
         <ColumnCustom>4</ColumnCustom>
       </Wrapper>
 
-
-
       {/*<Wrapper2>*/}
       {/*  <Column2>1</Column2>*/}
       {/*  <Column2>2</Column2>*/}
@@ -89,5 +87,5 @@ export const Default:FC = ():JSX.Element => {
       {/*  <Column2>16</Column2>*/}
       {/*</Wrapper2>*/}
     </>
-  )
-}
+  );
+};

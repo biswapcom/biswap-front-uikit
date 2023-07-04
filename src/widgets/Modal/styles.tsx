@@ -6,6 +6,19 @@ import { ArrowLeftIcon, CloseIcon } from "../../components/Svg";
 import { IconButton } from "../../components/Button";
 import { ModalProps } from "./types";
 
+export const ModalWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: ${({ theme }) => theme.zIndices.modal - 1};
+`;
+
 export const ModalHeader = styled.div`
   display: flex;
   //align-items: flex-start;

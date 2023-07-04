@@ -5,6 +5,8 @@ import { ModalProps } from "./types";
 import Button from "../../components/Button/Button";
 import Heading from "../../components/Heading/Heading";
 import { Text } from "../../components/Text";
+import { ModalV2, useModalV2 } from "./ModalV2";
+import { BodyText } from "../../components/Typography";
 
 export default {
   title: "Widgets/Modal",
@@ -22,8 +24,17 @@ const CustomModal: React.FC<ModalProps> = ({ title, onDismiss, ...props }) => (
 
 export const Default: React.FC = () => {
   const theme = useTheme();
+  const modalV2 = useModalV2();
+  const modalExtendedV2 = useModalV2();
+
   const [onPresent1] = useModal(
-    <CustomModal p="8px" bodyPadding="0" title="Modal 1" />,
+    <Modal title={"title v1"}>
+      <Heading>title</Heading>
+      <Text>closeOnOverlayClick</Text>
+      <Button onClick={() => modalV2.onOpen()}>
+        This button opens v2 modal
+      </Button>
+    </Modal>,
     true
   );
   const [onPresent2] = useModal(
@@ -43,6 +54,16 @@ export const Default: React.FC = () => {
       <Button onClick={onPresent1}>Open modal 1</Button>
       <Button onClick={onPresent2}>Open modal 2</Button>
       <Button onClick={onPresent3}>Open modal with background</Button>
+      
+      <ModalV2 title="title v2" {...modalV2}>
+        <Button onClick={() => modalExtendedV2.onOpen()}>
+          This button opens extended v2 modal
+        </Button>
+        <BodyText> TEST V2 MODAL </BodyText>
+      </ModalV2>
+      <ModalV2 title="title extended v2" {...modalExtendedV2}>
+        <BodyText> TEST extended V2 MODAL </BodyText>
+      </ModalV2>
     </div>
   );
 };
