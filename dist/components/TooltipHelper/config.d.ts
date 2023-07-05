@@ -1,3 +1,3 @@
-import React from "react";
-declare const CustomTooltip: () => React.JSX.Element;
+/// <reference types="react" />
+declare const CustomTooltip: () => JSX.Element;
 export default CustomTooltip;
