@@ -1,5 +1,5 @@
-import React from "react";
+/// <reference types="react" />
 declare const Burger: ({ open }: {
     open: boolean;
-}) => React.JSX.Element;
+}) => JSX.Element;
 export default Burger;
