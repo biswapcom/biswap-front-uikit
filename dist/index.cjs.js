@@ -120,10 +120,6 @@ function __makeTemplateObject(cooked, raw) {
     if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
     return cooked;
 }
-typeof SuppressedError === "function" ? SuppressedError : function (error, suppressed, message) {
-    var e = new Error(message);
-    return e.name = "SuppressedError", e.error = error, e.suppressed = suppressed, e;
-};
 
 var getThemeValue = function (path, fallback) {
     return function (theme) {
@@ -5464,6 +5460,14 @@ var useTooltip = function (content, options) {
         e.stopPropagation();
         setVisible(!visible);
     }, [visible]);
+    var stopPropagationHandle = function (e) { return e.stopPropagation(); };
+    //stop bubble
+    React.useEffect(function () {
+        tooltipElement === null || tooltipElement === void 0 ? void 0 : tooltipElement.addEventListener("click", stopPropagationHandle);
+        return function () {
+            tooltipElement === null || tooltipElement === void 0 ? void 0 : tooltipElement.removeEventListener("click", stopPropagationHandle);
+        };
+    }, [tooltipElement]);
     // Trigger = hover
     React.useEffect(function () {
         if (targetElement === null || trigger !== "hover")

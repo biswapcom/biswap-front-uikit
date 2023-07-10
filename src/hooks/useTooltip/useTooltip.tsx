@@ -92,6 +92,15 @@ const useTooltip = (
     },
     [visible]
   );
+  const stopPropagationHandle = (e: Event) => e.stopPropagation();
+
+  //stop bubble
+  useEffect(() => {
+    tooltipElement?.addEventListener("click", stopPropagationHandle);
+    return () => {
+      tooltipElement?.removeEventListener("click", stopPropagationHandle);
+    };
+  }, [tooltipElement]);
 
   // Trigger = hover
   useEffect(() => {
