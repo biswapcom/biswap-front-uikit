@@ -45,6 +45,7 @@ export { default as WarningCycleIcon } from "./Icons/Warning/WarningCycle";
 
 //CLOSE
 export { default as CloseIcon } from "./Icons/Close/Close";
+export { default as CloseCircleIcon } from "./Icons/Close/CloseCircle";
 export { default as CloseCircleOpacityIcon } from "./Icons/Close/CloseCircleOpacity";
 export { default as CloseCircleSolidIcon } from "./Icons/Close/CloseCircleSolid";
 
@@ -92,6 +93,7 @@ export { default as EyeCloseIcon } from "./Icons/Eye/EyeClose";
 
 //Check
 export { default as CheckIcon } from "./Icons/Check/Check";
+export { default as CheckCircleIcon } from "./Icons/Check/CheckCircle";
 export { default as CheckSolidIcon } from "./Icons/Check/CheckSolid";
 export { default as CheckOpacityIcon } from "./Icons/Check/CheckOpacity";
 
