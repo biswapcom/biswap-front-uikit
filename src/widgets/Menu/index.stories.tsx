@@ -24,6 +24,7 @@ import {
 } from "./config";
 import Menu from "./Menu";
 import { NavProps } from "./types";
+import { ExpandableButton } from "../../components/Button";
 
 export default {
   title: "Widgets/Menu",
@@ -128,113 +129,162 @@ const defaultProps = {
   rightSide: UserMenuTest,
 };
 
+const Banner = ({ setHeight, setBannerHeight }) => {
+  const [expanded, setExpanded] = useState(false);
+
+  const onClick = () => {
+    setHeight(expanded);
+    setBannerHeight(expanded ? 0 : 116);
+    setExpanded(!expanded);
+  };
+
+  return (
+    <Flex flexDirection="column" px="16px" background="#071C3C">
+      <Flex alignItems="center" justifyContent="space-between" height="40px">
+        <BodyText>Title</BodyText>
+        <ExpandableButton onClick={onClick} expanded={expanded}>
+          Details
+        </ExpandableButton>
+      </Flex>
+      {expanded && (
+        <Flex height="100px" mt="16px" background="#07162D">
+          <Button width="100%" mx="4px">
+            Step1
+          </Button>
+          <Button width="100%" mx="4px">
+            Step2
+          </Button>
+          <Button width="100%" mx="4px">
+            Step3
+          </Button>
+        </Flex>
+      )}
+    </Flex>
+  );
+};
+
 const ConnectedTemplate: React.FC<NavProps> = (args) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [bannerHeight, setBannerHeight] = useState<number>(0);
 
   return (
     <BrowserRouter>
-      <Menu
-        {...args}
-        BSWPriceLabel={BSWPriceLabel}
-        BSWPriceValue={BSWPriceValue}
-        footerStatistic={footerStatistic}
-        registerToken={noop}
-        aboutLinks={aboutLinks}
-        productLinks={productLinks}
-        socialLinks={socialLinks}
-        serviceLinks={serviceLinks}
-        buyBswLabel={"Buy bsdt"}
-      >
-        <Box pt="113px" pb="32px" px="24px" background="#071C3C">
-          <Text bold fontSize="24px" as="h1" mb="8px" color="white">
-            Page body
-          </Text>
-          <Button scale="sm" onClick={() => setIsOpen(!isOpen)}>
-            Show mobile drawer
-          </Button>
-          {/*<BottomDrawer*/}
-          {/*  content={<Box p="16px">Example</Box>}*/}
-          {/*  isOpen={isOpen}*/}
-          {/*  setIsOpen={setIsOpen}*/}
-          {/*/>*/}
-          <Text as="p">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat. Duis aute irure dolor in reprehenderit in
-            voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-            officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit
-            amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-            nostrud exercitation ullamco laboris nisi ut
-          </Text>
-          <Text as="p">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat. Duis aute irure dolor in reprehenderit in
-            voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-            officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit
-            amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-            nostrud exercitation ullamco laboris nisi ut
-          </Text>
-          <Text as="p">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat. Duis aute irure dolor in reprehenderit in
-            voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-            officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit
-            amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-            nostrud exercitation ullamco laboris nisi ut
-          </Text>
-          <Text as="p">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat. Duis aute irure dolor in reprehenderit in
-            voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-            officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit
-            amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-            nostrud exercitation ullamco laboris nisi ut
-          </Text>
-        </Box>
-      </Menu>
+      <Box background="#071C3C">
+        <Menu
+          {...args}
+          BSWPriceLabel={BSWPriceLabel}
+          BSWPriceValue={BSWPriceValue}
+          footerStatistic={footerStatistic}
+          registerToken={noop}
+          aboutLinks={aboutLinks}
+          productLinks={productLinks}
+          socialLinks={socialLinks}
+          serviceLinks={serviceLinks}
+          buyBswLabel={"Buy bsdt"}
+          banner={(setHeight: (s: boolean) => void) => (
+            <Banner setHeight={setHeight} setBannerHeight={setBannerHeight} />
+          )}
+        >
+          <Box
+            pt={`${bannerHeight + 156}px`}
+            pb="32px"
+            px="24px"
+            background="#071C3C"
+          >
+            <Text bold fontSize="24px" as="h1" mb="8px" color="white">
+              Page body
+            </Text>
+            <Button scale="sm" onClick={() => setIsOpen(!isOpen)}>
+              Show mobile drawer
+            </Button>
+            {/*<BottomDrawer*/}
+            {/*  content={<Box p="16px">Example</Box>}*/}
+            {/*  isOpen={isOpen}*/}
+            {/*  setIsOpen={setIsOpen}*/}
+            {/*/>*/}
+            <Text as="p">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut
+            </Text>
+            <Text as="p">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut
+            </Text>
+            <Text as="p">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut
+            </Text>
+            <Text as="p">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut
+            </Text>
+          </Box>
+        </Menu>
+      </Box>
     </BrowserRouter>
   );
 };
@@ -244,20 +294,7 @@ Connected.args = defaultProps;
 export const ConnectedWithBanner = ConnectedTemplate.bind({});
 ConnectedWithBanner.args = {
   ...defaultProps,
-  banner: (
-    <Flex
-      height="100%"
-      p="16px"
-      alignItems="center"
-      justifyContent="center"
-      background="#7645D9"
-    >
-      <Text color="invertedContrast" mr="8px">
-        Banner example
-      </Text>
-      <Button scale="sm">I am button</Button>
-    </Flex>
-  ),
+  banner: (setHeight: () => void) => <Banner setHeight={setHeight} />,
 };
 
 export const NotConnected: React.FC = () => {

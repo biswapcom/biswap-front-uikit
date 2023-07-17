@@ -1,4 +1,4 @@
-import { ElementType, FunctionComponent, ReactElement, ReactNode } from "react";
+import { ElementType, FunctionComponent, ReactNode } from "react";
 import { MenuItemsType } from "../../components/MenuItems/types";
 import { SubMenuItemsType } from "../../components/SubMenuItems";
 import { Colors } from "../../theme";
@@ -10,7 +10,7 @@ export interface LinkStatus {
 export interface NavProps extends BSWPriceProps, FooterAboutLinks, FooterProductLinks, FooterServiceLinks, ConnectMetaProps, FooterSocialLinks, FooterStatisticProps {
     buyBswHandler: () => void;
     linkComponent?: ElementType;
-    banner?: ReactElement;
+    banner?: (b: (s: boolean) => void) => JSX.Element;
     links: Array<MenuItemsType>;
     subLinks: Array<SubMenuItemsType>;
     activeItem: string;

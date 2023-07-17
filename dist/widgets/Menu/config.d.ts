@@ -65,3 +65,5 @@ export declare const MENU_HEIGHT = 72;
 export declare const TOP_BANNER_HEIGHT = 70;
 export declare const TOP_BANNER_HEIGHT_MOBILE = 84;
 export declare const MOBILE_EVENT_BUTTON_HEIGHT = 40;
+export declare const TRANSFER_BLOCK_CLOSED_HEIGHT = 40;
+export declare const TRANSFER_BLOCK_OPENED_HEIGHT = 156;

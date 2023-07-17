@@ -120,6 +120,10 @@ function __makeTemplateObject(cooked, raw) {
     if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
     return cooked;
 }
+typeof SuppressedError === "function" ? SuppressedError : function (error, suppressed, message) {
+    var e = new Error(message);
+    return e.name = "SuppressedError", e.error = error, e.suppressed = suppressed, e;
+};
 
 var getThemeValue = function (path, fallback) {
     return function (theme) {
@@ -6853,15 +6857,11 @@ var socials = [
     },
 ];
 var MENU_HEIGHT = 72;
-// export const MENU_ENTRY_HEIGHT = 48;
-// export const MOBILE_MENU_HEIGHT = 44;
-// export const SIDEBAR_WIDTH_FULL = 240;
-// export const SIDEBAR_WIDTH_REDUCED = 56;
-var TOP_BANNER_HEIGHT = 70;
-var TOP_BANNER_HEIGHT_MOBILE = 84;
 var MOBILE_EVENT_BUTTON_HEIGHT = 40;
 // export const FISHING_BANNER_HEIGHT = 40;
 // export const FISHING_MOBILE_BANNER_HEIGHT = 60;
+var TRANSFER_BLOCK_CLOSED_HEIGHT = 40;
+var TRANSFER_BLOCK_OPENED_HEIGHT = 156;
 
 var Icons = IconModule;
 var Wrapper$2 = styled__default["default"].div(templateObject_1$i || (templateObject_1$i = __makeTemplateObject(["\n  grid-area: community;\n  ", "\n"], ["\n  grid-area: community;\n  ", "\n"])), function (_a) {
@@ -7626,16 +7626,11 @@ var Menu = function (_a) {
     var _f = React.useState(true), showMenu = _f[0], setShowMenu = _f[1];
     var _g = React.useState(false), menuBg = _g[0], setMenuBg = _g[1];
     var _h = React.useState(false), isMobileMenuOpened = _h[0], setIsMobileMenuOpened = _h[1];
+    var _j = React.useState(TRANSFER_BLOCK_CLOSED_HEIGHT), transferBannerHeight = _j[0], setTransferBannerHeight = _j[1];
     // const [showFishingWarn, setShowFishingWarn] = useState(true);
     var refPrevOffset = React.useRef(typeof window === "undefined" ? 0 : window.pageYOffset);
-    // const fishingBannerHeight = isMobile
-    //   ? FISHING_MOBILE_BANNER_HEIGHT
-    //   : FISHING_BANNER_HEIGHT
-    var topBannerHeight = isMobile
-        ? TOP_BANNER_HEIGHT_MOBILE
-        : TOP_BANNER_HEIGHT;
     var TopMenuWithBannerHeight = banner
-        ? MENU_HEIGHT + topBannerHeight
+        ? MENU_HEIGHT + transferBannerHeight
         : MENU_HEIGHT;
     // const TopMenuWithAllBannersHeight = showFishingWarn
     //   ? TopMenuWithBannerHeight + fishingBannerHeight
@@ -7657,6 +7652,9 @@ var Menu = function (_a) {
     //     setShowFishingWarn(true);
     //   }
     // }, [showFishingWarn]);
+    var setTransferHeight = function (expanded) {
+        return setTransferBannerHeight(expanded ? TRANSFER_BLOCK_CLOSED_HEIGHT : TRANSFER_BLOCK_OPENED_HEIGHT);
+    };
     React.useEffect(function () {
         var handleScroll = function () {
             var currentOffset = window.pageYOffset;
@@ -7697,7 +7695,7 @@ var Menu = function (_a) {
     return (React__default["default"].createElement(MenuContext.Provider, { value: { linkComponent: linkComponent } },
         React__default["default"].createElement(Wrapper, null,
             React__default["default"].createElement(FixedContainer, { showMenu: showMenu, height: isMobileMenuOpened ? 0 : totalTopMenuHeight },
-                banner && (React__default["default"].createElement(TopBannerContainer, { height: topBannerHeight }, banner)),
+                banner && (React__default["default"].createElement(TopBannerContainer, { height: transferBannerHeight }, banner(setTransferHeight))),
                 React__default["default"].createElement(StyledNav, { menuBg: menuBg, isMobileMenuOpened: isMobileMenuOpened },
                     React__default["default"].createElement(Flex, { alignItems: "center", justifyContent: "center" },
                         React__default["default"].createElement(Logo, { logoSubtitle: customLogoSubtitle, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
