@@ -137,7 +137,6 @@ const TopBannerContainer = styled.div<{ height: number }>`
 
 const BodyWrapper = styled(Flex)`
   position: relative;
-  transition: padding-top 0.3s ease-in-out;
 `;
 
 const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
@@ -210,6 +209,8 @@ const Menu: FC<PropsWithChildren<NavProps>> = ({
 
   const RightSide = rightSide ?? Fragment;
 
+  const transferHeight = banner ? transferBannerHeight : 0;
+
   // const closeWarn = () => {
   //   localStorage.setItem("showFishingWarn", JSON.stringify(false));
   //   setShowFishingWarn(false);
@@ -233,6 +234,7 @@ const Menu: FC<PropsWithChildren<NavProps>> = ({
   useEffect(() => {
     const handleScroll = () => {
       const currentOffset = window.pageYOffset;
+      console.log(currentOffset);
       const isBottomOfPage =
         window.document.body.clientHeight ===
         currentOffset + window.innerHeight;
@@ -325,7 +327,7 @@ const Menu: FC<PropsWithChildren<NavProps>> = ({
           {/*  />*/}
           {/*)}*/}
         </FixedContainer>
-        <BodyWrapper pt={`${totalTopMenuHeight}px`}>
+        <BodyWrapper>
           <Inner isPushed={false} showMenu={showMenu}>
             <>
               {/*<Box height={isMobileMenuOpened ? 0 : totalTopMenuHeight} />*/}

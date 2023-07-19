@@ -231,7 +231,12 @@ const ConnectedTemplate: React.FC<NavProps> = (args) => {
             <Banner setHeight={setHeight} setBannerHeight={setBannerHeight} />
           )}
         >
-          <ContentWrap pb="32px" px="24px" background="#071C3C">
+          <ContentWrap
+            pt={`${bannerHeight + 116}px`}
+            pb="32px"
+            px="24px"
+            background="#071C3C"
+          >
             <Text bold fontSize="24px" as="h1" mb="8px" color="white">
               Page body
             </Text>

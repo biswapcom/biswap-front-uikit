@@ -7602,7 +7602,7 @@ var TopBannerContainer = styled.div(templateObject_4$1 || (templateObject_4$1 = 
     var height = _a.height;
     return "".concat(height, "px");
 });
-var BodyWrapper = styled(Flex)(templateObject_5$1 || (templateObject_5$1 = __makeTemplateObject(["\n  position: relative;\n  transition: padding-top 0.3s ease-in-out;\n"], ["\n  position: relative;\n  transition: padding-top 0.3s ease-in-out;\n"])));
+var BodyWrapper = styled(Flex)(templateObject_5$1 || (templateObject_5$1 = __makeTemplateObject(["\n  position: relative;\n"], ["\n  position: relative;\n"])));
 var Inner = styled.div(templateObject_6$1 || (templateObject_6$1 = __makeTemplateObject(["\n  flex-grow: 1;\n  transition: margin-top 0.2s, margin-left 0.2s cubic-bezier(0.4, 0, 0.2, 1);\n  transform: translate3d(0, 0, 0);\n  max-width: 100%;\n"], ["\n  flex-grow: 1;\n  transition: margin-top 0.2s, margin-left 0.2s cubic-bezier(0.4, 0, 0.2, 1);\n  transform: translate3d(0, 0, 0);\n  max-width: 100%;\n"])));
 var Menu = function (_a) {
     var _b;
@@ -7645,6 +7645,7 @@ var Menu = function (_a) {
     useEffect(function () {
         var handleScroll = function () {
             var currentOffset = window.pageYOffset;
+            console.log(currentOffset);
             var isBottomOfPage = window.document.body.clientHeight ===
                 currentOffset + window.innerHeight;
             var isTopOfPage = currentOffset === 0;
@@ -7689,7 +7690,7 @@ var Menu = function (_a) {
                         React.createElement(MenuItems, { items: links, activeItem: activeItem, activeSubItem: activeSubItem, isMobileMenuOpened: isMobileMenuOpened, mobileMenuCallback: setIsMobileMenuOpened, baseAwsUrl: baseAwsUrl, ml: isMobile ? "12px" : "26px" })),
                     React.createElement(Flex, { alignItems: "center", height: "100%" },
                         React.createElement(RightSide, { isMobileMenuOpen: isMobileMenuOpened })))),
-            React.createElement(BodyWrapper, { pt: "".concat(totalTopMenuHeight, "px") },
+            React.createElement(BodyWrapper, null,
                 React.createElement(Inner, { isPushed: false, showMenu: showMenu },
                     React.createElement(React.Fragment, null,
                         children,
