@@ -25,7 +25,7 @@ export interface NavProps
     FooterStatisticProps {
   buyBswHandler: () => void;
   linkComponent?: ElementType;
-  banner?: (b: (s: boolean) => void) => JSX.Element;
+  banner?: (b?: (s: boolean) => void) => JSX.Element;
   links: Array<MenuItemsType>;
   subLinks: Array<SubMenuItemsType>;
   activeItem: string;

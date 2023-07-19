@@ -10,7 +10,7 @@ export interface LinkStatus {
 export interface NavProps extends BSWPriceProps, FooterAboutLinks, FooterProductLinks, FooterServiceLinks, ConnectMetaProps, FooterSocialLinks, FooterStatisticProps {
     buyBswHandler: () => void;
     linkComponent?: ElementType;
-    banner?: (b: (s: boolean) => void) => JSX.Element;
+    banner?: (b?: (s: boolean) => void) => JSX.Element;
     links: Array<MenuItemsType>;
     subLinks: Array<SubMenuItemsType>;
     activeItem: string;

@@ -1,5 +1,5 @@
 import noop from "lodash/noop";
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
 import { BrowserRouter, Link, MemoryRouter } from "react-router-dom";
 import Box from "../../components/Box/Box";
 import Flex from "../../components/Box/Flex";
@@ -25,6 +25,7 @@ import {
 import Menu from "./Menu";
 import { NavProps } from "./types";
 import { ExpandableButton } from "../../components/Button";
+import styled, { css } from "styled-components";
 
 export default {
   title: "Widgets/Menu",
@@ -129,11 +130,37 @@ const defaultProps = {
   rightSide: UserMenuTest,
 };
 
-const Banner = ({ setHeight, setBannerHeight }) => {
+const Extended = styled(Flex)<{ expanded: boolean }>`
+  max-height: 0;
+  height: 0;
+  transform: scaleY(0);
+  visibility: hidden;
+  transition: transform 0.3s ease-out;
+  transform-origin: top;
+
+  ${({ expanded }) =>
+    expanded &&
+    css`
+      max-height: 100px;
+      height: 100px;
+      transform: scaleY(1);
+      visibility: visible;
+      transition: transform 0.3s ease-in;
+    `};
+`;
+
+const ContentWrap = styled(Box)`
+  transition: padding-top 0.25s ease-in;
+`;
+
+const Banner: FC<{
+  setHeight?: (i: boolean) => void;
+  setBannerHeight: (i: number) => void;
+}> = ({ setHeight, setBannerHeight }) => {
   const [expanded, setExpanded] = useState(false);
 
   const onClick = () => {
-    setHeight(expanded);
+    setHeight && setHeight(expanded);
     setBannerHeight(expanded ? 0 : 116);
     setExpanded(!expanded);
   };
@@ -146,19 +173,17 @@ const Banner = ({ setHeight, setBannerHeight }) => {
           Details
         </ExpandableButton>
       </Flex>
-      {expanded && (
-        <Flex height="100px" mt="16px" background="#07162D">
-          <Button width="100%" mx="4px">
-            Step1
-          </Button>
-          <Button width="100%" mx="4px">
-            Step2
-          </Button>
-          <Button width="100%" mx="4px">
-            Step3
-          </Button>
-        </Flex>
-      )}
+      <Extended expanded={expanded} mt="16px" background="#07162D">
+        <Button width="100%" mx="4px">
+          Step1
+        </Button>
+        <Button width="100%" mx="4px">
+          Step2
+        </Button>
+        <Button width="100%" mx="4px">
+          Step3
+        </Button>
+      </Extended>
     </Flex>
   );
 };
@@ -181,11 +206,11 @@ const ConnectedTemplate: React.FC<NavProps> = (args) => {
           socialLinks={socialLinks}
           serviceLinks={serviceLinks}
           buyBswLabel={"Buy bsdt"}
-          banner={(setHeight: (s: boolean) => void) => (
+          banner={(setHeight?: (s: boolean) => void) => (
             <Banner setHeight={setHeight} setBannerHeight={setBannerHeight} />
           )}
         >
-          <Box
+          <ContentWrap
             pt={`${bannerHeight + 156}px`}
             pb="32px"
             px="24px"
@@ -282,7 +307,7 @@ const ConnectedTemplate: React.FC<NavProps> = (args) => {
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
               nisi ut
             </Text>
-          </Box>
+          </ContentWrap>
         </Menu>
       </Box>
     </BrowserRouter>

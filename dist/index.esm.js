@@ -7582,14 +7582,17 @@ var StyledNav = styled.nav(templateObject_2$2 || (templateObject_2$2 = __makeTem
 });
 var FixedContainer = styled.div.attrs({
     id: "menu-container",
-})(templateObject_3$1 || (templateObject_3$1 = __makeTemplateObject(["\n  position: fixed;\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  height: ", ";\n  width: 100%;\n  z-index: 20;\n"], ["\n  position: fixed;\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  height: ", ";\n  width: 100%;\n  z-index: 20;\n"])), function (_a) {
+})(templateObject_3$1 || (templateObject_3$1 = __makeTemplateObject(["\n  position: fixed;\n  top: ", ";\n  left: 0;\n  //transition: top 0.2s;\n  height: ", ";\n  max-height: ", ";\n  width: 100%;\n  z-index: 20;\n\n  transition: top 0.3s ease-in-out, max-height 0.3s ease-in-out;\n"], ["\n  position: fixed;\n  top: ", ";\n  left: 0;\n  //transition: top 0.2s;\n  height: ", ";\n  max-height: ", ";\n  width: 100%;\n  z-index: 20;\n\n  transition: top 0.3s ease-in-out, max-height 0.3s ease-in-out;\n"])), function (_a) {
     var showMenu = _a.showMenu, height = _a.height;
     return (showMenu ? 0 : "-".concat(height, "px"));
 }, function (_a) {
     var height = _a.height;
     return "".concat(height, "px");
+}, function (_a) {
+    var height = _a.height;
+    return "".concat(height, "px");
 });
-var TopBannerContainer = styled.div(templateObject_4$1 || (templateObject_4$1 = __makeTemplateObject(["\n  height: ", ";\n  min-height: ", ";\n  max-height: ", ";\n  width: 100%;\n"], ["\n  height: ", ";\n  min-height: ", ";\n  max-height: ", ";\n  width: 100%;\n"])), function (_a) {
+var TopBannerContainer = styled.div(templateObject_4$1 || (templateObject_4$1 = __makeTemplateObject(["\n  height: ", ";\n  min-height: ", ";\n  max-height: ", ";\n  width: 100%;\n  transition: all 0.3s ease-in-out;\n"], ["\n  height: ", ";\n  min-height: ", ";\n  max-height: ", ";\n  width: 100%;\n  transition: all 0.3s ease-in-out;\n"])), function (_a) {
     var height = _a.height;
     return "".concat(height, "px");
 }, function (_a) {

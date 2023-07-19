@@ -118,10 +118,13 @@ const FixedContainer = styled.div.attrs({
   position: fixed;
   top: ${({ showMenu, height }) => (showMenu ? 0 : `-${height}px`)};
   left: 0;
-  transition: top 0.2s;
+  //transition: top 0.2s;
   height: ${({ height }) => `${height}px`};
+  max-height: ${({ height }) => `${height}px`};
   width: 100%;
   z-index: 20;
+
+  transition: top 0.3s ease-in-out, max-height 0.3s ease-in-out;
 `;
 
 const TopBannerContainer = styled.div<{ height: number }>`
@@ -129,6 +132,7 @@ const TopBannerContainer = styled.div<{ height: number }>`
   min-height: ${({ height }) => `${height}px`};
   max-height: ${({ height }) => `${height}px`};
   width: 100%;
+  transition: all 0.3s ease-in-out;
 `;
 
 const BodyWrapper = styled(Box)`
