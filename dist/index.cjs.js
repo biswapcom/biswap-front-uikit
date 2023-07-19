@@ -7618,7 +7618,7 @@ var TopBannerContainer = styled__default["default"].div(templateObject_4$1 || (t
     var height = _a.height;
     return "".concat(height, "px");
 });
-var BodyWrapper = styled__default["default"](Box)(templateObject_5$1 || (templateObject_5$1 = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n"], ["\n  position: relative;\n  display: flex;\n"])));
+var BodyWrapper = styled__default["default"](Flex)(templateObject_5$1 || (templateObject_5$1 = __makeTemplateObject(["\n  position: relative;\n  transition: padding-top 0.3s ease-in-out;\n"], ["\n  position: relative;\n  transition: padding-top 0.3s ease-in-out;\n"])));
 var Inner = styled__default["default"].div(templateObject_6$1 || (templateObject_6$1 = __makeTemplateObject(["\n  flex-grow: 1;\n  transition: margin-top 0.2s, margin-left 0.2s cubic-bezier(0.4, 0, 0.2, 1);\n  transform: translate3d(0, 0, 0);\n  max-width: 100%;\n"], ["\n  flex-grow: 1;\n  transition: margin-top 0.2s, margin-left 0.2s cubic-bezier(0.4, 0, 0.2, 1);\n  transform: translate3d(0, 0, 0);\n  max-width: 100%;\n"])));
 var Menu = function (_a) {
     var _b;
@@ -7705,7 +7705,7 @@ var Menu = function (_a) {
                         React__default["default"].createElement(MenuItems, { items: links, activeItem: activeItem, activeSubItem: activeSubItem, isMobileMenuOpened: isMobileMenuOpened, mobileMenuCallback: setIsMobileMenuOpened, baseAwsUrl: baseAwsUrl, ml: isMobile ? "12px" : "26px" })),
                     React__default["default"].createElement(Flex, { alignItems: "center", height: "100%" },
                         React__default["default"].createElement(RightSide, { isMobileMenuOpen: isMobileMenuOpened })))),
-            React__default["default"].createElement(BodyWrapper, null,
+            React__default["default"].createElement(BodyWrapper, { pt: "".concat(totalTopMenuHeight, "px") },
                 React__default["default"].createElement(Inner, { isPushed: false, showMenu: showMenu },
                     React__default["default"].createElement(React__default["default"].Fragment, null,
                         children,

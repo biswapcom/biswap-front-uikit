@@ -135,9 +135,9 @@ const TopBannerContainer = styled.div<{ height: number }>`
   transition: all 0.3s ease-in-out;
 `;
 
-const BodyWrapper = styled(Box)`
+const BodyWrapper = styled(Flex)`
   position: relative;
-  display: flex;
+  transition: padding-top 0.3s ease-in-out;
 `;
 
 const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
@@ -325,7 +325,7 @@ const Menu: FC<PropsWithChildren<NavProps>> = ({
           {/*  />*/}
           {/*)}*/}
         </FixedContainer>
-        <BodyWrapper>
+        <BodyWrapper pt={`${totalTopMenuHeight}px`}>
           <Inner isPushed={false} showMenu={showMenu}>
             <>
               {/*<Box height={isMobileMenuOpened ? 0 : totalTopMenuHeight} />*/}
