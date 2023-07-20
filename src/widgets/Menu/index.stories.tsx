@@ -1,5 +1,5 @@
 import noop from "lodash/noop";
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
 import { BrowserRouter, Link, MemoryRouter } from "react-router-dom";
 import Box from "../../components/Box/Box";
 import Flex from "../../components/Box/Flex";
@@ -24,6 +24,9 @@ import {
 } from "./config";
 import Menu from "./Menu";
 import { NavProps } from "./types";
+import { ExpandableButton } from "../../components/Button";
+import styled, { css } from "styled-components";
+import { HeroWrapper } from "../../components/Layouts";
 
 export default {
   title: "Widgets/Menu",
@@ -128,113 +131,127 @@ const defaultProps = {
   rightSide: UserMenuTest,
 };
 
+const Extended = styled(Flex)<{ expanded: boolean }>`
+  max-height: 0;
+  height: 0;
+  transform: scaleY(0);
+  visibility: hidden;
+  transition: transform 0.3s ease-out;
+  transform-origin: top;
+
+  ${({ expanded }) =>
+    expanded &&
+    css`
+      max-height: 100px;
+      height: 100px;
+      transform: scaleY(1);
+      visibility: visible;
+      transition: transform 0.3s ease-in;
+    `};
+`;
+
+const ContentWrap = styled(Box)`
+  transition: padding-top 0.25s ease-in;
+`;
+
+const Banner: FC<{
+  setHeight?: (i: boolean) => void;
+  setBannerHeight?: (i: number) => void;
+}> = ({ setHeight, setBannerHeight }) => {
+  const [expanded, setExpanded] = useState(false);
+
+  const onClick = () => {
+    setHeight && setHeight(expanded);
+    setBannerHeight && setBannerHeight(expanded ? 0 : 116);
+    setExpanded(!expanded);
+  };
+
+  return (
+    <Flex flexDirection="column" px="16px" background="#071C3C">
+      <Flex alignItems="center" justifyContent="space-between" height="40px">
+        <BodyText>Title</BodyText>
+        <ExpandableButton onClick={onClick} expanded={expanded}>
+          Details
+        </ExpandableButton>
+      </Flex>
+      <Extended expanded={expanded} mt="16px" background="#07162D">
+        <Button width="100%" mx="4px">
+          Step1
+        </Button>
+        <Button width="100%" mx="4px">
+          Step2
+        </Button>
+        <Button width="100%" mx="4px">
+          Step3
+        </Button>
+      </Extended>
+    </Flex>
+  );
+};
+
 const ConnectedTemplate: React.FC<NavProps> = (args) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [bannerHeight, setBannerHeight] = useState<number>(0);
+
+  const renderContent = Array.from({ length: 30 }, (v, i) => i).map((el) => (
+    <Text as="p" mt="32px">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+      est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+      do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+      est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+      do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+      minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+    </Text>
+  ));
 
   return (
     <BrowserRouter>
-      <Menu
-        {...args}
-        BSWPriceLabel={BSWPriceLabel}
-        BSWPriceValue={BSWPriceValue}
-        footerStatistic={footerStatistic}
-        registerToken={noop}
-        aboutLinks={aboutLinks}
-        productLinks={productLinks}
-        socialLinks={socialLinks}
-        serviceLinks={serviceLinks}
-        buyBswLabel={"Buy bsdt"}
-      >
-        <Box pt="113px" pb="32px" px="24px" background="#071C3C">
-          <Text bold fontSize="24px" as="h1" mb="8px" color="white">
-            Page body
-          </Text>
-          <Button scale="sm" onClick={() => setIsOpen(!isOpen)}>
-            Show mobile drawer
-          </Button>
-          {/*<BottomDrawer*/}
-          {/*  content={<Box p="16px">Example</Box>}*/}
-          {/*  isOpen={isOpen}*/}
-          {/*  setIsOpen={setIsOpen}*/}
-          {/*/>*/}
-          <Text as="p">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat. Duis aute irure dolor in reprehenderit in
-            voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-            officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit
-            amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-            nostrud exercitation ullamco laboris nisi ut
-          </Text>
-          <Text as="p">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat. Duis aute irure dolor in reprehenderit in
-            voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-            officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit
-            amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-            nostrud exercitation ullamco laboris nisi ut
-          </Text>
-          <Text as="p">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat. Duis aute irure dolor in reprehenderit in
-            voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-            officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit
-            amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-            nostrud exercitation ullamco laboris nisi ut
-          </Text>
-          <Text as="p">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat. Duis aute irure dolor in reprehenderit in
-            voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-            officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit
-            amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-            nostrud exercitation ullamco laboris nisi ut
-          </Text>
-        </Box>
-      </Menu>
+      <Box background="#071C3C">
+        <Menu
+          {...args}
+          BSWPriceLabel={BSWPriceLabel}
+          BSWPriceValue={BSWPriceValue}
+          footerStatistic={footerStatistic}
+          registerToken={noop}
+          aboutLinks={aboutLinks}
+          productLinks={productLinks}
+          socialLinks={socialLinks}
+          serviceLinks={serviceLinks}
+          buyBswLabel={"Buy bsdt"}
+          banner={(setHeight?: (s: boolean) => void) => (
+            <Banner setHeight={setHeight} setBannerHeight={setBannerHeight} />
+          )}
+        >
+          <ContentWrap
+            pt={`${bannerHeight + 116}px`}
+            pb="32px"
+            px="24px"
+            background="#071C3C"
+          >
+            <Text bold fontSize="24px" as="h1" mb="8px" color="white">
+              Page body
+            </Text>
+            <Button scale="sm" onClick={() => setIsOpen(!isOpen)}>
+              Show mobile drawer
+            </Button>
+            {/*<BottomDrawer*/}
+            {/*  content={<Box p="16px">Example</Box>}*/}
+            {/*  isOpen={isOpen}*/}
+            {/*  setIsOpen={setIsOpen}*/}
+            {/*/>*/}
+            {renderContent}
+          </ContentWrap>
+        </Menu>
+      </Box>
     </BrowserRouter>
   );
 };
@@ -244,20 +261,7 @@ Connected.args = defaultProps;
 export const ConnectedWithBanner = ConnectedTemplate.bind({});
 ConnectedWithBanner.args = {
   ...defaultProps,
-  banner: (
-    <Flex
-      height="100%"
-      p="16px"
-      alignItems="center"
-      justifyContent="center"
-      background="#7645D9"
-    >
-      <Text color="invertedContrast" mr="8px">
-        Banner example
-      </Text>
-      <Button scale="sm">I am button</Button>
-    </Flex>
-  ),
+  banner: (setHeight: () => void) => <Banner setHeight={setHeight} />,
 };
 
 export const NotConnected: React.FC = () => {

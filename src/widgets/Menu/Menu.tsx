@@ -32,6 +32,8 @@ import {
   TOP_BANNER_HEIGHT_MOBILE,
   // FISHING_BANNER_HEIGHT,
   // FISHING_MOBILE_BANNER_HEIGHT,
+  TRANSFER_BLOCK_OPENED_HEIGHT,
+  TRANSFER_BLOCK_CLOSED_HEIGHT,
 } from "./config";
 
 // types
@@ -116,10 +118,13 @@ const FixedContainer = styled.div.attrs({
   position: fixed;
   top: ${({ showMenu, height }) => (showMenu ? 0 : `-${height}px`)};
   left: 0;
-  transition: top 0.2s;
+  //transition: top 0.2s;
   height: ${({ height }) => `${height}px`};
+  max-height: ${({ height }) => `${height}px`};
   width: 100%;
   z-index: 20;
+
+  transition: top 0.3s ease-in-out, max-height 0.3s ease-in-out;
 `;
 
 const TopBannerContainer = styled.div<{ height: number }>`
@@ -127,11 +132,11 @@ const TopBannerContainer = styled.div<{ height: number }>`
   min-height: ${({ height }) => `${height}px`};
   max-height: ${({ height }) => `${height}px`};
   width: 100%;
+  transition: all 0.3s ease-in-out;
 `;
 
-const BodyWrapper = styled(Box)`
+const BodyWrapper = styled(Flex)`
   position: relative;
-  display: flex;
 `;
 
 const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
@@ -171,6 +176,11 @@ const Menu: FC<PropsWithChildren<NavProps>> = ({
   const [showMenu, setShowMenu] = useState<boolean>(true);
   const [menuBg, setMenuBg] = useState<boolean>(false);
   const [isMobileMenuOpened, setIsMobileMenuOpened] = useState<boolean>(false);
+
+  const [transferBannerHeight, setTransferBannerHeight] = useState<number>(
+    TRANSFER_BLOCK_CLOSED_HEIGHT
+  );
+
   // const [showFishingWarn, setShowFishingWarn] = useState(true);
 
   const refPrevOffset = useRef(
@@ -186,7 +196,7 @@ const Menu: FC<PropsWithChildren<NavProps>> = ({
     : TOP_BANNER_HEIGHT;
 
   const TopMenuWithBannerHeight = banner
-    ? MENU_HEIGHT + topBannerHeight
+    ? MENU_HEIGHT + transferBannerHeight
     : MENU_HEIGHT;
 
   // const TopMenuWithAllBannersHeight = showFishingWarn
@@ -205,6 +215,7 @@ const Menu: FC<PropsWithChildren<NavProps>> = ({
   //   setShowFishingWarn(false);
   // };
   //
+
   // useEffect(() => {
   //   if (!localStorage.getItem("showFishingWarn")) {
   //     localStorage.setItem("showFishingWarn", JSON.stringify(true));
@@ -213,6 +224,11 @@ const Menu: FC<PropsWithChildren<NavProps>> = ({
   //     setShowFishingWarn(true);
   //   }
   // }, [showFishingWarn]);
+
+  const setTransferHeight = (expanded: boolean) =>
+    setTransferBannerHeight(
+      expanded ? TRANSFER_BLOCK_CLOSED_HEIGHT : TRANSFER_BLOCK_OPENED_HEIGHT
+    );
 
   useEffect(() => {
     const handleScroll = () => {
@@ -274,8 +290,8 @@ const Menu: FC<PropsWithChildren<NavProps>> = ({
           {/*  </FishingWarn>*/}
           {/*)}*/}
           {banner && (
-            <TopBannerContainer height={topBannerHeight}>
-              {banner}
+            <TopBannerContainer height={transferBannerHeight}>
+              {banner(setTransferHeight)}
             </TopBannerContainer>
           )}
           <StyledNav menuBg={menuBg} isMobileMenuOpened={isMobileMenuOpened}>
@@ -312,6 +328,7 @@ const Menu: FC<PropsWithChildren<NavProps>> = ({
         <BodyWrapper>
           <Inner isPushed={false} showMenu={showMenu}>
             <>
+              {/*<Box height={isMobileMenuOpened ? 0 : totalTopMenuHeight} />*/}
               {children}
               <Footer
                 BSWPriceLabel={BSWPriceLabel}
