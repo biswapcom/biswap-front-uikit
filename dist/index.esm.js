@@ -7645,7 +7645,6 @@ var Menu = function (_a) {
     useEffect(function () {
         var handleScroll = function () {
             var currentOffset = window.pageYOffset;
-            console.log(currentOffset);
             var isBottomOfPage = window.document.body.clientHeight ===
                 currentOffset + window.innerHeight;
             var isTopOfPage = currentOffset === 0;
