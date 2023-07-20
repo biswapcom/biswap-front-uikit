@@ -176,6 +176,7 @@ const Menu: FC<PropsWithChildren<NavProps>> = ({
   const [showMenu, setShowMenu] = useState<boolean>(true);
   const [menuBg, setMenuBg] = useState<boolean>(false);
   const [isMobileMenuOpened, setIsMobileMenuOpened] = useState<boolean>(false);
+
   const [transferBannerHeight, setTransferBannerHeight] = useState<number>(
     TRANSFER_BLOCK_CLOSED_HEIGHT
   );
@@ -209,8 +210,6 @@ const Menu: FC<PropsWithChildren<NavProps>> = ({
 
   const RightSide = rightSide ?? Fragment;
 
-  const transferHeight = banner ? transferBannerHeight : 0;
-
   // const closeWarn = () => {
   //   localStorage.setItem("showFishingWarn", JSON.stringify(false));
   //   setShowFishingWarn(false);
@@ -234,7 +233,6 @@ const Menu: FC<PropsWithChildren<NavProps>> = ({
   useEffect(() => {
     const handleScroll = () => {
       const currentOffset = window.pageYOffset;
-      console.log(currentOffset);
       const isBottomOfPage =
         window.document.body.clientHeight ===
         currentOffset + window.innerHeight;
