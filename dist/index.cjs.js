@@ -1849,9 +1849,9 @@ var IconModule = /*#__PURE__*/Object.freeze({
     BlogOpacityIcon: Icon$v,
     LimitOrderSolidIcon: Icon$u,
     LimitOrderOpacityIcon: Icon$t,
-    LiquidityStakingOpacity: Icon$s,
-    LiquidityStakingSolid: Icon$r,
-    LiquidityStakingSolidOpacity: Icon$q,
+    LiquidityStakingOpacityIcon: Icon$s,
+    LiquidityStakingSolidIcon: Icon$r,
+    LiquidityStakingSolidOpacityIcon: Icon$q,
     InstagramIcon: Icon$p,
     MediumIcon: Icon$o,
     RedditIcon: Icon$n,
@@ -8151,9 +8151,9 @@ exports.Link = Link;
 exports.LinkExternal = LinkExternal;
 exports.LiquidityOpacityIcon = Icon$1f;
 exports.LiquiditySolidIcon = Icon$1g;
-exports.LiquidityStakingOpacity = Icon$s;
-exports.LiquidityStakingSolid = Icon$r;
-exports.LiquidityStakingSolidOpacity = Icon$q;
+exports.LiquidityStakingOpacityIcon = Icon$s;
+exports.LiquidityStakingSolidIcon = Icon$r;
+exports.LiquidityStakingSolidOpacityIcon = Icon$q;
 exports.ListOpacityIcon = Icon$1q;
 exports.ListSolidIcon = Icon$1p;
 exports.ListViewIcon = Icon$2z;
