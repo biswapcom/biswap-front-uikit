@@ -5960,17 +5960,20 @@ var descriptionVariants = (_d = {},
     },
     _d);
 
-var Wrapper$8 = styled__default["default"](Box)(templateObject_1$v || (templateObject_1$v = __makeTemplateObject(["\n  width: 100%;\n  margin-top: 8px;\n  ", "\n  background: ", ";\n  border: 1px solid\n    ", ";\n  border-radius: 8px;\n  cursor: pointer;\n  transition: background 0.3s ease;\n\n  &:hover {\n    border-color: ", ";\n    background: transparent;\n  }\n"], ["\n  width: 100%;\n  margin-top: 8px;\n  ", "\n  background: ", ";\n  border: 1px solid\n    ", ";\n  border-radius: 8px;\n  cursor: pointer;\n  transition: background 0.3s ease;\n\n  &:hover {\n    border-color: ", ";\n    background: transparent;\n  }\n"])), styledSystem.variant({
+var Wrapper$8 = styled__default["default"](Box)(templateObject_1$v || (templateObject_1$v = __makeTemplateObject(["\n  width: 100%;\n  margin-top: 8px;\n  ", "\n  background: ", ";\n  border: 1px solid\n    ", ";\n  border-radius: 8px;\n  cursor: pointer;\n  transition: background 0.3s ease;\n\n  &:hover {\n    border-color: ", ";\n    background: ", ";\n  }\n"], ["\n  width: 100%;\n  margin-top: 8px;\n  ", "\n  background: ", ";\n  border: 1px solid\n    ", ";\n  border-radius: 8px;\n  cursor: pointer;\n  transition: background 0.3s ease;\n\n  &:hover {\n    border-color: ", ";\n    background: ", ";\n  }\n"])), styledSystem.variant({
     variants: wrapperVariants,
 }), function (_a) {
-    var isOpen = _a.isOpen;
-    return isOpen && "transparent";
+    var theme = _a.theme, isOpen = _a.isOpen;
+    return isOpen && theme.colors.dark900;
 }, function (_a) {
     var theme = _a.theme, isOpen = _a.isOpen;
     return isOpen ? getRgba(theme.colors.primary, theme, 0.16) : "transparent";
 }, function (_a) {
     var theme = _a.theme;
     return getRgba(theme.colors.primary, theme, 0.16);
+}, function (_a) {
+    var theme = _a.theme;
+    return theme.colors.dark900;
 });
 var Question = styled__default["default"](Flex)(templateObject_2$i || (templateObject_2$i = __makeTemplateObject(["\n  align-items: center;\n  justify-content: space-between;\n  padding: 16px;\n  border-radius: 8px;\n\n  ", " {\n    justify-content: space-between;\n  }\n"], ["\n  align-items: center;\n  justify-content: space-between;\n  padding: 16px;\n  border-radius: 8px;\n\n  ", " {\n    justify-content: space-between;\n  }\n"])), function (_a) {
     var theme = _a.theme;
