@@ -15,7 +15,7 @@ import { descriptionVariants, titleVariants } from "./theme";
 interface IProps extends BoxProps {
   title?: string;
   leftData: QuestionProp[];
-  rightData: QuestionProp[];
+  rightData?: QuestionProp[];
   variant?: Variant;
   blogFAQ?: boolean;
 }
@@ -26,12 +26,12 @@ const Title = styled(BodyText)<{ variant: Variant }>`
   })}
 `;
 
-const ContentWrapper = styled(Grid)<{ blogFAQ: boolean }>`
+const ContentWrapper = styled(Grid)<{ blogFAQ: boolean; fullWidth: boolean }>`
   grid-template-columns: 1fr;
 
   ${({ theme, blogFAQ }) =>
     blogFAQ ? theme.mediaQueries.xl : theme.mediaQueries.md} {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: ${({ fullWidth }) => !fullWidth && "repeat(2, 1fr)"};
     grid-gap: 32px;
   }
 `;
@@ -85,9 +85,11 @@ const Faqs: FC<IProps> = ({
           {title}
         </Title>
       )}
-      <ContentWrapper blogFAQ={blogFAQ}>
+      <ContentWrapper blogFAQ={blogFAQ} fullWidth={!rightData}>
         <Flex flexDirection="column">{renderQuestionList(leftData)}</Flex>
-        <Flex flexDirection="column">{renderQuestionList(rightData)}</Flex>
+        {rightData && (
+          <Flex flexDirection="column">{renderQuestionList(rightData)}</Flex>
+        )}
       </ContentWrapper>
     </Box>
   );
