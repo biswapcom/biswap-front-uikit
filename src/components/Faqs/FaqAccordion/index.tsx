@@ -28,7 +28,7 @@ const Wrapper = styled(Box)<{ isOpen: boolean; variant: Variant }>`
   ${variant({
     variants: wrapperVariants,
   })}
-  background: ${({ isOpen }) => isOpen && "transparent"};
+  background: ${({ theme, isOpen }) => isOpen && theme.colors.dark900};
   border: 1px solid
     ${({ theme, isOpen }) =>
       isOpen ? getRgba(theme.colors.primary, theme, 0.16) : "transparent"};
@@ -38,7 +38,7 @@ const Wrapper = styled(Box)<{ isOpen: boolean; variant: Variant }>`
 
   &:hover {
     border-color: ${({ theme }) => getRgba(theme.colors.primary, theme, 0.16)};
-    background: transparent;
+    background: ${({ theme }) => theme.colors.dark900};
   }
 `;
 
