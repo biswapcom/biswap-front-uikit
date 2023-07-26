@@ -4,7 +4,7 @@ import { QuestionProp, Variant } from "./types";
 interface IProps extends BoxProps {
     title?: string;
     leftData: QuestionProp[];
-    rightData: QuestionProp[];
+    rightData?: QuestionProp[];
     variant?: Variant;
     blogFAQ?: boolean;
 }

@@ -6002,9 +6002,12 @@ var templateObject_1$v, templateObject_2$i, templateObject_3$e, templateObject_4
 var Title$2 = styled__default["default"](BodyText)(templateObject_1$u || (templateObject_1$u = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), styledSystem.variant({
     variants: titleVariants,
 }));
-var ContentWrapper = styled__default["default"](Grid)(templateObject_2$h || (templateObject_2$h = __makeTemplateObject(["\n  grid-template-columns: 1fr;\n\n  ", " {\n    grid-template-columns: repeat(2, 1fr);\n    grid-gap: 32px;\n  }\n"], ["\n  grid-template-columns: 1fr;\n\n  ", " {\n    grid-template-columns: repeat(2, 1fr);\n    grid-gap: 32px;\n  }\n"])), function (_a) {
+var ContentWrapper = styled__default["default"](Grid)(templateObject_2$h || (templateObject_2$h = __makeTemplateObject(["\n  grid-template-columns: 1fr;\n\n  ", " {\n    grid-template-columns: ", ";\n    grid-gap: 32px;\n  }\n"], ["\n  grid-template-columns: 1fr;\n\n  ", " {\n    grid-template-columns: ", ";\n    grid-gap: 32px;\n  }\n"])), function (_a) {
     var theme = _a.theme, blogFAQ = _a.blogFAQ;
     return blogFAQ ? theme.mediaQueries.xl : theme.mediaQueries.md;
+}, function (_a) {
+    var fullWidth = _a.fullWidth;
+    return !fullWidth && "repeat(2, 1fr)";
 });
 var Description = styled__default["default"](BodyText)(templateObject_3$d || (templateObject_3$d = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), styledSystem.variant({
     variants: descriptionVariants,
@@ -6023,9 +6026,9 @@ var Faqs = function (_a) {
     };
     return (React__default["default"].createElement(Box, __assign({}, props),
         title && (React__default["default"].createElement(Title$2, { scale: { xs: isDarkMobile, md: "size24" }, mb: "16px", bold: true, variant: variant }, title)),
-        React__default["default"].createElement(ContentWrapper, { blogFAQ: blogFAQ },
+        React__default["default"].createElement(ContentWrapper, { blogFAQ: blogFAQ, fullWidth: !rightData },
             React__default["default"].createElement(Flex, { flexDirection: "column" }, renderQuestionList(leftData)),
-            React__default["default"].createElement(Flex, { flexDirection: "column" }, renderQuestionList(rightData)))));
+            rightData && (React__default["default"].createElement(Flex, { flexDirection: "column" }, renderQuestionList(rightData))))));
 };
 var templateObject_1$u, templateObject_2$h, templateObject_3$d;
 
