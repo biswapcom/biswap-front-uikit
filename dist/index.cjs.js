@@ -144,24 +144,24 @@ Svg.defaultProps = {
 };
 var templateObject_1$1q, templateObject_2$N, templateObject_3$z;
 
-var Icon$3t = function (props) {
+var Icon$3v = function (props) {
     return (React__default["default"].createElement(Svg, __assign({ viewBox: "0 0 24 24" }, props),
         React__default["default"].createElement("path", { d: "M16.59 9H15V4C15 3.45 14.55 3 14 3H10C9.45 3 9 3.45 9 4V9H7.41C6.52 9 6.07 10.08 6.7 10.71L11.29 15.3C11.68 15.69 12.31 15.69 12.7 15.3L17.29 10.71C17.92 10.08 17.48 9 16.59 9ZM5 19C5 19.55 5.45 20 6 20H18C18.55 20 19 19.55 19 19C19 18.45 18.55 18 18 18H6C5.45 18 5 18.45 5 19Z" })));
 };
 
-var Icon$3s = function (props) {
+var Icon$3u = function (props) {
     return (React__default["default"].createElement(Svg, __assign({ viewBox: "0 0 24 24" }, props),
         React__default["default"].createElement("path", { d: "M9.38031 13.532L4.01253 11.58C3.71703 11.4726 3.46156 11.2772 3.28053 11.0201C3.09949 10.763 3.00159 10.4566 3.00002 10.1422C2.99844 9.82779 3.09327 9.52044 3.27172 9.26156C3.45016 9.00268 3.70367 8.80471 3.99807 8.69431L18.9218 3.09796C19.1983 2.99424 19.4988 2.97234 19.7875 3.03486C20.0761 3.09738 20.3407 3.24168 20.5495 3.45052C20.7584 3.65936 20.9027 3.92392 20.9652 4.21257C21.0277 4.50122 21.0057 4.80176 20.902 5.07829V5.07824L15.3056 20.0019C15.1974 20.2961 15.0011 20.5498 14.7435 20.7284C14.4858 20.907 14.1794 21.0019 13.8659 21H13.8578C13.5429 21.0003 13.2356 20.9032 12.9782 20.7219C12.7207 20.5406 12.5257 20.2841 12.4199 19.9875L10.468 14.6197L4.40017 20.6874C4.25593 20.8317 4.0603 20.9127 3.85631 20.9127C3.65233 20.9127 3.4567 20.8317 3.31246 20.6874C3.16822 20.5432 3.08718 20.3476 3.08718 20.1436C3.08718 19.9396 3.16822 19.744 3.31246 19.5997L9.38031 13.532Z" })));
 };
 
-var Icon$3r = function (props) {
+var Icon$3t = function (props) {
     return (React__default["default"].createElement(Svg, __assign({ viewBox: "0 0 18 18" }, props),
         React__default["default"].createElement("path", { d: "M11.4545 4.90909C11.4545 4.90909 10.6364 8.18182 9 8.18182C7.36364 8.18182 6.54545 4.90909 6.54545 4.90909L11.4545 4.90909Z" }),
         React__default["default"].createElement("path", { d: "M9 9.81818C10.6364 9.81818 11.4545 13.0909 11.4545 13.0909H6.54545C6.54545 13.0909 7.36364 9.81818 9 9.81818Z" }),
         React__default["default"].createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M18 0V0.818182C18 1.72193 17.2674 2.45455 16.3636 2.45455H15.4292C15.1634 4.44627 14.4814 6.05746 13.7994 7.23802C13.3629 7.9933 12.9252 8.57483 12.5928 8.97116L12.5685 9L12.5928 9.02889C12.9252 9.42522 13.3629 10.0067 13.7994 10.7621C14.4814 11.9426 15.1634 13.5538 15.4292 15.5455L16.3636 15.5455C17.2674 15.5455 18 16.2781 18 17.1818V18H0L0 17.1818C0 16.2781 0.732613 15.5455 1.63636 15.5455H2.5708C2.83662 13.5538 3.51857 11.9426 4.20065 10.7621C4.63705 10.0068 5.07481 9.42525 5.4072 9.02891L5.43149 9.00005L5.40722 8.97119C5.07481 8.57488 4.63705 7.99335 4.20065 7.23807C3.51857 6.05751 2.8366 4.44629 2.5708 2.45455H1.63636C0.732613 2.45455 0 1.72193 0 0.818182L0 0L18 0ZM13.7762 2.45455L4.22384 2.45455C4.47523 4.0977 5.04644 5.43099 5.61753 6.41941C5.99931 7.08019 6.37974 7.58431 6.66096 7.91964C6.80144 8.08711 6.91664 8.21188 6.99417 8.29238L7.02486 8.32397C7.04865 8.34826 7.06738 8.36681 7.08044 8.37957L7.09932 8.39777L7.10089 8.39927L7.10209 8.4004C7.26883 8.55518 7.36364 8.77243 7.36364 9.00002C7.36364 9.22764 7.26883 9.44492 7.10209 9.5997L7.10136 9.60038L7.09932 9.6023L7.08046 9.6205L7.06396 9.63676L7.0483 9.65241C7.03317 9.66759 7.01507 9.68605 6.9942 9.70769C6.97824 9.72427 6.96069 9.74273 6.94164 9.76303C6.92533 9.7804 6.90795 9.79913 6.88955 9.81923C6.85452 9.85746 6.81579 9.9006 6.77385 9.94859C6.73844 9.98909 6.70071 10.0331 6.66099 10.0805C6.37974 10.4158 5.99931 10.9199 5.61753 11.5807C5.04644 12.5691 4.47526 13.9024 4.22387 15.5455H13.7761C13.5247 13.9024 12.9536 12.5691 12.3825 11.5807C12.0007 10.9199 11.6203 10.4157 11.339 10.0804C11.1986 9.91294 11.0833 9.78817 11.0058 9.70764C10.9893 9.69057 10.9746 9.67548 10.9617 9.66243L10.9347 9.63541L10.9195 9.62048L10.9007 9.60225L10.8991 9.60075L10.8979 9.59968C10.7312 9.4449 10.6364 9.22759 10.6364 9C10.6364 8.77238 10.7312 8.55508 10.898 8.4003L10.8987 8.39957L10.9007 8.39772L10.9196 8.37952C10.9378 8.36169 10.9671 8.33258 11.0058 8.29233C11.0834 8.21183 11.1986 8.08706 11.339 7.91959C11.6203 7.58429 12.0007 7.08014 12.3825 6.41936C12.9536 5.43094 13.5248 4.09768 13.7762 2.45455Z" })));
 };
 
-var Icon$3q = function (props) {
+var Icon$3s = function (props) {
     return (React__default["default"].createElement(Svg, __assign({ viewBox: "0 0 96 96" }, props),
         React__default["default"].createElement("circle", { cx: "48", cy: "48", r: "48", fill: "url(#paint0_linear_425_18017)" }),
         React__default["default"].createElement("path", { d: "M37.1865 28.2572L30.6206 24.4412L48.4798 14L66.3917 24.4412L59.8257 28.2572L48.4798 21.6851L37.1865 28.2572ZM71.0666 34.8293V42.5145L77.6325 38.6984V31.0133L71.0666 27.1442L64.5007 30.9603L71.0666 34.8293ZM41.9139 31.0133L48.4798 34.8293L55.0457 31.0133L48.4798 27.1442L41.9139 31.0133ZM66.3917 37.5854L59.8257 33.7693L48.4798 40.3414L37.1865 33.7693L30.6206 37.5854V45.2705L41.9139 51.8426V64.9868L48.4798 68.8029L55.0457 64.9868V51.8426L66.3917 45.2705V37.5854ZM71.0666 61.1708L59.7732 67.7429V75.428L77.685 64.9868V44.1575L71.0666 48.0266V61.1708ZM59.7732 62.2838L66.3391 58.4677V50.7296L59.7732 54.5457V62.2838ZM41.9139 70.4989V78.1841L48.4798 82.0001L55.0457 78.1841V70.4989L48.4798 74.315L41.9139 70.4989ZM19.2747 38.6984L25.8406 42.5145V34.8293L32.4065 31.0133L25.8931 27.1442L19.3272 30.9603V38.6984H19.2747ZM25.8931 48.0266L19.3272 44.2105V65.0398L37.239 75.481V67.7959L25.8931 61.1708V48.0266ZM37.1865 54.5987L30.6206 50.7826V58.4677L37.1865 62.2838V54.5987Z", fill: "#14151A" }),
@@ -171,118 +171,132 @@ var Icon$3q = function (props) {
                 React__default["default"].createElement("stop", { offset: "1", stopColor: "#FFD349" })))));
 };
 
-var Icon$3p = function (props) {
+var Icon$3r = function (props) {
     return (React__default["default"].createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React__default["default"].createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0ZM8.29289 11.7071C7.90237 11.3166 7.90237 10.6834 8.29289 10.2929C8.68342 9.90237 9.31658 9.90237 9.70711 10.2929L12 12.5858L14.2929 10.2929C14.6834 9.90237 15.3166 9.90237 15.7071 10.2929C16.0976 10.6834 16.0976 11.3166 15.7071 11.7071L12.7071 14.7071C12.3166 15.0976 11.6834 15.0976 11.2929 14.7071L8.29289 11.7071Z" })));
 };
 
-var Icon$3o = function (props) {
+var Icon$3q = function (props) {
     return (React__default["default"].createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React__default["default"].createElement("rect", { opacity: "0.48", width: "24", height: "24", rx: "12" }),
         React__default["default"].createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M8.29289 10.2929C7.90237 10.6834 7.90237 11.3166 8.29289 11.7071L11.2929 14.7071C11.6834 15.0976 12.3166 15.0976 12.7071 14.7071L15.7071 11.7071C16.0976 11.3166 16.0976 10.6834 15.7071 10.2929C15.3166 9.90237 14.6834 9.90237 14.2929 10.2929L12 12.5858L9.70711 10.2929C9.31658 9.90237 8.68342 9.90237 8.29289 10.2929Z" })));
 };
 
-var Icon$3n = function (props) {
+var Icon$3p = function (props) {
     return (React__default["default"].createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React__default["default"].createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M7.29289 9.79289C6.90237 10.1834 6.90237 10.8166 7.29289 11.2071L11.2929 15.2071C11.6834 15.5976 12.3166 15.5976 12.7071 15.2071L16.7071 11.2071C17.0976 10.8166 17.0976 10.1834 16.7071 9.79289C16.3166 9.40237 15.6834 9.40237 15.2929 9.79289L12 13.0858L8.70711 9.79289C8.31658 9.40237 7.68342 9.40237 7.29289 9.79289Z" })));
 };
 
-var Icon$3m = function (props) {
+var Icon$3o = function (props) {
     return (React__default["default"].createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React__default["default"].createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0ZM11.7071 8.29289C11.3166 7.90237 10.6834 7.90237 10.2929 8.29289C9.90237 8.68342 9.90237 9.31658 10.2929 9.70711L12.5858 12L10.2929 14.2929C9.90237 14.6834 9.90237 15.3166 10.2929 15.7071C10.6834 16.0976 11.3166 16.0976 11.7071 15.7071L14.7071 12.7071C15.0976 12.3166 15.0976 11.6834 14.7071 11.2929L11.7071 8.29289Z" })));
 };
 
-var Icon$3l = function (props) {
+var Icon$3n = function (props) {
     return (React__default["default"].createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React__default["default"].createElement("rect", { opacity: "0.48", width: "24", height: "24", rx: "12" }),
         React__default["default"].createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M10.2929 8.29289C10.6834 7.90237 11.3166 7.90237 11.7071 8.29289L14.7071 11.2929C15.0976 11.6834 15.0976 12.3166 14.7071 12.7071L11.7071 15.7071C11.3166 16.0976 10.6834 16.0976 10.2929 15.7071C9.90237 15.3166 9.90237 14.6834 10.2929 14.2929L12.5858 12L10.2929 9.70711C9.90237 9.31658 9.90237 8.68342 10.2929 8.29289Z" })));
 };
 
-var Icon$3k = function (props) {
+var Icon$3m = function (props) {
     return (React__default["default"].createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React__default["default"].createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M9.79289 7.29289C10.1834 6.90237 10.8166 6.90237 11.2071 7.29289L15.2071 11.2929C15.5976 11.6834 15.5976 12.3166 15.2071 12.7071L11.2071 16.7071C10.8166 17.0976 10.1834 17.0976 9.79289 16.7071C9.40237 16.3166 9.40237 15.6834 9.79289 15.2929L13.0858 12L9.79289 8.70711C9.40237 8.31658 9.40237 7.68342 9.79289 7.29289Z" })));
 };
 
-var Icon$3j = function (props) {
+var Icon$3l = function (props) {
     return (React__default["default"].createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React__default["default"].createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0ZM12.2929 8.29289C12.6834 7.90237 13.3166 7.90237 13.7071 8.29289C14.0976 8.68342 14.0976 9.31658 13.7071 9.70711L11.4142 12L13.7071 14.2929C14.0976 14.6834 14.0976 15.3166 13.7071 15.7071C13.3166 16.0976 12.6834 16.0976 12.2929 15.7071L9.29289 12.7071C8.90237 12.3166 8.90237 11.6834 9.29289 11.2929L12.2929 8.29289Z" })));
 };
 
-var Icon$3i = function (props) {
+var Icon$3k = function (props) {
     return (React__default["default"].createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React__default["default"].createElement("rect", { opacity: "0.48", width: "24", height: "24", rx: "12" }),
         React__default["default"].createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M13.7071 8.29289C13.3166 7.90237 12.6834 7.90237 12.2929 8.29289L9.29289 11.2929C8.90237 11.6834 8.90237 12.3166 9.29289 12.7071L12.2929 15.7071C12.6834 16.0976 13.3166 16.0976 13.7071 15.7071C14.0976 15.3166 14.0976 14.6834 13.7071 14.2929L11.4142 12L13.7071 9.70711C14.0976 9.31658 14.0976 8.68342 13.7071 8.29289Z" })));
 };
 
-var Icon$3h = function (props) {
+var Icon$3j = function (props) {
     return (React__default["default"].createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React__default["default"].createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M14.2071 7.29289C13.8166 6.90237 13.1834 6.90237 12.7929 7.29289L8.79289 11.2929C8.40237 11.6834 8.40237 12.3166 8.79289 12.7071L12.7929 16.7071C13.1834 17.0976 13.8166 17.0976 14.2071 16.7071C14.5976 16.3166 14.5976 15.6834 14.2071 15.2929L10.9142 12L14.2071 8.70711C14.5976 8.31658 14.5976 7.68342 14.2071 7.29289Z" })));
 };
 
-var Icon$3g = function (props) {
+var Icon$3i = function (props) {
     return (React__default["default"].createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React__default["default"].createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M7.29289 14.2071C6.90237 13.8166 6.90237 13.1834 7.29289 12.7929L11.2929 8.79289C11.6834 8.40237 12.3166 8.40237 12.7071 8.79289L16.7071 12.7929C17.0976 13.1834 17.0976 13.8166 16.7071 14.2071C16.3166 14.5976 15.6834 14.5976 15.2929 14.2071L12 10.9142L8.70711 14.2071C8.31658 14.5976 7.68342 14.5976 7.29289 14.2071Z" })));
 };
 
-var Icon$3f = function (props) {
+var Icon$3h = function (props) {
     return (React__default["default"].createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React__default["default"].createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0ZM8.29289 12.2929C7.90237 12.6834 7.90237 13.3166 8.29289 13.7071C8.68342 14.0976 9.31658 14.0976 9.70711 13.7071L12 11.4142L14.2929 13.7071C14.6834 14.0976 15.3166 14.0976 15.7071 13.7071C16.0976 13.3166 16.0976 12.6834 15.7071 12.2929L12.7071 9.29289C12.3166 8.90237 11.6834 8.90237 11.2929 9.29289L8.29289 12.2929Z" })));
 };
 
-var Icon$3e = function (props) {
+var Icon$3g = function (props) {
     return (React__default["default"].createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React__default["default"].createElement("rect", { opacity: "0.48", width: "24", height: "24", rx: "12", transform: "matrix(-1 0 0 1 24 0)" }),
         React__default["default"].createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M8.29289 13.7071C7.90237 13.3166 7.90237 12.6834 8.29289 12.2929L11.2929 9.29289C11.6834 8.90237 12.3166 8.90237 12.7071 9.29289L15.7071 12.2929C16.0976 12.6834 16.0976 13.3166 15.7071 13.7071C15.3166 14.0976 14.6834 14.0976 14.2929 13.7071L12 11.4142L9.70711 13.7071C9.31658 14.0976 8.68342 14.0976 8.29289 13.7071Z" })));
 };
 
-var Icon$3d = function (props) {
+var Icon$3f = function (props) {
     return (React__default["default"].createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React__default["default"].createElement("path", { d: "M13.7929 6.79289C14.1834 6.40237 14.8166 6.40237 15.2071 6.79289L19.7071 11.2929C20.0976 11.6834 20.0976 12.3166 19.7071 12.7071L15.2071 17.2071C14.8166 17.5976 14.1834 17.5976 13.7929 17.2071C13.4024 16.8166 13.4024 16.1834 13.7929 15.7929L16.5858 13H4.9375C4.41973 13 4 12.5523 4 12C4 11.4477 4.41973 11 4.9375 11H16.5858L13.7929 8.20711C13.4024 7.81658 13.4024 7.18342 13.7929 6.79289Z" })));
 };
 
-var Icon$3c = function (props) {
+var Icon$3e = function (props) {
     return (React__default["default"].createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React__default["default"].createElement("path", { d: "M6.79289 10.2071C6.40237 9.81658 6.40237 9.18342 6.79289 8.79289L11.2929 4.29289C11.6834 3.90237 12.3166 3.90237 12.7071 4.29289L17.2071 8.79289C17.5976 9.18342 17.5976 9.81658 17.2071 10.2071C16.8166 10.5976 16.1834 10.5976 15.7929 10.2071L13 7.41421L13 19.0625C13 19.5803 12.5523 20 12 20C11.4477 20 11 19.5803 11 19.0625L11 7.41421L8.20711 10.2071C7.81658 10.5976 7.18342 10.5976 6.79289 10.2071Z" })));
 };
 
-var Icon$3b = function (props) {
+var Icon$3d = function (props) {
     return (React__default["default"].createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React__default["default"].createElement("path", { d: "M10.2071 17.2071C9.81658 17.5976 9.18342 17.5976 8.79289 17.2071L4.29289 12.7071C3.90237 12.3166 3.90237 11.6834 4.29289 11.2929L8.79289 6.79289C9.18342 6.40237 9.81658 6.40237 10.2071 6.79289C10.5976 7.18342 10.5976 7.81658 10.2071 8.20711L7.41421 11H19.0625C19.5803 11 20 11.4477 20 12C20 12.5523 19.5803 13 19.0625 13H7.41421L10.2071 15.7929C10.5976 16.1834 10.5976 16.8166 10.2071 17.2071Z" })));
 };
 
-var Icon$3a = function (props) {
+var Icon$3c = function (props) {
     return (React__default["default"].createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React__default["default"].createElement("path", { d: "M6.79289 13.7929C6.40237 14.1834 6.40237 14.8166 6.79289 15.2071L11.2929 19.7071C11.6834 20.0976 12.3166 20.0976 12.7071 19.7071L17.2071 15.2071C17.5976 14.8166 17.5976 14.1834 17.2071 13.7929C16.8166 13.4024 16.1834 13.4024 15.7929 13.7929L13 16.5858L13 4.9375C13 4.41973 12.5523 4 12 4C11.4477 4 11 4.41973 11 4.9375L11 16.5858L8.20711 13.7929C7.81658 13.4024 7.18342 13.4024 6.79289 13.7929Z" })));
 };
 
-var Icon$39 = function (props) {
+var Icon$3b = function (props) {
     return (React__default["default"].createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React__default["default"].createElement("path", { d: "M9.58578 7.05025C9.58578 6.49796 10.0335 6.05025 10.5858 6.05025L16.9497 6.05025C17.502 6.05025 17.9497 6.49796 17.9497 7.05025V13.4142C17.9497 13.9665 17.502 14.4142 16.9497 14.4142C16.3975 14.4142 15.9497 13.9665 15.9497 13.4142V9.46446L7.71316 17.701C7.34705 18.0672 6.73367 18.0474 6.34314 17.6568C5.95262 17.2663 5.93283 16.6529 6.29895 16.2868L14.5355 8.05025L10.5858 8.05025C10.0335 8.05025 9.58578 7.60253 9.58578 7.05025Z" })));
 };
 
-var Icon$38 = function (props) {
+var Icon$3a = function (props) {
     return (React__default["default"].createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React__default["default"].createElement("path", { d: "M17.0024 7C17.0024 6.44772 16.5547 6 16.0024 6C15.4502 6 15.0024 6.44772 15.0024 7L15.0024 17C15.0024 17.5523 15.4502 18 16.0024 18C16.5547 18 17.0024 17.5523 17.0024 17L17.0024 7Z" }),
         React__default["default"].createElement("path", { d: "M11.1725 12L7.2925 15.88C6.9025 16.27 6.9125 16.91 7.2925 17.3C7.6825 17.69 8.3125 17.69 8.7025 17.3L13.2925 12.71C13.6825 12.32 13.6825 11.69 13.2925 11.3L8.7025 6.70998C8.3125 6.31998 7.6825 6.31998 7.2925 6.70998C6.9025 7.09998 6.9025 7.72998 7.2925 8.11998L11.1725 12Z" })));
 };
 
-var Icon$37 = function (props) {
+var Icon$39 = function (props) {
     return (React__default["default"].createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React__default["default"].createElement("path", { d: "M7 7C7 6.44772 7.44772 6 8 6C8.55228 6 9 6.44772 9 7L9 17C9 17.5523 8.55229 18 8 18C7.44772 18 7 17.5523 7 17L7 7Z" }),
         React__default["default"].createElement("path", { d: "M12.8299 12L16.7099 15.88C17.0999 16.27 17.0899 16.91 16.7099 17.3C16.3199 17.69 15.6899 17.69 15.2999 17.3L10.7099 12.71C10.3199 12.32 10.3199 11.69 10.7099 11.3L15.2999 6.70998C15.6899 6.31998 16.3199 6.31998 16.7099 6.70998C17.0999 7.09998 17.0999 7.72998 16.7099 8.11998L12.8299 12Z" })));
 };
 
-var Icon$36 = function (props) {
+var Icon$38 = function (props) {
     return (React__default["default"].createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React__default["default"].createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M7.29289 11.7071C6.90237 11.3166 6.90237 10.6834 7.29289 10.2929L11.2929 6.29289C11.6834 5.90237 12.3166 5.90237 12.7071 6.29289L16.7071 10.2929C17.0976 10.6834 17.0976 11.3166 16.7071 11.7071C16.3166 12.0976 15.6834 12.0976 15.2929 11.7071L12 8.41421L8.70711 11.7071C8.31658 12.0976 7.68342 12.0976 7.29289 11.7071Z" }),
         React__default["default"].createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M7.29289 17.7071C6.90237 17.3166 6.90237 16.6834 7.29289 16.2929L11.2929 12.2929C11.6834 11.9024 12.3166 11.9024 12.7071 12.2929L16.7071 16.2929C17.0976 16.6834 17.0976 17.3166 16.7071 17.7071C16.3166 18.0976 15.6834 18.0976 15.2929 17.7071L12 14.4142L8.70711 17.7071C8.31658 18.0976 7.68342 18.0976 7.29289 17.7071Z" })));
 };
 
-var Icon$35 = function (props) {
+var Icon$37 = function (props) {
     return (React__default["default"].createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
         React__default["default"].createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M12 1L18.5621 6.01512C19.0652 6.39965 19.1468 7.10101 18.7443 7.58167C18.3418 8.06232 17.6076 8.14025 17.1045 7.75573L12 3.8546L6.89551 7.75573C6.39237 8.14025 5.6582 8.06232 5.25569 7.58167C4.85319 7.10101 4.93476 6.39965 5.4379 6.01512L12 1Z" }),
         React__default["default"].createElement("path", { opacity: "0.56", fillRule: "evenodd", clipRule: "evenodd", d: "M12 8L18.5621 13.7316C19.0652 14.171 19.1468 14.9726 18.7443 15.5219C18.3418 16.0712 17.6076 16.1603 17.1045 15.7208L12 11.2624L6.89551 15.7208C6.39237 16.1603 5.6582 16.0712 5.25569 15.5219C4.85319 14.9726 4.93476 14.171 5.4379 13.7316L12 8Z" }),
         React__default["default"].createElement("path", { opacity: "0.32", fillRule: "evenodd", clipRule: "evenodd", d: "M12 16L18.5621 21.0151C19.0652 21.3996 19.1468 22.101 18.7443 22.5817C18.3418 23.0623 17.6076 23.1403 17.1045 22.7557L12 18.8546L6.89551 22.7557C6.39237 23.1403 5.6582 23.0623 5.25569 22.5817C4.85319 22.101 4.93476 21.3996 5.4379 21.0151L12 16Z" })));
+};
+
+var Icon$36 = function (props) {
+    return (React__default["default"].createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
+        React__default["default"].createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M12 23L5.4379 17.9849C4.93476 17.6004 4.85319 16.899 5.25569 16.4183C5.6582 15.9377 6.39237 15.8597 6.89551 16.2443L12 20.1454L17.1045 16.2443C17.6076 15.8597 18.3418 15.9377 18.7443 16.4183C19.1468 16.899 19.0652 17.6004 18.5621 17.9849L12 23Z" }),
+        React__default["default"].createElement("path", { opacity: "0.56", fillRule: "evenodd", clipRule: "evenodd", d: "M12 16L5.4379 10.2684C4.93476 9.82897 4.85319 9.02741 5.2557 8.47809C5.6582 7.92877 6.39237 7.83971 6.89551 8.27916L12 12.7376L17.1045 8.27917C17.6076 7.83971 18.3418 7.92877 18.7443 8.47809C19.1468 9.02741 19.0652 9.82897 18.5621 10.2684L12 16Z" }),
+        React__default["default"].createElement("path", { opacity: "0.32", fillRule: "evenodd", clipRule: "evenodd", d: "M12 8L5.4379 2.98488C4.93476 2.60035 4.85319 1.89898 5.25569 1.41833C5.6582 0.937674 6.39237 0.859744 6.89551 1.24427L12 5.1454L17.1045 1.24427C17.6076 0.859745 18.3418 0.937675 18.7443 1.41833C19.1468 1.89899 19.0652 2.60035 18.5621 2.98488L12 8Z" })));
+};
+
+var Icon$35 = function (props) {
+    return (React__default["default"].createElement(Svg, __assign({ viewBox: "0 0 24 24", fill: "currentColor" }, props),
+        React__default["default"].createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M23 12L17.9849 18.5621C17.6004 19.0652 16.899 19.1468 16.4183 18.7443C15.9377 18.3418 15.8597 17.6076 16.2443 17.1045L20.1454 12L16.2443 6.89551C15.8597 6.39237 15.9377 5.6582 16.4183 5.25569C16.899 4.85319 17.6004 4.93476 17.9849 5.4379L23 12Z" }),
+        React__default["default"].createElement("path", { opacity: "0.56", fillRule: "evenodd", clipRule: "evenodd", d: "M16 12L10.2684 18.5621C9.82897 19.0652 9.02741 19.1468 8.47809 18.7443C7.92877 18.3418 7.83971 17.6076 8.27916 17.1045L12.7376 12L8.27917 6.89551C7.83971 6.39237 7.92877 5.6582 8.47809 5.25569C9.02741 4.85319 9.82897 4.93476 10.2684 5.4379L16 12Z" }),
+        React__default["default"].createElement("path", { opacity: "0.32", fillRule: "evenodd", clipRule: "evenodd", d: "M8 12L2.98488 18.5621C2.60035 19.0652 1.89899 19.1468 1.41833 18.7443C0.937675 18.3418 0.859745 17.6076 1.24427 17.1045L5.1454 12L1.24427 6.89551C0.859745 6.39237 0.937675 5.6582 1.41833 5.25569C1.89899 4.85319 2.60035 4.93476 2.98488 5.4379L8 12Z" })));
 };
 
 var Icon$34 = function (props) {
@@ -1614,31 +1628,33 @@ var Icon = function (props) {
 
 var IconModule = /*#__PURE__*/Object.freeze({
     __proto__: null,
-    DownloadIcon: Icon$3t,
-    MouseIcon: Icon$3s,
-    HourglassIcon: Icon$3r,
-    BscBlackRoundIcon: Icon$3q,
-    ChevronDownCircleSolidIcon: Icon$3p,
-    ChevronDownCircleOpacityIcon: Icon$3o,
-    ChevronDownIcon: Icon$3n,
-    ChevronRightCircleSolidIcon: Icon$3m,
-    ChevronRightCircleOpacityIcon: Icon$3l,
-    ChevronRightIcon: Icon$3k,
-    ChevronLeftCircleSolidIcon: Icon$3j,
-    ChevronLeftCircleOpacityIcon: Icon$3i,
-    ChevronLeftIcon: Icon$3h,
-    ChevronUpIcon: Icon$3g,
-    ChevronUpCircleSolidIcon: Icon$3f,
-    ChevronUpCircleOpacityIcon: Icon$3e,
-    ArrowRightIcon: Icon$3d,
-    ArrowUpIcon: Icon$3c,
-    ArrowLeftIcon: Icon$3b,
-    ArrowDownIcon: Icon$3a,
-    ArrowUpForwardIcon: Icon$39,
-    ArrowSkipRightIcon: Icon$38,
-    ArrowSkipLeftIcon: Icon$37,
-    ChevronUpDoubleIcon: Icon$36,
-    ChevronUpTripleIcon: Icon$35,
+    DownloadIcon: Icon$3v,
+    MouseIcon: Icon$3u,
+    HourglassIcon: Icon$3t,
+    BscBlackRoundIcon: Icon$3s,
+    ChevronDownCircleSolidIcon: Icon$3r,
+    ChevronDownCircleOpacityIcon: Icon$3q,
+    ChevronDownIcon: Icon$3p,
+    ChevronRightCircleSolidIcon: Icon$3o,
+    ChevronRightCircleOpacityIcon: Icon$3n,
+    ChevronRightIcon: Icon$3m,
+    ChevronLeftCircleSolidIcon: Icon$3l,
+    ChevronLeftCircleOpacityIcon: Icon$3k,
+    ChevronLeftIcon: Icon$3j,
+    ChevronUpIcon: Icon$3i,
+    ChevronUpCircleSolidIcon: Icon$3h,
+    ChevronUpCircleOpacityIcon: Icon$3g,
+    ArrowRightIcon: Icon$3f,
+    ArrowUpIcon: Icon$3e,
+    ArrowLeftIcon: Icon$3d,
+    ArrowDownIcon: Icon$3c,
+    ArrowUpForwardIcon: Icon$3b,
+    ArrowSkipRightIcon: Icon$3a,
+    ArrowSkipLeftIcon: Icon$39,
+    ChevronUpDoubleIcon: Icon$38,
+    ChevronUpTripleIcon: Icon$37,
+    ChevronDownTripleIcon: Icon$36,
+    ChevronRightTripleIcon: Icon$35,
     PlusIcon: Icon$34,
     PlusCircleSolidIcon: Icon$33,
     PlusCircleOpacityIcon: Icon$32,
@@ -2013,7 +2029,7 @@ var insertSeparators = function (items, separator) {
         ], false);
     }, []);
 };
-var DefaultSeparator = React__default["default"].createElement(Icon$3k, { color: "dark500", width: "20px" });
+var DefaultSeparator = React__default["default"].createElement(Icon$3m, { color: "dark500", width: "20px" });
 var Breadcrumbs = function (_a) {
     var _b = _a.separator, separator = _b === void 0 ? DefaultSeparator : _b, children = _a.children;
     var validItems = React.Children.toArray(children).filter(function (child) {
@@ -2312,14 +2328,14 @@ var ExpandableButton = function (_a) {
     var onClick = _a.onClick, expanded = _a.expanded, children = _a.children;
     return (React__default["default"].createElement(IconButton, { "aria-label": "Hide or show expandable content", onClick: onClick },
         children,
-        expanded ? (React__default["default"].createElement(Icon$3g, { color: "invertedContrast" })) : (React__default["default"].createElement(Icon$3n, { color: "invertedContrast" }))));
+        expanded ? (React__default["default"].createElement(Icon$3i, { color: "invertedContrast" })) : (React__default["default"].createElement(Icon$3p, { color: "invertedContrast" }))));
 };
 ExpandableButton.defaultProps = {
     expanded: false,
 };
 var ExpandableLabel = function (_a) {
     var onClick = _a.onClick, expanded = _a.expanded, children = _a.children;
-    return (React__default["default"].createElement(Button, { variant: "text", "aria-label": "Hide or show expandable content", onClick: onClick, endIcon: expanded ? (React__default["default"].createElement(Icon$3g, { color: "primary" })) : (React__default["default"].createElement(Icon$3n, { color: "primary" })) }, children));
+    return (React__default["default"].createElement(Button, { variant: "text", "aria-label": "Hide or show expandable content", onClick: onClick, endIcon: expanded ? (React__default["default"].createElement(Icon$3i, { color: "primary" })) : (React__default["default"].createElement(Icon$3p, { color: "primary" })) }, children));
 };
 ExpandableLabel.defaultProps = {
     expanded: false,
@@ -3057,7 +3073,7 @@ var DropdownTop = styled__default["default"].div(templateObject_4$o || (template
     });
 });
 var Label$1 = styled__default["default"].span(templateObject_5$i || (templateObject_5$i = __makeTemplateObject(["\n  flex-grow: 1;\n"], ["\n  flex-grow: 1;\n"])));
-var StyledArrow = styled__default["default"](Icon$3n)(templateObject_6$b || (templateObject_6$b = __makeTemplateObject(["\n  transition: transform 0.4s ease-in-out;\n  transform: ", ";\n"], ["\n  transition: transform 0.4s ease-in-out;\n  transform: ", ";\n"])), function (_a) {
+var StyledArrow = styled__default["default"](Icon$3p)(templateObject_6$b || (templateObject_6$b = __makeTemplateObject(["\n  transition: transform 0.4s ease-in-out;\n  transform: ", ";\n"], ["\n  transition: transform 0.4s ease-in-out;\n  transform: ", ";\n"])), function (_a) {
     var isOpen = _a.isOpen;
     return (isOpen ? "scale(1,-1)" : "scale(1,1)");
 });
@@ -3620,7 +3636,7 @@ var LinkExternal = function (_a) {
     var children = _a.children, props = __rest(_a, ["children"]);
     return (React__default["default"].createElement(Link, __assign({ external: true }, props),
         children,
-        React__default["default"].createElement(Icon$39, { color: props.color ? props.color : "primary", width: "16px", ml: "4px" })));
+        React__default["default"].createElement(Icon$3b, { color: props.color ? props.color : "primary", width: "16px", ml: "4px" })));
 };
 
 var NotificationDotRoot = styled__default["default"].span(templateObject_1$10 || (templateObject_1$10 = __makeTemplateObject(["\n  display: inline-flex;\n  position: relative;\n"], ["\n  display: inline-flex;\n  position: relative;\n"])));
@@ -5042,7 +5058,7 @@ var Pagination = function (_a) {
         paginate__dark: !isLight,
     });
     return (React__default["default"].createElement(PaginationWrap, { className: paginationClass, variant: variant },
-        React__default["default"].createElement(ReactPaginate__default["default"], { previousLabel: React__default["default"].createElement(Icon$3h, { color: variant === "light" ? "primary" : "white" }), nextLabel: React__default["default"].createElement(Icon$3k, { color: variant === "light" ? "primary" : "white" }), forcePage: forcePage, breakLabel: "...", breakClassName: "break-me", pageCount: pageCount, marginPagesDisplayed: marginPagesDisplayed, pageRangeDisplayed: pageRangeDisplayed, onPageChange: handlePageClick, containerClassName: "pagination", activeClassName: "active" })));
+        React__default["default"].createElement(ReactPaginate__default["default"], { previousLabel: React__default["default"].createElement(Icon$3j, { color: variant === "light" ? "primary" : "white" }), nextLabel: React__default["default"].createElement(Icon$3m, { color: variant === "light" ? "primary" : "white" }), forcePage: forcePage, breakLabel: "...", breakClassName: "break-me", pageCount: pageCount, marginPagesDisplayed: marginPagesDisplayed, pageRangeDisplayed: pageRangeDisplayed, onPageChange: handlePageClick, containerClassName: "pagination", activeClassName: "active" })));
 };
 var templateObject_1$M;
 
@@ -5615,11 +5631,11 @@ var CarouselHeader = function (_a) {
                 React__default["default"].createElement(NavButton, { scale: "xs", variant: "primary", onClick: function () {
                         handleNav("prev");
                     } },
-                    React__default["default"].createElement(Icon$3h, { color: "white" })),
+                    React__default["default"].createElement(Icon$3j, { color: "white" })),
                 React__default["default"].createElement(NavButton, { scale: "xs", variant: "primary", ml: "8px", onClick: function () {
                         handleNav("next");
                     } },
-                    React__default["default"].createElement(Icon$3k, { color: "white" })))))));
+                    React__default["default"].createElement(Icon$3m, { color: "white" })))))));
 };
 var templateObject_1$C;
 
@@ -5939,7 +5955,7 @@ var StyledText = styled__default["default"](HeadText)(templateObject_3$e || (tem
 }));
 var StyledChevronIcon = styled__default["default"](function (_a) {
     var props = __rest(_a, []);
-    return (React__default["default"].createElement(Icon$3n, __assign({}, props)));
+    return (React__default["default"].createElement(Icon$3p, __assign({}, props)));
 })(templateObject_4$c || (templateObject_4$c = __makeTemplateObject(["\n  transform: scale(", ");\n  transition: transform 0.3s ease;\n"], ["\n  transform: scale(", ");\n  transition: transform 0.3s ease;\n"])), function (_a) {
     var isOpen = _a.isOpen;
     return (isOpen ? "1, -1" : "1, 1");
@@ -6060,7 +6076,7 @@ var ModalCloseButton = function (_a) {
 var ModalBackButton = function (_a) {
     var onBack = _a.onBack, closeBtnColor = _a.closeBtnColor;
     return (React__default["default"].createElement(IconButton, { variant: "text", onClick: onBack, "area-label": "go back", mr: "8px" },
-        React__default["default"].createElement(Icon$3b, { color: closeBtnColor || "primary" })));
+        React__default["default"].createElement(Icon$3d, { color: closeBtnColor || "primary" })));
 };
 var ModalContainer = styled__default["default"](Box)(templateObject_5$8 || (templateObject_5$8 = __makeTemplateObject(["\n  overflow: hidden;\n  background: ", ";\n  width: ", ";\n  z-index: ", ";\n  ", "\n\n  ", " {\n    width: ", ";\n    min-width: ", ";\n    max-width: 100%;\n  }\n"], ["\n  overflow: hidden;\n  background: ", ";\n  width: ", ";\n  z-index: ", ";\n  ", "\n\n  ", " {\n    width: ", ";\n    min-width: ", ";\n    max-width: 100%;\n  }\n"])), function (_a) {
     var background = _a.background;
@@ -7780,7 +7796,7 @@ var Toast = function (_a) {
                 React__default["default"].createElement("div", null,
                     hash && (React__default["default"].createElement(LinkWrapper, null,
                         React__default["default"].createElement(LinkStyles, { target: "_blank", href: "https://bscscan.com/tx/".concat(hash) }, viewBscScanLabel),
-                        React__default["default"].createElement(Icon$39, { ml: "6px", width: "18px", height: "18px", color: "primary" }))),
+                        React__default["default"].createElement(Icon$3b, { ml: "6px", width: "18px", height: "18px", color: "primary" }))),
                     description ? (React__default["default"].createElement(Text, { color: "#6B7D98", fontSize: "12px", as: "p", mb: "8px" }, description)) : (React__default["default"].createElement(React__default["default"].Fragment, null)),
                     telegramDescription && tweeterDescription && (React__default["default"].createElement(ActionContainer, null,
                         React__default["default"].createElement(ToastAction, { withGift: withGift, telegramDescription: telegramDescription, tweeterDescription: tweeterDescription, title: title, url: url, thx: "https://bscscan.com/tx/".concat(hash) }))))))));
@@ -7943,14 +7959,14 @@ exports.AboutBSWSolidIcon = Icon$M;
 exports.Alert = Alert;
 exports.AnalyticsOpacityIcon = Icon$R;
 exports.AnalyticsSolidIcon = Icon$S;
-exports.ArrowDownIcon = Icon$3a;
+exports.ArrowDownIcon = Icon$3c;
 exports.ArrowFiguredIcon = Icon$c;
-exports.ArrowLeftIcon = Icon$3b;
-exports.ArrowRightIcon = Icon$3d;
-exports.ArrowSkipLeftIcon = Icon$37;
-exports.ArrowSkipRightIcon = Icon$38;
-exports.ArrowUpForwardIcon = Icon$39;
-exports.ArrowUpIcon = Icon$3c;
+exports.ArrowLeftIcon = Icon$3d;
+exports.ArrowRightIcon = Icon$3f;
+exports.ArrowSkipLeftIcon = Icon$39;
+exports.ArrowSkipRightIcon = Icon$3a;
+exports.ArrowUpForwardIcon = Icon$3b;
+exports.ArrowUpIcon = Icon$3e;
 exports.AuctionIcon = Icon$1Z;
 exports.AuctionOpacityIcon = Icon$1X;
 exports.AuctionSolidIcon = Icon$1Y;
@@ -7983,7 +7999,7 @@ exports.BookOpacityIcon = Icon$21;
 exports.BookSolidIcon = Icon$22;
 exports.Box = Box;
 exports.Breadcrumbs = Breadcrumbs;
-exports.BscBlackRoundIcon = Icon$3q;
+exports.BscBlackRoundIcon = Icon$3s;
 exports.BswIcon = Icon$8;
 exports.BurgerCloseIcon = Icon$1i;
 exports.BurgerIcon = Icon$1j;
@@ -8009,20 +8025,22 @@ exports.CheckIcon = Icon$2t;
 exports.CheckOpacityIcon = Icon$2q;
 exports.CheckSolidIcon = Icon$2r;
 exports.Checkbox = Checkbox;
-exports.ChevronDownCircleOpacityIcon = Icon$3o;
-exports.ChevronDownCircleSolidIcon = Icon$3p;
-exports.ChevronDownIcon = Icon$3n;
-exports.ChevronLeftCircleOpacityIcon = Icon$3i;
-exports.ChevronLeftCircleSolidIcon = Icon$3j;
-exports.ChevronLeftIcon = Icon$3h;
-exports.ChevronRightCircleOpacityIcon = Icon$3l;
-exports.ChevronRightCircleSolidIcon = Icon$3m;
-exports.ChevronRightIcon = Icon$3k;
-exports.ChevronUpCircleOpacityIcon = Icon$3e;
-exports.ChevronUpCircleSolidIcon = Icon$3f;
-exports.ChevronUpDoubleIcon = Icon$36;
-exports.ChevronUpIcon = Icon$3g;
-exports.ChevronUpTripleIcon = Icon$35;
+exports.ChevronDownCircleOpacityIcon = Icon$3q;
+exports.ChevronDownCircleSolidIcon = Icon$3r;
+exports.ChevronDownIcon = Icon$3p;
+exports.ChevronDownTripleIcon = Icon$36;
+exports.ChevronLeftCircleOpacityIcon = Icon$3k;
+exports.ChevronLeftCircleSolidIcon = Icon$3l;
+exports.ChevronLeftIcon = Icon$3j;
+exports.ChevronRightCircleOpacityIcon = Icon$3n;
+exports.ChevronRightCircleSolidIcon = Icon$3o;
+exports.ChevronRightIcon = Icon$3m;
+exports.ChevronRightTripleIcon = Icon$35;
+exports.ChevronUpCircleOpacityIcon = Icon$3g;
+exports.ChevronUpCircleSolidIcon = Icon$3h;
+exports.ChevronUpDoubleIcon = Icon$38;
+exports.ChevronUpIcon = Icon$3i;
+exports.ChevronUpTripleIcon = Icon$37;
 exports.ClickableElementContainer = ClickableElementContainer;
 exports.CloseCircleIcon = Icon$2V;
 exports.CloseCircleOpacityIcon = Icon$2U;
@@ -8039,7 +8057,7 @@ exports.DirectionButton = DirectionButton;
 exports.DocsOpacityIcon = Icon$z;
 exports.DocsSolidIcon = Icon$A;
 exports.Dot = Dot;
-exports.DownloadIcon = Icon$3t;
+exports.DownloadIcon = Icon$3v;
 exports.Dropdown = Dropdown;
 exports.EditIcon = Icon$1D;
 exports.EditOpacityIcon = Icon$1C;
@@ -8086,7 +8104,7 @@ exports.HelpOpacityIcon = Icon$2M;
 exports.HelpSolidIcon = Icon$2L;
 exports.HeroWrapper = HeroWrapper;
 exports.HistoryIcon = Icon$1m;
-exports.HourglassIcon = Icon$3r;
+exports.HourglassIcon = Icon$3t;
 exports.IconButton = IconButton;
 exports.IconComponent = IconComponent;
 exports.IdoOpacityIcon = Icon$11;
@@ -8144,7 +8162,7 @@ exports.MoreHorizontalSolidIcon = Icon$1G;
 exports.MoreVerticalIcon = Icon$1K;
 exports.MoreVerticalOpacityIcon = Icon$1I;
 exports.MoreVerticalSolidIcon = Icon$1J;
-exports.MouseIcon = Icon$3s;
+exports.MouseIcon = Icon$3u;
 exports.MultiPoolOpacityIcon = Icon$E;
 exports.MultiPoolSolidIcon = Icon$D;
 exports.NFTEarnOpacityIcon = Icon$V;
