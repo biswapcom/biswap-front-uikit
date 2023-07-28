@@ -377,6 +377,9 @@ export { default as GiftIcon } from "./Icons/Gift/Gift";
 //Route
 export { default as RouteIcon } from "./Icons/Route/Route";
 
+// Discount
+export { default as DiscountSolidIcon } from "./Icons/Discount/DiscountSolid";
+
 // perpetual
 export * from "./Icons/Menu/Perpetual";
 
