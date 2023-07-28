@@ -379,6 +379,7 @@ export { default as RouteIcon } from "./Icons/Route/Route";
 
 // Discount
 export { default as DiscountSolidIcon } from "./Icons/Discount/DiscountSolid";
+export { default as DiscountOpacityIcon } from "./Icons/Discount/DiscountOpacity";
 
 // perpetual
 export * from "./Icons/Menu/Perpetual";
