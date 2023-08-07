@@ -45,6 +45,7 @@ export const Default: React.FC = () => {
     <Box p="20px">
       <Heading mb="20px">Faqs</Heading>
       <Faqs
+        titlePosition="center"
         title={title}
         leftData={leftData}
         rightData={rightData}

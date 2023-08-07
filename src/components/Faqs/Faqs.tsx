@@ -12,15 +12,20 @@ import { QuestionProp, Variant } from "./types";
 
 import { descriptionVariants, titleVariants } from "./theme";
 
+type TitlePositionType = "start" | "center" | "end";
+
 interface IProps extends BoxProps {
   title?: string;
   leftData: QuestionProp[];
   rightData: QuestionProp[];
   variant?: Variant;
   blogFAQ?: boolean;
+  titlePosition?: TitlePositionType;
 }
 
-const Title = styled(BodyText)<{ variant: Variant }>`
+const Title = styled(BodyText)<{ variant: Variant, titlePosition: TitlePositionType }>`
+  text-align: ${({ titlePosition }) => titlePosition}};
+
   ${variant({
     variants: titleVariants,
   })}
@@ -48,6 +53,7 @@ const Faqs: FC<IProps> = ({
   rightData,
   variant = "dark",
   blogFAQ = false,
+  titlePosition = "start",
   ...props
 }) => {
   const [activeQuestion, setActiveQuestion] = useState<string>("");
@@ -77,6 +83,7 @@ const Faqs: FC<IProps> = ({
     <Box {...props}>
       {title && (
         <Title
+          titlePosition={titlePosition}
           scale={{ xs: isDarkMobile, md: "size24" }}
           mb="16px"
           bold
