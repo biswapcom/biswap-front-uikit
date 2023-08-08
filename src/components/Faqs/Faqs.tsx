@@ -1,5 +1,5 @@
 import React, { FC, useState } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { variant } from "styled-system";
 
 // components
@@ -37,10 +37,14 @@ const Title = styled(BodyText)<{
 const ContentWrapper = styled(Grid)<{ blogFAQ: boolean; singleList: boolean }>`
   grid-template-columns: 1fr;
 
-  ${({ theme, blogFAQ, singleList }) =>
-    singleList ? {} : blogFAQ ? theme.mediaQueries.xl : theme.mediaQueries.md} {
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 32px;
+  ${({ theme, blogFAQ }) =>
+    blogFAQ ? theme.mediaQueries.xl : theme.mediaQueries.md} {
+    ${({ singleList }) =>
+      !singleList &&
+      css`
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 32px;
+      `}
   }
 `;
 
