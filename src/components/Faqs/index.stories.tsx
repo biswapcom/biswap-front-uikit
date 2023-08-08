@@ -72,7 +72,7 @@ export const DefaultBlog: React.FC = () => {
           <Faqs
             title={title}
             leftData={leftData}
-            rightData={rightData}
+            // rightData={rightData}
             variant="light"
             blogFAQ
           />
