@@ -17,13 +17,16 @@ type TitlePositionType = "start" | "center" | "end";
 interface IProps extends BoxProps {
   title?: string;
   leftData: QuestionProp[];
-  rightData: QuestionProp[];
+  rightData?: QuestionProp[];
   variant?: Variant;
   blogFAQ?: boolean;
   titlePosition?: TitlePositionType;
 }
 
-const Title = styled(BodyText)<{ variant: Variant, titlePosition: TitlePositionType }>`
+const Title = styled(BodyText)<{
+  variant: Variant;
+  titlePosition: TitlePositionType;
+}>`
   text-align: ${({ titlePosition }) => titlePosition}};
 
   ${variant({
@@ -31,11 +34,11 @@ const Title = styled(BodyText)<{ variant: Variant, titlePosition: TitlePositionT
   })}
 `;
 
-const ContentWrapper = styled(Grid)<{ blogFAQ: boolean }>`
+const ContentWrapper = styled(Grid)<{ blogFAQ: boolean; singleList: boolean }>`
   grid-template-columns: 1fr;
 
-  ${({ theme, blogFAQ }) =>
-    blogFAQ ? theme.mediaQueries.xl : theme.mediaQueries.md} {
+  ${({ theme, blogFAQ, singleList }) =>
+    singleList ? {} : blogFAQ ? theme.mediaQueries.xl : theme.mediaQueries.md} {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 32px;
   }
@@ -92,9 +95,11 @@ const Faqs: FC<IProps> = ({
           {title}
         </Title>
       )}
-      <ContentWrapper blogFAQ={blogFAQ}>
+      <ContentWrapper blogFAQ={blogFAQ} singleList={!rightData}>
         <Flex flexDirection="column">{renderQuestionList(leftData)}</Flex>
-        <Flex flexDirection="column">{renderQuestionList(rightData)}</Flex>
+        {rightData && (
+          <Flex flexDirection="column">{renderQuestionList(rightData)}</Flex>
+        )}
       </ContentWrapper>
     </Box>
   );

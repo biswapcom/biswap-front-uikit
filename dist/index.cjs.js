@@ -5995,19 +5995,22 @@ var FaqAccordion = function (_a) {
 };
 var templateObject_1$v, templateObject_2$i, templateObject_3$e, templateObject_4$c, templateObject_5$9;
 
-var Title$2 = styled__default["default"](BodyText)(templateObject_1$u || (templateObject_1$u = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), styledSystem.variant({
+var Title$2 = styled__default["default"](BodyText)(templateObject_1$u || (templateObject_1$u = __makeTemplateObject(["\n  text-align: ", "};\n\n  ", "\n"], ["\n  text-align: ", "};\n\n  ", "\n"])), function (_a) {
+    var titlePosition = _a.titlePosition;
+    return titlePosition;
+}, styledSystem.variant({
     variants: titleVariants,
 }));
 var ContentWrapper = styled__default["default"](Grid)(templateObject_2$h || (templateObject_2$h = __makeTemplateObject(["\n  grid-template-columns: 1fr;\n\n  ", " {\n    grid-template-columns: repeat(2, 1fr);\n    grid-gap: 32px;\n  }\n"], ["\n  grid-template-columns: 1fr;\n\n  ", " {\n    grid-template-columns: repeat(2, 1fr);\n    grid-gap: 32px;\n  }\n"])), function (_a) {
-    var theme = _a.theme, blogFAQ = _a.blogFAQ;
-    return blogFAQ ? theme.mediaQueries.xl : theme.mediaQueries.md;
+    var theme = _a.theme, blogFAQ = _a.blogFAQ, singleList = _a.singleList;
+    return singleList ? {} : blogFAQ ? theme.mediaQueries.xl : theme.mediaQueries.md;
 });
 var Description = styled__default["default"](BodyText)(templateObject_3$d || (templateObject_3$d = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), styledSystem.variant({
     variants: descriptionVariants,
 }));
 var Faqs = function (_a) {
-    var _b = _a.title, title = _b === void 0 ? "FAQs" : _b, leftData = _a.leftData, rightData = _a.rightData, _c = _a.variant, variant = _c === void 0 ? "dark" : _c, _d = _a.blogFAQ, blogFAQ = _d === void 0 ? false : _d, props = __rest(_a, ["title", "leftData", "rightData", "variant", "blogFAQ"]);
-    var _e = React.useState(""), activeQuestion = _e[0], setActiveQuestion = _e[1];
+    var _b = _a.title, title = _b === void 0 ? "FAQs" : _b, leftData = _a.leftData, rightData = _a.rightData, _c = _a.variant, variant = _c === void 0 ? "dark" : _c, _d = _a.blogFAQ, blogFAQ = _d === void 0 ? false : _d, _e = _a.titlePosition, titlePosition = _e === void 0 ? "start" : _e, props = __rest(_a, ["title", "leftData", "rightData", "variant", "blogFAQ", "titlePosition"]);
+    var _f = React.useState(""), activeQuestion = _f[0], setActiveQuestion = _f[1];
     var handleToggle = function (name) {
         setActiveQuestion(activeQuestion !== name ? name : "");
     };
@@ -6018,10 +6021,10 @@ var Faqs = function (_a) {
             React__default["default"].createElement(Description, { as: "div", scale: "size14", p: "0 16px 16px", variant: variant }, item.description))); });
     };
     return (React__default["default"].createElement(Box, __assign({}, props),
-        title && (React__default["default"].createElement(Title$2, { scale: { xs: isDarkMobile, md: "size24" }, mb: "16px", bold: true, variant: variant }, title)),
-        React__default["default"].createElement(ContentWrapper, { blogFAQ: blogFAQ },
+        title && (React__default["default"].createElement(Title$2, { titlePosition: titlePosition, scale: { xs: isDarkMobile, md: "size24" }, mb: "16px", bold: true, variant: variant }, title)),
+        React__default["default"].createElement(ContentWrapper, { blogFAQ: blogFAQ, singleList: !rightData },
             React__default["default"].createElement(Flex, { flexDirection: "column" }, renderQuestionList(leftData)),
-            React__default["default"].createElement(Flex, { flexDirection: "column" }, renderQuestionList(rightData)))));
+            rightData && (React__default["default"].createElement(Flex, { flexDirection: "column" }, renderQuestionList(rightData))))));
 };
 var templateObject_1$u, templateObject_2$h, templateObject_3$d;
 
