@@ -2663,7 +2663,7 @@ var ButtonMenu = function (_a) {
                 itemIndex: index,
                 activeButtonIndex: activeButtonIndex,
                 blockOffset: blockOffset,
-                markedIndexes: markedIndexes,
+                marker: markedIndexes.find(function (i) { return i.index === index; }),
                 scale: scale,
                 variant: variant,
                 disabled: disabled,
@@ -2817,8 +2817,8 @@ var MenuItemButton = styled__default["default"].button(templateObject_2$D || (te
 });
 var ButtonMenuItem = function (_a) {
     var _b, _c;
-    var _d = _a.isActive, isActive = _d === void 0 ? false : _d, _e = _a.variant, variant = _e === void 0 ? variants$6.DARK : _e, _f = _a.markedIndexes, markedIndexes = _f === void 0 ? [] : _f, _g = _a.scale, scale = _g === void 0 ? scales$9.MD : _g, as = _a.as, setWidth = _a.setWidth, _h = _a.itemIndex, itemIndex = _h === void 0 ? 0 : _h, activeButtonIndex = _a.activeButtonIndex, blockOffset = _a.blockOffset, _j = _a.onItemClick, onItemClick = _j === void 0 ? function () { } : _j, _k = _a.onClick, onClick = _k === void 0 ? function () { } : _k, props = __rest(_a, ["isActive", "variant", "markedIndexes", "scale", "as", "setWidth", "itemIndex", "activeButtonIndex", "blockOffset", "onItemClick", "onClick"]);
-    var _l = useMatchBreakpoints(), isXs = _l.isXs, isSm = _l.isSm, isMs = _l.isMs, isLg = _l.isLg, isXl = _l.isXl, isXll = _l.isXll, isXxl = _l.isXxl;
+    var _d = _a.isActive, isActive = _d === void 0 ? false : _d, _e = _a.variant, variant = _e === void 0 ? variants$6.DARK : _e, marker = _a.marker, _f = _a.scale, scale = _f === void 0 ? scales$9.MD : _f, as = _a.as, setWidth = _a.setWidth, _g = _a.itemIndex, itemIndex = _g === void 0 ? 0 : _g, activeButtonIndex = _a.activeButtonIndex, blockOffset = _a.blockOffset, _h = _a.onItemClick, onItemClick = _h === void 0 ? function () { } : _h, _j = _a.onClick, onClick = _j === void 0 ? function () { } : _j, props = __rest(_a, ["isActive", "variant", "marker", "scale", "as", "setWidth", "itemIndex", "activeButtonIndex", "blockOffset", "onItemClick", "onClick"]);
+    var _k = useMatchBreakpoints(), isXs = _k.isXs, isSm = _k.isSm, isMs = _k.isMs, isLg = _k.isLg, isXl = _k.isXl, isXll = _k.isXll, isXxl = _k.isXxl;
     var ref = React.useRef(null);
     var itemWidth = (_c = (_b = ref === null || ref === void 0 ? void 0 : ref.current) === null || _b === void 0 ? void 0 : _b.clientWidth) !== null && _c !== void 0 ? _c : 0;
     React.useEffect(function () {
@@ -2845,10 +2845,9 @@ var ButtonMenuItem = function (_a) {
         onItemClick(itemIndex);
         onClick();
     };
-    var withMarker = markedIndexes.includes(itemIndex);
     return (React__default["default"].createElement(Box, { position: "relative", width: "100%" },
         React__default["default"].createElement(MenuItemButton, __assign({ onClick: omItemClickHandler, isActive: isActive, ref: ref, as: as, variant: variant, hoverKey: getHoverKey(variant), colorKey: getColorKey(variant), scale: scale }, props)),
-        withMarker && React__default["default"].createElement(Marker, __assign({ color: "success" }, markerScales[scale]))));
+        marker && (React__default["default"].createElement(Marker, __assign({ color: (marker === null || marker === void 0 ? void 0 : marker.color) || "success" }, markerScales[scale])))));
 };
 var templateObject_1$19, templateObject_2$D;
 
