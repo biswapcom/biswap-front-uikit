@@ -8,6 +8,11 @@ import {
 } from "react";
 import { LayoutProps, SpaceProps } from "styled-system";
 
+type IMarkerType = {
+  index: number;
+  color?: "primary" | "secondary" | "success" | "warning" | undefined;
+};
+
 export interface ButtonMenuItemProps extends BaseButtonMenuItemProps {
   isActive?: boolean;
   setWidth?: Dispatch<SetStateAction<any>>;
@@ -17,7 +22,7 @@ export interface ButtonMenuItemProps extends BaseButtonMenuItemProps {
   elementRef?: RefObject<HTMLButtonElement>;
   onItemClick?: (index: number) => void;
   onClick?: () => void;
-  markedIndexes?: number[];
+  marker?: IMarkerType;
 }
 // export type ButtonMenuItemProps<P extends ElementType = "button"> =
 //   PolymorphicComponentProps<P, BaseButtonMenuItemProps>;
@@ -65,7 +70,7 @@ export interface ButtonMenuProps extends SpaceProps {
   scrollX?: boolean;
   equalElementWidth?: boolean;
   withoutAnimation?: boolean;
-  markedIndexes?: number[];
+  markedIndexes?: IMarkerType[];
 }
 
 //--------------

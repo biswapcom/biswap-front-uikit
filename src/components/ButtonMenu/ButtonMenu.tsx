@@ -241,7 +241,7 @@ const ButtonMenu: React.FC<ButtonMenuProps> = ({
             itemIndex: index,
             activeButtonIndex,
             blockOffset,
-            markedIndexes,
+            marker: markedIndexes.find((i) => i.index === index),
             scale,
             variant,
             disabled,

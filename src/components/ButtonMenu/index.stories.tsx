@@ -107,6 +107,11 @@ export const Default: React.FC = () => {
           activeIndex={index}
           onItemClick={handleClick}
           variant="dark"
+          markedIndexes={[
+            { index: 0, color: "success" },
+            { index: 1, color: "secondary" },
+            { index: 2 },
+          ]}
         >
           <ButtonMenuItem>Dark md 1</ButtonMenuItem>
           <ButtonMenuItem>Dark md 2</ButtonMenuItem>

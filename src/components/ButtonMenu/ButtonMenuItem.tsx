@@ -67,7 +67,7 @@ const MenuItemButton: PolymorphicComponent<
 const ButtonMenuItem: PolymorphicComponent<ButtonMenuItemProps, "button"> = ({
   isActive = false,
   variant = variants.DARK,
-  markedIndexes = [],
+  marker,
   scale = scales.MD,
   as,
   setWidth,
@@ -110,8 +110,6 @@ const ButtonMenuItem: PolymorphicComponent<ButtonMenuItemProps, "button"> = ({
     onClick();
   };
 
-  const withMarker = markedIndexes.includes(itemIndex);
-
   return (
     <Box position="relative" width="100%">
       <MenuItemButton
@@ -125,7 +123,9 @@ const ButtonMenuItem: PolymorphicComponent<ButtonMenuItemProps, "button"> = ({
         scale={scale}
         {...props}
       />
-      {withMarker && <Marker color="success" {...markerScales[scale]} />}
+      {marker && (
+        <Marker color={marker?.color || "success"} {...markerScales[scale]} />
+      )}
     </Box>
   );
 };
