@@ -12,6 +12,7 @@ export interface TooltipOptions {
   arrowPadding?: Padding;
   tooltipPadding?: Padding;
   tooltipOffset?: [number, number];
+  disableStopPropagation?: boolean;
 }
 
 export type TriggerType = "click" | "hover" | "focus";

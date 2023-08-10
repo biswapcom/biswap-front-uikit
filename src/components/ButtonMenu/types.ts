@@ -8,9 +8,11 @@ import {
 } from "react";
 import { LayoutProps, SpaceProps } from "styled-system";
 
-type IMarkerType = {
+type IPropertiesType = {
   index: number;
-  color?: "primary" | "secondary" | "success" | "warning" | undefined;
+  markerColor?: "primary" | "secondary" | "success" | "warning" | undefined;
+  tooltipText?: string;
+  dontShowTooltip?: boolean;
 };
 
 export interface ButtonMenuItemProps extends BaseButtonMenuItemProps {
@@ -22,7 +24,7 @@ export interface ButtonMenuItemProps extends BaseButtonMenuItemProps {
   elementRef?: RefObject<HTMLButtonElement>;
   onItemClick?: (index: number) => void;
   onClick?: () => void;
-  marker?: IMarkerType;
+  properties?: IPropertiesType;
 }
 // export type ButtonMenuItemProps<P extends ElementType = "button"> =
 //   PolymorphicComponentProps<P, BaseButtonMenuItemProps>;
@@ -70,7 +72,7 @@ export interface ButtonMenuProps extends SpaceProps {
   scrollX?: boolean;
   equalElementWidth?: boolean;
   withoutAnimation?: boolean;
-  markedIndexes?: IMarkerType[];
+  itemsProperties?: IPropertiesType[];
 }
 
 //--------------

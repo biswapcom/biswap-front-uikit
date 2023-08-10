@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { Meta } from "@storybook/react/types-6-0";
 import ButtonMenu from "./ButtonMenu";
 import ButtonMenuItem from "./ButtonMenuItem";
+import { useMatchBreakpoints } from "../../contexts";
 
 const Row = styled.div<{ isLight?: boolean }>`
   margin-bottom: 32px;
@@ -21,6 +22,7 @@ export default {
 export const Default: React.FC = () => {
   const [index, setIndex] = useState<number>(0);
 
+  const { isMobile } = useMatchBreakpoints();
   const handleClick = (newIndex: number) => setIndex(newIndex);
 
   return (
@@ -107,10 +109,25 @@ export const Default: React.FC = () => {
           activeIndex={index}
           onItemClick={handleClick}
           variant="dark"
-          markedIndexes={[
-            { index: 0, color: "success" },
-            { index: 1, color: "secondary" },
-            { index: 2 },
+          itemsProperties={[
+            {
+              index: 0,
+              markerColor: "success",
+              dontShowTooltip: !isMobile,
+              tooltipText: "test tooltip text",
+            },
+            { index: 1, markerColor: "secondary" },
+            {
+              index: 2,
+              tooltipText:
+                "test tooltip text extended test tooltip text extended test tooltip",
+            },
+            {
+              index: 3,
+              dontShowTooltip: isMobile,
+              tooltipText:
+                "test tooltip text extended test tooltip text extended test tooltip text extended test tooltip text extended ",
+            },
           ]}
         >
           <ButtonMenuItem>Dark md 1</ButtonMenuItem>

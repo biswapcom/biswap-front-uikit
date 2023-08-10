@@ -27,6 +27,7 @@ const useTooltip = (
     trigger = isMobile || isTablet ? "click" : "hover",
     tooltipPadding = { left: 16, right: 16 },
     tooltipOffset = [0, 10],
+    disableStopPropagation,
   } = options;
   const [targetElement, setTargetElement] = useState<HTMLElement | null>(null);
   const [tooltipElement, setTooltipElement] =
@@ -87,7 +88,7 @@ const useTooltip = (
 
   const toggleTooltip = useCallback(
     (e: Event) => {
-      e.stopPropagation();
+      !disableStopPropagation && e.stopPropagation();
       setVisible(!visible);
     },
     [visible]
