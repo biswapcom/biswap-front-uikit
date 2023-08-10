@@ -9,7 +9,7 @@ import {
 import { LayoutProps, SpaceProps } from "styled-system";
 import { MarkerType } from "../../theme";
 
-type IPropertiesType = {
+export type IPropertiesType = {
   index: number;
   markerColor?: keyof MarkerType;
   tooltipText?: string;
