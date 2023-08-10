@@ -7,10 +7,11 @@ import {
   SetStateAction,
 } from "react";
 import { LayoutProps, SpaceProps } from "styled-system";
+import { MarkerType } from "../../theme";
 
 type IPropertiesType = {
   index: number;
-  markerColor?: "primary" | "secondary" | "success" | "warning" | undefined;
+  markerColor?: keyof MarkerType;
   tooltipText?: string;
   dontShowTooltip?: boolean;
 };

@@ -1,8 +1,9 @@
 import { Dispatch, ElementType, ReactElement, ReactNode, RefObject, SetStateAction } from "react";
 import { LayoutProps, SpaceProps } from "styled-system";
+import { MarkerType } from "../../theme";
 declare type IPropertiesType = {
     index: number;
-    markerColor?: "primary" | "secondary" | "success" | "warning" | undefined;
+    markerColor?: keyof MarkerType;
     tooltipText?: string;
     dontShowTooltip?: boolean;
 };
