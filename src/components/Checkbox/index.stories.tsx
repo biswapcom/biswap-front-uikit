@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import Checkbox from "./Checkbox";
-import { Text } from "../Text";
 
 export default {
   title: "Components/Checkbox",
