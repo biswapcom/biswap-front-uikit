@@ -2960,7 +2960,7 @@ var variants$5 = {
     LIGHT: "light",
 };
 
-var _a$d, _b$5, _c$3, _d$2, _e;
+var _a$d, _b$5, _c$3, _d$2, _e$1;
 var scaleVariantsContainer = (_a$d = {},
     _a$d[scales$7.LG] = {
         height: "48px",
@@ -3038,8 +3038,8 @@ var scaleVariantItem = (_d$2 = {},
         },
     },
     _d$2);
-var styleVariantsTop = (_e = {},
-    _e[variants$5.LIGHT] = {
+var styleVariantsTop = (_e$1 = {},
+    _e$1[variants$5.LIGHT] = {
         borderColor: "gray300",
         color: "gray900",
         ".arrow": {
@@ -3061,7 +3061,7 @@ var styleVariantsTop = (_e = {},
             },
         },
     },
-    _e[variants$5.DARK] = {
+    _e$1[variants$5.DARK] = {
         borderColor: "dark500",
         color: "pastelBlue",
         ".arrow": {
@@ -3083,7 +3083,7 @@ var styleVariantsTop = (_e = {},
             },
         },
     },
-    _e);
+    _e$1);
 
 var getBottom = function (_a) {
     var position = _a.position;
@@ -5958,14 +5958,18 @@ var templateObject_1$w;
 var variants = {
     LIGHT: "light",
     DARK: "dark",
+    DARK_BACKGROUND: "darkBackground",
 };
 
-var _a$1, _b, _c, _d;
+var _a$1, _b, _c, _d, _e;
 var titleVariants = (_a$1 = {},
     _a$1[variants.LIGHT] = {
         color: "dark800",
     },
     _a$1[variants.DARK] = {
+        color: "white",
+    },
+    _a$1[variants.DARK_BACKGROUND] = {
         color: "white",
     },
     _a$1);
@@ -5976,12 +5980,18 @@ var wrapperVariants = (_b = {},
     _b[variants.DARK] = {
         backgroundColor: "dark600",
     },
+    _b[variants.DARK_BACKGROUND] = {
+        backgroundColor: "dark600",
+    },
     _b);
 var questionVariants = (_c = {},
     _c[variants.LIGHT] = {
         color: "dark800",
     },
     _c[variants.DARK] = {
+        color: "white",
+    },
+    _c[variants.DARK_BACKGROUND] = {
         color: "white",
     },
     _c);
@@ -5992,20 +6002,39 @@ var descriptionVariants = (_d = {},
     _d[variants.DARK] = {
         color: "gray700",
     },
+    _d[variants.DARK_BACKGROUND] = {
+        color: "gray700",
+    },
     _d);
+var openBackground = (_e = {},
+    _e[variants.LIGHT] = {
+        backgroundColor: "transparent",
+    },
+    _e[variants.DARK] = {
+        backgroundColor: "transparent",
+    },
+    _e[variants.DARK_BACKGROUND] = {
+        backgroundColor: "dark900",
+    },
+    _e);
 
-var Wrapper$8 = styled(Box)(templateObject_1$v || (templateObject_1$v = __makeTemplateObject(["\n  width: 100%;\n  margin-top: 8px;\n  ", "\n  background: ", ";\n  border: 1px solid\n    ", ";\n  border-radius: 8px;\n  cursor: pointer;\n  transition: background 0.3s ease;\n\n  &:hover {\n    border-color: ", ";\n    background: transparent;\n  }\n"], ["\n  width: 100%;\n  margin-top: 8px;\n  ", "\n  background: ", ";\n  border: 1px solid\n    ", ";\n  border-radius: 8px;\n  cursor: pointer;\n  transition: background 0.3s ease;\n\n  &:hover {\n    border-color: ", ";\n    background: transparent;\n  }\n"])), variant({
+var Wrapper$8 = styled(Box)(templateObject_1$v || (templateObject_1$v = __makeTemplateObject(["\n  width: 100%;\n  margin-top: 8px;\n  ", "\n  ", ";\n  border: 1px solid\n    ", ";\n  border-radius: 8px;\n  cursor: pointer;\n  transition: background 0.3s ease;\n\n  &:hover {\n    border-color: ", ";\n    ", "\n  }\n"], ["\n  width: 100%;\n  margin-top: 8px;\n  ", "\n  ", ";\n  border: 1px solid\n    ", ";\n  border-radius: 8px;\n  cursor: pointer;\n  transition: background 0.3s ease;\n\n  &:hover {\n    border-color: ", ";\n    ", "\n  }\n"])), variant({
     variants: wrapperVariants,
 }), function (_a) {
     var isOpen = _a.isOpen;
-    return isOpen && "transparent";
+    return isOpen &&
+        variant({
+            variants: openBackground,
+        });
 }, function (_a) {
     var theme = _a.theme, isOpen = _a.isOpen;
     return isOpen ? getRgba(theme.colors.primary, theme, 0.16) : "transparent";
 }, function (_a) {
     var theme = _a.theme;
     return getRgba(theme.colors.primary, theme, 0.16);
-});
+}, variant({
+    variants: openBackground,
+}));
 var Question = styled(Flex)(templateObject_2$i || (templateObject_2$i = __makeTemplateObject(["\n  align-items: center;\n  justify-content: space-between;\n  padding: 16px;\n  border-radius: 8px;\n\n  ", " {\n    justify-content: space-between;\n  }\n"], ["\n  align-items: center;\n  justify-content: space-between;\n  padding: 16px;\n  border-radius: 8px;\n\n  ", " {\n    justify-content: space-between;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
