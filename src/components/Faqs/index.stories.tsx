@@ -55,7 +55,7 @@ export const Default: React.FC = () => {
         title={title}
         leftData={leftData}
         rightData={rightData}
-        variant="dark"
+        variant="darkBackground"
       />
     </Box>
   );
