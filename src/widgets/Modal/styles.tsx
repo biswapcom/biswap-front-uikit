@@ -19,18 +19,6 @@ export const ModalWrapper = styled.div`
   z-index: ${({ theme }) => theme.zIndices.modal - 1};
 `;
 
-export const ModalHeader = styled.div`
-  display: flex;
-  //align-items: flex-start;
-  justify-content: space-between;
-  align-items: center;
-  padding: 24px 16px 16px;
-
-  ${({ theme }) => theme.mediaQueries.sm} {
-    padding: 32px 32px 24px;
-  }
-`;
-
 export const ModalTitle = styled(Flex)``;
 
 export const ModalBody = styled(Flex)`

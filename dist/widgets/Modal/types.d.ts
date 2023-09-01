@@ -14,6 +14,7 @@ export interface ModalProps extends InjectedProps, BoxProps {
     onBack?: () => void;
     hideOnBack?: boolean;
     bodyPadding?: string;
+    headerPadding?: string;
     minWidth?: string;
     maxWidth?: string;
     modalBackground?: string;
