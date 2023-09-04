@@ -1,6 +1,7 @@
 import React, { Dispatch, SetStateAction } from "react";
 import { BoxProps, FlexProps } from "../../components/Box";
 import { Scales } from "../../components/Heading/types";
+import { ResponsiveValueType } from "../../util";
 export interface ModalTheme {
     background: string;
 }
@@ -14,7 +15,7 @@ export interface ModalProps extends InjectedProps, BoxProps {
     onBack?: () => void;
     hideOnBack?: boolean;
     bodyPadding?: string;
-    headerPadding?: string;
+    headerPadding?: ResponsiveValueType;
     minWidth?: string;
     maxWidth?: string;
     modalBackground?: string;
