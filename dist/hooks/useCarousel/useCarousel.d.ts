@@ -22,7 +22,8 @@ interface IProps<T, C, A> {
     slideGap?: number;
     speed?: number;
     delay?: number;
+    containerOverflow?: string;
 }
 declare type ReturnDataType = [() => JSX.Element, () => void, () => void];
-export declare const useCarousel: ({ data, Slide, title, slidesToScroll, isDraggable, withDots, withNavButtons, navButtonsType, navPadding, withNavButtonsHeader, showNumberBlock, position, isAutoplay, alignItem, breakpoints, slideProps, loop, marginDots, slideGap, speed, delay, }: IProps<any, any, any>) => ReturnDataType;
+export declare const useCarousel: ({ data, Slide, title, slidesToScroll, isDraggable, withDots, withNavButtons, navButtonsType, navPadding, withNavButtonsHeader, showNumberBlock, position, isAutoplay, alignItem, breakpoints, slideProps, loop, marginDots, slideGap, speed, delay, containerOverflow, }: IProps<any, any, any>) => ReturnDataType;
 export {};

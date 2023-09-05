@@ -5749,7 +5749,10 @@ var NavWrapper = styled(Flex)(templateObject_1$y || (templateObject_1$y = __make
     return (navPadding ? "0 ".concat(navPadding, "px") : "0");
 });
 var Embla = styled.div(templateObject_2$k || (templateObject_2$k = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  margin: 0;\n  padding: 0;\n\n  &:hover ", " {\n    opacity: 1;\n  }\n"], ["\n  position: relative;\n  width: 100%;\n  margin: 0;\n  padding: 0;\n\n  &:hover ", " {\n    opacity: 1;\n  }\n"])), NavWrapper);
-var Viewport = styled.div(templateObject_3$f || (templateObject_3$f = __makeTemplateObject(["\n  overflow: hidden;\n  width: 100%;\n"], ["\n  overflow: hidden;\n  width: 100%;\n"])));
+var Viewport = styled.div(templateObject_3$f || (templateObject_3$f = __makeTemplateObject(["\n  overflow: ", ";\n  width: 100%;\n"], ["\n  overflow: ", ";\n  width: 100%;\n"])), function (_a) {
+    var containerOverflow = _a.containerOverflow;
+    return containerOverflow || "hidden";
+});
 var Container = styled(Flex)(templateObject_4$d || (templateObject_4$d = __makeTemplateObject(["\n  user-select: none;\n  -webkit-touch-callout: none;\n  -webkit-tap-highlight-color: transparent;\n  align-items: ", ";\n  margin: ", ";\n"], ["\n  user-select: none;\n  -webkit-touch-callout: none;\n  -webkit-tap-highlight-color: transparent;\n  align-items: ", ";\n  margin: ", ";\n"])), function (_a) {
     var alignItem = _a.alignItem;
     return alignItem;
@@ -5758,7 +5761,7 @@ var Container = styled(Flex)(templateObject_4$d || (templateObject_4$d = __makeT
     return (gap === 0 ? "0" : gap > 0 ? "0 -".concat(gap / 2, "px") : "0");
 });
 var useCarousel = function (_a) {
-    var data = _a.data, Slide = _a.Slide, title = _a.title, _b = _a.slidesToScroll, slidesToScroll = _b === void 0 ? 1 : _b, _c = _a.isDraggable, isDraggable = _c === void 0 ? false : _c, _d = _a.withDots, withDots = _d === void 0 ? false : _d, _e = _a.withNavButtons, withNavButtons = _e === void 0 ? false : _e, _f = _a.navButtonsType, navButtonsType = _f === void 0 ? CarouselButtonsTypes.GRAY_OPACITY : _f, _g = _a.navPadding, navPadding = _g === void 0 ? 0 : _g, _h = _a.withNavButtonsHeader, withNavButtonsHeader = _h === void 0 ? false : _h, _j = _a.showNumberBlock, showNumberBlock = _j === void 0 ? false : _j, _k = _a.position, position = _k === void 0 ? "center" : _k, _l = _a.isAutoplay, isAutoplay = _l === void 0 ? false : _l, _m = _a.alignItem, alignItem = _m === void 0 ? "normal" : _m, _o = _a.breakpoints, breakpoints = _o === void 0 ? {} : _o, _p = _a.slideProps, slideProps = _p === void 0 ? {} : _p, _q = _a.loop, loop = _q === void 0 ? true : _q, _r = _a.marginDots, marginDots = _r === void 0 ? "24px" : _r, _s = _a.slideGap, slideGap = _s === void 0 ? 32 : _s, _t = _a.speed, speed = _t === void 0 ? 10 : _t, _u = _a.delay, delay = _u === void 0 ? 8000 : _u;
+    var data = _a.data, Slide = _a.Slide, title = _a.title, _b = _a.slidesToScroll, slidesToScroll = _b === void 0 ? 1 : _b, _c = _a.isDraggable, isDraggable = _c === void 0 ? false : _c, _d = _a.withDots, withDots = _d === void 0 ? false : _d, _e = _a.withNavButtons, withNavButtons = _e === void 0 ? false : _e, _f = _a.navButtonsType, navButtonsType = _f === void 0 ? CarouselButtonsTypes.GRAY_OPACITY : _f, _g = _a.navPadding, navPadding = _g === void 0 ? 0 : _g, _h = _a.withNavButtonsHeader, withNavButtonsHeader = _h === void 0 ? false : _h, _j = _a.showNumberBlock, showNumberBlock = _j === void 0 ? false : _j, _k = _a.position, position = _k === void 0 ? "center" : _k, _l = _a.isAutoplay, isAutoplay = _l === void 0 ? false : _l, _m = _a.alignItem, alignItem = _m === void 0 ? "normal" : _m, _o = _a.breakpoints, breakpoints = _o === void 0 ? {} : _o, _p = _a.slideProps, slideProps = _p === void 0 ? {} : _p, _q = _a.loop, loop = _q === void 0 ? true : _q, _r = _a.marginDots, marginDots = _r === void 0 ? "24px" : _r, _s = _a.slideGap, slideGap = _s === void 0 ? 32 : _s, _t = _a.speed, speed = _t === void 0 ? 10 : _t, _u = _a.delay, delay = _u === void 0 ? 8000 : _u, containerOverflow = _a.containerOverflow;
     var autoplay = isAutoplay ? [Autoplay({ delay: delay })] : [];
     var isMobile = useMatchBreakpoints().isMobile;
     var _v = useEmblaCarousel({
@@ -5822,7 +5825,7 @@ var useCarousel = function (_a) {
         showHeader && (React.createElement(CarouselHeader, { title: title, handleNav: handleDirectionClick, showNavButtons: withNavButtonsHeader })),
         showNumberBlock && (React.createElement(CarouselNumbersBlock, { dataLength: data === null || data === void 0 ? void 0 : data.length, selectedIndex: selectedIndex, scrollToHandle: scrollToHandle })),
         (data === null || data === void 0 ? void 0 : data.length) && (React.createElement(Embla, null,
-            React.createElement(Viewport, { ref: viewportRef },
+            React.createElement(Viewport, { containerOverflow: containerOverflow, ref: viewportRef },
                 React.createElement(Container, { gap: slideGap, alignItem: alignItem }, renderSlides())),
             withNavButtons && (React.createElement(NavWrapper, { navPadding: navPadding }, renderNav(navButtonsType, navPadding))))),
         withDots && (React.createElement(Flex, { alignItems: "center", justifyContent: "center", marginTop: marginDots }, scrollSnaps.map(function (_, index) { return (React.createElement(Dot, { key: index.toString(), selected: index === selectedIndex, onClick: function () { return scrollTo(index); } })); }))))); };
