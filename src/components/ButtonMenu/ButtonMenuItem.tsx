@@ -1,7 +1,24 @@
 import React, { useEffect, useRef } from "react";
+
+// ui
 import styled, { css } from "styled-components";
 import { variant } from "styled-system";
 import { styleVariants, scaleVariants, markerScales } from "./theme";
+
+// components
+import { Box } from "../Box";
+import Marker from "../MenuItem/Marker";
+
+// hooks
+import { useTooltip } from "../../hooks";
+import { useMatchBreakpoints } from "../../contexts";
+
+// utils
+import { isTouchDevice, PolymorphicComponent } from "../../util";
+import { getColorKey, getHoverKey } from "./helpers";
+
+// types
+import { variants } from "./types";
 import {
   BaseButtonMenuItemProps,
   ButtonMenuItemProps,
@@ -9,12 +26,6 @@ import {
   HoverKey,
   scales,
 } from "./types";
-import { variants } from "./types";
-import { PolymorphicComponent } from "../../util";
-import { useMatchBreakpoints } from "../../contexts";
-import { getColorKey, getHoverKey } from "./helpers";
-import { Box } from "../Box";
-import Marker from "../MenuItem/Marker";
 
 interface ItemButtonProps extends BaseButtonMenuItemProps {
   colorKey: ColorKey;
@@ -67,7 +78,7 @@ const MenuItemButton: PolymorphicComponent<
 const ButtonMenuItem: PolymorphicComponent<ButtonMenuItemProps, "button"> = ({
   isActive = false,
   variant = variants.DARK,
-  markedIndexes = [],
+  properties,
   scale = scales.MD,
   as,
   setWidth,
@@ -78,9 +89,17 @@ const ButtonMenuItem: PolymorphicComponent<ButtonMenuItemProps, "button"> = ({
   onClick = () => {},
   ...props
 }: ButtonMenuItemProps) => {
-  const { isXs, isSm, isMs, isLg, isXl, isXll, isXxl } = useMatchBreakpoints();
+  const { isMobile, isTablet, isXs, isSm, isMs, isLg, isXl, isXll, isXxl } =
+    useMatchBreakpoints();
 
   const ref = useRef<HTMLButtonElement>(null);
+
+  const disableStopPropagation = isMobile || isTablet || isTouchDevice();
+
+  const { targetRef, tooltip, tooltipVisible } = useTooltip(
+    properties?.tooltipText,
+    { placement: "top", disableStopPropagation }
+  );
 
   const itemWidth = ref?.current?.clientWidth ?? 0;
 
@@ -105,15 +124,18 @@ const ButtonMenuItem: PolymorphicComponent<ButtonMenuItemProps, "button"> = ({
     isXxl,
   ]);
 
-  const omItemClickHandler = () => {
+  const omItemClickHandler = (e: Event) => {
     onItemClick(itemIndex);
     onClick();
+    disableStopPropagation && e.stopPropagation();
   };
 
-  const withMarker = markedIndexes.includes(itemIndex);
-
   return (
-    <Box position="relative" width="100%">
+    <Box ref={targetRef} position="relative" width="100%">
+      {properties?.tooltipText &&
+        !properties.dontShowTooltip &&
+        tooltipVisible &&
+        tooltip}
       <MenuItemButton
         onClick={omItemClickHandler}
         isActive={isActive}
@@ -125,7 +147,12 @@ const ButtonMenuItem: PolymorphicComponent<ButtonMenuItemProps, "button"> = ({
         scale={scale}
         {...props}
       />
-      {withMarker && <Marker color="success" {...markerScales[scale]} />}
+      {properties?.markerColor && (
+        <Marker
+          color={properties?.markerColor || "success"}
+          {...markerScales[scale]}
+        />
+      )}
     </Box>
   );
 };

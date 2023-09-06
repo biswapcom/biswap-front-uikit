@@ -1,5 +1,12 @@
 import { Dispatch, ElementType, ReactElement, ReactNode, RefObject, SetStateAction } from "react";
 import { LayoutProps, SpaceProps } from "styled-system";
+import { MarkerType } from "../../theme";
+export declare type IPropertiesType = {
+    index: number;
+    markerColor?: keyof MarkerType;
+    tooltipText?: string;
+    dontShowTooltip?: boolean;
+};
 export interface ButtonMenuItemProps extends BaseButtonMenuItemProps {
     isActive?: boolean;
     setWidth?: Dispatch<SetStateAction<any>>;
@@ -9,7 +16,7 @@ export interface ButtonMenuItemProps extends BaseButtonMenuItemProps {
     elementRef?: RefObject<HTMLButtonElement>;
     onItemClick?: (index: number) => void;
     onClick?: () => void;
-    markedIndexes?: number[];
+    properties?: IPropertiesType;
 }
 export interface BaseButtonMenuItemProps extends LayoutProps, SpaceProps {
     as?: "a" | "button" | ElementType;
@@ -51,7 +58,7 @@ export interface ButtonMenuProps extends SpaceProps {
     scrollX?: boolean;
     equalElementWidth?: boolean;
     withoutAnimation?: boolean;
-    markedIndexes?: number[];
+    itemsProperties?: IPropertiesType[];
 }
 export declare const scales: {
     readonly XL: "xl";
