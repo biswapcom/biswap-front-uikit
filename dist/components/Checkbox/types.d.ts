@@ -13,4 +13,6 @@ export interface CheckboxProps {
     onChange?: () => void;
     value?: boolean;
     disabled?: boolean;
+    inputMargin?: string;
+    checkboxPosition?: string;
 }

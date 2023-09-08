@@ -7,6 +7,14 @@ import {
   SetStateAction,
 } from "react";
 import { LayoutProps, SpaceProps } from "styled-system";
+import { MarkerType } from "../../theme";
+
+export type IPropertiesType = {
+  index: number;
+  markerColor?: keyof MarkerType;
+  tooltipText?: string;
+  dontShowTooltip?: boolean;
+};
 
 export interface ButtonMenuItemProps extends BaseButtonMenuItemProps {
   isActive?: boolean;
@@ -17,7 +25,7 @@ export interface ButtonMenuItemProps extends BaseButtonMenuItemProps {
   elementRef?: RefObject<HTMLButtonElement>;
   onItemClick?: (index: number) => void;
   onClick?: () => void;
-  markedIndexes?: number[];
+  properties?: IPropertiesType;
 }
 // export type ButtonMenuItemProps<P extends ElementType = "button"> =
 //   PolymorphicComponentProps<P, BaseButtonMenuItemProps>;
@@ -65,7 +73,7 @@ export interface ButtonMenuProps extends SpaceProps {
   scrollX?: boolean;
   equalElementWidth?: boolean;
   withoutAnimation?: boolean;
-  markedIndexes?: number[];
+  itemsProperties?: IPropertiesType[];
 }
 
 //--------------
