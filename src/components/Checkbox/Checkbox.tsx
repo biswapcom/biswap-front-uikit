@@ -14,7 +14,10 @@ const getScale = ({ scale }: CheckboxProps) => {
   }
 };
 
-const Wrapper = styled.label<{ labelOrientation?: string, checkboxPosition?: string }>`
+const Wrapper = styled.label<{
+  labelOrientation?: string;
+  checkboxPosition?: string;
+}>`
   display: inline-flex;
   align-items: ${({ checkboxPosition }) => checkboxPosition ?? "center"};
   flex-direction: ${({ labelOrientation }) =>
@@ -99,10 +102,13 @@ const Checkbox: FC<CheckboxProps> = ({
   value,
   disabled,
   inputMargin,
-  checkboxPosition
+  checkboxPosition,
 }) => {
   return (
-    <Wrapper checkboxPosition={checkboxPosition} labelOrientation={labelOrientation}>
+    <Wrapper
+      checkboxPosition={checkboxPosition}
+      labelOrientation={labelOrientation}
+    >
       <CheckboxInput
         checked={value}
         scale={scale}
