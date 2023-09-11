@@ -5,5 +5,6 @@ export type {
   ButtonProps,
   BaseButtonProps,
   Scale as ButtonScale,
-  Variant as ButtonVariant,
+  Variant as ButtonVariantType,
+  variants as ButtonVariant
 } from "./types";

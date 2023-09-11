@@ -1,6 +1,6 @@
 import { ElementType, ReactNode } from "react";
 import { LayoutProps, SpaceProps } from "styled-system";
-import type { PolymorphicComponentProps } from "../../util/polymorphic";
+import type { PolymorphicComponentProps } from "../../util";
 
 export const scales = {
   XL: "xl",
