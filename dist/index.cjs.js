@@ -8043,6 +8043,7 @@ exports.BurgerIcon = Icon$1m;
 exports.Button = Button;
 exports.ButtonMenu = ButtonMenu;
 exports.ButtonMenuItem = ButtonMenuItem;
+exports.ButtonVariants = variants$7;
 exports.CalculateIcon = Icon$2R;
 exports.CalculateOpacityIcon = Icon$2T;
 exports.CalculateSolidIcon = Icon$2S;
