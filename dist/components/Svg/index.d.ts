@@ -206,6 +206,7 @@ export { default as FacebookIcon } from "./Icons/Socials/Facebook";
 export { default as TikTokIcon } from "./Icons/Socials/TikTok";
 export { default as CoinMarketCapIcon } from "./Icons/Socials/CoinMarketCap";
 export { default as QuoraIcon } from "./Icons/Socials/Quora";
+export { default as DeBankIcon } from "./Icons/Socials/DeBank";
 export { default as BSCIcon } from "./Icons/Chains/BSC";
 export { default as PolygonIcon } from "./Icons/Chains/Polygon";
 export { default as AvalancheIcon } from "./Icons/Chains/Avalanche";

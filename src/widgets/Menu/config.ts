@@ -391,6 +391,11 @@ export const socials = [
     icon: "CoinMarketCapIcon",
     href: "https://coinmarketcap.com/community/profile/Biswap_DEX/",
   },
+  {
+    label: "DeBank",
+    icon: "DeBankIcon",
+    href: "https://debank.com/official-account/112793",
+  },
 ];
 
 export const BSWPriceLabel = "BSW";
