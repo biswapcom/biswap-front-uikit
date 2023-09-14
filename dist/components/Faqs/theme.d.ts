@@ -5,12 +5,18 @@ export declare const titleVariants: {
     dark: {
         color: string;
     };
+    darkBackground: {
+        color: string;
+    };
 };
 export declare const wrapperVariants: {
     light: {
         backgroundColor: string;
     };
     dark: {
+        backgroundColor: string;
+    };
+    darkBackground: {
         backgroundColor: string;
     };
 };
@@ -21,6 +27,9 @@ export declare const questionVariants: {
     dark: {
         color: string;
     };
+    darkBackground: {
+        color: string;
+    };
 };
 export declare const descriptionVariants: {
     light: {
@@ -28,5 +37,19 @@ export declare const descriptionVariants: {
     };
     dark: {
         color: string;
+    };
+    darkBackground: {
+        color: string;
+    };
+};
+export declare const openBackground: {
+    light: {
+        backgroundColor: string;
+    };
+    dark: {
+        backgroundColor: string;
+    };
+    darkBackground: {
+        backgroundColor: string;
     };
 };

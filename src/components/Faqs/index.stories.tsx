@@ -45,6 +45,7 @@ export const Default: React.FC = () => {
     <Box p="20px">
       <Heading mb="20px">Faqs</Heading>
       <Faqs
+        titlePosition="center"
         title={title}
         leftData={leftData}
         rightData={rightData}
@@ -54,7 +55,7 @@ export const Default: React.FC = () => {
         title={title}
         leftData={leftData}
         rightData={rightData}
-        variant="dark"
+        variant="darkBackground"
       />
     </Box>
   );
@@ -71,7 +72,7 @@ export const DefaultBlog: React.FC = () => {
           <Faqs
             title={title}
             leftData={leftData}
-            rightData={rightData}
+            // rightData={rightData}
             variant="light"
             blogFAQ
           />

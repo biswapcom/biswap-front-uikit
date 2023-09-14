@@ -338,6 +338,11 @@ export { default as BlogOpacityIcon } from "./Icons/Menu/Blog/BlogOpacity";
 export { default as LimitOrderSolidIcon } from "./Icons/Menu/LimitOrder/LimitOrderSolid";
 export { default as LimitOrderOpacityIcon } from "./Icons/Menu/LimitOrder/LimitOrderOpacity";
 
+// liquidity staking
+export { default as LiquidityStakingOpacityIcon } from "./Icons/Menu/LiquidityStaking/LiquidityStakingOpacity";
+export { default as LiquidityStakingSolidIcon } from "./Icons/Menu/LiquidityStaking/LiquidityStakingSolid";
+export { default as LiquidityStakingSolidOpacityIcon } from "./Icons/Menu/LiquidityStaking/LiquidityStakingSolidOpacity";
+
 //Socials
 export { default as InstagramIcon } from "./Icons/Socials/Instagram";
 export { default as MediumIcon } from "./Icons/Socials/Medium";
