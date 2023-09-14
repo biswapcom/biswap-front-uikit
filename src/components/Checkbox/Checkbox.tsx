@@ -14,9 +14,12 @@ const getScale = ({ scale }: CheckboxProps) => {
   }
 };
 
-const Wrapper = styled.label<{ labelOrientation?: string }>`
+const Wrapper = styled.label<{
+  labelOrientation?: string;
+  checkboxPosition?: string;
+}>`
   display: inline-flex;
-  align-items: center;
+  align-items: ${({ checkboxPosition }) => checkboxPosition ?? "center"};
   flex-direction: ${({ labelOrientation }) =>
     labelOrientation === "left" ? "row-reverse" : "row"};
 `;
@@ -28,7 +31,9 @@ const CheckboxInput = styled.input.attrs({ type: "checkbox" })<CheckboxProps>`
   position: relative;
   display: inline-block;
   height: ${getScale};
+  min-height: ${getScale};
   width: ${getScale};
+  min-width: ${getScale};
   border: 2px solid transparent;
   border-radius: 4px;
   background-color: ${({ theme }) =>
@@ -96,9 +101,14 @@ const Checkbox: FC<CheckboxProps> = ({
   onChange,
   value,
   disabled,
+  inputMargin,
+  checkboxPosition,
 }) => {
   return (
-    <Wrapper labelOrientation={labelOrientation}>
+    <Wrapper
+      checkboxPosition={checkboxPosition}
+      labelOrientation={labelOrientation}
+    >
       <CheckboxInput
         checked={value}
         scale={scale}
@@ -114,8 +124,8 @@ const Checkbox: FC<CheckboxProps> = ({
           fontSize="12px"
           fontWeight="600"
           color="gray900"
-          mr={labelOrientation === "left" ? "12px" : 0}
-          ml={labelOrientation === "right" ? "12px" : 0}
+          mr={labelOrientation === "left" ? inputMargin ?? "12px" : 0}
+          ml={labelOrientation === "right" ? inputMargin ?? "12px" : 0}
         >
           {label}
         </StyledText>
