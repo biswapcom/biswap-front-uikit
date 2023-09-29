@@ -6,5 +6,6 @@ export interface QuestionProp {
 export declare const variants: {
     readonly LIGHT: "light";
     readonly DARK: "dark";
+    readonly DARK_BACKGROUND: "darkBackground";
 };
 export declare type Variant = typeof variants[keyof typeof variants];

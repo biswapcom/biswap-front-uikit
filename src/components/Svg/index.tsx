@@ -338,6 +338,11 @@ export { default as BlogOpacityIcon } from "./Icons/Menu/Blog/BlogOpacity";
 export { default as LimitOrderSolidIcon } from "./Icons/Menu/LimitOrder/LimitOrderSolid";
 export { default as LimitOrderOpacityIcon } from "./Icons/Menu/LimitOrder/LimitOrderOpacity";
 
+// liquidity staking
+export { default as LiquidityStakingOpacityIcon } from "./Icons/Menu/LiquidityStaking/LiquidityStakingOpacity";
+export { default as LiquidityStakingSolidIcon } from "./Icons/Menu/LiquidityStaking/LiquidityStakingSolid";
+export { default as LiquidityStakingSolidOpacityIcon } from "./Icons/Menu/LiquidityStaking/LiquidityStakingSolidOpacity";
+
 //Socials
 export { default as InstagramIcon } from "./Icons/Socials/Instagram";
 export { default as MediumIcon } from "./Icons/Socials/Medium";
@@ -350,6 +355,7 @@ export { default as FacebookIcon } from "./Icons/Socials/Facebook";
 export { default as TikTokIcon } from "./Icons/Socials/TikTok";
 export { default as CoinMarketCapIcon } from "./Icons/Socials/CoinMarketCap";
 export { default as QuoraIcon } from "./Icons/Socials/Quora";
+export { default as DeBankIcon } from "./Icons/Socials/DeBank";
 
 //chain
 export { default as BSCIcon } from "./Icons/Chains/BSC";
