@@ -3632,7 +3632,7 @@ var useCarousel = function (_a) {
                 React__default["default"].createElement(Container$1, { gap: slideGap, alignItem: alignItem }, renderSlides())),
             withNavButtons && (React__default["default"].createElement(NavWrapper, { navPadding: navPadding }, renderNav(navButtonsType, navPadding))))),
         withDots && (React__default["default"].createElement(Flex, { alignItems: "center", justifyContent: "center", marginTop: marginDots }, scrollSnaps.map(function (_, index) { return (React__default["default"].createElement(Dot$1, { key: index.toString(), selected: index === selectedIndex, onClick: function () { return scrollTo(index); } })); }))))); };
-    return [carouselComponent, scrollNext, scrollPrev];
+    return [carouselComponent, scrollNext, scrollPrev, selectedIndex];
 };
 var templateObject_1$10, templateObject_2$A, templateObject_3$r, templateObject_4$o;
 

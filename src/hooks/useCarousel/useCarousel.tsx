@@ -40,7 +40,7 @@ interface IProps<T, C, A> {
   containerOverflow?: string;
 }
 
-type ReturnDataType = [() => JSX.Element, () => void, () => void];
+type ReturnDataType = [() => JSX.Element, () => void, () => void, number];
 
 const NavWrapper = styled(Flex)<{ navPadding?: number }>`
   position: absolute;
@@ -253,5 +253,5 @@ export const useCarousel = ({
     </Box>
   );
 
-  return [carouselComponent, scrollNext, scrollPrev];
+  return [carouselComponent, scrollNext, scrollPrev, selectedIndex];
 };
