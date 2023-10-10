@@ -369,6 +369,7 @@ export { default as LogoWithTextIcon } from "./Icons/Other/LogoWithText";
 export { default as ProjectNameIcon } from "./Icons/Other/ProjectName";
 export { default as BswIcon } from "./Icons/Other/Bsw";
 export { default as LightningIcon } from "./Icons/Other/Lightning";
+export { default as ConflictIcon } from "./Icons/Other/Conflict";
 
 // Locks
 export { default as LockIcon } from "./Icons/Lock/Lock";
