@@ -154,6 +154,13 @@ const ContentWrap = styled(Box)`
   transition: padding-top 0.25s ease-in;
 `;
 
+const ClickableWrapper = styled(Flex)`
+  cursor: pointer;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+`;
+
 const Banner: FC<{
   setHeight?: (i: boolean) => void;
   setBannerHeight?: (i: number) => void;
@@ -168,12 +175,10 @@ const Banner: FC<{
 
   return (
     <Flex flexDirection="column" px="16px" background="#071C3C">
-      <Flex alignItems="center" justifyContent="space-between" height="40px">
+      <ClickableWrapper onClick={onClick}>
         <BodyText>Title</BodyText>
-        <ExpandableButton onClick={onClick} expanded={expanded}>
-          Details
-        </ExpandableButton>
-      </Flex>
+        <ExpandableButton expanded={expanded}>Details</ExpandableButton>
+      </ClickableWrapper>
       <Extended expanded={expanded} mt="16px" background="#07162D">
         <Button width="100%" mx="4px">
           Step1

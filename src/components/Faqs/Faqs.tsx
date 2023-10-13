@@ -1,5 +1,5 @@
 import React, { FC, useState } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { variant } from "styled-system";
 
 // components
@@ -12,27 +12,39 @@ import { QuestionProp, Variant } from "./types";
 
 import { descriptionVariants, titleVariants } from "./theme";
 
+type TitlePositionType = "start" | "center" | "end";
+
 interface IProps extends BoxProps {
   title?: string;
   leftData: QuestionProp[];
-  rightData: QuestionProp[];
+  rightData?: QuestionProp[];
   variant?: Variant;
   blogFAQ?: boolean;
+  titlePosition?: TitlePositionType;
 }
 
-const Title = styled(BodyText)<{ variant: Variant }>`
+const Title = styled(BodyText)<{
+  variant: Variant;
+  titlePosition: TitlePositionType;
+}>`
+  text-align: ${({ titlePosition }) => titlePosition}};
+
   ${variant({
     variants: titleVariants,
   })}
 `;
 
-const ContentWrapper = styled(Grid)<{ blogFAQ: boolean }>`
+const ContentWrapper = styled(Grid)<{ blogFAQ: boolean; singleList: boolean }>`
   grid-template-columns: 1fr;
 
   ${({ theme, blogFAQ }) =>
     blogFAQ ? theme.mediaQueries.xl : theme.mediaQueries.md} {
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 32px;
+    ${({ singleList }) =>
+      !singleList &&
+      css`
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 32px;
+      `}
   }
 `;
 
@@ -48,6 +60,7 @@ const Faqs: FC<IProps> = ({
   rightData,
   variant = "dark",
   blogFAQ = false,
+  titlePosition = "start",
   ...props
 }) => {
   const [activeQuestion, setActiveQuestion] = useState<string>("");
@@ -77,6 +90,7 @@ const Faqs: FC<IProps> = ({
     <Box {...props}>
       {title && (
         <Title
+          titlePosition={titlePosition}
           scale={{ xs: isDarkMobile, md: "size24" }}
           mb="16px"
           bold
@@ -85,9 +99,11 @@ const Faqs: FC<IProps> = ({
           {title}
         </Title>
       )}
-      <ContentWrapper blogFAQ={blogFAQ}>
+      <ContentWrapper blogFAQ={blogFAQ} singleList={!rightData}>
         <Flex flexDirection="column">{renderQuestionList(leftData)}</Flex>
-        <Flex flexDirection="column">{renderQuestionList(rightData)}</Flex>
+        {rightData && (
+          <Flex flexDirection="column">{renderQuestionList(rightData)}</Flex>
+        )}
       </ContentWrapper>
     </Box>
   );

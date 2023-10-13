@@ -12,8 +12,11 @@ import { ChevronDownIcon } from "../../Svg";
 // utils
 import { getRgba } from "../../../util";
 
+// types
 import { Variant } from "../types";
-import { wrapperVariants, questionVariants } from "../theme";
+
+// theme
+import { wrapperVariants, questionVariants, openBackground } from "../theme";
 
 interface IProps {
   name: string;
@@ -28,7 +31,11 @@ const Wrapper = styled(Box)<{ isOpen: boolean; variant: Variant }>`
   ${variant({
     variants: wrapperVariants,
   })}
-  background: ${({ isOpen }) => isOpen && "transparent"};
+  ${({ isOpen }) =>
+    isOpen &&
+    variant({
+      variants: openBackground,
+    })};
   border: 1px solid
     ${({ theme, isOpen }) =>
       isOpen ? getRgba(theme.colors.primary, theme, 0.16) : "transparent"};
@@ -38,7 +45,9 @@ const Wrapper = styled(Box)<{ isOpen: boolean; variant: Variant }>`
 
   &:hover {
     border-color: ${({ theme }) => getRgba(theme.colors.primary, theme, 0.16)};
-    background: transparent;
+    ${variant({
+      variants: openBackground,
+    })}
   }
 `;
 
