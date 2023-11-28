@@ -3044,11 +3044,12 @@ var invertTheme = function (currentTheme) {
 };
 var useTooltip = function (content, options) {
     var _a = useMatchBreakpoints(), isMobile = _a.isMobile, isTablet = _a.isTablet;
-    var _b = options.placement, placement = _b === void 0 ? "auto" : _b, _c = options.trigger, trigger = _c === void 0 ? isMobile || isTablet ? "click" : "hover" : _c, _d = options.tooltipPadding, tooltipPadding = _d === void 0 ? { left: 16, right: 16 } : _d, _e = options.tooltipOffset, tooltipOffset = _e === void 0 ? [0, 10] : _e, disableStopPropagation = options.disableStopPropagation;
-    var _f = useState(null), targetElement = _f[0], setTargetElement = _f[1];
-    var _g = useState(null), tooltipElement = _g[0], setTooltipElement = _g[1];
-    var _h = useState(null), arrowElement = _h[0], setArrowElement = _h[1];
-    var _j = useState(false), visible = _j[0], setVisible = _j[1];
+    var _b = options.placement, placement = _b === void 0 ? "auto" : _b, _c = options.trigger, trigger = _c === void 0 ? isMobile || isTablet ? "click" : "hover" : _c, _d = options.tooltipPadding, tooltipPadding = _d === void 0 ? { left: 16, right: 16 } : _d, _e = options.tooltipOffset, tooltipOffset = _e === void 0 ? [0, 10] : _e, disableStopPropagation = options.disableStopPropagation, _f = options.openedByDefault, openedByDefault = _f === void 0 ? false : _f;
+    var _g = useState(null), targetElement = _g[0], setTargetElement = _g[1];
+    var _h = useState(null), tooltipElement = _h[0], setTooltipElement = _h[1];
+    var _j = useState(null), arrowElement = _j[0], setArrowElement = _j[1];
+    var _k = useState(false), visible = _k[0], setVisible = _k[1];
+    var _l = useState(openedByDefault), defaultVisible = _l[0], setDefaultVisible = _l[1];
     var isHoveringOverTooltip = useRef(false);
     var hideTimeout = useRef();
     var hideTooltip = useCallback(function (e) {
@@ -3140,6 +3141,15 @@ var useTooltip = function (content, options) {
         targetElement.addEventListener("click", toggleTooltip);
         return function () { return targetElement.removeEventListener("click", toggleTooltip); };
     }, [trigger, targetElement, visible, toggleTooltip]);
+    // If you need open by default
+    useEffect(function () {
+        if (targetElement === null || trigger !== "click" || !defaultVisible)
+            return undefined;
+        targetElement.addEventListener("click", showTooltip);
+        targetElement.click();
+        setDefaultVisible(false);
+        return function () { return targetElement.removeEventListener("click", showTooltip); };
+    }, [trigger, targetElement, visible, defaultVisible, showTooltip]);
     // Handle click outside
     useEffect(function () {
         if (trigger !== "click")
@@ -3179,7 +3189,7 @@ var useTooltip = function (content, options) {
     // even on the iPhone 5 screen (320px wide), BUT in the storybook with the contrived example ScreenEdges example
     // iPhone 5 behaves differently overflowing beyound the edge. All paddings are identical so I have no idea why it is,
     // and fixing that seems like a very bad use of time.
-    var _k = usePopper(targetElement, tooltipElement, {
+    var _m = usePopper(targetElement, tooltipElement, {
         placement: placement,
         modifiers: [
             {
@@ -3189,7 +3199,7 @@ var useTooltip = function (content, options) {
             { name: "offset", options: { offset: tooltipOffset } },
             { name: "preventOverflow", options: { padding: tooltipPadding } },
         ],
-    }), styles = _k.styles, attributes = _k.attributes;
+    }), styles = _m.styles, attributes = _m.attributes;
     var tooltip = (React.createElement(StyledTooltip, __assign({ ref: setTooltipElement, style: styles.popper }, attributes.popper),
         React.createElement(ThemeProvider, { theme: invertTheme }, content),
         React.createElement(Arrow, { ref: setArrowElement, style: styles.arrow })));

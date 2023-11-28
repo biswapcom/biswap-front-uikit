@@ -12,5 +12,6 @@ export interface TooltipOptions {
     tooltipPadding?: Padding;
     tooltipOffset?: [number, number];
     disableStopPropagation?: boolean;
+    openedByDefault?: boolean;
 }
 export declare type TriggerType = "click" | "hover" | "focus";
