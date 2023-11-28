@@ -28,7 +28,7 @@ const useTooltip = (
     tooltipPadding = { left: 16, right: 16 },
     tooltipOffset = [0, 10],
     disableStopPropagation,
-    openedByDefault = false
+    openedByDefault = false,
   } = options;
   const [targetElement, setTargetElement] = useState<HTMLElement | null>(null);
   const [tooltipElement, setTooltipElement] =
@@ -144,18 +144,18 @@ const useTooltip = (
 
     return () => targetElement.removeEventListener("click", toggleTooltip);
   }, [trigger, targetElement, visible, toggleTooltip]);
-  
+
   // If you need open by default
   useEffect(() => {
-    if (targetElement === null || trigger !== "click" || !defaultVisible) return undefined;
+    if (targetElement === null || trigger !== "click" || !defaultVisible)
+      return undefined;
 
     targetElement.addEventListener("click", showTooltip);
-    targetElement.click()
-    setDefaultVisible(false)
+    targetElement.click();
+    setDefaultVisible(false);
 
     return () => targetElement.removeEventListener("click", showTooltip);
   }, [trigger, targetElement, visible, defaultVisible, showTooltip]);
-  
 
   // Handle click outside
   useEffect(() => {
