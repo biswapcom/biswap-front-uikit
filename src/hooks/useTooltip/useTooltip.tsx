@@ -28,8 +28,9 @@ const useTooltip = (
     tooltipPadding = { left: 16, right: 16 },
     tooltipOffset = [0, 10],
     disableStopPropagation,
-    openedByDefault = false,
-    openTooltip = false
+    showByDefault = false,
+    isShowTooltip = false,
+    dynamicShowing = false,
   } = options;
   const [targetElement, setTargetElement] = useState<HTMLElement | null>(null);
   const [tooltipElement, setTooltipElement] =
@@ -37,7 +38,7 @@ const useTooltip = (
   const [arrowElement, setArrowElement] = useState<HTMLElement | null>(null);
 
   const [visible, setVisible] = useState(false);
-  const [defaultVisible, setDefaultVisible] = useState(openedByDefault);
+  const [defaultVisible, setDefaultVisible] = useState(showByDefault);
   const isHoveringOverTooltip = useRef(false);
   const hideTimeout = useRef<number>();
 
@@ -157,11 +158,12 @@ const useTooltip = (
 
     return () => targetElement.removeEventListener("click", showTooltip);
   }, [trigger, targetElement, visible, defaultVisible, showTooltip]);
-  
-  useEffect(() => {
-    if (targetElement === null || trigger !== "click") return undefined;
 
-    if (openTooltip) {
+  useEffect(() => {
+    if (targetElement === null || trigger !== "click" || !dynamicShowing)
+      return undefined;
+
+    if (isShowTooltip) {
       targetElement.addEventListener("click", showTooltip);
       targetElement.click();
     } else {
@@ -174,8 +176,15 @@ const useTooltip = (
     return () => {
       targetElement.removeEventListener("click", showTooltip);
       targetElement.removeEventListener("click", hideTooltip);
-    }
-  }, [trigger, targetElement, visible, openTooltip, hideTooltip, showTooltip]);
+    };
+  }, [
+    trigger,
+    targetElement,
+    visible,
+    isShowTooltip,
+    hideTooltip,
+    showTooltip,
+  ]);
 
   // Handle click outside
   useEffect(() => {

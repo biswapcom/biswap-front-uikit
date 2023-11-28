@@ -4,6 +4,7 @@ import Input from "../../components/Input/Input";
 import Text from "../../components/Text/Text";
 import HelpIcon from "../../components/Svg/Icons/Help/Help";
 import useTooltip from "./useTooltip";
+import { Button } from "../../components/Button";
 
 const GridCell = styled.div`
   display: flex;
@@ -48,6 +49,7 @@ export default {
 };
 
 export const Placement: React.FC = () => {
+  const [state, setState] = useState(false);
   // Trigger doesn't matter in this story, it just shows tooltips no matter what
   // TOP
   const {
@@ -56,6 +58,8 @@ export const Placement: React.FC = () => {
     tooltipVisible: tooltipTopStartVisible,
   } = useTooltip("top-start", {
     placement: "top-start",
+    isShowTooltip: state,
+    dynamicShowing: false,
   });
   const { targetRef: targetRefTop, tooltip: tooltipTop } = useTooltip("top", {
     placement: "top",
@@ -112,6 +116,7 @@ export const Placement: React.FC = () => {
 
   return (
     <Container>
+      <Button onClick={() => setState((prev) => !prev)}>test</Button>
       <GridCell>
         <ReferenceElement ref={targetRefTopStart} />
         {tooltipTopStartVisible && tooltipTopStart}

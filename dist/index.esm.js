@@ -3061,12 +3061,12 @@ var invertTheme = function (currentTheme) {
 };
 var useTooltip = function (content, options) {
     var _a = useMatchBreakpoints(), isMobile = _a.isMobile, isTablet = _a.isTablet;
-    var _b = options.placement, placement = _b === void 0 ? "auto" : _b, _c = options.trigger, trigger = _c === void 0 ? isMobile || isTablet ? "click" : "hover" : _c, _d = options.tooltipPadding, tooltipPadding = _d === void 0 ? { left: 16, right: 16 } : _d, _e = options.tooltipOffset, tooltipOffset = _e === void 0 ? [0, 10] : _e, disableStopPropagation = options.disableStopPropagation, _f = options.openedByDefault, openedByDefault = _f === void 0 ? false : _f, _g = options.openTooltip, openTooltip = _g === void 0 ? false : _g;
-    var _h = useState(null), targetElement = _h[0], setTargetElement = _h[1];
-    var _j = useState(null), tooltipElement = _j[0], setTooltipElement = _j[1];
-    var _k = useState(null), arrowElement = _k[0], setArrowElement = _k[1];
-    var _l = useState(false), visible = _l[0], setVisible = _l[1];
-    var _m = useState(openedByDefault), defaultVisible = _m[0], setDefaultVisible = _m[1];
+    var _b = options.placement, placement = _b === void 0 ? "auto" : _b, _c = options.trigger, trigger = _c === void 0 ? isMobile || isTablet ? "click" : "hover" : _c, _d = options.tooltipPadding, tooltipPadding = _d === void 0 ? { left: 16, right: 16 } : _d, _e = options.tooltipOffset, tooltipOffset = _e === void 0 ? [0, 10] : _e, disableStopPropagation = options.disableStopPropagation, _f = options.showByDefault, showByDefault = _f === void 0 ? false : _f, _g = options.isShowTooltip, isShowTooltip = _g === void 0 ? false : _g, _h = options.dynamicShowing, dynamicShowing = _h === void 0 ? false : _h;
+    var _j = useState(null), targetElement = _j[0], setTargetElement = _j[1];
+    var _k = useState(null), tooltipElement = _k[0], setTooltipElement = _k[1];
+    var _l = useState(null), arrowElement = _l[0], setArrowElement = _l[1];
+    var _m = useState(false), visible = _m[0], setVisible = _m[1];
+    var _o = useState(showByDefault), defaultVisible = _o[0], setDefaultVisible = _o[1];
     var isHoveringOverTooltip = useRef(false);
     var hideTimeout = useRef();
     var hideTooltip = useCallback(function (e) {
@@ -3168,9 +3168,9 @@ var useTooltip = function (content, options) {
         return function () { return targetElement.removeEventListener("click", showTooltip); };
     }, [trigger, targetElement, visible, defaultVisible, showTooltip]);
     useEffect(function () {
-        if (targetElement === null || trigger !== "click")
+        if (targetElement === null || trigger !== "click" || !dynamicShowing)
             return undefined;
-        if (openTooltip) {
+        if (isShowTooltip) {
             targetElement.addEventListener("click", showTooltip);
             targetElement.click();
         }
@@ -3183,7 +3183,14 @@ var useTooltip = function (content, options) {
             targetElement.removeEventListener("click", showTooltip);
             targetElement.removeEventListener("click", hideTooltip);
         };
-    }, [trigger, targetElement, visible, openTooltip, hideTooltip, showTooltip]);
+    }, [
+        trigger,
+        targetElement,
+        visible,
+        isShowTooltip,
+        hideTooltip,
+        showTooltip,
+    ]);
     // Handle click outside
     useEffect(function () {
         if (trigger !== "click")
@@ -3223,7 +3230,7 @@ var useTooltip = function (content, options) {
     // even on the iPhone 5 screen (320px wide), BUT in the storybook with the contrived example ScreenEdges example
     // iPhone 5 behaves differently overflowing beyound the edge. All paddings are identical so I have no idea why it is,
     // and fixing that seems like a very bad use of time.
-    var _o = usePopper(targetElement, tooltipElement, {
+    var _p = usePopper(targetElement, tooltipElement, {
         placement: placement,
         modifiers: [
             {
@@ -3233,7 +3240,7 @@ var useTooltip = function (content, options) {
             { name: "offset", options: { offset: tooltipOffset } },
             { name: "preventOverflow", options: { padding: tooltipPadding } },
         ],
-    }), styles = _o.styles, attributes = _o.attributes;
+    }), styles = _p.styles, attributes = _p.attributes;
     var tooltip = (React.createElement(StyledTooltip, __assign({ ref: setTooltipElement, style: styles.popper }, attributes.popper),
         React.createElement(ThemeProvider, { theme: invertTheme }, content),
         React.createElement(Arrow, { ref: setArrowElement, style: styles.arrow })));
