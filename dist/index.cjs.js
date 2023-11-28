@@ -3206,6 +3206,7 @@ var useTooltip = function (content, options) {
         isShowTooltip,
         hideTooltip,
         showTooltip,
+        dynamicShowing
     ]);
     // Handle click outside
     React.useEffect(function () {

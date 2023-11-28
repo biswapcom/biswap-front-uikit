@@ -184,6 +184,7 @@ const useTooltip = (
     isShowTooltip,
     hideTooltip,
     showTooltip,
+    dynamicShowing
   ]);
 
   // Handle click outside

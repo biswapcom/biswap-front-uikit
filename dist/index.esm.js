@@ -3190,6 +3190,7 @@ var useTooltip = function (content, options) {
         isShowTooltip,
         hideTooltip,
         showTooltip,
+        dynamicShowing
     ]);
     // Handle click outside
     useEffect(function () {
