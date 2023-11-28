@@ -339,7 +339,7 @@ export { default as LimitOrderSolidIcon } from "./Icons/Menu/LimitOrder/LimitOrd
 export { default as LimitOrderOpacityIcon } from "./Icons/Menu/LimitOrder/LimitOrderOpacity";
 
 // liquidity staking
-export { default as InvestPoolOpacity } from "./Icons/Menu/InvestPool/InvestPoolOpacity";
+export { default as InvestPoolOpacityIcon } from "./Icons/Menu/InvestPool/InvestPoolOpacity";
 
 // liquidity staking
 export { default as LiquidityStakingOpacityIcon } from "./Icons/Menu/LiquidityStaking/LiquidityStakingOpacity";

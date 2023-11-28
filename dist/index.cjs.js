@@ -1928,7 +1928,7 @@ var IconModule = /*#__PURE__*/Object.freeze({
     BlogOpacityIcon: Icon$C,
     LimitOrderSolidIcon: Icon$B,
     LimitOrderOpacityIcon: Icon$A,
-    InvestPoolOpacity: Icon$z,
+    InvestPoolOpacityIcon: Icon$z,
     LiquidityStakingOpacityIcon: Icon$y,
     LiquidityStakingSolidIcon: Icon$x,
     LiquidityStakingSolidOpacityIcon: Icon$w,
@@ -6690,6 +6690,12 @@ var links = [
                 description: "Item description",
             },
             {
+                label: "Farms",
+                href: "/pool",
+                leftIcon: "InvestPoolOpacity",
+                description: "Item description",
+            },
+            {
                 badgeType: "success",
                 badgeTitle: "New",
                 label: "LaunchPools",
@@ -8295,7 +8301,7 @@ exports.InlineMenuContainer = InlineMenuContainer;
 exports.Input = Input$1;
 exports.InputGroup = InputGroup;
 exports.InstagramIcon = Icon$v;
-exports.InvestPoolOpacity = Icon$z;
+exports.InvestPoolOpacityIcon = Icon$z;
 exports.ItemTypes = ItemTypes;
 exports.LanguageIcon = Icon$6;
 exports.LaunchpadOpacityIcon = Icon$14;
