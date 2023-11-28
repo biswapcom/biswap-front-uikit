@@ -29,6 +29,7 @@ const useTooltip = (
     tooltipOffset = [0, 10],
     disableStopPropagation,
     openedByDefault = false,
+    openTooltip = false
   } = options;
   const [targetElement, setTargetElement] = useState<HTMLElement | null>(null);
   const [tooltipElement, setTooltipElement] =
@@ -156,6 +157,25 @@ const useTooltip = (
 
     return () => targetElement.removeEventListener("click", showTooltip);
   }, [trigger, targetElement, visible, defaultVisible, showTooltip]);
+  
+  useEffect(() => {
+    if (targetElement === null || trigger !== "click") return undefined;
+
+    if (openTooltip) {
+      targetElement.addEventListener("click", showTooltip);
+      targetElement.click();
+    } else {
+      targetElement.addEventListener("click", hideTooltip);
+      targetElement.click();
+    }
+
+    setDefaultVisible(false);
+
+    return () => {
+      targetElement.removeEventListener("click", showTooltip);
+      targetElement.removeEventListener("click", hideTooltip);
+    }
+  }, [trigger, targetElement, visible, openTooltip, hideTooltip, showTooltip]);
 
   // Handle click outside
   useEffect(() => {
