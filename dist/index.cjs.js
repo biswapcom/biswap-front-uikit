@@ -2088,7 +2088,7 @@ var getIconColor = function (variant) {
 };
 var IconLabel = styled__default["default"].div(templateObject_1$1g || (templateObject_1$1g = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background-color: ", ";\n  border-radius: 8px;\n  border: none;\n  padding: 12px;\n"], ["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background-color: ", ";\n  border-radius: 8px;\n  border: none;\n  padding: 12px;\n"])), getThemeColor);
 var Details = styled__default["default"].div(templateObject_2$I || (templateObject_2$I = __makeTemplateObject(["\n  display: flex;\n"], ["\n  display: flex;\n"])));
-var StyledAlert = styled__default["default"](Flex)(templateObject_3$x || (templateObject_3$x = __makeTemplateObject(["\n  background-color: ", ";\n  border-radius: 16px;\n  box-shadow: 0 20px 36px -8px rgba(14, 14, 44, 0.1),\n    0px 1px 1px rgba(0, 0, 0, 0.05);\n  padding: 12px;\n"], ["\n  background-color: ", ";\n  border-radius: 16px;\n  box-shadow: 0 20px 36px -8px rgba(14, 14, 44, 0.1),\n    0px 1px 1px rgba(0, 0, 0, 0.05);\n  padding: 12px;\n"])), function (_a) {
+var StyledAlert = styled__default["default"](Flex)(templateObject_3$x || (templateObject_3$x = __makeTemplateObject(["\n  background-color: ", ";\n  border-radius: 16px;\n  box-shadow: 0 20px 36px -8px rgba(14, 14, 44, 0.1),\n    0px 1px 1px rgba(0, 0, 0, 0.05);\n  padding: 12px 60px 12px 12px;\n"], ["\n  background-color: ", ";\n  border-radius: 16px;\n  box-shadow: 0 20px 36px -8px rgba(14, 14, 44, 0.1),\n    0px 1px 1px rgba(0, 0, 0, 0.05);\n  padding: 12px 60px 12px 12px;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.alert.background;
 });
@@ -2106,7 +2106,7 @@ var Alert = function (_a) {
                 React__default["default"].createElement(Icon, { width: "24px", color: IconColor }))),
         React__default["default"].createElement(Details, { hasHandler: !!onClick },
             React__default["default"].createElement(Box, { ml: "10px" },
-                React__default["default"].createElement(Text, { mr: "18%", fontSize: "16px", color: "dark", bold: true }, title),
+                React__default["default"].createElement(Text, { fontSize: "16px", color: "dark", bold: true }, title),
                 typeof children === "string" ? (React__default["default"].createElement(Text, { as: "p" }, children)) : (children)),
             React__default["default"].createElement(StyledBox, null,
                 React__default["default"].createElement(ProgressCircle, { onClick: onClick, filled: progress, notFilled: progress ? 100 - progress : 0 })))));
