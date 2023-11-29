@@ -3162,7 +3162,7 @@ var useTooltip = function (content, options) {
             return undefined;
         targetElement.addEventListener("click", toggleTooltip);
         return function () { return targetElement.removeEventListener("click", toggleTooltip); };
-    }, [trigger, targetElement, visible, dynamic, toggleTooltip]);
+    }, [trigger, targetElement, visible, toggleTooltip]);
     // If you need open by default
     useEffect(function () {
         if (targetElement === null || trigger !== "click" || !defaultVisible)
