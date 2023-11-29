@@ -50,6 +50,7 @@ export default {
 
 export const Placement: React.FC = () => {
   const [state, setState] = useState(false);
+  const [dynamicShowing, setDynamicShowing] = useState(false);
   // Trigger doesn't matter in this story, it just shows tooltips no matter what
   // TOP
   const {
@@ -59,7 +60,7 @@ export const Placement: React.FC = () => {
   } = useTooltip("top-start", {
     placement: "top-start",
     isShowTooltip: state,
-    dynamicShowing: false,
+    dynamicShowing,
   });
   const { targetRef: targetRefTop, tooltip: tooltipTop } = useTooltip("top", {
     placement: "top",
@@ -116,7 +117,11 @@ export const Placement: React.FC = () => {
 
   return (
     <Container>
-      <Button onClick={() => setState((prev) => !prev)}>test</Button>
+      {`state ${state.toString()} dynamicShowing ${dynamicShowing.toString}`}
+      <Button onClick={() => setState((prev) => !prev)}>setState</Button>
+      <Button onClick={() => setDynamicShowing((prev) => !prev)}>
+        setDynamicShowing
+      </Button>
       <GridCell>
         <ReferenceElement ref={targetRefTopStart} />
         {tooltipTopStartVisible && tooltipTopStart}

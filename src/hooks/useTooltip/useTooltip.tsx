@@ -39,8 +39,13 @@ const useTooltip = (
 
   const [visible, setVisible] = useState(false);
   const [defaultVisible, setDefaultVisible] = useState(showByDefault);
+  const [dynamic, setDynamic] = useState(false);
   const isHoveringOverTooltip = useRef(false);
   const hideTimeout = useRef<number>();
+
+  useEffect(() => {
+    if (dynamicShowing) setDynamic(dynamicShowing);
+  }, [dynamicShowing]);
 
   const hideTooltip = useCallback(
     (e: Event) => {
@@ -140,12 +145,13 @@ const useTooltip = (
 
   // Trigger = click
   useEffect(() => {
-    if (targetElement === null || trigger !== "click") return undefined;
+    if (targetElement === null || trigger !== "click" || dynamic)
+      return undefined;
 
     targetElement.addEventListener("click", toggleTooltip);
 
     return () => targetElement.removeEventListener("click", toggleTooltip);
-  }, [trigger, targetElement, visible, toggleTooltip]);
+  }, [trigger, targetElement, visible, dynamic, toggleTooltip]);
 
   // If you need open by default
   useEffect(() => {
@@ -160,7 +166,7 @@ const useTooltip = (
   }, [trigger, targetElement, visible, defaultVisible, showTooltip]);
 
   useEffect(() => {
-    if (targetElement === null || trigger !== "click" || !dynamicShowing)
+    if (targetElement === null || trigger !== "click" || !dynamic)
       return undefined;
 
     if (isShowTooltip) {
@@ -173,6 +179,12 @@ const useTooltip = (
 
     setDefaultVisible(false);
 
+    if (!dynamicShowing) {
+      setDynamic(false);
+      targetElement.addEventListener("click", hideTooltip);
+      targetElement.click();
+    }
+
     return () => {
       targetElement.removeEventListener("click", showTooltip);
       targetElement.removeEventListener("click", hideTooltip);
@@ -184,7 +196,8 @@ const useTooltip = (
     isShowTooltip,
     hideTooltip,
     showTooltip,
-    dynamicShowing
+    dynamic,
+    dynamicShowing,
   ]);
 
   // Handle click outside

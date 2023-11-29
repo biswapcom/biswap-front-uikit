@@ -3067,8 +3067,13 @@ var useTooltip = function (content, options) {
     var _l = useState(null), arrowElement = _l[0], setArrowElement = _l[1];
     var _m = useState(false), visible = _m[0], setVisible = _m[1];
     var _o = useState(showByDefault), defaultVisible = _o[0], setDefaultVisible = _o[1];
+    var _p = useState(false), dynamic = _p[0], setDynamic = _p[1];
     var isHoveringOverTooltip = useRef(false);
     var hideTimeout = useRef();
+    useEffect(function () {
+        if (dynamicShowing)
+            setDynamic(dynamicShowing);
+    }, [dynamicShowing]);
     var hideTooltip = useCallback(function (e) {
         var hide = function () {
             e.stopPropagation();
@@ -3153,11 +3158,11 @@ var useTooltip = function (content, options) {
     }, [trigger, tooltipElement, hideTooltip, showTooltip]);
     // Trigger = click
     useEffect(function () {
-        if (targetElement === null || trigger !== "click")
+        if (targetElement === null || trigger !== "click" || dynamic)
             return undefined;
         targetElement.addEventListener("click", toggleTooltip);
         return function () { return targetElement.removeEventListener("click", toggleTooltip); };
-    }, [trigger, targetElement, visible, toggleTooltip]);
+    }, [trigger, targetElement, visible, dynamic, toggleTooltip]);
     // If you need open by default
     useEffect(function () {
         if (targetElement === null || trigger !== "click" || !defaultVisible)
@@ -3168,7 +3173,7 @@ var useTooltip = function (content, options) {
         return function () { return targetElement.removeEventListener("click", showTooltip); };
     }, [trigger, targetElement, visible, defaultVisible, showTooltip]);
     useEffect(function () {
-        if (targetElement === null || trigger !== "click" || !dynamicShowing)
+        if (targetElement === null || trigger !== "click" || !dynamic)
             return undefined;
         if (isShowTooltip) {
             targetElement.addEventListener("click", showTooltip);
@@ -3179,6 +3184,11 @@ var useTooltip = function (content, options) {
             targetElement.click();
         }
         setDefaultVisible(false);
+        if (!dynamicShowing) {
+            setDynamic(false);
+            targetElement.addEventListener("click", hideTooltip);
+            targetElement.click();
+        }
         return function () {
             targetElement.removeEventListener("click", showTooltip);
             targetElement.removeEventListener("click", hideTooltip);
@@ -3190,7 +3200,8 @@ var useTooltip = function (content, options) {
         isShowTooltip,
         hideTooltip,
         showTooltip,
-        dynamicShowing
+        dynamic,
+        dynamicShowing,
     ]);
     // Handle click outside
     useEffect(function () {
@@ -3231,7 +3242,7 @@ var useTooltip = function (content, options) {
     // even on the iPhone 5 screen (320px wide), BUT in the storybook with the contrived example ScreenEdges example
     // iPhone 5 behaves differently overflowing beyound the edge. All paddings are identical so I have no idea why it is,
     // and fixing that seems like a very bad use of time.
-    var _p = usePopper(targetElement, tooltipElement, {
+    var _q = usePopper(targetElement, tooltipElement, {
         placement: placement,
         modifiers: [
             {
@@ -3241,7 +3252,7 @@ var useTooltip = function (content, options) {
             { name: "offset", options: { offset: tooltipOffset } },
             { name: "preventOverflow", options: { padding: tooltipPadding } },
         ],
-    }), styles = _p.styles, attributes = _p.attributes;
+    }), styles = _q.styles, attributes = _q.attributes;
     var tooltip = (React.createElement(StyledTooltip, __assign({ ref: setTooltipElement, style: styles.popper }, attributes.popper),
         React.createElement(ThemeProvider, { theme: invertTheme }, content),
         React.createElement(Arrow, { ref: setArrowElement, style: styles.arrow })));
