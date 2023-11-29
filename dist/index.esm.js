@@ -3175,7 +3175,7 @@ var useTooltip = function (content, options) {
     useEffect(function () {
         if (targetElement === null || trigger !== "click" || !dynamic)
             return undefined;
-        if (isShowTooltip) {
+        if (isShowTooltip && dynamic) {
             targetElement.addEventListener("click", showTooltip);
             targetElement.click();
         }
