@@ -3214,7 +3214,11 @@ var useTooltip = function (content, options) {
                     targetElement != null &&
                     !tooltipElement.contains(target) &&
                     !targetElement.contains(target)) {
+                    if (!dynamicShowing) {
+                        setDynamic(false);
+                    }
                     setVisible(false);
+                    //
                 }
             }
         };

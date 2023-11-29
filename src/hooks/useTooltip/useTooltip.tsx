@@ -212,7 +212,12 @@ const useTooltip = (
           !tooltipElement.contains(target) &&
           !targetElement.contains(target)
         ) {
+          if (!dynamicShowing) {
+            setDynamic(false);
+          }
           setVisible(false);
+
+          //
         }
       }
     };
