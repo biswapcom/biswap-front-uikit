@@ -37,9 +37,10 @@ interface IProps<T, C, A> {
   slideGap?: number; //pixel value
   speed?: number;
   delay?: number;
+  containerOverflow?: string;
 }
 
-type ReturnDataType = [() => JSX.Element, () => void, () => void];
+type ReturnDataType = [() => JSX.Element, () => void, () => void, number];
 
 const NavWrapper = styled(Flex)<{ navPadding?: number }>`
   position: absolute;
@@ -67,8 +68,8 @@ const Embla = styled.div`
   }
 `;
 
-const Viewport = styled.div`
-  overflow: hidden;
+const Viewport = styled.div<{ containerOverflow?: string }>`
+  overflow: ${({ containerOverflow }) => containerOverflow || "hidden"};
   width: 100%;
 `;
 
@@ -102,6 +103,7 @@ export const useCarousel = ({
   slideGap = 32,
   speed = 10,
   delay = 8000,
+  containerOverflow,
 }: IProps<any, any, any>): ReturnDataType => {
   const autoplay = isAutoplay ? [Autoplay({ delay: delay })] : [];
   const { isMobile } = useMatchBreakpoints();
@@ -220,7 +222,7 @@ export const useCarousel = ({
 
       {data?.length && (
         <Embla>
-          <Viewport ref={viewportRef}>
+          <Viewport containerOverflow={containerOverflow} ref={viewportRef}>
             <Container gap={slideGap} alignItem={alignItem}>
               {renderSlides()}
             </Container>
@@ -251,5 +253,5 @@ export const useCarousel = ({
     </Box>
   );
 
-  return [carouselComponent, scrollNext, scrollPrev];
+  return [carouselComponent, scrollNext, scrollPrev, selectedIndex];
 };

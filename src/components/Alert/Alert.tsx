@@ -79,7 +79,7 @@ const StyledAlert = styled(Flex)`
   border-radius: 16px;
   box-shadow: 0 20px 36px -8px rgba(14, 14, 44, 0.1),
     0px 1px 1px rgba(0, 0, 0, 0.05);
-  padding: 12px;
+  padding: 12px 60px 12px 12px;
 `;
 
 const StyledBox = styled(Box)`
@@ -110,7 +110,7 @@ const Alert: React.FC<AlertProps> = ({
       </div>
       <Details hasHandler={!!onClick}>
         <Box ml="10px">
-          <Text mr="18%" fontSize="16px" color="dark" bold>
+          <Text fontSize="16px" color="dark" bold>
             {title}
           </Text>
           {typeof children === "string" ? (

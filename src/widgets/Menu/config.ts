@@ -71,6 +71,12 @@ export const links: MenuItemsType[] = [
         description: "Item description",
       },
       {
+        label: "Farms",
+        href: "/pool",
+        leftIcon: "InvestPoolOpacity",
+        description: "Item description",
+      },
+      {
         badgeType: "success",
         badgeTitle: "New",
         label: "LaunchPools",

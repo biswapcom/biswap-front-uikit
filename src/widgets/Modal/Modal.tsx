@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import { useTheme } from "styled-components";
 import Heading from "../../components/Heading/Heading";
+import { Flex } from "../../components/Box";
 import getThemeValue from "../../util/getThemeValue";
 import {
   ModalBody,
-  ModalHeader,
   ModalTitle,
   ModalContainer,
   ModalCloseButton,
@@ -24,6 +24,7 @@ const Modal: React.FC<ModalProps> = ({
   children,
   hideCloseButton = false,
   bodyPadding,
+  headerPadding,
   minWidth = "320px",
   modalBackground = "white",
   closeBtnColor,
@@ -41,6 +42,8 @@ const Modal: React.FC<ModalProps> = ({
 
   const context = useContext(ModalV2Context);
   const onDismiss = context?.onDismiss || onDismiss_;
+
+  const hp = isMobile ? "24px 16px 16px" : "32px 32px 24px";
   return (
     <ModalContainer
       minWidth={minWidth}
@@ -55,7 +58,11 @@ const Modal: React.FC<ModalProps> = ({
       borderRadius={props.borderRadius ?? "16px"}
     >
       {!hideHeader && (
-        <ModalHeader>
+        <Flex
+          justifyContent="space-between"
+          alignItems="center"
+          p={headerPadding ?? hp}
+        >
           {!hideOnBack && onBack && (
             <ModalBackButton onBack={onBack} closeBtnColor={closeBtnColor} />
           )}
@@ -72,7 +79,7 @@ const Modal: React.FC<ModalProps> = ({
               onDismiss={onDismiss}
             />
           )}
-        </ModalHeader>
+        </Flex>
       )}
       <ModalBody p={bodyPadding ?? defaultBodyPadding} {...modalBodyProps}>
         {children}
