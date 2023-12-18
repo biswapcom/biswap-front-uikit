@@ -29,6 +29,7 @@ const useTooltip = (
     tooltipOffset = [0, 10],
     disableStopPropagation,
     openedByDefault = false,
+    immediatelyCloseByClick = false,
   } = options;
   const [targetElement, setTargetElement] = useState<HTMLElement | null>(null);
   const [tooltipElement, setTooltipElement] =
@@ -173,9 +174,11 @@ const useTooltip = (
         }
       }
     };
-    document.addEventListener("mousedown", handleClickOutside);
+    const eventName =
+      isTouchDevice() && immediatelyCloseByClick ? "touchstart" : "mousedown";
+    document.addEventListener(eventName, handleClickOutside);
 
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener(eventName, handleClickOutside);
   }, [trigger, targetElement, tooltipElement]);
 
   // Trigger = focus
