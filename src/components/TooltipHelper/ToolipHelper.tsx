@@ -19,6 +19,7 @@ interface Props extends BoxProps {
   children?: React.ReactNode;
   showTooltip?: boolean;
   immediatelyCloseByClick?: boolean;
+  disableStopPropagation?: boolean;
 }
 
 const QuestionWrapper = styled(Flex)<{ showTooltip: boolean }>`
@@ -47,12 +48,14 @@ const TooltipHelper: React.FC<Props> = ({
   children,
   showTooltip = true,
   immediatelyCloseByClick,
+  disableStopPropagation,
   ...props
 }) => {
   const { targetRef, tooltip, tooltipVisible } = useTooltip(text, {
     placement,
     trigger,
-    immediatelyCloseByClick
+    immediatelyCloseByClick,
+    disableStopPropagation,
   });
 
   return (

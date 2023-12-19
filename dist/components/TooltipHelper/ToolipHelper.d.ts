@@ -15,6 +15,7 @@ interface Props extends BoxProps {
     children?: React.ReactNode;
     showTooltip?: boolean;
     immediatelyCloseByClick?: boolean;
+    disableStopPropagation?: boolean;
 }
 declare const TooltipHelper: React.FC<Props>;
 export default TooltipHelper;

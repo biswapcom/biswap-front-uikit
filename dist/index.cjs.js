@@ -5983,11 +5983,12 @@ var QuestionWrapper = styled__default["default"](Flex)(templateObject_2$j || (te
     return showTooltip && styled.css(templateObject_1$x || (templateObject_1$x = __makeTemplateObject(["\n      cursor: pointer;\n      transition: opacity 0.3s ease-in-out;\n      :hover,\n      :focus {\n        opacity: 0.7;\n      }\n    "], ["\n      cursor: pointer;\n      transition: opacity 0.3s ease-in-out;\n      :hover,\n      :focus {\n        opacity: 0.7;\n      }\n    "])));
 });
 var TooltipHelper = function (_a) {
-    var text = _a.text, _b = _a.placement, placement = _b === void 0 ? "auto" : _b, _c = _a.size, size = _c === void 0 ? "16px" : _c, _d = _a.color, color = _d === void 0 ? "pastelBlue" : _d, trigger = _a.trigger, _e = _a.Icon, Icon = _e === void 0 ? Icon$2T : _e, _f = _a.ml, ml = _f === void 0 ? "4px" : _f, children = _a.children, _g = _a.showTooltip, showTooltip = _g === void 0 ? true : _g, immediatelyCloseByClick = _a.immediatelyCloseByClick, props = __rest(_a, ["text", "placement", "size", "color", "trigger", "Icon", "ml", "children", "showTooltip", "immediatelyCloseByClick"]);
+    var text = _a.text, _b = _a.placement, placement = _b === void 0 ? "auto" : _b, _c = _a.size, size = _c === void 0 ? "16px" : _c, _d = _a.color, color = _d === void 0 ? "pastelBlue" : _d, trigger = _a.trigger, _e = _a.Icon, Icon = _e === void 0 ? Icon$2T : _e, _f = _a.ml, ml = _f === void 0 ? "4px" : _f, children = _a.children, _g = _a.showTooltip, showTooltip = _g === void 0 ? true : _g, immediatelyCloseByClick = _a.immediatelyCloseByClick, disableStopPropagation = _a.disableStopPropagation, props = __rest(_a, ["text", "placement", "size", "color", "trigger", "Icon", "ml", "children", "showTooltip", "immediatelyCloseByClick", "disableStopPropagation"]);
     var _h = useTooltip(text, {
         placement: placement,
         trigger: trigger,
-        immediatelyCloseByClick: immediatelyCloseByClick
+        immediatelyCloseByClick: immediatelyCloseByClick,
+        disableStopPropagation: disableStopPropagation,
     }), targetRef = _h.targetRef, tooltip = _h.tooltip, tooltipVisible = _h.tooltipVisible;
     return (React__default["default"].createElement(Box, __assign({ ml: ml }, props),
         showTooltip && tooltipVisible && tooltip,
