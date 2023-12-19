@@ -3171,8 +3171,9 @@ var useTooltip = function (content, options) {
     React.useEffect(function () {
         if (targetElement === null || trigger !== "click")
             return undefined;
-        targetElement.addEventListener("click", toggleTooltip);
-        return function () { return targetElement.removeEventListener("click", toggleTooltip); };
+        var eventName = isTouchDevice() && immediatelyCloseByClick ? "touchstart" : "click";
+        targetElement.addEventListener(eventName, toggleTooltip);
+        return function () { return targetElement.removeEventListener(eventName, toggleTooltip); };
     }, [trigger, targetElement, visible, toggleTooltip]);
     // If you need open by default
     React.useEffect(function () {

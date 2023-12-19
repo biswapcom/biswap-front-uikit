@@ -140,10 +140,11 @@ const useTooltip = (
   // Trigger = click
   useEffect(() => {
     if (targetElement === null || trigger !== "click") return undefined;
+    const eventName =
+      isTouchDevice() && immediatelyCloseByClick ? "touchstart" : "click";
+    targetElement.addEventListener(eventName, toggleTooltip);
 
-    targetElement.addEventListener("click", toggleTooltip);
-
-    return () => targetElement.removeEventListener("click", toggleTooltip);
+    return () => targetElement.removeEventListener(eventName, toggleTooltip);
   }, [trigger, targetElement, visible, toggleTooltip]);
 
   // If you need open by default
