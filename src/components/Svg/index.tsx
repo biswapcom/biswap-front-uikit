@@ -339,6 +339,9 @@ export { default as LimitOrderSolidIcon } from "./Icons/Menu/LimitOrder/LimitOrd
 export { default as LimitOrderOpacityIcon } from "./Icons/Menu/LimitOrder/LimitOrderOpacity";
 
 // liquidity staking
+export { default as InvestPoolOpacityIcon } from "./Icons/Menu/InvestPool/InvestPoolOpacity";
+
+// liquidity staking
 export { default as LiquidityStakingOpacityIcon } from "./Icons/Menu/LiquidityStaking/LiquidityStakingOpacity";
 export { default as LiquidityStakingSolidIcon } from "./Icons/Menu/LiquidityStaking/LiquidityStakingSolid";
 export { default as LiquidityStakingSolidOpacityIcon } from "./Icons/Menu/LiquidityStaking/LiquidityStakingSolidOpacity";
@@ -370,6 +373,7 @@ export { default as ProjectNameIcon } from "./Icons/Other/ProjectName";
 export { default as BswIcon } from "./Icons/Other/Bsw";
 export { default as LightningIcon } from "./Icons/Other/Lightning";
 export { default as ConflictIcon } from "./Icons/Other/Conflict";
+export { default as DropIcon } from "./Icons/Other/Drop";
 
 // Locks
 export { default as LockIcon } from "./Icons/Lock/Lock";

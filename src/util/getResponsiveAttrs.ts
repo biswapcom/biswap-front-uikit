@@ -2,7 +2,7 @@ import { ResponsiveValue } from "styled-system";
 
 type PropType = any | null;
 
-interface ResponsiveObj {
+export interface ResponsiveObj {
   xs?: PropType;
   sm?: PropType;
   md?: PropType;
@@ -22,7 +22,7 @@ const defaultObject = {
   xxl: null,
 };
 
-const getResponsiveAttrs = (obj: ResponsiveObj): ResponsiveValue<PropType> =>
-  Object.values({ ...defaultObject, ...obj });
+export type ResponsiveValueType = ResponsiveValue<PropType>;
 
-export default getResponsiveAttrs;
+export const getResponsiveAttrs = (obj: ResponsiveObj): ResponsiveValueType =>
+  Object.values({ ...defaultObject, ...obj });
