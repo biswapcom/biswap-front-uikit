@@ -10,18 +10,7 @@ const Separator = styled.div`
   color: ${({ theme }) => theme.colors.gray900};
   display: flex;
   justify-content: center;
-  padding-left: 4px;
-  padding-right: 4px;
-
-  ${({ theme }) => theme.mediaQueries.sm} {
-    padding-left: 8px;
-    padding-right: 8px;
-  }
-
-  ${({ theme }) => theme.mediaQueries.md} {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
+  padding: 0 4px;
 `;
 
 const StyledBreadcrumbs = styled.ul`
