@@ -2097,15 +2097,9 @@ var Alert = function (_a) {
 };
 var templateObject_1$1g, templateObject_2$I, templateObject_3$x, templateObject_4$t;
 
-var Separator = styled.div(templateObject_1$1f || (templateObject_1$1f = __makeTemplateObject(["\n  align-items: center;\n  color: ", ";\n  display: flex;\n  justify-content: center;\n  padding-left: 4px;\n  padding-right: 4px;\n\n  ", " {\n    padding-left: 8px;\n    padding-right: 8px;\n  }\n\n  ", " {\n    padding-left: 16px;\n    padding-right: 16px;\n  }\n"], ["\n  align-items: center;\n  color: ", ";\n  display: flex;\n  justify-content: center;\n  padding-left: 4px;\n  padding-right: 4px;\n\n  ", " {\n    padding-left: 8px;\n    padding-right: 8px;\n  }\n\n  ", " {\n    padding-left: 16px;\n    padding-right: 16px;\n  }\n"])), function (_a) {
+var Separator = styled.div(templateObject_1$1f || (templateObject_1$1f = __makeTemplateObject(["\n  align-items: center;\n  color: ", ";\n  display: flex;\n  justify-content: center;\n  padding: 0 4px;\n"], ["\n  align-items: center;\n  color: ", ";\n  display: flex;\n  justify-content: center;\n  padding: 0 4px;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.gray900;
-}, function (_a) {
-    var theme = _a.theme;
-    return theme.mediaQueries.sm;
-}, function (_a) {
-    var theme = _a.theme;
-    return theme.mediaQueries.md;
 });
 var StyledBreadcrumbs = styled.ul(templateObject_2$H || (templateObject_2$H = __makeTemplateObject(["\n  align-items: center;\n  display: flex;\n  flex-wrap: wrap;\n  list-style-type: none;\n\n  a {\n    color: ", ";\n\n    &:hover {\n      color: ", ";\n    }\n  }\n\n  ", "\n"], ["\n  align-items: center;\n  display: flex;\n  flex-wrap: wrap;\n  list-style-type: none;\n\n  a {\n    color: ", ";\n\n    &:hover {\n      color: ", ";\n    }\n  }\n\n  ", "\n"])), function (_a) {
     var theme = _a.theme;
