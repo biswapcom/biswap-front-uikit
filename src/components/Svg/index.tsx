@@ -397,3 +397,7 @@ export * from "./Icons/Menu/Perpetual";
 
 export { default as Svg } from "./Svg";
 export type { SvgProps } from "./types";
+
+// cross chain
+export { default as SquidRouterIcon } from "./Icons/CrossChain/SquidRouter";
+export { default as WormholeIcon } from "./Icons/CrossChain/Wormhole";
