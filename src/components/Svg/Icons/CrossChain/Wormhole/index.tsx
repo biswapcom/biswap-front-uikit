@@ -5,7 +5,7 @@ import { SvgProps } from "../../../types";
 const Icon: React.FC<SvgProps> = (props) => {
   return (
     <Svg viewBox="0 0 32 33" fill="currentColor" {...props}>
-      <g clip-path="url(#clip0_11521_22074)">
+      <g clipPath="url(#clip0_11521_22074)">
         <path
           d="M16.0033 32.0422C11.7646 32.0395 7.70006 30.3513 4.70152 27.3479C1.70298 24.3446 0.015305 20.2714 0.00878906 16.0221C0.0153041 11.7727 1.70289 7.69933 4.70138 4.69564C7.69988 1.69197 11.7644 0.00326129 16.0033 0C20.2421 0.00326129 24.3066 1.69197 27.3051 4.69564C30.3036 7.69933 31.9911 11.7727 31.9977 16.0221C31.9911 20.2714 30.3035 24.3446 27.305 27.3479C24.3065 30.3513 20.242 32.0395 16.0033 32.0422ZM16.0033 1.23342C12.0905 1.23614 8.33864 2.79472 5.57076 5.56722C2.8029 8.33969 1.2451 12.0996 1.23913 16.0221C1.24294 19.9451 2.80012 23.7061 5.56851 26.4788C8.3369 29.2514 12.09 30.8088 16.0033 30.8088C19.9164 30.8088 23.6696 29.2514 26.438 26.4788C29.2064 23.7061 30.7635 19.9451 30.7673 16.0221C30.7614 12.0996 29.2036 8.33969 26.4357 5.56722C23.6678 2.79472 19.916 1.23614 16.0033 1.23342Z"
           fill="url(#paint0_linear_11521_22074)"
@@ -32,8 +32,8 @@ const Icon: React.FC<SvgProps> = (props) => {
           y2="4.63311"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#0F0C48" />
-          <stop offset="1" stop-color="#262769" />
+          <stop stopColor="#0F0C48" />
+          <stop offset="1" stopColor="#262769" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_11521_22074"
@@ -43,8 +43,8 @@ const Icon: React.FC<SvgProps> = (props) => {
           y2="6.8003"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#0F0C48" />
-          <stop offset="1" stop-color="#262769" />
+          <stop stopColor="#0F0C48" />
+          <stop offset="1" stopColor="#262769" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_11521_22074"
@@ -54,8 +54,8 @@ const Icon: React.FC<SvgProps> = (props) => {
           y2="8.9694"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#0F0C48" />
-          <stop offset="1" stop-color="#262769" />
+          <stop stopColor="#0F0C48" />
+          <stop offset="1" stopColor="#262769" />
         </linearGradient>
         <linearGradient
           id="paint3_linear_11521_22074"
@@ -65,8 +65,8 @@ const Icon: React.FC<SvgProps> = (props) => {
           y2="11.1366"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#0F0C48" />
-          <stop offset="1" stop-color="#262769" />
+          <stop stopColor="#0F0C48" />
+          <stop offset="1" stopColor="#262769" />
         </linearGradient>
         <clipPath id="clip0_11521_22074">
           <rect width="32" height="32.0459" fill="white" />
