@@ -151,6 +151,7 @@ const Button = <E extends ElementType = "button">(
         {addBubble && <Bubble />}
         {isValidElement(startIcon) &&
           cloneElement(startIcon, {
+            // @ts-ignore
             mr: "0.5rem",
           })}
         {isLoading ? loadingText : children}

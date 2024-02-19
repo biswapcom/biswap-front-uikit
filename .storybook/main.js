@@ -15,4 +15,7 @@ module.exports = {
         "storybook-addon-styled-component-theme/dist/preset"
         //"themeprovider-storybook/register",
     ],
+    typescript: {
+        reactDocgen: 'react-docgen-typescript-plugin'
+    },
 };

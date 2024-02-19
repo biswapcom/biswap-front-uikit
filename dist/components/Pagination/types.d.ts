@@ -2,8 +2,8 @@ export declare const variants: {
     LIGHT: string;
     DARK: string;
 };
-export declare type Variant = typeof variants[keyof typeof variants];
-export declare type VariantProps = {
+export type Variant = typeof variants[keyof typeof variants];
+export type VariantProps = {
     variant: Variant;
 };
 export interface PaginationProps extends VariantProps {

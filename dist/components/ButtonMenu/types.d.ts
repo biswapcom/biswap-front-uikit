@@ -1,7 +1,7 @@
 import { Dispatch, ElementType, ReactElement, ReactNode, RefObject, SetStateAction } from "react";
 import { LayoutProps, SpaceProps } from "styled-system";
 import { MarkerType } from "../../theme";
-export declare type IPropertiesType = {
+export type IPropertiesType = {
     index: number;
     markerColor?: keyof MarkerType;
     tooltipText?: string;
@@ -73,7 +73,7 @@ export declare const variants: {
     readonly WARNING_LIGHT: "warningLight";
     readonly WARNING_DARK: "warningDark";
 };
-export declare type Scale = typeof scales[keyof typeof scales];
-export declare type Variant = typeof variants[keyof typeof variants];
-export declare type ColorKey = "pastelBlue" | "gray900";
-export declare type HoverKey = "white" | "dark800";
+export type Scale = typeof scales[keyof typeof scales];
+export type Variant = typeof variants[keyof typeof variants];
+export type ColorKey = "pastelBlue" | "gray900";
+export type HoverKey = "white" | "dark800";

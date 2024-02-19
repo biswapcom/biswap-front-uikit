@@ -1,11 +1,11 @@
 import { ReactNode } from "react";
 import { SpaceProps } from "styled-system";
-export declare type Position = "top" | "bottom";
+export type Position = "top" | "bottom";
 export interface PositionProps {
     position?: Position;
 }
-export declare type Variant = typeof variants[keyof typeof variants];
-export declare type Scale = typeof scales[keyof typeof scales];
+export type Variant = typeof variants[keyof typeof variants];
+export type Scale = typeof scales[keyof typeof scales];
 export interface DropdownProps extends PositionProps, SpaceProps {
     maxWidth?: string;
     minWidth?: string;

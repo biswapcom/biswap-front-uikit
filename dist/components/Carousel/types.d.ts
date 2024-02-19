@@ -12,7 +12,7 @@ export declare const variantsNavButton: {
     readonly WHITE: "white";
     readonly GRAY_OPACITY: "grayOpacity";
 };
-export declare type VariantNavButton = typeof variantsNavButton[keyof typeof variantsNavButton];
+export type VariantNavButton = typeof variantsNavButton[keyof typeof variantsNavButton];
 export interface IDirectButtonStyled {
     disabled?: boolean;
     isNextButton?: boolean;
