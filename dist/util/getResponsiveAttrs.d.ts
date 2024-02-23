@@ -1,5 +1,5 @@
 import { ResponsiveValue } from "styled-system";
-declare type PropType = any | null;
+type PropType = any | null;
 export interface ResponsiveObj {
     xs?: PropType;
     sm?: PropType;
@@ -9,6 +9,6 @@ export interface ResponsiveObj {
     xll?: PropType;
     xxl?: PropType;
 }
-export declare type ResponsiveValueType = ResponsiveValue<PropType>;
+export type ResponsiveValueType = ResponsiveValue<PropType>;
 export declare const getResponsiveAttrs: (obj: ResponsiveObj) => ResponsiveValueType;
 export {};

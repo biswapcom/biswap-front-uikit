@@ -14,4 +14,4 @@ export interface TooltipOptions {
     disableStopPropagation?: boolean;
     openedByDefault?: boolean;
 }
-export declare type TriggerType = "click" | "hover" | "focus";
+export type TriggerType = "click" | "hover" | "focus";

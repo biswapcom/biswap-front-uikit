@@ -2409,6 +2409,7 @@ var Button = function (props) {
             addBubble && React__default["default"].createElement(Bubble, null),
             React.isValidElement(startIcon) &&
                 React.cloneElement(startIcon, {
+                    // @ts-ignore
                     mr: "0.5rem",
                 }),
             isLoading ? loadingText : children,
@@ -6390,6 +6391,7 @@ var ModalProvider = function (_a) {
             React__default["default"].createElement(Overlay, { onClick: handleOverlayDismiss }),
             React__default["default"].isValidElement(modalNode) &&
                 React__default["default"].cloneElement(modalNode, {
+                    // @ts-ignore
                     onDismiss: handleDismiss,
                 }))),
         children));

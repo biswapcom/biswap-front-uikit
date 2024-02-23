@@ -16,8 +16,8 @@ export declare const scales: {
     readonly SIZE12: "size12";
     readonly SIZE10: "size10";
 };
-export declare type Tags = typeof tags[keyof typeof tags];
-export declare type Scales = typeof scales[keyof typeof scales];
+export type Tags = typeof tags[keyof typeof tags];
+export type Scales = typeof scales[keyof typeof scales];
 export interface ScalesObj {
     xs?: Scales;
     sm?: Scales;

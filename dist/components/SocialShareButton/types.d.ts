@@ -6,7 +6,7 @@ export declare const socials: {
     readonly TWITTER: "twitter";
     readonly TELEGRAM: "telegram";
 };
-export declare type Social = typeof socials[keyof typeof socials];
+export type Social = typeof socials[keyof typeof socials];
 export interface SocialShareButtonTypes extends BaseButtonProps, AnchorHTMLAttributes<HTMLAnchorElement> {
     social: Social;
     link?: string;
@@ -21,7 +21,7 @@ export declare enum SocialsList {
     "twitter" = 0,
     "telegram" = 1
 }
-export declare type LinkFunctionProps = {
+export type LinkFunctionProps = {
     message?: string;
     link?: string;
 };

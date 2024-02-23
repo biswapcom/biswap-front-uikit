@@ -2393,6 +2393,7 @@ var Button = function (props) {
             addBubble && React.createElement(Bubble, null),
             isValidElement(startIcon) &&
                 cloneElement(startIcon, {
+                    // @ts-ignore
                     mr: "0.5rem",
                 }),
             isLoading ? loadingText : children,
@@ -6374,6 +6375,7 @@ var ModalProvider = function (_a) {
             React.createElement(Overlay, { onClick: handleOverlayDismiss }),
             React.isValidElement(modalNode) &&
                 React.cloneElement(modalNode, {
+                    // @ts-ignore
                     onDismiss: handleDismiss,
                 }))),
         children));

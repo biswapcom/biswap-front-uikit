@@ -1,4 +1,4 @@
-export declare type ToggleTheme = {
+export type ToggleTheme = {
     handleBackground: string;
 };
 export declare const light: ToggleTheme;

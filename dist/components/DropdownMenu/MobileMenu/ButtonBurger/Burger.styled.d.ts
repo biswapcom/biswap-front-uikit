@@ -1,4 +1,4 @@
-declare type StyledBurgerProps = {
+type StyledBurgerProps = {
     open: boolean;
     isLoaded: boolean;
     isTablet: boolean;

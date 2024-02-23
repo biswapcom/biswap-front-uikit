@@ -19,8 +19,8 @@ export declare const variants: {
     readonly TEXT: "text";
     readonly TEXT_DARK: "textDark";
 };
-export declare type Scale = typeof scales[keyof typeof scales];
-export declare type Variant = typeof variants[keyof typeof variants];
+export type Scale = typeof scales[keyof typeof scales];
+export type Variant = typeof variants[keyof typeof variants];
 export interface PercentSliderProps extends BoxProps {
     name?: string;
     min?: number;
