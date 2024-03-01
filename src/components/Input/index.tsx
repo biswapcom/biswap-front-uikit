@@ -4,4 +4,5 @@ export type {
   InputProps,
   InputGroupProps,
   Scales as InputScales,
+  Variants as InputVariants
 } from "./types";
