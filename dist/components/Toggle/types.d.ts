@@ -5,7 +5,7 @@ import { Scales as BodyTextScales, ScalesObj } from "../Typography/typesBodyText
 export declare const scales: {
     readonly MD: "md";
 };
-export type Scales = typeof scales[keyof typeof scales];
+export declare type Scales = typeof scales[keyof typeof scales];
 export interface ToggleProps extends InputHTMLAttributes<HTMLInputElement>, SpaceProps {
     scale?: Scales;
     checked?: boolean;
@@ -42,4 +42,4 @@ export declare const scaleKeys: {
     readonly toggleHeight: "toggleHeight";
     readonly toggleWidth: "toggleWidth";
 };
-export type ScaleKeys = typeof scaleKeys[keyof typeof scaleKeys];
+export declare type ScaleKeys = typeof scaleKeys[keyof typeof scaleKeys];

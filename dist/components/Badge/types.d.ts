@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { SpaceProps } from "styled-system";
-export type BadgeType = typeof badgeTypes[keyof typeof badgeTypes];
+export declare type BadgeType = typeof badgeTypes[keyof typeof badgeTypes];
 export interface BadgeProps extends SpaceProps {
     badgeType: BadgeType;
     fontSize?: string;

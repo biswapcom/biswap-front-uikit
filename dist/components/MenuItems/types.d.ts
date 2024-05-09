@@ -4,8 +4,8 @@ import { Colors } from "../../theme";
 export declare const ItemTypes: {
     readonly DIVIDER: "DIVIDER";
 };
-type ItemType = typeof ItemTypes[keyof typeof ItemTypes];
-export type MenuItemsType = {
+declare type ItemType = typeof ItemTypes[keyof typeof ItemTypes];
+export declare type MenuItemsType = {
     label?: string;
     href?: string;
     icon?: string;

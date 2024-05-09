@@ -12,8 +12,8 @@ export declare const scales: {
     readonly XL: "xl";
     readonly XXL: "xxl";
 };
-export type Tags = typeof tags[keyof typeof tags];
-export type Scales = typeof scales[keyof typeof scales];
+export declare type Tags = typeof tags[keyof typeof tags];
+export declare type Scales = typeof scales[keyof typeof scales];
 export interface HeadingProps {
     as?: Tags;
     scale?: Scales;

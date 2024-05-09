@@ -1,5 +1,5 @@
 import { FlexProps } from "../Box";
-export type SubMenuItemsType = {
+export declare type SubMenuItemsType = {
     label: string;
     href: string;
     itemProps?: any;
