@@ -6336,10 +6336,10 @@ var ModalBody = styled__default["default"].div(templateObject_3$a || (templateOb
 });
 var Background = styled__default["default"].img(templateObject_4$a || (templateObject_4$a = __makeTemplateObject(["\n  width: 100%;\n"], ["\n  width: 100%;\n"])));
 var ModalWithBackground = function (_a) {
-    var onDismiss_ = _a.onDismiss, children = _a.children, _b = _a.hideCloseButton, hideCloseButton = _b === void 0 ? false : _b, backBtnColor = _a.backBtnColor, background = _a.background, backgroundTransparent = _a.backgroundTransparent, p = _a.p;
+    var onDismiss_ = _a.onDismiss, children = _a.children, _b = _a.hideCloseButton, hideCloseButton = _b === void 0 ? false : _b, backBtnColor = _a.backBtnColor, background = _a.background, backgroundTransparent = _a.backgroundTransparent, p = _a.p, props = __rest(_a, ["onDismiss", "children", "hideCloseButton", "backBtnColor", "background", "backgroundTransparent", "p"]);
     var context = React.useContext(ModalV2Context);
     var onDismiss = (context === null || context === void 0 ? void 0 : context.onDismiss) || onDismiss_;
-    return (React__default["default"].createElement(StyledModal, { backgroundTransparent: backgroundTransparent },
+    return (React__default["default"].createElement(StyledModal, __assign({ backgroundTransparent: backgroundTransparent }, props),
         !hideCloseButton && (React__default["default"].createElement(StyledIconButton, { variant: "text", className: "closeModal", scale: "sm", onClick: onDismiss, "aria-label": "Close the dialog" },
             React__default["default"].createElement(Icon$33, { width: "24px", color: backBtnColor !== null && backBtnColor !== void 0 ? backBtnColor : "card" }))),
         background && React__default["default"].createElement(Background, { src: background, alt: "image" }),

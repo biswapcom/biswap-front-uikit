@@ -4,8 +4,9 @@ import { CloseIcon } from "../../components/Svg";
 import { IconButton } from "../../components/Button";
 import { InjectedProps } from "./types";
 import { ModalV2Context } from "./ModalV2";
+import { BoxProps } from "../../components/Box";
 
-interface Props extends InjectedProps {
+interface Props extends InjectedProps, BoxProps {
   hideCloseButton?: boolean;
   backBtnColor?: string;
   background?: string;
@@ -73,11 +74,12 @@ const ModalWithBackground: React.FC<Props> = ({
   background,
   backgroundTransparent,
   p,
+  ...props
 }) => {
   const context = useContext(ModalV2Context);
   const onDismiss = context?.onDismiss || onDismiss_;
   return (
-    <StyledModal backgroundTransparent={backgroundTransparent}>
+    <StyledModal backgroundTransparent={backgroundTransparent} {...props}>
       {!hideCloseButton && (
         <StyledIconButton
           variant="text"
