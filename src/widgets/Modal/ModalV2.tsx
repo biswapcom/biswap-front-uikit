@@ -2,7 +2,7 @@ import React, { createContext, useCallback, useState } from "react";
 import { createPortal } from "react-dom";
 import { Overlay } from "../../components/Overlay";
 import getPortalRoot from "../../util/getPortalRoot";
-import { ModalWrapper } from "./styles";
+import { ModalWrapperV2 } from "./styles";
 import { IUseModalV2, ModalV2Props } from "./types";
 
 export const ModalV2Context = createContext<{
@@ -44,10 +44,10 @@ export function ModalV2({
     return createPortal(
       <ModalV2Context.Provider value={{ onDismiss }}>
         {isOpen && (
-          <ModalWrapper>
+          <ModalWrapperV2>
             <Overlay onClick={handleOverlayDismiss} />
             {children}
-          </ModalWrapper>
+          </ModalWrapperV2>
         )}
       </ModalV2Context.Provider>,
       portal
