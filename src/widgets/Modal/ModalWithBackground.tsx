@@ -28,7 +28,8 @@ const StyledModal = styled.div<{ backgroundTransparent?: boolean }>`
   //top: 0;
   //left: 0;
   position: absolute;
-  bottom: 0
+  bottom: 0;
+
   ${({ theme }) => theme.mediaQueries.sm} {
     position: relative;
     width: auto;
