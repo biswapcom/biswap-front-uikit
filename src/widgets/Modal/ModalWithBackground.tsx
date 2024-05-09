@@ -20,13 +20,17 @@ const StyledModal = styled.div<{ backgroundTransparent?: boolean }>`
   background-color: ${({ theme, backgroundTransparent }) =>
     backgroundTransparent ? "transparent" : theme.colors.white};
   border-radius: 16px 16px 0 0;
-  width: 100%;
+  //width: 100%;
+  width: auto;
   z-index: ${({ theme }) => theme.zIndices.modal};
   overflow-y: auto;
-  position: relative;
-  top: 0;
-  left: 0;
+  //position: relative;
+  //top: 0;
+  //left: 0;
+  position: absolute;
+  bottom: 0
   ${({ theme }) => theme.mediaQueries.sm} {
+    position: relative;
     width: auto;
     min-width: 416px;
     max-width: 100%;
