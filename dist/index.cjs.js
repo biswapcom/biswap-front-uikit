@@ -6226,9 +6226,12 @@ var ModalWrapperV2 = styled__default["default"].div(templateObject_1$r || (templ
     var theme = _a.theme;
     return theme.zIndices.modal - 1;
 });
-var ModalWrapper = styled__default["default"](Flex)(templateObject_2$e || (templateObject_2$e = __makeTemplateObject(["\n  flex-direction: column;\n  justify-content: flex-end;\n  align-items: center;\n  position: fixed;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  z-index: ", ";\n"], ["\n  flex-direction: column;\n  justify-content: flex-end;\n  align-items: center;\n  position: fixed;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  z-index: ", ";\n"])), function (_a) {
+var ModalWrapper = styled__default["default"](Flex)(templateObject_2$e || (templateObject_2$e = __makeTemplateObject(["\n  flex-direction: column;\n  justify-content: flex-end;\n  align-items: center;\n  position: fixed;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  z-index: ", ";\n  \n  ", " {\n    justify-content: center;\n  }\n"], ["\n  flex-direction: column;\n  justify-content: flex-end;\n  align-items: center;\n  position: fixed;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  z-index: ", ";\n  \n  ", " {\n    justify-content: center;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.zIndices.modal - 1;
+}, function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.sm;
 });
 var ModalTitle = styled__default["default"](Flex)(templateObject_3$b || (templateObject_3$b = __makeTemplateObject([""], [""])));
 var ModalBody$1 = styled__default["default"](Flex)(templateObject_4$b || (templateObject_4$b = __makeTemplateObject(["\n  flex-direction: column;\n  overflow-y: auto;\n"], ["\n  flex-direction: column;\n  overflow-y: auto;\n"])));

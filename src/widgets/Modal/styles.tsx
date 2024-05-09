@@ -29,6 +29,10 @@ export const ModalWrapper = styled(Flex)`
   bottom: 0;
   left: 0;
   z-index: ${({ theme }) => theme.zIndices.modal - 1};
+  
+  ${({ theme }) => theme.mediaQueries.sm} {
+    justify-content: center;
+  }
 `;
 
 export const ModalTitle = styled(Flex)``;
