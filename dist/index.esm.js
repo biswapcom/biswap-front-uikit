@@ -6294,7 +6294,7 @@ var Modal = function (_a) {
         React.createElement(ModalBody$1, __assign({ p: bodyPadding !== null && bodyPadding !== void 0 ? bodyPadding : defaultBodyPadding }, modalBodyProps), children)));
 };
 
-var StyledModal = styled.div(templateObject_1$q || (templateObject_1$q = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  background-color: ", ";\n  border-radius: 16px 16px 0 0;\n  //width: 100%;\n  width: auto;\n  z-index: ", ";\n  overflow-y: auto;\n  //position: relative;\n  //top: 0;\n  //left: 0;\n  position: absolute;\n  bottom: 0;\n\n  ", " {\n    position: relative;\n    width: auto;\n    min-width: 416px;\n    max-width: 100%;\n    border-radius: 16px;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  background-color: ", ";\n  border-radius: 16px 16px 0 0;\n  //width: 100%;\n  width: auto;\n  z-index: ", ";\n  overflow-y: auto;\n  //position: relative;\n  //top: 0;\n  //left: 0;\n  position: absolute;\n  bottom: 0;\n\n  ", " {\n    position: relative;\n    width: auto;\n    min-width: 416px;\n    max-width: 100%;\n    border-radius: 16px;\n  }\n"])), function (_a) {
+var StyledModal = styled(Flex)(templateObject_1$q || (templateObject_1$q = __makeTemplateObject(["\n  flex-direction: column;\n  background-color: ", ";\n  border-radius: 16px 16px 0 0;\n  //width: 100%;\n  width: auto;\n  z-index: ", ";\n  overflow-y: auto;\n  //position: relative;\n  //top: 0;\n  //left: 0;\n  position: absolute;\n  bottom: 0;\n\n  ", " {\n    position: relative;\n    width: auto;\n    min-width: 416px;\n    max-width: 100%;\n    border-radius: 16px;\n  }\n"], ["\n  flex-direction: column;\n  background-color: ", ";\n  border-radius: 16px 16px 0 0;\n  //width: 100%;\n  width: auto;\n  z-index: ", ";\n  overflow-y: auto;\n  //position: relative;\n  //top: 0;\n  //left: 0;\n  position: absolute;\n  bottom: 0;\n\n  ", " {\n    position: relative;\n    width: auto;\n    min-width: 416px;\n    max-width: 100%;\n    border-radius: 16px;\n  }\n"])), function (_a) {
     var theme = _a.theme, backgroundTransparent = _a.backgroundTransparent;
     return backgroundTransparent ? "transparent" : theme.colors.white;
 }, function (_a) {
@@ -6320,10 +6320,10 @@ var ModalBody = styled.div(templateObject_3$a || (templateObject_3$a = __makeTem
 });
 var Background = styled.img(templateObject_4$a || (templateObject_4$a = __makeTemplateObject(["\n  width: 100%;\n"], ["\n  width: 100%;\n"])));
 var ModalWithBackground = function (_a) {
-    var onDismiss_ = _a.onDismiss, children = _a.children, _b = _a.hideCloseButton, hideCloseButton = _b === void 0 ? false : _b, backBtnColor = _a.backBtnColor, background = _a.background, backgroundTransparent = _a.backgroundTransparent, p = _a.p, props = __rest(_a, ["onDismiss", "children", "hideCloseButton", "backBtnColor", "background", "backgroundTransparent", "p"]);
+    var onDismiss_ = _a.onDismiss, children = _a.children, _b = _a.hideCloseButton, hideCloseButton = _b === void 0 ? false : _b, backBtnColor = _a.backBtnColor, background = _a.background, backgroundTransparent = _a.backgroundTransparent, p = _a.p, boxProps = __rest(_a, ["onDismiss", "children", "hideCloseButton", "backBtnColor", "background", "backgroundTransparent", "p"]);
     var context = useContext(ModalV2Context);
     var onDismiss = (context === null || context === void 0 ? void 0 : context.onDismiss) || onDismiss_;
-    return (React.createElement(StyledModal, __assign({ backgroundTransparent: backgroundTransparent }, props),
+    return (React.createElement(StyledModal, __assign({ backgroundTransparent: backgroundTransparent }, boxProps),
         !hideCloseButton && (React.createElement(StyledIconButton, { variant: "text", className: "closeModal", scale: "sm", onClick: onDismiss, "aria-label": "Close the dialog" },
             React.createElement(Icon$33, { width: "24px", color: backBtnColor !== null && backBtnColor !== void 0 ? backBtnColor : "card" }))),
         background && React.createElement(Background, { src: background, alt: "image" }),
