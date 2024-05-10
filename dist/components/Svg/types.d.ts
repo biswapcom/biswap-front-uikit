@@ -6,7 +6,7 @@ export interface SvgProps extends SVGAttributes<HTMLOrSVGElement>, SpaceProps {
     theme?: DefaultTheme;
     spin?: boolean;
 }
-export type IconComponentType = {
+export declare type IconComponentType = {
     iconName: string;
     isActive?: boolean;
     height?: string;

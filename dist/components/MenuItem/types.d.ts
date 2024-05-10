@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { Colors } from "../../theme";
-export type MenuItemVariant = "default" | "subMenu";
+export declare type MenuItemVariant = "default" | "subMenu";
 export interface MenuItemProps {
     isActive?: boolean;
     href?: string;
@@ -9,7 +9,7 @@ export interface MenuItemProps {
     highlightTitle?: boolean;
     children: ReactNode;
 }
-export type StyledMenuItemProps = {
+export declare type StyledMenuItemProps = {
     $isActive?: boolean;
     $variant?: MenuItemVariant;
     $statusColor?: keyof Colors;

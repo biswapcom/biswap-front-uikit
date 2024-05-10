@@ -17,7 +17,7 @@ export declare const variants: {
     readonly DEFAULT: "default";
     readonly INVERTED: "inverted";
 };
-export type Variant = typeof variants[keyof typeof variants];
+export declare type Variant = typeof variants[keyof typeof variants];
 export interface TokenPairImageProps extends BoxProps {
     primarySrc: string;
     secondarySrc: string;

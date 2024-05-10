@@ -6,7 +6,7 @@ export interface CardRibbonProps extends SpaceProps, HTMLAttributes<HTMLDivEleme
     text: string;
     ribbonPosition?: "right" | "left";
 }
-export type CardTheme = {
+export declare type CardTheme = {
     background: string;
     boxShadow: string;
     boxShadowActive: string;

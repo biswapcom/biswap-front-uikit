@@ -27,7 +27,7 @@ export interface TabBarItemProps {
     scale?: typeof tabsScales[keyof typeof tabsScales];
     children?: ReactNode;
 }
-export type TabProps<P extends ElementType = "button"> = PolymorphicComponentProps<P, TabBarItemProps>;
+export declare type TabProps<P extends ElementType = "button"> = PolymorphicComponentProps<P, TabBarItemProps>;
 export declare const tabsScales: {
     readonly LG: "lg";
     readonly MD: "md";

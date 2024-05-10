@@ -38,6 +38,7 @@ export function ModalV2({
       onDismiss?.();
     }
   };
+
   const portal = getPortalRoot();
 
   if (portal) {

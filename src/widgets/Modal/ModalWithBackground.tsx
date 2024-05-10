@@ -4,8 +4,9 @@ import { CloseIcon } from "../../components/Svg";
 import { IconButton } from "../../components/Button";
 import { InjectedProps } from "./types";
 import { ModalV2Context } from "./ModalV2";
+import {BoxProps, Flex} from "../../components/Box";
 
-interface Props extends InjectedProps {
+interface Props extends InjectedProps, BoxProps {
   hideCloseButton?: boolean;
   backBtnColor?: string;
   background?: string;
@@ -14,19 +15,19 @@ interface Props extends InjectedProps {
   children: ReactNode;
 }
 
-const StyledModal = styled.div<{ backgroundTransparent?: boolean }>`
-  display: flex;
+const StyledModal = styled(Flex)<{ backgroundTransparent?: boolean }>`
   flex-direction: column;
   background-color: ${({ theme, backgroundTransparent }) =>
     backgroundTransparent ? "transparent" : theme.colors.white};
   border-radius: 16px 16px 0 0;
-  width: 100%;
+  width: auto;
   z-index: ${({ theme }) => theme.zIndices.modal};
   overflow-y: auto;
-  position: relative;
-  top: 0;
-  left: 0;
+  position: absolute;
+  bottom: 0;
+
   ${({ theme }) => theme.mediaQueries.sm} {
+    position: relative;
     width: auto;
     min-width: 416px;
     max-width: 100%;
@@ -68,11 +69,12 @@ const ModalWithBackground: React.FC<Props> = ({
   background,
   backgroundTransparent,
   p,
+  ...boxProps
 }) => {
   const context = useContext(ModalV2Context);
   const onDismiss = context?.onDismiss || onDismiss_;
   return (
-    <StyledModal backgroundTransparent={backgroundTransparent}>
+    <StyledModal backgroundTransparent={backgroundTransparent} {...boxProps}>
       {!hideCloseButton && (
         <StyledIconButton
           variant="text"

@@ -1,4 +1,4 @@
-export type TooltipTheme = {
+export declare type TooltipTheme = {
     background: string;
     text: string;
     boxShadow: string;
