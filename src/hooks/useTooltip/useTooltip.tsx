@@ -29,6 +29,7 @@ const useTooltip = (
     tooltipOffset = [0, 10],
     disableStopPropagation,
     openedByDefault = false,
+    isDark = true,
   } = options;
   const [targetElement, setTargetElement] = useState<HTMLElement | null>(null);
   const [tooltipElement, setTooltipElement] =
@@ -216,10 +217,11 @@ const useTooltip = (
     <StyledTooltip
       ref={setTooltipElement}
       style={styles.popper}
+      isDark={isDark}
       {...attributes.popper}
     >
       <ThemeProvider theme={invertTheme}>{content}</ThemeProvider>
-      <Arrow ref={setArrowElement} style={styles.arrow} />
+      <Arrow ref={setArrowElement} isDark={isDark} style={styles.arrow} />
     </StyledTooltip>
   );
 

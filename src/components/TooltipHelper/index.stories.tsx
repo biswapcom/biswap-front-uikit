@@ -98,6 +98,14 @@ export const Default = () => {
           color="warning"
         />
       </Flex>
+      <Flex mt="50px" ml="100px" height="100px" background="#000000">
+        <TooltipHelper
+          text={"light tooltip Some text for example"}
+          placement="bottom-start"
+          isDark={false}
+          mr="30px"
+        />
+      </Flex>
     </Box>
   );
 };
