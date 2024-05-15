@@ -45,32 +45,27 @@ export const bodyTextScaleMap: scalesMap = {
   },
 };
 
-const getScalesAttributes = ({ scale = "size16", as = "p" }: BodyTextProps) => {
-  if (typeof scale === "string") return bodyTextScaleMap[scale];
+const getScalesAttributes = ({ scale, as }: BodyTextProps) => {
+  const tempScales = JSON.parse(JSON.stringify(scale || "size16"));
 
-  const tempScales = JSON.parse(JSON.stringify(scale));
-
-  if (!tempScales.xs) tempScales.xs = BodyText.defaultProps?.scale;
-
-  return scale
-    ? {
-        fontSize: breakpointsKeys.map((breakPoint) =>
-          tempScales[breakPoint]
-            ? bodyTextScaleMap[tempScales[breakPoint]].fontSize
-            : null
-        ),
-        lineHeight: breakpointsKeys.map((breakPoint) =>
-          tempScales[breakPoint]
-            ? bodyTextScaleMap[tempScales[breakPoint]].lineHeight
-            : null
-        ),
-      }
-    : { fontSize: [], lineHeight: [] };
+  return {
+    fontSize: breakpointsKeys.map((breakPoint) =>
+      tempScales[breakPoint]
+        ? bodyTextScaleMap[tempScales[breakPoint]].fontSize
+        : null
+    ),
+    lineHeight: breakpointsKeys.map((breakPoint) =>
+      tempScales[breakPoint]
+        ? bodyTextScaleMap[tempScales[breakPoint]].lineHeight
+        : null
+    ),
+    as: as || "p",
+  };
 };
 
-export const BodyText = styled(Text)
-  .attrs({ as: "p" })
-  .attrs(getScalesAttributes)<BodyTextProps>`
+export const BodyText = styled(Text).attrs((props) =>
+  getScalesAttributes(props)
+)<BodyTextProps>`
   font-weight: ${({ bold }) => (bold ? 600 : 400)};
   white-space: ${({ nowrap }) => (nowrap ? "nowrap" : "normal")};
 `;

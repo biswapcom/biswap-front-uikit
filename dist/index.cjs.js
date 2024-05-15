@@ -3350,31 +3350,25 @@ var bodyTextScaleMap = (_a$c = {},
     },
     _a$c);
 var getScalesAttributes = function (_a) {
-    var _b;
-    var _c = _a.scale, scale = _c === void 0 ? "size16" : _c; _a.as;
-    if (typeof scale === "string")
-        return bodyTextScaleMap[scale];
-    var tempScales = JSON.parse(JSON.stringify(scale));
-    if (!tempScales.xs)
-        tempScales.xs = (_b = BodyText.defaultProps) === null || _b === void 0 ? void 0 : _b.scale;
-    return scale
-        ? {
-            fontSize: breakpointsKeys.map(function (breakPoint) {
-                return tempScales[breakPoint]
-                    ? bodyTextScaleMap[tempScales[breakPoint]].fontSize
-                    : null;
-            }),
-            lineHeight: breakpointsKeys.map(function (breakPoint) {
-                return tempScales[breakPoint]
-                    ? bodyTextScaleMap[tempScales[breakPoint]].lineHeight
-                    : null;
-            }),
-        }
-        : { fontSize: [], lineHeight: [] };
+    var scale = _a.scale, as = _a.as;
+    var tempScales = JSON.parse(JSON.stringify(scale || "size16"));
+    return {
+        fontSize: breakpointsKeys.map(function (breakPoint) {
+            return tempScales[breakPoint]
+                ? bodyTextScaleMap[tempScales[breakPoint]].fontSize
+                : null;
+        }),
+        lineHeight: breakpointsKeys.map(function (breakPoint) {
+            return tempScales[breakPoint]
+                ? bodyTextScaleMap[tempScales[breakPoint]].lineHeight
+                : null;
+        }),
+        as: as || "p",
+    };
 };
-var BodyText = styled__default["default"](Text)
-    .attrs({ as: "p" })
-    .attrs(getScalesAttributes)(templateObject_1$17 || (templateObject_1$17 = __makeTemplateObject(["\n  font-weight: ", ";\n  white-space: ", ";\n"], ["\n  font-weight: ", ";\n  white-space: ", ";\n"])), function (_a) {
+var BodyText = styled__default["default"](Text).attrs(function (props) {
+    return getScalesAttributes(props);
+})(templateObject_1$17 || (templateObject_1$17 = __makeTemplateObject(["\n  font-weight: ", ";\n  white-space: ", ";\n"], ["\n  font-weight: ", ";\n  white-space: ", ";\n"])), function (_a) {
     var bold = _a.bold;
     return (bold ? 600 : 400);
 }, function (_a) {

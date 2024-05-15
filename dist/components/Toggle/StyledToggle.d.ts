@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import { HandleProps, InputProps, StyleToggleProps } from "./types";
 import { SpaceProps } from "styled-system";
 interface IToggleProps extends SpaceProps {
@@ -9,15 +10,11 @@ interface IToggleProps extends SpaceProps {
 }
 export declare const ToggleWrap: import("styled-components").StyledComponent<"label", import("styled-components").DefaultTheme, IToggleProps, never>;
 export declare const Handle: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, HandleProps, never>;
-export declare const Label: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, ((import("../Text").TextProps & {
-    as: string;
-} & ({
-    fontSize: string;
-    lineHeight: string;
-} | {
+export declare const Label: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, import("../Text").TextProps & {
     fontSize: (string | null)[];
     lineHeight: (string | null)[];
-})) & import("../Typography").BodyTextProps) & {
+    as: string | number | true | Iterable<import("react").ReactNode> | JSX.Element | import("react").ComponentClass<{}, any> | import("react").FunctionComponent<{}>;
+} & import("../Typography").BodyTextProps & {
     labelOrientation?: string | undefined;
     isChecked: boolean;
     disabled?: boolean | undefined;
