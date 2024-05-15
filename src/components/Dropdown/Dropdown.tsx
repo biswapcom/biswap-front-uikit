@@ -19,7 +19,7 @@ const getBottom = ({ position }: PositionProps) => {
   return "-8px";
 };
 
-const Container = styled.div<{
+const Container = styled.div.attrs({ position: "bottom" })<{
   maxWidth?: string;
   minWidth?: string;
   scale?: string;

@@ -133,11 +133,14 @@ var getThemeValue = function (path, fallback) {
 
 var rotate$3 = styled.keyframes(templateObject_1$1q || (templateObject_1$1q = __makeTemplateObject(["\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n"], ["\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n"])));
 var spinStyle = styled.css(templateObject_2$N || (templateObject_2$N = __makeTemplateObject(["\n  animation: ", " 2s linear infinite;\n"], ["\n  animation: ", " 2s linear infinite;\n"])), rotate$3);
-var Svg = styled__default["default"].svg(templateObject_3$z || (templateObject_3$z = __makeTemplateObject(["\n  align-self: center; // Safari fix\n  fill: ", ";\n  flex-shrink: 0;\n  ", "\n  ", "\n"], ["\n  align-self: center; // Safari fix\n  fill: ", ";\n  flex-shrink: 0;\n  ", "\n  ", "\n"])), function (_a) {
+var Svg = styled__default["default"].svg.attrs(function (_a) {
+    var _b = _a.width, width = _b === void 0 ? "20px" : _b, _c = _a.xmlns, xmlns = _c === void 0 ? "http://www.w3.org/2000/svg" : _c, props = __rest(_a, ["width", "xmlns"]);
+    return (__assign({ width: width, xmlns: xmlns }, props));
+})(templateObject_3$z || (templateObject_3$z = __makeTemplateObject(["\n  align-self: center; // Safari fix\n  fill: ", ";\n  flex-shrink: 0;\n  ", "\n  ", "\n"], ["\n  align-self: center; // Safari fix\n  fill: ", ";\n  flex-shrink: 0;\n  ", "\n  ", "\n"])), function (_a) {
     var theme = _a.theme, _b = _a.color, color = _b === void 0 ? "gray900" : _b;
     return getThemeValue("colors.".concat(color), color)(theme);
 }, function (_a) {
-    var _b = _a.spin, spin = _b === void 0 ? false : _b;
+    var spin = _a.spin;
     return spin && spinStyle;
 }, styledSystem.space);
 var templateObject_1$1q, templateObject_2$N, templateObject_3$z;
@@ -349,8 +352,8 @@ var Icon$35 = function (props) {
 var Icon$34 = function (props) {
     return (React__default["default"].createElement(Svg, __assign({ viewBox: "0 0 160 160", fill: "none" }, props),
         React__default["default"].createElement("rect", { width: "160", height: "160", rx: "80", fill: "white" }),
-        React__default["default"].createElement("path", { "fill-rule": "evenodd", "clip-rule": "evenodd", d: "M120.726 104.348L85.418 41.2114C82.967 37.3744 77.0336 37.3735 74.582 41.2113L39.2745 104.35L39.1908 104.487C36.9923 108.086 39.4 113.333 44.6736 113.333H115.325C120.596 113.333 123.008 108.087 120.809 104.484L120.726 104.348ZM67.4029 36.9755C73.0861 27.6687 86.9215 27.681 92.5971 36.9755L127.922 100.143C133.724 109.65 126.687 121.667 115.325 121.667H44.6736C33.3019 121.667 26.2775 109.64 32.0795 100.143L67.4029 36.9755Z", fill: "#FFCD1C" }),
-        React__default["default"].createElement("path", { "fill-rule": "evenodd", "clip-rule": "evenodd", d: "M79.9991 54.9898C82.7566 54.9898 85.0012 57.2344 85.0012 59.9918V85.0021C85.0012 87.7595 82.7566 90.0041 79.9991 90.0041C77.2417 90.0041 74.9971 87.7595 74.9971 85.0021V59.9918C74.9971 57.2344 77.2417 54.9898 79.9991 54.9898ZM74.9971 100.008C74.9971 97.2507 77.2417 95.0062 79.9991 95.0062C82.7566 95.0062 85.0012 97.2507 85.0012 100.008C85.0012 102.766 82.7566 105.01 79.9991 105.01C77.2417 105.01 74.9971 102.766 74.9971 100.008Z", fill: "#FFCD1C" })));
+        React__default["default"].createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M120.726 104.348L85.418 41.2114C82.967 37.3744 77.0336 37.3735 74.582 41.2113L39.2745 104.35L39.1908 104.487C36.9923 108.086 39.4 113.333 44.6736 113.333H115.325C120.596 113.333 123.008 108.087 120.809 104.484L120.726 104.348ZM67.4029 36.9755C73.0861 27.6687 86.9215 27.681 92.5971 36.9755L127.922 100.143C133.724 109.65 126.687 121.667 115.325 121.667H44.6736C33.3019 121.667 26.2775 109.64 32.0795 100.143L67.4029 36.9755Z", fill: "#FFCD1C" }),
+        React__default["default"].createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M79.9991 54.9898C82.7566 54.9898 85.0012 57.2344 85.0012 59.9918V85.0021C85.0012 87.7595 82.7566 90.0041 79.9991 90.0041C77.2417 90.0041 74.9971 87.7595 74.9971 85.0021V59.9918C74.9971 57.2344 77.2417 54.9898 79.9991 54.9898ZM74.9971 100.008C74.9971 97.2507 77.2417 95.0062 79.9991 95.0062C82.7566 95.0062 85.0012 97.2507 85.0012 100.008C85.0012 102.766 82.7566 105.01 79.9991 105.01C77.2417 105.01 74.9971 102.766 74.9971 100.008Z", fill: "#FFCD1C" })));
 };
 
 var Icon$33 = function (props) {
@@ -3922,7 +3925,7 @@ var getBottom = function (_a) {
     }
     return "-8px";
 };
-var Container = styled__default["default"].div(templateObject_1$Z || (templateObject_1$Z = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  max-width: ", ";\n  min-width: ", ";\n\n  ", "\n\n  ", "\n"], ["\n  position: relative;\n  width: 100%;\n  max-width: ", ";\n  min-width: ", ";\n\n  ", "\n\n  ", "\n"])), function (_a) {
+var Container = styled__default["default"].div.attrs({ position: "bottom" })(templateObject_1$Z || (templateObject_1$Z = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  max-width: ", ";\n  min-width: ", ";\n\n  ", "\n\n  ", "\n"], ["\n  position: relative;\n  width: 100%;\n  max-width: ", ";\n  min-width: ", ";\n\n  ", "\n\n  ", "\n"])), function (_a) {
     var maxWidth = _a.maxWidth;
     return maxWidth || "none";
 }, function (_a) {
@@ -5894,10 +5897,10 @@ var Card = function (_a) {
             children)));
 };
 
-var CardBody = styled__default["default"].div(templateObject_1$A || (templateObject_1$A = __makeTemplateObject(["\n  padding: 24px;\n  ", "\n"], ["\n  padding: 24px;\n  ", "\n"])), styledSystem.space);
+var CardBody = styled__default["default"].div.attrs({ p: "24px" })(templateObject_1$A || (templateObject_1$A = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), styledSystem.space);
 var templateObject_1$A;
 
-var CardHeader = styled__default["default"].div(templateObject_1$z || (templateObject_1$z = __makeTemplateObject(["\n  background: ", ";\n  border-radius: ", ";\n  padding: 24px;\n  ", "\n"], ["\n  background: ", ";\n  border-radius: ", ";\n  padding: 24px;\n  ", "\n"])), function (_a) {
+var CardHeader = styled__default["default"].div.attrs({ p: "24px" })(templateObject_1$z || (templateObject_1$z = __makeTemplateObject(["\n  background: ", ";\n  border-radius: ", ";\n  ", "\n"], ["\n  background: ", ";\n  border-radius: ", ";\n  ", "\n"])), function (_a) {
     var theme = _a.theme, _b = _a.variant, variant = _b === void 0 ? "default" : _b;
     return theme.card.cardHeaderBackground[variant];
 }, function (_a) {
@@ -5906,7 +5909,7 @@ var CardHeader = styled__default["default"].div(templateObject_1$z || (templateO
 }, styledSystem.space);
 var templateObject_1$z;
 
-var CardFooter = styled__default["default"].div(templateObject_1$y || (templateObject_1$y = __makeTemplateObject(["\n  border-top: 1px solid ", ";\n  padding: 24px;\n  ", "\n"], ["\n  border-top: 1px solid ", ";\n  padding: 24px;\n  ", "\n"])), function (_a) {
+var CardFooter = styled__default["default"].div.attrs({ p: "24px" })(templateObject_1$y || (templateObject_1$y = __makeTemplateObject(["\n  border-top: 1px solid ", ";\n  ", "\n"], ["\n  border-top: 1px solid ", ";\n  ", "\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.white;
 }, styledSystem.space);
