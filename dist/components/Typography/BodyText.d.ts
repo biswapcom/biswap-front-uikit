@@ -7,9 +7,12 @@ interface scalesMap {
     };
 }
 export declare const bodyTextScaleMap: scalesMap;
-export declare const BodyText: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, import("../Text").TextProps & {
+export declare const BodyText: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, (import("../Text").TextProps & ({
+    fontSize: string;
+    lineHeight: string;
+} | {
     fontSize: (string | null)[];
     lineHeight: (string | null)[];
     as: string | number | true | Iterable<import("react").ReactNode> | JSX.Element | import("react").ComponentClass<{}, any> | import("react").FunctionComponent<{}>;
-} & BodyTextProps, "fontSize" | "as" | "lineHeight">;
+})) & BodyTextProps, "fontSize" | "lineHeight">;
 export {};

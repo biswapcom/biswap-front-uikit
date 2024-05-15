@@ -11,7 +11,7 @@ const getColor = ({ color = "pastelBlue", theme }: ThemedProps) => {
   return getThemeValue(`colors.${color}`, color)(theme);
 };
 
-const getFontSize = ({ fontSize, small = false }: TextProps) => {
+const getFontSize = ({ fontSize, small }: TextProps) => {
   return small ? "14px" : fontSize || "16px";
 };
 
@@ -21,7 +21,7 @@ const Text = styled.div<TextProps>`
   font-weight: ${({ bold }) => (bold ? 600 : 400)};
   line-height: 1.5;
   ${({ textTransform }) => textTransform && `text-transform: ${textTransform};`}
-  ${({ ellipsis = false }) =>
+  ${({ ellipsis }) =>
     ellipsis &&
     `white-space: nowrap;
     overflow: hidden;

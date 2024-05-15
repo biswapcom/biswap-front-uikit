@@ -1953,7 +1953,7 @@ var getColor$1 = function (_a) {
     return getThemeValue("colors.".concat(color), color)(theme);
 };
 var getFontSize = function (_a) {
-    var fontSize = _a.fontSize, _b = _a.small, small = _b === void 0 ? false : _b;
+    var fontSize = _a.fontSize, small = _a.small;
     return small ? "14px" : fontSize || "16px";
 };
 var Text = styled.div(templateObject_1$1m || (templateObject_1$1m = __makeTemplateObject(["\n  color: ", ";\n  font-size: ", ";\n  font-weight: ", ";\n  line-height: 1.5;\n  ", "\n  ", "\n\n  ", "\n  \n  ", "\n  ", "\n  ", "\n"], ["\n  color: ", ";\n  font-size: ", ";\n  font-weight: ", ";\n  line-height: 1.5;\n  ", "\n  ", "\n\n  ", "\n  \n  ", "\n  ", "\n  ", "\n"])), getColor$1, getFontSize, function (_a) {
@@ -1963,7 +1963,7 @@ var Text = styled.div(templateObject_1$1m || (templateObject_1$1m = __makeTempla
     var textTransform = _a.textTransform;
     return textTransform && "text-transform: ".concat(textTransform, ";");
 }, function (_a) {
-    var _b = _a.ellipsis, ellipsis = _b === void 0 ? false : _b;
+    var ellipsis = _a.ellipsis;
     return ellipsis &&
         "white-space: nowrap;\n    overflow: hidden;\n    text-overflow: ellipsis;";
 }, function (_a) {
@@ -3334,8 +3334,13 @@ var bodyTextScaleMap = (_a$c = {},
     },
     _a$c);
 var getScalesAttributes = function (_a) {
+    var _b;
     var scale = _a.scale, as = _a.as;
-    var tempScales = JSON.parse(JSON.stringify(scale || "size16"));
+    if (typeof scale === "string")
+        return bodyTextScaleMap[scale || "scale16"];
+    var tempScales = JSON.parse(JSON.stringify(scale));
+    if (!tempScales.xs)
+        tempScales.xs = (_b = BodyText.defaultProps) === null || _b === void 0 ? void 0 : _b.scale;
     return {
         fontSize: breakpointsKeys.map(function (breakPoint) {
             return tempScales[breakPoint]
@@ -3350,9 +3355,7 @@ var getScalesAttributes = function (_a) {
         as: as || "p",
     };
 };
-var BodyText = styled(Text).attrs(function (props) {
-    return getScalesAttributes(props);
-})(templateObject_1$17 || (templateObject_1$17 = __makeTemplateObject(["\n  font-weight: ", ";\n  white-space: ", ";\n"], ["\n  font-weight: ", ";\n  white-space: ", ";\n"])), function (_a) {
+var BodyText = styled(Text).attrs(getScalesAttributes)(templateObject_1$17 || (templateObject_1$17 = __makeTemplateObject(["\n  font-weight: ", ";\n  white-space: ", ";\n"], ["\n  font-weight: ", ";\n  white-space: ", ";\n"])), function (_a) {
     var bold = _a.bold;
     return (bold ? 600 : 400);
 }, function (_a) {

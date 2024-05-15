@@ -46,7 +46,11 @@ export const bodyTextScaleMap: scalesMap = {
 };
 
 const getScalesAttributes = ({ scale, as }: BodyTextProps) => {
-  const tempScales = JSON.parse(JSON.stringify(scale || "size16"));
+  if (typeof scale === "string") return bodyTextScaleMap[scale || "scale16"];
+
+  const tempScales = JSON.parse(JSON.stringify(scale));
+
+  if (!tempScales.xs) tempScales.xs = BodyText.defaultProps?.scale;
 
   return {
     fontSize: breakpointsKeys.map((breakPoint) =>
@@ -63,9 +67,7 @@ const getScalesAttributes = ({ scale, as }: BodyTextProps) => {
   };
 };
 
-export const BodyText = styled(Text).attrs((props) =>
-  getScalesAttributes(props)
-)<BodyTextProps>`
+export const BodyText = styled(Text).attrs(getScalesAttributes)<BodyTextProps>`
   font-weight: ${({ bold }) => (bold ? 600 : 400)};
   white-space: ${({ nowrap }) => (nowrap ? "nowrap" : "normal")};
 `;
