@@ -3056,15 +3056,15 @@ var isTouchDevice = function () {
 };
 
 var Arrow = styled.div(templateObject_1$19 || (templateObject_1$19 = __makeTemplateObject(["\n  &,\n  &::before {\n    position: absolute;\n    width: 10px;\n    height: 10px;\n    z-index: -1;\n  }\n\n  &::before {\n    content: \"\";\n    transform: rotate(45deg);\n    background: ", ";\n  }\n"], ["\n  &,\n  &::before {\n    position: absolute;\n    width: 10px;\n    height: 10px;\n    z-index: -1;\n  }\n\n  &::before {\n    content: \"\";\n    transform: rotate(45deg);\n    background: ", ";\n  }\n"])), function (_a) {
-    var theme = _a.theme, isDark = _a.isDark;
-    return isDark ? theme.colors.tooltip : theme.colors.white;
+    var theme = _a.theme, isLight = _a.isLight;
+    return isLight ? theme.colors.white : theme.colors.tooltip;
 });
 var StyledTooltip = styled.div(templateObject_2$D || (templateObject_2$D = __makeTemplateObject(["\n  max-width: 320px;\n  padding: 8px 12px;\n  border-radius: 8px;\n  line-height: 16px;\n  font-size: 12px;\n  color: ", ";\n  background: ", ";\n  z-index: 101;\n\n  &[data-popper-placement^=\"top\"] {\n      & > ", " {\n          bottom: -4px;\n      }\n  }\n\n  &[data-popper-placement^=\"bottom\"] > ", " {\n    top: -4px;\n  }\n\n  &[data-popper-placement^=\"left\"] > ", " {\n    right: -4px;\n  }\n\n  &[data-popper-placement^=\"right\"] > ", " {\n    left: -4px;\n  }\n"], ["\n  max-width: 320px;\n  padding: 8px 12px;\n  border-radius: 8px;\n  line-height: 16px;\n  font-size: 12px;\n  color: ", ";\n  background: ", ";\n  z-index: 101;\n\n  &[data-popper-placement^=\"top\"] {\n      & > ", " {\n          bottom: -4px;\n      }\n  }\n\n  &[data-popper-placement^=\"bottom\"] > ", " {\n    top: -4px;\n  }\n\n  &[data-popper-placement^=\"left\"] > ", " {\n    right: -4px;\n  }\n\n  &[data-popper-placement^=\"right\"] > ", " {\n    left: -4px;\n  }\n"])), function (_a) {
-    var theme = _a.theme, isDark = _a.isDark;
-    return isDark ? theme.colors.white : theme.colors.dark800;
+    var theme = _a.theme, isLight = _a.isLight;
+    return isLight ? theme.colors.dark800 : theme.colors.white;
 }, function (_a) {
-    var theme = _a.theme, isDark = _a.isDark;
-    return isDark ? theme.colors.tooltip : theme.colors.white;
+    var theme = _a.theme, isLight = _a.isLight;
+    return isLight ? theme.colors.white : theme.colors.tooltip;
 }, Arrow, Arrow, Arrow, Arrow);
 var templateObject_1$19, templateObject_2$D;
 
@@ -3083,7 +3083,7 @@ var invertTheme = function (currentTheme) {
 };
 var useTooltip = function (content, options) {
     var _a = useMatchBreakpoints(), isMobile = _a.isMobile, isTablet = _a.isTablet;
-    var _b = options.placement, placement = _b === void 0 ? "auto" : _b, _c = options.trigger, trigger = _c === void 0 ? isMobile || isTablet ? "click" : "hover" : _c, _d = options.tooltipPadding, tooltipPadding = _d === void 0 ? { left: 16, right: 16 } : _d, _e = options.tooltipOffset, tooltipOffset = _e === void 0 ? [0, 10] : _e, disableStopPropagation = options.disableStopPropagation, _f = options.openedByDefault, openedByDefault = _f === void 0 ? false : _f, _g = options.isDark, isDark = _g === void 0 ? true : _g;
+    var _b = options.placement, placement = _b === void 0 ? "auto" : _b, _c = options.trigger, trigger = _c === void 0 ? isMobile || isTablet ? "click" : "hover" : _c, _d = options.tooltipPadding, tooltipPadding = _d === void 0 ? { left: 16, right: 16 } : _d, _e = options.tooltipOffset, tooltipOffset = _e === void 0 ? [0, 10] : _e, disableStopPropagation = options.disableStopPropagation, _f = options.openedByDefault, openedByDefault = _f === void 0 ? false : _f, _g = options.isLight, isLight = _g === void 0 ? false : _g;
     var _h = useState(null), targetElement = _h[0], setTargetElement = _h[1];
     var _j = useState(null), tooltipElement = _j[0], setTooltipElement = _j[1];
     var _k = useState(null), arrowElement = _k[0], setArrowElement = _k[1];
@@ -3239,9 +3239,9 @@ var useTooltip = function (content, options) {
             { name: "preventOverflow", options: { padding: tooltipPadding } },
         ],
     }), styles = _o.styles, attributes = _o.attributes;
-    var tooltip = (React.createElement(StyledTooltip, __assign({ ref: setTooltipElement, style: styles.popper, isDark: isDark }, attributes.popper),
+    var tooltip = (React.createElement(StyledTooltip, __assign({ ref: setTooltipElement, style: styles.popper, isLight: isLight }, attributes.popper),
         React.createElement(ThemeProvider, { theme: invertTheme }, content),
-        React.createElement(Arrow, { ref: setArrowElement, isDark: isDark, style: styles.arrow })));
+        React.createElement(Arrow, { ref: setArrowElement, isLight: isLight, style: styles.arrow })));
     var portal = getPortalRoot();
     var tooltipInPortal = portal ? createPortal(tooltip, portal) : null;
     return {
@@ -5987,11 +5987,11 @@ var QuestionWrapper = styled(Flex)(templateObject_2$j || (templateObject_2$j = _
     return showTooltip && css(templateObject_1$x || (templateObject_1$x = __makeTemplateObject(["\n      cursor: pointer;\n      transition: opacity 0.3s ease-in-out;\n      :hover,\n      :focus {\n        opacity: 0.7;\n      }\n    "], ["\n      cursor: pointer;\n      transition: opacity 0.3s ease-in-out;\n      :hover,\n      :focus {\n        opacity: 0.7;\n      }\n    "])));
 });
 var TooltipHelper = function (_a) {
-    var text = _a.text, _b = _a.placement, placement = _b === void 0 ? "auto" : _b, _c = _a.size, size = _c === void 0 ? "16px" : _c, _d = _a.color, color = _d === void 0 ? "pastelBlue" : _d, trigger = _a.trigger, _e = _a.Icon, Icon = _e === void 0 ? Icon$2V : _e, _f = _a.ml, ml = _f === void 0 ? "4px" : _f, children = _a.children, _g = _a.showTooltip, showTooltip = _g === void 0 ? true : _g, _h = _a.isDark, isDark = _h === void 0 ? true : _h, props = __rest(_a, ["text", "placement", "size", "color", "trigger", "Icon", "ml", "children", "showTooltip", "isDark"]);
+    var text = _a.text, _b = _a.placement, placement = _b === void 0 ? "auto" : _b, _c = _a.size, size = _c === void 0 ? "16px" : _c, _d = _a.color, color = _d === void 0 ? "pastelBlue" : _d, trigger = _a.trigger, _e = _a.Icon, Icon = _e === void 0 ? Icon$2V : _e, _f = _a.ml, ml = _f === void 0 ? "4px" : _f, children = _a.children, _g = _a.showTooltip, showTooltip = _g === void 0 ? true : _g, _h = _a.isLight, isLight = _h === void 0 ? false : _h, props = __rest(_a, ["text", "placement", "size", "color", "trigger", "Icon", "ml", "children", "showTooltip", "isLight"]);
     var _j = useTooltip(text, {
         placement: placement,
         trigger: trigger,
-        isDark: isDark
+        isLight: isLight
     }), targetRef = _j.targetRef, tooltip = _j.tooltip, tooltipVisible = _j.tooltipVisible;
     return (React.createElement(Box, __assign({ ml: ml }, props),
         showTooltip && tooltipVisible && tooltip,

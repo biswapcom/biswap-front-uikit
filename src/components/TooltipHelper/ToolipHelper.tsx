@@ -18,7 +18,7 @@ interface Props extends BoxProps {
   Icon?: FC<IconProps>;
   children?: React.ReactNode;
   showTooltip?: boolean;
-  isDark?: boolean;
+  isLight?: boolean;
 }
 
 const QuestionWrapper = styled(Flex)<{ showTooltip: boolean }>`
@@ -46,13 +46,13 @@ const TooltipHelper: React.FC<Props> = ({
   ml = "4px",
   children,
   showTooltip = true,
-  isDark = true,
+  isLight = false,
   ...props
 }) => {
   const { targetRef, tooltip, tooltipVisible } = useTooltip(text, {
     placement,
     trigger,
-    isDark
+    isLight
   });
 
   return (

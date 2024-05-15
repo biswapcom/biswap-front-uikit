@@ -102,7 +102,7 @@ export const Default = () => {
         <TooltipHelper
           text={"light tooltip Some text for example"}
           placement="bottom-start"
-          isDark={false}
+          isLight
           mr="30px"
         />
       </Flex>

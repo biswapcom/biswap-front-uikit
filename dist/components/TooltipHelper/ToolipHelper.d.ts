@@ -14,7 +14,7 @@ interface Props extends BoxProps {
     Icon?: FC<IconProps>;
     children?: React.ReactNode;
     showTooltip?: boolean;
-    isDark?: boolean;
+    isLight?: boolean;
 }
 declare const TooltipHelper: React.FC<Props>;
 export default TooltipHelper;
