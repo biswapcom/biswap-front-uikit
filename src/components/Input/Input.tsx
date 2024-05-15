@@ -1,10 +1,9 @@
 import styled from "styled-components";
 import { variant } from "styled-system";
 import { scaleVariants, styleVariants } from "./theme";
-import { InputProps, scales } from "./types";
+import { InputProps } from "./types";
 
 const Input = styled.input.attrs({
-  scale: scales.MD,
   isError: false,
   isWarning: false,
 })<InputProps>`

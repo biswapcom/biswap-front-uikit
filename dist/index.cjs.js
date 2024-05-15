@@ -3348,7 +3348,7 @@ var bodyTextScaleMap = (_a$c = {},
     _a$c);
 var getScalesAttributes = function (_a) {
     var _b;
-    var scale = _a.scale;
+    var _c = _a.scale, scale = _c === void 0 ? "size16" : _c; _a.as;
     if (typeof scale === "string")
         return bodyTextScaleMap[scale];
     var tempScales = JSON.parse(JSON.stringify(scale));
@@ -3369,7 +3369,9 @@ var getScalesAttributes = function (_a) {
         }
         : { fontSize: [], lineHeight: [] };
 };
-var BodyText = styled__default["default"](Text).attrs(getScalesAttributes)(templateObject_1$17 || (templateObject_1$17 = __makeTemplateObject(["\n  font-weight: ", ";\n  white-space: ", ";\n"], ["\n  font-weight: ", ";\n  white-space: ", ";\n"])), function (_a) {
+var BodyText = styled__default["default"](Text)
+    .attrs({ as: "p" })
+    .attrs(getScalesAttributes)(templateObject_1$17 || (templateObject_1$17 = __makeTemplateObject(["\n  font-weight: ", ";\n  white-space: ", ";\n"], ["\n  font-weight: ", ";\n  white-space: ", ";\n"])), function (_a) {
     var bold = _a.bold;
     return (bold ? 600 : 400);
 }, function (_a) {
@@ -4235,7 +4237,6 @@ var styleTextVariants = (_c$2 = {},
     _c$2);
 
 var Input$1 = styled__default["default"].input.attrs({
-    scale: scales$3.MD,
     isError: false,
     isWarning: false,
 })(templateObject_1$X || (templateObject_1$X = __makeTemplateObject(["\n  display: block;\n  color: ", ";\n  outline: 0;\n  width: 100%;\n  max-width: ", ";\n  min-width: ", ";\n  border-width: 1px;\n  border-style: solid;\n  border-color: transparent;\n  opacity: ", ";\n  cursor: ", ";\n  transition: border-color 0.4s ease, background-color 0.4s ease,\n    color 0.4s ease;\n\n  ", "\n  ", "\n"], ["\n  display: block;\n  color: ", ";\n  outline: 0;\n  width: 100%;\n  max-width: ", ";\n  min-width: ", ";\n  border-width: 1px;\n  border-style: solid;\n  border-color: transparent;\n  opacity: ", ";\n  cursor: ", ";\n  transition: border-color 0.4s ease, background-color 0.4s ease,\n    color 0.4s ease;\n\n  ", "\n  ", "\n"])), function (_a) {
