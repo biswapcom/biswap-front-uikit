@@ -1,4 +1,4 @@
-import {HTMLAttributes, ReactElement} from "react";
+import { HTMLAttributes, ReactElement } from "react";
 import { SpaceProps } from "styled-system";
 import { Colors } from "../../theme";
 

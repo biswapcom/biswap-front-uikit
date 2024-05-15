@@ -118,18 +118,12 @@ var getThemeValue = function (path, fallback) {
 var rotate$3 = keyframes(templateObject_1$1q || (templateObject_1$1q = __makeTemplateObject(["\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n"], ["\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n"])));
 var spinStyle = css(templateObject_2$N || (templateObject_2$N = __makeTemplateObject(["\n  animation: ", " 2s linear infinite;\n"], ["\n  animation: ", " 2s linear infinite;\n"])), rotate$3);
 var Svg = styled.svg(templateObject_3$z || (templateObject_3$z = __makeTemplateObject(["\n  align-self: center; // Safari fix\n  fill: ", ";\n  flex-shrink: 0;\n  ", "\n  ", "\n"], ["\n  align-self: center; // Safari fix\n  fill: ", ";\n  flex-shrink: 0;\n  ", "\n  ", "\n"])), function (_a) {
-    var theme = _a.theme, color = _a.color;
+    var theme = _a.theme, _b = _a.color, color = _b === void 0 ? "gray900" : _b;
     return getThemeValue("colors.".concat(color), color)(theme);
 }, function (_a) {
-    var spin = _a.spin;
+    var _b = _a.spin, spin = _b === void 0 ? false : _b;
     return spin && spinStyle;
 }, space);
-Svg.defaultProps = {
-    color: "gray900",
-    width: "20px",
-    xmlns: "http://www.w3.org/2000/svg",
-    spin: false,
-};
 var templateObject_1$1q, templateObject_2$N, templateObject_3$z;
 
 var Icon$3E = function (props) {
@@ -1952,11 +1946,11 @@ var IconModule = /*#__PURE__*/Object.freeze({
 });
 
 var getColor$1 = function (_a) {
-    var color = _a.color, theme = _a.theme;
+    var _b = _a.color, color = _b === void 0 ? "pastelBlue" : _b, theme = _a.theme;
     return getThemeValue("colors.".concat(color), color)(theme);
 };
 var getFontSize = function (_a) {
-    var fontSize = _a.fontSize, small = _a.small;
+    var fontSize = _a.fontSize, _b = _a.small, small = _b === void 0 ? false : _b;
     return small ? "14px" : fontSize || "16px";
 };
 var Text = styled.div(templateObject_1$1m || (templateObject_1$1m = __makeTemplateObject(["\n  color: ", ";\n  font-size: ", ";\n  font-weight: ", ";\n  line-height: 1.5;\n  ", "\n  ", "\n\n  ", "\n  \n  ", "\n  ", "\n  ", "\n"], ["\n  color: ", ";\n  font-size: ", ";\n  font-weight: ", ";\n  line-height: 1.5;\n  ", "\n  ", "\n\n  ", "\n  \n  ", "\n  ", "\n  ", "\n"])), getColor$1, getFontSize, function (_a) {
@@ -1966,18 +1960,13 @@ var Text = styled.div(templateObject_1$1m || (templateObject_1$1m = __makeTempla
     var textTransform = _a.textTransform;
     return textTransform && "text-transform: ".concat(textTransform, ";");
 }, function (_a) {
-    var ellipsis = _a.ellipsis;
+    var _b = _a.ellipsis, ellipsis = _b === void 0 ? false : _b;
     return ellipsis &&
         "white-space: nowrap;\n    overflow: hidden;\n    text-overflow: ellipsis;";
 }, function (_a) {
     var noWrap = _a.noWrap;
     return noWrap && "white-space: nowrap;";
 }, space, typography, layout);
-Text.defaultProps = {
-    color: "pastelBlue",
-    small: false,
-    ellipsis: false,
-};
 var templateObject_1$1m;
 
 var TooltipText = styled(Text)(templateObject_1$1l || (templateObject_1$1l = __makeTemplateObject(["\n  text-decoration: ", ";\n  text-underline-offset: 0.1em;\n"], ["\n  text-decoration: ", ";\n  text-underline-offset: 0.1em;\n"])), function (_a) {
@@ -2382,7 +2371,7 @@ var Bubble = styled.span(templateObject_5$k || (templateObject_5$k = __makeTempl
     return color ? PULSES$1[color.toUpperCase()] : PULSE_SUCCESS$1;
 });
 var Button = function (props) {
-    var addBubble = props.addBubble; props.bubbleColor; var startIcon = props.startIcon, endIcon = props.endIcon, external = props.external, className = props.className, isLoading = props.isLoading, disabled = props.disabled, children = props.children, loadingTitle = props.loadingTitle, rest = __rest(props, ["addBubble", "bubbleColor", "startIcon", "endIcon", "external", "className", "isLoading", "disabled", "children", "loadingTitle"]);
+    var addBubble = props.addBubble; props.bubbleColor; var startIcon = props.startIcon, endIcon = props.endIcon, _a = props.external, external = _a === void 0 ? false : _a, className = props.className, _b = props.isLoading, isLoading = _b === void 0 ? false : _b, _c = props.disabled, disabled = _c === void 0 ? false : _c, children = props.children, loadingTitle = props.loadingTitle, _d = props.variant, variant = _d === void 0 ? variants$7.PRIMARY : _d, _e = props.scale, scale = _e === void 0 ? scales$a.MD : _e, rest = __rest(props, ["addBubble", "bubbleColor", "startIcon", "endIcon", "external", "className", "isLoading", "disabled", "children", "loadingTitle", "variant", "scale"]);
     var internalProps = external ? getExternalLinkProps() : {};
     var isDisabled = isLoading || disabled;
     var classNames = className ? [className] : [];
@@ -2394,7 +2383,7 @@ var Button = function (props) {
     if (isDisabled && !isLoading) {
         classNames.push("button--disabled");
     }
-    return (React.createElement(StyledButton, __assign({ "$isLoading": isLoading, className: classNames.join(" "), disabled: isDisabled }, internalProps, rest),
+    return (React.createElement(StyledButton, __assign({ "$isLoading": isLoading, className: classNames.join(" "), disabled: isDisabled, variant: variant, scale: scale }, internalProps, rest),
         React.createElement(React.Fragment, null,
             addBubble && React.createElement(Bubble, null),
             isValidElement(startIcon) &&
@@ -2408,33 +2397,20 @@ var Button = function (props) {
                     ml: "0.5rem",
                 }))));
 };
-Button.defaultProps = {
-    isLoading: false,
-    external: false,
-    variant: variants$7.PRIMARY,
-    scale: scales$a.MD,
-    disabled: false,
-};
 var templateObject_1$1d, templateObject_2$G, templateObject_3$w, templateObject_4$s, templateObject_5$k;
 
 var IconButton = styled(Button)(templateObject_1$1c || (templateObject_1$1c = __makeTemplateObject(["\n  padding: 0;\n"], ["\n  padding: 0;\n"])));
 var templateObject_1$1c;
 
 var ExpandableButton = function (_a) {
-    var onClick = _a.onClick, expanded = _a.expanded, children = _a.children;
+    var onClick = _a.onClick, _b = _a.expanded, expanded = _b === void 0 ? false : _b, children = _a.children;
     return (React.createElement(IconButton, { "aria-label": "Hide or show expandable content", onClick: onClick },
         children,
         expanded ? (React.createElement(Icon$3r, { color: "invertedContrast" })) : (React.createElement(Icon$3y, { color: "invertedContrast" }))));
 };
-ExpandableButton.defaultProps = {
-    expanded: false,
-};
 var ExpandableLabel = function (_a) {
-    var onClick = _a.onClick, expanded = _a.expanded, children = _a.children;
+    var onClick = _a.onClick, _b = _a.expanded, expanded = _b === void 0 ? false : _b, children = _a.children;
     return (React.createElement(Button, { variant: "text", "aria-label": "Hide or show expandable content", onClick: onClick, endIcon: expanded ? (React.createElement(Icon$3r, { color: "primary" })) : (React.createElement(Icon$3y, { color: "primary" })) }, children));
-};
-ExpandableLabel.defaultProps = {
-    expanded: false,
 };
 
 //--------------
@@ -3293,7 +3269,10 @@ var headTextScaleMap = (_a$d = {},
         lineHeight: "12px",
     },
     _a$d);
-var HeadText = styled(Text).attrs({ bold: true })(templateObject_1$18 || (templateObject_1$18 = __makeTemplateObject(["\n  font-size: ", ";\n  line-height: ", ";\n  font-weight: 600;\n  white-space: ", ";\n"], ["\n  font-size: ", ";\n  line-height: ", ";\n  font-weight: 600;\n  white-space: ", ";\n"])), function (_a) {
+var HeadText = styled(Text).attrs({
+    bold: true,
+    as: tags$1.H2,
+})(templateObject_1$18 || (templateObject_1$18 = __makeTemplateObject(["\n  font-size: ", ";\n  line-height: ", ";\n  font-weight: 600;\n  white-space: ", ";\n"], ["\n  font-size: ", ";\n  line-height: ", ";\n  font-weight: 600;\n  white-space: ", ";\n"])), function (_a) {
     var scale = _a.scale;
     return headTextScaleMap[scale || scales$8.SIZE32].fontSize;
 }, function (_a) {
@@ -3303,9 +3282,6 @@ var HeadText = styled(Text).attrs({ bold: true })(templateObject_1$18 || (templa
     var nowrap = _a.nowrap;
     return (nowrap ? "nowrap" : "normal");
 });
-HeadText.defaultProps = {
-    as: tags$1.H2,
-};
 var templateObject_1$18;
 
 var scales$7 = {
@@ -3384,10 +3360,6 @@ var BodyText = styled(Text).attrs(getScalesAttributes)(templateObject_1$17 || (t
     var nowrap = _a.nowrap;
     return (nowrap ? "nowrap" : "normal");
 });
-BodyText.defaultProps = {
-    scale: "size16",
-    as: "p",
-};
 var templateObject_1$17;
 
 var GridLayout$1 = styled(Grid)(templateObject_1$16 || (templateObject_1$16 = __makeTemplateObject(["\n  grid-template-columns: repeat(6, 1fr);\n  grid-gap: 16px;\n  ", " {\n    grid-template-columns: repeat(8, 1fr);\n    grid-gap: 24px;\n  }\n  ", " {\n    grid-template-columns: repeat(12, 1fr);\n    grid-gap: 24px;\n  }\n  ", " {\n    grid-template-columns: repeat(12, 1fr);\n    grid-gap: 32px;\n  }\n"], ["\n  grid-template-columns: repeat(6, 1fr);\n  grid-gap: 16px;\n  ", " {\n    grid-template-columns: repeat(8, 1fr);\n    grid-gap: 24px;\n  }\n  ", " {\n    grid-template-columns: repeat(12, 1fr);\n    grid-gap: 24px;\n  }\n  ", " {\n    grid-template-columns: repeat(12, 1fr);\n    grid-gap: 32px;\n  }\n"])), function (_a) {
@@ -3783,15 +3755,10 @@ var CheckboxInput = styled.input.attrs({ type: "checkbox" })(templateObject_2$y 
 });
 var StyledText$2 = styled(Text)(templateObject_3$q || (templateObject_3$q = __makeTemplateObject(["\n  transition: color 0.4s ease-in-out;\n"], ["\n  transition: color 0.4s ease-in-out;\n"])));
 var Checkbox = function (_a) {
-    var labelOrientation = _a.labelOrientation, label = _a.label, scale = _a.scale, colorVariant = _a.colorVariant, id = _a.id, defaultChecked = _a.defaultChecked, onChange = _a.onChange, value = _a.value, disabled = _a.disabled, inputMargin = _a.inputMargin, checkboxPosition = _a.checkboxPosition;
+    var _b = _a.labelOrientation, labelOrientation = _b === void 0 ? "left" : _b, label = _a.label, _c = _a.scale, scale = _c === void 0 ? scales$6.MD : _c, _d = _a.colorVariant, colorVariant = _d === void 0 ? "light" : _d, id = _a.id, defaultChecked = _a.defaultChecked, onChange = _a.onChange, value = _a.value, disabled = _a.disabled, inputMargin = _a.inputMargin, checkboxPosition = _a.checkboxPosition;
     return (React.createElement(Wrapper$g, { checkboxPosition: checkboxPosition, labelOrientation: labelOrientation },
         React.createElement(CheckboxInput, { checked: value, scale: scale, colorVariant: colorVariant, id: id, defaultChecked: defaultChecked, onChange: onChange, disabled: disabled }),
         label && labelOrientation && (React.createElement(StyledText$2, { as: "span", fontSize: "12px", fontWeight: "600", color: "gray900", mr: labelOrientation === "left" ? inputMargin !== null && inputMargin !== void 0 ? inputMargin : "12px" : 0, ml: labelOrientation === "right" ? inputMargin !== null && inputMargin !== void 0 ? inputMargin : "12px" : 0 }, label))));
-};
-Checkbox.defaultProps = {
-    scale: scales$6.MD,
-    labelOrientation: "left",
-    colorVariant: "light",
 };
 var templateObject_1$_, templateObject_2$y, templateObject_3$q;
 
@@ -4049,9 +4016,6 @@ var Dropdown = function (_a) {
             option.icon && (React.createElement(IconComponent$1, { iconName: option.icon.name, color: option.icon.color })),
             React.createElement("span", null, option.label))); })))));
 };
-Dropdown.defaultProps = {
-    position: "bottom",
-};
 var templateObject_1$Z, templateObject_2$x, templateObject_3$p, templateObject_4$n, templateObject_5$g, templateObject_6$a, templateObject_7$7, templateObject_8$6;
 
 var tags = {
@@ -4088,7 +4052,7 @@ var style = (_a$9 = {},
         fontSizeLg: "64px",
     },
     _a$9);
-var Heading = styled(Text).attrs({ bold: true })(templateObject_1$Y || (templateObject_1$Y = __makeTemplateObject(["\n  font-size: ", ";\n  font-weight: 600;\n  line-height: 1.1;\n\n  ", " {\n    font-size: ", ";\n  }\n"], ["\n  font-size: ", ";\n  font-weight: 600;\n  line-height: 1.1;\n\n  ", " {\n    font-size: ", ";\n  }\n"])), function (_a) {
+var Heading = styled(Text).attrs({ bold: true, as: tags.H2 })(templateObject_1$Y || (templateObject_1$Y = __makeTemplateObject(["\n  font-size: ", ";\n  font-weight: 600;\n  line-height: 1.1;\n\n  ", " {\n    font-size: ", ";\n  }\n"], ["\n  font-size: ", ";\n  font-weight: 600;\n  line-height: 1.1;\n\n  ", " {\n    font-size: ", ";\n  }\n"])), function (_a) {
     var scale = _a.scale;
     return style[scale || scales$4.MD].fontSize;
 }, function (_a) {
@@ -4098,9 +4062,6 @@ var Heading = styled(Text).attrs({ bold: true })(templateObject_1$Y || (template
     var scale = _a.scale;
     return style[scale || scales$4.LG].fontSize;
 });
-Heading.defaultProps = {
-    as: tags.H2,
-};
 var templateObject_1$Y;
 
 var scales$3 = {
@@ -4257,7 +4218,11 @@ var styleTextVariants = (_c$2 = {},
     },
     _c$2);
 
-var Input$1 = styled.input(templateObject_1$X || (templateObject_1$X = __makeTemplateObject(["\n  display: block;\n  color: ", ";\n  outline: 0;\n  width: 100%;\n  max-width: ", ";\n  min-width: ", ";\n  border-width: 1px;\n  border-style: solid;\n  border-color: transparent;\n  opacity: ", ";\n  cursor: ", ";\n  transition: border-color 0.4s ease, background-color 0.4s ease,\n    color 0.4s ease;\n\n  ", "\n  ", "\n"], ["\n  display: block;\n  color: ", ";\n  outline: 0;\n  width: 100%;\n  max-width: ", ";\n  min-width: ", ";\n  border-width: 1px;\n  border-style: solid;\n  border-color: transparent;\n  opacity: ", ";\n  cursor: ", ";\n  transition: border-color 0.4s ease, background-color 0.4s ease,\n    color 0.4s ease;\n\n  ", "\n  ", "\n"])), function (_a) {
+var Input$1 = styled.input.attrs({
+    scale: scales$3.MD,
+    isError: false,
+    isWarning: false,
+})(templateObject_1$X || (templateObject_1$X = __makeTemplateObject(["\n  display: block;\n  color: ", ";\n  outline: 0;\n  width: 100%;\n  max-width: ", ";\n  min-width: ", ";\n  border-width: 1px;\n  border-style: solid;\n  border-color: transparent;\n  opacity: ", ";\n  cursor: ", ";\n  transition: border-color 0.4s ease, background-color 0.4s ease,\n    color 0.4s ease;\n\n  ", "\n  ", "\n"], ["\n  display: block;\n  color: ", ";\n  outline: 0;\n  width: 100%;\n  max-width: ", ";\n  min-width: ", ";\n  border-width: 1px;\n  border-style: solid;\n  border-color: transparent;\n  opacity: ", ";\n  cursor: ", ";\n  transition: border-color 0.4s ease, background-color 0.4s ease,\n    color 0.4s ease;\n\n  ", "\n  ", "\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.gray900;
 }, function (_a) {
@@ -4279,11 +4244,6 @@ var Input$1 = styled.input(templateObject_1$X || (templateObject_1$X = __makeTem
     prop: "variant",
     variants: styleVariants$1,
 }));
-Input$1.defaultProps = {
-    scale: scales$3.MD,
-    isError: false,
-    isWarning: false,
-};
 var templateObject_1$X;
 
 var getPadding = function (scale, hasIcon) {
@@ -4556,16 +4516,10 @@ var InputRadio = styled.input.attrs({ type: "radio" })(templateObject_2$u || (te
 }, space);
 var StyledText$1 = styled(Text)(templateObject_3$n || (templateObject_3$n = __makeTemplateObject(["\n  transition: color 0.4s ease-in-out;\n"], ["\n  transition: color 0.4s ease-in-out;\n"])));
 var Radio = function (_a) {
-    var labelOrientation = _a.labelOrientation, label = _a.label, scale = _a.scale, radioName = _a.radioName, onChange = _a.onChange, colorVariant = _a.colorVariant, checked = _a.checked;
+    var _b = _a.labelOrientation, labelOrientation = _b === void 0 ? "left" : _b, label = _a.label, _c = _a.scale, scale = _c === void 0 ? scales$1.MD : _c, radioName = _a.radioName, onChange = _a.onChange, _d = _a.colorVariant, colorVariant = _d === void 0 ? "light" : _d, checked = _a.checked;
     return (React.createElement(Wrapper$f, { labelOrientation: labelOrientation },
         React.createElement(InputRadio, { scale: scale, name: radioName, onChange: onChange, colorVariant: colorVariant, checked: checked }),
         label && labelOrientation && (React.createElement(StyledText$1, { as: "span", fontSize: "12px", fontWeight: "400", color: "gray900", mr: labelOrientation === "left" ? "12px" : 0, ml: labelOrientation === "right" ? "12px" : 0 }, label))));
-};
-Radio.defaultProps = {
-    scale: scales$1.MD,
-    m: 0,
-    labelOrientation: "left",
-    colorVariant: "light",
 };
 var templateObject_1$S, templateObject_2$u, templateObject_3$n;
 
@@ -5253,17 +5207,13 @@ var StyledToggle = styled.div(templateObject_5$a || (templateObject_5$a = __make
 var templateObject_1$K, templateObject_2$n, templateObject_3$h, templateObject_4$g, templateObject_5$a;
 
 var Toggle = function (_a) {
-    var checked = _a.checked, _b = _a.defaultColor, defaultColor = _b === void 0 ? "toggleBg" : _b, _c = _a.checkedColor, checkedColor = _c === void 0 ? "success" : _c, _d = _a.scale, scale = _d === void 0 ? scales.MD : _d, disabled = _a.disabled, label = _a.label, labelOrientation = _a.labelOrientation, gridArea = _a.gridArea, variant = _a.variant, spaceBetween = _a.spaceBetween, _e = _a.labelSize, labelSize = _e === void 0 ? "size12" : _e, props = __rest(_a, ["checked", "defaultColor", "checkedColor", "scale", "disabled", "label", "labelOrientation", "gridArea", "variant", "spaceBetween", "labelSize"]);
+    var checked = _a.checked, _b = _a.defaultColor, defaultColor = _b === void 0 ? "toggleBg" : _b, _c = _a.checkedColor, checkedColor = _c === void 0 ? "success" : _c, _d = _a.scale, scale = _d === void 0 ? scales.MD : _d, disabled = _a.disabled, label = _a.label, labelOrientation = _a.labelOrientation, gridArea = _a.gridArea, _e = _a.variant, variant = _e === void 0 ? "light" : _e, spaceBetween = _a.spaceBetween, _f = _a.labelSize, labelSize = _f === void 0 ? "size12" : _f, props = __rest(_a, ["checked", "defaultColor", "checkedColor", "scale", "disabled", "label", "labelOrientation", "gridArea", "variant", "spaceBetween", "labelSize"]);
     var isChecked = !!checked;
     return (React.createElement(ToggleWrap, __assign({ labelOrientation: labelOrientation, disabled: disabled, gridArea: gridArea, spaceBetween: spaceBetween }, props),
         React.createElement(StyledToggle, { "$checked": isChecked, "$checkedColor": checkedColor, "$defaultColor": defaultColor, scale: scale, disabled: disabled },
             React.createElement(Input, { readOnly: true, checked: checked, scale: scale, type: "checkbox", disabled: disabled }),
             React.createElement(Handle, { scale: scale, disabled: disabled })),
         label && (React.createElement(Label, { labelOrientation: labelOrientation, isChecked: isChecked, disabled: disabled, variant: variant, scale: labelSize, as: "span" }, label))));
-};
-Toggle.defaultProps = {
-    scale: "md",
-    variant: "light",
 };
 
 var badgeTypes$1 = {
@@ -5877,12 +5827,12 @@ var SocialShareButtonCircle = function (_a) {
         React.createElement(IconComponent, { iconName: label, width: width, color: color })));
 };
 
-var PromotedGradient = keyframes(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  0% {\n    background-position: 50% 0%;\n  }\n  50% {\n    background-position: 50% 100%;\n  }\n  100% {\n    background-position: 50% 0%;\n  }\n"], ["\n  0% {\n    background-position: 50% 0%;\n  }\n  50% {\n    background-position: 50% 100%;\n  }\n  100% {\n    background-position: 50% 0%;\n  }\n"])));
+var PromotedGradient = keyframes(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  0% {\n    background-position: 50% 0;\n  }\n  50% {\n    background-position: 50% 100%;\n  }\n  100% {\n    background-position: 50% 0;\n  }\n"], ["\n  0% {\n    background-position: 50% 0;\n  }\n  50% {\n    background-position: 50% 100%;\n  }\n  100% {\n    background-position: 50% 0;\n  }\n"])));
 /**
  * Priority: Warning --> Success --> Active
  */
 var getBorderColor = function (_a) {
-    var isActive = _a.isActive, isSuccess = _a.isSuccess, isWarning = _a.isWarning, borderBackground = _a.borderBackground, theme = _a.theme;
+    var isActive = _a.isActive, _b = _a.isSuccess, isSuccess = _b === void 0 ? false : _b, _c = _a.isWarning, isWarning = _c === void 0 ? false : _c, borderBackground = _a.borderBackground, theme = _a.theme;
     if (borderBackground) {
         return borderBackground;
     }
@@ -5901,10 +5851,10 @@ var StyledCard = styled.div(templateObject_3$f || (templateObject_3$f = __makeTe
     var theme = _a.theme;
     return theme.radii.card;
 }, function (_a) {
-    var theme = _a.theme, isDisabled = _a.isDisabled;
+    var theme = _a.theme, _b = _a.isDisabled, isDisabled = _b === void 0 ? false : _b;
     return theme.colors[isDisabled ? "gray900" : "gray900"];
 }, function (_a) {
-    var isActive = _a.isActive;
+    var _b = _a.isActive, isActive = _b === void 0 ? false : _b;
     return isActive && css(templateObject_2$k || (templateObject_2$k = __makeTemplateObject(["\n      animation: ", " 3s ease infinite;\n      background-size: 400% 400%;\n    "], ["\n      animation: ", " 3s ease infinite;\n      background-size: 400% 400%;\n    "])), PromotedGradient);
 }, space);
 var StyledCardInner = styled(Box)(templateObject_4$e || (templateObject_4$e = __makeTemplateObject(["\n  width: 100%;\n  height: 100%;\n  overflow: ", ";\n  background: ", ";\n  border-radius: ", ";\n"], ["\n  width: 100%;\n  height: 100%;\n  overflow: ", ";\n  background: ", ";\n  border-radius: ", ";\n"])), function (_a) {
@@ -5917,12 +5867,6 @@ var StyledCardInner = styled(Box)(templateObject_4$e || (templateObject_4$e = __
     var theme = _a.theme;
     return theme.radii.card;
 });
-StyledCard.defaultProps = {
-    isActive: false,
-    isSuccess: false,
-    isWarning: false,
-    isDisabled: false,
-};
 var templateObject_1$B, templateObject_2$k, templateObject_3$f, templateObject_4$e;
 
 var Card = function (_a) {
@@ -5933,31 +5877,22 @@ var Card = function (_a) {
             children)));
 };
 
-var CardBody = styled.div(templateObject_1$A || (templateObject_1$A = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), space);
-CardBody.defaultProps = {
-    p: "24px",
-};
+var CardBody = styled.div(templateObject_1$A || (templateObject_1$A = __makeTemplateObject(["\n  padding: 24px;\n  ", "\n"], ["\n  padding: 24px;\n  ", "\n"])), space);
 var templateObject_1$A;
 
-var CardHeader = styled.div(templateObject_1$z || (templateObject_1$z = __makeTemplateObject(["\n  background: ", ";\n  border-radius: ", ";\n  ", "\n"], ["\n  background: ", ";\n  border-radius: ", ";\n  ", "\n"])), function (_a) {
+var CardHeader = styled.div(templateObject_1$z || (templateObject_1$z = __makeTemplateObject(["\n  background: ", ";\n  border-radius: ", ";\n  padding: 24px;\n  ", "\n"], ["\n  background: ", ";\n  border-radius: ", ";\n  padding: 24px;\n  ", "\n"])), function (_a) {
     var theme = _a.theme, _b = _a.variant, variant = _b === void 0 ? "default" : _b;
     return theme.card.cardHeaderBackground[variant];
 }, function (_a) {
     var theme = _a.theme;
     return "".concat(theme.radii.card, " ").concat(theme.radii.card, " 0 0");
 }, space);
-CardHeader.defaultProps = {
-    p: "24px",
-};
 var templateObject_1$z;
 
-var CardFooter = styled.div(templateObject_1$y || (templateObject_1$y = __makeTemplateObject(["\n  border-top: 1px solid ", ";\n  ", "\n"], ["\n  border-top: 1px solid ", ";\n  ", "\n"])), function (_a) {
+var CardFooter = styled.div(templateObject_1$y || (templateObject_1$y = __makeTemplateObject(["\n  border-top: 1px solid ", ";\n  padding: 24px;\n  ", "\n"], ["\n  border-top: 1px solid ", ";\n  padding: 24px;\n  ", "\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.white;
 }, space);
-CardFooter.defaultProps = {
-    p: "24px",
-};
 var templateObject_1$y;
 
 var QuestionWrapper = styled(Flex)(templateObject_2$j || (templateObject_2$j = __makeTemplateObject(["\n  align-items: center;\n\n  ", "\n"], ["\n  align-items: center;\n\n  ", "\n"])), function (_a) {

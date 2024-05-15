@@ -11,11 +11,8 @@ const CardHeader = styled.div<CardHeaderProps>`
     theme.card.cardHeaderBackground[variant]};
   border-radius: ${({ theme }) =>
     `${theme.radii.card} ${theme.radii.card} 0 0`};
+  padding: 24px;
   ${space}
 `;
-
-CardHeader.defaultProps = {
-  p: "24px",
-};
 
 export default CardHeader;

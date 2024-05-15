@@ -5,11 +5,8 @@ export type CardFooterProps = SpaceProps;
 
 const CardFooter = styled.div<CardFooterProps>`
   border-top: 1px solid ${({ theme }) => theme.colors.white};
+  padding: 24px;
   ${space}
 `;
-
-CardFooter.defaultProps = {
-  p: "24px",
-};
 
 export default CardFooter;

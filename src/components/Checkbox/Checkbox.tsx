@@ -92,10 +92,10 @@ const StyledText = styled(Text)`
 `;
 
 const Checkbox: FC<CheckboxProps> = ({
-  labelOrientation,
+  labelOrientation = "left",
   label,
-  scale,
-  colorVariant,
+  scale = scales.MD,
+  colorVariant = "light",
   id,
   defaultChecked,
   onChange,
@@ -132,12 +132,6 @@ const Checkbox: FC<CheckboxProps> = ({
       )}
     </Wrapper>
   );
-};
-
-Checkbox.defaultProps = {
-  scale: scales.MD,
-  labelOrientation: "left",
-  colorVariant: "light",
 };
 
 export default Checkbox;

@@ -3,7 +3,11 @@ import { variant } from "styled-system";
 import { scaleVariants, styleVariants } from "./theme";
 import { InputProps, scales } from "./types";
 
-const Input = styled.input<InputProps>`
+const Input = styled.input.attrs({
+  scale: scales.MD,
+  isError: false,
+  isWarning: false,
+})<InputProps>`
   display: block;
   color: ${({ theme }) => theme.colors.gray900};
   outline: 0;
@@ -27,11 +31,5 @@ const Input = styled.input<InputProps>`
     variants: styleVariants,
   })}
 `;
-
-Input.defaultProps = {
-  scale: scales.MD,
-  isError: false,
-  isWarning: false,
-};
 
 export default Input;

@@ -7,11 +7,11 @@ interface ThemedProps extends TextProps {
   theme: DefaultTheme;
 }
 
-const getColor = ({ color, theme }: ThemedProps) => {
+const getColor = ({ color = "pastelBlue", theme }: ThemedProps) => {
   return getThemeValue(`colors.${color}`, color)(theme);
 };
 
-const getFontSize = ({ fontSize, small }: TextProps) => {
+const getFontSize = ({ fontSize, small = false }: TextProps) => {
   return small ? "14px" : fontSize || "16px";
 };
 
@@ -21,7 +21,7 @@ const Text = styled.div<TextProps>`
   font-weight: ${({ bold }) => (bold ? 600 : 400)};
   line-height: 1.5;
   ${({ textTransform }) => textTransform && `text-transform: ${textTransform};`}
-  ${({ ellipsis }) =>
+  ${({ ellipsis = false }) =>
     ellipsis &&
     `white-space: nowrap;
     overflow: hidden;
@@ -33,11 +33,5 @@ const Text = styled.div<TextProps>`
   ${typography}
   ${layout}
 `;
-
-Text.defaultProps = {
-  color: "pastelBlue",
-  small: false,
-  ellipsis: false,
-};
 
 export default Text;
