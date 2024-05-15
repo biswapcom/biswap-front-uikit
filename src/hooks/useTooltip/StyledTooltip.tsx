@@ -27,13 +27,47 @@ export const StyledTooltip = styled.div<{ isLight: boolean }>`
   z-index: 101;
 
   &[data-popper-placement^="top"] {
+      &[data-popper-placement*="start"] {
+          margin-left: -4px;
+
+          & > ${Arrow} {
+              margin-left: 4px;
+          }
+      }
+
+      &[data-popper-placement*="end"] {
+          margin-right: -4px;
+
+          & > ${Arrow} {
+              margin-left: -4px;
+          }
+      }
+      
       & > ${Arrow} {
           bottom: -4px;
       }
   }
 
-  &[data-popper-placement^="bottom"] > ${Arrow} {
-    top: -4px;
+  &[data-popper-placement^="bottom"] {
+      &[data-popper-placement*="start"] {
+          margin-left: -4px;
+
+          & > ${Arrow} {
+              margin-left: 4px;
+          }
+      }
+
+      &[data-popper-placement*="end"] {
+          margin-right: -4px;
+
+          & > ${Arrow} {
+              margin-left: -4px;
+          }
+      }
+      
+      & > ${Arrow} {
+          top: -4px;
+      }
   }
 
   &[data-popper-placement^="left"] > ${Arrow} {
