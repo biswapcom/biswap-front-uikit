@@ -47,6 +47,7 @@ export const bodyTextScaleMap: scalesMap = {
 
 const getScalesAttributes = ({ scale, as }: BodyTextProps) => {
   if (typeof scale === "string") return bodyTextScaleMap[scale || "scale16"];
+  if (typeof scale === "undefined") return bodyTextScaleMap["scale16"];
 
   const tempScales = JSON.parse(JSON.stringify(scale));
 

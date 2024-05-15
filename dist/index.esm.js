@@ -3338,6 +3338,8 @@ var getScalesAttributes = function (_a) {
     var scale = _a.scale, as = _a.as;
     if (typeof scale === "string")
         return bodyTextScaleMap[scale || "scale16"];
+    if (typeof scale === "undefined")
+        return bodyTextScaleMap["scale16"];
     var tempScales = JSON.parse(JSON.stringify(scale));
     if (!tempScales.xs)
         tempScales.xs = (_b = BodyText.defaultProps) === null || _b === void 0 ? void 0 : _b.scale;
