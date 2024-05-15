@@ -181,10 +181,12 @@ export { default as BlockSolidIcon } from "./Icons/Block/BlockSolid";
 export { default as MoreVerticalIcon } from "./Icons/More/MoreVertical";
 export { default as MoreVerticalSolidIcon } from "./Icons/More/MoreVerticalSolid";
 export { default as MoreVerticalOpacityIcon } from "./Icons/More/MoreVerticalOpacity";
+export { default as MoreVerticalOutlineIcon } from "./Icons/More/MoreVerticalOutline";
 //More horizontal
 export { default as MoreHorizontalIcon } from "./Icons/More/MoreHorizontal";
 export { default as MoreHorizontalSolidIcon } from "./Icons/More/MoreHorizontalSolid";
 export { default as MoreHorizontalOpacityIcon } from "./Icons/More/MoreHorizontalOpacity";
+export { default as MoreHorizontalOutlineIcon } from "./Icons/More/MoreHorizontalOutline";
 //More2
 export { default as More2Icon } from "./Icons/More/More2";
 
