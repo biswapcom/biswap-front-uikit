@@ -14,8 +14,8 @@ export declare const variants: {
     readonly DARK_ERROR: "darkError";
     readonly TRANSPARENT: "transparent";
 };
-export declare type Scales = typeof scales[keyof typeof scales];
-export declare type Variants = typeof variants[keyof typeof variants];
+export type Scales = typeof scales[keyof typeof scales];
+export type Variants = typeof variants[keyof typeof variants];
 export interface InputProps extends SpaceProps {
     scale?: Scales;
     variant?: Variants;

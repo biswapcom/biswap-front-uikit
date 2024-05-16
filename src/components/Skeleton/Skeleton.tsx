@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, ReactElement } from "react";
 import styled, { keyframes } from "styled-components";
 import { space, layout, variant } from "styled-system";
 import { getRgba } from "../../util";
@@ -79,7 +79,7 @@ const Skeleton: FC<SkeletonProps> = ({
   variant = VARIANT.RECT,
   animation = ANIMATION.PULSE,
   ...props
-}) => {
+}): ReactElement => {
   if (animation === ANIMATION.WAVES) {
     return <Waves variant={variant} {...props} />;
   }

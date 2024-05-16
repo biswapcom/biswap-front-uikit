@@ -38,27 +38,27 @@
     "@testing-library/jest-dom": "5.16.5",
     "@testing-library/react": "13.3.0",
     "@types/lodash": "4.14.182",
-    "@types/react-dom": "18.0.6",
-    "@types/react-router-dom": "5.3.3",
+    "@types/react-dom": "18.3.0",
     "@types/react-transition-group": "4.4.5",
     "@types/styled-components": "5.1.26",
     "babel-plugin-styled-components": "^2.0.7",
     "i": "0.3.7",
     "jest-styled-components": "7.1.0",
+    "next": "14.3.0-canary.61",
     "npm": "8.17.0",
-    "react": "18.2.0",
-    "next": "13.1.2",
-    "react-dom": "18.2.0",
+    "react": "18.3.1",
+    "react-docgen-typescript-plugin": "1.0.6",
+    "react-dom": "18.3.1",
     "react-refresh": "^0.14.0",
-    "react-router-dom": "6.3.0",
+    "react-router-dom": "6.6.2",
     "rollup": "2.78.0",
     "styled-components": "5.3.5",
-    "typescript": "4.7.4"
+    "typescript": "5.2.2"
   },
   "peerDependencies": {
-    "react": "18.2.0",
-    "next": "13.1.2",
-    "react-dom": "18.2.0",
+    "next": "14.3.0-canary.61",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
     "styled-components": "5.3.5"
   },
   "dependencies": {
@@ -67,6 +67,8 @@
     "@types/styled-system": "5.1.15",
     "autoprefixer": "^10.4.8",
     "classnames": "2.3.2",
+    "embla-carousel-autoplay": "7.1.0",
+    "embla-carousel-react": "7.1.0",
     "lodash": "4.17.21",
     "postcss-flexbugs-fixes": "^5.0.2",
     "react-device-detect": "^2.2.2",
@@ -74,9 +76,7 @@
     "react-popper": "2.3.0",
     "react-transition-group": "4.4.5",
     "storybook-addon-styled-component-theme": "^2.0.0",
-    "styled-system": "5.1.5",
-    "embla-carousel-autoplay": "7.1.0",
-    "embla-carousel-react": "7.1.0"
+    "styled-system": "5.1.5"
   },
   "publishConfig": {
     "access": "public"
