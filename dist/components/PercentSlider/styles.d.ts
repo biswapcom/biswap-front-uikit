@@ -1,7 +1,7 @@
 import { InputHTMLAttributes } from "react";
 export declare const StyledInput: import("styled-components").StyledComponent<"input", import("styled-components").DefaultTheme, InputHTMLAttributes<HTMLInputElement>, never>;
 export declare const BarBackground: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, {
-    darkMode?: boolean | undefined;
+    darkMode?: boolean;
     disabled: boolean;
 }, never>;
 export declare const BarProgress: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, {}, never>;

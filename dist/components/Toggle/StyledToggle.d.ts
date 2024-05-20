@@ -14,14 +14,14 @@ export declare const Label: import("styled-components").StyledComponent<"div", i
     fontSize: string;
     lineHeight: string;
 } | {
-    fontSize: (string | null)[];
-    lineHeight: (string | null)[];
+    fontSize: string[];
+    lineHeight: string[];
     as: string | number | true | Iterable<import("react").ReactNode> | JSX.Element | import("react").ComponentClass<{}, any> | import("react").FunctionComponent<{}>;
 })) & import("../Typography").BodyTextProps) & {
-    labelOrientation?: string | undefined;
+    labelOrientation?: string;
     isChecked: boolean;
-    disabled?: boolean | undefined;
-    variant?: string | undefined;
+    disabled?: boolean;
+    variant?: string;
 }, "fontSize" | "lineHeight">;
 export declare const Input: import("styled-components").StyledComponent<"input", import("styled-components").DefaultTheme, InputProps, never>;
 declare const StyledToggle: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, StyleToggleProps, never>;

@@ -6,7 +6,7 @@ module.exports = {
     features: {
         postcss: false,
     },
-    plugins: [new ReactDocgenTypescriptPlugin({ tsconfigPath: "./tsconfig.json" })],
+    plugins: [new ReactDocgenTypescriptPlugin({ tsconfigPath: "../tsconfig.json" })],
     addons: [
         {
             name: "@storybook/addon-essentials",
