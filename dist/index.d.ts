@@ -5,6 +5,7 @@ export * from "./components/Button";
 export * from "./components/ButtonMenu";
 export * from "./components/Checkbox";
 export * from "./components/Dropdown";
+export * from "./components/DropdownButton";
 export * from "./components/Heading";
 export * from "./components/Input";
 export * from "./components/Layouts";
