@@ -37,4 +37,33 @@ module.exports = {
             },
         },
     },
+    webpackFinal: async config => {
+        config.module.rules.push({
+            test: /\.(ts|tsx)$/,
+            exclude: /node_modules/,
+            use: [
+                {
+                    loader: require.resolve('ts-loader'),
+                    options: {
+                        configFile: '../tsconfig.json',
+                        transpileOnly: true
+                    }
+                },
+                {
+                    loader: require.resolve('babel-loader'),
+                    options: {
+                        presets: [
+                            "@babel/preset-env",
+                            "@babel/preset-react",
+                            "@babel/preset-typescript"
+                        ]
+                    }
+                }
+            ],
+        });
+
+        config.resolve.extensions.push('.ts', '.tsx');
+
+        return config;
+    }
 };
