@@ -1,6 +1,7 @@
 const {default: ReactDocgenTypescriptPlugin} = require("react-docgen-typescript-plugin");
 
 module.exports = {
+    framework: "@storybook/react",
     stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
     features: {
         postcss: false,
