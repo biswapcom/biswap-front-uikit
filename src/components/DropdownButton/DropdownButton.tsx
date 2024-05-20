@@ -86,13 +86,13 @@ const DropdownTop = styled(Flex)<{
     props.disabled &&
     props.variant === VARIANTS.LIGHT &&
     css`
-      color: ${({ theme }) => theme.colors.gray900} !important;
+      color: ${({ theme }) => theme.colors.white} !important;
     `}
   ${(props) =>
     props.disabled &&
     props.variant === VARIANTS.DARK &&
     css`
-      color: ${({ theme }) => theme.colors.pastelBlue} !important;
+      color: ${({ theme }) => theme.colors.dark800} !important;
     `}
     
   ${({theme}) => theme.mediaQueries.sm} {

@@ -4302,13 +4302,13 @@ var DropdownTop = styled(Flex)(templateObject_6$a || (templateObject_6$a = __mak
     return props.disabled &&
         props.variant === VARIANTS.LIGHT && css(templateObject_4$n || (templateObject_4$n = __makeTemplateObject(["\n      color: ", " !important;\n    "], ["\n      color: ", " !important;\n    "])), function (_a) {
         var theme = _a.theme;
-        return theme.colors.gray900;
+        return theme.colors.white;
     });
 }, function (props) {
     return props.disabled &&
         props.variant === VARIANTS.DARK && css(templateObject_5$g || (templateObject_5$g = __makeTemplateObject(["\n      color: ", " !important;\n    "], ["\n      color: ", " !important;\n    "])), function (_a) {
         var theme = _a.theme;
-        return theme.colors.pastelBlue;
+        return theme.colors.dark800;
     });
 }, function (_a) {
     var theme = _a.theme;
