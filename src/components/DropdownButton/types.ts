@@ -24,7 +24,7 @@ export interface DropdownButtonProps extends PositionProps, SpaceProps {
 
 export interface OptionProps {
   label: string;
-  value: string;
+  value: number | string;
   icon?: {
     name: string;
     color?: string;
