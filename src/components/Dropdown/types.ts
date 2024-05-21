@@ -15,7 +15,7 @@ export interface DropdownProps extends PositionProps, SpaceProps {
   minWidth?: string;
   withIcon?: string;
   variant?: Variant;
-  scale?: Scale;
+  scale: Scale;
   disabled?: boolean;
   options: Array<OptionProps>;
   onChange?: (option: OptionProps) => void;

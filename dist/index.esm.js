@@ -4061,6 +4061,14 @@ var Dropdown = function (_a) {
             onChange(option);
         }
     }; };
+    var scaleVariantsImage = function (scale) {
+        switch (scale) {
+            case scales$5.LG: return 24;
+            case scales$5.MD: return 20;
+            case scales$5.SM:
+            default: return 16;
+        }
+    };
     useEffect(function () {
         function handleClickOutside(event) {
             if (wrapperRef.current &&
@@ -4078,7 +4086,7 @@ var Dropdown = function (_a) {
     return (React.createElement(Container$1, __assign({ maxWidth: maxWidth, minWidth: minWidth, ref: wrapperRef, scale: scale }, props),
         React.createElement(DropdownTop$1, { scale: scale, variant: variant, onClick: toggling, disabled: disabled, className: isOpen ? "open" : disabled ? "disabled" : "" },
             selectedOption.icon && (selectedOption.icon.isAws ?
-                React.createElement(StyledNextImg, { src: selectedOption.icon.name, width: scale === "lg" ? 24 : scale === "md" ? 20 : 16, height: scale === "lg" ? 24 : scale === "md" ? 20 : 16, quality: 90, alt: "icon" })
+                React.createElement(StyledNextImg, { src: selectedOption.icon.name, width: scaleVariantsImage(scale), height: scaleVariantsImage(scale), quality: 90, alt: "icon" })
                 :
                     React.createElement(IconComponent$1, { iconName: selectedOption.icon.name, color: selectedOption.icon.color, mr: scale === "lg" ? "12px" : "8px" })),
             React.createElement(Label$1, null, selectedOption.label),

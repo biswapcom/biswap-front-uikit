@@ -12,6 +12,7 @@ import {
   scaleVariantItem,
 } from "./theme";
 import ChevronDown from "../Svg/Icons/Arrows/ChevronDown";
+import {Scale, scales} from "./types";
 
 const getBottom = ({ position }: PositionProps) => {
   if (position === "top") {
@@ -158,6 +159,14 @@ const Dropdown: React.FC<DropdownProps> = ({
       onChange(option);
     }
   };
+  const scaleVariantsImage = (scale: Scale): number => {
+    switch (scale) {
+      case scales.LG: return 24;
+      case scales.MD: return 20;
+      case scales.SM:
+      default: return 16;
+    }
+  }
   useEffect(() => {
     function handleClickOutside(event: { target: any }) {
       if (
@@ -194,8 +203,8 @@ const Dropdown: React.FC<DropdownProps> = ({
           selectedOption.icon.isAws ?
               <StyledNextImg
                   src={selectedOption.icon.name}
-                  width={scale === "lg" ? 24 : scale === "md" ? 20 : 16}
-                  height={scale === "lg" ? 24 : scale === "md" ? 20 : 16}
+                  width={scaleVariantsImage(scale)}
+                  height={scaleVariantsImage(scale)}
                   quality={90}
                   alt="icon"
               />
