@@ -1,4 +1,9 @@
-import React, { cloneElement, ElementType, isValidElement } from "react";
+import React, {
+  cloneElement,
+  ElementType,
+  isValidElement,
+  ReactElement,
+} from "react";
 import styled, { keyframes } from "styled-components";
 import getExternalLinkProps from "../../util/getExternalLinkProps";
 import StyledButton from "./StyledButton";
@@ -107,18 +112,20 @@ const Bubble = styled.span<{ bubbleColor?: keyof MarkerType }>`
 
 const Button = <E extends ElementType = "button">(
   props: ButtonProps<E>
-): JSX.Element => {
+): ReactElement => {
   const {
     addBubble,
     bubbleColor,
     startIcon,
     endIcon,
-    external,
+    external = false,
     className,
-    isLoading,
-    disabled,
+    isLoading = false,
+    disabled = false,
     children,
     loadingTitle,
+    variant = variants.PRIMARY,
+    scale = scales.MD,
     ...rest
   } = props;
 
@@ -144,6 +151,8 @@ const Button = <E extends ElementType = "button">(
       $isLoading={isLoading}
       className={classNames.join(" ")}
       disabled={isDisabled}
+      variant={variant}
+      scale={scale}
       {...internalProps}
       {...rest}
     >
@@ -163,14 +172,6 @@ const Button = <E extends ElementType = "button">(
       </>
     </StyledButton>
   );
-};
-
-Button.defaultProps = {
-  isLoading: false,
-  external: false,
-  variant: variants.PRIMARY,
-  scale: scales.MD,
-  disabled: false,
 };
 
 export default Button;

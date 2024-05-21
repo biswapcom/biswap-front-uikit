@@ -1,8 +1,12 @@
+const {default: ReactDocgenTypescriptPlugin} = require("react-docgen-typescript-plugin");
+
 module.exports = {
+    framework: "@storybook/react",
     stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
     features: {
         postcss: false,
     },
+    plugins: [new ReactDocgenTypescriptPlugin({ tsconfigPath: "../tsconfig.json" })],
     addons: [
         {
             name: "@storybook/addon-essentials",
@@ -16,6 +20,7 @@ module.exports = {
         //"themeprovider-storybook/register",
     ],
     typescript: {
-        reactDocgen: 'react-docgen-typescript-plugin'
+        reactDocgen: 'react-docgen-typescript-plugin',
+        reactDocgenTypescriptOptions: {},
     },
 };
