@@ -1,4 +1,4 @@
-import React, {FC, ReactElement} from "react";
+import React, { FC, ReactElement } from "react";
 import { Box, BoxProps } from "../Box";
 import { getResponsiveAttrs } from "../../util";
 
