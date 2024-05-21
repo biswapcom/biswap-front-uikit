@@ -2063,18 +2063,7 @@ const Separator = styled.div `
   color: ${({ theme }) => theme.colors.gray900};
   display: flex;
   justify-content: center;
-  padding-left: 4px;
-  padding-right: 4px;
-
-  ${({ theme }) => theme.mediaQueries.sm} {
-    padding-left: 8px;
-    padding-right: 8px;
-  }
-
-  ${({ theme }) => theme.mediaQueries.md} {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
+  padding: 0 4px;
 `;
 const StyledBreadcrumbs = styled.ul `
   align-items: center;
@@ -7056,18 +7045,18 @@ const Modal = ({ title, onDismiss: onDismiss_, onBack, hideOnBack, children, hid
         React.createElement(ModalBody$1, { p: bodyPadding ?? defaultBodyPadding, ...modalBodyProps }, children)));
 };
 
-const StyledModal = styled.div `
-  display: flex;
+const StyledModal = styled(Flex) `
   flex-direction: column;
   background-color: ${({ theme, backgroundTransparent }) => backgroundTransparent ? "transparent" : theme.colors.white};
   border-radius: 16px 16px 0 0;
-  width: 100%;
+  width: auto;
   z-index: ${({ theme }) => theme.zIndices.modal};
   overflow-y: auto;
-  position: relative;
-  top: 0;
-  left: 0;
+  position: absolute;
+  bottom: 0;
+
   ${({ theme }) => theme.mediaQueries.sm} {
+    position: relative;
     width: auto;
     min-width: 416px;
     max-width: 100%;
@@ -7097,10 +7086,10 @@ const ModalBody = styled.div `
 const Background = styled.img `
   width: 100%;
 `;
-const ModalWithBackground = ({ onDismiss: onDismiss_, children, hideCloseButton = false, backBtnColor, background, backgroundTransparent, p, }) => {
+const ModalWithBackground = ({ onDismiss: onDismiss_, children, hideCloseButton = false, backBtnColor, background, backgroundTransparent, p, ...boxProps }) => {
     const context = useContext(ModalV2Context);
     const onDismiss = context?.onDismiss || onDismiss_;
-    return (React.createElement(StyledModal, { backgroundTransparent: backgroundTransparent },
+    return (React.createElement(StyledModal, { backgroundTransparent: backgroundTransparent, ...boxProps },
         !hideCloseButton && (React.createElement(StyledIconButton, { variant: "text", className: "closeModal", scale: "sm", onClick: onDismiss, "aria-label": "Close the dialog" },
             React.createElement(Icon$33, { width: "24px", color: backBtnColor ?? "card" }))),
         background && React.createElement(Background, { src: background, alt: "image" }),
