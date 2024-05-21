@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Arrow = styled.div`
+export const Arrow = styled.div<{ isLight: boolean }>`
   &,
   &::before {
     position: absolute;
@@ -12,26 +12,62 @@ export const Arrow = styled.div`
   &::before {
     content: "";
     transform: rotate(45deg);
-    background: ${({ theme }) => theme.colors.tooltip};
+    background: ${({ theme, isLight }) => isLight ? theme.colors.white : theme.colors.tooltip};
   }
 `;
 
-export const StyledTooltip = styled.div`
-  padding: 8px 12px;
-  font-size: 12px;
-  line-height: 16px;
-  border-radius: 8px;
+export const StyledTooltip = styled.div<{ isLight: boolean }>`
   max-width: 320px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  line-height: 16px;
+  font-size: 12px;
+  color: ${({ theme, isLight }) => isLight ? theme.colors.dark800 : theme.colors.white};
+  background: ${({ theme, isLight }) => isLight ? theme.colors.white : theme.colors.tooltip};
   z-index: 101;
-  background: ${({ theme }) => theme.colors.tooltip};
-  color: ${({ theme }) => theme.colors.white};
 
-  &[data-popper-placement^="top"] > ${Arrow} {
-    bottom: -4px;
+  &[data-popper-placement^="top"] {
+      &[data-popper-placement*="start"] {
+          margin-left: -4px;
+
+          & > ${Arrow} {
+              margin-left: 4px;
+          }
+      }
+
+      &[data-popper-placement*="end"] {
+          margin-right: -4px;
+
+          & > ${Arrow} {
+              margin-left: -4px;
+          }
+      }
+      
+      & > ${Arrow} {
+          bottom: -4px;
+      }
   }
 
-  &[data-popper-placement^="bottom"] > ${Arrow} {
-    top: -4px;
+  &[data-popper-placement^="bottom"] {
+      &[data-popper-placement*="start"] {
+          margin-left: -4px;
+
+          & > ${Arrow} {
+              margin-left: 4px;
+          }
+      }
+
+      &[data-popper-placement*="end"] {
+          margin-right: -4px;
+
+          & > ${Arrow} {
+              margin-left: -4px;
+          }
+      }
+      
+      & > ${Arrow} {
+          top: -4px;
+      }
   }
 
   &[data-popper-placement^="left"] > ${Arrow} {
