@@ -21,6 +21,7 @@ export interface OptionProps {
     label: string;
     value: string | number;
     icon?: {
+        isAws?: boolean;
         name: string;
         color?: string;
     };

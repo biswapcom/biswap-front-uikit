@@ -2721,7 +2721,7 @@ var Selection$1 = styled__default["default"].div(templateObject_10$3 || (templat
     return flatTop && styled.css(templateObject_8$7 || (templateObject_8$7 = __makeTemplateObject(["\n      border-radius: ", ";\n      height: calc(100% - 4px);\n      top: calc(50% - 2px);\n    "], ["\n      border-radius: ", ";\n      height: calc(100% - 4px);\n      top: calc(50% - 2px);\n    "])), scale === scales$9.SM ? "0 0 6px 6px" : "0 0 8px 8px");
 }, function (_a) {
     var flatBottom = _a.flatBottom, scale = _a.scale;
-    return flatBottom && styled.css(templateObject_9$3 || (templateObject_9$3 = __makeTemplateObject(["\n      border-radius: ", ";\n      height: calc(100% - 4px);\n      top: calc(50% + 2px);\n    "], ["\n      border-radius: ", ";\n      height: calc(100% - 4px);\n      top: calc(50% + 2px);\n    "])), scale === scales$9.SM ? "6px 6px 0 0" : "8px 8px 0 0");
+    return flatBottom && styled.css(templateObject_9$4 || (templateObject_9$4 = __makeTemplateObject(["\n      border-radius: ", ";\n      height: calc(100% - 4px);\n      top: calc(50% + 2px);\n    "], ["\n      border-radius: ", ";\n      height: calc(100% - 4px);\n      top: calc(50% + 2px);\n    "])), scale === scales$9.SM ? "6px 6px 0 0" : "8px 8px 0 0");
 }, function (_a) {
     var theme = _a.theme, variant = _a.variant;
     return variant === variants$6.DARK &&
@@ -2762,7 +2762,7 @@ var ButtonMenu = function (_a) {
             });
         }))));
 };
-var templateObject_1$1b, templateObject_2$F, templateObject_3$v, templateObject_4$r, templateObject_5$j, templateObject_6$c, templateObject_7$8, templateObject_8$7, templateObject_9$3, templateObject_10$3;
+var templateObject_1$1b, templateObject_2$F, templateObject_3$v, templateObject_4$r, templateObject_5$j, templateObject_6$c, templateObject_7$8, templateObject_8$7, templateObject_9$4, templateObject_10$3;
 
 var _a$e, _b$6, _c$4;
 var scaleVariants$2 = (_a$e = {},
@@ -3879,6 +3879,9 @@ var scaleVariantItem = (_d$2 = {},
             width: "24px",
             marginRight: "12px",
         },
+        img: {
+            marginRight: "12px",
+        },
     },
     _d$2[scales$5.MD] = {
         height: "40px",
@@ -3888,6 +3891,9 @@ var scaleVariantItem = (_d$2 = {},
             width: "20px",
             marginRight: "8px",
         },
+        img: {
+            marginRight: "8px",
+        },
     },
     _d$2[scales$5.SM] = {
         height: "32px",
@@ -3895,6 +3901,9 @@ var scaleVariantItem = (_d$2 = {},
         padding: "0 13px",
         svg: {
             width: "16px",
+            marginRight: "8px",
+        },
+        img: {
             marginRight: "8px",
         },
     },
@@ -4023,6 +4032,10 @@ var DropdownItem = styled__default["default"].div(templateObject_8$6 || (templat
     var theme = _a.theme;
     return theme.colors.gray200;
 });
+var StyledNextImg = styled__default["default"](Image__default["default"])(templateObject_9$3 || (templateObject_9$3 = __makeTemplateObject(["\n  margin-right: 8px;\n  \n  ", " {\n      margin-right: 12px;\n  }\n"], ["\n  margin-right: 8px;\n  \n  ", " {\n      margin-right: 12px;\n  }\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.lg;
+});
 var Dropdown = function (_a) {
     var _b = _a.position, position = _b === void 0 ? "bottom" : _b; _a.children; var maxWidth = _a.maxWidth, minWidth = _a.minWidth, scale = _a.scale, variant = _a.variant, disabled = _a.disabled, options = _a.options, onChange = _a.onChange, props = __rest(_a, ["position", "children", "maxWidth", "minWidth", "scale", "variant", "disabled", "options", "onChange"]);
     var _c = React.useState(false), isOpen = _c[0], setIsOpen = _c[1];
@@ -4058,17 +4071,23 @@ var Dropdown = function (_a) {
     }, [wrapperRef]);
     return (React__default["default"].createElement(Container, __assign({ maxWidth: maxWidth, minWidth: minWidth, ref: wrapperRef, scale: scale }, props),
         React__default["default"].createElement(DropdownTop, { scale: scale, variant: variant, onClick: toggling, disabled: disabled, className: isOpen ? "open" : disabled ? "disabled" : "" },
-            selectedOption.icon && (React__default["default"].createElement(IconComponent$1, { iconName: selectedOption.icon.name, color: selectedOption.icon.color, mr: scale === "lg" ? "12px" : "8px" })),
+            selectedOption.icon && (selectedOption.icon.isAws ?
+                React__default["default"].createElement(StyledNextImg, { src: selectedOption.icon.name, width: scale === "lg" ? 24 : scale === "md" ? 20 : 16, height: scale === "lg" ? 24 : scale === "md" ? 20 : 16, quality: 90, alt: "icon" })
+                :
+                    React__default["default"].createElement(IconComponent$1, { iconName: selectedOption.icon.name, color: selectedOption.icon.color, mr: scale === "lg" ? "12px" : "8px" })),
             React__default["default"].createElement(Label$1, null, selectedOption.label),
             React__default["default"].createElement(StyledArrow, { className: "arrow", isOpen: isOpen })),
         isOpen && (React__default["default"].createElement(DropdownContent, { position: position, scale: scale }, options.map(function (option) { return (React__default["default"].createElement(DropdownItem, { scale: scale, selected: option.label === selectedOption.label, onClick: onOptionClicked(option), key: option.label },
-            option.icon && (React__default["default"].createElement(IconComponent$1, { iconName: option.icon.name, color: option.icon.color })),
+            option.icon && (option.icon.isAws ?
+                React__default["default"].createElement(Image__default["default"], { src: option.icon.name, width: scale === "lg" ? 24 : scale === "md" ? 20 : 16, height: scale === "lg" ? 24 : scale === "md" ? 20 : 16, quality: 90, alt: "icon" })
+                :
+                    React__default["default"].createElement(IconComponent$1, { iconName: option.icon.name, color: option.icon.color })),
             React__default["default"].createElement("span", null, option.label))); })))));
 };
 Dropdown.defaultProps = {
     position: "bottom",
 };
-var templateObject_1$Z, templateObject_2$x, templateObject_3$p, templateObject_4$n, templateObject_5$g, templateObject_6$a, templateObject_7$7, templateObject_8$6;
+var templateObject_1$Z, templateObject_2$x, templateObject_3$p, templateObject_4$n, templateObject_5$g, templateObject_6$a, templateObject_7$7, templateObject_8$6, templateObject_9$3;
 
 var tags = {
     H1: "h1",

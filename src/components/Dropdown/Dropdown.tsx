@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
+import Image from "next/image";
 import styled, { css } from "styled-components";
-import { variant, space } from "styled-system";
+import {variant, space, marginRight} from "styled-system";
 import { DropdownProps, Position, PositionProps, OptionProps } from "./types";
 import IconComponent from "../Svg/IconComponent";
 import {
@@ -119,6 +120,13 @@ const DropdownItem = styled.div<{ scale?: string; selected?: boolean }>`
     background: ${({ theme }) => theme.colors.gray200};
   }
 `;
+const StyledNextImg = styled(Image)`
+  margin-right: 8px;
+  
+  ${({ theme }) => theme.mediaQueries.lg} {
+      margin-right: 12px;
+  }
+`
 
 const Dropdown: React.FC<DropdownProps> = ({
   position = "bottom",
@@ -183,11 +191,20 @@ const Dropdown: React.FC<DropdownProps> = ({
         className={isOpen ? "open" : disabled ? "disabled" : ""}
       >
         {selectedOption.icon && (
-          <IconComponent
-            iconName={selectedOption.icon.name}
-            color={selectedOption.icon.color}
-            mr={scale === "lg" ? "12px" : "8px"}
-          />
+          selectedOption.icon.isAws ?
+              <StyledNextImg
+                  src={selectedOption.icon.name}
+                  width={scale === "lg" ? 24 : scale === "md" ? 20 : 16}
+                  height={scale === "lg" ? 24 : scale === "md" ? 20 : 16}
+                  quality={90}
+                  alt="icon"
+              />
+              :
+              <IconComponent
+                  iconName={selectedOption.icon.name}
+                  color={selectedOption.icon.color}
+                  mr={scale === "lg" ? "12px" : "8px"}
+              />
         )}
         <Label>{selectedOption.label}</Label>
         <StyledArrow className="arrow" isOpen={isOpen} />
@@ -202,10 +219,19 @@ const Dropdown: React.FC<DropdownProps> = ({
               key={option.label}
             >
               {option.icon && (
-                <IconComponent
-                  iconName={option.icon.name}
-                  color={option.icon.color}
-                />
+                option.icon.isAws ?
+                  <Image
+                    src={option.icon.name}
+                    width={scale === "lg" ? 24 : scale === "md" ? 20 : 16}
+                    height={scale === "lg" ? 24 : scale === "md" ? 20 : 16}
+                    quality={90}
+                    alt="icon"
+                  />
+                  :
+                  <IconComponent
+                    iconName={option.icon.name}
+                    color={option.icon.color}
+                  />
               )}
               <span>{option.label}</span>
             </DropdownItem>

@@ -63,6 +63,9 @@ export const scaleVariantItem = {
       width: "24px",
       marginRight: "12px",
     },
+    img: {
+      marginRight: "12px",
+    },
   },
   [scales.MD]: {
     height: "40px",
@@ -73,6 +76,9 @@ export const scaleVariantItem = {
       width: "20px",
       marginRight: "8px",
     },
+    img: {
+      marginRight: "8px",
+    },
   },
   [scales.SM]: {
     height: "32px",
@@ -81,6 +87,9 @@ export const scaleVariantItem = {
 
     svg: {
       width: "16px",
+      marginRight: "8px",
+    },
+    img: {
       marginRight: "8px",
     },
   },
