@@ -201,19 +201,19 @@ const Dropdown: React.FC<DropdownProps> = ({
       >
         {selectedOption.icon && (
           selectedOption.icon.isAws ?
-              <StyledNextImg
-                  src={selectedOption.icon.name}
-                  width={scaleVariantsImage(scale)}
-                  height={scaleVariantsImage(scale)}
-                  quality={90}
-                  alt="icon"
-              />
-              :
-              <IconComponent
-                  iconName={selectedOption.icon.name}
-                  color={selectedOption.icon.color}
-                  mr={scale === "lg" ? "12px" : "8px"}
-              />
+            <StyledNextImg
+              src={selectedOption.icon.name}
+              width={scaleVariantsImage(scale)}
+              height={scaleVariantsImage(scale)}
+              quality={90}
+              alt="icon"
+            />
+            :
+            <IconComponent
+              iconName={selectedOption.icon.name}
+              color={selectedOption.icon.color}
+              mr={scale === "lg" ? "12px" : "8px"}
+            />
         )}
         <Label>{selectedOption.label}</Label>
         <StyledArrow className="arrow" isOpen={isOpen} />
@@ -231,8 +231,8 @@ const Dropdown: React.FC<DropdownProps> = ({
                 option.icon.isAws ?
                   <Image
                     src={option.icon.name}
-                    width={scale === "lg" ? 24 : scale === "md" ? 20 : 16}
-                    height={scale === "lg" ? 24 : scale === "md" ? 20 : 16}
+                    width={scaleVariantsImage(scale)}
+                    height={scaleVariantsImage(scale)}
                     quality={90}
                     alt="icon"
                   />

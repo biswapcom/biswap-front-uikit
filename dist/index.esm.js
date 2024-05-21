@@ -4093,7 +4093,7 @@ var Dropdown = function (_a) {
             React.createElement(StyledArrow$1, { className: "arrow", isOpen: isOpen })),
         isOpen && (React.createElement(DropdownContent$1, { position: position, scale: scale }, options.map(function (option) { return (React.createElement(DropdownItem$1, { scale: scale, selected: option.label === selectedOption.label, onClick: onOptionClicked(option), key: option.label },
             option.icon && (option.icon.isAws ?
-                React.createElement(Image$1, { src: option.icon.name, width: scale === "lg" ? 24 : scale === "md" ? 20 : 16, height: scale === "lg" ? 24 : scale === "md" ? 20 : 16, quality: 90, alt: "icon" })
+                React.createElement(Image$1, { src: option.icon.name, width: scaleVariantsImage(scale), height: scaleVariantsImage(scale), quality: 90, alt: "icon" })
                 :
                     React.createElement(IconComponent$1, { iconName: option.icon.name, color: option.icon.color })),
             React.createElement("span", null, option.label))); })))));
