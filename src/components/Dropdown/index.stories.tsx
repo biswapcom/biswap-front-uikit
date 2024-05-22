@@ -302,7 +302,7 @@ export const Default: React.FC = () => {
               label: "Dark open to top",
               value: "valueTest",
               icon: {
-                name: "Binance",
+                name: "Auction",
                 color: "pastelBlue",
               },
             },
@@ -310,8 +310,8 @@ export const Default: React.FC = () => {
               label: "Text2",
               value: "valueTest",
               icon: {
-                name: "Binance",
-                color: "pastelBlue",
+                isAws: true,
+                name: "https://static.biswap.org/bs/chains/56.svg",
               },
             },
             {
@@ -358,6 +358,9 @@ export const Default: React.FC = () => {
           ]}
           disabled
         />
+      </WrapperDark>
+      <WrapperDark>
+
       </WrapperDark>
     </>
   );

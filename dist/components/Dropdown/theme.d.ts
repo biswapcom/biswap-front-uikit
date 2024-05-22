@@ -27,6 +27,9 @@ export declare const scaleVariantItem: {
             width: string;
             marginRight: string;
         };
+        img: {
+            marginRight: string;
+        };
     };
 };
 export declare const styleVariantsTop: {
