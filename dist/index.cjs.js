@@ -3954,14 +3954,14 @@ var styleVariantsTop$1 = (_e$2 = {},
         },
     },
     _e$2[variants$5.DARK] = {
-        borderColor: "dark500",
+        borderColor: "pastelBlue",
         color: "white",
         ".arrow": {
             fill: "pastelBlue",
         },
         ":hover": {
-            color: "pastelBlue",
-            borderColor: "dark300",
+            color: "white",
+            borderColor: "pastelBlue",
         },
         "&.open": {
             color: "white",
