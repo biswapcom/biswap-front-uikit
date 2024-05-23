@@ -122,15 +122,15 @@ export const styleVariantsTop = {
     },
   },
   [variants.DARK]: {
-    borderColor: "dark500",
+    borderColor: "pastelBlue",
     color: "white",
 
     ".arrow": {
       fill: "pastelBlue",
     },
     ":hover": {
-      color: "pastelBlue",
-      borderColor: "dark300",
+      color: "white",
+      borderColor: "pastelBlue",
     },
     "&.open": {
       color: "white",
