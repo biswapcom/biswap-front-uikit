@@ -139,6 +139,7 @@ const Dropdown: React.FC<DropdownProps> = ({
   disabled,
   options,
   onChange,
+  hideLabel,
   ...props
 }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -215,7 +216,7 @@ const Dropdown: React.FC<DropdownProps> = ({
               mr={scale === "lg" ? "12px" : "8px"}
             />
         )}
-        <Label>{selectedOption.label}</Label>
+        {!hideLabel ?? <Label>{selectedOption.label}</Label>}
         <StyledArrow className="arrow" isOpen={isOpen} />
       </DropdownTop>
       {isOpen && (
