@@ -216,7 +216,7 @@ const Dropdown: React.FC<DropdownProps> = ({
               mr={scale === "lg" ? "12px" : "8px"}
             />
         )}
-        {!hideLabel ?? <Label>{selectedOption.label}</Label>}
+        {!hideLabel && <Label>{selectedOption.label}</Label>}
         <StyledArrow className="arrow" isOpen={isOpen} />
       </DropdownTop>
       {isOpen && (
