@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import Image from "next/image";
 import styled, { css } from "styled-components";
 import { variant, space } from "styled-system";
 
@@ -20,7 +21,6 @@ import ChevronDownCircleSolid from "../Svg/Icons/Arrows/ChevronDownCircleSolid";
 
 // components
 import IconComponent from "../Svg/IconComponent";
-import { Image } from "../Image";
 import { Box, Flex } from "../Box";
 
 const getBottom = ({ contentPosition }: { contentPosition: Position }) => {
@@ -147,6 +147,14 @@ const DropdownItem = styled(Flex)<{ scale: Scale; selected?: boolean }>`
   }
 `;
 
+const StyledNextImg = styled(Image)`
+  margin-right: 8px;
+  
+  ${({ theme }) => theme.mediaQueries.lg} {
+      margin-right: 12px;
+  }
+`
+
 const DropdownButton: React.FC<DropdownButtonProps> = ({
   position = "bottom",
   children,
@@ -234,21 +242,21 @@ const DropdownButton: React.FC<DropdownButtonProps> = ({
         className={isOpen ? "open" : disabled ? "disabled" : ""}
       >
         {selectedOption.icon && (
-          <IconComponent
-            iconName={selectedOption.icon.name}
-            color={selectedOption.icon.color}
-            mr={getIconMargin(scale)}
-          />
+          selectedOption.icon.isAws ?
+            <StyledNextImg
+              src={selectedOption.icon.name}
+              width={scaleVariantsImage(scale)}
+              height={scaleVariantsImage(scale)}
+              quality={90}
+              alt="icon"
+            />
+            :
+            <IconComponent
+              iconName={selectedOption.icon.name}
+              color={selectedOption.icon.color}
+              mr={getIconMargin(scale)}
+            />
         )}
-        {selectedOption.link &&
-          <Image
-            src={selectedOption.link.url}
-            width={scaleVariantsImage(scale)}
-            height={scaleVariantsImage(scale)}
-            mr={getIconMargin(scale)}
-            alt={selectedOption.link.alt}
-          />
-        }
         <span>{selectedOption.label}</span>
         {variant === VARIANTS.PRIMARY
           ? <StyledArrowPrimary className="arrow arrow_primary" isOpen={isOpen} />
@@ -268,20 +276,19 @@ const DropdownButton: React.FC<DropdownButtonProps> = ({
             key={option.label}
           >
             {option.icon && (
-              <IconComponent
-                iconName={option.icon.name}
-                color={option.icon.color}
-              />
+              option.icon.isAws ?
+                <Image
+                  src={option.icon.name}
+                  width={scaleVariantsImage(scale)}
+                  height={scaleVariantsImage(scale)}
+                  alt="icon"
+                />
+                :
+                <IconComponent
+                  iconName={option.icon.name}
+                  color={option.icon.color}
+                />
             )}
-            {option.link &&
-              <Image
-                src={option.link.url}
-                width={scaleVariantsImage(scale)}
-                height={scaleVariantsImage(scale)}
-                mr={getIconMargin(scale)}
-                alt={option.link.alt}
-              />
-            }
             <span>{option.label}</span>
           </DropdownItem>
         ))}

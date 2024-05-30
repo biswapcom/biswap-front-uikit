@@ -21,12 +21,9 @@ export interface OptionProps {
     label: string;
     value: number | string;
     icon?: {
+        isAws?: boolean;
         name: string;
         color?: string;
-    };
-    link?: {
-        url: string;
-        alt: string;
     };
 }
 export declare enum SCALES {
