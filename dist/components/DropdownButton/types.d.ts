@@ -16,17 +16,15 @@ export interface DropdownButtonProps extends PositionProps, SpaceProps {
     options: Array<OptionProps>;
     onChange?: (option: OptionProps) => void;
     children?: ReactNode;
+    hideLabel?: boolean;
 }
 export interface OptionProps {
     label: string;
     value: number | string;
     icon?: {
+        isAws?: boolean;
         name: string;
         color?: string;
-    };
-    link?: {
-        url: string;
-        alt: string;
     };
 }
 export declare enum SCALES {

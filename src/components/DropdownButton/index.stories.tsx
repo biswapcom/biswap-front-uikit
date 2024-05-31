@@ -34,25 +34,25 @@ export const Default: React.FC = () => {
             {
               label: "Light LG",
               value: "valueTest",
-              link: {
-                url: "https://static.biswap.org/bs/chains/BNBChain.svg",
-                alt: "pastelBlue",
+              icon: {
+                isAws: true,
+                name: "https://static.biswap.org/bs/chains/56.svg",
               },
             },
             {
               label: "Text2",
               value: "valueTest",
-              link: {
-                url: "https://static.biswap.org/bs/chains/Ethereum.svg",
-                alt: "success",
+              icon: {
+                isAws: true,
+                name: "https://static.biswap.org/bs/chains/56.svg",
               },
             },
             {
               label: "Text3",
               value: "valueTest",
-              link: {
-                url: "https://static.biswap.org/bs/chains/Arbitrum.svg",
-                alt: "secondary",
+              icon: {
+                isAws: true,
+                name: "https://static.biswap.org/bs/chains/56.svg",
               },
             },
           ]}
@@ -66,25 +66,25 @@ export const Default: React.FC = () => {
             {
               label: "Light LG",
               value: "valueTest",
-              link: {
-                url: "https://static.biswap.org/bs/chains/BNBChain.svg",
-                alt: "pastelBlue",
+              icon: {
+                isAws: true,
+                name: "https://static.biswap.org/bs/chains/56.svg",
               },
             },
             {
               label: "Text2",
               value: "valueTest",
-              link: {
-                url: "https://static.biswap.org/bs/chains/Ethereum.svg",
-                alt: "success",
+              icon: {
+                isAws: true,
+                name: "https://static.biswap.org/bs/chains/56.svg",
               },
             },
             {
               label: "Text3",
               value: "valueTest",
-              link: {
-                url: "https://static.biswap.org/bs/chains/Arbitrum.svg",
-                alt: "secondary",
+              icon: {
+                isAws: true,
+                name: "https://static.biswap.org/bs/chains/56.svg",
               },
             },
           ]}
@@ -97,25 +97,25 @@ export const Default: React.FC = () => {
             {
               label: "Light LG",
               value: "valueTest",
-              link: {
-                url: "https://static.biswap.org/bs/chains/BNBChain.svg",
-                alt: "pastelBlue",
+              icon: {
+                isAws: true,
+                name: "https://static.biswap.org/bs/chains/56.svg",
               },
             },
             {
               label: "Text2",
               value: "valueTest",
-              link: {
-                url: "https://static.biswap.org/bs/chains/Ethereum.svg",
-                alt: "success",
+              icon: {
+                isAws: true,
+                name: "https://static.biswap.org/bs/chains/56.svg",
               },
             },
             {
               label: "Text3",
               value: "valueTest",
-              link: {
-                url: "https://static.biswap.org/bs/chains/Arbitrum.svg",
-                alt: "secondary",
+              icon: {
+                isAws: true,
+                name: "https://static.biswap.org/bs/chains/56.svg",
               },
             },
           ]}
