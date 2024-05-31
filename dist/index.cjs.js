@@ -4342,7 +4342,7 @@ var StyledNextImg = styled__default["default"](Image__default["default"])(templa
 });
 var DropdownButton = function (_a) {
     var _b;
-    var _c = _a.position, position = _c === void 0 ? "bottom" : _c; _a.children; var maxWidth = _a.maxWidth, minWidth = _a.minWidth, _d = _a.scale, scale = _d === void 0 ? SCALES.MD : _d, _e = _a.variant, variant = _e === void 0 ? VARIANTS.PRIMARY : _e, _f = _a.disabled, disabled = _f === void 0 ? false : _f, options = _a.options, onChange = _a.onChange, props = __rest(_a, ["position", "children", "maxWidth", "minWidth", "scale", "variant", "disabled", "options", "onChange"]);
+    var _c = _a.position, position = _c === void 0 ? "bottom" : _c; _a.children; var maxWidth = _a.maxWidth, minWidth = _a.minWidth, _d = _a.scale, scale = _d === void 0 ? SCALES.MD : _d, _e = _a.variant, variant = _e === void 0 ? VARIANTS.PRIMARY : _e, _f = _a.disabled, disabled = _f === void 0 ? false : _f, options = _a.options, onChange = _a.onChange, hideLabel = _a.hideLabel, props = __rest(_a, ["position", "children", "maxWidth", "minWidth", "scale", "variant", "disabled", "options", "onChange", "hideLabel"]);
     var _g = React.useState(false), isOpen = _g[0], setIsOpen = _g[1];
     var _h = React.useState(options[0]), selectedOption = _h[0], setSelectedOption = _h[1];
     var wrapperRef = React.useRef(null);
@@ -4397,7 +4397,7 @@ var DropdownButton = function (_a) {
                 React__default["default"].createElement(StyledNextImg, { src: selectedOption.icon.name, width: scaleVariantsImage(scale), height: scaleVariantsImage(scale), quality: 90, alt: "icon" })
                 :
                     React__default["default"].createElement(IconComponent$1, { iconName: selectedOption.icon.name, color: selectedOption.icon.color, mr: getIconMargin(scale) })),
-            React__default["default"].createElement("span", null, selectedOption.label),
+            !hideLabel && React__default["default"].createElement("span", null, selectedOption.label),
             variant === VARIANTS.PRIMARY
                 ? React__default["default"].createElement(StyledArrowPrimary, { className: "arrow arrow_primary", isOpen: isOpen })
                 : React__default["default"].createElement(StyledArrow, { className: "arrow", isOpen: isOpen })),

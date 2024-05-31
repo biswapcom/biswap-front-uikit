@@ -165,6 +165,7 @@ const DropdownButton: React.FC<DropdownButtonProps> = ({
   disabled = false,
   options,
   onChange,
+  hideLabel,
   ...props
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -257,7 +258,7 @@ const DropdownButton: React.FC<DropdownButtonProps> = ({
               mr={getIconMargin(scale)}
             />
         )}
-        <span>{selectedOption.label}</span>
+        {!hideLabel && <span>{selectedOption.label}</span>}
         {variant === VARIANTS.PRIMARY
           ? <StyledArrowPrimary className="arrow arrow_primary" isOpen={isOpen} />
           : <StyledArrow className="arrow" isOpen={isOpen} />}
