@@ -4295,7 +4295,10 @@ var StyledArrowPrimary = styled(Icon$3C)(templateObject_8$6 || (templateObject_8
     var isOpen = _a.isOpen;
     return (isOpen ? "scale(1,-1)" : "scale(1,1)");
 });
-var DropdownContent = styled(Box)(templateObject_9$3 || (templateObject_9$3 = __makeTemplateObject(["\n  position: absolute;\n  left: 0;\n  bottom: ", ";\n  width: 100%;\n  box-shadow: ", ";\n  background: ", ";\n  overflow: hidden;\n  transform: ", ";\n  transition: height 0.3s;\n  z-index: 101;\n\n  ", "\n"], ["\n  position: absolute;\n  left: 0;\n  bottom: ", ";\n  width: 100%;\n  box-shadow: ", ";\n  background: ", ";\n  overflow: hidden;\n  transform: ", ";\n  transition: height 0.3s;\n  z-index: 101;\n\n  ", "\n"])), getBottom, function (_a) {
+var DropdownContent = styled(Box)(templateObject_9$3 || (templateObject_9$3 = __makeTemplateObject(["\n  position: absolute;\n  left: 0;\n  bottom: ", ";\n  width: ", ";\n  box-shadow: ", ";\n  background: ", ";\n  overflow: hidden;\n  transform: ", ";\n  transition: height 0.3s;\n  z-index: 101;\n\n  ", "\n"], ["\n  position: absolute;\n  left: 0;\n  bottom: ", ";\n  width: ", ";\n  box-shadow: ", ";\n  background: ", ";\n  overflow: hidden;\n  transform: ", ";\n  transition: height 0.3s;\n  z-index: 101;\n\n  ", "\n"])), getBottom, function (_a) {
+    var dropDownWidth = _a.dropDownWidth;
+    return dropDownWidth ? dropDownWidth : '100%';
+}, function (_a) {
     var contentPosition = _a.contentPosition;
     return contentPosition === "bottom"
         ? "0px 16px 32px rgba(0, 26, 67, 0.24)"
@@ -4326,7 +4329,7 @@ var StyledNextImg = styled(Image$1)(templateObject_11$2 || (templateObject_11$2 
 });
 var DropdownButton = function (_a) {
     var _b;
-    var _c = _a.position, position = _c === void 0 ? "bottom" : _c; _a.children; var maxWidth = _a.maxWidth, minWidth = _a.minWidth, _d = _a.scale, scale = _d === void 0 ? SCALES.MD : _d, _e = _a.variant, variant = _e === void 0 ? VARIANTS.PRIMARY : _e, _f = _a.disabled, disabled = _f === void 0 ? false : _f, options = _a.options, onChange = _a.onChange, hideLabel = _a.hideLabel, props = __rest(_a, ["position", "children", "maxWidth", "minWidth", "scale", "variant", "disabled", "options", "onChange", "hideLabel"]);
+    var _c = _a.position, position = _c === void 0 ? "bottom" : _c; _a.children; var maxWidth = _a.maxWidth, minWidth = _a.minWidth, _d = _a.scale, scale = _d === void 0 ? SCALES.MD : _d, _e = _a.variant, variant = _e === void 0 ? VARIANTS.PRIMARY : _e, _f = _a.disabled, disabled = _f === void 0 ? false : _f, options = _a.options, onChange = _a.onChange, hideLabel = _a.hideLabel; _a.dropDownWidth; var props = __rest(_a, ["position", "children", "maxWidth", "minWidth", "scale", "variant", "disabled", "options", "onChange", "hideLabel", "dropDownWidth"]);
     var _g = useState(false), isOpen = _g[0], setIsOpen = _g[1];
     var _h = useState(options[0]), selectedOption = _h[0], setSelectedOption = _h[1];
     var wrapperRef = useRef(null);
