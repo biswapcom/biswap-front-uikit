@@ -6617,7 +6617,7 @@ const PromotedGradient = keyframes `
 /**
  * Priority: Warning --> Success --> Active
  */
-const getBorderColor = ({ isActive, isSuccess = false, isWarning = false, borderBackground, theme, }) => {
+const getBorderColor = ({ isActive, isSuccess, isWarning, borderBackground, theme, }) => {
     if (borderBackground) {
         return borderBackground;
     }
@@ -6639,7 +6639,7 @@ const StyledCard = styled.div `
   overflow: hidden;
   position: relative;
 
-  ${({ isActive = false }) => isActive &&
+  ${({ isActive }) => isActive &&
     css `
       animation: ${PromotedGradient} 3s ease infinite;
       background-size: 400% 400%;
