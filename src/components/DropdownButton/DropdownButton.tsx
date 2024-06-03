@@ -110,11 +110,11 @@ const StyledArrowPrimary = styled(ChevronDownCircleSolid)<{ isOpen: boolean; }>`
   transition: transform 0.4s ease-in-out;
 `;
 
-const DropdownContent = styled(Box)<{ contentPosition: Position; scale: Scale }>`
+const DropdownContent = styled(Box)<{ contentPosition: Position; scale: Scale; dropDownWidth?: string }>`
   position: absolute;
   left: 0;
   bottom: ${getBottom};
-  width: 100%;
+  width: ${({ dropDownWidth}) => dropDownWidth ? dropDownWidth : '100%'};
   box-shadow: ${({ contentPosition }) => contentPosition === "bottom"
       ? "0px 16px 32px rgba(0, 26, 67, 0.24)"
       : "0px -16px 32px rgba(0, 26, 67, 0.24)"};
@@ -166,6 +166,7 @@ const DropdownButton: React.FC<DropdownButtonProps> = ({
   options,
   onChange,
   hideLabel,
+  dropDownWidth,
   ...props
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -268,7 +269,8 @@ const DropdownButton: React.FC<DropdownButtonProps> = ({
         ref={dropdownMenuRef}
         height={isOpen ? dropdownMenuRef?.current?.scrollHeight : 0}
         contentPosition={position}
-        scale={scale}>
+        scale={scale}
+      >
         {options.map((option) => (
           <DropdownItem
             scale={scale}
