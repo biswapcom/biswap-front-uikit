@@ -24,8 +24,8 @@ interface StyledCardProps extends CardProps {
  */
 const getBorderColor = ({
   isActive,
-  isSuccess = false,
-  isWarning = false,
+  isSuccess,
+  isWarning,
   borderBackground,
   theme,
 }: StyledCardProps) => {
@@ -55,7 +55,7 @@ export const StyledCard = styled.div<StyledCardProps>`
   overflow: hidden;
   position: relative;
 
-  ${({ isActive = false }) =>
+  ${({ isActive }) =>
     isActive &&
     css`
       animation: ${PromotedGradient} 3s ease infinite;
