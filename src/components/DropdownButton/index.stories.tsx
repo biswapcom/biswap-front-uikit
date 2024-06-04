@@ -30,6 +30,7 @@ export const Default: React.FC = () => {
           mr="24px"
           maxWidth="250px"
           scale="lg"
+          dropDownWidth="300px"
           options={[
             {
               label: "Light LG",
@@ -133,7 +134,7 @@ export const Default: React.FC = () => {
               label: "Light LG",
               value: "valueTest",
               icon: {
-                name: "Auction",
+                name: "AnalyticsSolid",
                 color: "pastelBlue",
               },
             },
@@ -227,12 +228,13 @@ export const Default: React.FC = () => {
           maxWidth="250px"
           scale="lg"
           variant="light"
+          dropDownWidth="400px"
           options={[
             {
               label: "Light LG",
               value: "valueTest",
               icon: {
-                name: "Binance",
+                name: "VotingSolid",
                 color: "pastelBlue",
               },
             },

@@ -19,6 +19,10 @@ export const scaleVariantsTop = {
 
     svg: {
       width: "24px",
+      marginRight: "8px",
+    },
+    img: {
+      marginRight: "8px",
     },
 
     ".arrow_primary": {
@@ -32,6 +36,10 @@ export const scaleVariantsTop = {
 
     svg: {
       width: "20px",
+      marginRight: "6px",
+    },
+    img: {
+      marginRight: "6px",
     },
 
     ".arrow_primary": {
@@ -45,6 +53,10 @@ export const scaleVariantsTop = {
 
     svg: {
       width: "16px",
+      marginRight: "4px",
+    },
+    img: {
+      marginRight: "4px",
     },
 
     ".arrow_primary": {
@@ -75,6 +87,9 @@ export const scaleVariantItem = {
       width: "24px",
       marginRight: "8px",
     },
+    img: {
+      marginRight: "8px",
+    }
   },
   [SCALES.MD]: {
     height: "40px",
@@ -85,6 +100,9 @@ export const scaleVariantItem = {
       width: "20px",
       marginRight: "6px",
     },
+    img: {
+      marginRight: "6px",
+    }
   },
   [SCALES.SM]: {
     height: "32px",
@@ -95,6 +113,9 @@ export const scaleVariantItem = {
       width: "16px",
       marginRight: "4px",
     },
+    img: {
+      marginRight: "4px",
+    }
   },
 };
 

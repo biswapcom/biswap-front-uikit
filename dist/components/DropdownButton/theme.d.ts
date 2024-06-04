@@ -16,6 +16,10 @@ export declare const scaleVariantsTop: {
         borderRadius: string;
         svg: {
             width: string;
+            marginRight: string;
+        };
+        img: {
+            marginRight: string;
         };
         ".arrow_primary": {
             marginLeft: string;
@@ -27,6 +31,10 @@ export declare const scaleVariantsTop: {
         borderRadius: string;
         svg: {
             width: string;
+            marginRight: string;
+        };
+        img: {
+            marginRight: string;
         };
         ".arrow_primary": {
             marginLeft: string;
@@ -38,6 +46,10 @@ export declare const scaleVariantsTop: {
         borderRadius: string;
         svg: {
             width: string;
+            marginRight: string;
+        };
+        img: {
+            marginRight: string;
         };
         ".arrow_primary": {
             marginLeft: string;
@@ -64,6 +76,9 @@ export declare const scaleVariantItem: {
             width: string;
             marginRight: string;
         };
+        img: {
+            marginRight: string;
+        };
     };
     md: {
         height: string;
@@ -73,6 +88,9 @@ export declare const scaleVariantItem: {
             width: string;
             marginRight: string;
         };
+        img: {
+            marginRight: string;
+        };
     };
     sm: {
         height: string;
@@ -80,6 +98,9 @@ export declare const scaleVariantItem: {
         padding: string;
         svg: {
             width: string;
+            marginRight: string;
+        };
+        img: {
             marginRight: string;
         };
     };

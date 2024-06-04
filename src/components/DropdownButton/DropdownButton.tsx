@@ -147,14 +147,6 @@ const DropdownItem = styled(Flex)<{ scale: Scale; selected?: boolean }>`
   }
 `;
 
-const StyledNextImg = styled(Image)`
-  margin-right: 8px;
-  
-  ${({ theme }) => theme.mediaQueries.lg} {
-      margin-right: 12px;
-  }
-`
-
 const DropdownButton: React.FC<DropdownButtonProps> = ({
   position = "bottom",
   children,
@@ -245,7 +237,7 @@ const DropdownButton: React.FC<DropdownButtonProps> = ({
       >
         {selectedOption.icon && (
           selectedOption.icon.isAws ?
-            <StyledNextImg
+            <Image
               src={selectedOption.icon.name}
               width={scaleVariantsImage(scale)}
               height={scaleVariantsImage(scale)}
@@ -270,6 +262,7 @@ const DropdownButton: React.FC<DropdownButtonProps> = ({
         height={isOpen ? dropdownMenuRef?.current?.scrollHeight : 0}
         contentPosition={position}
         scale={scale}
+        dropDownWidth={dropDownWidth}
       >
         {options.map((option) => (
           <DropdownItem

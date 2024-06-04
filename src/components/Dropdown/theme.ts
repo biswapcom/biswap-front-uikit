@@ -19,6 +19,10 @@ export const scaleVariantsTop = {
 
     svg: {
       width: "24px",
+      marginRight: "12px",
+    },
+    img: {
+      marginRight: "12px",
     },
   },
   [scales.MD]: {
@@ -28,6 +32,10 @@ export const scaleVariantsTop = {
 
     svg: {
       width: "20px",
+      marginRight: "8px",
+    },
+    img: {
+      marginRight: "8px",
     },
   },
   [scales.SM]: {
@@ -37,6 +45,10 @@ export const scaleVariantsTop = {
 
     svg: {
       width: "16px",
+      marginRight: "8px",
+    },
+    img: {
+      marginRight: "8px",
     },
   },
 };

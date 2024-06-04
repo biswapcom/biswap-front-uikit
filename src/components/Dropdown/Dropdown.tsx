@@ -121,13 +121,6 @@ const DropdownItem = styled.div<{ scale?: string; selected?: boolean }>`
     background: ${({ theme }) => theme.colors.gray200};
   }
 `;
-const StyledNextImg = styled(Image)`
-  margin-right: 8px;
-  
-  ${({ theme }) => theme.mediaQueries.lg} {
-      margin-right: 12px;
-  }
-`
 
 const Dropdown: React.FC<DropdownProps> = ({
   position = "bottom",
@@ -201,7 +194,7 @@ const Dropdown: React.FC<DropdownProps> = ({
       >
         {selectedOption.icon && (
           selectedOption.icon.isAws ?
-            <StyledNextImg
+            <Image
               src={selectedOption.icon.name}
               width={scaleVariantsImage(scale)}
               height={scaleVariantsImage(scale)}
@@ -212,7 +205,6 @@ const Dropdown: React.FC<DropdownProps> = ({
             <IconComponent
               iconName={selectedOption.icon.name}
               color={selectedOption.icon.color}
-              mr={scale === "lg" ? "12px" : "8px"}
             />
         )}
         <Label>{selectedOption.label}</Label>
