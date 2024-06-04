@@ -10,6 +10,10 @@ export declare const scaleVariantsTop: {
         borderRadius: string;
         svg: {
             width: string;
+            marginRight: string;
+        };
+        img: {
+            marginRight: string;
         };
     };
 };

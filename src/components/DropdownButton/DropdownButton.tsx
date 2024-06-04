@@ -245,7 +245,7 @@ const DropdownButton: React.FC<DropdownButtonProps> = ({
       >
         {selectedOption.icon && (
           selectedOption.icon.isAws ?
-            <StyledNextImg
+            <Image
               src={selectedOption.icon.name}
               width={scaleVariantsImage(scale)}
               height={scaleVariantsImage(scale)}
@@ -270,6 +270,7 @@ const DropdownButton: React.FC<DropdownButtonProps> = ({
         height={isOpen ? dropdownMenuRef?.current?.scrollHeight : 0}
         contentPosition={position}
         scale={scale}
+        dropDownWidth={dropDownWidth}
       >
         {options.map((option) => (
           <DropdownItem

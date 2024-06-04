@@ -2727,7 +2727,7 @@ var Selection$1 = styled.div(templateObject_10$4 || (templateObject_10$4 = __mak
     return flatTop && css(templateObject_8$8 || (templateObject_8$8 = __makeTemplateObject(["\n      border-radius: ", ";\n      height: calc(100% - 4px);\n      top: calc(50% - 2px);\n    "], ["\n      border-radius: ", ";\n      height: calc(100% - 4px);\n      top: calc(50% - 2px);\n    "])), scale === scales$9.SM ? "0 0 6px 6px" : "0 0 8px 8px");
 }, function (_a) {
     var flatBottom = _a.flatBottom, scale = _a.scale;
-    return flatBottom && css(templateObject_9$5 || (templateObject_9$5 = __makeTemplateObject(["\n      border-radius: ", ";\n      height: calc(100% - 4px);\n      top: calc(50% + 2px);\n    "], ["\n      border-radius: ", ";\n      height: calc(100% - 4px);\n      top: calc(50% + 2px);\n    "])), scale === scales$9.SM ? "6px 6px 0 0" : "8px 8px 0 0");
+    return flatBottom && css(templateObject_9$4 || (templateObject_9$4 = __makeTemplateObject(["\n      border-radius: ", ";\n      height: calc(100% - 4px);\n      top: calc(50% + 2px);\n    "], ["\n      border-radius: ", ";\n      height: calc(100% - 4px);\n      top: calc(50% + 2px);\n    "])), scale === scales$9.SM ? "6px 6px 0 0" : "8px 8px 0 0");
 }, function (_a) {
     var theme = _a.theme, variant = _a.variant;
     return variant === variants$6.DARK &&
@@ -2768,7 +2768,7 @@ var ButtonMenu = function (_a) {
             });
         }))));
 };
-var templateObject_1$1c, templateObject_2$G, templateObject_3$w, templateObject_4$s, templateObject_5$k, templateObject_6$d, templateObject_7$9, templateObject_8$8, templateObject_9$5, templateObject_10$4;
+var templateObject_1$1c, templateObject_2$G, templateObject_3$w, templateObject_4$s, templateObject_5$k, templateObject_6$d, templateObject_7$9, templateObject_8$8, templateObject_9$4, templateObject_10$4;
 
 var _a$f, _b$7, _c$5;
 var scaleVariants$2 = (_a$f = {},
@@ -3846,6 +3846,10 @@ var scaleVariantsTop$1 = (_b$6 = {},
         borderRadius: "10px",
         svg: {
             width: "24px",
+            marginRight: "12px",
+        },
+        img: {
+            marginRight: "12px",
         },
     },
     _b$6[scales$5.MD] = {
@@ -3854,6 +3858,10 @@ var scaleVariantsTop$1 = (_b$6 = {},
         borderRadius: "8px",
         svg: {
             width: "20px",
+            marginRight: "8px",
+        },
+        img: {
+            marginRight: "8px",
         },
     },
     _b$6[scales$5.SM] = {
@@ -3862,6 +3870,10 @@ var scaleVariantsTop$1 = (_b$6 = {},
         borderRadius: "8px",
         svg: {
             width: "16px",
+            marginRight: "8px",
+        },
+        img: {
+            marginRight: "8px",
         },
     },
     _b$6);
@@ -4038,10 +4050,6 @@ var DropdownItem$1 = styled.div(templateObject_8$7 || (templateObject_8$7 = __ma
     var theme = _a.theme;
     return theme.colors.gray200;
 });
-var StyledNextImg$1 = styled(Image$1)(templateObject_9$4 || (templateObject_9$4 = __makeTemplateObject(["\n  margin-right: 8px;\n  \n  ", " {\n      margin-right: 12px;\n  }\n"], ["\n  margin-right: 8px;\n  \n  ", " {\n      margin-right: 12px;\n  }\n"])), function (_a) {
-    var theme = _a.theme;
-    return theme.mediaQueries.lg;
-});
 var Dropdown = function (_a) {
     var _b = _a.position, position = _b === void 0 ? "bottom" : _b; _a.children; var maxWidth = _a.maxWidth, minWidth = _a.minWidth, scale = _a.scale, variant = _a.variant, disabled = _a.disabled, options = _a.options, onChange = _a.onChange, props = __rest(_a, ["position", "children", "maxWidth", "minWidth", "scale", "variant", "disabled", "options", "onChange"]);
     var _c = useState(false), isOpen = _c[0], setIsOpen = _c[1];
@@ -4086,9 +4094,9 @@ var Dropdown = function (_a) {
     return (React.createElement(Container$1, __assign({ maxWidth: maxWidth, minWidth: minWidth, ref: wrapperRef, scale: scale }, props),
         React.createElement(DropdownTop$1, { scale: scale, variant: variant, onClick: toggling, disabled: disabled, className: isOpen ? "open" : disabled ? "disabled" : "" },
             selectedOption.icon && (selectedOption.icon.isAws ?
-                React.createElement(StyledNextImg$1, { src: selectedOption.icon.name, width: scaleVariantsImage(scale), height: scaleVariantsImage(scale), quality: 90, alt: "icon" })
+                React.createElement(Image$1, { src: selectedOption.icon.name, width: scaleVariantsImage(scale), height: scaleVariantsImage(scale), quality: 90, alt: "icon" })
                 :
-                    React.createElement(IconComponent$1, { iconName: selectedOption.icon.name, color: selectedOption.icon.color, mr: scale === "lg" ? "12px" : "8px" })),
+                    React.createElement(IconComponent$1, { iconName: selectedOption.icon.name, color: selectedOption.icon.color })),
             React.createElement(Label$1, null, selectedOption.label),
             React.createElement(StyledArrow$1, { className: "arrow", isOpen: isOpen })),
         isOpen && (React.createElement(DropdownContent$1, { position: position, scale: scale }, options.map(function (option) { return (React.createElement(DropdownItem$1, { scale: scale, selected: option.label === selectedOption.label, onClick: onOptionClicked(option), key: option.label },
@@ -4101,7 +4109,7 @@ var Dropdown = function (_a) {
 Dropdown.defaultProps = {
     position: "bottom",
 };
-var templateObject_1$_, templateObject_2$y, templateObject_3$q, templateObject_4$o, templateObject_5$h, templateObject_6$b, templateObject_7$8, templateObject_8$7, templateObject_9$4;
+var templateObject_1$_, templateObject_2$y, templateObject_3$q, templateObject_4$o, templateObject_5$h, templateObject_6$b, templateObject_7$8, templateObject_8$7;
 
 var SCALES;
 (function (SCALES) {
@@ -4136,6 +4144,10 @@ var scaleVariantsTop = (_b$5 = {},
         borderRadius: "10px",
         svg: {
             width: "24px",
+            marginRight: "8px",
+        },
+        img: {
+            marginRight: "8px",
         },
         ".arrow_primary": {
             marginLeft: "8px",
@@ -4147,6 +4159,10 @@ var scaleVariantsTop = (_b$5 = {},
         borderRadius: "8px",
         svg: {
             width: "20px",
+            marginRight: "6px",
+        },
+        img: {
+            marginRight: "6px",
         },
         ".arrow_primary": {
             marginLeft: "6px",
@@ -4158,6 +4174,10 @@ var scaleVariantsTop = (_b$5 = {},
         borderRadius: "8px",
         svg: {
             width: "16px",
+            marginRight: "4px",
+        },
+        img: {
+            marginRight: "4px",
         },
         ".arrow_primary": {
             marginLeft: "4px",
@@ -4184,6 +4204,9 @@ var scaleVariantItem = (_d$2 = {},
             width: "24px",
             marginRight: "8px",
         },
+        img: {
+            marginRight: "8px",
+        }
     },
     _d$2[SCALES.MD] = {
         height: "40px",
@@ -4193,6 +4216,9 @@ var scaleVariantItem = (_d$2 = {},
             width: "20px",
             marginRight: "6px",
         },
+        img: {
+            marginRight: "6px",
+        }
     },
     _d$2[SCALES.SM] = {
         height: "32px",
@@ -4202,6 +4228,9 @@ var scaleVariantItem = (_d$2 = {},
             width: "16px",
             marginRight: "4px",
         },
+        img: {
+            marginRight: "4px",
+        }
     },
     _d$2);
 var styleVariantsTop = (_e$1 = {},
@@ -4323,13 +4352,13 @@ var DropdownItem = styled(Flex)(templateObject_10$3 || (templateObject_10$3 = __
     var theme = _a.theme;
     return theme.colors.gray200;
 });
-var StyledNextImg = styled(Image$1)(templateObject_11$2 || (templateObject_11$2 = __makeTemplateObject(["\n  margin-right: 8px;\n  \n  ", " {\n      margin-right: 12px;\n  }\n"], ["\n  margin-right: 8px;\n  \n  ", " {\n      margin-right: 12px;\n  }\n"])), function (_a) {
+styled(Image$1)(templateObject_11$2 || (templateObject_11$2 = __makeTemplateObject(["\n  margin-right: 8px;\n  \n  ", " {\n      margin-right: 12px;\n  }\n"], ["\n  margin-right: 8px;\n  \n  ", " {\n      margin-right: 12px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.lg;
 });
 var DropdownButton = function (_a) {
     var _b;
-    var _c = _a.position, position = _c === void 0 ? "bottom" : _c; _a.children; var maxWidth = _a.maxWidth, minWidth = _a.minWidth, _d = _a.scale, scale = _d === void 0 ? SCALES.MD : _d, _e = _a.variant, variant = _e === void 0 ? VARIANTS.PRIMARY : _e, _f = _a.disabled, disabled = _f === void 0 ? false : _f, options = _a.options, onChange = _a.onChange, hideLabel = _a.hideLabel; _a.dropDownWidth; var props = __rest(_a, ["position", "children", "maxWidth", "minWidth", "scale", "variant", "disabled", "options", "onChange", "hideLabel", "dropDownWidth"]);
+    var _c = _a.position, position = _c === void 0 ? "bottom" : _c; _a.children; var maxWidth = _a.maxWidth, minWidth = _a.minWidth, _d = _a.scale, scale = _d === void 0 ? SCALES.MD : _d, _e = _a.variant, variant = _e === void 0 ? VARIANTS.PRIMARY : _e, _f = _a.disabled, disabled = _f === void 0 ? false : _f, options = _a.options, onChange = _a.onChange, hideLabel = _a.hideLabel, dropDownWidth = _a.dropDownWidth, props = __rest(_a, ["position", "children", "maxWidth", "minWidth", "scale", "variant", "disabled", "options", "onChange", "hideLabel", "dropDownWidth"]);
     var _g = useState(false), isOpen = _g[0], setIsOpen = _g[1];
     var _h = useState(options[0]), selectedOption = _h[0], setSelectedOption = _h[1];
     var wrapperRef = useRef(null);
@@ -4381,14 +4410,14 @@ var DropdownButton = function (_a) {
     return (React.createElement(Container, __assign({ maxWidth: maxWidth, minWidth: minWidth, ref: wrapperRef, scale: scale }, props),
         React.createElement(DropdownTop, { scale: scale, variant: variant, onClick: toggling, disabled: disabled, className: isOpen ? "open" : disabled ? "disabled" : "" },
             selectedOption.icon && (selectedOption.icon.isAws ?
-                React.createElement(StyledNextImg, { src: selectedOption.icon.name, width: scaleVariantsImage(scale), height: scaleVariantsImage(scale), quality: 90, alt: "icon" })
+                React.createElement(Image$1, { src: selectedOption.icon.name, width: scaleVariantsImage(scale), height: scaleVariantsImage(scale), quality: 90, alt: "icon" })
                 :
                     React.createElement(IconComponent$1, { iconName: selectedOption.icon.name, color: selectedOption.icon.color, mr: getIconMargin(scale) })),
             !hideLabel && React.createElement("span", null, selectedOption.label),
             variant === VARIANTS.PRIMARY
                 ? React.createElement(StyledArrowPrimary, { className: "arrow arrow_primary", isOpen: isOpen })
                 : React.createElement(StyledArrow, { className: "arrow", isOpen: isOpen })),
-        React.createElement(DropdownContent, { ref: dropdownMenuRef, height: isOpen ? (_b = dropdownMenuRef === null || dropdownMenuRef === void 0 ? void 0 : dropdownMenuRef.current) === null || _b === void 0 ? void 0 : _b.scrollHeight : 0, contentPosition: position, scale: scale }, options.map(function (option) { return (React.createElement(DropdownItem, { scale: scale, selected: option.label === selectedOption.label, onClick: onOptionClicked(option), key: option.label },
+        React.createElement(DropdownContent, { ref: dropdownMenuRef, height: isOpen ? (_b = dropdownMenuRef === null || dropdownMenuRef === void 0 ? void 0 : dropdownMenuRef.current) === null || _b === void 0 ? void 0 : _b.scrollHeight : 0, contentPosition: position, scale: scale, dropDownWidth: dropDownWidth }, options.map(function (option) { return (React.createElement(DropdownItem, { scale: scale, selected: option.label === selectedOption.label, onClick: onOptionClicked(option), key: option.label },
             option.icon && (option.icon.isAws ?
                 React.createElement(Image$1, { src: option.icon.name, width: scaleVariantsImage(scale), height: scaleVariantsImage(scale), alt: "icon" })
                 :
