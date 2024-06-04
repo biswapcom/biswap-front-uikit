@@ -147,14 +147,6 @@ const DropdownItem = styled(Flex)<{ scale: Scale; selected?: boolean }>`
   }
 `;
 
-const StyledNextImg = styled(Image)`
-  margin-right: 8px;
-  
-  ${({ theme }) => theme.mediaQueries.lg} {
-      margin-right: 12px;
-  }
-`
-
 const DropdownButton: React.FC<DropdownButtonProps> = ({
   position = "bottom",
   children,
