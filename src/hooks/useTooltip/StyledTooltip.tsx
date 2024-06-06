@@ -12,7 +12,8 @@ export const Arrow = styled.div<{ isLight: boolean }>`
   &::before {
     content: "";
     transform: rotate(45deg);
-    background: ${({ theme, isLight }) => isLight ? theme.colors.white : theme.colors.tooltip};
+    background: ${({ theme, isLight }) =>
+      isLight ? theme.colors.white : theme.colors.tooltip};
   }
 `;
 
@@ -22,52 +23,54 @@ export const StyledTooltip = styled.div<{ isLight: boolean }>`
   border-radius: 8px;
   line-height: 16px;
   font-size: 12px;
-  color: ${({ theme, isLight }) => isLight ? theme.colors.dark800 : theme.colors.white};
-  background: ${({ theme, isLight }) => isLight ? theme.colors.white : theme.colors.tooltip};
+  color: ${({ theme, isLight }) =>
+    isLight ? theme.colors.dark800 : theme.colors.white};
+  background: ${({ theme, isLight }) =>
+    isLight ? theme.colors.white : theme.colors.tooltip};
   z-index: 101;
 
   &[data-popper-placement^="top"] {
-      &[data-popper-placement*="start"] {
-          margin-left: -4px;
+    &[data-popper-placement*="start"] {
+      margin-left: -4px;
 
-          & > ${Arrow} {
-              margin-left: 4px;
-          }
-      }
-
-      &[data-popper-placement*="end"] {
-          margin-right: -4px;
-
-          & > ${Arrow} {
-              margin-left: -4px;
-          }
-      }
-      
       & > ${Arrow} {
-          bottom: -4px;
+        margin-left: 4px;
       }
+    }
+
+    &[data-popper-placement*="end"] {
+      margin-right: -4px;
+
+      & > ${Arrow} {
+        margin-left: -4px;
+      }
+    }
+
+    & > ${Arrow} {
+      bottom: -4px;
+    }
   }
 
   &[data-popper-placement^="bottom"] {
-      &[data-popper-placement*="start"] {
-          margin-left: -4px;
+    &[data-popper-placement*="start"] {
+      margin-left: -4px;
 
-          & > ${Arrow} {
-              margin-left: 4px;
-          }
-      }
-
-      &[data-popper-placement*="end"] {
-          margin-right: -4px;
-
-          & > ${Arrow} {
-              margin-left: -4px;
-          }
-      }
-      
       & > ${Arrow} {
-          top: -4px;
+        margin-left: 4px;
       }
+    }
+
+    &[data-popper-placement*="end"] {
+      margin-right: -4px;
+
+      & > ${Arrow} {
+        margin-left: -4px;
+      }
+    }
+
+    & > ${Arrow} {
+      top: -4px;
+    }
   }
 
   &[data-popper-placement^="left"] > ${Arrow} {

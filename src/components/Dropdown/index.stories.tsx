@@ -359,9 +359,7 @@ export const Default: React.FC = () => {
           disabled
         />
       </WrapperDark>
-      <WrapperDark>
-
-      </WrapperDark>
+      <WrapperDark></WrapperDark>
     </>
   );
 };

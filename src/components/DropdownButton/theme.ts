@@ -89,7 +89,7 @@ export const scaleVariantItem = {
     },
     img: {
       marginRight: "8px",
-    }
+    },
   },
   [SCALES.MD]: {
     height: "40px",
@@ -102,7 +102,7 @@ export const scaleVariantItem = {
     },
     img: {
       marginRight: "6px",
-    }
+    },
   },
   [SCALES.SM]: {
     height: "32px",
@@ -115,7 +115,7 @@ export const scaleVariantItem = {
     },
     img: {
       marginRight: "4px",
-    }
+    },
   },
 };
 

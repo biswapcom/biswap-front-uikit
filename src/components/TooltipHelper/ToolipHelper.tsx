@@ -52,7 +52,7 @@ const TooltipHelper: React.FC<Props> = ({
   const { targetRef, tooltip, tooltipVisible } = useTooltip(text, {
     placement,
     trigger,
-    isLight
+    isLight,
   });
 
   return (

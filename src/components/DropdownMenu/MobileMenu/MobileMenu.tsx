@@ -123,7 +123,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
           $isOpen={isOpen}
         >
           <Box>
-            <LanguageSelector/>
+            <LanguageSelector />
             {items
               .filter((item, categoryNum) => item.label && !item.type)
               .map(
