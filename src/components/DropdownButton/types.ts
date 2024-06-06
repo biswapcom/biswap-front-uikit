@@ -22,6 +22,7 @@ export interface DropdownButtonProps extends PositionProps, SpaceProps {
   children?: ReactNode;
   hideLabel?: boolean;
   dropDownWidth?: string;
+  selectedItem?: OptionProps;
 }
 
 export interface OptionProps {

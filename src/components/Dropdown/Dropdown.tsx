@@ -132,11 +132,12 @@ const Dropdown: React.FC<DropdownProps> = ({
   disabled,
   options,
   onChange,
+  selectedItem,
   ...props
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const wrapperRef = useRef(null);
-  const [selectedOption, setSelectedOption] = useState(options[0]);
+  const [selectedOption, setSelectedOption] = useState(selectedItem || options[0]);
 
   const toggling = (event: React.MouseEvent<HTMLDivElement>) => {
     if (!disabled) {
