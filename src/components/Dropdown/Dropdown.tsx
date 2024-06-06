@@ -142,7 +142,7 @@ const Dropdown: React.FC<DropdownProps> = ({
   );
 
   useEffect(() => {
-    if (selectedItem && selectedItem !== selectedOption)
+    if (selectedItem && selectedItem?.value !== selectedOption?.value)
       setSelectedOption(selectedItem);
   }, [selectedItem]);
 

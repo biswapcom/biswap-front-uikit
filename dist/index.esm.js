@@ -3059,7 +3059,7 @@ var Arrow = styled.div(templateObject_1$1b || (templateObject_1$1b = __makeTempl
     var theme = _a.theme, isLight = _a.isLight;
     return isLight ? theme.colors.white : theme.colors.tooltip;
 });
-var StyledTooltip = styled.div(templateObject_2$F || (templateObject_2$F = __makeTemplateObject(["\n  max-width: 320px;\n  padding: 8px 12px;\n  border-radius: 8px;\n  line-height: 16px;\n  font-size: 12px;\n  color: ", ";\n  background: ", ";\n  z-index: 101;\n\n  &[data-popper-placement^=\"top\"] {\n      &[data-popper-placement*=\"start\"] {\n          margin-left: -4px;\n\n          & > ", " {\n              margin-left: 4px;\n          }\n      }\n\n      &[data-popper-placement*=\"end\"] {\n          margin-right: -4px;\n\n          & > ", " {\n              margin-left: -4px;\n          }\n      }\n      \n      & > ", " {\n          bottom: -4px;\n      }\n  }\n\n  &[data-popper-placement^=\"bottom\"] {\n      &[data-popper-placement*=\"start\"] {\n          margin-left: -4px;\n\n          & > ", " {\n              margin-left: 4px;\n          }\n      }\n\n      &[data-popper-placement*=\"end\"] {\n          margin-right: -4px;\n\n          & > ", " {\n              margin-left: -4px;\n          }\n      }\n      \n      & > ", " {\n          top: -4px;\n      }\n  }\n\n  &[data-popper-placement^=\"left\"] > ", " {\n    right: -4px;\n  }\n\n  &[data-popper-placement^=\"right\"] > ", " {\n    left: -4px;\n  }\n"], ["\n  max-width: 320px;\n  padding: 8px 12px;\n  border-radius: 8px;\n  line-height: 16px;\n  font-size: 12px;\n  color: ", ";\n  background: ", ";\n  z-index: 101;\n\n  &[data-popper-placement^=\"top\"] {\n      &[data-popper-placement*=\"start\"] {\n          margin-left: -4px;\n\n          & > ", " {\n              margin-left: 4px;\n          }\n      }\n\n      &[data-popper-placement*=\"end\"] {\n          margin-right: -4px;\n\n          & > ", " {\n              margin-left: -4px;\n          }\n      }\n      \n      & > ", " {\n          bottom: -4px;\n      }\n  }\n\n  &[data-popper-placement^=\"bottom\"] {\n      &[data-popper-placement*=\"start\"] {\n          margin-left: -4px;\n\n          & > ", " {\n              margin-left: 4px;\n          }\n      }\n\n      &[data-popper-placement*=\"end\"] {\n          margin-right: -4px;\n\n          & > ", " {\n              margin-left: -4px;\n          }\n      }\n      \n      & > ", " {\n          top: -4px;\n      }\n  }\n\n  &[data-popper-placement^=\"left\"] > ", " {\n    right: -4px;\n  }\n\n  &[data-popper-placement^=\"right\"] > ", " {\n    left: -4px;\n  }\n"])), function (_a) {
+var StyledTooltip = styled.div(templateObject_2$F || (templateObject_2$F = __makeTemplateObject(["\n  max-width: 320px;\n  padding: 8px 12px;\n  border-radius: 8px;\n  line-height: 16px;\n  font-size: 12px;\n  color: ", ";\n  background: ", ";\n  z-index: 101;\n\n  &[data-popper-placement^=\"top\"] {\n    &[data-popper-placement*=\"start\"] {\n      margin-left: -4px;\n\n      & > ", " {\n        margin-left: 4px;\n      }\n    }\n\n    &[data-popper-placement*=\"end\"] {\n      margin-right: -4px;\n\n      & > ", " {\n        margin-left: -4px;\n      }\n    }\n\n    & > ", " {\n      bottom: -4px;\n    }\n  }\n\n  &[data-popper-placement^=\"bottom\"] {\n    &[data-popper-placement*=\"start\"] {\n      margin-left: -4px;\n\n      & > ", " {\n        margin-left: 4px;\n      }\n    }\n\n    &[data-popper-placement*=\"end\"] {\n      margin-right: -4px;\n\n      & > ", " {\n        margin-left: -4px;\n      }\n    }\n\n    & > ", " {\n      top: -4px;\n    }\n  }\n\n  &[data-popper-placement^=\"left\"] > ", " {\n    right: -4px;\n  }\n\n  &[data-popper-placement^=\"right\"] > ", " {\n    left: -4px;\n  }\n"], ["\n  max-width: 320px;\n  padding: 8px 12px;\n  border-radius: 8px;\n  line-height: 16px;\n  font-size: 12px;\n  color: ", ";\n  background: ", ";\n  z-index: 101;\n\n  &[data-popper-placement^=\"top\"] {\n    &[data-popper-placement*=\"start\"] {\n      margin-left: -4px;\n\n      & > ", " {\n        margin-left: 4px;\n      }\n    }\n\n    &[data-popper-placement*=\"end\"] {\n      margin-right: -4px;\n\n      & > ", " {\n        margin-left: -4px;\n      }\n    }\n\n    & > ", " {\n      bottom: -4px;\n    }\n  }\n\n  &[data-popper-placement^=\"bottom\"] {\n    &[data-popper-placement*=\"start\"] {\n      margin-left: -4px;\n\n      & > ", " {\n        margin-left: 4px;\n      }\n    }\n\n    &[data-popper-placement*=\"end\"] {\n      margin-right: -4px;\n\n      & > ", " {\n        margin-left: -4px;\n      }\n    }\n\n    & > ", " {\n      top: -4px;\n    }\n  }\n\n  &[data-popper-placement^=\"left\"] > ", " {\n    right: -4px;\n  }\n\n  &[data-popper-placement^=\"right\"] > ", " {\n    left: -4px;\n  }\n"])), function (_a) {
     var theme = _a.theme, isLight = _a.isLight;
     return isLight ? theme.colors.dark800 : theme.colors.white;
 }, function (_a) {
@@ -4056,7 +4056,7 @@ var Dropdown = function (_a) {
     var wrapperRef = useRef(null);
     var _d = useState(selectedItem || options[0]), selectedOption = _d[0], setSelectedOption = _d[1];
     useEffect(function () {
-        if (selectedItem && selectedItem !== selectedOption)
+        if (selectedItem && (selectedItem === null || selectedItem === void 0 ? void 0 : selectedItem.value) !== (selectedOption === null || selectedOption === void 0 ? void 0 : selectedOption.value))
             setSelectedOption(selectedItem);
     }, [selectedItem]);
     var toggling = function (event) {
@@ -4075,10 +4075,13 @@ var Dropdown = function (_a) {
     }; };
     var scaleVariantsImage = function (scale) {
         switch (scale) {
-            case scales$5.LG: return 24;
-            case scales$5.MD: return 20;
+            case scales$5.LG:
+                return 24;
+            case scales$5.MD:
+                return 20;
             case scales$5.SM:
-            default: return 16;
+            default:
+                return 16;
         }
     };
     useEffect(function () {
@@ -4097,17 +4100,13 @@ var Dropdown = function (_a) {
     }, [wrapperRef]);
     return (React.createElement(Container$1, __assign({ maxWidth: maxWidth, minWidth: minWidth, ref: wrapperRef, scale: scale }, props),
         React.createElement(DropdownTop$1, { scale: scale, variant: variant, onClick: toggling, disabled: disabled, className: isOpen ? "open" : disabled ? "disabled" : "" },
-            selectedOption.icon && (selectedOption.icon.isAws ?
-                React.createElement(Image$1, { src: selectedOption.icon.name, width: scaleVariantsImage(scale), height: scaleVariantsImage(scale), quality: 90, alt: "icon" })
-                :
-                    React.createElement(IconComponent$1, { iconName: selectedOption.icon.name, color: selectedOption.icon.color })),
+            selectedOption.icon &&
+                (selectedOption.icon.isAws ? (React.createElement(Image$1, { src: selectedOption.icon.name, width: scaleVariantsImage(scale), height: scaleVariantsImage(scale), quality: 90, alt: "icon" })) : (React.createElement(IconComponent$1, { iconName: selectedOption.icon.name, color: selectedOption.icon.color }))),
             React.createElement(Label$1, null, selectedOption.label),
             React.createElement(StyledArrow$1, { className: "arrow", isOpen: isOpen })),
         isOpen && (React.createElement(DropdownContent$1, { position: position, scale: scale }, options.map(function (option) { return (React.createElement(DropdownItem$1, { scale: scale, selected: option.label === selectedOption.label, onClick: onOptionClicked(option), key: option.label },
-            option.icon && (option.icon.isAws ?
-                React.createElement(Image$1, { src: option.icon.name, width: scaleVariantsImage(scale), height: scaleVariantsImage(scale), quality: 90, alt: "icon" })
-                :
-                    React.createElement(IconComponent$1, { iconName: option.icon.name, color: option.icon.color })),
+            option.icon &&
+                (option.icon.isAws ? (React.createElement(Image$1, { src: option.icon.name, width: scaleVariantsImage(scale), height: scaleVariantsImage(scale), quality: 90, alt: "icon" })) : (React.createElement(IconComponent$1, { iconName: option.icon.name, color: option.icon.color }))),
             React.createElement("span", null, option.label))); })))));
 };
 Dropdown.defaultProps = {
@@ -4210,7 +4209,7 @@ var scaleVariantItem = (_d$2 = {},
         },
         img: {
             marginRight: "8px",
-        }
+        },
     },
     _d$2[SCALES.MD] = {
         height: "40px",
@@ -4222,7 +4221,7 @@ var scaleVariantItem = (_d$2 = {},
         },
         img: {
             marginRight: "6px",
-        }
+        },
     },
     _d$2[SCALES.SM] = {
         height: "32px",
@@ -4234,7 +4233,7 @@ var scaleVariantItem = (_d$2 = {},
         },
         img: {
             marginRight: "4px",
-        }
+        },
     },
     _d$2);
 var styleVariantsTop = (_e$1 = {},
@@ -4281,7 +4280,7 @@ var Container = styled.div(templateObject_1$_ || (templateObject_1$_ = __makeTem
     prop: "scale",
     variants: scaleVariantsContainer,
 }), space);
-var DropdownTop = styled(Flex)(templateObject_6$a || (templateObject_6$a = __makeTemplateObject(["\n  align-items: center;\n  width: 100%;\n  height: 100%;\n  font-weight: 600;\n  cursor: ", ";\n  opacity: ", ";\n\n  ", "\n\n  ", "\n\n  ", "\n  ", "\n  ", "\n  ", "\n    \n  ", " {\n      width: auto;\n  }\n"], ["\n  align-items: center;\n  width: 100%;\n  height: 100%;\n  font-weight: 600;\n  cursor: ", ";\n  opacity: ", ";\n\n  ", "\n\n  ", "\n\n  ", "\n  ", "\n  ", "\n  ", "\n    \n  ", " {\n      width: auto;\n  }\n"])), function (_a) {
+var DropdownTop = styled(Flex)(templateObject_6$a || (templateObject_6$a = __makeTemplateObject(["\n  align-items: center;\n  width: 100%;\n  height: 100%;\n  font-weight: 600;\n  cursor: ", ";\n  opacity: ", ";\n\n  ", "\n\n  ", "\n\n  ", "\n  ", "\n  ", "\n  ", "\n    \n  ", " {\n    width: auto;\n  }\n"], ["\n  align-items: center;\n  width: 100%;\n  height: 100%;\n  font-weight: 600;\n  cursor: ", ";\n  opacity: ", ";\n\n  ", "\n\n  ", "\n\n  ", "\n  ", "\n  ", "\n  ", "\n    \n  ", " {\n    width: auto;\n  }\n"])), function (_a) {
     var disabled = _a.disabled;
     return (disabled ? "not-allowed" : "pointer");
 }, function (_a) {
@@ -4330,7 +4329,7 @@ var StyledArrowPrimary = styled(Icon$3C)(templateObject_8$6 || (templateObject_8
 });
 var DropdownContent = styled(Box)(templateObject_9$3 || (templateObject_9$3 = __makeTemplateObject(["\n  position: absolute;\n  left: 0;\n  bottom: ", ";\n  width: ", ";\n  box-shadow: ", ";\n  background: ", ";\n  overflow: hidden;\n  transform: ", ";\n  transition: height 0.3s;\n  z-index: 101;\n\n  ", "\n"], ["\n  position: absolute;\n  left: 0;\n  bottom: ", ";\n  width: ", ";\n  box-shadow: ", ";\n  background: ", ";\n  overflow: hidden;\n  transform: ", ";\n  transition: height 0.3s;\n  z-index: 101;\n\n  ", "\n"])), getBottom, function (_a) {
     var dropDownWidth = _a.dropDownWidth;
-    return dropDownWidth ? dropDownWidth : '100%';
+    return (dropDownWidth ? dropDownWidth : "100%");
 }, function (_a) {
     var contentPosition = _a.contentPosition;
     return contentPosition === "bottom"
@@ -4364,6 +4363,10 @@ var DropdownButton = function (_a) {
     var wrapperRef = useRef(null);
     var dropdownMenuRef = useRef(null);
     useEffect(function () {
+        if (selectedItem && (selectedItem === null || selectedItem === void 0 ? void 0 : selectedItem.value) !== (selectedOption === null || selectedOption === void 0 ? void 0 : selectedOption.value))
+            setSelectedOption(selectedItem);
+    }, [selectedItem]);
+    useEffect(function () {
         function handleClickOutside(event) {
             if (wrapperRef.current &&
                 !wrapperRef.current.contains(event.target)) {
@@ -4393,35 +4396,35 @@ var DropdownButton = function (_a) {
     }; };
     var scaleVariantsImage = function (scale) {
         switch (scale) {
-            case SCALES.LG: return 24;
-            case SCALES.MD: return 20;
+            case SCALES.LG:
+                return 24;
+            case SCALES.MD:
+                return 20;
             case SCALES.SM:
-            default: return 16;
+            default:
+                return 16;
         }
     };
     var getIconMargin = function (scale) {
         switch (scale) {
-            case SCALES.LG: return "8px";
-            case SCALES.MD: return "6px";
+            case SCALES.LG:
+                return "8px";
+            case SCALES.MD:
+                return "6px";
             case SCALES.SM:
-            default: return "4px";
+            default:
+                return "4px";
         }
     };
     return (React.createElement(Container, __assign({ maxWidth: maxWidth, minWidth: minWidth, ref: wrapperRef, scale: scale }, props),
         React.createElement(DropdownTop, { scale: scale, variant: variant, onClick: toggling, disabled: disabled, className: isOpen ? "open" : disabled ? "disabled" : "" },
-            selectedOption.icon && (selectedOption.icon.isAws ?
-                React.createElement(Image$1, { src: selectedOption.icon.name, width: scaleVariantsImage(scale), height: scaleVariantsImage(scale), quality: 90, alt: "icon" })
-                :
-                    React.createElement(IconComponent$1, { iconName: selectedOption.icon.name, color: selectedOption.icon.color, mr: getIconMargin(scale) })),
+            selectedOption.icon &&
+                (selectedOption.icon.isAws ? (React.createElement(Image$1, { src: selectedOption.icon.name, width: scaleVariantsImage(scale), height: scaleVariantsImage(scale), quality: 90, alt: "icon" })) : (React.createElement(IconComponent$1, { iconName: selectedOption.icon.name, color: selectedOption.icon.color, mr: getIconMargin(scale) }))),
             !hideLabel && React.createElement("span", null, selectedOption.label),
-            variant === VARIANTS.PRIMARY
-                ? React.createElement(StyledArrowPrimary, { className: "arrow arrow_primary", isOpen: isOpen })
-                : React.createElement(StyledArrow, { className: "arrow", isOpen: isOpen })),
+            variant === VARIANTS.PRIMARY ? (React.createElement(StyledArrowPrimary, { className: "arrow arrow_primary", isOpen: isOpen })) : (React.createElement(StyledArrow, { className: "arrow", isOpen: isOpen }))),
         React.createElement(DropdownContent, { ref: dropdownMenuRef, height: isOpen ? (_b = dropdownMenuRef === null || dropdownMenuRef === void 0 ? void 0 : dropdownMenuRef.current) === null || _b === void 0 ? void 0 : _b.scrollHeight : 0, contentPosition: position, scale: scale, dropDownWidth: dropDownWidth }, options.map(function (option) { return (React.createElement(DropdownItem, { scale: scale, selected: option.label === selectedOption.label, onClick: onOptionClicked(option), key: option.label },
-            option.icon && (option.icon.isAws ?
-                React.createElement(Image$1, { src: option.icon.name, width: scaleVariantsImage(scale), height: scaleVariantsImage(scale), alt: "icon" })
-                :
-                    React.createElement(IconComponent$1, { iconName: option.icon.name, color: option.icon.color })),
+            option.icon &&
+                (option.icon.isAws ? (React.createElement(Image$1, { src: option.icon.name, width: scaleVariantsImage(scale), height: scaleVariantsImage(scale), alt: "icon" })) : (React.createElement(IconComponent$1, { iconName: option.icon.name, color: option.icon.color }))),
             React.createElement("span", null, option.label))); }))));
 };
 var templateObject_1$_, templateObject_2$y, templateObject_3$q, templateObject_4$n, templateObject_5$g, templateObject_6$a, templateObject_7$7, templateObject_8$6, templateObject_9$3, templateObject_10$3;
@@ -6341,7 +6344,7 @@ var TooltipHelper = function (_a) {
     var _j = useTooltip(text, {
         placement: placement,
         trigger: trigger,
-        isLight: isLight
+        isLight: isLight,
     }), targetRef = _j.targetRef, tooltip = _j.tooltip, tooltipVisible = _j.tooltipVisible;
     return (React.createElement(Box, __assign({ ml: ml }, props),
         showTooltip && tooltipVisible && tooltip,
@@ -7852,11 +7855,11 @@ var Accordion = function (_a) {
 };
 var templateObject_1$d, templateObject_2$7, templateObject_3$5, templateObject_4$4;
 
-var Wrapper$1 = styled.div(templateObject_1$c || (templateObject_1$c = __makeTemplateObject(["\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    width: 100%;\n    height: 47px;\n    background: ", ";\n    padding: 12px 16px;\n"], ["\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    width: 100%;\n    height: 47px;\n    background: ", ";\n    padding: 12px 16px;\n"])), function (_a) {
+var Wrapper$1 = styled.div(templateObject_1$c || (templateObject_1$c = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  height: 47px;\n  background: ", ";\n  padding: 12px 16px;\n"], ["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  height: 47px;\n  background: ", ";\n  padding: 12px 16px;\n"])), function (_a) {
     var theme = _a.theme;
     return getRgba(theme.colors.backgroundDark, theme, 0.16);
 });
-var LabelWrap = styled.div(templateObject_2$6 || (templateObject_2$6 = __makeTemplateObject(["\n  display: flex;\n    align-items: center;\n"], ["\n  display: flex;\n    align-items: center;\n"])));
+var LabelWrap = styled.div(templateObject_2$6 || (templateObject_2$6 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n"], ["\n  display: flex;\n  align-items: center;\n"])));
 styled.span(templateObject_3$4 || (templateObject_3$4 = __makeTemplateObject([""], [""])));
 var LanguageSelector = function () {
     return (React.createElement(Wrapper$1, null,
