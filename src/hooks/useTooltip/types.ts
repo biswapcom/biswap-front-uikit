@@ -14,7 +14,7 @@ export interface TooltipOptions {
   tooltipOffset?: [number, number];
   disableStopPropagation?: boolean;
   openedByDefault?: boolean;
-  isLight?:boolean
+  isLight?: boolean;
 }
 
 export type TriggerType = "click" | "hover" | "focus";

@@ -4071,6 +4071,10 @@ var Dropdown = function (_a) {
     var _c = React.useState(false), isOpen = _c[0], setIsOpen = _c[1];
     var wrapperRef = React.useRef(null);
     var _d = React.useState(selectedItem || options[0]), selectedOption = _d[0], setSelectedOption = _d[1];
+    React.useEffect(function () {
+        if (selectedItem && selectedItem !== selectedOption)
+            setSelectedOption(selectedItem);
+    }, [selectedItem]);
     var toggling = function (event) {
         if (!disabled) {
             setIsOpen(!isOpen);

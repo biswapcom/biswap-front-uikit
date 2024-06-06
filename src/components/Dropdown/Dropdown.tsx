@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import styled, { css } from "styled-components";
-import {variant, space, marginRight} from "styled-system";
+import { variant, space } from "styled-system";
 import { DropdownProps, Position, PositionProps, OptionProps } from "./types";
 import IconComponent from "../Svg/IconComponent";
 import {
@@ -12,7 +12,7 @@ import {
   scaleVariantItem,
 } from "./theme";
 import ChevronDown from "../Svg/Icons/Arrows/ChevronDown";
-import {Scale, scales} from "./types";
+import { Scale, scales } from "./types";
 
 const getBottom = ({ position }: PositionProps) => {
   if (position === "top") {
@@ -137,7 +137,14 @@ const Dropdown: React.FC<DropdownProps> = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const wrapperRef = useRef(null);
-  const [selectedOption, setSelectedOption] = useState(selectedItem || options[0]);
+  const [selectedOption, setSelectedOption] = useState(
+    selectedItem || options[0]
+  );
+
+  useEffect(() => {
+    if (selectedItem && selectedItem !== selectedOption)
+      setSelectedOption(selectedItem);
+  }, [selectedItem]);
 
   const toggling = (event: React.MouseEvent<HTMLDivElement>) => {
     if (!disabled) {
@@ -155,12 +162,15 @@ const Dropdown: React.FC<DropdownProps> = ({
   };
   const scaleVariantsImage = (scale: Scale): number => {
     switch (scale) {
-      case scales.LG: return 24;
-      case scales.MD: return 20;
+      case scales.LG:
+        return 24;
+      case scales.MD:
+        return 20;
       case scales.SM:
-      default: return 16;
+      default:
+        return 16;
     }
-  }
+  };
   useEffect(() => {
     function handleClickOutside(event: { target: any }) {
       if (
@@ -193,8 +203,8 @@ const Dropdown: React.FC<DropdownProps> = ({
         disabled={disabled}
         className={isOpen ? "open" : disabled ? "disabled" : ""}
       >
-        {selectedOption.icon && (
-          selectedOption.icon.isAws ?
+        {selectedOption.icon &&
+          (selectedOption.icon.isAws ? (
             <Image
               src={selectedOption.icon.name}
               width={scaleVariantsImage(scale)}
@@ -202,12 +212,12 @@ const Dropdown: React.FC<DropdownProps> = ({
               quality={90}
               alt="icon"
             />
-            :
+          ) : (
             <IconComponent
               iconName={selectedOption.icon.name}
               color={selectedOption.icon.color}
             />
-        )}
+          ))}
         <Label>{selectedOption.label}</Label>
         <StyledArrow className="arrow" isOpen={isOpen} />
       </DropdownTop>
@@ -220,8 +230,8 @@ const Dropdown: React.FC<DropdownProps> = ({
               onClick={onOptionClicked(option)}
               key={option.label}
             >
-              {option.icon && (
-                option.icon.isAws ?
+              {option.icon &&
+                (option.icon.isAws ? (
                   <Image
                     src={option.icon.name}
                     width={scaleVariantsImage(scale)}
@@ -229,12 +239,12 @@ const Dropdown: React.FC<DropdownProps> = ({
                     quality={90}
                     alt="icon"
                   />
-                  :
+                ) : (
                   <IconComponent
                     iconName={option.icon.name}
                     color={option.icon.color}
                   />
-              )}
+                ))}
               <span>{option.label}</span>
             </DropdownItem>
           ))}

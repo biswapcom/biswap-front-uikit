@@ -4,7 +4,15 @@ import styled, { css } from "styled-components";
 import { variant, space } from "styled-system";
 
 // types
-import { DropdownButtonProps, Position, OptionProps, VARIANTS, Scale, SCALES, Variant } from "./types";
+import {
+  DropdownButtonProps,
+  Position,
+  OptionProps,
+  VARIANTS,
+  Scale,
+  SCALES,
+  Variant,
+} from "./types";
 
 // theme
 import {
@@ -95,32 +103,38 @@ const DropdownTop = styled(Flex)<{
       color: ${({ theme }) => theme.colors.dark800} !important;
     `}
     
-  ${({theme}) => theme.mediaQueries.sm} {
-      width: auto;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    width: auto;
   }
 `;
 
-const StyledArrow = styled(ChevronDown)<{ isOpen: boolean; }>`
+const StyledArrow = styled(ChevronDown)<{ isOpen: boolean }>`
   transform: ${({ isOpen }) => (isOpen ? "scale(1,-1)" : "scale(1,1)")};
   transition: transform 0.4s ease-in-out;
 `;
 
-const StyledArrowPrimary = styled(ChevronDownCircleSolid)<{ isOpen: boolean; }>`
+const StyledArrowPrimary = styled(ChevronDownCircleSolid)<{ isOpen: boolean }>`
   transform: ${({ isOpen }) => (isOpen ? "scale(1,-1)" : "scale(1,1)")};
   transition: transform 0.4s ease-in-out;
 `;
 
-const DropdownContent = styled(Box)<{ contentPosition: Position; scale: Scale; dropDownWidth?: string }>`
+const DropdownContent = styled(Box)<{
+  contentPosition: Position;
+  scale: Scale;
+  dropDownWidth?: string;
+}>`
   position: absolute;
   left: 0;
   bottom: ${getBottom};
-  width: ${({ dropDownWidth}) => dropDownWidth ? dropDownWidth : '100%'};
-  box-shadow: ${({ contentPosition }) => contentPosition === "bottom"
+  width: ${({ dropDownWidth }) => (dropDownWidth ? dropDownWidth : "100%")};
+  box-shadow: ${({ contentPosition }) =>
+    contentPosition === "bottom"
       ? "0px 16px 32px rgba(0, 26, 67, 0.24)"
       : "0px -16px 32px rgba(0, 26, 67, 0.24)"};
   background: ${({ theme }) => theme.colors.white};
   overflow: hidden;
-  transform: ${({ contentPosition }) => contentPosition === "bottom" ? "translateY(100%)" : "translateY(0)"};
+  transform: ${({ contentPosition }) =>
+    contentPosition === "bottom" ? "translateY(100%)" : "translateY(0)"};
   transition: height 0.3s;
   z-index: 101;
 
@@ -132,7 +146,8 @@ const DropdownContent = styled(Box)<{ contentPosition: Position; scale: Scale; d
 
 const DropdownItem = styled(Flex)<{ scale: Scale; selected?: boolean }>`
   align-items: center;
-  color: ${({ theme, selected }) => selected ? theme.colors.primary : theme.colors.dark800};
+  color: ${({ theme, selected }) =>
+    selected ? theme.colors.primary : theme.colors.dark800};
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.4s ease-out;
@@ -163,7 +178,9 @@ const DropdownButton: React.FC<DropdownButtonProps> = ({
   ...props
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [selectedOption, setSelectedOption] = useState<OptionProps>(selectedItem || options[0]);
+  const [selectedOption, setSelectedOption] = useState<OptionProps>(
+    selectedItem || options[0]
+  );
 
   const wrapperRef = useRef<HTMLDivElement>(null);
   const dropdownMenuRef = useRef<HTMLDivElement>(null);
@@ -205,21 +222,27 @@ const DropdownButton: React.FC<DropdownButtonProps> = ({
 
   const scaleVariantsImage = (scale: Scale): number => {
     switch (scale) {
-      case SCALES.LG: return 24;
-      case SCALES.MD: return 20;
+      case SCALES.LG:
+        return 24;
+      case SCALES.MD:
+        return 20;
       case SCALES.SM:
-      default: return 16;
+      default:
+        return 16;
     }
-  }
+  };
 
   const getIconMargin = (scale: Scale): string => {
     switch (scale) {
-      case SCALES.LG: return "8px";
-      case SCALES.MD: return "6px";
+      case SCALES.LG:
+        return "8px";
+      case SCALES.MD:
+        return "6px";
       case SCALES.SM:
-      default: return "4px"
+      default:
+        return "4px";
     }
-  }
+  };
 
   return (
     <Container
@@ -236,8 +259,8 @@ const DropdownButton: React.FC<DropdownButtonProps> = ({
         disabled={disabled}
         className={isOpen ? "open" : disabled ? "disabled" : ""}
       >
-        {selectedOption.icon && (
-          selectedOption.icon.isAws ?
+        {selectedOption.icon &&
+          (selectedOption.icon.isAws ? (
             <Image
               src={selectedOption.icon.name}
               width={scaleVariantsImage(scale)}
@@ -245,18 +268,19 @@ const DropdownButton: React.FC<DropdownButtonProps> = ({
               quality={90}
               alt="icon"
             />
-            :
+          ) : (
             <IconComponent
               iconName={selectedOption.icon.name}
               color={selectedOption.icon.color}
               mr={getIconMargin(scale)}
             />
-        )}
+          ))}
         {!hideLabel && <span>{selectedOption.label}</span>}
-        {variant === VARIANTS.PRIMARY
-          ? <StyledArrowPrimary className="arrow arrow_primary" isOpen={isOpen} />
-          : <StyledArrow className="arrow" isOpen={isOpen} />}
-
+        {variant === VARIANTS.PRIMARY ? (
+          <StyledArrowPrimary className="arrow arrow_primary" isOpen={isOpen} />
+        ) : (
+          <StyledArrow className="arrow" isOpen={isOpen} />
+        )}
       </DropdownTop>
       <DropdownContent
         ref={dropdownMenuRef}
@@ -272,20 +296,20 @@ const DropdownButton: React.FC<DropdownButtonProps> = ({
             onClick={onOptionClicked(option)}
             key={option.label}
           >
-            {option.icon && (
-              option.icon.isAws ?
+            {option.icon &&
+              (option.icon.isAws ? (
                 <Image
                   src={option.icon.name}
                   width={scaleVariantsImage(scale)}
                   height={scaleVariantsImage(scale)}
                   alt="icon"
                 />
-                :
+              ) : (
                 <IconComponent
                   iconName={option.icon.name}
                   color={option.icon.color}
                 />
-            )}
+              ))}
             <span>{option.label}</span>
           </DropdownItem>
         ))}
