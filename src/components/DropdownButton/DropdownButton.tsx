@@ -159,10 +159,11 @@ const DropdownButton: React.FC<DropdownButtonProps> = ({
   onChange,
   hideLabel,
   dropDownWidth,
+  selectedItem,
   ...props
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [selectedOption, setSelectedOption] = useState<OptionProps>(options[0]);
+  const [selectedOption, setSelectedOption] = useState<OptionProps>(selectedItem || options[0]);
 
   const wrapperRef = useRef<HTMLDivElement>(null);
   const dropdownMenuRef = useRef<HTMLDivElement>(null);

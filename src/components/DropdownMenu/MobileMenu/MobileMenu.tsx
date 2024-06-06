@@ -14,6 +14,7 @@ import Accordion from "../../Accordion/Accordion";
 import Community from "../../../widgets/Menu/components/Footer/Community";
 import Marker from "../../MenuItem/Marker";
 import { HeadText } from "../../Typography";
+import LanguageSelector from "../../../widgets/Menu/components/LanguageSelector";
 
 const MobileCommunityWrapper = styled.div`
   flex: 1;
@@ -122,6 +123,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
           $isOpen={isOpen}
         >
           <Box>
+            <LanguageSelector/>
             {items
               .filter((item, categoryNum) => item.label && !item.type)
               .map(
