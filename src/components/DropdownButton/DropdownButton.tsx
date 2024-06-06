@@ -186,6 +186,11 @@ const DropdownButton: React.FC<DropdownButtonProps> = ({
   const dropdownMenuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (selectedItem && selectedItem?.value !== selectedOption?.value)
+      setSelectedOption(selectedItem);
+  }, [selectedItem]);
+
+  useEffect(() => {
     function handleClickOutside(event: { target: any }) {
       if (
         wrapperRef.current &&
