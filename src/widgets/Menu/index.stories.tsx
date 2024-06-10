@@ -338,6 +338,7 @@ export const WithSubmenuSelected: React.FC = () => {
         socialLinks={socialLinks}
         serviceLinks={serviceLinks}
         links={links}
+        mobileLangSelector="test"
         subLinks={[
           {
             label: "Home",

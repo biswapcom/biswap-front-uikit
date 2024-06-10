@@ -19,6 +19,7 @@ const MenuItems: React.FC<MenuItemsProps> = ({
   mobileMenuCallback,
   baseAwsUrl,
   children,
+  mobileLangSelector,
   ...props
 }) => {
   const { isDesktop, isTablet } = useMatchBreakpoints();

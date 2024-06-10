@@ -41,6 +41,7 @@ export interface NavProps
   marketplaceLink?: string;
   baseAwsUrl?: string;
   buyBswLabel?: string;
+  mobileLangSelector?: string
 }
 
 export interface FooterStatisticProps {

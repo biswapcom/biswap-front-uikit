@@ -10,6 +10,7 @@ export interface MobileMenuProps {
   activeItem?: string;
   isMobileNav?: boolean;
   children: ReactNode;
+  mobileLangSelector?: string;
 }
 
 export interface DropdownMenuProps extends BoxProps {

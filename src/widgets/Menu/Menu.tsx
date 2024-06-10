@@ -171,6 +171,7 @@ const Menu: FC<PropsWithChildren<NavProps>> = ({
   marketplaceLink,
   baseAwsUrl = "https://static.biswap.org/bs",
   buyBswLabel = "Buy BSW",
+  mobileLangSelector,
 }) => {
   const { isMobile } = useMatchBreakpoints();
   const [showMenu, setShowMenu] = useState<boolean>(true);
@@ -307,6 +308,7 @@ const Menu: FC<PropsWithChildren<NavProps>> = ({
                 isMobileMenuOpened={isMobileMenuOpened}
                 mobileMenuCallback={setIsMobileMenuOpened}
                 baseAwsUrl={baseAwsUrl}
+                mobileLangSelector={mobileLangSelector}
                 ml={isMobile ? "12px" : "26px"}
               />
             </Flex>
