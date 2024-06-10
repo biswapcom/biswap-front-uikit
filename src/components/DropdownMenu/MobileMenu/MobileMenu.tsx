@@ -1,4 +1,4 @@
-import React, { FC, useContext, useEffect, useState } from "react";
+import React, {FC, Fragment, useContext, useEffect, useState} from "react";
 import { MenuContext } from "../../../widgets/Menu/context";
 import { usePopper } from "react-popper";
 import { useMatchBreakpoints } from "../../../contexts";
@@ -70,6 +70,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
   children,
   activeItem,
   baseAwsUrl,
+  mobileLangSelector,
   ...props
 }) => {
   const { linkComponent } = useContext(MenuContext);
@@ -112,6 +113,8 @@ const MobileMenu: FC<MobileMenuProps> = ({
     update && (await update());
   };
 
+  const LanguageSelector = mobileLangSelector ?? Fragment;
+
   return (
     <Box ref={setTargetRef} {...props}>
       <Box onPointerDown={onPointerDownHandler}>{children}</Box>
@@ -123,7 +126,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
           $isOpen={isOpen}
         >
           <Box>
-            <LanguageSelector />
+            <LanguageSelector/>
             {items
               .filter((item, categoryNum) => item.label && !item.type)
               .map(
