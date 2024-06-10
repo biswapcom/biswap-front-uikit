@@ -5,7 +5,7 @@ export declare const types: {
     WARNING: string;
     INFO: string;
 };
-export declare type Types = typeof types[keyof typeof types];
+export type Types = typeof types[keyof typeof types];
 export interface Toast {
     id: string;
     type: Types;
@@ -31,7 +31,7 @@ export interface ToastContainerProps {
     clearAllLabel?: string;
     viewBscScanLabel?: string;
 }
-export declare type ColoredToastContainerProps = Pick<ToastContainerProps, "ttl" | "onRemove">;
+export type ColoredToastContainerProps = Pick<ToastContainerProps, "ttl" | "onRemove">;
 export interface ToastProps {
     toast: Toast;
     onRemove?: ToastContainerProps["onRemove"];

@@ -12,7 +12,7 @@ const Toggle: React.FC<ToggleProps> = ({
   label,
   labelOrientation,
   gridArea,
-  variant,
+  variant = "light",
   spaceBetween,
   labelSize = "size12",
   ...props
@@ -57,11 +57,6 @@ const Toggle: React.FC<ToggleProps> = ({
       )}
     </ToggleWrap>
   );
-};
-
-Toggle.defaultProps = {
-  scale: "md",
-  variant: "light",
 };
 
 export default Toggle;

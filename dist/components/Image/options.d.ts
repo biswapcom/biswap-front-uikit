@@ -1,5 +1,5 @@
 declare const _default: {
-    root: null;
+    root: any;
     rootMargin: string;
     threshold: number;
 };

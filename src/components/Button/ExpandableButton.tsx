@@ -11,7 +11,7 @@ interface Props {
 
 export const ExpandableButton: React.FC<Props> = ({
   onClick,
-  expanded,
+  expanded = false,
   children,
 }) => {
   return (
@@ -25,13 +25,10 @@ export const ExpandableButton: React.FC<Props> = ({
     </IconButton>
   );
 };
-ExpandableButton.defaultProps = {
-  expanded: false,
-};
 
 export const ExpandableLabel: React.FC<Props> = ({
   onClick,
-  expanded,
+  expanded = false,
   children,
 }) => {
   return (
@@ -50,7 +47,4 @@ export const ExpandableLabel: React.FC<Props> = ({
       {children}
     </Button>
   );
-};
-ExpandableLabel.defaultProps = {
-  expanded: false,
 };
