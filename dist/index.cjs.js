@@ -8073,10 +8073,10 @@ var MenuItemDivider = function () { return React__default["default"].createEleme
 var templateObject_1$8;
 
 var MenuItems = function (_a) {
-    var _b = _a.items, items = _b === void 0 ? [] : _b, activeItem = _a.activeItem, activeSubItem = _a.activeSubItem, _c = _a.isMobileMenuOpened, isMobileMenuOpened = _c === void 0 ? false : _c, mobileMenuCallback = _a.mobileMenuCallback, baseAwsUrl = _a.baseAwsUrl; _a.children; _a.mobileLangSelector; var props = __rest(_a, ["items", "activeItem", "activeSubItem", "isMobileMenuOpened", "mobileMenuCallback", "baseAwsUrl", "children", "mobileLangSelector"]);
+    var _b = _a.items, items = _b === void 0 ? [] : _b, activeItem = _a.activeItem, activeSubItem = _a.activeSubItem, _c = _a.isMobileMenuOpened, isMobileMenuOpened = _c === void 0 ? false : _c, mobileMenuCallback = _a.mobileMenuCallback, baseAwsUrl = _a.baseAwsUrl; _a.children; var mobileLangSelector = _a.mobileLangSelector, props = __rest(_a, ["items", "activeItem", "activeSubItem", "isMobileMenuOpened", "mobileMenuCallback", "baseAwsUrl", "children", "mobileLangSelector"]);
     var _d = useMatchBreakpoints(), isDesktop = _d.isDesktop, isTablet = _d.isTablet;
     return (React__default["default"].createElement(Flex, __assign({}, props, { alignItems: "center" }),
-        !isDesktop && (React__default["default"].createElement(MobileDropdownMenu, { items: items, activeItem: activeItem, isMobileMenuOpened: isMobileMenuOpened, mobileMenuCallback: mobileMenuCallback, baseAwsUrl: baseAwsUrl })),
+        !isDesktop && (React__default["default"].createElement(MobileDropdownMenu, { items: items, activeItem: activeItem, isMobileMenuOpened: isMobileMenuOpened, mobileMenuCallback: mobileMenuCallback, baseAwsUrl: baseAwsUrl, mobileLangSelector: mobileLangSelector })),
         items.map(function (_a, index) {
             var _b, _c, _d, _e;
             var label = _a.label, _f = _a.items, menuItems = _f === void 0 ? [] : _f, href = _a.href, _g = _a.icon, icon = _g === void 0 ? "" : _g, isExtended = _a.isExtended, showItemsOnMobile = _a.showItemsOnMobile, type = _a.type, hidden = _a.hidden; _a.showNavBadge; var highlightTitle = _a.highlightTitle;

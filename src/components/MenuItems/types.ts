@@ -36,6 +36,5 @@ export interface MenuItemsProps extends BoxProps {
   isMobileMenuOpened?: boolean;
   mobileMenuCallback?: (s: boolean) => void;
   baseAwsUrl: string;
-  // mobileLangSelector?: FunctionComponent;
-  mobileLangSelector?: string;
+  mobileLangSelector: FunctionComponent;
 }

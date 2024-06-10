@@ -32,6 +32,7 @@ const MenuItems: React.FC<MenuItemsProps> = ({
           isMobileMenuOpened={isMobileMenuOpened}
           mobileMenuCallback={mobileMenuCallback}
           baseAwsUrl={baseAwsUrl}
+          mobileLangSelector={mobileLangSelector}
         />
       )}
       {items.map(

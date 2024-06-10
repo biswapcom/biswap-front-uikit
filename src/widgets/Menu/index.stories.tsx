@@ -232,6 +232,7 @@ const ConnectedTemplate: React.FC<NavProps> = (args) => {
           socialLinks={socialLinks}
           serviceLinks={serviceLinks}
           buyBswLabel={"Buy bsdt"}
+          mobileLangSelector="test"
           banner={(setHeight?: (s: boolean) => void) => (
             <Banner setHeight={setHeight} setBannerHeight={setBannerHeight} />
           )}

@@ -1,3 +1,4 @@
+import { FunctionComponent } from "react";
 import { BoxProps } from "../Box";
 import { DropdownMenuItems } from "../DropdownMenu/types";
 import { Colors } from "../../theme";
@@ -31,6 +32,6 @@ export interface MenuItemsProps extends BoxProps {
     isMobileMenuOpened?: boolean;
     mobileMenuCallback?: (s: boolean) => void;
     baseAwsUrl: string;
-    mobileLangSelector?: string;
+    mobileLangSelector: FunctionComponent;
 }
 export {};
