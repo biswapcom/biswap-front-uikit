@@ -1,4 +1,13 @@
-import React, { ReactElement } from "react";
+import React from "react";
 import { ButtonProps } from "./types";
-declare const Button: <E extends React.ElementType = "button">(props: ButtonProps<E>) => ReactElement;
+declare const Button: {
+    <E extends React.ElementType<any, keyof React.JSX.IntrinsicElements> = "button">(props: ButtonProps<E>): JSX.Element;
+    defaultProps: {
+        isLoading: boolean;
+        external: boolean;
+        variant: "primary";
+        scale: "md";
+        disabled: boolean;
+    };
+};
 export default Button;
