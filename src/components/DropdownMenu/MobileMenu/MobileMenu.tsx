@@ -144,7 +144,6 @@ const MobileMenu: FC<MobileMenuProps> = ({
                   const isMarker = items[index].showNavBadge;
                   const isMarkerColor = items[index].colorNavBadge;
                   const isOpenAccordion = label === "Biswap Products";
-                  const firstAccordionItemMobile = index === 1 && isMobile;
 
                   if (hidden) return null;
 
@@ -173,11 +172,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
                               (href && !isTablet)) && (
                               <>
                                 <Box
-                                  m={
-                                    firstAccordionItemMobile
-                                      ? "16px 0"
-                                      : "16px 0"
-                                  }
+                                  m="16px 0"
                                   position="relative"
                                 >
                                   {/*@ts-ignore*/}
