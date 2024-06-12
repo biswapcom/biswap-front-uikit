@@ -7934,7 +7934,7 @@ var MobileMenu = function (_a) {
                                 return (((!showItemsOnMobile && !hidden) ||
                                     (href && !isTablet)) && (React.createElement(React.Fragment, null,
                                     React.createElement(Box, { m: firstAccordionItemMobile
-                                            ? "4px 0 16px"
+                                            ? "16px 0"
                                             : "16px 0", position: "relative" },
                                         isMarker && React.createElement(Marker, { color: isMarkerColor }),
                                         React.createElement(HeadText, { scale: isTablet ? "size20" : "size16", color: isMobile && opened && !href

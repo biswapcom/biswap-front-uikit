@@ -175,7 +175,7 @@ const MobileMenu: FC<MobileMenuProps> = ({
                                 <Box
                                   m={
                                     firstAccordionItemMobile
-                                      ? "4px 0 16px"
+                                      ? "16px 0"
                                       : "16px 0"
                                   }
                                   position="relative"
