@@ -7923,7 +7923,6 @@ var MobileMenu = function (_a) {
                     var isMarker = items[index].showNavBadge;
                     var isMarkerColor = items[index].colorNavBadge;
                     var isOpenAccordion = label === "Biswap Products";
-                    var firstAccordionItemMobile = index === 1 && isMobile;
                     if (hidden)
                         return null;
                     var isHighlighted = items[index].highlightTitle;
@@ -7933,9 +7932,7 @@ var MobileMenu = function (_a) {
                         React.createElement(Accordion, { index: index, label: label, href: href, linkComponent: linkComponent, setIsOpenMenu: setIsOpen, currentOpen: currentOpen, setCurrentOpen: setCurrentOpen, clickable: !isTablet && innerItems.length > 0, isOpenItem: isOpenAccordion, heading: function (opened) {
                                 return (((!showItemsOnMobile && !hidden) ||
                                     (href && !isTablet)) && (React.createElement(React.Fragment, null,
-                                    React.createElement(Box, { m: firstAccordionItemMobile
-                                            ? "16px 0"
-                                            : "16px 0", position: "relative" },
+                                    React.createElement(Box, { m: "16px 0", position: "relative" },
                                         isMarker && React.createElement(Marker, { color: isMarkerColor }),
                                         React.createElement(HeadText, { scale: isTablet ? "size20" : "size16", color: isMobile && opened && !href
                                                 ? "primary"
