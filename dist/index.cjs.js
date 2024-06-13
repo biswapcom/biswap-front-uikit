@@ -1945,7 +1945,7 @@ const variants$8 = {
     DANGER: "danger",
     SUCCESS: "success",
     WARNING: "warning",
-    EXTENSION_CONFLICT: 'extensionConflict'
+    EXTENSIONS_CONFLICT: 'extensionsConflict'
 };
 const coloredVariants = {
     DANGER: "danger",
@@ -2000,7 +2000,7 @@ const getThemeColor = ({ variant = variants$8.INFO }) => {
             return "rgba(255, 219, 28, 0.16)";
         case variants$8.SUCCESS:
             return "rgba(29, 200, 114, 0.16)";
-        case variants$8.EXTENSION_CONFLICT:
+        case variants$8.EXTENSIONS_CONFLICT:
             return "rgba(255, 255, 255, 1)";
         case variants$8.INFO:
         default:
@@ -2015,7 +2015,7 @@ const getIcon = (variant = variants$8.INFO) => {
             return Icon$36;
         case variants$8.SUCCESS:
             return Icon$2A;
-        case variants$8.EXTENSION_CONFLICT:
+        case variants$8.EXTENSIONS_CONFLICT:
             return Icon$a;
         case variants$8.INFO:
         default:
@@ -2039,7 +2039,7 @@ const IconLabel = styled__default["default"](Flex) `
   justify-content: center;
   align-items: center;
   background-color: ${getThemeColor};
-  border-radius: ${({ variant }) => variant === variants$8.EXTENSION_CONFLICT ? '50px' : '8px'};
+  border-radius: ${({ variant }) => variant === variants$8.EXTENSIONS_CONFLICT ? '50px' : '8px'};
   border: none;
   padding: 12px;
 `;
@@ -2074,7 +2074,7 @@ const TitleWrapper = styled__default["default"](Box) `
 const Alert = ({ title, children, variant, onClick, progress, }) => {
     const Icon = getIcon(variant);
     const IconColor = getIconColor(variant);
-    if (variant === variants$8.EXTENSION_CONFLICT) {
+    if (variant === variants$8.EXTENSIONS_CONFLICT) {
         return (React__default["default"].createElement(Wrapper$i, null,
             React__default["default"].createElement(TitleWrapper, { py: "8px", pl: "20px", pr: "66px" },
                 React__default["default"].createElement(Text, { fontSize: "16px", color: "dark800", bold: true }, title)),
@@ -9235,7 +9235,7 @@ const types = {
     DANGER: "danger",
     WARNING: "warning",
     INFO: "info",
-    EXTENSION_CONFLICT: 'extensionConflict'
+    EXTENSIONS_CONFLICT: 'extensionsConflict'
 };
 
 const alertTypeMap = {
@@ -9243,7 +9243,7 @@ const alertTypeMap = {
     [types.SUCCESS]: variants$8.SUCCESS,
     [types.DANGER]: variants$8.DANGER,
     [types.WARNING]: variants$8.WARNING,
-    [types.EXTENSION_CONFLICT]: variants$8.EXTENSION_CONFLICT
+    [types.EXTENSIONS_CONFLICT]: variants$8.EXTENSIONS_CONFLICT
 };
 const ClearAllButton = styled__default["default"](Button) `
   position: absolute;
@@ -9295,7 +9295,7 @@ const ActionContainer = styled__default["default"].div `
 `;
 const Toast = ({ removeButtonPosition = 60, clearAll, toast, style, handleMouseEnter, handleMouseLeave, handleRemove, progress, clearAllLabel, viewBscScanLabel, ...props }) => {
     const { description, type, title, telegramDescription, tweeterDescription, hash, url, withGift, } = toast;
-    const isExtensionConflict = type === types.EXTENSION_CONFLICT;
+    const isExtensionConflict = type === types.EXTENSIONS_CONFLICT;
     return (React__default["default"].createElement(reactTransitionGroup.CSSTransition, { timeout: 250, style: style, ...props },
         React__default["default"].createElement(StyledToast$1, { onMouseEnter: handleMouseEnter, onMouseLeave: handleMouseLeave },
             clearAll && (React__default["default"].createElement(ClearAllButton, { scale: "sm", variant: "text", top: removeButtonPosition, onClick: () => clearAll() },

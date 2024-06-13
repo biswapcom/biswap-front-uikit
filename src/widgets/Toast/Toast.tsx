@@ -13,7 +13,7 @@ const alertTypeMap = {
   [types.SUCCESS]: alertVariants.SUCCESS,
   [types.DANGER]: alertVariants.DANGER,
   [types.WARNING]: alertVariants.WARNING,
-  [types.EXTENSION_CONFLICT]: alertVariants.EXTENSION_CONFLICT
+  [types.EXTENSIONS_CONFLICT]: alertVariants.EXTENSIONS_CONFLICT
 };
 
 interface ClearButtonProps {
@@ -97,7 +97,7 @@ const Toast: React.FC<ToastProps> = ({
     url,
     withGift,
   } = toast;
-  const isExtensionConflict = type === types.EXTENSION_CONFLICT
+  const isExtensionConflict = type === types.EXTENSIONS_CONFLICT
 
   return (
     <CSSTransition timeout={250} style={style} {...props}>

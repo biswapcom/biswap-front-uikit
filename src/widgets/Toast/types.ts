@@ -6,7 +6,7 @@ export const types = {
   DANGER: "danger",
   WARNING: "warning",
   INFO: "info",
-  EXTENSION_CONFLICT: 'extensionConflict'
+  EXTENSIONS_CONFLICT: 'extensionsConflict'
 };
 
 export type Types = typeof types[keyof typeof types];

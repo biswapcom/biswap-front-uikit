@@ -27,7 +27,7 @@ const getThemeColor = ({ variant = variants.INFO }: ThemedIconLabel) => {
       return "rgba(255, 219, 28, 0.16)";
     case variants.SUCCESS:
       return "rgba(29, 200, 114, 0.16)";
-    case variants.EXTENSION_CONFLICT:
+    case variants.EXTENSIONS_CONFLICT:
       return "rgba(255, 255, 255, 1)";
     case variants.INFO:
     default:
@@ -43,7 +43,7 @@ const getIcon = (variant: AlertProps["variant"] = variants.INFO) => {
       return WarningSolidIcon;
     case variants.SUCCESS:
       return CheckSolidIcon;
-    case variants.EXTENSION_CONFLICT:
+    case variants.EXTENSIONS_CONFLICT:
       return ConflictIcon;
     case variants.INFO:
     default:
@@ -69,7 +69,7 @@ const IconLabel = styled(Flex)<ThemedIconLabel>`
   justify-content: center;
   align-items: center;
   background-color: ${getThemeColor};
-  border-radius: ${({variant}) => variant === variants.EXTENSION_CONFLICT ? '50px' : '8px'};
+  border-radius: ${({variant}) => variant === variants.EXTENSIONS_CONFLICT ? '50px' : '8px'};
   border: none;
   padding: 12px;
 `;
@@ -117,7 +117,7 @@ const Alert: React.FC<AlertProps> = ({
   const Icon = getIcon(variant);
   const IconColor = getIconColor(variant);
 
-  if (variant === variants.EXTENSION_CONFLICT) {
+  if (variant === variants.EXTENSIONS_CONFLICT) {
     return (
       <Wrapper>
         <TitleWrapper py="8px" pl="20px" pr="66px">

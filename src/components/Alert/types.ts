@@ -9,7 +9,7 @@ export const variants = {
   DANGER: "danger",
   SUCCESS: "success",
   WARNING: "warning",
-  EXTENSION_CONFLICT: 'extensionConflict'
+  EXTENSIONS_CONFLICT: 'extensionsConflict'
 } as const;
 
 export type Variants = typeof variants[keyof typeof variants];
