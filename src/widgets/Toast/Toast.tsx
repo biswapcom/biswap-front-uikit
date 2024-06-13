@@ -13,6 +13,7 @@ const alertTypeMap = {
   [types.SUCCESS]: alertVariants.SUCCESS,
   [types.DANGER]: alertVariants.DANGER,
   [types.WARNING]: alertVariants.WARNING,
+  [types.EXTENSION_CONFLICT]: alertVariants.EXTENSION_CONFLICT
 };
 
 interface ClearButtonProps {
@@ -96,6 +97,7 @@ const Toast: React.FC<ToastProps> = ({
     url,
     withGift,
   } = toast;
+  const isExtensionConflict = type === types.EXTENSION_CONFLICT
 
   return (
     <CSSTransition timeout={250} style={style} {...props}>
@@ -140,10 +142,10 @@ const Toast: React.FC<ToastProps> = ({
             )}
             {description ? (
               <Text
-                color="#6B7D98"
+                color={isExtensionConflict ? 'gray900' : '#6B7D98'}
                 fontSize="12px"
                 as="p"
-                mb="8px"
+                mb={isExtensionConflict ? '0' : "8px"}
                 // dangerouslySetInnerHTML={{ __html: description }}
               >
                 {description}
