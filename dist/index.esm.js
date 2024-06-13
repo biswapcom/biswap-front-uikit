@@ -1929,6 +1929,7 @@ const variants$8 = {
     DANGER: "danger",
     SUCCESS: "success",
     WARNING: "warning",
+    EXTENSION_CONFLICT: 'extensionConflict'
 };
 const coloredVariants = {
     DANGER: "danger",
@@ -1983,6 +1984,8 @@ const getThemeColor = ({ variant = variants$8.INFO }) => {
             return "rgba(255, 219, 28, 0.16)";
         case variants$8.SUCCESS:
             return "rgba(29, 200, 114, 0.16)";
+        case variants$8.EXTENSION_CONFLICT:
+            return "rgba(255, 255, 255, 1)";
         case variants$8.INFO:
         default:
             return "rgba(18, 99, 241, 0.16)";
@@ -1996,6 +1999,8 @@ const getIcon = (variant = variants$8.INFO) => {
             return Icon$36;
         case variants$8.SUCCESS:
             return Icon$2A;
+        case variants$8.EXTENSION_CONFLICT:
+            return Icon$a;
         case variants$8.INFO:
         default:
             return Icon$2O;
@@ -2014,12 +2019,11 @@ const getIconColor = (variant = variants$8.INFO) => {
             return "primary";
     }
 };
-const IconLabel = styled.div `
-  display: flex;
+const IconLabel = styled(Flex) `
   justify-content: center;
   align-items: center;
   background-color: ${getThemeColor};
-  border-radius: 8px;
+  border-radius: ${({ variant }) => variant === variants$8.EXTENSION_CONFLICT ? '50px' : '8px'};
   border: none;
   padding: 12px;
 `;
@@ -2042,9 +2046,30 @@ const StyledBox = styled(Box) `
   //   transform: translateX(-50%);
   //}
 `;
+const Wrapper$i = styled(Flex) `
+    flex-direction: column;
+    border-radius: ${({ theme }) => theme.radii.default};
+    background-color: ${({ theme }) => theme.colors.gray200};
+    overflow: hidden;
+`;
+const TitleWrapper = styled(Box) `
+    background-color: ${({ theme }) => theme.colors.white};
+`;
 const Alert = ({ title, children, variant, onClick, progress, }) => {
     const Icon = getIcon(variant);
     const IconColor = getIconColor(variant);
+    if (variant === variants$8.EXTENSION_CONFLICT) {
+        return (React.createElement(Wrapper$i, null,
+            React.createElement(TitleWrapper, { py: "8px", pl: "20px", pr: "66px" },
+                React.createElement(Text, { fontSize: "16px", color: "dark800", bold: true }, title)),
+            React.createElement(Flex, { p: "16px" },
+                React.createElement(Box, { mr: "12px" },
+                    React.createElement(IconLabel, { variant: variant, hasDescription: !!children },
+                        React.createElement(Icon, { width: "48px", color: IconColor }))),
+                typeof children === "string" ? (React.createElement(Text, { as: "p" }, children)) : (children)),
+            React.createElement(StyledBox, null,
+                React.createElement(ProgressCircle, { onClick: onClick, filled: progress, notFilled: progress ? 100 - progress : 0 }))));
+    }
     return (React.createElement(StyledAlert, null,
         React.createElement("div", null,
             React.createElement(IconLabel, { variant: variant, hasDescription: !!children },
@@ -9194,6 +9219,7 @@ const types = {
     DANGER: "danger",
     WARNING: "warning",
     INFO: "info",
+    EXTENSION_CONFLICT: 'extensionConflict'
 };
 
 const alertTypeMap = {
@@ -9201,6 +9227,7 @@ const alertTypeMap = {
     [types.SUCCESS]: variants$8.SUCCESS,
     [types.DANGER]: variants$8.DANGER,
     [types.WARNING]: variants$8.WARNING,
+    [types.EXTENSION_CONFLICT]: variants$8.EXTENSION_CONFLICT
 };
 const ClearAllButton = styled(Button) `
   position: absolute;
@@ -9252,6 +9279,7 @@ const ActionContainer = styled.div `
 `;
 const Toast = ({ removeButtonPosition = 60, clearAll, toast, style, handleMouseEnter, handleMouseLeave, handleRemove, progress, clearAllLabel, viewBscScanLabel, ...props }) => {
     const { description, type, title, telegramDescription, tweeterDescription, hash, url, withGift, } = toast;
+    const isExtensionConflict = type === types.EXTENSION_CONFLICT;
     return (React.createElement(CSSTransition, { timeout: 250, style: style, ...props },
         React.createElement(StyledToast$1, { onMouseEnter: handleMouseEnter, onMouseLeave: handleMouseLeave },
             clearAll && (React.createElement(ClearAllButton, { scale: "sm", variant: "text", top: removeButtonPosition, onClick: () => clearAll() },
@@ -9261,7 +9289,7 @@ const Toast = ({ removeButtonPosition = 60, clearAll, toast, style, handleMouseE
                     hash && (React.createElement(LinkWrapper, null,
                         React.createElement(LinkStyles, { target: "_blank", href: `https://bscscan.com/tx/${hash}` }, viewBscScanLabel),
                         React.createElement(Icon$3k, { ml: "6px", width: "18px", height: "18px", color: "primary" }))),
-                    description ? (React.createElement(Text, { color: "#6B7D98", fontSize: "12px", as: "p", mb: "8px" }, description)) : (React.createElement(React.Fragment, null)),
+                    description ? (React.createElement(Text, { color: isExtensionConflict ? 'gray900' : '#6B7D98', fontSize: "12px", as: "p", mb: isExtensionConflict ? '0' : "8px" }, description)) : (React.createElement(React.Fragment, null)),
                     telegramDescription && tweeterDescription && (React.createElement(ActionContainer, null,
                         React.createElement(ToastAction, { withGift: withGift, telegramDescription: telegramDescription, tweeterDescription: tweeterDescription, title: title, url: url, thx: `https://bscscan.com/tx/${hash}` }))))))));
 };
