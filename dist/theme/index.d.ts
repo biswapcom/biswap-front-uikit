@@ -4,14 +4,12 @@ import { ToggleTheme } from "../components/Toggle/theme";
 import { TooltipTheme } from "../components/Tooltip/types";
 import { NavThemeType } from "../widgets/Menu/theme";
 import { ModalTheme } from "../widgets/Modal/types";
-import { CardTheme } from "../components/Card/types";
 import { Breakpoints, Colors, MediaQueries, Radii, Shadows, Spacing, ZIndices } from "./types";
 export interface BiswapTheme {
     siteWidth: number;
     isDark: boolean;
     alert: AlertTheme;
     colors: Colors;
-    card: CardTheme;
     nav: NavThemeType;
     modal: ModalTheme;
     radio: RadioTheme;

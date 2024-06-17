@@ -25,7 +25,7 @@ const MobileCommunityWrapper = styled.div`
 const StyledMobileMenu = styled.div<{
   $isOpen: boolean;
 }>`
-  background-color: ${({ theme }) => theme.card.background};
+  background-color: ${({ theme }) => theme.colors.white};
   width: 100vw;
   height: calc(100vh - 72px);
   overflow: auto;

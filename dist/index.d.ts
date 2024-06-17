@@ -27,7 +27,6 @@ export * from "./components/PercentSlider";
 export * from "./components/Typography";
 export * from "./components/Pagination";
 export * from "./components/SocialShareButton";
-export * from "./components/Card";
 export * from "./components/Image";
 export * from "./components/TooltipHelper";
 export * from "./components/TableCardSkeleton";

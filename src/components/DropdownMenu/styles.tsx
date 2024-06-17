@@ -174,7 +174,7 @@ export const StyledDropdownMenu = styled(Grid)<{
 }>`
   grid-template-columns: 1fr;
 
-  background-color: ${({ theme }) => theme.card.background};
+  background-color: ${({ theme }) => theme.colors.white};
   border: 1px solid ${({ theme }) => theme.colors.white};
   border-radius: 16px;
 
