@@ -1,5 +1,5 @@
 import { MouseEvent, ReactNode } from "react";
-export declare type AlertTheme = {
+export type AlertTheme = {
     background: string;
 };
 export declare const variants: {
@@ -7,8 +7,9 @@ export declare const variants: {
     readonly DANGER: "danger";
     readonly SUCCESS: "success";
     readonly WARNING: "warning";
+    readonly EXTENSIONS_CONFLICT: "extensionsConflict";
 };
-export declare type Variants = typeof variants[keyof typeof variants];
+export type Variants = typeof variants[keyof typeof variants];
 export interface AlertProps {
     variant?: Variants;
     title: string;
@@ -20,4 +21,4 @@ export declare const coloredVariants: {
     DANGER: string;
     SUCCESS: string;
 };
-export declare type ColoredVariants = typeof coloredVariants[keyof typeof coloredVariants];
+export type ColoredVariants = typeof coloredVariants[keyof typeof coloredVariants];

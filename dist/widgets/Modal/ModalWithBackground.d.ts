@@ -1,6 +1,7 @@
 import React, { ReactNode } from "react";
 import { InjectedProps } from "./types";
-interface Props extends InjectedProps {
+import { BoxProps } from "../../components/Box";
+interface Props extends InjectedProps, BoxProps {
     hideCloseButton?: boolean;
     backBtnColor?: string;
     background?: string;

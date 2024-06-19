@@ -10,8 +10,8 @@ export declare const variants: {
     readonly MD: "md";
     readonly LG: "lg";
 };
-export declare type Animation = typeof animation[keyof typeof animation];
-export declare type Variant = typeof variants[keyof typeof variants];
+export type Animation = typeof animation[keyof typeof animation];
+export type Variant = typeof variants[keyof typeof variants];
 export interface SkeletonProps extends SpaceProps, LayoutProps {
     animation?: Animation;
     variant?: Variant;

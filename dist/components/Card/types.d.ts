@@ -1,4 +1,4 @@
-import { HTMLAttributes } from "react";
+import { HTMLAttributes, ReactElement } from "react";
 import { SpaceProps } from "styled-system";
 import { Colors } from "../../theme";
 export interface CardRibbonProps extends SpaceProps, HTMLAttributes<HTMLDivElement> {
@@ -6,7 +6,7 @@ export interface CardRibbonProps extends SpaceProps, HTMLAttributes<HTMLDivEleme
     text: string;
     ribbonPosition?: "right" | "left";
 }
-export declare type CardTheme = {
+export type CardTheme = {
     background: string;
     boxShadow: string;
     boxShadowActive: string;
@@ -25,7 +25,7 @@ export interface CardProps extends SpaceProps, HTMLAttributes<HTMLDivElement> {
     isSuccess?: boolean;
     isWarning?: boolean;
     isDisabled?: boolean;
-    ribbon?: React.ReactNode;
+    ribbon?: ReactElement;
     borderBackground?: string;
     background?: string;
 }

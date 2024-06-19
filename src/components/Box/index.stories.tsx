@@ -4,7 +4,7 @@ import FlexComponent from "./Flex";
 import GridComponent from "./Grid";
 import Text from "../Text/Text";
 import { Link } from "../Link";
-import getResponsiveAttrs from "../../util/getResponsiveAttrs";
+import { getResponsiveAttrs } from "../../util";
 
 export default {
   title: "Components/Primitives",

@@ -8,4 +8,4 @@ export declare const variants: {
     readonly DARK: "dark";
     readonly DARK_BACKGROUND: "darkBackground";
 };
-export declare type Variant = typeof variants[keyof typeof variants];
+export type Variant = typeof variants[keyof typeof variants];
