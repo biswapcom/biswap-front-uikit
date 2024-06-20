@@ -7,7 +7,7 @@ interface ThemedProps extends TextProps {
   theme: DefaultTheme;
 }
 
-const getColor = ({ color, theme }: ThemedProps) => {
+const getColor = ({ color = "pastelBlue", theme }: ThemedProps) => {
   return getThemeValue(`colors.${color}`, color)(theme);
 };
 
@@ -33,11 +33,5 @@ const Text = styled.div<TextProps>`
   ${typography}
   ${layout}
 `;
-
-Text.defaultProps = {
-  color: "pastelBlue",
-  small: false,
-  ellipsis: false,
-};
 
 export default Text;

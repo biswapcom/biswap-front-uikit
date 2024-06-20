@@ -37,7 +37,7 @@ export declare const footerStatistic: {
 }[];
 export declare const socialLinks: {
     title: string;
-    links: never[];
+    links: any[];
 };
 export declare const aboutLinks: {
     title: string;

@@ -5,7 +5,7 @@ interface StyledCardProps extends CardProps {
 }
 export declare const StyledCard: import("styled-components").StyledComponent<"div", DefaultTheme, StyledCardProps, never>;
 export declare const StyledCardInner: import("styled-components").StyledComponent<"div", DefaultTheme, import("../Box").BoxProps & {
-    background?: string | undefined;
+    background?: string;
     hasCustomBorder: boolean;
 }, never>;
 export {};

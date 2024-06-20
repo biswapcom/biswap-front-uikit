@@ -69,12 +69,12 @@ const StyledText = styled(Text)`
 `;
 
 const Radio: FC<RadioProps> = ({
-  labelOrientation,
+  labelOrientation = "left",
   label,
-  scale,
+  scale = scales.MD,
   radioName,
   onChange,
-  colorVariant,
+  colorVariant = "light",
   checked,
 }) => {
   return (
@@ -100,13 +100,6 @@ const Radio: FC<RadioProps> = ({
       )}
     </Wrapper>
   );
-};
-
-Radio.defaultProps = {
-  scale: scales.MD,
-  m: 0,
-  labelOrientation: "left",
-  colorVariant: "light",
 };
 
 export default Radio;
