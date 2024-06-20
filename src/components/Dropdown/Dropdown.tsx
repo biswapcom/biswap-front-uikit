@@ -21,7 +21,7 @@ const getBottom = ({ position }: PositionProps) => {
   return "-8px";
 };
 
-const Container = styled.div<{
+const Container = styled.div.attrs({ position: "bottom" })<{
   maxWidth?: string;
   minWidth?: string;
   scale?: string;
@@ -252,9 +252,6 @@ const Dropdown: React.FC<DropdownProps> = ({
       )}
     </Container>
   );
-};
-Dropdown.defaultProps = {
-  position: "bottom",
 };
 
 export default Dropdown;

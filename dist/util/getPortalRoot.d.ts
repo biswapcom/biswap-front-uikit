@@ -1,2 +1,2 @@
-declare const getPortalRoot: () => false | HTMLElement;
+declare const getPortalRoot: () => HTMLElement;
 export default getPortalRoot;

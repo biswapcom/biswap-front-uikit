@@ -13,7 +13,7 @@ export declare const ModalBackButton: React.FC<{
 }>;
 export declare const ModalContainer: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, import("../../components/Box").BoxProps & {
     minWidth: string;
-    maxWidth?: string | undefined;
-    background?: string | undefined;
-    walletModal?: boolean | undefined;
+    maxWidth?: string;
+    background?: string;
+    walletModal?: boolean;
 }, never>;
