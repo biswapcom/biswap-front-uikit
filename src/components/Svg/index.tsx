@@ -248,6 +248,9 @@ export { default as ExchangeOpacityIcon } from "./Icons/Menu/Exchange/ExchangeOp
 export { default as ExpertModeSolidIcon } from "./Icons/Menu/ExpertMode/ExpertModeSolid";
 export { default as ExpertModeOpacityIcon } from "./Icons/Menu/ExpertMode/ExpertModeOpacity";
 
+//CrossChain
+export { default as CrossChainOpacityIcon } from "./Icons/Menu/CrossChain/CrossChainOpacity";
+
 //LaunchPools
 export { default as PoolsSolidIcon } from "./Icons/Menu/Pools/PoolsSolid";
 export { default as PoolsOpacityIcon } from "./Icons/Menu/Pools/PoolsOpacity";

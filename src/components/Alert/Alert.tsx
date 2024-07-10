@@ -69,7 +69,8 @@ const IconLabel = styled(Flex)<ThemedIconLabel>`
   justify-content: center;
   align-items: center;
   background-color: ${getThemeColor};
-  border-radius: ${({variant}) => variant === variants.EXTENSIONS_CONFLICT ? '50px' : '8px'};
+  border-radius: ${({ variant }) =>
+    variant === variants.EXTENSIONS_CONFLICT ? "50px" : "8px"};
   border: none;
   padding: 12px;
 `;
@@ -97,14 +98,14 @@ const StyledBox = styled(Box)`
 `;
 
 const Wrapper = styled(Flex)`
-    flex-direction: column;
-    border-radius: ${({theme}) => theme.radii.default};
-    background-color: ${({ theme }) => theme.colors.gray200};
-    overflow: hidden;
+  flex-direction: column;
+  border-radius: ${({ theme }) => theme.radii.default};
+  background-color: ${({ theme }) => theme.colors.gray200};
+  overflow: hidden;
 `;
 
 const TitleWrapper = styled(Box)`
-    background-color: ${({theme}) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.white};
 `;
 
 const Alert: React.FC<AlertProps> = ({
@@ -145,7 +146,7 @@ const Alert: React.FC<AlertProps> = ({
           />
         </StyledBox>
       </Wrapper>
-    )
+    );
   }
 
   return (
