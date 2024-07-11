@@ -4,7 +4,7 @@ import { CloseIcon } from "../../components/Svg";
 import { IconButton } from "../../components/Button";
 import { InjectedProps } from "./types";
 import { ModalV2Context } from "./ModalV2";
-import {BoxProps, Flex} from "../../components/Box";
+import { BoxProps, Flex } from "../../components/Box";
 
 interface Props extends InjectedProps, BoxProps {
   hideCloseButton?: boolean;
@@ -16,6 +16,7 @@ interface Props extends InjectedProps, BoxProps {
 }
 
 const StyledModal = styled(Flex)<{ backgroundTransparent?: boolean }>`
+  display: flex;
   flex-direction: column;
   background-color: ${({ theme, backgroundTransparent }) =>
     backgroundTransparent ? "transparent" : theme.colors.white};
