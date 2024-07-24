@@ -5,6 +5,7 @@ import {
   WarningSolidIcon,
   CloseCircleSolidIcon,
   InfoSolidIcon,
+  ConflictIcon,
 } from "../Svg";
 import { Text } from "../Text";
 import Flex from "../Box/Flex";
@@ -26,6 +27,8 @@ const getThemeColor = ({ variant = variants.INFO }: ThemedIconLabel) => {
       return "rgba(255, 219, 28, 0.16)";
     case variants.SUCCESS:
       return "rgba(29, 200, 114, 0.16)";
+    case variants.EXTENSIONS_CONFLICT:
+      return "rgba(255, 255, 255, 1)";
     case variants.INFO:
     default:
       return "rgba(18, 99, 241, 0.16)";
@@ -40,6 +43,8 @@ const getIcon = (variant: AlertProps["variant"] = variants.INFO) => {
       return WarningSolidIcon;
     case variants.SUCCESS:
       return CheckSolidIcon;
+    case variants.EXTENSIONS_CONFLICT:
+      return ConflictIcon;
     case variants.INFO:
     default:
       return InfoSolidIcon;
@@ -60,12 +65,12 @@ const getIconColor = (variant: AlertProps["variant"] = variants.INFO) => {
   }
 };
 
-const IconLabel = styled.div<ThemedIconLabel>`
-  display: flex;
+const IconLabel = styled(Flex)<ThemedIconLabel>`
   justify-content: center;
   align-items: center;
   background-color: ${getThemeColor};
-  border-radius: 8px;
+  border-radius: ${({ variant }) =>
+    variant === variants.EXTENSIONS_CONFLICT ? "50px" : "8px"};
   border: none;
   padding: 12px;
 `;
@@ -92,6 +97,17 @@ const StyledBox = styled(Box)`
   //}
 `;
 
+const Wrapper = styled(Flex)`
+  flex-direction: column;
+  border-radius: ${({ theme }) => theme.radii.default};
+  background-color: ${({ theme }) => theme.colors.gray200};
+  overflow: hidden;
+`;
+
+const TitleWrapper = styled(Box)`
+  background-color: ${({ theme }) => theme.colors.white};
+`;
+
 const Alert: React.FC<AlertProps> = ({
   title,
   children,
@@ -101,6 +117,38 @@ const Alert: React.FC<AlertProps> = ({
 }) => {
   const Icon = getIcon(variant);
   const IconColor = getIconColor(variant);
+
+  if (variant === variants.EXTENSIONS_CONFLICT) {
+    return (
+      <Wrapper>
+        <TitleWrapper py="8px" pl="20px" pr="66px">
+          <Text fontSize="16px" color="dark800" bold>
+            {title}
+          </Text>
+        </TitleWrapper>
+        <Flex p="16px">
+          <Box mr="12px">
+            <IconLabel variant={variant} hasDescription={!!children}>
+              <Icon width="48px" color={IconColor} />
+            </IconLabel>
+          </Box>
+          {typeof children === "string" ? (
+            <Text as="p">{children}</Text>
+          ) : (
+            children
+          )}
+        </Flex>
+        <StyledBox>
+          <ProgressCircle
+            onClick={onClick}
+            filled={progress}
+            notFilled={progress ? 100 - progress : 0}
+          />
+        </StyledBox>
+      </Wrapper>
+    );
+  }
+
   return (
     <StyledAlert>
       <div>

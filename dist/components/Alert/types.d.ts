@@ -7,6 +7,7 @@ export declare const variants: {
     readonly DANGER: "danger";
     readonly SUCCESS: "success";
     readonly WARNING: "warning";
+    readonly EXTENSIONS_CONFLICT: "extensionsConflict";
 };
 export declare type Variants = typeof variants[keyof typeof variants];
 export interface AlertProps {

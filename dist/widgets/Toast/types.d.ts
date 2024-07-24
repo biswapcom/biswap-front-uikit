@@ -4,6 +4,7 @@ export declare const types: {
     DANGER: string;
     WARNING: string;
     INFO: string;
+    EXTENSIONS_CONFLICT: string;
 };
 export declare type Types = typeof types[keyof typeof types];
 export interface Toast {
