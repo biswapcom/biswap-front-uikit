@@ -1,8 +1,8 @@
 import { ReactNode } from "react";
 import { SpaceProps } from "styled-system";
-export declare type Position = "top" | "bottom";
-export declare type Variant = "dark" | "light" | "primary" | "secondary";
-export declare type Scale = "lg" | "md" | "sm";
+export type Position = "top" | "bottom";
+export type Variant = "dark" | "light" | "primary" | "secondary";
+export type Scale = "lg" | "md" | "sm";
 export interface PositionProps {
     position?: Position;
 }

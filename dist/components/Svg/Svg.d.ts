@@ -252,7 +252,7 @@ declare const Svg: import("styled-components").StyledComponent<"svg", import("st
     crossOrigin?: "" | "anonymous" | "use-credentials";
     accentHeight?: string | number;
     accumulate?: "none" | "sum";
-    additive?: "sum" | "replace";
+    additive?: "replace" | "sum";
     alignmentBaseline?: "inherit" | "auto" | "baseline" | "middle" | "alphabetic" | "hanging" | "ideographic" | "mathematical" | "before-edge" | "text-before-edge" | "central" | "after-edge" | "text-after-edge";
     allowReorder?: "yes" | "no";
     alphabetic?: string | number;

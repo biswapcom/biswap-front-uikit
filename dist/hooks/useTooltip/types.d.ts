@@ -15,4 +15,4 @@ export interface TooltipOptions {
     openedByDefault?: boolean;
     isLight?: boolean;
 }
-export declare type TriggerType = "click" | "hover" | "focus";
+export type TriggerType = "click" | "hover" | "focus";
