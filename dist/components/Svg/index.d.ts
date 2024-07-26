@@ -149,6 +149,7 @@ export { default as ExchangeSolidIcon } from "./Icons/Menu/Exchange/ExchangeSoli
 export { default as ExchangeOpacityIcon } from "./Icons/Menu/Exchange/ExchangeOpacity";
 export { default as ExpertModeSolidIcon } from "./Icons/Menu/ExpertMode/ExpertModeSolid";
 export { default as ExpertModeOpacityIcon } from "./Icons/Menu/ExpertMode/ExpertModeOpacity";
+export { default as CrossChainOpacityIcon } from "./Icons/Menu/CrossChain/CrossChainOpacity";
 export { default as PoolsSolidIcon } from "./Icons/Menu/Pools/PoolsSolid";
 export { default as PoolsOpacityIcon } from "./Icons/Menu/Pools/PoolsOpacity";
 export { default as FarmsSolidIcon } from "./Icons/Menu/Farms/FarmsSolid";
@@ -230,6 +231,7 @@ export { default as RouteIcon } from "./Icons/Route/Route";
 export { default as DiscountSolidIcon } from "./Icons/Discount/DiscountSolid";
 export { default as DiscountOpacityIcon } from "./Icons/Discount/DiscountOpacity";
 export * from "./Icons/Menu/Perpetual";
+export * from "./Icons/Menu/Prediction";
 export { default as Svg } from "./Svg";
 export type { SvgProps } from "./types";
 export { default as SquidRouterIcon } from "./Icons/CrossChain/SquidRouter";
