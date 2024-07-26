@@ -398,6 +398,9 @@ export { default as DiscountOpacityIcon } from "./Icons/Discount/DiscountOpacity
 // perpetual
 export * from "./Icons/Menu/Perpetual";
 
+// Prediction
+export * from "./Icons/Menu/Prediction";
+
 export { default as Svg } from "./Svg";
 export type { SvgProps } from "./types";
 
