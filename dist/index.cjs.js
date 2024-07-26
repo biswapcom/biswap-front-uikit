@@ -9181,7 +9181,7 @@ const Inner = styled__default["default"].div `
 `;
 const Menu = ({ linkComponent = "a", banner, links, rightSide, subLinks, activeItem, activeSubItem, children, BSWPriceLabel, BSWPriceValue, footerStatistic, registerToken, buyBswHandler, aboutLinks, productLinks, serviceLinks, socialLinks, withEvent, eventCallback, 
 //eventButtonLogo,
-customLogoSubtitle, marketplaceLink, baseAwsUrl = "https://static.biswap.org/bs", buyBswLabel = "Buy BSW", }) => {
+customLogoSubtitle, marketplaceLink, baseAwsUrl = "https://static.biswap.org/bs", buyBswLabel = "Buy BSW", showFooter = true, }) => {
     const { isMobile } = useMatchBreakpoints();
     const [showMenu, setShowMenu] = React.useState(true);
     const [menuBg, setMenuBg] = React.useState(false);
@@ -9264,7 +9264,7 @@ customLogoSubtitle, marketplaceLink, baseAwsUrl = "https://static.biswap.org/bs"
                 React__default["default"].createElement(Inner, { isPushed: false, showMenu: showMenu },
                     React__default["default"].createElement(React__default["default"].Fragment, null,
                         children,
-                        React__default["default"].createElement(Footer, { BSWPriceLabel: BSWPriceLabel, BSWPriceValue: BSWPriceValue, footerStatistic: footerStatistic, registerToken: registerToken, buyBswHandler: buyBswHandler, aboutLinks: aboutLinks, productLinks: productLinks, serviceLinks: serviceLinks, socialLinks: socialLinks, marketplaceLink: marketplaceLink, baseAwsUrl: baseAwsUrl, buyBswLabel: buyBswLabel })))))));
+                        showFooter && React__default["default"].createElement(Footer, { BSWPriceLabel: BSWPriceLabel, BSWPriceValue: BSWPriceValue, footerStatistic: footerStatistic, registerToken: registerToken, buyBswHandler: buyBswHandler, aboutLinks: aboutLinks, productLinks: productLinks, serviceLinks: serviceLinks, socialLinks: socialLinks, marketplaceLink: marketplaceLink, baseAwsUrl: baseAwsUrl, buyBswLabel: buyBswLabel })))))));
 };
 
 const ActionsContainer = styled__default["default"].div `

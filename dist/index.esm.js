@@ -9165,7 +9165,7 @@ const Inner = styled.div `
 `;
 const Menu = ({ linkComponent = "a", banner, links, rightSide, subLinks, activeItem, activeSubItem, children, BSWPriceLabel, BSWPriceValue, footerStatistic, registerToken, buyBswHandler, aboutLinks, productLinks, serviceLinks, socialLinks, withEvent, eventCallback, 
 //eventButtonLogo,
-customLogoSubtitle, marketplaceLink, baseAwsUrl = "https://static.biswap.org/bs", buyBswLabel = "Buy BSW", }) => {
+customLogoSubtitle, marketplaceLink, baseAwsUrl = "https://static.biswap.org/bs", buyBswLabel = "Buy BSW", showFooter = true, }) => {
     const { isMobile } = useMatchBreakpoints();
     const [showMenu, setShowMenu] = useState(true);
     const [menuBg, setMenuBg] = useState(false);
@@ -9248,7 +9248,7 @@ customLogoSubtitle, marketplaceLink, baseAwsUrl = "https://static.biswap.org/bs"
                 React.createElement(Inner, { isPushed: false, showMenu: showMenu },
                     React.createElement(React.Fragment, null,
                         children,
-                        React.createElement(Footer, { BSWPriceLabel: BSWPriceLabel, BSWPriceValue: BSWPriceValue, footerStatistic: footerStatistic, registerToken: registerToken, buyBswHandler: buyBswHandler, aboutLinks: aboutLinks, productLinks: productLinks, serviceLinks: serviceLinks, socialLinks: socialLinks, marketplaceLink: marketplaceLink, baseAwsUrl: baseAwsUrl, buyBswLabel: buyBswLabel })))))));
+                        showFooter && React.createElement(Footer, { BSWPriceLabel: BSWPriceLabel, BSWPriceValue: BSWPriceValue, footerStatistic: footerStatistic, registerToken: registerToken, buyBswHandler: buyBswHandler, aboutLinks: aboutLinks, productLinks: productLinks, serviceLinks: serviceLinks, socialLinks: socialLinks, marketplaceLink: marketplaceLink, baseAwsUrl: baseAwsUrl, buyBswLabel: buyBswLabel })))))));
 };
 
 const ActionsContainer = styled.div `

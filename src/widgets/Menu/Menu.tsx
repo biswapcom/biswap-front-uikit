@@ -171,6 +171,7 @@ const Menu: FC<PropsWithChildren<NavProps>> = ({
   marketplaceLink,
   baseAwsUrl = "https://static.biswap.org/bs",
   buyBswLabel = "Buy BSW",
+  showFooter = true,
 }) => {
   const { isMobile } = useMatchBreakpoints();
   const [showMenu, setShowMenu] = useState<boolean>(true);
@@ -330,7 +331,7 @@ const Menu: FC<PropsWithChildren<NavProps>> = ({
             <>
               {/*<Box height={isMobileMenuOpened ? 0 : totalTopMenuHeight} />*/}
               {children}
-              <Footer
+              {showFooter && <Footer
                 BSWPriceLabel={BSWPriceLabel}
                 BSWPriceValue={BSWPriceValue}
                 footerStatistic={footerStatistic}
@@ -343,7 +344,7 @@ const Menu: FC<PropsWithChildren<NavProps>> = ({
                 marketplaceLink={marketplaceLink}
                 baseAwsUrl={baseAwsUrl}
                 buyBswLabel={buyBswLabel}
-              />
+              />}
             </>
           </Inner>
         </BodyWrapper>
